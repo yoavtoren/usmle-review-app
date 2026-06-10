@@ -1,0 +1,151 @@
+# 12 Neuro & Special Senses — 8/136 (6%)
+
+> Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
+
+## 01 Embryology — 0/9
+- [ ] 01 Neural development
+- [ ] 02 Regional specification of developing brain
+- [ ] 03 Central & peripheral nervous systems origins
+- [ ] 04 Neural tube defects
+- [ ] 05 Holoprosencephaly
+- [ ] 06 Lissencephaly
+- [ ] 07 Posterior fossa malformations
+- [ ] 08 Syringomyelia
+- [ ] 09 Tongue development
+
+## 02 Anatomy & Physiology — 8/43
+- [ ] 01 Neurons
+- [ ] 02 Astrocytes
+- [ ] 03 Microglia
+- [ ] 04 Ependymal cells
+- [ ] 05 Myelin
+- [ ] 06 Schwann cells
+- [ ] 07 Oligodendrocytes
+- [ ] 08 Sensory receptors
+- [ ] 09 Peripheral nerve
+- [ ] 10 Chromatolysis
+- [ ] 11 Neurotransmitter changes with disease
+- [ ] 12 Meninges
+- [ ] 13 Blood-brain barrier
+- [ ] 14 Vomiting center
+- [ ] 15 Sleep physiology
+- [ ] 16 Hypothalamus
+- [ ] 17 Thalamus
+- [ ] 18 Limbic system
+- [ ] 19 Dopaminergic pathways
+- [ ] 20 Cerebellum
+- [ ] 21 Basal ganglia
+- [ ] 22 Cerebral cortex regions
+- [ ] 23 Cerebral perfusion
+- [ ] 24 Homunculus
+- [ ] 25 Cerebral arteries - cortical distribution
+- [ ] 26 Circle of Willis
+- [ ] 27 Dural venous sinuses
+- [ ] 28 Ventricular system
+- [ ] 29 Brain stem - ventral view
+- [ ] 30 Brain stem - dorsal view (cerebellum removed)
+- [ ] 31 Cranial nerve nuclei
+- [ ] 32 Cranial nerve & vessel pathways
+- [ ] 33 Cranial nerves
+- [ ] 34 Vagal nuclei
+- [ ] 35 Cranial nerve reflexes
+- [x] 36 Mastication muscles
+- [x] 37 Spinal nerves
+- [x] 38 Spinal cord - lower extent
+- [x] 39 Spinal cord & associated tracts
+- [x] 40 Spinal tract anatomy & functions
+- [x] 41 Clinical reflexes
+- [x] 42 Primitive reflexes
+- [x] 43 Landmark dermatomes
+
+## 03 Pathology — 0/32
+- [ ] 01 Common brain lesions
+- [ ] 02 Ischemic brain disease/stroke
+- [ ] 03 Neonatal intraventricular hemorrhage
+- [ ] 04 Intracranial hemorrhage
+- [ ] 05 Effects of strokes
+- [ ] 06 Central post-stroke pain syndrome
+- [ ] 07 Diffuse axonal injury
+- [ ] 08 Aphasia
+- [ ] 09 Aneurysms
+- [ ] 10 Seizures
+- [ ] 11 Fever vs Heat Stroke
+- [ ] 12 Headaches
+- [ ] 13 Movement disorders
+- [ ] 14 Neurodegenerative disorders
+- [ ] 15 Idiopathic intracranial hypertension
+- [ ] 16 Hydrocephalus
+- [ ] 17 Multiple sclerosis
+- [ ] 18 Other demyelinating & dysmyelinating disorders
+- [ ] 19 Neurocutaneous disorders
+- [ ] 20 Adult primary brain tumors
+- [ ] 21 Childhood primary brain tumors
+- [ ] 22 Herniation syndromes
+- [ ] 23 Motor neuron signs
+- [ ] 24 Spinal lesions
+- [ ] 25 Poliomyelitis
+- [ ] 26 Brown-Sequard syndrome
+- [ ] 27 Friedreich ataxia
+- [ ] 28 Common cranial nerve lesions
+- [ ] 29 Facial nerve lesions
+- [ ] 30 Basilar Skull Fracture
+- [ ] 31 Orbital Floor Fracture
+- [ ] 32 Cribiform Plate Fracture
+
+## 04 Otology — 0/5
+- [ ] 01 Auditory physiology
+- [ ] 02 Diagnosing hearing loss
+- [ ] 03 Types of hearing loss
+- [ ] 04 Cholesteatoma
+- [ ] 05 Vertigo
+
+## 05 Ophthalmology — 0/26
+- [ ] 01 Normal eye anatomy
+- [ ] 02 Conjunctivitis
+- [ ] 03 Refractive errors
+- [ ] 04 Presbyopia
+- [ ] 05 Cataract
+- [ ] 06 Aqueous humor pathway
+- [ ] 07 Glaucoma
+- [ ] 08 Uveitis
+- [ ] 09 Age-related macular degeneration
+- [ ] 10 Diabetic retinopathy
+- [ ] 11 Hypertensive retinopathy
+- [ ] 12 Retinal vein occlusion
+- [ ] 13 Retinal detachment
+- [ ] 14 Central retinal artery occlusion
+- [ ] 15 Retinitis pigmentosa
+- [ ] 16 Papilledema
+- [ ] 17 Leukocoria
+- [ ] 18 Pupillary control
+- [ ] 19 Marcus Gunn pupil
+- [ ] 20 Horner syndrome
+- [ ] 21 Ocular motility
+- [ ] 22 CN III, IV, VI palsies
+- [ ] 23 Visual field defects
+- [ ] 24 Cavernous sinus
+- [ ] 25 Internuclear ophthalmoplegia
+- [ ] retinitis
+
+## 06 Pharm — 0/21
+- [ ] 01 Epilepsy therapy
+- [ ] 02 Barbiturates
+- [ ] 03 Benzodiazepines
+- [ ] 04 Nonbenzodiazepine hypnotics
+- [ ] 05 Suvorexant
+- [ ] 06 Ramelteon
+- [ ] 07 Triptans
+- [ ] 08 Parkinson disease therapy
+- [ ] 09 Carbidopa/levodopa
+- [ ] 10 Selegiline, rasagiline
+- [ ] 11 Neurodegenerative disease therapy
+- [ ] 12 Anesthetics - general principles
+- [ ] 13 Inhaled anesthetics
+- [ ] 14 Intravenous anesthetics
+- [ ] 15 Local anesthetics
+- [ ] 16 Neuromuscular blocking drugs
+- [ ] 17 Spasmolytics, antispasmodics
+- [ ] 18 Opioid analgesics
+- [ ] 19 Mixed agonist & antagonist opioid analgesics
+- [ ] 20 Tramadol
+- [ ] 21 Glaucoma drugs
