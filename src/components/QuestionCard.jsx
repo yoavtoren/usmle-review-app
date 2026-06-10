@@ -1,255 +1,382 @@
 import { useState } from "react";
 import { rate, setDifficulty, getCard } from "../lib/storage.js";
 
-const TABS = [
-  ["q", "📖 Question"],
-  ["e", "🚫 Eliminate"],
-  ["a", "🎯 Answer"],
-  ["k", "🔑 Keywords"],
-  ["f", "📚 First Aid"],
-];
-
-const CLUE_COLORS = {
-  red: "#b3261e",
-  orange: "#8a5a00",
-  blue: "#0c447c",
-  green: "#27500a",
-  purple: "#72243e",
-};
-const CLUE_BG = {
-  red: "#fdeceb",
-  orange: "#fbf0da",
-  blue: "#e6f1fb",
-  green: "#eaf3de",
-  purple: "#fbeaf0",
+// CLUE COLOR CODE per the guide
+// 🔴 fatal/critical | 🟠 demographic/risk | 🔵 key context | 🟢 confirmatory | 🟣 trap
+const CLUE = {
+  red:    { bg: "#fee2e2", text: "#991b1b", emoji: "🔴", label: "Critical" },
+  orange: { bg: "#fff7ed", text: "#9a3412", emoji: "🟠", label: "Risk factor" },
+  blue:   { bg: "#dbeafe", text: "#1e40af", emoji: "🔵", label: "Key context" },
+  green:  { bg: "#dcfce7", text: "#166534", emoji: "🟢", label: "Confirms" },
+  purple: { bg: "#f3e8ff", text: "#7e22ce", emoji: "🟣", label: "Trap" },
 };
 
 const DIFF_OPTIONS = [
-  ["knowledge", "📚 Pure knowledge gap"],
-  ["comprehension", "🧭 Understanding the question"],
-  ["vocab", "🔤 Vocabulary"],
-  ["imaging", "🖼️ Imaging / diagram"],
-  ["distractor", "🧲 Pulled by a distractor"],
-  ["other", "✍️ Something else"],
+  ["knowledge",    "📚 Knowledge gap"],
+  ["comprehension","🧭 Misread the question"],
+  ["vocab",        "🔤 Vocabulary"],
+  ["imaging",      "🖼️ Imaging/diagram"],
+  ["distractor",   "🧲 Pulled by a distractor"],
+  ["other",        "✍️ Something else"],
 ];
 
+// ── Inline highlight helpers ────────────────────────────────────────────────
+
+function findInText(text, search) {
+  const lower = text.toLowerCase();
+  let idx = lower.indexOf(search.toLowerCase());
+  if (idx !== -1) return { start: idx, end: idx + search.length };
+  // try first part before " + " or ","
+  const parts = search.split(/\s*[+,]\s*/);
+  for (const p of parts) {
+    const t = p.trim();
+    if (t.length < 5) continue;
+    idx = lower.indexOf(t.toLowerCase());
+    if (idx !== -1) return { start: idx, end: idx + t.length };
+  }
+  return null;
+}
+
+function buildSegments(vignette, clues) {
+  let segs = [{ type: "text", val: vignette }];
+  const inlined = new Set();
+  for (let ci = 0; ci < clues.length; ci++) {
+    let hit = false;
+    const next = [];
+    for (const seg of segs) {
+      if (seg.type !== "text" || hit) { next.push(seg); continue; }
+      const m = findInText(seg.val, clues[ci].text);
+      if (m) {
+        hit = true;
+        if (m.start > 0) next.push({ type: "text", val: seg.val.slice(0, m.start) });
+        next.push({ type: "clue", ci, val: seg.val.slice(m.start, m.end) });
+        if (m.end < seg.val.length) next.push({ type: "text", val: seg.val.slice(m.end) });
+      } else {
+        next.push(seg);
+      }
+    }
+    if (hit) { segs = next; inlined.add(ci); }
+  }
+  const unmatched = clues.map((_, i) => i).filter(i => !inlined.has(i));
+  return { segs, unmatched };
+}
+
+// ── Main component ───────────────────────────────────────────────────────────
+
 export default function QuestionCard({ q, onProgress, progress }) {
-  const [tab, setTab] = useState("q");
+  const [tab, setTab]           = useState("q");
   const [openClue, setOpenClue] = useState(null);
-  const [openElim, setOpenElim] = useState(null);
-  const [locked, setLocked] = useState(null);
+  const [locked, setLocked]     = useState(null);
   const [revealed, setRevealed] = useState(false);
-  const [steps, setSteps] = useState(0);
-  const [flipped, setFlipped] = useState({});
+  const [step, setStep]         = useState(0);
+  const [flipped, setFlipped]   = useState({});
+  const [openElim, setOpenElim] = useState(null);
   const card = getCard(progress, q.id);
 
-  const wrongOptions = q.options.filter((o) => !o.correct);
-  const correctOption = q.options.find((o) => o.correct);
+  const clues       = q.clues || [];
+  const correctOpt  = q.options.find(o => o.correct);
+  const wrongOpts   = q.options.filter(o => !o.correct);
+  const { segs, unmatched } = buildSegments(q.vignette, clues);
 
-  function handleRate(r) {
-    onProgress(rate(q.id, r));
-  }
-  function handleDifficulty(d) {
-    onProgress(setDifficulty(q.id, d));
-  }
+  const activeClue = openClue !== null
+    ? (openClue.startsWith("ci-") ? clues[parseInt(openClue.split("-")[1])]
+      : clues[parseInt(openClue.split("-")[1])])
+    : null;
+
+  function toggleClue(key) { setOpenClue(openClue === key ? null : key); }
+  function handleRate(r)  { onProgress(rate(q.id, r)); }
+  function handleDiff(d)  { onProgress(setDifficulty(q.id, d)); }
+
+  const TABS = [
+    ["q", "📖 Question"],
+    ["e", "🚫 Eliminate"],
+    ["a", "🎯 Answer"],
+    ["k", "🔑 Keywords"],
+    ["f", "📚 First Aid"],
+  ];
 
   return (
-    <div className="card">
-      <div className="card-head">
-        <div>
-          <span className="pill">#{q.item}</span>
-          <span className="pill ghost">{q.system}</span>
-          <span className="pill ghost">{q.topic}</span>
+    <div className="qcard">
+
+      {/* ── Header ── */}
+      <div className="qcard-head">
+        <div className="qcard-pills">
+          <span className="qpill accent">{q.system}</span>
+          <span className="qpill ghost">{q.topic}</span>
           {q.percentCorrect != null && (
-            <span className="pill ghost">{q.percentCorrect}% got it right</span>
+            <span className="qpill ghost">🎯 {q.percentCorrect}% got it right</span>
           )}
+          {q.missed && <span className="qpill danger">❌ Missed</span>}
         </div>
-        <h2>{q.title}</h2>
+        <h2 className="qcard-title">#{q.item} · {q.title}</h2>
       </div>
 
-      <div className="tabs">
+      {/* ── Tabs ── */}
+      <div className="qtabs">
         {TABS.map(([key, label]) => (
           <button
             key={key}
-            className={tab === key ? "tab active" : "tab"}
+            className={tab === key ? "qtab active" : "qtab"}
             onClick={() => setTab(key)}
-          >
-            {label}
-          </button>
+          >{label}</button>
         ))}
       </div>
 
-      {/* QUESTION */}
+      {/* ══════════════════════════════════════════════
+          TAB 1 — QUESTION
+      ══════════════════════════════════════════════ */}
       {tab === "q" && (
-        <section>
-          <p className="vignette">{q.vignette}</p>
+        <div className="qtab-body">
 
-          {q.clues?.length > 0 && (
-            <>
-              <p className="hint">👆 Tap a clue to see why it matters</p>
-              <div className="clues">
-                {q.clues.map((c, i) => (
-                  <div key={i}>
+          {/* Vignette with inline clue highlights */}
+          <div className="vignette-block">
+            <div className="vignette-text">
+              {segs.map((seg, i) => {
+                if (seg.type === "text") return <span key={i}>{seg.val}</span>;
+                const c = CLUE[clues[seg.ci].type] || CLUE.blue;
+                const key = `ci-${seg.ci}`;
+                return (
+                  <button
+                    key={i}
+                    className="iclue"
+                    style={{ background: c.bg, color: c.text }}
+                    onClick={() => toggleClue(key)}
+                  >
+                    {c.emoji} {seg.val}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Inline clue reveal panel */}
+            {openClue && openClue.startsWith("ci-") && (() => {
+              const ci = parseInt(openClue.split("-")[1]);
+              const c = CLUE[clues[ci].type] || CLUE.blue;
+              return (
+                <div className="clue-panel" style={{ background: c.bg, borderColor: c.text, color: c.text }}>
+                  <strong>{c.emoji} {c.label}:</strong> {clues[ci].note}
+                </div>
+              );
+            })()}
+          </div>
+
+          {/* Unmatched clues as tags */}
+          {unmatched.length > 0 && (
+            <div className="clue-tags">
+              {unmatched.map(ci => {
+                const c = CLUE[clues[ci].type] || CLUE.blue;
+                const key = `uc-${ci}`;
+                const isOpen = openClue === key;
+                return (
+                  <div key={ci}>
                     <button
-                      className="clue"
-                      style={{ background: CLUE_BG[c.type] || "#eee", color: CLUE_COLORS[c.type] || "#333" }}
-                      onClick={() => setOpenClue(openClue === i ? null : i)}
+                      className="clue-tag"
+                      style={{ background: c.bg, color: c.text }}
+                      onClick={() => toggleClue(key)}
                     >
-                      {c.text}
+                      {c.emoji} {clues[ci].text}
                     </button>
-                    {openClue === i && <div className="panel">{c.note}</div>}
+                    {isOpen && (
+                      <div className="clue-panel" style={{ background: c.bg, borderColor: c.text, color: c.text }}>
+                        {clues[ci].note}
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
-            </>
+                );
+              })}
+            </div>
           )}
 
-          <div className="callout">
-            <strong>🧩 What actually matters:</strong> {q.whatMatters}
+          {/* What matters + strategy */}
+          <div className="callout-block important">
+            <span className="ci">🧩</span>
+            <div><strong>What actually matters:</strong> {q.whatMatters}</div>
           </div>
-          <div className="callout info">
-            <strong>🧠 In these kinds of questions:</strong> {q.strategy}
+          <div className="callout-block info">
+            <span className="ci">🧠</span>
+            <div><strong>Strategy:</strong> {q.strategy}</div>
           </div>
 
-          <div className="options">
-            {q.options.map((o) => (
+          {/* Answer options */}
+          <div className="options-list">
+            {q.options.map(o => (
               <button
                 key={o.letter}
-                className={"option" + (locked === o.letter ? " locked" : "")}
+                className={`opt${locked === o.letter ? " locked" : ""}`}
                 onClick={() => setLocked(o.letter)}
               >
-                <b>{o.letter}</b> {o.text}
+                <span className={`opt-ltr${locked === o.letter ? " locked" : ""}`}>{o.letter}</span>
+                <span className="opt-txt">{o.text}</span>
+                {locked === o.letter && <span className="opt-lock-badge">🔒</span>}
               </button>
             ))}
           </div>
+
           {locked && (
-            <p className="lockmsg">🔒 Locked in {locked}. Head to the Answer tab to check it.</p>
+            <div className="lock-msg">
+              Locked in <strong>{locked}</strong> · head to 🎯 Answer to check
+            </div>
           )}
-        </section>
+        </div>
       )}
 
-      {/* ELIMINATE */}
+      {/* ══════════════════════════════════════════════
+          TAB 2 — ELIMINATE
+      ══════════════════════════════════════════════ */}
       {tab === "e" && (
-        <section>
-          <p className="hint">👆 Tap each wrong answer — what it is, then why it fails</p>
-          {wrongOptions.map((o) => {
-            const elim = q.eliminations?.find((e) => e.letter === o.letter);
+        <div className="qtab-body">
+          <p className="tab-hint">👆 Tap each wrong answer — why it fails, and when it would be right</p>
+          {wrongOpts.map(o => {
+            const elim = (q.eliminations || []).find(e => e.letter === o.letter);
+            const isOpen = openElim === o.letter;
             return (
-              <div key={o.letter} className="elim" onClick={() => setOpenElim(openElim === o.letter ? null : o.letter)}>
-                <div><b>{o.letter}</b> {o.text}{elim ? ` — ${elim.what}` : ""}</div>
-                {openElim === o.letter && elim && (
-                  <div className="panel">❌ {elim.why}</div>
+              <div
+                key={o.letter}
+                className={`elim-row${isOpen ? " open" : ""}`}
+                onClick={() => setOpenElim(isOpen ? null : o.letter)}
+              >
+                <div className="elim-top">
+                  <span className="elim-ltr">{o.letter}</span>
+                  <span className="elim-txt">{o.text}</span>
+                  <span className="elim-chev">{isOpen ? "▲" : "▼"}</span>
+                </div>
+                {isOpen && elim && (
+                  <div className="elim-panel">
+                    <p>❌ <strong>What it is:</strong> {elim.what}</p>
+                    <p>🚫 <strong>Eliminated because:</strong> {elim.why}</p>
+                  </div>
                 )}
               </div>
             );
           })}
-        </section>
+        </div>
       )}
 
-      {/* ANSWER */}
+      {/* ══════════════════════════════════════════════
+          TAB 3 — ANSWER
+      ══════════════════════════════════════════════ */}
       {tab === "a" && (
-        <section>
+        <div className="qtab-body">
           {!revealed ? (
-            <button className="reveal" onClick={() => setRevealed(true)}>
+            <button className="reveal-btn" onClick={() => { setRevealed(true); setStep(0); }}>
               🎯 Reveal answer
             </button>
           ) : (
             <>
               <div className="answer-banner">
-                ✅ {correctOption.letter} · {correctOption.text}
+                ✅ <strong>{correctOpt.letter}</strong> — {correctOpt.text}
               </div>
+
               {locked && (
-                <p className={locked === q.correct ? "ok" : "bad"}>
+                <div className={locked === q.correct ? "guess-ok" : "guess-bad"}>
                   {locked === q.correct
-                    ? `🎉 Your locked guess ${locked} is correct.`
-                    : `Your locked guess was ${locked} — correct answer is ${q.correct}.`}
-                </p>
+                    ? `🎉 Correct! Your guess (${locked}) was right.`
+                    : `Your locked guess was ${locked} — correct is ${q.correct}.`}
+                </div>
               )}
               {q.yourAnswer && q.yourAnswer !== q.correct && (
-                <p className="muted">On the real test you picked {q.yourAnswer}.</p>
+                <p className="muted small">On the real exam you picked <strong>{q.yourAnswer}</strong>.</p>
               )}
 
-              <h3>🧩 Reasoning chain</h3>
+              <h3 className="sec-head">🧩 Reasoning chain</h3>
               <div className="chain">
-                {q.reasoning.slice(0, steps).map((s, i) => (
-                  <div key={i} className="chain-step">{i + 1}. {s}</div>
-                ))}
-                {steps < q.reasoning.length && (
-                  <button className="chain-next" onClick={() => setSteps(steps + 1)}>
-                    👆 Reveal step {steps + 1}
+                {q.reasoning.slice(0, step + 1).map((s, i) => {
+                  const match = clues.find(c =>
+                    c.text.split(/\s*[+,]\s*/)[0] &&
+                    s.toLowerCase().includes(c.text.split(/\s*[+,]\s*/)[0].toLowerCase().slice(0, 8))
+                  );
+                  const c = match ? (CLUE[match.type] || CLUE.blue) : null;
+                  return (
+                    <div key={i} className="chain-step" style={c ? { borderLeftColor: c.text } : {}}>
+                      <span className="chain-num">{i + 1}</span>
+                      {c && <span style={{ marginRight: 4 }}>{c.emoji}</span>}
+                      <span>{s}</span>
+                    </div>
+                  );
+                })}
+                {step < q.reasoning.length - 1 && (
+                  <button className="chain-next" onClick={() => setStep(step + 1)}>
+                    👆 Reveal step {step + 2} / {q.reasoning.length}
                   </button>
                 )}
               </div>
 
-              <div className="callout">
-                <strong>⚙️ Mechanism:</strong> {q.mechanism}
+              <div className="callout-block important" style={{ marginTop: 16 }}>
+                <span className="ci">⚙️</span>
+                <div><strong>Mechanism:</strong> {q.mechanism}</div>
               </div>
 
               <div className="memhook">🧠 {q.memoryHook}</div>
 
+              {/* Difficulty + rate */}
               <div className="review-box">
-                <h3>🤔 What made this hard for you?</h3>
+                <h3 className="sec-head">🤔 What made this hard?</h3>
                 <div className="diffgrid">
                   {DIFF_OPTIONS.map(([key, label]) => (
                     <button
                       key={key}
-                      className={card.difficulty === key ? "diff active" : "diff"}
-                      onClick={() => handleDifficulty(key)}
-                    >
-                      {label}
-                    </button>
+                      className={`diff${card.difficulty === key ? " active" : ""}`}
+                      onClick={() => handleDiff(key)}
+                    >{label}</button>
                   ))}
                 </div>
 
-                <h3>Schedule next review</h3>
+                <h3 className="sec-head">📅 Schedule next review</h3>
                 <div className="rate-row">
                   <button className="rate again" onClick={() => handleRate("again")}>
-                    🔁 Review again soon
+                    🔁 Again soon
                   </button>
                   <button className="rate got" onClick={() => handleRate("got")}>
-                    ✅ Got it — push it out
+                    ✅ Got it — push out
                   </button>
                 </div>
                 {card.dueAt && (
-                  <p className="muted">
-                    Next due: {new Date(card.dueAt).toLocaleDateString()} · status: {card.status}
+                  <p className="muted small">
+                    Next due: {new Date(card.dueAt).toLocaleDateString()} · {card.status}
                   </p>
                 )}
               </div>
             </>
           )}
-        </section>
+        </div>
       )}
 
-      {/* KEYWORDS */}
+      {/* ══════════════════════════════════════════════
+          TAB 4 — KEYWORDS
+      ══════════════════════════════════════════════ */}
       {tab === "k" && (
-        <section>
-          <p className="hint">👆 Tap a card to flip · “If you see…” → “think…”</p>
+        <div className="qtab-body">
+          <p className="tab-hint">👆 Tap to flip · "If you see…" → "Think…"</p>
           <div className="cardgrid">
-            {q.keywords.map((kw, i) => (
+            {(q.keywords || []).map((kw, i) => (
               <button
                 key={i}
-                className={"flip" + (flipped[i] ? " on" : "")}
+                className={`flip${flipped[i] ? " on" : ""}`}
                 onClick={() => setFlipped({ ...flipped, [i]: !flipped[i] })}
               >
-                {flipped[i] ? <span>→ <b>{kw.back}</b></span> : <span>If you see:<br /><b>{kw.front}</b></span>}
+                {flipped[i]
+                  ? <span>→ <strong>{kw.back}</strong></span>
+                  : <span>If you see:<br /><strong>{kw.front}</strong></span>}
               </button>
             ))}
           </div>
-        </section>
+        </div>
       )}
 
-      {/* FIRST AID */}
+      {/* ══════════════════════════════════════════════
+          TAB 5 — FIRST AID
+      ══════════════════════════════════════════════ */}
       {tab === "f" && (
-        <section>
-          {q.firstAid.map((fa, i) => (
-            <div key={i} className="fa">
-              <div className="fa-topic">{fa.topic}</div>
-              <div className="fa-loc">{fa.location}</div>
+        <div className="qtab-body">
+          <p className="tab-hint">📚 Exact First Aid locations — go read these</p>
+          {(q.firstAid || []).map((fa, i) => (
+            <div key={i} className="fa-loc-card">
+              <div className="fa-loc-topic">📖 {fa.topic}</div>
+              <div className="fa-loc-path">{fa.location}</div>
             </div>
           ))}
-          <div className="memhook">🧠 {q.memoryHook}</div>
-        </section>
+          <div className="memhook" style={{ marginTop: 16 }}>🧠 {q.memoryHook}</div>
+        </div>
       )}
     </div>
   );
