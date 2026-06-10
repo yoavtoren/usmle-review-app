@@ -1,0 +1,20 @@
+{
+  "name": "usmle-review-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Personal offline USMLE Step 1 review deck (questions you missed), rendered as interactive review cards.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2"
+  }
+}

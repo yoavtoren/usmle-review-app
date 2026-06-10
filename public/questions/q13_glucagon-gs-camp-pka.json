@@ -1,0 +1,107 @@
+{
+  "id": "q13",
+  "item": 13,
+  "qid": "994",
+  "title": "Glucagon -> Gs -> cAMP -> PKA",
+  "system": "Cell biology",
+  "topic": "Second messengers",
+  "correct": "D",
+  "yourAnswer": "A",
+  "percentCorrect": 59,
+  "vignette": "Hypoglycemic diabetic given IM glucagon; it binds a receptor that promotes intracellular GTP binding to a receptor-associated protein, driving glycogenolysis. Mediator?",
+  "clues": [
+    {
+      "text": "GTP binds a receptor-associated protein",
+      "type": "red",
+      "note": "= activation of a heterotrimeric G protein (Gs)."
+    },
+    {
+      "text": "propofol mention (other Qs)",
+      "type": "purple",
+      "note": "N/A here — glucagon uses Gs/cAMP."
+    }
+  ],
+  "whatMatters": "'GTP-binding protein' = Gs-coupled GPCR -> adenylate cyclase -> cAMP -> protein kinase A.",
+  "strategy": "ID the second-messenger system first (Gs/Gi->cAMP/PKA; Gq->IP3/DAG/PKC; GC->cGMP/PKG; cytokine->JAK/STAT; RTK->insulin/GF), then name the kinase.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "cGMP-dependent protein kinase",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Janus tyrosine kinase (JAK)",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Phosphodiesterase",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Protein kinase A",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Tyrosine-specific protein kinase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "cGMP/NO pathway.",
+      "why": "Glucagon uses cAMP, not cGMP."
+    },
+    {
+      "letter": "B",
+      "what": "Cytokine receptors (GH, EPO).",
+      "why": "Not GPCRs."
+    },
+    {
+      "letter": "C",
+      "what": "Degrades cAMP.",
+      "why": "Terminates the signal, doesn't mediate it."
+    },
+    {
+      "letter": "E",
+      "what": "Insulin/growth-factor RTKs.",
+      "why": "Glucagon is a GPCR hormone (ironically insulin's pathway)."
+    }
+  ],
+  "reasoning": [
+    "'GTP binds receptor-associated protein' = G protein (Gs)",
+    "Ga-GTP -> adenylate cyclase -> cAMP",
+    "cAMP activates PKA",
+    "PKA drives glycogenolysis -> D"
+  ],
+  "mechanism": "Glucagon binds a Gs-GPCR; Ga swaps GDP for GTP, activates adenylate cyclase -> cAMP -> PKA -> glycogenolysis/gluconeogenesis. Same pathway: epinephrine (beta), ACTH, PTH.",
+  "keywords": [
+    {
+      "front": "Glucagon hepatocyte signaling",
+      "back": "Gs -> adenylate cyclase -> cAMP -> PKA"
+    },
+    {
+      "front": "cAMP activates which kinase",
+      "back": "Protein kinase A"
+    },
+    {
+      "front": "GH, prolactin, EPO, IL signaling",
+      "back": "JAK/STAT"
+    },
+    {
+      "front": "Degrades cAMP",
+      "back": "Phosphodiesterase"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Second messengers",
+      "location": "Cell biology > signaling pathways; FLAT ChAMP cAMP hormones"
+    }
+  ],
+  "memoryHook": "G protein -> cAMP -> PKA."
+}

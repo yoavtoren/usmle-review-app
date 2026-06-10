@@ -1,0 +1,107 @@
+{
+  "id": "q14",
+  "item": 14,
+  "qid": "106226",
+  "title": "Neonatal abstinence syndrome (heroin)",
+  "system": "Pediatrics",
+  "topic": "Prenatal drug exposure",
+  "correct": "C",
+  "yourAnswer": "B",
+  "percentCorrect": 51,
+  "vignette": "2-day-old with irritability, high-pitched cry, poor feeding, vomiting/loose stools, sweating, sneezing, tachypnea; NO dysmorphic features. Prenatal exposure to which drug?",
+  "clues": [
+    {
+      "text": "neuro + GI + autonomic signs, first days of life",
+      "type": "red",
+      "note": "Neonatal abstinence syndrome (opioid withdrawal)."
+    },
+    {
+      "text": "no dysmorphic features",
+      "type": "green",
+      "note": "Rules out fetal alcohol syndrome; withdrawal, not malformation."
+    }
+  ],
+  "whatMatters": "Neuro+GI+autonomic hyperactivity in a non-dysmorphic newborn = NAS = opioid withdrawal (heroin among options).",
+  "strategy": "Separate WITHDRAWAL (opioids -> NAS) from intoxication/teratogenesis (cocaine, alcohol, antiepileptics).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alcohol",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cocaine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Heroin",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Phenytoin",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Valproic acid",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Fetal alcohol syndrome.",
+      "why": "Defined by dysmorphism (absent here)."
+    },
+    {
+      "letter": "B",
+      "what": "IUGR/jittery (intoxication).",
+      "why": "No full opioid-withdrawal triad."
+    },
+    {
+      "letter": "D",
+      "what": "Fetal hydantoin (malformations).",
+      "why": "Structural defects, not withdrawal."
+    },
+    {
+      "letter": "E",
+      "what": "Neural tube defects.",
+      "why": "Teratogenic structural defects, not withdrawal."
+    }
+  ],
+  "reasoning": [
+    "Neuro + GI + autonomic signs, days 1-3",
+    "No dysmorphism -> withdrawal, not malformation",
+    "Withdrawal = opioid",
+    "Opioid among options = heroin -> C"
+  ],
+  "mechanism": "NAS = withdrawal from transplacental opioids (heroin/methadone/buprenorphine). Neuro (high-pitched cry, tremor), GI (vomiting/diarrhea), autonomic (sweating, sneezing, tachypnea). Supportive care + morphine/methadone if severe; Finnegan scoring.",
+  "keywords": [
+    {
+      "front": "High-pitched cry + sweating + diarrhea, day 1-3",
+      "back": "Neonatal abstinence syndrome (opioids)"
+    },
+    {
+      "front": "Smooth philtrum + thin lip + VSD",
+      "back": "Fetal alcohol syndrome"
+    },
+    {
+      "front": "Abruption + IUGR + jittery newborn",
+      "back": "Prenatal cocaine"
+    },
+    {
+      "front": "Neural tube defect",
+      "back": "Valproate / carbamazepine"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Neonatal abstinence syndrome",
+      "location": "Peds/Psych > prenatal substance exposure"
+    }
+  ],
+  "memoryHook": "Withdrawal = opioid; dysmorphism = something else."
+}

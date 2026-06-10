@@ -1,0 +1,107 @@
+{
+  "id": "q15",
+  "item": 15,
+  "qid": "18867",
+  "title": "Refeeding hypophosphatemia (redistribution)",
+  "system": "Nutrition/Renal",
+  "topic": "Hypophosphatemia / refeeding",
+  "correct": "E",
+  "yourAnswer": "C",
+  "percentCorrect": 40,
+  "vignette": "Malnourished alcoholic given dextrose IV fluids develops marked muscle weakness; serum phosphate 0.5 (normal 2.5-4.5). Cause of low phosphate?",
+  "clues": [
+    {
+      "text": "malnourished + dextrose",
+      "type": "red",
+      "note": "Dextrose -> insulin surge -> phosphate into cells = refeeding syndrome."
+    },
+    {
+      "text": "phosphate 0.5",
+      "type": "green",
+      "note": "Profound hypophosphatemia confirms the shift."
+    }
+  ],
+  "whatMatters": "Insulin drives phosphate (+K, Mg) into cells; glycolysis consumes phosphate (ATP/2,3-BPG) = redistribution, not loss.",
+  "strategy": "Hypophosphatemia buckets: internal redistribution (insulin/refeeding, alkalosis, hungry bone) vs decreased gut absorption vs increased urinary loss.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased renal proximal reabsorption",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Increased colonic excretion",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased extracellular binding with calcium",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Increased uptake by bone cells",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Redistribution into hepatic and muscle cells",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Renal wasting (HPT/Fanconi).",
+      "why": "No PTH/Fanconi; this is an intracellular shift."
+    },
+    {
+      "letter": "B",
+      "what": "GI loss (diarrhea/antacids).",
+      "why": "No diarrhea/antacids; acute drop after dextrose."
+    },
+    {
+      "letter": "C",
+      "what": "Ca-phosphate binding.",
+      "why": "Lowers calcium and needs HIGH phosphate, opposite here."
+    },
+    {
+      "letter": "D",
+      "what": "Hungry bone (post-parathyroidectomy).",
+      "why": "No parathyroid surgery; shift is into soft tissue."
+    }
+  ],
+  "reasoning": [
+    "Malnourished + dextrose -> insulin surge",
+    "Insulin drives phosphate into cells; glycolysis consumes it",
+    "Profound hypophosphatemia -> weakness = refeeding syndrome",
+    "Mechanism = redistribution -> E"
+  ],
+  "mechanism": "Carbohydrate refeeding spikes insulin, shifting phosphate/K/Mg intracellularly and accelerating glycolysis (ATP, 2,3-BPG). Result: refeeding syndrome -> weakness, arrhythmia, CHF. Prevent: slow calories + replete electrolytes + thiamine.",
+  "keywords": [
+    {
+      "front": "Malnourished + dextrose -> weakness, low phosphate",
+      "back": "Refeeding syndrome"
+    },
+    {
+      "front": "Refeeding mechanism",
+      "back": "Insulin shifts PO4/K/Mg into cells"
+    },
+    {
+      "front": "Hypophosphatemia after parathyroidectomy",
+      "back": "Hungry bone syndrome"
+    },
+    {
+      "front": "Why thiamine first in alcoholics",
+      "back": "Prevent Wernicke encephalopathy"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Refeeding syndrome / hypophosphatemia",
+      "location": "Nutrition/Renal > electrolyte shifts"
+    }
+  ],
+  "memoryHook": "Feed a starved patient -> phosphate dives into cells."
+}

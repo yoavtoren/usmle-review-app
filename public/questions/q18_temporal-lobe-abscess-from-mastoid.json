@@ -1,0 +1,117 @@
+{
+  "id": "q18",
+  "item": 18,
+  "qid": "14898",
+  "title": "Temporal lobe abscess from mastoid",
+  "system": "Neuro/ID",
+  "topic": "Brain abscess spread",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 42,
+  "vignette": "3-year-old with otitis media (ear-pulling), now seizure; CT shows a single ring-enhancing lesion in the left temporal lobe. The pathogen entered the brain via which structure?",
+  "clues": [
+    {
+      "text": "ear-pulling/otitis media",
+      "type": "red",
+      "note": "Otitis media is the source; spreads to mastoid then temporal lobe."
+    },
+    {
+      "text": "single ring-enhancing temporal-lobe lesion",
+      "type": "green",
+      "note": "Single abscess = contiguous spread; location names the source."
+    }
+  ],
+  "whatMatters": "Single (contiguous) abscess -> match the lobe to its neighbor: temporal lobe <- otitis/mastoid air cells.",
+  "strategy": "Single abscess = local spread (use location); multiple = hematogenous from heart/lungs.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Ethmoid air cells",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Frontal sinus",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Mastoid air cells",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Maxillary sinus",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Nose and upper lips",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Peritonsillar space",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Frontal-lobe/orbital spread.",
+      "why": "Wrong lobe; clue is otitis, not sinusitis."
+    },
+    {
+      "letter": "B",
+      "what": "Frontal-lobe spread.",
+      "why": "Wrong lobe and source."
+    },
+    {
+      "letter": "D",
+      "what": "Orbit, not brain-adjacent.",
+      "why": "Doesn't seed temporal lobe."
+    },
+    {
+      "letter": "E",
+      "what": "Cavernous sinus thrombosis.",
+      "why": "Facial danger triangle; no facial-infection clue."
+    },
+    {
+      "letter": "F",
+      "what": "Deep neck/mediastinum.",
+      "why": "No throat clue; doesn't track to temporal lobe."
+    }
+  ],
+  "reasoning": [
+    "Otitis media + single ring-enhancing temporal abscess",
+    "Single = contiguous spread; location = source",
+    "Otitis -> adjacent mastoid air cells",
+    "Mastoid invades temporal lobe -> C"
+  ],
+  "mechanism": "Otitis media extends into adjacent mastoid air cells (mastoiditis), then invades the neighboring temporal lobe -> abscess (ring-enhancing). Organisms: viridans strep, S. aureus, anaerobes.",
+  "keywords": [
+    {
+      "front": "Otitis -> temporal-lobe abscess via",
+      "back": "Mastoid air cells"
+    },
+    {
+      "front": "Single vs multiple abscesses",
+      "back": "Single = local; multiple = hematogenous"
+    },
+    {
+      "front": "Frontal lobe abscess source",
+      "back": "Frontal/ethmoid sinusitis"
+    },
+    {
+      "front": "Facial danger triangle infection",
+      "back": "Cavernous sinus thrombosis"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Brain abscess",
+      "location": "Neuro/ID > brain abscess spread routes"
+    }
+  ],
+  "memoryHook": "Ear -> mastoid -> temporal lobe."
+}

@@ -1,0 +1,142 @@
+{
+  "id": "q10",
+  "item": 10,
+  "qid": "1490",
+  "title": "Ebstein anomaly -> lithium -> bipolar",
+  "system": "Cardio/Pharm",
+  "topic": "Teratogens",
+  "correct": "B",
+  "yourAnswer": "I",
+  "percentCorrect": 72,
+  "vignette": "7-year-old; echo shows apical displacement of tricuspid leaflets, atrialized RV, tricuspid regurgitation (Ebstein anomaly). If due to a drug in pregnancy, the mother most likely had which condition?",
+  "clues": [
+    {
+      "text": "apical tricuspid displacement + atrialized RV + TR",
+      "type": "red",
+      "note": "Pathognomonic triad of Ebstein anomaly."
+    }
+  ],
+  "whatMatters": "Ebstein anomaly's classic teratogen is lithium, used for bipolar disorder. The answer is the maternal diagnosis.",
+  "strategy": "Malformation -> teratogen -> disease the drug treats. The answer is the maternal disease, not the drug.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alcohol use disorder",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Bipolar disorder",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Cocaine use disorder",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Down syndrome",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Epilepsy",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Gestational diabetes",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Hypothyroidism",
+      "correct": false
+    },
+    {
+      "letter": "H",
+      "text": "Opioid use disorder",
+      "correct": false
+    },
+    {
+      "letter": "I",
+      "text": "Schizophrenia",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Fetal alcohol syndrome.",
+      "why": "Facial dysmorphism/VSD, not Ebstein."
+    },
+    {
+      "letter": "C",
+      "what": "Abruption/IUGR.",
+      "why": "Not linked to Ebstein."
+    },
+    {
+      "letter": "D",
+      "what": "AV septal defect.",
+      "why": "Not a drug; chromosomal."
+    },
+    {
+      "letter": "E",
+      "what": "Valproate/phenytoin NTDs.",
+      "why": "Antiepileptics cause structural defects, not Ebstein."
+    },
+    {
+      "letter": "F",
+      "what": "TGA/VSD, macrosomia.",
+      "why": "Maternal condition, not a drug."
+    },
+    {
+      "letter": "G",
+      "what": "Neurodevelopmental delay.",
+      "why": "Not a teratogenic drug."
+    },
+    {
+      "letter": "H",
+      "what": "Neonatal abstinence.",
+      "why": "Withdrawal, not Ebstein."
+    },
+    {
+      "letter": "I",
+      "what": "Antipsychotics, not lithium.",
+      "why": "Lithium treats bipolar, not schizophrenia."
+    }
+  ],
+  "reasoning": [
+    "Echo triad = Ebstein anomaly",
+    "Classic teratogen = lithium",
+    "Lithium treats bipolar disorder",
+    "Mother most likely had bipolar -> B"
+  ],
+  "mechanism": "Lithium (1st-trimester) is the classic teratogen for Ebstein anomaly (apical tricuspid displacement, atrialized RV, TR; associations: ASD, WPW). Lithium is a mood stabilizer for bipolar disorder.",
+  "keywords": [
+    {
+      "front": "Apical tricuspid displacement + atrialized RV",
+      "back": "Ebstein anomaly"
+    },
+    {
+      "front": "Teratogen causing Ebstein",
+      "back": "Lithium"
+    },
+    {
+      "front": "Lithium's main indication",
+      "back": "Bipolar disorder"
+    },
+    {
+      "front": "Schizophrenia drug class",
+      "back": "Antipsychotics (not lithium)"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Teratogens / lithium",
+      "location": "Pharm > teratogens; Cardio > Ebstein anomaly"
+    }
+  ],
+  "memoryHook": "Li in the womb -> Ebstein; drug -> disease it treats = bipolar."
+}

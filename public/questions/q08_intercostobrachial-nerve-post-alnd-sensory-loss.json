@@ -1,0 +1,102 @@
+{
+  "id": "q08",
+  "item": 8,
+  "qid": "19291",
+  "title": "Intercostobrachial nerve (post-ALND sensory loss)",
+  "system": "Anatomy",
+  "topic": "Nerves at risk in axillary surgery",
+  "correct": "A",
+  "yourAnswer": "D",
+  "percentCorrect": 44,
+  "vignette": "Woman a month after mastectomy + axillary lymph node dissection has burning/aching and decreased sensation of the medial upper arm; normal shoulder ROM, no weakness. Injured nerve?",
+  "clues": [
+    {
+      "text": "axillary lymph node dissection",
+      "type": "red",
+      "note": "Intercostobrachial nerve is the most frequently injured nerve in ALND."
+    },
+    {
+      "text": "burning/aching, decreased sensation",
+      "type": "red",
+      "note": "Sensory deficit -> a sensory nerve."
+    },
+    {
+      "text": "normal shoulder ROM",
+      "type": "green",
+      "note": "No motor deficit -> rules out motor nerves."
+    }
+  ],
+  "whatMatters": "Pure sensory deficit of the medial upper arm after ALND = intercostobrachial nerve (T2).",
+  "strategy": "Classify deficit as sensory vs motor first. Burning/numbness = sensory nerve; weakness/winging = motor nerve.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Intercostobrachial",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Medial pectoral",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Suprascapular",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Thoracodorsal",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "what": "Motor to pectoralis (adduction).",
+      "why": "No cutaneous sensation; no weakness here."
+    },
+    {
+      "letter": "C",
+      "what": "Motor to supra/infraspinatus.",
+      "why": "Doesn't traverse axilla; causes weak abduction/ER."
+    },
+    {
+      "letter": "D",
+      "what": "Motor to latissimus dorsi.",
+      "why": "Purely motor; can't cause sensory loss."
+    }
+  ],
+  "reasoning": [
+    "Burning + decreased sensation = sensory deficit",
+    "Normal ROM rules out motor nerves",
+    "Territory = medial upper arm/axilla after ALND",
+    "Pure sensory medial-arm nerve = intercostobrachial -> A"
+  ],
+  "mechanism": "The intercostobrachial nerve (lateral cutaneous branch of T2) is purely sensory to the axilla and medial upper arm and crosses the surgical field in ALND, the most commonly injured nerve there.",
+  "keywords": [
+    {
+      "front": "Burning/numb medial arm after ALND",
+      "back": "Intercostobrachial nerve"
+    },
+    {
+      "front": "Intercostobrachial nerve root/modality",
+      "back": "T2; pure sensory"
+    },
+    {
+      "front": "Scapular winging, can't abduct >90",
+      "back": "Long thoracic -> serratus anterior"
+    },
+    {
+      "front": "Sensory symptom -> pick",
+      "back": "A sensory nerve"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Nerves at risk in breast/axillary surgery",
+      "location": "Anatomy > brachial plexus branches"
+    }
+  ],
+  "memoryHook": "Match modality before fame — sensory deficit = sensory nerve, not the famous motor one."
+}

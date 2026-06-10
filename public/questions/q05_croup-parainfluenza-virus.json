@@ -1,0 +1,105 @@
+{
+  "id": "q05",
+  "item": 5,
+  "qid": "1667",
+  "title": "Croup = parainfluenza virus",
+  "system": "Pediatrics/Micro",
+  "topic": "Pediatric respiratory infections",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 51,
+  "vignette": "18-month-old with URI prodrome then barking cough, inspiratory stridor worse with crying, mild distress, CLEAR lungs. Which pathogen?",
+  "clues": [
+    {
+      "text": "barking cough + inspiratory stridor (worse with agitation)",
+      "type": "red",
+      "note": "Hallmark of croup (laryngotracheitis), subglottic narrowing."
+    },
+    {
+      "text": "lungs clear",
+      "type": "green",
+      "note": "Upper-airway problem; excludes bronchiolitis/pneumonia."
+    }
+  ],
+  "whatMatters": "Toddler + barking cough + inspiratory stridor + clear lungs = croup = parainfluenza.",
+  "strategy": "Stridor = upper airway (croup); wheeze + abnormal lungs = lower airway (bronchiolitis/RSV).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Haemophilus influenzae",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Parainfluenza virus",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Respiratory syncytial virus",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Rhinovirus",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Staphylococcus aureus",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Epiglottitis (drooling, tripod).",
+      "why": "No drooling/dysphagia; rare post-Hib vaccine."
+    },
+    {
+      "letter": "C",
+      "what": "Bronchiolitis (wheeze).",
+      "why": "Lungs clear; sign is stridor, not wheeze."
+    },
+    {
+      "letter": "D",
+      "what": "Common cold.",
+      "why": "Explains prodrome, not barking cough/stridor."
+    },
+    {
+      "letter": "E",
+      "what": "Bacterial tracheitis (toxic).",
+      "why": "Child only mildly ill; not toxic/purulent."
+    }
+  ],
+  "reasoning": [
+    "Barking cough + inspiratory stridor + clear lungs = croup",
+    "Most common cause = parainfluenza -> B"
+  ],
+  "mechanism": "Parainfluenza infects nasopharynx then larynx/trachea -> subglottic edema -> barking cough, stridor (steeple sign on X-ray). Tx: humidified air, corticosteroids, racemic epi if severe.",
+  "keywords": [
+    {
+      "front": "Barking cough + inspiratory stridor",
+      "back": "Croup -> parainfluenza"
+    },
+    {
+      "front": "Steeple sign",
+      "back": "Croup"
+    },
+    {
+      "front": "Expiratory wheeze, infant <2",
+      "back": "Bronchiolitis -> RSV"
+    },
+    {
+      "front": "Drooling, tripod, thumbprint sign",
+      "back": "Epiglottitis -> H. influenzae b"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Croup / parainfluenza",
+      "location": "Micro/Peds > viral respiratory infections; paramyxovirus"
+    }
+  ],
+  "memoryHook": "A seal walks into a STEEPLE — barking cough + steeple sign = croup."
+}

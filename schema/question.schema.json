@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "USMLE review question",
+  "type": "object",
+  "required": ["id", "title", "vignette", "options", "correct", "reasoning", "mechanism"],
+  "properties": {
+    "id": { "type": "string", "description": "Stable unique id, e.g. q30" },
+    "item": { "type": "integer", "description": "Item number within the block" },
+    "qid": { "type": "string", "description": "Original question bank ID (optional)" },
+    "title": { "type": "string" },
+    "system": { "type": "string", "description": "e.g. GI, Endocrine, Micro" },
+    "topic": { "type": "string" },
+    "correct": { "type": "string", "description": "Letter of the correct option" },
+    "yourAnswer": { "type": ["string", "null"], "description": "What you picked (null if unanswered)" },
+    "percentCorrect": { "type": ["integer", "null"] },
+    "vignette": { "type": "string", "description": "Plain-text stem" },
+    "clues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "type", "note"],
+        "properties": {
+          "text": { "type": "string" },
+          "type": { "enum": ["red", "orange", "blue", "green", "purple"] },
+          "note": { "type": "string", "description": "Why this clue matters" }
+        }
+      }
+    },
+    "whatMatters": { "type": "string" },
+    "strategy": { "type": "string", "description": "Generalizable 'in these kinds of questions...' tip" },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["letter", "text", "correct"],
+        "properties": {
+          "letter": { "type": "string" },
+          "text": { "type": "string" },
+          "correct": { "type": "boolean" }
+        }
+      }
+    },
+    "eliminations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["letter", "what", "why"],
+        "properties": {
+          "letter": { "type": "string" },
+          "what": { "type": "string", "description": "What the option actually is" },
+          "why": { "type": "string", "description": "Why it does not fit" }
+        }
+      }
+    },
+    "reasoning": { "type": "array", "items": { "type": "string" }, "description": "Ordered chain to the answer" },
+    "mechanism": { "type": "string" },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["front", "back"],
+        "properties": {
+          "front": { "type": "string", "description": "If you see..." },
+          "back": { "type": "string", "description": "...think" }
+        }
+      }
+    },
+    "firstAid": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic", "location"],
+        "properties": {
+          "topic": { "type": "string" },
+          "location": { "type": "string", "description": "Chapter > section > what to read" }
+        }
+      }
+    },
+    "memoryHook": { "type": "string" }
+  }
+}

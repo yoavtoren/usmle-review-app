@@ -1,0 +1,111 @@
+{
+  "id": "q06",
+  "item": 6,
+  "qid": "1422",
+  "title": "Campylobacter (puppy, bloody diarrhea)",
+  "system": "GI/Micro",
+  "topic": "Acute infectious diarrhea",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 64,
+  "vignette": "8-year-old with fever, abdominal pain, diarrhea; new puppy from a kennel. Stool: occult blood + numerous leukocytes, NEGATIVE ova and parasites. Cause?",
+  "clues": [
+    {
+      "text": "fever + bloody, leukocyte-positive stool",
+      "type": "red",
+      "note": "Inflammatory (invasive) diarrhea."
+    },
+    {
+      "text": "new puppy from a kennel",
+      "type": "red",
+      "note": "Classic Campylobacter exposure."
+    },
+    {
+      "text": "negative ova and parasites",
+      "type": "blue",
+      "note": "Argues against parasites; favors invasive bacterium."
+    }
+  ],
+  "whatMatters": "Inflammatory diarrhea (blood + leukocytes, O&P negative) + puppy = Campylobacter jejuni.",
+  "strategy": "Classify diarrhea: inflammatory (invasive bacteria) vs noninflammatory (viruses/toxins). Then use exposure to name the bug.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bacillus cereus",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Campylobacter jejuni",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Giardia lamblia",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Norovirus",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Staphylococcus aureus",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Toxin, watery (reheated rice).",
+      "why": "Noninflammatory; no blood/leukocytes."
+    },
+    {
+      "letter": "C",
+      "what": "Parasite, fatty nonbloody.",
+      "why": "O&P negative; noninflammatory."
+    },
+    {
+      "letter": "D",
+      "what": "Virus, watery, outbreaks.",
+      "why": "No fecal blood/leukocytes."
+    },
+    {
+      "letter": "E",
+      "what": "Preformed toxin, rapid vomiting.",
+      "why": "Noninflammatory, short incubation."
+    }
+  ],
+  "reasoning": [
+    "Fever + bloody/leukocyte stool = inflammatory diarrhea",
+    "O&P negative -> invasive bacterium",
+    "Puppy/kennel exposure -> Campylobacter -> B"
+  ],
+  "mechanism": "Campylobacter jejuni: curved/comma-shaped, oxidase+, microaerophilic, grows at 42C; invades mucosa -> bloody diarrhea. Antecedent of Guillain-Barre and reactive arthritis.",
+  "keywords": [
+    {
+      "front": "Bloody diarrhea + puppy exposure",
+      "back": "Campylobacter jejuni"
+    },
+    {
+      "front": "Comma-shaped, 42C, oxidase+",
+      "back": "Campylobacter"
+    },
+    {
+      "front": "Ascending paralysis weeks after diarrhea",
+      "back": "Guillain-Barre (post-Campylobacter)"
+    },
+    {
+      "front": "Fecal blood + leukocytes",
+      "back": "Inflammatory (invasive) diarrhea"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Campylobacter",
+      "location": "Micro > GI bacteria; inflammatory vs noninflammatory diarrhea table"
+    }
+  ],
+  "memoryHook": "Campylobacter = a CAMPER's comma from puppies & poultry; can trigger GBS."
+}

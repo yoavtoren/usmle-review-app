@@ -1,0 +1,111 @@
+{
+  "id": "q04",
+  "item": 4,
+  "qid": "21994",
+  "title": "Pancreatic ductal adenocarcinoma origin",
+  "system": "GI/Pathology",
+  "topic": "Pancreatic cancer",
+  "correct": "D",
+  "yourAnswer": "B",
+  "percentCorrect": 54,
+  "vignette": "62-year-old smoker with back-radiating epigastric pain, weight loss, jaundice; CT shows a pancreatic mass. The lesion originated from which cell?",
+  "clues": [
+    {
+      "text": "back-radiating epigastric pain + weight loss + jaundice",
+      "type": "red",
+      "note": "Classic pancreatic cancer triad."
+    },
+    {
+      "text": "smoked most of his life",
+      "type": "orange",
+      "note": "#1 modifiable risk factor for PDAC."
+    },
+    {
+      "text": "CT pancreatic mass",
+      "type": "blue",
+      "note": "Localizes to pancreas, excluding biliary tree/liver."
+    }
+  ],
+  "whatMatters": "~85% of pancreatic cancers are ductal adenocarcinoma -> ductal epithelium. Default to ductal unless acinar clues given.",
+  "strategy": "'Originated from which cell' = name the tumor, then its default cell of origin (common > rare variant).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bile duct epithelium",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Hepatocyte",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Pancreatic acinar cell",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pancreatic duct epithelium",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Vascular endothelium",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Cholangiocarcinoma.",
+      "why": "CT shows pancreatic, not biliary, mass."
+    },
+    {
+      "letter": "B",
+      "what": "HCC (cirrhosis, AFP).",
+      "why": "No liver mass/cirrhosis; jaundice is obstructive."
+    },
+    {
+      "letter": "C",
+      "what": "Acinar cell carcinoma (rare).",
+      "why": "Much rarer; no fat necrosis/high lipase clues."
+    },
+    {
+      "letter": "E",
+      "what": "Hemangioma/angiosarcoma.",
+      "why": "Benign vascular; doesn't cause this picture."
+    }
+  ],
+  "reasoning": [
+    "Back pain + weight loss + jaundice + smoking + pancreatic mass = PDAC",
+    "Most pancreatic cancer (~85%) is ductal",
+    "Cell of origin = pancreatic duct epithelium -> D"
+  ],
+  "mechanism": "PDAC arises from ductal epithelium with dense desmoplasia; drivers KRAS, CDKN2A, TP53, SMAD4. Markers/associations: CA 19-9, Trousseau migratory thrombophlebitis, Courvoisier sign.",
+  "keywords": [
+    {
+      "front": "Back-radiating epigastric pain + weight loss",
+      "back": "Pancreatic cancer"
+    },
+    {
+      "front": "Most common pancreatic cancer cell",
+      "back": "Ductal epithelium (PDAC)"
+    },
+    {
+      "front": "Migratory thrombophlebitis",
+      "back": "Trousseau sign"
+    },
+    {
+      "front": "Pancreatic cancer marker",
+      "back": "CA 19-9"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Pancreatic adenocarcinoma",
+      "location": "GI > pancreatic cancer (ductal, risk factors, Courvoisier, Trousseau)"
+    }
+  ],
+  "memoryHook": "Pancreatic cancer is a DUCT problem — default = Ductal adenocarcinoma."
+}
