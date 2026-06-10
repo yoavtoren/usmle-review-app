@@ -59,27 +59,32 @@
     {
       "letter": "A",
       "what": "Gut, liver, lungs.",
-      "why": "No Schwann cells."
+      "why": "No Schwann cells.",
+      "correctIf": "Tumor involved hepatocytes or pulmonary epithelium (endodermal, not neural crest)"
     },
     {
       "letter": "B",
       "what": "Muscle, bone, blood, kidney.",
-      "why": "'Soft fleshy' tempts but predominant cell is Schwann (neural crest)."
+      "why": "'Soft fleshy' tempts but predominant cell is Schwann (neural crest).",
+      "correctIf": "Tumor was rhabdomyosarcoma (mesoderm) or Wilms tumor (metanephric mesoderm)"
     },
     {
       "letter": "D",
       "what": "CNS, retina, CNS glia.",
-      "why": "Schwann cells are PERIPHERAL = neural crest, not neural tube."
+      "why": "Schwann cells are PERIPHERAL = neural crest, not neural tube.",
+      "correctIf": "Tumor involved CNS astrocytes or oligodendrocytes (neural tube, not neural crest)"
     },
     {
       "letter": "E",
       "what": "Nucleus pulposus only.",
-      "why": "Chordoma, not neurofibroma."
+      "why": "Chordoma, not neurofibroma.",
+      "correctIf": "Tumor was a chordoma (nucleus pulposus/notochord remnant)"
     },
     {
       "letter": "F",
       "what": "Epidermis, lens, anterior pituitary.",
-      "why": "Cafe-au-lait pigment is melanocytes (also neural crest), but tumor cell is Schwann."
+      "why": "Cafe-au-lait pigment is melanocytes (also neural crest), but tumor cell is Schwann.",
+      "correctIf": "Question asked specifically about the melanocyte (café-au-lait pigment origin), not the neurofibromas themselves"
     }
   ],
   "reasoning": [

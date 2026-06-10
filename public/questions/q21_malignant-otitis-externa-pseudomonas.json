@@ -54,22 +54,26 @@
     {
       "letter": "A",
       "what": "Vibrio.",
-      "why": "Wrong organism/scenario (cholera/seawater)."
+      "why": "Wrong organism/scenario (cholera/seawater).",
+      "correctIf": "Patient had seawater exposure or ate raw oysters and developed rapidly spreading necrotizing cellulitis (Vibrio)"
     },
     {
       "letter": "B",
       "what": "E. coli/Klebsiella.",
-      "why": "Pseudomonas is NON-lactose fermenting."
+      "why": "Pseudomonas is NON-lactose fermenting.",
+      "correctIf": "Organism was a lactose-fermenting Gram-negative rod in a UTI or pneumonia context"
     },
     {
       "letter": "D",
       "what": "Right on lactose, wrong on motility.",
-      "why": "Pseudomonas IS motile. Top trap."
+      "why": "Pseudomonas IS motile. Top trap.",
+      "correctIf": "Organism was non-motile AND lactose-negative (Acinetobacter or Stenotrophomonas scenario)"
     },
     {
       "letter": "E",
       "what": "Haemophilus influenzae.",
-      "why": "Causes otitis media/epiglottitis, not this."
+      "why": "Causes otitis media/epiglottitis, not this.",
+      "correctIf": "Child had acute otitis media or an unvaccinated adult had epiglottitis (Haemophilus influenzae)"
     }
   ],
   "reasoning": [

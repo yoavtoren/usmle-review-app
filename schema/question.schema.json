@@ -48,7 +48,8 @@
         "properties": {
           "letter": { "type": "string" },
           "what": { "type": "string", "description": "What the option actually is" },
-          "why": { "type": "string", "description": "Why it does not fit" }
+          "why": { "type": "string", "description": "Why it does not fit" },
+          "correctIf": { "type": "string", "description": "One-line trigger: when this answer WOULD be correct" }
         }
       }
     },

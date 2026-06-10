@@ -54,22 +54,26 @@
     {
       "letter": "A",
       "what": "Respiratory alkalosis.",
-      "why": "Low CO2; benzo OD raises CO2."
+      "why": "Low CO2; benzo OD raises CO2.",
+      "correctIf": "Patient was hyperventilating due to anxiety, aspirin toxicity, or pulmonary embolism"
     },
     {
       "letter": "B",
       "what": "Low CO2 + widened A-a (PE/pneumonia).",
-      "why": "Wrong CO2 direction + lung disease."
+      "why": "Wrong CO2 direction + lung disease.",
+      "correctIf": "Patient had tachypnea, hypoxia, and widened A-a gradient (pulmonary embolism pattern)"
     },
     {
       "letter": "C",
       "what": "High CO2 + widened A-a (COPD).",
-      "why": "Right CO2, but clear lungs -> A-a should be normal. (Trap.)"
+      "why": "Right CO2, but clear lungs -> A-a should be normal. (Trap.)",
+      "correctIf": "Known COPD patient had diffuse wheezing and worsening O2 saturation during an acute flare"
     },
     {
       "letter": "E",
       "what": "Widened A-a (lung disease).",
-      "why": "Increased A-a inconsistent with clear lungs."
+      "why": "Increased A-a inconsistent with clear lungs.",
+      "correctIf": "Patient had pneumonia or pulmonary edema (lung disease explaining widened A-a gradient)"
     }
   ],
   "reasoning": [

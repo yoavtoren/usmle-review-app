@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import QuestionCard from "./QuestionCard.jsx";
 import { loadProgress, getCard, isDue } from "../lib/storage.js";
 
@@ -65,6 +65,22 @@ export default function TestReview({ onBack }) {
       due,
     };
   }, [deck, progress]);
+
+  useEffect(() => {
+    function onKey(e) {
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+      if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
+      e.preventDefault();
+      if (filtered.length === 0) return;
+      const idx = filtered.findIndex(q => q.id === selectedId);
+      const next = e.key === "ArrowDown"
+        ? Math.min(idx + 1, filtered.length - 1)
+        : Math.max(idx - 1, 0);
+      setSelectedId(filtered[next].id);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [filtered, selectedId]);
 
   if (error)
     return (

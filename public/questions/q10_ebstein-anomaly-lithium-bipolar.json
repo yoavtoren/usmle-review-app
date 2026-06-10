@@ -69,42 +69,50 @@
     {
       "letter": "A",
       "what": "Fetal alcohol syndrome.",
-      "why": "Facial dysmorphism/VSD, not Ebstein."
+      "why": "Facial dysmorphism/VSD, not Ebstein.",
+      "correctIf": "Mother had significant alcohol use and neonate had thin vermillion, smooth philtrum, microcephaly (FAS features)"
     },
     {
       "letter": "C",
       "what": "Abruption/IUGR.",
-      "why": "Not linked to Ebstein."
+      "why": "Not linked to Ebstein.",
+      "correctIf": "Mother had placental abruption and baby had documented intrauterine growth restriction"
     },
     {
       "letter": "D",
       "what": "AV septal defect.",
-      "why": "Not a drug; chromosomal."
+      "why": "Not a drug; chromosomal.",
+      "correctIf": "Baby had trisomy 21 features (not a teratogenic drug exposure question)"
     },
     {
       "letter": "E",
       "what": "Valproate/phenytoin NTDs.",
-      "why": "Antiepileptics cause structural defects, not Ebstein."
+      "why": "Antiepileptics cause structural defects, not Ebstein.",
+      "correctIf": "Mother took valproate or phenytoin and baby had a neural tube defect (spina bifida)"
     },
     {
       "letter": "F",
       "what": "TGA/VSD, macrosomia.",
-      "why": "Maternal condition, not a drug."
+      "why": "Maternal condition, not a drug.",
+      "correctIf": "Mother had poorly controlled gestational diabetes and baby was macrosomic with a cardiac septal defect"
     },
     {
       "letter": "G",
       "what": "Neurodevelopmental delay.",
-      "why": "Not a teratogenic drug."
+      "why": "Not a teratogenic drug.",
+      "correctIf": "Mother took a medication specifically associated with neurodevelopmental delay (not Ebstein anomaly)"
     },
     {
       "letter": "H",
       "what": "Neonatal abstinence.",
-      "why": "Withdrawal, not Ebstein."
+      "why": "Withdrawal, not Ebstein.",
+      "correctIf": "Neonate had yawning, poor feeding, tremors, and a high Finnegan score (opioid withdrawal, not structural defect)"
     },
     {
       "letter": "I",
       "what": "Antipsychotics, not lithium.",
-      "why": "Lithium treats bipolar, not schizophrenia."
+      "why": "Lithium treats bipolar, not schizophrenia.",
+      "correctIf": "Mother had schizophrenia treated with antipsychotics (not bipolar on lithium)"
     }
   ],
   "reasoning": [

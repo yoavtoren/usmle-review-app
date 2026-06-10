@@ -61,3 +61,52 @@ export function setDifficulty(id, difficulty) {
 export function isDue(card) {
   return !card.dueAt || card.dueAt <= Date.now();
 }
+
+const STREAK_KEY = "usmle-streak-v1";
+
+export function recordActivity() {
+  const today = new Date().toDateString();
+  try {
+    const stored = JSON.parse(localStorage.getItem(STREAK_KEY) || "null");
+    if (stored?.last === today) return;
+    const yesterday = new Date(Date.now() - DAY).toDateString();
+    const streak = stored?.last === yesterday ? (stored.streak || 0) + 1 : 1;
+    localStorage.setItem(STREAK_KEY, JSON.stringify({ last: today, streak }));
+  } catch {}
+}
+
+export function getStreak() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(STREAK_KEY) || "null");
+    if (!stored) return 0;
+    const today = new Date().toDateString();
+    const yesterday = new Date(Date.now() - DAY).toDateString();
+    return stored.last === today || stored.last === yesterday ? stored.streak || 0 : 0;
+  } catch {
+    return 0;
+  }
+}
+
+// ── FA topic manual tracking ──────────────────────────────────────────────────
+const FA_TOPICS_KEY = "fa-topics-v2";
+
+export function loadFATopics() {
+  try { return JSON.parse(localStorage.getItem(FA_TOPICS_KEY)) || {}; }
+  catch { return {}; }
+}
+
+export function saveFATopics(topics) {
+  localStorage.setItem(FA_TOPICS_KEY, JSON.stringify(topics));
+}
+
+// ── Test score log ────────────────────────────────────────────────────────────
+const TEST_LOG_KEY = "test-log-v1";
+
+export function loadTestLog() {
+  try { return JSON.parse(localStorage.getItem(TEST_LOG_KEY)) || []; }
+  catch { return []; }
+}
+
+export function saveTestLog(log) {
+  localStorage.setItem(TEST_LOG_KEY, JSON.stringify(log));
+}

@@ -59,27 +59,32 @@
     {
       "letter": "A",
       "what": "Frontal-lobe/orbital spread.",
-      "why": "Wrong lobe; clue is otitis, not sinusitis."
+      "why": "Wrong lobe; clue is otitis, not sinusitis.",
+      "correctIf": "Source was frontal sinusitis (not otitis) spreading intracranially to the frontal lobe"
     },
     {
       "letter": "B",
       "what": "Frontal-lobe spread.",
-      "why": "Wrong lobe and source."
+      "why": "Wrong lobe and source.",
+      "correctIf": "Source was frontal sinusitis with direct frontal lobe extension (frontal, not temporal)"
     },
     {
       "letter": "D",
       "what": "Orbit, not brain-adjacent.",
-      "why": "Doesn't seed temporal lobe."
+      "why": "Doesn't seed temporal lobe.",
+      "correctIf": "Infection was periorbital/preseptal cellulitis from ethmoid sinusitis (not intracranial)"
     },
     {
       "letter": "E",
       "what": "Cavernous sinus thrombosis.",
-      "why": "Facial danger triangle; no facial-infection clue."
+      "why": "Facial danger triangle; no facial-infection clue.",
+      "correctIf": "Source was a furuncle in the facial danger triangle (upper lip/nose) causing cavernous sinus thrombosis"
     },
     {
       "letter": "F",
       "what": "Deep neck/mediastinum.",
-      "why": "No throat clue; doesn't track to temporal lobe."
+      "why": "No throat clue; doesn't track to temporal lobe.",
+      "correctIf": "Source was a mandibular/dental infection tracking down fascial planes toward the mediastinum"
     }
   ],
   "reasoning": [

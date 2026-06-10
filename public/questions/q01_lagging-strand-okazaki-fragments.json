@@ -54,22 +54,26 @@
     {
       "letter": "A",
       "what": "Proofreading exonuclease.",
-      "why": "Occurs on BOTH strands, not unique to lagging."
+      "why": "Occurs on BOTH strands, not unique to lagging.",
+      "correctIf": "Question asked for a feature common to BOTH daughter strands"
     },
     {
       "letter": "B",
       "what": "No polymerase synthesizes 3'->5'.",
-      "why": "Doesn't exist."
+      "why": "Doesn't exist.",
+      "correctIf": "Never — 3'→5' DNA synthesis does not exist in any organism"
     },
     {
       "letter": "C",
       "what": "Removes RNA primers.",
-      "why": "Happens on both strands."
+      "why": "Happens on both strands.",
+      "correctIf": "Question asked about a feature shared by both daughter strands (not unique to lagging)"
     },
     {
       "letter": "D",
       "what": "Primer needed to start synthesis.",
-      "why": "Both strands need a primer (leading: one; lagging: many)."
+      "why": "Both strands need a primer (leading: one; lagging: many).",
+      "correctIf": "Question asked which strand needs FEWER primers (the leading strand needs only one)"
     }
   ],
   "reasoning": [

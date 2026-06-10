@@ -54,22 +54,26 @@
     {
       "letter": "A",
       "what": "Renal wasting (HPT/Fanconi).",
-      "why": "No PTH/Fanconi; this is an intracellular shift."
+      "why": "No PTH/Fanconi; this is an intracellular shift.",
+      "correctIf": "Patient had hyperparathyroidism or Fanconi syndrome causing chronic renal phosphate wasting"
     },
     {
       "letter": "B",
       "what": "GI loss (diarrhea/antacids).",
-      "why": "No diarrhea/antacids; acute drop after dextrose."
+      "why": "No diarrhea/antacids; acute drop after dextrose.",
+      "correctIf": "Patient had chronic diarrhea or was taking phosphate-binding antacids causing GI losses"
     },
     {
       "letter": "C",
       "what": "Ca-phosphate binding.",
-      "why": "Lowers calcium and needs HIGH phosphate, opposite here."
+      "why": "Lowers calcium and needs HIGH phosphate, opposite here.",
+      "correctIf": "Patient received massive IV phosphate infusion and developed precipitating hypocalcemia"
     },
     {
       "letter": "D",
       "what": "Hungry bone (post-parathyroidectomy).",
-      "why": "No parathyroid surgery; shift is into soft tissue."
+      "why": "No parathyroid surgery; shift is into soft tissue.",
+      "correctIf": "Patient underwent parathyroidectomy and was developing rapid bone remineralization (hungry bone)"
     }
   ],
   "reasoning": [

@@ -54,22 +54,26 @@
     {
       "letter": "A",
       "what": "cGMP/NO pathway.",
-      "why": "Glucagon uses cAMP, not cGMP."
+      "why": "Glucagon uses cAMP, not cGMP.",
+      "correctIf": "Hormone was ANP, nitric oxide, or a phosphodiesterase-5 target (cGMP pathway)"
     },
     {
       "letter": "B",
       "what": "Cytokine receptors (GH, EPO).",
-      "why": "Not GPCRs."
+      "why": "Not GPCRs.",
+      "correctIf": "Hormone was growth hormone, prolactin, EPO, or a cytokine (JAK-STAT pathway)"
     },
     {
       "letter": "C",
       "what": "Degrades cAMP.",
-      "why": "Terminates the signal, doesn't mediate it."
+      "why": "Terminates the signal, doesn't mediate it.",
+      "correctIf": "Question asked which enzyme TERMINATES glucagon signaling (PDE degrades cAMP)"
     },
     {
       "letter": "E",
       "what": "Insulin/growth-factor RTKs.",
-      "why": "Glucagon is a GPCR hormone (ironically insulin's pathway)."
+      "why": "Glucagon is a GPCR hormone (ironically insulin's pathway).",
+      "correctIf": "Hormone was insulin, IGF-1, or another growth factor (receptor tyrosine kinase pathway)"
     }
   ],
   "reasoning": [

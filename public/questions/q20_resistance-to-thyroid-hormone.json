@@ -54,22 +54,26 @@
     {
       "letter": "A",
       "what": "Hashimoto -> hypothyroid (low T4).",
-      "why": "Wrong direction; T4 is high."
+      "why": "Wrong direction; T4 is high.",
+      "correctIf": "Patient had low T4, elevated TSH, and positive anti-TPO antibodies (Hashimoto hypothyroidism)"
     },
     {
       "letter": "B",
       "what": "High total T4 only, normal TSH.",
-      "why": "Doesn't raise TSH or cause goiter."
+      "why": "Doesn't raise TSH or cause goiter.",
+      "correctIf": "Patient on OCPs had elevated total T4 with normal free T4 and normal TSH (increased TBG)"
     },
     {
       "letter": "C",
       "what": "Would SUPPRESS TSH.",
-      "why": "TSH is 7 (not suppressed). Trap."
+      "why": "TSH is 7 (not suppressed). Trap.",
+      "correctIf": "TSH were >10 with a pituitary MRI showing an adenoma (TSH-secreting pituitary tumor)"
     },
     {
       "letter": "D",
       "what": "Causes hypothyroidism (low T4).",
-      "why": "T4 is high here."
+      "why": "T4 is high here.",
+      "correctIf": "Patient had low free T4, elevated TSH, and lived in an iodine-deficient region"
     }
   ],
   "reasoning": [

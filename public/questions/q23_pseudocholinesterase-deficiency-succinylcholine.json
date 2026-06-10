@@ -49,22 +49,26 @@
     {
       "letter": "A",
       "what": "Renal elimination.",
-      "why": "Wrong route; not renally cleared."
+      "why": "Wrong route; not renally cleared.",
+      "correctIf": "Drug was an aminoglycoside or vancomycin (renally cleared, renal failure prolongs effect)"
     },
     {
       "letter": "B",
       "what": "That's propofol's offset.",
-      "why": "Propofol is a hypnotic, doesn't paralyze."
+      "why": "Propofol is a hypnotic, doesn't paralyze.",
+      "correctIf": "Drug was propofol (anesthetic hypnotic; offset by redistribution, not metabolism)"
     },
     {
       "letter": "D",
       "what": "Liver synthesizes the enzyme.",
-      "why": "No liver disease; wouldn't last hours."
+      "why": "No liver disease; wouldn't last hours.",
+      "correctIf": "Patient had severe liver failure AND received a drug metabolized by the liver (not plasma cholinesterase)"
     },
     {
       "letter": "E",
       "what": "Myasthenia gravis.",
-      "why": "Myasthenics are RESISTANT to succinylcholine."
+      "why": "Myasthenics are RESISTANT to succinylcholine.",
+      "correctIf": "Myasthenic patient was RESISTANT to succinylcholine (not prolonged paralysis — opposite scenario)"
     }
   ],
   "reasoning": [

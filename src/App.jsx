@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import WelcomeScreen from "./components/WelcomeScreen.jsx";
+import TestDashboard from "./components/TestDashboard.jsx";
 import TestReview from "./components/TestReview.jsx";
+import FADashboard from "./components/FADashboard.jsx";
 import FATracker from "./components/FATracker.jsx";
-import { loadProgress, getCard, isDue } from "./lib/storage.js";
+import { loadProgress, getCard, isDue, getStreak } from "./lib/storage.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -44,14 +46,28 @@ export default function App() {
     return { seen: faData.seen, total: faData.totalTopics };
   }, [faData]);
 
-  if (view === "tests") return <TestReview onBack={() => setView("welcome")} />;
-  if (view === "fa") return <FATracker onBack={() => setView("welcome")} />;
+  if (view === "tests-dash") return (
+    <TestDashboard
+      onBack={() => setView("welcome")}
+      onStudy={() => setView("tests")}
+    />
+  );
+  if (view === "tests") return <TestReview onBack={() => setView("tests-dash")} />;
+
+  if (view === "fa-dash") return (
+    <FADashboard
+      onBack={() => setView("welcome")}
+      onTrack={() => setView("fa")}
+    />
+  );
+  if (view === "fa") return <FATracker onBack={() => setView("fa-dash")} />;
 
   return (
     <WelcomeScreen
       onNav={setView}
       testStats={testStats}
       faStats={faStats}
+      streak={getStreak()}
     />
   );
 }

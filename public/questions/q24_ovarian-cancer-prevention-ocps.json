@@ -54,22 +54,26 @@
     {
       "letter": "A",
       "what": "Prevents STIs/cervical.",
-      "why": "Ovarian cancer isn't infection-driven."
+      "why": "Ovarian cancer isn't infection-driven.",
+      "correctIf": "Question asked about cervical cancer prevention (barrier methods + HPV vaccine are correct)"
     },
     {
       "letter": "B",
       "what": "Cervical, not ovarian.",
-      "why": "HPV-unrelated tumor; the Pap history is bait."
+      "why": "HPV-unrelated tumor; the Pap history is bait.",
+      "correctIf": "Question asked about screening for cervical dysplasia (Pap smear is appropriate, not ovarian cancer)"
     },
     {
       "letter": "C",
       "what": "No proven benefit.",
-      "why": "Not a recognized protective factor."
+      "why": "Not a recognized protective factor.",
+      "correctIf": "Question asked about endometrial cancer prevention (progestin-releasing IUD is protective)"
     },
     {
       "letter": "D",
       "what": "A RISK factor.",
-      "why": "More lifetime ovulations -> increases EOC risk."
+      "why": "More lifetime ovulations -> increases EOC risk.",
+      "correctIf": "Question asked what INCREASES ovarian cancer risk (ovulation and nulliparity increase risk)"
     }
   ],
   "reasoning": [

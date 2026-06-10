@@ -4,6 +4,16 @@ Generate one JSON file per USMLE review question into public/questions/,
 plus a deck.json index. Re-run any time you add questions to QUESTIONS below.
 
 Usage:  python3 scripts/generate_questions.py
+
+ELIMINATION FORMAT — each entry must have:
+  "letter"    : answer letter
+  "what"      : what the answer choice actually describes
+  "why"       : one-line reason it is eliminated
+  "correctIf" : one-line trigger when this choice WOULD be correct
+                ("Correct if: the patient had X" / "Never — X doesn't exist")
+
+After adding new questions, also run:
+  python3 scripts/patch_correct_if.py   (adds correctIf to any entries missing it)
 """
 import json, os, re
 

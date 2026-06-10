@@ -54,22 +54,26 @@
     {
       "letter": "A",
       "what": "Liver/biliary problem.",
-      "why": "Causes cholestasis/jaundice, not pancreatic steatorrhea."
+      "why": "Causes cholestasis/jaundice, not pancreatic steatorrhea.",
+      "correctIf": "Patient had jaundice, elevated bilirubin, and normal fecal elastase (biliary obstruction)"
     },
     {
       "letter": "C",
       "what": "B12/macrocytic anemia.",
-      "why": "Causes anemia; Hgb normal here."
+      "why": "Causes anemia; Hgb normal here.",
+      "correctIf": "Patient had macrocytic anemia, elevated MCV, and positive Schilling test (B12 deficiency)"
     },
     {
       "letter": "D",
       "what": "Wrong direction.",
-      "why": "Bicarbonate DECREASES in chronic pancreatitis."
+      "why": "Bicarbonate DECREASES in chronic pancreatitis.",
+      "correctIf": "Question asked which pancreatic secretion DECREASES (bicarbonate also decreases — but elastase is the direct test)"
     },
     {
       "letter": "E",
       "what": "Celiac/mucosal.",
-      "why": "No celiac clues; this is pancreatic maldigestion."
+      "why": "No celiac clues; this is pancreatic maldigestion.",
+      "correctIf": "Patient had positive anti-tTG antibodies and duodenal villous atrophy on biopsy (celiac disease)"
     }
   ],
   "reasoning": [

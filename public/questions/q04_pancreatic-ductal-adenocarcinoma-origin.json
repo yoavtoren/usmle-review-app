@@ -59,22 +59,26 @@
     {
       "letter": "A",
       "what": "Cholangiocarcinoma.",
-      "why": "CT shows pancreatic, not biliary, mass."
+      "why": "CT shows pancreatic, not biliary, mass.",
+      "correctIf": "CT showed a biliary duct (CBD) mass, not a pancreatic head lesion"
     },
     {
       "letter": "B",
       "what": "HCC (cirrhosis, AFP).",
-      "why": "No liver mass/cirrhosis; jaundice is obstructive."
+      "why": "No liver mass/cirrhosis; jaundice is obstructive.",
+      "correctIf": "Patient had cirrhosis, elevated AFP, and a hepatic mass on imaging"
     },
     {
       "letter": "C",
       "what": "Acinar cell carcinoma (rare).",
-      "why": "Much rarer; no fat necrosis/high lipase clues."
+      "why": "Much rarer; no fat necrosis/high lipase clues.",
+      "correctIf": "Patient had elevated serum lipase and subcutaneous fat necrosis (acinar cell)"
     },
     {
       "letter": "E",
       "what": "Hemangioma/angiosarcoma.",
-      "why": "Benign vascular; doesn't cause this picture."
+      "why": "Benign vascular; doesn't cause this picture.",
+      "correctIf": "Imaging showed a multilocular, enhancing vascular lesion (hemangioma on MRI)"
     }
   ],
   "reasoning": [
