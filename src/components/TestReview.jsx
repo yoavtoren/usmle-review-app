@@ -1,17 +1,15 @@
-import { useEffect, useMemo, useState, useCallback } from "react";
-import QuestionCard from "./QuestionCard.jsx";
-import { loadProgress, getCard, isDue } from "../lib/storage.js";
+import { useEffect, useMemo, useState } from "react";
+import { loadProgress, getCard, isDue, rate } from "../lib/storage.js";
 
 const BASE = import.meta.env.BASE_URL;
 
 export default function TestReview({ onBack }) {
-  const [deck, setDeck] = useState(null);
-  const [error, setError] = useState(null);
+  const [deck, setDeck]             = useState(null);
+  const [error, setError]           = useState(null);
   const [selectedId, setSelectedId] = useState(null);
-  const [question, setQuestion] = useState(null);
-  const [filter, setFilter] = useState("missed");
-  const [query, setQuery] = useState("");
-  const [progress, setProgress] = useState(loadProgress());
+  const [filter, setFilter]         = useState("missed");
+  const [query, setQuery]           = useState("");
+  const [progress, setProgress]     = useState(loadProgress);
 
   useEffect(() => {
     fetch(`${BASE}questions/deck.json`)
@@ -24,24 +22,13 @@ export default function TestReview({ onBack }) {
       .catch((e) => setError(String(e)));
   }, []);
 
-  useEffect(() => {
-    if (!selectedId || !deck) return;
-    const meta = deck.questions.find((q) => q.id === selectedId);
-    if (!meta) return;
-    setQuestion(null);
-    fetch(`${BASE}questions/${meta.file}`)
-      .then((r) => r.json())
-      .then(setQuestion)
-      .catch((e) => setError(String(e)));
-  }, [selectedId, deck]);
-
   const filtered = useMemo(() => {
     if (!deck) return [];
     return deck.questions.filter((q) => {
       const card = getCard(progress, q.id);
-      if (filter === "missed" && !q.missed) return false;
-      if (filter === "due" && !(card.status !== "new" && isDue(card))) return false;
-      if (filter === "mastered" && card.status !== "mastered") return false;
+      if (filter === "missed"   && !q.missed)                               return false;
+      if (filter === "due"      && !(card.status !== "new" && isDue(card))) return false;
+      if (filter === "mastered" && card.status !== "mastered")              return false;
       if (query) {
         const hay = `${q.title} ${q.system} ${q.topic}`.toLowerCase();
         if (!hay.includes(query.toLowerCase())) return false;
@@ -66,13 +53,14 @@ export default function TestReview({ onBack }) {
     };
   }, [deck, progress]);
 
+  // Arrow key sidebar navigation
   useEffect(() => {
     function onKey(e) {
       if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
       if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
       e.preventDefault();
       if (filtered.length === 0) return;
-      const idx = filtered.findIndex(q => q.id === selectedId);
+      const idx = filtered.findIndex((q) => q.id === selectedId);
       const next = e.key === "ArrowDown"
         ? Math.min(idx + 1, filtered.length - 1)
         : Math.max(idx - 1, 0);
@@ -82,14 +70,21 @@ export default function TestReview({ onBack }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [filtered, selectedId]);
 
-  if (error)
-    return (
-      <div className="boot error">
-        Could not load questions: {error}
-        <p>Run the app with <code>npm run dev</code> from the project folder.</p>
-      </div>
-    );
+  function handleRate(id, rating) {
+    const next = rate(id, rating);
+    setProgress({ ...next });
+  }
+
+  if (error) return (
+    <div className="boot error">
+      Could not load questions: {error}
+      <p>Run <code>npm run dev</code> from the project folder.</p>
+    </div>
+  );
   if (!deck) return <div className="boot">Loading deck…</div>;
+
+  const selectedMeta = selectedId ? deck.questions.find((q) => q.id === selectedId) : null;
+  const selectedCard = selectedMeta ? getCard(progress, selectedMeta.id) : null;
 
   return (
     <div className="layout">
@@ -97,24 +92,23 @@ export default function TestReview({ onBack }) {
         <div className="brand">
           <button className="back-btn" onClick={onBack}>← Dashboard</button>
           <h1>Test Review</h1>
-          <p className="test-badge">May 18, 2026 · <span className="score-bad">28%</span></p>
-          <p className="muted">{stats.total} questions · {stats.missed} missed · {stats.mastered} mastered</p>
+          <p className="muted">
+            {stats.total} questions · {stats.missed} missed · {stats.mastered} mastered
+          </p>
         </div>
 
         <div className="filters">
           {[
-            ["missed", `Missed (${stats.missed})`],
-            ["due", `Due (${stats.due})`],
-            ["all", `All (${stats.total})`],
+            ["missed",   `Missed (${stats.missed})`],
+            ["due",      `Due (${stats.due})`],
+            ["all",      `All (${stats.total})`],
             ["mastered", `Mastered (${stats.mastered})`],
           ].map(([key, label]) => (
             <button
               key={key}
               className={filter === key ? "chip active" : "chip"}
               onClick={() => setFilter(key)}
-            >
-              {label}
-            </button>
+            >{label}</button>
           ))}
         </div>
 
@@ -139,7 +133,7 @@ export default function TestReview({ onBack }) {
                     <span className="qitem-title">{q.title}</span>
                     <span className="qitem-meta">
                       #{q.item} · {q.system}
-                      {q.missed && <span className="tag-missed">missed</span>}
+                      {q.missed && <span className="tag-missed"> missed</span>}
                     </span>
                   </span>
                 </button>
@@ -150,19 +144,35 @@ export default function TestReview({ onBack }) {
             <li className="empty muted">Nothing here — try another filter.</li>
           )}
         </ul>
-        <p className="footnote muted">100% local · your progress stays in this browser.</p>
+
+        <p className="footnote muted">100% local · progress stays in this browser.</p>
       </aside>
 
       <main className="main">
-        {question ? (
-          <QuestionCard
-            key={question.id}
-            q={question}
-            onProgress={setProgress}
-            progress={progress}
-          />
+        {selectedMeta ? (
+          <div className="widget-wrap">
+            <iframe
+              key={selectedMeta.id}
+              src={`${BASE}questions/${selectedMeta.file.replace(".json", ".html")}`}
+              title={selectedMeta.title}
+              className="widget-frame"
+            />
+            <div className="sr-bar">
+              <span className="sr-status">
+                {selectedCard?.status === "mastered" ? "✓ Mastered" :
+                 selectedCard?.status === "review"   ? `Streak ${selectedCard.streak}` :
+                 "New"}
+              </span>
+              <button className="sr-btn sr-again" onClick={() => handleRate(selectedMeta.id, "again")}>
+                🔁 Review again
+              </button>
+              <button className="sr-btn sr-got" onClick={() => handleRate(selectedMeta.id, "got")}>
+                ✓ Got it
+              </button>
+            </div>
+          </div>
         ) : (
-          <div className="boot">Loading question…</div>
+          <div className="boot">Select a question from the list.</div>
         )}
       </main>
     </div>
