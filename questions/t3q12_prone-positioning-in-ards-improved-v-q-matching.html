@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prone positioning in ARDS: improved V/Q matching</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q81", "item": 81, "qid": "19624", "title": "Prone positioning in ARDS: improved V/Q matching", "system": "Pulmonary", "topic": "ARDS / ventilation", "correct": "E", "yourAnswer": "E", "percentCorrect": 71, "vignette": "A 55-year-old woman with a history of Crohn disease is admitted to the hospital due to perforated appendicitis. The patient quickly develops respiratory difficulty, and acute respiratory distress syndrome is diagnosed. She is intubated and mechanically ventilated with positive pressure ventilation. Despite the use of high positive end-expiratory pressure, the patient's condition continues to deteriorate. She is intermittently placed in the prone position while mechanically ventilated. Which of the following is most likely to occur due to this position change?", "clues": [{"text": "acute respiratory distress syndrome is diagnosed", "type": "red", "note": "ARDS = diffuse alveolar damage with non-cardiogenic pulmonary edema and widespread alveolar COLLAPSE, worst in the dependent (dorsal, when supine) lung. Severe shunt physiology causes refractory hypoxemia. This is the substrate prone positioning targets."}, {"text": "high positive end-expiratory pressure, the patient's condition continues to deteriorate", "type": "blue", "note": "Refractory hypoxemia despite high PEEP is the trigger for prone positioning in severe ARDS. The question asks what physiologically improves when you flip the patient."}, {"text": "prone position", "type": "green", "note": "Proning lets the previously collapsed DORSAL alveoli re-expand (the abdomen no longer compresses the posterior diaphragm) while perfusion stays relatively even. More alveoli are both ventilated and perfused, so ventilation-perfusion matching improves and oxygenation rises."}], "whatMatters": "The Crohn/appendicitis story just gives a reason for ARDS. The point: in ARDS the dorsal alveoli collapse; turning the patient PRONE recruits those dependent alveoli and makes ventilation more uniform, so ventilation-perfusion matching improves — answer E.", "strategy": "For 'why does prone positioning help ARDS,' think recruitment of collapsed dependent alveoli + more homogeneous ventilation → reduced shunt → better V/Q matching and oxygenation. Reject options that claim a worsening (hyperdistension, ↓FRC) or a primary hemodynamic mechanism.", "options": [{"letter": "A", "text": "Alveolar hyperdistension", "correct": false}, {"letter": "B", "text": "Decreased cardiac output", "correct": false}, {"letter": "C", "text": "Decreased functional residual capacity", "correct": false}, {"letter": "D", "text": "Decreased right ventricular preload", "correct": false}, {"letter": "E", "text": "Improved ventilation-perfusion matching", "correct": true}], "eliminations": [{"letter": "A", "label": "alveolar hyperdistension — that's harm, not benefit", "detail": "WHAT IT IS: overdistension of alveoli causes ventilator-induced lung injury (volutrauma). ❌ WHY IT FAILS: proning REDUCES regional overdistension by distributing ventilation more evenly; it doesn't cause hyperdistension. ✅ Correct if: the question asked about a harm of high tidal volumes/pressures."}, {"letter": "B", "label": "decreased cardiac output — not the mechanism of benefit", "detail": "WHAT IT IS: positioning and PEEP can affect venous return/CO. ❌ WHY IT FAILS: prone positioning's oxygenation benefit is from alveolar recruitment and better V/Q, not from lowering cardiac output; CO is not reliably decreased. ✅ Correct if: the stem asked about a hemodynamic side effect of high PEEP."}, {"letter": "C", "label": "decreased FRC — backwards", "detail": "WHAT IT IS: functional residual capacity is the air left after a normal exhale; recruitment increases it. ❌ WHY IT FAILS: proning RECRUITS collapsed dorsal alveoli, INCREASING aerated lung/FRC, not decreasing it. ✅ Correct if: the question described atelectasis or supine abdominal compression reducing FRC."}, {"letter": "D", "label": "decreased RV preload — a PEEP/hemodynamic distractor", "detail": "WHAT IT IS: high intrathoracic pressure can reduce venous return and RV preload. ❌ WHY IT FAILS: that's a consequence of PEEP, not the benefit of proning; the asked effect is improved gas exchange via V/Q matching. ✅ Correct if: the question targeted how positive-pressure ventilation lowers preload/CO."}], "reasoning": ["ARDS → dependent (dorsal) alveolar collapse → shunt → refractory hypoxemia", "Prone position unloads the posterior diaphragm and recruits dorsal alveoli", "Ventilation becomes more uniform while perfusion stays relatively even", "More alveoli ventilated AND perfused → improved V/Q matching → answer E"], "mechanism": "In ARDS, edema and the weight of the heart and abdominal contents collapse the dependent (dorsal, when supine) alveoli, creating intrapulmonary shunt and hypoxemia. Prone positioning relieves dorsal compression, recruits those alveoli, and distributes ventilation more homogeneously while perfusion remains relatively uniform, reducing shunt and improving ventilation-perfusion matching and oxygenation. Prone positioning improves oxygenation and mortality in severe ARDS.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid/IM Pulmonary > ARDS: diffuse alveolar damage, non-cardiogenic edema, shunt physiology, lung-protective ventilation (low tidal volume, PEEP), prone positioning to recruit dependent alveoli and improve V/Q."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Frame proning as 'recruit the collapsed dorsal lung → ventilation matches perfusion better → less shunt.' The correct answer is the only one describing improvement in gas exchange."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on ARDS, V/Q matching, shunt, FRC, PEEP, recruitment, dependent alveoli? Tell me which and I'll explain."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Hemodynamic options (B, D) ride on PEEP physiology, and A/C describe worsening — all distract from the oxygenation mechanism. Anchor on 'better V/Q matching.'"}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "The figure compares supine (abdomen compresses posterior diaphragm → dorsal alveoli collapse) vs prone (posterior alveoli re-expand, anterior less distended). Practice reading the alveolar collapse/recruitment diagram."}, {"key": "other", "label": "✍️ Something else", "message": "Right answer (E). One-liner to retain: proning recruits dependent alveoli → V/Q matching improves → oxygenation up."}], "keywords": [{"front": "Prone positioning in ARDS — benefit", "back": "Recruits dorsal alveoli → improved V/Q matching/oxygenation"}, {"front": "ARDS physiology", "back": "Diffuse alveolar damage, non-cardiogenic edema, shunt → refractory hypoxemia"}, {"front": "Where alveoli collapse when supine", "back": "Dependent (dorsal) regions"}, {"front": "Lung-protective ventilation", "back": "Low tidal volume (~6 mL/kg) + PEEP"}, {"front": "Effect of recruitment on FRC", "back": "Increases aerated lung/FRC"}, {"front": "Shunt definition", "back": "Perfusion without ventilation (V/Q = 0) → hypoxemia not fixed by O2 alone"}], "firstAid": [{"tag": "answer", "topic": "ARDS & prone positioning", "detail": "Pulmonary: ARDS pathophysiology (diffuse alveolar damage), shunt, prone positioning recruitment, mortality benefit."}, {"tag": "stem", "topic": "V/Q matching & shunt", "detail": "Physiology: V/Q spectrum (shunt vs dead space), regional ventilation/perfusion, effect of positioning."}, {"tag": "options", "topic": "Mechanical ventilation effects", "detail": "Pulm/Crit care: PEEP effects on FRC and preload, volutrauma/barotrauma, lung-protective strategy."}], "memoryHook": "Flip the patient → the squashed BACK lung opens up → ventilation finally meets perfusion. Prone = better V/Q.", "stem": [{"text": "A 55-year-old woman with a history of Crohn disease is admitted to the hospital due to perforated appendicitis. The patient quickly develops respiratory difficulty, and "}, {"text": "acute respiratory distress syndrome is diagnosed", "clue": true, "type": "red", "note": "ARDS = diffuse alveolar damage with non-cardiogenic pulmonary edema and widespread alveolar COLLAPSE, worst in the dependent (dorsal, when supine) lung. Severe shunt physiology causes refractory hypoxemia. This is the substrate prone positioning targets."}, {"text": ". She is intubated and mechanically ventilated with positive pressure ventilation. Despite the use of "}, {"text": "high positive end-expiratory pressure, the patient's condition continues to deteriorate", "clue": true, "type": "blue", "note": "Refractory hypoxemia despite high PEEP is the trigger for prone positioning in severe ARDS. The question asks what physiologically improves when you flip the patient."}, {"text": ". She is intermittently placed in the "}, {"text": "prone position", "clue": true, "type": "green", "note": "Proning lets the previously collapsed DORSAL alveoli re-expand (the abdomen no longer compresses the posterior diaphragm) while perfusion stays relatively even. More alveoli are both ventilated and perfused, so ventilation-perfusion matching improves and oxygenation rises."}, {"text": " while mechanically ventilated. Which of the following is most likely to occur due to this position change?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

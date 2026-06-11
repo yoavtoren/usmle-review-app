@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osteoclast differentiation: RANKL (Paget disease)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q92", "item": 92, "qid": "639", "title": "Osteoclast differentiation: RANKL (Paget disease)", "system": "Musculoskeletal", "topic": "Bone remodeling / RANKL-RANK-OPG", "correct": "D", "yourAnswer": "D", "percentCorrect": 52, "vignette": "A 67-year-old man comes to the office with right tibial pain that started 3 months ago and has increased in intensity over time. He also has had progressive hearing impairment for the last year. Physical examination reveals local tenderness and a lumpy protuberance over the right tibia. After extensive evaluation, the patient undergoes a bone biopsy. The pathologist identifies numerous multinucleated cells, some containing over 100 nuclei. Which of the following factors is essential for the differentiation of the cells described by the pathologist?", "clues": [{"text": "progressive hearing impairment", "type": "orange", "note": "Hearing loss in an older adult with bone disease suggests Paget disease of bone: thickened skull bones compress CN VIII (or remodel the ossicles). Paget is a disorder of disordered, excessive bone remodeling driven by overactive osteoclasts."}, {"text": "a lumpy protuberance over the right tibia", "type": "blue", "note": "Bone pain with deformity/bowing of a long bone (tibia) is typical Paget disease. The disorganized remodeling enlarges and deforms the bone, raising it as a palpable protuberance."}, {"text": "numerous multinucleated cells, some containing over 100 nuclei", "type": "green", "note": "Giant multinucleated cells with dozens to >100 nuclei are abnormal OSTEOCLASTS — the pathologic hallmark of Paget disease. The question asks what drives osteoclast differentiation: RANKL (RANK ligand), made by osteoblasts/stromal cells."}], "whatMatters": "The bone pain, deformity, hearing loss, and a biopsy full of giant multinucleated cells = Paget disease, and those cells are OSTEOCLASTS. The factor essential for osteoclast differentiation is RANKL (receptor activator of NF-κB ligand), produced by osteoblasts/stromal cells — answer D.", "strategy": "When a biopsy shows giant multinucleated bone cells, name them OSTEOCLASTS, then recall their differentiation switch: osteoblast-derived RANKL binds RANK on osteoclast precursors (with M-CSF) → osteoclast formation. Osteoprotegerin (OPG) is the DECOY that blocks this — so OPG inhibits, RANKL promotes. Pick the activator.", "options": [{"letter": "A", "text": "Fibroblast growth factor", "correct": false}, {"letter": "B", "text": "Insulin-like growth factors", "correct": false}, {"letter": "C", "text": "Osteoprotegerin", "correct": false}, {"letter": "D", "text": "Receptor activator of nuclear factor kappa-B ligand", "correct": true}, {"letter": "E", "text": "Transforming growth factor beta", "correct": false}], "eliminations": [{"letter": "A", "label": "FGF — growth-plate/skeletal patterning, not osteoclasts", "detail": "WHAT IT IS: FGF (and FGFR3) regulate chondrocyte proliferation at the growth plate (FGFR3 gain-of-function → achondroplasia). ❌ WHY IT FAILS: FGF doesn't drive osteoclast differentiation; the giant cells here form via RANKL. ✅ Correct if: the question were about endochondral growth-plate signaling or achondroplasia."}, {"letter": "B", "label": "IGF — bone matrix anabolism, not osteoclastogenesis", "detail": "WHAT IT IS: insulin-like growth factors (GH-stimulated) promote bone/cartilage growth and osteoblast activity. ❌ WHY IT FAILS: IGFs build matrix; they aren't the differentiation signal for bone-resorbing osteoclasts. ✅ Correct if: the topic were growth-hormone-mediated longitudinal bone growth."}, {"letter": "C", "label": "osteoprotegerin — the INHIBITOR (decoy), opposite of the answer", "detail": "WHAT IT IS: OPG is a soluble decoy receptor made by osteoblasts that binds RANKL and PREVENTS it from activating RANK — so it BLOCKS osteoclast formation. ❌ WHY IT FAILS: the question asks what's ESSENTIAL for differentiation; OPG does the opposite (a high OPG/RANKL ratio means fewer osteoclasts). ✅ Correct if: the question asked which factor INHIBITS osteoclastogenesis (or modeled denosumab, an anti-RANKL antibody)."}, {"letter": "E", "label": "TGF-β — coupling/matrix factor, not the differentiation switch", "detail": "WHAT IT IS: TGF-β, released from resorbed matrix, helps couple resorption to formation and recruits osteoblasts. ❌ WHY IT FAILS: it's a coupling/anabolic signal, not the obligatory osteoclast-differentiation factor (that's RANKL + M-CSF). ✅ Correct if: the question targeted resorption-formation coupling or osteoblast recruitment."}], "reasoning": ["Bone pain + deformity + hearing loss + giant multinucleated cells = Paget disease", "The giant multinucleated cells are osteoclasts", "Osteoclast differentiation requires osteoblast-derived RANKL (+ M-CSF) binding RANK", "Essential factor = RANKL → answer D"], "mechanism": "Osteoclasts derive from monocyte/macrophage precursors. Osteoblasts and marrow stromal cells express RANKL (RANK ligand), which binds RANK on precursors and — together with M-CSF — drives their fusion and differentiation into multinucleated, bone-resorbing osteoclasts. Osteoprotegerin (OPG), also made by osteoblasts, is a soluble decoy that sequesters RANKL and inhibits osteoclastogenesis; the OPG/RANKL balance sets resorption. Paget disease features dysregulated, excessive osteoclastic remodeling (giant osteoclasts), producing pain, deformity, and cranial-nerve compression. Denosumab (anti-RANKL) exploits this pathway.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Musculoskeletal > Bone remodeling: RANK-RANKL-OPG axis, M-CSF, osteoclast vs osteoblast origins; Paget disease (mosaic bone, ↑ALP, giant osteoclasts, hearing loss, bisphosphonates). Cross-link denosumab (anti-RANKL)."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Two steps: giant multinucleated bone cells = osteoclasts; their 'on switch' = RANKL (OPG is the 'off switch'). The question asks for the essential (promoting) factor."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on osteoclast vs osteoblast, RANK/RANKL/OPG, M-CSF, Paget disease, denosumab? Tell me which and I'll explain."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Osteoprotegerin (C) is the trap — it's in the same pathway but it INHIBITS osteoclasts. 'Essential for differentiation' = the activator RANKL, not the decoy OPG."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "The osteoclast-differentiation figure shows hematopoietic precursor → (M-CSF) → osteoclast precursor → (RANK-RANKL from osteoblast) → multinucleated osteoclast, with OPG competitively blocking RANKL. Practice reading the RANKL/OPG balance diagram."}, {"key": "other", "label": "✍️ Something else", "message": "Right answer (D). Keep the polarity straight: RANKL promotes, OPG blocks; denosumab mimics OPG (anti-RANKL)."}], "keywords": [{"front": "Factor essential for osteoclast differentiation", "back": "RANKL (+ M-CSF), from osteoblasts/stromal cells"}, {"front": "Osteoprotegerin (OPG) role", "back": "Decoy receptor for RANKL — INHIBITS osteoclastogenesis"}, {"front": "Giant multinucleated bone cells", "back": "Osteoclasts"}, {"front": "Bone pain + deformity + hearing loss + ↑ALP", "back": "Paget disease of bone"}, {"front": "Denosumab mechanism", "back": "Monoclonal anti-RANKL antibody (mimics OPG)"}, {"front": "M-CSF role", "back": "Drives osteoclast precursor proliferation"}, {"front": "Osteoblast products", "back": "RANKL, OPG, ALP, osteoid (type I collagen)"}], "firstAid": [{"tag": "answer", "topic": "RANK-RANKL-OPG / osteoclasts", "detail": "MSK: osteoclast differentiation (RANKL + M-CSF), OPG decoy, denosumab; bone remodeling balance."}, {"tag": "stem", "topic": "Paget disease of bone", "detail": "MSK: disordered remodeling, mosaic 'jigsaw' bone, ↑ALP (normal Ca/phos), hearing loss, high-output heart failure, osteosarcoma risk, bisphosphonates."}, {"tag": "options", "topic": "Bone growth factors", "detail": "MSK/Endo: FGF/FGFR3 (achondroplasia), IGF (GH-mediated growth), TGF-β (coupling) for contrast."}], "memoryHook": "RANKL = 'Rank-and-file soldiers' that MAKE osteoclasts; OPG = the 'Off' decoy that blocks them. Giant osteoclasts = Paget.", "stem": [{"text": "A 67-year-old man comes to the office with right tibial pain that started 3 months ago and has increased in intensity over time. He also has had "}, {"text": "progressive hearing impairment", "clue": true, "type": "orange", "note": "Hearing loss in an older adult with bone disease suggests Paget disease of bone: thickened skull bones compress CN VIII (or remodel the ossicles). Paget is a disorder of disordered, excessive bone remodeling driven by overactive osteoclasts."}, {"text": " for the last year. Physical examination reveals local tenderness and "}, {"text": "a lumpy protuberance over the right tibia", "clue": true, "type": "blue", "note": "Bone pain with deformity/bowing of a long bone (tibia) is typical Paget disease. The disorganized remodeling enlarges and deforms the bone, raising it as a palpable protuberance."}, {"text": ". After extensive evaluation, the patient undergoes a bone biopsy. The pathologist identifies "}, {"text": "numerous multinucleated cells, some containing over 100 nuclei", "clue": true, "type": "green", "note": "Giant multinucleated cells with dozens to >100 nuclei are abnormal OSTEOCLASTS — the pathologic hallmark of Paget disease. The question asks what drives osteoclast differentiation: RANKL (RANK ligand), made by osteoblasts/stromal cells."}, {"text": ". Which of the following factors is essential for the differentiation of the cells described by the pathologist?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

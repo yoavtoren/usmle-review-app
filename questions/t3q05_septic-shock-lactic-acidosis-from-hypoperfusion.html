@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Septic shock: lactic acidosis from hypoperfusion</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q74", "item": 74, "qid": "2101", "title": "Septic shock: lactic acidosis from hypoperfusion", "system": "Physiology", "topic": "Acid-base / anion gap", "correct": "A", "yourAnswer": "E", "percentCorrect": 49, "vignette": "An 87-year-old nursing home resident is brought to the emergency department with a 2-day history of fever, vomiting, and progressive lethargy. The patient's past medical history is significant for advanced dementia and stroke. Temperature is 38.3 C (101 F), blood pressure is 88/62 mm Hg, and pulse is 120/min and regular. On examination, he is lethargic but arousable. Coarse rhonchi are heard over the right midlung. Laboratory results show leukocytes 23,000/mm3, sodium 140 mEq/L, potassium 4.2 mEq/L, chloride 101 mEq/L, bicarbonate 18 mEq/L, creatinine 0.9 mg/dL, glucose 121 mg/dL, and lactic acid 4.0 mmol/L (normal: <2 mmol/L). Which of the following is the most likely cause of this patient's increased anion gap?", "clues": [{"text": "fever, vomiting, and progressive lethargy", "type": "blue", "note": "Systemic illness with altered mental status in a frail elder. Combined with leukocytosis and a lung source, this is sepsis — the setup for shock-related lactic acidosis."}, {"text": "blood pressure is 88/62 mm Hg, and pulse is 120/min", "type": "red", "note": "Hypotension + tachycardia = shock with tissue hypoperfusion. Inadequate oxygen delivery forces tissues into anaerobic metabolism, the engine of lactic acid production."}, {"text": "Coarse rhonchi are heard over the right midlung", "type": "orange", "note": "Localizes the infectious source to pneumonia, the likely cause of septic shock here. Source identification supports the sepsis → hypoperfusion → lactate chain."}, {"text": "lactic acid 4.0 mmol/L (normal: <2 mmol/L)", "type": "green", "note": "A high lactate (4.0 / normal <2) with low bicarbonate (18 / normal 22-28) is the unmeasured anion raising the gap. Lactate accumulates when hypoperfused cells can't run oxidative phosphorylation and shunt pyruvate to lactate."}], "whatMatters": "The frailty/dementia details are window dressing. The core chain is sepsis (pneumonia) → hypotension/tachycardia → tissue hypoperfusion → the cells can't run oxidative phosphorylation → pyruvate is shunted to lactate → high-anion-gap lactic acidosis. The asked cause is DECREASED oxidative phosphorylation — answer A.", "strategy": "For an elevated anion gap, name the unmeasured anion (MUDPILES). Here lactate is explicitly high, so trace WHY: shock → low O2 delivery → mitochondria can't oxidatively phosphorylate → anaerobic glycolysis → lactate. Pick the upstream mechanism (impaired oxidative phosphorylation), not a downstream/clearance detail.", "options": [{"letter": "A", "text": "Decreased oxidative phosphorylation", "correct": true}, {"letter": "B", "text": "Impaired hepatic gluconeogenesis", "correct": false}, {"letter": "C", "text": "Increased production of ketoacids", "correct": false}, {"letter": "D", "text": "Reduced renal excretion of organic acids", "correct": false}, {"letter": "E", "text": "Reduced hepatic metabolism of lactate", "correct": false}], "eliminations": [{"letter": "B", "label": "hepatic gluconeogenesis defect — inborn errors, wrong patient", "detail": "WHAT IT IS: primary impairment of hepatic gluconeogenesis (pyruvate carboxylase or glucose-6-phosphatase deficiency) can raise lactate. ❌ WHY IT FAILS: these inborn errors present in infancy with fasting hypoglycemia, not an 87-year-old with septic shock; his glucose is 121. ✅ Correct if: the patient were an infant with fasting hypoglycemia and lactic acidosis."}, {"letter": "C", "label": "ketoacidosis — wrong anion", "detail": "WHAT IT IS: beta-hydroxybutyrate/acetoacetate cause the gap in DKA and alcoholic/starvation ketoacidosis. ❌ WHY IT FAILS: he isn't diabetic-uncontrolled or starving (glucose 121), and the stem names LACTATE as the elevated anion, not ketones. ✅ Correct if: the stem gave high glucose with ketones, a fruity breath, or alcohol/starvation."}, {"letter": "D", "label": "renal acid retention — a uremic/RTA story, not this", "detail": "WHAT IT IS: reduced renal excretion of organic acids contributes to the gap in renal failure (uremia). ❌ WHY IT FAILS: creatinine is normal (0.9) and the acid here is lactate generated by hypoperfusion, not retained by failing kidneys. ✅ Correct if: creatinine/BUN were markedly elevated pointing to uremic acidosis."}, {"letter": "E", "label": "impaired hepatic lactate clearance — secondary, not the primary driver (your pick)", "detail": "WHAT IT IS: the liver normally clears lactate via gluconeogenesis; hypoperfusion can reduce this and worsen the level. ❌ WHY IT FAILS: in septic shock the dominant mechanism is OVERPRODUCTION from anaerobic metabolism (failed oxidative phosphorylation); reduced clearance is a contributing, downstream factor, not the primary cause being asked. ✅ Correct if: the stem isolated severe hepatic failure as the sole cause of lactate accumulation."}], "reasoning": ["Sepsis from pneumonia → hypotension/tachycardia = shock", "Tissue hypoperfusion → inadequate O2 delivery to mitochondria", "Cells can't run oxidative phosphorylation → pyruvate → lactate", "High-anion-gap lactic acidosis from decreased oxidative phosphorylation → answer A"], "mechanism": "In septic shock, end-organ hypoperfusion lowers oxygen delivery so mitochondria cannot complete oxidative phosphorylation. Glycolysis continues, generating pyruvate and NADH; without adequate O2, pyruvate is reduced to lactate (regenerating NAD+). Lactate is an unmeasured anion, so it raises the anion gap and consumes bicarbonate (here 18). Reduced hepatic lactate clearance contributes, but overproduction from anaerobic metabolism is the primary driver.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Physiology/Pathology > Acid-base: high-anion-gap metabolic acidosis (MUDPILES — lactate is the 'L'), the causes-of-lactic-acidosis table (reduced O2 delivery in shock), and oxidative phosphorylation basics. Cross-link sepsis/shock physiology."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Reframe to a chain: shock → ↓O2 delivery → ↓oxidative phosphorylation → anaerobic glycolysis → lactate → ↑gap. The question wants the UPSTREAM mechanism, not clearance."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on anion gap, oxidative phosphorylation, anaerobic glycolysis, gluconeogenesis, MUDPILES? Tell me which term and I'll explain."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Option E (reduced hepatic lactate metabolism) is the tempting near-miss because the liver does clear lactate. In septic shock, OVERPRODUCTION dominates — choose decreased oxidative phosphorylation."}, {"key": "other", "label": "✍️ Something else", "message": "Answer choices B-E here were reconstructed because the screenshot cut them off (only the correct choice A was visible). The correct answer A and the teaching point are solid; verify the exact wording of B-E against UWorld if you want them word-perfect."}], "keywords": [{"front": "High lactate in shock — mechanism", "back": "↓ O2 delivery → ↓ oxidative phosphorylation → anaerobic glycolysis"}, {"front": "Lactate's role in acid-base", "back": "Unmeasured anion → high-anion-gap metabolic acidosis"}, {"front": "High-anion-gap mnemonic", "back": "MUDPILES (lactate = L)"}, {"front": "Anion gap formula", "back": "Na − (Cl + HCO3); normal ~8-12"}, {"front": "Inborn errors causing infantile lactic acidosis", "back": "Pyruvate carboxylase / glucose-6-phosphatase (von Gierke) deficiency"}, {"front": "Primary site of lactate clearance", "back": "Liver (via gluconeogenesis / Cori cycle)"}, {"front": "Pyruvate fate without O2", "back": "Reduced to lactate by LDH (regenerates NAD+)"}], "firstAid": [{"tag": "answer", "topic": "Lactic acidosis", "detail": "Physiology > Acid-base: causes of lactic acidosis (reduced O2 delivery/shock, mitochondrial dysfunction), oxidative phosphorylation, anion gap calculation."}, {"tag": "options", "topic": "Anion-gap differential", "detail": "Path/Physio: MUDPILES — ketoacidosis (DKA/alcoholic), uremia, toxins; plus inborn errors of gluconeogenesis for infantile lactic acidosis."}, {"tag": "stem", "topic": "Sepsis & shock", "detail": "Physiology/Path: SIRS/sepsis criteria, distributive shock hemodynamics, end-organ hypoperfusion and lactate as a marker."}], "memoryHook": "No O2 to the mitochondria → no oxidative phosphorylation → pyruvate becomes LACTATE → the gap opens. Shock makes lactate.", "stem": [{"text": "An 87-year-old nursing home resident is brought to the emergency department with a 2-day history of "}, {"text": "fever, vomiting, and progressive lethargy", "clue": true, "type": "blue", "note": "Systemic illness with altered mental status in a frail elder. Combined with leukocytosis and a lung source, this is sepsis — the setup for shock-related lactic acidosis."}, {"text": ". The patient's past medical history is significant for advanced dementia and stroke. Temperature is 38.3 C (101 F), "}, {"text": "blood pressure is 88/62 mm Hg, and pulse is 120/min", "clue": true, "type": "red", "note": "Hypotension + tachycardia = shock with tissue hypoperfusion. Inadequate oxygen delivery forces tissues into anaerobic metabolism, the engine of lactic acid production."}, {"text": " and regular. On examination, he is lethargic but arousable. "}, {"text": "Coarse rhonchi are heard over the right midlung", "clue": true, "type": "orange", "note": "Localizes the infectious source to pneumonia, the likely cause of septic shock here. Source identification supports the sepsis → hypoperfusion → lactate chain."}, {"text": ". Laboratory results show leukocytes 23,000/mm3, sodium 140 mEq/L, potassium 4.2 mEq/L, chloride 101 mEq/L, bicarbonate 18 mEq/L, creatinine 0.9 mg/dL, glucose 121 mg/dL, and "}, {"text": "lactic acid 4.0 mmol/L (normal: <2 mmol/L)", "clue": true, "type": "green", "note": "A high lactate (4.0 / normal <2) with low bicarbonate (18 / normal 22-28) is the unmeasured anion raising the gap. Lactate accumulates when hypoperfused cells can't run oxidative phosphorylation and shunt pyruvate to lactate."}, {"text": ". Which of the following is the most likely cause of this patient's increased anion gap?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

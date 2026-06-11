@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conduct disorder: violating norms in a minor</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q87", "item": 87, "qid": "11828", "title": "Conduct disorder: violating norms in a minor", "system": "Psychiatry", "topic": "Disruptive behavior disorders", "correct": "C", "yourAnswer": "A", "percentCorrect": 76, "vignette": "A 12-year-old boy is brought to the office due to behavioral problems. His parents are upset about his poor grades and recent school suspension for setting fires in the locker room and stealing another student's cell phone. They say that the boy has always been impulsive, had a lot of energy, and become angry and argumentative easily, but over the past year his aggressive behavior \"has gotten out of control.\" The patient says that the fires were an \"accident,\" although he admits to being angry at the coach for kicking him off the basketball team. Regarding the theft, he jokingly says, \"People deserve to have their phones stolen when they are stupid enough to leave them in plain sight.\" The patient has a history of getting into trouble for talking back to teachers, skipping class, and getting into fights since the fourth grade. He has no medical history. There is a family history of bipolar disorder and alcohol dependence. The patient smokes cigarettes occasionally but denies illicit drug or alcohol use. Which of the following is the most likely diagnosis in this patient?", "clues": [{"text": "setting fires in the locker room and stealing another student's cell phone", "type": "red", "note": "Fire-setting + theft + aggression are core conduct-disorder behaviors: a repetitive pattern of violating others' rights and major societal norms. Multiple categories (deceit/theft, destruction of property, aggression) push this past oppositional defiance."}, {"text": "his aggressive behavior \"has gotten out of control", "type": "blue", "note": "Escalating aggression toward people/property over the past year fits the conduct-disorder trajectory in an adolescent. The breadth and severity exceed simple defiance."}, {"text": "getting into fights since the fourth grade", "type": "green", "note": "Onset of rule-violating, aggressive behavior in childhood (since 4th grade, well before age 15) supports conduct disorder and predicts higher risk of progressing to antisocial personality disorder in adulthood."}], "whatMatters": "The diagnosis hinges on the PATTERN and the AGE. A 12-year-old with a year-plus of fire-setting, theft, fighting, and rule-breaking that violates others' rights = conduct disorder. He's a minor, so antisocial personality disorder (≥18) can't apply yet. Answer C.", "strategy": "Disruptive-behavior ladder: Oppositional defiant disorder = angry/argumentative/defiant but NOT serious rights violations; Conduct disorder = aggression to people/animals, destruction (fire-setting), deceit/theft, serious rule violations in someone <18; Antisocial PD = the same pattern but only diagnosable at ≥18 (with conduct disorder before 15). Match severity + age.", "options": [{"letter": "A", "text": "Antisocial personality disorder", "correct": false}, {"letter": "B", "text": "Attention-deficit hyperactivity disorder", "correct": false}, {"letter": "C", "text": "Conduct disorder", "correct": true}, {"letter": "D", "text": "Intermittent explosive disorder", "correct": false}, {"letter": "E", "text": "Oppositional defiant disorder", "correct": false}, {"letter": "F", "text": "Pyromania", "correct": false}], "eliminations": [{"letter": "A", "label": "antisocial PD — can't diagnose under 18 (your pick)", "detail": "WHAT IT IS: antisocial personality disorder is a pervasive pattern of violating others' rights with deceit/aggression. ❌ WHY IT FAILS: by definition it's only diagnosed at age ≥18 (and requires conduct disorder onset before 15); this patient is 12. The childhood version of this picture IS conduct disorder. ✅ Correct if: the patient were ≥18 with a documented history of conduct disorder before age 15."}, {"letter": "B", "label": "ADHD — impulsivity/energy, but not norm violation", "detail": "WHAT IT IS: ADHD features inattention and hyperactivity/impulsivity. ❌ WHY IT FAILS: ADHD alone doesn't include deliberate fire-setting, theft, and rights violations; his impulsivity is a backdrop, but the dominant pattern is conduct disorder (the two can coexist). ✅ Correct if: symptoms were limited to inattention/hyperactivity impairing school without antisocial acts."}, {"letter": "D", "label": "intermittent explosive disorder — impulsive outbursts only", "detail": "WHAT IT IS: IED is recurrent, impulsive aggressive OUTBURSTS out of proportion to provocation, without premeditation or tangible goal. ❌ WHY IT FAILS: his theft and fire-setting are purposeful/instrumental and span multiple norm-violating categories, beyond unplanned rage episodes. ✅ Correct if: the picture were isolated impulsive aggressive outbursts without planned rule-breaking."}, {"letter": "E", "label": "oppositional defiant disorder — defiance without serious rights violations", "detail": "WHAT IT IS: ODD is a pattern of angry/irritable mood, argumentative/defiant behavior, and vindictiveness toward authority. ❌ WHY IT FAILS: ODD does NOT include serious violations of others' rights (aggression to people, property destruction, theft) — those upgrade him to conduct disorder. ✅ Correct if: he were only argumentative/defiant without fire-setting, theft, or fighting."}, {"letter": "F", "label": "pyromania — isolated fire fascination, not this", "detail": "WHAT IT IS: pyromania is deliberate fire-setting for its own sake (tension relief/fascination with fire), without other antisocial behavior. ❌ WHY IT FAILS: his fires are one part of a broad pattern that also includes theft and fighting, and he set the fire out of anger, not fascination. ✅ Correct if: fire-setting were the SOLE problem, driven by fascination/arousal."}], "reasoning": ["12-year-old with a sustained pattern of rights/norm violations", "Behaviors span aggression, property destruction (fires), and theft", "Onset in childhood (4th grade), too young for antisocial PD (≥18)", "Pattern + age = conduct disorder → answer C"], "mechanism": "Conduct disorder is a childhood/adolescent disorder defined by a repetitive pattern of violating major societal norms or the basic rights of others over ~12 months, spanning aggression to people/animals, destruction of property (including fire-setting), deceitfulness/theft, and serious rule violations (truancy, running away). It is more common in boys, presents in middle childhood to adolescence, and increases the risk of progressing to antisocial personality disorder (diagnosable only at ≥18, requiring conduct disorder onset before age 15).", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Psychiatry > Disruptive/conduct disorders: ODD vs conduct disorder vs antisocial PD (age cutoffs and severity), intermittent explosive disorder, pyromania/kleptomania (impulse-control). Memorize the ≥18 rule for antisocial PD and conduct-disorder-before-15 requirement."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Sort by two axes: severity (defiance vs serious rights violations) and age (<18 vs ≥18). Serious violations in a 12-year-old = conduct disorder."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on conduct disorder, oppositional defiant disorder, antisocial personality disorder, intermittent explosive disorder, pyromania? Tell me which and I'll explain."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Antisocial PD (A, your pick) is the same behavior pattern but is age-gated to ≥18. At 12, the correct label for that pattern is conduct disorder."}, {"key": "other", "label": "✍️ Something else", "message": "Missed as A → anchor the age rule: under 18 with serious norm violations = conduct disorder; antisocial PD requires age ≥18."}], "keywords": [{"front": "<18 with fire-setting, theft, fighting, rule-breaking", "back": "Conduct disorder"}, {"front": "Same pattern but age ≥18", "back": "Antisocial personality disorder (needs conduct disorder before 15)"}, {"front": "Defiant/argumentative without serious rights violations", "back": "Oppositional defiant disorder"}, {"front": "Impulsive aggressive outbursts, no premeditation", "back": "Intermittent explosive disorder"}, {"front": "Deliberate fire-setting for fascination only", "back": "Pyromania"}, {"front": "Conduct disorder prognosis", "back": "↑ risk of antisocial personality disorder in adulthood"}, {"front": "Conduct disorder symptom categories", "back": "Aggression, property destruction, deceit/theft, serious rule violations"}], "firstAid": [{"tag": "answer", "topic": "Conduct disorder", "detail": "Psychiatry: criteria (rights/norm violations >12 months), age of onset, progression to antisocial PD."}, {"tag": "options", "topic": "Disruptive & impulse-control disorders", "detail": "Psych: ODD, antisocial PD (≥18), intermittent explosive disorder, pyromania, kleptomania — distinguishing features."}, {"tag": "stem", "topic": "Child & adolescent psychiatry", "detail": "Psych: ADHD vs disruptive behavior disorders, comorbidity, developmental considerations."}], "memoryHook": "Kid (<18) who violates others' rights (fires + theft + fights) = CONDUCT disorder. Grows up to be antisocial PD (≥18).", "stem": [{"text": "A 12-year-old boy is brought to the office due to behavioral problems. His parents are upset about his poor grades and recent school suspension for "}, {"text": "setting fires in the locker room and stealing another student's cell phone", "clue": true, "type": "red", "note": "Fire-setting + theft + aggression are core conduct-disorder behaviors: a repetitive pattern of violating others' rights and major societal norms. Multiple categories (deceit/theft, destruction of property, aggression) push this past oppositional defiance."}, {"text": ". They say that the boy has always been impulsive, had a lot of energy, and become angry and argumentative easily, but over the past year "}, {"text": "his aggressive behavior \"has gotten out of control", "clue": true, "type": "blue", "note": "Escalating aggression toward people/property over the past year fits the conduct-disorder trajectory in an adolescent. The breadth and severity exceed simple defiance."}, {"text": ".\" The patient says that the fires were an \"accident,\" although he admits to being angry at the coach for kicking him off the basketball team. Regarding the theft, he jokingly says, \"People deserve to have their phones stolen when they are stupid enough to leave them in plain sight.\" The patient has a history of getting into trouble for talking back to teachers, skipping class, and "}, {"text": "getting into fights since the fourth grade", "clue": true, "type": "green", "note": "Onset of rule-violating, aggressive behavior in childhood (since 4th grade, well before age 15) supports conduct disorder and predicts higher risk of progressing to antisocial personality disorder in adulthood."}, {"text": ". He has no medical history. There is a family history of bipolar disorder and alcohol dependence. The patient smokes cigarettes occasionally but denies illicit drug or alcohol use. Which of the following is the most likely diagnosis in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>
