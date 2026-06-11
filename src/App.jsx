@@ -64,7 +64,7 @@ export default function App() {
         />
       } />
       <Route path="/tests" element={
-        <TestDashboard onBack={() => nav("/")} onStudy={() => nav("/tests/review")} />
+        <TestDashboard onBack={() => nav("/")} onStudy={(deckFile, block) => nav("/tests/review", { state: { deckFile, block } })} />
       } />
       <Route path="/tests/review" element={
         <TestReview onBack={() => nav("/tests")} />

@@ -1,5 +1,7 @@
-import { useState, useMemo } from "react";
-import { loadTestLog, saveTestLog } from "../lib/storage.js";
+import { useState, useMemo, useEffect } from "react";
+import { loadTestLog, saveTestLog, loadProgress } from "../lib/storage.js";
+
+const BASE = import.meta.env.BASE_URL;
 
 function fmt(d) {
   return new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
@@ -96,14 +98,31 @@ function ScoreBadge({ score }) {
 
 export default function TestDashboard({ onBack, onStudy }) {
   const [tests, setTests] = useState(loadTestLog);
+  const [progress] = useState(loadProgress);
+  // Map of deckFile → question IDs (only loaded for tests that have a deckFile)
+  const [deckQuestions, setDeckQuestions] = useState({});
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({
     testNum: "",
     score: "",
     date: new Date().toISOString().split("T")[0],
     uworldAvg: "",
+    questionCount: "",
   });
   const [formErr, setFormErr] = useState("");
+
+  // Load the deck for every test that has a deckFile
+  useEffect(() => {
+    const files = [...new Set(tests.filter(t => t.deckFile).map(t => t.deckFile))];
+    files.forEach(f => {
+      if (deckQuestions[f]) return;
+      fetch(`${BASE}${f}`)
+        .then(r => r.json())
+        .then(d => setDeckQuestions(prev => ({ ...prev, [f]: d.questions || [] })))
+        .catch(() => {});
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tests]);
 
   const sorted = useMemo(
     () => [...tests].sort((a, b) => new Date(a.date) - new Date(b.date)),
@@ -125,6 +144,14 @@ export default function TestDashboard({ onBack, onStudy }) {
     };
   }, [tests, sorted]);
 
+  // Done count per test (using that test's own deck questions)
+  function getDoneCount(test) {
+    if (!test.deckFile) return 0;
+    const qs = deckQuestions[test.deckFile];
+    if (!qs) return 0;
+    return qs.filter(q => progress[q.id]?.done).length;
+  }
+
   function setField(k, v) { setForm(f => ({ ...f, [k]: v })); setFormErr(""); }
 
   function handleAdd() {
@@ -133,6 +160,7 @@ export default function TestDashboard({ onBack, onStudy }) {
       setFormErr("Enter a valid score between 0 and 100.");
       return;
     }
+    const qCount = form.questionCount !== "" ? Math.round(Number(form.questionCount)) : null;
     const newTest = {
       id: Date.now(),
       testNum: form.testNum.trim() || `Test ${tests.length + 1}`,
@@ -140,12 +168,13 @@ export default function TestDashboard({ onBack, onStudy }) {
       date: form.date || new Date().toISOString().split("T")[0],
       uworldAvg: form.uworldAvg !== "" ? Math.round(Number(form.uworldAvg)) : null,
       hasQuestions: false,
+      questionCount: qCount,
     };
     const next = [...tests, newTest];
     setTests(next);
     saveTestLog(next);
     setShowForm(false);
-    setForm({ testNum: "", score: "", date: new Date().toISOString().split("T")[0], uworldAvg: "" });
+    setForm({ testNum: "", score: "", date: new Date().toISOString().split("T")[0], uworldAvg: "", questionCount: "" });
   }
 
   function handleDelete(id) {
@@ -155,7 +184,7 @@ export default function TestDashboard({ onBack, onStudy }) {
   }
 
   const hasTrend = stats?.trend != null;
-  const trendUp = hasTrend && stats.trend > 0;
+  const trendUp  = hasTrend && stats.trend > 0;
   const trendFlat = hasTrend && stats.trend === 0;
 
   return (
@@ -201,13 +230,18 @@ export default function TestDashboard({ onBack, onStudy }) {
               <input className="td-input" type="number" min="0" max="100" placeholder="e.g. 72"
                 value={form.uworldAvg} onChange={e => setField("uworldAvg", e.target.value)} />
             </div>
+            <div className="td-form-field">
+              <label className="td-label"># Questions <span className="td-optional">(optional)</span></label>
+              <input className="td-input" type="number" min="1" placeholder="e.g. 40"
+                value={form.questionCount} onChange={e => setField("questionCount", e.target.value)} />
+            </div>
           </div>
           {formErr && <p className="td-form-err">{formErr}</p>}
           <button className="td-submit-btn" onClick={handleAdd}>Save test →</button>
         </div>
       )}
 
-      {/* ── Two-column layout: list left, dashboard right ── */}
+      {/* ── Two-column layout ── */}
       <div className="td-layout">
 
         {/* LEFT: test list */}
@@ -220,8 +254,11 @@ export default function TestDashboard({ onBack, onStudy }) {
           {tests.length > 0 ? (
             <div className="td-test-list">
               {sorted.map((t, i) => {
-                const gap = t.uworldAvg != null ? t.score - t.uworldAvg : null;
+                const gap      = t.uworldAvg != null ? t.score - t.uworldAvg : null;
                 const isLatest = i === sorted.length - 1;
+                const qTotal   = t.questionCount ?? null;
+                const doneCount = getDoneCount(t);
+
                 return (
                   <div key={t.id} className={`td-test-card${isLatest ? " td-test-latest" : ""}`}>
                     <div className="td-test-top-row">
@@ -236,8 +273,23 @@ export default function TestDashboard({ onBack, onStudy }) {
                       )}
                       <GapBadge gap={gap} />
                     </div>
+
+                    {qTotal != null && (
+                      <div className="td-done-progress">
+                        <div className="td-done-bar-wrap">
+                          <div
+                            className="td-done-bar-fill"
+                            style={{ width: `${Math.round((doneCount / qTotal) * 100)}%` }}
+                          />
+                        </div>
+                        <span className="td-done-label">
+                          {doneCount} / {qTotal} reviewed
+                        </span>
+                      </div>
+                    )}
+
                     {t.hasQuestions && onStudy && (
-                      <button className="td-review-btn" onClick={onStudy}>
+                      <button className="td-review-btn" onClick={() => onStudy(t.deckFile, t.block)}>
                         Review questions →
                       </button>
                     )}
@@ -254,7 +306,7 @@ export default function TestDashboard({ onBack, onStudy }) {
           )}
         </div>
 
-        {/* RIGHT: summary dashboard */}
+        {/* RIGHT: dashboard */}
         <div className="td-col-dash">
           {stats ? (
             <>

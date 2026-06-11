@@ -1,19 +1,26 @@
 import { useEffect, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { loadProgress, getCard, isDue, rate, toggleDone } from "../lib/storage.js";
 
 const BASE = import.meta.env.BASE_URL;
 
 export default function TestReview({ onBack }) {
+  const location = useLocation();
+  const deckFile    = location.state?.deckFile || "questions/deck.json";
+  const initialBlock = location.state?.block   || "all";
+
   const [deck, setDeck]             = useState(null);
   const [error, setError]           = useState(null);
   const [selectedId, setSelectedId] = useState(null);
   const [filter, setFilter]         = useState("missed");
-  const [block, setBlock]           = useState("all");
+  const [block, setBlock]           = useState(initialBlock);
   const [query, setQuery]           = useState("");
   const [progress, setProgress]     = useState(loadProgress);
 
   useEffect(() => {
-    fetch(`${BASE}questions/deck.json`)
+    setDeck(null);
+    setSelectedId(null);
+    fetch(`${BASE}${deckFile}`)
       .then((r) => r.json())
       .then((d) => {
         setDeck(d);
@@ -21,7 +28,7 @@ export default function TestReview({ onBack }) {
         if (first) setSelectedId(first.id);
       })
       .catch((e) => setError(String(e)));
-  }, []);
+  }, [deckFile]);
 
   const filtered = useMemo(() => {
     if (!deck) return [];

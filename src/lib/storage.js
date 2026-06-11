@@ -108,19 +108,18 @@ export function saveFATopics(topics) {
 }
 
 // ── Test score log ────────────────────────────────────────────────────────────
-const TEST_LOG_KEY = "test-log-v4";
+const TEST_LOG_KEY = "test-log-v5";
 
 const SEED_TESTS = [
-  { id: 1748563200000, testNum: "UWORLD test 1", score: 28, date: "2026-05-18", uworldAvg: 54, hasQuestions: true },
-  { id: 1749686400000, testNum: "UWORLD test 2", score: 55, date: "2026-06-11", uworldAvg: 54, hasQuestions: true },
-  { id: 1749772800000, testNum: "UWORLD test 3", score: 49, date: "2026-06-12", uworldAvg: 54, hasQuestions: true },
+  { id: 1748563200000, testNum: "UWORLD test 1", score: 28, date: "2026-05-18", uworldAvg: 54, hasQuestions: true, block: "test1", deckFile: "questions/deck.json" },
+  { id: 1749686400000, testNum: "UWORLD test 2", score: 55, date: "2026-06-11", uworldAvg: 54, hasQuestions: true, block: "test2", deckFile: "questions/deck.json" },
+  { id: 1749772800000, testNum: "UWORLD test 3", score: 49, date: "2026-06-12", uworldAvg: 54, hasQuestions: true, block: "test3", deckFile: "questions/deck.json" },
 ];
 
 export function loadTestLog() {
   try {
     const raw = localStorage.getItem(TEST_LOG_KEY);
     if (raw !== null) return JSON.parse(raw) || [];
-    // First load — seed with the baseline test
     localStorage.setItem(TEST_LOG_KEY, JSON.stringify(SEED_TESTS));
     return SEED_TESTS;
   } catch { return []; }
