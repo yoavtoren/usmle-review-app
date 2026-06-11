@@ -1790,7 +1790,28 @@ kbd {
 /* ══════════════════════════════════════════════════════════
    TEST DASHBOARD
 ══════════════════════════════════════════════════════════ */
-.td-page { max-width: 780px; margin: 0 auto; padding: 28px 20px 64px; }
+.td-page { max-width: 1100px; margin: 0 auto; padding: 28px 20px 64px; }
+
+/* Two-column layout */
+.td-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.td-col-list { min-width: 0; }
+.td-col-dash  { min-width: 0; }
+.td-dash-empty {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 32px 24px;
+  text-align: center;
+  border: 1px dashed var(--line);
+}
+@media (max-width: 760px) {
+  .td-layout { grid-template-columns: 1fr; }
+  .td-col-dash { order: -1; }
+}
 .td-header {
   display: flex;
   align-items: flex-start;
@@ -2040,11 +2061,10 @@ kbd {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
-  padding: 18px 20px;
+  padding: 16px 18px;
   display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
   box-shadow: var(--sh-xs);
   transition: box-shadow var(--t), border-color var(--t);
 }
@@ -2055,23 +2075,20 @@ kbd {
 }
 .td-test-latest:hover { box-shadow: 0 0 0 3px var(--accent-soft), var(--sh-sm); }
 
-.td-test-left { min-width: 160px; flex: 1; }
-.td-test-name { font-size: 16px; font-weight: 800; margin-bottom: 3px; letter-spacing: -0.2px; }
-.td-test-date { font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.td-test-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.td-test-name { font-size: 15px; font-weight: 800; letter-spacing: -0.2px; line-height: 1.2; }
+.td-test-date { font-size: 12px; color: var(--muted); font-weight: 500; }
 
 .td-test-badges {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   flex-wrap: wrap;
-}
-
-.td-test-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-left: auto;
-  flex-shrink: 0;
 }
 
 .td-review-btn {
@@ -2079,11 +2096,12 @@ kbd {
   color: #fff;
   border: none;
   border-radius: var(--r-sm);
-  padding: 9px 16px;
+  padding: 10px 16px;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  white-space: nowrap;
+  width: 100%;
+  text-align: center;
   transition: all var(--t);
   box-shadow: 0 2px 8px rgba(37,99,235,0.25);
 }

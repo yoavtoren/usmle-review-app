@@ -36,35 +36,26 @@ function LineChart({ tests }) {
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%", height: "auto", display: "block" }}>
-      {/* Grid */}
       {gridYs.map(y => (
         <g key={y}>
-          <line
-            x1={PAD.left} x2={W - PAD.right}
-            y1={toY(y)} y2={toY(y)}
+          <line x1={PAD.left} x2={W - PAD.right} y1={toY(y)} y2={toY(y)}
             stroke="var(--line)" strokeWidth={y === 60 ? "1.5" : "1"}
-            strokeDasharray={y === 60 ? "4 3" : undefined}
-          />
+            strokeDasharray={y === 60 ? "4 3" : undefined} />
           <text x={PAD.left - 6} y={toY(y)} textAnchor="end" dominantBaseline="middle" fontSize="9.5" fill="var(--muted)">
             {y}%
           </text>
         </g>
       ))}
-
-      {/* 60% label */}
       <text x={W - PAD.right + 4} y={toY(60)} dominantBaseline="middle" fontSize="8.5" fill="#f59e0b" fontWeight="700">
         target
       </text>
 
-      {/* UWorld area + line */}
       {uwPts.length >= 2 && (
         <>
           <path d={areaPath(uwPts)} fill="#f59e0b" opacity="0.07" />
           <path d={linePath(uwPts)} fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
         </>
       )}
-
-      {/* Score area + line */}
       {scorePts.length >= 2 && (
         <>
           <path d={areaPath(scorePts)} fill="var(--accent)" opacity="0.09" />
@@ -72,12 +63,9 @@ function LineChart({ tests }) {
         </>
       )}
 
-      {/* UWorld dots */}
       {uwPts.map(([x, y], i) => (
         <circle key={i} cx={x} cy={y} r="4" fill="#f59e0b" stroke="var(--surface)" strokeWidth="2" />
       ))}
-
-      {/* Score dots */}
       {scorePts.map(([x, y, t], i) => (
         <g key={i}>
           <circle cx={x} cy={y} r="5.5" fill="var(--accent)" stroke="var(--surface)" strokeWidth="2.5" />
@@ -86,8 +74,6 @@ function LineChart({ tests }) {
           </text>
         </g>
       ))}
-
-      {/* X-axis labels */}
       {sorted.map((t, i) => (
         <text key={i} x={toX(t.date)} y={H - 6} textAnchor="middle" fontSize="9.5" fill="var(--muted)">
           {new Date(t.date + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
@@ -101,6 +87,11 @@ function GapBadge({ gap }) {
   if (gap == null) return <span className="muted">—</span>;
   const cls = gap >= 0 ? "td-gap-pos" : "td-gap-neg";
   return <span className={`td-gap-badge ${cls}`}>{gap >= 0 ? "+" : ""}{gap}%</span>;
+}
+
+function ScoreBadge({ score }) {
+  const cls = score >= 60 ? "td-score-ok" : score >= 50 ? "td-score-mid" : "td-score-low";
+  return <span className={`td-score-badge ${cls}`}>{score}%</span>;
 }
 
 export default function TestDashboard({ onBack, onStudy }) {
@@ -134,10 +125,7 @@ export default function TestDashboard({ onBack, onStudy }) {
     };
   }, [tests, sorted]);
 
-  function setField(k, v) {
-    setForm(f => ({ ...f, [k]: v }));
-    setFormErr("");
-  }
+  function setField(k, v) { setForm(f => ({ ...f, [k]: v })); setFormErr(""); }
 
   function handleAdd() {
     const score = Number(form.score);
@@ -151,6 +139,7 @@ export default function TestDashboard({ onBack, onStudy }) {
       score: Math.round(score),
       date: form.date || new Date().toISOString().split("T")[0],
       uworldAvg: form.uworldAvg !== "" ? Math.round(Number(form.uworldAvg)) : null,
+      hasQuestions: false,
     };
     const next = [...tests, newTest];
     setTests(next);
@@ -176,8 +165,8 @@ export default function TestDashboard({ onBack, onStudy }) {
       {/* Header */}
       <div className="td-header">
         <div>
-          <h1 className="td-title">Test Progress</h1>
-          <p className="muted td-sub">Track NBME · UWorld · practice scores over time</p>
+          <h1 className="td-title">Tests</h1>
+          <p className="muted td-sub">Track NBME · UWorld · practice blocks over time</p>
         </div>
         <button
           className={`dash-cta-btn${showForm ? " td-cancel-btn" : ""}`}
@@ -194,43 +183,23 @@ export default function TestDashboard({ onBack, onStudy }) {
           <div className="td-form-grid">
             <div className="td-form-field">
               <label className="td-label">Test name</label>
-              <input
-                className="td-input"
-                placeholder="e.g. NBME 30"
-                value={form.testNum}
-                onChange={e => setField("testNum", e.target.value)}
-              />
+              <input className="td-input" placeholder="e.g. NBME 30"
+                value={form.testNum} onChange={e => setField("testNum", e.target.value)} />
             </div>
             <div className="td-form-field">
               <label className="td-label">Your score (%)</label>
-              <input
-                className="td-input"
-                type="number" min="0" max="100"
-                placeholder="e.g. 65"
-                value={form.score}
-                onChange={e => setField("score", e.target.value)}
-              />
+              <input className="td-input" type="number" min="0" max="100" placeholder="e.g. 65"
+                value={form.score} onChange={e => setField("score", e.target.value)} />
             </div>
             <div className="td-form-field">
               <label className="td-label">Date</label>
-              <input
-                className="td-input"
-                type="date"
-                value={form.date}
-                onChange={e => setField("date", e.target.value)}
-              />
+              <input className="td-input" type="date"
+                value={form.date} onChange={e => setField("date", e.target.value)} />
             </div>
             <div className="td-form-field">
-              <label className="td-label">
-                UWorld avg <span className="td-optional">(optional)</span>
-              </label>
-              <input
-                className="td-input"
-                type="number" min="0" max="100"
-                placeholder="e.g. 72"
-                value={form.uworldAvg}
-                onChange={e => setField("uworldAvg", e.target.value)}
-              />
+              <label className="td-label">UWorld avg <span className="td-optional">(optional)</span></label>
+              <input className="td-input" type="number" min="0" max="100" placeholder="e.g. 72"
+                value={form.uworldAvg} onChange={e => setField("uworldAvg", e.target.value)} />
             </div>
           </div>
           {formErr && <p className="td-form-err">{formErr}</p>}
@@ -238,133 +207,121 @@ export default function TestDashboard({ onBack, onStudy }) {
         </div>
       )}
 
-      {/* Stats */}
-      {stats && (
-        <div className="td-stats-row">
-          <div className="td-stat-card">
-            <span className="td-stat-num">{stats.avg}%</span>
-            <span className="td-stat-label">Avg score</span>
+      {/* ── Two-column layout: list left, dashboard right ── */}
+      <div className="td-layout">
+
+        {/* LEFT: test list */}
+        <div className="td-col-list">
+          <div className="td-list-head">
+            <span className="td-list-title">Your tests</span>
+            {tests.length > 0 && <span className="muted small">{tests.length} recorded</span>}
           </div>
-          <div className="td-stat-card">
-            <span className="td-stat-num td-best">{stats.best}%</span>
-            <span className="td-stat-label">Personal best</span>
-          </div>
-          <div className="td-stat-card">
-            <span className="td-stat-num">
-              {stats.latest}%{" "}
-              {hasTrend && (
-                <span className={`td-trend ${trendFlat ? "" : trendUp ? "td-trend-up" : "td-trend-dn"}`}>
-                  {trendFlat ? "→" : trendUp ? `▲${stats.trend}` : `▼${Math.abs(stats.trend)}`}
-                </span>
-              )}
-            </span>
-            <span className="td-stat-label">Latest</span>
-          </div>
-          {stats.avgUW != null && (
-            <div className="td-stat-card">
-              <span className="td-stat-num td-uw-num">{stats.avgUW}%</span>
-              <span className="td-stat-label">UWorld avg</span>
+
+          {tests.length > 0 ? (
+            <div className="td-test-list">
+              {sorted.map((t, i) => {
+                const gap = t.uworldAvg != null ? t.score - t.uworldAvg : null;
+                const isLatest = i === sorted.length - 1;
+                return (
+                  <div key={t.id} className={`td-test-card${isLatest ? " td-test-latest" : ""}`}>
+                    <div className="td-test-top-row">
+                      <div className="td-test-name">{t.testNum}</div>
+                      <button className="td-del-btn" onClick={() => handleDelete(t.id)} title="Remove">✕</button>
+                    </div>
+                    <div className="td-test-date">{fmt(t.date)}</div>
+                    <div className="td-test-badges">
+                      <ScoreBadge score={t.score} />
+                      {t.uworldAvg != null && (
+                        <span className="td-uw-badge">{t.uworldAvg}% UWorld</span>
+                      )}
+                      <GapBadge gap={gap} />
+                    </div>
+                    {t.hasQuestions && onStudy && (
+                      <button className="td-review-btn" onClick={onStudy}>
+                        Review questions →
+                      </button>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="td-empty">
+              <div className="td-empty-icon">📊</div>
+              <p className="td-empty-msg">No tests recorded yet</p>
+              <p className="muted small">Click "+ Add test" above to log your first score.</p>
             </div>
           )}
-          {stats.avgGap != null && (
-            <div className="td-stat-card">
-              <span className={`td-stat-num ${stats.avgGap >= 0 ? "td-gap-pos-num" : "td-gap-neg-num"}`}>
-                {stats.avgGap >= 0 ? "+" : ""}{stats.avgGap}%
-              </span>
-              <span className="td-stat-label">Avg gap vs UWorld</span>
+        </div>
+
+        {/* RIGHT: summary dashboard */}
+        <div className="td-col-dash">
+          {stats ? (
+            <>
+              <div className="td-stats-row">
+                <div className="td-stat-card">
+                  <span className="td-stat-num">{stats.avg}%</span>
+                  <span className="td-stat-label">Avg score</span>
+                </div>
+                <div className="td-stat-card">
+                  <span className="td-stat-num td-best">{stats.best}%</span>
+                  <span className="td-stat-label">Personal best</span>
+                </div>
+                <div className="td-stat-card">
+                  <span className="td-stat-num">
+                    {stats.latest}%{" "}
+                    {hasTrend && (
+                      <span className={`td-trend ${trendFlat ? "" : trendUp ? "td-trend-up" : "td-trend-dn"}`}>
+                        {trendFlat ? "→" : trendUp ? `▲${stats.trend}` : `▼${Math.abs(stats.trend)}`}
+                      </span>
+                    )}
+                  </span>
+                  <span className="td-stat-label">Latest</span>
+                </div>
+                {stats.avgUW != null && (
+                  <div className="td-stat-card">
+                    <span className="td-stat-num td-uw-num">{stats.avgUW}%</span>
+                    <span className="td-stat-label">UWorld avg</span>
+                  </div>
+                )}
+                {stats.avgGap != null && (
+                  <div className="td-stat-card">
+                    <span className={`td-stat-num ${stats.avgGap >= 0 ? "td-gap-pos-num" : "td-gap-neg-num"}`}>
+                      {stats.avgGap >= 0 ? "+" : ""}{stats.avgGap}%
+                    </span>
+                    <span className="td-stat-label">Avg gap vs UWorld</span>
+                  </div>
+                )}
+              </div>
+
+              <div className="td-chart-card">
+                <div className="td-chart-head">
+                  <span className="td-chart-title">Score over time</span>
+                  <div className="td-legend">
+                    <span className="td-legend-item">
+                      <span className="td-legend-line td-legend-score-line" /> My score
+                    </span>
+                    <span className="td-legend-item">
+                      <span className="td-legend-line td-legend-uw-line" /> UWorld avg
+                    </span>
+                    <span className="td-legend-item td-legend-target">
+                      <span className="td-legend-dash" /> 60% target
+                    </span>
+                  </div>
+                </div>
+                <div className="td-chart-body">
+                  <LineChart tests={sorted} />
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="td-dash-empty">
+              <p className="muted">Add a test to see your dashboard.</p>
             </div>
           )}
         </div>
-      )}
 
-      {/* Chart */}
-      {tests.length > 0 && (
-        <div className="td-chart-card">
-          <div className="td-chart-head">
-            <span className="td-chart-title">Score over time</span>
-            <div className="td-legend">
-              <span className="td-legend-item">
-                <span className="td-legend-line td-legend-score-line" />
-                My score
-              </span>
-              <span className="td-legend-item">
-                <span className="td-legend-line td-legend-uw-line" />
-                UWorld avg
-              </span>
-              <span className="td-legend-item td-legend-target">
-                <span className="td-legend-dash" />
-                60% target
-              </span>
-            </div>
-          </div>
-          <div className="td-chart-body">
-            <LineChart tests={sorted} />
-          </div>
-        </div>
-      )}
-
-      {/* Table */}
-      {tests.length > 0 ? (
-        <div className="td-table-card">
-          <div className="td-table-head">
-            <span className="td-chart-title">All tests</span>
-            <span className="muted small">{tests.length} recorded</span>
-          </div>
-          <div className="td-table-wrap">
-            <table className="td-table">
-              <thead>
-                <tr>
-                  <th>Test</th>
-                  <th>Date</th>
-                  <th>Score</th>
-                  <th>UWorld avg</th>
-                  <th>Gap</th>
-                  <th />
-                </tr>
-              </thead>
-              <tbody>
-                {sorted.map(t => {
-                  const gap = t.uworldAvg != null ? t.score - t.uworldAvg : null;
-                  return (
-                    <tr key={t.id}>
-                      <td className="td-col-name">{t.testNum}</td>
-                      <td className="td-col-date">{fmt(t.date)}</td>
-                      <td>
-                        <span className={`td-score-badge ${t.score >= 60 ? "td-score-ok" : t.score >= 50 ? "td-score-mid" : "td-score-low"}`}>
-                          {t.score}%
-                        </span>
-                      </td>
-                      <td>
-                        {t.uworldAvg != null
-                          ? <span className="td-uw-badge">{t.uworldAvg}%</span>
-                          : <span className="muted">—</span>}
-                      </td>
-                      <td><GapBadge gap={gap} /></td>
-                      <td>
-                        <button className="td-del-btn" onClick={() => handleDelete(t.id)} title="Delete">✕</button>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      ) : (
-        <div className="td-empty">
-          <div className="td-empty-icon">📊</div>
-          <p className="td-empty-msg">No tests recorded yet</p>
-          <p className="muted small">Click "+ Add test" above to log your first score.</p>
-        </div>
-      )}
-
-      {onStudy && (
-        <div className="dash-footer-cta" style={{ marginTop: 16 }}>
-          <button className="dash-cta-btn dash-cta-full" onClick={onStudy}>
-            📝 Study missed questions →
-          </button>
-        </div>
-      )}
+      </div>
     </div>
   );
 }

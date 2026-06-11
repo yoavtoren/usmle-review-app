@@ -100,11 +100,20 @@ export function saveFATopics(topics) {
 }
 
 // ── Test score log ────────────────────────────────────────────────────────────
-const TEST_LOG_KEY = "test-log-v1";
+const TEST_LOG_KEY = "test-log-v2";
+
+const SEED_TESTS = [
+  { id: 1748563200000, testNum: "UWORLD test 1", score: 28, date: "2026-05-18", uworldAvg: 54, hasQuestions: true },
+];
 
 export function loadTestLog() {
-  try { return JSON.parse(localStorage.getItem(TEST_LOG_KEY)) || []; }
-  catch { return []; }
+  try {
+    const raw = localStorage.getItem(TEST_LOG_KEY);
+    if (raw !== null) return JSON.parse(raw) || [];
+    // First load — seed with the baseline test
+    localStorage.setItem(TEST_LOG_KEY, JSON.stringify(SEED_TESTS));
+    return SEED_TESTS;
+  } catch { return []; }
 }
 
 export function saveTestLog(log) {
