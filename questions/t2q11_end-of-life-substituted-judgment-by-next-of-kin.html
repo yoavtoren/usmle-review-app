@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>End-of-life: substituted judgment by next of kin</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q40", "item": 40, "qid": "1124", "title": "End-of-life: substituted judgment by next of kin", "system": "Ethics", "topic": "Surrogate decision-making / DNR", "correct": "A", "yourAnswer": "C", "percentCorrect": 54, "vignette": "An 82-year-old man is admitted to the hospital in the middle of the night. He is noncommunicative and has multiple comorbidities, including end-stage lung cancer. The patient has neither a designated power of attorney nor an advance directive on file. His wife of many years, who is at the hospital with him, has an extensive conversation with the physician in charge of his care. During the conversation, she says that, on several occasions, the patient said not to resuscitate him if he were near death because he did not want to live \"attached to machines or brain dead.\" She says that he just wants to die in peace when the time comes. What would be the most appropriate course of action if the patient enters ventricular fibrillation?", "clues": [{"text": "end-stage lung cancer", "type": "blue", "note": "Terminal illness sets the context: the patient is near the end of life, making prior expressed wishes about resuscitation directly relevant. It frames why DNR/comfort care is being considered."}, {"text": "neither a designated power of attorney nor an advance directive", "type": "red", "note": "With no written directive and no chosen healthcare proxy, decision-making falls to the next of kin (default surrogate). The legally recognized first surrogate is usually the spouse."}, {"text": "on several occasions, the patient said not to resuscitate him", "type": "green", "note": "The wife is relaying the patient's previously stated wishes. The surrogate's job is SUBSTITUTED JUDGMENT — to choose what the patient would have wanted, not what the family prefers. Clear, repeated prior statements should be honored."}], "whatMatters": "There's no advance directive, so the spouse acts as default surrogate using substituted judgment — and she reports the patient repeatedly said he didn't want resuscitation. The right action in VF is to honor that: comfort care, allow family to be present, and not resuscitate. The trap answers either ignore his wishes (full code) or over-formalize (court order).", "strategy": "In surrogate/end-of-life questions: no advance directive → next of kin (spouse first) decides by substituted judgment (what the PATIENT would want). Honor clearly expressed prior wishes; you don't need written documentation or a court when the surrogate credibly relays them. Avoid both 'resuscitate anyway' and 'suspend ALL care.'", "options": [{"letter": "A", "text": "Attend to the patient's comfort and allow his family to be present with him as he is dying", "correct": true}, {"letter": "B", "text": "Begin full resuscitation because the patient's wife has no official documentation of her husband's wishes", "correct": false}, {"letter": "C", "text": "Inform the nursing staff that the patient is \"do not resuscitate\" and suspend all treatment", "correct": false}, {"letter": "D", "text": "Obtain a court order to confirm the patient's wishes and have legal documentation", "correct": false}, {"letter": "E", "text": "Perform resuscitation without using a defibrillator but use only cardiac medications", "correct": false}], "eliminations": [{"letter": "B", "label": "full code — ignores valid substituted judgment", "detail": "WHAT IT IS: defaulting to full resuscitation because the wishes weren't written down. ❌ WHY IT FAILS: a valid surrogate's credible report of the patient's wishes does NOT require written documentation; overriding it violates autonomy and substituted judgment. ✅ Correct if: there were no surrogate and no evidence of the patient's wishes at all (then act in best interest, often resuscitate)."}, {"letter": "C", "label": "DNR but 'suspend ALL treatment' — too far (your pick)", "detail": "WHAT IT IS: making him DNR and stopping all care. ❌ WHY IT FAILS: DNR means no CPR/ACLS — it does NOT mean withdrawing comfort, symptom control, or other care; 'suspend all treatment' wrongly equates DNR with abandonment. ✅ Correct if: the option said 'do not resuscitate but continue comfort-directed care.'"}, {"letter": "D", "label": "court order — unnecessary", "detail": "WHAT IT IS: seeking judicial confirmation before acting. ❌ WHY IT FAILS: courts are reserved for genuine disputes or absent/conflicting surrogates; here a clear surrogate credibly relays consistent wishes, so a court order needlessly delays appropriate end-of-life care. ✅ Correct if: family members were in irreconcilable conflict or the surrogate's authority was contested."}, {"letter": "E", "label": "partial resuscitation — still against his wishes", "detail": "WHAT IT IS: 'half' resuscitation (meds but no defibrillation). ❌ WHY IT FAILS: there's no such standard, and it still contradicts the patient's wish not to be resuscitated; resuscitation is all-or-none per his expressed values. ✅ Correct if: never — it's a nonstandard compromise that violates autonomy."}], "reasoning": ["No advance directive or proxy → next of kin (wife) is default surrogate", "Surrogate uses substituted judgment = what the patient would want", "Patient repeatedly stated he did not want resuscitation", "In VF: honor DNR with comfort care and family presence → answer A"], "mechanism": "When a patient lacks capacity and has no advance directive or healthcare proxy, decisions pass to the next of kin in a priority order (typically spouse → adult children → parents → siblings). The surrogate should apply substituted judgment — deciding as the patient would have, based on prior statements and values — and otherwise the patient's best interest. A credible report of consistent wishes is honored without requiring written proof or court involvement; DNR limits CPR/ACLS but never withdraws comfort care.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Behavioral Science > end-of-life & decision-making: advance directives, surrogate priority order, substituted judgment vs best interest, DNR scope (no CPR but continue comfort care)."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Two judgments: who decides (spouse, by substituted judgment) and what they decide (honor his stated DNR wishes with comfort care). Reject extremes — full code and 'stop everything' are both wrong."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on advance directive, durable power of attorney, surrogate/next-of-kin, substituted judgment vs best interest, DNR? Tell me which and I'll explain."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "'No documentation → resuscitate' and 'DNR → suspend all care' are the two traps. Remember a surrogate's credible account suffices, and DNR never means abandoning comfort care."}, {"key": "other", "label": "✍️ Something else", "message": "If you over-weighted 'documentation,' make a rule card: credible surrogate report of wishes = honor it; courts only for disputes."}], "keywords": [{"front": "No advance directive / proxy — who decides?", "back": "Next of kin (spouse first) as default surrogate"}, {"front": "How surrogates should decide", "back": "Substituted judgment (what the patient would want)"}, {"front": "Fallback when wishes unknown", "back": "Best-interest standard"}, {"front": "What DNR means", "back": "No CPR/ACLS — comfort care continues"}, {"front": "Surrogate priority order", "back": "Spouse → adult children → parents → adult siblings"}, {"front": "When is a court needed?", "back": "Genuine disputes or absent/contested surrogate"}, {"front": "Does a verbal wish need documentation to honor?", "back": "No — credible surrogate report suffices"}], "firstAid": [{"tag": "answer", "topic": "Surrogate decision-making", "detail": "Behavioral Science > end-of-life ethics: default surrogate (next of kin) order, substituted judgment, DNR/DNI scope, comfort/palliative care."}, {"tag": "stem", "topic": "Advance directives", "detail": "Behavioral Science > advance directives: living will vs durable power of attorney; what happens when neither exists."}, {"tag": "cross-ref", "topic": "Capacity & autonomy", "detail": "Behavioral Science > decision-making capacity, autonomy, and when to involve ethics committees vs courts."}], "memoryHook": "No paper, no proxy → the spouse speaks for him (substituted judgment); DNR stops the shocks, never the comfort.", "stem": [{"text": "An 82-year-old man is admitted to the hospital in the middle of the night. He is noncommunicative and has multiple comorbidities, including "}, {"text": "end-stage lung cancer", "clue": true, "type": "blue", "note": "Terminal illness sets the context: the patient is near the end of life, making prior expressed wishes about resuscitation directly relevant. It frames why DNR/comfort care is being considered."}, {"text": ". The patient has "}, {"text": "neither a designated power of attorney nor an advance directive", "clue": true, "type": "red", "note": "With no written directive and no chosen healthcare proxy, decision-making falls to the next of kin (default surrogate). The legally recognized first surrogate is usually the spouse."}, {"text": " on file. His wife of many years, who is at the hospital with him, has an extensive conversation with the physician in charge of his care. During the conversation, she says that, "}, {"text": "on several occasions, the patient said not to resuscitate him", "clue": true, "type": "green", "note": "The wife is relaying the patient's previously stated wishes. The surrogate's job is SUBSTITUTED JUDGMENT — to choose what the patient would have wanted, not what the family prefers. Clear, repeated prior statements should be honored."}, {"text": " if he were near death because he did not want to live \"attached to machines or brain dead.\" She says that he just wants to die in peace when the time comes. What would be the most appropriate course of action if the patient enters ventricular fibrillation?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

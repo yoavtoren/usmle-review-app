@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Procalcitonin: positive acute-phase reactant</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q41", "item": 41, "qid": "14921", "title": "Procalcitonin: positive acute-phase reactant", "system": "Pathology/Immunology", "topic": "Acute-phase reactants", "correct": "D", "yourAnswer": "D", "percentCorrect": 28, "vignette": "A 73-year-old woman comes to the emergency department with a 3-day history of worsening breathlessness and cough productive of thick, rust-colored sputum. The patient has a longstanding history of hypertension. Temperature is 38.3 C (101 F), blood pressure is 130/68 mm Hg, pulse is 102/min, and respirations are 24/min. BMI is 27 kg/m2. Jugular venous pressure is normal and there is no lower extremity edema. Heart sounds are normal with no murmur. Lung auscultation reveals left lower lobe crackles and bronchial breath sounds. Leukocyte count is 14,000/mm3 with 80% neutrophils and 7% bands, hemoglobin is 13.6 g/dL, and platelets are 400,000/mm3. Serum levels of which of the following are most likely to be elevated in this patient?", "clues": [{"text": "thick, rust-colored sputum", "type": "red", "note": "Rust-colored sputum is classic for Streptococcus pneumoniae lobar pneumonia. It signals a bacterial process, which is the key to choosing a POSITIVE acute-phase reactant that rises with bacterial infection."}, {"text": "24", "type": "blue", "note": "Tachypnea (24/min) with fever and crackles supports an acute infectious pneumonia. Vital-sign abnormality reinforces the inflammatory state."}, {"text": "no murmur", "type": "purple", "note": "Normal JVP, no edema, and no murmur deliberately exclude heart failure — steering you away from BNP. It's a 'rule-out' clue: this is pneumonia, not cardiac congestion."}, {"text": "80% neutrophils and 7% bands", "type": "green", "note": "Neutrophilia with a left shift (bands) indicates an acute bacterial infection. This bacterial picture predicts a rise in procalcitonin, which increases with bacterial toxins and falls with viral infection. WBC 14,000/mm3 (normal 4,500-11,000); platelets 400,000/mm3 (normal 150,000-400,000)."}], "whatMatters": "Strip it down: this is bacterial lobar pneumonia, and the question asks which serum protein RISES with acute inflammation — a positive acute-phase reactant. Procalcitonin is the answer (it rises with bacterial infection, falls with viral). Albumin, transferrin, and prealbumin are NEGATIVE acute-phase reactants (they fall); BNP is a heart-failure marker that's excluded here.", "strategy": "Sort the options into POSITIVE acute-phase reactants (rise: CRP, ferritin, fibrinogen, hepcidin, procalcitonin, serum amyloid A, complement) vs NEGATIVE (fall: albumin, transferrin, prealbumin/transthyretin). For a bacterial infection, pick the positive reactant; procalcitonin is the bacterial-specific one.", "options": [{"letter": "A", "text": "B-type natriuretic peptide", "correct": false}, {"letter": "B", "text": "Cold agglutinins", "correct": false}, {"letter": "C", "text": "Prealbumin", "correct": false}, {"letter": "D", "text": "Procalcitonin", "correct": true}, {"letter": "E", "text": "Transferrin", "correct": false}], "eliminations": [{"letter": "A", "label": "BNP — heart-failure marker, excluded here", "detail": "WHAT IT IS: BNP rises with ventricular wall stretch in heart failure. ❌ WHY IT FAILS: the stem explicitly rules out HF (normal JVP, no edema, no murmur); this is pneumonia, so BNP shouldn't be elevated. ✅ Correct if: the patient had dyspnea with elevated JVP, edema, and bilateral congestion (decompensated HF)."}, {"letter": "B", "label": "cold agglutinins — Mycoplasma, wrong picture", "detail": "WHAT IT IS: cold agglutinins (IgM vs RBC I antigen) appear with Mycoplasma pneumoniae. ❌ WHY IT FAILS: Mycoplasma causes a 'walking pneumonia' with dry cough, scattered/bilateral findings, and a NORMAL WBC — not rust-colored sputum with neutrophilic leukocytosis and lobar consolidation. ✅ Correct if: a young patient had dry cough, bilateral infiltrates, and hemolytic anemia."}, {"letter": "C", "label": "prealbumin — NEGATIVE acute-phase reactant (falls)", "detail": "WHAT IT IS: prealbumin (transthyretin) is a nutrition/transport protein and a NEGATIVE acute-phase reactant. ❌ WHY IT FAILS: during inflammation the liver makes LESS of it, so it FALLS, not rises. ✅ Correct if: the question asked which protein DECREASES in acute inflammation (or tracks short-term nutrition)."}, {"letter": "E", "label": "transferrin — NEGATIVE acute-phase reactant (falls)", "detail": "WHAT IT IS: transferrin carries iron and is a NEGATIVE acute-phase reactant. ❌ WHY IT FAILS: in inflammation it DECREASES (mirroring functional iron sequestration via hepcidin); it doesn't rise. ✅ Correct if: asked which protein falls in the anemia of chronic disease / acute inflammation."}], "reasoning": ["Rust-colored sputum + neutrophilia with left shift = bacterial lobar pneumonia", "Question asks which serum protein RISES (positive acute-phase reactant)", "Procalcitonin rises with bacterial toxins, falls with viral infection", "Other options are negative reactants or the excluded BNP → answer D"], "mechanism": "Acute-phase reactants are liver-made proteins whose levels shift >=25% during inflammation. Positive reactants rise (CRP, fibrinogen, ferritin, hepcidin, serum amyloid A, complement, procalcitonin); negative reactants fall (albumin, transferrin, prealbumin/transthyretin). Procalcitonin specifically rises in response to bacterial toxins and falls with viral infection, so it helps distinguish bacterial from viral community-acquired pneumonia.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Pathology > acute-phase reactants: memorize POSITIVE (CRP, ferritin, fibrinogen, hepcidin, serum amyloid A, procalcitonin, complement) vs NEGATIVE (albumin, transferrin, prealbumin/transthyretin) and procalcitonin's bacterial-vs-viral utility."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Decode the vignette to 'bacterial infection' and the question to 'which protein goes UP.' Then split options into up vs down reactants; pick the positive, bacterial-specific one."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on acute-phase reactant, positive vs negative reactant, procalcitonin, prealbumin/transthyretin, left shift/bands? Tell me which and I'll explain."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Prealbumin and transferrin are real serum proteins but they FALL in inflammation; BNP and cold agglutinins are planted to test HF vs Mycoplasma. Anchor on 'rises with bacterial infection' = procalcitonin."}, {"key": "other", "label": "✍️ Something else", "message": "The 28% national correct rate means this one's tricky — drill the positive/negative reactant lists until automatic."}], "keywords": [{"front": "Rises with bacterial infection, falls with viral", "back": "Procalcitonin"}, {"front": "Positive acute-phase reactants", "back": "CRP, ferritin, fibrinogen, hepcidin, serum amyloid A, procalcitonin, complement"}, {"front": "Negative acute-phase reactants", "back": "Albumin, transferrin, prealbumin (transthyretin)"}, {"front": "Rust-colored sputum lobar pneumonia", "back": "Streptococcus pneumoniae"}, {"front": "Cold agglutinins", "back": "Mycoplasma pneumoniae (dry cough, bilateral)"}, {"front": "BNP elevation", "back": "Heart failure (ventricular stretch)"}, {"front": "CRP role", "back": "Opsonin; nonspecific inflammation marker"}, {"front": "Ferritin/hepcidin in inflammation", "back": "Rise → anemia of chronic disease"}], "firstAid": [{"tag": "answer", "topic": "Acute-phase reactants", "detail": "Pathology > inflammation: positive vs negative acute-phase reactants; procalcitonin for bacterial vs viral infection; ESR as an indirect marker."}, {"tag": "stem", "topic": "Community-acquired pneumonia", "detail": "Pulmonary/Micro > CAP: S. pneumoniae (rust sputum, lobar), typical vs atypical (Mycoplasma) presentations."}, {"tag": "options", "topic": "BNP & iron proteins", "detail": "Cardio > BNP in heart failure; Heme > transferrin and hepcidin in iron handling / anemia of chronic disease."}], "memoryHook": "ProCALCitonin CALLS out bacteria (up); albumin/transferrin/prealbumin DUCK down when the liver pivots to fighting inflammation.", "stem": [{"text": "A 73-year-old woman comes to the emergency department with a 3-day history of worsening breathlessness and cough productive of "}, {"text": "thick, rust-colored sputum", "clue": true, "type": "red", "note": "Rust-colored sputum is classic for Streptococcus pneumoniae lobar pneumonia. It signals a bacterial process, which is the key to choosing a POSITIVE acute-phase reactant that rises with bacterial infection."}, {"text": ". The patient has a longstanding history of hypertension. Temperature is 38.3 C (101 F), blood pressure is 130/68 mm Hg, pulse is 102/min, and respirations are "}, {"text": "24", "clue": true, "type": "blue", "note": "Tachypnea (24/min) with fever and crackles supports an acute infectious pneumonia. Vital-sign abnormality reinforces the inflammatory state."}, {"text": "/min. BMI is 27 kg/m2. Jugular venous pressure is normal and there is no lower extremity edema. Heart sounds are normal with "}, {"text": "no murmur", "clue": true, "type": "purple", "note": "Normal JVP, no edema, and no murmur deliberately exclude heart failure — steering you away from BNP. It's a 'rule-out' clue: this is pneumonia, not cardiac congestion."}, {"text": ". Lung auscultation reveals left lower lobe crackles and bronchial breath sounds. Leukocyte count is 14,000/mm3 with "}, {"text": "80% neutrophils and 7% bands", "clue": true, "type": "green", "note": "Neutrophilia with a left shift (bands) indicates an acute bacterial infection. This bacterial picture predicts a rise in procalcitonin, which increases with bacterial toxins and falls with viral infection. WBC 14,000/mm3 (normal 4,500-11,000); platelets 400,000/mm3 (normal 150,000-400,000)."}, {"text": ", hemoglobin is 13.6 g/dL, and platelets are 400,000/mm3. Serum levels of which of the following are most likely to be elevated in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>
