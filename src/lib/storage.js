@@ -58,6 +58,14 @@ export function setDifficulty(id, difficulty) {
   return progress;
 }
 
+export function toggleDone(id) {
+  const progress = loadProgress();
+  const card = getCard(progress, id);
+  progress[id] = { ...card, done: !card.done };
+  save(progress);
+  return progress;
+}
+
 export function isDue(card) {
   return !card.dueAt || card.dueAt <= Date.now();
 }
@@ -100,10 +108,11 @@ export function saveFATopics(topics) {
 }
 
 // ── Test score log ────────────────────────────────────────────────────────────
-const TEST_LOG_KEY = "test-log-v2";
+const TEST_LOG_KEY = "test-log-v3";
 
 const SEED_TESTS = [
   { id: 1748563200000, testNum: "UWORLD test 1", score: 28, date: "2026-05-18", uworldAvg: 54, hasQuestions: true },
+  { id: 1749686400000, testNum: "UWORLD test 2", score: 55, date: "2026-06-11", uworldAvg: 54, hasQuestions: true },
 ];
 
 export function loadTestLog() {

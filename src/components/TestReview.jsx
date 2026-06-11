@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { loadProgress, getCard, isDue, rate } from "../lib/storage.js";
+import { loadProgress, getCard, isDue, rate, toggleDone } from "../lib/storage.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -8,6 +8,7 @@ export default function TestReview({ onBack }) {
   const [error, setError]           = useState(null);
   const [selectedId, setSelectedId] = useState(null);
   const [filter, setFilter]         = useState("missed");
+  const [block, setBlock]           = useState("all");
   const [query, setQuery]           = useState("");
   const [progress, setProgress]     = useState(loadProgress);
 
@@ -26,6 +27,8 @@ export default function TestReview({ onBack }) {
     if (!deck) return [];
     return deck.questions.filter((q) => {
       const card = getCard(progress, q.id);
+      if (block === "test1" && q.block !== undefined)  return false;
+      if (block === "test2" && q.block !== "UWORLD test 2") return false;
       if (filter === "missed"   && !q.missed)                               return false;
       if (filter === "due"      && !(card.status !== "new" && isDue(card))) return false;
       if (filter === "mastered" && card.status !== "mastered")              return false;
@@ -35,7 +38,7 @@ export default function TestReview({ onBack }) {
       }
       return true;
     });
-  }, [deck, filter, query, progress]);
+  }, [deck, filter, block, query, progress]);
 
   const stats = useMemo(() => {
     if (!deck) return { total: 0, missed: 0, mastered: 0, due: 0 };
@@ -75,6 +78,11 @@ export default function TestReview({ onBack }) {
     setProgress({ ...next });
   }
 
+  function handleDone(id) {
+    const next = toggleDone(id);
+    setProgress({ ...next });
+  }
+
   if (error) return (
     <div className="boot error">
       Could not load questions: {error}
@@ -95,6 +103,12 @@ export default function TestReview({ onBack }) {
           <p className="muted">
             {stats.total} questions · {stats.missed} missed · {stats.mastered} mastered
           </p>
+        </div>
+
+        <div className="filters">
+          {[["all","All tests"],["test1","Test 1"],["test2","Test 2"]].map(([key, label]) => (
+            <button key={key} className={block === key ? "chip active" : "chip"} onClick={() => setBlock(key)}>{label}</button>
+          ))}
         </div>
 
         <div className="filters">
@@ -132,7 +146,7 @@ export default function TestReview({ onBack }) {
                   <span className="qitem-text">
                     <span className="qitem-title">{q.title}</span>
                     <span className="qitem-meta">
-                      #{q.item} · {q.system}
+                      {q.block ? "T2" : "T1"} #{q.item} · {q.system}
                       {q.missed && <span className="tag-missed"> missed</span>}
                     </span>
                   </span>
@@ -163,6 +177,12 @@ export default function TestReview({ onBack }) {
                  selectedCard?.status === "review"   ? `Streak ${selectedCard.streak}` :
                  "New"}
               </span>
+              <button
+                className={`sr-btn sr-done${selectedCard?.done ? " sr-done-on" : ""}`}
+                onClick={() => handleDone(selectedMeta.id)}
+              >
+                {selectedCard?.done ? "✓ Done" : "Mark done"}
+              </button>
               <button className="sr-btn sr-again" onClick={() => handleRate(selectedMeta.id, "again")}>
                 🔁 Review again
               </button>
