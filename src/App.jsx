@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import WelcomeScreen from "./components/WelcomeScreen.jsx";
 import TestDashboard from "./components/TestDashboard.jsx";
 import TestReview from "./components/TestReview.jsx";
@@ -8,8 +9,7 @@ import { loadProgress, getCard, isDue, getStreak } from "./lib/storage.js";
 
 const BASE = import.meta.env.BASE_URL;
 
-export default function App() {
-  const [view, setView] = useState("welcome");
+function useAppData() {
   const [deck, setDeck] = useState(null);
   const [faData, setFaData] = useState(null);
   const [progress] = useState(loadProgress());
@@ -46,28 +46,43 @@ export default function App() {
     return { seen: faData.seen, total: faData.totalTopics };
   }, [faData]);
 
-  if (view === "tests-dash") return (
-    <TestDashboard
-      onBack={() => setView("welcome")}
-      onStudy={() => setView("tests")}
-    />
-  );
-  if (view === "tests") return <TestReview onBack={() => setView("tests-dash")} />;
+  return { testStats, faStats };
+}
 
-  if (view === "fa-dash") return (
-    <FADashboard
-      onBack={() => setView("welcome")}
-      onTrack={() => setView("fa")}
-    />
-  );
-  if (view === "fa") return <FATracker onBack={() => setView("fa-dash")} />;
+export default function App() {
+  const { testStats, faStats } = useAppData();
+  const nav = useNavigate();
 
   return (
-    <WelcomeScreen
-      onNav={setView}
-      testStats={testStats}
-      faStats={faStats}
-      streak={getStreak()}
-    />
+    <Routes>
+      <Route path="/" element={
+        <WelcomeScreen
+          onNav={nav}
+          testStats={testStats}
+          faStats={faStats}
+          streak={getStreak()}
+        />
+      } />
+      <Route path="/tests" element={
+        <TestDashboard onBack={() => nav("/")} onStudy={() => nav("/tests/review")} />
+      } />
+      <Route path="/tests/review" element={
+        <TestReview onBack={() => nav("/tests")} />
+      } />
+      <Route path="/fa" element={
+        <FADashboard onBack={() => nav("/")} onTrack={() => nav("/fa/study")} />
+      } />
+      <Route path="/fa/study" element={
+        <FATracker onBack={() => nav("/fa")} />
+      } />
+      <Route path="*" element={
+        <WelcomeScreen
+          onNav={nav}
+          testStats={testStats}
+          faStats={faStats}
+          streak={getStreak()}
+        />
+      } />
+    </Routes>
   );
 }

@@ -45,7 +45,7 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak }) {
         {/* Feature cards — 2-col on desktop */}
         <div className="welcome-cards">
 
-          <button className="welcome-card wcard-blue" onClick={() => onNav("tests-dash")}>
+          <button className="welcome-card wcard-blue" onClick={() => onNav("/tests")}>
             <div className="wcard-top">
               <div className="wcard-icon-wrap">📝</div>
               <span className="wcard-arrow">→</span>
@@ -79,7 +79,7 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak }) {
             </div>
           </button>
 
-          <button className="welcome-card wcard-green" onClick={() => onNav("fa-dash")}>
+          <button className="welcome-card wcard-green" onClick={() => onNav("/fa")}>
             <div className="wcard-top">
               <div className="wcard-icon-wrap">📖</div>
               <span className="wcard-arrow">→</span>
