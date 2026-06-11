@@ -1,0 +1,126 @@
+{
+  "id": "q19",
+  "item": 19,
+  "qid": "14907",
+  "title": "Acute diverticulitis (LLQ)",
+  "system": "GI",
+  "topic": "Diverticulitis",
+  "correct": "A",
+  "yourAnswer": "B",
+  "percentCorrect": 63,
+  "vignette": "73-year-old with 10 days of LLQ pain, fever, leukocytosis (WBC 15k), palpable LLQ mass; aunt had colon cancer. Most likely cause of pain?",
+  "clues": [
+    {
+      "text": "LLQ tenderness + palpable mass",
+      "type": "red",
+      "note": "Sigmoid diverticulitis with inflammatory phlegmon/abscess."
+    },
+    {
+      "text": "fever + leukocytosis",
+      "type": "red",
+      "note": "Acute infectious/inflammatory process, not indolent tumor."
+    },
+    {
+      "text": "aunt with colon cancer",
+      "type": "purple",
+      "note": "Weak family history; bait toward cancer."
+    }
+  ],
+  "whatMatters": "Elderly + LLQ pain + fever + leukocytosis + mass = acute diverticulitis ('left-sided appendicitis').",
+  "strategy": "Acute + febrile = infection (diverticulitis); chronic + weight loss/anemia = cancer. Confirm with CT, not acute colonoscopy.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acute diverticulitis",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Colon cancer",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Incarcerated direct inguinal hernia",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Ischemic colitis",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Tubo-ovarian abscess",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Ulcerative colitis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "what": "Too acute/inflammatory.",
+      "why": "Cancer is chronic (weight loss, anemia); one aunt is weak FH.",
+      "correctIf": "Patient had 6 months of weight loss, melena, strong family history, and age >50 (colorectal cancer)"
+    },
+    {
+      "letter": "C",
+      "what": "Groin obstruction.",
+      "why": "Mass is LLQ, no groin bulge.",
+      "correctIf": "Patient had a reducible groin mass that enlarged with Valsalva (inguinal hernia)"
+    },
+    {
+      "letter": "D",
+      "what": "Bloody diarrhea, watershed.",
+      "why": "Hematochezia/acute onset; no inflammatory mass.",
+      "correctIf": "Patient had sudden-onset hematochezia at the watershed area after a hypotensive episode (ischemic colitis)"
+    },
+    {
+      "letter": "E",
+      "what": "PID in young women.",
+      "why": "73-year-old; localizes to sigmoid.",
+      "correctIf": "Patient was a young sexually active woman with bilateral adnexal tenderness and cervical motion tenderness (PID)"
+    },
+    {
+      "letter": "F",
+      "what": "Chronic bloody diarrhea, young.",
+      "why": "Not a new focal mass in elderly.",
+      "correctIf": "Patient had years of bloody diarrhea, cramping, and skip lesions on colonoscopy (IBD)"
+    }
+  ],
+  "reasoning": [
+    "Elderly + LLQ pain + palpable mass",
+    "Fever + leukocytosis = acute inflammation",
+    "LLQ + mass in older adult = acute diverticulitis -> A"
+  ],
+  "mechanism": "Diverticula obstruct -> microperforation and inflammation (sigmoid). LLQ pain, fever, leukocytosis, +/- mass. CT diagnosis; complications: abscess, colovesical fistula (pneumaturia), obstruction, perforation.",
+  "keywords": [
+    {
+      "front": "Elderly + LLQ pain + fever + mass",
+      "back": "Acute diverticulitis"
+    },
+    {
+      "front": "Diverticulitis diagnostic test",
+      "back": "CT abdomen (oral + IV contrast)"
+    },
+    {
+      "front": "Avoid acutely in diverticulitis",
+      "back": "Colonoscopy (perforation risk)"
+    },
+    {
+      "front": "Colovesical fistula sign",
+      "back": "Pneumaturia"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Diverticulitis",
+      "location": "GI > diverticular disease"
+    }
+  ],
+  "memoryHook": "Left-sided appendicitis — acute + febrile = infection, not cancer."
+}

@@ -1,0 +1,110 @@
+{
+  "id": "q21",
+  "item": 21,
+  "qid": "8342",
+  "title": "Malignant otitis externa (Pseudomonas)",
+  "system": "Micro/ID",
+  "topic": "Pseudomonas aeruginosa",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 42,
+  "vignette": "Elderly diabetic with severe otitis externa, granulation tissue in the canal, Gram-negative rod on culture. Best microbiological description of the organism?",
+  "clues": [
+    {
+      "text": "diabetic + granulation tissue otitis externa",
+      "type": "red",
+      "note": "Malignant (necrotizing) otitis externa = Pseudomonas aeruginosa."
+    },
+    {
+      "text": "Gram-negative rod",
+      "type": "red",
+      "note": "Confirms Pseudomonas in this setting."
+    }
+  ],
+  "whatMatters": "Pseudomonas = aerobic, motile, oxidase-positive, NON-lactose-fermenting GNR (pyocyanin, grape odor).",
+  "strategy": "Name the bug from the script, then recall its lab fingerprint; when an answer has two clauses, BOTH must fit.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Comma-shaped, grows in high pH",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Fast lactose fermenter",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Motile and oxidase positive",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Nonmotile, lactose nonfermenter",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Requires factors V and X",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Vibrio.",
+      "why": "Wrong organism/scenario (cholera/seawater).",
+      "correctIf": "Patient had seawater exposure or ate raw oysters and developed rapidly spreading necrotizing cellulitis (Vibrio)"
+    },
+    {
+      "letter": "B",
+      "what": "E. coli/Klebsiella.",
+      "why": "Pseudomonas is NON-lactose fermenting.",
+      "correctIf": "Organism was a lactose-fermenting Gram-negative rod in a UTI or pneumonia context"
+    },
+    {
+      "letter": "D",
+      "what": "Right on lactose, wrong on motility.",
+      "why": "Pseudomonas IS motile. Top trap.",
+      "correctIf": "Organism was non-motile AND lactose-negative (Acinetobacter or Stenotrophomonas scenario)"
+    },
+    {
+      "letter": "E",
+      "what": "Haemophilus influenzae.",
+      "why": "Causes otitis media/epiglottitis, not this.",
+      "correctIf": "Child had acute otitis media or an unvaccinated adult had epiglottitis (Haemophilus influenzae)"
+    }
+  ],
+  "reasoning": [
+    "Diabetic + necrotizing otitis externa + GNR = Pseudomonas",
+    "Pseudomonas: aerobic, motile, oxidase+, non-lactose fermenter",
+    "Motile and oxidase positive -> C"
+  ],
+  "mechanism": "Pseudomonas aeruginosa: aerobic, motile, oxidase+, non-lactose-fermenting GNR; pyocyanin (blue-green), grape odor, exotoxin A (inactivates EF-2). Untreated MOE can erode into skull-base osteomyelitis + cranial nerve palsies.",
+  "keywords": [
+    {
+      "front": "Diabetic + necrotizing otitis externa",
+      "back": "Pseudomonas aeruginosa"
+    },
+    {
+      "front": "Pseudomonas lab fingerprint",
+      "back": "Aerobic, motile, oxidase+, non-lactose fermenter"
+    },
+    {
+      "front": "Blue-green pigment",
+      "back": "Pyocyanin"
+    },
+    {
+      "front": "Pseudomonas exotoxin A",
+      "back": "Inactivates EF-2"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Pseudomonas aeruginosa",
+      "location": "Micro > gram-negative rods; malignant otitis externa"
+    }
+  ],
+  "memoryHook": "AERuginosa = AERobic, oxidase-positive, blue-green and fruity."
+}

@@ -1,0 +1,110 @@
+{
+  "id": "q11",
+  "item": 11,
+  "qid": "1337",
+  "title": "Porphyria cutanea tarda (UROD)",
+  "system": "Biochemistry",
+  "topic": "Heme synthesis / porphyrias",
+  "correct": "E",
+  "yourAnswer": "D",
+  "percentCorrect": 53,
+  "vignette": "22-year-old with chronic photosensitive blistering on the backs of hands/forearms, healing with hyperpigmentation; drinks 2-3 beers daily. Deficient enzyme?",
+  "clues": [
+    {
+      "text": "photosensitive blistering of sun-exposed skin",
+      "type": "red",
+      "note": "Signature of porphyria cutanea tarda (PCT)."
+    },
+    {
+      "text": "alcohol use",
+      "type": "red",
+      "note": "Major PCT precipitant (with HCV, iron, estrogen)."
+    }
+  ],
+  "whatMatters": "Photosensitive blistering + alcohol = PCT = uroporphyrinogen decarboxylase (UROD) deficiency.",
+  "strategy": "Porphyrias: skin blistering -> PCT (UROD); neurovisceral attacks (no rash) -> AIP (PBG deaminase).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "d-Aminolevulinate dehydratase",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "d-Aminolevulinate synthase",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Bilirubin glucuronyl transferase",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Porphobilinogen deaminase",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Uroporphyrinogen decarboxylase",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Lead target; neuro/GI.",
+      "why": "Not photosensitive blistering.",
+      "correctIf": "Patient had neurologic symptoms and microcytic anemia with basophilic stippling (lead poisoning)"
+    },
+    {
+      "letter": "B",
+      "what": "Rate-limiting step.",
+      "why": "Upregulated in PCT; deficiency = sideroblastic anemia.",
+      "correctIf": "Patient had sideroblastic anemia with ringed sideroblasts on bone marrow biopsy"
+    },
+    {
+      "letter": "C",
+      "what": "Bilirubin/jaundice.",
+      "why": "Heme breakdown, not synthesis; causes jaundice.",
+      "correctIf": "Patient had jaundice from hemolysis or hepatic disease (heme breakdown pathway)"
+    },
+    {
+      "letter": "D",
+      "what": "AIP (neurovisceral).",
+      "why": "5 P's, NO skin blistering; tempting trap.",
+      "correctIf": "Patient had abdominal pain, port-wine urine, and neuropsychiatric symptoms WITHOUT photosensitive blistering (AIP)"
+    }
+  ],
+  "reasoning": [
+    "Photosensitive blistering + hyperpigmentation = PCT",
+    "Plus alcohol -> PCT",
+    "PCT = UROD deficiency -> E"
+  ],
+  "mechanism": "UROD deficiency backs up water-soluble uroporphyrinogens that deposit in skin and absorb light -> photosensitive bullae. Urine uroporphyrins elevated (pink-orange under Wood lamp). Tx: sun protection, stop alcohol, phlebotomy, hydroxychloroquine.",
+  "keywords": [
+    {
+      "front": "Photosensitive blistering + alcohol",
+      "back": "Porphyria cutanea tarda (PCT)"
+    },
+    {
+      "front": "PCT deficient enzyme",
+      "back": "Uroporphyrinogen decarboxylase"
+    },
+    {
+      "front": "Painful abdomen + neuro/psych, no rash",
+      "back": "Acute intermittent porphyria (PBG deaminase)"
+    },
+    {
+      "front": "Lead inhibits",
+      "back": "ALA dehydratase + ferrochelatase"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Porphyrias / heme synthesis",
+      "location": "Biochem > heme pathway, porphyria table"
+    }
+  ],
+  "memoryHook": "PCT: blisters on the back of a drinker's hands = UROD (UV-sensitive)."
+}

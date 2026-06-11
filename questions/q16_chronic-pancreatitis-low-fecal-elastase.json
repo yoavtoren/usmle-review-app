@@ -1,0 +1,110 @@
+{
+  "id": "q16",
+  "item": 16,
+  "qid": "14939",
+  "title": "Chronic pancreatitis: low fecal elastase",
+  "system": "GI",
+  "topic": "Pancreatic exocrine insufficiency",
+  "correct": "B",
+  "yourAnswer": "A",
+  "percentCorrect": 39,
+  "vignette": "54-year-old heavy drinker with steatorrhea (bulky foul stools, Sudan+), epigastric pain worse with meals, weight loss; occult blood negative, normal Hgb. Pathophysiologic change?",
+  "clues": [
+    {
+      "text": "steatorrhea (Sudan+) + epigastric pain + alcohol",
+      "type": "red",
+      "note": "Chronic pancreatitis with exocrine insufficiency."
+    },
+    {
+      "text": "occult blood negative",
+      "type": "green",
+      "note": "Argues against mucosal/inflammatory disease or cancer."
+    }
+  ],
+  "whatMatters": "Chronic pancreatitis destroys acinar cells -> low digestive enzymes -> fecal elastase falls (marker of pancreatic function).",
+  "strategy": "Classify steatorrhea: pancreatic (low enzymes/elastase) vs biliary (cholestasis) vs mucosal (celiac/villous atrophy).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased bile acid synthesis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased levels of fecal elastase",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Impaired production of intrinsic factor",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Increased pancreatic bicarbonate secretion",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Small bowel villous atrophy",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Liver/biliary problem.",
+      "why": "Causes cholestasis/jaundice, not pancreatic steatorrhea.",
+      "correctIf": "Patient had jaundice, elevated bilirubin, and normal fecal elastase (biliary obstruction)"
+    },
+    {
+      "letter": "C",
+      "what": "B12/macrocytic anemia.",
+      "why": "Causes anemia; Hgb normal here.",
+      "correctIf": "Patient had macrocytic anemia, elevated MCV, and positive Schilling test (B12 deficiency)"
+    },
+    {
+      "letter": "D",
+      "what": "Wrong direction.",
+      "why": "Bicarbonate DECREASES in chronic pancreatitis.",
+      "correctIf": "Question asked which pancreatic secretion DECREASES (bicarbonate also decreases — but elastase is the direct test)"
+    },
+    {
+      "letter": "E",
+      "what": "Celiac/mucosal.",
+      "why": "No celiac clues; this is pancreatic maldigestion.",
+      "correctIf": "Patient had positive anti-tTG antibodies and duodenal villous atrophy on biopsy (celiac disease)"
+    }
+  ],
+  "reasoning": [
+    "Alcohol + epigastric pain + steatorrhea = chronic pancreatitis",
+    "Acinar cell loss -> exocrine insufficiency",
+    "Marker = LOW fecal elastase -> B"
+  ],
+  "mechanism": "Chronic pancreatitis destroys acinar cells -> loss of lipase/elastase etc. -> fat/protein malabsorption (steatorrhea, fat-soluble vitamin deficiency). Fecal elastase-1 resists transit, so stool level tracks pancreatic output (low in insufficiency).",
+  "keywords": [
+    {
+      "front": "Alcoholic + epigastric pain + greasy stools",
+      "back": "Chronic pancreatitis"
+    },
+    {
+      "front": "Marker of pancreatic exocrine insufficiency",
+      "back": "Low fecal elastase-1"
+    },
+    {
+      "front": "Sudan stain positive",
+      "back": "Steatorrhea (fecal fat)"
+    },
+    {
+      "front": "Late chronic pancreatitis endocrine failure",
+      "back": "Diabetes mellitus"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Chronic pancreatitis",
+      "location": "GI > pancreatitis; malabsorption tests"
+    }
+  ],
+  "memoryHook": "Alcoholic + greasy stools + epigastric pain = pancreas failing -> low fecal elastase."
+}

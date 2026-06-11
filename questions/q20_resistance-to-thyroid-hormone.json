@@ -1,0 +1,110 @@
+{
+  "id": "q20",
+  "item": 20,
+  "qid": "19750",
+  "title": "Resistance to thyroid hormone",
+  "system": "Endocrine",
+  "topic": "Thyroid function tests",
+  "correct": "E",
+  "yourAnswer": "C",
+  "percentCorrect": 42,
+  "vignette": "7-year-old with ADHD-like behavior, goiter; TSH 7, total T4 16 (high), T3 210 (high). Etiology?",
+  "clues": [
+    {
+      "text": "high T4/T3 with non-suppressed (high) TSH",
+      "type": "red",
+      "note": "'Inappropriate TSH' -> resistance or TSH-secreting adenoma."
+    },
+    {
+      "text": "ADHD-like + goiter",
+      "type": "blue",
+      "note": "Classic for resistance to thyroid hormone in a child."
+    }
+  ],
+  "whatMatters": "High thyroid hormones that fail to suppress TSH = thyroid hormone resistance (defective THRB receptor).",
+  "strategy": "Read the TSH-T4 relationship: high T4 + suppressed TSH = Graves; high T4 + non-suppressed TSH = resistance/TSHoma.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Chronic autoimmune thyroiditis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Elevated thyroxine-binding globulin",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Graves disease",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Organification defect",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Resistance to thyroid hormone",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Hashimoto -> hypothyroid (low T4).",
+      "why": "Wrong direction; T4 is high.",
+      "correctIf": "Patient had low T4, elevated TSH, and positive anti-TPO antibodies (Hashimoto hypothyroidism)"
+    },
+    {
+      "letter": "B",
+      "what": "High total T4 only, normal TSH.",
+      "why": "Doesn't raise TSH or cause goiter.",
+      "correctIf": "Patient on OCPs had elevated total T4 with normal free T4 and normal TSH (increased TBG)"
+    },
+    {
+      "letter": "C",
+      "what": "Would SUPPRESS TSH.",
+      "why": "TSH is 7 (not suppressed). Trap.",
+      "correctIf": "TSH were >10 with a pituitary MRI showing an adenoma (TSH-secreting pituitary tumor)"
+    },
+    {
+      "letter": "D",
+      "what": "Causes hypothyroidism (low T4).",
+      "why": "T4 is high here.",
+      "correctIf": "Patient had low free T4, elevated TSH, and lived in an iodine-deficient region"
+    }
+  ],
+  "reasoning": [
+    "High T4/T3 + non-suppressed TSH = 'inappropriate TSH'",
+    "Pituitary insensitive -> keeps making TSH -> goiter (THRB defect)",
+    "ADHD-like child + goiter + this pattern = resistance -> E"
+  ],
+  "mechanism": "Mutation in thyroid hormone receptor beta (THRB) makes tissues (incl. pituitary) insensitive, so TSH stays high and drives more T4/T3 + goiter. Often near-euthyroid with ADHD-like behavior. Differential: TSHoma.",
+  "keywords": [
+    {
+      "front": "High T4/T3 + non-suppressed TSH",
+      "back": "Resistance to thyroid hormone (or TSHoma)"
+    },
+    {
+      "front": "RTH gene",
+      "back": "Thyroid hormone receptor beta (THRB)"
+    },
+    {
+      "front": "High T4/T3 + SUPPRESSED TSH",
+      "back": "Graves disease"
+    },
+    {
+      "front": "High total T4, normal free T4 & TSH",
+      "back": "Elevated TBG (estrogen/pregnancy)"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Thyroid function tests",
+      "location": "Endocrine > TFT interpretation; inappropriate TSH"
+    }
+  ],
+  "memoryHook": "High hormones + TSH that won't quit = resistance."
+}

@@ -1,0 +1,111 @@
+{
+  "id": "q24",
+  "item": 24,
+  "qid": "578",
+  "title": "Ovarian cancer prevention: OCPs",
+  "system": "Repro/Oncology",
+  "topic": "Epithelial ovarian cancer",
+  "correct": "E",
+  "yourAnswer": "B",
+  "percentCorrect": 56,
+  "vignette": "55-year-old with ovarian mass, ascites, elevated CA-125 (epithelial ovarian cancer). She had abnormal Paps + cervical conization. Which would most likely have reduced the risk of THIS condition?",
+  "clues": [
+    {
+      "text": "ovarian mass + ascites + CA-125",
+      "type": "green",
+      "note": "Epithelial ovarian cancer (EOC)."
+    },
+    {
+      "text": "abnormal Paps + conization, no HPV vaccine",
+      "type": "purple",
+      "note": "Cervical decoy steering toward HPV vaccine."
+    }
+  ],
+  "whatMatters": "EOC is driven by repeated ovulation. Protective = anything that suppresses ovulation (combined OCPs).",
+  "strategy": "Confirm which cancer first (ovarian), then choose its protective factor (ovulation suppression). Ignore cervical bait.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Consistent condom use",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Human papillomavirus vaccination",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Long-term antioxidant supplementation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Nulliparity",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Use of combined oral contraceptive pills",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Prevents STIs/cervical.",
+      "why": "Ovarian cancer isn't infection-driven.",
+      "correctIf": "Question asked about cervical cancer prevention (barrier methods + HPV vaccine are correct)"
+    },
+    {
+      "letter": "B",
+      "what": "Cervical, not ovarian.",
+      "why": "HPV-unrelated tumor; the Pap history is bait.",
+      "correctIf": "Question asked about screening for cervical dysplasia (Pap smear is appropriate, not ovarian cancer)"
+    },
+    {
+      "letter": "C",
+      "what": "No proven benefit.",
+      "why": "Not a recognized protective factor.",
+      "correctIf": "Question asked about endometrial cancer prevention (progestin-releasing IUD is protective)"
+    },
+    {
+      "letter": "D",
+      "what": "A RISK factor.",
+      "why": "More lifetime ovulations -> increases EOC risk.",
+      "correctIf": "Question asked what INCREASES ovarian cancer risk (ovulation and nulliparity increase risk)"
+    }
+  ],
+  "reasoning": [
+    "Ovarian mass + ascites + CA-125 = EOC",
+    "EOC driven by repeated ovulation injuring surface epithelium",
+    "Reduce risk by reducing ovulations",
+    "Combined OCPs suppress ovulation -> E"
+  ],
+  "mechanism": "EOC arises from repeated injury-repair of ovarian surface epithelium with each ovulation. Combined OCPs suppress ovulation (also lower endometrial cancer). Other protective: multiparity, breastfeeding, salpingo-oophorectomy/tubal ligation.",
+  "keywords": [
+    {
+      "front": "Ovarian mass + ascites + CA-125",
+      "back": "Epithelial ovarian cancer"
+    },
+    {
+      "front": "OCPs effect on ovarian/endometrial cancer",
+      "back": "Protective (suppress ovulation)"
+    },
+    {
+      "front": "HPV vaccine prevents",
+      "back": "Cervical/anal/oropharyngeal cancer (not ovarian)"
+    },
+    {
+      "front": "Nulliparity",
+      "back": "RISK factor (more ovulations)"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Epithelial ovarian cancer",
+      "location": "Repro/Onc > ovarian cancer risk/protective factors, CA-125"
+    }
+  ],
+  "memoryHook": "Fewer ovulations, fewer ovarian cancers."
+}
