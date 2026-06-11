@@ -1,0 +1,110 @@
+{
+  "id": "q25",
+  "item": 25,
+  "qid": "860",
+  "title": "Acute gout: first-line is NSAID",
+  "system": "Rheumatology/Pharm",
+  "topic": "Gout treatment",
+  "correct": "A",
+  "yourAnswer": "E",
+  "percentCorrect": 65,
+  "vignette": "Obese diabetic with sudden nocturnal first-MTP pain; synovial fluid shows needle-shaped, negatively birefringent crystals; normal creatinine. Best initial treatment?",
+  "clues": [
+    {
+      "text": "needle-shaped, negatively birefringent crystals",
+      "type": "green",
+      "note": "Monosodium urate = acute gout."
+    },
+    {
+      "text": "normal creatinine",
+      "type": "blue",
+      "note": "NSAIDs not contraindicated."
+    }
+  ],
+  "whatMatters": "Acute gout flare = anti-inflammatory (NSAID first-line). Urate-lowering drugs are for chronic prevention and can worsen a flare.",
+  "strategy": "Acute = put out the fire (NSAID/colchicine/steroids); chronic = lower urate (allopurinol/febuxostat/probenecid).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cyclooxygenase inhibitor",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Lipoxygenase inhibitor",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "TNF-alpha inhibitor",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Uricosuric agent",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Xanthine oxidase inhibitor",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "what": "Asthma/leukotrienes.",
+      "why": "Not a gout therapy.",
+      "correctIf": "Patient had aspirin-exacerbated asthma and the question was about leukotriene pathway blockade"
+    },
+    {
+      "letter": "C",
+      "what": "RA/autoimmune.",
+      "why": "Not used for acute gout.",
+      "correctIf": "Patient had rheumatoid arthritis or psoriatic arthritis (not acute crystalline gout)"
+    },
+    {
+      "letter": "D",
+      "what": "Chronic urate-lowering (probenecid).",
+      "why": "Preventive; can worsen acute flare.",
+      "correctIf": "Patient was in gout remission and the question asked about PREVENTING future attacks via urate lowering"
+    },
+    {
+      "letter": "E",
+      "what": "Chronic (allopurinol).",
+      "why": "Doesn't treat acute attack; can prolong it. Trap.",
+      "correctIf": "Patient was already stable on chronic allopurinol (continuation during acute flare may be acceptable)"
+    }
+  ],
+  "reasoning": [
+    "Needle-shaped negatively birefringent crystals + first-MTP = acute gout",
+    "Acute flare = anti-inflammatory",
+    "First-line = NSAID (COX inhibitor); normal creatinine makes it safe -> A"
+  ],
+  "mechanism": "Urate crystals -> neutrophil-driven inflammation. First-line acute Tx: NSAIDs (inhibit COX); alternatives colchicine, glucocorticoids. Don't start urate-lowering therapy during a flare.",
+  "keywords": [
+    {
+      "front": "Acute gout first-line treatment",
+      "back": "NSAID (COX inhibitor)"
+    },
+    {
+      "front": "NSAID alternatives in acute gout",
+      "back": "Colchicine, glucocorticoids"
+    },
+    {
+      "front": "Needle-shaped, negatively birefringent",
+      "back": "Monosodium urate (gout)"
+    },
+    {
+      "front": "Rhomboid, positively birefringent",
+      "back": "CPPD (pseudogout)"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Gout",
+      "location": "Rheum/Pharm > acute vs chronic gout therapy; crystal ID"
+    }
+  ],
+  "memoryHook": "Put out the FIRE first, lower the URATE later."
+}

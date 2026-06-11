@@ -1,0 +1,111 @@
+{
+  "id": "q17",
+  "item": 17,
+  "qid": "214",
+  "title": "Pituitary stalk lesion -> high prolactin",
+  "system": "Endocrine",
+  "topic": "Hypothalamic-pituitary axis",
+  "correct": "C",
+  "yourAnswer": "A",
+  "percentCorrect": 61,
+  "vignette": "29-year-old with sarcoidosis, headaches, bitemporal hemianopia; MRI shows a mass involving the hypothalamus and pituitary stalk. Which pituitary hormone is most likely elevated?",
+  "clues": [
+    {
+      "text": "mass involving the pituitary stalk",
+      "type": "red",
+      "note": "Stalk carries dopamine that tonically inhibits prolactin."
+    },
+    {
+      "text": "bitemporal hemianopia",
+      "type": "green",
+      "note": "Optic chiasm compression by a sellar/suprasellar mass."
+    }
+  ],
+  "whatMatters": "Prolactin is the only anterior pituitary hormone under tonic INHIBITION (dopamine); cut the stalk -> prolactin rises (stalk effect). All others fall.",
+  "strategy": "Stalk lesion: releasing-hormone-dependent hormones drop; the inhibited one (prolactin) rises. ADH falls -> central DI.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "ACTH",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Growth hormone",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Prolactin",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Thyrotropin (TSH)",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Vasopressin (ADH)",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Needs CRH.",
+      "why": "Stalk loss -> ACTH falls (central adrenal insufficiency).",
+      "correctIf": "Question asked which anterior pituitary hormone UNIQUELY RISES with stalk section (only prolactin does)"
+    },
+    {
+      "letter": "B",
+      "what": "Needs GHRH.",
+      "why": "Falls.",
+      "correctIf": "Same as ACTH — GH decreases with stalk section due to loss of GHRH"
+    },
+    {
+      "letter": "D",
+      "what": "Needs TRH.",
+      "why": "Falls (central hypothyroidism).",
+      "correctIf": "Question asked about the secondary hypothyroidism that develops from stalk damage (TSH falls)"
+    },
+    {
+      "letter": "E",
+      "what": "Made in hypothalamus.",
+      "why": "Falls -> central diabetes insipidus.",
+      "correctIf": "Question asked which condition develops from stalk damage (central DI from ADH deficiency is also correct)"
+    }
+  ],
+  "reasoning": [
+    "Sarcoid mass on hypothalamus + pituitary stalk",
+    "Stalk carries dopamine that inhibits prolactin",
+    "Stalk interruption -> disinhibition",
+    "Prolactin rises (stalk effect) -> C"
+  ],
+  "mechanism": "The pituitary stalk conveys hypothalamic control. Prolactin is uniquely under tonic dopamine inhibition; a stalk lesion blocks dopamine -> hyperprolactinemia. Differential: TSH-secreting adenoma (up alpha-subunit, MRI).",
+  "keywords": [
+    {
+      "front": "Pituitary stalk lesion",
+      "back": "High prolactin (stalk effect)"
+    },
+    {
+      "front": "Only anterior pituitary hormone tonically inhibited",
+      "back": "Prolactin (by dopamine)"
+    },
+    {
+      "front": "Lowers prolactin drug class",
+      "back": "Dopamine agonists (cabergoline, bromocriptine)"
+    },
+    {
+      "front": "Hypothalamic ADH lost",
+      "back": "Central diabetes insipidus"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Prolactin / stalk effect",
+      "location": "Endocrine > hypothalamic-pituitary axis"
+    }
+  ],
+  "memoryHook": "Cut the stalk -> only prolactin climbs."
+}

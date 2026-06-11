@@ -1,0 +1,111 @@
+{
+  "id": "q09",
+  "item": 9,
+  "qid": "21742",
+  "title": "Vaccine hesitancy: open dialogue first",
+  "system": "Ethics/Communication",
+  "topic": "Vaccine hesitancy",
+  "correct": "A",
+  "yourAnswer": "B",
+  "percentCorrect": 56,
+  "vignette": "Mother of a healthy 2-month-old is vaccine-hesitant (older son had a 'bad reaction'), expects disagreement. Most appropriate response?",
+  "clues": [
+    {
+      "text": "vaccine-hesitant, wants to defer",
+      "type": "red",
+      "note": "Communication/counseling scenario; child is well, no urgency."
+    },
+    {
+      "text": "'I know you won't agree with me'",
+      "type": "red",
+      "note": "Expects confrontation; build trust, don't argue."
+    }
+  ],
+  "whatMatters": "First step with a hesitant parent = open, nonconfrontational dialogue establishing trust and a shared goal.",
+  "strategy": "Pick the empathic option that acknowledges concern + names a shared goal first; defer facts/persuasion.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "'I understand your concern; our shared goal is your children's health'",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "'Immunizations are safe; we should vaccinate today'",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Provide a list of vaccine-safety resources",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Defer the discussion to the next visit",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "'This is hard, BUT disease risk is far greater'",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "what": "Pushes action.",
+      "why": "Skips trust-building; entrenches a hesitant parent.",
+      "correctIf": "Parent had already agreed to vaccination and the visit was purely for scheduling"
+    },
+    {
+      "letter": "C",
+      "what": "Offers resources.",
+      "why": "Good but passive; active dialogue first.",
+      "correctIf": "Parent had low health literacy and specifically requested written educational materials"
+    },
+    {
+      "letter": "D",
+      "what": "Defers the relationship.",
+      "why": "Avoids the conversation; missed opportunity.",
+      "correctIf": "Never — declining to engage with a hesitant parent is never the recommended approach"
+    },
+    {
+      "letter": "E",
+      "what": "Empathy + 'but' rebuttal.",
+      "why": "The 'but' negates empathy; leads with facts.",
+      "correctIf": "Response expressed genuine empathy WITHOUT a negating 'but' (e.g., 'I understand, and here's what data shows…')"
+    }
+  ],
+  "reasoning": [
+    "Vaccine-hesitant parent expecting conflict; child well",
+    "First step = open nonconfrontational dialogue",
+    "Acknowledge concern + name shared goal (child's health)",
+    "Only option that does this first -> A"
+  ],
+  "mechanism": "Approach: open dialogue -> acknowledge concern -> dispel specific misconceptions -> explain risks/benefits. Don't override an informed parent for routine vaccines; keep the relationship open.",
+  "keywords": [
+    {
+      "front": "Vaccine-hesitant parent: first step",
+      "back": "Open nonconfrontational dialogue (trust + shared goal)"
+    },
+    {
+      "front": "Answer contains a 'but' rebuttal",
+      "back": "Wrong this early — empathy undone"
+    },
+    {
+      "front": "Cough weeks after shots",
+      "back": "Likely coincidental illness, not vaccine harm"
+    },
+    {
+      "front": "Persistent refusal steps",
+      "back": "Document, alternate schedule, dismissal (last resort)"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Vaccine hesitancy / communication",
+      "location": "Ethics > patient-centered communication"
+    }
+  ],
+  "memoryHook": "Trust before facts; no 'but'."
+}

@@ -1,0 +1,212 @@
+# 03 Micro — 1/195 (1%)
+
+> Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
+
+## 01 Basic Bacteriology — 0/20
+- [ ] 01 Bacterial structures
+- [ ] 02 Cell envelope
+- [ ] 03 Stains
+- [ ] 04 Properties of growth media
+- [ ] 05 Special culture requirements
+- [ ] 06 Aerobes
+- [ ] 07 Anaerobes
+- [ ] 08 Intracellular bugs
+- [ ] 09 Encapsulated bacteria
+- [ ] 10 Encapsulated bacteria vaccines
+- [ ] 11 Urease-positive organisms
+- [ ] 12 Catalase-positive organisms
+- [ ] 13 Pigment-producing bacteria
+- [ ] 14 In vivo biofilm-producing bacteria
+- [ ] 15 Spore-forming bacteria
+- [ ] 16 Bacterial virulence factors
+- [ ] 17 Bacterial genetics
+- [ ] 18 Main features of exotoxins & endotoxins
+- [ ] 19 Bacteria with exotoxins
+- [ ] 20 Endotoxin
+
+## 02 Clinical Bacteriology — 1/54
+- [ ] 01 Gram-positive lab algorithm
+- [ ] 02 Gram-positive cocci antibiotic tests
+- [ ] 03 a-hemolytic bacteria
+- [ ] 04 b-hemolytic bacteria
+- [ ] 05 Staph aureus
+- [ ] 06 Staph epidermidis
+- [ ] 07 Staph saprophyticus
+- [ ] 08 Strep pneumoniae
+- [ ] 09 Viridans group streptococci
+- [ ] 10 Strep pyogenes (group A streptococci)
+- [ ] 11 Strep agalactiae (group B streptococci)
+- [ ] 12 Strep bovis
+- [ ] 13 Enterococci
+- [ ] 14 Bacillus anthracis
+- [ ] 15 Bacillus cereus
+- [ ] 16 Clostridia
+- [ ] 17 Corynebacterium diphtheriae
+- [ ] 18 Listeria monocytogenes
+- [ ] 19 Nocardia vs Actinomyces
+- [ ] 20 Mycobacteria
+- [ ] 21 Tuberculosis
+- [ ] 22 Leprosy
+- [ ] 23 Gram-negative lab algorithm
+- [ ] 24 Neisseria
+- [x] 25 Haemophilus influenzae
+- [ ] 26 Acinetobacter baumannii
+- [ ] 27 Bordetella pertussis
+- [ ] 28 Brucella
+- [ ] 29 Legionella pneumophila
+- [ ] 30 Pseudomonas aeruginosa
+- [ ] 31 Salmonella vs Shigella
+- [ ] 32 Yersinia enterocolitica
+- [ ] 33 Lactose-fermenting enteric bacteria
+- [ ] 34 Escherichia coli
+- [ ] 35 Klebsiella
+- [ ] 36 Campylobacter jejuni
+- [ ] 37 Vibrio cholerae
+- [ ] 38 Helicobacter pylori
+- [ ] 39 Spirochetes
+- [ ] 40 Lyme disease
+- [ ] 41 Leptospira interrogans
+- [ ] 42 Syphilis
+- [ ] 43 VDRL false positives
+- [ ] 44 Jarisch-Herxheimer reaction
+- [ ] 45 Gardnerella vaginalis
+- [ ] 46 Chlamydiae
+- [ ] 47 Chlamydia trachomatis serotypes
+- [ ] 48 Zoonotic bacteria
+- [ ] 49 Rickettsial diseases & vector-borne illness
+- [ ] 50 Mycoplasma pneumoniae
+- [ ] 51 Moraxella catarrhalis
+- [ ] 52 Peptostreptococcus Fusobacterium Prevotella Bacteroides
+- [ ] 53 Burkholderia cepacia
+- [ ] 54 Serratia
+
+## 03 Mycology — 0/5
+- [ ] 01 Systemic mycoses
+- [ ] 02 Cutaneous mycoses
+- [ ] 03 Opportunistic fungal infections
+- [ ] 04 Pneumocystis jirovecii
+- [ ] 05 Sporothrix schenckii
+
+## 04 Parasitology — 0/10
+- [ ] 01 Protozoa- GI infections
+- [ ] 02 Protozoa- CNS infections
+- [ ] 03 Protozoa- hematologic infections
+- [ ] 04 Protozoa- others
+- [ ] 05 Nematode routes of infection
+- [ ] 06 Nematodes (roundworms)
+- [ ] 07 Cestodes (tapeworms)
+- [ ] 08 Trematodes (flukes)
+- [ ] 09 Ectoparasites
+- [ ] 10 Parasite hints
+
+## 05 Virology — 0/35
+- [ ] 01 Viral structure- general features
+- [ ] 02 Viral genetics
+- [ ] 03 DNA viral genomes
+- [ ] 04 RNA viral genomes
+- [ ] 05 Naked viral genome infectivity
+- [ ] 06 Viral envelopes
+- [ ] 07 DNA virus characteristics
+- [ ] 08 DNA viruses
+- [ ] 09 Herpesviruses
+- [ ] 10 HSV identification
+- [ ] 11 Receptors used by viruses
+- [ ] 12 RNA Viruses
+- [ ] 13 Negative-stranded viruses
+- [ ] 14 Segmented viruses
+- [ ] 15 Picornavirus
+- [ ] 16 Rhinovirus
+- [ ] 17 Yellow fever virus
+- [ ] 18 Rotavirus
+- [ ] 19 Influenza viruses
+- [ ] 20 Rubella virus
+- [ ] 21 Paramyxoviruses
+- [ ] 22 Acute laryngotracheobronchitis
+- [ ] 23 Measles (rubeola) virus
+- [ ] 24 Mumps virus
+- [ ] 25 Rabies virus
+- [ ] 26 Ebola virus
+- [ ] 27 Zika virus
+- [ ] 28 Hepatitis viruses
+- [ ] 29 Extrahepatic manifestations of hepatitis B & C
+- [ ] 30 Hepatitis serologic markers
+- [ ] 31 HIV
+- [ ] 32 HIV diagnosis
+- [ ] 33 Time course of untreated HIV infection
+- [ ] 34 Common diseases of HIV-positive adults
+- [ ] 35 Prions
+
+## 06 Systems — 0/17
+- [ ] 01 Normal flora: dominant
+- [ ] 02 Bugs causing food-borne illness
+- [ ] 03 Bugs causing diarrhea
+- [ ] 04 Common causes of pneumonia
+- [ ] 05 Common causes of meningitis
+- [ ] 06 Cerebrospinal fluid findings in meningitis
+- [ ] 07 Infections causing brain abscess
+- [ ] 08 Osteomyelitis
+- [ ] 09 Urinary tract infections
+- [ ] 10 Common vaginal infections
+- [ ] 11 TORCH infections
+- [ ] 12 Red rashes of childhood
+- [ ] 13 Sexually transmitted infections
+- [ ] 14 Pelvic inflammatory disease
+- [ ] 15 Nosocomial infections
+- [ ] 16 Bugs affecting unvaccinated children
+- [ ] 17 Bug hints
+
+## 07 Antimicrobials — 0/54
+- [ ] 02 Penicillin G, V
+- [ ] 03 Penicillinase-sensitive penicillins
+- [ ] 04 Penicillinase-resistant penicillins
+- [ ] 05 Antipseudomonal penicillins
+- [ ] 06 Cephalosporins
+- [ ] 07 b-lactamase inhibitors
+- [ ] 08 Carbapenems
+- [ ] 09 Monobactams
+- [ ] 10 Vancomycin
+- [ ] 11 Protein synthesis inhibitors
+- [ ] 12 Aminoglycosides
+- [ ] 13 Tetracyclines
+- [ ] 14 Tigecycline
+- [ ] 15 Chloramphenicol
+- [ ] 16 Clindamycin
+- [ ] 17 Linezolid
+- [ ] 18 Macrolides
+- [ ] 19 Polymyxins
+- [ ] 20 Sulfonamides
+- [ ] 21 Dapsone
+- [ ] 22 Trimethoprim
+- [ ] 23 Fluoroquinolones
+- [ ] 24 Daptomycin
+- [ ] 25 Metronidazole
+- [ ] 26 Antimycobacterial therapy
+- [ ] 27 Rifamycins
+- [ ] 28 Isoniazid
+- [ ] 29 Pyrazinamide
+- [ ] 30 Ethambutol
+- [ ] 31 Streptomycin
+- [ ] 32 Antimicrobial prophylaxis
+- [ ] 33 Prophylaxis in HIV patients
+- [ ] 34 Treatment of highly resistant bacteria
+- [ ] 36 Amphotericin B
+- [ ] 37 Nystatin
+- [ ] 38 Flucytosine
+- [ ] 39 Azoles
+- [ ] 40 Terbinafine
+- [ ] 41 Echinocandins
+- [ ] 42 Griseofulvin
+- [ ] 43 Antiprotozoal therapy
+- [ ] 44 Anti-mite/louse therapy
+- [ ] 45 Chloroquine
+- [ ] 46 Antihelminthic therapy
+- [ ] 48 Oseltamivir, zanamivir
+- [ ] 49 Acyclovir, famciclovir, valacyvlovir
+- [ ] 50 Ganciclovir
+- [ ] 51 Foscarnet
+- [ ] 52 Cidofovir
+- [ ] 53 HIV therapy
+- [ ] 54 Hepatitis C therapy
+- [ ] 55 Disinfection & sterilization
+- [ ] 56 Antimicrobials to avoid in pregnancy
+- [ ] 57 Mupirocin

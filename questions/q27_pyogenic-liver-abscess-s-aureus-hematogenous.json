@@ -1,0 +1,111 @@
+{
+  "id": "q27",
+  "item": 27,
+  "qid": "62",
+  "title": "Pyogenic liver abscess (S. aureus, hematogenous)",
+  "system": "GI/ID",
+  "topic": "Liver abscess",
+  "correct": "D",
+  "yourAnswer": null,
+  "percentCorrect": 39,
+  "vignette": "57-year-old in Wisconsin, no travel, with fever/RUQ pain and a hypodense liver cavity on CT (pyogenic abscess). Which organism/route combination?",
+  "clues": [
+    {
+      "text": "no international travel",
+      "type": "green",
+      "note": "Argues against amebic abscess -> pyogenic (bacterial)."
+    },
+    {
+      "text": "hypodense liver cavity",
+      "type": "green",
+      "note": "Hepatic abscess on contrast CT."
+    }
+  ],
+  "whatMatters": "Pick the organism+route combination that's actually valid. S. aureus seeds the liver hematogenously (bacteremia/endocarditis).",
+  "strategy": "'Organism + route' = BOTH halves must be true. Match the microbe to how it reaches the liver.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Chlamydia trachomatis - ascending cholangitis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cytomegalovirus - direct invasion",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Entamoeba histolytica - penetrating stab wound",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Staphylococcus aureus - hematogenous route",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Streptococcus pneumoniae - portal vein",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "what": "Perihepatitis, not abscess.",
+      "why": "Wrong organism + ascending cholangitis = enteric GNRs.",
+      "correctIf": "Patient had Charcot's triad (RUQ pain, fever, jaundice) from a bile duct stone (ascending cholangitis, enteric GNRs)"
+    },
+    {
+      "letter": "B",
+      "what": "Viral, immunocompromised.",
+      "why": "Not a pyogenic abscess by direct invasion.",
+      "correctIf": "Immunocompromised post-transplant patient had CMV hepatitis or viral liver lesion"
+    },
+    {
+      "letter": "C",
+      "what": "Right bug, WRONG route.",
+      "why": "Amebic spreads via portal vein after intestinal infection; no travel.",
+      "correctIf": "Patient traveled to an endemic area, had bloody diarrhea, and had a single large right-lobe abscess (amebic — E. histolytica via portal vein)"
+    },
+    {
+      "letter": "E",
+      "what": "Not a gut/portal organism.",
+      "why": "Portal-vein abscess comes from enteric flora.",
+      "correctIf": "Patient had diverticulitis or appendicitis with bacteremia spreading via portal vein (enteric flora: E. coli/Klebsiella, not S. aureus)"
+    }
+  ],
+  "reasoning": [
+    "Fever + RUQ pain + hypodense liver cavity, no travel = pyogenic abscess",
+    "Match organism to a valid route",
+    "S. aureus seeds the liver hematogenously",
+    "Only valid pairing -> D"
+  ],
+  "mechanism": "Pyogenic liver abscess routes: biliary (cholangitis), portal vein (appendicitis/diverticulitis), hematogenous via hepatic artery (bacteremia/endocarditis -> S. aureus), direct extension, trauma. Enteric GNRs (E. coli, Klebsiella) most common overall. Tx: drainage + antibiotics.",
+  "keywords": [
+    {
+      "front": "Liver abscess, no travel",
+      "back": "Pyogenic (bacterial), not amebic"
+    },
+    {
+      "front": "S. aureus liver abscess route",
+      "back": "Hematogenous (bacteremia/endocarditis)"
+    },
+    {
+      "front": "'Anchovy paste' right-lobe abscess + travel",
+      "back": "Entamoeba histolytica (portal route)"
+    },
+    {
+      "front": "PID + violin-string adhesions on liver",
+      "back": "Fitz-Hugh-Curtis (perihepatitis)"
+    }
+  ],
+  "firstAid": [
+    {
+      "topic": "Liver abscess",
+      "location": "GI/ID > pyogenic vs amebic; spread routes"
+    }
+  ],
+  "memoryHook": "Match the bug to its road to the liver — a right bug on the wrong road still fails."
+}
