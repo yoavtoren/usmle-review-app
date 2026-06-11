@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rifaximin in hepatic encephalopathy: ↓ ammonia production</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q90", "item": 90, "qid": "11661", "title": "Rifaximin in hepatic encephalopathy: ↓ ammonia production", "system": "Pharmacology", "topic": "Hepatic encephalopathy", "correct": "B", "yourAnswer": "E", "percentCorrect": 48, "vignette": "A 57-year-old man with a history of alcohol-induced cirrhosis is brought to the emergency department due to altered mental status. Over the weekend, he ate a lot of smoked meats at a local barbecue competition. Since then, he has been sleeping most of the day and is confused and disoriented when awake. On examination, he has abdominal distension with shifting dullness. The patient answers correctly when asked for his name but does not know that he is in the hospital and says the year is \"1997.\" When asked to extend his hands as if stopping traffic, the patient makes rhythmic flapping movements. He is started on rifaximin. Which of the following is the most likely mechanism of action of this drug when used to treat this patient's current condition?", "clues": [{"text": "alcohol-induced cirrhosis", "type": "orange", "note": "Cirrhosis is the substrate for hepatic encephalopathy: the failing liver can't convert gut-derived ammonia to urea, and portosystemic shunting lets ammonia bypass the liver and reach the brain. This sets up an ammonia-lowering treatment."}, {"text": "ate a lot of smoked meats", "type": "blue", "note": "A large protein (nitrogen) load is a classic precipitant of hepatic encephalopathy: gut bacteria degrade protein to ammonia. Other triggers include GI bleeding, infection, constipation, and hypokalemia. The trigger reinforces the ammonia mechanism."}, {"text": "abdominal distension with shifting dullness", "type": "blue", "note": "Ascites confirms decompensated cirrhosis/portal hypertension. It supports the diagnosis of hepatic encephalopathy as the cause of the confusion."}, {"text": "rhythmic flapping movements", "type": "green", "note": "Asterixis (flapping tremor of dorsiflexed hands) is the hallmark sign of hepatic encephalopathy. Confusion + asterixis + cirrhosis = HE, treated by lowering ammonia. Rifaximin, a nonabsorbable antibiotic, kills ammonia-producing gut flora to DECREASE intestinal ammonia production."}], "whatMatters": "The barbecue/ascites/asterixis details all point to hepatic encephalopathy from a protein load. The question is rifaximin's mechanism: it's a nonabsorbable gut antibiotic that kills ammonia-producing colonic bacteria, DECREASING intraluminal ammonia production — answer B. (Lactulose, by contrast, increases conversion of ammonia to ammonium for excretion.)", "strategy": "Separate the two HE drugs by mechanism: rifaximin = nonabsorbable ANTIBIOTIC → fewer ammoniagenic bacteria → less ammonia PRODUCED. Lactulose = nonabsorbable disaccharide → acidifies colon → converts NH3 to NH4+ (trapped/excreted) and acts as a cathartic. The stem names rifaximin, so pick 'decreased production.'", "options": [{"letter": "A", "text": "Binding of dietary phosphate", "correct": false}, {"letter": "B", "text": "Decreased intraluminal ammonia production", "correct": true}, {"letter": "C", "text": "Exchange of intraluminal sodium ions for potassium ions", "correct": false}, {"letter": "D", "text": "Formation of a nonabsorbable complex with bile acids", "correct": false}, {"letter": "E", "text": "Increased conversion of ammonia to ammonium ion", "correct": false}], "eliminations": [{"letter": "A", "label": "phosphate binder — that's calcium acetate/sevelamer for ESRD", "detail": "WHAT IT IS: phosphate binders lower serum phosphate in chronic kidney disease. ❌ WHY IT FAILS: this has nothing to do with ammonia or hepatic encephalopathy; rifaximin doesn't bind phosphate. ✅ Correct if: the patient had ESRD and hyperphosphatemia."}, {"letter": "C", "label": "Na/K exchange resin — that's sodium polystyrene sulfonate for hyperkalemia", "detail": "WHAT IT IS: a cation-exchange resin swaps gut sodium for potassium to treat hyperkalemia. ❌ WHY IT FAILS: it doesn't reduce ammonia and isn't how rifaximin works. ✅ Correct if: the question were about lowering serum potassium."}, {"letter": "D", "label": "bile-acid sequestrant — that's cholestyramine for cholesterol", "detail": "WHAT IT IS: cholestyramine/colestipol bind intestinal bile acids to lower LDL cholesterol (and treat bile-acid diarrhea/pruritus). ❌ WHY IT FAILS: bile-acid binding doesn't treat HE or lower ammonia; rifaximin is an antibiotic. ✅ Correct if: the goal were lowering cholesterol or treating cholestatic pruritus."}, {"letter": "E", "label": "convert ammonia to ammonium — that's LACTULOSE, not rifaximin (your pick)", "detail": "WHAT IT IS: lactulose is metabolized by colonic bacteria to short-chain fatty acids, acidifying the colon so NH3 is converted to non-absorbable NH4+ (and is excreted via its cathartic effect). ❌ WHY IT FAILS: that's lactulose's mechanism; the stem specifies RIFAXIMIN, which acts by killing ammonia-producing bacteria to reduce ammonia PRODUCTION. ✅ Correct if: the drug named were lactulose."}], "reasoning": ["Cirrhosis + protein load + asterixis + ascites = hepatic encephalopathy", "HE is driven by gut-derived ammonia reaching the brain", "Rifaximin is a nonabsorbable antibiotic acting in the gut lumen", "It kills ammoniagenic bacteria → decreased intraluminal ammonia production → answer B"], "mechanism": "Hepatic encephalopathy results from accumulation of gut-derived ammonia (and other neurotoxins) that a cirrhotic, shunted liver cannot detoxify; ammonia crosses the blood-brain barrier and impairs neurotransmission/astrocyte function (asterixis, confusion). Rifaximin is a minimally absorbed antibiotic that suppresses ammonia-producing colonic bacteria, decreasing intestinal ammonia PRODUCTION. It is typically added to lactulose, which acidifies the colon to convert NH3 to non-absorbable NH4+ and increase its excretion.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid GI/Pharm > Hepatic encephalopathy: pathophysiology (ammonia, portosystemic shunt), precipitants (protein load, GI bleed, infection, hypokalemia, constipation), treatments — lactulose (NH3→NH4+, cathartic) and rifaximin (antibiotic, ↓ ammoniagenic flora). Cross-link cirrhosis/portal hypertension."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Reframe to: which mechanism belongs to the NAMED drug? Rifaximin = antibiotic → fewer bacteria → less ammonia made. Don't give it lactulose's mechanism."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on hepatic encephalopathy, asterixis, ammonia vs ammonium, nonabsorbable antibiotic, portosystemic shunt? Tell me which and I'll explain."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Option E is the classic trap: it's the correct mechanism for the WRONG drug (lactulose). The stem says rifaximin → 'decreased production.' Map mechanism to the specific agent."}, {"key": "other", "label": "✍️ Something else", "message": "Missed as E → pair them: lactulose = 'trap ammonia as ammonium (NH4+) + flush it out'; rifaximin = 'kill the bug that makes ammonia.' They are complementary, not the same."}], "keywords": [{"front": "Rifaximin mechanism in HE", "back": "Nonabsorbable antibiotic → ↓ ammonia-producing gut bacteria → ↓ ammonia production"}, {"front": "Lactulose mechanism in HE", "back": "Acidifies colon → NH3→NH4+ (trapped/excreted) + cathartic"}, {"front": "Hallmark sign of hepatic encephalopathy", "back": "Asterixis (flapping tremor)"}, {"front": "HE precipitants", "back": "Protein load, GI bleed, infection, constipation, hypokalemia, alkalosis"}, {"front": "Why ammonia rises in cirrhosis", "back": "↓ urea cycle capacity + portosystemic shunting"}, {"front": "Phosphate binder use", "back": "Hyperphosphatemia in CKD (not HE)"}, {"front": "Sodium polystyrene sulfonate use", "back": "Hyperkalemia (Na/K exchange)"}], "firstAid": [{"tag": "answer", "topic": "Hepatic encephalopathy treatment", "detail": "GI/Pharm: lactulose (NH3→NH4+) and rifaximin (gut antibiotic, ↓ ammonia production); ammonia pathophysiology."}, {"tag": "stem", "topic": "Cirrhosis & portal hypertension", "detail": "GI: decompensation (ascites, varices, encephalopathy), shifting dullness, precipitants of HE."}, {"tag": "options", "topic": "Luminal-acting drugs", "detail": "Pharm: phosphate binders (CKD), Na/K exchange resin (hyperkalemia), bile-acid sequestrants (cholesterol) for contrast."}], "memoryHook": "Rifaximin = antibiotic → fewer ammonia-making bugs (↓ PRODUCTION). Lactulose = traps ammonia as ammonium and flushes it. Different jobs.", "stem": [{"text": "A 57-year-old man with a history of "}, {"text": "alcohol-induced cirrhosis", "clue": true, "type": "orange", "note": "Cirrhosis is the substrate for hepatic encephalopathy: the failing liver can't convert gut-derived ammonia to urea, and portosystemic shunting lets ammonia bypass the liver and reach the brain. This sets up an ammonia-lowering treatment."}, {"text": " is brought to the emergency department due to altered mental status. Over the weekend, he "}, {"text": "ate a lot of smoked meats", "clue": true, "type": "blue", "note": "A large protein (nitrogen) load is a classic precipitant of hepatic encephalopathy: gut bacteria degrade protein to ammonia. Other triggers include GI bleeding, infection, constipation, and hypokalemia. The trigger reinforces the ammonia mechanism."}, {"text": " at a local barbecue competition. Since then, he has been sleeping most of the day and is confused and disoriented when awake. On examination, he has "}, {"text": "abdominal distension with shifting dullness", "clue": true, "type": "blue", "note": "Ascites confirms decompensated cirrhosis/portal hypertension. It supports the diagnosis of hepatic encephalopathy as the cause of the confusion."}, {"text": ". The patient answers correctly when asked for his name but does not know that he is in the hospital and says the year is \"1997.\" When asked to extend his hands as if stopping traffic, the patient makes "}, {"text": "rhythmic flapping movements", "clue": true, "type": "green", "note": "Asterixis (flapping tremor of dorsiflexed hands) is the hallmark sign of hepatic encephalopathy. Confusion + asterixis + cirrhosis = HE, treated by lowering ammonia. Rifaximin, a nonabsorbable antibiotic, kills ammonia-producing gut flora to DECREASE intestinal ammonia production."}, {"text": ". He is started on rifaximin. Which of the following is the most likely mechanism of action of this drug when used to treat this patient's current condition?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

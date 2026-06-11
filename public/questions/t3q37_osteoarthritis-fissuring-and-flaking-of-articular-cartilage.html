@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osteoarthritis: fissuring and flaking of articular cartilage</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q107", "item": 107, "qid": "7556", "title": "Osteoarthritis: fissuring and flaking of articular cartilage", "system": "Musculoskeletal", "topic": "Arthritis / cartilage degeneration", "correct": "B", "yourAnswer": "C", "percentCorrect": 79, "vignette": "A 52-year-old woman comes to the office due to pain in the right knee for the past several months. The pain is typically better in the morning but worsens by the end of the day. There is no history of trauma to the joint. Medical history is significant for hypertension, type 2 diabetes mellitus, and hypercholesterolemia. The patient is a lifetime nonsmoker. She works as an office clerk. Family history is significant for stroke in her mother and gout in her father. Temperature is 37.2 C (99 F), blood pressure is 145/95 mm Hg, and pulse is 90/min. BMI is 37 kg/m2. Physical examination shows crepitation on flexion and extension of the right knee; range of motion is otherwise normal, and there is no swelling, warmth, or redness. Which of the following pathologic processes is most likely occurring in this patient's knee joint?", "clues": [{"text": "better in the morning but worsens by the end of the day", "type": "red", "note": "Pain that is minimal in the morning and worsens with USE through the day is the classic pattern of osteoarthritis (mechanical/'wear-and-tear'). This contrasts with inflammatory arthritis (e.g., RA), which causes prolonged morning stiffness that improves with activity."}, {"text": "BMI is 37", "type": "orange", "note": "Obesity (BMI 37) is a major risk factor for knee osteoarthritis through increased mechanical load on weight-bearing joints. Risk-factor clue reinforcing the degenerative cartilage diagnosis."}, {"text": "crepitation on flexion and extension", "type": "green", "note": "Crepitus (grinding) with movement reflects roughened, degenerated articular cartilage and bone-on-bone contact — a hallmark of osteoarthritis. The pathology is cartilage breakdown, not synovial inflammation."}, {"text": "no swelling, warmth, or redness", "type": "green", "note": "Absence of inflammatory signs argues against rheumatoid/septic/crystal arthritis and supports a NON-inflammatory, degenerative process. Combined with obesity (BMI 37) and use-related pain, this is osteoarthritis: fissuring and flaking of articular cartilage."}], "whatMatters": "Use-related knee pain (worse by day's end), crepitus, no inflammatory signs, and obesity = osteoarthritis. The underlying joint pathology is degeneration of articular cartilage — fissuring, fibrillation, and flaking of the cartilage surface. Answer B.", "strategy": "Classify the arthritis first: non-inflammatory + use-related + crepitus + risk factors (age, obesity) = osteoarthritis → cartilage degeneration. Inflammatory (morning stiffness >1 h, swelling/warmth) = RA → synovial pannus. Crystal disease = CPPD/gout. Match the joint pathology to the arthritis type.", "options": [{"letter": "A", "text": "Calcium pyrophosphate crystal deposition", "correct": false}, {"letter": "B", "text": "Fissuring and flaking of articular cartilage", "correct": true}, {"letter": "C", "text": "Iron deposition in cartilage", "correct": false}, {"letter": "D", "text": "Synovial cell hyperplasia", "correct": false}, {"letter": "E", "text": "Virus-induced synovial inflammation", "correct": false}], "eliminations": [{"letter": "A", "label": "CPPD crystals — pseudogout, an inflammatory crystal arthritis (your pick)", "detail": "WHAT IT IS: calcium pyrophosphate deposition (pseudogout) causes acute inflammatory arthritis with chondrocalcinosis and rhomboid, positively birefringent crystals. ❌ WHY IT FAILS: this patient has a NON-inflammatory, use-related picture (no swelling/warmth) — osteoarthritis, not a crystal-induced flare. ✅ Correct if: there were an acutely hot, swollen joint with positively birefringent rhomboid crystals."}, {"letter": "C", "label": "iron deposition — hemochromatosis arthropathy, different setting", "detail": "WHAT IT IS: iron deposition in cartilage occurs in hemochromatosis (often 2nd/3rd MCP arthropathy, CPPD). ❌ WHY IT FAILS: nothing here suggests iron overload (no diabetes-bronze-skin-cirrhosis triad emphasis or characteristic MCP involvement); the picture is primary knee OA from load/age. ✅ Correct if: the stem featured hemochromatosis with hook-like MCP osteophytes."}, {"letter": "D", "label": "synovial hyperplasia (pannus) — rheumatoid arthritis", "detail": "WHAT IT IS: proliferative synovitis (pannus) destroying cartilage/bone defines rheumatoid arthritis. ❌ WHY IT FAILS: RA causes inflammatory signs and prolonged morning stiffness that IMPROVES with use — the opposite of this use-worsened, non-inflammatory presentation. ✅ Correct if: there were symmetric small-joint inflammatory arthritis with morning stiffness >1 hour and positive RF/anti-CCP."}, {"letter": "E", "label": "virus-induced synovitis — wrong mechanism", "detail": "WHAT IT IS: some viruses (parvovirus B19, rubella, hepatitis) cause transient inflammatory arthritis. ❌ WHY IT FAILS: this is a chronic, mechanical, non-inflammatory process, not a viral synovitis. ✅ Correct if: there were an acute symmetric polyarthritis after a viral illness."}], "reasoning": ["Use-related pain (worse by evening) + crepitus + no inflammatory signs + obesity = osteoarthritis", "OA is a degenerative (non-inflammatory) joint disease", "Cartilage breaks down: fibrillation, fissuring, and flaking of the articular surface", "Joint pathology = fissuring/flaking of articular cartilage → answer B"], "mechanism": "Osteoarthritis is a degenerative joint disease driven by mechanical wear (age, obesity, prior injury). Chondrocyte-mediated imbalance of matrix synthesis and degradation leads to progressive cartilage fibrillation, fissuring, and flaking, then full-thickness loss with eburnated subchondral bone, osteophytes, and subchondral cysts/sclerosis. Clinically: use-related pain worse at day's end, brief (<30 min) morning stiffness, crepitus, and minimal inflammation — distinct from rheumatoid (pannus) and crystal arthritides.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid MSK > Osteoarthritis vs rheumatoid: OA = degenerative cartilage (fibrillation/fissuring/flaking), osteophytes, subchondral sclerosis/cysts, Heberden/Bouchard nodes, use-related pain; RA = inflammatory synovial pannus. Cross-link crystal arthropathies (gout/CPPD) and hemochromatosis."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "First classify: non-inflammatory + mechanical + crepitus = OA. Then name the cartilage pathology (fissuring/flaking). The arthritis type dictates the histology."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on osteoarthritis vs rheumatoid arthritis, crepitus, fibrillation/fissuring, pannus, CPPD, chondrocalcinosis? Tell me which and I'll explain."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "CPPD crystals (A, your pick) and synovial hyperplasia (D) are INFLAMMATORY arthritis findings — but this joint has no swelling/warmth and pain worsens with use. That's degenerative OA → cartilage fissuring/flaking."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "The OA figure shows cartilage thinning, bone spurs (osteophytes), narrowed joint space, exposed/eburnated bone, and broken cartilage. Practice contrasting OA radiographic/pathologic features with RA's erosions and pannus."}, {"key": "other", "label": "✍️ Something else", "message": "Missed as C → build an arthritis-classification card: OA (mechanical, cartilage wear) vs RA (inflammatory pannus) vs gout/CPPD (crystals) vs hemochromatosis (iron). Use the inflammatory-vs-not split first."}], "keywords": [{"front": "Use-related knee pain + crepitus + no inflammation + obesity", "back": "Osteoarthritis"}, {"front": "OA joint pathology", "back": "Cartilage fibrillation, fissuring, and flaking → bone-on-bone"}, {"front": "OA radiographic features", "back": "Osteophytes, joint-space narrowing, subchondral sclerosis/cysts"}, {"front": "OA vs RA morning stiffness", "back": "OA brief (<30 min, worse with use); RA prolonged (>1 h, better with use)"}, {"front": "RA joint pathology", "back": "Synovial hyperplasia / pannus"}, {"front": "CPPD (pseudogout) crystals", "back": "Rhomboid, positively birefringent; chondrocalcinosis"}, {"front": "Hemochromatosis arthropathy", "back": "Iron in cartilage; 2nd/3rd MCP, hook osteophytes, CPPD"}], "firstAid": [{"tag": "answer", "topic": "Osteoarthritis", "detail": "MSK: degenerative cartilage loss (fibrillation/fissuring), osteophytes, subchondral sclerosis/cysts, Heberden/Bouchard nodes, risk factors (age, obesity, trauma)."}, {"tag": "options", "topic": "Arthritis differential", "detail": "MSK: rheumatoid (pannus), gout/CPPD (crystals), hemochromatosis (iron), viral arthritis — distinguishing features."}, {"tag": "stem", "topic": "Joint pain evaluation", "detail": "Rheum: inflammatory vs non-inflammatory pattern, morning stiffness, crepitus, exam findings."}], "memoryHook": "Wear-and-tear knee (worse by evening, crepitus, no swelling) = OA → cartilage frays, fissures, and flakes off.", "stem": [{"text": "A 52-year-old woman comes to the office due to pain in the right knee for the past several months. The pain is typically "}, {"text": "better in the morning but worsens by the end of the day", "clue": true, "type": "red", "note": "Pain that is minimal in the morning and worsens with USE through the day is the classic pattern of osteoarthritis (mechanical/'wear-and-tear'). This contrasts with inflammatory arthritis (e.g., RA), which causes prolonged morning stiffness that improves with activity."}, {"text": ". There is no history of trauma to the joint. Medical history is significant for hypertension, type 2 diabetes mellitus, and hypercholesterolemia. The patient is a lifetime nonsmoker. She works as an office clerk. Family history is significant for stroke in her mother and gout in her father. Temperature is 37.2 C (99 F), blood pressure is 145/95 mm Hg, and pulse is 90/min. "}, {"text": "BMI is 37", "clue": true, "type": "orange", "note": "Obesity (BMI 37) is a major risk factor for knee osteoarthritis through increased mechanical load on weight-bearing joints. Risk-factor clue reinforcing the degenerative cartilage diagnosis."}, {"text": " kg/m2. Physical examination shows "}, {"text": "crepitation on flexion and extension", "clue": true, "type": "green", "note": "Crepitus (grinding) with movement reflects roughened, degenerated articular cartilage and bone-on-bone contact — a hallmark of osteoarthritis. The pathology is cartilage breakdown, not synovial inflammation."}, {"text": " of the right knee; range of motion is otherwise normal, and there is "}, {"text": "no swelling, warmth, or redness", "clue": true, "type": "green", "note": "Absence of inflammatory signs argues against rheumatoid/septic/crystal arthritis and supports a NON-inflammatory, degenerative process. Combined with obesity (BMI 37) and use-related pain, this is osteoarthritis: fissuring and flaking of articular cartilage."}, {"text": ". Which of the following pathologic processes is most likely occurring in this patient's knee joint?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

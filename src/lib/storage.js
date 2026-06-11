@@ -108,11 +108,12 @@ export function saveFATopics(topics) {
 }
 
 // ── Test score log ────────────────────────────────────────────────────────────
-const TEST_LOG_KEY = "test-log-v3";
+const TEST_LOG_KEY = "test-log-v4";
 
 const SEED_TESTS = [
   { id: 1748563200000, testNum: "UWORLD test 1", score: 28, date: "2026-05-18", uworldAvg: 54, hasQuestions: true },
   { id: 1749686400000, testNum: "UWORLD test 2", score: 55, date: "2026-06-11", uworldAvg: 54, hasQuestions: true },
+  { id: 1749772800000, testNum: "UWORLD test 3", score: 49, date: "2026-06-12", uworldAvg: 54, hasQuestions: true },
 ];
 
 export function loadTestLog() {

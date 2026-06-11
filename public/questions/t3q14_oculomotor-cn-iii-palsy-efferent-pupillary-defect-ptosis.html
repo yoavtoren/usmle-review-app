@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oculomotor (CN III) palsy: efferent pupillary defect + ptosis</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q83", "item": 83, "qid": "8557", "title": "Oculomotor (CN III) palsy: efferent pupillary defect + ptosis", "system": "Neuroanatomy", "topic": "Pupillary light reflex / CN III", "correct": "B", "yourAnswer": "D", "percentCorrect": 49, "vignette": "A 34-year-old woman comes to the office due to double vision. The patient first experienced difficulty focusing her eyes while at work yesterday. On awakening this morning, her symptoms had progressed to frank diplopia. Medical history is insignificant. A complete physical examination is performed, including a full neurologic assessment. Shining light into the patient's right eye causes constriction of her right pupil, but not the left pupil. Shining light into her left eye causes constriction of only her right pupil. Which of the following additional physical examination findings is likely to be found in this patient?", "clues": [{"text": "double vision", "type": "blue", "note": "Diplopia signals an extraocular-muscle/cranial-nerve problem. With the pupil findings below, it localizes to CN III, which moves most extraocular muscles and carries the pupillary constrictor fibers."}, {"text": "Shining light into the patient's right eye causes constriction of her right pupil, but not the left pupil", "type": "red", "note": "Right light → right pupil constricts (intact right afferent + right efferent = direct response) but the LEFT pupil does not (absent consensual). The failure is on the LEFT efferent (motor) limb — the left pupil cannot constrict to any stimulus."}, {"text": "Shining light into her left eye causes constriction of only her right pupil", "type": "green", "note": "Left light → the RIGHT pupil constricts (left afferent is intact, driving the right consensual response), but the LEFT pupil still doesn't constrict. So the left eye SEES light (afferent OK) but cannot CONSTRICT — a left EFFERENT pupillary defect = left CN III lesion. CN III also raises the eyelid, so expect left ptosis."}], "whatMatters": "Decode the pupils: the LEFT pupil never constricts to light entering either eye, while the left eye still drives the right pupil — that's a left EFFERENT defect = left CN III palsy. CN III also innervates the levator palpebrae, so the expected extra finding is left eyelid drooping (ptosis) — answer B.", "strategy": "For pupillary-reflex puzzles, separate afferent (CN II, 'does the eye SEE the light?') from efferent (CN III, 'can the pupil CONSTRICT?'). A pupil that won't constrict to light from EITHER eye = efferent (CN III) defect. Then recall CN III's other jobs: ptosis, 'down-and-out' eye, and (if compressive) a blown pupil.", "options": [{"letter": "A", "text": "Absence of the left corneal reflex", "correct": false}, {"letter": "B", "text": "Drooping of the left eyelid", "correct": true}, {"letter": "C", "text": "Inability to close the left eye", "correct": false}, {"letter": "D", "text": "Inward deviation of the left eye", "correct": false}, {"letter": "E", "text": "Visual loss in the left eye", "correct": false}], "eliminations": [{"letter": "A", "label": "absent corneal reflex — CN V1/VII, not III", "detail": "WHAT IT IS: the corneal reflex tests CN V1 (afferent) and CN VII (efferent blink). ❌ WHY IT FAILS: this patient's lesion is CN III (efferent pupil + extraocular muscles), which doesn't mediate the corneal reflex. ✅ Correct if: the lesion involved trigeminal V1 or facial VII."}, {"letter": "C", "label": "can't close the eye — facial nerve (CN VII)", "detail": "WHAT IT IS: orbicularis oculi closes the eye and is CN VII. ❌ WHY IT FAILS: CN III OPENS the lid (levator palpebrae); a III lesion causes drooping (ptosis), not failure to close. ✅ Correct if: the deficit were facial-nerve weakness (Bell palsy)."}, {"letter": "D", "label": "inward (medial) deviation — that's CN VI, opposite of CN III (your pick)", "detail": "WHAT IT IS: an eye deviated INWARD (esotropia) at rest occurs with lateral rectus (CN VI) palsy. ❌ WHY IT FAILS: a CN III palsy gives the OPPOSITE — a 'down and OUT' eye (unopposed lateral rectus + superior oblique), not inward deviation. ✅ Correct if: the lesion were CN VI (abducens)."}, {"letter": "E", "label": "visual loss — that's CN II (afferent)", "detail": "WHAT IT IS: monocular visual loss implies an optic-nerve (afferent) problem. ❌ WHY IT FAILS: the left eye SEES fine (it drove the right pupil's consensual response); the defect is efferent (CN III), so vision is intact. ✅ Correct if: the left eye failed to drive ANY constriction (afferent/optic-nerve lesion → Marcus Gunn pupil)."}], "reasoning": ["Left pupil won't constrict to light in either eye = left efferent defect", "Left eye still drives the right pupil → left afferent (CN II) intact", "Efferent pupillary defect = left CN III (oculomotor) palsy", "CN III also elevates the lid → expect left ptosis → answer B"], "mechanism": "CN III (oculomotor) carries parasympathetic fibers to the pupillary sphincter and innervates the levator palpebrae and four extraocular muscles (superior/inferior/medial rectus, inferior oblique). A left CN III lesion blocks the efferent limb so the left pupil cannot constrict to light entering either eye (afferent/CN II is intact, so the left eye still drives the right consensual response). Other CN III signs: ptosis (levator weakness), a 'down-and-out' eye, and — with compressive lesions (PCom aneurysm, uncal herniation) — a dilated, fixed pupil from peripheral parasympathetic fiber involvement.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Neuro > Pupillary light reflex and CN III: afferent (CN II) vs efferent (CN III) limbs, direct/consensual responses, Marcus Gunn (afferent) vs efferent defect; CN III functions and palsy signs (ptosis, down-and-out, blown pupil)."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Work the reflex logic: which pupil fails to constrict regardless of where light enters? That side's EFFERENT (CN III) is out. Then list CN III's other jobs to pick the extra finding."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on afferent vs efferent pupillary defect, consensual response, ptosis, levator palpebrae, 'down and out,' Marcus Gunn pupil? Tell me which and I'll explain."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Inward deviation (D, your pick) is the CN VI sign — the exact opposite of CN III's 'down and OUT.' Don't swap the abducens and oculomotor pictures."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "The CN table maps each nerve's muscles, functions, and lesion findings. Practice the pupillary-reflex circuit diagram (light → CN II → pretectal → Edinger-Westphal → CN III → sphincter) to localize afferent vs efferent defects."}, {"key": "other", "label": "✍️ Something else", "message": "Missed as D → drill the contrast: CN III = ptosis + down-and-out + dilated pupil; CN VI = inward deviation (can't abduct). They look opposite."}], "keywords": [{"front": "Pupil won't constrict to light from either eye", "back": "Efferent (CN III) defect on that side"}, {"front": "Eye sees light but pupil can't constrict", "back": "Efferent CN III lesion (afferent CN II intact)"}, {"front": "CN III palsy classic signs", "back": "Ptosis, 'down and out' eye, dilated pupil (if compressive)"}, {"front": "CN III muscles", "back": "SR, IR, MR, IO + levator palpebrae + pupillary sphincter (parasympathetic)"}, {"front": "Inward (medial) eye deviation", "back": "CN VI (abducens) palsy"}, {"front": "Afferent pupillary defect (Marcus Gunn)", "back": "CN II/optic nerve lesion"}, {"front": "Compressive vs ischemic CN III palsy", "back": "Compressive (PCom aneurysm) → pupil involved; ischemic (diabetes) → pupil spared"}], "firstAid": [{"tag": "answer", "topic": "CN III (oculomotor) palsy", "detail": "Neuro: CN III functions, pupillary light reflex efferent limb, ptosis/down-and-out, compressive vs ischemic (pupil-sparing) palsies."}, {"tag": "options", "topic": "Cranial nerve lesions differential", "detail": "Neuro: CN II (vision/afferent), V1+VII (corneal reflex), VI (lateral rectus/abduction), VII (eye closure)."}, {"tag": "stem", "topic": "Pupillary light reflex circuit", "detail": "Neuro: retina → CN II → pretectal nucleus → bilateral Edinger-Westphal → CN III → ciliary ganglion → sphincter; direct vs consensual."}], "memoryHook": "The left pupil is 'deaf to all light' = its MOTOR (CN III) is out. CN III also lifts the lid → left ptosis (and 'down & out').", "stem": [{"text": "A 34-year-old woman comes to the office due to "}, {"text": "double vision", "clue": true, "type": "blue", "note": "Diplopia signals an extraocular-muscle/cranial-nerve problem. With the pupil findings below, it localizes to CN III, which moves most extraocular muscles and carries the pupillary constrictor fibers."}, {"text": ". The patient first experienced difficulty focusing her eyes while at work yesterday. On awakening this morning, her symptoms had progressed to frank diplopia. Medical history is insignificant. A complete physical examination is performed, including a full neurologic assessment. "}, {"text": "Shining light into the patient's right eye causes constriction of her right pupil, but not the left pupil", "clue": true, "type": "red", "note": "Right light → right pupil constricts (intact right afferent + right efferent = direct response) but the LEFT pupil does not (absent consensual). The failure is on the LEFT efferent (motor) limb — the left pupil cannot constrict to any stimulus."}, {"text": ". "}, {"text": "Shining light into her left eye causes constriction of only her right pupil", "clue": true, "type": "green", "note": "Left light → the RIGHT pupil constricts (left afferent is intact, driving the right consensual response), but the LEFT pupil still doesn't constrict. So the left eye SEES light (afferent OK) but cannot CONSTRICT — a left EFFERENT pupillary defect = left CN III lesion. CN III also raises the eyelid, so expect left ptosis."}, {"text": ". Which of the following additional physical examination findings is likely to be found in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>
