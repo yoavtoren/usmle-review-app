@@ -1904,7 +1904,7 @@ input[type="file"] { direction: ltr; text-align: left; }
 .home-page {
   direction: rtl;
   min-height: 100vh;
-  background: #080d18;
+  background: #0d1117;
   position: relative;
 }
 /* Ambient indigo halo behind the title */
@@ -1913,7 +1913,7 @@ input[type="file"] { direction: ltr; text-align: left; }
   position: absolute;
   top: 0; left: 50%; transform: translateX(-50%);
   width: 900px; height: 520px;
-  background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(99,102,241,0.18) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(99,102,241,0.20) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -1933,13 +1933,12 @@ input[type="file"] { direction: ltr; text-align: left; }
 
 .home-title {
   font-size: 52px; font-weight: 900;
-  background: linear-gradient(145deg, #fff 30%, #a5b4fc 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
+  text-shadow: 0 0 60px rgba(165,180,252,0.45);
   margin: 0; letter-spacing: -2.5px; line-height: 1;
 }
 .home-sub {
-  color: rgba(255,255,255,0.28); font-size: 13px; margin: 0;
+  color: rgba(255,255,255,0.45); font-size: 13px; margin: 0;
   letter-spacing: 0.3px;
 }
 
@@ -1990,7 +1989,7 @@ input[type="file"] { direction: ltr; text-align: left; }
 
 /* ── Cards ── */
 .home-card {
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -1998,37 +1997,31 @@ input[type="file"] { direction: ltr; text-align: left; }
   text-align: right;
   display: flex;
   flex-direction: column;
-  background: #0f1623;
+  background: #161b22;
+  color: rgba(255,255,255,0.85);
+  padding: 0;
   position: relative;
   transition: transform 0.2s cubic-bezier(0.2,0,0,1),
               border-color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  /* inset box-shadow creates the per-card top accent line — works reliably on <button> */
+  box-shadow: inset 0 1px 0 var(--card-c), 0 2px 8px rgba(0,0,0,0.4);
 }
 .home-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.13);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
-}
-
-/* Thin accent line across the top of each card */
-.home-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 14px; right: 14px; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--card-c), transparent);
-  opacity: 0.65;
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: inset 0 1px 0 var(--card-c), 0 16px 48px rgba(0,0,0,0.5);
 }
 
 /* Step 1 — wide card with indigo gradient bg */
 .home-card-step1 {
-  background: linear-gradient(150deg, #0f1623 40%, rgba(79,70,229,0.14) 100%);
-  border-color: rgba(79,70,229,0.18);
+  background: linear-gradient(150deg, #161b22 40%, rgba(79,70,229,0.22) 100%);
+  border-color: rgba(79,70,229,0.28);
   min-height: 200px;
+  box-shadow: inset 0 1px 0 #6366f1, 0 4px 20px rgba(79,70,229,0.15), 0 2px 6px rgba(0,0,0,0.4);
 }
-.home-card-step1::after { opacity: 1; }
 .home-card-step1:hover {
-  border-color: rgba(79,70,229,0.35);
-  box-shadow: 0 20px 56px rgba(79,70,229,0.20), 0 4px 16px rgba(0,0,0,0.4);
+  border-color: rgba(99,102,241,0.45);
+  box-shadow: inset 0 1px 0 #6366f1, 0 20px 56px rgba(79,70,229,0.28), 0 4px 16px rgba(0,0,0,0.4);
 }
 
 /* ── Card header row ── */
@@ -2038,7 +2031,7 @@ input[type="file"] { direction: ltr; text-align: left; }
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .home-card-featured .home-card-band { padding: 20px 22px 14px; }
 
@@ -2091,7 +2084,7 @@ input[type="file"] { direction: ltr; text-align: left; }
 .home-card-featured .home-stat-val { font-size: 46px; letter-spacing: -2px; }
 .home-stat-lbl {
   font-size: 10px; font-weight: 600;
-  color: rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.42);
   letter-spacing: 0.5px; text-transform: uppercase;
 }
 
@@ -2114,7 +2107,7 @@ input[type="file"] { direction: ltr; text-align: left; }
 }
 .home-prog-label {
   font-size: 10px; font-weight: 700;
-  color: rgba(255,255,255,0.25); text-align: left;
+  color: rgba(255,255,255,0.40); text-align: left;
 }
 
 /* ── Responsive ── */
