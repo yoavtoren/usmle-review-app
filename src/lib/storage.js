@@ -256,3 +256,146 @@ export function loadTestLog() {
 export function saveTestLog(log) {
   localStorage.setItem(TEST_LOG_KEY, JSON.stringify(log));
 }
+
+// ── Question intake metadata ───────────────────────────────────────────────
+const Q_INTAKE_KEY = "usmle-q-intake-v1";
+
+export function loadQIntake() {
+  try { return JSON.parse(localStorage.getItem(Q_INTAKE_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveQIntakeRaw(data) { localStorage.setItem(Q_INTAKE_KEY, JSON.stringify(data)); }
+export function getQIntakeMeta(id) { return loadQIntake()[id] || null; }
+export function saveQuestionIntake(id, meta) {
+  const all = loadQIntake();
+  all[id] = { ...meta, savedAt: Date.now() };
+  saveQIntakeRaw(all);
+}
+
+// ── Atomic wizard completion (schedule + mark done in one write) ───────────
+export function processWizardComplete(id, schedule) {
+  const progress = loadProgress();
+  const card = getCard(progress, id);
+  const now = Date.now();
+  let update = {};
+  if (schedule === "mastered") {
+    update = { status: "mastered", streak: INTERVALS.length - 1, lastReviewed: now, dueAt: null };
+  } else if (schedule === "got") {
+    const streak = Math.min(card.streak + 1, INTERVALS.length - 1);
+    update = { status: streak >= INTERVALS.length - 1 ? "mastered" : "review", streak, lastReviewed: now, dueAt: now + INTERVALS[streak] * DAY };
+  } else if (schedule === "again") {
+    update = { status: "review", streak: 0, lastReviewed: now, dueAt: now + INTERVALS[0] * DAY };
+  }
+  progress[id] = { ...card, ...update, done: true };
+  save(progress);
+  return progress;
+}
+
+// ── Topic miss counters ───────────────────────────────────────────────────
+const TOPIC_CTR_KEY = "usmle-topic-ctr-v1";
+
+export function loadTopicCounters() {
+  try { return JSON.parse(localStorage.getItem(TOPIC_CTR_KEY)) || {}; }
+  catch { return {}; }
+}
+export function saveTopicCounters(ctrs) {
+  localStorage.setItem(TOPIC_CTR_KEY, JSON.stringify(ctrs));
+}
+export function bumpTopicMiss(subject, system, questionId) {
+  const ctrs = loadTopicCounters();
+  const key = `${subject}::${system}`;
+  const cur = ctrs[key] || { count: 0, questionIds: [] };
+  const qIds = [...new Set([...cur.questionIds, questionId])];
+  ctrs[key] = { count: qIds.length, questionIds: qIds };
+  saveTopicCounters(ctrs);
+  return ctrs[key].count;
+}
+export function getWeakSubjects(n = 3) {
+  const ctrs = loadTopicCounters();
+  const totals = {};
+  for (const [key, val] of Object.entries(ctrs)) {
+    const [subject] = key.split("::");
+    totals[subject] = (totals[subject] || 0) + val.count;
+  }
+  return Object.entries(totals)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, n)
+    .map(([subject, count]) => ({ subject, count }));
+}
+
+// ── Light mode — pause SR due-counter ────────────────────────────────────
+const LIGHT_MODE_KEY = "usmle-light-mode-v1";
+export function getLightMode() {
+  try { return JSON.parse(localStorage.getItem(LIGHT_MODE_KEY)) || { paused: false }; }
+  catch { return { paused: false }; }
+}
+export function setLightMode(paused) {
+  localStorage.setItem(LIGHT_MODE_KEY, JSON.stringify({ paused, changedAt: Date.now() }));
+}
+export function isDueRespectingMode(card) {
+  if (getLightMode().paused) return false;
+  return isDue(card);
+}
+
+// ── Reset schedule to a target date ──────────────────────────────────────
+export function resetScheduleToDate(targetDateStr) {
+  const progress = loadProgress();
+  const targetMs = new Date(targetDateStr).getTime();
+  const now = Date.now();
+  const reviewCards = Object.entries(progress).filter(([, c]) => c.status === "review" || c.status === "mastered");
+  if (!reviewCards.length) return;
+  const span = Math.max(targetMs - now, DAY);
+  const step = Math.floor(span / Math.max(reviewCards.length, 1));
+  reviewCards.forEach(([id, card], i) => {
+    if (card.status !== "mastered") {
+      progress[id] = { ...card, dueAt: now + i * step };
+    }
+  });
+  save(progress);
+}
+
+// ── FA coverage from intake (sections read via "read-fa" tasks) ───────────
+const FA_INTAKE_KEY = "usmle-fa-intake-v1";
+export function loadFAIntake() {
+  try { return JSON.parse(localStorage.getItem(FA_INTAKE_KEY)) || {}; }
+  catch { return {}; }
+}
+export function touchFASection(sectionId) {
+  if (!sectionId) return;
+  const data = loadFAIntake();
+  if (!data[sectionId]) {
+    data[sectionId] = { touchedAt: Date.now() };
+    localStorage.setItem(FA_INTAKE_KEY, JSON.stringify(data));
+  }
+}
+export function getFAIntakeCoverage() {
+  return Object.keys(loadFAIntake()).length;
+}
+
+// ── Mastered this week ───────────────────────────────────────────────────
+export function getMasteredThisWeek() {
+  const progress = loadProgress();
+  const weekAgo = Date.now() - 7 * DAY;
+  return Object.values(progress).filter(c => c.status === "mastered" && c.lastReviewed >= weekAgo).length;
+}
+
+// ── JSON export / import ──────────────────────────────────────────────────
+export function exportAllData() {
+  const keys = [KEY, TASKS_KEY, FA_TOPICS_KEY, TEST_LOG_KEY, STREAK_KEY,
+    Q_INTAKE_KEY, TOPIC_CTR_KEY, FA_INTAKE_KEY, LIGHT_MODE_KEY];
+  const out = {};
+  for (const k of keys) {
+    const raw = localStorage.getItem(k);
+    if (raw) try { out[k] = JSON.parse(raw); } catch {}
+  }
+  return JSON.stringify(out, null, 2);
+}
+export function importAllData(jsonStr) {
+  try {
+    const data = JSON.parse(jsonStr);
+    for (const [k, v] of Object.entries(data)) {
+      localStorage.setItem(k, JSON.stringify(v));
+    }
+    return true;
+  } catch { return false; }
+}

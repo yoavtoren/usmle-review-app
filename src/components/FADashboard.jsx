@@ -3,6 +3,16 @@ import { loadFATopics, saveFATopics } from "../lib/storage.js";
 
 const BASE = import.meta.env.BASE_URL;
 
+const FA_REVIEW_INTERVALS = {
+  1: [14],
+  2: [10],
+  3: [5, 14],
+  4: [3, 10],
+  5: [2, 7, 14],
+};
+
+const DIFF_COLORS = ["", "#22c55e", "#84cc16", "#eab308", "#f97316", "#ef4444"];
+
 const CHAPTER_COLORS = [
   "#ef4444", "#f97316", "#eab308", "#22c55e",
   "#06b6d4", "#3b82f6", "#8b5cf6", "#ec4899",
@@ -63,6 +73,151 @@ function ProgressRing({ pct, color = "var(--accent)", size = 110 }) {
   );
 }
 
+function DifficultyStars({ value, onChange }) {
+  return (
+    <span className="fa-diff-stars" onClick={e => e.stopPropagation()}>
+      {[1, 2, 3, 4, 5].map(i => (
+        <button
+          key={i}
+          className={`fa-diff-star${i <= (value || 0) ? " fa-diff-star-on" : ""}`}
+          style={i <= (value || 0) ? { color: DIFF_COLORS[i] } : {}}
+          onClick={e => { e.stopPropagation(); onChange(i === value ? 0 : i); }}
+          title={`Difficulty ${i}`}
+        >★</button>
+      ))}
+    </span>
+  );
+}
+
+function ReviewBadge({ reviews, total, nextDueAt }) {
+  const count = reviews?.length || 0;
+  if (count >= total && total > 0) {
+    return <span className="fa-rev-badge fa-rev-done">✓ {count}× done</span>;
+  }
+  const isDue = nextDueAt && new Date(nextDueAt) <= new Date();
+  return (
+    <span className={`fa-rev-badge${isDue ? " fa-rev-due" : ""}`}>
+      {isDue ? "⚡ " : ""}Rev {count}/{total}
+    </span>
+  );
+}
+
+function ProgressChart({ lsTopics, chapterStats }) {
+  const { showDates, maxTotal, chFileToColor } = useMemo(() => {
+    const byDate = {};
+    for (const [key, val] of Object.entries(lsTopics)) {
+      if (!val.done || !val.doneAt) continue;
+      const chFile = key.split("::")[0];
+      const date = val.doneAt.slice(0, 10);
+      if (!byDate[date]) byDate[date] = {};
+      byDate[date][chFile] = (byDate[date][chFile] || 0) + 1;
+    }
+    const now = new Date();
+    const dates = [];
+    for (let i = 29; i >= 0; i--) {
+      const d = new Date(now);
+      d.setDate(d.getDate() - i);
+      const iso = d.toISOString().slice(0, 10);
+      dates.push({
+        date: iso,
+        label: d.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
+        counts: byDate[iso] || {},
+        total: Object.values(byDate[iso] || {}).reduce((a, b) => a + b, 0),
+      });
+    }
+    const maxTotal = Math.max(...dates.map(d => d.total), 1);
+    const chFileToColor = {};
+    chapterStats.forEach(ch => { chFileToColor[ch.file] = ch.color; });
+    return { showDates: dates, maxTotal, chFileToColor };
+  }, [lsTopics, chapterStats]);
+
+  const hasData = showDates.some(d => d.total > 0);
+  if (!hasData) return null;
+
+  const W = 600, H = 120;
+  const n = showDates.length;
+  const slotW = W / n;
+  const barW = Math.max(3, Math.floor(slotW) - 2);
+
+  return (
+    <div className="fad-chart-card">
+      <div className="fad-chart-head">
+        <span className="fad-section-label">Daily progress</span>
+        <span className="muted small">last 30 days</span>
+      </div>
+      <div className="fad-chart-wrap">
+        <svg viewBox={`0 0 ${W} ${H + 18}`} className="fad-chart-svg" preserveAspectRatio="xMidYMid meet">
+          {showDates.map((d, i) => {
+            if (d.total === 0) return null;
+            const x = Math.floor(i * slotW + (slotW - barW) / 2);
+            let y = H;
+            return (
+              <g key={d.date}>
+                {Object.entries(d.counts).sort().map(([chFile, count]) => {
+                  const barH = Math.max(2, Math.round((count / maxTotal) * H));
+                  y -= barH;
+                  const color = chFileToColor[chFile] || "#94a3b8";
+                  const yPos = y;
+                  return <rect key={chFile} x={x} y={yPos} width={barW} height={barH} fill={color} rx="1" />;
+                })}
+              </g>
+            );
+          })}
+          {showDates
+            .map((d, i) => ({ d, i }))
+            .filter(({ i }) => i % 5 === 0 || i === n - 1)
+            .map(({ d, i }) => (
+              <text key={i} x={Math.floor(i * slotW + slotW / 2)} y={H + 13}
+                textAnchor="middle" fontSize="7.5" fill="#94a3b8">
+                {d.label}
+              </text>
+            ))}
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+function DueReviewsPanel({ dueTopics, chapterStats, onMarkReviewed, onSetDifficulty }) {
+  if (dueTopics.length === 0) return null;
+  const chMap = {};
+  chapterStats.forEach(ch => { chMap[ch.file] = ch; });
+
+  return (
+    <div className="fad-due-card">
+      <div className="fad-due-head">
+        <span className="fad-section-label">⚡ Due reviews</span>
+        <span className="fad-due-count">{dueTopics.length} topic{dueTopics.length !== 1 ? "s" : ""} due</span>
+      </div>
+      <div className="fad-due-list">
+        {dueTopics.map(({ key, topicTitle, chFile, reviews, totalReviewsTarget, difficulty }) => {
+          const ch = chMap[chFile];
+          const color = ch?.color || "#94a3b8";
+          const chName = ch?.name || chFile;
+          return (
+            <div key={key} className="fad-due-item">
+              <div className="fad-due-item-left">
+                <span className="fad-due-dot" style={{ background: color }} />
+                <div className="fad-due-info">
+                  <span className="fad-due-topic">{topicTitle}</span>
+                  <span className="fad-due-ch" style={{ color }}>{chName}</span>
+                </div>
+              </div>
+              <div className="fad-due-item-right">
+                <DifficultyStars value={difficulty} onChange={d => onSetDifficulty(key, d)} />
+                <ReviewBadge reviews={reviews} total={totalReviewsTarget} nextDueAt={null} />
+                <button className="fad-due-mark-btn" onClick={() => onMarkReviewed(key)}>
+                  Reviewed ✓
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function FADashboard({ onBack, onTrack }) {
   const [data, setData] = useState(null);
   const [allTopics, setAllTopics] = useState({});
@@ -97,9 +252,66 @@ export default function FADashboard({ onBack, onTrack }) {
     setLsTopics(prev => {
       const cur = prev[key];
       const wasDone = cur !== undefined ? cur.done : markdownDone;
+      let updated;
+      if (wasDone) {
+        updated = {
+          done: false,
+          doneAt: null,
+          ...(cur?.difficulty ? { difficulty: cur.difficulty } : {}),
+          reviews: [],
+          nextDueAt: null,
+          totalReviewsTarget: null,
+        };
+      } else {
+        updated = { ...(cur || {}), done: true, doneAt: new Date().toISOString() };
+      }
+      const next = { ...prev, [key]: updated };
+      saveFATopics(next);
+      return next;
+    });
+  }, []);
+
+  const handleSetDifficulty = useCallback((key, difficulty) => {
+    setLsTopics(prev => {
+      const cur = prev[key] || {};
+      let updated;
+      if (!difficulty) {
+        const { difficulty: _d, reviews: _r, nextDueAt: _n, totalReviewsTarget: _t, ...rest } = cur;
+        updated = rest;
+      } else {
+        const intervals = FA_REVIEW_INTERVALS[difficulty];
+        const doneAtMs = cur.doneAt ? new Date(cur.doneAt).getTime() : Date.now();
+        const nextDueAt = new Date(doneAtMs + intervals[0] * 86400000).toISOString();
+        updated = {
+          ...cur,
+          difficulty,
+          reviews: cur.reviews || [],
+          nextDueAt,
+          totalReviewsTarget: intervals.length,
+        };
+      }
+      const next = { ...prev, [key]: updated };
+      saveFATopics(next);
+      return next;
+    });
+  }, []);
+
+  const handleMarkReviewed = useCallback((key) => {
+    setLsTopics(prev => {
+      const cur = prev[key] || {};
+      const difficulty = cur.difficulty || 1;
+      const intervals = FA_REVIEW_INTERVALS[difficulty];
+      const reviews = [
+        ...(cur.reviews || []),
+        { completedAt: new Date().toISOString(), reviewIndex: (cur.reviews || []).length },
+      ];
+      const nextIdx = reviews.length;
+      const nextDueAt = nextIdx < intervals.length
+        ? new Date(Date.now() + intervals[nextIdx] * 86400000).toISOString()
+        : null;
       const next = {
         ...prev,
-        [key]: { done: !wasDone, doneAt: !wasDone ? new Date().toISOString() : null },
+        [key]: { ...cur, reviews, nextDueAt, totalReviewsTarget: intervals.length },
       };
       saveFATopics(next);
       return next;
@@ -151,6 +363,30 @@ export default function FADashboard({ onBack, onTrack }) {
       .slice(0, 10);
   }, [lsTopics]);
 
+  const dueReviews = useMemo(() => {
+    const now = new Date();
+    const result = [];
+    for (const [key, val] of Object.entries(lsTopics)) {
+      if (!val.done || !val.nextDueAt || !val.difficulty) continue;
+      const reviews = val.reviews || [];
+      const target = val.totalReviewsTarget || FA_REVIEW_INTERVALS[val.difficulty]?.length || 1;
+      if (reviews.length >= target) continue;
+      if (new Date(val.nextDueAt) > now) continue;
+      const parts = key.split("::");
+      const rawTitle = parts[2] || "";
+      result.push({
+        key,
+        topicTitle: rawTitle.replace(/^\d+ /, ""),
+        chFile: parts[0],
+        reviews,
+        totalReviewsTarget: target,
+        difficulty: val.difficulty,
+        nextDueAt: val.nextDueAt,
+      });
+    }
+    return result.sort((a, b) => b.difficulty - a.difficulty || new Date(a.nextDueAt) - new Date(b.nextDueAt));
+  }, [lsTopics]);
+
   const searchResults = useMemo(() => {
     if (!search.trim() || !data) return [];
     const q = search.toLowerCase();
@@ -165,7 +401,7 @@ export default function FADashboard({ onBack, onTrack }) {
             const ls = lsTopics[key];
             const isDone = ls !== undefined ? ls.done : t.markdownDone;
             results.push({
-              ch, chIdx, sec, topic: t, key, isDone,
+              ch, chIdx, sec, topic: t, key, isDone, ls,
               color: CHAPTER_COLORS[chIdx % CHAPTER_COLORS.length],
               soft: CHAPTER_SOFT[chIdx % CHAPTER_SOFT.length],
               chName: ch.chapter.replace(/^\d+ /, ""),
@@ -216,13 +452,13 @@ export default function FADashboard({ onBack, onTrack }) {
           </div>
           <div className="fad-vdiv" />
           <div className="fad-hero-stat">
-            <span className="fad-hero-num">{activityLog.length}</span>
-            <span className="fad-hero-label">Active days</span>
+            <span className="fad-hero-num">{dueReviews.length > 0 ? dueReviews.length : activityLog.length}</span>
+            <span className="fad-hero-label">{dueReviews.length > 0 ? "Due reviews" : "Active days"}</span>
           </div>
         </div>
       </div>
 
-      {/* Multi-segment stacked progress bar */}
+      {/* Stacked progress bar */}
       <div className="fad-stack-wrap">
         <div className="fad-stack-bar">
           {chapterStats.map((ch, i) => ch.done > 0 && (
@@ -246,6 +482,17 @@ export default function FADashboard({ onBack, onTrack }) {
           ))}
         </div>
       </div>
+
+      {/* Progress chart */}
+      <ProgressChart lsTopics={lsTopics} chapterStats={chapterStats} />
+
+      {/* Due reviews panel */}
+      <DueReviewsPanel
+        dueTopics={dueReviews}
+        chapterStats={chapterStats}
+        onMarkReviewed={handleMarkReviewed}
+        onSetDifficulty={handleSetDifficulty}
+      />
 
       {/* Search */}
       <div className="fad-search-wrap">
@@ -281,27 +528,44 @@ export default function FADashboard({ onBack, onTrack }) {
               const doneAt = ls?.doneAt
                 ? new Date(ls.doneAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })
                 : null;
+              const hasDiff = r.isDone && ls?.difficulty > 0;
               return (
-                <button
-                  key={i}
-                  className={`fad-result-item${r.isDone ? " fad-result-done" : ""}`}
-                  onClick={() => toggle(r.key, r.topic.markdownDone)}
-                >
-                  <span
-                    className="fad-result-check-box"
-                    style={r.isDone ? { background: r.color, borderColor: r.color } : {}}
+                <div key={i} className={`fad-result-item-wrap${r.isDone ? " fad-result-done" : ""}`}>
+                  <button
+                    className="fad-result-item"
+                    onClick={() => toggle(r.key, r.topic.markdownDone)}
                   >
-                    {r.isDone ? "✓" : ""}
-                  </span>
-                  <span className="fad-result-body">
-                    <span className="fad-result-topic-name">{r.topic.title}</span>
-                    <span className="fad-result-path">
-                      <span style={{ color: r.color, fontWeight: 700 }}>{r.chName}</span>
-                      {" · "}{r.sec.title}
-                      {doneAt && <span className="fad-result-doneAt"> · done {doneAt}</span>}
+                    <span
+                      className="fad-result-check-box"
+                      style={r.isDone ? { background: r.color, borderColor: r.color } : {}}
+                    >
+                      {r.isDone ? "✓" : ""}
                     </span>
-                  </span>
-                </button>
+                    <span className="fad-result-body">
+                      <span className="fad-result-topic-name">{r.topic.title}</span>
+                      <span className="fad-result-path">
+                        <span style={{ color: r.color, fontWeight: 700 }}>{r.chName}</span>
+                        {" · "}{r.sec.title}
+                        {doneAt && <span className="fad-result-doneAt"> · done {doneAt}</span>}
+                      </span>
+                    </span>
+                  </button>
+                  {r.isDone && (
+                    <div className="fad-topic-meta">
+                      <DifficultyStars
+                        value={ls?.difficulty || 0}
+                        onChange={d => handleSetDifficulty(r.key, d)}
+                      />
+                      {hasDiff && (
+                        <ReviewBadge
+                          reviews={ls?.reviews || []}
+                          total={ls?.totalReviewsTarget || FA_REVIEW_INTERVALS[ls.difficulty]?.length || 1}
+                          nextDueAt={ls?.nextDueAt}
+                        />
+                      )}
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
@@ -322,22 +586,17 @@ export default function FADashboard({ onBack, onTrack }) {
               const sections = allTopics[ch.file] || [];
               return (
                 <div key={idx} className={`fad-ch-card${isOpen ? " fad-ch-open" : ""}`}>
-                  {/* Chapter header row */}
                   <button className="fad-ch-header" onClick={() => setExpanded(isOpen ? null : idx)}>
                     <span className="fad-ch-accent" style={{ background: ch.color }} />
                     <span className="fad-ch-name">{ch.name}</span>
                     <div className="fad-ch-bar-wrap">
-                      <div
-                        className="fad-ch-bar-fill"
-                        style={{ width: `${ch.pct}%`, background: ch.color }}
-                      />
+                      <div className="fad-ch-bar-fill" style={{ width: `${ch.pct}%`, background: ch.color }} />
                     </div>
                     <span className="fad-ch-pct" style={{ color: ch.color }}>{ch.pct}%</span>
                     <span className="fad-ch-count">{ch.done}/{ch.total}</span>
                     <span className="fad-ch-chev" style={{ color: ch.color }}>{isOpen ? "▲" : "▼"}</span>
                   </button>
 
-                  {/* Expanded topic list */}
                   {isOpen && (
                     <div className="fad-ch-body">
                       {sections.length === 0 && !chaptersLoaded && (
@@ -371,23 +630,40 @@ export default function FADashboard({ onBack, onTrack }) {
                                 const doneAt = ls?.doneAt
                                   ? new Date(ls.doneAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })
                                   : null;
+                                const hasDiff = isDone && (ls?.difficulty > 0);
                                 return (
-                                  <button
-                                    key={ti}
-                                    className={`fad-topic-item${isDone ? " fad-topic-done" : ""}`}
-                                    onClick={() => toggle(key, t.markdownDone)}
-                                  >
-                                    <span
-                                      className="fad-topic-check"
-                                      style={isDone ? { background: ch.color, borderColor: ch.color, color: "#fff" } : {}}
+                                  <div key={ti} className={`fad-topic-item${isDone ? " fad-topic-done" : ""}`}>
+                                    <button
+                                      className="fad-topic-toggle"
+                                      onClick={() => toggle(key, t.markdownDone)}
                                     >
-                                      {isDone ? "✓" : ""}
-                                    </span>
-                                    <span className="fad-topic-name">{t.title}</span>
-                                    {doneAt && (
-                                      <span className="fad-topic-date" style={{ color: ch.color }}>{doneAt}</span>
+                                      <span
+                                        className="fad-topic-check"
+                                        style={isDone ? { background: ch.color, borderColor: ch.color, color: "#fff" } : {}}
+                                      >
+                                        {isDone ? "✓" : ""}
+                                      </span>
+                                      <span className="fad-topic-name">{t.title}</span>
+                                      {doneAt && (
+                                        <span className="fad-topic-date" style={{ color: ch.color }}>{doneAt}</span>
+                                      )}
+                                    </button>
+                                    {isDone && (
+                                      <div className="fad-topic-meta">
+                                        <DifficultyStars
+                                          value={ls?.difficulty || 0}
+                                          onChange={d => handleSetDifficulty(key, d)}
+                                        />
+                                        {hasDiff && (
+                                          <ReviewBadge
+                                            reviews={ls?.reviews || []}
+                                            total={ls?.totalReviewsTarget || FA_REVIEW_INTERVALS[ls.difficulty]?.length || 1}
+                                            nextDueAt={ls?.nextDueAt}
+                                          />
+                                        )}
+                                      </div>
                                     )}
-                                  </button>
+                                  </div>
                                 );
                               })}
                             </div>
