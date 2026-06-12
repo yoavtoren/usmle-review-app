@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aging liver: aminotransferases stay normal</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q117", "item": 117, "qid": "21033", "title": "Aging liver: aminotransferases stay normal", "system": "Physiology", "topic": "Pharmacology of aging", "correct": "D", "yourAnswer": "E", "percentCorrect": 35, "vignette": "An 87-year-old woman comes to the office to discuss treatment for colon cancer, which was recently diagnosed by colonoscopy. CT scan was negative for metastatic disease. The patient has no other medical conditions, and family history is unremarkable. She does not drink alcohol. Vital signs are normal. A chemotherapy regimen containing a medication that is primarily metabolized by the liver is chosen for therapy. Because of the patient's age, the physician is considering adjusting the dose to prevent adverse effects. Which of the following parameters is likely to be the most similar between this patient and a healthy 40-year-old individual?", "clues": [{"text": "87-year-old woman", "type": "orange", "note": "Advanced age is the entire point: the stem tests which hepatic parameters DECLINE with normal aging and which stay UNCHANGED. Most metabolic/structural measures decline; you must find the exception."}, {"text": "medication that is primarily metabolized by the liver", "type": "blue", "note": "Hepatic drug clearance falls with age mainly due to reduced liver mass and reduced hepatic blood flow (and some decline in phase I/CYP activity), which is why dose reduction is considered - framing all the 'decreased' options."}, {"text": "adjusting the dose to prevent adverse effects", "type": "green", "note": "The clinical concern is age-related decline in hepatic clearance. The asked exception - the parameter UNCHANGED with age - is the serum aminotransferase level, which does not fall in healthy aging."}], "whatMatters": "The question wants the hepatic parameter that does NOT change with age. With normal aging the liver shrinks, hepatic blood flow drops, CYP450 activity and regenerative capacity decline - but serum aminotransferase (AST/ALT) levels remain unchanged. Answer D.", "strategy": "For 'what stays the same with aging' liver questions, recall that aging reduces liver size, hepatic blood flow, CYP450/phase I metabolism, and regenerative capacity - all DECREASE. Aminotransferase levels are the classic exception (normal aging does not raise/lower them), so elevated transaminases in an elderly patient still imply real disease.", "options": [{"letter": "A", "text": "Hepatic concentration of cytochrome P-450", "correct": false}, {"letter": "B", "text": "Liver blood perfusion", "correct": false}, {"letter": "C", "text": "Rate of hepatic regeneration", "correct": false}, {"letter": "D", "text": "Serum aminotransferase levels", "correct": true}, {"letter": "E", "text": "Size of the liver", "correct": false}], "eliminations": [{"letter": "A", "label": "CYP450 activity - decreases with age", "detail": "WHAT IT IS: hepatic cytochrome P-450 content/phase I metabolism. ❌ WHY IT FAILS: it declines with aging, slowing oxidative drug metabolism - a reason to reduce dose, so it differs between the two patients. ✅ Correct if: asked which parameter DECREASES with age."}, {"letter": "B", "label": "hepatic blood flow - decreases with age", "detail": "WHAT IT IS: liver perfusion. ❌ WHY IT FAILS: hepatic blood flow falls substantially with age, reducing first-pass extraction and clearance of high-extraction drugs - it is different, not similar. ✅ Correct if: asked which parameter drops with aging."}, {"letter": "C", "label": "hepatic regeneration - decreases with age", "detail": "WHAT IT IS: the liver's capacity to regenerate after injury. ❌ WHY IT FAILS: regenerative capacity declines with age, so it is not the same as a young adult. ✅ Correct if: asked about reduced repair/regeneration in the elderly."}, {"letter": "E", "label": "liver size - decreases with age", "detail": "WHAT IT IS: total liver mass/volume. ❌ WHY IT FAILS: liver size decreases with aging (partly from reduced perfusion), contributing to lower metabolic capacity - you chose this, but it does change. ✅ Correct if: asked which parameter shrinks with age."}], "reasoning": ["Normal aging reduces liver size, perfusion, CYP450, and regeneration", "These declines justify chemo dose reduction in the elderly", "Serum aminotransferases are NOT altered by healthy aging", "So AST/ALT are the parameter most similar to a 40-year-old -> answer D"], "mechanism": "With normal aging the liver loses mass and receives less blood flow, and phase I (cytochrome P-450) metabolism and regenerative capacity decline; phase II conjugation is relatively preserved. These changes reduce clearance of hepatically metabolized and high-extraction drugs, raising toxicity risk and prompting dose adjustment in elderly patients. Serum aminotransferases (AST, ALT), however, are not changed by aging itself - so an elevation should not be dismissed as 'just age' but investigated as genuine hepatocellular injury. Hence aminotransferase levels are the parameter most similar between an 87-year-old and a healthy 40-year-old.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid/Physiology > Aging and the liver: decreased liver mass, hepatic blood flow, CYP450/phase I metabolism, regenerative capacity; aminotransferases UNCHANGED. Implication: reduce doses of hepatically cleared drugs in elderly."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Read the polarity carefully - it asks what is the SAME (unchanged), not what changes. Everything that changes is a distractor; pick the one stable parameter."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on aminotransferases (AST/ALT), cytochrome P-450/phase I vs phase II, hepatic extraction/first-pass, regenerative capacity? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "You chose E (liver size). Liver size DOES shrink with age - it's a 'changes' option. The only 'stays the same' choice is aminotransferase levels."}, {"key": "other", "label": "✍️ Something else", "message": "Flip the question into a list: aging liver = smaller, less flow, less CYP, less regeneration; transaminases unchanged. The exception is the answer."}], "keywords": [{"front": "Liver parameter UNCHANGED with normal aging", "back": "Serum aminotransferases (AST/ALT)"}, {"front": "Hepatic changes that DECREASE with age", "back": "Liver mass, hepatic blood flow, CYP450/phase I metabolism, regeneration"}, {"front": "Phase I vs phase II in elderly", "back": "Phase I (CYP) declines; phase II conjugation relatively preserved"}, {"front": "Why reduce drug doses in elderly", "back": "Lower hepatic clearance + lower renal clearance -> higher drug levels"}, {"front": "Elevated AST/ALT in an elderly patient", "back": "Real hepatocellular injury (not explained by age)"}], "firstAid": [{"tag": "answer", "topic": "Aging and hepatic drug metabolism", "detail": "Pharmacology/Physiology: age-related decline in liver mass, flow, CYP450; aminotransferases unchanged."}, {"tag": "stem", "topic": "Pharmacokinetics in the elderly", "detail": "Pharm: reduced hepatic/renal clearance, altered volume of distribution, dose adjustment."}, {"tag": "options", "topic": "Liver function tests", "detail": "Hepatology: AST/ALT meaning, hepatocellular vs cholestatic patterns."}], "memoryHook": "Aging liver: Smaller, Slower flow, less CYP, less regrowth - but transaminases hold steady. The 'unchanged' one is the answer.", "stem": [{"text": "An "}, {"text": "87-year-old woman", "clue": true, "type": "orange", "note": "Advanced age is the entire point: the stem tests which hepatic parameters DECLINE with normal aging and which stay UNCHANGED. Most metabolic/structural measures decline; you must find the exception."}, {"text": " comes to the office to discuss treatment for colon cancer, which was recently diagnosed by colonoscopy. CT scan was negative for metastatic disease. The patient has no other medical conditions, and family history is unremarkable. She does not drink alcohol. Vital signs are normal. A chemotherapy regimen containing a "}, {"text": "medication that is primarily metabolized by the liver", "clue": true, "type": "blue", "note": "Hepatic drug clearance falls with age mainly due to reduced liver mass and reduced hepatic blood flow (and some decline in phase I/CYP activity), which is why dose reduction is considered - framing all the 'decreased' options."}, {"text": " is chosen for therapy. Because of the patient's age, the physician is considering "}, {"text": "adjusting the dose to prevent adverse effects", "clue": true, "type": "green", "note": "The clinical concern is age-related decline in hepatic clearance. The asked exception - the parameter UNCHANGED with age - is the serum aminotransferase level, which does not fall in healthy aging."}, {"text": ". Which of the following parameters is likely to be the most similar between this patient and a healthy 40-year-old individual?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

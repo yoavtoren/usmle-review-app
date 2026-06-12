@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celiac disease: villous atrophy of the small intestine</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q132", "item": 132, "qid": "20428", "title": "Celiac disease: villous atrophy of the small intestine", "system": "Pathology", "topic": "Malabsorption", "correct": "A", "yourAnswer": "E", "percentCorrect": 53, "vignette": "A 30-year-old man comes to the office due to a 4-month history of fatigue that is worse at the end of the day. The patient has also had abdominal bloating and intermittent loose stools after meals. His appetite is normal, and he has had no weight loss. Vital signs are normal. Examination shows pale mucosa. The abdomen is mildly distended and tympanic; there is no tenderness or organomegaly. Rectal examination shows brown stool that is negative for fecal occult blood. Laboratory results are as follows: hematocrit 28%, mean corpuscular volume 75 um3, leukocytes 7,100/mm3, platelets 490,000/mm3. C-reactive protein level is normal. Which of the following pathologic gastrointestinal tract findings is most likely to be present in this patient?", "clues": [{"text": "abdominal bloating and intermittent loose stools after meals", "type": "blue", "note": "Postprandial bloating and loose stools with a normal appetite suggest malabsorption. In a young adult with iron-deficiency anemia and no inflammation, celiac disease is the leading cause."}, {"text": "pale mucosa", "type": "orange", "note": "Pallor reflects anemia. Combined with the microcytic indices below, this is iron-deficiency anemia - a common presentation of celiac disease (impaired duodenal iron absorption)."}, {"text": "mean corpuscular volume 75 um3", "type": "red", "note": "Microcytic anemia (MCV 75 / normal 80-100) with low hematocrit and reactive thrombocytosis, in the absence of GI blood loss (negative occult blood), points to iron malabsorption - classic for celiac disease."}, {"text": "C-reactive protein level is normal", "type": "green", "note": "A normal CRP argues against inflammatory bowel disease/colitis. This steers the diagnosis toward a non-inflammatory malabsorptive process - celiac disease with villous atrophy - rather than Crohn or microscopic colitis."}], "whatMatters": "A young adult with malabsorptive symptoms, iron-deficiency (microcytic) anemia, no GI bleeding, and a normal CRP has celiac disease. The pathologic finding is atrophy of the small-intestinal mucosa with loss of villi - answer A.", "strategy": "For malabsorption + microcytic (iron-deficiency) anemia without bleeding in a young adult, think celiac disease: duodenal villous blunting impairs iron absorption. Match the histology - villous atrophy with crypt hyperplasia and intraepithelial lymphocytes (small intestine) - and rule out colonic processes (normal CRP, no blood).", "options": [{"letter": "A", "text": "Atrophic mucosa with loss of villi in the small intestine", "correct": true}, {"letter": "B", "text": "Autoimmune destruction of gastric parietal cells", "correct": false}, {"letter": "C", "text": "Chronic inflammation within the colonic mucosa and submucosa", "correct": false}, {"letter": "D", "text": "Giardia trophozoites lining the small intestinal mucosa", "correct": false}, {"letter": "E", "text": "Subepithelial collagen deposition in the colon", "correct": false}], "eliminations": [{"letter": "B", "label": "parietal cell destruction - would cause B12 (macrocytic) anemia", "detail": "WHAT IT IS: autoimmune gastritis destroying parietal cells -> loss of intrinsic factor -> B12 deficiency (pernicious anemia). ❌ WHY IT FAILS: that causes MACROCYTIC anemia, but this patient is MICROCYTIC (iron deficiency); the location/anemia type don't fit. ✅ Correct if: macrocytic anemia with low B12 and anti-parietal/IF antibodies."}, {"letter": "C", "label": "colonic transmural/mucosal inflammation - IBD, CRP would be up", "detail": "WHAT IT IS: chronic colonic inflammation (inflammatory bowel disease). ❌ WHY IT FAILS: CRP is normal and there's no blood in stool; the picture is non-inflammatory small-bowel malabsorption, not colitis. ✅ Correct if: elevated CRP, bloody diarrhea, and colonic involvement."}, {"letter": "D", "label": "Giardia - usually acute/travel-related, not this chronic iron-deficiency picture", "detail": "WHAT IT IS: giardiasis causes small-bowel malabsorption with trophozoites on biopsy. ❌ WHY IT FAILS: it typically follows contaminated-water/travel exposure with acute-subacute foul diarrhea, not chronic iron-deficiency anemia from villous atrophy; nothing suggests exposure here. ✅ Correct if: camping/travel exposure with steatorrhea and trophozoites/cysts identified."}, {"letter": "E", "label": "subepithelial collagen in colon - collagenous colitis, wrong demographic/labs", "detail": "WHAT IT IS: collagenous (microscopic) colitis - watery diarrhea with a thickened subepithelial collagen band, typically in older women. ❌ WHY IT FAILS: it doesn't cause iron-deficiency anemia or affect the small bowel; this young man's microcytic anemia and malabsorption fit celiac. You chose this. ✅ Correct if: chronic watery diarrhea in an older woman with normal endoscopy but collagen band on biopsy."}], "reasoning": ["Young adult, malabsorptive symptoms, iron-deficiency (microcytic) anemia", "No GI blood loss (negative occult blood); normal CRP (non-inflammatory)", "Celiac disease: gluten-driven small-bowel mucosal damage", "Histology = villous atrophy (with crypt hyperplasia, intraepithelial lymphocytes) -> answer A"], "mechanism": "Celiac disease is an immune reaction to gliadin (gluten) in genetically predisposed (HLA-DQ2/DQ8) individuals. Tissue transglutaminase-modified gliadin peptides activate CD4 T cells, driving mucosal injury concentrated in the duodenum/proximal small intestine: villous atrophy (blunting), crypt hyperplasia, and increased intraepithelial lymphocytes. Loss of absorptive surface impairs iron (and later folate/fat-soluble vitamin) uptake, producing iron-deficiency microcytic anemia and malabsorptive symptoms without colonic inflammation. Diagnosis is by anti-tTG/anti-endomysial IgA antibodies and confirmatory small-bowel biopsy; treatment is a gluten-free diet.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid GI/Pathology > Celiac disease: HLA-DQ2/DQ8, anti-tTG/anti-endomysial/anti-DGP antibodies, duodenal villous atrophy + crypt hyperplasia + intraepithelial lymphocytes, iron/folate malabsorption, dermatitis herpetiformis, gluten-free diet."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Synthesize the labs: microcytic anemia + malabsorption + no bleeding + normal CRP -> small-bowel villous atrophy. Then choose the histology that matches."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on villous atrophy, malabsorption, microcytic vs macrocytic anemia, intraepithelial lymphocytes, collagenous colitis? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "You chose E (collagenous colitis). That's a COLONIC, watery-diarrhea diagnosis in older women without iron deficiency. The iron-deficiency + small-bowel malabsorption picture is celiac -> villous atrophy."}, {"key": "other", "label": "✍️ Something else", "message": "Anchor: young adult + iron-deficiency anemia + bloating/loose stools + normal CRP = celiac (duodenal villous atrophy)."}], "keywords": [{"front": "Malabsorption + iron-deficiency anemia + villous atrophy, young adult", "back": "Celiac disease"}, {"front": "Celiac histology", "back": "Villous atrophy + crypt hyperplasia + intraepithelial lymphocytes (duodenum)"}, {"front": "Celiac serology / HLA", "back": "Anti-tTG / anti-endomysial IgA; HLA-DQ2/DQ8"}, {"front": "Parietal cell autoimmunity -> anemia type", "back": "B12 deficiency -> macrocytic (pernicious anemia)"}, {"front": "Collagenous/microscopic colitis", "back": "Watery diarrhea, older women, subepithelial collagen band, normal endoscopy"}, {"front": "Celiac skin association", "back": "Dermatitis herpetiformis (IgA deposits)"}], "firstAid": [{"tag": "answer", "topic": "Celiac disease", "detail": "GI: pathogenesis, duodenal villous atrophy, serology, gluten-free diet, complications."}, {"tag": "stem", "topic": "Malabsorption & microcytic anemia", "detail": "GI/Heme: iron-deficiency from malabsorption vs blood loss; reactive thrombocytosis."}, {"tag": "options", "topic": "Other GI mucosal pathologies", "detail": "GI: autoimmune gastritis, IBD, giardiasis, microscopic (collagenous/lymphocytic) colitis."}], "memoryHook": "Celiac = gluten flattens the villi. Lost absorptive carpet -> iron can't get in -> microcytic anemia.", "stem": [{"text": "A 30-year-old man comes to the office due to a 4-month history of fatigue that is worse at the end of the day. The patient has also had "}, {"text": "abdominal bloating and intermittent loose stools after meals", "clue": true, "type": "blue", "note": "Postprandial bloating and loose stools with a normal appetite suggest malabsorption. In a young adult with iron-deficiency anemia and no inflammation, celiac disease is the leading cause."}, {"text": ". His appetite is normal, and he has had no weight loss. Vital signs are normal. Examination shows "}, {"text": "pale mucosa", "clue": true, "type": "orange", "note": "Pallor reflects anemia. Combined with the microcytic indices below, this is iron-deficiency anemia - a common presentation of celiac disease (impaired duodenal iron absorption)."}, {"text": ". The abdomen is mildly distended and tympanic; there is no tenderness or organomegaly. Rectal examination shows brown stool that is negative for fecal occult blood. Laboratory results are as follows: hematocrit 28%, "}, {"text": "mean corpuscular volume 75 um3", "clue": true, "type": "red", "note": "Microcytic anemia (MCV 75 / normal 80-100) with low hematocrit and reactive thrombocytosis, in the absence of GI blood loss (negative occult blood), points to iron malabsorption - classic for celiac disease."}, {"text": ", leukocytes 7,100/mm3, platelets 490,000/mm3. "}, {"text": "C-reactive protein level is normal", "clue": true, "type": "green", "note": "A normal CRP argues against inflammatory bowel disease/colitis. This steers the diagnosis toward a non-inflammatory malabsorptive process - celiac disease with villous atrophy - rather than Crohn or microscopic colitis."}, {"text": ". Which of the following pathologic gastrointestinal tract findings is most likely to be present in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

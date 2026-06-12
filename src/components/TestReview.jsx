@@ -37,6 +37,7 @@ export default function TestReview({ onBack }) {
       if (block === "test1" && q.block !== undefined)       return false;
       if (block === "test2" && q.block !== "UWORLD test 2") return false;
       if (block === "test3" && q.block !== "UWORLD test 3") return false;
+      if (block === "test4" && q.block !== "UWORLD test 4") return false;
       if (filter === "missed"   && !q.missed)                               return false;
       if (filter === "due"      && !(card.status !== "new" && isDue(card))) return false;
       if (filter === "mastered" && card.status !== "mastered")              return false;
@@ -114,7 +115,7 @@ export default function TestReview({ onBack }) {
         </div>
 
         <div className="filters">
-          {[["all","All tests"],["test1","Test 1"],["test2","Test 2"],["test3","Test 3"]].map(([key, label]) => (
+          {[["all","All tests"],["test1","Test 1"],["test2","Test 2"],["test3","Test 3"],["test4","Test 4"]].map(([key, label]) => (
             <button key={key} className={block === key ? "chip active" : "chip"} onClick={() => setBlock(key)}>{label}</button>
           ))}
         </div>
@@ -154,7 +155,7 @@ export default function TestReview({ onBack }) {
                   <span className="qitem-text">
                     <span className="qitem-title">{q.title}</span>
                     <span className="qitem-meta">
-                      {q.block === "UWORLD test 3" ? "T3" : q.block === "UWORLD test 2" ? "T2" : "T1"} #{q.item} · {q.system}
+                      {q.block === "UWORLD test 4" ? "T4" : q.block === "UWORLD test 3" ? "T3" : q.block === "UWORLD test 2" ? "T2" : "T1"} #{q.item} · {q.system}
                       {q.missed && <span className="tag-missed"> missed</span>}
                     </span>
                   </span>
