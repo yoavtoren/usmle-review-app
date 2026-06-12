@@ -10,23 +10,33 @@ import { buildGCalLink } from "../lib/calendarExport.js";
 const TL_START   = new Date("2026-06-10T00:00:00Z");
 const TL_END     = new Date("2026-10-12T00:00:00Z");
 const TOTAL_DAYS = Math.round((TL_END - TL_START) / 86400000);
-const DAY_PX     = 9;
+const DAY_PX     = 16;
 const PADD       = 20;
-const TRACK_W    = TOTAL_DAYS * DAY_PX + PADD * 2;   // 1156px
-const LABEL_W    = 206;   // sticky left label column
+const TRACK_W    = TOTAL_DAYS * DAY_PX + PADD * 2;
+const LABEL_W    = 206;
 const TOTAL_W    = LABEL_W + TRACK_W;
 const BAND_H     = 38;
-const AXIS_H     = 24;
+const AXIS_H     = 28;
 const ROW_H      = 34;
 const DOT_R      = 5;
 
 const MONTHS = [
-  { str: "2026-06-10", label: "Jun" },
-  { str: "2026-07-01", label: "Jul" },
-  { str: "2026-08-01", label: "Aug" },
-  { str: "2026-09-01", label: "Sep" },
-  { str: "2026-10-01", label: "Oct" },
+  { str: "2026-06-10", label: "יוני" },
+  { str: "2026-07-01", label: "יולי" },
+  { str: "2026-08-01", label: "אוג'" },
+  { str: "2026-09-01", label: "ספט'" },
+  { str: "2026-10-01", label: "אוק'" },
 ];
+
+// Week ticks — every 7 days from TL_START
+const WEEK_TICKS = (() => {
+  const ticks = [];
+  for (let d = 0; d < TOTAL_DAYS; d += 7) {
+    const date = new Date(TL_START.getTime() + d * 86400000);
+    ticks.push({ x: d * DAY_PX + PADD, label: `${date.getDate()}/${date.getMonth() + 1}` });
+  }
+  return ticks;
+})();
 
 function dateToX(dateStr) {
   if (!dateStr) return -1;
@@ -308,12 +318,21 @@ export default function Timeline() {
       <div className="tl-rows-wrap" ref={scrollRef}>
         <div style={{ width: TOTAL_W, height: totalHeight, position: "relative" }}>
 
-          {/* Vertical month grid lines — span full height */}
+          {/* Week grid lines — span full height */}
+          {WEEK_TICKS.map((wk, i) => (
+            <div key={i} style={{
+              position: "absolute", left: LABEL_W + wk.x,
+              top: 0, bottom: 0, width: 1,
+              background: "rgba(0,0,0,0.04)", pointerEvents: "none",
+            }} />
+          ))}
+
+          {/* Vertical month grid lines — span full height (stronger) */}
           {MONTHS.map(({ str }) => (
             <div key={str} style={{
               position: "absolute", left: LABEL_W + dateToX(str),
               top: 0, bottom: 0, width: 1,
-              background: "rgba(0,0,0,0.05)", pointerEvents: "none",
+              background: "rgba(0,0,0,0.09)", pointerEvents: "none",
             }} />
           ))}
 
@@ -369,15 +388,25 @@ export default function Timeline() {
               <span style={{ fontSize: 9.5, fontWeight: 700, color: "#94a3b8" }}>{todayStr}</span>
             </div>
             <div style={{ position: "relative", width: TRACK_W, height: AXIS_H }}>
+              {/* Week ticks */}
+              {WEEK_TICKS.map((wk, i) => (
+                <div key={i} style={{ position: "absolute", left: wk.x, top: 0, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                  <div style={{ width: 1, height: 5, background: "rgba(0,0,0,0.15)", marginTop: 2 }} />
+                  <div style={{ fontSize: 8, color: "#b0b8c8", fontWeight: 600, whiteSpace: "nowrap", marginTop: 1, marginLeft: 2 }}>
+                    {wk.label}
+                  </div>
+                </div>
+              ))}
+              {/* Month labels — larger, on top */}
               {MONTHS.map(({ str, label }) => (
-                <div key={str} style={{ position: "absolute", left: dateToX(str) + 4, top: 4, fontSize: 11, fontWeight: 700, color: "#94a3b8" }}>{label}</div>
+                <div key={str} style={{ position: "absolute", left: dateToX(str) + 4, top: 2, fontSize: 12, fontWeight: 800, color: "#64748b", zIndex: 2 }}>{label}</div>
               ))}
               <div style={{
                 position: "absolute", left: todayX - 14, top: 3,
                 fontSize: 9, fontWeight: 900, color: "#ef4444",
                 background: "#fff", padding: "1px 4px", borderRadius: 4, border: "1.5px solid #ef4444",
                 zIndex: 10, whiteSpace: "nowrap",
-              }}>NOW</div>
+              }}>עכשיו</div>
             </div>
           </div>
 
