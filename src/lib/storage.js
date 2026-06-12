@@ -95,6 +95,17 @@ export function getStreak() {
   }
 }
 
+// ── Task manager ─────────────────────────────────────────────────────────────
+const TASKS_KEY = "usmle-tasks-v1";
+
+export function loadTasks() {
+  try { return JSON.parse(localStorage.getItem(TASKS_KEY)) || []; }
+  catch { return []; }
+}
+export function saveTasks(tasks) {
+  localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
+}
+
 // ── FA topic manual tracking ──────────────────────────────────────────────────
 const FA_TOPICS_KEY = "fa-topics-v2";
 
