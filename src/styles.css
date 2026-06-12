@@ -1848,3 +1848,33 @@ kbd { background: var(--surface); border: 1px solid var(--line-hover); border-ra
 .tl-ev-row:hover {
   filter: brightness(0.97);
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   HEBREW RTL ALIGNMENT
+═══════════════════════════════════════════════════════════════════ */
+
+/* Page containers */
+.welcome         { direction: rtl; }
+.ws-page         { direction: rtl; }
+
+/* Timeline — header / filters / goals only; Gantt track is exempt */
+.tl-header,
+.tl-filters,
+.tl-jump-row     { direction: rtl; }
+.goals-panel     { direction: rtl; }
+.tl-vlist        { direction: rtl; }
+.ev-drawer       { direction: rtl; }
+
+/* Reminders */
+.popcenter-modal { direction: rtl; }
+.toast-card      { direction: rtl; }
+
+/* NavBar */
+.top-nav         { direction: rtl; }
+
+/* Gantt chart must stay LTR — date axis flows left→right */
+.tl-rows-wrap    { direction: ltr !important; }
+
+/* Date & file inputs are always LTR */
+input[type="date"],
+input[type="file"] { direction: ltr; text-align: left; }
