@@ -1878,3 +1878,74 @@ kbd { background: var(--surface); border: 1px solid var(--line-hover); border-ra
 /* Date & file inputs are always LTR */
 input[type="date"],
 input[type="file"] { direction: ltr; text-align: left; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   HOME PAGE (general overview)
+═══════════════════════════════════════════════════════════════════ */
+.home-page {
+  direction: rtl;
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 48px 32px 72px;
+}
+.home-hero {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.home-title  { font-size: 34px; font-weight: 900; color: var(--text); margin: 0; letter-spacing: -0.5px; }
+.home-sub    { color: var(--muted); font-size: 14px; margin: 0; }
+.home-phase-badge {
+  font-size: 12px; font-weight: 800;
+  padding: 5px 14px; border-radius: 100px;
+}
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.home-card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-top: 3px solid transparent;
+  border-radius: var(--r-2xl);
+  padding: 24px;
+  cursor: pointer;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--sh-sm);
+  transition: transform 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+.home-card:hover { transform: translateY(-2px); box-shadow: var(--sh-md); }
+.home-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.home-card-icon  { font-size: 22px; flex-shrink: 0; }
+.home-card-title { font-size: 19px; font-weight: 900; flex: 1; text-align: right; }
+.home-card-arrow { font-size: 16px; font-weight: 700; margin-right: auto; }
+.home-card-stats { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+.home-stat       { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.home-stat-val   { font-size: 26px; font-weight: 900; line-height: 1; }
+.home-stat-lbl   { font-size: 11px; font-weight: 600; color: var(--muted); }
+.home-card-prog-wrap {
+  height: 4px; background: var(--surface-3);
+  border-radius: 999px; overflow: hidden;
+}
+.home-card-prog-bar { height: 100%; border-radius: 999px; transition: width 0.5s; }
+@media (max-width: 680px) {
+  .home-page  { padding: 32px 16px 56px; }
+  .home-title { font-size: 26px; }
+  .home-grid  { grid-template-columns: 1fr; }
+}

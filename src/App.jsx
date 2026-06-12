@@ -15,6 +15,7 @@ import { generateICS, downloadICS } from "./lib/calendarExport.js";
 import { loadTimelineEvents } from "./lib/timelineData.js";
 import { loadAllWorkstreamTasks } from "./lib/workstreamData.js";
 import WorkstreamPage from "./components/WorkstreamPage.jsx";
+import HomePage from "./components/HomePage.jsx";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -87,6 +88,9 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={
+          <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} />
+        } />
+        <Route path="/step1" element={
           <WelcomeScreen
             onNav={nav}
             testStats={testStats}
@@ -96,13 +100,13 @@ export default function App() {
           />
         } />
         <Route path="/tests" element={
-          <TestDashboard onBack={() => nav("/")} onStudy={(deckFile, block) => nav("/tests/review", { state: { deckFile, block } })} />
+          <TestDashboard onBack={() => nav("/step1")} onStudy={(deckFile, block) => nav("/tests/review", { state: { deckFile, block } })} />
         } />
         <Route path="/tests/review" element={
           <TestReview onBack={() => nav("/tests")} />
         } />
         <Route path="/fa" element={
-          <FADashboard onBack={() => nav("/")} onTrack={() => nav("/fa/study")} />
+          <FADashboard onBack={() => nav("/step1")} onTrack={() => nav("/fa/study")} />
         } />
         <Route path="/fa/study" element={
           <FATracker onBack={() => nav("/fa")} />
@@ -114,13 +118,7 @@ export default function App() {
         <Route path="/medcross" element={<WorkstreamPage categoryId="medcross" />} />
         <Route path="/selfcare" element={<WorkstreamPage categoryId="selfcare" />} />
         <Route path="*" element={
-          <WelcomeScreen
-            onNav={nav}
-            testStats={testStats}
-            faStats={faStats}
-            streak={getStreak()}
-            questions={questions}
-          />
+          <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} />
         } />
       </Routes>
     </>

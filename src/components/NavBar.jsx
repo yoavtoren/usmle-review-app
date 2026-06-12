@@ -10,6 +10,7 @@ const FLAT_LINKS = [
 ];
 
 const STEP1_CHILDREN = [
+  { to: "/step1", label: "📊 לוח Step 1" },
   { to: "/tests", label: "📝 Tests"      },
   { to: "/fa",    label: "📖 First Aid"  },
 ];
@@ -21,7 +22,7 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
   const [step1Open, setStep1Open] = useState(false);
   const wrapRef = useRef(null);
 
-  const isStep1Active = p.startsWith("/tests") || p.startsWith("/fa");
+  const isStep1Active = p === "/step1" || p.startsWith("/tests") || p.startsWith("/fa");
 
   useEffect(() => {
     function handler(e) {
