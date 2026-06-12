@@ -104,7 +104,7 @@ export default function HomePage({ testStats, faStats, streak }) {
           {sections.map(s => (
             <button
               key={s.id}
-              className={`home-card${s.featured ? " home-card-featured" : ""}`}
+              className={`home-card home-card-${s.id}${s.featured ? " home-card-featured" : ""}`}
               onClick={() => nav(s.to)}
               style={{ "--card-c": s.color }}
             >

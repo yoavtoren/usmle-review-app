@@ -1910,16 +1910,30 @@ input[type="file"] { direction: ltr; text-align: left; }
 /* Dark hero header */
 .home-hero {
   background: linear-gradient(148deg, #0f172a 0%, #1e1b4b 100%);
-  padding: 44px 40px 60px;
+  padding: 48px 40px 68px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(99,102,241,0.25) 0%, transparent 70%);
+  pointer-events: none;
 }
 .home-title {
-  font-size: 40px; font-weight: 900; color: #fff;
-  margin: 0; letter-spacing: -1px; line-height: 1.1;
+  font-size: 44px; font-weight: 900;
+  background: linear-gradient(135deg, #fff 30%, #c4b5fd 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0; letter-spacing: -1.5px; line-height: 1.1;
+  position: relative;
 }
 .home-sub { color: rgba(255,255,255,0.42); font-size: 13px; margin: 0; }
 
@@ -1948,14 +1962,24 @@ input[type="file"] { direction: ltr; text-align: left; }
   z-index: 1;
 }
 
-/* Card grid — 3 columns; step1 spans 2 */
+/* Card grid — named areas guarantee layout regardless of RTL direction */
 .home-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-areas:
+    "timeline step1 step1"
+    "selfcare medcross aims";
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* Per-card placement */
+.home-card-step1    { grid-area: step1; }
+.home-card-timeline { grid-area: timeline; }
+.home-card-aims     { grid-area: aims; }
+.home-card-medcross { grid-area: medcross; }
+.home-card-selfcare { grid-area: selfcare; }
 
 /* Cards */
 .home-card {
@@ -1975,25 +1999,35 @@ input[type="file"] { direction: ltr; text-align: left; }
   transform: translateY(-5px) scale(1.01);
   box-shadow: 0 14px 44px rgba(0,0,0,0.13), 0 4px 14px rgba(0,0,0,0.07);
 }
-.home-card-featured { grid-column: span 2; }
+/* Featured flag kept for extra styling hooks */
+.home-card-featured { /* grid placement handled by .home-card-{id} */ }
+
+/* Step 1 card gets a premium feel */
+.home-card-step1 {
+  box-shadow: 0 8px 40px rgba(79,70,229,0.22), 0 2px 8px rgba(0,0,0,0.08);
+  min-height: 230px;
+}
+.home-card-step1:hover {
+  box-shadow: 0 18px 60px rgba(79,70,229,0.32), 0 6px 20px rgba(0,0,0,0.10);
+}
 
 /* Colored band at top of every card */
 .home-card-band {
   background: var(--card-c);
-  background-image: linear-gradient(130deg, transparent 30%, rgba(0,0,0,0.18));
+  background-image: linear-gradient(130deg, rgba(255,255,255,0.12) 0%, transparent 50%, rgba(0,0,0,0.15) 100%);
   padding: 18px 20px 16px;
   display: flex;
   align-items: center;
   gap: 10px;
   color: #fff;
 }
-.home-card-featured .home-card-band { padding: 24px 26px 20px; }
+.home-card-featured .home-card-band { padding: 28px 28px 22px; }
 .home-card-icon { font-size: 22px; flex-shrink: 0; }
-.home-card-featured .home-card-icon { font-size: 28px; }
+.home-card-featured .home-card-icon { font-size: 32px; }
 .home-card-name {
   font-size: 16px; font-weight: 800; flex: 1; text-align: right;
 }
-.home-card-featured .home-card-name { font-size: 21px; }
+.home-card-featured .home-card-name { font-size: 24px; letter-spacing: -0.5px; }
 .home-card-arr { font-size: 15px; opacity: 0.55; flex-shrink: 0; }
 
 /* Stats area */
@@ -2006,29 +2040,39 @@ input[type="file"] { direction: ltr; text-align: left; }
   align-items: flex-end;
   flex: 1;
 }
-.home-card-featured .home-card-body { padding: 22px 26px 18px; gap: 28px; }
+.home-card-featured .home-card-body { padding: 22px 28px 18px; gap: 32px; }
 .home-stat { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
 .home-stat-val {
-  font-size: 32px; font-weight: 900; line-height: 1; color: var(--card-c);
+  font-size: 30px; font-weight: 900; line-height: 1; color: var(--card-c);
 }
-.home-card-featured .home-stat-val { font-size: 42px; }
+.home-card-featured .home-stat-val { font-size: 48px; }
 .home-stat-lbl {
-  font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0.2px; text-transform: uppercase;
+  font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0.3px; text-transform: uppercase;
 }
-
 
 /* Responsive */
 @media (max-width: 980px) {
-  .home-grid { grid-template-columns: 1fr 1fr; }
+  .home-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "step1 step1"
+      "timeline aims"
+      "medcross selfcare";
+  }
   .home-content { padding: 28px 24px 64px; }
 }
 @media (max-width: 640px) {
   .home-hero  { padding: 32px 20px 48px; }
-  .home-title { font-size: 28px; }
+  .home-title { font-size: 30px; }
   .home-content { padding: 20px 16px 56px; border-radius: 20px 20px 0 0; }
-  .home-grid  { grid-template-columns: 1fr; gap: 14px; }
-  .home-card-featured { grid-column: span 1; }
-  .home-card-featured .home-stat-val { font-size: 36px; }
+  .home-grid  {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+    gap: 14px;
+  }
+  .home-card-step1, .home-card-timeline, .home-card-aims,
+  .home-card-medcross, .home-card-selfcare { grid-area: auto; }
+  .home-card-featured .home-stat-val { font-size: 38px; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -2040,7 +2084,7 @@ input[type="file"] { direction: ltr; text-align: left; }
 }
 .home-card-featured .home-card-prog-section { padding: 0 26px 22px; }
 .home-card-prog { height: 4px; background: rgba(0,0,0,0.06); border-radius: 999px; overflow: hidden; }
-.home-card-featured .home-card-prog { height: 5px; }
+.home-card-featured .home-card-prog { height: 6px; background: rgba(79,70,229,0.10); }
 .home-card-prog-bar {
   height: 100%; background: var(--card-c); border-radius: 999px;
   transition: width 0.7s cubic-bezier(0.25,0,0,1);
