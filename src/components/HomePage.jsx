@@ -13,9 +13,15 @@ function currentPhase() {
   return PHASES.find(p => t >= p.start && t <= p.end) || null;
 }
 
-function activeCount(categoryId) {
-  try { return loadCategoryTasks(categoryId).filter(t => t.status === "Active").length; }
-  catch { return 0; }
+function taskStats(categoryId) {
+  try {
+    const tasks = loadCategoryTasks(categoryId);
+    const today = new Date().toISOString().slice(0, 10);
+    return {
+      active:  tasks.filter(t => t.status === "Active").length,
+      overdue: tasks.filter(t => t.status === "Active" && t.deadline && t.deadline < today).length,
+    };
+  } catch { return { active: 0, overdue: 0 }; }
 }
 
 export default function HomePage({ testStats, faStats, streak }) {
@@ -25,9 +31,9 @@ export default function HomePage({ testStats, faStats, streak }) {
   const testPct = testStats.total > 0 ? Math.round((testStats.mastered / testStats.total) * 100) : 0;
   const faPct   = faStats.total   > 0 ? Math.round((faStats.seen       / faStats.total)   * 100) : 0;
 
-  const aimsActive     = activeCount("aims");
-  const medcrossActive = activeCount("medcross");
-  const selfcareActive = activeCount("selfcare");
+  const aims     = taskStats("aims");
+  const medcross = taskStats("medcross");
+  const selfcare = taskStats("selfcare");
 
   const sections = [
     {
@@ -39,33 +45,42 @@ export default function HomePage({ testStats, faStats, streak }) {
         { val: testPct + "%",      lbl: "כיסוי" },
       ],
       progress: testPct,
+      progressLabel: `${testPct}% שליטה`,
     },
     {
       id: "timeline", to: "/timeline", icon: "📅",
       title: "ציר זמן", color: "#0d9488", featured: false,
-      stats: [{ val: days > 0 ? days : "—", lbl: "ימים לבחינה" }],
-      progress: null,
+      stats: phase
+        ? [{ val: phase.name, lbl: "שלב נוכחי" }, { val: days > 0 ? days : "—", lbl: "ימים" }]
+        : [{ val: days > 0 ? days : "—", lbl: "ימים לבחינה" }],
+      progress: null, progressLabel: null,
     },
     {
       id: "aims", to: "/aims", icon: "🎯",
       title: "AIMS", color: "#7c3aed", featured: false,
-      stats: [{ val: aimsActive, lbl: "פעילות" }],
-      progress: null,
+      stats: [
+        { val: aims.active, lbl: "פעילות" },
+        ...(aims.overdue > 0 ? [{ val: aims.overdue, lbl: "⚠ באיחור" }] : []),
+      ],
+      progress: null, progressLabel: null,
     },
     {
       id: "medcross", to: "/medcross", icon: "🏥",
       title: "MedCross", color: "#db2777", featured: false,
-      stats: [{ val: medcrossActive, lbl: "פעילות" }],
-      progress: null,
+      stats: [
+        { val: medcross.active, lbl: "פעילות" },
+        ...(medcross.overdue > 0 ? [{ val: medcross.overdue, lbl: "⚠ באיחור" }] : []),
+      ],
+      progress: null, progressLabel: null,
     },
     {
       id: "selfcare", to: "/selfcare", icon: "💚",
       title: "טיפול עצמי", color: "#16a34a", featured: false,
       stats: [
-        { val: selfcareActive, lbl: "פעילות" },
-        { val: faPct + "%",   lbl: "FA" },
+        { val: selfcare.active, lbl: "פעילות" },
+        { val: faPct + "%",     lbl: "FA" },
       ],
-      progress: null,
+      progress: null, progressLabel: null,
     },
   ];
 
@@ -107,8 +122,11 @@ export default function HomePage({ testStats, faStats, streak }) {
                 ))}
               </div>
               {s.progress !== null && (
-                <div className="home-card-prog">
-                  <div className="home-card-prog-bar" style={{ width: `${Math.max(s.progress, 2)}%` }} />
+                <div className="home-card-prog-section">
+                  <div className="home-card-prog">
+                    <div className="home-card-prog-bar" style={{ width: `${Math.max(s.progress, 2)}%` }} />
+                  </div>
+                  {s.progressLabel && <span className="home-prog-label">{s.progressLabel}</span>}
                 </div>
               )}
             </button>

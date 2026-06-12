@@ -82,16 +82,19 @@ function EventDrawer({ event, onClose }) {
   const gcal  = buildGCalLink(event);
   return (
     <div className="ev-drawer-overlay" onClick={onClose}>
-      <div className="ev-drawer" onClick={e => e.stopPropagation()} style={{ borderTopColor: color }}>
-        <div className="ev-drawer-hd">
-          <div>
-            <span className="ev-drawer-type" style={{ color }}>{TYPE_ICONS[event.type] || "📌"} {TYPE_LABELS[event.type] || event.type}</span>
+      <div className="ev-drawer" onClick={e => e.stopPropagation()} style={{ "--ev-c": color }}>
+        <div className="ev-drawer-band">
+          <div className="ev-drawer-band-inner">
+            <div className="ev-drawer-type-row">
+              <span className="ev-drawer-type-icon">{TYPE_ICONS[event.type] || "📌"}</span>
+              <span className="ev-drawer-type-lbl">{TYPE_LABELS[event.type] || event.type}</span>
+            </div>
             <h2 className="ev-drawer-title">{event.title}</h2>
-            <div className="ev-drawer-date" style={{ color }}>
+            <div className="ev-drawer-date">
               {fmtDate(event.date)}{event.endDate ? ` – ${fmtDate(event.endDate)}` : ""}
             </div>
           </div>
-          <button className="intake-close" onClick={onClose}>✕</button>
+          <button className="ev-close-btn" onClick={onClose}>✕</button>
         </div>
         {event.note && <p className="ev-drawer-note">{event.note}</p>}
         {event.people?.length > 0 && (
@@ -229,6 +232,7 @@ export default function Timeline() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [activeF, setActiveF] = useState(new Set(ALL_FRONTS));
   const [activeT, setActiveT] = useState(new Set(ALL_TYPES));
+  const [showTypeFilter, setShowTypeFilter] = useState(false);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -295,15 +299,25 @@ export default function Timeline() {
         </div>
       </div>
       <div className="tl-filters tl-filters-types">
-        <span className="tl-filter-lbl">סוג</span>
-        <div className="tl-filter-chips">
-          {ALL_TYPES.map(t => (
-            <button key={t} className={`tl-chip${activeT.has(t) ? " tl-chip-on tl-chip-type-on" : ""}`}
-              onClick={() => toggleType(t)}>
-              {TYPE_ICONS[t]} {TYPE_LABELS[t] || t}
-            </button>
-          ))}
-        </div>
+        <button className="tl-type-toggle" onClick={() => setShowTypeFilter(s => !s)}>
+          <span className="tl-filter-lbl">סוג</span>
+          <span className={`tl-type-caret${showTypeFilter ? " open" : ""}`}>›</span>
+          {!showTypeFilter && (
+            <span className="tl-type-summary">
+              {activeT.size === ALL_TYPES.length ? "הכל" : `${activeT.size}/${ALL_TYPES.length}`}
+            </span>
+          )}
+        </button>
+        {showTypeFilter && (
+          <div className="tl-filter-chips">
+            {ALL_TYPES.map(t => (
+              <button key={t} className={`tl-chip${activeT.has(t) ? " tl-chip-on tl-chip-type-on" : ""}`}
+                onClick={() => toggleType(t)}>
+                {TYPE_ICONS[t]} {TYPE_LABELS[t] || t}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Jump to today */}

@@ -129,11 +129,12 @@ function TaskManager({ tasks, setTasks }) {
   function handleImport(e) {
     const file = e.target.files?.[0];
     if (!file) return;
+    setImportError("");
     const reader = new FileReader();
     reader.onload = ev => {
       const ok = importAllData(ev.target.result);
       if (ok) window.location.reload();
-      else alert("ייבוא נכשל — קובץ לא תקין.");
+      else setImportError("ייבוא נכשל — קובץ לא תקין.");
     };
     reader.readAsText(file);
     e.target.value = "";
@@ -215,6 +216,9 @@ function TaskManager({ tasks, setTasks }) {
         <button className="task-io-btn" onClick={() => importRef.current?.click()}>↑ ייבא נתונים</button>
         <input ref={importRef} type="file" accept=".json" style={{ display: "none" }} onChange={handleImport} />
       </div>
+      {importError && (
+        <div className="task-import-error">⚠ {importError}</div>
+      )}
     </div>
   );
 }
@@ -241,6 +245,7 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
   const [tasks, setTasks]       = useState(() => loadTasks());
   const [lightMode, setLightModeState] = useState(() => getLightMode().paused);
   const [showReset, setShowReset] = useState(false);
+  const [importError, setImportError] = useState("");
 
   const insights = useMemo(() => {
     if (!questions?.length) return [];

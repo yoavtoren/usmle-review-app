@@ -20,10 +20,12 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
   const loc  = useLocation();
   const p    = loc.pathname;
   const [step1Open, setStep1Open] = useState(false);
+  const [menuOpen,  setMenuOpen]  = useState(false);
   const wrapRef = useRef(null);
 
   const isStep1Active = p === "/step1" || p.startsWith("/tests") || p.startsWith("/fa");
 
+  // Close step1 dropdown on outside click
   useEffect(() => {
     function handler(e) {
       if (wrapRef.current && !wrapRef.current.contains(e.target)) setStep1Open(false);
@@ -32,50 +34,92 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  return (
-    <nav className="top-nav">
-      <div className="top-nav-inner">
-        <span className="top-nav-brand" onClick={() => nav("/")} role="button" tabIndex={0}
-          onKeyDown={e => e.key === "Enter" && nav("/")}>
-          לוח ההישרדות
-        </span>
+  // Close mobile menu on route change
+  useEffect(() => { setMenuOpen(false); }, [p]);
 
-        {/* Step 1 dropdown — first in order */}
-        <div className="top-nav-step1-wrap" ref={wrapRef}>
-          <button
-            className={`top-nav-link top-nav-step1${isStep1Active ? " top-nav-active" : ""}`}
-            onClick={() => setStep1Open(o => !o)}>
-            Step 1 {step1Open ? "▴" : "▾"}
-          </button>
-          {step1Open && (
-            <div className="top-nav-dropdown">
-              {STEP1_CHILDREN.map(({ to, label }) => (
-                <button key={to} className="top-nav-dd-item"
-                  onClick={() => { nav(to); setStep1Open(false); }}>
+  return (
+    <>
+      <nav className="top-nav">
+        <div className="top-nav-inner">
+          <span className="top-nav-brand" onClick={() => nav("/")} role="button" tabIndex={0}
+            onKeyDown={e => e.key === "Enter" && nav("/")}>
+            לוח ההישרדות
+          </span>
+
+          {/* Step 1 dropdown — desktop only */}
+          <div className="top-nav-step1-wrap" ref={wrapRef}>
+            <button
+              className={`top-nav-link top-nav-step1${isStep1Active ? " top-nav-active" : ""}`}
+              onClick={() => setStep1Open(o => !o)}>
+              Step 1 {step1Open ? "▴" : "▾"}
+            </button>
+            {step1Open && (
+              <div className="top-nav-dropdown">
+                {STEP1_CHILDREN.map(({ to, label }) => (
+                  <button key={to} className="top-nav-dd-item"
+                    onClick={() => { nav(to); setStep1Open(false); }}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="top-nav-links">
+            {FLAT_LINKS.map(({ to, label }) => {
+              const active = to === "/" ? p === "/" : p.startsWith(to);
+              return (
+                <button key={to} className={`top-nav-link${active ? " top-nav-active" : ""}`}
+                  onClick={() => nav(to)}>
                   {label}
                 </button>
-              ))}
-            </div>
-          )}
-        </div>
+              );
+            })}
+          </div>
 
-        <div className="top-nav-links">
-          {FLAT_LINKS.map(({ to, label }) => {
-            const active = to === "/" ? p === "/" : p.startsWith(to);
-            return (
-              <button key={to} className={`top-nav-link${active ? " top-nav-active" : ""}`}
-                onClick={() => nav(to)}>
+          <button className="top-nav-bell" onClick={onBellClick} title="תזכורות">
+            🔔
+            {dueCount > 0 && <span className="top-nav-badge">{dueCount}</span>}
+          </button>
+
+          {/* Hamburger — mobile only */}
+          <button
+            className={`top-nav-hamburger${menuOpen ? " ham-open" : ""}`}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="פתח תפריט">
+            <span /><span /><span />
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile menu panel */}
+      {menuOpen && (
+        <div className="top-nav-mobile-menu">
+          <div className="top-nav-mobile-section">
+            <div className="top-nav-mobile-label">Step 1</div>
+            {STEP1_CHILDREN.map(({ to, label }) => (
+              <button key={to}
+                className={`top-nav-mobile-link${p === to ? " top-nav-mobile-active" : ""}`}
+                onClick={() => { nav(to); setMenuOpen(false); }}>
                 {label}
               </button>
-            );
-          })}
+            ))}
+          </div>
+          <div className="top-nav-mobile-section">
+            <div className="top-nav-mobile-label">ניווט</div>
+            {FLAT_LINKS.map(({ to, label }) => {
+              const active = to === "/" ? p === "/" : p.startsWith(to);
+              return (
+                <button key={to}
+                  className={`top-nav-mobile-link${active ? " top-nav-mobile-active" : ""}`}
+                  onClick={() => { nav(to); setMenuOpen(false); }}>
+                  {label}
+                </button>
+              );
+            })}
+          </div>
         </div>
-
-        <button className="top-nav-bell" onClick={onBellClick} title="תזכורות">
-          🔔
-          {dueCount > 0 && <span className="top-nav-badge">{dueCount}</span>}
-        </button>
-      </div>
-    </nav>
+      )}
+    </>
   );
 }

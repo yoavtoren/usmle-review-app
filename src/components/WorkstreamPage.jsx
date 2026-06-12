@@ -6,6 +6,7 @@ import { buildGCalLink } from "../lib/calendarExport.js";
 
 const URGENCIES = ["Critical", "High", "Medium", "Low"];
 const URGENCY_HE = { Critical: "קריטי", High: "גבוה", Medium: "בינוני", Low: "נמוך" };
+const CAT_ICONS  = { aims: "🎯", medcross: "🏥", selfcare: "💚" };
 
 function fmtDate(d) {
   if (!d) return "";
@@ -163,7 +164,7 @@ function TaskCard({ task, cat, onEdit, onDelete, onToggleStatus }) {
 
   return (
     <div className={`ws-task-card${isDone ? " ws-task-done" : ""}${isOverdue ? " ws-task-overdue" : ""}`}
-      style={{ borderLeftColor: uColor }}>
+      style={{ borderRightColor: uColor }}>
       <div className="ws-task-top">
         <button
           className={`ws-task-check${isDone ? " ws-check-done" : ""}`}
@@ -256,17 +257,17 @@ function StreamGroup({ stream, tasks, cat, collapsed, onToggle, onEdit, onDelete
   return (
     <div className="ws-stream-group">
       <button className="ws-stream-hd" onClick={onToggle}
-        style={{ borderLeftColor: cat.accent }}>
+        style={{ borderRightColor: cat.accent }}>
         <span className="ws-stream-label">{stream.label}</span>
         <span className="ws-stream-count" style={{ background: cat.accent+"22", color: cat.accent }}>
           {tasks.length}
         </span>
-        <span className="ws-stream-caret">{collapsed ? "▶" : "▼"}</span>
+        <span className={`ws-stream-caret${collapsed ? "" : " ws-caret-open"}`}>›</span>
       </button>
       {!collapsed && (
         <div className="ws-stream-tasks">
           {tasks.length === 0
-            ? <div className="ws-empty muted">ריק.</div>
+            ? <div className="ws-empty"><span className="ws-empty-icon">📋</span><span className="ws-empty-text">אין משימות כאן</span><span className="ws-empty-hint">הוסף משימה חדשה ↑</span></div>
             : tasks.map(t => (
                 <TaskCard key={t.id} task={t} cat={cat}
                   onEdit={onEdit} onDelete={onDelete} onToggleStatus={onToggleStatus} />
@@ -361,17 +362,26 @@ export default function WorkstreamPage({ categoryId }) {
 
   return (
     <div className="ws-page" style={{ "--ws-accent": cat.accent }}>
-      {/* Header */}
-      <div className="ws-header">
-        <div>
-          <h1 className="ws-title" style={{ color: cat.accent }}>{cat.title}</h1>
-          <p className="muted ws-sub">{cat.subtitle} · {activeCount} פעיל · {doneCount} הושלם</p>
+
+      {/* Colored band header */}
+      <div className="ws-band" style={{ "--ws-band-c": cat.accent }}>
+        <div className="ws-band-left">
+          <span className="ws-band-icon">{CAT_ICONS[categoryId] || "📋"}</span>
+          <div>
+            <h1 className="ws-band-title">{cat.title}</h1>
+            <p className="ws-band-sub">{cat.subtitle}</p>
+          </div>
         </div>
-        <button className="ws-new-btn"
-          style={{ background: cat.accent+"18", color: cat.accent, borderColor: cat.accent+"44" }}
-          onClick={() => { setEditing(null); setShowForm(f => !f); }}>
-          {showForm && !editingTask ? "✕ ביטול" : "+ משימה חדשה"}
-        </button>
+        <div className="ws-band-right">
+          <div className="ws-band-count">
+            <span>{activeCount}</span>
+            <small>פעיל</small>
+          </div>
+          <button className="ws-band-btn"
+            onClick={() => { setEditing(null); setShowForm(f => !f); }}>
+            {showForm && !editingTask ? "✕" : "+ חדש"}
+          </button>
+        </div>
       </div>
 
       {/* Form */}
@@ -384,15 +394,26 @@ export default function WorkstreamPage({ categoryId }) {
         />
       )}
 
+      {/* Rhythms — moved to top so daily/weekly habits are seen first */}
+      {recurring.length > 0 && (
+        <RhythmsStrip tasks={recurring} rhythms={rhythms} onMark={handleMarkRhythm} accent={cat.accent} />
+      )}
+
       {/* Waiting on */}
       {waitingOn.length > 0 && (
         <div className="ws-waiting-card">
-          <div className="ws-section-label">ממתין ל</div>
+          <div className="ws-waiting-hd">
+            <span className="ws-section-label">ממתין ל</span>
+            <span className="ws-waiting-count">{waitingOn.length}</span>
+          </div>
           <div className="ws-waiting-chips">
             {waitingOn.map((p, i) => (
               <div key={i} className="ws-waiting-chip">
-                <span className="ws-waiting-name">{p.name}</span>
-                <span className="ws-waiting-task muted">בנושא: {p.taskTitle}</span>
+                <span className="ws-waiting-avatar">{p.name[0]}</span>
+                <div className="ws-waiting-info">
+                  <span className="ws-waiting-name">{p.name}</span>
+                  <span className="ws-waiting-task">{p.taskTitle}</span>
+                </div>
                 {p.contact && (
                   <a className="ws-person-contact"
                     href={p.contact.includes("@") ? `mailto:${p.contact}` : undefined}
@@ -463,7 +484,7 @@ export default function WorkstreamPage({ categoryId }) {
           ))
         ) : (
           filteredTasks.length === 0
-            ? <div className="ws-empty muted">אין משימות שתואמות את הסינון.</div>
+            ? <div className="ws-empty"><span className="ws-empty-icon">🔍</span><span className="ws-empty-text">אין תוצאות</span><span className="ws-empty-hint">נסה לשנות את הסינון</span></div>
             : filteredTasks.map(t => (
                 <TaskCard key={t.id} task={t} cat={cat}
                   onEdit={startEdit} onDelete={handleDelete} onToggleStatus={toggleStatus} />
@@ -471,10 +492,6 @@ export default function WorkstreamPage({ categoryId }) {
         )}
       </div>
 
-      {/* Rhythms strip */}
-      {recurring.length > 0 && (
-        <RhythmsStrip tasks={recurring} rhythms={rhythms} onMark={handleMarkRhythm} accent={cat.accent} />
-      )}
 
       {/* Footer */}
       <div className="ws-footer muted small">
