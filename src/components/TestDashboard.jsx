@@ -27,6 +27,21 @@ function LineChart({ tests }) {
   const scorePts = sorted.map(t => [toX(t.date), toY(t.score), t]);
   const uwPts = sorted.filter(t => t.uworldAvg != null).map(t => [toX(t.date), toY(t.uworldAvg), t]);
 
+  // Linear regression trend line over score points
+  const trendLine = (() => {
+    if (scorePts.length < 2) return null;
+    const xs = scorePts.map(([x]) => x);
+    const ys = scorePts.map(([, y]) => y);
+    const n = xs.length;
+    const mx = xs.reduce((a, b) => a + b) / n;
+    const my = ys.reduce((a, b) => a + b) / n;
+    const slope = xs.reduce((s, x, i) => s + (x - mx) * (ys[i] - my), 0) /
+                  xs.reduce((s, x) => s + (x - mx) ** 2, 0);
+    const intercept = my - slope * mx;
+    const x1 = xs[0], x2 = xs[xs.length - 1];
+    return { x1, y1: slope * x1 + intercept, x2, y2: slope * x2 + intercept };
+  })();
+
   const linePath = pts => pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
   const areaPath = pts => {
     if (pts.length < 2) return "";
@@ -52,6 +67,13 @@ function LineChart({ tests }) {
         target
       </text>
 
+      {trendLine && (
+        <line
+          x1={trendLine.x1.toFixed(1)} y1={trendLine.y1.toFixed(1)}
+          x2={trendLine.x2.toFixed(1)} y2={trendLine.y2.toFixed(1)}
+          stroke="rgba(148,163,184,0.55)" strokeWidth="1.5" strokeDasharray="6 4" strokeLinecap="round"
+        />
+      )}
       {uwPts.length >= 2 && (
         <>
           <path d={areaPath(uwPts)} fill="#f59e0b" opacity="0.07" />
@@ -358,6 +380,9 @@ export default function TestDashboard({ onBack, onStudy }) {
                     </span>
                     <span className="td-legend-item td-legend-target">
                       <span className="td-legend-dash" /> 60% target
+                    </span>
+                    <span className="td-legend-item td-legend-trend">
+                      <span className="td-legend-dash td-legend-trend-dash" /> Trend
                     </span>
                   </div>
                 </div>
