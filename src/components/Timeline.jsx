@@ -1,26 +1,24 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import {
   PHASES, GOALS, FRONT_COLORS, FRONT_LABELS, TYPE_ICONS,
-  loadTimelineEvents, saveTimelineEvents, loadAimsTasks,
-  loadGoalsDone, saveGoalsDone,
+  loadTimelineEvents, loadGoalsDone, saveGoalsDone,
 } from "../lib/timelineData.js";
+import { loadAllWorkstreamTasks } from "../lib/workstreamData.js";
 import { buildGCalLink } from "../lib/calendarExport.js";
 
 // ── Layout constants ───────────────────────────────────────────────────────
-const TL_START  = new Date("2026-06-10T00:00:00Z");
-const TL_END    = new Date("2026-10-12T00:00:00Z");
+const TL_START   = new Date("2026-06-10T00:00:00Z");
+const TL_END     = new Date("2026-10-12T00:00:00Z");
 const TOTAL_DAYS = Math.round((TL_END - TL_START) / 86400000);
 const DAY_PX     = 9;
-const PADD       = 24;          // left/right padding px
-const TOTAL_W    = TOTAL_DAYS * DAY_PX + PADD * 2;
-
-// Y positions
-const BAND_H     = 50;          // phase bands
-const AXIS_H     = 22;          // month labels
-const ABOVE_H    = 82;          // card space above spine
-const SPINE_Y    = BAND_H + AXIS_H + ABOVE_H;   // = 154
-const BELOW_H    = 80;          // card space below spine
-const TOTAL_H    = SPINE_Y + 2 + BELOW_H + 10;  // = 246
+const PADD       = 20;
+const TRACK_W    = TOTAL_DAYS * DAY_PX + PADD * 2;   // 1156px
+const LABEL_W    = 206;   // sticky left label column
+const TOTAL_W    = LABEL_W + TRACK_W;
+const BAND_H     = 38;
+const AXIS_H     = 24;
+const ROW_H      = 34;
+const DOT_R      = 5;
 
 const MONTHS = [
   { str: "2026-06-10", label: "Jun" },
@@ -32,9 +30,8 @@ const MONTHS = [
 
 function dateToX(dateStr) {
   if (!dateStr) return -1;
-  const d = new Date(dateStr + "T12:00:00Z");
-  const days = Math.max(0, Math.round((d.getTime() - TL_START.getTime()) / 86400000));
-  return Math.min(days * DAY_PX + PADD, TOTAL_W - PADD);
+  const days = Math.max(0, Math.round((new Date(dateStr + "T12:00:00Z") - TL_START) / 86400000));
+  return Math.min(days * DAY_PX + PADD, TRACK_W - PADD);
 }
 
 function fmtDate(dateStr) {
@@ -43,57 +40,32 @@ function fmtDate(dateStr) {
     weekday: "short", month: "short", day: "numeric",
   });
 }
+function fmtShort(dateStr) {
+  if (!dateStr) return "TBD";
+  return dateStr.slice(5).replace("-", "/");
+}
 
 function currentPhase(today) {
   const t = today.toISOString().slice(0, 10);
   return PHASES.find(p => t >= p.start && t <= p.end) || null;
 }
 
-// ── Filter config ─────────────────────────────────────────────────────────
 const ALL_FRONTS = Object.keys(FRONT_LABELS);
-const ALL_TYPES  = ["deadline","event","landmark","task-deadline","aims","blocker"];
+const ALL_TYPES  = ["deadline", "event", "landmark", "task-deadline", "aims", "blocker"];
 
-// ── Derive AIMS-sourced nodes ─────────────────────────────────────────────
-function aimsNodes(tasks) {
+function workstreamNodes(tasks) {
   return tasks
-    .filter(t => t.addToTimeline && t.deadline && t.status === "Active")
+    .filter(t => t.addToTimeline && t.deadline && t.status === "Active" && !t.recurring)
     .map(t => ({
-      id:       `aims-derived-${t.id}`,
-      _aimsId:  t.id,
-      title:    t.title,
-      date:     t.deadline,
-      tz:       t.tz,
-      type:     "aims",
-      front:    "aims",
-      note:     t.notes,
-      people:   t.people || [],
-      reminders: t.reminders || [],
-      source:   "aims",
+      id: `ws-derived-${t.id}`, _wsId: t.id,
+      title: t.title, date: t.deadline, tz: t.tz,
+      type: "aims", front: t.category || "aims",
+      note: t.notes, people: t.people || [], reminders: t.reminders || [],
+      source: t.category || "aims",
     }));
 }
 
-// Assign above/below row to avoid cards overlapping.
-function assignRows(events) {
-  let lastAboveX = -999;
-  let lastBelowX = -999;
-  const GAP = 122;
-  return events.map(ev => {
-    if (!ev.date) return { ...ev, row: null, x: -1 };
-    const x = dateToX(ev.date);
-    let row;
-    if (x - lastAboveX >= GAP) {
-      row = "above"; lastAboveX = x;
-    } else if (x - lastBelowX >= GAP) {
-      row = "below"; lastBelowX = x;
-    } else {
-      // Both conflict — put below, accept slight overlap
-      row = "below"; lastBelowX = x;
-    }
-    return { ...ev, row, x };
-  });
-}
-
-// ── Detail drawer ─────────────────────────────────────────────────────────
+// ── Event drawer ─────────────────────────────────────────────────────────
 function EventDrawer({ event, onClose }) {
   if (!event) return null;
   const color = FRONT_COLORS[event.front] || "#94a3b8";
@@ -105,7 +77,9 @@ function EventDrawer({ event, onClose }) {
           <div>
             <span className="ev-drawer-type" style={{ color }}>{TYPE_ICONS[event.type] || "📌"} {event.type}</span>
             <h2 className="ev-drawer-title">{event.title}</h2>
-            <div className="ev-drawer-date" style={{ color }}>{fmtDate(event.date)}{event.endDate ? ` – ${fmtDate(event.endDate)}` : ""}</div>
+            <div className="ev-drawer-date" style={{ color }}>
+              {fmtDate(event.date)}{event.endDate ? ` – ${fmtDate(event.endDate)}` : ""}
+            </div>
           </div>
           <button className="intake-close" onClick={onClose}>✕</button>
         </div>
@@ -119,8 +93,9 @@ function EventDrawer({ event, onClose }) {
                   <span className="ev-person-name">{p.name}</span>
                   <span className="ev-person-role">{p.role}</span>
                   {p.contact && (
-                    <a className="ev-person-contact" href={p.contact.includes("@") ? `mailto:${p.contact}` : undefined}
-                       onClick={p.contact.includes("@") ? undefined : () => navigator.clipboard?.writeText(p.contact)}>
+                    <a className="ev-person-contact"
+                      href={p.contact.includes("@") ? `mailto:${p.contact}` : undefined}
+                      onClick={p.contact.includes("@") ? undefined : () => navigator.clipboard?.writeText(p.contact)}>
                       {p.contact.includes("@") ? "Email" : "Copy"}
                     </a>
                   )}
@@ -162,8 +137,7 @@ function GoalsPanel({ done, onToggle }) {
           const color = FRONT_COLORS[g.front] || "#94a3b8";
           return (
             <label key={g.id} className={`goal-item${done[g.id] ? " goal-done" : ""}`}>
-              <input type="checkbox" checked={!!done[g.id]} onChange={() => onToggle(g.id)}
-                style={{ accentColor: color }} />
+              <input type="checkbox" checked={!!done[g.id]} onChange={() => onToggle(g.id)} style={{ accentColor: color }} />
               <span className="goal-dot" style={{ background: color }} />
               <span className="goal-label">{g.label}</span>
             </label>
@@ -174,11 +148,11 @@ function GoalsPanel({ done, onToggle }) {
   );
 }
 
-// ── Vertical list view (mobile / fallback) ────────────────────────────────
+// ── Vertical list (mobile) ────────────────────────────────────────────────
 function VerticalList({ events, onSelect }) {
   const today = new Date().toISOString().slice(0, 10);
-  const undated = events.filter(e => !e.date);
   const dated   = events.filter(e => e.date).sort((a, b) => a.date.localeCompare(b.date));
+  const undated = events.filter(e => !e.date);
   const grouped = {};
   dated.forEach(ev => {
     const m = ev.date.slice(0, 7);
@@ -189,12 +163,13 @@ function VerticalList({ events, onSelect }) {
     <div className="tl-vlist">
       {Object.entries(grouped).map(([month, evs]) => (
         <div key={month} className="tl-vmonth">
-          <div className="tl-vmonth-label">{new Date(month + "-15T12:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric" })}</div>
+          <div className="tl-vmonth-label">
+            {new Date(month + "-15T12:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+          </div>
           {evs.map(ev => {
             const color = FRONT_COLORS[ev.front] || "#94a3b8";
-            const isToday = ev.date === today;
             return (
-              <button key={ev.id} className={`tl-vitem${isToday ? " tl-vitem-today" : ""}`}
+              <button key={ev.id} className={`tl-vitem${ev.date === today ? " tl-vitem-today" : ""}`}
                 style={{ borderLeftColor: color }} onClick={() => onSelect(ev)}>
                 <span className="tl-vitem-icon">{TYPE_ICONS[ev.type] || "📌"}</span>
                 <span className="tl-vitem-body">
@@ -238,56 +213,48 @@ export default function Timeline() {
   const todayX    = dateToX(todayStr);
   const phase     = currentPhase(today);
 
-  const [tlEvents, setTlEvents]   = useState(loadTimelineEvents);
-  const [aimsTasks]               = useState(loadAimsTasks);
+  const [tlEvents]       = useState(loadTimelineEvents);
+  const [wsTasksAll]     = useState(loadAllWorkstreamTasks);
   const [goalsDone, setGoalsDone] = useState(loadGoalsDone);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [activeF, setActiveF] = useState(new Set(ALL_FRONTS));
-  const [activeT, setActiveT] = useState(new Set([...ALL_TYPES, "blocker"]));
+  const [activeT, setActiveT] = useState(new Set(ALL_TYPES));
 
-  // Scroll to today on mount
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft = Math.max(0, todayX - 240);
+      scrollRef.current.scrollLeft = Math.max(0, todayX - 360);
     }
   }, [todayX]);
 
   const allEvents = useMemo(() => {
-    const nodes = aimsNodes(aimsTasks);
+    const nodes = workstreamNodes(wsTasksAll);
     return [...tlEvents, ...nodes].sort((a, b) => {
       if (!a.date) return 1;
       if (!b.date) return -1;
       return a.date.localeCompare(b.date);
     });
-  }, [tlEvents, aimsTasks]);
+  }, [tlEvents, wsTasksAll]);
 
   const filtered = useMemo(() =>
     allEvents.filter(ev => activeF.has(ev.front) && activeT.has(ev.type)),
     [allEvents, activeF, activeT]
   );
 
-  const assigned = useMemo(() => assignRows(filtered), [filtered]);
+  const dated   = filtered.filter(ev => ev.date);
+  const undated = filtered.filter(ev => !ev.date);
 
   function toggleGoal(id) {
     const next = { ...goalsDone, [id]: !goalsDone[id] };
     setGoalsDone(next); saveGoalsDone(next);
   }
-
   function toggleFront(f) {
-    setActiveF(prev => {
-      const next = new Set(prev);
-      next.has(f) ? next.delete(f) : next.add(f);
-      return next;
-    });
+    setActiveF(prev => { const n = new Set(prev); n.has(f) ? n.delete(f) : n.add(f); return n; });
+  }
+  function toggleType(t) {
+    setActiveT(prev => { const n = new Set(prev); n.has(t) ? n.delete(t) : n.add(t); return n; });
   }
 
-  function toggleType(t) {
-    setActiveT(prev => {
-      const next = new Set(prev);
-      next.has(t) ? next.delete(t) : next.add(t);
-      return next;
-    });
-  }
+  const totalHeight = BAND_H + AXIS_H + (dated.length + (undated.length ? undated.length + 1 : 0)) * ROW_H;
 
   return (
     <div className="tl-page">
@@ -304,7 +271,7 @@ export default function Timeline() {
         )}
       </div>
 
-      {/* Filter: fronts */}
+      {/* Filters */}
       <div className="tl-filters">
         <span className="tl-filter-lbl">Front</span>
         <div className="tl-filter-chips">
@@ -317,8 +284,6 @@ export default function Timeline() {
           ))}
         </div>
       </div>
-
-      {/* Filter: types */}
       <div className="tl-filters tl-filters-types">
         <span className="tl-filter-lbl">Type</span>
         <div className="tl-filter-chips">
@@ -334,115 +299,175 @@ export default function Timeline() {
       {/* Jump to today */}
       <div className="tl-jump-row">
         <button className="tl-jump-btn" onClick={() => {
-          if (scrollRef.current) scrollRef.current.scrollLeft = Math.max(0, todayX - 240);
-        }}>
-          ↩ Jump to today
-        </button>
-        <span className="muted small">{todayStr} · {filtered.length} events shown</span>
+          if (scrollRef.current) scrollRef.current.scrollLeft = Math.max(0, todayX - 360);
+        }}>↩ Jump to today</button>
+        <span className="muted small">{todayStr} · {filtered.length} events</span>
       </div>
 
-      {/* ── Horizontal scroll track (desktop) ─────────────────────────── */}
-      <div className="tl-scroll-wrap" ref={scrollRef}>
-        <div className="tl-inner" style={{ width: TOTAL_W, height: TOTAL_H }}>
+      {/* ── Gantt track (desktop) ──────────────────────────────────────── */}
+      <div className="tl-rows-wrap" ref={scrollRef}>
+        <div style={{ width: TOTAL_W, height: totalHeight, position: "relative" }}>
 
-          {/* Phase bands */}
-          {PHASES.map(ph => {
-            const x1 = dateToX(ph.start);
-            const x2 = dateToX(ph.end) + DAY_PX;
-            const isNow = phase?.id === ph.id;
-            return (
-              <div key={ph.id} style={{
-                position: "absolute", top: 0, left: x1, width: x2 - x1, height: BAND_H,
-                background: ph.color + (isNow ? "30" : "18"),
-                borderLeft: `2px solid ${ph.color}`,
-                borderTop: isNow ? `3px solid ${ph.color}` : "none",
-                overflow: "hidden",
-              }}>
-                <span style={{ fontSize: 9, fontWeight: 800, color: ph.color, padding: "4px 5px", display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                  {isNow ? "▶ " : ""}{ph.name}
-                </span>
-                <span style={{ fontSize: 8, color: ph.color + "99", padding: "0 5px", display: "block" }}>
-                  {ph.start.slice(5)} → {ph.end.slice(5)}
-                </span>
-              </div>
-            );
-          })}
+          {/* Vertical month grid lines — span full height */}
+          {MONTHS.map(({ str }) => (
+            <div key={str} style={{
+              position: "absolute", left: LABEL_W + dateToX(str),
+              top: 0, bottom: 0, width: 1,
+              background: "rgba(0,0,0,0.05)", pointerEvents: "none",
+            }} />
+          ))}
 
-          {/* Month grid lines + labels */}
-          {MONTHS.map(({ str, label }) => {
-            const x = dateToX(str);
-            return (
-              <g key={str}>
-                <div style={{ position: "absolute", top: BAND_H, left: x, height: TOTAL_H - BAND_H, width: 1, background: "#e2e8f0", pointerEvents: "none" }} />
-                <div style={{ position: "absolute", top: BAND_H + 4, left: x + 4, fontSize: 11, fontWeight: 700, color: "#94a3b8" }}>{label}</div>
-              </g>
-            );
-          })}
+          {/* Today vertical line — span full height */}
+          <div style={{
+            position: "absolute", left: LABEL_W + todayX,
+            top: 0, bottom: 0, width: 2,
+            background: "rgba(239,68,68,0.7)",
+            pointerEvents: "none", zIndex: 8,
+          }} />
 
-          {/* TODAY marker */}
-          <div style={{ position: "absolute", top: 0, left: todayX, width: 2, height: TOTAL_H, background: "#ef4444", opacity: 0.85, zIndex: 20 }}>
-            <div style={{ position: "absolute", top: BAND_H - 18, left: -12, fontSize: 9, fontWeight: 900, color: "#ef4444", background: "#fff", padding: "1px 4px", borderRadius: 4, border: "1.5px solid #ef4444", whiteSpace: "nowrap" }}>NOW</div>
+          {/* Phase bands row */}
+          <div style={{ display: "flex", height: BAND_H, borderBottom: "1.5px solid var(--line)" }}>
+            <div style={{
+              position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 20,
+              background: "var(--surface-2)", borderRight: "1.5px solid var(--line)",
+              display: "flex", alignItems: "center", padding: "0 12px",
+            }}>
+              <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1, textTransform: "uppercase", color: "var(--muted)" }}>Event</span>
+            </div>
+            <div style={{ position: "relative", width: TRACK_W, height: BAND_H }}>
+              {PHASES.map(ph => {
+                const x1 = dateToX(ph.start);
+                const x2 = dateToX(ph.end) + DAY_PX;
+                const isNow = phase?.id === ph.id;
+                return (
+                  <div key={ph.id} style={{
+                    position: "absolute", left: x1, width: x2 - x1, top: 0, height: BAND_H,
+                    background: ph.color + (isNow ? "2a" : "16"),
+                    borderLeft: `2px solid ${ph.color}88`,
+                    borderTop: isNow ? `2px solid ${ph.color}` : "none",
+                    overflow: "hidden",
+                  }}>
+                    <span style={{ fontSize: 9, fontWeight: 800, color: ph.color, padding: "3px 5px", display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                      {isNow ? "▶ " : ""}{ph.name}
+                    </span>
+                    <span style={{ fontSize: 8, color: ph.color + "99", padding: "0 5px", display: "block" }}>
+                      {ph.start.slice(5)} → {ph.end.slice(5)}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Spine */}
-          <div style={{ position: "absolute", top: SPINE_Y, left: 0, width: TOTAL_W, height: 2, background: "#e2e8f0", zIndex: 5 }} />
+          {/* Month axis row */}
+          <div style={{ display: "flex", height: AXIS_H, borderBottom: "1.5px solid var(--line)", background: "var(--surface)" }}>
+            <div style={{
+              position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 20,
+              background: "var(--surface)", borderRight: "1.5px solid var(--line)",
+              display: "flex", alignItems: "center", padding: "0 12px",
+            }}>
+              <span style={{ fontSize: 9.5, fontWeight: 700, color: "#94a3b8" }}>{todayStr}</span>
+            </div>
+            <div style={{ position: "relative", width: TRACK_W, height: AXIS_H }}>
+              {MONTHS.map(({ str, label }) => (
+                <div key={str} style={{ position: "absolute", left: dateToX(str) + 4, top: 4, fontSize: 11, fontWeight: 700, color: "#94a3b8" }}>{label}</div>
+              ))}
+              <div style={{
+                position: "absolute", left: todayX - 14, top: 3,
+                fontSize: 9, fontWeight: 900, color: "#ef4444",
+                background: "#fff", padding: "1px 4px", borderRadius: 4, border: "1.5px solid #ef4444",
+                zIndex: 10, whiteSpace: "nowrap",
+              }}>NOW</div>
+            </div>
+          </div>
 
-          {/* Event nodes */}
-          {assigned.map(ev => {
-            if (!ev.date) return null;
+          {/* One row per dated event */}
+          {dated.map((ev, i) => {
             const color = FRONT_COLORS[ev.front] || "#94a3b8";
-            const above = ev.row === "above";
-            const cardTop = above ? SPINE_Y - ABOVE_H + 4 : SPINE_Y + 12;
+            const x     = dateToX(ev.date);
+            const odd   = i % 2 === 1;
+            const bg    = odd ? "var(--surface-2)" : "var(--surface)";
+
             return (
-              <div key={ev.id} style={{ position: "absolute", left: ev.x, top: 0, zIndex: 10 }}>
-                {/* Dot on spine */}
-                <button
-                  className="tl-dot"
-                  style={{
-                    position: "absolute", top: SPINE_Y - 5, left: -5,
+              <div key={ev.id}
+                style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", cursor: "pointer", background: bg }}
+                onClick={() => setSelectedEvent(ev)}
+                className="tl-ev-row">
+
+                {/* Sticky label */}
+                <div style={{
+                  position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
+                  background: bg, borderRight: "1.5px solid var(--line)",
+                  borderLeft: `3px solid ${color}`,
+                  display: "flex", alignItems: "center", gap: 6, padding: "0 8px 0 6px",
+                }}>
+                  <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", lineHeight: 1.3 }}>{ev.title}</span>
+                  <span style={{ fontSize: 9, fontWeight: 800, color, flexShrink: 0 }}>{fmtShort(ev.date)}</span>
+                </div>
+
+                {/* Track */}
+                <div style={{ position: "relative", width: TRACK_W, flexShrink: 0, height: ROW_H }}>
+                  {/* Row line */}
+                  <div style={{ position: "absolute", top: "50%", left: 0, width: "100%", height: 1, background: odd ? "rgba(0,0,0,0.07)" : "rgba(0,0,0,0.05)", transform: "translateY(-0.5px)", pointerEvents: "none" }} />
+                  {/* Dot */}
+                  <div style={{
+                    position: "absolute",
+                    left: x - DOT_R, top: "50%", transform: "translateY(-50%)",
+                    width: DOT_R * 2, height: DOT_R * 2, borderRadius: "50%",
                     background: color, border: "2.5px solid white",
                     boxShadow: `0 0 0 1.5px ${color}`,
-                  }}
-                  onClick={() => setSelectedEvent(ev)}
-                  title={ev.title}
-                />
-
-                {/* Card */}
-                <button
-                  className="tl-card"
-                  style={{
-                    position: "absolute",
-                    top: cardTop,
-                    left: -56,
-                    borderColor: color + "55",
-                    borderTopColor: color,
-                  }}
-                  onClick={() => setSelectedEvent(ev)}
-                >
-                  <span className="tl-card-icon">{TYPE_ICONS[ev.type] || "📌"}</span>
-                  <span className="tl-card-title">{ev.title}</span>
-                  <span className="tl-card-date" style={{ color }}>{ev.date.slice(5).replace("-", "/")}</span>
-                </button>
+                    zIndex: 5,
+                  }} />
+                </div>
               </div>
             );
           })}
 
-          {/* Undated blocker nodes at the right edge */}
-          {filtered.filter(ev => !ev.date).map((ev, i) => {
-            const color = FRONT_COLORS[ev.front] || "#94a3b8";
-            return (
-              <button key={ev.id}
-                className="tl-card tl-card-undated"
-                style={{ position: "absolute", top: BAND_H + AXIS_H + 4 + i * 28, right: 4, borderColor: color, color }}
-                onClick={() => setSelectedEvent(ev)}>
-                🚧 {ev.title}
-              </button>
-            );
-          })}
+          {/* Undated events section */}
+          {undated.length > 0 && (
+            <>
+              <div style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", background: "var(--surface-3)" }}>
+                <div style={{
+                  position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
+                  background: "var(--surface-3)", borderRight: "1.5px solid var(--line)",
+                  display: "flex", alignItems: "center", padding: "0 12px",
+                }}>
+                  <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1, textTransform: "uppercase", color: "var(--muted)" }}>No date yet</span>
+                </div>
+                <div style={{ width: TRACK_W }} />
+              </div>
+              {undated.map((ev, i) => {
+                const color = FRONT_COLORS[ev.front] || "#94a3b8";
+                const odd   = i % 2 === 0;
+                const bg    = odd ? "var(--surface-2)" : "var(--surface)";
+                return (
+                  <div key={ev.id}
+                    style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", cursor: "pointer", background: bg }}
+                    onClick={() => setSelectedEvent(ev)}
+                    className="tl-ev-row">
+                    <div style={{
+                      position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
+                      background: bg, borderRight: "1.5px solid var(--line)",
+                      borderLeft: `3px solid ${color}44`,
+                      display: "flex", alignItems: "center", gap: 6, padding: "0 8px 0 6px",
+                    }}>
+                      <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
+                      <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{ev.title}</span>
+                      <span style={{ fontSize: 9, fontWeight: 700, color: "var(--muted)", flexShrink: 0 }}>TBD</span>
+                    </div>
+                    <div style={{ position: "relative", width: TRACK_W, flexShrink: 0, display: "flex", alignItems: "center", paddingLeft: 12 }}>
+                      <span style={{ fontSize: 10, fontWeight: 600, color: color + "88" }}>🚧 no date</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </>
+          )}
         </div>
       </div>
 
-      {/* ── Vertical list (mobile / always visible) ──────────────────── */}
+      {/* Vertical list (mobile) */}
       <div className="tl-vlist-wrap">
         <VerticalList events={filtered} onSelect={setSelectedEvent} />
       </div>
@@ -450,7 +475,6 @@ export default function Timeline() {
       {/* Goals panel */}
       <GoalsPanel done={goalsDone} onToggle={toggleGoal} />
 
-      {/* Event detail drawer */}
       {selectedEvent && (
         <EventDrawer event={selectedEvent} onClose={() => setSelectedEvent(null)} />
       )}

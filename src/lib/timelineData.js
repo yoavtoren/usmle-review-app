@@ -6,6 +6,7 @@ export const FRONT_COLORS = {
   "sept-move":    "#ea580c",
   "aims":         "#7c3aed",
   "medcross":     "#db2777",
+  "selfcare":     "#16a34a",
   "relationship": "#16a34a",
   "personal":     "#475569",
 };
@@ -17,6 +18,7 @@ export const FRONT_LABELS = {
   "sept-move":    "Israel Move",
   "aims":         "AIMS",
   "medcross":     "MedCross",
+  "selfcare":     "Self-care",
   "relationship": "Relationship",
   "personal":     "Personal",
 };

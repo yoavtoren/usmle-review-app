@@ -12,7 +12,9 @@ import ReminderToasts, { PopCenter } from "./components/ReminderToasts.jsx";
 import { loadProgress, getCard, isDueRespectingMode, getStreak } from "./lib/storage.js";
 import { getDueCount } from "./lib/reminderEngine.js";
 import { generateICS, downloadICS } from "./lib/calendarExport.js";
-import { loadTimelineEvents, loadAimsTasks } from "./lib/timelineData.js";
+import { loadTimelineEvents } from "./lib/timelineData.js";
+import { loadAllWorkstreamTasks } from "./lib/workstreamData.js";
+import WorkstreamPage from "./components/WorkstreamPage.jsx";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -70,7 +72,7 @@ export default function App() {
   }, []);
 
   function handleExportICS() {
-    const ics = generateICS(loadTimelineEvents(), loadAimsTasks());
+    const ics = generateICS(loadTimelineEvents(), loadAllWorkstreamTasks());
     downloadICS(ics);
   }
 
@@ -108,9 +110,9 @@ export default function App() {
         <Route path="/timeline" element={
           <Timeline onExportICS={handleExportICS} />
         } />
-        <Route path="/aims" element={
-          <AIMSDashboard />
-        } />
+        <Route path="/aims"     element={<AIMSDashboard />} />
+        <Route path="/medcross" element={<WorkstreamPage categoryId="medcross" />} />
+        <Route path="/selfcare" element={<WorkstreamPage categoryId="selfcare" />} />
         <Route path="*" element={
           <WelcomeScreen
             onNav={nav}
