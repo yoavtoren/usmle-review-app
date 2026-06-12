@@ -38,7 +38,7 @@ export default function HomePage({ testStats, faStats, streak }) {
   const sections = [
     {
       id: "step1", to: "/step1", icon: "🎓",
-      title: "Step 1", color: "#818cf8", featured: true,
+      title: "Step 1", color: "#4f46e5", featured: true,
       stats: [
         { val: testStats.due,      lbl: "לביקורת היום" },
         { val: testStats.mastered, lbl: "שלטתי" },
@@ -49,7 +49,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "timeline", to: "/timeline", icon: "📅",
-      title: "ציר זמן", color: "#2dd4bf", featured: false,
+      title: "ציר זמן", color: "#0891b2", featured: false,
       stats: phase
         ? [{ val: phase.name, lbl: "שלב נוכחי" }, { val: days > 0 ? days : "—", lbl: "ימים" }]
         : [{ val: days > 0 ? days : "—", lbl: "ימים לבחינה" }],
@@ -57,7 +57,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "aims", to: "/aims", icon: "🎯",
-      title: "AIMS", color: "#a78bfa", featured: false,
+      title: "AIMS", color: "#7c3aed", featured: false,
       stats: [
         { val: aims.active, lbl: "פעילות" },
         ...(aims.overdue > 0 ? [{ val: aims.overdue, lbl: "⚠ באיחור" }] : []),
@@ -66,7 +66,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "medcross", to: "/medcross", icon: "🏥",
-      title: "MedCross", color: "#f472b6", featured: false,
+      title: "MedCross", color: "#db2777", featured: false,
       stats: [
         { val: medcross.active, lbl: "פעילות" },
         ...(medcross.overdue > 0 ? [{ val: medcross.overdue, lbl: "⚠ באיחור" }] : []),
@@ -75,7 +75,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "selfcare", to: "/selfcare", icon: "💚",
-      title: "טיפול עצמי", color: "#34d399", featured: false,
+      title: "טיפול עצמי", color: "#16a34a", featured: false,
       stats: [
         { val: selfcare.active, lbl: "פעילות" },
         { val: faPct + "%",     lbl: "FA" },
@@ -90,7 +90,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     <div className="home-page">
 
       <div className="home-hero">
-        <h1 className="home-title">לוח ההישרדות</h1>
+        <h1 className="home-title">Personal Dashboard</h1>
         <p className="home-sub">{dateStr}</p>
         <div className="home-hero-chips">
           {days > 0 && <span className="home-chip home-chip-days">{days} ימים לבחינה</span>}
