@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubonic plague: Yersinia pestis from rodents</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q130", "item": 130, "qid": "15400", "title": "Bubonic plague: Yersinia pestis from rodents", "system": "Microbiology", "topic": "Zoonotic bacteria", "correct": "E", "yourAnswer": "E", "percentCorrect": 46, "vignette": "A previously healthy 23-year-old man comes to the office due to abrupt-onset high fever, chills, headache, and weakness that developed after he spent a month working on a large ranch. His initial symptoms were quickly followed by intensely painful swellings in the groin. Physical examination is significant for tender and enlarged inguinal lymph nodes with overlying erythematous skin. Blood cultures and fluid aspirated from the lymph nodes grow gram-negative coccobacilli that resemble a closed safety pin on special staining. Which of the following activities is the most likely source of this patient's infection?", "clues": [{"text": "abrupt-onset high fever, chills, headache, and weakness", "type": "blue", "note": "Sudden severe systemic illness after rural exposure fits an acute zoonotic infection. Combined with painful inguinal swellings, this points toward bubonic plague."}, {"text": "intensely painful swellings in the groin", "type": "red", "note": "Acutely painful, tender regional lymphadenopathy (buboes) is the hallmark of bubonic plague (Yersinia pestis). Buboes distinguish plague from many other zoonoses."}, {"text": "closed safety pin on special staining", "type": "green", "note": "Gram-negative coccobacilli with bipolar ('safety pin') staining on Wright/Giemsa is the classic morphology of Yersinia pestis. This nails the organism."}, {"text": "source of this patient's infection", "type": "blue", "note": "Y pestis is maintained in rodents and transmitted by rodent FLEAS. The most likely exposure is contact with rodent-infested areas - e.g., replacing rodent traps - rather than livestock or other animals."}], "whatMatters": "Acute fever + painful inguinal buboes + bipolar 'safety-pin' gram-negative coccobacilli = bubonic plague (Yersinia pestis). Its reservoir is rodents and the vector is the rodent flea, so the exposure is rodent contact - replacing rodent traps - answer E.", "strategy": "Match zoonosis to exposure by organism: Y pestis -> rodents/fleas (buboes, safety-pin stain); Brucella -> unpasteurized dairy/livestock (undulant fever); Francisella tularensis -> rabbits/ticks (ulceroglandular); Coxiella/Q fever -> parturient livestock; Bartonella -> cat scratch. Use the buboes + safety-pin clue to lock plague, then pick rodents.", "options": [{"letter": "A", "text": "Butchering wild pigs", "correct": false}, {"letter": "B", "text": "Handling deer hides", "correct": false}, {"letter": "C", "text": "Hunting rabbits", "correct": false}, {"letter": "D", "text": "Maintaining a chicken coop", "correct": false}, {"letter": "E", "text": "Replacing rodent traps", "correct": true}, {"letter": "F", "text": "Vaccinating cattle", "correct": false}], "eliminations": [{"letter": "A", "label": "butchering wild pigs - brucellosis/other, not plague", "detail": "WHAT IT IS: contact with swine carcasses risks brucellosis (and others). ❌ WHY IT FAILS: Brucella causes undulant fever without the painful buboes/safety-pin organism of plague; the morphology here is Y pestis from rodents. ✅ Correct if: undulant fever, sweats, and small gram-negative rods from livestock."}, {"letter": "B", "label": "handling deer hides - not the Y pestis route", "detail": "WHAT IT IS: deer exposure relates to tick-borne illness (e.g., tularemia, anaplasmosis). ❌ WHY IT FAILS: plague's reservoir/vector is rodents and rodent fleas, not deer hides. ✅ Correct if: a tick-borne deer-associated infection were described."}, {"letter": "C", "label": "hunting rabbits - tularemia, not plague", "detail": "WHAT IT IS: skinning rabbits classically transmits Francisella tularensis (ulceroglandular tularemia). ❌ WHY IT FAILS: tularemia gives an ulcer with regional nodes, not the safety-pin Y pestis on staining; the bipolar morphology and buboes are plague. ✅ Correct if: a skin ulcer with regional lymphadenopathy and a tiny pleomorphic gram-negative rod from a rabbit."}, {"letter": "D", "label": "chicken coop - not a Y pestis reservoir", "detail": "WHAT IT IS: poultry exposure (histoplasmosis from droppings, avian flu, etc.). ❌ WHY IT FAILS: chickens are not the reservoir for plague; rodents/fleas are. ✅ Correct if: a poultry-associated respiratory/fungal exposure were the point."}, {"letter": "F", "label": "vaccinating cattle - brucellosis exposure", "detail": "WHAT IT IS: the live Brucella cattle vaccine can transmit brucellosis to handlers. ❌ WHY IT FAILS: this is a Brucella, not Y pestis, exposure; the clinical/morphologic clues point to plague from rodents. ✅ Correct if: undulant fever from cattle-vaccine inoculation."}], "reasoning": ["Abrupt fever + painful inguinal buboes", "Gram-negative coccobacilli with bipolar 'safety pin' staining = Yersinia pestis", "Reservoir = rodents; vector = rodent flea", "Most likely exposure is rodent contact -> replacing rodent traps -> answer E"], "mechanism": "Yersinia pestis is a gram-negative coccobacillus showing bipolar ('safety-pin') staining with Wright/Giemsa. It is a zoonosis maintained in rodent reservoirs and transmitted to humans by the bite of an infected rodent flea (or by direct contact with infected animals). After inoculation, the bacteria travel via lymphatics to regional nodes, triggering intense inflammation that produces painful, swollen buboes (bubonic plague), along with abrupt fever, chills, and weakness; untreated infection can progress to septicemic or pneumonic plague and DIC. Aminoglycosides (e.g., streptomycin/gentamicin) are curative. The key exposure is rodent-infested environments, such as handling/replacing rodent traps.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Microbiology > Zoonotic gram-negatives: Yersinia pestis (rodents/fleas, buboes, bipolar safety-pin stain, aminoglycoside treatment) vs Brucella, Francisella tularensis, Coxiella, Bartonella - know reservoir/vector for each."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The question is an exposure match. Identify the organism first (safety-pin Y pestis), then select its reservoir/vector (rodents)."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on bubo, bipolar/safety-pin staining, coccobacillus, zoonosis, reservoir vs vector? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Hunting rabbits (C) tempts because tularemia also gives fever + regional nodes, but rabbits = Francisella, not Y pestis. The safety-pin morphology + buboes = plague = rodents."}, {"key": "other", "label": "✍️ Something else", "message": "You picked E correctly - keep a zoonosis-to-exposure table so the organism clue routes you straight to the source."}], "keywords": [{"front": "Painful buboes + bipolar 'safety-pin' gram-negative coccobacillus", "back": "Yersinia pestis (bubonic plague)"}, {"front": "Y pestis reservoir and vector", "back": "Rodents (reservoir); rodent flea (vector)"}, {"front": "Plague treatment", "back": "Aminoglycoside (streptomycin/gentamicin)"}, {"front": "Rabbit skinning -> which infection", "back": "Tularemia (Francisella tularensis)"}, {"front": "Unpasteurized dairy / livestock -> which infection", "back": "Brucellosis (undulant fever)"}, {"front": "Safety-pin staining organisms", "back": "Yersinia pestis, also Burkholderia/Klebsiella can show bipolar staining"}], "firstAid": [{"tag": "answer", "topic": "Yersinia pestis / plague", "detail": "Microbiology: reservoir, flea vector, buboes, bipolar staining, treatment."}, {"tag": "stem", "topic": "Regional lymphadenitis / buboes", "detail": "ID: differential of painful regional lymphadenopathy after animal exposure."}, {"tag": "options", "topic": "Zoonotic exposures", "detail": "Micro: Brucella, Francisella, Coxiella, Bartonella reservoirs and routes."}], "memoryHook": "Plague: painful buboes + 'safety-pin' bugs from RODENTS and their fleas. Rats and traps, not rabbits or cattle.", "stem": [{"text": "A previously healthy 23-year-old man comes to the office due to "}, {"text": "abrupt-onset high fever, chills, headache, and weakness", "clue": true, "type": "blue", "note": "Sudden severe systemic illness after rural exposure fits an acute zoonotic infection. Combined with painful inguinal swellings, this points toward bubonic plague."}, {"text": " that developed after he spent a month working on a large ranch. His initial symptoms were quickly followed by "}, {"text": "intensely painful swellings in the groin", "clue": true, "type": "red", "note": "Acutely painful, tender regional lymphadenopathy (buboes) is the hallmark of bubonic plague (Yersinia pestis). Buboes distinguish plague from many other zoonoses."}, {"text": ". Physical examination is significant for tender and enlarged inguinal lymph nodes with overlying erythematous skin. Blood cultures and fluid aspirated from the lymph nodes grow gram-negative coccobacilli that resemble a "}, {"text": "closed safety pin on special staining", "clue": true, "type": "green", "note": "Gram-negative coccobacilli with bipolar ('safety pin') staining on Wright/Giemsa is the classic morphology of Yersinia pestis. This nails the organism."}, {"text": ". Which of the following activities is the most likely "}, {"text": "source of this patient's infection", "clue": true, "type": "blue", "note": "Y pestis is maintained in rodents and transmitted by rodent FLEAS. The most likely exposure is contact with rodent-infested areas - e.g., replacing rodent traps - rather than livestock or other animals."}, {"text": "?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

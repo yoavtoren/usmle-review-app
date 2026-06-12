@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motivational interviewing: explore the patient's ambivalence</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q136", "item": 136, "qid": "21168", "title": "Motivational interviewing: explore the patient's ambivalence", "system": "Psychiatry", "topic": "Behavioral counseling", "correct": "C", "yourAnswer": "A", "percentCorrect": 74, "vignette": "A 24-year-old man comes to the office because of mood changes. He has felt depressed, irritable, and anxious nearly every day for 2 months. The patient has difficulty getting out of bed in the mornings and staying focused at work. He has no medical conditions and takes no medications. The patient drinks 3 or 4 beers daily and more on weekends. The physician provides education about the link between alcohol and mood changes. The patient responds, \"But it really helps me to unwind and relax after a long workday and makes it easier to fall asleep. It's also how I hang out with my friends on weekends. I can't see quitting.\" Which of the following is the most appropriate statement by the physician at this time?", "clues": [{"text": "drinks 3 or 4 beers daily and more on weekends", "type": "orange", "note": "Daily heavy drinking contributing to depressed/anxious mood sets up a behavior-change conversation. The patient is the target of motivational interviewing for an unhealthy behavior."}, {"text": "I can't see quitting", "type": "red", "note": "Explicit resistance/ambivalence ('I can't see quitting') signals the patient is NOT ready to change. The evidence-based response is motivational interviewing - acknowledge his perspective and explore ambivalence rather than confront."}, {"text": "most appropriate statement by the physician", "type": "blue", "note": "The best statement uses OARS (open-ended questions, affirmations, reflections, summaries) to elicit the patient's OWN reasons for change. Asking about the downsides from his perspective is the motivational-interviewing move."}], "whatMatters": "The patient is ambivalent and resistant. The motivational-interviewing approach is to acknowledge his reasons for drinking and ask an open-ended question that lets him voice the downsides himself: 'I can understand your reasons... What are the downsides to drinking from your perspective?' - answer C.", "strategy": "For 'most appropriate statement' counseling items with a resistant patient, choose motivational interviewing: remain nonjudgmental, reflect/affirm the patient's view, and ask OPEN-ENDED questions to elicit their own change talk. Avoid confrontation, lecturing, premature advice-giving, or prematurely 'giving up' on readiness.", "options": [{"letter": "A", "text": "\"Alcohol is likely making your depression worse. It will be harder to treat your depression without addressing alcohol.\"", "correct": false}, {"letter": "B", "text": "\"Although you feel alcohol helps you to relax, I am concerned that you are using it to self-medicate your depression.\"", "correct": false}, {"letter": "C", "text": "\"I can understand your reasons for using alcohol. What are the downsides to drinking from your perspective?\"", "correct": true}, {"letter": "D", "text": "\"I get it, but there are other, healthier ways to relax. Would you be willing to discuss those?\"", "correct": false}, {"letter": "E", "text": "\"I understand your reasons and see that you are not ready to make a change. I am here to help when you feel ready.\"", "correct": false}], "eliminations": [{"letter": "A", "label": "confrontational warning - raises resistance", "detail": "WHAT IT IS: directly telling him alcohol worsens his depression. ❌ WHY IT FAILS: confronting a resistant patient tends to increase defensiveness and 'sustain talk,' the opposite of motivational interviewing. You chose this. ✅ Correct if: the patient were already committed to change and asking for medical facts."}, {"letter": "B", "label": "expressing the doctor's concern - still doctor-centered", "detail": "WHAT IT IS: voicing the physician's worry about self-medication. ❌ WHY IT FAILS: it imposes the clinician's interpretation rather than eliciting the patient's own motivation; not the open-ended, patient-centered MI move. ✅ Correct if: a more directive style were appropriate, but here MI is indicated."}, {"letter": "D", "label": "offering alternatives prematurely - skips ambivalence", "detail": "WHAT IT IS: suggesting other ways to relax. ❌ WHY IT FAILS: jumping to solutions before the patient has explored his own reasons to change is premature; MI first develops discrepancy/change talk. ✅ Correct if: the patient had already expressed readiness and wanted concrete strategies."}, {"letter": "E", "label": "prematurely conceding - abandons engagement", "detail": "WHAT IT IS: declaring he's 'not ready' and stepping back. ❌ WHY IT FAILS: it disengages too early and forfeits the chance to elicit ambivalence; MI keeps the conversation going by exploring downsides. ✅ Correct if: the patient flatly refused any discussion after MI attempts."}], "reasoning": ["Resistant, ambivalent patient ('I can't see quitting')", "Best approach = motivational interviewing (nonjudgmental, patient-centered)", "Acknowledge his reasons + ask open-ended question to elicit his own change talk", "'What are the downsides from your perspective?' -> answer C"], "mechanism": "Motivational interviewing is a patient-centered, nonjudgmental method for strengthening a person's own motivation to change a maladaptive behavior, matched to their stage of readiness. Core techniques (OARS) are open-ended questions, affirmations, reflective listening, and summaries, used to develop discrepancy between current behavior and the patient's goals while rolling with resistance rather than confronting it. For an ambivalent patient who 'can't see quitting,' the most effective statement validates his reasons for drinking and invites him to articulate the downsides himself, eliciting 'change talk.' Confrontation, unsolicited advice, or prematurely conceding all undermine engagement.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Psychiatry > Behavioral change/motivational interviewing: OARS, stages of change, roll with resistance, develop discrepancy, elicit change talk; avoid confrontation and premature advice."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The cue 'I can't see quitting' = not ready -> use MI. Pick the open-ended, validating question that lets the patient generate his own reasons."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on motivational interviewing, OARS, ambivalence/change talk, stages of change, rolling with resistance? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "You chose A - the confrontational, fact-based warning. With a resistant patient, that increases defensiveness. The MI move is to explore his perspective (C)."}, {"key": "other", "label": "✍️ Something else", "message": "Default for resistant patients: validate + open-ended question. Reserve direct advice for patients who are ready."}], "keywords": [{"front": "Resistant patient ('can't see quitting') - best technique", "back": "Motivational interviewing (open-ended, nonjudgmental)"}, {"front": "Motivational interviewing OARS", "back": "Open-ended questions, Affirmations, Reflections, Summaries"}, {"front": "Core MI principle with resistance", "back": "Roll with resistance; develop discrepancy; elicit change talk"}, {"front": "What to avoid with an ambivalent patient", "back": "Confrontation, lecturing, premature advice, giving up"}, {"front": "When direct advice is appropriate", "back": "Patient already in action/preparation stage and asking for guidance"}], "firstAid": [{"tag": "answer", "topic": "Motivational interviewing", "detail": "Psychiatry: patient-centered counseling, OARS, stages of change."}, {"tag": "stem", "topic": "Alcohol use & mood", "detail": "Psych: alcohol as a depressant, screening, brief intervention."}, {"tag": "options", "topic": "Counseling communication styles", "detail": "Psych: open vs closed questions, reflective listening, avoiding confrontation."}], "memoryHook": "MI = let the patient argue for change. Don't push - ask 'what are the downsides for YOU?'", "stem": [{"text": "A 24-year-old man comes to the office because of mood changes. He has felt depressed, irritable, and anxious nearly every day for 2 months. The patient has difficulty getting out of bed in the mornings and staying focused at work. He has no medical conditions and takes no medications. The patient "}, {"text": "drinks 3 or 4 beers daily and more on weekends", "clue": true, "type": "orange", "note": "Daily heavy drinking contributing to depressed/anxious mood sets up a behavior-change conversation. The patient is the target of motivational interviewing for an unhealthy behavior."}, {"text": ". The physician provides education about the link between alcohol and mood changes. The patient responds, \"But it really helps me to unwind and relax after a long workday and makes it easier to fall asleep. It's also how I hang out with my friends on weekends. "}, {"text": "I can't see quitting", "clue": true, "type": "red", "note": "Explicit resistance/ambivalence ('I can't see quitting') signals the patient is NOT ready to change. The evidence-based response is motivational interviewing - acknowledge his perspective and explore ambivalence rather than confront."}, {"text": ".\" Which of the following is the "}, {"text": "most appropriate statement by the physician", "clue": true, "type": "blue", "note": "The best statement uses OARS (open-ended questions, affirmations, reflections, summaries) to elicit the patient's OWN reasons for change. Asking about the downsides from his perspective is the motivational-interviewing move."}, {"text": " at this time?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

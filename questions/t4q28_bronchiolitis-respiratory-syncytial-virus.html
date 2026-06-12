@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bronchiolitis: respiratory syncytial virus</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q137", "item": 137, "qid": "1668", "title": "Bronchiolitis: respiratory syncytial virus", "system": "Microbiology", "topic": "Pediatric respiratory virus", "correct": "E", "yourAnswer": "E", "percentCorrect": 78, "vignette": "A 1-month-old boy is brought to the emergency department during winter with cough and difficulty breathing. He has had rhinorrhea, cough, and congestion for the past 3 days. Today, the patient began breathing harder and faster with increased cough. Temperature is 37.8 C (100 F) and respirations are 68/min. Oxygen saturation is 91%. The patient is alert and awake and has subcostal and suprasternal retractions. Mucous membranes are moist, and the anterior fontanelle is open and flat. Physical examination reveals diffuse expiratory wheezes and scattered rales. Which of the following pathogens is most likely causing this patient's condition?", "clues": [{"text": "during winter", "type": "orange", "note": "RSV bronchiolitis peaks in late fall and winter. Seasonality plus the infant's age strongly favors RSV."}, {"text": "rhinorrhea, cough, and congestion for the past 3 days", "type": "blue", "note": "A preceding upper-respiratory prodrome that progresses to lower-airway involvement over a few days is the classic bronchiolitis course."}, {"text": "subcostal and suprasternal retractions", "type": "blue", "note": "Retractions and tachypnea (RR 68) indicate increased work of breathing/respiratory distress in a young infant - typical of bronchiolitis."}, {"text": "diffuse expiratory wheezes and scattered rales", "type": "red", "note": "Diffuse wheezes + crackles in an infant under 2 years = bronchiolitis, whose most common cause is respiratory syncytial virus (RSV)."}], "whatMatters": "A wheezing, distressed infant under 2 years in winter with a URI prodrome progressing to lower-airway signs = bronchiolitis, and the most common pathogen is respiratory syncytial virus - answer E.", "strategy": "For an infant (<2 years) with winter onset, URI prodrome, wheezing/crackles, and retractions, diagnose bronchiolitis and default to RSV as the cause. Reserve other pathogens for specific clues (whooping cough for pertussis, staccato cough for Chlamydia, older child for Mycoplasma).", "options": [{"letter": "A", "text": "Adenovirus", "correct": false}, {"letter": "B", "text": "Bordetella pertussis", "correct": false}, {"letter": "C", "text": "Mycoplasma pneumoniae", "correct": false}, {"letter": "D", "text": "Parainfluenza virus", "correct": false}, {"letter": "E", "text": "Respiratory syncytial virus", "correct": true}], "eliminations": [{"letter": "A", "label": "adenovirus - less common cause of bronchiolitis", "detail": "WHAT IT IS: adenovirus can cause respiratory infection (and pharyngoconjunctival fever). ❌ WHY IT FAILS: it is a far less common bronchiolitis cause than RSV and lacks distinguishing features here. ✅ Correct if: conjunctivitis + pharyngitis + fever (pharyngoconjunctival fever) or severe necrotizing pneumonia were described."}, {"letter": "B", "label": "Bordetella pertussis - whooping cough, different pattern", "detail": "WHAT IT IS: pertussis causes paroxysmal coughing fits with inspiratory whoop and post-tussive emesis. ❌ WHY IT FAILS: this infant has wheezing/crackles and a bronchiolitis pattern, not paroxysms with whoop; afebrile-to-low-grade and lymphocytosis would be expected for pertussis. ✅ Correct if: staccato/paroxysmal cough with whoop and marked lymphocytosis."}, {"letter": "C", "label": "Mycoplasma pneumoniae - older patients", "detail": "WHAT IT IS: atypical 'walking' pneumonia. ❌ WHY IT FAILS: Mycoplasma affects older children/young adults, not 1-month-olds, and causes interstitial pneumonia, not infantile bronchiolitis. ✅ Correct if: a school-age child/teen with dry cough and patchy infiltrates."}, {"letter": "D", "label": "parainfluenza - more classic for croup", "detail": "WHAT IT IS: parainfluenza is the leading cause of croup (laryngotracheobronchitis) and a secondary bronchiolitis cause. ❌ WHY IT FAILS: this is a wheezing lower-airway bronchiolitis picture, most commonly RSV; croup would show barky cough/stridor. ✅ Correct if: barking cough, inspiratory stridor, steeple sign."}], "reasoning": ["Infant <2 years, winter, URI prodrome -> lower airway", "Wheezes + crackles + retractions = bronchiolitis", "Most common cause of bronchiolitis = RSV", "-> answer E"], "mechanism": "Respiratory syncytial virus is the most common cause of bronchiolitis, a lower respiratory tract infection of infants and children under 2 years, peaking in fall/winter. After an upper-respiratory prodrome (rhinorrhea, congestion, cough), the virus infects bronchiolar epithelium, causing necrosis, edema, mucus plugging, and small-airway obstruction that produces wheezing, crackles, tachypnea, retractions, and hypoxemia. Diagnosis is clinical and treatment supportive (oxygen, nasal suctioning, hydration); young or premature infants are at risk for apnea and respiratory failure, and high-risk infants may receive RSV prophylaxis.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Microbiology/Peds > Bronchiolitis: RSV most common, age <2, fall/winter, URI prodrome -> wheezes/crackles/retractions, supportive care; RSV is a paramyxovirus (F protein -> syncytia); palivizumab prophylaxis in high-risk infants."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Pattern-match the infant bronchiolitis picture and default to RSV; the clues (age, season, wheezing) are confirmatory."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on bronchiolitis, RSV, retractions, rales/crackles, croup vs bronchiolitis, paramyxovirus? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Parainfluenza (D) tempts as a related virus, but it's the croup classic (barky cough/stridor). The wheezing infant bronchiolitis is RSV."}, {"key": "other", "label": "✍️ Something else", "message": "You picked E correctly - lock 'infant + winter + wheeze = RSV bronchiolitis.'"}], "keywords": [{"front": "Most common cause of infant bronchiolitis", "back": "Respiratory syncytial virus (RSV)"}, {"front": "Bronchiolitis clinical pattern", "back": "<2 yrs, winter, URI prodrome -> wheezes/crackles, retractions, tachypnea"}, {"front": "RSV virus family / hallmark", "back": "Paramyxovirus; F (fusion) protein -> multinucleated syncytia"}, {"front": "Parainfluenza classic disease", "back": "Croup (barky cough, stridor, steeple sign)"}, {"front": "Pertussis cough pattern", "back": "Paroxysmal cough + inspiratory whoop + post-tussive emesis; lymphocytosis"}, {"front": "RSV prophylaxis", "back": "Palivizumab (monoclonal anti-F) in high-risk infants"}], "firstAid": [{"tag": "answer", "topic": "RSV / bronchiolitis", "detail": "Microbiology/Peds: epidemiology, F protein/syncytia, supportive care, palivizumab."}, {"tag": "stem", "topic": "Infant respiratory distress", "detail": "Peds: retractions, tachypnea, hypoxemia, apnea risk in young infants."}, {"tag": "options", "topic": "Pediatric respiratory pathogens", "detail": "Micro: parainfluenza (croup), pertussis, Mycoplasma, adenovirus distinguishing features."}], "memoryHook": "RSV = 'Really Small Victims' - winter wheezing babies. Bronchiolitis under 2 = RSV until proven otherwise.", "stem": [{"text": "A 1-month-old boy is brought to the emergency department "}, {"text": "during winter", "clue": true, "type": "orange", "note": "RSV bronchiolitis peaks in late fall and winter. Seasonality plus the infant's age strongly favors RSV."}, {"text": " with cough and difficulty breathing. He has had "}, {"text": "rhinorrhea, cough, and congestion for the past 3 days", "clue": true, "type": "blue", "note": "A preceding upper-respiratory prodrome that progresses to lower-airway involvement over a few days is the classic bronchiolitis course."}, {"text": ". Today, the patient began breathing harder and faster with increased cough. Temperature is 37.8 C (100 F) and respirations are 68/min. Oxygen saturation is 91%. The patient is alert and awake and has "}, {"text": "subcostal and suprasternal retractions", "clue": true, "type": "blue", "note": "Retractions and tachypnea (RR 68) indicate increased work of breathing/respiratory distress in a young infant - typical of bronchiolitis."}, {"text": ". Mucous membranes are moist, and the anterior fontanelle is open and flat. Physical examination reveals "}, {"text": "diffuse expiratory wheezes and scattered rales", "clue": true, "type": "red", "note": "Diffuse wheezes + crackles in an infant under 2 years = bronchiolitis, whose most common cause is respiratory syncytial virus (RSV)."}, {"text": ". Which of the following pathogens is most likely causing this patient's condition?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

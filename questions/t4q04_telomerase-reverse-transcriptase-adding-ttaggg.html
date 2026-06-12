@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telomerase: reverse transcriptase adding TTAGGG</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q113", "item": 113, "qid": "1438", "title": "Telomerase: reverse transcriptase adding TTAGGG", "system": "Biochemistry", "topic": "DNA replication / telomeres", "correct": "A", "yourAnswer": "A", "percentCorrect": 66, "vignette": "A cell biologist is studying the role of ribonucleoproteins in normal cellular function. He prepares a cell extract using a specific cell type obtained from a 73-year-old man. Ribonucleoproteins are separated and purified from the cell extract for structural and functional analyses. These cells are found to express higher amounts of a particular protein in comparison to other cell types. This protein has reverse transcriptase activity that functions to add TTAGGG repeats to the 3' end of chromosomes. Which of the following cell types was most likely studied in this experiment?", "clues": [{"text": "ribonucleoproteins", "type": "blue", "note": "Telomerase is a ribonucleoprotein: it carries both a protein catalytic subunit (TERT) and an RNA template subunit (TERC). The 'ribonucleoprotein' framing is a hint that the protein in question is telomerase, not a plain enzyme."}, {"text": "reverse transcriptase activity", "type": "red", "note": "Telomerase uses its built-in RNA as a template to synthesize DNA - i.e., it is an RNA-dependent DNA polymerase (reverse transcriptase). This activity is the defining feature distinguishing telomerase from ordinary DNA polymerases."}, {"text": "add TTAGGG repeats to the 3' end of chromosomes", "type": "green", "note": "TTAGGG is the human telomere repeat that telomerase appends to chromosome 3' ends, counteracting end-replication shortening. High telomerase activity marks cells that must divide indefinitely: stem cells, germ cells, and cancer cells."}], "whatMatters": "Ignore the lab packaging: a ribonucleoprotein with reverse transcriptase activity that adds TTAGGG to chromosome ends IS telomerase. The question becomes 'which listed cell has high telomerase?' Among the choices, only the regenerating stem-cell compartment - epidermal basal cells - qualifies. Answer A.", "strategy": "When telomerase shows up, reframe the answer choices by proliferative capacity. High telomerase = continuously dividing cells: germ cells, stem/progenitor cells, and cancer. Terminally differentiated cells (neurons, cardiac myocytes, mature RBCs which lack a nucleus entirely) have little to none. Pick the self-renewing tissue.", "options": [{"letter": "A", "text": "Epidermal basal cells", "correct": true}, {"letter": "B", "text": "Erythrocytes", "correct": false}, {"letter": "C", "text": "Myocardial cells", "correct": false}, {"letter": "D", "text": "Neurons", "correct": false}, {"letter": "E", "text": "Pancreatic beta cells", "correct": false}], "eliminations": [{"letter": "B", "label": "erythrocytes - no nucleus, no DNA", "detail": "WHAT IT IS: mature red blood cells. ❌ WHY IT FAILS: erythrocytes are anucleate and contain no chromosomes or DNA-synthesizing machinery, so telomerase activity is irrelevant/absent. ✅ Correct if: the question asked about an anucleate cell or a cell that cannot replicate DNA."}, {"letter": "C", "label": "myocardial cells - terminally differentiated", "detail": "WHAT IT IS: cardiac myocytes. ❌ WHY IT FAILS: they are largely post-mitotic with minimal regenerative capacity, so telomerase expression is low. ✅ Correct if: asked which cells have poor regenerative/telomerase capacity."}, {"letter": "D", "label": "neurons - permanent cells", "detail": "WHAT IT IS: mature neurons. ❌ WHY IT FAILS: they are permanent (G0), do not divide, and have negligible telomerase. ✅ Correct if: asking for a non-dividing 'permanent' cell type."}, {"letter": "E", "label": "pancreatic beta cells - low turnover", "detail": "WHAT IT IS: islet beta cells. ❌ WHY IT FAILS: they have very low proliferative turnover and little telomerase compared with a stem-cell compartment. ✅ Correct if: asking about slowly dividing 'stable' cells rather than a high-telomerase population."}], "reasoning": ["Ribonucleoprotein + reverse transcriptase + TTAGGG = telomerase", "Telomerase is high in continuously dividing cells (stem/germ/cancer)", "Of the options, only epidermal basal cells are a self-renewing stem compartment", "RBCs/neurons/cardiac myocytes/beta cells divide little or not at all -> answer A"], "mechanism": "Telomerase is a ribonucleoprotein composed of the catalytic reverse-transcriptase subunit TERT and an RNA template (TERC) that reads 'AAUCCC' to add TTAGGG DNA repeats to the 3' single-stranded overhang of chromosome ends. This offsets the end-replication problem, in which lagging-strand synthesis cannot fully replicate chromosome termini, so telomeres shorten each division. Cells that must proliferate indefinitely - germ cells, stem/progenitor cells (e.g., epidermal basal layer), and most cancers - express high telomerase, whereas terminally differentiated somatic cells do not and undergo progressive telomere shortening leading to senescence.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Biochemistry > DNA replication: telomerase = RNA-dependent DNA polymerase (TERT + TERC RNA template) adds TTAGGG; high in stem/germ/cancer cells; end-replication problem and telomere shortening with aging."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Two-step: identify the protein (telomerase) from its description, then pick the cell with the highest proliferative/telomerase activity (a stem-cell compartment)."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on ribonucleoprotein, reverse transcriptase / RNA-dependent DNA polymerase, telomere/TTAGGG, end-replication problem, permanent vs stable vs labile cells? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Neurons (D) tempt because they are long-lived in a 73-year-old, but longevity is not proliferation; telomerase tracks DIVISION capacity, which is highest in the basal keratinocytes."}, {"key": "other", "label": "✍️ Something else", "message": "You got A right - keep the cell-turnover buckets crisp (labile/stable/permanent) so telomerase questions become one-step."}], "keywords": [{"front": "Ribonucleoprotein + reverse transcriptase + adds TTAGGG", "back": "Telomerase"}, {"front": "Telomerase subunits", "back": "TERT (catalytic) + TERC (RNA template)"}, {"front": "Human telomere repeat", "back": "TTAGGG"}, {"front": "Cells with high telomerase", "back": "Germ cells, stem/progenitor cells, cancer cells"}, {"front": "End-replication problem", "back": "Lagging strand can't replicate 3' ends -> telomere shortening each division"}, {"front": "Labile tissue example (high turnover)", "back": "Epidermal basal cells, gut crypt cells, bone marrow"}], "firstAid": [{"tag": "answer", "topic": "Telomerase", "detail": "Biochem > DNA replication: telomerase structure/function, TTAGGG repeats, aging and cancer."}, {"tag": "stem", "topic": "End-replication problem", "detail": "Biochem: leading vs lagging strand, why telomeres shorten, senescence."}, {"tag": "options", "topic": "Cell types by regenerative capacity", "detail": "Pathology: labile (basal skin, gut, marrow), stable (hepatocytes, beta cells), permanent (neurons, cardiac/skeletal muscle)."}], "memoryHook": "Telomerase = the immortality enzyme. Cells that keep dividing (skin basal layer) keep it; couch-potato cells (neurons, cardiac) lose it.", "stem": [{"text": "A cell biologist is studying the role of "}, {"text": "ribonucleoproteins", "clue": true, "type": "blue", "note": "Telomerase is a ribonucleoprotein: it carries both a protein catalytic subunit (TERT) and an RNA template subunit (TERC). The 'ribonucleoprotein' framing is a hint that the protein in question is telomerase, not a plain enzyme."}, {"text": " in normal cellular function. He prepares a cell extract using a specific cell type obtained from a 73-year-old man. Ribonucleoproteins are separated and purified from the cell extract for structural and functional analyses. These cells are found to express higher amounts of a particular protein in comparison to other cell types. This protein has "}, {"text": "reverse transcriptase activity", "clue": true, "type": "red", "note": "Telomerase uses its built-in RNA as a template to synthesize DNA - i.e., it is an RNA-dependent DNA polymerase (reverse transcriptase). This activity is the defining feature distinguishing telomerase from ordinary DNA polymerases."}, {"text": " that functions to "}, {"text": "add TTAGGG repeats to the 3' end of chromosomes", "clue": true, "type": "green", "note": "TTAGGG is the human telomere repeat that telomerase appends to chromosome 3' ends, counteracting end-replication shortening. High telomerase activity marks cells that must divide indefinitely: stem cells, germ cells, and cancer cells."}, {"text": ". Which of the following cell types was most likely studied in this experiment?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

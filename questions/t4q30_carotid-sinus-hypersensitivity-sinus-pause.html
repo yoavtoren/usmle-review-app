@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carotid sinus hypersensitivity: sinus pause</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q140", "item": 140, "qid": "19561", "title": "Carotid sinus hypersensitivity: sinus pause", "system": "Cardiology", "topic": "Syncope / autonomic", "correct": "D", "yourAnswer": "C", "percentCorrect": 68, "vignette": "A 72-year-old man comes to the clinic due to episodic lightheadedness. The episodes typically occur in the morning when the patient adjusts his shirt collar or tightens his tie and he briefly feels like he is going to pass out. The patient had a thyroidectomy 5 years ago for a large benign tumor. He also has hypertension and takes amlodipine. Blood pressure is 135/78 mm Hg and pulse is 78/min. Physical examination reveals no heart murmurs or carotid bruits. ECG shows normal sinus rhythm. The patient is given an ambulatory ECG monitoring device. During symptomatic episodes, the device is most likely to show which of the following?", "clues": [{"text": "episodic lightheadedness", "type": "blue", "note": "Episodic presyncope (near-fainting) suggests a transient drop in cerebral perfusion. The trigger pattern that follows localizes the cause to the carotid sinus reflex."}, {"text": "when the patient adjusts his shirt collar or tightens his tie", "type": "red", "note": "Symptoms provoked by neck/collar pressure are pathognomonic for carotid sinus hypersensitivity: mechanical stimulation of overly sensitive carotid baroreceptors triggers an exaggerated vagal reflex."}, {"text": "thyroidectomy 5 years ago", "type": "orange", "note": "Prior neck surgery (and carotid atherosclerosis in an elderly man) are risk factors for carotid sinus hypersensitivity, as scarring/manipulation can sensitize the baroreceptor reflex."}, {"text": "no heart murmurs or carotid bruits", "type": "blue", "note": "Absence of murmurs/bruits argues against structural valvular disease or significant carotid stenosis as the cause, supporting a reflex (neurally mediated) mechanism."}], "whatMatters": "Presyncope triggered by collar/tie pressure in an elderly man with prior neck surgery = carotid sinus hypersensitivity. The exaggerated vagal response causes a marked sinus pause (and/or AV block) during episodes - answer D.", "strategy": "When neck pressure triggers near-syncope, think carotid sinus hypersensitivity: a cardioinhibitory vagal surge produces transient sinus pause/bradycardia (and a vasodepressor drop in BP). Expect the monitor to capture a SINUS PAUSE during symptoms, not a tachyarrhythmia.", "options": [{"letter": "A", "text": "Atrial fibrillation", "correct": false}, {"letter": "B", "text": "Mobitz type II second-degree heart block", "correct": false}, {"letter": "C", "text": "Paroxysmal supraventricular tachycardia", "correct": false}, {"letter": "D", "text": "Sinus pause", "correct": true}, {"letter": "E", "text": "Ventricular tachycardia", "correct": false}], "eliminations": [{"letter": "A", "label": "atrial fibrillation - a tachyarrhythmia, wrong mechanism", "detail": "WHAT IT IS: irregular atrial tachyarrhythmia. ❌ WHY IT FAILS: the trigger is vagal (collar pressure) causing a PAUSE/bradycardia, not a rapid irregular rhythm; AF wouldn't be provoked by neck pressure. ✅ Correct if: irregularly irregular pulse and palpitations unrelated to neck stimulation."}, {"letter": "B", "label": "Mobitz II block - structural conduction disease, less linked to neck pressure", "detail": "WHAT IT IS: a His-Purkinje conduction block with dropped beats and risk of progression. ❌ WHY IT FAILS: although advanced AV block can cause syncope, it is not provoked by carotid/collar stimulation; carotid sinus hypersensitivity classically yields sinus pause from vagal output. ✅ Correct if: fixed PR with sudden non-conducted P waves and a wide QRS, independent of neck pressure."}, {"letter": "C", "label": "paroxysmal SVT - tachyarrhythmia, wrong trigger", "detail": "WHAT IT IS: a reentrant supraventricular tachycardia. ❌ WHY IT FAILS: vagal maneuvers (including carotid pressure) TERMINATE SVT rather than cause symptoms; the scenario is vagally INDUCED bradycardia/pause. You chose this. ✅ Correct if: sudden palpitations with narrow-complex tachycardia that breaks with vagal maneuvers."}, {"letter": "E", "label": "ventricular tachycardia - not neck-pressure triggered", "detail": "WHAT IT IS: a wide-complex ventricular tachyarrhythmia, often with structural heart disease. ❌ WHY IT FAILS: VT causes syncope but isn't provoked by collar pressure; the reflex here is cardioinhibitory (pause). ✅ Correct if: syncope with palpitations, structural/ischemic heart disease, and wide-complex tachycardia on monitor."}], "reasoning": ["Near-syncope triggered by neck/collar pressure", "Risk factors: elderly, prior neck (thyroid) surgery", "Carotid sinus hypersensitivity -> exaggerated vagal output", "Cardioinhibitory response = sinus pause on monitor -> answer D"], "mechanism": "In carotid sinus hypersensitivity, baroreceptors in the carotid sinus are abnormally sensitive to mechanical stimulation (e.g., a tight collar, head turning). Stimulation triggers an exaggerated reflex: increased parasympathetic (vagal) output to the SA and AV nodes causes a cardioinhibitory response - a prolonged sinus pause (often >=3 seconds) and/or AV block - while reduced sympathetic tone produces vasodepressor hypotension. The resulting transient cerebral hypoperfusion causes presyncope or syncope. It is most common in elderly men and is associated with carotid atherosclerosis and prior neck surgery. An ambulatory monitor during symptoms typically captures a sinus pause/bradycardia.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Cardiology > Syncope/autonomic: carotid sinus hypersensitivity - neck-pressure-triggered vagal reflex -> cardioinhibitory sinus pause/AV block and/or vasodepressor hypotension; elderly men, prior neck surgery/atherosclerosis; treatment may include pacemaker for cardioinhibitory type."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The trigger (collar/tie) and risk factors point to a vagal reflex; predict the monitor finding from the mechanism (vagus slows the SA node -> pause)."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on carotid sinus hypersensitivity, baroreceptor reflex, cardioinhibitory vs vasodepressor, sinus pause, presyncope? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "You chose C (PSVT). Carotid/vagal stimulation TERMINATES SVT - it doesn't cause this presyncope. The expected capture is a vagally induced sinus PAUSE."}, {"key": "other", "label": "✍️ Something else", "message": "Anchor: neck pressure -> vagus -> bradycardia/pause. Tachyarrhythmias are the wrong direction."}], "keywords": [{"front": "Near-syncope triggered by collar/tie or head turning", "back": "Carotid sinus hypersensitivity"}, {"front": "Carotid sinus hypersensitivity ECG during episode", "back": "Sinus pause (cardioinhibitory) +/- AV block"}, {"front": "Two response types in CSH", "back": "Cardioinhibitory (pause/bradycardia) and vasodepressor (hypotension)"}, {"front": "Risk factors for CSH", "back": "Elderly men, carotid atherosclerosis, prior neck surgery"}, {"front": "Effect of carotid massage on SVT", "back": "Vagal maneuver that TERMINATES SVT (opposite scenario)"}, {"front": "Treatment of cardioinhibitory CSH", "back": "Permanent pacemaker (for recurrent symptomatic pauses)"}], "firstAid": [{"tag": "answer", "topic": "Carotid sinus hypersensitivity", "detail": "Cardiology: baroreceptor reflex, cardioinhibitory/vasodepressor responses, pacemaker."}, {"tag": "stem", "topic": "Syncope workup", "detail": "Cards: reflex (neurally mediated) vs cardiac vs orthostatic; ambulatory monitoring."}, {"tag": "options", "topic": "Brady vs tachyarrhythmias", "detail": "Cards: sinus pause, AV blocks, AF, SVT, VT distinguishing features and triggers."}], "memoryHook": "Tight collar -> tickled carotid -> vagus slams the brakes -> sinus PAUSE. Neck pressure faint = CSH.", "stem": [{"text": "A 72-year-old man comes to the clinic due to "}, {"text": "episodic lightheadedness", "clue": true, "type": "blue", "note": "Episodic presyncope (near-fainting) suggests a transient drop in cerebral perfusion. The trigger pattern that follows localizes the cause to the carotid sinus reflex."}, {"text": ". The episodes typically occur in the morning "}, {"text": "when the patient adjusts his shirt collar or tightens his tie", "clue": true, "type": "red", "note": "Symptoms provoked by neck/collar pressure are pathognomonic for carotid sinus hypersensitivity: mechanical stimulation of overly sensitive carotid baroreceptors triggers an exaggerated vagal reflex."}, {"text": " and he briefly feels like he is going to pass out. The patient had a "}, {"text": "thyroidectomy 5 years ago", "clue": true, "type": "orange", "note": "Prior neck surgery (and carotid atherosclerosis in an elderly man) are risk factors for carotid sinus hypersensitivity, as scarring/manipulation can sensitize the baroreceptor reflex."}, {"text": " for a large benign tumor. He also has hypertension and takes amlodipine. Blood pressure is 135/78 mm Hg and pulse is 78/min. Physical examination reveals "}, {"text": "no heart murmurs or carotid bruits", "clue": true, "type": "blue", "note": "Absence of murmurs/bruits argues against structural valvular disease or significant carotid stenosis as the cause, supporting a reflex (neurally mediated) mechanism."}, {"text": ". ECG shows normal sinus rhythm. The patient is given an ambulatory ECG monitoring device. During symptomatic episodes, the device is most likely to show which of the following?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lung abscess: aerobic and anaerobic coverage</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="../index.html">← All questions</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q134", "item": 134, "qid": "1446", "title": "Lung abscess: aerobic and anaerobic coverage", "system": "Microbiology", "topic": "Pulmonary infection", "correct": "E", "yourAnswer": "B", "percentCorrect": 59, "vignette": "A 41-year-old man comes to the emergency department due to 3 weeks of low-grade fever, productive cough, and a 4.5-kg (10-lb) weight loss. The patient drinks 10-12 beers a day. On physical examination, he appears cachectic. Poor dentition and clubbing of the fingers are noted. A foul-smelling sputum sample is expectorated and sent for Gram stain and culture. CT scan of the chest shows a cavitary lung lesion with an air-fluid level. Empiric antimicrobial therapy should include coverage against which of the following pathogens?", "clues": [{"text": "3 weeks of low-grade fever, productive cough, and a 4.5-kg (10-lb) weight loss", "type": "blue", "note": "A subacute illness with constitutional symptoms and weight loss fits an indolent pulmonary suppurative process like a lung abscess (not acute lobar pneumonia)."}, {"text": "drinks 10-12 beers a day", "type": "orange", "note": "Heavy alcohol use predisposes to aspiration (reduced consciousness, impaired gag), the central risk factor for an anaerobe-rich lung abscess."}, {"text": "Poor dentition", "type": "red", "note": "Poor dentition provides a reservoir of oral ANAEROBES (Peptostreptococcus, Prevotella, Fusobacterium, Bacteroides) that are aspirated into the lung, seeding an abscess."}, {"text": "foul-smelling sputum", "type": "green", "note": "Foul/putrid-smelling sputum is the signature of anaerobic infection. Together with the cavitary air-fluid level on CT, this confirms an aspiration lung abscess of mixed flora."}], "whatMatters": "Alcoholic with poor dentition, aspiration risk, foul-smelling sputum, and a cavitary lesion with an air-fluid level = aspiration lung abscess. The flora is mixed oral aerobes AND anaerobes, so empiric therapy must cover both - answer E.", "strategy": "For a cavitary lung lesion with air-fluid level + foul sputum + aspiration risk (alcohol/poor dentition/altered consciousness), diagnose aspiration lung abscess and choose coverage of mixed AEROBIC + ANAEROBIC oral flora (e.g., ampicillin-sulbactam or clindamycin). Don't narrow to a single organism class.", "options": [{"letter": "A", "text": "Cell wall-deficient bacteria", "correct": false}, {"letter": "B", "text": "Intestinal gram-negative flora", "correct": false}, {"letter": "C", "text": "Resident skin microbiota", "correct": false}, {"letter": "D", "text": "Staphylococci resistant to beta-lactams", "correct": false}, {"letter": "E", "text": "Aerobic and anaerobic organisms", "correct": true}], "eliminations": [{"letter": "A", "label": "cell wall-deficient bacteria - Mycoplasma, wrong picture", "detail": "WHAT IT IS: cell wall-deficient organisms = Mycoplasma (atypical 'walking' pneumonia). ❌ WHY IT FAILS: Mycoplasma causes diffuse interstitial pneumonia in younger patients, not a foul-smelling cavitary abscess from aspiration. ✅ Correct if: a young patient with dry cough, bullous myringitis, and patchy interstitial infiltrates."}, {"letter": "B", "label": "intestinal gram-negative flora - wrong source", "detail": "WHAT IT IS: enteric gram-negatives (E. coli, Klebsiella) from the gut. ❌ WHY IT FAILS: aspiration abscesses arise from ORAL flora, not intestinal flora; coverage should target mouth aerobes/anaerobes. (Klebsiella can cause a cavitary pneumonia in alcoholics, but the foul-smelling mixed picture calls for aerobic+anaerobic coverage rather than 'intestinal flora.') You chose this. ✅ Correct if: the stem emphasized currant-jelly sputum Klebsiella specifically, but the answer set asked for source coverage."}, {"letter": "C", "label": "skin microbiota - not the aspiration source", "detail": "WHAT IT IS: skin commensals (coagulase-negative staph, etc.). ❌ WHY IT FAILS: skin flora aren't the cause of an aspiration lung abscess; the inoculum is oral. ✅ Correct if: a line-associated/hematogenous infection were implied."}, {"letter": "D", "label": "beta-lactam-resistant staph (MRSA) - not the empiric target here", "detail": "WHAT IT IS: MRSA, which can cause necrotizing pneumonia. ❌ WHY IT FAILS: nothing points to MRSA (no post-influenza necrotizing pneumonia, no risk markers); the clinical picture is anaerobe-rich aspiration requiring aerobic+anaerobic coverage. ✅ Correct if: post-viral necrotizing pneumonia with rapid cavitation and MRSA risk factors."}], "reasoning": ["Aspiration risk (alcohol, poor dentition) + foul sputum + cavitary air-fluid level = lung abscess", "Source is oral flora: mixed aerobes AND anaerobes", "Empiric therapy must cover both classes (e.g., ampicillin-sulbactam or clindamycin)", "-> answer E"], "mechanism": "Aspiration of oropharyngeal contents - facilitated by reduced consciousness (alcohol), impaired gag, and a large anaerobic burden from poor dentition - delivers a polymicrobial inoculum to dependent lung segments. The mixed oral aerobes (e.g., viridans streptococci) and anaerobes (Peptostreptococcus, Prevotella, Fusobacterium, Bacteroides) produce tissue necrosis and a cavitary abscess with an air-fluid level and characteristically foul-smelling sputum. Because the flora is mixed, empiric coverage must include both aerobic and anaerobic organisms (e.g., ampicillin-sulbactam or clindamycin). Selecting a single narrow class (Mycoplasma, enteric gram-negatives, skin flora, or MRSA) would miss the responsible organisms.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Microbiology/Pulm > Lung abscess: aspiration risk factors (alcoholism, seizures, poor dentition, dysphagia), polymicrobial oral aerobes + anaerobes, foul sputum, cavitary air-fluid level; treat with clindamycin or ampicillin-sulbactam."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The question asks what to COVER empirically, not a single organism. Recognize the abscess and answer with the breadth of flora (aerobic + anaerobic)."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on aspiration, anaerobes, cavitary lesion/air-fluid level, polymicrobial, cell wall-deficient (Mycoplasma)? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "You chose B (intestinal gram-negative flora). The source of an aspiration abscess is ORAL, not intestinal. Cover oral aerobes AND anaerobes (E)."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "The CT shows a cavity with an air-fluid level - the radiologic signature of a lung abscess; pair it with foul sputum to call aspiration."}, {"key": "other", "label": "✍️ Something else", "message": "Anchor aspiration-abscess therapy to 'mixed mouth flora -> aerobic + anaerobic coverage.'"}], "keywords": [{"front": "Cavitary lesion + air-fluid level + foul sputum + aspiration risk", "back": "Aspiration lung abscess (polymicrobial)"}, {"front": "Lung abscess flora", "back": "Mixed oral AEROBES + ANAEROBES (Peptostreptococcus, Prevotella, Fusobacterium, Bacteroides)"}, {"front": "Lung abscess empiric therapy", "back": "Ampicillin-sulbactam or clindamycin"}, {"front": "Aspiration risk factors", "back": "Alcoholism, seizures, poor dentition, dysphagia, altered consciousness"}, {"front": "Cell wall-deficient bacterium", "back": "Mycoplasma pneumoniae (atypical pneumonia)"}, {"front": "Klebsiella pneumonia hint", "back": "Alcoholic, currant-jelly sputum, can cavitate"}], "firstAid": [{"tag": "answer", "topic": "Lung abscess / anaerobes", "detail": "Microbiology/Pulm: aspiration, polymicrobial oral flora, foul sputum, treatment."}, {"tag": "stem", "topic": "Aspiration pneumonia/abscess risk", "detail": "Pulm: dependent segments, alcohol/altered consciousness, poor dentition."}, {"tag": "options", "topic": "Cavitary lung infection differential", "detail": "ID: TB, Klebsiella, Staph aureus, anaerobes, fungi - distinguishing features."}], "memoryHook": "Drunk + bad teeth + putrid sputum + cavity with a fluid line = aspiration abscess. Mouth flora = aerobes AND anaerobes; cover both.", "stem": [{"text": "A 41-year-old man comes to the emergency department due to "}, {"text": "3 weeks of low-grade fever, productive cough, and a 4.5-kg (10-lb) weight loss", "clue": true, "type": "blue", "note": "A subacute illness with constitutional symptoms and weight loss fits an indolent pulmonary suppurative process like a lung abscess (not acute lobar pneumonia)."}, {"text": ". The patient "}, {"text": "drinks 10-12 beers a day", "clue": true, "type": "orange", "note": "Heavy alcohol use predisposes to aspiration (reduced consciousness, impaired gag), the central risk factor for an anaerobe-rich lung abscess."}, {"text": ". On physical examination, he appears cachectic. "}, {"text": "Poor dentition", "clue": true, "type": "red", "note": "Poor dentition provides a reservoir of oral ANAEROBES (Peptostreptococcus, Prevotella, Fusobacterium, Bacteroides) that are aspirated into the lung, seeding an abscess."}, {"text": " and clubbing of the fingers are noted. A "}, {"text": "foul-smelling sputum", "clue": true, "type": "green", "note": "Foul/putrid-smelling sputum is the signature of anaerobic infection. Together with the cavitary air-fluid level on CT, this confirms an aspiration lung abscess of mixed flora."}, {"text": " sample is expectorated and sent for Gram stain and culture. CT scan of the chest shows a cavitary lung lesion with an air-fluid level. Empiric antimicrobial therapy should include coverage against which of the following pathogens?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>
