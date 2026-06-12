@@ -95,6 +95,122 @@ export function getStreak() {
   }
 }
 
+// ── Smart insights ────────────────────────────────────────────────────────────
+
+export function computeInsights(questions, progress) {
+  const insights = [];
+  const knowledgeQs = [];
+  let distractorCount = 0, comprehensionCount = 0, vocabCount = 0, imagingCount = 0;
+  const distractorSystems = {};
+
+  for (const q of questions) {
+    const d = progress[q.id]?.difficulty;
+    if (!d) continue;
+    if (d === "knowledge")    { knowledgeQs.push(q); }
+    else if (d === "distractor") { distractorCount++; distractorSystems[q.system] = (distractorSystems[q.system] || 0) + 1; }
+    else if (d === "comprehension") comprehensionCount++;
+    else if (d === "vocab")   vocabCount++;
+    else if (d === "imaging") imagingCount++;
+  }
+
+  // FA chapter recommendations from knowledge gaps
+  const chapterCounts = {};
+  for (const q of knowledgeQs) {
+    for (const fa of (q.firstAid || [])) {
+      const chapter = fa.location.split(/\s*[>›]\s*/)[0].trim();
+      chapterCounts[chapter] = (chapterCounts[chapter] || 0) + 1;
+    }
+    if (!q.firstAid?.length) {
+      const k = `__sys__${q.system}`;
+      chapterCounts[k] = (chapterCounts[k] || 0) + 1;
+    }
+  }
+
+  const topChapters = Object.entries(chapterCounts)
+    .filter(([k]) => !k.startsWith("__sys__"))
+    .sort((a, b) => b[1] - a[1]).slice(0, 3);
+
+  for (const [chapter, count] of topChapters) {
+    insights.push({
+      id: `fa-${chapter}`,
+      type: "firstaid",
+      icon: "📚",
+      title: `Review "${chapter}" in First Aid`,
+      detail: `${count} knowledge gap${count > 1 ? "s" : ""} here`,
+      taskText: `📚 First Aid: ${chapter} — ${count} knowledge gap${count > 1 ? "s" : ""}`,
+      priority: count >= 3 ? "high" : "medium",
+    });
+  }
+
+  // Fallback: system-level knowledge gaps when no FA refs available
+  if (knowledgeQs.length > 0 && topChapters.length === 0) {
+    const sysCounts = {};
+    for (const q of knowledgeQs) sysCounts[q.system] = (sysCounts[q.system] || 0) + 1;
+    for (const [sys, count] of Object.entries(sysCounts).sort((a, b) => b[1] - a[1]).slice(0, 2)) {
+      insights.push({
+        id: `sys-${sys}`,
+        type: "firstaid",
+        icon: "📚",
+        title: `Study ${sys} concepts`,
+        detail: `${count} knowledge gap${count > 1 ? "s" : ""}`,
+        taskText: `📚 Study ${sys} — ${count} knowledge gap${count > 1 ? "s" : ""}`,
+        priority: "medium",
+      });
+    }
+  }
+
+  if (distractorCount >= 2) {
+    const topSys = Object.entries(distractorSystems).sort((a, b) => b[1] - a[1])[0];
+    insights.push({
+      id: "distractor",
+      type: "technique",
+      icon: "🧲",
+      title: "Practice active elimination",
+      detail: `Pulled by wrong answers ${distractorCount} times${topSys ? ` · most in ${topSys[0]}` : ""}`,
+      taskText: `🧲 Practice elimination technique — distracted ${distractorCount} times`,
+      priority: distractorCount >= 4 ? "high" : "medium",
+    });
+  }
+
+  if (vocabCount >= 2) {
+    insights.push({
+      id: "vocab",
+      type: "vocab",
+      icon: "🔤",
+      title: "Review medical vocabulary",
+      detail: `Vocabulary gaps on ${vocabCount} question${vocabCount > 1 ? "s" : ""}`,
+      taskText: `🔤 Review medical vocabulary — ${vocabCount} questions affected`,
+      priority: "medium",
+    });
+  }
+
+  if (imagingCount >= 2) {
+    insights.push({
+      id: "imaging",
+      type: "imaging",
+      icon: "🖼️",
+      title: "Review pathology images",
+      detail: `Imaging/diagrams blocked you ${imagingCount} times`,
+      taskText: `🖼️ Review pathology & imaging — ${imagingCount} questions affected`,
+      priority: "medium",
+    });
+  }
+
+  if (comprehensionCount >= 2) {
+    insights.push({
+      id: "comprehension",
+      type: "technique",
+      icon: "🧭",
+      title: "Slow down reading question stems",
+      detail: `Misread ${comprehensionCount} question${comprehensionCount > 1 ? "s" : ""}`,
+      taskText: `🧭 Practice careful reading — misread ${comprehensionCount} stems`,
+      priority: "low",
+    });
+  }
+
+  return insights;
+}
+
 // ── Task manager ─────────────────────────────────────────────────────────────
 const TASKS_KEY = "usmle-tasks-v1";
 

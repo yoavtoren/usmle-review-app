@@ -46,11 +46,11 @@ function useAppData() {
     return { seen: faData.seen, total: faData.totalTopics };
   }, [faData]);
 
-  return { testStats, faStats };
+  return { testStats, faStats, questions: deck?.questions || [] };
 }
 
 export default function App() {
-  const { testStats, faStats } = useAppData();
+  const { testStats, faStats, questions } = useAppData();
   const nav = useNavigate();
 
   return (
@@ -61,6 +61,7 @@ export default function App() {
           testStats={testStats}
           faStats={faStats}
           streak={getStreak()}
+          questions={questions}
         />
       } />
       <Route path="/tests" element={
@@ -81,6 +82,7 @@ export default function App() {
           testStats={testStats}
           faStats={faStats}
           streak={getStreak()}
+          questions={questions}
         />
       } />
     </Routes>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { rate, setDifficulty, getCard, recordActivity } from "../lib/storage.js";
+import { rate, setDifficulty, getCard, recordActivity, toggleDone } from "../lib/storage.js";
 
 // 🔴 fatal/critical | 🟠 demographic/risk | 🔵 key context | 🟢 confirmatory | 🟣 trap
 const CLUE = {
@@ -94,6 +94,7 @@ export default function QuestionCard({ q, onProgress, progress }) {
   function toggleClue(key) { setOpenClue(openClue === key ? null : key); }
   function handleRate(r)   { recordActivity(); onProgress(rate(q.id, r)); }
   function handleDiff(d)   { onProgress(setDifficulty(q.id, d)); }
+  function handleDone()    { onProgress(toggleDone(q.id)); }
 
   const TAB_KEYS = { "1": "q", "2": "e", "3": "a", "4": "k", "5": "f" };
   useEffect(() => {
@@ -148,7 +149,16 @@ export default function QuestionCard({ q, onProgress, progress }) {
           )}
           {q.missed && <span className="qpill danger">❌ Missed</span>}
         </div>
-        <h2 className="qcard-title">#{q.item} · {q.title}</h2>
+        <div className="qcard-title-row">
+          <h2 className="qcard-title">#{q.item} · {q.title}</h2>
+          <button
+            className={`done-btn${card.done ? " done-on" : ""}`}
+            onClick={handleDone}
+            title={card.done ? "Mark as not done" : "Mark as done"}
+          >
+            {card.done ? "✓ Done" : "Mark done"}
+          </button>
+        </div>
       </div>
 
       {/* ── Tabs ── */}

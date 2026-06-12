@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { loadTasks, saveTasks } from "../lib/storage.js";
+import { useMemo, useState } from "react";
+import { loadTasks, saveTasks, loadProgress, computeInsights } from "../lib/storage.js";
 
 const PRIOS = [
   { key: "high",   label: "High",   color: "#ef4444", bg: "#fef2f2" },
@@ -7,8 +7,44 @@ const PRIOS = [
   { key: "low",    label: "Low",    color: "#059669", bg: "#f0fdf4" },
 ];
 
-function TaskManager() {
-  const [tasks, setTasks]   = useState(() => loadTasks());
+function SmartInsights({ insights, tasks, onAdd }) {
+  if (!insights || insights.length === 0) return null;
+
+  return (
+    <div className="insights-panel">
+      <div className="insights-hd">
+        <span className="insights-title">💡 Study Insights</span>
+        <span className="insights-sub">from your difficulty responses</span>
+      </div>
+      <div className="insights-list">
+        {insights.map(ins => {
+          const added = tasks.some(t => t.insightId === ins.id);
+          return (
+            <div key={ins.id} className={`insight-item insight-${ins.type}`}>
+              <div className="insight-body">
+                <span className="insight-icon">{ins.icon}</span>
+                <div className="insight-text">
+                  <span className="insight-title">{ins.title}</span>
+                  <span className="insight-detail">{ins.detail}</span>
+                </div>
+              </div>
+              <button
+                className={`insight-add-btn${added ? " insight-added" : ""}`}
+                onClick={() => !added && onAdd(ins)}
+                disabled={added}
+                title={added ? "Already in tasks" : "Add to tasks"}
+              >
+                {added ? "✓ Added" : "+ Tasks"}
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function TaskManager({ tasks, setTasks }) {
   const [input, setInput]   = useState("");
   const [prio, setPrio]     = useState("medium");
   const [filter, setFilter] = useState("active");
@@ -95,7 +131,7 @@ function TaskManager() {
         {shown.map(t => {
           const p = PRIOS.find(p => p.key === t.priority) || PRIOS[1];
           return (
-            <li key={t.id} className={`task-item${t.done ? " task-done" : ""}`}>
+            <li key={t.id} className={`task-item${t.done ? " task-done" : ""}${t.insightId ? " task-insight" : ""}`}>
               <button
                 className="task-check"
                 style={{ borderColor: p.color, background: t.done ? p.color : "transparent" }}
@@ -137,10 +173,27 @@ function CaduceusIcon() {
   );
 }
 
-export default function WelcomeScreen({ onNav, testStats, faStats, streak }) {
+export default function WelcomeScreen({ onNav, testStats, faStats, streak, questions }) {
   const faPct     = faStats.total  > 0 ? Math.round((faStats.seen    / faStats.total)  * 100) : 0;
   const testPct   = testStats.total > 0 ? Math.round((testStats.mastered / testStats.total) * 100) : 0;
   const remaining = Math.max(0, testStats.missed - testStats.mastered);
+
+  const [tasks, setTasks] = useState(() => loadTasks());
+
+  const insights = useMemo(() => {
+    if (!questions?.length) return [];
+    return computeInsights(questions, loadProgress());
+  }, [questions]);
+
+  function addInsightAsTask(ins) {
+    if (tasks.some(t => t.insightId === ins.id)) return;
+    const next = [
+      ...tasks,
+      { id: Date.now(), text: ins.taskText, priority: ins.priority, done: false, createdAt: Date.now(), insightId: ins.id },
+    ];
+    setTasks(next);
+    saveTasks(next);
+  }
 
   return (
     <div className="welcome">
@@ -179,7 +232,7 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak }) {
           </div>
         </div>
 
-        {/* ── 2-column main area: cards | task manager ── */}
+        {/* ── 2-column main area: cards | insights + task manager ── */}
         <div className="welcome-main-grid">
 
           <div className="welcome-left">
@@ -252,7 +305,10 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak }) {
 
           </div>
 
-          <TaskManager />
+          <div className="welcome-right">
+            <SmartInsights insights={insights} tasks={tasks} onAdd={addInsightAsTask} />
+            <TaskManager tasks={tasks} setTasks={setTasks} />
+          </div>
 
         </div>
 
