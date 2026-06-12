@@ -32,84 +32,90 @@ export default function HomePage({ testStats, faStats, streak }) {
   const sections = [
     {
       id: "step1", to: "/step1", icon: "🎓",
-      title: "Step 1", color: "#4f46e5",
+      title: "Step 1", color: "#4f46e5", featured: true,
       stats: [
-        { val: testStats.due,    lbl: "לביקורת היום" },
+        { val: testStats.due,      lbl: "לביקורת היום" },
         { val: testStats.mastered, lbl: "שלטתי" },
-        { val: testPct + "%",    lbl: "כיסוי" },
+        { val: testPct + "%",      lbl: "כיסוי" },
       ],
       progress: testPct,
     },
     {
       id: "timeline", to: "/timeline", icon: "📅",
-      title: "ציר זמן", color: "#0d9488",
-      stats: [
-        { val: days > 0 ? days : "—", lbl: "ימים לבחינה" },
-        { val: phase?.name || "—",     lbl: "שלב נוכחי" },
-      ],
+      title: "ציר זמן", color: "#0d9488", featured: false,
+      stats: [{ val: days > 0 ? days : "—", lbl: "ימים לבחינה" }],
       progress: null,
     },
     {
       id: "aims", to: "/aims", icon: "🎯",
-      title: "AIMS", color: "#7c3aed",
-      stats: [{ val: aimsActive, lbl: "משימות פעילות" }],
+      title: "AIMS", color: "#7c3aed", featured: false,
+      stats: [{ val: aimsActive, lbl: "פעילות" }],
       progress: null,
     },
     {
       id: "medcross", to: "/medcross", icon: "🏥",
-      title: "MedCross", color: "#db2777",
-      stats: [{ val: medcrossActive, lbl: "משימות פעילות" }],
+      title: "MedCross", color: "#db2777", featured: false,
+      stats: [{ val: medcrossActive, lbl: "פעילות" }],
       progress: null,
     },
     {
       id: "selfcare", to: "/selfcare", icon: "💚",
-      title: "טיפול עצמי", color: "#16a34a",
+      title: "טיפול עצמי", color: "#16a34a", featured: false,
       stats: [
-        { val: selfcareActive, lbl: "משימות פעילות" },
-        { val: faPct + "%",   lbl: "כיסוי FA" },
+        { val: selfcareActive, lbl: "פעילות" },
+        { val: faPct + "%",   lbl: "FA" },
       ],
       progress: null,
     },
   ];
 
+  const dateStr = new Date().toLocaleDateString("he-IL", { day: "numeric", month: "long", year: "numeric" });
+
   return (
     <div className="home-page">
+
       <div className="home-hero">
         <h1 className="home-title">לוח ההישרדות</h1>
-        <p className="home-sub">סקירה כללית · {new Date().toLocaleDateString("he-IL", { day: "numeric", month: "long", year: "numeric" })}</p>
-        {streak > 0 && <div className="streak-badge">🔥 רצף {streak} ימים</div>}
-        {phase && (
-          <div className="home-phase-badge" style={{ background: phase.color + "18", color: phase.color, border: `1.5px solid ${phase.color}44` }}>
-            ▶ {phase.name}
-          </div>
-        )}
+        <p className="home-sub">{dateStr}</p>
+        <div className="home-hero-chips">
+          {days > 0 && <span className="home-chip home-chip-days">{days} ימים לבחינה</span>}
+          {streak > 0 && <span className="home-chip home-chip-streak">🔥 {streak} ימים</span>}
+          {phase && <span className="home-chip home-chip-phase">▶ {phase.name}</span>}
+        </div>
       </div>
 
-      <div className="home-grid">
-        {sections.map(s => (
-          <button key={s.id} className="home-card" onClick={() => nav(s.to)}
-            style={{ borderTopColor: s.color }}>
-            <div className="home-card-head">
-              <span className="home-card-icon">{s.icon}</span>
-              <span className="home-card-title" style={{ color: s.color }}>{s.title}</span>
-              <span className="home-card-arrow" style={{ color: s.color }}>←</span>
-            </div>
-            <div className="home-card-stats">
-              {s.stats.map((st, i) => (
-                <div key={i} className="home-stat">
-                  <span className="home-stat-val" style={{ color: s.color }}>{st.val}</span>
-                  <span className="home-stat-lbl">{st.lbl}</span>
-                </div>
-              ))}
-            </div>
-            {s.progress !== null && (
-              <div className="home-card-prog-wrap">
-                <div className="home-card-prog-bar" style={{ width: `${s.progress || 2}%`, background: s.color }} />
+      <div className="home-content">
+        <div className="home-grid">
+          {sections.map(s => (
+            <button
+              key={s.id}
+              className={`home-card${s.featured ? " home-card-featured" : ""}`}
+              onClick={() => nav(s.to)}
+              style={{ "--card-c": s.color }}
+            >
+              <div className="home-card-band">
+                <span className="home-card-icon">{s.icon}</span>
+                <span className="home-card-name">{s.title}</span>
+                <span className="home-card-arr">←</span>
               </div>
-            )}
-          </button>
-        ))}
+              <div className="home-card-body">
+                {s.stats.map((st, i) => (
+                  <div key={i} className="home-stat">
+                    <span className="home-stat-val">{st.val}</span>
+                    <span className="home-stat-lbl">{st.lbl}</span>
+                  </div>
+                ))}
+              </div>
+              {s.progress !== null && (
+                <div className="home-card-prog">
+                  <div className="home-card-prog-bar" style={{ width: `${Math.max(s.progress, 2)}%` }} />
+                </div>
+              )}
+            </button>
+          ))}
+        </div>
       </div>
+
     </div>
   );
 }
