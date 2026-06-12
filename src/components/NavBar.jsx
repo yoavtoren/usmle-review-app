@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const FLAT_LINKS = [
-  { to: "/",          label: "Dashboard" },
-  { to: "/timeline",  label: "Timeline"  },
-  { to: "/aims",      label: "AIMS"      },
-  { to: "/medcross",  label: "MedCross"  },
-  { to: "/selfcare",  label: "Self-care" },
+  { to: "/",          label: "בית"        },
+  { to: "/timeline",  label: "ציר זמן"   },
+  { to: "/aims",      label: "AIMS"       },
+  { to: "/medcross",  label: "MedCross"   },
+  { to: "/selfcare",  label: "טיפול עצמי" },
 ];
 
 const STEP1_CHILDREN = [
@@ -36,7 +36,7 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
       <div className="top-nav-inner">
         <span className="top-nav-brand" onClick={() => nav("/")} role="button" tabIndex={0}
           onKeyDown={e => e.key === "Enter" && nav("/")}>
-          Survival Dashboard
+          לוח ההישרדות
         </span>
 
         {/* Step 1 dropdown — first in order */}
@@ -70,7 +70,7 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
           })}
         </div>
 
-        <button className="top-nav-bell" onClick={onBellClick} title="Reminders">
+        <button className="top-nav-bell" onClick={onBellClick} title="תזכורות">
           🔔
           {dueCount > 0 && <span className="top-nav-badge">{dueCount}</span>}
         </button>

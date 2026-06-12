@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import {
-  PHASES, GOALS, FRONT_COLORS, FRONT_LABELS, TYPE_ICONS,
+  PHASES, GOALS, FRONT_COLORS, FRONT_LABELS, TYPE_ICONS, TYPE_LABELS,
   loadTimelineEvents, loadGoalsDone, saveGoalsDone,
 } from "../lib/timelineData.js";
 import { loadAllWorkstreamTasks } from "../lib/workstreamData.js";
@@ -75,7 +75,7 @@ function EventDrawer({ event, onClose }) {
       <div className="ev-drawer" onClick={e => e.stopPropagation()} style={{ borderTopColor: color }}>
         <div className="ev-drawer-hd">
           <div>
-            <span className="ev-drawer-type" style={{ color }}>{TYPE_ICONS[event.type] || "📌"} {event.type}</span>
+            <span className="ev-drawer-type" style={{ color }}>{TYPE_ICONS[event.type] || "📌"} {TYPE_LABELS[event.type] || event.type}</span>
             <h2 className="ev-drawer-title">{event.title}</h2>
             <div className="ev-drawer-date" style={{ color }}>
               {fmtDate(event.date)}{event.endDate ? ` – ${fmtDate(event.endDate)}` : ""}
@@ -86,7 +86,7 @@ function EventDrawer({ event, onClose }) {
         {event.note && <p className="ev-drawer-note">{event.note}</p>}
         {event.people?.length > 0 && (
           <div className="ev-drawer-people">
-            <div className="ev-drawer-lbl">People</div>
+            <div className="ev-drawer-lbl">אנשים</div>
             <div className="ev-people-chips">
               {event.people.map((p, i) => (
                 <div key={i} className="ev-person-chip">
@@ -96,7 +96,7 @@ function EventDrawer({ event, onClose }) {
                     <a className="ev-person-contact"
                       href={p.contact.includes("@") ? `mailto:${p.contact}` : undefined}
                       onClick={p.contact.includes("@") ? undefined : () => navigator.clipboard?.writeText(p.contact)}>
-                      {p.contact.includes("@") ? "Email" : "Copy"}
+                      {p.contact.includes("@") ? "אימייל" : "העתק"}
                     </a>
                   )}
                 </div>
@@ -106,7 +106,7 @@ function EventDrawer({ event, onClose }) {
         )}
         {event.reminders?.length > 0 && (
           <div className="ev-drawer-reminders">
-            <div className="ev-drawer-lbl">Reminders</div>
+            <div className="ev-drawer-lbl">תזכורות</div>
             <div className="ev-rem-chips">
               {event.reminders.map((r, i) => <span key={i} className="ev-rem-chip">{r}</span>)}
             </div>
@@ -115,7 +115,7 @@ function EventDrawer({ event, onClose }) {
         <div className="ev-drawer-btns">
           {gcal && (
             <a className="ev-gcal-btn" href={gcal} target="_blank" rel="noopener noreferrer">
-              📅 Add to Google Calendar
+              📅 הוסף ליומן Google
             </a>
           )}
         </div>
@@ -129,8 +129,8 @@ function GoalsPanel({ done, onToggle }) {
   return (
     <div className="goals-panel">
       <div className="goals-hd">
-        <span className="goals-title">October finish line</span>
-        <span className="goals-sub muted small">{Object.values(done).filter(Boolean).length}/{GOALS.length} done</span>
+        <span className="goals-title">קו הסיום — אוקטובר</span>
+        <span className="goals-sub muted small">{Object.values(done).filter(Boolean).length}/{GOALS.length} הושלמו</span>
       </div>
       <div className="goals-list">
         {GOALS.map(g => {
@@ -164,7 +164,7 @@ function VerticalList({ events, onSelect }) {
       {Object.entries(grouped).map(([month, evs]) => (
         <div key={month} className="tl-vmonth">
           <div className="tl-vmonth-label">
-            {new Date(month + "-15T12:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+            {new Date(month + "-15T12:00:00Z").toLocaleDateString("he-IL", { month: "long", year: "numeric" })}
           </div>
           {evs.map(ev => {
             const color = FRONT_COLORS[ev.front] || "#94a3b8";
@@ -186,7 +186,7 @@ function VerticalList({ events, onSelect }) {
       ))}
       {undated.length > 0 && (
         <div className="tl-vmonth">
-          <div className="tl-vmonth-label">No date yet</div>
+          <div className="tl-vmonth-label">ללא תאריך</div>
           {undated.map(ev => {
             const color = FRONT_COLORS[ev.front] || "#94a3b8";
             return (
@@ -261,19 +261,19 @@ export default function Timeline() {
       {/* Header */}
       <div className="tl-header">
         <div>
-          <h1 className="tl-title">Timeline</h1>
-          <p className="muted tl-sub">Jun → Oct 2026 · your full arc at a glance</p>
+          <h1 className="tl-title">ציר זמן</h1>
+          <p className="muted tl-sub">יוני → אוקטובר 2026 · כל הנתיב שלך במבט אחד</p>
         </div>
         {phase && (
           <div className="tl-phase-badge" style={{ background: phase.color + "18", color: phase.color, border: `1.5px solid ${phase.color}44` }}>
-            NOW: {phase.name}
+            עכשיו: {phase.name}
           </div>
         )}
       </div>
 
       {/* Filters */}
       <div className="tl-filters">
-        <span className="tl-filter-lbl">Front</span>
+        <span className="tl-filter-lbl">נושא</span>
         <div className="tl-filter-chips">
           {ALL_FRONTS.map(f => (
             <button key={f} className={`tl-chip${activeF.has(f) ? " tl-chip-on" : ""}`}
@@ -285,12 +285,12 @@ export default function Timeline() {
         </div>
       </div>
       <div className="tl-filters tl-filters-types">
-        <span className="tl-filter-lbl">Type</span>
+        <span className="tl-filter-lbl">סוג</span>
         <div className="tl-filter-chips">
           {ALL_TYPES.map(t => (
             <button key={t} className={`tl-chip${activeT.has(t) ? " tl-chip-on tl-chip-type-on" : ""}`}
               onClick={() => toggleType(t)}>
-              {TYPE_ICONS[t]} {t}
+              {TYPE_ICONS[t]} {TYPE_LABELS[t] || t}
             </button>
           ))}
         </div>
@@ -300,8 +300,8 @@ export default function Timeline() {
       <div className="tl-jump-row">
         <button className="tl-jump-btn" onClick={() => {
           if (scrollRef.current) scrollRef.current.scrollLeft = Math.max(0, todayX - 360);
-        }}>↩ Jump to today</button>
-        <span className="muted small">{todayStr} · {filtered.length} events</span>
+        }}>↩ קפוץ להיום</button>
+        <span className="muted small">{todayStr} · {filtered.length} אירועים</span>
       </div>
 
       {/* ── Gantt track (desktop) ──────────────────────────────────────── */}
@@ -332,7 +332,7 @@ export default function Timeline() {
               background: "var(--surface-2)", borderRight: "1.5px solid var(--line)",
               display: "flex", alignItems: "center", padding: "0 12px",
             }}>
-              <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1, textTransform: "uppercase", color: "var(--muted)" }}>Event</span>
+              <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1, textTransform: "uppercase", color: "var(--muted)" }}>אירוע</span>
             </div>
             <div style={{ position: "relative", width: TRACK_W, height: BAND_H }}>
               {PHASES.map(ph => {
@@ -433,7 +433,7 @@ export default function Timeline() {
                   background: "var(--surface-3)", borderRight: "1.5px solid var(--line)",
                   display: "flex", alignItems: "center", padding: "0 12px",
                 }}>
-                  <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1, textTransform: "uppercase", color: "var(--muted)" }}>No date yet</span>
+                  <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1, textTransform: "uppercase", color: "var(--muted)" }}>ללא תאריך</span>
                 </div>
                 <div style={{ width: TRACK_W }} />
               </div>

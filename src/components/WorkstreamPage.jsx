@@ -5,10 +5,11 @@ import { URGENCY_COLORS, FRONT_COLORS } from "../lib/timelineData.js";
 import { buildGCalLink } from "../lib/calendarExport.js";
 
 const URGENCIES = ["Critical", "High", "Medium", "Low"];
+const URGENCY_HE = { Critical: "קריטי", High: "גבוה", Medium: "בינוני", Low: "נמוך" };
 
 function fmtDate(d) {
   if (!d) return "";
-  return new Date(d + "T12:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return new Date(d + "T12:00:00Z").toLocaleDateString("he-IL", { month: "short", day: "numeric", year: "numeric" });
 }
 function urgencyScore(u) { return { Critical: 0, High: 1, Medium: 2, Low: 3 }[u] ?? 4; }
 
@@ -25,7 +26,7 @@ function PersonChip({ person }) {
       {person.role && <span className="ws-person-role">{person.role}</span>}
       {person.contact && (
         <button className="ws-person-contact" onClick={handle} title={person.contact}>
-          {isEmail ? "✉" : "Copy"}
+          {isEmail ? "✉" : "העתק"}
         </button>
       )}
     </div>
@@ -55,75 +56,76 @@ function TaskForm({ initial, cat, onSave, onCancel }) {
   return (
     <div className="ws-form-card">
       <div className="ws-form-title" style={{ color: cat.accent }}>
-        {initial?.id ? "Edit task" : `New ${cat.title} task`}
+        {initial?.id ? "ערוך משימה" : `משימה חדשה ב-${cat.title}`}
       </div>
       <div className="ws-form-grid">
         <div className="ws-form-field ws-form-full">
-          <label className="ws-lbl">Title *</label>
+          <label className="ws-lbl">כותרת *</label>
           <input className="intake-inp" value={form.title}
-            onChange={e => set("title", e.target.value)} placeholder="What needs to happen?" />
+            onChange={e => set("title", e.target.value)} placeholder="מה צריך לקרות?" />
         </div>
         <div className="ws-form-field">
-          <label className="ws-lbl">Urgency</label>
+          <label className="ws-lbl">דחיפות</label>
           <select className="intake-sel" value={form.urgency} onChange={e => set("urgency", e.target.value)}>
-            {URGENCIES.map(u => <option key={u}>{u}</option>)}
+            {URGENCIES.map(u => <option key={u} value={u}>{URGENCY_HE[u]}</option>)}
           </select>
         </div>
         <div className="ws-form-field">
-          <label className="ws-lbl">Deadline</label>
+          <label className="ws-lbl">מועד אחרון</label>
           <input className="intake-inp" type="date" value={form.deadline || ""}
             onChange={e => set("deadline", e.target.value)} />
         </div>
         <div className="ws-form-field">
-          <label className="ws-lbl">Status</label>
+          <label className="ws-lbl">סטטוס</label>
           <select className="intake-sel" value={form.status} onChange={e => set("status", e.target.value)}>
-            <option>Active</option><option>Done</option>
+            <option value="Active">פעיל</option>
+            <option value="Done">הושלם</option>
           </select>
         </div>
         {cat.streams && (
           <div className="ws-form-field">
-            <label className="ws-lbl">Stream</label>
+            <label className="ws-lbl">זרם</label>
             <select className="intake-sel" value={form.stream || ""}
               onChange={e => set("stream", e.target.value)}>
-              <option value="">— none —</option>
+              <option value="">— ללא —</option>
               {cat.streams.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
             </select>
           </div>
         )}
         <div className="ws-form-field">
-          <label className="ws-lbl">Recurring</label>
+          <label className="ws-lbl">חוזר</label>
           <select className="intake-sel" value={form.recurring || ""}
             onChange={e => set("recurring", e.target.value)}>
-            <option value="">One-off</option>
-            <option value="daily">Daily</option>
-            <option value="weekly">Weekly</option>
+            <option value="">חד פעמי</option>
+            <option value="daily">יומי</option>
+            <option value="weekly">שבועי</option>
           </select>
         </div>
         <div className="ws-form-field ws-form-full" style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
           <input type="checkbox" id="ws-tl-cb" checked={!!form.addToTimeline}
             onChange={e => set("addToTimeline", e.target.checked)} />
           <label htmlFor="ws-tl-cb" className="ws-lbl" style={{ cursor: "pointer", marginBottom: 0 }}>
-            Add to Timeline (only if deadline is set)
+            הוסף לציר זמן (רק אם נקבע מועד)
           </label>
         </div>
         <div className="ws-form-field ws-form-full">
-          <label className="ws-lbl">Notes</label>
+          <label className="ws-lbl">הערות</label>
           <textarea className="intake-ta" rows={2} value={form.notes || ""}
             onChange={e => set("notes", e.target.value)}
-            placeholder="Context, blockers, next action…" />
+            placeholder="הקשר, חסמים, פעולה הבאה…" />
         </div>
       </div>
 
       <div className="ws-form-section">
-        <div className="ws-lbl" style={{ marginBottom: 6 }}>People</div>
+        <div className="ws-lbl" style={{ marginBottom: 6 }}>אנשים</div>
         <div className="ws-form-people-row">
-          <input className="intake-inp" style={{ flex: 2 }} placeholder="Name"
+          <input className="intake-inp" style={{ flex: 2 }} placeholder="שם"
             value={personInput.name} onChange={e => setPersonInput(p => ({ ...p, name: e.target.value }))} />
-          <input className="intake-inp" style={{ flex: 1 }} placeholder="Role"
+          <input className="intake-inp" style={{ flex: 1 }} placeholder="תפקיד"
             value={personInput.role} onChange={e => setPersonInput(p => ({ ...p, role: e.target.value }))} />
-          <input className="intake-inp" style={{ flex: 2 }} placeholder="Email / handle"
+          <input className="intake-inp" style={{ flex: 2 }} placeholder="אימייל / ידית"
             value={personInput.contact} onChange={e => setPersonInput(p => ({ ...p, contact: e.target.value }))} />
-          <button className="ws-add-person-btn" onClick={addPerson}>+ Add</button>
+          <button className="ws-add-person-btn" onClick={addPerson}>+ הוסף</button>
         </div>
         {form.people?.length > 0 && (
           <div className="ws-people-list">
@@ -138,10 +140,10 @@ function TaskForm({ initial, cat, onSave, onCancel }) {
       </div>
 
       <div className="intake-ft">
-        <button className="intake-back" onClick={onCancel}>Cancel</button>
+        <button className="intake-back" onClick={onCancel}>ביטול</button>
         <button className="intake-save" style={{ background: cat.accent }}
           onClick={() => onSave(form)} disabled={!form.title.trim()}>
-          Save →
+          שמור ←
         </button>
       </div>
     </div>
@@ -167,20 +169,20 @@ function TaskCard({ task, cat, onEdit, onDelete, onToggleStatus }) {
           className={`ws-task-check${isDone ? " ws-check-done" : ""}`}
           style={{ borderColor: uColor, background: isDone ? uColor : "transparent" }}
           onClick={() => onToggleStatus(task.id)}
-          title={isDone ? "Mark active" : "Mark done"}
+          title={isDone ? "סמן פעיל" : "סמן הושלם"}
         >{isDone ? "✓" : ""}</button>
         <div className="ws-task-body">
           <div className="ws-task-title">{task.title}</div>
           {task.notes && <div className="ws-task-notes muted">{task.notes}</div>}
         </div>
         <div className="ws-task-actions">
-          <button className="ws-action-btn" onClick={() => onEdit(task)} title="Edit">✎</button>
-          <button className="ws-action-btn ws-del-btn" onClick={() => onDelete(task.id)} title="Delete">✕</button>
+          <button className="ws-action-btn" onClick={() => onEdit(task)} title="ערוך">✎</button>
+          <button className="ws-action-btn ws-del-btn" onClick={() => onDelete(task.id)} title="מחק">✕</button>
         </div>
       </div>
       <div className="ws-task-meta">
         <span className="ws-urgency-badge" style={{ background: uColor+"22", color: uColor, borderColor: uColor+"66" }}>
-          {task.urgency}
+          {URGENCY_HE[task.urgency] || task.urgency}
         </span>
         {task.deadline && (
           <span className={`ws-deadline-badge${isOverdue ? " ws-overdue-badge" : ""}`}>
@@ -189,7 +191,7 @@ function TaskCard({ task, cat, onEdit, onDelete, onToggleStatus }) {
         )}
         {task.addToTimeline && task.deadline && (
           <span className="ws-tl-badge" style={{ background: cat.accent+"18", color: cat.accent, borderColor: cat.accent+"44" }}>
-            Timeline
+            ציר זמן
           </span>
         )}
         {gcal && (
@@ -197,7 +199,7 @@ function TaskCard({ task, cat, onEdit, onDelete, onToggleStatus }) {
         )}
       </div>
       {showGCalTip && (
-        <div className="ws-gcal-tip muted">Tip: in Google Calendar set this to green (Basil).</div>
+        <div className="ws-gcal-tip muted">טיפ: ביומן Google הגדר כירוק (Basil).</div>
       )}
       {task.people?.length > 0 && (
         <div className="ws-task-people">
@@ -216,15 +218,15 @@ function RhythmsStrip({ tasks, rhythms, onMark, accent }) {
   return (
     <div className="ws-rhythms">
       <div className="ws-rhythms-hd">
-        <span className="ws-section-label">Rhythms</span>
-        <span className="muted small">Daily + weekly commitments — check off when done</span>
+        <span className="ws-section-label">שגרות</span>
+        <span className="muted small">מחויבויות יומיות ושבועיות — סמן כשסיימת</span>
       </div>
       {["daily","weekly"].map(period => {
         const items = period === "daily" ? daily : weekly;
         if (!items.length) return null;
         return (
           <div key={period} className="ws-rhythm-group">
-            <div className="ws-rhythm-period muted small">{period === "daily" ? "Every day" : "Every week"}</div>
+            <div className="ws-rhythm-period muted small">{period === "daily" ? "כל יום" : "כל שבוע"}</div>
             {items.map(t => {
               const done = isRhythmDone(rhythms, t.id, period);
               return (
@@ -233,7 +235,7 @@ function RhythmsStrip({ tasks, rhythms, onMark, accent }) {
                     className="ws-rhythm-check"
                     style={{ borderColor: accent, background: done ? accent : "transparent" }}
                     onClick={() => onMark(t.id)}
-                    title={done ? "Done ✓" : "Mark done"}
+                    title={done ? "הושלם ✓" : "סמן כהושלם"}
                   >{done ? "✓" : ""}</button>
                   <div className="ws-rhythm-body">
                     <span className="ws-rhythm-title">{t.title}</span>
@@ -264,7 +266,7 @@ function StreamGroup({ stream, tasks, cat, collapsed, onToggle, onEdit, onDelete
       {!collapsed && (
         <div className="ws-stream-tasks">
           {tasks.length === 0
-            ? <div className="ws-empty muted">Nothing here.</div>
+            ? <div className="ws-empty muted">ריק.</div>
             : tasks.map(t => (
                 <TaskCard key={t.id} task={t} cat={cat}
                   onEdit={onEdit} onDelete={onDelete} onToggleStatus={onToggleStatus} />
@@ -363,12 +365,12 @@ export default function WorkstreamPage({ categoryId }) {
       <div className="ws-header">
         <div>
           <h1 className="ws-title" style={{ color: cat.accent }}>{cat.title}</h1>
-          <p className="muted ws-sub">{cat.subtitle} · {activeCount} active · {doneCount} done</p>
+          <p className="muted ws-sub">{cat.subtitle} · {activeCount} פעיל · {doneCount} הושלם</p>
         </div>
         <button className="ws-new-btn"
           style={{ background: cat.accent+"18", color: cat.accent, borderColor: cat.accent+"44" }}
           onClick={() => { setEditing(null); setShowForm(f => !f); }}>
-          {showForm && !editingTask ? "✕ Cancel" : "+ New task"}
+          {showForm && !editingTask ? "✕ ביטול" : "+ משימה חדשה"}
         </button>
       </div>
 
@@ -385,17 +387,17 @@ export default function WorkstreamPage({ categoryId }) {
       {/* Waiting on */}
       {waitingOn.length > 0 && (
         <div className="ws-waiting-card">
-          <div className="ws-section-label">Waiting on</div>
+          <div className="ws-section-label">ממתין ל</div>
           <div className="ws-waiting-chips">
             {waitingOn.map((p, i) => (
               <div key={i} className="ws-waiting-chip">
                 <span className="ws-waiting-name">{p.name}</span>
-                <span className="ws-waiting-task muted">re: {p.taskTitle}</span>
+                <span className="ws-waiting-task muted">בנושא: {p.taskTitle}</span>
                 {p.contact && (
                   <a className="ws-person-contact"
                     href={p.contact.includes("@") ? `mailto:${p.contact}` : undefined}
                     onClick={p.contact.includes("@") ? undefined : e => { e.preventDefault(); navigator.clipboard?.writeText(p.contact); }}>
-                    {p.contact.includes("@") ? "✉" : "Copy"}
+                    {p.contact.includes("@") ? "✉" : "העתק"}
                   </a>
                 )}
               </div>
@@ -416,13 +418,13 @@ export default function WorkstreamPage({ categoryId }) {
                 onClick={() => setFilterU(prev => {
                   const n = new Set(prev); n.has(u) ? n.delete(u) : n.add(u); return n;
                 })}>
-                {u}
+                {URGENCY_HE[u]}
               </button>
             );
           })}
         </div>
         <div className="ws-filter-group">
-          {[["active","Active"],["all","All"],["done","Done"]].map(([k,l]) => (
+          {[["active","פעיל"],["all","הכל"],["done","הושלם"]].map(([k,l]) => (
             <button key={k} className={`ws-schip${filterS === k ? " ws-schip-on" : ""}`}
               style={filterS === k ? { background: cat.accent+"18", color: cat.accent, borderColor: cat.accent+"44" } : {}}
               onClick={() => setFilterS(k)}>{l}</button>
@@ -432,7 +434,7 @@ export default function WorkstreamPage({ categoryId }) {
           <div className="ws-filter-group">
             <button className={`ws-schip${!activeStream ? " ws-schip-on" : ""}`}
               style={!activeStream ? { background: cat.accent+"18", color: cat.accent, borderColor: cat.accent+"44" } : {}}
-              onClick={() => setActiveStream(null)}>All streams</button>
+              onClick={() => setActiveStream(null)}>כל הזרמים</button>
             {cat.streams.map(s => (
               <button key={s.id} className={`ws-schip${activeStream === s.id ? " ws-schip-on" : ""}`}
                 style={activeStream === s.id ? { background: cat.accent+"18", color: cat.accent, borderColor: cat.accent+"44" } : {}}
@@ -461,7 +463,7 @@ export default function WorkstreamPage({ categoryId }) {
           ))
         ) : (
           filteredTasks.length === 0
-            ? <div className="ws-empty muted">No tasks match the current filter.</div>
+            ? <div className="ws-empty muted">אין משימות שתואמות את הסינון.</div>
             : filteredTasks.map(t => (
                 <TaskCard key={t.id} task={t} cat={cat}
                   onEdit={startEdit} onDelete={handleDelete} onToggleStatus={toggleStatus} />
@@ -476,9 +478,9 @@ export default function WorkstreamPage({ categoryId }) {
 
       {/* Footer */}
       <div className="ws-footer muted small">
-        Tasks with a deadline + "Add to Timeline" auto-appear on the Timeline page.
-        Export to .ics from the Timeline page for Google Calendar reminders.
-        {categoryId === "selfcare" && " · Green items: set to Basil in Google Calendar for color consistency."}
+        משימות עם מועד + "הוסף לציר זמן" מופיעות אוטומטית בציר הזמן.
+        ייצא .ics מציר הזמן לתזכורות ביומן Google.
+        {categoryId === "selfcare" && " · פריטים ירוקים: הגדר ל-Basil ביומן Google לעקביות צבע."}
       </div>
     </div>
   );

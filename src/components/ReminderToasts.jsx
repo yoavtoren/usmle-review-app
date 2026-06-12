@@ -4,10 +4,10 @@ import { buildGCalLink } from "../lib/calendarExport.js";
 import { FRONT_COLORS, TYPE_ICONS } from "../lib/timelineData.js";
 
 function fmtDue(daysUntil) {
-  if (daysUntil < 0)  return `${Math.abs(daysUntil)}d ago`;
-  if (daysUntil === 0) return "today";
-  if (daysUntil === 1) return "tomorrow";
-  return `in ${daysUntil} days`;
+  if (daysUntil < 0)  return `לפני ${Math.abs(daysUntil)} ימים`;
+  if (daysUntil === 0) return "היום";
+  if (daysUntil === 1) return "מחר";
+  return `בעוד ${daysUntil} ימים`;
 }
 
 function Toast({ rem, onDismiss, onSnooze }) {
@@ -23,11 +23,11 @@ function Toast({ rem, onDismiss, onSnooze }) {
         <span className="toast-title">{rem.item.title}</span>
         <button className="toast-x" onClick={() => onDismiss(rem.remId)}>✕</button>
       </div>
-      <div className="toast-due" style={{ color }}>Due {dueStr}</div>
+      <div className="toast-due" style={{ color }}>תאריך: {dueStr}</div>
       <div className="toast-nudge">{rem.nudge}</div>
       <div className="toast-btns">
-        <button className="toast-btn toast-dismiss" onClick={() => onDismiss(rem.remId)}>Dismiss</button>
-        <button className="toast-btn toast-snooze"  onClick={() => onSnooze(rem.remId)}>Snooze 1d</button>
+        <button className="toast-btn toast-dismiss" onClick={() => onDismiss(rem.remId)}>סגור</button>
+        <button className="toast-btn toast-snooze"  onClick={() => onSnooze(rem.remId)}>דחה ליום</button>
         {gcal && (
           <a className="toast-btn toast-gcal" href={gcal} target="_blank" rel="noopener noreferrer">
             + GCal
@@ -51,10 +51,10 @@ export function PopCenter({ onClose }) {
     <div className="popcenter-overlay" onClick={onClose}>
       <div className="popcenter-modal" onClick={e => e.stopPropagation()}>
         <div className="popcenter-hd">
-          <span className="popcenter-title">Reminders</span>
+          <span className="popcenter-title">תזכורות</span>
           <button className="intake-close" onClick={onClose}>✕</button>
         </div>
-        <div className="popcenter-empty">All clear — no active reminders.</div>
+        <div className="popcenter-empty">הכל נקי — אין תזכורות פעילות.</div>
       </div>
     </div>
   );
@@ -63,7 +63,7 @@ export function PopCenter({ onClose }) {
     <div className="popcenter-overlay" onClick={onClose}>
       <div className="popcenter-modal" onClick={e => e.stopPropagation()}>
         <div className="popcenter-hd">
-          <span className="popcenter-title">Reminders ({reminders.length})</span>
+          <span className="popcenter-title">תזכורות ({reminders.length})</span>
           <button className="intake-close" onClick={onClose}>✕</button>
         </div>
         <div className="popcenter-list">
@@ -72,7 +72,7 @@ export function PopCenter({ onClose }) {
           ))}
         </div>
         <div className="popcenter-footer muted small">
-          For reminders when the app is closed → export to Google Calendar (📅 .ics).
+          לתזכורות כשהאפליקציה סגורה → ייצא לגוגל קלנדר (📅 .ics).
         </div>
       </div>
     </div>

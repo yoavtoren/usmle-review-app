@@ -14,13 +14,22 @@ export const FRONT_COLORS = {
 export const FRONT_LABELS = {
   "step1":        "Step 1",
   "ent":          "ENT",
-  "july-move":    "Prague Move",
-  "sept-move":    "Israel Move",
+  "july-move":    "מעבר לפראג",
+  "sept-move":    "מעבר לישראל",
   "aims":         "AIMS",
   "medcross":     "MedCross",
-  "selfcare":     "Self-care",
-  "relationship": "Relationship",
-  "personal":     "Personal",
+  "selfcare":     "טיפול עצמי",
+  "relationship": "מערכת יחסים",
+  "personal":     "אישי",
+};
+
+export const TYPE_LABELS = {
+  deadline:        "דד-ליין",
+  event:           "אירוע",
+  landmark:        "ציון דרך",
+  "task-deadline": "משימה",
+  aims:            "AIMS",
+  blocker:         "חוסם",
 };
 
 export const TYPE_ICONS = {
@@ -41,21 +50,21 @@ export const URGENCY_COLORS = {
 
 // ── Phases ────────────────────────────────────────────────────────────────
 export const PHASES = [
-  { id:"ph1", name:"Launch",            start:"2026-06-10", end:"2026-06-12", color:"#475569", note:"Sell-off groundwork; set contract end-dates; watch flights; ECFMG with faculty." },
-  { id:"ph2", name:"ENT + sell-off",    start:"2026-06-13", end:"2026-06-22", color:"#0d9488", note:"Light ENT oral prep with Angela; keep selling/packing; exam 22 Jun." },
-  { id:"ph3", name:"Move out (Prague)", start:"2026-06-23", end:"2026-07-31", color:"#d97706", note:"Pack, sell, cancel contracts, book + take flight; lease ends ~31 Jul." },
-  { id:"ph4", name:"Land & settle",     start:"2026-08-01", end:"2026-08-15", color:"#ea580c", note:"Arrive; AIMS peak (3+5 Aug); vacation 14–15 Aug; restart light study." },
-  { id:"ph5", name:"Step 1 push",       start:"2026-08-16", end:"2026-10-11", color:"#4f46e5", note:"Dedicated block 12h/day, 1 lighter half-day/wk; Sept permanent move early; exam before 11 Oct." },
+  { id:"ph1", name:"התחלה",             start:"2026-06-10", end:"2026-06-12", color:"#475569", note:"Sell-off groundwork; set contract end-dates; watch flights; ECFMG with faculty." },
+  { id:"ph2", name:"ENT + מכירה",       start:"2026-06-13", end:"2026-06-22", color:"#0d9488", note:"Light ENT oral prep with Angela; keep selling/packing; exam 22 Jun." },
+  { id:"ph3", name:"יציאה מפראג",       start:"2026-06-23", end:"2026-07-31", color:"#d97706", note:"Pack, sell, cancel contracts, book + take flight; lease ends ~31 Jul." },
+  { id:"ph4", name:"נחיתה",             start:"2026-08-01", end:"2026-08-15", color:"#ea580c", note:"Arrive; AIMS peak (3+5 Aug); vacation 14–15 Aug; restart light study." },
+  { id:"ph5", name:"דחיפת Step 1",      start:"2026-08-16", end:"2026-10-11", color:"#4f46e5", note:"Dedicated block 12h/day, 1 lighter half-day/wk; Sept permanent move early; exam before 11 Oct." },
 ];
 
 // ── Goals ─────────────────────────────────────────────────────────────────
 export const GOALS = [
-  { id:"g1", label:"Step 1: a confident pass",                                     front:"step1" },
-  { id:"g2", label:"Move done smoothly; good permanent flat",                      front:"sept-move" },
-  { id:"g3", label:"Angela satisfied and supported",                               front:"relationship" },
-  { id:"g4", label:"AIMS role undamaged",                                          front:"aims" },
-  { id:"g5", label:"MedCross launched — content, real followers, first revenue",   front:"medcross" },
-  { id:"g6", label:"Feel strong and look good",                                    front:"personal" },
+  { id:"g1", label:"Step 1: מעבר בטוח",                                             front:"step1" },
+  { id:"g2", label:"מעבר חלק; דירה קבועה טובה",                                    front:"sept-move" },
+  { id:"g3", label:"אנג'לה מסופקת ונתמכת",                                          front:"relationship" },
+  { id:"g4", label:"תפקיד AIMS ללא פגיעה",                                          front:"aims" },
+  { id:"g5", label:"MedCross הושק — תוכן, עוקבים אמיתיים, הכנסה ראשונה",           front:"medcross" },
+  { id:"g6", label:"להרגיש חזק ולהיראות טוב",                                       front:"personal" },
 ];
 
 // ── Seed timeline events ──────────────────────────────────────────────────

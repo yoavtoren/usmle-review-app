@@ -2,7 +2,7 @@
 export const CATEGORIES = {
   aims: {
     title:      "AIMS",
-    subtitle:   "Student org command page",
+    subtitle:   "עמוד פיקוד — ארגון סטודנטים",
     accent:     "#7c3aed",
     storageKey: "usmle-app:aims-tasks-v1",
     streams:    null,
@@ -11,7 +11,7 @@ export const CATEGORIES = {
   },
   medcross: {
     title:      "MedCross",
-    subtitle:   "Instagram + pre-launch",
+    subtitle:   "אינסטגרם + לפני לונץ׳",
     accent:     "#db2777",
     storageKey: "usmle-app:medcross-tasks-v1",
     streams:    null,
@@ -19,14 +19,14 @@ export const CATEGORIES = {
     frontKey:   "medcross",
   },
   selfcare: {
-    title:      "Self-care",
-    subtitle:   "Angela · Myself · General — protect this",
+    title:      "טיפול עצמי",
+    subtitle:   "אנג'לה · עצמי · כללי — להגן על זה",
     accent:     "#16a34a",
     storageKey: "usmle-app:selfcare-tasks-v1",
     streams: [
-      { id: "angela",  label: "Angela"  },
-      { id: "myself",  label: "Myself"  },
-      { id: "general", label: "General" },
+      { id: "angela",  label: "אנג'לה" },
+      { id: "myself",  label: "עצמי"   },
+      { id: "general", label: "כללי"   },
     ],
     tone:       "warm",
     frontKey:   "selfcare",
