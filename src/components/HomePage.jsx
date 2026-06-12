@@ -38,7 +38,7 @@ export default function HomePage({ testStats, faStats, streak }) {
   const sections = [
     {
       id: "step1", to: "/step1", icon: "🎓",
-      title: "Step 1", color: "#4f46e5", featured: true,
+      title: "Step 1", color: "#818cf8", featured: true,
       stats: [
         { val: testStats.due,      lbl: "לביקורת היום" },
         { val: testStats.mastered, lbl: "שלטתי" },
@@ -49,7 +49,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "timeline", to: "/timeline", icon: "📅",
-      title: "ציר זמן", color: "#0d9488", featured: false,
+      title: "ציר זמן", color: "#2dd4bf", featured: false,
       stats: phase
         ? [{ val: phase.name, lbl: "שלב נוכחי" }, { val: days > 0 ? days : "—", lbl: "ימים" }]
         : [{ val: days > 0 ? days : "—", lbl: "ימים לבחינה" }],
@@ -57,7 +57,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "aims", to: "/aims", icon: "🎯",
-      title: "AIMS", color: "#7c3aed", featured: false,
+      title: "AIMS", color: "#a78bfa", featured: false,
       stats: [
         { val: aims.active, lbl: "פעילות" },
         ...(aims.overdue > 0 ? [{ val: aims.overdue, lbl: "⚠ באיחור" }] : []),
@@ -66,7 +66,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "medcross", to: "/medcross", icon: "🏥",
-      title: "MedCross", color: "#db2777", featured: false,
+      title: "MedCross", color: "#f472b6", featured: false,
       stats: [
         { val: medcross.active, lbl: "פעילות" },
         ...(medcross.overdue > 0 ? [{ val: medcross.overdue, lbl: "⚠ באיחור" }] : []),
@@ -75,7 +75,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "selfcare", to: "/selfcare", icon: "💚",
-      title: "טיפול עצמי", color: "#16a34a", featured: false,
+      title: "טיפול עצמי", color: "#34d399", featured: false,
       stats: [
         { val: selfcare.active, lbl: "פעילות" },
         { val: faPct + "%",     lbl: "FA" },
@@ -111,7 +111,7 @@ export default function HomePage({ testStats, faStats, streak }) {
               <div className="home-card-band">
                 <span className="home-card-icon">{s.icon}</span>
                 <span className="home-card-name">{s.title}</span>
-                <span className="home-card-arr">←</span>
+                <span className="home-card-arr">‹</span>
               </div>
               <div className="home-card-body">
                 {s.stats.map((st, i) => (
