@@ -1899,158 +1899,225 @@ input[type="date"],
 input[type="file"] { direction: ltr; text-align: left; }
 
 /* ═══════════════════════════════════════════════════════════════════
-   HOME PAGE — premium redesign
+   HOME PAGE — dark premium v2
 ═══════════════════════════════════════════════════════════════════ */
 .home-page {
   direction: rtl;
   min-height: 100vh;
-  background: var(--bg);
+  background: #080d18;
+  position: relative;
+}
+/* Ambient indigo halo behind the title */
+.home-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 520px;
+  background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(99,102,241,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Dark hero header */
+/* Hero — transparent, floats on the dark page */
 .home-hero {
-  background: linear-gradient(148deg, #0f172a 0%, #1e1b4b 100%);
-  padding: 48px 40px 68px;
+  background: transparent;
+  padding: 64px 40px 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.home-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(99,102,241,0.25) 0%, transparent 70%);
-  pointer-events: none;
-}
-.home-title {
-  font-size: 44px; font-weight: 900;
-  background: linear-gradient(135deg, #fff 30%, #c4b5fd 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0; letter-spacing: -1.5px; line-height: 1.1;
-  position: relative;
-}
-.home-sub { color: rgba(255,255,255,0.42); font-size: 13px; margin: 0; }
-
-/* Chips row */
-.home-hero-chips { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 2px; }
-.home-chip {
-  font-size: 12.5px; font-weight: 700; padding: 5px 14px; border-radius: 100px;
-}
-.home-chip-days {
-  background: rgba(79,70,229,0.22); border: 1px solid rgba(79,70,229,0.40); color: #a5b4fc;
-}
-.home-chip-streak {
-  background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.32); color: #fbbf24;
-}
-.home-chip-phase {
-  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.70);
-}
-
-/* Content area rises from hero */
-.home-content {
-  background: var(--bg);
-  border-radius: 28px 28px 0 0;
-  margin-top: -24px;
-  padding: 36px 36px 80px;
   position: relative;
   z-index: 1;
 }
 
-/* Card grid — named areas guarantee layout regardless of RTL direction */
+.home-title {
+  font-size: 52px; font-weight: 900;
+  background: linear-gradient(145deg, #fff 30%, #a5b4fc 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0; letter-spacing: -2.5px; line-height: 1;
+}
+.home-sub {
+  color: rgba(255,255,255,0.28); font-size: 13px; margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Status chips */
+.home-hero-chips {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  justify-content: center; align-items: center;
+  margin-top: 10px;
+}
+.home-chip {
+  font-size: 12px; font-weight: 700; padding: 6px 16px;
+  border-radius: 999px; letter-spacing: 0.2px;
+}
+.home-chip-days {
+  background: rgba(99,102,241,0.14); border: 1px solid rgba(99,102,241,0.28); color: #a5b4fc;
+}
+.home-chip-streak {
+  background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.22); color: #fbbf24;
+}
+.home-chip-phase {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); color: rgba(255,255,255,0.50);
+}
+
+/* Content wrapper */
+.home-content {
+  background: transparent;
+  padding: 4px 40px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Grid ── named areas: RTL-safe regardless of direction ── */
 .home-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
     "timeline step1 step1"
     "selfcare medcross aims";
-  gap: 20px;
-  max-width: 1200px;
+  gap: 14px;
+  max-width: 1100px;
   margin: 0 auto;
 }
-
-/* Per-card placement */
 .home-card-step1    { grid-area: step1; }
 .home-card-timeline { grid-area: timeline; }
 .home-card-aims     { grid-area: aims; }
 .home-card-medcross { grid-area: medcross; }
 .home-card-selfcare { grid-area: selfcare; }
 
-/* Cards */
+/* ── Cards ── */
 .home-card {
-  border: none;
-  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
   font-family: inherit;
   text-align: right;
   display: flex;
   flex-direction: column;
-  background: var(--surface);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
-  transition: transform 0.18s cubic-bezier(0.2,0,0,1), box-shadow 0.18s;
+  background: #0f1623;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.2,0,0,1),
+              border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 .home-card:hover {
-  transform: translateY(-5px) scale(1.01);
-  box-shadow: 0 14px 44px rgba(0,0,0,0.13), 0 4px 14px rgba(0,0,0,0.07);
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.13);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
 }
-/* Featured flag kept for extra styling hooks */
-.home-card-featured { /* grid placement handled by .home-card-{id} */ }
 
-/* Step 1 card gets a premium feel */
+/* Thin accent line across the top of each card */
+.home-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 14px; right: 14px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--card-c), transparent);
+  opacity: 0.65;
+}
+
+/* Step 1 — wide card with indigo gradient bg */
 .home-card-step1 {
-  box-shadow: 0 8px 40px rgba(79,70,229,0.22), 0 2px 8px rgba(0,0,0,0.08);
-  min-height: 230px;
+  background: linear-gradient(150deg, #0f1623 40%, rgba(79,70,229,0.14) 100%);
+  border-color: rgba(79,70,229,0.18);
+  min-height: 200px;
 }
+.home-card-step1::after { opacity: 1; }
 .home-card-step1:hover {
-  box-shadow: 0 18px 60px rgba(79,70,229,0.32), 0 6px 20px rgba(0,0,0,0.10);
+  border-color: rgba(79,70,229,0.35);
+  box-shadow: 0 20px 56px rgba(79,70,229,0.20), 0 4px 16px rgba(0,0,0,0.4);
 }
 
-/* Colored band at top of every card */
+/* ── Card header row ── */
 .home-card-band {
-  background: var(--card-c);
-  background-image: linear-gradient(130deg, rgba(255,255,255,0.12) 0%, transparent 50%, rgba(0,0,0,0.15) 100%);
-  padding: 18px 20px 16px;
+  background: transparent;
+  padding: 16px 18px 12px;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.home-card-featured .home-card-band { padding: 28px 28px 22px; }
-.home-card-icon { font-size: 22px; flex-shrink: 0; }
-.home-card-featured .home-card-icon { font-size: 32px; }
-.home-card-name {
-  font-size: 16px; font-weight: 800; flex: 1; text-align: right;
-}
-.home-card-featured .home-card-name { font-size: 24px; letter-spacing: -0.5px; }
-.home-card-arr { font-size: 15px; opacity: 0.55; flex-shrink: 0; }
+.home-card-featured .home-card-band { padding: 20px 22px 14px; }
 
-/* Stats area */
+/* Icon badge */
+.home-card-icon {
+  width: 34px; height: 34px; flex-shrink: 0;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 9px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 16px; font-style: normal;
+}
+.home-card-featured .home-card-icon {
+  width: 40px; height: 40px;
+  background: rgba(99,102,241,0.14);
+  border-color: rgba(99,102,241,0.22);
+  border-radius: 11px;
+  font-size: 20px;
+}
+
+.home-card-name {
+  font-size: 13px; font-weight: 700; flex: 1;
+  text-align: right; color: rgba(255,255,255,0.65);
+  letter-spacing: 0.2px;
+}
+.home-card-featured .home-card-name {
+  font-size: 18px; font-weight: 800;
+  color: rgba(255,255,255,0.90); letter-spacing: -0.3px;
+}
+.home-card-arr {
+  font-size: 13px; color: rgba(255,255,255,0.18); flex-shrink: 0;
+}
+
+/* ── Stats ── */
 .home-card-body {
-  padding: 18px 22px 16px;
+  padding: 16px 18px 14px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;    /* RTL: pushes to RIGHT (reading-start) */
   align-items: flex-end;
   flex: 1;
 }
-.home-card-featured .home-card-body { padding: 22px 28px 18px; gap: 32px; }
-.home-stat { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.home-card-featured .home-card-body { padding: 20px 22px 18px; gap: 30px; }
+.home-stat { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .home-stat-val {
-  font-size: 30px; font-weight: 900; line-height: 1; color: var(--card-c);
+  font-size: 28px; font-weight: 900; line-height: 1;
+  color: var(--card-c); letter-spacing: -0.5px;
 }
-.home-card-featured .home-stat-val { font-size: 48px; }
+.home-card-featured .home-stat-val { font-size: 46px; letter-spacing: -2px; }
 .home-stat-lbl {
-  font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0.3px; text-transform: uppercase;
+  font-size: 10px; font-weight: 600;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.5px; text-transform: uppercase;
 }
 
-/* Responsive */
+/* ── Progress bar (Step 1 only) ── */
+.home-card-prog-section {
+  padding: 0 18px 18px;
+  display: flex; flex-direction: column; gap: 5px;
+}
+.home-card-featured .home-card-prog-section { padding: 0 22px 22px; }
+.home-card-prog {
+  height: 3px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 999px; overflow: hidden;
+}
+.home-card-featured .home-card-prog { height: 4px; background: rgba(79,70,229,0.15); }
+.home-card-prog-bar {
+  height: 100%; background: var(--card-c); border-radius: 999px;
+  box-shadow: 0 0 6px var(--card-c);
+  transition: width 0.8s cubic-bezier(0.25,0,0,1);
+}
+.home-prog-label {
+  font-size: 10px; font-weight: 700;
+  color: rgba(255,255,255,0.25); text-align: left;
+}
+
+/* ── Responsive ── */
 @media (max-width: 980px) {
   .home-grid {
     grid-template-columns: 1fr 1fr;
@@ -2059,39 +2126,20 @@ input[type="file"] { direction: ltr; text-align: left; }
       "timeline aims"
       "medcross selfcare";
   }
-  .home-content { padding: 28px 24px 64px; }
+  .home-content { padding: 4px 24px 64px; }
 }
 @media (max-width: 640px) {
-  .home-hero  { padding: 32px 20px 48px; }
-  .home-title { font-size: 30px; }
-  .home-content { padding: 20px 16px 56px; border-radius: 20px 20px 0 0; }
-  .home-grid  {
+  .home-hero { padding: 44px 20px 36px; }
+  .home-title { font-size: 36px; letter-spacing: -1.5px; }
+  .home-content { padding: 0 16px 56px; }
+  .home-grid {
     grid-template-columns: 1fr;
     grid-template-areas: none;
-    gap: 14px;
+    gap: 12px;
   }
   .home-card-step1, .home-card-timeline, .home-card-aims,
   .home-card-medcross, .home-card-selfcare { grid-area: auto; }
   .home-card-featured .home-stat-val { font-size: 38px; }
-}
-
-/* ═══════════════════════════════════════════════════════════════════
-   HOME CARD — progress section with label
-═══════════════════════════════════════════════════════════════════ */
-.home-card-prog-section {
-  display: flex; flex-direction: column; gap: 4px;
-  padding: 0 22px 18px;
-}
-.home-card-featured .home-card-prog-section { padding: 0 26px 22px; }
-.home-card-prog { height: 4px; background: rgba(0,0,0,0.06); border-radius: 999px; overflow: hidden; }
-.home-card-featured .home-card-prog { height: 6px; background: rgba(79,70,229,0.10); }
-.home-card-prog-bar {
-  height: 100%; background: var(--card-c); border-radius: 999px;
-  transition: width 0.7s cubic-bezier(0.25,0,0,1);
-}
-.home-prog-label {
-  font-size: 10px; font-weight: 700; color: var(--muted);
-  text-align: left;
 }
 
 /* ═══════════════════════════════════════════════════════════════════
