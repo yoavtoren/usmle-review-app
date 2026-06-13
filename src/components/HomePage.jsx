@@ -59,7 +59,7 @@ export default function HomePage({ testStats, faStats, streak }) {
       id: "aims", to: "/aims", icon: "🎯",
       title: "AIMS", color: "#7c3aed", featured: false,
       stats: [
-        { val: aims.active, lbl: "פעילות" },
+        { val: aims.active, lbl: "מטלות" },
         ...(aims.overdue > 0 ? [{ val: aims.overdue, lbl: "⚠ באיחור" }] : []),
       ],
       progress: null, progressLabel: null,
@@ -68,7 +68,7 @@ export default function HomePage({ testStats, faStats, streak }) {
       id: "medcross", to: "/medcross", icon: "🏥",
       title: "MedCross", color: "#db2777", featured: false,
       stats: [
-        { val: medcross.active, lbl: "פעילות" },
+        { val: medcross.active, lbl: "מטלות" },
         ...(medcross.overdue > 0 ? [{ val: medcross.overdue, lbl: "⚠ באיחור" }] : []),
       ],
       progress: null, progressLabel: null,
@@ -77,7 +77,7 @@ export default function HomePage({ testStats, faStats, streak }) {
       id: "selfcare", to: "/selfcare", icon: "💚",
       title: "טיפול עצמי", color: "#16a34a", featured: false,
       stats: [
-        { val: selfcare.active, lbl: "פעילות" },
+        { val: selfcare.active, lbl: "מטלות" },
         { val: faPct + "%",     lbl: "FA" },
       ],
       progress: null, progressLabel: null,
