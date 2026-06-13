@@ -2,10 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const FLAT_LINKS = [
-  { to: "/timeline",  label: "ציר זמן"   },
   { to: "/aims",      label: "AIMS"       },
   { to: "/medcross",  label: "MedCross"   },
   { to: "/selfcare",  label: "טיפול עצמי" },
+  { to: "/timeline",  label: "ציר זמן"   },
 ];
 
 const STEP1_CHILDREN = [
