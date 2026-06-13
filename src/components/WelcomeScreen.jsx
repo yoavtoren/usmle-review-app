@@ -86,9 +86,10 @@ function WeakSubjectsStrip({ data }) {
 }
 
 function TaskManager({ tasks, setTasks }) {
-  const [input, setInput]   = useState("");
-  const [prio, setPrio]     = useState("medium");
-  const [filter, setFilter] = useState("active");
+  const [input, setInput]       = useState("");
+  const [prio, setPrio]         = useState("medium");
+  const [filter, setFilter]     = useState("active");
+  const [importError, setImportError] = useState("");
   const importRef = useRef(null);
 
   function add() {
