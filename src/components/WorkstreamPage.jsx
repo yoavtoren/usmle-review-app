@@ -41,8 +41,12 @@ const EMPTY_FORM = {
   people: [],
 };
 
-function TaskForm({ initial, cat, onSave, onCancel }) {
-  const [form, setForm] = useState(() => ({ ...EMPTY_FORM, ...(initial || {}) }));
+const CAT_LABELS = { aims: "AIMS 🎯", medcross: "MedCross 🏥", selfcare: "טיפול עצמי 💚" };
+
+function TaskForm({ initial, cat, categoryId, onSave, onCancel }) {
+  const [form, setForm] = useState(() => ({
+    ...EMPTY_FORM, ...(initial || {}), targetCategory: categoryId,
+  }));
   const [personInput, setPersonInput] = useState({ name: "", role: "", contact: "" });
 
   function set(k, v) { setForm(f => ({ ...f, [k]: v })); }
@@ -65,6 +69,17 @@ function TaskForm({ initial, cat, onSave, onCancel }) {
           <input className="intake-inp" value={form.title}
             onChange={e => set("title", e.target.value)} placeholder="מה צריך לקרות?" />
         </div>
+        {initial?.id && (
+          <div className="ws-form-field">
+            <label className="ws-lbl">נושא</label>
+            <select className="intake-sel" value={form.targetCategory}
+              onChange={e => set("targetCategory", e.target.value)}>
+              {Object.entries(CAT_LABELS).map(([id, label]) => (
+                <option key={id} value={id}>{label}</option>
+              ))}
+            </select>
+          </div>
+        )}
         <div className="ws-form-field">
           <label className="ws-lbl">דחיפות</label>
           <select className="intake-sel" value={form.urgency} onChange={e => set("urgency", e.target.value)}>
@@ -295,12 +310,21 @@ export default function WorkstreamPage({ categoryId }) {
   function persist(next) { setAllTasks(next); saveCategoryTasks(categoryId, next); }
 
   function handleSave(form) {
-    const task = editingTask
-      ? { ...editingTask, ...form }
-      : { ...form, id: `${categoryId}-${Date.now()}`, category: categoryId };
-    persist(editingTask
-      ? allTasks.map(t => t.id === editingTask.id ? task : t)
-      : [...allTasks, task]);
+    const { targetCategory, ...taskFields } = form;
+    if (editingTask && targetCategory && targetCategory !== categoryId) {
+      // Move to a different category
+      persist(allTasks.filter(t => t.id !== editingTask.id));
+      const destTasks = loadCategoryTasks(targetCategory);
+      const moved = { ...editingTask, ...taskFields, category: targetCategory, stream: "" };
+      saveCategoryTasks(targetCategory, [...destTasks, moved]);
+    } else {
+      const task = editingTask
+        ? { ...editingTask, ...taskFields }
+        : { ...taskFields, id: `${categoryId}-${Date.now()}`, category: categoryId };
+      persist(editingTask
+        ? allTasks.map(t => t.id === editingTask.id ? task : t)
+        : [...allTasks, task]);
+    }
     setShowForm(false); setEditing(null);
   }
   function handleDelete(id) { persist(allTasks.filter(t => t.id !== id)); }
@@ -389,6 +413,7 @@ export default function WorkstreamPage({ categoryId }) {
         <TaskForm
           initial={editingTask}
           cat={cat}
+          categoryId={categoryId}
           onSave={handleSave}
           onCancel={() => { setShowForm(false); setEditing(null); }}
         />
