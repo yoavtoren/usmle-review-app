@@ -14,7 +14,7 @@ export const FRONT_COLORS = {
 export const FRONT_LABELS = {
   "step1":        "Step 1",
   "ent":          "ENT",
-  "july-move":    "מעבר לפראג",
+  "july-move":    "מעבר מפראג ואריזה",
   "sept-move":    "מעבר לישראל",
   "aims":         "AIMS",
   "medcross":     "MedCross",
