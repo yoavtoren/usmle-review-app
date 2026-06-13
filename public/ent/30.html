@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 · Acute & chronic rhinosinusitis</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 30</span>
+    <h1 class="title">👃 Acute & chronic rhinosinusitis</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Rhinosinusitis is symptomatic inflammation of the nasal and paranasal-sinus mucosa, divided by duration into <b>acute (&lt;12 weeks)</b> and <b>chronic (≥12 weeks)</b>. The key skills: know when acute sinusitis is bacterial (and when not to give antibiotics), subtype chronic disease by polyps, and recognise the red flags of complications and tumour.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🧬 Anatomy — the ostiomeatal complex</h3>
+      <p>The sinuses drain by <button class="clue c-blue" onclick="toggle('rs1',this)">mucociliary clearance</button> through the <button class="clue c-blue" onclick="toggle('rs2',this)">ostiomeatal complex</button> — the anatomical key to both disease and surgery.</p>
+      <div class="reveal r-blue" id="rs1"><b>Mucociliary clearance:</b> cilia sweep mucus toward the natural ostia in defined patterns. Anything that blocks an ostium or impairs cilia (infection, allergy, polyps, anatomical narrowing, ciliary disease) causes stasis, retained secretions and infection — the basis of rhinosinusitis.</div>
+      <div class="reveal r-blue" id="rs2"><b>Ostiomeatal complex (OMC):</b> the common drainage channel of the <b>maxillary, anterior ethmoid and frontal sinuses into the middle meatus</b>. Obstruction here causes anterior-sinus disease, and relieving it is the central aim of <b>functional endoscopic sinus surgery</b> (Topic 35).</div>
+
+      <h3>🤧 Acute rhinosinusitis</h3>
+      <p>Acute rhinosinusitis is usually <button class="clue c-blue" onclick="toggle('rs3',this)">viral/post-viral</button>; suspect <button class="clue c-green" onclick="toggle('rs4',this)">acute bacterial sinusitis</button> with specific features, and always watch for <button class="clue c-red" onclick="toggle('rs5',this)">complication red flags</button>.</p>
+      <div class="reveal r-blue" id="rs3"><b>Viral (commonest):</b> the "common cold" — nasal blockage, discharge, facial pressure and reduced smell, peaking and resolving within ~10 days. Antibiotics are not indicated; treat with analgesia, saline and intranasal steroids.</div>
+      <div class="reveal r-green" id="rs4"><b>Acute bacterial rhinosinusitis:</b> suspect when symptoms are <b>&gt;10 days without improvement</b>, are <b>severe (high fever, purulent discharge, unilateral facial pain)</b>, or show <b>"double-sickening"</b> (initial improvement then worsening). Organisms: <b>S. pneumoniae, H. influenzae, Moraxella</b>. Then consider antibiotics (e.g. amoxicillin/co-amoxiclav).</div>
+      <div class="reveal r-red" id="rs5"><b>Red flags (→ Topic 31):</b> <b>periorbital swelling/erythema, proptosis, painful or restricted eye movements, reduced vision, severe frontal headache, altered consciousness, or frontal swelling</b> signal an <b>orbital or intracranial complication</b> — urgent CT, IV antibiotics and ophthalmology/neurosurgery.</div>
+
+      <h3>🔁 Chronic rhinosinusitis</h3>
+      <p>Chronic rhinosinusitis (CRS) lasts <button class="clue c-green" onclick="toggle('rs6',this)">≥12 weeks with objective evidence</button> and is subtyped by <button class="clue c-blue" onclick="toggle('rs7',this)">the presence of nasal polyps</button>, with several important <button class="clue c-orange" onclick="toggle('rs8',this)">associations</button>.</p>
+      <div class="reveal r-green" id="rs6"><b>Definition:</b> ≥12 weeks of <b>≥2 symptoms</b> — nasal blockage, (anterior/posterior) discharge, facial pain/pressure, reduction/loss of smell — <b>one of which must be blockage or discharge</b>, PLUS objective evidence on <b>nasal endoscopy or CT</b> (inflammation/polyps/mucopus). Symptoms alone are not enough.</div>
+      <div class="reveal r-blue" id="rs7"><b>Phenotypes:</b> <b>CRS with nasal polyps (CRSwNP)</b> — often eosinophilic/type-2 inflammation, smell loss prominent, associated with asthma; <b>CRS without polyps (CRSsNP)</b>. This split guides treatment (steroids, biologics) and prognosis.</div>
+      <div class="reveal r-orange" id="rs8"><b>Associations to ask about:</b> <b>asthma and aspirin sensitivity (Samter's triad/AERD)</b>, allergic fungal rhinosinusitis, <b>primary ciliary dyskinesia and cystic fibrosis</b> (especially children/bilateral polyps), immunodeficiency, and <b>granulomatosis with polyangiitis</b>. Bilateral polyps in a child → think cystic fibrosis.</div>
+
+      <h3>🔎 Diagnosis</h3>
+      <p>Diagnosis is clinical + <button class="clue c-green" onclick="toggle('rs9',this)">endoscopy</button>, with <button class="clue c-blue" onclick="toggle('rs10',this)">CT reserved for specific indications</button> and a key <button class="clue c-purple" onclick="toggle('rs11',this)">unilateral red flag</button>.</p>
+      <div class="reveal r-green" id="rs9"><b>Assessment:</b> history, <b>anterior rhinoscopy and nasal endoscopy</b> (mucopus from the middle meatus, polyps), allergy testing where relevant. Acute uncomplicated sinusitis needs no imaging.</div>
+      <div class="reveal r-blue" id="rs10"><b>CT sinuses:</b> reserved for <b>CRS not responding to medical therapy (surgical planning), suspected complications, or atypical/unilateral disease</b>. It maps the OMC and anatomy for FESS; it is not a screening test for acute sinusitis.</div>
+      <div class="reveal r-purple" id="rs11"><b>Trap — unilateral disease:</b> <b>unilateral nasal obstruction, bloody discharge, facial pain or a unilateral polyp/mass</b> must prompt endoscopy, imaging and biopsy to exclude a <b>neoplasm</b> (inverted papilloma, SCC) — not simply "sinusitis".</div>
+
+      <h3>💊 Management</h3>
+      <p>Acute disease is mostly <button class="clue c-blue" onclick="toggle('rs12',this)">supportive</button>; CRS is treated with <button class="clue c-green" onclick="toggle('rs13',this)">intranasal steroids and saline as the mainstay</button>, escalating to <button class="clue c-blue" onclick="toggle('rs14',this)">oral steroids/biologics and surgery (FESS)</button> for refractory disease.</p>
+      <div class="reveal r-blue" id="rs12"><b>Acute:</b> analgesia, <b>saline irrigation, intranasal steroids</b>, and decongestants short-term; <b>antibiotics only for bacterial features</b> (&gt;10 days, severe, double-sickening). Most viral/post-viral cases resolve without antibiotics.</div>
+      <div class="reveal r-green" id="rs13"><b>CRS first-line:</b> <b>intranasal corticosteroids + saline irrigation</b> (the mainstay), treat allergy, and avoid irritants/smoking. A <b>short course of oral steroids</b> can shrink polyps and improve smell.</div>
+      <div class="reveal r-blue" id="rs14"><b>Refractory CRS:</b> <b>biologics (anti-IL-5/IL-4Rα, e.g. dupilumab)</b> for severe CRSwNP/type-2 disease; <b>functional endoscopic sinus surgery (FESS)</b> when maximal medical therapy fails — to restore OMC drainage and ventilation (Topic 35).</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Acute viral sinusitis resolves spontaneously; bacterial sinusitis responds to antibiotics. CRS is a chronic relapsing disease controlled (not usually cured) by topical steroids/irrigation ± biologics/surgery; CRSwNP and aspirin-exacerbated disease are more recalcitrant and recur after surgery.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> When is acute rhinosinusitis bacterial rather than viral?</button>
+        <div class="ans">Suspect bacterial sinusitis with <b>symptoms &gt;10 days without improvement, severe disease (high fever, purulent discharge, unilateral facial pain), or "double-sickening"</b>. Only then consider antibiotics; most acute sinusitis is viral and self-limiting.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> Give the diagnostic criteria for chronic rhinosinusitis.</button>
+        <div class="ans"><b>≥12 weeks of ≥2 symptoms</b> (blockage, discharge, facial pain/pressure, smell loss) — at least one being <b>blockage or discharge</b> — <b>plus objective evidence on endoscopy or CT</b>. Subtype by the presence of polyps.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> What is the ostiomeatal complex and why does it matter?</button>
+        <div class="ans">The common drainage channel of the <b>maxillary, anterior ethmoid and frontal sinuses into the middle meatus</b>. Obstruction here causes anterior-sinus disease, and relieving it is the central aim of <b>FESS</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Bilateral nasal polyps in a child — what must you exclude?</button>
+        <div class="ans"><b>Cystic fibrosis</b> (and primary ciliary dyskinesia) — nasal polyps are uncommon in children and bilateral polyps warrant a <b>sweat test/CF work-up</b>. In adults with polyps + asthma + aspirin sensitivity, think <b>Samter's triad (AERD)</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> Outline CRS medical management.</button>
+        <div class="ans"><b>Intranasal corticosteroids + saline irrigation</b> (mainstay), allergy treatment, smoking cessation; <b>short oral steroids</b> for polyps; <b>biologics</b> for severe type-2 CRSwNP; <b>FESS</b> if maximal medical therapy fails.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> What unilateral features make you think tumour, not sinusitis?</button>
+        <div class="ans"><b>Unilateral obstruction, bloody/blood-stained discharge, facial pain/numbness, a unilateral polyp or mass, or epistaxis</b> → endoscopy, CT/MRI and <b>biopsy</b> to exclude inverted papilloma or sinonasal carcinoma (Topic 42).</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Viral vs bacterial acute sinusitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = blocked, discharging nose with facial pressure. <br><span class="dif">✅ Different in:</span> bacterial = <b>&gt;10 days, severe, or double-sickening</b> → consider antibiotics; viral resolves in ~10 days.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>CRS with vs without polyps</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = ≥12 weeks of sinonasal symptoms. <br><span class="dif">✅ Different in:</span> CRSwNP = <b>polyps on endoscopy, smell loss, type-2/asthma/AERD, biologics</b>; CRSsNP = no polyps.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>CRS vs allergic rhinitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = blockage + rhinorrhoea. <br><span class="dif">✅ Different in:</span> allergic rhinitis = <b>sneeze/itch, clear discharge, atopy, no objective sinus inflammation</b>; CRS = <b>endoscopic/CT mucosal disease ≥12 wks</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>CRS vs sinonasal tumour</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both cause obstruction/discharge. <br><span class="dif">✅ Different in:</span> tumour = <b>unilateral, bloody, facial numbness, unilateral mass</b> → biopsy; CRS is usually bilateral/symmetrical.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Bacterial sinusitis vs orbital complication</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both follow acute sinusitis. <br><span class="dif">✅ Different in:</span> complication = <b>periorbital swelling, proptosis, painful/limited eye movement, reduced vision</b> → CT + emergency care (Topic 31).</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 35-year-old has 4 months of nasal blockage, loss of smell and postnasal drip, with bilateral polyps on endoscopy. How do you assess and manage?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Name the diagnosis</button>
+          <div class="sbody"><i>"≥12 weeks of blockage, smell loss and discharge with bilateral polyps is <b>chronic rhinosinusitis with nasal polyps (CRSwNP)</b> — confirmed by endoscopy."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Apply criteria & associations</button>
+          <div class="sbody">Confirm the CRS criteria; screen for <b>asthma and aspirin sensitivity (AERD), allergy</b>, and (if relevant) CF/PCD/immunodeficiency.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigate</button>
+          <div class="sbody"><b>Nasal endoscopy</b> (confirm polyps/mucopus), allergy testing, and <b>CT sinuses</b> if medical therapy fails (surgical planning) or disease is atypical/unilateral.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Treat up the ladder</button>
+          <div class="sbody"><b>Intranasal steroids + saline irrigation</b>, short oral steroids for polyps, treat allergy/asthma; <b>biologics</b> for severe type-2 disease; <b>FESS</b> if maximal medical therapy fails, with ongoing topical maintenance.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> Persistent mucosal inflammation (often eosinophilic/type-2) thickens the mucosa and forms oedematous polyps that obstruct the ostiomeatal complex. Blocked drainage perpetuates mucus stasis, infection and further inflammation, impairing the olfactory cleft to cause smell loss. Topical steroids and irrigation dampen the inflammation, while surgery restores ventilation and drainage so topical therapy can reach the sinuses.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">sinusitis &gt;10 days / double-sickening / severe</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Acute bacterial rhinosinusitis</span><div class="assoc">S. pneumoniae/H. influenzae/Moraxella · antibiotics</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">≥12 weeks ≥2 symptoms + endoscopy/CT signs</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Chronic rhinosinusitis</span><div class="assoc">subtype by polyps</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">drainage of maxillary/ant ethmoid/frontal</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Ostiomeatal complex → middle meatus</span><div class="assoc">FESS target</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">polyps + asthma + aspirin sensitivity</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Samter's triad (AERD)</span><div class="assoc">type-2 · recalcitrant</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">bilateral polyps in a child</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Cystic fibrosis (sweat test)</span><div class="assoc">or primary ciliary dyskinesia</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">unilateral obstruction + bloody discharge</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Sinonasal tumour — biopsy</span><div class="assoc">inverted papilloma / SCC</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">CRS mainstay treatment</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Intranasal steroids + saline irrigation</span><div class="assoc">± oral steroid for polyps</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">severe type-2 CRSwNP failing therapy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Biologic (e.g. dupilumab)</span><div class="assoc">anti-IL-4Rα/IL-5</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">periorbital swelling in sinusitis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Orbital complication — CT + emergency</span><div class="assoc">Topic 31</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">CT sinuses indication</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Medical failure / complication / atypical</span><div class="assoc">not for acute uncomplicated</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Acute bacterial sinusitis</button>
+        <div class="ans"><i>"Twelve days of facial pain, purulent discharge and fever after a cold, having initially improved (double-sickening)."</i> → <b>acute bacterial rhinosinusitis</b>: analgesia, intranasal steroid, saline; <b>antibiotics</b> (amoxicillin/co-amoxiclav); safety-net for orbital/intracranial red flags.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> CRSwNP with asthma</button>
+        <div class="ans"><i>"Chronic blockage, anosmia, bilateral polyps, asthmatic, aspirin-sensitive."</i> → <b>CRSwNP (Samter's triad)</b>: intranasal steroids + irrigation, short oral steroid, treat asthma/allergy; <b>biologic</b> if severe; <b>FESS</b> if refractory, with maintenance topical therapy.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is allergic fungal rhinosinusitis?</button>
+        <div class="ans">A type-2 hypersensitivity to fungi in atopic patients with <b>nasal polyps, eosinophilic "allergic mucin", characteristic heterogeneous CT opacification, and raised IgE</b>. Treated with <b>surgery to remove mucin + topical/oral steroids</b> (not antifungals primarily); distinct from invasive fungal sinusitis.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why are antibiotics overused in acute sinusitis, and what is the harm?</button>
+        <div class="ans">Most acute sinusitis is <b>viral/self-limiting</b>, but purulent discharge is misread as bacterial. Overuse drives <b>resistance and side-effects</b> without benefit. Reserve antibiotics for the defined bacterial features (&gt;10 days, severe, double-sickening).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> When is invasive fungal sinusitis suspected?</button>
+        <div class="ans">In <b>immunocompromised/diabetic (ketoacidotic)</b> patients with rapid facial pain, mucosal necrosis (black eschar), orbital/cranial-nerve signs — <b>acute invasive fungal sinusitis (mucormycosis/Aspergillus)</b>. It is a life-threatening emergency needing urgent biopsy, <b>antifungals and surgical debridement</b>, and reversal of immunosuppression.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What systemic disease should you consider in crusting, destructive sinonasal inflammation?</button>
+        <div class="ans"><b>Granulomatosis with polyangiitis</b> — crusting rhinitis, septal perforation/saddle nose, with <b>c-ANCA/PR3</b> and renal/pulmonary involvement. Biopsy and ANCA testing distinguish it from ordinary CRS.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 30 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

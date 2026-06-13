@@ -16,6 +16,8 @@ import { loadTimelineEvents } from "./lib/timelineData.js";
 import { loadAllWorkstreamTasks } from "./lib/workstreamData.js";
 import WorkstreamPage from "./components/WorkstreamPage.jsx";
 import HomePage from "./components/HomePage.jsx";
+import MedSchoolHub from "./components/MedSchoolHub.jsx";
+import MedSchoolSubject from "./components/MedSchoolSubject.jsx";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -115,8 +117,10 @@ export default function App() {
           <Timeline onExportICS={handleExportICS} />
         } />
         <Route path="/aims"     element={<AIMSDashboard />} />
-        <Route path="/medcross" element={<WorkstreamPage categoryId="medcross" />} />
-        <Route path="/selfcare" element={<WorkstreamPage categoryId="selfcare" />} />
+        <Route path="/medcross"  element={<WorkstreamPage categoryId="medcross" />} />
+        <Route path="/selfcare"  element={<WorkstreamPage categoryId="selfcare" />} />
+        <Route path="/medschool" element={<MedSchoolHub />} />
+        <Route path="/medschool/subject/:subjectId" element={<MedSchoolSubject />} />
         <Route path="*" element={
           <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} />
         } />

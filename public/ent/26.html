@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>26 · Acute laryngitis</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 26</span>
+    <h1 class="title">🗣️🔥 Acute laryngitis</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Acute laryngitis is acute inflammation of the laryngeal mucosa causing hoarseness. In adults it is usually a benign self-limiting viral illness, but the exam priority is the <b>paediatric airway emergencies that mimic it</b> — epiglottitis, croup and bacterial tracheitis — and the red flag of persistent hoarseness.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ Definition & causes (adult)</h3>
+      <p>Adult acute laryngitis is <button class="clue c-blue" onclick="toggle('al1',this)">usually viral and self-limiting</button>, with contributory <button class="clue c-orange" onclick="toggle('al2',this)">vocal abuse, reflux and irritants</button>, presenting with <button class="clue c-green" onclick="toggle('al3',this)">hoarseness and oedematous red cords</button>.</p>
+      <div class="reveal r-blue" id="al1"><b>Aetiology:</b> most cases follow a <b>viral URTI</b> (rhinovirus, influenza, parainfluenza), occasionally with secondary bacterial infection. It is self-limiting over ~1–2 weeks; antibiotics are rarely indicated.</div>
+      <div class="reveal r-orange" id="al2"><b>Contributors:</b> <b>vocal abuse/overuse</b>, <b>laryngopharyngeal reflux</b>, smoking and inhaled irritants, and allergy. Repeated insults predispose to chronic laryngitis (Topic 45).</div>
+      <div class="reveal r-green" id="al3"><b>Presentation:</b> <b>hoarseness/voice loss, dry cough, throat discomfort and a preceding/accompanying cold</b>; laryngoscopy (if done) shows <b>red, oedematous vocal cords</b>. Systemic upset is mild in uncomplicated adult disease.</div>
+
+      <h3>🔴 Paediatric airway emergencies (the must-know mimics)</h3>
+      <p>In children, acute upper-airway inflammation can be life-threatening: <button class="clue c-red" onclick="toggle('al4',this)">acute epiglottitis (supraglottitis)</button>, <button class="clue c-green" onclick="toggle('al5',this)">croup (laryngotracheobronchitis)</button>, and <button class="clue c-blue" onclick="toggle('al6',this)">bacterial tracheitis</button>.</p>
+      <div class="reveal r-red" id="al4"><b>Acute epiglottitis (supraglottitis):</b> classically <b>Haemophilus influenzae type b</b> (now rarer post-Hib vaccine; consider in adults too). <b>Rapid onset of high fever, drooling, dysphagia, muffled voice, tripod posture and stridor</b>; the child looks toxic. <b>Do NOT examine the throat with a tongue depressor or distress the child</b> — secure the airway in a controlled setting (theatre, senior ENT + anaesthetics), then antibiotics. A <b>"cherry-red" epiglottis</b> is seen on careful laryngoscopy.</div>
+      <div class="reveal r-green" id="al5"><b>Croup:</b> <b>parainfluenza</b> laryngotracheobronchitis in toddlers — a <b>barking ("seal") cough, hoarse voice, inspiratory stridor</b>, usually preceded by coryza, worse at night. CXR may show subglottic narrowing (<b>"steeple sign"</b>). Treat with <b>oral/IM dexamethasone</b>; <b>nebulised adrenaline</b> for moderate-severe distress.</div>
+      <div class="reveal r-blue" id="al6"><b>Bacterial tracheitis:</b> a toxic child with stridor and <b>thick purulent tracheal secretions</b> (often Staph aureus), more unwell than croup and not responding to adrenaline/steroids; needs IV antibiotics and sometimes intubation/airway toilet. Diphtheria (grey membrane) is the historical mimic.</div>
+
+      <h3>👂 Clinical assessment</h3>
+      <p>Assess for <button class="clue c-red" onclick="toggle('al7',this)">airway compromise</button> and apply the <button class="clue c-red" onclick="toggle('al8',this)">persistent-hoarseness red flag</button>.</p>
+      <div class="reveal r-red" id="al7"><b>Airway signs:</b> <b>stridor, drooling, respiratory distress, tachypnoea, recession, agitation then exhaustion, cyanosis</b>. Inspiratory stridor localises to the supraglottis/glottis. Any of these → do not distress the patient; get senior airway help.</div>
+      <div class="reveal r-red" id="al8"><b>Red flag — persistent hoarseness:</b> hoarseness lasting <b>more than 3 weeks</b>, especially in a smoker/drinker, must be referred for <b>laryngoscopy to exclude laryngeal carcinoma</b> — acute laryngitis should resolve within ~2 weeks.</div>
+
+      <h3>💊 Management</h3>
+      <p>Adult acute laryngitis needs only <button class="clue c-blue" onclick="toggle('al9',this)">supportive care</button>; the paediatric emergencies need <button class="clue c-red" onclick="toggle('al10',this)">airway-centred management</button>.</p>
+      <div class="reveal r-blue" id="al9"><b>Adult:</b> <b>voice rest, hydration, humidification, analgesia, stop smoking and treat reflux</b>; antibiotics only if clear bacterial infection. Reassure that it is self-limiting; review/scope if it persists beyond 3 weeks.</div>
+      <div class="reveal r-red" id="al10"><b>Paediatric emergencies:</b> <b>epiglottitis</b> — keep the child calm, no throat examination, controlled airway in theatre, IV antibiotics (e.g. ceftriaxone); <b>croup</b> — steroids ± nebulised adrenaline, observe; <b>bacterial tracheitis</b> — IV antibiotics ± airway support. Senior ENT/anaesthetic/paediatric input throughout.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Adult acute laryngitis resolves fully with voice rest; croup is usually self-limiting; epiglottitis and bacterial tracheitis are life-threatening but have good outcomes with prompt airway management and antibiotics. The persistent-hoarseness rule prevents missed cancers.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> How do you manage adult acute laryngitis?</button>
+        <div class="ans">Supportive: <b>voice rest, hydration, humidification, analgesia, stop smoking, treat reflux</b>; antibiotics only if clearly bacterial. Reassure (self-limiting in ~1–2 weeks) and <b>scope if hoarseness persists &gt;3 weeks</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> A toxic child with high fever, drooling and tripod posture — diagnosis and the key rule?</button>
+        <div class="ans"><b>Acute epiglottitis</b> (classically Hib). <b>Do NOT examine the throat or distress the child</b>; secure the airway in a controlled setting with senior ENT/anaesthetics, then IV antibiotics. A cherry-red epiglottis confirms it.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Barking cough + stridor in a toddler — diagnosis and treatment?</button>
+        <div class="ans"><b>Croup</b> (parainfluenza laryngotracheobronchitis). <b>Dexamethasone</b> for all; <b>nebulised adrenaline</b> for moderate-severe distress; observe. CXR (if done) shows the <b>steeple sign</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> How do you distinguish croup from epiglottitis?</button>
+        <div class="ans"><b>Croup</b> = barking cough, hoarse, gradual, low-grade fever, looks reasonably well, responds to steroids/adrenaline. <b>Epiglottitis</b> = no/little cough, <b>drooling, high fever, toxic, tripod, muffled voice, rapid onset</b> — an airway emergency.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> When is hoarseness NOT just laryngitis?</button>
+        <div class="ans">When it lasts <b>&gt;3 weeks</b> (especially with smoking/alcohol, neck lump, dysphagia, otalgia, weight loss) — refer for <b>laryngoscopy to exclude laryngeal carcinoma</b> (Topics 43–45).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> A child with croup-like stridor not improving on adrenaline/steroids and looking toxic — concern?</button>
+        <div class="ans"><b>Bacterial tracheitis</b> (often Staph aureus) — more unwell, with thick purulent tracheal secretions; needs <b>IV antibiotics and possibly intubation/airway toilet</b>. It does not respond like viral croup.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Croup vs epiglottitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = paediatric stridor + fever. <br><span class="dif">✅ Different in:</span> croup = <b>barking cough, hoarse, responds to steroids</b>; epiglottitis = <b>drooling, toxic, tripod, no cough, airway emergency</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Croup vs bacterial tracheitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = barking-type stridor. <br><span class="dif">✅ Different in:</span> tracheitis = <b>toxic child, purulent tracheal secretions, no response to adrenaline/steroids</b> → IV antibiotics.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Adult acute vs chronic laryngitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = hoarseness. <br><span class="dif">✅ Different in:</span> acute = <b>&lt;2 weeks, post-URTI, self-limiting</b>; chronic/&gt;3 weeks = <b>scope to exclude cancer/Reinke's</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Acute laryngitis vs laryngeal carcinoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = hoarse voice. <br><span class="dif">✅ Different in:</span> cancer = <b>persistent &gt;3 weeks, smoker/drinker, ± neck node/otalgia/dysphagia</b> → laryngoscopy + biopsy.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Epiglottitis vs retropharyngeal abscess</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = febrile child, drooling, airway risk. <br><span class="dif">✅ Different in:</span> epiglottitis = <b>cherry-red epiglottis, supraglottic</b>; retropharyngeal abscess = <b>neck held still, CT collection</b>.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 4-year-old has rapid-onset high fever, drooling, a muffled voice and soft stridor, sitting forward. How do you proceed?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Recognise epiglottitis</button>
+          <div class="sbody"><i>"Rapid fever, drooling, muffled voice and tripod posture is <b>acute epiglottitis</b> — a paediatric airway emergency. The first rule is do NOT distress the child or examine the throat."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Keep calm & call for help</button>
+          <div class="sbody">Leave the child with a parent in a position of comfort, give <b>no cannulas/examinations</b> that upset them, and summon <b>senior ENT, anaesthetics and paediatrics</b> immediately.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Secure the airway</button>
+          <div class="sbody">Transfer to <b>theatre</b> for gaseous induction and <b>controlled intubation</b> (with tracheostomy backup); confirm the cherry-red epiglottis only under controlled conditions.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Treat</button>
+          <div class="sbody"><b>IV antibiotics (e.g. ceftriaxone)</b>, fluids, and ICU/HDU care; cultures; prophylaxis/vaccination considerations for Hib contacts. Extubate when the swelling settles.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> Bacterial (classically Hib) infection inflames the supraglottic structures, and the loose submucosa of the epiglottis swells rapidly into a cherry-red mass. This narrows the supraglottic airway, producing drooling, a muffled "hot-potato" voice and stridor, with a danger of sudden complete obstruction if the child is agitated. Controlled airway control before any examination, plus antibiotics, prevents catastrophic occlusion.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">hoarseness after a cold, well adult</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Acute viral laryngitis</span><div class="assoc">voice rest · self-limiting</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">drooling + tripod + toxic child, no cough</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Acute epiglottitis (Hib)</span><div class="assoc">don't examine throat · theatre airway</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">barking cough + inspiratory stridor, toddler</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Croup (parainfluenza)</span><div class="assoc">dexamethasone ± nebulised adrenaline</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">steeple sign on CXR</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Croup (subglottic narrowing)</span><div class="assoc">thumbprint = epiglottitis</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">cherry-red epiglottis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Epiglottitis</span><div class="assoc">supraglottitis</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">toxic child, purulent tracheal secretions, no adrenaline response</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Bacterial tracheitis</span><div class="assoc">Staph aureus · IV antibiotics</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">hoarseness &gt;3 weeks (smoker)</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Laryngoscopy — exclude cancer</span><div class="assoc">red flag</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">inspiratory stridor localises to…</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Supraglottis/glottis</span><div class="assoc">biphasic = subglottic/tracheal</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">grey adherent membrane + airway</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Diphtheria</span><div class="assoc">antitoxin · unvaccinated</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">croup steroid</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Dexamethasone</span><div class="assoc">single dose · for all severities</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Adult laryngitis</button>
+        <div class="ans"><i>"A teacher has 5 days of hoarseness after a cold, otherwise well."</i> → <b>acute viral laryngitis</b>: voice rest, hydration, humidification, treat reflux/stop smoking; reassure; review/scope if it persists beyond 3 weeks.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Croup</button>
+        <div class="ans"><i>"A 2-year-old with a barking cough, stridor at night, low-grade fever, looks well between episodes."</i> → <b>croup</b>: <b>dexamethasone</b>; nebulised adrenaline if stridor at rest/distress; observe and discharge with advice when stable.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why is epiglottitis now seen in adults as well as children?</button>
+        <div class="ans"><b>Hib vaccination</b> dramatically reduced childhood epiglottitis, so the case mix has shifted, with relatively more <b>adult supraglottitis</b> (often other organisms). Adults present with severe sore throat, odynophagia and a normal-looking oropharynx but a tender larynx; have a low threshold for fibreoptic assessment and airway vigilance.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How does stridor localise the level of obstruction?</button>
+        <div class="ans"><b>Inspiratory stridor</b> = supraglottic/glottic; <b>biphasic stridor</b> = subglottic/tracheal (fixed lesion); <b>expiratory stridor/wheeze</b> = lower (intrathoracic) airway. This guides where to look and how urgently.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is the role of nebulised adrenaline in croup?</button>
+        <div class="ans">It causes <b>mucosal vasoconstriction</b>, rapidly reducing subglottic oedema and stridor in moderate-severe croup, buying time while steroids act. Its effect is temporary (~2 h), so the child must be <b>observed for rebound</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> When would acute laryngitis itself threaten the adult airway?</button>
+        <div class="ans">With <b>marked supraglottic oedema (supraglottitis), inhalational/thermal injury, angioedema or severe infection</b> — look for stridor, drooling and distress, and manage as an airway emergency with senior ENT/anaesthetic input.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 26 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

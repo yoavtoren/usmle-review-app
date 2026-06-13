@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>05 · Acute otitis media</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 05</span>
+    <h1 class="title">👂 Acute otitis media</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Acute otitis media (AOM) is acute suppurative inflammation of the middle-ear cleft lasting under three weeks, overwhelmingly a disease of young children. This overview covers why children are prone, the bugs, the stages, how to diagnose it, the antibiotic decision, and the complications you must never miss.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ Definition & the otitis-media spectrum</h3>
+      <p>AOM is the <b>rapid onset of signs and symptoms of middle-ear inflammation with an effusion</b>. It sits within a spectrum: <button class="clue c-blue" onclick="toggle('m1',this)">AOM versus otitis media with effusion (OME) versus chronic suppurative OM</button>. <button class="clue c-orange" onclick="toggle('m2',this)">Recurrent AOM</button> is defined by episode frequency and changes management. Getting these definitions straight at the start frames the whole answer.</p>
+      <div class="reveal r-blue" id="m1"><b>Spectrum:</b> <b>AOM</b> = acute infection (pain, fever, bulging drum). <b>OME ("glue ear")</b> = effusion <b>without</b> acute infection (painless hearing loss). <b>CSOM</b> = a permanent perforation with chronic discharge &gt;3 months. AOM and OME interconvert; OME is the usual aftermath of an AOM episode.</div>
+      <div class="reveal r-orange" id="m2"><b>Recurrent AOM</b> = <b>≥3 episodes in 6 months or ≥4 in 12 months</b> (with at least one in the last 6 months). It triggers consideration of ventilation tubes ± adenoidectomy and a review of risk factors and vaccination.</div>
+
+      <h3>🧬 Applied anatomy — why children?</h3>
+      <p>AOM peaks at <button class="clue c-orange" onclick="toggle('m3',this)">6–24 months</button> because the infant <button class="clue c-blue" onclick="toggle('m4',this)">Eustachian tube is short, wide and horizontal</button> with an immature <b>tensor veli palatini</b>, so it ventilates and protects the middle ear poorly. The middle-ear cleft is continuous with the mastoid air cells and nasopharynx, which is why infection spreads to the mastoid and why <button class="clue c-red" onclick="toggle('m5',this)">a unilateral effusion in an adult is different</button>.</p>
+      <div class="reveal r-orange" id="m3"><b>Age:</b> by age 3, over 80% of children have had at least one episode; incidence falls after 5–7 years as the skull base matures and the tube lengthens and steepens. A first episode before 6 months predicts recurrent disease.</div>
+      <div class="reveal r-blue" id="m4"><b>Child vs adult tube:</b> the child tube is ~10° (near-horizontal), short and floppy, draining poorly and refluxing nasopharyngeal organisms; the adult tube is ~45°, longer and stiffer. Cleft palate (abnormal tensor veli palatini) and Down syndrome worsen this and cause near-universal middle-ear disease.</div>
+      <div class="reveal r-red" id="m5"><b>Adult red flag:</b> a <b>persistent unilateral middle-ear effusion in an adult</b> can be caused by a <b>nasopharyngeal carcinoma</b> obstructing the tubal orifice — always examine the nasopharynx (flexible endoscopy) before simply placing a grommet.</div>
+
+      <h3>⚙️ Pathophysiology</h3>
+      <p>A <button class="clue c-blue" onclick="toggle('m6',this)">viral upper-respiratory infection inflames the tubal mucosa first</button>, obstructing it; trapped middle-ear air is absorbed, creating negative pressure and a sterile effusion. <button class="clue c-blue" onclick="toggle('m7',this)">Nasopharyngeal bacteria then reflux up the tube and multiply</button> in that effusion, producing pus that bulges the drum. <button class="clue c-green" onclick="toggle('m8',this)">Biofilms</button> on the mucosa underlie persistent and recurrent disease.</p>
+      <div class="reveal r-blue" id="m6"><b>Viral trigger:</b> RSV, rhinovirus, influenza and adenovirus damage the tubal mucosa and impair clearance; about two-thirds of AOM has a viral component. This is why many episodes resolve spontaneously and why influenza and pneumococcal vaccination reduce AOM.</div>
+      <div class="reveal r-blue" id="m7"><b>Bacterial superinfection:</b> negative pressure and reflux carry nasopharyngeal flora into the effusion, which is an ideal culture medium. The result is suppuration, drum bulging and severe otalgia.</div>
+      <div class="reveal r-green" id="m8"><b>Biofilms:</b> communities of bacteria encased in matrix on the middle-ear/adenoid mucosa resist antibiotics and host defences, explaining treatment failure, persistence and recurrence — and part of the rationale for adenoidectomy in recurrent disease.</div>
+
+      <h3>📊 Epidemiology & risk factors</h3>
+      <p>Risk rises with <button class="clue c-orange" onclick="toggle('m9',this)">daycare, passive smoking, supine bottle-feeding, pacifier use, allergy, and craniofacial anomalies</button>, and falls with breastfeeding beyond six months and vaccination.</p>
+      <div class="reveal r-orange" id="m9"><b>Modifiable & non-modifiable factors:</b> daycare (viral exposure), tobacco smoke (mucosal irritation), bottle-feeding lying flat (reflux), lack of breastfeeding (loss of passive immunity), allergic rhinitis, adenoid hypertrophy, and <b>cleft palate/Down syndrome</b>. Counselling on smoke avoidance and feeding position is part of management.</div>
+
+      <h3>🦠 Microbiology</h3>
+      <p>The classic trio is <button class="clue c-green" onclick="toggle('m10',this)">Streptococcus pneumoniae</button>, <button class="clue c-green" onclick="toggle('m11',this)">non-typeable Haemophilus influenzae</button> and <button class="clue c-green" onclick="toggle('m12',this)">Moraxella catarrhalis</button>; <button class="clue c-orange" onclick="toggle('m13',this)">neonates</button> carry a different spectrum, and <button class="clue c-blue" onclick="toggle('m14',this)">pneumococcal vaccination has shifted the picture</button>.</p>
+      <div class="reveal r-green" id="m10"><b>S. pneumoniae:</b> historically the commonest and the <b>least likely to resolve spontaneously</b>, most associated with mastoiditis. Resistance is via <b>altered penicillin-binding proteins</b> (raised MIC), overcome by <b>high-dose amoxicillin</b>, not by clavulanate.</div>
+      <div class="reveal r-green" id="m11"><b>Non-typeable H. influenzae:</b> relatively more common since PCV; frequently <b>β-lactamase producing</b> → needs <b>amoxicillin–clavulanate</b>; linked to the <b>otitis–conjunctivitis syndrome</b>.</div>
+      <div class="reveal r-green" id="m12"><b>Moraxella catarrhalis:</b> almost always <b>β-lactamase positive</b> but tends to mild disease with high spontaneous resolution; also covered by co-amoxiclav.</div>
+      <div class="reveal r-orange" id="m13"><b>Neonates (&lt;6 weeks):</b> add <b>Gram-negative enterics, Staph aureus and group B Streptococcus</b>. Presentation is non-specific and complications more dangerous, so the threshold for <b>tympanocentesis, culture and parenteral antibiotics</b> is lower.</div>
+      <div class="reveal r-blue" id="m14"><b>Post-PCV shift:</b> conjugate vaccines (PCV7→13→15→20) reduced vaccine-serotype pneumococcal AOM and complications, leaving <b>NTHi relatively more prominent</b> with some serotype replacement — strengthening the case for co-amoxiclav when H. influenzae is likely.</div>
+
+      <h3>🔬 The four stages (Politzer)</h3>
+      <p>AOM evolves through predictable stages, and recognising them guides treatment and warns of complications.</p>
+      <table class="stg">
+        <tr><th>Stage</th><th>Drum / findings</th><th>Symptom</th></tr>
+        <tr><td><b>1. Tubal occlusion / hyperaemia</b></td><td>Retraction, injected malleus handle, "cartwheel" vessels</td><td>Blockage, mild pain</td></tr>
+        <tr><td><b>2. Suppuration</b></td><td><b>Red, bulging</b> drum, lost landmarks/light reflex</td><td><b>Severe throbbing otalgia</b>, high fever</td></tr>
+        <tr><td><b>3. Perforation</b></td><td>Central perforation, pulsatile <b>mucopurulent otorrhoea</b></td><td><b>Sudden relief of pain</b> + fever</td></tr>
+        <tr><td><b>4. Resolution / complication</b></td><td>Drum heals OR → coalescent mastoiditis / other complication</td><td>Settles or worsens</td></tr>
+      </table>
+      <p>The <button class="clue c-blue" onclick="toggle('m15',this)">sudden pain relief with discharge</button> marks perforation; <button class="clue c-red" onclick="toggle('m16',this)">worsening or failure to resolve</button> signals a complication.</p>
+      <div class="reveal r-blue" id="m15"><b>Stage 3 logic:</b> rising pus pressure necroses a small area of pars tensa → a <b>central perforation</b> discharges, pressure falls and the throbbing pain abruptly eases as the discharge appears. Most heal spontaneously within weeks.</div>
+      <div class="reveal r-red" id="m16"><b>Red flag:</b> persistent fever, deep pain, postauricular swelling/protruding pinna, vertigo, facial weakness, or deterioration after apparent improvement → suspect <b>acute mastoiditis</b> or another complication and image (CT). Do not just keep changing antibiotics.</div>
+
+      <h3>👂 Clinical features</h3>
+      <p>Older children and adults describe <b>otalgia, blockage, fever and conductive hearing loss</b>, with sudden relief and discharge if the drum perforates. Pre-verbal infants show <button class="clue c-blue" onclick="toggle('m17',this)">non-specific signs</button> — irritability, ear-tugging, fever, poor feeding and disturbed sleep — so the diagnosis rests on examination, not history.</p>
+      <div class="reveal r-blue" id="m17"><b>Infant presentation:</b> because they cannot localise pain, infants present with crying, fever, vomiting/diarrhoea and ear-pulling; ear-pulling alone is unreliable. This is why <b>pneumatic otoscopy</b> is essential to confirm an effusion rather than treating on symptoms.</div>
+
+      <h3>🔎 Examination & diagnosis</h3>
+      <p>Diagnosis requires <button class="clue c-green" onclick="toggle('m18',this)">acute onset + a middle-ear effusion + signs of inflammation</button> (the AAP triad). The most reliable sign is a <button class="clue c-green" onclick="toggle('m19',this)">bulging drum with reduced mobility on pneumatic otoscopy</button>. <button class="clue c-purple" onclick="toggle('m20',this)">A red drum alone is a trap</button>. <button class="clue c-blue" onclick="toggle('m21',this)">Tympanometry, audiometry and tuning forks</button> objectively support the effusion and the conductive loss.</p>
+      <div class="reveal r-green" id="m18"><b>AAP triad:</b> (1) <b>acute onset</b>; (2) <b>middle-ear effusion</b> (bulging, reduced mobility, air–fluid level or otorrhoea); (3) <b>middle-ear inflammation</b> (distinct erythema or clear otalgia). Requiring all three avoids over-diagnosis.</div>
+      <div class="reveal r-green" id="m19"><b>Pneumatic otoscopy = bedside gold standard:</b> a bulging drum that <b>does not move</b> on insufflation confirms an effusion under pressure; loss of the light reflex and an obscured malleus handle support it.</div>
+      <div class="reveal r-purple" id="m20"><b>Trap:</b> a crying or febrile child can have a pink/red drum from vascular engorgement <b>without AOM</b>. Erythema alone, with a mobile non-bulging drum, is <b>not</b> AOM — require bulging/effusion, not just colour.</div>
+      <div class="reveal r-blue" id="m21"><b>Adjuncts:</b> <b>tympanometry</b> shows a flat <b>Type B</b> trace with normal canal volume (effusion); <b>audiometry</b> shows a conductive loss of ~20–40 dB; tuning forks give a <b>Rinne negative</b> result with <b>Weber lateralising to the affected ear</b>.</div>
+
+      <h3>💊 Management & the antibiotic decision</h3>
+      <p><button class="clue c-blue" onclick="toggle('m22',this)">Analgesia is for everyone</button>. Then choose between <button class="clue c-blue" onclick="toggle('m23',this)">watchful waiting and immediate antibiotics</button>. First-line is <button class="clue c-green" onclick="toggle('m24',this)">high-dose amoxicillin</button>; escalate to <button class="clue c-green" onclick="toggle('m25',this)">amoxicillin–clavulanate</button> in defined cases. <button class="clue c-blue" onclick="toggle('m26',this)">Myringotomy/tympanocentesis</button> is reserved for specific indications.</p>
+      <div class="reveal r-blue" id="m22"><b>Pain control first:</b> paracetamol/ibuprofen for all — pain is the dominant symptom and often the only thing needing treatment in mild disease.</div>
+      <div class="reveal r-blue" id="m23"><b>Antibiotics now vs wait:</b> <b>always treat</b> &lt;6 months; &lt;2 years with bilateral AOM; any age with otorrhoea or severe illness (T ≥39 °C, marked otalgia). A <b>48–72 h safety-net</b> is reasonable for mild unilateral AOM in a well child &gt;2 years, treating if not improving.</div>
+      <div class="reveal r-green" id="m24"><b>High-dose amoxicillin</b> <span class="lab">80–90 mg/kg/day</span>: the high dose keeps middle-ear levels above the raised pneumococcal MIC, overcoming <b>PBP</b>-mediated resistance. Course 5–10 days (longer/younger).</div>
+      <div class="reveal r-green" id="m25"><b>Amoxicillin–clavulanate</b> when there is recent amoxicillin use (&lt;30 days), failure at 48–72 h, concurrent purulent conjunctivitis, or recurrent AOM — to cover <b>β-lactamase-producing H. influenzae/Moraxella</b>. Penicillin allergy → cefuroxime/ceftriaxone or a macrolide.</div>
+      <div class="reveal r-blue" id="m26"><b>Myringotomy ± tympanocentesis indications:</b> severe bulging with intractable pain, failure of medical therapy, neonates/immunocompromised needing culture, or a <b>suspected/early complication</b> (impending mastoiditis, facial palsy). It gives instant pain relief and a microbiological sample; the incision is in the <b>antero-inferior quadrant</b> to avoid the ossicles and round window.</div>
+
+      <h3>🔁 Recurrent AOM</h3>
+      <p>Recurrent AOM (≥3 in 6 months / ≥4 in 12 months) is managed by <button class="clue c-blue" onclick="toggle('m27',this)">risk-factor reduction, vaccination, and ventilation tubes ± adenoidectomy</button>.</p>
+      <div class="reveal r-blue" id="m27"><b>Strategy:</b> reduce daycare/smoke exposure, ensure pneumococcal and influenza vaccination, and consider <b>grommets</b> (which ventilate the middle ear and let any infection drain through the tube) ± <b>adenoidectomy</b> (removes a biofilm reservoir and tubal obstruction), reducing both episode frequency and effusion-related hearing loss.</div>
+
+      <h3>🔴 Complications</h3>
+      <p>Untreated or aggressive AOM spreads beyond the middle ear. <button class="clue c-red" onclick="toggle('m28',this)">Intratemporal and intracranial complications</button> are the highest-yield danger material (covered fully in Topic 11).</p>
+      <div class="reveal r-red" id="m28"><b>Complications:</b> <b>intratemporal</b> — acute mastoiditis, facial-nerve palsy, labyrinthitis, petrositis (Gradenigo's triad), TM perforation, OME; <b>intracranial</b> — meningitis (commonest), extradural/subdural empyema, brain abscess, <b>sigmoid/lateral sinus thrombosis</b>, otitic hydrocephalus. Any red-flag feature mandates urgent CT and admission.</div>
+
+      <h3>⚠️ Special forms</h3>
+      <p><button class="clue c-orange" onclick="toggle('m29',this)">Acute necrotizing otitis media</button> is a severe variant in debilitated children. AOM in <button class="clue c-orange" onclick="toggle('m30',this)">neonates and the immunocompromised</button> needs a more aggressive, culture-driven approach.</p>
+      <div class="reveal r-orange" id="m29"><b>Acute necrotizing OM:</b> in children debilitated by <b>measles, scarlet fever or influenza</b>, rapid mucosal necrosis causes a <b>large/total perforation</b>, profuse discharge and ossicular destruction, often leaving a permanent perforation and significant hearing loss. Now rare with vaccination.</div>
+      <div class="reveal r-orange" id="m30"><b>Neonatal/immunocompromised AOM:</b> atypical organisms, non-specific presentation and higher complication risk justify early <b>tympanocentesis for culture</b> and broader/parenteral antibiotics.</div>
+
+      <h3>📈 Prognosis & prevention</h3>
+      <p>Most AOM resolves within days, many without antibiotics. Prevention centres on <b>pneumococcal and influenza vaccination, breastfeeding, avoiding tobacco smoke and upright feeding</b>, with grommets for the recurrent group. Persistent effusion after an episode (OME) is followed because of its effect on hearing and speech.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> Why are children so much more prone to AOM than adults?</button>
+        <div class="ans">Their Eustachian tube is <b>shorter, wider and horizontal (~10°)</b> with weaker cartilage and an immature tensor veli palatini, so it clears poorly and refluxes nasopharyngeal organisms. Add immature immunity, frequent viral URTIs, daycare exposure and adenoid hypertrophy. As the skull base matures the tube lengthens/steepens and incidence falls.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> AOM vs otitis media with effusion — the key difference?</button>
+        <div class="ans"><b>AOM</b> = acute infection: pain, fever, bulging red drum. <b>OME</b> = effusion <b>without</b> acute infection: painless hearing loss, dull retracted drum with bubbles, Type B tympanogram. OME is the usual aftermath of AOM and the main cause of childhood conductive hearing loss.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Why high-dose amoxicillin specifically?</button>
+        <div class="ans">Pneumococcal resistance is through <b>altered penicillin-binding proteins</b> (raised MIC), not β-lactamase. <b>Doubling the dose</b> raises middle-ear concentration above that MIC; clavulanate would not help pneumococcus but is added when β-lactamase-producing <b>H. influenzae/Moraxella</b> are likely.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> A child improves then deteriorates at day 10 with a tender, pushed-forward ear. What now?</button>
+        <div class="ans"><b>Acute coalescent mastoiditis.</b> Look for postauricular swelling/erythema, a down-and-out pinna and a sagging posterosuperior canal wall. Investigate with <span class="lab">WBC/CRP</span> and <b>CT temporal bone</b>; treat with <b>IV antibiotics + myringotomy</b>, and <b>cortical mastoidectomy</b> if an abscess or no response.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> When is watchful waiting NOT allowed?</button>
+        <div class="ans">Give antibiotics immediately if: age <b>&lt;6 months</b>; <b>&lt;2 years with bilateral</b> AOM; <b>otorrhoea</b>; or <b>severe disease</b> (T ≥39 °C, marked otalgia, ill child); also immunocompromise, craniofacial anomaly, cochlear implant or only-hearing ear.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> A 55-year-old has a persistent unilateral middle-ear effusion. Trap?</button>
+        <div class="ans">In an adult, <b>unilateral persistent serous OM = nasopharyngeal carcinoma until excluded</b> — the tumour blocks the Eustachian-tube orifice. <b>Examine the nasopharynx (flexible endoscopy)</b> and palpate for a neck node; do not just place a grommet.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b> that tells them apart.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Otitis media with effusion (glue ear)</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> middle-ear effusion + conductive hearing loss. <br><span class="dif">✅ Different in:</span> <b>no acute pain/fever; dull retracted drum with bubbles</b>; the chronic painless sequel of AOM.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Acute otitis externa</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> painful discharging ear with hearing loss. <br><span class="dif">✅ Different in:</span> <b>tragal/pinna tenderness, swollen canal, normal drum</b>; AOM has a non-tender tragus and a bulging drum.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Acute mastoiditis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> a complication continuum from AOM. <br><span class="dif">✅ Different in:</span> <b>postauricular swelling/tenderness, protruding pinna, sagging canal wall</b> and failure to resolve — AOM spread to the mastoid air cells.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Bullous myringitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> acute severe otalgia with a red drum. <br><span class="dif">✅ Different in:</span> <b>haemorrhagic bullae on the drum itself</b>, often viral/Mycoplasma; the middle ear may be normal.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Cholesteatoma (chronic OM)</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> discharging ear with hearing loss. <br><span class="dif">✅ Different in:</span> <b>chronic, foul, scanty discharge + attic/marginal retraction with keratin debris</b>; recurrent not acute, bone-eroding.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Referred otalgia / teething</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> child pulling at ear, crying. <br><span class="dif">✅ Different in:</span> <b>normal mobile drum on pneumatic otoscopy</b>; pain is from teeth/pharynx, not the middle ear.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Nasopharyngeal carcinoma (adult)</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> unilateral middle-ear effusion. <br><span class="dif">✅ Different in:</span> <b>adult + persistent unilateral effusion ± neck node/epistaxis</b> → scope the nasopharynx; obstructs the ET orifice.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit to an answer first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 2-year-old has 1 day of fever, irritability and right ear-tugging after a cold. Walk me through diagnosis and management."</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> State the diagnosis and safety question</button>
+          <div class="sbody"><i>"This is <b>acute otitis media</b> following a viral URTI. My first jobs are to confirm it on examination and to decide whether this child needs antibiotics now — and to screen for any complication."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Define AOM + pathophysiology</button>
+          <div class="sbody">AOM = acute suppurative middle-ear inflammation &lt;3 weeks from <b>Eustachian-tube dysfunction</b> after a viral URTI with bacterial superinfection (<b>pneumococcus, NTHi, Moraxella</b>). Children are prone because of the short horizontal tube.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Examination & confirmation</button>
+          <div class="sbody"><b>Pneumatic otoscopy:</b> bulging, erythematous, immobile drum with lost landmarks (AAP triad). Screen for complications: postauricular swelling, facial movement, vertigo, meningism. Adjuncts: <b>Type B tympanogram</b>, conductive loss.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Management decision</button>
+          <div class="sbody"><b>Analgesia for all.</b> &lt;2 y — if <b>bilateral</b>, treat immediately; if unilateral and mildly unwell, a 48–72 h <b>safety-net</b> is acceptable. First-line <b>high-dose amoxicillin</b>; <b>co-amoxiclav</b> if recent antibiotics/failure/conjunctivitis. Safety-net advice + review.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> A viral URTI inflames the Eustachian-tube mucosa, obstructing it; trapped middle-ear air is absorbed, creating negative pressure and a sterile effusion. Nasopharyngeal bacteria reflux up the short horizontal tube and multiply in that effusion, producing pus that bulges the drum. Rising pressure causes severe otalgia and, if it perforates, sudden relief with mucopurulent otorrhoea.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">bulging red immobile drum + fever in a toddler</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Acute otitis media</span><div class="assoc">pneumatic otoscopy · AAP triad · Type B tympanogram</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">sudden pain relief + ear discharge</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Stage 3 — TM perforation</span><div class="assoc">central perforation · usually heals spontaneously</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">most common AOM organism / hardest to clear</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Streptococcus pneumoniae</span><div class="assoc">altered PBP → high-dose amoxicillin · most complications</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">AOM + purulent conjunctivitis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Non-typeable H. influenzae</span><div class="assoc">β-lactamase → co-amoxiclav</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">first-line antibiotic + dose</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">High-dose amoxicillin 80–90 mg/kg/day</span><div class="assoc">co-amoxiclav if recent abx / failure / conjunctivitis</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">postauricular swelling + protruding pinna</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Acute mastoiditis</span><div class="assoc">CT temporal bone · IV abx + myringotomy ± mastoidectomy</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">adult + unilateral persistent effusion</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Nasopharyngeal carcinoma until excluded</span><div class="assoc">scope nasopharynx · neck node · EBV</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">≥3 episodes/6 mo or ≥4/12 mo</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Recurrent AOM → grommets</span><div class="assoc">± adenoidectomy · vaccinate · reduce smoke/daycare</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">haemorrhagic blebs on the drum</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Bullous myringitis</span><div class="assoc">viral / Mycoplasma · very painful</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">cleft palate / Down syndrome child</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">High AOM/OME risk</span><div class="assoc">tensor veli palatini dysfunction · ET dysfunction</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and the advanced follow-ups examiners push on.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Classic toddler AOM — present it</button>
+        <div class="ans"><i>"An 18-month-old has 2 days of fever, irritability and ear-pulling after a cold. Pneumatic otoscopy shows a bulging, red, immobile right drum with lost landmarks — <b>acute otitis media</b>. I'd give <b>analgesia</b>, and as he is unwell with a clear bulging drum, start <b>high-dose amoxicillin</b>, give safety-net advice and review at 48–72 h, escalating to <b>co-amoxiclav</b> if no better."</i></div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> AOM not resolving → complication</button>
+        <div class="ans"><i>"A 4-year-old treated for AOM re-presents at day 10 with fever, a tender boggy postauricular swelling pushing the pinna down-and-out."</i> → <b>acute coalescent mastoiditis</b>. Admit; <span class="lab">CRP/WBC</span>; <b>CT temporal bone</b>; <b>IV antibiotics + myringotomy</b>; <b>cortical mastoidectomy</b> if subperiosteal abscess or failure. Screen for intracranial spread.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> List the complications of AOM (intratemporal vs intracranial).</button>
+        <div class="ans"><b>Intratemporal:</b> acute mastoiditis, facial-nerve palsy, labyrinthitis, petrositis (<b>Gradenigo's triad</b> = otorrhoea + retro-orbital pain + VI palsy), TM perforation, OME. <b>Intracranial:</b> meningitis (commonest), extradural/subdural empyema, brain abscess, <b>sigmoid/lateral sinus thrombosis</b>, otitic hydrocephalus.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How does AOM cause a facial palsy, and how do you manage it?</button>
+        <div class="ans">In ~15% the facial (Fallopian) canal is <b>dehiscent</b> in the middle ear, so suppuration directly inflames/compresses CN VII. Manage with <b>urgent myringotomy + IV antibiotics</b>; AOM-related palsy usually recovers fully. (Contrast chronic OM/cholesteatoma palsy, which needs mastoid surgery.)</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Tuning-fork and tympanometry findings in AOM?</button>
+        <div class="ans">Conductive loss: <b>Rinne negative</b> (bone &gt; air) on the affected side, <b>Weber lateralises to the affected ear</b>. Tympanometry: <b>Type B</b> (flat) with <b>normal canal volume</b> (high volume would suggest a perforation/patent grommet). Audiometry shows an air–bone gap of ~20–40 dB.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why has the bug spectrum shifted, and what does PCV change?</button>
+        <div class="ans">Conjugate vaccines reduced vaccine-serotype pneumococcal AOM and complications, leaving <b>non-typeable H. influenzae</b> relatively more prominent with some <b>serotype replacement</b>. Net effect: fewer episodes, fewer mastoiditis cases, and a stronger case for co-amoxiclav when H. influenzae is likely.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> When and why would you perform myringotomy in AOM?</button>
+        <div class="ans">To drain pus and obtain culture when: severe intractable pain/hyperpyrexia, <b>failed medical therapy</b>, neonate/immunocompromised, or <b>impending/early complication</b> (mastoiditis, facial palsy, suspected intracranial spread). The incision is in the <b>antero-inferior quadrant</b> to avoid the ossicles and round-window niche.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 05 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

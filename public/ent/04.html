@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04 · Secretory otitis media (OME)</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 04</span>
+    <h1 class="title">👂💧 Secretory otitis media (otitis media with effusion)</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Secretory otitis media (otitis media with effusion, "glue ear") is a <b>middle-ear effusion without acute infection</b> — the commonest cause of childhood hearing loss. The themes are: it is painless and conductive; most cases resolve; and an <b>adult with a unilateral effusion needs the nasopharynx examined</b>.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ Definition & spectrum</h3>
+      <p>OME is the presence of fluid in the middle ear <b>behind an intact drum without signs of acute inflammation</b>, persisting (by convention) beyond <b>3 months</b> when "chronic". It is one point on the otitis-media spectrum — distinct from <button class="clue c-blue" onclick="toggle('w1',this)">acute otitis media and chronic suppurative OM</button> — and frequently the residue of an AOM episode.</p>
+      <div class="reveal r-blue" id="w1"><b>Spectrum:</b> <b>AOM</b> = acute infection (pain, fever, bulging drum); <b>OME</b> = effusion <b>without</b> acute infection (painless hearing loss); <b>CSOM</b> = permanent perforation with chronic discharge. They interconvert, and OME is the typical aftermath of AOM.</div>
+
+      <h3>📊 Epidemiology & risk groups</h3>
+      <p>OME is extremely common in early childhood (peak ~2 and ~5 years), and is the <b>leading cause of acquired hearing loss in children</b>. Risk rises with <button class="clue c-orange" onclick="toggle('w2',this)">daycare, smoke exposure, allergy, recent AOM and bottle-feeding</button>, and is near-universal in <button class="clue c-orange" onclick="toggle('w3',this)">cleft palate and Down syndrome</button>.</p>
+      <div class="reveal r-orange" id="w2"><b>Risk factors:</b> passive smoking, daycare attendance, lack of breastfeeding, supine bottle-feeding, allergic rhinitis, adenoid hypertrophy, and recurrent URTIs/AOM. Winter incidence is higher. Most are otherwise-healthy children whose disease resolves spontaneously.</div>
+      <div class="reveal r-orange" id="w3"><b>High-risk children:</b> <b>cleft palate</b> (abnormal tensor veli palatini → persistent OME) and <b>Down syndrome</b> (narrow tube, hypotonia, immune factors) have chronic disease and a lower treatment threshold — though hearing aids are often preferred over grommets given anatomy and complication rates.</div>
+
+      <h3>⚙️ Pathophysiology</h3>
+      <p>The core lesion is <button class="clue c-blue" onclick="toggle('w4',this)">Eustachian-tube dysfunction</button>: poor ventilation → absorption of middle-ear air → negative pressure → a sterile transudate. Persistent inflammation drives <button class="clue c-blue" onclick="toggle('w5',this)">goblet-cell metaplasia and thickening into "glue"</button>, and <button class="clue c-green" onclick="toggle('w6',this)">bacterial biofilm</button> on the mucosa/adenoid sustains it.</p>
+      <div class="reveal r-blue" id="w4"><b>ET dysfunction:</b> the child's short, horizontal tube with an immature tensor veli palatini ventilates poorly; obstruction (adenoids, allergy, inflammation) compounds it. The same mechanism causes AOM, but here without acute infection.</div>
+      <div class="reveal r-blue" id="w5"><b>Serous → mucoid:</b> sustained inflammation causes <b>goblet-cell and glandular metaplasia</b>, thickening the effusion into tenacious glue that dampens ossicular movement and impairs hearing.</div>
+      <div class="reveal r-green" id="w6"><b>Biofilms:</b> matrix-encased bacterial communities on the middle-ear and adenoid mucosa resist antibiotics and host defences, explaining why antibiotics rarely cure OME and part of the rationale for adenoidectomy.</div>
+
+      <h3>🔴 The adult red flag</h3>
+      <p>A <button class="clue c-red" onclick="toggle('w7',this)">persistent unilateral effusion in an adult</button> demands nasopharyngeal examination before any grommet.</p>
+      <div class="reveal r-red" id="w7"><b>Unilateral adult OME = nasopharyngeal carcinoma until proven otherwise.</b> A tumour at the fossa of Rosenmüller obstructs the Eustachian-tube orifice → one-sided effusion. <b>Flexible nasendoscopy</b>, check for a neck node/epistaxis, and biopsy any lesion. Do not just insert a grommet and discharge.</div>
+
+      <h3>👂 Clinical features & examination</h3>
+      <p>Children present with <button class="clue c-green" onclick="toggle('w8',this)">painless hearing loss and its behavioural/speech consequences</button>; otoscopy shows a <button class="clue c-green" onclick="toggle('w9',this)">dull, retracted drum with a fluid level or bubbles</button> and reduced mobility. Confirm objectively with <button class="clue c-green" onclick="toggle('w10',this)">tympanometry (Type B) and audiometry</button>; a <button class="clue c-purple" onclick="toggle('w11',this)">red drum from crying is a trap</button>.</p>
+      <div class="reveal r-green" id="w8"><b>Presentation:</b> inattention, "turning up the TV", mishearing, poor school performance, speech/language delay, clumsiness/balance problems, and recurrent AOM. There is <b>no pain or fever</b> — the absence of acute symptoms defines it.</div>
+      <div class="reveal r-green" id="w9"><b>Otoscopy:</b> a dull, retracted, amber/grey or bluish drum with a visible <b>air–fluid level or bubbles</b>, reduced mobility on pneumatic otoscopy, and sometimes early <b>retraction pockets</b> to look for.</div>
+      <div class="reveal r-green" id="w10"><b>Objective tests:</b> <b>tympanometry Type B</b> (flat, normal canal volume) confirms effusion; <b>Type C</b> = negative pressure without frank effusion. Audiometry shows a conductive loss, typically <span class="lab">~25–30 dB</span>; use age-appropriate testing (visual reinforcement/play) in young children.</div>
+      <div class="reveal r-purple" id="w11"><b>Trap:</b> erythema alone (e.g. a crying child) with a mobile, non-retracted drum is not OME. Diagnose on the effusion (dull, retracted, fluid level, reduced mobility, Type B), not colour.</div>
+
+      <h3>🔄 Natural history</h3>
+      <p>OME is usually self-limiting: roughly <b>half resolve within 3 months</b> and the majority within a year, which is why <b>active observation</b> is first-line rather than immediate intervention.</p>
+
+      <h3>💊 Management</h3>
+      <p>Begin with <button class="clue c-blue" onclick="toggle('w12',this)">active observation for ~3 months</button> with hearing tactics; <button class="clue c-purple" onclick="toggle('w13',this)">antibiotics, steroids and antihistamines are not recommended</button>. Persistent disease with hearing/developmental impact → <button class="clue c-green" onclick="toggle('w14',this)">ventilation tubes (grommets) ± adenoidectomy</button>, with <button class="clue c-blue" onclick="toggle('w15',this)">hearing aids</button> as an alternative (especially in high-risk children) and <b>autoinflation</b> for motivated older children.</p>
+      <div class="reveal r-blue" id="w12"><b>Watchful waiting:</b> two audiograms over ~3 months while most resolve; optimise the listening environment, treat allergy/adenoid symptoms, and counsel the family. Document persistence before intervening.</div>
+      <div class="reveal r-purple" id="w13"><b>What NOT to use:</b> antibiotics, oral/intranasal steroids, antihistamines and decongestants give <b>no durable benefit</b> for OME and are not recommended as treatment. Avoid repeated antibiotic courses for "glue ear".</div>
+      <div class="reveal r-green" id="w14"><b>Surgery:</b> <b>grommets</b> for bilateral OME persisting &gt;3 months with hearing loss/impact; <b>adenoidectomy</b> added for nasal obstruction/recurrence or at re-insertion (removes obstruction and biofilm reservoir). Tubes typically extrude in 6–12 months.</div>
+      <div class="reveal r-blue" id="w15"><b>Hearing aids</b> are a valid non-surgical option, particularly in <b>Down syndrome/cleft palate</b> (narrow canals, higher tube-complication rates) or where surgery is declined/contraindicated.</div>
+
+      <h3>⚠️ Sequelae of chronic negative pressure</h3>
+      <p>Persistent OME and tubal dysfunction can cause <button class="clue c-red" onclick="toggle('w16',this)">retraction pockets, atelectasis and acquired cholesteatoma</button>, plus tympanosclerosis and ossicular erosion — and the conductive loss itself threatens <button class="clue c-blue" onclick="toggle('w17',this)">speech and language development</button>.</p>
+      <div class="reveal r-red" id="w16"><b>Structural sequelae:</b> deep <b>posterosuperior/attic retraction pockets</b> can retain keratin and become an <b>acquired cholesteatoma</b>; tympanic atelectasis, tympanosclerosis and ossicular erosion also occur. This is why deep retractions are followed or treated, not ignored.</div>
+      <div class="reveal r-blue" id="w17"><b>Developmental impact:</b> fluctuating conductive loss during the <b>language-acquisition window</b> delays speech/literacy and causes inattention/behavioural problems sometimes mistaken for primary attention disorders. Restoring hearing protects development.</div>
+
+      <h3>📈 Prognosis & prevention</h3>
+      <p>Most childhood OME resolves spontaneously with normal long-term hearing; grommets reliably restore hearing while in place. Prevention/risk reduction includes smoke avoidance, breastfeeding, upright feeding, treating allergy, and vaccination (reducing AOM that seeds OME).</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> How do you distinguish OME from acute otitis media?</button>
+        <div class="ans"><b>OME</b> = effusion <b>without</b> acute infection: painless hearing loss, dull retracted drum with bubbles, Type B tympanogram. <b>AOM</b> = acute infection: pain, fever, bulging red drum. OME is often the residue of an AOM episode.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> A 50-year-old has a 6-week unilateral effusion. What must you do?</button>
+        <div class="ans"><b>Flexible nasendoscopy of the nasopharynx</b> to exclude <b>nasopharyngeal carcinoma</b> obstructing the ET orifice, plus neck examination; biopsy any lesion. Do not just insert a grommet.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Why are antibiotics not the answer in glue ear?</button>
+        <div class="ans">OME is driven by <b>tubal dysfunction and biofilm-related mucosal metaplasia</b>, not active infection, so antibiotics give only transient benefit and risk resistance. Management is <b>observation then ventilation</b>, not repeated courses.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Type B with normal vs high canal volume?</button>
+        <div class="ans"><b>Type B + normal volume = effusion (OME)</b>; <b>Type B + high volume = perforation or patent grommet</b>; <b>Type C</b> (negative peak) = ET dysfunction/retraction without frank effusion.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> Why treat OME more aggressively in cleft palate or Down syndrome?</button>
+        <div class="ans">They have <b>near-persistent OME</b> and are already at risk of <b>speech/developmental delay</b> during the language window; they warrant earlier intervention, though <b>hearing aids</b> are often preferred over grommets given anatomy and complication rates.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> Danger of an untreated posterosuperior retraction pocket?</button>
+        <div class="ans">It can deepen, retain keratin and become an <b>acquired cholesteatoma</b>, which erodes ossicles and can cause intracranial complications. Persistent deep retractions are monitored or treated, not left alone.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>OME vs acute otitis media</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both have a middle-ear effusion + conductive loss. <br><span class="dif">✅ Different in:</span> OME = <b>painless, dull retracted drum, no fever</b>; AOM = <b>pain, fever, bulging red drum</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Type B vs Type C tympanogram</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are abnormal traces in tubal disease. <br><span class="dif">✅ Different in:</span> <b>Type B (flat)</b> = effusion present; <b>Type C (negative peak)</b> = negative pressure/retraction without frank effusion.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>OME vs early cholesteatoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both can show retraction and hearing loss. <br><span class="dif">✅ Different in:</span> cholesteatoma = <b>keratin debris in a deep attic/posterosuperior pocket ± foul discharge</b>; OME = clear/amber fluid, no keratin.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Conductive vs sensorineural loss in a child</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both cause poor hearing/inattention. <br><span class="dif">✅ Different in:</span> OME conductive loss = <b>Type B tympanogram, air–bone gap, fluctuates/resolves</b>; SNHL = abnormal OAE/ABR, no effusion, permanent.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Childhood bilateral OME vs adult unilateral effusion</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are "fluid in the ear". <br><span class="dif">✅ Different in:</span> child = <b>common, benign, observe</b>; adult unilateral = <b>scope the nasopharynx for carcinoma</b>.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 4-year-old's teacher reports he ignores instructions and the TV is always loud. No ear pain. How do you proceed?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Name it & rule out alternatives</button>
+          <div class="sbody"><i>"Painless hearing loss with inattention in a child is most likely <b>otitis media with effusion</b>. I want to confirm an effusion, quantify the hearing, and exclude permanent SNHL."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Define & give risk factors</button>
+          <div class="sbody">OME = middle-ear effusion <b>without acute infection</b> from ET dysfunction. Ask about cleft palate, Down syndrome, allergy, smoke exposure and recent AOM, and screen for speech/behaviour impact.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Examine & test</button>
+          <div class="sbody"><b>Pneumatic otoscopy</b> (dull retracted drum, fluid level), <b>tympanometry (Type B)</b>, and <b>age-appropriate audiometry</b> showing a ~25–30 dB conductive loss. Examine the nose/adenoids.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Stepwise management</button>
+          <div class="sbody"><b>Active observation 3 months</b> with two audiograms (most resolve); hearing tactics. <b>No</b> antibiotics/steroids/antihistamines. If it persists with significant loss/impact → <b>grommets ± adenoidectomy</b>, or <b>hearing aids</b> (especially Down/cleft). Safety-net for cholesteatoma signs.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> A poorly ventilating Eustachian tube lets middle-ear air be absorbed, creating negative pressure that draws in a sterile transudate. Ongoing inflammation drives goblet-cell metaplasia, thickening the fluid into "glue" that dampens ossicular movement and produces a conductive loss. Sustained negative pressure also retracts the drum, the long-term risk being a keratin-filled pocket that becomes cholesteatoma.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">painless hearing loss + dull retracted drum in a child</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Otitis media with effusion (glue ear)</span><div class="assoc">commonest childhood hearing loss · Type B tympanogram</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">flat tympanogram + normal canal volume</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Type B = middle-ear effusion</span><div class="assoc">high volume = perforation/grommet</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">adult + unilateral effusion</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Nasopharyngeal carcinoma until excluded</span><div class="assoc">scope nasopharynx · neck node · EBV</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">cleft palate / Down syndrome</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Persistent OME — aid early</span><div class="assoc">hearing aids often preferred over grommets</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">first-line management of OME</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Active observation 3 months</span><div class="assoc">most resolve · 2 audiograms</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">persistent bilateral OME + hearing impact</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Grommets ± adenoidectomy</span><div class="assoc">ventilation tubes extrude 6–12 mo</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">deep posterosuperior retraction + keratin</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Evolving acquired cholesteatoma</span><div class="assoc">complication of chronic negative pressure</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">"do NOT use" drugs in OME</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Antibiotics / steroids / antihistamines</span><div class="assoc">no durable benefit</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">balloon device for the ear</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Autoinflation (Otovent)</span><div class="assoc">motivated older children</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">enlarged adenoids + recurrent glue ear</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Add adenoidectomy</span><div class="assoc">removes obstruction/biofilm reservoir</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Classic glue ear — present it</button>
+        <div class="ans"><i>"A 4-year-old has painless hearing difficulty, speech that's a little behind and a dull retracted right drum with bubbles; tympanometry is Type B with a 30 dB conductive loss."</i> → <b>OME</b>: <b>active observation 3 months</b> with repeat audiometry; hearing tactics; if persistent with impact, <b>grommets ± adenoidectomy</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> The adult trap</button>
+        <div class="ans"><i>"A 48-year-old man has 2 months of unilateral aural fullness and a serous effusion; he also reports occasional blood-stained postnasal discharge."</i> → urgent <b>nasendoscopy for nasopharyngeal carcinoma</b>, neck exam, MRI and biopsy. Never insert a grommet and discharge.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What are the indications for grommets in OME?</button>
+        <div class="ans"><b>Bilateral OME persisting &gt;3 months</b> with a hearing level ~25–30 dB or worse and/or significant developmental, speech, behavioural or educational impact; recurrent AOM with effusion; and high-risk ears (with hearing-aid alternative considered). Document persistence with two audiograms first.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Complications of ventilation tubes?</button>
+        <div class="ans"><b>Otorrhoea</b> (commonest), tympanosclerosis, persistent perforation after extrusion, premature extrusion or retention, granulation, and rarely a tube falling into the middle ear. Counsel on water precautions (routine swimming usually allowed) and review for extrusion at 6–12 months.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How does adenoidectomy help, and when is it added?</button>
+        <div class="ans">Adenoid tissue obstructs the tubal orifice and harbours <b>biofilm</b>. Adding adenoidectomy reduces OME recurrence and the need for repeat tubes, and is indicated with <b>nasal obstruction, recurrent disease, or at second grommet insertion</b> (≈ in children &gt;4 years for greatest benefit).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why is OME developmentally important?</button>
+        <div class="ans">Fluctuating conductive loss during the <b>language-acquisition window</b> can delay speech and literacy and cause inattention/behavioural problems often mistaken for primary attention disorders. Restoring hearing (observation→ventilation/aids) protects development — the reason we don't simply ignore "just fluid".</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 04 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

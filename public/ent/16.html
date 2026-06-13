@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>16 · ENT aspects of facial nerve paralysis</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 16</span>
+    <h1 class="title">😐 ENT aspects of facial nerve paralysis</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Facial palsy is approached by first separating <b>upper- from lower-motor-neuron</b> weakness, then localising the lesion along the nerve's long course, and identifying the cause. The two ENT imperatives are <b>protect the eye</b> and <b>never dismiss a slowly progressive palsy</b> — that is a tumour until proven otherwise.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🧬 Anatomy of the facial nerve</h3>
+      <p>CN VII has a <button class="clue c-blue" onclick="toggle('f1',this)">complex course through the temporal bone</button> with several branch points that allow <button class="clue c-green" onclick="toggle('f2',this)">topognostic localisation</button>, and mixed <button class="clue c-blue" onclick="toggle('f3',this)">motor, secretomotor, taste and sensory functions</button>.</p>
+      <div class="reveal r-blue" id="f1"><b>Course:</b> brainstem → cerebellopontine angle → internal auditory meatus (with CN VIII) → <b>labyrinthine segment (narrowest, geniculate ganglion → greater petrosal nerve)</b> → tympanic segment (over the oval window, often <b>dehiscent</b>) → mastoid segment (gives nerve to stapedius, then chorda tympani) → <b>stylomastoid foramen</b> → parotid, dividing into five branches.</div>
+      <div class="reveal r-green" id="f2"><b>Topognostic tests</b> use the branch order to localise: <b>lacrimation (Schirmer)</b> tests above the geniculate; the <b>stapedial reflex</b> tests above the nerve-to-stapedius; <b>taste/submandibular flow</b> tests above the chorda tympani. The most proximal affected function locates the lesion.</div>
+      <div class="reveal r-blue" id="f3"><b>Functions:</b> motor to facial muscles + stapedius; <b>parasympathetic</b> to lacrimal (via greater petrosal) and submandibular/sublingual glands (via chorda); <b>taste</b> to the anterior two-thirds of the tongue (chorda); and sensation to the concha. This is why a palsy can include dry eye, hyperacusis and taste loss.</div>
+
+      <h3>⬆️⬇️ Upper- vs lower-motor-neuron</h3>
+      <p>The first bedside step is to decide <button class="clue c-red" onclick="toggle('f4',this)">UMN vs LMN</button>, because UMN palsy implies a central (often stroke) cause needing different management.</p>
+      <div class="reveal r-red" id="f4"><b>UMN vs LMN:</b> the <b>forehead has bilateral cortical innervation</b>, so an <b>UMN lesion (stroke) spares the forehead</b> (the patient can wrinkle it) and often spares emotional movement, whereas an <b>LMN lesion paralyses the whole half of the face</b> including the forehead. Forehead sparing = think central, urgent stroke pathway.</div>
+
+      <h3>📋 House–Brackmann grading</h3>
+      <p>Severity and recovery are documented with the <button class="clue c-green" onclick="toggle('f5',this)">House–Brackmann scale (I–VI)</button>.</p>
+      <div class="reveal r-green" id="f5"><b>House–Brackmann:</b> <b>I</b> normal, <b>II</b> mild, <b>III</b> moderate (obvious but not disfiguring, complete eye closure with effort), <b>IV</b> moderately severe (incomplete eye closure), <b>V</b> severe (barely perceptible motion), <b>VI</b> total paralysis. Grading guides prognosis and tracks recovery.</div>
+
+      <h3>🩺 Causes</h3>
+      <p>The commonest is <button class="clue c-orange" onclick="toggle('f6',this)">Bell's palsy</button>, then <button class="clue c-blue" onclick="toggle('f7',this)">Ramsay Hunt and otologic causes</button>, with <button class="clue c-red" onclick="toggle('f8',this)">tumours</button> and <button class="clue c-blue" onclick="toggle('f9',this)">systemic/bilateral causes</button> not to be missed.</p>
+      <div class="reveal r-orange" id="f6"><b>Bell's palsy:</b> acute idiopathic LMN palsy (linked to <b>HSV-1 reactivation</b>), a diagnosis of exclusion reaching maximal weakness within ~72 h; ~85% recover. Treat early with <b>oral corticosteroids</b> (± antiviral) and eye care.</div>
+      <div class="reveal r-blue" id="f7"><b>Ramsay Hunt & otologic:</b> <b>Ramsay Hunt</b> (VZV) = palsy + vesicles in the concha/canal ± SNHL/vertigo, worse prognosis, treat with <b>aciclovir + steroid</b>. <b>Otologic</b>: AOM (dehiscent canal → myringotomy + antibiotics) and <b>cholesteatoma/CSOM</b> (bony erosion → mastoid surgery).</div>
+      <div class="reveal r-red" id="f8"><b>Tumour (the trap):</b> a <b>slowly progressive palsy, no recovery by 3 weeks, facial twitching/spasm, or a recurrent palsy</b> suggests a neoplasm — <b>parotid malignancy</b> (examine the gland and neck), facial-nerve schwannoma, or a vestibular schwannoma. Bell's palsy never slowly progresses; if it does, image.</div>
+      <div class="reveal r-blue" id="f9"><b>Systemic/bilateral:</b> <b>Lyme disease</b> (often bilateral, endemic areas), <b>sarcoidosis (Heerfordt syndrome)</b>, Guillain–Barré (bilateral), diabetes, and trauma/iatrogenic injury. <b>Bilateral facial palsy is rarely Bell's</b> — investigate for a systemic cause.</div>
+
+      <h3>🔎 Investigation</h3>
+      <p>Assess with <button class="clue c-blue" onclick="toggle('f10',this)">a full ENT/otologic and parotid examination</button>, then <button class="clue c-green" onclick="toggle('f11',this)">electrodiagnostics and imaging</button> as indicated.</p>
+      <div class="reveal r-blue" id="f10"><b>Examination:</b> confirm LMN, grade (HB), then <b>otoscopy</b> (vesicles, AOM, cholesteatoma), <b>parotid and neck palpation</b> (mass), oral cavity, eye (closure, Bell's phenomenon, corneal sensation), and the other cranial nerves. The exam often reveals the cause.</div>
+      <div class="reveal r-green" id="f11"><b>Tests:</b> <b>audiometry</b>; <b>ENoG/EMG</b> for prognosis in complete palsy (especially trauma); <b>MRI</b> (CPA/IAM, parotid, perineural spread) for progressive/atypical/no-recovery cases; <b>CT temporal bone</b> for trauma/cholesteatoma; bloods (Lyme, glucose, ACE) where relevant.</div>
+
+      <h3>👁️ Management</h3>
+      <p>Two universal priorities: <button class="clue c-red" onclick="toggle('f12',this)">eye protection</button> and <button class="clue c-green" onclick="toggle('f13',this)">cause-specific treatment</button>; chronic palsy is addressed with <button class="clue c-blue" onclick="toggle('f14',this)">facial reanimation</button>.</p>
+      <div class="reveal r-red" id="f12"><b>Eye care first:</b> incomplete eye closure risks <b>exposure keratopathy and corneal ulceration</b>. Use <b>lubricating drops by day, ointment and taping/patching at night</b>, and refer to ophthalmology; a <b>gold/platinum upper-lid weight or tarsorrhaphy</b> for persistent palsy. This is the commonest exam "safety" mark.</div>
+      <div class="reveal r-green" id="f13"><b>Cause-specific:</b> <b>Bell's</b> — oral steroids within 72 h (± antiviral); <b>Ramsay Hunt</b> — steroid + aciclovir; <b>otologic</b> — treat the infection/operate; <b>trauma</b> — steroids for delayed/partial, explore/decompress immediate-complete with &gt;90–95% ENoG degeneration; <b>tumour</b> — surgery ± grafting.</div>
+      <div class="reveal r-blue" id="f14"><b>Reanimation (chronic):</b> for incomplete recovery — <b>nerve repair/interposition grafts, hypoglossal–facial or masseteric–facial transfer, gracilis free-muscle transfer</b>, plus static procedures (brow lift, lid weight, fascial slings) and botulinum toxin for synkinesis. Restores tone, symmetry and eye closure.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Bell's palsy recovers in ~85% (worse if complete or in older/diabetic patients); Ramsay Hunt recovers less well. Incomplete palsies generally recover fully; complete palsies with high ENoG degeneration and tumour-related palsies have poorer outcomes and may need reanimation. Aberrant regeneration causes <b>synkinesis and crocodile tears</b>.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> How do you separate UMN from LMN facial palsy, and why does it matter?</button>
+        <div class="ans"><b>UMN (stroke) spares the forehead</b> (bilateral cortical supply) and may spare emotional movement; <b>LMN paralyses the whole hemiface including the forehead</b>. Forehead sparing diverts the patient to a <b>stroke pathway</b>, not an ENT one.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> What features make a facial palsy "not Bell's"?</button>
+        <div class="ans"><b>Slowly progressive course, no recovery by 3 weeks, facial twitching/spasm, recurrence, bilateral palsy, or other cranial-nerve/ear signs.</b> These mandate imaging (MRI/CT) and a search for tumour or systemic disease.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Outline Bell's palsy management.</button>
+        <div class="ans"><b>Eye protection</b> (lubricants, night taping), <b>oral corticosteroids within 72 h</b> (e.g. prednisolone), consider an antiviral if severe/Ramsay-Hunt-like, reassure (~85% recover), and review for recovery — image if it doesn't recover or progresses.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> How does the lesion site change the associated symptoms?</button>
+        <div class="ans">Above the <b>geniculate</b> → dry eye (greater petrosal); above the <b>nerve-to-stapedius</b> → hyperacusis; above the <b>chorda tympani</b> → loss of taste and reduced salivation. Topognostic testing uses this order to localise.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> A patient with chronic ear discharge develops facial palsy. Approach?</button>
+        <div class="ans">Assume <b>cholesteatoma eroding the facial canal</b>: otomicroscopy, <b>HRCT</b>, IV antibiotics, and <b>urgent mastoid surgery</b> to decompress and eradicate disease. Contrast with AOM palsy (dehiscent canal → myringotomy + antibiotics, usually recovers).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> Why is eye care the first priority?</button>
+        <div class="ans">Failure of eye closure causes <b>exposure keratopathy and corneal ulceration</b>, which can permanently damage vision. <b>Lubrication and night-time taping/patching</b> (and a lid weight/tarsorrhaphy if prolonged) protect the cornea regardless of the cause.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>UMN vs LMN facial palsy</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both cause facial weakness. <br><span class="dif">✅ Different in:</span> UMN (stroke) <b>spares the forehead</b>; LMN <b>paralyses the whole hemiface</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Bell's palsy vs Ramsay Hunt</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = acute LMN palsy. <br><span class="dif">✅ Different in:</span> Ramsay Hunt has <b>vesicles in the concha/canal ± SNHL/vertigo (VZV)</b> and a worse prognosis; treat with aciclovir + steroid.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Bell's palsy vs tumour</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = unilateral LMN palsy. <br><span class="dif">✅ Different in:</span> tumour = <b>slowly progressive, no recovery by 3 weeks, twitching, recurrent, or a parotid mass</b> → image; Bell's is acute and recovers.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>AOM palsy vs cholesteatoma palsy</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = otogenic VII palsy. <br><span class="dif">✅ Different in:</span> AOM = <b>dehiscent canal → myringotomy + antibiotics, recovers</b>; cholesteatoma = <b>bony erosion → urgent mastoid surgery</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Unilateral vs bilateral palsy</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = LMN weakness. <br><span class="dif">✅ Different in:</span> <b>bilateral palsy is rarely Bell's</b> → think <b>Lyme, sarcoidosis (Heerfordt), Guillain–Barré</b>.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 35-year-old wakes with a complete right-sided facial droop including the forehead, and ear pain. Assess and manage."</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Localise UMN vs LMN</button>
+          <div class="sbody"><i>"Forehead involvement makes this a <b>lower-motor-neuron</b> palsy, so this is a peripheral CN VII problem — I must find the cause and protect the eye."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Examine for the cause</button>
+          <div class="sbody">Grade (House–Brackmann); <b>otoscopy for vesicles (Ramsay Hunt), AOM or cholesteatoma</b>; palpate the <b>parotid/neck</b>; check the eye and other cranial nerves. Ear pain + vesicles would change this to Ramsay Hunt.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigate as needed</button>
+          <div class="sbody">If a clear Bell's picture, treat clinically; otherwise audiometry, <b>ENoG/EMG</b> (complete palsy), and <b>MRI/CT</b> for atypical, progressive, otologic or traumatic causes.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Treat</button>
+          <div class="sbody"><b>Eye protection</b> for all; <b>Bell's → oral steroids within 72 h</b> (± antiviral); <b>Ramsay Hunt → aciclovir + steroid</b>; otologic → treat infection/operate; safety-net for non-recovery → image for tumour.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> In Bell's palsy, HSV-1 reactivation inflames the facial nerve, which swells within the rigid bony Fallopian canal — narrowest at the labyrinthine segment — causing compression, ischaemia and conduction block. This produces a complete lower-motor-neuron weakness of the whole hemiface. Early corticosteroids reduce the oedema and improve the odds of full recovery, while eye protection prevents corneal damage during the palsy.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">facial weakness sparing the forehead</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">UMN lesion (stroke)</span><div class="assoc">bilateral forehead cortical supply</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">acute whole-hemiface palsy, otherwise well</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Bell's palsy</span><div class="assoc">HSV-1 · steroids ≤72 h · ~85% recover</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">palsy + concha vesicles + vertigo</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Ramsay Hunt (VZV)</span><div class="assoc">aciclovir + steroid · worse prognosis</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">slowly progressive / non-recovering palsy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Tumour until proven otherwise</span><div class="assoc">parotid malignancy · schwannoma · MRI</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">discharging ear + facial palsy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Cholesteatoma eroding facial canal</span><div class="assoc">HRCT · mastoid surgery</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">bilateral facial palsy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Lyme / sarcoid / Guillain–Barré</span><div class="assoc">rarely Bell's</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">dry eye + palsy (lesion level)</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Above geniculate (greater petrosal)</span><div class="assoc">Schirmer test</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">hyperacusis with palsy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Above nerve-to-stapedius</span><div class="assoc">absent stapedial reflex</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">complete palsy, >90–95% ENoG degeneration</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Consider surgical decompression</span><div class="assoc">esp. trauma</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">universal first treatment</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Eye protection</span><div class="assoc">lubricant + night taping · prevent keratopathy</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Bell's palsy — present it</button>
+        <div class="ans"><i>"A 35-year-old has a sudden complete LMN right facial palsy with forehead involvement, normal ears and no other deficit."</i> → <b>Bell's palsy</b>: <b>eye protection</b>, <b>oral steroids within 72 h</b>, reassure (~85% recover), safety-net; image only if it fails to recover or progresses.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> The sinister slow palsy</button>
+        <div class="ans"><i>"A facial weakness that has worsened over months with facial twitching and a firm parotid lump."</i> → <b>parotid malignancy with perineural invasion</b>: examine the neck, <b>MRI + biopsy/FNAC</b>, and refer for oncologic surgery; a slowly progressive palsy is never Bell's.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Describe the facial-nerve segments and a vulnerable point.</button>
+        <div class="ans">Intracranial → CPA → IAM → <b>labyrinthine (narrowest, geniculate)</b> → tympanic (often dehiscent over the oval window) → mastoid (stapedius, chorda) → stylomastoid foramen → parotid (5 branches). The <b>labyrinthine segment</b> is the tightest, hence vulnerable to oedema in Bell's.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is synkinesis and crocodile tears?</button>
+        <div class="ans">Aberrant regeneration: <b>synkinesis</b> = involuntary co-movement (e.g. eye closes when smiling); <b>crocodile (gustatory) tears</b> = lacrimation while eating, from misdirected secretomotor fibres to the lacrimal gland. Managed with botulinum toxin and rehabilitation.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Outline facial reanimation options.</button>
+        <div class="ans"><b>Dynamic</b>: primary repair/interposition graft, <b>hypoglossal- or masseteric-to-facial transfer</b>, and <b>gracilis free-muscle transfer</b> (with cross-face nerve graft) for a smile. <b>Static</b>: brow lift, fascial slings, <b>upper-lid gold/platinum weight, tarsorrhaphy</b>. Choice depends on chronicity and nerve availability.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> When do you order ENoG, and what threshold matters?</button>
+        <div class="ans">In <b>complete</b> palsy (especially traumatic), within ~2 weeks: <b>&gt;90–95% degeneration</b> versus the normal side predicts poor recovery and supports <b>surgical decompression</b>; lesser degeneration favours conservative care.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 16 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

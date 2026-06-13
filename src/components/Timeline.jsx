@@ -1,12 +1,12 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import {
-  PHASES, GOALS, FRONT_COLORS, FRONT_LABELS, TYPE_ICONS, TYPE_LABELS,
-  loadTimelineEvents, loadGoalsDone, saveGoalsDone, loadEventsDone, saveEventsDone,
+  PHASES, GOALS, FRONT_COLORS, FRONT_LABELS, TYPE_ICONS, TYPE_LABELS, URGENCY_COLORS,
+  loadTimelineEvents, saveTimelineEvents,
+  loadGoalsDone, saveGoalsDone, loadEventsDone, saveEventsDone,
 } from "../lib/timelineData.js";
 import { loadAllWorkstreamTasks } from "../lib/workstreamData.js";
 import { buildGCalLink } from "../lib/calendarExport.js";
 
-// ── Layout constants ───────────────────────────────────────────────────────
 const TL_START   = new Date("2026-06-10T00:00:00Z");
 const TL_END     = new Date("2026-10-12T00:00:00Z");
 const TOTAL_DAYS = Math.round((TL_END - TL_START) / 86400000);
@@ -28,7 +28,6 @@ const MONTHS = [
   { str: "2026-10-01", label: "אוק'" },
 ];
 
-// Week ticks — every 7 days from TL_START
 const WEEK_TICKS = (() => {
   const ticks = [];
   for (let d = 0; d < TOTAL_DAYS; d += 7) {
@@ -44,17 +43,20 @@ function dateToX(dateStr) {
   return Math.min(days * DAY_PX + PADD, TRACK_W - PADD);
 }
 
+function xToDate(x) {
+  const clamped = Math.max(PADD, Math.min(x, TRACK_W - PADD));
+  const days    = Math.round((clamped - PADD) / DAY_PX);
+  return new Date(TL_START.getTime() + days * 86400000).toISOString().slice(0, 10);
+}
+
 function fmtDate(dateStr) {
   if (!dateStr) return "TBD";
-  return new Date(dateStr + "T12:00:00Z").toLocaleDateString("en-US", {
-    weekday: "short", month: "short", day: "numeric",
-  });
+  return new Date(dateStr + "T12:00:00Z").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
 }
 function fmtShort(dateStr) {
   if (!dateStr) return "TBD";
   return dateStr.slice(5).replace("-", "/");
 }
-
 function currentPhase(today) {
   const t = today.toISOString().slice(0, 10);
   return PHASES.find(p => t >= p.start && t <= p.end) || null;
@@ -75,7 +77,208 @@ function workstreamNodes(tasks) {
     }));
 }
 
-// ── Event drawer ─────────────────────────────────────────────────────────
+// ── Add / Edit Event Modal ────────────────────────────────────────────────
+const EMPTY_FORM = {
+  title: "", date: "", type: "task-deadline", front: "step1",
+  note: "", urgency: "Medium",
+  contactName: "", contactEmail: "", emailNotifs: false, reminders: "",
+};
+
+function EventModal({ initial, defaultDate, onSave, onClose }) {
+  const [form, setForm] = useState(() => ({
+    ...EMPTY_FORM,
+    ...(initial || {}),
+    date: initial?.date || defaultDate || "",
+    contactName:  initial?.people?.[0]?.name    || "",
+    contactEmail: initial?.people?.[0]?.contact || "",
+    emailNotifs:  initial?.emailNotifs || false,
+    reminders:    (initial?.reminders || []).join(", "),
+  }));
+  const upd = (k, v) => setForm(f => ({ ...f, [k]: v }));
+  const isEdit = !!initial;
+
+  function save() {
+    if (!form.title.trim() || !form.date) return;
+    const remArr = form.reminders ? form.reminders.split(",").map(r => r.trim()).filter(Boolean) : [];
+    onSave({
+      ...(initial || { id: `ev-user-${Date.now()}`, source: "user" }),
+      title: form.title.trim(), date: form.date, type: form.type, front: form.front,
+      note: form.note, urgency: form.urgency, emailNotifs: form.emailNotifs, reminders: remArr,
+      people: form.contactName.trim()
+        ? [{ name: form.contactName.trim(), role: "", contact: form.contactEmail.trim() }]
+        : (initial?.people || []),
+    });
+  }
+
+  return (
+    <div className="ev-modal-overlay" onClick={onClose}>
+      <div className="ev-modal" onClick={e => e.stopPropagation()}>
+        <div className="ev-modal-hd">
+          <span>{isEdit ? "ערוך אירוע" : "הוסף אירוע חדש"}</span>
+          <button className="ev-close-btn" onClick={onClose}>✕</button>
+        </div>
+        <div className="ev-modal-body">
+          <div className="ev-modal-grid">
+            <label className="ev-modal-lbl">כותרת *</label>
+            <input className="ev-modal-inp" value={form.title} onChange={e => upd("title", e.target.value)} placeholder="שם האירוע" autoFocus />
+            <label className="ev-modal-lbl">תאריך *</label>
+            <input className="ev-modal-inp" type="date" value={form.date} onChange={e => upd("date", e.target.value)} />
+            <label className="ev-modal-lbl">סוג</label>
+            <select className="ev-modal-sel" value={form.type} onChange={e => upd("type", e.target.value)}>
+              {Object.entries(TYPE_LABELS).map(([k, v]) => <option key={k} value={k}>{TYPE_ICONS[k]} {v}</option>)}
+            </select>
+            <label className="ev-modal-lbl">נושא</label>
+            <select className="ev-modal-sel" value={form.front} onChange={e => upd("front", e.target.value)}>
+              {Object.entries(FRONT_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+            </select>
+            <label className="ev-modal-lbl">דחיפות</label>
+            <select className="ev-modal-sel" value={form.urgency} onChange={e => upd("urgency", e.target.value)}>
+              {Object.keys(URGENCY_COLORS).map(u => <option key={u} value={u}>{u}</option>)}
+            </select>
+            <label className="ev-modal-lbl">הערות</label>
+            <textarea className="ev-modal-ta" rows={2} value={form.note} onChange={e => upd("note", e.target.value)} placeholder="הוסף הערות..." />
+          </div>
+
+          <div className="ev-modal-section-title">📞 איש קשר</div>
+          <div className="ev-modal-grid">
+            <label className="ev-modal-lbl">שם</label>
+            <input className="ev-modal-inp" value={form.contactName} onChange={e => upd("contactName", e.target.value)} placeholder="שם מלא" />
+            <label className="ev-modal-lbl">אימייל</label>
+            <input className="ev-modal-inp" type="email" value={form.contactEmail} onChange={e => upd("contactEmail", e.target.value)} placeholder="email@example.com" />
+          </div>
+
+          <div className="ev-modal-section-title">🔔 תזכורות</div>
+          <div className="ev-modal-grid">
+            <label className="ev-modal-lbl">תזכורות</label>
+            <input className="ev-modal-inp" value={form.reminders} onChange={e => upd("reminders", e.target.value)} placeholder="T-7d, T-1d, T-0@09:00" />
+            <label className="ev-modal-lbl">אימייל</label>
+            <label className="ev-modal-check">
+              <input type="checkbox" checked={form.emailNotifs} onChange={e => upd("emailNotifs", e.target.checked)} />
+              <span>שלח התראות לאימייל</span>
+            </label>
+          </div>
+        </div>
+        <div className="ev-modal-btns">
+          <button className="ev-modal-cancel" onClick={onClose}>ביטול</button>
+          <button className="ev-modal-save" onClick={save} disabled={!form.title.trim() || !form.date}>
+            {isEdit ? "שמור שינויים" : "הוסף אירוע"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Bottom event table ────────────────────────────────────────────────────
+function EventTable({ events, eventsDone, onUpdate, onDelete, onToggleDone, onAdd }) {
+  const [sortCol,   setSortCol] = useState("date");
+  const [editModal, setEditModal] = useState(null); // event being edited
+
+  const sorted = useMemo(() => [...events].sort((a, b) => {
+    if (sortCol === "date")    return (a.date || "9999").localeCompare(b.date || "9999");
+    if (sortCol === "front")   return (FRONT_LABELS[a.front] || "").localeCompare(FRONT_LABELS[b.front] || "", "he");
+    if (sortCol === "urgency") {
+      const ord = { Critical: 0, High: 1, Medium: 2, Low: 3 };
+      return (ord[a.urgency] ?? 4) - (ord[b.urgency] ?? 4);
+    }
+    return 0;
+  }), [events, sortCol]);
+
+  const Hd = ({ col, children }) => (
+    <th className={`ev-th ev-th-sort${sortCol === col ? " ev-th-active" : ""}`} onClick={() => setSortCol(col)}>
+      {children}{sortCol === col ? " ↑" : ""}
+    </th>
+  );
+
+  return (
+    <div className="ev-table-wrap">
+      <div className="ev-table-hd">
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <span className="ev-table-title">📋 ניהול אירועים</span>
+          <span className="muted small">{events.length} אירועים</span>
+        </div>
+        <button className="ev-table-add-btn" onClick={onAdd}>+ הוסף אירוע</button>
+      </div>
+      <div className="ev-table-scroll">
+        <table className="ev-table">
+          <thead>
+            <tr>
+              <th className="ev-th ev-th-check">✓</th>
+              <Hd col="date">תאריך</Hd>
+              <th className="ev-th">כותרת</th>
+              <Hd col="front">נושא</Hd>
+              <th className="ev-th">סוג</th>
+              <Hd col="urgency">דחיפות</Hd>
+              <th className="ev-th">איש קשר</th>
+              <th className="ev-th">אימייל</th>
+              <th className="ev-th">תזכורות</th>
+              <th className="ev-th ev-th-actions">פעולות</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map(ev => {
+              const color   = FRONT_COLORS[ev.front] || "#94a3b8";
+              const isDone  = !!eventsDone[ev.id];
+              const urgColor = URGENCY_COLORS[ev.urgency] || null;
+              return (
+                <tr key={ev.id} className={`ev-tr${isDone ? " ev-tr-done" : ""}`}>
+                  <td className="ev-td-check">
+                    <input type="checkbox" checked={isDone} onChange={() => onToggleDone(ev.id)} className="ev-checkbox" />
+                  </td>
+                  <td className="ev-td-date">{fmtShort(ev.date)}</td>
+                  <td className="ev-td-title">{ev.title}</td>
+                  <td>
+                    <span className="ev-td-front" style={{ background: color + "1a", color, borderColor: color + "44" }}>
+                      {FRONT_LABELS[ev.front] || ev.front || "—"}
+                    </span>
+                  </td>
+                  <td className="ev-td-type">{TYPE_ICONS[ev.type]} {TYPE_LABELS[ev.type] || ev.type}</td>
+                  <td>
+                    {urgColor
+                      ? <span className="ev-td-urgency" style={{ color: urgColor }}>{ev.urgency}</span>
+                      : <span className="muted">—</span>}
+                  </td>
+                  <td className="ev-td-contact">
+                    {ev.people?.[0]?.name
+                      ? <div>
+                          <div style={{ fontWeight: 700, fontSize: 12 }}>{ev.people[0].name}</div>
+                          {ev.people[0].contact && <div style={{ fontSize: 10, color: "var(--muted)" }}>{ev.people[0].contact}</div>}
+                        </div>
+                      : <span className="muted">—</span>}
+                  </td>
+                  <td>
+                    {ev.emailNotifs
+                      ? <span className="ev-notif-on">✉ פעיל</span>
+                      : <span className="muted">—</span>}
+                  </td>
+                  <td>
+                    {ev.reminders?.length > 0
+                      ? <span className="ev-rem-count">{ev.reminders.length} תז'</span>
+                      : <span className="muted">—</span>}
+                  </td>
+                  <td className="ev-td-acts">
+                    <button className="ev-act-edit" onClick={() => setEditModal(ev)} title="ערוך">✏</button>
+                    <button className="ev-act-del"  onClick={() => onDelete(ev.id)}  title="מחק">🗑</button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      {editModal && (
+        <EventModal
+          initial={editModal}
+          onSave={ev => { onUpdate(ev.id, ev); setEditModal(null); }}
+          onClose={() => setEditModal(null)}
+        />
+      )}
+    </div>
+  );
+}
+
+// ── Event Drawer ──────────────────────────────────────────────────────────
 function EventDrawer({ event, onClose, done, onToggleDone }) {
   if (!event) return null;
   const color = FRONT_COLORS[event.front] || "#94a3b8";
@@ -130,9 +333,7 @@ function EventDrawer({ event, onClose, done, onToggleDone }) {
             {done ? "✓ הושלם" : "סמן כהושלם"}
           </button>
           {gcal && (
-            <a className="ev-gcal-btn" href={gcal} target="_blank" rel="noopener noreferrer">
-              📅 הוסף ליומן Google
-            </a>
+            <a className="ev-gcal-btn" href={gcal} target="_blank" rel="noopener noreferrer">📅 הוסף ליומן Google</a>
           )}
         </div>
       </div>
@@ -166,15 +367,11 @@ function GoalsPanel({ done, onToggle }) {
 
 // ── Vertical list (mobile) ────────────────────────────────────────────────
 function VerticalList({ events, onSelect }) {
-  const today = new Date().toISOString().slice(0, 10);
+  const today   = new Date().toISOString().slice(0, 10);
   const dated   = events.filter(e => e.date).sort((a, b) => a.date.localeCompare(b.date));
   const undated = events.filter(e => !e.date);
   const grouped = {};
-  dated.forEach(ev => {
-    const m = ev.date.slice(0, 7);
-    if (!grouped[m]) grouped[m] = [];
-    grouped[m].push(ev);
-  });
+  dated.forEach(ev => { const m = ev.date.slice(0, 7); (grouped[m] = grouped[m] || []).push(ev); });
   return (
     <div className="tl-vlist">
       {Object.entries(grouped).map(([month, evs]) => (
@@ -192,9 +389,7 @@ function VerticalList({ events, onSelect }) {
                   <span className="tl-vitem-title">{ev.title}</span>
                   <span className="tl-vitem-meta" style={{ color }}>{fmtDate(ev.date)}</span>
                 </span>
-                <span className="tl-vitem-front" style={{ background: color + "22", color }}>
-                  {FRONT_LABELS[ev.front] || ev.front}
-                </span>
+                <span className="tl-vitem-front" style={{ background: color + "22", color }}>{FRONT_LABELS[ev.front] || ev.front}</span>
               </button>
             );
           })}
@@ -221,78 +416,169 @@ function VerticalList({ events, onSelect }) {
   );
 }
 
-// ── Main Timeline page ────────────────────────────────────────────────────
+// ── Main Timeline ─────────────────────────────────────────────────────────
 export default function Timeline() {
   const scrollRef = useRef(null);
+  const dragRef   = useRef(null);       // mutable drag state (avoids stale closures)
   const today     = useMemo(() => new Date(), []);
   const todayStr  = today.toISOString().slice(0, 10);
   const todayX    = dateToX(todayStr);
   const phase     = currentPhase(today);
 
-  const [tlEvents]       = useState(loadTimelineEvents);
-  const [wsTasksAll]     = useState(loadAllWorkstreamTasks);
-  const [goalsDone, setGoalsDone]     = useState(loadGoalsDone);
-  const [eventsDone, setEventsDone]   = useState(loadEventsDone);
-  const [selectedEvent, setSelectedEvent] = useState(null);
-  const [activeF, setActiveF] = useState(new Set(ALL_FRONTS));
-  const [activeT, setActiveT] = useState(new Set(ALL_TYPES));
-  const [showTypeFilter, setShowTypeFilter] = useState(false);
-  const [sortMode, setSortMode] = useState("date"); // "date" | "topic"
+  const [tlEvents, setTlEventsRaw] = useState(loadTimelineEvents);
+  const [wsTasksAll]               = useState(loadAllWorkstreamTasks);
+  const [goalsDone,   setGoalsDone]   = useState(loadGoalsDone);
+  const [eventsDone,  setEventsDone]  = useState(loadEventsDone);
+  const [selectedEv,  setSelectedEv]  = useState(null);
+  const [activeF,     setActiveF]     = useState(new Set(ALL_FRONTS));
+  const [activeT,     setActiveT]     = useState(new Set(ALL_TYPES));
+  const [showTypes,   setShowTypes]   = useState(false);
+  const [sortMode,    setSortMode]    = useState("date");
+  const [dragState,   setDragState]   = useState(null);  // { evId, currentDate, mouseX, mouseY }
+  const [hoveredId,   setHoveredId]   = useState(null);
+  const [showAdd,     setShowAdd]     = useState(false);
+  const [addDate,     setAddDate]     = useState("");
+
+  // Auto-save wrapper
+  function setTlEvents(updater) {
+    setTlEventsRaw(prev => {
+      const next = typeof updater === "function" ? updater(prev) : updater;
+      saveTimelineEvents(next);
+      return next;
+    });
+  }
 
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft = Math.max(0, todayX - 360);
-    }
+    if (scrollRef.current) scrollRef.current.scrollLeft = Math.max(0, todayX - 360);
   }, [todayX]);
+
+  // Pointer drag — attach once to window
+  useEffect(() => {
+    function onMove(e) {
+      if (!dragRef.current) return;
+      const d = dragRef.current;
+      const scroll = scrollRef.current;
+      if (!scroll) return;
+      const dx = (e.clientX - d.startClientX) + (scroll.scrollLeft - d.startScrollLeft);
+      const newDate = xToDate(d.origX + dx);
+      dragRef.current = { ...d, currentDate: newDate };
+      setDragState({ evId: d.evId, currentDate: newDate, mouseX: e.clientX, mouseY: e.clientY });
+    }
+    function onUp(e) {
+      if (!dragRef.current) return;
+      const d = dragRef.current;
+      dragRef.current = null;
+      setDragState(null);
+      if (d.currentDate && d.currentDate !== d.origDate) {
+        setTlEvents(prev => prev.map(ev => ev.id === d.evId ? { ...ev, date: d.currentDate } : ev));
+      }
+    }
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup",   onUp);
+    return () => { window.removeEventListener("pointermove", onMove); window.removeEventListener("pointerup", onUp); };
+  }, []);
+
+  function handleDotDown(e, ev) {
+    e.stopPropagation(); e.preventDefault();
+    const scroll = scrollRef.current;
+    if (!scroll) return;
+    dragRef.current = {
+      evId: ev.id, origDate: ev.date, origX: dateToX(ev.date),
+      startClientX: e.clientX, startScrollLeft: scroll.scrollLeft, currentDate: ev.date,
+    };
+    setDragState({ evId: ev.id, currentDate: ev.date, mouseX: e.clientX, mouseY: e.clientY });
+  }
 
   const allEvents = useMemo(() => {
     const nodes = workstreamNodes(wsTasksAll);
-    return [...tlEvents, ...nodes].sort((a, b) => {
-      if (!a.date) return 1;
-      if (!b.date) return -1;
-      return a.date.localeCompare(b.date);
-    });
+    return [...tlEvents, ...nodes].sort((a, b) => (!a.date ? 1 : !b.date ? -1 : a.date.localeCompare(b.date)));
   }, [tlEvents, wsTasksAll]);
 
-  const filtered = useMemo(() =>
-    allEvents.filter(ev => activeF.has(ev.front) && activeT.has(ev.type)),
-    [allEvents, activeF, activeT]
-  );
+  const filtered = useMemo(() => allEvents.filter(ev => activeF.has(ev.front) && activeT.has(ev.type)), [allEvents, activeF, activeT]);
+  const dated    = filtered.filter(ev => ev.date);
+  const undated  = filtered.filter(ev => !ev.date);
 
-  const dated   = filtered.filter(ev => ev.date);
-  const undated = filtered.filter(ev => !ev.date);
-
-  // Grouped rows for topic sort mode
   const groupedRows = useMemo(() => {
     if (sortMode !== "topic") return null;
     const groups = {};
-    for (const ev of dated) {
-      const k = ev.front || "other";
-      if (!groups[k]) groups[k] = [];
-      groups[k].push(ev);
-    }
-    return Object.entries(groups).sort(([a], [b]) =>
-      (FRONT_LABELS[a] || a).localeCompare(FRONT_LABELS[b] || b, "he")
-    );
+    for (const ev of dated) { const k = ev.front || "other"; (groups[k] = groups[k] || []).push(ev); }
+    return Object.entries(groups).sort(([a], [b]) => (FRONT_LABELS[a] || a).localeCompare(FRONT_LABELS[b] || b, "he"));
   }, [dated, sortMode]);
 
-  function toggleGoal(id) {
-    const next = { ...goalsDone, [id]: !goalsDone[id] };
-    setGoalsDone(next); saveGoalsDone(next);
-  }
-  function toggleEventDone(id) {
-    const next = { ...eventsDone, [id]: !eventsDone[id] };
-    setEventsDone(next); saveEventsDone(next);
-  }
-  function toggleFront(f) {
-    setActiveF(prev => { const n = new Set(prev); n.has(f) ? n.delete(f) : n.add(f); return n; });
-  }
-  function toggleType(t) {
-    setActiveT(prev => { const n = new Set(prev); n.has(t) ? n.delete(t) : n.add(t); return n; });
-  }
+  function toggleGoal(id)       { const n = { ...goalsDone,  [id]: !goalsDone[id]  }; setGoalsDone(n);  saveGoalsDone(n); }
+  function toggleEventDone(id)  { const n = { ...eventsDone, [id]: !eventsDone[id] }; setEventsDone(n); saveEventsDone(n); }
+  function toggleFront(f)       { setActiveF(p => { const n = new Set(p); n.has(f) ? n.delete(f) : n.add(f); return n; }); }
+  function toggleType(t)        { setActiveT(p => { const n = new Set(p); n.has(t) ? n.delete(t) : n.add(t); return n; }); }
+  function handleDelete(id)     { setTlEvents(prev => prev.filter(ev => ev.id !== id)); }
+  function handleAdd(ev)        { setTlEvents(prev => [...prev, ev]); setShowAdd(false); }
+  function handleUpdate(id, patch) { setTlEvents(prev => prev.map(ev => ev.id === id ? { ...ev, ...patch } : ev)); }
 
   const topicGroupCount = groupedRows ? groupedRows.length : 0;
   const totalHeight = BAND_H + AXIS_H + (dated.length + topicGroupCount + (undated.length ? undated.length + 1 : 0)) * ROW_H;
+
+  // ── Gantt row renderer ─────────────────────────────────────────────────
+  function renderRow(ev, i) {
+    const color       = FRONT_COLORS[ev.front] || "#94a3b8";
+    const isDone      = !!eventsDone[ev.id];
+    const isDragging  = dragState?.evId === ev.id;
+    const displayDate = isDragging ? dragState.currentDate : ev.date;
+    const x           = dateToX(displayDate);
+    const isHovered   = hoveredId === ev.id;
+    const bg          = isDone ? "rgba(22,163,74,0.04)" : i % 2 === 1 ? "var(--surface-2)" : "var(--surface)";
+
+    return (
+      <div key={ev.id}
+        style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", cursor: isDragging ? "grabbing" : "pointer", background: bg, opacity: isDone ? 0.65 : 1, position: "relative", userSelect: isDragging ? "none" : "auto" }}
+        onClick={() => !isDragging && setSelectedEv(ev)}
+        className="tl-ev-row"
+        onMouseEnter={() => setHoveredId(ev.id)}
+        onMouseLeave={() => setHoveredId(null)}>
+
+        {/* Label column */}
+        <div style={{ position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10, background: bg, borderRight: "1.5px solid var(--line)", display: "flex", alignItems: "center", gap: 0 }}>
+          <div style={{ width: 10, alignSelf: "stretch", background: isDone ? "#16a34a" : color, flexShrink: 0 }} />
+          <div style={{ display: "flex", alignItems: "center", gap: 5, flex: 1, padding: "0 4px 0 6px", overflow: "hidden" }}>
+            <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
+            <span style={{ fontSize: 11, fontWeight: 700, color: isDone ? "var(--muted)" : "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", textDecoration: isDone ? "line-through" : "none" }}>{ev.title}</span>
+            <span style={{ fontSize: 9, fontWeight: 800, color: isDragging ? "#ef4444" : color, flexShrink: 0, transition: "color 0.1s" }}>
+              {isDone ? "✓" : fmtShort(displayDate)}
+            </span>
+          </div>
+          {isHovered && !isDragging && (
+            <button
+              style={{ position: "absolute", right: 20, top: "50%", transform: "translateY(-50%)", border: "none", background: "rgba(220,38,38,0.12)", color: "#dc2626", borderRadius: 5, width: 20, height: 20, cursor: "pointer", fontSize: 13, fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 20 }}
+              onClick={e => { e.stopPropagation(); handleDelete(ev.id); }}
+              title="מחק אירוע">✕</button>
+          )}
+        </div>
+
+        {/* Track */}
+        <div style={{ position: "relative", width: TRACK_W, flexShrink: 0, height: ROW_H }}>
+          <div style={{ position: "absolute", top: "50%", left: 0, width: "100%", height: 1, background: i % 2 === 1 ? "rgba(0,0,0,0.07)" : "rgba(0,0,0,0.04)", transform: "translateY(-0.5px)", pointerEvents: "none" }} />
+          {/* Draggable dot */}
+          <div
+            style={{
+              position: "absolute",
+              left: x - DOT_R, top: "50%",
+              transform: `translateY(-50%) scale(${isDragging ? 1.8 : isHovered ? 1.35 : 1})`,
+              width: DOT_R * 2, height: DOT_R * 2, borderRadius: "50%",
+              background: isDone ? "#16a34a" : color,
+              border: `2.5px solid white`,
+              boxShadow: isDragging
+                ? `0 0 0 3px ${color}, 0 6px 18px rgba(0,0,0,0.28)`
+                : `0 0 0 1.5px ${isDone ? "#16a34a" : color}`,
+              cursor: isDragging ? "grabbing" : "grab",
+              zIndex: isDragging ? 30 : 5,
+              transition: isDragging ? "none" : "transform 0.15s, box-shadow 0.15s",
+              display: "flex", alignItems: "center", justifyContent: "center",
+            }}
+            onPointerDown={e => handleDotDown(e, ev)}>
+            {isDone && <span style={{ color: "white", fontSize: 6, fontWeight: 900, lineHeight: 1 }}>✓</span>}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="tl-page">
@@ -309,7 +595,7 @@ export default function Timeline() {
         )}
       </div>
 
-      {/* Filters */}
+      {/* Front filters */}
       <div className="tl-filters">
         <span className="tl-filter-lbl">נושא</span>
         <div className="tl-filter-chips">
@@ -323,20 +609,15 @@ export default function Timeline() {
         </div>
       </div>
       <div className="tl-filters tl-filters-types">
-        <button className="tl-type-toggle" onClick={() => setShowTypeFilter(s => !s)}>
+        <button className="tl-type-toggle" onClick={() => setShowTypes(s => !s)}>
           <span className="tl-filter-lbl">סוג</span>
-          <span className={`tl-type-caret${showTypeFilter ? " open" : ""}`}>›</span>
-          {!showTypeFilter && (
-            <span className="tl-type-summary">
-              {activeT.size === ALL_TYPES.length ? "הכל" : `${activeT.size}/${ALL_TYPES.length}`}
-            </span>
-          )}
+          <span className={`tl-type-caret${showTypes ? " open" : ""}`}>›</span>
+          {!showTypes && <span className="tl-type-summary">{activeT.size === ALL_TYPES.length ? "הכל" : `${activeT.size}/${ALL_TYPES.length}`}</span>}
         </button>
-        {showTypeFilter && (
+        {showTypes && (
           <div className="tl-filter-chips">
             {ALL_TYPES.map(t => (
-              <button key={t} className={`tl-chip${activeT.has(t) ? " tl-chip-on tl-chip-type-on" : ""}`}
-                onClick={() => toggleType(t)}>
+              <button key={t} className={`tl-chip${activeT.has(t) ? " tl-chip-on tl-chip-type-on" : ""}`} onClick={() => toggleType(t)}>
                 {TYPE_ICONS[t]} {TYPE_LABELS[t] || t}
               </button>
             ))}
@@ -344,265 +625,126 @@ export default function Timeline() {
         )}
       </div>
 
-      {/* Jump to today + sort toggle */}
+      {/* Controls: jump | sort | add | count */}
       <div className="tl-jump-row">
-        <button className="tl-jump-btn" onClick={() => {
-          if (scrollRef.current) scrollRef.current.scrollLeft = Math.max(0, todayX - 360);
-        }}>↩ קפוץ להיום</button>
+        <button className="tl-jump-btn" onClick={() => { if (scrollRef.current) scrollRef.current.scrollLeft = Math.max(0, todayX - 360); }}>
+          ↩ קפוץ להיום
+        </button>
         <div className="tl-sort-tabs">
-          <button
-            className={`tl-sort-tab${sortMode === "date" ? " active" : ""}`}
-            onClick={() => setSortMode("date")}
-          >📅 תאריך</button>
-          <button
-            className={`tl-sort-tab${sortMode === "topic" ? " active" : ""}`}
-            onClick={() => setSortMode("topic")}
-          >🏷 נושא</button>
+          <button className={`tl-sort-tab${sortMode === "date"  ? " active" : ""}`} onClick={() => setSortMode("date")}>📅 תאריך</button>
+          <button className={`tl-sort-tab${sortMode === "topic" ? " active" : ""}`} onClick={() => setSortMode("topic")}>🏷 נושא</button>
         </div>
-        <span className="muted small">{todayStr} · {filtered.length} אירועים</span>
+        <button className="tl-add-ev-btn" onClick={() => { setAddDate(""); setShowAdd(true); }}>
+          + הוסף אירוע
+        </button>
+        <span className="muted small">{todayStr} · {filtered.length} אירועים · גרור נקודה לשינוי תאריך</span>
       </div>
 
-      {/* ── Gantt track (desktop) ──────────────────────────────────────── */}
+      {/* Gantt */}
       <div className="tl-rows-wrap" ref={scrollRef}>
         <div style={{ width: TOTAL_W, height: totalHeight, position: "relative" }}>
 
-          {/* Week grid lines — span full height */}
+          {/* Grid lines */}
           {WEEK_TICKS.map((wk, i) => (
-            <div key={i} style={{
-              position: "absolute", left: LABEL_W + wk.x,
-              top: 0, bottom: 0, width: 1,
-              background: "rgba(0,0,0,0.04)", pointerEvents: "none",
-            }} />
+            <div key={i} style={{ position: "absolute", left: LABEL_W + wk.x, top: 0, bottom: 0, width: 1, background: "rgba(0,0,0,0.04)", pointerEvents: "none" }} />
           ))}
-
-          {/* Vertical month grid lines — span full height (stronger) */}
           {MONTHS.map(({ str }) => (
-            <div key={str} style={{
-              position: "absolute", left: LABEL_W + dateToX(str),
-              top: 0, bottom: 0, width: 1,
-              background: "rgba(0,0,0,0.09)", pointerEvents: "none",
-            }} />
+            <div key={str} style={{ position: "absolute", left: LABEL_W + dateToX(str), top: 0, bottom: 0, width: 1, background: "rgba(0,0,0,0.09)", pointerEvents: "none" }} />
           ))}
+          <div style={{ position: "absolute", left: LABEL_W + todayX, top: 0, bottom: 0, width: 2, background: "rgba(239,68,68,0.7)", pointerEvents: "none", zIndex: 8 }} />
 
-          {/* Today vertical line — span full height */}
-          <div style={{
-            position: "absolute", left: LABEL_W + todayX,
-            top: 0, bottom: 0, width: 2,
-            background: "rgba(239,68,68,0.7)",
-            pointerEvents: "none", zIndex: 8,
-          }} />
-
-          {/* Phase bands row */}
+          {/* Phase band */}
           <div style={{ display: "flex", height: BAND_H, borderBottom: "1.5px solid var(--line)" }}>
-            <div style={{
-              position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 20,
-              background: "var(--surface-2)", borderRight: "1.5px solid var(--line)",
-              display: "flex", alignItems: "center", padding: "0 12px",
-            }}>
+            <div style={{ position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 20, background: "var(--surface-2)", borderRight: "1.5px solid var(--line)", display: "flex", alignItems: "center", padding: "0 12px" }}>
               <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1, textTransform: "uppercase", color: "var(--muted)" }}>אירוע</span>
             </div>
             <div style={{ position: "relative", width: TRACK_W, height: BAND_H }}>
               {PHASES.map(ph => {
-                const x1 = dateToX(ph.start);
-                const x2 = dateToX(ph.end) + DAY_PX;
+                const x1 = dateToX(ph.start), x2 = dateToX(ph.end) + DAY_PX;
                 const isNow = phase?.id === ph.id;
                 return (
-                  <div key={ph.id} style={{
-                    position: "absolute", left: x1, width: x2 - x1, top: 0, height: BAND_H,
-                    background: ph.color + (isNow ? "2a" : "16"),
-                    borderLeft: `2px solid ${ph.color}88`,
-                    borderTop: isNow ? `2px solid ${ph.color}` : "none",
-                    overflow: "hidden",
-                  }}>
-                    <span style={{ fontSize: 9, fontWeight: 800, color: ph.color, padding: "3px 5px", display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                      {isNow ? "▶ " : ""}{ph.name}
-                    </span>
-                    <span style={{ fontSize: 8, color: ph.color + "99", padding: "0 5px", display: "block" }}>
-                      {ph.start.slice(5)} → {ph.end.slice(5)}
-                    </span>
+                  <div key={ph.id} style={{ position: "absolute", left: x1, width: x2 - x1, top: 0, height: BAND_H, background: ph.color + (isNow ? "2a" : "16"), borderLeft: `2px solid ${ph.color}88`, borderTop: isNow ? `2px solid ${ph.color}` : "none", overflow: "hidden" }}>
+                    <span style={{ fontSize: 9, fontWeight: 800, color: ph.color, padding: "3px 5px", display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{isNow ? "▶ " : ""}{ph.name}</span>
+                    <span style={{ fontSize: 8, color: ph.color + "99", padding: "0 5px", display: "block" }}>{ph.start.slice(5)} → {ph.end.slice(5)}</span>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          {/* Month axis row */}
+          {/* Axis — click to add at date */}
           <div style={{ display: "flex", height: AXIS_H, borderBottom: "1.5px solid var(--line)", background: "var(--surface)" }}>
-            <div style={{
-              position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 20,
-              background: "var(--surface)", borderRight: "1.5px solid var(--line)",
-              display: "flex", alignItems: "center", padding: "0 12px",
-            }}>
+            <div style={{ position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 20, background: "var(--surface)", borderRight: "1.5px solid var(--line)", display: "flex", alignItems: "center", padding: "0 12px" }}>
               <span style={{ fontSize: 9.5, fontWeight: 700, color: "#94a3b8" }}>{todayStr}</span>
             </div>
-            <div style={{ position: "relative", width: TRACK_W, height: AXIS_H }}>
-              {/* Week ticks */}
+            <div style={{ position: "relative", width: TRACK_W, height: AXIS_H, cursor: "crosshair" }}
+              onClick={e => {
+                const rect   = e.currentTarget.getBoundingClientRect();
+                const scroll = scrollRef.current?.scrollLeft || 0;
+                setAddDate(xToDate(e.clientX - rect.left + scroll));
+                setShowAdd(true);
+              }}
+              title="לחץ כדי להוסיף אירוע בתאריך זה">
               {WEEK_TICKS.map((wk, i) => (
-                <div key={i} style={{ position: "absolute", left: wk.x, top: 0, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                <div key={i} style={{ position: "absolute", left: wk.x, top: 0 }}>
                   <div style={{ width: 1, height: 5, background: "rgba(0,0,0,0.15)", marginTop: 2 }} />
-                  <div style={{ fontSize: 8, color: "#b0b8c8", fontWeight: 600, whiteSpace: "nowrap", marginTop: 1, marginLeft: 2 }}>
-                    {wk.label}
-                  </div>
+                  <div style={{ fontSize: 8, color: "#b0b8c8", fontWeight: 600, whiteSpace: "nowrap", marginTop: 1, marginLeft: 2 }}>{wk.label}</div>
                 </div>
               ))}
-              {/* Month labels — larger, on top */}
               {MONTHS.map(({ str, label }) => (
                 <div key={str} style={{ position: "absolute", left: dateToX(str) + 4, top: 2, fontSize: 12, fontWeight: 800, color: "#64748b", zIndex: 2 }}>{label}</div>
               ))}
-              <div style={{
-                position: "absolute", left: todayX - 14, top: 3,
-                fontSize: 9, fontWeight: 900, color: "#ef4444",
-                background: "#fff", padding: "1px 4px", borderRadius: 4, border: "1.5px solid #ef4444",
-                zIndex: 10, whiteSpace: "nowrap",
-              }}>עכשיו</div>
+              <div style={{ position: "absolute", left: todayX - 14, top: 3, fontSize: 9, fontWeight: 900, color: "#ef4444", background: "#fff", padding: "1px 4px", borderRadius: 4, border: "1.5px solid #ef4444", zIndex: 10, whiteSpace: "nowrap" }}>עכשיו</div>
             </div>
           </div>
 
-          {/* One row per dated event (or grouped by topic) */}
-          {(sortMode === "topic" && groupedRows ? groupedRows.flatMap(([front, evs]) => {
-            const groupColor = FRONT_COLORS[front] || "#94a3b8";
-            const header = (
-              <div key={`hdr-${front}`} style={{
-                display: "flex", height: ROW_H,
-                borderBottom: "1px solid var(--line)",
-                background: groupColor + "14",
-              }}>
-                <div style={{
-                  position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
-                  background: groupColor + "14",
-                  borderRight: "1.5px solid var(--line)",
-                  display: "flex", alignItems: "center", gap: 8, padding: "0 10px",
-                }}>
-                  <div style={{ width: 12, height: 12, borderRadius: 3, background: groupColor, flexShrink: 0 }} />
-                  <span style={{ fontSize: 11.5, fontWeight: 900, color: groupColor, letterSpacing: 0.1, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                    {FRONT_LABELS[front] || front}
-                  </span>
-                  <span style={{ fontSize: 9, fontWeight: 800, color: groupColor + "99", flexShrink: 0 }}>{evs.length}</span>
-                </div>
-                <div style={{ width: TRACK_W }} />
-              </div>
-            );
-            const rows = evs.map((ev, i) => {
-              const color  = FRONT_COLORS[ev.front] || "#94a3b8";
-              const x      = dateToX(ev.date);
-              const odd    = i % 2 === 1;
-              const isDone = !!eventsDone[ev.id];
-              const bg     = isDone ? "rgba(22,163,74,0.04)" : odd ? "var(--surface-2)" : "var(--surface)";
-              return (
-                <div key={ev.id}
-                  style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", cursor: "pointer", background: bg, opacity: isDone ? 0.7 : 1 }}
-                  onClick={() => setSelectedEvent(ev)}
-                  className="tl-ev-row">
-                  <div style={{
-                    position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
-                    background: bg, borderRight: "1.5px solid var(--line)",
-                    display: "flex", alignItems: "center", gap: 0,
-                  }}>
-                    <div style={{ width: 10, alignSelf: "stretch", background: isDone ? "#16a34a" : color, flexShrink: 0 }} />
-                    <div style={{ display: "flex", alignItems: "center", gap: 5, flex: 1, padding: "0 6px", overflow: "hidden" }}>
-                      <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
-                      <span style={{ fontSize: 11, fontWeight: 700, color: isDone ? "var(--muted)" : "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", textDecoration: isDone ? "line-through" : "none" }}>{ev.title}</span>
-                      {isDone
-                        ? <span style={{ fontSize: 9, fontWeight: 900, color: "#16a34a", flexShrink: 0 }}>✓</span>
-                        : <span style={{ fontSize: 9, fontWeight: 800, color, flexShrink: 0 }}>{fmtShort(ev.date)}</span>
-                      }
+          {/* Event rows */}
+          {sortMode === "topic" && groupedRows
+            ? groupedRows.flatMap(([front, evs]) => {
+                const gc = FRONT_COLORS[front] || "#94a3b8";
+                const hdr = (
+                  <div key={`hdr-${front}`} style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", background: gc + "14" }}>
+                    <div style={{ position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10, background: gc + "14", borderRight: "1.5px solid var(--line)", display: "flex", alignItems: "center", gap: 8, padding: "0 10px" }}>
+                      <div style={{ width: 12, height: 12, borderRadius: 3, background: gc, flexShrink: 0 }} />
+                      <span style={{ fontSize: 11.5, fontWeight: 900, color: gc, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{FRONT_LABELS[front] || front}</span>
+                      <span style={{ fontSize: 9, fontWeight: 800, color: gc + "99", flexShrink: 0 }}>{evs.length}</span>
                     </div>
+                    <div style={{ width: TRACK_W }} />
                   </div>
-                  <div style={{ position: "relative", width: TRACK_W, flexShrink: 0, height: ROW_H }}>
-                    <div style={{ position: "absolute", top: "50%", left: 0, width: "100%", height: 1, background: "rgba(0,0,0,0.05)", transform: "translateY(-0.5px)", pointerEvents: "none" }} />
-                    <div style={{ position: "absolute", left: x - DOT_R, top: "50%", transform: "translateY(-50%)", width: DOT_R * 2, height: DOT_R * 2, borderRadius: "50%", background: isDone ? "#16a34a" : color, border: "2.5px solid white", boxShadow: `0 0 0 1.5px ${isDone ? "#16a34a" : color}`, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 5 }}>
-                      {isDone && <span style={{ color: "white", fontSize: 6, fontWeight: 900, lineHeight: 1 }}>✓</span>}
-                    </div>
-                  </div>
-                </div>
-              );
-            });
-            return [header, ...rows];
-          }) : dated).map((node, i) => {
-            if (node.type !== undefined || node.key?.startsWith("hdr-")) return node;
-            const ev     = node;
-            const color  = FRONT_COLORS[ev.front] || "#94a3b8";
-            const x      = dateToX(ev.date);
-            const odd    = i % 2 === 1;
-            const isDone = !!eventsDone[ev.id];
-            const bg     = isDone ? "rgba(22,163,74,0.04)" : odd ? "var(--surface-2)" : "var(--surface)";
+                );
+                return [hdr, ...evs.map((ev, i) => renderRow(ev, i))];
+              })
+            : dated.map((ev, i) => renderRow(ev, i))
+          }
 
-            return (
-              <div key={ev.id}
-                style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", cursor: "pointer", background: bg, opacity: isDone ? 0.7 : 1 }}
-                onClick={() => setSelectedEvent(ev)}
-                className="tl-ev-row">
-
-                {/* Sticky label with colored topic box */}
-                <div style={{
-                  position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
-                  background: bg, borderRight: "1.5px solid var(--line)",
-                  display: "flex", alignItems: "center", gap: 0,
-                }}>
-                  {/* Colored topic strip */}
-                  <div style={{ width: 10, alignSelf: "stretch", background: isDone ? "#16a34a" : color, flexShrink: 0 }} />
-                  <div style={{ display: "flex", alignItems: "center", gap: 5, flex: 1, padding: "0 6px", overflow: "hidden" }}>
-                    <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
-                    <span style={{ fontSize: 11, fontWeight: 700, color: isDone ? "var(--muted)" : "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", lineHeight: 1.3, textDecoration: isDone ? "line-through" : "none" }}>{ev.title}</span>
-                    {isDone
-                      ? <span style={{ fontSize: 9, fontWeight: 900, color: "#16a34a", flexShrink: 0 }}>✓</span>
-                      : <span style={{ fontSize: 9, fontWeight: 800, color, flexShrink: 0 }}>{fmtShort(ev.date)}</span>
-                    }
-                  </div>
-                </div>
-
-                {/* Track */}
-                <div style={{ position: "relative", width: TRACK_W, flexShrink: 0, height: ROW_H }}>
-                  <div style={{ position: "absolute", top: "50%", left: 0, width: "100%", height: 1, background: odd ? "rgba(0,0,0,0.07)" : "rgba(0,0,0,0.05)", transform: "translateY(-0.5px)", pointerEvents: "none" }} />
-                  <div style={{
-                    position: "absolute",
-                    left: x - DOT_R, top: "50%", transform: "translateY(-50%)",
-                    width: DOT_R * 2, height: DOT_R * 2, borderRadius: "50%",
-                    background: isDone ? "#16a34a" : color, border: "2.5px solid white",
-                    boxShadow: `0 0 0 1.5px ${isDone ? "#16a34a" : color}`,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    zIndex: 5,
-                  }}>
-                    {isDone && <span style={{ color: "white", fontSize: 6, fontWeight: 900, lineHeight: 1, marginTop: 0.5 }}>✓</span>}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-
-          {/* Undated events section */}
+          {/* Undated */}
           {undated.length > 0 && (
             <>
               <div style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", background: "var(--surface-3)" }}>
-                <div style={{
-                  position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
-                  background: "var(--surface-3)", borderRight: "1.5px solid var(--line)",
-                  display: "flex", alignItems: "center", padding: "0 12px",
-                }}>
+                <div style={{ position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10, background: "var(--surface-3)", borderRight: "1.5px solid var(--line)", display: "flex", alignItems: "center", padding: "0 12px" }}>
                   <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1, textTransform: "uppercase", color: "var(--muted)" }}>ללא תאריך</span>
                 </div>
                 <div style={{ width: TRACK_W }} />
               </div>
               {undated.map((ev, i) => {
                 const color = FRONT_COLORS[ev.front] || "#94a3b8";
-                const odd   = i % 2 === 0;
-                const bg    = odd ? "var(--surface-2)" : "var(--surface)";
+                const bg    = i % 2 === 0 ? "var(--surface-2)" : "var(--surface)";
                 return (
                   <div key={ev.id}
                     style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", cursor: "pointer", background: bg }}
-                    onClick={() => setSelectedEvent(ev)}
-                    className="tl-ev-row">
-                    <div style={{
-                      position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
-                      background: bg, borderRight: "1.5px solid var(--line)",
-                      display: "flex", alignItems: "center", gap: 0,
-                    }}>
+                    onClick={() => setSelectedEv(ev)} className="tl-ev-row"
+                    onMouseEnter={() => setHoveredId(ev.id)} onMouseLeave={() => setHoveredId(null)}>
+                    <div style={{ position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10, background: bg, borderRight: "1.5px solid var(--line)", display: "flex", alignItems: "center", gap: 0 }}>
                       <div style={{ width: 10, alignSelf: "stretch", background: color + "55", flexShrink: 0 }} />
-                      <div style={{ display: "flex", alignItems: "center", gap: 5, flex: 1, padding: "0 6px", overflow: "hidden" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 5, flex: 1, padding: "0 4px 0 6px", overflow: "hidden" }}>
                         <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
                         <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{ev.title}</span>
                         <span style={{ fontSize: 9, fontWeight: 700, color: "var(--muted)", flexShrink: 0 }}>TBD</span>
                       </div>
+                      {hoveredId === ev.id && (
+                        <button style={{ position: "absolute", right: 20, top: "50%", transform: "translateY(-50%)", border: "none", background: "rgba(220,38,38,0.12)", color: "#dc2626", borderRadius: 5, width: 20, height: 20, cursor: "pointer", fontSize: 13, fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 20 }}
+                          onClick={e => { e.stopPropagation(); handleDelete(ev.id); }}>✕</button>
+                      )}
                     </div>
                     <div style={{ position: "relative", width: TRACK_W, flexShrink: 0, display: "flex", alignItems: "center", paddingLeft: 12 }}>
                       <span style={{ fontSize: 10, fontWeight: 600, color: color + "88" }}>🚧 no date</span>
@@ -615,20 +757,39 @@ export default function Timeline() {
         </div>
       </div>
 
-      {/* Vertical list (mobile) */}
+      {/* Drag tooltip */}
+      {dragState && (
+        <div className="tl-drag-tooltip" style={{ left: dragState.mouseX + 16, top: dragState.mouseY - 36 }}>
+          📅 {fmtDate(dragState.currentDate)}
+        </div>
+      )}
+
       <div className="tl-vlist-wrap">
-        <VerticalList events={filtered} onSelect={setSelectedEvent} />
+        <VerticalList events={filtered} onSelect={setSelectedEv} />
       </div>
 
-      {/* Goals panel */}
       <GoalsPanel done={goalsDone} onToggle={toggleGoal} />
 
-      {selectedEvent && (
+      {/* Bottom management table */}
+      <EventTable
+        events={tlEvents}
+        eventsDone={eventsDone}
+        onUpdate={(id, patch) => handleUpdate(id, patch)}
+        onDelete={handleDelete}
+        onToggleDone={toggleEventDone}
+        onAdd={() => { setAddDate(""); setShowAdd(true); }}
+      />
+
+      {showAdd && (
+        <EventModal defaultDate={addDate} onSave={handleAdd} onClose={() => setShowAdd(false)} />
+      )}
+
+      {selectedEv && (
         <EventDrawer
-          event={selectedEvent}
-          onClose={() => setSelectedEvent(null)}
-          done={!!eventsDone[selectedEvent.id]}
-          onToggleDone={() => toggleEventDone(selectedEvent.id)}
+          event={selectedEv}
+          onClose={() => setSelectedEv(null)}
+          done={!!eventsDone[selectedEv.id]}
+          onToggleDone={() => toggleEventDone(selectedEv.id)}
         />
       )}
     </div>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21 · Tonsillitis complications</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 21</span>
+    <h1 class="title">🦠⚠️ Tonsillitis complications</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Complications of tonsillitis split into <b>suppurative</b> (local abscesses and deep-neck/vascular spread) and <b>non-suppurative immune</b> sequelae of group A streptococcus. The exam priorities are recognising <b>quinsy</b>, the deep-neck-space emergencies (including airway and Lemierre syndrome), and the immune complications.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗺️ Classification</h3>
+      <p>Group complications as <button class="clue c-blue" onclick="toggle('tc1',this)">suppurative (local/spreading infection)</button> versus <button class="clue c-blue" onclick="toggle('tc2',this)">non-suppurative (immune-mediated, GABHS)</button>.</p>
+      <div class="reveal r-blue" id="tc1"><b>Suppurative:</b> <b>peritonsillar abscess (quinsy)</b>, parapharyngeal and retropharyngeal abscess, descending deep-neck infection/mediastinitis, <b>Lemierre syndrome</b>, and airway obstruction. These are infections that need drainage/antibiotics and can be life-threatening.</div>
+      <div class="reveal r-blue" id="tc2"><b>Non-suppurative (post-streptococcal immune):</b> <b>acute rheumatic fever, post-streptococcal glomerulonephritis, scarlet fever</b>, and PANDAS. These follow GABHS by immune mechanisms (molecular mimicry/immune complexes) rather than direct spread.</div>
+
+      <h3>🔴 Peritonsillar abscess (quinsy)</h3>
+      <p>Quinsy is the commonest suppurative complication: a <button class="clue c-green" onclick="toggle('tc3',this)">collection of pus between the tonsil capsule and the superior constrictor</button>, with a classic <button class="clue c-green" onclick="toggle('tc4',this)">unilateral picture</button> treated by <button class="clue c-red" onclick="toggle('tc5',this)">drainage and antibiotics</button>.</p>
+      <div class="reveal r-green" id="tc3"><b>Anatomy:</b> pus collects in the <b>peritonsillar space (between the tonsil capsule and the superior pharyngeal constrictor)</b>, usually superior to the tonsil. Often polymicrobial (streptococci + anaerobes). It is largely a disease of adolescents/young adults.</div>
+      <div class="reveal r-green" id="tc4"><b>Classic features:</b> <b>severe unilateral sore throat, trismus, "hot-potato" muffled voice, drooling, uvular deviation to the opposite side, and a bulging peritonsillar swelling</b> with the tonsil pushed medially; referred otalgia and tender nodes. Trismus distinguishes it from simple tonsillitis.</div>
+      <div class="reveal r-red" id="tc5"><b>Management:</b> <b>needle aspiration or incision-and-drainage</b> (under local anaesthesia), <b>IV antibiotics covering streptococci + anaerobes</b> (e.g. penicillin + metronidazole), analgesia, fluids and a single dose of steroid; admit. Consider interval/"quinsy" tonsillectomy after recurrent episodes.</div>
+
+      <h3>🦠 Deep-neck space & vascular spread</h3>
+      <p>Infection can spread to the <button class="clue c-red" onclick="toggle('tc6',this)">parapharyngeal and retropharyngeal spaces</button>, descend to the <button class="clue c-red" onclick="toggle('tc7',this)">mediastinum</button>, or cause <button class="clue c-red" onclick="toggle('tc8',this)">Lemierre syndrome</button> — all airway/sepsis emergencies.</p>
+      <div class="reveal r-red" id="tc6"><b>Parapharyngeal/retropharyngeal abscess:</b> spread into deep neck spaces causes neck swelling/stiffness, odynophagia and <b>airway compromise</b>; the <b>retropharyngeal abscess</b> is classically in young children (febrile, neck held still, drooling). Diagnose with <b>contrast CT neck</b>; treat with IV antibiotics ± surgical drainage and airway protection.</div>
+      <div class="reveal r-red" id="tc7"><b>Descending mediastinitis:</b> deep-neck pus can track down fascial planes into the mediastinum — a <b>high-mortality emergency</b> needing urgent CT chest/neck, IV antibiotics, surgical drainage and intensive care.</div>
+      <div class="reveal r-red" id="tc8"><b>Lemierre syndrome:</b> <b>Fusobacterium necrophorum</b> oropharyngeal infection causing <b>septic thrombophlebitis of the internal jugular vein with septic emboli (classically to the lungs)</b>. Suspect with persisting fever, neck tenderness and pulmonary symptoms after a sore throat; diagnose with CT/Doppler and treat with prolonged IV antibiotics ± anticoagulation.</div>
+
+      <h3>💉 Non-suppurative (immune) complications</h3>
+      <p>GABHS triggers <button class="clue c-red" onclick="toggle('tc9',this)">rheumatic fever</button>, <button class="clue c-blue" onclick="toggle('tc10',this)">post-streptococcal glomerulonephritis</button>, and <button class="clue c-blue" onclick="toggle('tc11',this)">scarlet fever</button>.</p>
+      <div class="reveal r-red" id="tc9"><b>Acute rheumatic fever:</b> an immune (molecular-mimicry) reaction ~2–4 weeks after GABHS pharyngitis, diagnosed by the <b>Jones criteria</b> (carditis, polyarthritis, chorea, erythema marginatum, subcutaneous nodules + minor criteria). <b>Carditis → rheumatic valve disease</b> is the feared sequel; penicillin treatment/prophylaxis prevents it.</div>
+      <div class="reveal r-blue" id="tc10"><b>Post-streptococcal glomerulonephritis:</b> immune-complex nephritis ~1–2 weeks after GABHS (pharyngitis or skin), with haematuria, hypertension and oedema. It is largely self-limiting; antibiotic treatment of GABHS does not reliably prevent it (unlike rheumatic fever).</div>
+      <div class="reveal r-blue" id="tc11"><b>Scarlet fever:</b> GABHS strains producing erythrogenic <b>exotoxin</b> → a <b>sandpaper rash, strawberry tongue, circumoral pallor and flushed cheeks</b> with the sore throat. Treat with penicillin and notify public health; it is part of the streptococcal disease spectrum.</div>
+
+      <h3>🚩 Assessment & airway</h3>
+      <p>Any complicated tonsillitis needs <button class="clue c-red" onclick="toggle('tc12',this)">airway and sepsis assessment</button> with <button class="clue c-green" onclick="toggle('tc13',this)">targeted imaging</button>.</p>
+      <div class="reveal r-red" id="tc12"><b>Red flags:</b> <b>stridor, drooling, respiratory distress, severe trismus, neck swelling/stiffness, sepsis</b> or rapid deterioration. Prioritise the airway (senior ENT + anaesthetics), resuscitate, and give IV antibiotics/steroids before/with imaging.</div>
+      <div class="reveal r-green" id="tc13"><b>Imaging:</b> <b>contrast CT of the neck (± chest)</b> defines and localises deep-neck abscesses, vascular thrombosis (Lemierre) and mediastinal spread, guiding drainage. Bloods/cultures and (for immune sequelae) ASO titre, urinalysis and ECG/echo as indicated.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Quinsy and most deep-neck infections resolve with prompt drainage and antibiotics; mediastinitis and Lemierre carry significant mortality and need aggressive multidisciplinary care. Rheumatic fever's prognosis hinges on preventing carditis through penicillin treatment and secondary prophylaxis.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> Classify the complications of tonsillitis.</button>
+        <div class="ans"><b>Suppurative:</b> quinsy, parapharyngeal/retropharyngeal abscess, descending mediastinitis, Lemierre syndrome, airway obstruction. <b>Non-suppurative (GABHS immune):</b> rheumatic fever, post-streptococcal glomerulonephritis, scarlet fever, PANDAS.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> How do you recognise and manage quinsy?</button>
+        <div class="ans"><b>Unilateral severe sore throat, trismus, hot-potato voice, uvular deviation, peritonsillar bulge.</b> Manage with <b>needle aspiration or I&D</b>, <b>IV antibiotics (penicillin + metronidazole)</b>, fluids, analgesia ± steroid; admit. Recurrent quinsy is a tonsillectomy indication.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> What is Lemierre syndrome?</button>
+        <div class="ans"><b>Fusobacterium necrophorum</b> oropharyngeal infection → <b>internal jugular vein septic thrombophlebitis with septic emboli (lungs)</b>. Persisting fever, neck tenderness and pulmonary symptoms after a sore throat; CT/Doppler; prolonged IV antibiotics ± anticoagulation.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Which complication is prevented by treating GABHS, and which is not?</button>
+        <div class="ans">Penicillin treatment of GABHS pharyngitis <b>prevents acute rheumatic fever</b> (and reduces suppurative spread), but <b>does not reliably prevent post-streptococcal glomerulonephritis</b>, which is largely self-limiting.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> A young child with fever holds the neck still and won't swallow. Concern?</button>
+        <div class="ans"><b>Retropharyngeal abscess</b> — neck stiffness/extension, drooling, odynophagia ± airway compromise. <b>Contrast CT neck</b>, IV antibiotics, airway protection and <b>surgical drainage</b>; involve senior ENT/anaesthetics early.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> Describe the Jones criteria in one line.</button>
+        <div class="ans"><b>Major:</b> carditis, polyarthritis, chorea, erythema marginatum, subcutaneous nodules; <b>minor:</b> fever, arthralgia, raised inflammatory markers, prolonged PR — with evidence of preceding GABHS. Diagnosis needs 2 major or 1 major + 2 minor.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Quinsy vs severe tonsillitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = very sore throat + fever. <br><span class="dif">✅ Different in:</span> quinsy = <b>unilateral, trismus, uvular deviation, peritonsillar bulge, hot-potato voice</b> → drain.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Quinsy vs parapharyngeal abscess</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = peritonsillar-region infection. <br><span class="dif">✅ Different in:</span> parapharyngeal = <b>neck swelling/stiffness, deeper, CT-defined, drained externally</b>; quinsy is intra-oral.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Retropharyngeal abscess (child) vs epiglottitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = febrile child, drooling, airway risk. <br><span class="dif">✅ Different in:</span> retropharyngeal = <b>neck held still/extended, CT collection</b>; epiglottitis = <b>tripod posture, stridor, cherry-red epiglottis</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Rheumatic fever vs post-strep glomerulonephritis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both follow GABHS by immune mechanisms. <br><span class="dif">✅ Different in:</span> rheumatic fever = <b>carditis/arthritis, ~2–4 wks, prevented by penicillin</b>; PSGN = <b>haematuria/HTN, ~1–2 wks, not reliably prevented</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Lemierre vs simple cervical lymphadenitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = neck signs after a sore throat. <br><span class="dif">✅ Different in:</span> Lemierre = <b>IJV thrombophlebitis + septic pulmonary emboli, persistent sepsis</b> (Fusobacterium); lymphadenitis is localised and benign.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 22-year-old with tonsillitis now has a unilateral severe sore throat, trismus and a muffled voice. Manage."</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Name it & assess airway</button>
+          <div class="sbody"><i>"This is a <b>quinsy</b> (peritonsillar abscess). First I assess the airway and hydration, then drain it and give antibiotics."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Confirm the signs</button>
+          <div class="sbody">Unilateral peritonsillar bulge, <b>uvular deviation to the opposite side</b>, trismus, hot-potato voice, tender ipsilateral nodes; exclude deeper spread (neck swelling/stiffness) suggesting a parapharyngeal abscess.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigate as needed</button>
+          <div class="sbody">Bloods/cultures; <b>contrast CT neck</b> only if deep-neck spread/airway concern or diagnostic doubt. Most quinsies are a clinical diagnosis drained at the bedside.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Drain + treat</button>
+          <div class="sbody"><b>Needle aspiration or incision-and-drainage</b> under local anaesthesia; <b>IV penicillin + metronidazole</b>, fluids, analgesia, single-dose steroid; admit. Discuss interval tonsillectomy if recurrent.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> Acute tonsillitis spreads beyond the tonsil capsule into the loose peritonsillar space, where pus collects between the capsule and the superior constrictor. The expanding abscess and muscle irritation cause trismus, displaces the uvula, and muffles the voice. Drainage decompresses the collection, and antibiotics covering streptococci and anaerobes clear the infection.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">unilateral sore throat + trismus + uvular deviation</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Quinsy (peritonsillar abscess)</span><div class="assoc">aspirate/I&D + penicillin + metronidazole</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">sore throat → IJV thrombosis + lung emboli</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Lemierre syndrome</span><div class="assoc">Fusobacterium necrophorum</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">child, neck held still, drooling</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Retropharyngeal abscess</span><div class="assoc">CT neck · drain · airway</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">carditis/arthritis 2–4 wks post sore throat</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Acute rheumatic fever (Jones)</span><div class="assoc">prevented by penicillin</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">haematuria + HTN 1–2 wks post GABHS</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Post-streptococcal glomerulonephritis</span><div class="assoc">not reliably prevented · self-limiting</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">sandpaper rash + strawberry tongue</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Scarlet fever</span><div class="assoc">erythrogenic exotoxin · notify</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">deep-neck pus tracking to chest</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Descending mediastinitis</span><div class="assoc">high mortality · CT + drainage + ICU</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">quinsy space</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Peritonsillar space</span><div class="assoc">capsule ↔ superior constrictor</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">imaging for deep-neck abscess</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Contrast CT neck (± chest)</span><div class="assoc">localise + plan drainage</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">recurrent quinsy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Tonsillectomy indication</span><div class="assoc">≥2 episodes</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Quinsy</button>
+        <div class="ans"><i>"Unilateral severe sore throat, trismus, hot-potato voice, uvula pushed across."</i> → <b>peritonsillar abscess</b>: airway/hydration check, <b>aspiration/I&D</b>, IV <b>penicillin + metronidazole</b>, steroid, admit; interval tonsillectomy if recurrent.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Lemierre syndrome</button>
+        <div class="ans"><i>"A young adult, days after a sore throat, has swinging fever, a tender neck and pleuritic chest pain with lung nodules."</i> → <b>Lemierre</b>: blood cultures (Fusobacterium), <b>CT neck/chest + IJV Doppler</b>, <b>prolonged IV antibiotics</b> (e.g. β-lactam + metronidazole) ± anticoagulation.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How do deep-neck infections threaten the airway and chest?</button>
+        <div class="ans">Abscesses in the <b>parapharyngeal/retropharyngeal spaces</b> displace and compress the airway, and pus can <b>track down the fascial planes into the mediastinum</b> (mediastinitis). Hence early airway assessment, CT, antibiotics and surgical drainage with ICU support.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Needle aspiration vs incision-and-drainage for quinsy?</button>
+        <div class="ans">Both are effective; <b>needle aspiration</b> is simpler and confirms pus, while <b>I&D</b> gives more complete drainage and is preferred for large/recurrent collections. Both are combined with antibiotics; quinsy tonsillectomy ("hot" or interval) is reserved for recurrence/complications.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why does rheumatic fever damage the heart?</button>
+        <div class="ans"><b>Molecular mimicry</b>: antibodies against streptococcal M-protein cross-react with cardiac (and other) tissue, causing pancarditis and, chronically, <b>valve disease (especially mitral stenosis)</b>. Secondary penicillin prophylaxis prevents recurrent attacks and progressive valve damage.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is PANDAS?</button>
+        <div class="ans"><b>Paediatric Autoimmune Neuropsychiatric Disorders Associated with Streptococci</b> — abrupt-onset OCD/tics temporally related to GABHS infection, thought to be immune-mediated. It is a recognised (debated) non-suppurative association and occasionally cited as a tonsillectomy consideration.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 21 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

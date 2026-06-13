@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>25 · Laryngeal injuries & innervation disorders</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 25</span>
+    <h1 class="title">🗣️ Laryngeal injuries & innervation disorders</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Two themes: <b>laryngeal trauma</b> (where the airway is the immediate threat) and <b>vocal-cord paralysis</b> (where the innervation anatomy explains the cause and the voice/airway pattern). The recurrent and superior laryngeal nerves are the spine of this topic.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🧬 Laryngeal innervation</h3>
+      <p>The larynx is supplied by two branches of the vagus: the <button class="clue c-blue" onclick="toggle('li1',this)">superior laryngeal nerve</button> and the <button class="clue c-blue" onclick="toggle('li2',this)">recurrent laryngeal nerve</button>, the <button class="clue c-orange" onclick="toggle('li3',this)">left recurrent being especially vulnerable</button>.</p>
+      <div class="reveal r-blue" id="li1"><b>Superior laryngeal nerve (SLN):</b> its <b>external branch</b> supplies the <b>cricothyroid</b> (tenses the cord → controls pitch); its <b>internal branch</b> is <b>sensory above the cords</b> (protective cough). SLN palsy causes voice fatigue and loss of high notes, and reduced supraglottic sensation → aspiration risk.</div>
+      <div class="reveal r-blue" id="li2"><b>Recurrent laryngeal nerve (RLN):</b> supplies <b>all intrinsic muscles except cricothyroid</b> and is <b>sensory below the cords</b>. The key abductor it powers is the <b>posterior cricoarytenoid</b> — the only cord abductor — so RLN palsy threatens both voice and airway.</div>
+      <div class="reveal r-orange" id="li3"><b>Left RLN course:</b> the left RLN loops under the <b>aortic arch</b>, giving it a long intrathoracic course, so it is more often affected by chest pathology (lung/mediastinal tumour, aortic aneurysm) than the right (which loops under the subclavian artery).</div>
+
+      <h3>🤕 Laryngeal trauma</h3>
+      <p>Blunt or penetrating laryngeal injury is an <button class="clue c-red" onclick="toggle('li4',this)">airway emergency</button>, recognised by <button class="clue c-green" onclick="toggle('li5',this)">voice change, surgical emphysema and a loss of laryngeal contour</button>, including the catastrophic <button class="clue c-red" onclick="toggle('li6',this)">laryngotracheal separation</button>; <button class="clue c-orange" onclick="toggle('li7',this)">intubation injuries</button> are an important iatrogenic group.</p>
+      <div class="reveal r-red" id="li4"><b>Airway first:</b> blunt trauma (steering wheel, "clothesline") can fracture the thyroid/cricoid cartilage and cause mucosal tears, haematoma and oedema → rapidly progressive obstruction. Manage the airway early; if the larynx is disrupted, a careful <b>awake tracheostomy is often safer than intubation</b> (which can create a false passage or worsen disruption).</div>
+      <div class="reveal r-green" id="li5"><b>Signs:</b> <b>hoarseness/voice change, surgical emphysema, haemoptysis, stridor, dysphagia/odynophagia, anterior neck pain, and loss of the normal thyroid/laryngeal prominence</b>. Assess with <b>flexible laryngoscopy</b> and <b>CT</b> (cartilage fractures) once the airway is safe.</div>
+      <div class="reveal r-red" id="li6"><b>Laryngotracheal separation:</b> cricotracheal disruption is rapidly fatal; clues are severe surgical emphysema and respiratory distress. Avoid blind intubation; secure the airway distal to the injury (tracheostomy) and repair urgently.</div>
+      <div class="reveal r-orange" id="li7"><b>Intubation injuries:</b> prolonged or traumatic intubation causes <b>posterior glottic/subglottic stenosis, vocal-process granuloma, arytenoid dislocation, and vocal-cord palsy</b>. Suspect with persistent hoarseness/stridor after extubation; assess by laryngoscopy.</div>
+
+      <h3>🎙️ Vocal-cord paralysis</h3>
+      <p>Paralysis is classified by <button class="clue c-blue" onclick="toggle('li8',this)">unilateral vs bilateral</button>; the commonest cause is <button class="clue c-orange" onclick="toggle('li9',this)">iatrogenic (thyroid surgery)</button>, but a unilateral palsy <button class="clue c-red" onclick="toggle('li10',this)">may signal malignancy along the nerve's course</button>.</p>
+      <div class="reveal r-blue" id="li8"><b>Unilateral vs bilateral:</b> <b>unilateral</b> palsy → a <b>breathy, weak voice, poor cough and aspiration</b> (the cord lies paramedian and the other compensates) — voice problem, not airway. <b>Bilateral</b> palsy → both cords paramedian, a reasonable voice but <b>airway obstruction/stridor</b> — an airway problem that may need tracheostomy.</div>
+      <div class="reveal r-orange" id="li9"><b>Causes:</b> <b>iatrogenic (thyroid/parathyroid/neck/chest surgery)</b> is the commonest; also <b>malignancy</b> (thyroid, lung, oesophageal along the RLN), idiopathic/viral, neurological, trauma, and aortic aneurysm. Always seek a cause.</div>
+      <div class="reveal r-red" id="li10"><b>Don't-miss:</b> an unexplained unilateral cord palsy (especially left) demands imaging of the <b>entire nerve course from skull base to mediastinum</b> (CT neck + chest) to exclude a <b>lung, thyroid or oesophageal tumour</b> or other compressive lesion.</div>
+
+      <h3>🔎 Investigation</h3>
+      <p>Assess with <button class="clue c-green" onclick="toggle('li11',this)">flexible laryngoscopy, targeted imaging and laryngeal EMG</button>, and distinguish palsy from <button class="clue c-purple" onclick="toggle('li12',this)">cricoarytenoid joint fixation</button>.</p>
+      <div class="reveal r-green" id="li11"><b>Work-up:</b> <b>flexible laryngoscopy</b> (cord position/mobility), <b>CT skull base to mediastinum</b> for an idiopathic unilateral palsy (trace the nerve), and <b>laryngeal EMG</b> to confirm denervation and assess prognosis/recovery potential.</div>
+      <div class="reveal r-purple" id="li12"><b>Trap — fixation vs palsy:</b> a fixed, immobile cord can be due to <b>cricoarytenoid joint fixation</b> (after intubation, trauma, arthritis or tumour) rather than neural palsy. <b>Palpation of the arytenoid under anaesthesia and EMG</b> distinguish them — important because management differs.</div>
+
+      <h3>💊 Management</h3>
+      <p>Treatment depends on uni- vs bilateral: <button class="clue c-blue" onclick="toggle('li13',this)">voice therapy and medialisation for unilateral</button>; <button class="clue c-red" onclick="toggle('li14',this)">airway procedures for bilateral</button>; and repair/stabilisation for trauma.</p>
+      <div class="reveal r-blue" id="li13"><b>Unilateral:</b> if recovery is possible, <b>speech therapy ± temporary injection medialisation</b>; for permanent palsy, <b>injection augmentation</b> or <b>medialisation (type I) thyroplasty</b> ± arytenoid adduction to improve voice and protect the airway from aspiration.</div>
+      <div class="reveal r-red" id="li14"><b>Bilateral:</b> the priority is the <b>airway</b> — a <b>tracheostomy</b> acutely, then airway-widening procedures (<b>cordotomy, arytenoidectomy, or cord lateralisation</b>) trading voice for a safe airway; reinnervation/pacing in selected cases.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Many traumatic/viral palsies recover over months (hence early temporary measures); permanent palsies are well rehabilitated by phonosurgery. Laryngeal-trauma outcomes depend on early airway control and accurate cartilage repair; the overriding rule is "airway first, voice second".</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> What does each laryngeal nerve supply?</button>
+        <div class="ans"><b>SLN external branch → cricothyroid</b> (pitch); <b>SLN internal branch → sensation above the cords</b>. <b>RLN → all other intrinsic muscles</b> (including the posterior cricoarytenoid, the only abductor) and <b>sensation below the cords</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> Why is the left recurrent laryngeal nerve more vulnerable?</button>
+        <div class="ans">It loops under the <b>aortic arch</b>, giving a long intrathoracic course, so it is affected by <b>lung/mediastinal tumours and aortic aneurysm</b> — hence a left cord palsy mandates chest imaging.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Unilateral vs bilateral cord palsy — what's the dominant problem in each?</button>
+        <div class="ans"><b>Unilateral</b> = a <b>voice/aspiration</b> problem (breathy voice, weak cough; airway usually adequate). <b>Bilateral</b> = an <b>airway</b> problem (cords paramedian → stridor/obstruction, reasonable voice) — may need a tracheostomy.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> How do you manage suspected laryngeal trauma?</button>
+        <div class="ans"><b>Airway first</b> — if the larynx is disrupted, prefer an <b>awake tracheostomy</b> over intubation. Then assess with <b>flexible laryngoscopy and CT</b>; manage haematoma/oedema, repair mucosal tears and cartilage fractures, and protect the voice.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> How do you tell vocal-cord palsy from cricoarytenoid fixation?</button>
+        <div class="ans">An immobile cord may be neural (palsy) or mechanical (<b>cricoarytenoid joint fixation</b> from intubation/arthritis/trauma/tumour). <b>Palpation of the arytenoid under anaesthesia and laryngeal EMG</b> distinguish them — treatment differs.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> Outline the work-up of an idiopathic unilateral cord palsy.</button>
+        <div class="ans"><b>Flexible laryngoscopy</b> confirms it; <b>CT from skull base to mediastinum</b> traces the whole vagus/RLN course (exclude lung/thyroid/oesophageal tumour, aneurysm); consider <b>EMG</b> for prognosis. Only label "idiopathic" after imaging is clear.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Unilateral vs bilateral cord palsy</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = impaired cord movement. <br><span class="dif">✅ Different in:</span> unilateral = <b>breathy voice, aspiration, OK airway</b>; bilateral = <b>stridor/airway obstruction, reasonable voice → tracheostomy</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>RLN vs SLN palsy</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both alter the voice. <br><span class="dif">✅ Different in:</span> RLN = <b>cord immobile (most muscles)</b>; SLN (external) = <b>loss of pitch/cricothyroid, bowed cord, voice fatigue</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Cord palsy vs cricoarytenoid fixation</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = immobile cord. <br><span class="dif">✅ Different in:</span> palsy = <b>denervation on EMG, arytenoid passively mobile</b>; fixation = <b>arytenoid won't move on palpation, normal EMG</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Laryngeal fracture vs simple soft-tissue neck injury</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both follow neck trauma. <br><span class="dif">✅ Different in:</span> laryngeal fracture = <b>voice change, surgical emphysema, lost laryngeal contour, airway risk → CT/scope</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Post-intubation hoarseness — granuloma vs stenosis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both follow intubation. <br><span class="dif">✅ Different in:</span> granuloma = <b>posterior vocal-process lesion, hoarse</b>; subglottic/posterior glottic stenosis = <b>stridor/airway narrowing</b>.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A patient has a breathy voice and cough after thyroidectomy; another presents with stridor after a road traffic accident with neck bruising. Discuss."</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Split the two problems</button>
+          <div class="sbody"><i>"The post-thyroidectomy breathy voice is a <b>unilateral RLN palsy (voice/aspiration problem)</b>; the trauma patient with stridor is a <b>laryngeal injury (airway emergency)</b> — airway first."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Apply the anatomy</button>
+          <div class="sbody">RLN supplies all intrinsics except cricothyroid; thyroid surgery is the commonest iatrogenic cause. In trauma, cartilage fracture/oedema threatens the airway.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigate appropriately</button>
+          <div class="sbody"><b>Palsy:</b> flexible laryngoscopy (paramedian cord), and if not clearly surgical, CT neck-to-chest + EMG. <b>Trauma:</b> secure the airway, then flexible scope + CT for cartilage injury.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Manage each</button>
+          <div class="sbody"><b>Unilateral palsy:</b> speech therapy ± injection/medialisation thyroplasty for voice and aspiration. <b>Trauma:</b> awake tracheostomy if disrupted, then repair mucosa/cartilage; watch for late stenosis.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> The recurrent laryngeal nerve drives the posterior cricoarytenoid (the sole abductor) and the adductors; injuring it leaves the cord paramedian, so a single palsy gives a breathy voice while bilateral palsy obstructs the airway. In trauma, cartilage fracture, mucosal tear and submucosal haematoma rapidly narrow the laryngeal lumen. Securing the airway distal to the disruption and accurately repairing the framework restores both ventilation and voice.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">only cord abductor</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Posterior cricoarytenoid</span><div class="assoc">RLN-supplied</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">pitch/tension muscle + its nerve</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Cricothyroid — SLN external branch</span><div class="assoc">spared in RLN palsy</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">breathy voice + weak cough post-thyroidectomy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Unilateral RLN palsy</span><div class="assoc">commonest = iatrogenic</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">stridor + reasonable voice after thyroid/intubation</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Bilateral cord palsy</span><div class="assoc">airway → tracheostomy</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">left cord palsy, no neck cause</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Image chest (aortic arch course)</span><div class="assoc">lung/mediastinal tumour, aneurysm</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">neck trauma + surgical emphysema + voice change</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Laryngeal fracture — airway first</span><div class="assoc">awake tracheostomy · CT</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">disrupted larynx — secure airway how?</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Awake tracheostomy (not blind intubation)</span><div class="assoc">avoid false passage</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">immobile cord, normal EMG, arytenoid won't move</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Cricoarytenoid joint fixation</span><div class="assoc">not a palsy</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">voice surgery for permanent unilateral palsy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Medialisation (type I) thyroplasty</span><div class="assoc">± injection · arytenoid adduction</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">posterior vocal-process lesion post-intubation</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Vocal-process granuloma</span><div class="assoc">reflux contributes</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Post-thyroidectomy hoarseness</button>
+        <div class="ans"><i>"Breathy voice, weak cough and mild aspiration after thyroid surgery; laryngoscopy shows a paramedian immobile right cord."</i> → <b>unilateral RLN palsy</b>: speech therapy, swallow safety; if persistent, <b>injection or medialisation thyroplasty</b>. Many recover over months.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Blunt laryngeal trauma</button>
+        <div class="ans"><i>"A cyclist hit a wire; hoarse voice, neck crepitus and worsening stridor."</i> → <b>laryngeal fracture</b>: secure the airway (awake tracheostomy if disrupted), flexible scope + CT, repair mucosa/cartilage; monitor for late stenosis.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What cord positions do you describe and what do they mean?</button>
+        <div class="ans">Median, <b>paramedian</b> (typical of RLN palsy — good voice/airway compromise pattern depending on uni/bilateral), intermediate ("cadaveric", combined RLN+SLN), and abducted. The position reflects which nerves are affected and predicts voice vs airway impact.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why might a unilateral palsy improve over time?</button>
+        <div class="ans">If the nerve is bruised/neuropraxic rather than divided, axonal recovery occurs over months, and the contralateral cord may compensate by crossing the midline. Hence <b>temporary measures (injection) and speech therapy</b> precede permanent surgery, guided by EMG.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Outline airway options in bilateral cord palsy.</button>
+        <div class="ans"><b>Tracheostomy</b> for acute airway compromise, then airway-widening surgery — <b>posterior cordotomy, arytenoidectomy, or cord lateralisation</b> (trading some voice quality for a patent airway); reinnervation or laryngeal pacing in selected cases.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is the long-term complication to watch for after laryngeal trauma/intubation?</button>
+        <div class="ans"><b>Laryngotracheal stenosis</b> (subglottic/glottic) from scarring, presenting with progressive stridor/exertional dyspnoea and voice change. It is assessed by laryngoscopy/CT and managed with endoscopic dilatation/laser or open laryngotracheal reconstruction.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 25 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

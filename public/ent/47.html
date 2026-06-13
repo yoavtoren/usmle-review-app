@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>47 · Differential diagnosis of a neck mass</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 47</span>
+    <h1 class="title">🔍 Differential diagnosis of a neck mass</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">A neck mass is approached by <b>age, site (midline vs lateral), and duration</b>. The governing rule: in an <b>adult, a persistent neck mass is metastatic cancer until proven otherwise</b>, worked up with <b>ultrasound + FNAC and panendoscopy</b> — never an open biopsy first.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ The framework</h3>
+      <p>Triage by <button class="clue c-orange" onclick="toggle('nm1',this)">age</button>, <button class="clue c-blue" onclick="toggle('nm2',this)">site (midline vs lateral)</button>, and apply the <button class="clue c-red" onclick="toggle('nm3',this)">"adult mass = cancer" rule</button>.</p>
+      <div class="reveal r-orange" id="nm1"><b>Age:</b> in <b>children/young adults</b>, most masses are <b>congenital or inflammatory</b>; in <b>adults &gt;40</b>, a persistent mass is <b>neoplastic (metastatic SCC, lymphoma, thyroid/salivary) until excluded</b>. Age reshapes the probabilities dramatically.</div>
+      <div class="reveal r-blue" id="nm2"><b>Site:</b> <b>midline</b> masses — thyroglossal cyst, dermoid, thyroid, Delphian node; <b>lateral</b> masses — lymph nodes (commonest), branchial cyst, salivary gland (parotid/submandibular), carotid-body tumour, nerve-sheath tumour. Site narrows the differential quickly.</div>
+      <div class="reveal r-red" id="nm3"><b>The rule:</b> a <b>neck mass persisting &gt;3 weeks in an adult is metastatic head-and-neck cancer until proven otherwise</b> — examine the upper aerodigestive tract and arrange US-FNAC; don't reassure or excise blindly.</div>
+
+      <h3>🧒 Congenital masses</h3>
+      <p>Key congenital lesions are the <button class="clue c-green" onclick="toggle('nm4',this)">thyroglossal duct cyst (midline)</button>, the <button class="clue c-green" onclick="toggle('nm5',this)">branchial cyst (lateral)</button>, and others (dermoid, cystic hygroma, laryngocele).</p>
+      <div class="reveal r-green" id="nm4"><b>Thyroglossal duct cyst:</b> a <b>midline</b> cyst that <b>moves up on tongue protrusion and swallowing</b> (attached to the hyoid/foramen caecum tract). Treated by <b>Sistrunk's operation</b> (excise the cyst + central hyoid + tract). Confirm normal thyroid first (rarely the only thyroid tissue).</div>
+      <div class="reveal r-green" id="nm5"><b>Branchial cyst:</b> a <b>lateral</b> cyst (2nd cleft) at the <b>anterior border of the upper SCM</b>, typically in young adults, sometimes presenting after an URTI. Beware: in an adult &gt;40 a "branchial cyst" may be a <b>cystic metastatic (HPV+) node</b> — FNAC/p16 first.</div>
+
+      <h3>🦠 Inflammatory masses</h3>
+      <p>Inflammatory causes (commonest overall) include <button class="clue c-blue" onclick="toggle('nm6',this)">reactive lymphadenopathy and specific infections</button>.</p>
+      <div class="reveal r-blue" id="nm6"><b>Inflammatory:</b> <b>reactive lymphadenitis</b> (viral/bacterial URTI), abscess, <b>infectious mononucleosis (EBV)</b>, <b>tuberculous/atypical mycobacterial lymphadenitis</b> (matted nodes, "cold abscess", collar-stud abscess), cat-scratch and toxoplasmosis. Usually tender/short-history in the young; persistence warrants work-up.</div>
+
+      <h3>🎗️ Neoplastic masses</h3>
+      <p>Neoplastic causes are <button class="clue c-red" onclick="toggle('nm7',this)">metastatic SCC</button>, <button class="clue c-blue" onclick="toggle('nm8',this)">lymphoma</button>, <button class="clue c-blue" onclick="toggle('nm9',this)">thyroid/salivary tumours</button>, and the <button class="clue c-blue" onclick="toggle('nm10',this)">carotid-body tumour</button>.</p>
+      <div class="reveal r-red" id="nm7"><b>Metastatic SCC:</b> a <b>hard, often level-II node</b> from a head-and-neck primary (or a cystic node in HPV+ oropharyngeal cancer). The most important adult diagnosis — examine the UADT and arrange FNAC + imaging (Topic 46).</div>
+      <div class="reveal r-blue" id="nm8"><b>Lymphoma:</b> <b>rubbery, painless, often multiple nodes</b> ± <b>B-symptoms</b> (fever, night sweats, weight loss). Diagnosis needs <b>architecture</b>, so a <b>core or excisional node biopsy</b> is appropriate here (unlike SCC, where FNAC comes first).</div>
+      <div class="reveal r-blue" id="nm9"><b>Thyroid & salivary:</b> a <b>thyroid mass</b> moves on swallowing (Topic 48); a <b>parotid/submandibular mass</b> sits over the gland (Topic 50). FNAC/US guide both; a parotid mass with facial palsy = malignant.</div>
+      <div class="reveal r-blue" id="nm10"><b>Carotid-body tumour (paraganglioma):</b> a <b>pulsatile mass at the carotid bifurcation that is mobile side-to-side but not vertically, splaying the carotids ("lyre sign" on angiography)</b>, ± a bruit. <b>Do not biopsy</b> (vascular); image (CT/MR angiography).</div>
+
+      <h3>🔎 Investigation</h3>
+      <p>The cornerstone is <button class="clue c-green" onclick="toggle('nm11',this)">ultrasound + FNAC</button>, with <button class="clue c-blue" onclick="toggle('nm12',this)">panendoscopy/imaging</button> and the <button class="clue c-purple" onclick="toggle('nm13',this)">no-open-biopsy rule for suspected SCC</button>.</p>
+      <div class="reveal r-green" id="nm11"><b>US + FNAC:</b> <b>first-line</b> — ultrasound characterises the mass and guides FNAC, which gives cytology to direct further work-up. Bloods (FBC, EBV/HIV, TFTs) as indicated.</div>
+      <div class="reveal r-blue" id="nm12"><b>Further work-up:</b> for suspected metastatic SCC → <b>flexible nasendoscopy, EUA + panendoscopy, CT/MRI and PET-CT</b> to find the primary; CT/MR angiography for vascular lesions; cross-sectional imaging for staging.</div>
+      <div class="reveal r-purple" id="nm13"><b>Trap:</b> <b>never perform an open/excisional biopsy of a neck node before FNAC</b> in suspected SCC (seeding, compromises definitive surgery). The exception is <b>suspected lymphoma</b>, which needs a core/excisional biopsy for architecture after FNAC raises the suspicion.</div>
+
+      <h3>📈 Approach summary</h3>
+      <p>Combine age + site + duration with US-FNAC; treat congenital/inflammatory causes appropriately, refer suspected malignancy urgently, and remember the can't-miss adult metastatic node and the don't-biopsy vascular lesion.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> What is your framework for a neck mass?</button>
+        <div class="ans"><b>Age (child = congenital/inflammatory; adult &gt;40 = malignancy until excluded), site (midline vs lateral), and duration</b>. Then <b>US + FNAC</b> first-line, with panendoscopy/imaging for suspected SCC.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> How do you recognise a thyroglossal cyst?</button>
+        <div class="ans">A <b>midline cyst that moves up on tongue protrusion and swallowing</b> (hyoid/foramen-caecum tract). Treated by <b>Sistrunk's operation</b>; confirm normal thyroid first.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> When is a "branchial cyst" actually cancer?</button>
+        <div class="ans">In an <b>adult &gt;40</b>, a cystic lateral neck mass may be a <b>metastatic (HPV+) cystic node</b>, not a branchial cyst. <b>FNAC + p16</b> and examination/biopsy of the tonsil/tongue base are needed before assuming benign disease.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> How does lymphoma differ in work-up from metastatic SCC?</button>
+        <div class="ans">Lymphoma = <b>rubbery, multiple nodes ± B-symptoms</b> and needs <b>architecture (core/excisional biopsy)</b>; metastatic SCC = <b>hard node, UADT primary</b>, worked up by <b>FNAC + panendoscopy (no open biopsy first)</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> Describe the carotid-body tumour signs.</button>
+        <div class="ans">A <b>pulsatile bifurcation mass, mobile side-to-side but not vertically</b>, ± bruit, that <b>splays the internal/external carotids ("lyre sign")</b>. <b>Do not biopsy</b>; diagnose with CT/MR angiography.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> What does a left supraclavicular node suggest?</button>
+        <div class="ans"><b>Virchow's node (Troisier's sign)</b> — metastasis from an <b>infraclavicular primary (gastric/GI, lung)</b> via the thoracic duct, rather than a head-and-neck source. Investigate the chest/abdomen.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Thyroglossal cyst vs thyroid mass</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are midline and move with swallowing. <br><span class="dif">✅ Different in:</span> thyroglossal = <b>also moves on tongue protrusion</b>; thyroid = moves with swallowing only.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Branchial cyst vs metastatic cystic node</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = lateral cystic neck mass. <br><span class="dif">✅ Different in:</span> adult &gt;40 → <b>metastatic HPV+ SCC until excluded (FNAC/p16)</b>; branchial cyst = younger, benign.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Metastatic SCC node vs lymphoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = enlarged neck node(s). <br><span class="dif">✅ Different in:</span> SCC = <b>hard, level II, UADT primary → FNAC + panendoscopy</b>; lymphoma = <b>rubbery, multiple, B-symptoms → core/excisional biopsy</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Reactive lymphadenopathy vs malignant node</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = enlarged node. <br><span class="dif">✅ Different in:</span> reactive = <b>tender, short history, resolves</b>; malignant = <b>persistent &gt;3 weeks, hard/fixed, ± primary symptoms</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Carotid-body tumour vs lymph node</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = lateral neck mass. <br><span class="dif">✅ Different in:</span> carotid body = <b>pulsatile, mobile side-to-side only, splays carotids on imaging</b> → don't biopsy.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 58-year-old smoker has a hard, painless lump in the upper neck for 6 weeks. How do you assess?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Apply the adult rule</button>
+          <div class="sbody"><i>"A persistent hard neck mass in an adult smoker is <b>metastatic head-and-neck SCC until proven otherwise</b> — I examine the upper aerodigestive tract and do US-FNAC, not an open biopsy."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Localise & frame the differential</button>
+          <div class="sbody">Note the <b>level</b> (often II), characterise the mass, and list the differential (metastatic SCC, lymphoma, thyroid/salivary, carotid body, congenital/inflammatory) weighted by age/site.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigate</button>
+          <div class="sbody"><b>US + FNAC (± p16/EBV)</b>; <b>flexible nasendoscopy</b>; if SCC, <b>EUA + panendoscopy, CT/MRI, PET-CT</b> to find the primary. Avoid open biopsy in suspected SCC.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Direct management</button>
+          <div class="sbody">Treat per diagnosis: metastatic SCC → find/treat the primary + neck (Topic 46); lymphoma → core/excisional biopsy then haem-oncology; carotid body → vascular team; congenital/inflammatory → appropriate management.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> A mucosal head-and-neck carcinoma metastasises along lymphatics to predictable cervical levels, so a hard upper-neck node in an adult smoker most often reflects an occult or overt UADT primary. The node's site and FNAC cytology (with p16/EBV) point to the source. Systematic endoscopy and imaging then localise the primary, while avoiding open biopsy preserves the integrity of definitive surgery.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">persistent neck mass in an adult &gt;40</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Metastatic cancer until proven otherwise</span><div class="assoc">US-FNAC + panendoscopy</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">midline cyst moving on tongue protrusion</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Thyroglossal duct cyst</span><div class="assoc">Sistrunk's operation</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">lateral cyst at anterior SCM, young adult</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Branchial cyst</span><div class="assoc">adult &gt;40 → exclude cystic metastasis</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">rubbery multiple nodes + night sweats</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Lymphoma → core/excisional biopsy</span><div class="assoc">need architecture</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">pulsatile bifurcation mass, side-to-side mobile</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Carotid-body tumour — DON'T biopsy</span><div class="assoc">lyre sign · CT/MR angio</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">matted nodes / cold abscess</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">TB/atypical mycobacterial lymphadenitis</span><div class="assoc">collar-stud abscess</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">left supraclavicular node</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Virchow's node (GI/lung)</span><div class="assoc">Troisier's sign</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">first-line neck-mass investigation</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Ultrasound + FNAC</span><div class="assoc">not open biopsy in SCC</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">midline mass moving with swallowing only</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Thyroid mass</span><div class="assoc">US/FNAC (Topic 48)</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">parotid mass + facial palsy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Malignant salivary tumour</span><div class="assoc">Topic 50</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Adult metastatic node</button>
+        <div class="ans"><i>"A 58-year-old smoker with a hard level-II node for 6 weeks."</i> → <b>metastatic SCC until excluded</b>: US-FNAC (± p16), nasendoscopy, EUA/panendoscopy, CT/MRI/PET-CT to find the primary; treat per Topic 46.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Young patient with a midline lump</button>
+        <div class="ans"><i>"A 20-year-old with a midline neck lump that rises on swallowing and tongue protrusion."</i> → <b>thyroglossal duct cyst</b>: US (confirm normal thyroid), then <b>Sistrunk's operation</b>; excise infected ones after settling.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why is FNAC preferred over excision for most neck masses?</button>
+        <div class="ans">It is <b>safe, quick and avoids tumour seeding/scarring</b> that would compromise definitive surgery in SCC. It triages the differential; only when <b>lymphoma</b> is suspected is a <b>core/excisional biopsy</b> needed for architecture.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How does TB cervical lymphadenitis present and how is it confirmed?</button>
+        <div class="ans"><b>Matted, sometimes fluctuant nodes ("cold abscess"), with a collar-stud abscess and overlying skin involvement</b>, often with systemic features. Confirm with <b>FNA/biopsy for AFB/culture/PCR and histology (caseating granulomas)</b>; treat with anti-TB therapy.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is the significance of a node that does not resolve in a child?</button>
+        <div class="ans">Most paediatric nodes are reactive, but a <b>persistent (&gt;4–6 weeks), enlarging, hard or matted node, or B-symptoms</b> warrants work-up (US-FNAC/biopsy) for <b>lymphoma, atypical mycobacteria, or rarely metastatic disease</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Which neck masses must never be biopsied with a needle/open approach first?</button>
+        <div class="ans"><b>Vascular lesions — carotid-body/paraganglioma tumours</b> (haemorrhage; image with angiography) and, in suspected SCC, avoid <b>open</b> biopsy before FNAC. Also image a <b>pulsatile mass</b> before any intervention.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 47 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

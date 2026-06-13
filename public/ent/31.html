@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>31 · Complications of rhinosinusitis</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 31</span>
+    <h1 class="title">👁️ Complications of rhinosinusitis</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Sinusitis complications are grouped as <b>orbital, intracranial and bony</b>. They arise mostly from <b>acute</b> sinusitis (ethmoiditis in children) and are sight- and life-threatening, so the highest-yield skills are recognising the <b>orbital red flags</b> and the Chandler classification.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗺️ Classification & spread</h3>
+      <p>Complications are <button class="clue c-blue" onclick="toggle('rk1',this)">orbital, intracranial or bony</button>, spreading by <button class="clue c-blue" onclick="toggle('rk2',this)">thin bony walls and valveless veins</button>, classically from <button class="clue c-orange" onclick="toggle('rk3',this)">ethmoid sinusitis in children</button>.</p>
+      <div class="reveal r-blue" id="rk1"><b>Three families:</b> <b>orbital</b> (commonest — periorbital → cavernous sinus), <b>intracranial</b> (meningitis, abscess, sinus thrombosis), and <b>bony</b> (osteomyelitis, Pott's puffy tumour, mucocele). Acute sinusitis (especially frontal/ethmoid) is the usual source.</div>
+      <div class="reveal r-blue" id="rk2"><b>Routes:</b> the <b>lamina papyracea</b> (paper-thin medial orbital wall) lets ethmoid infection enter the orbit; the thin posterior tables and the <b>valveless ophthalmic/diploic veins</b> allow retrograde spread to the cavernous sinus and cranium.</div>
+      <div class="reveal r-orange" id="rk3"><b>Demographics:</b> <b>orbital complications are commonest in children</b>, typically from <b>acute ethmoiditis</b>, because the lamina papyracea is thin and may be dehiscent. Frontal-sinus complications (Pott's puffy tumour, intracranial) cluster in <b>adolescents</b>.</div>
+
+      <h3>👁️ Orbital complications (Chandler)</h3>
+      <p>The orbital complications follow the <button class="clue c-green" onclick="toggle('rk4',this)">Chandler classification</button>; the crucial distinction is <button class="clue c-red" onclick="toggle('rk5',this)">preseptal vs postseptal disease</button>, and the sight-threatening signs of a <button class="clue c-red" onclick="toggle('rk6',this)">subperiosteal/orbital abscess</button>.</p>
+      <div class="reveal r-green" id="rk4"><b>Chandler I–V:</b> <b>I preseptal cellulitis → II orbital (postseptal) cellulitis → III subperiosteal abscess → IV orbital abscess → V cavernous sinus thrombosis</b>. Rising grade = rising threat to vision and life.</div>
+      <div class="reveal r-red" id="rk5"><b>Preseptal vs postseptal (the key call):</b> <b>preseptal</b> = lid swelling/erythema with <b>normal eye movements, normal vision, no proptosis</b> (anterior to the orbital septum — manage with antibiotics, observe). <b>Postseptal</b> = <b>proptosis, chemosis, painful/restricted eye movements (ophthalmoplegia), reduced acuity/colour vision</b> — needs CT and urgent intervention.</div>
+      <div class="reveal r-red" id="rk6"><b>Sight-threatening:</b> a <b>subperiosteal or orbital abscess</b> causes proptosis, ophthalmoplegia and <b>reduced visual acuity / a relative afferent pupillary defect (RAPD)</b> — a surgical emergency to <b>drain and decompress the orbit</b> before irreversible optic-nerve damage/blindness.</div>
+
+      <h3>🧠 Intracranial complications</h3>
+      <p>Intracranial spread causes <button class="clue c-red" onclick="toggle('rk7',this)">meningitis, abscess and empyema</button> and the dangerous <button class="clue c-red" onclick="toggle('rk8',this)">cavernous sinus thrombosis</button>.</p>
+      <div class="reveal r-red" id="rk7"><b>Meningitis/abscess:</b> <b>meningitis, epidural/subdural empyema, and frontal-lobe abscess</b> (from frontal/ethmoid sinusitis) present with severe headache, fever, vomiting, seizures, focal deficits and altered consciousness. Need contrast CT/MRI, IV antibiotics crossing the BBB, and neurosurgical drainage.</div>
+      <div class="reveal r-red" id="rk8"><b>Cavernous sinus thrombosis:</b> retrograde spread (often from sphenoid/ethmoid) → <b>headache, proptosis, chemosis, and palsies of CN III, IV, V1, V2 and VI</b> (which run in/through the sinus), often becoming <b>bilateral</b> (the sinuses communicate). A life-threatening emergency needing IV antibiotics ± anticoagulation.</div>
+
+      <h3>🦴 Bony complications</h3>
+      <p>Bone involvement causes <button class="clue c-blue" onclick="toggle('rk9',this)">osteomyelitis and Pott's puffy tumour</button>, and chronic obstruction causes a <button class="clue c-blue" onclick="toggle('rk10',this)">mucocele</button>.</p>
+      <div class="reveal r-blue" id="rk9"><b>Pott's puffy tumour:</b> <b>frontal-bone osteomyelitis with a subperiosteal abscess → a doughy forehead swelling</b>, classically in adolescents from frontal sinusitis; often coexists with intracranial spread. Needs IV antibiotics and surgical drainage ± frontal-sinus surgery.</div>
+      <div class="reveal r-blue" id="rk10"><b>Mucocele:</b> an obstructed sinus fills with mucus and expands, eroding bone (commonest in the <b>frontal/ethmoid</b> sinuses) → proptosis, globe displacement and diplopia. Treated by <b>marsupialisation/drainage (usually endoscopic)</b>.</div>
+
+      <h3>🔎 Management</h3>
+      <p>Suspected complications need <button class="clue c-green" onclick="toggle('rk11',this)">urgent contrast imaging and multidisciplinary care</button>, with <button class="clue c-red" onclick="toggle('rk12',this)">surgical drainage for abscess or vision threat</button>.</p>
+      <div class="reveal r-green" id="rk11"><b>Work-up:</b> <b>contrast CT of the sinuses, orbit and brain</b> (± MRI for intracranial/sinus-thrombosis detail), bloods/cultures, and urgent <b>ophthalmology and neurosurgery</b> involvement. Start <b>IV broad-spectrum antibiotics crossing the BBB</b> immediately.</div>
+      <div class="reveal r-red" id="rk12"><b>Surgery:</b> <b>drain a subperiosteal/orbital abscess (endoscopic or external) and the source sinus</b>, and <b>decompress the orbit</b> if vision is threatened; neurosurgical drainage of intracranial collections. Postseptal disease with any visual deterioration is a surgical emergency.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Preseptal cellulitis does well on antibiotics; postseptal disease and intracranial complications can cause blindness or death if treatment is delayed. Early recognition of the orbital red flags, prompt imaging and timely drainage are what save sight and life.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> Classify the complications of rhinosinusitis.</button>
+        <div class="ans"><b>Orbital</b> (Chandler I–V: preseptal cellulitis → orbital cellulitis → subperiosteal abscess → orbital abscess → cavernous sinus thrombosis), <b>intracranial</b> (meningitis, epidural/subdural empyema, brain abscess, cavernous sinus thrombosis), and <b>bony</b> (osteomyelitis, Pott's puffy tumour, mucocele).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> How do you distinguish preseptal from postseptal orbital cellulitis?</button>
+        <div class="ans"><b>Preseptal</b> = lid swelling/erythema with <b>normal vision, normal eye movements, no proptosis</b>. <b>Postseptal</b> = <b>proptosis, chemosis, painful/restricted eye movements, reduced acuity/colour vision</b> → urgent CT and intervention.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Which signs mean "save the eye now"?</button>
+        <div class="ans"><b>Reduced visual acuity, impaired colour vision, or a relative afferent pupillary defect (RAPD)</b> with proptosis/ophthalmoplegia indicate a sight-threatening orbital abscess → <b>urgent CT and surgical drainage/orbital decompression</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Why are orbital complications commonest in children from ethmoiditis?</button>
+        <div class="ans">The <b>lamina papyracea</b> (medial orbital wall) is paper-thin and often dehiscent, so <b>ethmoid sinus infection readily enters the orbit</b>; children also have frequent acute sinusitis. Hence ethmoiditis is the classic source of paediatric orbital cellulitis.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> What is Pott's puffy tumour?</button>
+        <div class="ans"><b>Frontal-bone osteomyelitis with a subperiosteal abscess</b> producing a <b>doughy forehead swelling</b>, typically in adolescents from frontal sinusitis. It often coexists with intracranial spread; treat with IV antibiotics and surgical drainage.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> How does cavernous sinus thrombosis present?</button>
+        <div class="ans"><b>Headache, proptosis, chemosis, and palsies of CN III, IV, V1, V2, VI</b> (running in/through the sinus), often <b>becoming bilateral</b>, with sepsis. It is life-threatening — IV antibiotics, imaging (MRV) and consideration of anticoagulation.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Preseptal vs orbital (postseptal) cellulitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = red swollen eyelid. <br><span class="dif">✅ Different in:</span> postseptal = <b>proptosis, painful/limited eye movements, reduced vision</b> → CT + emergency; preseptal = normal eye movements/vision.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Subperiosteal vs orbital abscess</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = postseptal collections. <br><span class="dif">✅ Different in:</span> subperiosteal = <b>pus along the lamina papyracea (Chandler III)</b>; orbital abscess = <b>pus within orbital fat (IV)</b> — both may need drainage if vision threatened.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Orbital cellulitis vs cavernous sinus thrombosis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = proptosis + ophthalmoplegia. <br><span class="dif">✅ Different in:</span> cavernous sinus thrombosis = <b>multiple cranial-nerve palsies, often bilateral, systemically septic</b> → MRV.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Pott's puffy tumour vs simple frontal swelling</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = forehead swelling. <br><span class="dif">✅ Different in:</span> Pott's = <b>doughy swelling + frontal osteomyelitis/abscess ± intracranial spread</b> in an adolescent with frontal sinusitis.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Mucocele vs orbital tumour</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both displace the globe. <br><span class="dif">✅ Different in:</span> mucocele = <b>expansile cystic sinus lesion (frontal/ethmoid) on CT, history of sinus disease</b>; tumour needs biopsy.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A child with a cold develops a red, swollen, proptosed eye that won't move properly and blurred vision. Manage."</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Declare a sight emergency</button>
+          <div class="sbody"><i>"Proptosis, ophthalmoplegia and reduced vision after sinusitis is <b>postseptal orbital cellulitis ± abscess</b> — a sight-threatening emergency from ethmoiditis until proven otherwise."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Assess the eye</button>
+          <div class="sbody">Document <b>visual acuity, colour vision, pupils (RAPD), proptosis and eye movements</b>; this is the postseptal end of the Chandler spectrum.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigate urgently</button>
+          <div class="sbody"><b>Contrast CT of sinuses + orbits (± brain)</b>, bloods/cultures, and immediate <b>ophthalmology + ENT (± neurosurgery)</b> review; start <b>IV antibiotics</b> at once.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Treat</button>
+          <div class="sbody"><b>IV broad-spectrum antibiotics crossing the BBB</b>; <b>surgical drainage of any abscess and the source sinus (endoscopic/external) + orbital decompression</b> if vision is threatened or no improvement in ~24–48 h.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> Acute ethmoiditis breaches the thin lamina papyracea, letting infection enter the orbit and form a subperiosteal then orbital abscess. Rising orbital pressure and inflammation compress the optic nerve and its blood supply, threatening vision (proptosis, ophthalmoplegia, RAPD). Draining the pus and the source sinus, with antibiotics, decompresses the orbit before irreversible optic-nerve injury.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">proptosis + painful eye movements + sinusitis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Postseptal orbital cellulitis</span><div class="assoc">CT + emergency</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">lid swelling, normal vision/movements</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Preseptal cellulitis (Chandler I)</span><div class="assoc">antibiotics · observe</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">reduced acuity / RAPD in orbital cellulitis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Sight emergency → drain/decompress</span><div class="assoc">abscess</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">orbital complication route in children</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Lamina papyracea (ethmoiditis)</span><div class="assoc">thin/dehiscent</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">Chandler classification</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Preseptal→orbital→subperiosteal→orbital abscess→CST</span><div class="assoc">I–V</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">doughy forehead swelling, adolescent, frontal sinusitis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Pott's puffy tumour</span><div class="assoc">frontal osteomyelitis + abscess</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">CN III,IV,V1,V2,VI palsies + proptosis, often bilateral</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Cavernous sinus thrombosis</span><div class="assoc">MRV · antibiotics ± anticoagulation</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">expansile frontal/ethmoid cyst displacing globe</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Mucocele</span><div class="assoc">endoscopic marsupialisation</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">imaging for sinusitis complication</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Contrast CT sinus/orbit/brain (± MRI)</span><div class="assoc">+ cultures</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">antibiotic principle for complications</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">IV broad-spectrum crossing the BBB</span><div class="assoc">+ drain abscess</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Paediatric orbital cellulitis</button>
+        <div class="ans"><i>"A child with ethmoiditis has proptosis, restricted painful eye movements and blurred vision."</i> → <b>postseptal orbital cellulitis ± subperiosteal abscess</b>: assess vision/RAPD, <b>contrast CT</b>, IV antibiotics, urgent ENT/ophthalmology; <b>drain abscess + source sinus</b> if vision threatened/no improvement.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Frontal sinusitis with forehead swelling</button>
+        <div class="ans"><i>"A teenager with frontal sinusitis develops a tender, doughy forehead swelling and headache."</i> → <b>Pott's puffy tumour</b>: contrast CT/MRI (exclude intracranial abscess), IV antibiotics, and <b>surgical drainage ± frontal-sinus surgery</b>; neurosurgical input if intracranial.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Which orbital complications need surgery vs antibiotics alone?</button>
+        <div class="ans"><b>Preseptal cellulitis and many small medial subperiosteal abscesses in young children</b> may settle on IV antibiotics with close monitoring; <b>large/lateral/superior abscesses, any visual deterioration, or failure to improve in 24–48 h</b> require <b>surgical drainage and orbital decompression</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why does cavernous sinus thrombosis become bilateral?</button>
+        <div class="ans">The two cavernous sinuses <b>communicate via intercavernous sinuses</b>, so thrombus and infection spread across the midline — producing <b>bilateral</b> proptosis, chemosis and cranial-nerve palsies, a hallmark distinguishing it from simple orbital cellulitis.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How do intracranial complications of sinusitis present?</button>
+        <div class="ans"><b>Severe headache, fever, vomiting, seizures, focal neurological deficits and reduced consciousness</b> — from meningitis, epidural/subdural empyema or a frontal-lobe abscess (often from frontal/ethmoid disease). Urgent contrast CT/MRI, IV antibiotics and neurosurgical drainage.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why is endoscopic drainage favoured for medial orbital abscess?</button>
+        <div class="ans">A <b>medial subperiosteal abscess along the lamina papyracea</b> can be drained <b>endoscopically through the ethmoid</b>, simultaneously clearing the source sinus, avoiding an external scar. Lateral/superior collections or limited access may still need an external approach.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 31 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

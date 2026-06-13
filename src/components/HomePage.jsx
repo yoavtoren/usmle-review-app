@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { PHASES } from "../lib/timelineData.js";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
+import { loadMedSchool } from "../lib/medSchoolData.js";
 
 const EXAM_DATE = new Date("2026-10-11T00:00:00Z");
 
@@ -34,6 +35,15 @@ export default function HomePage({ testStats, faStats, streak }) {
   const aims     = taskStats("aims");
   const medcross = taskStats("medcross");
   const selfcare = taskStats("selfcare");
+
+  const msSubjects = (() => {
+    try {
+      const all = loadMedSchool();
+      const y4 = all.filter(s => s.year === 4);
+      const notesCount = y4.filter(s => s.notes?.trim()).length;
+      return { total: y4.length, notesCount };
+    } catch { return { total: 0, notesCount: 0 }; }
+  })();
 
   const sections = [
     {
@@ -79,6 +89,15 @@ export default function HomePage({ testStats, faStats, streak }) {
       stats: [
         { val: selfcare.active, lbl: "מטלות" },
         { val: faPct + "%",     lbl: "FA" },
+      ],
+      progress: null, progressLabel: null,
+    },
+    {
+      id: "medschool", to: "/medschool", icon: "🏫",
+      title: "Med School", color: "#0e7490", featured: false,
+      stats: [
+        { val: msSubjects.total,      lbl: "subjects" },
+        { val: msSubjects.notesCount, lbl: "with notes" },
       ],
       progress: null, progressLabel: null,
     },

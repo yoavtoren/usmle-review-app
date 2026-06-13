@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13 · Differential diagnosis of hypacusis</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 13</span>
+    <h1 class="title">👂❓ Differential diagnosis of hypacusis</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Hypacusis (hearing loss) is approached by answering four questions: <b>conductive or sensorineural? one ear or both? sudden or gradual? congenital or acquired?</b> The answers localise the lesion along the pathway and flag the two emergencies — <b>sudden SNHL</b> and an <b>asymmetric SNHL hiding a vestibular schwannoma</b>.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ Classification framework</h3>
+      <p>First localise: <button class="clue c-blue" onclick="toggle('d1',this)">conductive (outer/middle ear), sensorineural (cochlea/nerve), or mixed</button>, and add <button class="clue c-green" onclick="toggle('d2',this)">cochlear vs retrocochlear</button> for SNHL. Then characterise by <button class="clue c-blue" onclick="toggle('d3',this)">onset, laterality and age</button>, because these reshuffle the differential.</p>
+      <div class="reveal r-blue" id="d1"><b>Conductive vs sensorineural:</b> conductive = a problem in sound delivery (canal, drum, ossicles); sensorineural = a problem in transduction/transmission (cochlea or cochlear nerve). <b>Tuning forks and the air–bone gap on audiometry</b> separate them — this is the first branch point.</div>
+      <div class="reveal r-green" id="d2"><b>Cochlear vs retrocochlear:</b> within SNHL, distinguish a cochlear (hair-cell) lesion from a <b>retrocochlear (nerve/brainstem)</b> one. <b>Recruitment, good word scores</b> suggest cochlear; <b>poor word scores out of proportion, tone decay, abnormal ABR</b> suggest retrocochlear → MRI for vestibular schwannoma.</div>
+      <div class="reveal r-blue" id="d3"><b>Onset/laterality/age:</b> <b>sudden</b> SNHL is an emergency; <b>unilateral/asymmetric</b> SNHL needs a schwannoma excluded; <b>bilateral symmetrical high-frequency</b> SNHL in the elderly is presbycusis; <b>congenital</b> loss has its own genetic/syndromic differential (Topic 02).</div>
+
+      <h3>👂 Conductive causes</h3>
+      <p>Conductive loss arises in the <button class="clue c-blue" onclick="toggle('d4',this)">external ear</button> or the <button class="clue c-blue" onclick="toggle('d5',this)">middle ear</button>, with a classic trap: a <button class="clue c-purple" onclick="toggle('d6',this)">"conductive" loss with a normal drum and intact reflexes</button>.</p>
+      <div class="reveal r-blue" id="d4"><b>External ear:</b> <b>wax impaction</b> (commonest reversible cause), foreign body, otitis externa, exostoses/osteoma, keratosis obturans, and <b>congenital atresia</b>. Usually obvious on otoscopy.</div>
+      <div class="reveal r-blue" id="d5"><b>Middle ear:</b> <b>OME, AOM, perforation/CSOM, cholesteatoma, otosclerosis, ossicular discontinuity, tympanosclerosis</b>, haemotympanum/barotrauma, and a glomus tumour. The drum and tympanogram point to the cause.</div>
+      <div class="reveal r-purple" id="d6"><b>Trap — superior canal dehiscence:</b> a low-frequency air–bone gap mimicking otosclerosis, but with <b>intact/low-threshold stapedial reflexes, autophony and the Tullio phenomenon</b> and a CT dehiscence. Don't operate on it as "otosclerosis".</div>
+
+      <h3>🌀 Sensorineural causes</h3>
+      <p>SNHL spans <button class="clue c-orange" onclick="toggle('d7',this)">presbycusis and noise-induced loss</button>, <button class="clue c-red" onclick="toggle('d8',this)">ototoxicity</button>, <button class="clue c-red" onclick="toggle('d9',this)">sudden SNHL</button>, <button class="clue c-blue" onclick="toggle('d10',this)">Ménière's and infections/autoimmune</button>, and the crucial <button class="clue c-red" onclick="toggle('d11',this)">retrocochlear vestibular schwannoma</button>.</p>
+      <div class="reveal r-orange" id="d7"><b>Presbycusis & NIHL:</b> <b>presbycusis</b> = age-related, bilateral, symmetrical, high-frequency SNHL with poor speech-in-noise; <b>NIHL</b> = a <b>4 kHz notch</b> from noise exposure. Both are bilateral and gradual — the commonest acquired SNHLs.</div>
+      <div class="reveal r-red" id="d8"><b>Ototoxicity:</b> <b>aminoglycosides, cisplatin, loop diuretics, high-dose aspirin/quinine</b> damage cochlear hair cells (high-frequency loss first, often with tinnitus/imbalance). Drug history is essential; some loss is preventable by monitoring.</div>
+      <div class="reveal r-red" id="d9"><b>Sudden SNHL = emergency:</b> ≥30 dB over ≥3 contiguous frequencies within 72 h; mostly idiopathic but must exclude a retrocochlear lesion. <b>Treat urgently with corticosteroids</b> (oral ± intratympanic) and arrange MRI — early treatment improves recovery.</div>
+      <div class="reveal r-blue" id="d10"><b>Other SNHL:</b> <b>Ménière's</b> (fluctuating low-frequency SNHL + episodic vertigo + tinnitus + fullness), labyrinthitis, <b>autoimmune inner-ear disease</b> (rapidly progressive bilateral, steroid-responsive), and infections (mumps, measles, congenital CMV, meningitis).</div>
+      <div class="reveal r-red" id="d11"><b>Vestibular schwannoma:</b> any <b>unilateral/asymmetric SNHL, unilateral tinnitus, or poor word discrimination out of proportion</b> must prompt <b>MRI of the IAM</b> to exclude this retrocochlear tumour. This is the single most important "don't miss" of asymmetric SNHL.</div>
+
+      <h3>🔎 Clinical assessment</h3>
+      <p>The work-up is <button class="clue c-blue" onclick="toggle('d12',this)">history and otoscopy → tuning forks → audiometry → targeted special tests/imaging</button>.</p>
+      <div class="reveal r-blue" id="d12"><b>Sequence:</b> history (onset, laterality, tinnitus/vertigo, noise/drugs/family), <b>otoscopy</b>, <b>tuning forks (Weber/Rinne)</b>, then <b>pure-tone & speech audiometry, tympanometry and reflexes</b>; add <b>OAE/ABR</b> and <b>MRI</b> for asymmetric/retrocochlear pictures, and bloods for autoimmune/infective causes.</div>
+
+      <h3>🎵 Tuning forks & audiometry logic</h3>
+      <p><button class="clue c-green" onclick="toggle('d13',this)">Weber and Rinne</button> give an immediate localisation, refined by <button class="clue c-green" onclick="toggle('d14',this)">the audiogram</button>.</p>
+      <div class="reveal r-green" id="d13"><b>Tuning forks (512 Hz):</b> <b>Rinne negative (BC&gt;AC)</b> = conductive on that side; <b>Weber lateralises to the affected ear in conductive loss</b> and <b>to the better ear in SNHL</b>. Beware the <b>false-negative Rinne</b> from a dead ear (the sound is heard by the opposite cochlea).</div>
+      <div class="reveal r-green" id="d14"><b>Audiogram:</b> an <b>air–bone gap</b> = the conductive component; symmetrical high-frequency loss = presbycusis/NIHL; a 4 kHz notch = noise; low-frequency fluctuating loss = Ménière's. <b>Speech audiometry rollover</b> and abnormal ABR point retrocochlear.</div>
+
+      <h3>🚩 Red flags & management principle</h3>
+      <p>Two findings change urgency: <button class="clue c-red" onclick="toggle('d15',this)">sudden SNHL (treat now)</button> and <button class="clue c-red" onclick="toggle('d16',this)">asymmetric SNHL/unilateral tinnitus (MRI)</button>. Otherwise treat the underlying cause and rehabilitate hearing (Topic 12).</p>
+      <div class="reveal r-red" id="d15"><b>Sudden SNHL:</b> a true ENT emergency — same-week corticosteroids and MRI. Delay reduces the chance of recovery; never dismiss "muffled hearing after a cold" as just wax without an audiogram.</div>
+      <div class="reveal r-red" id="d16"><b>Asymmetry:</b> a persistent inter-aural difference (commonly ≥15 dB over several frequencies) or unilateral tinnitus warrants <b>MRI of the internal auditory meatus</b> to exclude a vestibular schwannoma.</div>
+
+      <h3>📈 Outcome</h3>
+      <p>Conductive losses are largely correctable (wax removal, surgery, aids); SNHL is managed by treating reversible causes early and rehabilitating with aids or implants. The diagnostic priority is to catch the treatable emergency (sudden SNHL) and the dangerous tumour (schwannoma).</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> Give your structured approach to a patient with hearing loss.</button>
+        <div class="ans">Answer four questions: <b>conductive vs SNHL? unilateral vs bilateral? sudden vs gradual? congenital vs acquired?</b> Then otoscopy + tuning forks localise, audiometry quantifies, and MRI/special tests are reserved for asymmetric/retrocochlear or sudden cases.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> Interpret Weber and Rinne in conductive vs sensorineural loss.</button>
+        <div class="ans"><b>Conductive:</b> Rinne <b>negative</b> (BC&gt;AC) on the affected side, Weber lateralises <b>to the affected ear</b>. <b>SNHL:</b> Rinne <b>positive</b> bilaterally, Weber lateralises <b>to the better ear</b>. A <b>false-negative Rinne</b> indicates a dead ear.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Which hearing-loss presentations are emergencies?</button>
+        <div class="ans"><b>Sudden SNHL</b> (urgent steroids + MRI) and <b>asymmetric SNHL/unilateral tinnitus</b> (MRI for vestibular schwannoma). Also a discharging ear with new SNHL/vertigo (suppurative labyrinthitis).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> How do you separate cochlear from retrocochlear SNHL?</button>
+        <div class="ans">Cochlear lesions show <b>recruitment and reasonable word scores</b>; retrocochlear lesions show <b>disproportionately poor word discrimination, rollover, tone decay, abnormal ABR (prolonged wave V/I–V)</b>, and are confirmed by <b>MRI</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> Name the common ototoxic drugs and the pattern of loss.</button>
+        <div class="ans"><b>Aminoglycosides, cisplatin, loop diuretics, high-dose salicylates/quinine</b>. They damage outer hair cells, causing <b>high-frequency SNHL first, with tinnitus ± imbalance</b>; cisplatin and aminoglycosides can be permanent — monitor hearing during treatment.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> A conductive loss with a normal drum — differential?</button>
+        <div class="ans"><b>Otosclerosis, ossicular discontinuity, congenital ossicular fixation, tympanosclerosis, and superior canal dehiscence (SSCD)</b>. SSCD is the trap — intact reflexes, autophony, Tullio, CT dehiscence — and must not be treated as otosclerosis.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Conductive vs sensorineural loss</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both reduce hearing. <br><span class="dif">✅ Different in:</span> conductive = <b>Rinne −, air–bone gap, Weber to bad ear</b>; SNHL = <b>Rinne +, no gap, Weber to good ear</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Presbycusis vs noise-induced loss</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = bilateral high-frequency SNHL. <br><span class="dif">✅ Different in:</span> presbycusis = <b>elderly, sloping high-frequency loss</b>; NIHL = <b>4 kHz notch with recovery at 8 kHz + noise history</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Cochlear vs retrocochlear SNHL</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are sensorineural. <br><span class="dif">✅ Different in:</span> retrocochlear = <b>word score worse than pure tones, rollover, abnormal ABR → MRI</b>; cochlear = recruitment, proportionate scores.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Sudden SNHL vs sudden conductive loss</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = abrupt hearing drop. <br><span class="dif">✅ Different in:</span> sudden SNHL = <b>Weber to the GOOD ear, urgent steroids + MRI</b>; sudden conductive (wax/effusion) = <b>Weber to the affected ear, treat the cause</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Otosclerosis vs superior canal dehiscence</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = low-frequency conductive gap, normal drum. <br><span class="dif">✅ Different in:</span> SSCD has <b>intact reflexes, autophony, Tullio, CT dehiscence</b>; otosclerosis has <b>absent reflexes</b>.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 55-year-old reports gradually worsening hearing in the right ear with right-sided tinnitus. How do you work this up?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Flag the asymmetry</button>
+          <div class="sbody"><i>"Unilateral progressive SNHL with unilateral tinnitus is <b>a vestibular schwannoma until excluded</b>, so an MRI of the IAM is mandatory."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Classify the loss</button>
+          <div class="sbody">Use the four-question framework: <b>SNHL, unilateral, gradual, acquired</b>. State the localisation goal: cochlear vs <b>retrocochlear</b>.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Examine & test</button>
+          <div class="sbody">Otoscopy (normal), tuning forks (Weber to the <b>good</b> ear, Rinne +), <b>pure-tone + speech audiometry</b> (look for word scores worse than pure tones), tympanometry/reflexes; <b>MRI IAM with gadolinium</b>.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Diagnose & manage</button>
+          <div class="sbody">If MRI confirms a schwannoma → observe/radiosurgery/microsurgery by size (Topic 52); if not, treat the SNHL cause and rehabilitate with a hearing aid. Counsel and monitor.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> A vestibular schwannoma arises from Schwann cells of the vestibular nerve in the internal auditory meatus and grows to compress the cochlear nerve and its blood supply. This produces a retrocochlear pattern of asymmetric SNHL and tinnitus with word scores poorer than the pure-tone average. Because plain audiometry cannot exclude it, gadolinium MRI of the IAM is the definitive test.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">unilateral SNHL + unilateral tinnitus</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Vestibular schwannoma → MRI IAM</span><div class="assoc">retrocochlear · poor word scores</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">≥30 dB over 3 frequencies in 72 h</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Sudden SNHL — emergency</span><div class="assoc">steroids (oral ± IT) + MRI</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">Rinne negative + Weber to that ear</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Conductive loss</span><div class="assoc">air–bone gap on PTA</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">Weber to the better ear</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Sensorineural loss</span><div class="assoc">Rinne positive</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">bilateral symmetrical high-frequency SNHL, elderly</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Presbycusis</span><div class="assoc">poor speech-in-noise</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">4 kHz notch</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Noise-induced hearing loss</span><div class="assoc">recovery at 8 kHz</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">fluctuating low-frequency SNHL + vertigo + fullness</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Ménière's disease</span><div class="assoc">endolymphatic hydrops</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">cisplatin / aminoglycoside / loop diuretic</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Ototoxic SNHL</span><div class="assoc">high frequencies first · monitor</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">commonest reversible conductive cause</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Wax impaction</span><div class="assoc">check before audiometry</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">conductive gap + intact reflexes + autophony</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Superior canal dehiscence</span><div class="assoc">Tullio · CT</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Sudden one-sided deafness</button>
+        <div class="ans"><i>"A 40-year-old wakes with a dead-feeling right ear; Weber goes to the left."</i> → <b>sudden SNHL</b>: audiogram confirms, start <b>corticosteroids urgently</b> (oral ± intratympanic), and arrange <b>MRI</b> to exclude a retrocochlear lesion. Time-critical.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Gradual bilateral loss, struggles in restaurants</button>
+        <div class="ans"><i>"A 72-year-old hears poorly in noise; symmetrical high-frequency SNHL on PTA."</i> → <b>presbycusis</b>; exclude wax/ear disease, fit <b>hearing aids</b>, give communication tactics and review.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What audiometric features point to a retrocochlear lesion?</button>
+        <div class="ans"><b>Word discrimination worse than the pure-tone average predicts</b>, <b>rollover</b> on speech audiometry, <b>tone decay</b>, absent acoustic-reflexes/reflex decay, and an <b>abnormal ABR</b> (prolonged wave V or I–V interval). Confirm with gadolinium MRI.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How do you investigate bilateral rapidly progressive SNHL in a young adult?</button>
+        <div class="ans">Consider <b>autoimmune inner-ear disease</b> (a steroid trial is both diagnostic and therapeutic), infections, and syndromic causes; bloods (autoimmune screen), MRI, and serial audiograms. Early steroids may preserve hearing.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> A child fails school screening — approach?</button>
+        <div class="ans">Otoscopy + tympanometry first (commonest cause is <b>OME</b>), then age-appropriate audiometry; if SNHL, work up genetic/syndromic causes, congenital CMV, and image; rehabilitate early to protect language (Topics 02, 12).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is non-organic (functional) hearing loss and how is it detected?</button>
+        <div class="ans">A claimed loss without an organic basis (often medico-legal/psychogenic). Suspect with inconsistent audiometry; detect with the <b>Stenger test</b>, objective <b>OAE/ABR</b> (normal despite claimed loss), and test–retest variability.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 13 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>
