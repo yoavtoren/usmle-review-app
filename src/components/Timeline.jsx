@@ -237,6 +237,7 @@ export default function Timeline() {
   const [activeF, setActiveF] = useState(new Set(ALL_FRONTS));
   const [activeT, setActiveT] = useState(new Set(ALL_TYPES));
   const [showTypeFilter, setShowTypeFilter] = useState(false);
+  const [sortMode, setSortMode] = useState("date"); // "date" | "topic"
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -261,6 +262,20 @@ export default function Timeline() {
   const dated   = filtered.filter(ev => ev.date);
   const undated = filtered.filter(ev => !ev.date);
 
+  // Grouped rows for topic sort mode
+  const groupedRows = useMemo(() => {
+    if (sortMode !== "topic") return null;
+    const groups = {};
+    for (const ev of dated) {
+      const k = ev.front || "other";
+      if (!groups[k]) groups[k] = [];
+      groups[k].push(ev);
+    }
+    return Object.entries(groups).sort(([a], [b]) =>
+      (FRONT_LABELS[a] || a).localeCompare(FRONT_LABELS[b] || b, "he")
+    );
+  }, [dated, sortMode]);
+
   function toggleGoal(id) {
     const next = { ...goalsDone, [id]: !goalsDone[id] };
     setGoalsDone(next); saveGoalsDone(next);
@@ -276,7 +291,8 @@ export default function Timeline() {
     setActiveT(prev => { const n = new Set(prev); n.has(t) ? n.delete(t) : n.add(t); return n; });
   }
 
-  const totalHeight = BAND_H + AXIS_H + (dated.length + (undated.length ? undated.length + 1 : 0)) * ROW_H;
+  const topicGroupCount = groupedRows ? groupedRows.length : 0;
+  const totalHeight = BAND_H + AXIS_H + (dated.length + topicGroupCount + (undated.length ? undated.length + 1 : 0)) * ROW_H;
 
   return (
     <div className="tl-page">
@@ -328,11 +344,21 @@ export default function Timeline() {
         )}
       </div>
 
-      {/* Jump to today */}
+      {/* Jump to today + sort toggle */}
       <div className="tl-jump-row">
         <button className="tl-jump-btn" onClick={() => {
           if (scrollRef.current) scrollRef.current.scrollLeft = Math.max(0, todayX - 360);
         }}>↩ קפוץ להיום</button>
+        <div className="tl-sort-tabs">
+          <button
+            className={`tl-sort-tab${sortMode === "date" ? " active" : ""}`}
+            onClick={() => setSortMode("date")}
+          >📅 תאריך</button>
+          <button
+            className={`tl-sort-tab${sortMode === "topic" ? " active" : ""}`}
+            onClick={() => setSortMode("topic")}
+          >🏷 נושא</button>
+        </div>
         <span className="muted small">{todayStr} · {filtered.length} אירועים</span>
       </div>
 
@@ -432,8 +458,69 @@ export default function Timeline() {
             </div>
           </div>
 
-          {/* One row per dated event */}
-          {dated.map((ev, i) => {
+          {/* One row per dated event (or grouped by topic) */}
+          {(sortMode === "topic" && groupedRows ? groupedRows.flatMap(([front, evs]) => {
+            const groupColor = FRONT_COLORS[front] || "#94a3b8";
+            const header = (
+              <div key={`hdr-${front}`} style={{
+                display: "flex", height: ROW_H,
+                borderBottom: "1px solid var(--line)",
+                background: groupColor + "14",
+              }}>
+                <div style={{
+                  position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
+                  background: groupColor + "14",
+                  borderRight: "1.5px solid var(--line)",
+                  display: "flex", alignItems: "center", gap: 8, padding: "0 10px",
+                }}>
+                  <div style={{ width: 12, height: 12, borderRadius: 3, background: groupColor, flexShrink: 0 }} />
+                  <span style={{ fontSize: 11.5, fontWeight: 900, color: groupColor, letterSpacing: 0.1, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    {FRONT_LABELS[front] || front}
+                  </span>
+                  <span style={{ fontSize: 9, fontWeight: 800, color: groupColor + "99", flexShrink: 0 }}>{evs.length}</span>
+                </div>
+                <div style={{ width: TRACK_W }} />
+              </div>
+            );
+            const rows = evs.map((ev, i) => {
+              const color  = FRONT_COLORS[ev.front] || "#94a3b8";
+              const x      = dateToX(ev.date);
+              const odd    = i % 2 === 1;
+              const isDone = !!eventsDone[ev.id];
+              const bg     = isDone ? "rgba(22,163,74,0.04)" : odd ? "var(--surface-2)" : "var(--surface)";
+              return (
+                <div key={ev.id}
+                  style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", cursor: "pointer", background: bg, opacity: isDone ? 0.7 : 1 }}
+                  onClick={() => setSelectedEvent(ev)}
+                  className="tl-ev-row">
+                  <div style={{
+                    position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
+                    background: bg, borderRight: "1.5px solid var(--line)",
+                    display: "flex", alignItems: "center", gap: 0,
+                  }}>
+                    <div style={{ width: 10, alignSelf: "stretch", background: isDone ? "#16a34a" : color, flexShrink: 0 }} />
+                    <div style={{ display: "flex", alignItems: "center", gap: 5, flex: 1, padding: "0 6px", overflow: "hidden" }}>
+                      <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
+                      <span style={{ fontSize: 11, fontWeight: 700, color: isDone ? "var(--muted)" : "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", textDecoration: isDone ? "line-through" : "none" }}>{ev.title}</span>
+                      {isDone
+                        ? <span style={{ fontSize: 9, fontWeight: 900, color: "#16a34a", flexShrink: 0 }}>✓</span>
+                        : <span style={{ fontSize: 9, fontWeight: 800, color, flexShrink: 0 }}>{fmtShort(ev.date)}</span>
+                      }
+                    </div>
+                  </div>
+                  <div style={{ position: "relative", width: TRACK_W, flexShrink: 0, height: ROW_H }}>
+                    <div style={{ position: "absolute", top: "50%", left: 0, width: "100%", height: 1, background: "rgba(0,0,0,0.05)", transform: "translateY(-0.5px)", pointerEvents: "none" }} />
+                    <div style={{ position: "absolute", left: x - DOT_R, top: "50%", transform: "translateY(-50%)", width: DOT_R * 2, height: DOT_R * 2, borderRadius: "50%", background: isDone ? "#16a34a" : color, border: "2.5px solid white", boxShadow: `0 0 0 1.5px ${isDone ? "#16a34a" : color}`, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 5 }}>
+                      {isDone && <span style={{ color: "white", fontSize: 6, fontWeight: 900, lineHeight: 1 }}>✓</span>}
+                    </div>
+                  </div>
+                </div>
+              );
+            });
+            return [header, ...rows];
+          }) : dated).map((node, i) => {
+            if (node.type !== undefined || node.key?.startsWith("hdr-")) return node;
+            const ev     = node;
             const color  = FRONT_COLORS[ev.front] || "#94a3b8";
             const x      = dateToX(ev.date);
             const odd    = i % 2 === 1;
@@ -446,26 +533,27 @@ export default function Timeline() {
                 onClick={() => setSelectedEvent(ev)}
                 className="tl-ev-row">
 
-                {/* Sticky label */}
+                {/* Sticky label with colored topic box */}
                 <div style={{
                   position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
                   background: bg, borderRight: "1.5px solid var(--line)",
-                  borderLeft: `3px solid ${isDone ? "#16a34a" : color}`,
-                  display: "flex", alignItems: "center", gap: 6, padding: "0 8px 0 6px",
+                  display: "flex", alignItems: "center", gap: 0,
                 }}>
-                  <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: isDone ? "var(--muted)" : "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", lineHeight: 1.3, textDecoration: isDone ? "line-through" : "none" }}>{ev.title}</span>
-                  {isDone
-                    ? <span style={{ fontSize: 9, fontWeight: 900, color: "#16a34a", flexShrink: 0 }}>✓</span>
-                    : <span style={{ fontSize: 9, fontWeight: 800, color, flexShrink: 0 }}>{fmtShort(ev.date)}</span>
-                  }
+                  {/* Colored topic strip */}
+                  <div style={{ width: 10, alignSelf: "stretch", background: isDone ? "#16a34a" : color, flexShrink: 0 }} />
+                  <div style={{ display: "flex", alignItems: "center", gap: 5, flex: 1, padding: "0 6px", overflow: "hidden" }}>
+                    <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
+                    <span style={{ fontSize: 11, fontWeight: 700, color: isDone ? "var(--muted)" : "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", lineHeight: 1.3, textDecoration: isDone ? "line-through" : "none" }}>{ev.title}</span>
+                    {isDone
+                      ? <span style={{ fontSize: 9, fontWeight: 900, color: "#16a34a", flexShrink: 0 }}>✓</span>
+                      : <span style={{ fontSize: 9, fontWeight: 800, color, flexShrink: 0 }}>{fmtShort(ev.date)}</span>
+                    }
+                  </div>
                 </div>
 
                 {/* Track */}
                 <div style={{ position: "relative", width: TRACK_W, flexShrink: 0, height: ROW_H }}>
-                  {/* Row line */}
                   <div style={{ position: "absolute", top: "50%", left: 0, width: "100%", height: 1, background: odd ? "rgba(0,0,0,0.07)" : "rgba(0,0,0,0.05)", transform: "translateY(-0.5px)", pointerEvents: "none" }} />
-                  {/* Dot */}
                   <div style={{
                     position: "absolute",
                     left: x - DOT_R, top: "50%", transform: "translateY(-50%)",
@@ -507,12 +595,14 @@ export default function Timeline() {
                     <div style={{
                       position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
                       background: bg, borderRight: "1.5px solid var(--line)",
-                      borderLeft: `3px solid ${color}44`,
-                      display: "flex", alignItems: "center", gap: 6, padding: "0 8px 0 6px",
+                      display: "flex", alignItems: "center", gap: 0,
                     }}>
-                      <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
-                      <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{ev.title}</span>
-                      <span style={{ fontSize: 9, fontWeight: 700, color: "var(--muted)", flexShrink: 0 }}>TBD</span>
+                      <div style={{ width: 10, alignSelf: "stretch", background: color + "55", flexShrink: 0 }} />
+                      <div style={{ display: "flex", alignItems: "center", gap: 5, flex: 1, padding: "0 6px", overflow: "hidden" }}>
+                        <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
+                        <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{ev.title}</span>
+                        <span style={{ fontSize: 9, fontWeight: 700, color: "var(--muted)", flexShrink: 0 }}>TBD</span>
+                      </div>
                     </div>
                     <div style={{ position: "relative", width: TRACK_W, flexShrink: 0, display: "flex", alignItems: "center", paddingLeft: 12 }}>
                       <span style={{ fontSize: 10, fontWeight: 600, color: color + "88" }}>🚧 no date</span>

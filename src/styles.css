@@ -1454,6 +1454,29 @@ kbd { background: var(--surface); border: 1px solid var(--line-hover); border-ra
 }
 .tl-jump-btn:hover { background: var(--surface-2); border-color: var(--accent); color: var(--accent); }
 
+/* Sort tabs */
+.tl-sort-tabs {
+  display: flex;
+  gap: 2px;
+  background: var(--surface-3);
+  border: 1.5px solid var(--line);
+  border-radius: 9px;
+  padding: 3px;
+}
+.tl-sort-tab {
+  font-size: 11.5px; font-weight: 700;
+  padding: 5px 12px; border-radius: 7px;
+  border: none; background: transparent;
+  color: var(--muted); cursor: pointer;
+  font-family: inherit;
+  transition: all 0.14s;
+}
+.tl-sort-tab.active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
 /* Horizontal scroll track */
 .tl-scroll-wrap {
   overflow-x: auto; border-radius: 16px;
