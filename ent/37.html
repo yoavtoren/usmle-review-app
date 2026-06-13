@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>37 · Upper aerodigestive tract tumors — general</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 37</span>
+    <h1 class="title">🎗️ Upper aerodigestive tract tumors — general principles</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Head-and-neck cancer of the upper aerodigestive tract (UADT) is mostly <b>squamous cell carcinoma</b> driven by <b>tobacco + alcohol</b> and increasingly <b>HPV</b>. The general principles — risk factors, field cancerisation, TNM staging, multidisciplinary work-up and the surgery/radiotherapy/chemotherapy modalities — apply across all the sites covered in the following topics.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ Scope & histology</h3>
+      <p>The UADT comprises the <button class="clue c-blue" onclick="toggle('ga1',this)">oral cavity, pharynx, larynx (± nose/sinus)</button>, and the dominant histology is <button class="clue c-green" onclick="toggle('ga2',this)">squamous cell carcinoma</button>.</p>
+      <div class="reveal r-blue" id="ga1"><b>Sites:</b> oral cavity, nasopharynx (epipharynx), oropharynx, hypopharynx, larynx, and the sinonasal tract; salivary glands are considered separately. Each site has distinct lymphatic drainage and behaviour, but shares general oncological principles.</div>
+      <div class="reveal r-green" id="ga2"><b>Histology:</b> <b>&gt;90% are squamous cell carcinoma</b> arising from the mucosal lining; others include salivary-type carcinomas, lymphoma, melanoma, sarcoma and (nasopharynx) undifferentiated EBV-related carcinoma.</div>
+
+      <h3>🚬 Risk factors</h3>
+      <p>The dominant risks are <button class="clue c-red" onclick="toggle('ga3',this)">tobacco and alcohol (synergistic)</button> and <button class="clue c-orange" onclick="toggle('ga4',this)">HPV (oropharynx) and EBV (nasopharynx)</button>, with several <button class="clue c-blue" onclick="toggle('ga5',this)">site-specific exposures</button>.</p>
+      <div class="reveal r-red" id="ga3"><b>Tobacco + alcohol:</b> independent carcinogens that act <b>synergistically (multiplicatively)</b> for UADT SCC. Smoking cessation is the key modifiable factor and improves treatment outcomes.</div>
+      <div class="reveal r-orange" id="ga4"><b>Viral:</b> <b>HPV (esp. type 16) drives a rising proportion of oropharyngeal SCC</b> — younger, often non-smokers, with cystic neck nodes and a <b>better prognosis (p16-positive)</b>; <b>EBV</b> drives <b>nasopharyngeal carcinoma</b>.</div>
+      <div class="reveal r-blue" id="ga5"><b>Site-specific:</b> <b>betel/areca nut</b> (oral cavity), <b>wood/leather dust and nickel</b> (sinonasal adenocarcinoma), <b>salted fish/nitrosamines</b> (nasopharynx), <b>Plummer–Vinson</b> (post-cricoid), GORD, immunosuppression and prior radiation.</div>
+
+      <h3>🌾 Premalignancy & field cancerisation</h3>
+      <p>SCC often arises from <button class="clue c-green" onclick="toggle('ga6',this)">premalignant lesions</button> in a <button class="clue c-red" onclick="toggle('ga7',this)">cancerised field</button>, which mandates panendoscopy.</p>
+      <div class="reveal r-green" id="ga6"><b>Premalignant lesions:</b> <b>leukoplakia, erythroplakia and dysplasia (→ carcinoma-in-situ)</b>; erythroplakia has the highest malignant potential. Any persistent lesion is biopsied (Topic 45).</div>
+      <div class="reveal r-red" id="ga7"><b>Field cancerisation:</b> the whole mucosa is exposed to carcinogens, so <b>synchronous and second primary tumours</b> are common. This justifies <b>panendoscopy</b> at diagnosis and long-term surveillance.</div>
+
+      <h3>👤 Presentation</h3>
+      <p>UADT cancer presents with <button class="clue c-red" onclick="toggle('ga8',this)">persistent local symptoms and a neck node</button>, with red-flag features that demand urgent referral.</p>
+      <div class="reveal r-red" id="ga8"><b>Presentation/red flags:</b> a <b>non-healing ulcer or mass, persistent hoarseness or dysphagia &gt;3 weeks, odynophagia, referred otalgia, a neck lump, unexplained weight loss, trismus, bleeding or cranial-nerve palsy</b> — any in a smoker/drinker → urgent (2-week-wait) head-and-neck referral.</div>
+
+      <h3>🔎 Diagnosis & staging</h3>
+      <p>Work-up combines <button class="clue c-green" onclick="toggle('ga9',this)">endoscopy and biopsy/panendoscopy</button>, <button class="clue c-blue" onclick="toggle('ga10',this)">imaging and FNAC of the node</button>, and <button class="clue c-green" onclick="toggle('ga11',this)">TNM staging with p16/EBV</button>.</p>
+      <div class="reveal r-green" id="ga9"><b>Tissue diagnosis:</b> flexible nasendoscopy, then <b>biopsy</b>; <b>examination under anaesthesia + panendoscopy</b> maps the primary and excludes synchronous tumours. <b>Never do an open neck biopsy first</b> in suspected SCC (use FNAC).</div>
+      <div class="reveal r-blue" id="ga10"><b>Imaging:</b> <b>CT and/or MRI</b> for local extent and nodal staging; <b>ultrasound-guided FNAC</b> of a neck node; <b>PET-CT</b> for distant disease/unknown primary and treatment response. Stage the chest for distant metastases (lung commonest).</div>
+      <div class="reveal r-green" id="ga11"><b>Staging:</b> <b>TNM (AJCC)</b>, with a <b>separate, more favourable staging for p16-positive (HPV) oropharyngeal cancer</b>. Test <b>p16/HPV</b> (oropharynx) and <b>EBV</b> (nasopharynx) as they alter prognosis and management.</div>
+
+      <h3>💊 General treatment principles</h3>
+      <p>Treatment is <button class="clue c-blue" onclick="toggle('ga12',this)">MDT-led</button>, using <button class="clue c-green" onclick="toggle('ga13',this)">surgery, radiotherapy and chemotherapy</button>, with <button class="clue c-blue" onclick="toggle('ga14',this)">stage-based strategy and neck management</button> and essential <button class="clue c-orange" onclick="toggle('ga15',this)">rehabilitation</button>.</p>
+      <div class="reveal r-blue" id="ga12"><b>MDT:</b> decisions are made by a head-and-neck multidisciplinary team (surgeon, oncologist, radiologist, pathologist, SLT, dietitian, clinical nurse specialist), individualised to site, stage, HPV/EBV status, comorbidity and patient choice.</div>
+      <div class="reveal r-green" id="ga13"><b>Modalities:</b> <b>surgery, radiotherapy, and chemotherapy</b> (cisplatin-based), plus <b>targeted therapy (cetuximab)</b> and <b>immunotherapy</b> (PD-1 inhibitors in recurrent/metastatic disease). Concurrent <b>chemoradiotherapy</b> enables organ preservation.</div>
+      <div class="reveal r-blue" id="ga14"><b>Stage strategy:</b> <b>early disease (stage I–II) → single modality (surgery OR radiotherapy)</b>; <b>advanced (III–IV) → combined modality</b> (surgery + adjuvant (chemo)RT, or definitive chemoRT). The <b>neck</b> is treated electively or therapeutically depending on nodal risk/status (Topic 46).</div>
+      <div class="reveal r-orange" id="ga15"><b>Rehabilitation & supportive care:</b> <b>speech and swallowing therapy, nutrition (PEG), dental assessment before radiotherapy (osteoradionecrosis prevention), airway management, and psychological support</b>. Palliative care for incurable disease. Survivorship and surveillance follow.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Prognosis depends on <b>site, stage, and HPV/EBV status</b>: early glottic cancer and HPV-positive oropharyngeal cancer do well, while hypopharyngeal and advanced/ENE-positive disease do poorly. Extranodal extension and positive margins worsen outcome and prompt adjuvant chemoradiotherapy.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> What is the commonest histology and the main risk factors for UADT cancer?</button>
+        <div class="ans"><b>Squamous cell carcinoma (&gt;90%)</b>; main risks are <b>tobacco + alcohol (synergistic)</b>, <b>HPV (oropharynx)</b> and <b>EBV (nasopharynx)</b>, plus betel nut, wood/nickel dust (sinonasal), and Plummer–Vinson (post-cricoid).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> Why do we perform panendoscopy?</button>
+        <div class="ans">Because of <b>field cancerisation</b> — the whole mucosa is at risk, so <b>synchronous primaries</b> are common. Panendoscopy maps the index tumour and detects second primaries, guiding treatment.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Why is HPV status important in oropharyngeal cancer?</button>
+        <div class="ans"><b>HPV/p16-positive</b> oropharyngeal SCC occurs in younger, often non-smoking patients, presents with cystic neck nodes, <b>responds better and has a markedly better prognosis</b>, and is staged separately (with de-escalation under study).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Outline the general treatment strategy by stage.</button>
+        <div class="ans"><b>Early (I–II):</b> single modality (surgery OR radiotherapy). <b>Advanced (III–IV):</b> combined modality (surgery + adjuvant (chemo)RT, or definitive chemoRT for organ preservation), with appropriate neck treatment. All MDT-led and individualised.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> Why must you never do an open neck biopsy first for a suspicious node?</button>
+        <div class="ans">It risks <b>tumour seeding, scarring and compromising definitive neck surgery/flap design</b>. Use <b>ultrasound-guided FNAC</b> first; the primary is sought by endoscopy/panendoscopy and imaging.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> What adverse pathological features prompt adjuvant chemoradiotherapy?</button>
+        <div class="ans"><b>Positive resection margins and extranodal (extracapsular) extension</b> are the two strongest indications for postoperative <b>concurrent chemoradiotherapy</b>; other adverse features (multiple nodes, perineural/lymphovascular invasion) prompt adjuvant radiotherapy.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>HPV+ vs HPV− oropharyngeal SCC</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> same site/histology. <br><span class="dif">✅ Different in:</span> HPV+ = <b>younger/non-smoker, cystic nodes, p16+, better prognosis, separate staging</b>; HPV− = smoking/alcohol, worse prognosis.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Early vs advanced disease</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> same cancer. <br><span class="dif">✅ Different in:</span> early (I–II) = <b>single modality</b>; advanced (III–IV) = <b>combined modality</b> (surgery + adjuvant, or chemoRT).</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>SCC vs salivary/other histology</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are H&N tumours. <br><span class="dif">✅ Different in:</span> SCC (mucosal, smoking/alcohol/HPV) vs <b>salivary-type, lymphoma, melanoma, sarcoma, nasopharyngeal undifferentiated</b> — biopsy defines it and changes treatment.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Premalignant vs invasive</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both appear as mucosal patches/lesions. <br><span class="dif">✅ Different in:</span> dysplasia/CIS = <b>no basement-membrane breach</b>; invasive SCC = <b>invasion</b> — only biopsy distinguishes.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>FNAC vs open node biopsy</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both sample a neck node. <br><span class="dif">✅ Different in:</span> <b>FNAC first (safe)</b>; open biopsy risks <b>seeding and compromises definitive surgery</b> in SCC.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"Outline your general approach to a patient with a suspected head-and-neck squamous cell carcinoma."</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Frame it as a 2-week-wait pathway</button>
+          <div class="sbody"><i>"A non-healing mucosal lesion or neck node with red flags in a smoker/drinker is a head-and-neck SCC until excluded, managed on an urgent cancer pathway by the MDT."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Risk factors & history</button>
+          <div class="sbody">Tobacco/alcohol (synergistic), HPV/EBV, betel, occupational dust; symptoms &gt;3 weeks (ulcer, hoarseness, dysphagia, otalgia, neck lump, weight loss).</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Diagnose & stage</button>
+          <div class="sbody"><b>Nasendoscopy + biopsy, EUA/panendoscopy</b> (synchronous primaries), <b>US-FNAC</b> of the node (not open biopsy), <b>CT/MRI ± PET-CT</b>, and <b>p16/EBV</b>; assign <b>TNM</b>.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> MDT treatment + support</button>
+          <div class="sbody"><b>Early → single modality; advanced → combined modality</b>; treat the neck; provide <b>dental, nutrition, speech/swallow rehabilitation and smoking cessation</b>; surveillance.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> Carcinogen exposure (tobacco/alcohol) or oncogenic virus (HPV/EBV) accumulates mutations across the mucosal field, producing dysplasia that progresses to invasive squamous carcinoma. The tumour invades locally and spreads via lymphatics to predictable cervical node levels, with extranodal extension worsening prognosis. Treatment matches the modality (surgery/radiotherapy/chemotherapy) to the site, stage and biology, while preserving function where possible.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">commonest H&N cancer histology</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Squamous cell carcinoma (&gt;90%)</span><div class="assoc">mucosal</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">synergistic carcinogens</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Tobacco + alcohol</span><div class="assoc">multiplicative risk</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">young non-smoker + cystic neck node</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">HPV/p16+ oropharyngeal SCC</span><div class="assoc">better prognosis · separate staging</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">multiple mucosal primaries</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Field cancerisation → panendoscopy</span><div class="assoc">synchronous/second primary</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">neck node sampling method</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">US-guided FNAC (NOT open biopsy)</span><div class="assoc">avoid seeding</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">adverse path → add chemo to adjuvant RT</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Positive margins / extranodal extension</span><div class="assoc">concurrent chemoRT</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">organ-preservation treatment</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Concurrent chemoradiotherapy (cisplatin)</span><div class="assoc">larynx/oropharynx</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">dental review before this treatment</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Radiotherapy (osteoradionecrosis prevention)</span><div class="assoc">extractions pre-RT</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">commonest distant metastasis site</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Lung</span><div class="assoc">stage the chest</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">recurrent/metastatic systemic option</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Immunotherapy (PD-1) ± cetuximab</span><div class="assoc">platinum-based chemo</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Smoker with a throat lesion + node</button>
+        <div class="ans"><i>"A 62-year-old smoker/drinker has a non-healing throat ulcer, referred otalgia and a hard level-II node."</i> → suspected <b>H&N SCC</b>: nasendoscopy + biopsy, EUA/panendoscopy, <b>US-FNAC of the node</b>, CT/MRI ± PET-CT, p16; stage and treat by MDT.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Young non-smoker with a cystic node</button>
+        <div class="ans"><i>"A 45-year-old non-smoker has a painless cystic upper-neck node."</i> → consider <b>HPV+ oropharyngeal SCC</b> (a cystic node is not just a branchial cyst in this age group): FNAC + p16, examine/biopsy the tonsil/tongue base, imaging; treat per HPV+ pathway.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is the role of PET-CT?</button>
+        <div class="ans">To detect <b>distant metastases and synchronous primaries</b>, to <b>find an unknown primary</b> presenting as a neck node, and to <b>assess treatment response</b> (e.g. after chemoRT, to decide on neck dissection). It complements CT/MRI of the primary and neck.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What are the major toxicities of head-and-neck radiotherapy?</button>
+        <div class="ans"><b>Acute:</b> mucositis, dysphagia/odynophagia, skin reaction. <b>Late:</b> <b>xerostomia, dysphagia/aspiration, fibrosis, hypothyroidism, dental caries and osteoradionecrosis</b> (hence pre-RT dental assessment). These shape rehabilitation and follow-up.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How do you manage a patient who presents with airway compromise from a tumour?</button>
+        <div class="ans"><b>Secure the airway first</b> (senior ENT/anaesthetics; awake tracheostomy if the larynx is obstructed/disrupted), then proceed with staging and definitive treatment. Airway always precedes oncological work-up.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why is smoking cessation part of cancer treatment, not just prevention?</button>
+        <div class="ans">Continued smoking <b>reduces radiotherapy efficacy, increases complications and second primaries, and worsens survival</b>. Cessation improves treatment response and outcomes, so it is an active component of management.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 37 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

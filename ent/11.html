@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11 · Complications of otitis media</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 11</span>
+    <h1 class="title">👂⚠️ Complications of otitis media</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Complications of otitis media (acute or chronic/cholesteatoma) are divided into <b>intratemporal (extracranial)</b> and <b>intracranial</b>. They arise when infection escapes the middle-ear cleft by bone erosion, thrombophlebitis, or preformed pathways — and they remain a cause of death, so recognising the red flags is the highest-yield skill here.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗺️ Classification & routes of spread</h3>
+      <p>Group complications as <button class="clue c-blue" onclick="toggle('c1',this)">intratemporal vs intracranial</button>. Infection spreads by <button class="clue c-blue" onclick="toggle('c2',this)">three routes</button>, and the <button class="clue c-orange" onclick="toggle('c3',this)">at-risk settings</button> are acute coalescent mastoiditis and cholesteatoma.</p>
+      <div class="reveal r-blue" id="c1"><b>Two families:</b> <b>intratemporal</b> — mastoiditis, petrositis, facial palsy, labyrinthitis, labyrinthine fistula, subperiosteal/Bezold abscess; <b>intracranial</b> — meningitis, extradural/subdural empyema, brain abscess, lateral (sigmoid) sinus thrombosis, otitic hydrocephalus. Listing these two groups is the framework for the whole answer.</div>
+      <div class="reveal r-blue" id="c2"><b>Routes:</b> (1) <b>direct bone erosion/osteitis</b> (cholesteatoma, coalescent mastoiditis); (2) <b>retrograde thrombophlebitis</b> through venous channels into the cranium; (3) <b>preformed pathways</b> — the oval/round windows, congenital or surgical dehiscences, and the petrosquamous suture. These explain how an ear infection reaches the brain.</div>
+      <div class="reveal r-orange" id="c3"><b>High-risk disease:</b> complications cluster around <b>acute coalescent mastoiditis</b> (children) and <b>cholesteatoma/atticoantral CSOM</b> (any age). Any red-flag feature in these patients demands urgent imaging.</div>
+
+      <h3>🦴 Intratemporal complications</h3>
+      <p>These include <button class="clue c-red" onclick="toggle('c4',this)">acute mastoiditis</button>, <button class="clue c-red" onclick="toggle('c5',this)">petrositis (Gradenigo's triad)</button>, <button class="clue c-red" onclick="toggle('c6',this)">facial-nerve palsy</button>, and <button class="clue c-red" onclick="toggle('c7',this)">labyrinthitis and labyrinthine fistula</button>.</p>
+      <div class="reveal r-red" id="c4"><b>Acute mastoiditis:</b> the commonest suppurative complication — postauricular swelling/erythema, a protruding pinna and a sagging canal wall, with subperiosteal or Bezold (neck) abscess. Treat with IV antibiotics + myringotomy ± cortical mastoidectomy (Topic 09).</div>
+      <div class="reveal r-red" id="c5"><b>Petrositis / Gradenigo's syndrome:</b> spread to a pneumatised <b>petrous apex</b> gives the triad <b>otorrhoea + retro-orbital pain (CN V) + lateral rectus palsy (CN VI, Dorello's canal)</b>. Needs imaging and aggressive antibiotic ± surgical treatment.</div>
+      <div class="reveal r-red" id="c6"><b>Facial-nerve palsy:</b> in AOM, from a <b>dehiscent facial canal</b> → urgent myringotomy + IV antibiotics, usually full recovery; in cholesteatoma, from <b>erosion of the facial canal</b> → urgent mastoid surgery. New facial weakness in a discharging ear is always a complication.</div>
+      <div class="reveal r-red" id="c7"><b>Labyrinthitis & fistula:</b> <b>serous labyrinthitis</b> (irritation → vertigo, some SNHL, reversible) vs <b>suppurative labyrinthitis</b> (infection → severe vertigo + total SNHL "dead ear", and a gateway to meningitis). A <b>positive fistula sign</b> (vertigo on tragal pressure) indicates a lateral-canal fistula from cholesteatoma.</div>
+
+      <h3>🧠 Intracranial complications</h3>
+      <p>The major intracranial complications are <button class="clue c-red" onclick="toggle('c8',this)">meningitis</button>, <button class="clue c-red" onclick="toggle('c9',this)">brain abscess and empyema</button>, <button class="clue c-red" onclick="toggle('c10',this)">lateral (sigmoid) sinus thrombosis</button> and <button class="clue c-red" onclick="toggle('c11',this)">otitic hydrocephalus</button>.</p>
+      <div class="reveal r-red" id="c8"><b>Meningitis</b> is the <b>commonest intracranial complication</b> — headache, photophobia, neck stiffness, fever, reduced consciousness. <b>Pneumococcus</b> predominates. Confirm/treat urgently; <b>image before LP</b> if focal signs or raised ICP are suspected, and treat the ear source.</div>
+      <div class="reveal r-red" id="c9"><b>Abscess:</b> <b>extradural</b> (often silent, found at surgery), <b>subdural empyema</b> (rapidly deteriorating, seizures), and <b>brain abscess</b> in the <b>temporal lobe (from the tegmen) or cerebellum (from the sinus plate)</b> — headache, focal deficit, fever, then raised ICP. Needs CT/MRI, neurosurgical drainage and mastoid eradication.</div>
+      <div class="reveal r-red" id="c10"><b>Lateral/sigmoid sinus thrombosis:</b> <b>swinging "picket-fence" fever with rigors</b>, headache, ± <b>Griesinger's sign</b> (postauricular oedema over the mastoid emissary vein). The <b>Tobey–Ayer test</b> is the classic clinical sign; confirm with <b>MRV/contrast CT</b>. Treat with IV antibiotics, mastoidectomy ± anticoagulation.</div>
+      <div class="reveal r-red" id="c11"><b>Otitic hydrocephalus:</b> raised intracranial pressure (headache, papilloedema, diplopia from VI palsy) <b>without a mass or ventricular dilatation</b>, usually associated with lateral sinus thrombosis impairing CSF reabsorption. Manage ICP (the threat is to vision) and treat the ear/thrombosis.</div>
+
+      <h3>🚩 Red flags & assessment</h3>
+      <p>In any patient with AOM/CSOM, the warning features are <button class="clue c-red" onclick="toggle('c12',this)">severe headache, persistent/swinging fever, vomiting, drowsiness, focal neurology, vertigo or facial weakness</button>. These mandate <button class="clue c-green" onclick="toggle('c13',this)">contrast CT/MRI and joint care</button>.</p>
+      <div class="reveal r-red" id="c12"><b>Red flags:</b> a discharging ear that develops <b>severe headache, altered consciousness, seizures, neck stiffness, swinging fever, vertigo, diplopia, or facial palsy</b> has a complication until proven otherwise. Do not keep changing antibiotics — escalate and image.</div>
+      <div class="reveal r-green" id="c13"><b>Work-up:</b> <span class="lab">FBC/CRP</span>, blood cultures, <b>contrast CT temporal bone + brain</b> and <b>MRI/MRV</b> (best for intracranial collections and sinus thrombosis); audiometry; LP only after imaging excludes a mass/raised ICP.</div>
+
+      <h3>💊 Management principles</h3>
+      <p>Management combines <button class="clue c-blue" onclick="toggle('c14',this)">high-dose IV antibiotics, source control by mastoid surgery, and neurosurgical drainage</button> of intracranial collections.</p>
+      <div class="reveal r-blue" id="c14"><b>Triple approach:</b> (1) <b>broad-spectrum IV antibiotics</b> crossing the blood–brain barrier (then culture-directed, often with metronidazole for anaerobes); (2) <b>surgical eradication of the ear source</b> — myringotomy for AOM, <b>mastoidectomy</b> for coalescent disease/cholesteatoma; (3) <b>neurosurgical drainage</b> of abscess/empyema and ICP control. Anticoagulation is considered for sinus thrombosis.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Early recognition and the combined medical–surgical approach give good outcomes for most intratemporal complications and meningitis; brain abscess and extensive intracranial sepsis still carry significant mortality, and suppurative labyrinthitis leaves a permanently dead ear.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> Classify the complications of otitis media.</button>
+        <div class="ans"><b>Intratemporal:</b> mastoiditis, petrositis (Gradenigo), facial palsy, serous/suppurative labyrinthitis, labyrinthine fistula, subperiosteal/Bezold abscess. <b>Intracranial:</b> meningitis (commonest), extradural/subdural empyema, brain abscess, lateral sinus thrombosis, otitic hydrocephalus.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> How does infection reach the cranium from the ear?</button>
+        <div class="ans">By <b>direct bone erosion/osteitis</b> (cholesteatoma, coalescent mastoiditis), <b>retrograde thrombophlebitis</b> through venous channels, and <b>preformed pathways</b> (oval/round windows, dehiscences, the petrosquamous suture, or surgical defects).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> What is Gradenigo's syndrome?</button>
+        <div class="ans"><b>Petrous apicitis</b> giving the triad <b>otorrhoea + retro-orbital pain (trigeminal) + lateral rectus palsy (abducens, in Dorello's canal)</b>. It signals petrous-apex infection needing imaging and aggressive treatment.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Serous vs suppurative labyrinthitis?</button>
+        <div class="ans"><b>Serous</b> = irritation/toxins → vertigo + partial, often reversible SNHL. <b>Suppurative</b> = actual infection of the labyrinth → severe vertigo + <b>total irreversible SNHL ("dead ear")</b> and a route to meningitis. Suppurative is the emergency.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> A child with mastoiditis has swinging fevers and rigors. Diagnosis and tests?</button>
+        <div class="ans"><b>Lateral (sigmoid) sinus thrombosis</b> — picket-fence fever, ± Griesinger's sign, Tobey–Ayer test. Confirm with <b>MRV/contrast CT</b>; treat with IV antibiotics, <b>mastoidectomy</b>, and consider <b>anticoagulation</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> Where do otogenic brain abscesses form, and from which route?</button>
+        <div class="ans"><b>Temporal lobe</b> (via the <b>tegmen tympani</b>) and <b>cerebellum</b> (via the <b>sinus plate/Trautmann's triangle</b>). They present with headache, focal deficit and raised ICP, needing CT/MRI, neurosurgical drainage and mastoid eradication.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q7.</span> What is the principle of management?</button>
+        <div class="ans">A combined approach: <b>high-dose IV antibiotics crossing the BBB</b>, <b>surgical eradication of the ear source (mastoidectomy)</b>, and <b>neurosurgical drainage</b> of intracranial collections with ICP control — never antibiotics alone when there is pus or a mass.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Serous vs suppurative labyrinthitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both cause vertigo + hearing loss in OM. <br><span class="dif">✅ Different in:</span> serous = <b>partial, reversible SNHL</b>; suppurative = <b>total dead ear + meningitis risk</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Lateral sinus thrombosis vs brain abscess</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = intracranial otogenic sepsis with headache/fever. <br><span class="dif">✅ Different in:</span> sinus thrombosis = <b>swinging fever, Griesinger, MRV filling defect</b>; abscess = <b>focal deficit + ring-enhancing lesion</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>AOM facial palsy vs cholesteatoma facial palsy</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = otogenic VII palsy. <br><span class="dif">✅ Different in:</span> AOM = <b>dehiscent canal → myringotomy + antibiotics, recovers</b>; cholesteatoma = <b>bony erosion → urgent mastoid surgery</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Otitic hydrocephalus vs brain abscess</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both raise ICP with headache. <br><span class="dif">✅ Different in:</span> otitic hydrocephalus = <b>raised ICP, normal-size ventricles, no mass</b> (with sinus thrombosis); abscess = <b>focal mass on imaging</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Petrositis vs simple mastoiditis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both follow ear infection with deep pain. <br><span class="dif">✅ Different in:</span> petrositis adds <b>retro-orbital pain (V) + VI palsy = Gradenigo</b>; mastoiditis is postauricular.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A patient with a long-standing cholesteatoma develops severe headache, fever and a new facial droop. How do you proceed?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Declare an emergency</button>
+          <div class="sbody"><i>"A discharging cholesteatomatous ear with new headache, fever and facial palsy has an <b>intratemporal and possibly intracranial complication</b> — this is an emergency needing admission, imaging and combined ENT–neurosurgical care."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Localise the complications</button>
+          <div class="sbody">Facial palsy = <b>eroded facial canal</b>; headache/fever = possible <b>meningitis, abscess or sinus thrombosis</b>. Examine cranial nerves, fundi, neck stiffness, fistula sign and conscious level.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigate</button>
+          <div class="sbody"><span class="lab">FBC/CRP</span>, cultures; <b>contrast CT temporal bone + brain</b> and <b>MRI/MRV</b> for collections and sinus thrombosis; audiometry; LP only after imaging.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Treat the source + the complication</button>
+          <div class="sbody"><b>IV antibiotics across the BBB</b>; <b>mastoidectomy</b> to eradicate the cholesteatoma and decompress; <b>neurosurgical drainage</b> of any abscess/empyema; manage facial nerve and ICP; anticoagulation for sinus thrombosis as indicated.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> Cholesteatoma erodes the bony walls of the middle ear and mastoid, breaching the facial canal, labyrinth, tegmen and sinus plate. Infection then escapes by direct extension, retrograde thrombophlebitis, or preformed pathways into the cranial cavity. The result is a spectrum from facial palsy and labyrinthitis to meningitis, brain abscess and sinus thrombosis — treated by eradicating the ear source and draining intracranial pus.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">otorrhoea + retro-orbital pain + VI palsy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Gradenigo (petrous apicitis)</span><div class="assoc">CN V + VI · Dorello's canal</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">swinging "picket-fence" fever + rigors</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Lateral sinus thrombosis</span><div class="assoc">Griesinger sign · Tobey–Ayer · MRV</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">commonest intracranial complication</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Meningitis</span><div class="assoc">pneumococcus · image before LP if focal signs</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">vertigo + total dead ear in OM</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Suppurative labyrinthitis</span><div class="assoc">gateway to meningitis</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">vertigo on tragal pressure (discharging ear)</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Labyrinthine fistula</span><div class="assoc">cholesteatoma · positive fistula sign</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">otogenic abscess sites</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Temporal lobe + cerebellum</span><div class="assoc">tegmen / sinus plate routes</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">raised ICP, normal ventricles, no mass</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Otitic hydrocephalus</span><div class="assoc">with sinus thrombosis · protect vision</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">postauricular oedema over emissary vein</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Griesinger's sign</span><div class="assoc">sigmoid sinus thrombosis</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">facial palsy + discharging ear</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Otogenic VII complication</span><div class="assoc">AOM dehiscence vs cholesteatoma erosion</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">principle of treatment</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">IV antibiotics + mastoidectomy + neurosurgical drainage</span><div class="assoc">treat source AND complication</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Otogenic meningitis</button>
+        <div class="ans"><i>"A child with otorrhoea develops fever, photophobia and neck stiffness."</i> → resuscitate; <b>IV antibiotics across the BBB</b>; <b>CT before LP</b> if focal signs/raised ICP; identify and <b>eradicate the ear source</b> (myringotomy/mastoidectomy). Meningitis is the commonest intracranial complication.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Sigmoid sinus thrombosis</button>
+        <div class="ans"><i>"Mastoiditis with swinging fevers, rigors and postauricular oedema."</i> → <b>MRV/contrast CT</b>; IV antibiotics, <b>mastoidectomy</b> (± exposing/incising the sinus), and consider <b>anticoagulation</b>. Watch for otitic hydrocephalus and protect vision.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why image before lumbar puncture in suspected otogenic meningitis?</button>
+        <div class="ans">Because an associated <b>brain abscess or raised ICP</b> can cause <b>coning</b> if CSF is removed. Imaging (CT/MRI) excludes a mass effect first; antibiotics should not be delayed for imaging.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is the Tobey–Ayer (Queckenstedt) test?</button>
+        <div class="ans">A clinical test for <b>lateral sinus thrombosis</b>: compressing the affected jugular vein produces <b>no rise in CSF pressure</b> (the sinus is blocked), whereas compressing the normal side raises pressure. Largely historical now that <b>MRV</b> is available.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How does cholesteatoma differ from AOM as a source of complications?</button>
+        <div class="ans">AOM complications (mostly children) arise from acute suppuration and a dehiscent facial canal, often reversible with drainage. <b>Cholesteatoma</b> complications arise from <b>relentless bony erosion</b>, so they need <b>mastoid surgery to eradicate the matrix</b>, not antibiotics alone.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Which complication threatens vision, and how?</button>
+        <div class="ans"><b>Otitic hydrocephalus</b> — raised ICP from impaired CSF reabsorption (with lateral sinus thrombosis) causes <b>papilloedema and can damage the optic nerve</b>. Management lowers ICP (acetazolamide, sometimes shunt/optic-sheath fenestration) alongside treating the ear and thrombosis.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 11 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 · Salivary gland tumors</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 50</span>
+    <h1 class="title">💧🎗️ Salivary gland tumors</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Salivary tumours follow a useful rule of thumb — the <b>parotid is the commonest site and most are benign, but the smaller the gland, the higher the chance of malignancy</b>. The benchmark benign tumour is the <b>pleomorphic adenoma</b>; the key malignant red flag is a <b>facial-nerve palsy</b>.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ The "rule of the glands"</h3>
+      <p>Site predicts the chance of malignancy: <button class="clue c-blue" onclick="toggle('sg1',this)">parotid = commonest, mostly benign</button>; <button class="clue c-orange" onclick="toggle('sg2',this)">smaller glands = higher malignant risk</button>.</p>
+      <div class="reveal r-blue" id="sg1"><b>Parotid:</b> ~<b>80% of salivary tumours</b> arise here and ~<b>80% are benign</b> (mostly pleomorphic adenoma); ~80% of the benign ones are pleomorphic adenomas ("80% rule"). Most sit in the superficial lobe lateral to the facial nerve.</div>
+      <div class="reveal r-orange" id="sg2"><b>Smaller glands, higher malignancy:</b> the proportion that is malignant rises as gland size falls — <b>submandibular (~50%) and sublingual/minor glands (highest)</b>. So a minor-gland or sublingual mass is much more likely to be cancer.</div>
+
+      <h3>🟢 Benign tumours</h3>
+      <p>The two important benign tumours are the <button class="clue c-green" onclick="toggle('sg3',this)">pleomorphic adenoma</button> and <button class="clue c-blue" onclick="toggle('sg4',this)">Warthin's tumour</button>.</p>
+      <div class="reveal r-green" id="sg3"><b>Pleomorphic adenoma:</b> the <b>commonest salivary tumour</b> — a slow-growing, painless parotid lump. It has a <b>tendency to recur if incompletely excised or the capsule is ruptured</b>, and a small long-term risk of <b>malignant transformation (carcinoma ex-pleomorphic adenoma)</b> — hence formal excision, not enucleation.</div>
+      <div class="reveal r-blue" id="sg4"><b>Warthin's tumour (papillary cystadenoma lymphomatosum):</b> benign, in <b>older male smokers</b>, often in the <b>parotid tail</b> and sometimes <b>bilateral/multifocal</b>; takes up technetium on scintigraphy. Benign with negligible malignant potential.</div>
+
+      <h3>🔴 Malignant tumours</h3>
+      <p>The common malignancies are <button class="clue c-green" onclick="toggle('sg5',this)">mucoepidermoid carcinoma</button> and <button class="clue c-orange" onclick="toggle('sg6',this)">adenoid cystic carcinoma</button>, with <button class="clue c-red" onclick="toggle('sg7',this)">facial-nerve palsy signalling malignancy</button>.</p>
+      <div class="reveal r-green" id="sg5"><b>Mucoepidermoid carcinoma:</b> the <b>commonest salivary malignancy</b> (and the commonest in children); behaviour ranges from low- to high-grade. Grade drives treatment and prognosis.</div>
+      <div class="reveal r-orange" id="sg6"><b>Adenoid cystic carcinoma:</b> notable for <b>perineural spread</b>, a long but relentless course with <b>late lung metastases</b>, and late recurrences — so wide excision, perineural assessment and long follow-up are needed. Other malignancies: acinic cell, <b>carcinoma ex-pleomorphic adenoma</b>, adenocarcinoma.</div>
+      <div class="reveal r-red" id="sg7"><b>Red flags for malignancy:</b> <b>facial-nerve weakness (a malignant parotid tumour until proven otherwise)</b>, pain, rapid growth, fixation to skin/deep tissue, skin ulceration, and cervical nodes. A painless mobile lump is more likely benign.</div>
+
+      <h3>🔎 Diagnosis</h3>
+      <p>Assess with <button class="clue c-green" onclick="toggle('sg8',this)">ultrasound + FNAC and MRI</button>, avoiding <button class="clue c-purple" onclick="toggle('sg9',this)">incisional biopsy</button>.</p>
+      <div class="reveal r-green" id="sg8"><b>Work-up:</b> <b>ultrasound-guided FNAC (or core biopsy)</b> for cytology and <b>MRI</b> for deep-lobe extent, parapharyngeal spread, perineural invasion and the facial-nerve relationship; assess the facial nerve clinically and look for neck nodes.</div>
+      <div class="reveal r-purple" id="sg9"><b>Trap:</b> <b>do not perform an incisional/open biopsy</b> of a salivary (especially parotid) mass — risk of <b>tumour seeding and facial-nerve injury</b>. Use FNAC/core biopsy; the definitive diagnosis is on the excised specimen.</div>
+
+      <h3>💊 Treatment</h3>
+      <p>Treatment is <button class="clue c-green" onclick="toggle('sg10',this)">surgical excision with facial-nerve preservation</button>, with <button class="clue c-blue" onclick="toggle('sg11',this)">adjuvant radiotherapy for malignancy</button> and recognised <button class="clue c-red" onclick="toggle('sg12',this)">complications</button>.</p>
+      <div class="reveal r-green" id="sg10"><b>Surgery:</b> parotid tumours → <b>superficial (or total) parotidectomy with facial-nerve identification and preservation</b> (the nerve is sacrificed only if directly involved by malignancy); submandibular tumours → gland excision (protect the lingual, hypoglossal and marginal mandibular nerves). Neck dissection for malignant/node-positive disease.</div>
+      <div class="reveal r-blue" id="sg11"><b>Adjuvant radiotherapy:</b> for <b>high-grade or incompletely excised malignancy, adenoid cystic (perineural) carcinoma, advanced stage, and recurrence</b>. Improves local control where surgery alone is insufficient.</div>
+      <div class="reveal r-red" id="sg12"><b>Complications:</b> <b>facial-nerve injury (temporary or permanent), Frey syndrome (gustatory sweating), salivary fistula/sialocele, greater-auricular-nerve numbness, and recurrence</b> (especially pleomorphic adenoma if the capsule is breached).</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Benign tumours do well with complete excision (pleomorphic adenoma recurs if incompletely removed). Malignant prognosis depends on histology/grade and stage: low-grade mucoepidermoid does well; high-grade and adenoid cystic carcinomas (with perineural spread and late metastases) are more challenging.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> State the "rule of the glands" for salivary tumours.</button>
+        <div class="ans">The <b>parotid is the commonest site and ~80% are benign</b>, but the <b>smaller the gland, the higher the malignancy risk</b> (submandibular ~50%, sublingual/minor highest). So a minor-gland mass is more likely cancer.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> Which sign indicates a malignant parotid tumour?</button>
+        <div class="ans"><b>Facial-nerve weakness/palsy</b> — a parotid mass with facial palsy is <b>malignant until proven otherwise</b>; also pain, rapid growth, fixation, skin involvement and neck nodes.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Why excise (not enucleate) a pleomorphic adenoma?</button>
+        <div class="ans">It has microscopic capsular extensions, so enucleation/capsule rupture causes <b>recurrence</b>; there is also a long-term risk of <b>malignant transformation</b>. A formal parotidectomy with a cuff of normal tissue is required.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Describe Warthin's tumour.</button>
+        <div class="ans">A benign <b>papillary cystadenoma lymphomatosum</b> in <b>older male smokers</b>, often in the <b>parotid tail</b>, sometimes <b>bilateral/multifocal</b>, technetium-avid; negligible malignant potential.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> Why is incisional biopsy avoided for a parotid mass?</button>
+        <div class="ans">Risk of <b>tumour seeding and facial-nerve injury</b>. Use <b>US-guided FNAC/core biopsy</b>; the definitive histology comes from the excised specimen at parotidectomy.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> What is distinctive about adenoid cystic carcinoma?</button>
+        <div class="ans"><b>Perineural spread</b> (skip lesions), an <b>indolent but relentless course with late lung metastases and late recurrences</b> — needing wide excision, perineural assessment, adjuvant radiotherapy and long-term follow-up.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Pleomorphic adenoma vs Warthin's tumour</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are benign parotid lumps. <br><span class="dif">✅ Different in:</span> pleomorphic = <b>commonest, any age, recurs/transforms</b>; Warthin's = <b>older male smoker, parotid tail, often bilateral, Tc-avid</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Benign vs malignant salivary tumour</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = a gland lump. <br><span class="dif">✅ Different in:</span> malignant = <b>facial palsy, pain, rapid growth, fixation, nodes</b>; benign = painless, mobile, slow.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Mucoepidermoid vs adenoid cystic carcinoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are salivary malignancies. <br><span class="dif">✅ Different in:</span> mucoepidermoid = <b>commonest, graded, commonest in children</b>; adenoid cystic = <b>perineural spread, late lung mets/recurrence</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Parotid tumour vs non-tumorous swelling</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = parotid enlargement. <br><span class="dif">✅ Different in:</span> tumour = <b>persistent dominant mass (± facial palsy) → FNAC</b>; sialadenitis/stone/sialosis fluctuates with meals/infection (Topic 24).</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Parotid mass vs other neck/CPA lesion</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = mass near the ear/upper neck. <br><span class="dif">✅ Different in:</span> parotid tumour = <b>over the gland, FNAC/MRI</b>; a deep-lobe/parapharyngeal tumour displaces the tonsil — MRI defines it.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A patient has a parotid lump with a new facial-nerve weakness. How do you assess and manage?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Facial palsy = malignant</button>
+          <div class="sbody"><i>"A parotid mass with facial-nerve weakness is a <b>malignant parotid tumour until proven otherwise</b> — the nerve involvement is the key red flag."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Examine</button>
+          <div class="sbody">Assess the lump (fixation, skin), <b>grade the facial nerve (House–Brackmann)</b>, examine the oropharynx (deep-lobe/parapharyngeal extension) and the neck for nodes.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigate</button>
+          <div class="sbody"><b>US-guided FNAC/core biopsy</b> (no incisional biopsy) and <b>MRI</b> (deep lobe, perineural spread, nerve relationship); stage the neck/chest.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Treat (MDT)</button>
+          <div class="sbody"><b>Parotidectomy</b> (sacrificing only involved nerve, with grafting if resected) + <b>neck dissection</b> for malignant/nodal disease + <b>adjuvant radiotherapy</b> (high-grade/adenoid cystic/incomplete/advanced). Facial rehabilitation as needed.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> The facial nerve runs through the parotid, so a tumour that infiltrates the nerve (rather than merely displacing it) produces facial weakness — a hallmark of malignancy. Benign tumours like pleomorphic adenoma grow slowly and push the nerve aside without paralysing it. Surgery removes the tumour with a cuff of gland while preserving the uninvolved nerve, sacrificing and grafting it only where directly invaded.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">commonest salivary tumour</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Pleomorphic adenoma (benign, parotid)</span><div class="assoc">recurs if capsule breached · can transform</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">older male smoker, parotid tail, bilateral</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Warthin's tumour</span><div class="assoc">Tc-avid · benign</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">parotid mass + facial palsy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Malignant until proven otherwise</span><div class="assoc">red flag</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">commonest salivary malignancy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Mucoepidermoid carcinoma</span><div class="assoc">graded · commonest in children</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">perineural spread + late lung mets</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Adenoid cystic carcinoma</span><div class="assoc">long but relentless</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">smaller gland → tumour risk</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Higher malignancy</span><div class="assoc">submandibular/minor &gt; parotid</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">salivary mass biopsy method</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">US-guided FNAC/core (NOT incisional)</span><div class="assoc">seeding/VII injury</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">gustatory sweating after parotidectomy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Frey syndrome</span><div class="assoc">aberrant reinnervation</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">benign parotid tumour operation</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Superficial parotidectomy (preserve VII)</span><div class="assoc">not enucleation</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">long-standing adenoma now painful/rapid</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Carcinoma ex-pleomorphic adenoma</span><div class="assoc">malignant transformation</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Benign parotid lump</button>
+        <div class="ans"><i>"A slow-growing, painless, mobile parotid lump with normal facial-nerve function."</i> → likely <b>pleomorphic adenoma</b>: US-FNAC, MRI if deep; <b>superficial parotidectomy with facial-nerve preservation</b> (avoid capsule rupture/enucleation).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Malignant parotid tumour</button>
+        <div class="ans"><i>"A rapidly growing fixed parotid mass with facial weakness and a neck node."</i> → <b>malignant</b>: FNAC/core + MRI; <b>parotidectomy ± nerve resection/grafting + neck dissection + adjuvant radiotherapy</b>; facial rehabilitation.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How do you manage a deep-lobe/parapharyngeal salivary tumour?</button>
+        <div class="ans">It often presents as <b>medial displacement of the tonsil/soft palate</b>; <b>MRI</b> defines it and its relation to the carotid; <b>do not transorally biopsy/excise</b> (vascular/seeding risk) — resect via a transcervical (± transparotid) approach with facial-nerve care.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is Frey syndrome and how is it treated?</button>
+        <div class="ans"><b>Gustatory sweating/flushing of the cheek when eating</b> after parotid surgery, from misdirected parasympathetic fibres reinnervating skin sweat glands. Confirm with the <b>starch–iodine test</b>; treat with <b>topical antiperspirants or botulinum toxin</b> (prevented by interposing a flap/barrier).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How is the facial nerve managed when involved by cancer?</button>
+        <div class="ans">Preserve it if not involved; if <b>directly infiltrated</b>, resect the involved segment with the tumour and perform <b>immediate nerve grafting (e.g. great auricular/sural)</b> ± static/dynamic facial reanimation, with eye protection (Topic 16).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why does submandibular/minor-gland disease change your index of suspicion?</button>
+        <div class="ans">Because <b>malignancy is proportionally more common in smaller glands</b> (~50% submandibular, highest in minor/sublingual), any persistent mass there warrants <b>prompt FNAC/MRI</b> and a lower threshold for malignancy than a parotid lump.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 50 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

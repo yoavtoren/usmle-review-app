@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>09 · Mastoiditis</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 09</span>
+    <h1 class="title">👂🦴 Mastoiditis</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Acute mastoiditis is the commonest <b>suppurative complication of acute otitis media</b> — infection spreading from the middle ear into the mastoid air cells with breakdown of their bony septa. It is a clinical diagnosis with classic post-auricular signs, and it is the gateway to intracranial complications.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🧬 Anatomy & pathophysiology</h3>
+      <p>The mastoid air cells communicate with the middle ear through the <button class="clue c-blue" onclick="toggle('k1',this)">aditus ad antrum</button>. In AOM the mucosa lining these cells inflames; if the aditus blocks, pus is trapped and <button class="clue c-blue" onclick="toggle('k2',this)">acute coalescent mastoiditis</button> develops as the bony septa dissolve. Pus then escapes along paths of least resistance to form <button class="clue c-orange" onclick="toggle('k3',this)">subperiosteal and neck abscesses</button>.</p>
+      <div class="reveal r-blue" id="k1"><b>Aditus ad antrum:</b> the narrow channel linking the epitympanum to the mastoid antrum. Mucosal swelling here converts a simple "mastoid reaction" (mucosal inflammation, present in most AOM) into <b>trapped empyema</b> when drainage fails — the step that defines true mastoiditis.</div>
+      <div class="reveal r-blue" id="k2"><b>Coalescent mastoiditis:</b> trapped pus under pressure causes <b>osteitis and resorption of the inter-cellular septa</b>, coalescing the cells into an abscess cavity. This is the surgical form, distinct from the radiological "fluid in cells" seen in ordinary AOM.</div>
+      <div class="reveal r-orange" id="k3"><b>Abscess routes:</b> through the lateral mastoid cortex → <b>postauricular subperiosteal abscess</b> (commonest); through the mastoid tip into the sternocleidomastoid → <b>Bezold abscess</b> (neck swelling, torticollis); into the digastric groove or zygomatic root (<b>Citelli/zygomatic</b>); and into the deep neck.</div>
+
+      <h3>🦠 Microbiology & demographics</h3>
+      <p>The organisms mirror AOM — <button class="clue c-green" onclick="toggle('k4',this)">Streptococcus pneumoniae, group A Strep, H. influenzae, Staph aureus</button>; it is mainly a <button class="clue c-orange" onclick="toggle('k5',this)">disease of young children</button>.</p>
+      <div class="reveal r-green" id="k4"><b>Organisms:</b> <b>S. pneumoniae</b> is the classic, with <b>group A streptococcus</b>, <b>H. influenzae</b> and <b>S. aureus</b>; chronic/atypical cases add Pseudomonas and anaerobes. Pneumococcus (notably some serotypes) is most associated with aggressive coalescent disease.</div>
+      <div class="reveal r-orange" id="k5"><b>Demographics:</b> most cases are in <b>children under 2</b> with their first or recurrent AOM. Despite antibiotics it remains the commonest suppurative AOM complication; incomplete/partial antibiotic treatment can produce a <b>"masked" mastoiditis</b>.</div>
+
+      <h3>👂 Clinical features</h3>
+      <p>Suspect mastoiditis when AOM <button class="clue c-red" onclick="toggle('k6',this)">fails to settle or worsens after ~2 weeks</button>, with the triad of <button class="clue c-green" onclick="toggle('k7',this)">postauricular swelling, erythema and tenderness pushing the pinna down-and-out</button>, plus a <button class="clue c-green" onclick="toggle('k8',this)">sagging posterosuperior canal wall</button>. Beware <button class="clue c-purple" onclick="toggle('k9',this)">masked mastoiditis</button>.</p>
+      <div class="reveal r-red" id="k6"><b>Time course:</b> persistent fever, deep otalgia and otorrhoea continuing or recurring <b>beyond 10–14 days</b> of AOM, or deterioration after apparent improvement, is the warning that infection has entered the mastoid.</div>
+      <div class="reveal r-green" id="k7"><b>The classic sign:</b> a red, tender, fluctuant <b>postauricular swelling</b> over the mastoid that <b>protrudes the pinna forward and downward and obliterates the postauricular crease</b> — distinguishing it from simple lymphadenitis (which sits behind the crease and does not displace the pinna).</div>
+      <div class="reveal r-green" id="k8"><b>Otoscopy:</b> a bulging/perforated drum with otorrhoea and a <b>sagging posterosuperior (bony) canal wall</b> caused by periosteitis of the medial canal — a near-pathognomonic sign of mastoid suppuration.</div>
+      <div class="reveal r-purple" id="k9"><b>Masked mastoiditis (trap):</b> partial antibiotic treatment can suppress the obvious signs while <b>osteitis smoulders</b>, presenting later with vague illness or a sudden intracranial complication. Maintain suspicion in a child with persistent low-grade symptoms after "treated" AOM.</div>
+
+      <h3>🔎 Investigation</h3>
+      <p>Diagnosis is clinical; confirm and plan with <button class="clue c-green" onclick="toggle('k10',this)">inflammatory markers and HRCT</button>, adding <button class="clue c-red" onclick="toggle('k11',this)">contrast CT/MRI if a complication is suspected</button>.</p>
+      <div class="reveal r-green" id="k10"><b>Tests:</b> <span class="lab">raised WBC/CRP</span>, blood cultures, and ear swab. <b>HRCT temporal bone</b> shows opacified coalescent air cells with <b>loss of septa</b> and any cortical breach/subperiosteal abscess; it guides surgery.</div>
+      <div class="reveal r-red" id="k11"><b>If complications suspected:</b> <b>contrast CT + MRI/MRV</b> to detect intracranial abscess, meningitis or <b>sigmoid sinus thrombosis</b>. New neurology, severe headache, seizures or swinging fever mandate this before/with treatment.</div>
+
+      <h3>💊 Management</h3>
+      <p>Treat with <button class="clue c-blue" onclick="toggle('k12',this)">admission, IV antibiotics and myringotomy</button>; perform <button class="clue c-red" onclick="toggle('k13',this)">cortical mastoidectomy</button> for an abscess, failure to respond, or any complication.</p>
+      <div class="reveal r-blue" id="k12"><b>First-line:</b> admit, <b>IV broad-spectrum antibiotics</b> (e.g. ceftriaxone ± an anti-staph/anti-anaerobe agent, then culture-directed), and <b>myringotomy ± grommet</b> to drain the middle ear and obtain pus. Many early cases settle on this alone.</div>
+      <div class="reveal r-red" id="k13"><b>Cortical (simple) mastoidectomy</b> drains the coalesced cells and any <b>subperiosteal abscess</b>; indicated for a subperiosteal/neck abscess, failure to improve in ~48 h, or an intracranial complication. It preserves the canal wall and middle ear, unlike cholesteatoma surgery.</div>
+
+      <h3>🔴 Complications</h3>
+      <p>Untreated mastoiditis spreads to give <button class="clue c-red" onclick="toggle('k14',this)">facial palsy, labyrinthitis, petrositis and intracranial sepsis</button> (covered fully in Topic 11).</p>
+      <div class="reveal r-red" id="k14"><b>Spread:</b> facial-nerve palsy, labyrinthitis, <b>petrous apicitis (Gradenigo's triad)</b>, and intracranial complications — meningitis, extradural/subdural/brain abscess and <b>sigmoid (lateral) sinus thrombosis</b> (picket-fence fever, Griesinger's sign). These convert a treatable infection into a life-threatening one.</div>
+
+      <h3>🔄 Chronic mastoiditis</h3>
+      <p>In the context of <b>chronic suppurative OM/cholesteatoma</b>, low-grade mastoid infection persists with chronic discharge; management is the surgery of the underlying chronic otitis (Topics 06–07), not just antibiotics.</p>
+
+      <h3>📈 Prognosis</h3>
+      <p>With prompt antibiotics ± surgery the prognosis is excellent. Delay — particularly in masked disease — risks hearing loss and the intracranial complications that still cause mortality.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> How does mastoiditis differ from the "mastoid reaction" seen in ordinary AOM?</button>
+        <div class="ans">Most AOM shows fluid in mastoid cells on imaging (a mucosal reaction). <b>True (coalescent) mastoiditis</b> means trapped pus has caused <b>osteitis with breakdown of the bony septa</b> and clinical postauricular signs — that is the surgical disease.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> How do you distinguish mastoiditis from postauricular lymphadenitis?</button>
+        <div class="ans">Mastoiditis pushes the <b>pinna down-and-out and obliterates the postauricular crease</b>, with otoscopic AOM and a sagging canal wall. Lymphadenitis sits <b>behind the crease</b>, does not displace the pinna, and the ear exam is normal.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> What is a Bezold abscess?</button>
+        <div class="ans">Pus eroding through the <b>mastoid tip</b> into the <b>sternocleidomastoid</b>, producing a tender neck swelling ± torticollis. It signals advanced disease and needs drainage and mastoidectomy.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> When do you operate rather than continue antibiotics?</button>
+        <div class="ans"><b>Cortical mastoidectomy</b> for a <b>subperiosteal/neck abscess, failure to improve within ~48 h of IV antibiotics + myringotomy, or any intracranial complication</b>. Otherwise many early cases settle medically.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> What is masked mastoiditis and why is it dangerous?</button>
+        <div class="ans">Partial antibiotic treatment suppresses the obvious signs while <b>osteitis continues silently</b>, so the first presentation may be an <b>intracranial complication</b>. Keep a high index of suspicion in a child with persistent vague symptoms after "treated" AOM and image with contrast.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> Which complication should you actively exclude in a child with mastoiditis and swinging fever?</button>
+        <div class="ans"><b>Sigmoid (lateral) sinus thrombosis</b> — picket-fence/swinging fever, ± Griesinger's sign (postauricular oedema over the emissary vein). Confirm with <b>MRV/contrast CT</b>; treat with antibiotics, mastoidectomy ± anticoagulation.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Acute mastoiditis vs uncomplicated AOM</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both follow a URTI with otalgia/fever. <br><span class="dif">✅ Different in:</span> mastoiditis adds <b>postauricular swelling/erythema, protruding pinna, sagging canal wall</b> and failure to settle &gt;2 weeks.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Mastoiditis vs postauricular lymphadenitis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both cause a tender lump behind the ear. <br><span class="dif">✅ Different in:</span> mastoiditis <b>displaces the pinna and obliterates the crease + abnormal ear exam</b>; lymphadenitis is behind the crease with a normal ear.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Mastoiditis vs severe otitis externa</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both can swell the periauricular area. <br><span class="dif">✅ Different in:</span> OE has <b>tragal tenderness + canal oedema + normal drum</b>; mastoiditis has <b>AOM signs + postauricular fluctuance</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Coalescent mastoiditis vs masked mastoiditis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are true mastoid suppuration. <br><span class="dif">✅ Different in:</span> coalescent = <b>florid signs</b>; masked = <b>blunted signs after partial antibiotics</b>, presenting late or with a complication.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Subperiosteal vs Bezold abscess</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are mastoiditis abscesses. <br><span class="dif">✅ Different in:</span> subperiosteal = <b>postauricular</b> (commonest); Bezold = through the <b>mastoid tip into the SCM/neck</b>.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 3-year-old treated for AOM returns at day 12 with fever and a red, tender swelling behind the ear pushing it forward. Manage."</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Name it & flag the danger</button>
+          <div class="sbody"><i>"This is <b>acute mastoiditis</b> — a suppurative complication of AOM and the gateway to intracranial sepsis, so it needs admission and urgent treatment."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Define & examine</button>
+          <div class="sbody">Define coalescent mastoiditis; confirm the <b>protruding pinna, obliterated crease, sagging canal wall</b> and AOM; screen cranial nerves and for meningism.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigate</button>
+          <div class="sbody"><span class="lab">WBC/CRP</span>, blood cultures, ear swab; <b>HRCT temporal bone</b> (coalescence, cortical breach, abscess); <b>contrast CT/MRV</b> if any complication is suspected.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Treat</button>
+          <div class="sbody"><b>IV antibiotics + myringotomy</b> first; <b>cortical mastoidectomy</b> for a subperiosteal/neck abscess, failure to improve in ~48 h, or a complication. Treat any intracranial complication jointly with neurosurgery.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> AOM inflames the mastoid mucosa, and when the aditus ad antrum obstructs, pus is trapped under pressure. The trapped empyema causes osteitis that dissolves the bony septa, coalescing the air cells into an abscess. Continued pressure decompresses through the cortex (subperiosteal abscess), the tip (Bezold), or — dangerously — through the tegmen and sinus plate intracranially.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">protruding pinna + obliterated postauricular crease</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Acute mastoiditis</span><div class="assoc">postauricular subperiosteal abscess</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">sagging posterosuperior canal wall</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Mastoid suppuration</span><div class="assoc">periosteitis of medial canal</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">neck swelling through mastoid tip into SCM</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Bezold abscess</span><div class="assoc">torticollis · advanced disease</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">loss of bony septa on CT</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Coalescent mastoiditis</span><div class="assoc">surgical form</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">first-line treatment</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">IV antibiotics + myringotomy</span><div class="assoc">cortical mastoidectomy if abscess/fails</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">blunted signs after partial antibiotics</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Masked mastoiditis</span><div class="assoc">image with contrast · beware intracranial</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">swinging "picket-fence" fever in mastoiditis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Sigmoid sinus thrombosis</span><div class="assoc">MRV · Griesinger sign</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">commonest organism</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Streptococcus pneumoniae</span><div class="assoc">+ GAS, H. influenzae, S. aureus</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">channel from middle ear to mastoid</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Aditus ad antrum</span><div class="assoc">blockage → trapped empyema</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">mastoidectomy type for mastoiditis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Cortical (Schwartze)</span><div class="assoc">preserves canal wall + middle ear</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Classic acute mastoiditis — present it</button>
+        <div class="ans"><i>"A toddler with AOM not settling at day 12 has a red, fluctuant postauricular swelling pushing the pinna forward, a sagging canal wall and otorrhoea."</i> → admit; <span class="lab">CRP/WBC</span>, cultures; <b>HRCT</b>; <b>IV antibiotics + myringotomy</b>; <b>cortical mastoidectomy</b> for the subperiosteal abscess. Screen for intracranial spread.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Mastoiditis with neurology</button>
+        <div class="ans"><i>"Mastoiditis plus severe headache, drowsiness and swinging fever."</i> → suspect <b>sinus thrombosis/intracranial abscess/meningitis</b>: urgent <b>contrast CT + MRI/MRV</b>, IV antibiotics crossing the blood–brain barrier, <b>mastoidectomy</b>, and joint neurosurgical care ± anticoagulation.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> List the abscess types of mastoiditis by route.</button>
+        <div class="ans"><b>Postauricular subperiosteal</b> (lateral cortex, commonest), <b>Bezold</b> (tip → SCM), <b>Citelli</b> (digastric/occipital), <b>zygomatic/Luc</b> (zygomatic root/under temporalis), and deep-neck extension. Each reflects the path of least resistance for escaping pus.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why has incidence fallen but not disappeared?</button>
+        <div class="ans">Antibiotics and pneumococcal vaccination reduced AOM and its complications, but mastoiditis persists due to resistant organisms, <b>under- or partial treatment (masked disease)</b>, and virulent serotypes; it remains the commonest suppurative AOM complication.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is petrositis / Gradenigo's syndrome?</button>
+        <div class="ans">Spread to a pneumatised <b>petrous apex</b> gives <b>Gradenigo's triad</b>: otorrhoea + <b>retro-orbital pain (CN V)</b> + <b>lateral rectus palsy (CN VI)</b>. It needs imaging and aggressive antibiotic ± surgical treatment.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Role of grommet vs mastoidectomy in drainage?</button>
+        <div class="ans">A <b>myringotomy ± grommet</b> drains the middle ear and gives culture, settling many early cases; <b>mastoidectomy</b> is needed when the disease is <b>coalescent with an abscess</b>, fails to respond, or has caused a complication — it drains the mastoid itself.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 09 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

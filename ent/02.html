@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>02 · Congenital malformations of the ear</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 02</span>
+    <h1 class="title">👶👂 Congenital malformations of the ear</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Congenital ear malformations are best organised by embryological origin, because the <b>outer and middle ear arise from the branchial apparatus</b> while the <b>inner ear arises from the otic placode</b>. This separation is the single highest-yield principle: an atretic outer ear usually hides a normal cochlea, so the loss is conductive and treatable.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ Definition & classification</h3>
+      <p>Malformations are classified by <b>site</b> (outer, middle, inner ear — often combined), by <b>cause</b> (genetic vs acquired/teratogenic), and by <b>syndromic vs non-syndromic</b>. About half of congenital sensorineural loss is <button class="clue c-green" onclick="toggle('y1',this)">genetic</button>; of that, ~70% is non-syndromic and ~30% syndromic; the remainder is <button class="clue c-orange" onclick="toggle('y2',this)">acquired</button> (especially congenital CMV). A clean opening sentence — "I'll split this into outer/middle/inner, then genetic vs acquired" — frames the answer.</p>
+      <div class="reveal r-green" id="y1"><b>Genetic share:</b> ~50% of congenital SNHL is genetic. Of the genetic group, ~70% is <b>non-syndromic</b> (mostly autosomal-recessive, the DFNB1/<b>GJB2 connexin-26</b> locus) and ~30% is <b>syndromic</b>. Most non-syndromic deafness has no other clinical features, so the diagnosis is genetic.</div>
+      <div class="reveal r-orange" id="y2"><b>Acquired (non-genetic):</b> intrauterine TORCH infections — <b>congenital CMV is the leading non-genetic cause</b> — plus rubella; and perinatal factors (prematurity, hypoxia, hyperbilirubinaemia/kernicterus, ototoxic drugs, neonatal meningitis). CMV matters because the loss may be progressive/delayed and is <b>treatable</b> with neonatal valganciclovir.</div>
+
+      <h3>🧬 Embryology — say this first</h3>
+      <p>The <button class="clue c-blue" onclick="toggle('y3',this)">pinna forms from the six hillocks of His</button> (1st & 2nd arches); the <button class="clue c-blue" onclick="toggle('y4',this)">EAC from the 1st pharyngeal cleft</button> (a solid meatal plug recanalises in the 7th month); the <button class="clue c-blue" onclick="toggle('y5',this)">ossicles from the 1st & 2nd arches</button> (footplate partly from the otic capsule); the middle-ear cavity and Eustachian tube from the <b>1st pharyngeal pouch</b> endoderm; and the <button class="clue c-green" onclick="toggle('y6',this)">inner ear from the otic placode</button> (otocyst → membranous labyrinth, with the bony labyrinth ossifying around it). Different origins explain why branchial-arch syndromes deform the outer/middle ear but commonly spare the cochlea.</p>
+      <div class="reveal r-blue" id="y3"><b>Hillocks of His:</b> hillocks 1–3 from the mandibular (1st) arch, 4–6 from the hyoid (2nd) arch, fuse around the first cleft. Faulty fusion → <b>preauricular sinus/pit, accessory tags, microtia</b>. The auricle is largely complete by ~20 weeks.</div>
+      <div class="reveal r-blue" id="y4"><b>EAC recanalisation:</b> ectoderm forms a solid epithelial plug that hollows out in month 7; failure → <b>congenital aural atresia/stenosis</b>, almost always with ossicular anomalies and frequently microtia.</div>
+      <div class="reveal r-blue" id="y5"><b>Ossicles:</b> malleus head & incus body from the 1st arch (Meckel); malleus handle, long process of incus and stapes superstructure from the 2nd arch (Reichert); the <b>stapes footplate/vestibular surface from the otic capsule</b> — so isolated footplate fixation can occur with a normal superstructure.</div>
+      <div class="reveal r-green" id="y6"><b>Otic placode origin:</b> the cochlea and vestibular labyrinth develop independently of the arches. This is why a child with microtia/atresia typically has a <b>normal cochlea and a purely conductive loss</b>, and is a candidate for bone-conduction devices or atresia repair.</div>
+
+      <h3>👂 Outer-ear anomalies</h3>
+      <p><button class="clue c-orange" onclick="toggle('y7',this)">Microtia (grades 1–3) and anotia</button> commonly accompany <button class="clue c-blue" onclick="toggle('y8',this)">aural atresia/stenosis, which causes a maximal conductive loss</button>. Minor anomalies include accessory auricles, prominent ("bat") ears and Darwin's tubercle. A <button class="clue c-green" onclick="toggle('y9',this)">preauricular sinus</button> is a common pit that can become infected, and must be distinguished from a deeper <button class="clue c-purple" onclick="toggle('y10',this)">first branchial cleft anomaly</button> that runs near the facial nerve.</p>
+      <div class="reveal r-orange" id="y7"><b>Microtia grading:</b> Grade 1 = small but recognisable auricle; Grade 2 = some structures + partial/absent canal; Grade 3 = "peanut" remnant (classic); <b>anotia</b> = complete absence. More common on the right and in males; associated with hemifacial microsomia (Goldenhar) and Treacher Collins.</div>
+      <div class="reveal r-blue" id="y8"><b>Atresia → conductive loss ~50–60 dB</b>, with preserved bone conduction (normal cochlea). The <b>Jahrsdoerfer CT score</b> (out of 10: stapes, oval/round windows, middle-ear space, facial-nerve course, ossicles, mastoid pneumatisation, external ear) grades candidacy for atresia repair; <b>≥7</b> favours surgery, lower scores favour a bone-anchored device.</div>
+      <div class="reveal r-green" id="y9"><b>Preauricular sinus:</b> a blind epithelial tract at the ascending helix from incomplete hillock fusion; asymptomatic until infected (discharge/abscess). Treatment when recurrently infected is <b>complete excision of the whole tract</b>. <b>Bilateral sinuses → screen for branchio-oto-renal syndrome</b>.</div>
+      <div class="reveal r-purple" id="y10"><b>Trap — first branchial cleft anomaly:</b> a cyst/sinus near the angle of the mandible/parotid or opening into the EAC, whose tract has an <b>intimate relationship with the facial nerve</b>. Excision risks VII injury and needs formal nerve identification — not a simple "cyst removal".</div>
+
+      <h3>🥁 Middle-ear anomalies</h3>
+      <p>These include <button class="clue c-blue" onclick="toggle('y11',this)">ossicular fixation/discontinuity</button>, <button class="clue c-green" onclick="toggle('y12',this)">congenital cholesteatoma</button>, and dangerous <button class="clue c-red" onclick="toggle('y13',this)">vascular and facial-nerve variants</button> that must be recognised before any middle-ear surgery.</p>
+      <div class="reveal r-blue" id="y11"><b>Ossicular anomalies:</b> congenital stapes footplate fixation or a discontinuous/absent long process of incus give a <b>conductive loss behind an intact drum</b> — a paediatric differential of otosclerosis, confirmed at exploratory tympanotomy.</div>
+      <div class="reveal r-green" id="y12"><b>Congenital cholesteatoma:</b> a <b>white pearl behind an intact drum</b>, classically in the <b>anterosuperior quadrant</b>, in a child with no history of otorrhoea or perforation; from epithelial rests. Needs excision before it erodes the ossicles.</div>
+      <div class="reveal r-red" id="y13"><b>Operative hazards:</b> a <b>dehiscent facial nerve</b> over the oval window, a <b>high/dehiscent jugular bulb</b>, or an <b>aberrant internal carotid artery</b> (pulsatile red middle-ear mass). Recognise these on CT before myringotomy or surgery to avoid catastrophic haemorrhage or facial palsy.</div>
+
+      <h3>🌀 Inner-ear anomalies</h3>
+      <p>Most are <button class="clue c-blue" onclick="toggle('y14',this)">membranous (e.g. Scheibe)</button> with a normal CT; bony malformations include <button class="clue c-green" onclick="toggle('y15',this)">Mondini and Michel</button>, common cavity and cochlear hypoplasia. The commonest radiological anomaly is the <button class="clue c-green" onclick="toggle('y16',this)">enlarged vestibular aqueduct (EVA)</button>, and a <button class="clue c-red" onclick="toggle('y17',this)">cochlear-nerve aplasia</button> changes implant planning entirely.</p>
+      <div class="reveal r-blue" id="y14"><b>Membranous dysplasias:</b> <b>Scheibe</b> (cochleosaccular, the most common; normal bony labyrinth so CT is normal), Bing–Siebenmann, Alexander. Diagnosis is functional/genetic, not radiological.</div>
+      <div class="reveal r-green" id="y15"><b>Bony malformations:</b> <b>Michel aplasia</b> = complete absence of the inner ear (no cochlear implant possible); <b>Mondini</b> = incomplete partition, only <b>1.5 turns</b> (normal 2.5), with a <b>CSF-gusher risk</b> at stapes/cochleostomy. Common cavity and cochlear hypoplasia also occur.</div>
+      <div class="reveal r-green" id="y16"><b>Enlarged vestibular aqueduct (EVA/LVAS):</b> aqueduct &gt;1.5 mm; causes <b>fluctuating, progressive, stepwise SNHL</b> often triggered by minor head trauma. Counsel to avoid contact sports/barotrauma; strongly linked to <b>SLC26A4/Pendred</b>.</div>
+      <div class="reveal r-red" id="y17"><b>Cochlear-nerve aplasia:</b> if the cochlear nerve is absent (best seen on MRI), a cochlear implant cannot work and an <b>auditory brainstem implant</b> is considered instead — which is why MRI is mandatory before paediatric implantation.</div>
+
+      <h3>🧩 Genetics & syndromes</h3>
+      <p>The commonest non-syndromic cause is <button class="clue c-green" onclick="toggle('y18',this)">GJB2/connexin-26</button>. High-yield syndromes carry <button class="clue c-red" onclick="toggle('y19',this)">systemic or lethal associations</button> you must screen for, and several <button class="clue c-orange" onclick="toggle('y20',this)">craniofacial syndromes</button> cause the microtia/atresia picture.</p>
+      <div class="reveal r-green" id="y18"><b>GJB2 (connexin-26):</b> a gap-junction protein for cochlear K⁺ recycling; the <b>commonest autosomal-recessive non-syndromic SNHL</b> (DFNB1). Severity varies; targeted genetic testing is widely available.</div>
+      <div class="reveal r-red" id="y19"><b>Screen for:</b> <b>Jervell–Lange–Nielsen</b> (KCNQ1/KCNE1 — SNHL + long QT → syncope/sudden death; do an <b>ECG</b>); <b>Pendred</b> (SLC26A4 — SNHL + EVA + goitre; perchlorate test); <b>Usher</b> (SNHL + retinitis pigmentosa); <b>Alport</b> (COL4A5 — SNHL + nephritis); <b>branchio-oto-renal/EYA1</b> (branchial + otic + renal).</div>
+      <div class="reveal r-orange" id="y20"><b>Craniofacial:</b> <b>Treacher Collins</b> (TCOF1 — bilateral symmetric mandibulofacial dysostosis, microtia/atresia, down-slanting fissures/coloboma); <b>Goldenhar</b> (unilateral hemifacial microsomia + epibulbar dermoid + vertebral anomalies); <b>CHARGE</b>, <b>Crouzon/Apert</b>, <b>Stickler</b> and <b>Waardenburg</b> (PAX3 — white forelock, heterochromia, dystopia canthorum).</div>
+
+      <h3>🔎 Presentation, screening & investigation</h3>
+      <p>Hearing loss may be detected on <button class="clue c-green" onclick="toggle('y21',this)">universal newborn screening (OAE/AABR)</button> or later through speech delay, and outer-ear anomalies are obvious at birth. Work-up combines <button class="clue c-blue" onclick="toggle('y22',this)">diagnostic audiology, CT and MRI</button> with a <button class="clue c-orange" onclick="toggle('y23',this)">syndrome screen</button>.</p>
+      <div class="reveal r-green" id="y21"><b>Screening:</b> OAEs (outer-hair-cell/cochlear function) and automated ABR aim to <b>diagnose by 3 months and intervene by 6 months</b>; a failed screen prompts diagnostic ABR and ENT/audiology referral. Early detection is what protects language development.</div>
+      <div class="reveal r-blue" id="y22"><b>Imaging:</b> <b>HRCT</b> defines bony anatomy (atresia, ossicles, EVA, facial-nerve course, Jahrsdoerfer score); <b>MRI</b> shows the membranous labyrinth and confirms a <b>present cochlear nerve</b> before implantation.</div>
+      <div class="reveal r-orange" id="y23"><b>Syndrome screen:</b> <b>ECG</b> (Jervell–Lange–Nielsen), <b>renal ultrasound</b> (BOR, Alport), ophthalmology/ERG (Usher), thyroid/perchlorate or genetics (Pendred), and a craniofacial/genetics assessment. The screen is driven by the associated features you find.</div>
+
+      <h3>💊 Management</h3>
+      <p>The overriding principle is <button class="clue c-red" onclick="toggle('y24',this)">early hearing habilitation within the critical period for language</button>. Options range from <button class="clue c-blue" onclick="toggle('y25',this)">hearing aids and bone-conduction devices</button> to <button class="clue c-blue" onclick="toggle('y26',this)">cochlear implantation</button>, with surgical reconstruction for the outer ear and excision of infected sinuses, alongside <button class="clue c-green" onclick="toggle('y27',this)">genetic counselling</button>.</p>
+      <div class="reveal r-red" id="y24"><b>Critical period:</b> the auditory cortex needs early stimulation; untreated bilateral loss causes permanent speech/language delay. Amplification or implantation is therefore started in infancy — the timing is itself a high-yield exam point.</div>
+      <div class="reveal r-blue" id="y25"><b>Conductive/atresia:</b> conventional or bone-conduction aids; a <b>softband BAHA in infancy</b>, then an implanted BAHA or <b>atresiaplasty</b> (good Jahrsdoerfer score) later. Microtia is reconstructed with <b>autologous rib cartilage at age 6–10</b> or a prosthesis/porous polyethylene.</div>
+      <div class="reveal r-blue" id="y26"><b>Severe–profound SNHL:</b> <b>cochlear implantation</b>, provided MRI confirms a cochlea and cochlear nerve (exclude Michel/nerve aplasia). Bilateral atresia gets bone-conduction amplification first to enable speech.</div>
+      <div class="reveal r-green" id="y27"><b>Genetic counselling:</b> recurrence-risk advice (e.g. autosomal-recessive GJB2), connexin and syndrome-specific testing, and family screening (audiology for siblings). It also guides expectations about progression (e.g. EVA/Pendred).</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Conductive losses from atresia are usually correctable and, with early amplification, language develops normally. Severe SNHL outcomes depend on early implantation and an intact cochlear nerve. Progressive forms (EVA/Pendred, congenital CMV) need ongoing audiological surveillance.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> Why does a child with aural atresia usually have only a conductive loss?</button>
+        <div class="ans">The outer/middle ear arise from the <b>branchial arches</b> while the cochlea arises from the <b>otic placode</b>. Atresia blocks conduction but the independently-formed cochlea is normal, so <b>bone conduction is preserved</b> — making the child a candidate for BAHA or atresiaplasty.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> A deaf child has recurrent syncope. What must you not miss?</button>
+        <div class="ans"><b>Jervell–Lange–Nielsen syndrome</b> — congenital profound SNHL with a <b>prolonged QT</b> (KCNQ1/KCNE1), risking torsades and sudden death. <b>Get an ECG</b>; treat with β-blockers ± ICD.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Deafness + a goitre — diagnosis and test?</button>
+        <div class="ans"><b>Pendred syndrome</b> (SLC26A4/pendrin): SNHL with <b>EVA/Mondini</b> + euthyroid goitre. Confirm with the <b>perchlorate discharge test</b> and genetics; image with CT for EVA.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Before a paediatric cochlear implant, what is essential?</button>
+        <div class="ans"><b>MRI to confirm a present cochlear nerve</b> and a non-aplastic cochlea (exclude Michel/nerve aplasia), and CT for bony anatomy and gusher risk. Without a nerve, an auditory brainstem implant is considered instead.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> Fluctuating, stepwise hearing loss after minor head bumps — cause and advice?</button>
+        <div class="ans"><b>Enlarged vestibular aqueduct (EVA/LVAS)</b>, often Pendred-related. <b>Avoid contact sports/barotrauma</b>, monitor audiology, fit hearing aids; progression to profound loss may need a cochlear implant.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> Why is a "simple" preauricular sinus excision sometimes dangerous?</button>
+        <div class="ans">A <b>first branchial cleft anomaly</b> can mimic it and runs <b>near the facial nerve/parotid</b>. Incomplete removal recurs and blind dissection risks VII injury — so plan for nerve identification, and screen for BOR if bilateral.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q7.</span> Why does congenital CMV matter in this topic?</button>
+        <div class="ans">It is the <b>commonest non-genetic cause of congenital SNHL</b>, the loss is often <b>progressive/delayed</b>, and it is the one cause that is <b>treatable</b> — neonatal <b>valganciclovir</b> can improve outcomes. Diagnose in the first 3 weeks (saliva/urine PCR) before it becomes unprovable.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Scheibe vs Mondini vs Michel</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> all are congenital cochlear dysplasias. <br><span class="dif">✅ Different in:</span> <b>Scheibe</b> = membranous only (CT normal, commonest); <b>Mondini</b> = incomplete partition, 1.5 turns on CT; <b>Michel</b> = complete labyrinthine aplasia (no CI possible).</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Congenital aural atresia vs otosclerosis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both give a conductive loss with a normal cochlea. <br><span class="dif">✅ Different in:</span> atresia is <b>present from birth with an absent/abnormal canal & pinna</b>; otosclerosis is <b>acquired in adults</b> with a normal canal and stapes fixation.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Preauricular sinus vs 1st branchial cleft anomaly</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are periauricular pits/discharging tracts. <br><span class="dif">✅ Different in:</span> the sinus is a <b>superficial pit at the helical root</b>; the cleft anomaly tracks <b>deep, near the facial nerve/parotid/EAC</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Syndromic vs non-syndromic SNHL</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both present as congenital SNHL. <br><span class="dif">✅ Different in:</span> non-syndromic (≈70%, often <b>GJB2</b>) has <b>no other features</b>; syndromic has the tell-tale extra finding (forelock, goitre, RP, nephritis, long QT, branchial/renal).</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Congenital vs acquired cholesteatoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are keratin masses eroding the middle ear. <br><span class="dif">✅ Different in:</span> congenital = <b>white pearl behind an intact drum, no otorrhoea history</b>; acquired follows perforation/retraction with discharge.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Pulsatile middle-ear mass — aberrant ICA vs glomus</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both look like a red retrotympanic mass with pulsatile tinnitus. <br><span class="dif">✅ Different in:</span> <b>never biopsy/myringotomy before CT/angio</b> — an aberrant carotid or high jugular bulb is a vascular anomaly, a glomus is a paraganglioma (Brown sign).</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Treacher Collins vs Goldenhar</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both cause microtia/atresia with facial anomalies. <br><span class="dif">✅ Different in:</span> <b>Treacher Collins</b> = bilateral, symmetric, TCOF1, down-slanting fissures/coloboma; <b>Goldenhar</b> = unilateral hemifacial microsomia + epibulbar dermoid + vertebral anomalies.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A newborn fails the hearing screen and has a small right ear with no ear canal. How do you assess and manage?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Frame it & state the urgent screen</button>
+          <div class="sbody"><i>"This is <b>microtia with congenital aural atresia</b>. My priorities are to define the hearing in <b>both</b> ears, habilitate within the critical period, and screen for an associated syndrome — including an <b>ECG for long-QT</b> if there is any inner-ear loss."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Embryology & expected loss</button>
+          <div class="sbody">Outer/middle ear are branchial-arch derivatives; the cochlea is from the otic placode, so atresia typically gives a <b>~60 dB conductive loss with a normal cochlea</b>. Grade the microtia and look for hemifacial microsomia/Treacher Collins.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Investigations</button>
+          <div class="sbody">Diagnostic <b>ABR</b> for thresholds in each ear; <b>HRCT</b> temporal bone (Jahrsdoerfer score, facial-nerve course); <b>MRI</b> if SNHL/CI is considered. Screen associations: <b>renal US, ECG, ophthalmology</b>, genetics.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Management plan</button>
+          <div class="sbody"><b>Bilateral atresia:</b> early <b>bone-conduction hearing aid (softband BAHA)</b> to enable speech. <b>Unilateral with a normal other ear:</b> can monitor and aid later. Surgical options: <b>atresiaplasty</b> (good Jahrsdoerfer score) or <b>implanted BAHA</b>, with staged <b>auricular reconstruction</b> (rib cartilage age 6–10) or a prosthesis.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> Failure of the 1st pharyngeal cleft to recanalise leaves a bony/membranous atresia plate, and faulty hillock fusion deforms the auricle. Sound cannot reach the otic-capsule-derived cochlea, which is itself normal, producing a maximal <b>conductive</b> loss. Because cortical auditory pathways require early stimulation, bone-conduction amplification is started in infancy to prevent permanent language delay.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">deafness + prolonged QT / syncope</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Jervell–Lange–Nielsen</span><div class="assoc">KCNQ1/KCNE1 · ECG · β-blocker/ICD</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">SNHL + goitre + EVA</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Pendred syndrome</span><div class="assoc">SLC26A4/pendrin · perchlorate discharge test</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">SNHL + retinitis pigmentosa</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Usher syndrome</span><div class="assoc">commonest cause of deaf-blindness · ERG</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">SNHL + haematuria/nephritis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Alport syndrome</span><div class="assoc">COL4A5 · type IV collagen · X-linked</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">white forelock + heterochromia + dystopia canthorum</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Waardenburg syndrome</span><div class="assoc">PAX3 · neural-crest melanocytes</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">commonest non-syndromic recessive SNHL</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">GJB2 / connexin-26</span><div class="assoc">DFNB1 · K⁺ recycling gap junction</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">cochlea with 1.5 turns on CT</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Mondini deformity</span><div class="assoc">incomplete partition · CSF gusher risk</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">complete absence of the inner ear</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Michel aplasia</span><div class="assoc">no cochlear implant possible</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">branchial cysts + ear pits + renal anomalies</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Branchio-oto-renal (BOR)</span><div class="assoc">EYA1 · renal ultrasound</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">white mass behind an intact drum, no otorrhoea</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Congenital cholesteatoma</span><div class="assoc">anterosuperior quadrant · epithelial rest</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Microtia + atresia — present it</button>
+        <div class="ans"><i>"A newborn has Grade 3 right microtia with aural atresia and failed the screen on that side. The left ear is normal."</i> → diagnostic <b>ABR both ears</b>; as the better ear hears, monitor, fit a <b>softband BAHA</b> if any concern; <b>HRCT</b> later for Jahrsdoerfer scoring; screen for hemifacial microsomia/Treacher Collins; plan reconstruction from age 6–10.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> The dangerous deaf child</button>
+        <div class="ans"><i>"A 5-year-old with congenital deafness has had two unexplained faints."</i> → think <b>Jervell–Lange–Nielsen</b>: <b>ECG for long QT</b>, cardiology referral, β-blockade ± ICD. Never attribute syncope in a deaf child to "breath-holding" without an ECG.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Outline the genetics of congenital hearing loss.</button>
+        <div class="ans">~50% of congenital SNHL is <b>genetic</b>; of that, ~70% <b>non-syndromic</b> (mostly autosomal-recessive, DFNB1/<b>GJB2 connexin-26</b>) and ~30% syndromic. The rest are acquired (TORCH — esp. <b>congenital CMV</b>, the leading non-genetic cause; rubella; prematurity, hyperbilirubinaemia, ototoxic drugs, meningitis).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why image with both CT and MRI before a paediatric cochlear implant?</button>
+        <div class="ans"><b>CT</b> shows bony anatomy (Mondini, ossification after meningitis, facial-nerve course, <b>incomplete partition → CSF gusher risk</b>). <b>MRI</b> confirms a <b>patent cochlea and present cochlear nerve</b> — a cochlear-nerve aplasia or Michel aplasia contraindicates a standard implant.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is the Jahrsdoerfer score?</button>
+        <div class="ans">A 10-point CT grading of candidacy for <b>atresia repair</b>: points for the stapes, oval window, round window, middle-ear space, facial-nerve course, malleus-incus complex, incus-stapes connection, mastoid pneumatisation and external-ear appearance. <b>≥7/10</b> predicts a good surgical hearing result; lower scores favour a <b>BAHA</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> A recurrently infected preauricular sinus — management?</button>
+        <div class="ans">Treat acute infection with antibiotics ± drainage, then <b>elective complete excision of the entire tract</b> when quiescent (supra-auricular/wide local approach, often with methylene-blue cannulation) to prevent recurrence. Screen for <b>BOR</b> if bilateral or with renal/branchial features.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Congenital CMV — why does it matter here?</button>
+        <div class="ans">It is the <b>commonest non-genetic cause of congenital SNHL</b>, the loss is often <b>progressive and may be delayed</b>, and it is the one cause that is <b>treatable</b> — neonatal <b>valganciclovir</b> can improve hearing outcomes. Diagnose within the first 3 weeks of life (saliva/urine PCR) before it is unprovable.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How do you counsel a family on an enlarged vestibular aqueduct?</button>
+        <div class="ans">Explain the loss is <b>progressive and fluctuating</b>, can <b>drop suddenly after head trauma or barotrauma</b>; advise <b>helmet sports avoidance</b>, prompt review of any sudden change (consider steroids), serial audiograms, hearing aids, and cochlear implantation if it becomes profound. Test for <b>Pendred</b>.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 02 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

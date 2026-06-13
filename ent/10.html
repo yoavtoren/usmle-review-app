@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 · Otosclerosis</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 10</span>
+    <h1 class="title">👂🦻 Otosclerosis</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">Otosclerosis is a primary disease of the <b>otic-capsule bone</b> in which abnormal remodelling fixes the stapes footplate, producing a <b>progressive conductive hearing loss with a normal drum</b>. The classic patient is a young white woman with a family history whose hearing worsens in pregnancy.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🧬 Definition & pathology</h3>
+      <p>Otosclerosis is focal disordered bone remodelling of the <button class="clue c-blue" onclick="toggle('p1',this)">otic capsule, beginning at the fissula ante fenestram</button>, passing from an active vascular <button class="clue c-blue" onclick="toggle('p2',this)">otospongiotic</button> phase to a dense sclerotic phase that <button class="clue c-green" onclick="toggle('p3',this)">fixes the stapes footplate</button>. When foci reach the cochlear endosteum it becomes <button class="clue c-red" onclick="toggle('p4',this)">cochlear otosclerosis with SNHL</button>.</p>
+      <div class="reveal r-blue" id="p1"><b>Site:</b> the commonest focus is the <b>fissula ante fenestram</b>, just anterior to the oval window — explaining why the <b>stapes footplate</b> is the structure that fixes. The otic capsule is normally the most stable bone in the body, which is why this localised remodelling is pathological.</div>
+      <div class="reveal r-blue" id="p2"><b>Phases:</b> the <b>otospongiotic</b> (active) phase shows vascular, lytic, immature bone; it later matures into dense <b>sclerotic</b> bone. Activity correlates with the Schwartze sign and CT lucency, and is the rationale (limited) for medical therapy.</div>
+      <div class="reveal r-green" id="p3"><b>Footplate fixation:</b> new bone anchors the footplate in the oval window, abolishing its piston movement → a progressive <b>conductive loss</b> with a normal, mobile drum and an intact ossicular chain otherwise.</div>
+      <div class="reveal r-red" id="p4"><b>Cochlear otosclerosis:</b> foci involving the cochlear endosteum release toxic enzymes/inflammatory mediators into the inner ear → <b>sensorineural loss</b>, giving an overall <b>mixed</b> picture in advanced disease.</div>
+
+      <h3>📊 Epidemiology & genetics</h3>
+      <p>It typically presents in <button class="clue c-orange" onclick="toggle('p5',this)">young adults, more often women, of white ancestry, with a family history</button>, and <button class="clue c-orange" onclick="toggle('p6',this)">worsens during pregnancy</button>.</p>
+      <div class="reveal r-orange" id="p5"><b>Demographics:</b> onset typically 20–40 years; female:male ≈ 2:1; commonest in white populations; ~50% have a <b>family history</b> with <b>autosomal-dominant inheritance and incomplete penetrance (~40%)</b>. A measles-virus association has been proposed.</div>
+      <div class="reveal r-orange" id="p6"><b>Pregnancy:</b> hearing often deteriorates during pregnancy and with oestrogen exposure, suggesting a <b>hormonal influence</b> on disease activity — a classic history point.</div>
+
+      <h3>👂 Clinical features</h3>
+      <p>The hallmark is <button class="clue c-green" onclick="toggle('p7',this)">bilateral, progressive conductive hearing loss with a normal drum</button>, often with <button class="clue c-green" onclick="toggle('p8',this)">paracusis Willisii</button> and tinnitus; occasionally a <button class="clue c-green" onclick="toggle('p9',this)">Schwartze sign</button> is visible.</p>
+      <div class="reveal r-green" id="p7"><b>Core picture:</b> slowly progressive <b>conductive loss, usually bilateral and asymmetric</b>, in a young adult with an entirely <b>normal tympanic membrane and ear canal</b>. The normal drum with a conductive loss is what points away from middle-ear infection.</div>
+      <div class="reveal r-green" id="p8"><b>Paracusis Willisii:</b> the patient <b>hears better in noisy surroundings</b>, because others raise their voices while the patient's conductive loss filters out background noise. A near-pathognomonic symptom.</div>
+      <div class="reveal r-green" id="p9"><b>Schwartze sign:</b> a <b>reddish hue over the promontory</b> seen through the drum, reflecting the hypervascular <b>active otospongiotic</b> phase. Present in a minority but a useful confirmatory clue.</div>
+
+      <h3>🔎 Investigation</h3>
+      <p>Tuning forks and audiometry show a conductive loss with a <button class="clue c-green" onclick="toggle('p10',this)">Carhart notch</button> and <button class="clue c-green" onclick="toggle('p11',this)">absent stapedial reflexes</button>; <button class="clue c-blue" onclick="toggle('p12',this)">CT</button> demonstrates otospongiotic foci.</p>
+      <div class="reveal r-green" id="p10"><b>Carhart notch:</b> an <b>artefactual dip in bone-conduction thresholds maximal at 2 kHz</b> caused by loss of the ossicular resonance, not true cochlear loss; it typically improves after successful stapes surgery. Audiometry shows a conductive (later mixed) loss with an air–bone gap.</div>
+      <div class="reveal r-green" id="p11"><b>Stapedial reflexes:</b> <b>absent (or biphasic on/off) reflexes</b> reflect footplate fixation and are an early objective sign. Tuning forks give a <b>Rinne negative</b> result bilaterally with Weber lateralising to the worse (more conductive) ear.</div>
+      <div class="reveal r-blue" id="p12"><b>HRCT:</b> shows <b>lucent otospongiotic foci</b> at the fissula ante fenestram and (in cochlear disease) a "double-ring/halo" around the cochlea. CT confirms the diagnosis, excludes other causes, and plans surgery.</div>
+
+      <h3>💊 Management</h3>
+      <p>Options are <button class="clue c-blue" onclick="toggle('p13',this)">observation, a hearing aid, or surgery</button>; the definitive operation is a <button class="clue c-green" onclick="toggle('p14',this)">stapedotomy/stapedectomy with a prosthesis</button>. <button class="clue c-purple" onclick="toggle('p15',this)">Medical therapy is of limited value</button>, and a <button class="clue c-red" onclick="toggle('p16',this)">cochlear implant</button> is used for far-advanced disease.</p>
+      <div class="reveal r-blue" id="p13"><b>Conservative options:</b> a well-fitted <b>hearing aid</b> reliably rehabilitates the conductive loss and is a valid alternative to surgery, especially in mild disease, bilateral cochlear involvement, an only-hearing ear, or patient preference.</div>
+      <div class="reveal r-green" id="p14"><b>Stapes surgery:</b> <b>stapedotomy</b> (small fenestra in the footplate + a piston prosthesis from incus to vestibule) — now preferred over total stapedectomy — bypasses the fixation and closes the air–bone gap in ~90%+. Operate the worse-hearing ear; never both at once.</div>
+      <div class="reveal r-purple" id="p15"><b>Medical therapy (limited):</b> <b>sodium fluoride</b> (± vitamin D/calcium) and bisphosphonates aim to stabilise active otospongiotic foci, with weak evidence; they may slow cochlear progression but do not reverse fixation.</div>
+      <div class="reveal r-red" id="p16"><b>Far-advanced otosclerosis:</b> when SNHL is profound, a <b>cochlear implant</b> is used (with care, as the otosclerotic cochlea can cause facial-nerve stimulation and is harder to drill).</div>
+
+      <h3>⚠️ Complications of stapes surgery</h3>
+      <p>The feared outcomes are a <button class="clue c-red" onclick="toggle('p17',this)">"dead ear", vertigo, taste disturbance and facial-nerve injury</button>.</p>
+      <div class="reveal r-red" id="p17"><b>Risks:</b> <b>sensorineural loss / "dead ear" (~1%)</b>, vertigo, a perilymph fistula/floating footplate, <b>dysgeusia from chorda tympani</b> injury, facial-nerve injury, tinnitus, and prosthesis displacement/erosion (causing recurrent conductive loss). These are the core of consent and why only one ear is operated.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Stapes surgery closes the air–bone gap in most and is durable; the conductive component is highly treatable. Cochlear otosclerosis may progress despite surgery and is the main long-term concern, ultimately rehabilitated with amplification or implantation.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> Give the classic otosclerosis profile and the cardinal sign.</button>
+        <div class="ans">A <b>young white woman with a family history</b>, bilateral <b>progressive conductive loss</b>, worsening in pregnancy, with a <b>normal drum</b>; often <b>paracusis Willisii</b>. The footplate fixation is the lesion; the normal drum with conductive loss is the cardinal clue.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> What is the Carhart notch and what happens to it after surgery?</button>
+        <div class="ans">An <b>artefactual bone-conduction dip at 2 kHz</b> from loss of ossicular resonance (not true cochlear loss). It typically <b>improves/resolves after successful stapedotomy</b>, confirming it was mechanical.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> Where does otosclerosis start and why does that fix the stapes?</button>
+        <div class="ans">At the <b>fissula ante fenestram</b>, immediately anterior to the oval window; new bone there <b>locks the stapes footplate</b>, abolishing its piston motion and causing the conductive loss.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Stapedotomy vs stapedectomy — and why operate only one ear?</button>
+        <div class="ans"><b>Stapedotomy</b> (small footplate fenestra + piston) is now preferred over total <b>stapedectomy</b> (lower SNHL/vertigo risk). Operate the <b>worse ear only</b>, never both simultaneously, because of the ~1% risk of a <b>dead ear</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> A conductive loss with a normal drum — what is your differential?</button>
+        <div class="ans"><b>Otosclerosis, ossicular discontinuity, congenital ossicular fixation, tympanosclerosis, and superior semicircular canal dehiscence (SSCD)</b>. SSCD mimics a conductive loss but has <b>intact/low-threshold reflexes</b> and vestibular symptoms — a key trap.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> Which findings indicate active disease?</button>
+        <div class="ans">A <b>Schwartze sign</b> (reddish promontory) and <b>lucent otospongiotic foci on CT</b> indicate the active vascular phase — the rationale for considering sodium fluoride/bisphosphonates and for caution at surgery.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Otosclerosis vs ossicular discontinuity</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both cause conductive loss with a normal drum. <br><span class="dif">✅ Different in:</span> otosclerosis = <b>fixation, absent reflexes, slowly progressive, family history</b>; discontinuity = <b>post-trauma/erosion, larger gap, often present reflexes pattern differs</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Otosclerosis vs superior canal dehiscence</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both can show a low-frequency conductive (air–bone gap) loss. <br><span class="dif">✅ Different in:</span> SSCD has <b>intact/low-threshold stapedial reflexes, autophony, Tullio phenomenon and a CT dehiscence</b>; otosclerosis has <b>absent reflexes</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Otosclerosis vs tympanosclerosis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both fix the conducting mechanism. <br><span class="dif">✅ Different in:</span> tympanosclerosis = <b>chalky drum plaques + history of chronic OM</b>; otosclerosis = <b>normal drum, otic-capsule focus</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Otosclerosis vs congenital ossicular fixation</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both give conductive loss with a normal drum. <br><span class="dif">✅ Different in:</span> congenital fixation is <b>non-progressive, present from childhood</b>; otosclerosis is <b>progressive, adult-onset, often with family history/pregnancy effect</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Cochlear otosclerosis vs presbycusis</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both cause SNHL. <br><span class="dif">✅ Different in:</span> cochlear otosclerosis = <b>younger, family history, CT halo, mixed loss</b>; presbycusis = <b>elderly, symmetrical high-frequency SNHL</b>.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 32-year-old woman has bilateral progressive hearing loss, normal drums, and hears better in noisy rooms. Her mother is similar. Diagnose and manage."</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Name the diagnosis</button>
+          <div class="sbody"><i>"Progressive conductive loss with normal drums, paracusis Willisii and a family history is <b>otosclerosis</b> — stapes-footplate fixation — until proven otherwise."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Define & confirm</button>
+          <div class="sbody">Define otic-capsule remodelling at the fissula ante fenestram → footplate fixation. Confirm with <b>tuning forks (Rinne −), audiometry (conductive loss + Carhart notch), absent stapedial reflexes</b>, and HRCT.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Counsel options</button>
+          <div class="sbody">Three options: <b>observe, hearing aid, or stapes surgery</b>. Discuss CT findings, the worse ear first, and that medical therapy (fluoride) is of limited value.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Definitive treatment & risks</button>
+          <div class="sbody"><b>Stapedotomy + piston prosthesis</b> on the worse ear closes the air–bone gap in ~90%+. Consent for <b>~1% dead ear</b>, vertigo, dysgeusia and facial-nerve risk; a hearing aid is the safe alternative.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> Disordered otic-capsule remodelling lays down bone at the fissula ante fenestram that fixes the stapes footplate in the oval window. The fixed footplate can no longer transmit the ossicular piston motion to the cochlear fluid, producing a progressive conductive loss. Stapedotomy bypasses the fixation with a prosthesis from the incus through a footplate fenestra into the vestibule, restoring sound transmission.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">progressive conductive loss + normal drum + family history</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Otosclerosis</span><div class="assoc">stapes footplate fixation · AD incomplete penetrance</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">hears better in noisy rooms</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Paracusis Willisii</span><div class="assoc">near-pathognomonic of conductive otosclerosis</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">reddish promontory through the drum</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Schwartze sign</span><div class="assoc">active otospongiotic (vascular) phase</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">bone-conduction dip at 2 kHz</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Carhart notch</span><div class="assoc">artefact · improves after stapedotomy</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">starting focus of otosclerosis</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Fissula ante fenestram</span><div class="assoc">anterior to oval window</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">absent stapedial reflexes + normal drum</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Footplate fixation (otosclerosis)</span><div class="assoc">early objective sign</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">definitive operation</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Stapedotomy + piston prosthesis</span><div class="assoc">worse ear first · never both at once</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">hearing worse in pregnancy</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Otosclerosis (hormonal effect)</span><div class="assoc">oestrogen-related progression</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">~1% dreaded surgical outcome</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Dead ear (profound SNHL)</span><div class="assoc">+ vertigo, dysgeusia, VII risk</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">conductive gap but intact reflexes + autophony</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Superior canal dehiscence (mimic)</span><div class="assoc">Tullio · CT dehiscence</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Classic otosclerosis — present it</button>
+        <div class="ans"><i>"A 30-year-old woman has slowly worsening bilateral hearing, normal drums, paracusis Willisii, Rinne negative, a conductive loss with a Carhart notch and absent reflexes."</i> → <b>otosclerosis</b>; HRCT; offer <b>hearing aid vs stapedotomy</b> (worse ear), with consent for the surgical risks.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Recurrent conductive loss after stapes surgery</button>
+        <div class="ans"><i>"Good initial result, then the gap returns."</i> → suspect <b>prosthesis displacement, incus erosion, or progressive footplate disease</b> (or a perilymph fistula if vertigo). Re-image and consider revision stapes surgery.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How does superior canal dehiscence mimic otosclerosis, and how do you tell them apart?</button>
+        <div class="ans">SSCD creates a "third window" giving a low-frequency <b>air–bone gap</b> that looks conductive. Unlike otosclerosis, reflexes are <b>present (often low-threshold)</b>, with <b>autophony, the Tullio phenomenon, and a CT dehiscence of the superior canal</b>. Operating on an SSCD as if it were otosclerosis is a classic error.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is the evidence base for medical therapy?</button>
+        <div class="ans">Weak. <b>Sodium fluoride (± vitamin D/calcium)</b> and bisphosphonates aim to stabilise active otospongiotic foci and may slow cochlear progression, but they do not reverse footplate fixation; surgery or amplification remains definitive.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why operate only the worse-hearing ear?</button>
+        <div class="ans">Because stapes surgery carries a ~1% risk of a <b>dead ear</b>. Operating the worse ear preserves the better ear as a safety net; the second ear is considered only after a good, stable result on the first.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Outline far-advanced otosclerosis management.</button>
+        <div class="ans">When loss is profound and mixed/sensorineural, <b>cochlear implantation</b> is indicated. The surgeon must anticipate a <b>harder-to-drill cochlea, possible facial-nerve stimulation</b>, and use careful electrode selection; outcomes are generally good.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 10 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

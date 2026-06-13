@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>29 · Voice & speech disorders, laryngectomy rehab</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 29</span>
+    <h1 class="title">🎤 Voice & speech disorders, laryngectomy rehabilitation</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">This topic covers <b>dysphonia</b> (its organic, neurological and functional causes and the benign vocal-fold lesions), the red flag of persistent hoarseness, and the <b>rehabilitation of voice after total laryngectomy</b>. The recurring rule: hoarseness over 3 weeks needs the larynx looked at.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ Classifying dysphonia</h3>
+      <p>Dysphonia is classified as <button class="clue c-blue" onclick="toggle('vo1',this)">organic (structural)</button>, <button class="clue c-blue" onclick="toggle('vo2',this)">neurological</button>, or <button class="clue c-blue" onclick="toggle('vo3',this)">functional/muscle-tension</button>, all sitting beneath the overriding <button class="clue c-red" onclick="toggle('vo4',this)">persistent-hoarseness red flag</button>.</p>
+      <div class="reveal r-blue" id="vo1"><b>Organic:</b> structural vocal-fold lesions — <b>nodules, polyps, Reinke's oedema, cysts, papillomatosis</b>, granuloma, and <b>carcinoma</b> — plus cord palsy. The voice change reflects altered mass/stiffness or closure of the cords.</div>
+      <div class="reveal r-blue" id="vo2"><b>Neurological:</b> <b>vocal-cord palsy</b> (Topic 25), <b>spasmodic dysphonia</b> (focal laryngeal dystonia — strained/strangled or breathy breaks), Parkinson's (hypophonia), and tremor.</div>
+      <div class="reveal r-blue" id="vo3"><b>Functional/muscle-tension dysphonia:</b> abnormal laryngeal muscle use <b>without structural disease</b> (often with stress/voice misuse); includes <b>psychogenic aphonia</b> (whispered voice but normal cough/cord closure on examination).</div>
+      <div class="reveal r-red" id="vo4"><b>Red flag:</b> <b>hoarseness lasting &gt;3 weeks</b>, especially in a smoker/drinker or with a neck lump/dysphagia/otalgia, requires <b>laryngoscopy to exclude laryngeal carcinoma</b> before attributing it to a benign cause.</div>
+
+      <h3>🎚️ Benign vocal-fold lesions</h3>
+      <p>The common benign lesions are <button class="clue c-green" onclick="toggle('vo5',this)">nodules</button>, <button class="clue c-green" onclick="toggle('vo6',this)">polyps</button>, <button class="clue c-orange" onclick="toggle('vo7',this)">Reinke's oedema</button>, and <button class="clue c-blue" onclick="toggle('vo8',this)">papillomatosis</button>, each with a typical story.</p>
+      <div class="reveal r-green" id="vo5"><b>Vocal nodules:</b> <b>bilateral</b>, symmetrical, at the junction of the anterior and middle thirds (point of maximal contact), from <b>chronic voice overuse/misuse</b> ("singer's/screamer's nodules", children, teachers). Treated primarily with <b>voice therapy</b>.</div>
+      <div class="reveal r-green" id="vo6"><b>Vocal polyp:</b> usually <b>unilateral</b>, often haemorrhagic/pedunculated, from a single phonotrauma episode or vocal abuse; typically needs <b>phonosurgical excision</b> ± voice therapy.</div>
+      <div class="reveal r-orange" id="vo7"><b>Reinke's oedema (polypoid corditis):</b> diffuse bilateral oedema of the superficial lamina propria (Reinke's space), strongly linked to <b>smoking</b> (and reflux/voice abuse), classically in <b>middle-aged women</b>, giving a <b>low-pitched, gravelly voice</b>. Stop smoking ± surgical reduction.</div>
+      <div class="reveal r-blue" id="vo8"><b>Recurrent respiratory papillomatosis:</b> <b>HPV 6 and 11</b> wart-like lesions; in children it can cause airway obstruction and recurs after removal. Managed with repeated debulking (microdebrider/laser), avoiding tracheostomy where possible; HPV vaccination is preventive.</div>
+
+      <h3>🔎 Voice assessment</h3>
+      <p>Assess with <button class="clue c-green" onclick="toggle('vo9',this)">history, perceptual rating and laryngoscopy/stroboscopy</button>.</p>
+      <div class="reveal r-green" id="vo9"><b>Assessment:</b> history (onset, smoking/voice use, reflux, red flags), <b>perceptual voice rating (GRBAS scale)</b>, <b>flexible laryngoscopy</b> and <b>videostroboscopy</b> (assesses the mucosal wave — distinguishes lesions and detects subtle disease), and voice-lab measures. Microlaryngoscopy + biopsy is definitive for suspicious lesions.</div>
+
+      <h3>💊 Management of dysphonia</h3>
+      <p>Treatment combines <button class="clue c-blue" onclick="toggle('vo10',this)">voice therapy and risk-factor control</button> with <button class="clue c-green" onclick="toggle('vo11',this)">phonosurgery</button> and targeted measures.</p>
+      <div class="reveal r-blue" id="vo10"><b>Conservative:</b> <b>speech-and-language voice therapy</b> (first-line for nodules and muscle-tension dysphonia), <b>smoking cessation</b>, <b>treat reflux</b>, and vocal hygiene. Many benign disorders resolve without surgery.</div>
+      <div class="reveal r-green" id="vo11"><b>Procedures:</b> <b>microlaryngoscopy/phonosurgery</b> for polyps, cysts, Reinke's and biopsy; <b>medialisation/injection</b> for cord palsy; <b>botulinum toxin</b> for spasmodic dysphonia; debulking for papillomatosis. Treat any carcinoma per its own pathway (Topics 43–44).</div>
+
+      <h3>🗣️ Speech disorders (brief)</h3>
+      <p>Beyond voice, speech disorders include <button class="clue c-blue" onclick="toggle('vo12',this)">resonance/articulation, fluency and language problems</button>.</p>
+      <div class="reveal r-blue" id="vo12"><b>Types:</b> <b>resonance</b> (hypernasal speech from velopharyngeal insufficiency, e.g. cleft palate), <b>articulation/dysarthria</b> (neuromuscular), <b>fluency</b> (stammering/stuttering), and <b>language/aphasia</b> (cortical). The ENT-relevant ones are VPI (cleft, post-adenoidectomy) and laryngeal causes of voice.</div>
+
+      <h3>🔁 Laryngectomy rehabilitation</h3>
+      <p>After total laryngectomy the patient is a <button class="clue c-red" onclick="toggle('vo13',this)">neck breather</button> and needs <button class="clue c-green" onclick="toggle('vo14',this)">voice restoration</button> plus <button class="clue c-blue" onclick="toggle('vo15',this)">stoma/pulmonary and sensory rehabilitation</button>.</p>
+      <div class="reveal r-red" id="vo13"><b>Anatomy after laryngectomy:</b> the airway and food passage are <b>separated</b> — the trachea is brought to a permanent <b>end stoma</b>, so the patient breathes through the neck (no airflow through the nose/mouth). This underlies the rehabilitation needs and the emergency point that <b>you ventilate a laryngectomee via the stoma, not the mouth</b>.</div>
+      <div class="reveal r-green" id="vo14"><b>Voice restoration (3 options):</b> <b>(1) Tracheo-oesophageal puncture + voice prosthesis (Blom–Singer)</b> — the gold standard: a one-way valve shunts pulmonary air into the oesophagus/pharynx to vibrate the mucosa for fluent voice (occlude the stoma to speak). <b>(2) Oesophageal speech</b> — swallow/inject air and eructate it (no device, but harder to learn). <b>(3) Electrolarynx</b> — a hand-held vibrator producing a robotic voice (useful early/as backup).</div>
+      <div class="reveal r-blue" id="vo15"><b>Other rehabilitation:</b> <b>stoma care</b>; <b>humidification + heat-moisture exchanger</b> (the nose's warming/filtering/humidifying is lost → crusting, infection); <b>swallowing</b> rehabilitation; <b>pulmonary</b> care; and counselling about <b>anosmia</b> (no nasal airflow — use the "polite yawning"/nasal-airflow-inducing manoeuvre) and psychosocial support, all via the head-and-neck MDT.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Benign dysphonias do well with voice therapy ± phonosurgery; the key safety net is excluding cancer in persistent hoarseness. After laryngectomy, most patients achieve functional voice (usually with a TEP voice prosthesis) and adapt to neck breathing with good MDT rehabilitation.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> How do you classify dysphonia?</button>
+        <div class="ans"><b>Organic</b> (nodules, polyps, Reinke's, cysts, papilloma, carcinoma, palsy), <b>neurological</b> (palsy, spasmodic dysphonia, Parkinson's), and <b>functional/muscle-tension</b> (incl. psychogenic aphonia) — under the rule that <b>hoarseness &gt;3 weeks needs laryngoscopy</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> Vocal nodules vs polyp — features and treatment?</button>
+        <div class="ans"><b>Nodules:</b> bilateral, from chronic overuse, anterior-middle third → <b>voice therapy</b> first. <b>Polyp:</b> usually unilateral/haemorrhagic from acute phonotrauma → <b>phonosurgical excision</b> ± therapy.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> A middle-aged woman smoker with a deep, gravelly voice — diagnosis?</button>
+        <div class="ans"><b>Reinke's oedema (polypoid corditis)</b> — diffuse bilateral Reinke's-space oedema from <b>smoking</b> (± reflux/voice abuse), lowering the pitch. Stop smoking; surgical reduction if needed. Biopsy/exclude carcinoma given the smoking history.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> Describe the three methods of voice rehabilitation after total laryngectomy.</button>
+        <div class="ans"><b>(1) Tracheo-oesophageal puncture + voice prosthesis (Blom–Singer)</b> — best, shunts pulmonary air to vibrate the pharyngo-oesophageal mucosa; <b>(2) oesophageal speech</b> — swallow/inject and eructate air; <b>(3) electrolarynx</b> — external vibrator giving a robotic voice.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> Why do laryngectomees need humidification, and how do you resuscitate one?</button>
+        <div class="ans">The <b>nose no longer warms/filters/humidifies</b> inspired air, causing tracheal crusting/infection — hence a <b>heat-moisture exchanger</b>. In an emergency, <b>oxygenate/ventilate via the neck stoma</b> (a total laryngectomee has no connection between mouth and trachea).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> What is psychogenic (functional) aphonia and how is it recognised?</button>
+        <div class="ans">Loss of voice <b>without structural or neurological disease</b>, often stress-related: the patient whispers but has a <b>normal cough and normal cord closure on laryngoscopy</b> (the cords adduct for cough/throat-clear). It responds to <b>voice therapy</b> and reassurance.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Vocal nodules vs polyp</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = phonotrauma lesions causing hoarseness. <br><span class="dif">✅ Different in:</span> nodules = <b>bilateral, chronic overuse → voice therapy</b>; polyp = <b>unilateral/haemorrhagic, acute → surgery</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Reinke's oedema vs vocal-cord carcinoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = hoarseness in a smoker. <br><span class="dif">✅ Different in:</span> Reinke's = <b>diffuse bilateral oedema, low pitch</b>; carcinoma = <b>focal lesion/leukoplakia, persistent → biopsy</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Muscle-tension/psychogenic vs organic dysphonia</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = altered voice. <br><span class="dif">✅ Different in:</span> functional = <b>normal cords/cough, stress-related → voice therapy</b>; organic = <b>visible lesion on laryngoscopy</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Spasmodic dysphonia vs muscle-tension dysphonia</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = strained voice, normal-looking cords. <br><span class="dif">✅ Different in:</span> spasmodic = <b>task-specific dystonic breaks → botulinum toxin</b>; MTD = <b>generalised tension → voice therapy</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>TEP voice vs oesophageal speech</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both use the pharyngo-oesophageal segment to make voice. <br><span class="dif">✅ Different in:</span> TEP = <b>pulmonary air via a valve (fluent, needs device/occlusion)</b>; oesophageal speech = <b>swallowed air, no device (harder to learn)</b>.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A patient 2 months after total laryngectomy wants to talk again. What options do you offer and what else does rehabilitation involve?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Frame the new anatomy</button>
+          <div class="sbody"><i>"After total laryngectomy the airway is separated from the throat and the patient is a neck breather, so voice must be generated by vibrating the pharyngo-oesophageal mucosa."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Offer the three voice options</button>
+          <div class="sbody"><b>(1) TEP + voice prosthesis (Blom–Singer)</b> — gold standard; <b>(2) oesophageal speech</b>; <b>(3) electrolarynx</b>. Most achieve fluent voice with a TEP valve.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Cover the rest of rehabilitation</button>
+          <div class="sbody"><b>Stoma care, humidification + heat-moisture exchanger</b> (lost nasal conditioning), <b>swallowing</b> rehab, <b>pulmonary</b> care, manage <b>anosmia</b>, and psychosocial support — via the MDT/SLT.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Safety point</button>
+          <div class="sbody">Educate that in an emergency they are <b>ventilated/oxygenated through the stoma</b>, not the mouth; provide stoma protection and a medical-alert. Long-term valve maintenance with SLT.</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> A tracheo-oesophageal puncture creates a controlled fistula holding a one-way valve between the trachea and the oesophagus. When the patient occludes the stoma and exhales, pulmonary air is diverted through the valve into the oesophagus, setting the pharyngo-oesophageal segment mucosa into vibration to produce sound. Articulation by the tongue and lips then shapes this into fluent speech.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">bilateral lesions from voice overuse</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Vocal nodules → voice therapy</span><div class="assoc">anterior-middle third</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">unilateral haemorrhagic cord lesion</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Vocal polyp → excision</span><div class="assoc">single phonotrauma</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">smoker woman + deep gravelly voice</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Reinke's oedema</span><div class="assoc">stop smoking · biopsy to exclude Ca</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">HPV 6/11 laryngeal warts</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Recurrent respiratory papillomatosis</span><div class="assoc">debulk · avoid tracheostomy · HPV vaccine</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">strained/strangled voice, normal cords</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Spasmodic dysphonia</span><div class="assoc">botulinum toxin</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">whispered voice but normal cough</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Psychogenic (functional) aphonia</span><div class="assoc">voice therapy</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">best post-laryngectomy voice method</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">TEP + voice prosthesis (Blom–Singer)</span><div class="assoc">pulmonary air · occlude stoma</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">robotic backup voice device</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Electrolarynx</span><div class="assoc">+ oesophageal speech (no device)</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">laryngectomee tracheal crusting</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Need humidification / HME</span><div class="assoc">lost nasal conditioning</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">resuscitating a total laryngectomee</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Ventilate via the STOMA</span><div class="assoc">not the mouth</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Teacher with hoarse voice</button>
+        <div class="ans"><i>"A teacher has months of hoarseness; laryngoscopy shows bilateral mid-cord swellings."</i> → <b>vocal nodules</b>: <b>voice therapy</b> and vocal hygiene first; surgery only if they persist. Exclude red flags before labelling benign.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Post-laryngectomy voice</button>
+        <div class="ans"><i>"A laryngectomee wants to speak."</i> → offer <b>TEP + voice prosthesis</b> (best), with <b>oesophageal speech</b> and an <b>electrolarynx</b> as alternatives/backup; arrange SLT, stoma care, HME and counselling about anosmia and neck breathing.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is the GRBAS scale?</button>
+        <div class="ans">A perceptual voice-rating scale: <b>Grade (overall), Roughness, Breathiness, Asthenia, Strain</b>, each scored 0–3. It standardises the clinical description of dysphonia and tracks change with treatment.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Why is videostroboscopy useful?</button>
+        <div class="ans">It visualises the <b>mucosal wave</b> of the vibrating cords, revealing subtle lesions, scar, or stiffness not seen on standard laryngoscopy, and helps distinguish nodules/polyps/cysts and detect early malignancy — guiding therapy vs surgery.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What complications affect TEP voice prostheses?</button>
+        <div class="ans"><b>Valve leakage</b> (through or around the prosthesis → aspiration), <b>Candida colonisation</b> shortening valve life, granulation, and enlargement of the puncture. Managed with regular SLT review, valve changes, antifungals and sizing adjustments.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How is recurrent respiratory papillomatosis managed in children?</button>
+        <div class="ans"><b>Repeated conservative debulking</b> (microdebrider/CO₂ laser) to maintain the airway and voice while <b>avoiding tracheostomy</b> (which can spread disease distally); adjuvants (e.g. cidofovir, bevacizumab) in severe cases. <b>HPV vaccination</b> is preventive.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 29 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>

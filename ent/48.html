@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>48 · Thyroid gland tumors</title>
+<style>
+  :root{
+    --bg:#eef1f8; --card:#ffffff; --card2:#f4f7fd; --ink:#1b2236; --muted:#586079;
+    --line:#dce2ee; --brand:#6a3fef; --brand2:#0b8794;
+    --red:#d11d3a; --red-bg:#ffe1e6; --orange:#c2660a; --orange-bg:#ffedd2;
+    --blue:#0d63b8; --blue-bg:#dbeafe; --green:#0a8f5e; --green-bg:#d6f7e8;
+    --purple:#7a3fd0; --purple-bg:#eee0ff;
+    --radius:14px; --tap:48px; font-synthesis:none;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:14px 14px 60px}
+  header.topbar{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800}
+  h1.title{font-size:23px;line-height:1.2;margin:0;font-weight:850;
+    background:linear-gradient(90deg,#2a2160,#6a3fef);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .tab-btn{flex:1 1 auto;min-height:var(--tap);min-width:120px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);border-radius:12px;padding:8px 10px;font-size:13.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:.15s;line-height:1.15}
+  .tab-btn:hover{border-color:var(--brand)}
+  .tab-btn.active{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff;border-color:transparent;box-shadow:0 6px 18px -8px var(--brand)}
+  .tab-panel{display:none;animation:fade .25s ease}
+  .tab-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:850}
+  
+  .card h3{margin:18px 0 7px;font-size:15px;font-weight:800;color:#16203a}
+  .sec-emoji{font-size:18px}
+  .lead{color:var(--muted);font-size:14px;margin:2px 0 10px}
+  p{margin:8px 0}
+  .hint{font-size:12.5px;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+  .legend span{font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink)}
+  .clue{cursor:pointer;background:transparent;border:0;font:inherit;font-weight:700;padding:0;margin:0;
+    text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+  .clue:hover{text-decoration-style:solid}
+  .c-red{color:#bf1530;text-decoration-color:#e8657a}
+  .c-orange{color:#9a5500;text-decoration-color:#e0913a}
+  .c-blue{color:#0a5aa6;text-decoration-color:#5aa0e0}
+  .c-green{color:#0a7d52;text-decoration-color:#43b487}
+  .c-purple{color:#6a34b8;text-decoration-color:#a877e0}
+  .clue.on{background:rgba(106,63,239,.10);border-radius:5px;box-shadow:0 0 0 3px rgba(106,63,239,.10)}
+  .reveal{display:none;margin:9px 0 4px;padding:11px 12px;border-radius:12px;font-size:13.5px;border-left:4px solid var(--brand);background:var(--card2)}
+  .reveal.open{display:block;animation:fade .2s ease}
+  .reveal.r-red{border-left-color:var(--red)} .reveal.r-orange{border-left-color:var(--orange)}
+  .reveal.r-blue{border-left-color:var(--blue)} .reveal.r-green{border-left-color:var(--green)}
+  .reveal.r-purple{border-left-color:var(--purple)}
+  .reveal b{color:#111a30}
+  .lab{display:inline-block;background:#eef2fa;border:1px solid var(--line);border-radius:7px;padding:1px 7px;font-weight:800;font-size:12.5px;color:var(--ink);margin:1px 0}
+  .lab .nl{color:var(--green)} .lab .ab{color:var(--red)}
+  .q{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .q>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-size:14px;font-weight:800;display:flex;gap:9px;align-items:flex-start;min-height:var(--tap)}
+  .q>button .qi{color:var(--brand2);font-weight:900}
+  .q .ans{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .q.open .ans{display:block;animation:fade .2s ease}
+  .q.open>button{color:#14203c}
+  .cmp{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .cmp>button{width:100%;text-align:left;cursor:pointer;border:none;background:transparent;color:var(--ink);padding:12px 13px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:var(--tap)}
+  .cmp>button .chev{color:var(--brand2);transition:.2s}
+  .cmp.open>button .chev{transform:rotate(90deg)}
+  .cmp .body{display:none;padding:0 13px 13px;font-size:13.5px}
+  .cmp.open .body{display:block;animation:fade .2s ease}
+  .cmp .sim{color:var(--orange)} .cmp .dif{color:var(--green)}
+  .guessbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:#f4f7fd;color:var(--ink);padding:11px;font:inherit;font-size:14px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:13px 16px;font-weight:850;font-size:14.5px;min-height:var(--tap);width:100%;margin-top:10px}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),#5a3ff0);color:#fff}
+  .btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:scale(.99)}
+  .locked{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);border:1px dashed var(--line);font-size:13.5px}
+  .locked.show{display:block}
+  .answer{display:none;margin-top:12px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .step{border:1px solid var(--line);border-radius:12px;margin:9px 0;background:var(--card2)}
+  .step>button{width:100%;text-align:left;border:none;background:transparent;color:var(--ink);cursor:pointer;padding:12px 13px;font-weight:800;font-size:14px;display:flex;gap:9px;align-items:center;min-height:var(--tap)}
+  .step .sbody{display:none;padding:0 13px 13px;font-size:13.5px;color:var(--muted)}
+  .step.open .sbody{display:block}
+  .tag{font-size:11px;font-weight:900;border-radius:7px;padding:2px 7px;margin-right:2px}
+  .t-red{background:var(--red-bg);color:#a01228} .t-orange{background:var(--orange-bg);color:#8a4b00}
+  .t-blue{background:var(--blue-bg);color:#0a4f96} .t-green{background:var(--green-bg);color:#0a6e48}
+  .mech{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--green);background:#e7f9f1;font-size:13.5px}
+  .mech b{color:#111a30}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .fc{cursor:pointer;border-radius:14px;padding:14px;min-height:96px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:var(--card2);transition:.15s}
+  .fc:active{transform:scale(.99)}
+  .fc .front{font-weight:800;font-size:14px}
+  .fc .front .k{color:var(--orange);font-weight:900}
+  .fc .back{display:none;font-size:14px}
+  .fc.flipped{background:linear-gradient(135deg,#e3f8ee,#d2f0e0);border-color:var(--green)}
+  .fc.flipped .front{display:none}
+  .fc.flipped .back{display:block}
+  .fc .back .v{color:var(--green);font-weight:900}
+  .fc .assoc{margin-top:7px;font-size:12px;color:var(--muted)}
+  .flip-hint{font-size:11px;color:var(--muted);margin-top:6px}
+  ul.tight{margin:6px 0 6px 2px;padding-left:18px} ul.tight li{margin:4px 0}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 9px;margin:2px 3px 2px 0;border:1px solid var(--line)}
+  .danger{color:var(--red);font-weight:900}
+  .ok{color:var(--green);font-weight:900}
+  .divider{height:1px;background:var(--line);margin:14px 0;border:none}
+  .footnote{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px}
+  table.stg{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  table.stg th,table.stg td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  table.stg th{background:#eef2fa;color:#16203a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <span class="eyebrow">ENT Oral Exam · Topic 48</span>
+    <h1 class="title">🦋 Thyroid gland tumors</h1>
+    <span class="subtitle">The <b>Overview</b> is a full walk-through of the topic. Tap any <b>coloured word</b> for an extra exam pearl. Then work through all 5 tabs.</span>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" onclick="showTab(this,'t1')">📖 Overview</button>
+    <button class="tab-btn" onclick="showTab(this,'t2')">⚖️ Compare</button>
+    <button class="tab-btn" onclick="showTab(this,'t3')">🎯 Demonstrate</button>
+    <button class="tab-btn" onclick="showTab(this,'t4')">🔑 Keywords</button>
+    <button class="tab-btn" onclick="showTab(this,'t5')">📚 Cases</button>
+  </nav>
+
+  <section class="tab-panel active" id="t1">
+    <div class="card">
+      <h2><span class="sec-emoji">📖</span> Full topic explanation</h2>
+      <div class="lead">A thyroid nodule is common and usually benign; the task is to <b>identify the few that are malignant</b> and classify the cancers — <b>papillary, follicular, medullary, anaplastic and lymphoma</b> — each with distinct behaviour. The work-up centres on <b>ultrasound + FNAC</b>, and red flags (hoarseness, fixation, rapid growth) point to malignancy.</div>
+      <div class="legend"><span>🔴 fatal/critical</span><span>🟠 risk/demographic</span><span>🔵 key context</span><span>🟢 confirmatory</span><span>🟣 trap</span></div>
+
+      <h3>🗂️ The solitary thyroid nodule</h3>
+      <p>Most nodules are <button class="clue c-blue" onclick="toggle('th1',this)">benign</button>; assessment targets the <button class="clue c-red" onclick="toggle('th2',this)">red flags of malignancy</button>.</p>
+      <div class="reveal r-blue" id="th1"><b>Benign causes:</b> <b>colloid nodule, follicular adenoma, cyst, and dominant nodules in a multinodular goitre</b>. The great majority of nodules are benign, so over-investigation is avoided by structured (US/FNAC) triage.</div>
+      <div class="reveal r-red" id="th2"><b>Red flags for malignancy:</b> a <b>hard, fixed, rapidly growing nodule</b>, <b>hoarseness (recurrent laryngeal nerve involvement)</b>, <b>cervical lymphadenopathy</b>, age (very young/old), male sex, prior <b>neck irradiation</b>, and a family history (MEN2). These prompt urgent assessment.</div>
+
+      <h3>🧬 Differentiated carcinomas (papillary & follicular)</h3>
+      <p>The commonest cancers are the differentiated types: <button class="clue c-green" onclick="toggle('th3',this)">papillary</button> and <button class="clue c-green" onclick="toggle('th4',this)">follicular</button>.</p>
+      <div class="reveal r-green" id="th3"><b>Papillary carcinoma:</b> the <b>commonest</b> thyroid cancer; <b>lymphatic spread</b> to neck nodes; excellent prognosis. Histology: <b>"Orphan-Annie" empty nuclei, nuclear grooves and psammoma bodies</b>; associated with <b>BRAF/RET</b> and prior radiation. FNAC is diagnostic.</div>
+      <div class="reveal r-green" id="th4"><b>Follicular carcinoma:</b> <b>haematogenous spread</b> (bone/lung); <b>FNAC cannot distinguish it from a follicular adenoma</b> (diagnosis needs histological evidence of <b>capsular/vascular invasion</b>), so a "follicular lesion" is managed by diagnostic lobectomy. Good prognosis overall.</div>
+
+      <h3>🧪 Medullary, anaplastic & lymphoma</h3>
+      <p>The other cancers are <button class="clue c-orange" onclick="toggle('th5',this)">medullary (C cells, MEN2)</button>, <button class="clue c-red" onclick="toggle('th6',this)">anaplastic (aggressive)</button>, and <button class="clue c-blue" onclick="toggle('th7',this)">thyroid lymphoma</button>.</p>
+      <div class="reveal r-orange" id="th5"><b>Medullary carcinoma:</b> arises from <b>parafollicular C cells</b> → secretes <b>calcitonin</b> (tumour marker), with <b>amyloid</b> stroma. ~25% are familial (<b>MEN2/RET mutation</b>) — screen for <b>phaeochromocytoma before surgery</b> and for hyperparathyroidism. Spreads to nodes; needs total thyroidectomy + central neck dissection.</div>
+      <div class="reveal r-red" id="th6"><b>Anaplastic carcinoma:</b> <b>elderly patients, a rapidly enlarging hard mass with airway/voice compromise</b>; extremely aggressive with a very poor prognosis. Often only palliative/airway management is possible.</div>
+      <div class="reveal r-blue" id="th7"><b>Thyroid lymphoma:</b> a rapidly enlarging mass on a background of <b>Hashimoto's thyroiditis</b>; diagnosed by <b>core biopsy</b> and treated with <b>chemoradiotherapy</b> (not surgery).</div>
+
+      <h3>🔎 Investigation</h3>
+      <p>Work-up combines <button class="clue c-green" onclick="toggle('th8',this)">TFTs, ultrasound and FNAC</button>, with <button class="clue c-blue" onclick="toggle('th9',this)">specific markers and pre-op laryngoscopy</button>, and a <button class="clue c-purple" onclick="toggle('th10',this)">contrast caveat</button>.</p>
+      <div class="reveal r-green" id="th8"><b>Core tests:</b> <b>TFTs</b> (a hot/toxic nodule on isotope scan is rarely malignant), <b>ultrasound (TIRADS risk features)</b>, and <b>FNAC reported by Thy/Bethesda category</b> — the cornerstone for triaging benign vs malignant vs indeterminate nodules.</div>
+      <div class="reveal r-blue" id="th9"><b>Markers/assessment:</b> <b>calcitonin (medullary), thyroglobulin (post-op surveillance of differentiated cancer)</b>; <b>laryngoscopy to document vocal-cord function before surgery</b>; CT/MRI for retrosternal extension or extent (with the contrast caveat).</div>
+      <div class="reveal r-purple" id="th10"><b>Trap — iodinated contrast:</b> <b>avoid iodinated CT contrast if radioactive-iodine therapy is planned</b> (it saturates the gland and delays RAI for weeks). Use ultrasound/MRI where possible in differentiated cancer.</div>
+
+      <h3>💊 Treatment (overview)</h3>
+      <p>Treatment is <button class="clue c-green" onclick="toggle('th11',this)">surgery ± radioactive iodine and TSH suppression</button>, by histology (surgical detail in Topic 49).</p>
+      <div class="reveal r-green" id="th11"><b>By type:</b> <b>differentiated (papillary/follicular)</b> → lobectomy or total thyroidectomy ± <b>radioactive iodine</b> and <b>levothyroxine/TSH suppression</b>, with thyroglobulin surveillance; <b>medullary</b> → total thyroidectomy + central neck dissection (no RAI); <b>anaplastic</b> → palliation/airway; <b>lymphoma</b> → chemoRT. Detailed surgery and complications are in Topic 49.</div>
+
+      <h3>📈 Prognosis</h3>
+      <p>Differentiated (papillary/follicular) carcinoma has an <b>excellent prognosis</b>, especially in younger patients; medullary depends on stage and familial screening; <b>anaplastic carcinoma has a dismal prognosis</b>; lymphoma responds to chemoRT.</p>
+
+      <hr class="divider">
+      <h3>🧠 Thinking questions <span class="hint">(tap to reveal)</span></h3>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q1.</span> How do you assess a solitary thyroid nodule?</button>
+        <div class="ans"><b>TFTs, ultrasound (TIRADS) and FNAC (Thy/Bethesda)</b>, plus a history/examination for red flags (hard/fixed/rapid growth, hoarseness, nodes, radiation/family history). Laryngoscopy before any surgery.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q2.</span> Why can't FNAC diagnose follicular carcinoma?</button>
+        <div class="ans">Because malignancy is defined by <b>capsular or vascular invasion</b>, which cytology cannot show — a "follicular lesion/neoplasm" needs <b>histology (diagnostic lobectomy)</b> to distinguish carcinoma from a benign adenoma.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q3.</span> What must you exclude before operating on medullary carcinoma?</button>
+        <div class="ans">A <b>phaeochromocytoma</b> (MEN2 association) — screen with plasma/urinary metanephrines and treat first, to avoid an intra-operative hypertensive crisis; also check for hyperparathyroidism and test for the <b>RET mutation</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q4.</span> An elderly patient has a rapidly enlarging hard thyroid mass with stridor. Diagnosis?</button>
+        <div class="ans"><b>Anaplastic carcinoma</b> (consider <b>lymphoma</b> if Hashimoto's background) — aggressive; secure the airway, biopsy (core), and treat palliatively (anaplastic) or with chemoRT (lymphoma).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q5.</span> Which markers are used and for what?</button>
+        <div class="ans"><b>Calcitonin</b> (medullary diagnosis/follow-up), <b>thyroglobulin</b> (surveillance of differentiated cancer after total thyroidectomy + RAI), and <b>RET</b> testing (familial medullary/MEN2).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q6.</span> Why avoid iodinated contrast in differentiated thyroid cancer?</button>
+        <div class="ans">It <b>saturates the thyroid with iodine and delays radioactive-iodine therapy</b> for weeks. Prefer <b>ultrasound/MRI</b>; if CT contrast is unavoidable, plan RAI timing accordingly.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t2">
+    <div class="card">
+      <h2><span class="sec-emoji">⚖️</span> Look-alikes & how to separate them</h2>
+      <div class="lead">Each row: why it is confused, then the <b style="color:var(--green)">✅ trigger phrase</b>.</div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Papillary vs follicular carcinoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are differentiated thyroid cancers. <br><span class="dif">✅ Different in:</span> papillary = <b>lymphatic spread, Orphan-Annie nuclei/psammoma, FNAC-diagnosable</b>; follicular = <b>haematogenous spread, needs histology (capsular/vascular invasion)</b>.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Follicular adenoma vs carcinoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> identical on FNAC. <br><span class="dif">✅ Different in:</span> only <b>capsular/vascular invasion on histology</b> defines carcinoma → diagnostic lobectomy.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Medullary vs differentiated carcinoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both are thyroid cancers. <br><span class="dif">✅ Different in:</span> medullary = <b>C cells, calcitonin, amyloid, MEN2/RET, no RAI</b>; differentiated = follicular-cell, RAI-avid.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Anaplastic carcinoma vs thyroid lymphoma</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = rapidly enlarging mass in older patients. <br><span class="dif">✅ Different in:</span> lymphoma = <b>Hashimoto's background, core biopsy, chemoRT (treatable)</b>; anaplastic = very poor prognosis, palliative.</div></div>
+      <div class="cmp"><button onclick="cmpToggle(this)"><span>Benign nodule vs malignant nodule</span><span class="chev">▸</span></button>
+        <div class="body"><span class="sim">Similar because</span> both = a thyroid lump. <br><span class="dif">✅ Different in:</span> malignant = <b>hard/fixed, rapid growth, hoarseness, nodes, suspicious US/FNAC</b>; benign = soft, mobile, low-risk US, benign FNAC.</div></div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t3">
+    <div class="card">
+      <h2><span class="sec-emoji">🎯</span> Demonstrate it like an examiner wants</h2>
+      <div class="lead">Commit first, then reveal the model structure and build the chain step by step.</div>
+      <p style="font-weight:800">Prompt: <i>"A 40-year-old has a firm, enlarging thyroid nodule and recent hoarseness. How do you assess?"</i></p>
+      <textarea class="guessbox" id="guess" placeholder="Type your structured answer before revealing…"></textarea>
+      <button class="btn btn-ghost" onclick="lockGuess()">🔒 Lock my guess</button>
+      <div class="locked" id="lockedBox"><b>Your locked answer:</b><br><span id="lockedTxt"></span></div>
+      <button class="btn btn-primary" onclick="revealAns()">✅ Reveal model answer</button>
+      <div class="answer" id="ans">
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-red">🔴 INTRO</span> Flag the red flags</button>
+          <div class="sbody"><i>"An enlarging firm nodule with <b>hoarseness</b> suggests <b>thyroid malignancy with recurrent-laryngeal-nerve involvement</b> until excluded."</i></div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-orange">🟠 DEFINITIONS</span> Triage the nodule</button>
+          <div class="sbody"><b>TFTs, ultrasound (TIRADS), FNAC (Thy/Bethesda)</b>; <b>laryngoscopy</b> to document the cord; consider calcitonin if medullary features/family history.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-blue">🔵 EXPANSION</span> Stage if malignant</button>
+          <div class="sbody">Assess nodes on US ± FNAC; imaging (US/MRI; <b>avoid iodinated contrast if RAI planned</b>) for extent/retrosternal spread; histology-specific markers.</div></div>
+        <div class="step"><button onclick="stepToggle(this)"><span class="tag t-green">🟢 ANSWER</span> Plan by histology (MDT)</button>
+          <div class="sbody">Differentiated → surgery ± RAI + TSH suppression; medullary → total thyroidectomy + central neck (exclude phaeo first); anaplastic → palliation/airway; lymphoma → chemoRT (Topic 49 for surgery).</div></div>
+        <div class="mech"><b>🔬 Mechanism in 3 sentences:</b> A growing thyroid carcinoma can invade or compress the adjacent recurrent laryngeal nerve in the tracheo-oesophageal groove, paralysing the ipsilateral vocal cord and causing hoarseness — a sinister sign. Papillary cancers spread via lymphatics to neck nodes, whereas follicular cancers invade vessels and metastasise haematogenously to bone/lung. FNAC triages most nodules, but follicular lesions require histological proof of capsular/vascular invasion to confirm malignancy.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t4">
+    <div class="card">
+      <h2><span class="sec-emoji">🔑</span> Keyword flashcards</h2>
+      <div class="lead">Tap a card to flip: <b>"If you see …"</b> → <b>"think …"</b>.</div>
+      <div class="cards">
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">commonest thyroid cancer + lymph spread</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Papillary carcinoma</span><div class="assoc">Orphan-Annie nuclei · psammoma · BRAF/RET</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">FNAC can't diagnose; haematogenous spread</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Follicular carcinoma</span><div class="assoc">capsular/vascular invasion → lobectomy</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">calcitonin + amyloid + MEN2</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Medullary carcinoma (C cells)</span><div class="assoc">exclude phaeo · RET · no RAI</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">elderly, rapidly enlarging hard mass + stridor</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Anaplastic carcinoma</span><div class="assoc">very poor prognosis · airway</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">rapidly enlarging mass + Hashimoto's</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Thyroid lymphoma</span><div class="assoc">core biopsy · chemoRT</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">nodule with hoarseness</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">RLN involvement → malignancy</span><div class="assoc">laryngoscopy</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">nodule first-line investigations</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">TFTs + ultrasound (TIRADS) + FNAC (Thy/Bethesda)</span><div class="assoc">cornerstone triage</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">marker for differentiated-cancer surveillance</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Thyroglobulin</span><div class="assoc">after total thyroidectomy + RAI</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">avoid this before RAI</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Iodinated CT contrast</span><div class="assoc">use US/MRI</div></div></div>
+        <div class="fc" onclick="flip(this)"><div class="front">If you see <span class="k">prior childhood neck irradiation</span><div class="flip-hint">tap to flip</div></div><div class="back">think <span class="v">Thyroid cancer risk (papillary)</span><div class="assoc">key risk factor</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="t5">
+    <div class="card">
+      <h2><span class="sec-emoji">📚</span> Clinical reasoning & case presentations</h2>
+      <div class="lead">Model presentations and advanced examiner follow-ups.</div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 1</span> Papillary carcinoma</button>
+        <div class="ans"><i>"A young woman with a thyroid nodule and a small lateral neck node; FNAC shows papillary carcinoma."</i> → total thyroidectomy (± neck dissection) + <b>RAI + TSH suppression</b>, thyroglobulin surveillance; excellent prognosis (Topic 49 for surgery).</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Case 2</span> Medullary carcinoma</button>
+        <div class="ans"><i>"Raised calcitonin and a family history."</i> → <b>exclude phaeochromocytoma first</b>, test RET, screen for hyperparathyroidism; <b>total thyroidectomy + central neck dissection</b> (no RAI); calcitonin/CEA follow-up.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What ultrasound features suggest malignancy?</button>
+        <div class="ans"><b>Hypoechogenicity, microcalcifications, irregular/infiltrative margins, taller-than-wide shape, and suspicious nodes</b> (TIRADS). These raise the risk and prompt FNAC; purely cystic/spongiform nodules are low risk.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> What is the Thy/Bethesda system?</button>
+        <div class="ans">A structured <b>FNAC cytology classification</b> (e.g. Thy1 non-diagnostic → Thy5 malignant; Bethesda I–VI) that stratifies malignancy risk and guides management (repeat FNAC, diagnostic lobectomy, or definitive surgery), notably for <b>indeterminate (follicular) lesions</b>.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> Which thyroid cancers do NOT take up radioactive iodine?</button>
+        <div class="ans"><b>Medullary (C-cell origin), anaplastic, and lymphoma</b> are not iodine-avid, so RAI is ineffective. RAI is used for <b>differentiated (papillary/follicular)</b> cancer of follicular-cell origin after total thyroidectomy.</div></div>
+      <div class="q"><button onclick="qToggle(this)"><span class="qi">Q</span> How does MEN2 influence management?</button>
+        <div class="ans">MEN2 (RET) predisposes to <b>medullary thyroid carcinoma, phaeochromocytoma and (2A) hyperparathyroidism</b>. It mandates <b>RET testing, phaeo exclusion before surgery, and prophylactic thyroidectomy</b> in gene carriers; family screening is essential.</div></div>
+    </div>
+  </section>
+
+  <div class="footnote">Topic 48 of 54 · ENT oral-exam revision · tap-to-reveal interactive widget</div>
+</div>
+<script>
+  function showTab(btn,id){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');var t=document.querySelector('.tabs');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}
+  function toggle(id,el){var p=document.getElementById(id);if(!p)return;var open=p.classList.toggle('open');if(el)el.classList.toggle('on',open);}
+  function qToggle(btn){btn.parentElement.classList.toggle('open');}
+  function cmpToggle(btn){btn.parentElement.classList.toggle('open');}
+  function stepToggle(btn){btn.parentElement.classList.toggle('open');}
+  function flip(card){card.classList.toggle('flipped');}
+  function lockGuess(){var t=document.getElementById('guess');var box=document.getElementById('lockedBox');document.getElementById('lockedTxt').textContent=t.value.trim()?t.value:'(no guess entered — reveal anyway)';box.classList.add('show');t.setAttribute('readonly','readonly');}
+  function revealAns(){document.getElementById('ans').classList.add('show');}
+</script>
+</body>
+</html>
