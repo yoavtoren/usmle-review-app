@@ -1574,6 +1574,18 @@ kbd { background: var(--surface); border: 1px solid var(--line-hover); border-ra
   border: 1.5px solid #4285f444; text-decoration: none; transition: background 0.15s;
 }
 .ev-gcal-btn:hover { background: #4285f433; }
+.ev-done-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12.5px; font-weight: 700; padding: 8px 16px;
+  border-radius: 10px; background: rgba(22,163,74,0.08); color: #16a34a;
+  border: 1.5px solid rgba(22,163,74,0.25); cursor: pointer;
+  font-family: inherit; transition: background 0.15s, border-color 0.15s;
+}
+.ev-done-btn:hover { background: rgba(22,163,74,0.15); border-color: rgba(22,163,74,0.40); }
+.ev-done-btn-on {
+  background: #16a34a; color: #fff; border-color: #16a34a;
+}
+.ev-done-btn-on:hover { background: #15803d; border-color: #15803d; }
 
 /* Goals panel */
 .goals-panel {

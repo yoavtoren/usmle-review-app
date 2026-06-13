@@ -132,3 +132,10 @@ export function loadGoalsDone() {
   catch { return {}; }
 }
 export function saveGoalsDone(done) { localStorage.setItem(GOALS_KEY, JSON.stringify(done)); }
+
+const EVENTS_DONE_KEY = "usmle-app:events-done-v1";
+export function loadEventsDone() {
+  try { return JSON.parse(localStorage.getItem(EVENTS_DONE_KEY)) || {}; }
+  catch { return {}; }
+}
+export function saveEventsDone(done) { localStorage.setItem(EVENTS_DONE_KEY, JSON.stringify(done)); }

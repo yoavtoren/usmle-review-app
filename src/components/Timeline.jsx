@@ -1,7 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import {
   PHASES, GOALS, FRONT_COLORS, FRONT_LABELS, TYPE_ICONS, TYPE_LABELS,
-  loadTimelineEvents, loadGoalsDone, saveGoalsDone,
+  loadTimelineEvents, loadGoalsDone, saveGoalsDone, loadEventsDone, saveEventsDone,
 } from "../lib/timelineData.js";
 import { loadAllWorkstreamTasks } from "../lib/workstreamData.js";
 import { buildGCalLink } from "../lib/calendarExport.js";
@@ -76,13 +76,13 @@ function workstreamNodes(tasks) {
 }
 
 // ── Event drawer ─────────────────────────────────────────────────────────
-function EventDrawer({ event, onClose }) {
+function EventDrawer({ event, onClose, done, onToggleDone }) {
   if (!event) return null;
   const color = FRONT_COLORS[event.front] || "#94a3b8";
   const gcal  = buildGCalLink(event);
   return (
     <div className="ev-drawer-overlay" onClick={onClose}>
-      <div className="ev-drawer" onClick={e => e.stopPropagation()} style={{ "--ev-c": color }}>
+      <div className={`ev-drawer${done ? " ev-drawer-done" : ""}`} onClick={e => e.stopPropagation()} style={{ "--ev-c": color }}>
         <div className="ev-drawer-band">
           <div className="ev-drawer-band-inner">
             <div className="ev-drawer-type-row">
@@ -126,6 +126,9 @@ function EventDrawer({ event, onClose }) {
           </div>
         )}
         <div className="ev-drawer-btns">
+          <button className={`ev-done-btn${done ? " ev-done-btn-on" : ""}`} onClick={onToggleDone}>
+            {done ? "✓ הושלם" : "סמן כהושלם"}
+          </button>
           {gcal && (
             <a className="ev-gcal-btn" href={gcal} target="_blank" rel="noopener noreferrer">
               📅 הוסף ליומן Google
@@ -228,7 +231,8 @@ export default function Timeline() {
 
   const [tlEvents]       = useState(loadTimelineEvents);
   const [wsTasksAll]     = useState(loadAllWorkstreamTasks);
-  const [goalsDone, setGoalsDone] = useState(loadGoalsDone);
+  const [goalsDone, setGoalsDone]     = useState(loadGoalsDone);
+  const [eventsDone, setEventsDone]   = useState(loadEventsDone);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [activeF, setActiveF] = useState(new Set(ALL_FRONTS));
   const [activeT, setActiveT] = useState(new Set(ALL_TYPES));
@@ -260,6 +264,10 @@ export default function Timeline() {
   function toggleGoal(id) {
     const next = { ...goalsDone, [id]: !goalsDone[id] };
     setGoalsDone(next); saveGoalsDone(next);
+  }
+  function toggleEventDone(id) {
+    const next = { ...eventsDone, [id]: !eventsDone[id] };
+    setEventsDone(next); saveEventsDone(next);
   }
   function toggleFront(f) {
     setActiveF(prev => { const n = new Set(prev); n.has(f) ? n.delete(f) : n.add(f); return n; });
@@ -426,14 +434,15 @@ export default function Timeline() {
 
           {/* One row per dated event */}
           {dated.map((ev, i) => {
-            const color = FRONT_COLORS[ev.front] || "#94a3b8";
-            const x     = dateToX(ev.date);
-            const odd   = i % 2 === 1;
-            const bg    = odd ? "var(--surface-2)" : "var(--surface)";
+            const color  = FRONT_COLORS[ev.front] || "#94a3b8";
+            const x      = dateToX(ev.date);
+            const odd    = i % 2 === 1;
+            const isDone = !!eventsDone[ev.id];
+            const bg     = isDone ? "rgba(22,163,74,0.04)" : odd ? "var(--surface-2)" : "var(--surface)";
 
             return (
               <div key={ev.id}
-                style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", cursor: "pointer", background: bg }}
+                style={{ display: "flex", height: ROW_H, borderBottom: "1px solid var(--line)", cursor: "pointer", background: bg, opacity: isDone ? 0.7 : 1 }}
                 onClick={() => setSelectedEvent(ev)}
                 className="tl-ev-row">
 
@@ -441,12 +450,15 @@ export default function Timeline() {
                 <div style={{
                   position: "sticky", left: 0, width: LABEL_W, flexShrink: 0, zIndex: 10,
                   background: bg, borderRight: "1.5px solid var(--line)",
-                  borderLeft: `3px solid ${color}`,
+                  borderLeft: `3px solid ${isDone ? "#16a34a" : color}`,
                   display: "flex", alignItems: "center", gap: 6, padding: "0 8px 0 6px",
                 }}>
                   <span style={{ fontSize: 11, flexShrink: 0 }}>{TYPE_ICONS[ev.type] || "📌"}</span>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", lineHeight: 1.3 }}>{ev.title}</span>
-                  <span style={{ fontSize: 9, fontWeight: 800, color, flexShrink: 0 }}>{fmtShort(ev.date)}</span>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: isDone ? "var(--muted)" : "var(--text)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", lineHeight: 1.3, textDecoration: isDone ? "line-through" : "none" }}>{ev.title}</span>
+                  {isDone
+                    ? <span style={{ fontSize: 9, fontWeight: 900, color: "#16a34a", flexShrink: 0 }}>✓</span>
+                    : <span style={{ fontSize: 9, fontWeight: 800, color, flexShrink: 0 }}>{fmtShort(ev.date)}</span>
+                  }
                 </div>
 
                 {/* Track */}
@@ -458,10 +470,13 @@ export default function Timeline() {
                     position: "absolute",
                     left: x - DOT_R, top: "50%", transform: "translateY(-50%)",
                     width: DOT_R * 2, height: DOT_R * 2, borderRadius: "50%",
-                    background: color, border: "2.5px solid white",
-                    boxShadow: `0 0 0 1.5px ${color}`,
+                    background: isDone ? "#16a34a" : color, border: "2.5px solid white",
+                    boxShadow: `0 0 0 1.5px ${isDone ? "#16a34a" : color}`,
+                    display: "flex", alignItems: "center", justifyContent: "center",
                     zIndex: 5,
-                  }} />
+                  }}>
+                    {isDone && <span style={{ color: "white", fontSize: 6, fontWeight: 900, lineHeight: 1, marginTop: 0.5 }}>✓</span>}
+                  </div>
                 </div>
               </div>
             );
@@ -519,7 +534,12 @@ export default function Timeline() {
       <GoalsPanel done={goalsDone} onToggle={toggleGoal} />
 
       {selectedEvent && (
-        <EventDrawer event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+        <EventDrawer
+          event={selectedEvent}
+          onClose={() => setSelectedEvent(null)}
+          done={!!eventsDone[selectedEvent.id]}
+          onToggleDone={() => toggleEventDone(selectedEvent.id)}
+        />
       )}
     </div>
   );
