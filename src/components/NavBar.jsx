@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const FLAT_LINKS = [
-  { to: "/",          label: "בית"        },
   { to: "/timeline",  label: "ציר זמן"   },
   { to: "/aims",      label: "AIMS"       },
   { to: "/medcross",  label: "MedCross"   },
@@ -15,20 +14,29 @@ const STEP1_CHILDREN = [
   { to: "/fa",    label: "📖 First Aid"  },
 ];
 
+const MEDSCHOOL_CHILDREN = [
+  { to: "/medschool", label: "🏫 Hub" },
+];
+
+
 export default function NavBar({ dueCount = 0, onBellClick }) {
   const nav  = useNavigate();
   const loc  = useLocation();
   const p    = loc.pathname;
-  const [step1Open, setStep1Open] = useState(false);
-  const [menuOpen,  setMenuOpen]  = useState(false);
-  const wrapRef = useRef(null);
+  const [step1Open,  setStep1Open]  = useState(false);
+  const [msOpen,     setMsOpen]     = useState(false);
+  const [menuOpen,   setMenuOpen]   = useState(false);
+  const wrapRef  = useRef(null);
+  const msWrapRef = useRef(null);
 
   const isStep1Active = p === "/step1" || p.startsWith("/tests") || p.startsWith("/fa");
+  const isMsActive    = p.startsWith("/medschool");
 
-  // Close step1 dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     function handler(e) {
-      if (wrapRef.current && !wrapRef.current.contains(e.target)) setStep1Open(false);
+      if (wrapRef.current   && !wrapRef.current.contains(e.target))   setStep1Open(false);
+      if (msWrapRef.current && !msWrapRef.current.contains(e.target)) setMsOpen(false);
     }
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
@@ -64,6 +72,29 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
               </div>
             )}
           </div>
+
+          {/* Med School dropdown — desktop only */}
+          <div className="top-nav-step1-wrap" ref={msWrapRef}>
+            <button
+              className={`top-nav-link top-nav-step1${isMsActive ? " top-nav-active" : ""}`}
+              onClick={() => setMsOpen(o => !o)}>
+              Med School {msOpen ? "▴" : "▾"}
+            </button>
+            {msOpen && (
+              <div className="top-nav-dropdown">
+                {MEDSCHOOL_CHILDREN.map(({ to, label }) => (
+                  <button key={to} className="top-nav-dd-item"
+                    onClick={() => { nav(to); setMsOpen(false); }}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <button className={`top-nav-link${p === "/" ? " top-nav-active" : ""}`} onClick={() => nav("/")}>
+            בית
+          </button>
 
           <div className="top-nav-links">
             {FLAT_LINKS.map(({ to, label }) => {
@@ -106,17 +137,26 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
             ))}
           </div>
           <div className="top-nav-mobile-section">
+            <div className="top-nav-mobile-label">Med School</div>
+            {MEDSCHOOL_CHILDREN.map(({ to, label }) => (
+              <button key={to}
+                className={`top-nav-mobile-link${p.startsWith("/medschool") ? " top-nav-mobile-active" : ""}`}
+                onClick={() => { nav(to); setMenuOpen(false); }}>
+                {label}
+              </button>
+            ))}
+          </div>
+          <div className="top-nav-mobile-section">
             <div className="top-nav-mobile-label">ניווט</div>
-            {FLAT_LINKS.map(({ to, label }) => {
-              const active = to === "/" ? p === "/" : p.startsWith(to);
-              return (
-                <button key={to}
-                  className={`top-nav-mobile-link${active ? " top-nav-mobile-active" : ""}`}
-                  onClick={() => { nav(to); setMenuOpen(false); }}>
-                  {label}
-                </button>
-              );
-            })}
+            <button className={`top-nav-mobile-link${p === "/" ? " top-nav-mobile-active" : ""}`}
+              onClick={() => { nav("/"); setMenuOpen(false); }}>בית</button>
+            {FLAT_LINKS.map(({ to, label }) => (
+              <button key={to}
+                className={`top-nav-mobile-link${p.startsWith(to) ? " top-nav-mobile-active" : ""}`}
+                onClick={() => { nav(to); setMenuOpen(false); }}>
+                {label}
+              </button>
+            ))}
           </div>
         </div>
       )}
