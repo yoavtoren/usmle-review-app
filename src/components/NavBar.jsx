@@ -45,21 +45,31 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
   // Close mobile menu on route change
   useEffect(() => { setMenuOpen(false); }, [p]);
 
+  const Chevron = ({ open }) => (
+    <svg className={`top-nav-chev${open ? " open" : ""}`} width="9" height="9" viewBox="0 0 9 9" aria-hidden="true">
+      <path d="M1.5 3 L4.5 6 L7.5 3" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+
   return (
     <>
       <nav className="top-nav">
         <div className="top-nav-inner">
           <span className="top-nav-brand" onClick={() => nav("/")} role="button" tabIndex={0}
             onKeyDown={e => e.key === "Enter" && nav("/")}>
+            <span className="top-nav-brand-dot" aria-hidden="true" />
             לוח ההישרדות
           </span>
 
+          <div className="top-nav-divider" aria-hidden="true" />
+
           {/* Step 1 dropdown — desktop only */}
-          <div className="top-nav-step1-wrap" ref={wrapRef}>
+          <div className="top-nav-dd-wrap" ref={wrapRef}>
             <button
-              className={`top-nav-link top-nav-step1${isStep1Active ? " top-nav-active" : ""}`}
+              className={`top-nav-link top-nav-pill top-nav-pill-step1${isStep1Active ? " top-nav-pill-active" : ""}`}
               onClick={() => setStep1Open(o => !o)}>
-              Step 1 {step1Open ? "▴" : "▾"}
+              <span>Step 1</span>
+              <Chevron open={step1Open} />
             </button>
             {step1Open && (
               <div className="top-nav-dropdown">
@@ -74,14 +84,15 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
           </div>
 
           {/* Med School dropdown — desktop only */}
-          <div className="top-nav-step1-wrap" ref={msWrapRef}>
+          <div className="top-nav-dd-wrap" ref={msWrapRef}>
             <button
-              className={`top-nav-link top-nav-step1${isMsActive ? " top-nav-active" : ""}`}
+              className={`top-nav-link top-nav-pill top-nav-pill-ms${isMsActive ? " top-nav-pill-active" : ""}`}
               onClick={() => setMsOpen(o => !o)}>
-              Med School {msOpen ? "▴" : "▾"}
+              <span>Med School</span>
+              <Chevron open={msOpen} />
             </button>
             {msOpen && (
-              <div className="top-nav-dropdown">
+              <div className="top-nav-dropdown top-nav-dropdown-ms">
                 {MEDSCHOOL_CHILDREN.map(({ to, label }) => (
                   <button key={to} className="top-nav-dd-item"
                     onClick={() => { nav(to); setMsOpen(false); }}>
@@ -92,11 +103,10 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
             )}
           </div>
 
-          <button className={`top-nav-link${p === "/" ? " top-nav-active" : ""}`} onClick={() => nav("/")}>
-            בית
-          </button>
-
           <div className="top-nav-links">
+            <button className={`top-nav-link${p === "/" ? " top-nav-active" : ""}`} onClick={() => nav("/")}>
+              בית
+            </button>
             {FLAT_LINKS.map(({ to, label }) => {
               const active = to === "/" ? p === "/" : p.startsWith(to);
               return (
@@ -108,8 +118,11 @@ export default function NavBar({ dueCount = 0, onBellClick }) {
             })}
           </div>
 
-          <button className="top-nav-bell" onClick={onBellClick} title="תזכורות">
-            🔔
+          <button className="top-nav-bell" onClick={onBellClick} title="תזכורות" aria-label="תזכורות">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+            </svg>
             {dueCount > 0 && <span className="top-nav-badge">{dueCount}</span>}
           </button>
 
