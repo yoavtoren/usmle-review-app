@@ -9,6 +9,8 @@ export const FRONT_COLORS = {
   "selfcare":     "#16a34a",
   "relationship": "#16a34a",
   "personal":     "#475569",
+  "move":         "#d97706",
+  "medschool":    "#0e7c86",
 };
 
 export const FRONT_LABELS = {
@@ -21,6 +23,8 @@ export const FRONT_LABELS = {
   "selfcare":     "טיפול עצמי",
   "relationship": "מערכת יחסים",
   "personal":     "אישי",
+  "move":         "מעבר",
+  "medschool":    "Med School",
 };
 
 export const TYPE_LABELS = {

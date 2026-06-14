@@ -34,6 +34,9 @@ export const IconCap = (p) => (
 export const IconCalendar = (p) => (
   <Svg {...p}><rect x="3.5" y="5" width="17" height="16" rx="2.5" /><path d="M3.5 9.5h17M8 3v4M16 3v4" /></Svg>
 );
+export const IconBox = (p) => (
+  <Svg {...p}><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5Z" /><path d="m3.5 7.5 8.5 4.5 8.5-4.5M12 12v9" /></Svg>
+);
 export const IconTarget = (p) => (
   <Svg {...p}><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="4" /><circle cx="12" cy="12" r="0.6" fill="currentColor" stroke="none" /></Svg>
 );

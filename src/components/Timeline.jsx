@@ -5,6 +5,7 @@ import {
   loadGoalsDone, saveGoalsDone, loadEventsDone, saveEventsDone,
 } from "../lib/timelineData.js";
 import { loadAllWorkstreamTasks, saveCategoryTasks } from "../lib/workstreamData.js";
+import { loadGeneralTasks, saveGeneralTasks } from "../lib/storage.js";
 import { buildGCalLink } from "../lib/calendarExport.js";
 
 const TL_START   = new Date("2026-06-10T00:00:00Z");
@@ -74,6 +75,22 @@ function workstreamNodes(tasks) {
       type: "aims", front: t.category || "aims",
       note: t.notes, people: t.people || [], reminders: t.reminders || [],
       source: t.category || "aims",
+    }));
+}
+
+// Tasks-page tasks opt-in to the timeline (addToTimeline + a date).
+function generalTaskNodes(tasks) {
+  return tasks
+    .filter(t => t.addToTimeline && t.date && !t.done)
+    .map(t => ({
+      id: `gt-derived-${t.id}`, _gtId: t.id,
+      title: t.title, date: t.date, tz: t.tz,
+      type: t.kind === "event" ? "event" : "task-deadline",
+      front: t.category || "personal",
+      note: t.notes,
+      people: t.contactName ? [{ name: t.contactName, contact: t.contactInfo || "" }] : [],
+      reminders: [],
+      source: "general",
     }));
 }
 
@@ -427,6 +444,7 @@ export default function Timeline() {
 
   const [tlEvents, setTlEventsRaw] = useState(loadTimelineEvents);
   const [wsTasksAll, setWsTasksAll] = useState(loadAllWorkstreamTasks);
+  const [genTasks, setGenTasks] = useState(loadGeneralTasks);
   const [goalsDone,   setGoalsDone]   = useState(loadGoalsDone);
   const [eventsDone,  setEventsDone]  = useState(loadEventsDone);
   const [selectedEv,  setSelectedEv]  = useState(null);
@@ -477,6 +495,13 @@ export default function Timeline() {
             if (d.wsCategory) saveCategoryTasks(d.wsCategory, next.filter(t => t.category === d.wsCategory));
             return next;
           });
+        } else if (d.gtId) {
+          // Tasks-page derived node → persist the underlying task's date
+          setGenTasks(prev => {
+            const next = prev.map(t => String(t.id) === String(d.gtId) ? { ...t, date: d.currentDate } : t);
+            saveGeneralTasks(next);
+            return next;
+          });
         } else {
           // Regular timeline event
           setTlEvents(prev => prev.map(ev => ev.id === d.evId ? { ...ev, date: d.currentDate } : ev));
@@ -496,14 +521,15 @@ export default function Timeline() {
       evId: ev.id, origDate: ev.date, origX: dateToX(ev.date),
       startClientX: e.clientX, startScrollLeft: scroll.scrollLeft, currentDate: ev.date,
       wsId: ev._wsId || null, wsCategory: ev._wsId ? (ev.source || ev.front) : null,
+      gtId: ev._gtId || null,
     };
     setDragState({ evId: ev.id, currentDate: ev.date, mouseX: e.clientX, mouseY: e.clientY });
   }
 
   const allEvents = useMemo(() => {
-    const nodes = workstreamNodes(wsTasksAll);
+    const nodes = [...workstreamNodes(wsTasksAll), ...generalTaskNodes(genTasks)];
     return [...tlEvents, ...nodes].sort((a, b) => (!a.date ? 1 : !b.date ? -1 : a.date.localeCompare(b.date)));
-  }, [tlEvents, wsTasksAll]);
+  }, [tlEvents, wsTasksAll, genTasks]);
 
   const filtered = useMemo(() => allEvents.filter(ev => activeF.has(ev.front) && activeT.has(ev.type)), [allEvents, activeF, activeT]);
   const dated    = filtered.filter(ev => ev.date);
@@ -531,6 +557,13 @@ export default function Timeline() {
           const catTasks = next.filter(t => t.category === task.category);
           saveCategoryTasks(task.category, catTasks);
         }
+        return next;
+      });
+    } else if (id.startsWith("gt-derived-")) {
+      const gtId = id.replace("gt-derived-", "");
+      setGenTasks(prev => {
+        const next = prev.filter(t => String(t.id) !== String(gtId));
+        saveGeneralTasks(next);
         return next;
       });
     } else {

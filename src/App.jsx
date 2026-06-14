@@ -22,6 +22,7 @@ import MedSchoolHub from "./components/MedSchoolHub.jsx";
 import MedSchoolSubject from "./components/MedSchoolSubject.jsx";
 import FirstAidBook from "./components/FirstAidBook.jsx";
 import TasksPage from "./components/TasksPage.jsx";
+import MovePage from "./components/MovePage.jsx";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -139,6 +140,7 @@ export default function App() {
               <Timeline onExportICS={handleExportICS} />
             } />
             <Route path="/tasks" element={<TasksPage />} />
+            <Route path="/move" element={<MovePage />} />
             <Route path="/aims"     element={<AIMSDashboard />} />
             <Route path="/medcross"  element={<WorkstreamPage categoryId="medcross" />} />
             <Route path="/selfcare"  element={<WorkstreamPage categoryId="selfcare" />} />

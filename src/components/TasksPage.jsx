@@ -25,10 +25,12 @@ const CATEGORIES = [
   { id: "personal",  label: "אישי",        color: "#565660", subs: [] },
 ];
 const catMeta = (id) => CATEGORIES.find(c => c.id === id) || null;
+export { CATEGORIES, catMeta };
 
 const EMPTY = {
-  title: "", kind: "task", date: "", time: "", priority: "medium", notes: "",
+  title: "", kind: "task", date: "", endDate: "", time: "", priority: "medium", notes: "",
   category: "", subtopic: "", detail: "", contactName: "", contactInfo: "",
+  addToTimeline: false,
 };
 
 function todayStr() { return new Date().toISOString().slice(0, 10); }
@@ -43,7 +45,7 @@ function contactHref(info) {
   return null;
 }
 
-function TaskForm({ initial, onSave, onCancel }) {
+export function TaskForm({ initial, onSave, onCancel }) {
   const [f, setF] = useState({ ...EMPTY, ...(initial || {}) });
   const upd = (k, v) => setF(p => ({ ...p, [k]: v }));
   const isEvent = f.kind === "event";
@@ -53,7 +55,9 @@ function TaskForm({ initial, onSave, onCancel }) {
   function submit(e) {
     e.preventDefault();
     if (!f.title.trim()) return;
-    onSave({ ...f, title: f.title.trim(), time: isEvent ? f.time : "" });
+    // endDate only applies to multi-day events and must not precede the start.
+    const endDate = isEvent && f.endDate && f.endDate >= f.date ? f.endDate : "";
+    onSave({ ...f, title: f.title.trim(), time: isEvent ? f.time : "", endDate, addToTimeline: !!f.date && !!f.addToTimeline });
   }
 
   return (
@@ -76,12 +80,19 @@ function TaskForm({ initial, onSave, onCancel }) {
       {/* Date / time / priority */}
       <div className="tk-form-row">
         <label className="tk-field">
-          <span className="tk-field-lbl">{isEvent ? "תאריך האירוע" : "תאריך יעד (דדליין)"}</span>
+          <span className="tk-field-lbl">{isEvent ? "תאריך התחלה" : "תאריך יעד (דדליין)"}</span>
           <input className="tk-input" type="date" value={f.date} onChange={e => upd("date", e.target.value)} />
         </label>
         {isEvent && (
           <label className="tk-field">
-            <span className="tk-field-lbl">שעה</span>
+            <span className="tk-field-lbl">תאריך סיום <span className="tk-field-opt">(אופציונלי)</span></span>
+            <input className="tk-input" type="date" value={f.endDate} min={f.date || undefined}
+              onChange={e => upd("endDate", e.target.value)} />
+          </label>
+        )}
+        {isEvent && (
+          <label className="tk-field">
+            <span className="tk-field-lbl">שעה <span className="tk-field-opt">(כל היום אם ריק)</span></span>
             <input className="tk-input" type="time" value={f.time} onChange={e => upd("time", e.target.value)} />
           </label>
         )}
@@ -145,6 +156,13 @@ function TaskForm({ initial, onSave, onCancel }) {
         placeholder="הערות (אופציונלי)…"
       />
 
+      <label className={`tk-timeline-toggle${f.date ? "" : " disabled"}`}>
+        <input type="checkbox" checked={!!f.addToTimeline && !!f.date} disabled={!f.date}
+          onChange={e => upd("addToTimeline", e.target.checked)} />
+        <IconCalendar size={14} />
+        <span>הוסף לציר הזמן{!f.date && <span className="tk-timeline-hint"> — דורש תאריך</span>}</span>
+      </label>
+
       <div className="tk-form-btns">
         {onCancel && <button type="button" className="tk-btn-ghost" onClick={onCancel}>ביטול</button>}
         <button type="submit" className="tk-btn-primary" disabled={!f.title.trim()}>
@@ -173,7 +191,7 @@ function Breadcrumb({ task }) {
   );
 }
 
-function TaskRow({ task, onToggle, onEdit, onDelete }) {
+export function TaskRow({ task, onToggle, onEdit, onDelete }) {
   const prio = PRIOS[task.priority] || PRIOS.medium;
   const isEvent = task.kind === "event";
   const overdue = task.date && task.date < todayStr() && !task.done;
@@ -196,11 +214,16 @@ function TaskRow({ task, onToggle, onEdit, onDelete }) {
           <span className="tk-prio" style={{ color: prio.color, background: prio.bg }}>{prio.label}</span>
           {task.date && (
             <span className={`tk-date${overdue ? " overdue" : ""}`}>
-              <IconCalendar size={11} /> {isEvent ? "" : "יעד: "}{fmtDate(task.date)}{task.time ? ` · ${task.time}` : ""}
+              <IconCalendar size={11} /> {isEvent ? "" : "יעד: "}{fmtDate(task.date)}
+              {task.endDate && task.endDate !== task.date ? ` – ${fmtDate(task.endDate)}` : ""}
+              {task.time ? ` · ${task.time}` : ""}
               {overdue && " · באיחור"}
             </span>
           )}
           <Breadcrumb task={task} />
+          {task.addToTimeline && task.date && (
+            <span className="tk-timeline-badge"><IconCalendar size={10} /> ציר זמן</span>
+          )}
           {task.contactName && (
             <span className="tk-contact">
               👤 {href

@@ -2,9 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   IconHome, IconDash, IconClipboard, IconBook, IconCap, IconCalendar,
-  IconTarget, IconPulse, IconHeart, IconBell, IconMail, IconChevron, IconCheck,
+  IconTarget, IconPulse, IconHeart, IconBell, IconMail, IconChevron, IconCheck, IconBox,
 } from "./icons.jsx";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
+import { loadGeneralTasks } from "../lib/storage.js";
 
 const EXAM_DATE = new Date("2026-10-11T00:00:00Z");
 
@@ -26,6 +27,14 @@ function overdueCount(categoryId) {
 function activeCount(categoryId) {
   try {
     return loadCategoryTasks(categoryId).filter((t) => t.status === "Active").length;
+  } catch {
+    return 0;
+  }
+}
+
+function moveActiveCount() {
+  try {
+    return loadGeneralTasks().filter((t) => t.category === "move" && !t.done).length;
   } catch {
     return 0;
   }
@@ -56,6 +65,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
     aimsOver: overdueCount("aims"),
     medcrossOver: overdueCount("medcross"),
     selfcareActive: activeCount("selfcare"),
+    moveActive: moveActiveCount(),
   }), [p]);
 
   const groups = [
@@ -79,6 +89,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
       label: "ניהול",
       items: [
         { to: "/tasks", label: "משימות", Icon: IconCheck },
+        { to: "/move", label: "מעבר", Icon: IconBox, count: stats.moveActive },
         { to: "/timeline", label: "ציר זמן", Icon: IconCalendar },
         { to: "/aims", label: "AIMS", Icon: IconTarget, count: stats.aimsOver, alert: stats.aimsOver > 0 },
         { to: "/medcross", label: "MedCross", Icon: IconPulse, count: stats.medcrossOver, alert: stats.medcrossOver > 0 },
