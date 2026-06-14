@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { loadGeneralTasks, saveGeneralTasks } from "../lib/storage.js";
-import { IconCheck, IconCalendar, IconClock, IconTarget, IconClose } from "./icons.jsx";
+import { IconCheck, IconCalendar, IconClose } from "./icons.jsx";
 
 const PRIOS = {
   high:   { label: "גבוה",  color: "#C0392B", bg: "rgba(192,57,43,0.10)" },
@@ -9,29 +9,51 @@ const PRIOS = {
 };
 const PRIO_ORDER = { high: 0, medium: 1, low: 2 };
 
-const EMPTY = { title: "", kind: "task", date: "", time: "", priority: "medium", notes: "" };
+// Topic categories with colors + subtopic suggestions (free text still allowed)
+const CATEGORIES = [
+  { id: "step1",    label: "Step 1",       color: "#4F46E5",
+    subs: ["Biochemistry","Immunology","Microbiology","Pathology","Pharmacology","Public Health",
+           "Cardiovascular","Endocrine","Gastrointestinal","Heme/Onc","MSK & Skin","Neurology",
+           "Psychiatry","Renal","Reproductive","Respiratory"] },
+  { id: "medschool", label: "Med School",  color: "#0E7C86",
+    subs: ["3rd year","4th year","5th year","6th year","ENT","Internal Medicine","Surgery",
+           "Neurology","Dermatology","Ophthalmology","Pharmacology"] },
+  { id: "aims",      label: "AIMS",        color: "#6D4AC2", subs: [] },
+  { id: "medcross",  label: "MedCross",    color: "#C2185B", subs: ["תוכן","שיווק","פיתוח","הכנסות"] },
+  { id: "selfcare",  label: "טיפול עצמי",  color: "#1F7A52", subs: ["כושר","תזונה","שינה","מנטלי"] },
+  { id: "move",      label: "מעבר",        color: "#D97706", subs: ["פראג","ישראל","אריזה","Freemovers"] },
+  { id: "personal",  label: "אישי",        color: "#565660", subs: [] },
+];
+const catMeta = (id) => CATEGORIES.find(c => c.id === id) || null;
+
+const EMPTY = {
+  title: "", kind: "task", date: "", time: "", priority: "medium", notes: "",
+  category: "", subtopic: "", detail: "", contactName: "", contactInfo: "",
+};
 
 function todayStr() { return new Date().toISOString().slice(0, 10); }
-
 function fmtDate(d) {
   if (!d) return "";
   return new Date(d + "T12:00:00").toLocaleDateString("he-IL", { weekday: "short", day: "numeric", month: "long" });
+}
+function contactHref(info) {
+  if (!info) return null;
+  if (info.includes("@")) return `mailto:${info}`;
+  if (/[\d+]/.test(info)) return `tel:${info.replace(/[^\d+]/g, "")}`;
+  return null;
 }
 
 function TaskForm({ initial, onSave, onCancel }) {
   const [f, setF] = useState({ ...EMPTY, ...(initial || {}) });
   const upd = (k, v) => setF(p => ({ ...p, [k]: v }));
   const isEvent = f.kind === "event";
+  const cat = catMeta(f.category);
+  const subListId = "subs-" + (f.category || "none");
 
   function submit(e) {
     e.preventDefault();
     if (!f.title.trim()) return;
-    onSave({
-      ...f,
-      title: f.title.trim(),
-      date: isEvent ? f.date : "",
-      time: isEvent ? f.time : "",
-    });
+    onSave({ ...f, title: f.title.trim(), time: isEvent ? f.time : "" });
   }
 
   return (
@@ -51,18 +73,17 @@ function TaskForm({ initial, onSave, onCancel }) {
         placeholder={isEvent ? "שם האירוע…" : "מה צריך לעשות?"}
       />
 
+      {/* Date / time / priority */}
       <div className="tk-form-row">
+        <label className="tk-field">
+          <span className="tk-field-lbl">{isEvent ? "תאריך האירוע" : "תאריך יעד (דדליין)"}</span>
+          <input className="tk-input" type="date" value={f.date} onChange={e => upd("date", e.target.value)} />
+        </label>
         {isEvent && (
-          <>
-            <label className="tk-field">
-              <span className="tk-field-lbl">תאריך</span>
-              <input className="tk-input" type="date" value={f.date} onChange={e => upd("date", e.target.value)} />
-            </label>
-            <label className="tk-field">
-              <span className="tk-field-lbl">שעה</span>
-              <input className="tk-input" type="time" value={f.time} onChange={e => upd("time", e.target.value)} />
-            </label>
-          </>
+          <label className="tk-field">
+            <span className="tk-field-lbl">שעה</span>
+            <input className="tk-input" type="time" value={f.time} onChange={e => upd("time", e.target.value)} />
+          </label>
         )}
         <label className="tk-field">
           <span className="tk-field-lbl">עדיפות</span>
@@ -71,6 +92,50 @@ function TaskForm({ initial, onSave, onCancel }) {
             <option value="medium">בינוני</option>
             <option value="low">נמוך</option>
           </select>
+        </label>
+      </div>
+
+      {/* Topic: category → subtopic → detail */}
+      <div className="tk-form-row">
+        <label className="tk-field">
+          <span className="tk-field-lbl">נושא</span>
+          <select className="tk-input" value={f.category} onChange={e => upd("category", e.target.value)}>
+            <option value="">— ללא —</option>
+            {CATEGORIES.map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
+          </select>
+        </label>
+        <label className="tk-field">
+          <span className="tk-field-lbl">תת-נושא</span>
+          <input
+            className="tk-input" list={subListId}
+            value={f.subtopic} onChange={e => upd("subtopic", e.target.value)}
+            placeholder={cat?.subs?.length ? "בחר או הקלד…" : "אופציונלי…"}
+            disabled={!f.category}
+          />
+          <datalist id={subListId}>
+            {(cat?.subs || []).map(s => <option key={s} value={s} />)}
+          </datalist>
+        </label>
+        <label className="tk-field">
+          <span className="tk-field-lbl">פירוט</span>
+          <input
+            className="tk-input"
+            value={f.detail} onChange={e => upd("detail", e.target.value)}
+            placeholder="למשל: Genetics"
+            disabled={!f.subtopic}
+          />
+        </label>
+      </div>
+
+      {/* Contact */}
+      <div className="tk-form-row">
+        <label className="tk-field">
+          <span className="tk-field-lbl">איש קשר</span>
+          <input className="tk-input" value={f.contactName} onChange={e => upd("contactName", e.target.value)} placeholder="שם…" />
+        </label>
+        <label className="tk-field">
+          <span className="tk-field-lbl">טלפון / אימייל</span>
+          <input className="tk-input" value={f.contactInfo} onChange={e => upd("contactInfo", e.target.value)} placeholder="050… / email@…" />
         </label>
       </div>
 
@@ -90,10 +155,29 @@ function TaskForm({ initial, onSave, onCancel }) {
   );
 }
 
+function Breadcrumb({ task }) {
+  const cat = catMeta(task.category);
+  if (!cat && !task.subtopic) return null;
+  const parts = [cat?.label, task.subtopic, task.detail].filter(Boolean);
+  const color = cat?.color || "var(--muted)";
+  return (
+    <span className="tk-topic" style={{ "--tc": color }}>
+      <span className="tk-topic-dot" />
+      {parts.map((p, i) => (
+        <span key={i} className="tk-topic-part">
+          {i > 0 && <span className="tk-topic-sep">›</span>}
+          {p}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 function TaskRow({ task, onToggle, onEdit, onDelete }) {
   const prio = PRIOS[task.priority] || PRIOS.medium;
   const isEvent = task.kind === "event";
-  const overdue = isEvent && task.date && task.date < todayStr() && !task.done;
+  const overdue = task.date && task.date < todayStr() && !task.done;
+  const href = contactHref(task.contactInfo);
 
   return (
     <div className={`tk-row${task.done ? " done" : ""}${overdue ? " overdue" : ""}`}>
@@ -110,10 +194,18 @@ function TaskRow({ task, onToggle, onEdit, onDelete }) {
         </div>
         <div className="tk-row-meta">
           <span className="tk-prio" style={{ color: prio.color, background: prio.bg }}>{prio.label}</span>
-          {isEvent && task.date && (
+          {task.date && (
             <span className={`tk-date${overdue ? " overdue" : ""}`}>
-              <IconCalendar size={11} /> {fmtDate(task.date)}{task.time ? ` · ${task.time}` : ""}
+              <IconCalendar size={11} /> {isEvent ? "" : "יעד: "}{fmtDate(task.date)}{task.time ? ` · ${task.time}` : ""}
               {overdue && " · באיחור"}
+            </span>
+          )}
+          <Breadcrumb task={task} />
+          {task.contactName && (
+            <span className="tk-contact">
+              👤 {href
+                ? <a href={href} onClick={e => e.stopPropagation()}>{task.contactName}</a>
+                : task.contactName}
             </span>
           )}
           {task.notes && <span className="tk-note-preview">{task.notes}</span>}
@@ -131,6 +223,7 @@ function TaskRow({ task, onToggle, onEdit, onDelete }) {
 export default function TasksPage() {
   const [tasks, setTasks] = useState(() => loadGeneralTasks());
   const [filter, setFilter] = useState("all"); // all | task | event | done
+  const [catFilter, setCatFilter] = useState("");
   const [adding, setAdding] = useState(false);
   const [editing, setEditing] = useState(null);
 
@@ -155,24 +248,28 @@ export default function TasksPage() {
     done:  tasks.filter(t => t.done).length,
   }), [tasks]);
 
+  const usedCats = useMemo(() => {
+    const ids = new Set(tasks.map(t => t.category).filter(Boolean));
+    return CATEGORIES.filter(c => ids.has(c.id));
+  }, [tasks]);
+
   const shown = useMemo(() => {
     let list = tasks.filter(t => {
       if (filter === "done") return t.done;
       if (filter === "task") return !t.done && t.kind !== "event";
       if (filter === "event") return !t.done && t.kind === "event";
-      return !t.done; // all (active)
+      return !t.done;
     });
+    if (catFilter) list = list.filter(t => t.category === catFilter);
     return list.sort((a, b) => {
-      // events with dates first (by date), then by priority, then newest
-      const ad = a.kind === "event" && a.date, bd = b.kind === "event" && b.date;
-      if (ad && bd) return (a.date + (a.time || "")).localeCompare(b.date + (b.time || ""));
-      if (ad && !bd) return -1;
-      if (!ad && bd) return 1;
+      if (a.date && b.date) return (a.date + (a.time || "")).localeCompare(b.date + (b.time || ""));
+      if (a.date && !b.date) return -1;
+      if (!a.date && b.date) return 1;
       const pa = PRIO_ORDER[a.priority] ?? 1, pb = PRIO_ORDER[b.priority] ?? 1;
       if (pa !== pb) return pa - pb;
       return b.createdAt - a.createdAt;
     });
-  }, [tasks, filter]);
+  }, [tasks, filter, catFilter]);
 
   const TABS = [
     ["all", "הכל", counts.all],
@@ -186,7 +283,7 @@ export default function TasksPage() {
       <header className="tk-header">
         <div>
           <h1 className="tk-title">משימות ואירועים</h1>
-          <p className="tk-sub">צור, ערוך ומחק משימות כלליות ואירועים עם תאריך</p>
+          <p className="tk-sub">צור, ערוך ומחק משימות ואירועים — עם דדליין, נושא ואיש קשר</p>
         </div>
         {!adding && !editing && (
           <button className="tk-add-main" onClick={() => setAdding(true)}>+ הוסף חדש</button>
@@ -209,6 +306,19 @@ export default function TasksPage() {
           <button className="tk-clear-done" onClick={clearDone}>נקה שהושלמו</button>
         )}
       </div>
+
+      {/* Category filter chips */}
+      {usedCats.length > 0 && (
+        <div className="tk-catbar">
+          <button className={`tk-catchip${!catFilter ? " on" : ""}`} onClick={() => setCatFilter("")}>כל הנושאים</button>
+          {usedCats.map(c => (
+            <button key={c.id} className={`tk-catchip${catFilter === c.id ? " on" : ""}`}
+              style={{ "--tc": c.color }} onClick={() => setCatFilter(catFilter === c.id ? "" : c.id)}>
+              <span className="tk-catchip-dot" />{c.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="tk-list">
         {shown.length === 0 && (
