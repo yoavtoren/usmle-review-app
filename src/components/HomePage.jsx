@@ -4,10 +4,11 @@ import { loadCategoryTasks } from "../lib/workstreamData.js";
 import { loadMedSchool } from "../lib/medSchoolData.js";
 import {
   IconDash, IconCalendar, IconTarget, IconPulse, IconHeart, IconCap,
-  IconArrow, IconFlame, IconClock,
+  IconArrow, IconFlame, IconClock, IconSparkle, IconCheck,
 } from "./icons.jsx";
 
 const EXAM_DATE = new Date("2026-10-11T00:00:00Z");
+const JOURNEY_START = new Date("2026-06-10T00:00:00Z");
 
 function daysUntilExam() {
   return Math.ceil((EXAM_DATE - new Date()) / 86400000);
@@ -53,16 +54,23 @@ export default function HomePage({ testStats, faStats, streak }) {
     }
   })();
 
+  // Journey progress (days elapsed of the total run to exam)
+  const totalSpan = Math.max(1, Math.round((EXAM_DATE - JOURNEY_START) / 86400000));
+  const elapsed = Math.max(0, Math.min(totalSpan, Math.round((new Date() - JOURNEY_START) / 86400000)));
+  const journeyPct = Math.round((elapsed / totalSpan) * 100);
+
   // Secondary section cards (the featured Step 1 panel is rendered separately)
   const sections = [
     {
       id: "timeline", to: "/timeline", Icon: IconCalendar, title: "ציר זמן",
+      tint: "#0E7C86", tint2: "#14A0AD",
       stats: phase
         ? [{ val: phase.name, lbl: "שלב נוכחי" }, { val: days > 0 ? days : "—", lbl: "ימים" }]
         : [{ val: days > 0 ? days : "—", lbl: "ימים לבחינה" }],
     },
     {
       id: "medschool", to: "/medschool", Icon: IconCap, title: "Med School",
+      tint: "#4F46E5", tint2: "#6D5DF0",
       stats: [
         { val: msSubjects.total, lbl: "נושאים" },
         { val: msSubjects.notesCount, lbl: "עם הערות" },
@@ -70,6 +78,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "aims", to: "/aims", Icon: IconTarget, title: "AIMS",
+      tint: "#6D4AC2", tint2: "#8A66E0",
       stats: [
         { val: aims.active, lbl: "מטלות" },
         ...(aims.overdue > 0 ? [{ val: aims.overdue, lbl: "באיחור", alert: true }] : []),
@@ -77,6 +86,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "medcross", to: "/medcross", Icon: IconPulse, title: "MedCross",
+      tint: "#C2185B", tint2: "#E84393",
       stats: [
         { val: medcross.active, lbl: "מטלות" },
         ...(medcross.overdue > 0 ? [{ val: medcross.overdue, lbl: "באיחור", alert: true }] : []),
@@ -84,6 +94,7 @@ export default function HomePage({ testStats, faStats, streak }) {
     },
     {
       id: "selfcare", to: "/selfcare", Icon: IconHeart, title: "טיפול עצמי",
+      tint: "#1F7A52", tint2: "#2EA372",
       stats: [
         { val: selfcare.active, lbl: "מטלות" },
         { val: faPct + "%", lbl: "FA" },
@@ -99,13 +110,14 @@ export default function HomePage({ testStats, faStats, streak }) {
     return "ערב טוב";
   })();
   const dateStr = new Date().toLocaleDateString("he-IL", { weekday: "long", day: "numeric", month: "long" });
+  const examStr = EXAM_DATE.toLocaleDateString("he-IL", { day: "numeric", month: "long", year: "numeric" });
 
   return (
     <div className="home">
       <div className="page">
-        {/* ── Hero ── */}
-        <header className="home-hero2">
-          <div className="home-hero2-text">
+        {/* ── Hero: editorial text + countdown showcase ── */}
+        <header className="home-hero3">
+          <div className="home-hero3-text">
             <p className="home-eyebrow">{dateStr}</p>
             <h1 className="home-h1">{greeting}, יואב</h1>
             <p className="home-lede">
@@ -113,67 +125,94 @@ export default function HomePage({ testStats, faStats, streak }) {
                 ? <>נותרו <em>{days}</em> ימים ל‑Step 1. {phase ? `אתה ב${phase.name}.` : ""}</>
                 : "המסע נמשך — צעד אחד היום."}
             </p>
+            <div className="home-hero3-pills">
+              {streak > 0 && (
+                <div className="home-pill"><IconFlame size={15} /> רצף {streak} ימים</div>
+              )}
+              {testStats.due > 0 && (
+                <div className="home-pill accent"><IconClock size={15} /> {testStats.due} לביקורת היום</div>
+              )}
+              {phase && (
+                <div className="home-pill"><IconSparkle size={15} /> {phase.name}</div>
+              )}
+            </div>
           </div>
-          <div className="home-hero2-meta">
-            {streak > 0 && (
-              <div className="home-pill">
-                <IconFlame size={15} /> רצף {streak} ימים
-              </div>
-            )}
-            {testStats.due > 0 && (
-              <div className="home-pill accent">
-                <IconClock size={15} /> {testStats.due} לביקורת היום
-              </div>
-            )}
+
+          {/* Countdown showcase card */}
+          <div className="home-count">
+            <div className="home-count-glow" />
+            <span className="home-count-kicker">USMLE STEP 1</span>
+            <div className="home-count-num">{days > 0 ? days : 0}</div>
+            <span className="home-count-unit">ימים לבחינה</span>
+            <span className="home-count-date">{examStr}</span>
+            <div className="home-count-track">
+              <div className="home-count-fill" style={{ width: `${journeyPct}%` }} />
+            </div>
+            <span className="home-count-prog">{journeyPct}% מהמסע הושלם</span>
           </div>
         </header>
 
         {/* ── Featured Step 1 panel ── */}
-        <button className="home-feature" onClick={() => nav("/step1")}>
-          <div className="home-feature-main">
-            <div className="home-feature-head">
-              <span className="home-feature-ico"><IconDash size={20} /></span>
-              <span className="home-feature-kicker">המוקד</span>
+        <button className="home-feature2" onClick={() => nav("/step1")}>
+          <div className="home-feature2-bg" />
+          <div className="home-feature2-main">
+            <div className="home-feature2-head">
+              <span className="home-feature2-ico"><IconDash size={22} /></span>
+              <span className="home-feature2-kicker">המוקד</span>
             </div>
-            <h2 className="home-feature-title">USMLE Step 1</h2>
-            <p className="home-feature-sub">בקרת שאלות · חזרה מרווחת · כיסוי First Aid</p>
-            <div className="home-feature-stats">
-              <div className="home-fstat">
-                <span className="home-fstat-num">{testStats.due}</span>
-                <span className="home-fstat-lbl">לביקורת היום</span>
+            <h2 className="home-feature2-title">USMLE Step 1</h2>
+            <p className="home-feature2-sub">בקרת שאלות · חזרה מרווחת · כיסוי First Aid</p>
+            <div className="home-feature2-stats">
+              <div className="home-fstat2">
+                <span className="home-fstat2-num">{testStats.due}</span>
+                <span className="home-fstat2-lbl">לביקורת היום</span>
               </div>
-              <div className="home-fstat">
-                <span className="home-fstat-num">{testStats.mastered}</span>
-                <span className="home-fstat-lbl">שלטתי</span>
+              <div className="home-fstat2-sep" />
+              <div className="home-fstat2">
+                <span className="home-fstat2-num">{testStats.mastered}</span>
+                <span className="home-fstat2-lbl">שלטתי</span>
               </div>
-              <div className="home-fstat">
-                <span className="home-fstat-num">{testPct}%</span>
-                <span className="home-fstat-lbl">כיסוי</span>
+              <div className="home-fstat2-sep" />
+              <div className="home-fstat2">
+                <span className="home-fstat2-num">{testPct}%</span>
+                <span className="home-fstat2-lbl">כיסוי</span>
               </div>
             </div>
           </div>
-          <div className="home-feature-side">
+          <div className="home-feature2-side">
             <Ring pct={testPct} />
-            <span className="home-feature-cta">פתח לוח <IconArrow size={15} /></span>
+            <span className="home-feature2-cta">פתח לוח <IconArrow size={15} /></span>
           </div>
         </button>
 
+        {/* ── Section header ── */}
+        <div className="home-sec-label">
+          <span>הזירות שלך</span>
+          <span className="home-sec-line" />
+        </div>
+
         {/* ── Section grid ── */}
-        <div className="home-grid2">
+        <div className="home-grid3">
           {sections.map((s) => {
             const { Icon } = s;
             return (
-              <button key={s.id} className="home-tile" onClick={() => nav(s.to)}>
-                <div className="home-tile-top">
-                  <span className="home-tile-ico"><Icon size={18} /></span>
-                  <span className="home-tile-arr"><IconArrow size={16} /></span>
+              <button
+                key={s.id}
+                className="home-card3"
+                onClick={() => nav(s.to)}
+                style={{ "--tint": s.tint, "--tint2": s.tint2 }}
+              >
+                <div className="home-card3-accent" />
+                <div className="home-card3-top">
+                  <span className="home-card3-ico"><Icon size={19} /></span>
+                  <span className="home-card3-arr"><IconArrow size={16} /></span>
                 </div>
-                <span className="home-tile-title">{s.title}</span>
-                <div className="home-tile-stats">
+                <span className="home-card3-title">{s.title}</span>
+                <div className="home-card3-stats">
                   {s.stats.map((st, i) => (
-                    <div key={i} className={`home-tile-stat${st.alert ? " alert" : ""}`}>
-                      <span className="home-tile-val">{st.val}</span>
-                      <span className="home-tile-lbl">{st.lbl}</span>
+                    <div key={i} className={`home-card3-stat${st.alert ? " alert" : ""}`}>
+                      <span className="home-card3-val">{st.val}</span>
+                      <span className="home-card3-lbl">{st.lbl}</span>
                     </div>
                   ))}
                 </div>
@@ -186,22 +225,22 @@ export default function HomePage({ testStats, faStats, streak }) {
   );
 }
 
-// Minimal progress ring
+// Progress ring (used in featured panel)
 function Ring({ pct }) {
   const r = 34;
   const c = 2 * Math.PI * r;
   const off = c - (Math.max(0, Math.min(100, pct)) / 100) * c;
   return (
-    <div className="home-ring">
-      <svg width="84" height="84" viewBox="0 0 84 84">
-        <circle cx="42" cy="42" r={r} fill="none" stroke="var(--surface-4)" strokeWidth="6" />
+    <div className="home-ring2">
+      <svg width="92" height="92" viewBox="0 0 92 92">
+        <circle cx="46" cy="46" r={r} fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="7" />
         <circle
-          cx="42" cy="42" r={r} fill="none" stroke="var(--accent)" strokeWidth="6"
-          strokelinecap="round" strokeDasharray={c} strokeDashoffset={off}
-          transform="rotate(-90 42 42)" style={{ transition: "stroke-dashoffset 0.8s var(--ease-out)" }}
+          cx="46" cy="46" r={r} fill="none" stroke="#fff" strokeWidth="7"
+          strokeLinecap="round" strokeDasharray={c} strokeDashoffset={off}
+          transform="rotate(-90 46 46)" style={{ transition: "stroke-dashoffset 0.9s var(--ease-out)" }}
         />
       </svg>
-      <span className="home-ring-pct">{pct}%</span>
+      <span className="home-ring2-pct">{pct}%</span>
     </div>
   );
 }
