@@ -1,0 +1,193 @@
+{
+  "id": "q142",
+  "item": 142,
+  "qid": "1659",
+  "title": "Medullary thyroid carcinoma: amyloid (Congo red) stroma",
+  "system": "Pathology",
+  "topic": "Thyroid cancer / MEN2",
+  "correct": "C",
+  "yourAnswer": "B",
+  "percentCorrect": 48,
+  "vignette": "A 30-year-old man comes to the office with a neck lump. The patient is otherwise asymptomatic and discovered the nodule incidentally while showering. His medical history is significant for a recently diagnosed pheochromocytoma, which was successfully removed. The patient's father died of thyroid cancer in his 30s. An ultrasound reveals a hypoechoic 3-cm nodule in the right lobe of the thyroid gland. Fine-needle biopsy of the nodule is consistent with a subtype of thyroid cancer. The patient undergoes total thyroidectomy with central neck dissection. Which of the following is the most likely histological finding?",
+  "clues": [
+    {
+      "text": "recently diagnosed pheochromocytoma",
+      "type": "red",
+      "note": "Pheochromocytoma plus thyroid cancer in a young patient is the MEN2 pattern. MEN2A/2B feature medullary thyroid carcinoma + pheochromocytoma (RET proto-oncogene), steering toward medullary, not papillary, cancer."
+    },
+    {
+      "text": "father died of thyroid cancer in his 30s",
+      "type": "orange",
+      "note": "A family history of young-onset thyroid cancer indicates an autosomal dominant familial syndrome (MEN2/RET). Hereditary medullary thyroid carcinoma is the unifying diagnosis."
+    },
+    {
+      "text": "subtype of thyroid cancer",
+      "type": "green",
+      "note": "The 'subtype' in this MEN2 context is medullary thyroid carcinoma, arising from parafollicular C cells (calcitonin-secreting). Its histology shows nests of polygonal/spindled cells in an amyloid stroma."
+    }
+  ],
+  "whatMatters": "Pheochromocytoma + familial young-onset thyroid cancer = MEN2 with medullary thyroid carcinoma (C-cell origin, RET). Its histology is nests of polygonal cells in a stroma containing amyloid that stains with Congo red - answer C.",
+  "strategy": "Use the MEN2 trigger (pheochromocytoma + family history) to pick MEDULLARY thyroid carcinoma, then recall its signature histology: sheets/nests of polygonal C cells with AMYLOID (calcitonin-derived) stroma that is Congo red-positive and apple-green birefringent. Distinguish from papillary (psammoma bodies, Orphan-Annie nuclei) and follicular/anaplastic.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Branching structures with interspersed calcified bodies",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Follicular hyperplasia with tall cells forming intrafollicular projections",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Nests of polygonal cells with Congo red-positive deposits",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Pleomorphic giant cell nests with occasional multinucleated cells",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Sheets of uniform cells forming small follicles",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "papillary structures + psammoma bodies - papillary carcinoma",
+      "detail": "WHAT IT IS: branching papillae with calcified psammoma bodies = papillary thyroid carcinoma. ❌ WHY IT FAILS: papillary cancer is not the MEN2-associated tumor; the syndrome points to medullary (amyloid), not papillary. ✅ Correct if: a sporadic thyroid nodule with Orphan-Annie nuclei, nuclear grooves, and psammoma bodies."
+    },
+    {
+      "letter": "B",
+      "label": "tall cells with papillary projections - papillary variant",
+      "detail": "WHAT IT IS: follicular epithelium with tall cells/intrafollicular projections suggests a papillary (tall-cell variant) pattern. ❌ WHY IT FAILS: that is papillary-type, not medullary; the MEN2/pheochromocytoma context demands medullary histology. You chose this. ✅ Correct if: papillary carcinoma features dominated."
+    },
+    {
+      "letter": "D",
+      "label": "pleomorphic giant cells - anaplastic carcinoma",
+      "detail": "WHAT IT IS: pleomorphic, multinucleated giant cells = anaplastic (undifferentiated) thyroid carcinoma. ❌ WHY IT FAILS: anaplastic occurs in the elderly with rapid growth/invasion, not a young MEN2 patient. ✅ Correct if: an older patient with a rapidly enlarging, fixed thyroid mass."
+    },
+    {
+      "letter": "E",
+      "label": "uniform cells forming small follicles - follicular carcinoma/adenoma",
+      "detail": "WHAT IT IS: uniform follicular cells forming microfollicles = follicular neoplasm. ❌ WHY IT FAILS: follicular carcinoma is not MEN2-associated and lacks amyloid; the C-cell amyloid pattern is expected here. ✅ Correct if: capsular/vascular invasion of a follicular-patterned tumor."
+    }
+  ],
+  "reasoning": [
+    "Pheochromocytoma + familial thyroid cancer = MEN2 (RET)",
+    "MEN2 thyroid tumor = medullary thyroid carcinoma (parafollicular C cells)",
+    "C cells secrete calcitonin that deposits as amyloid in the stroma",
+    "Nests of polygonal cells with Congo red-positive amyloid -> answer C"
+  ],
+  "mechanism": "Medullary thyroid carcinoma arises from the parafollicular C cells of the thyroid, which secrete calcitonin. In MEN2A/2B (germline RET proto-oncogene mutations) it co-occurs with pheochromocytoma (and parathyroid hyperplasia in 2A or mucosal neuromas/marfanoid habitus in 2B). Histologically, the tumor shows nests and sheets of polygonal-to-spindled C cells separated by a stroma containing AMYLOID derived from deposited calcitonin; this amyloid stains red with Congo red and shows apple-green birefringence under polarized light. This differs from papillary (psammoma bodies, Orphan-Annie nuclei), follicular (microfollicles, capsular/vascular invasion), and anaplastic (pleomorphic giant cells) carcinomas. Prophylactic thyroidectomy is offered to RET carriers.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Endocrine/Pathology > Thyroid cancer & MEN2: medullary carcinoma (C cells, calcitonin, amyloid/Congo red, RET, MEN2A/2B with pheochromocytoma); papillary (psammoma bodies, Orphan-Annie nuclei), follicular (invasion), anaplastic (giant cells)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The syndrome (pheo + familial thyroid cancer) selects the tumor (medullary); then recall its unique amyloid histology. Don't default to papillary just because it's the most common thyroid cancer overall."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on medullary thyroid carcinoma, parafollicular C cells, calcitonin amyloid, Congo red/apple-green birefringence, MEN2/RET, psammoma bodies? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose B (tall cells/papillary projections) - that's a papillary pattern. The MEN2 context forces MEDULLARY carcinoma with amyloid (Congo red), answer C."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Anchor: pheochromocytoma + thyroid cancer = MEN2 medullary = AMYLOID (Congo red)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Pheochromocytoma + familial thyroid cancer",
+      "back": "MEN2 (RET) -> medullary thyroid carcinoma"
+    },
+    {
+      "front": "Medullary thyroid carcinoma histology",
+      "back": "Nests of polygonal C cells in amyloid stroma (Congo red+, apple-green birefringence)"
+    },
+    {
+      "front": "Cell of origin / hormone in medullary carcinoma",
+      "back": "Parafollicular C cells; secrete calcitonin"
+    },
+    {
+      "front": "Papillary carcinoma histology",
+      "back": "Psammoma bodies, Orphan-Annie nuclei, nuclear grooves"
+    },
+    {
+      "front": "MEN2A vs MEN2B",
+      "back": "2A: medullary + pheo + parathyroid hyperplasia; 2B: medullary + pheo + mucosal neuromas/marfanoid"
+    },
+    {
+      "front": "Anaplastic thyroid carcinoma",
+      "back": "Elderly, pleomorphic giant cells, rapidly enlarging, poor prognosis"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Medullary thyroid carcinoma",
+      "detail": "Endocrine/Path: C cells, calcitonin, amyloid stroma, RET, MEN2.",
+      "location": "Endocrine/Path: C cells, calcitonin, amyloid stroma, RET, MEN2."
+    },
+    {
+      "tag": "stem",
+      "topic": "MEN2 syndromes",
+      "detail": "Endo: RET proto-oncogene, pheochromocytoma, prophylactic thyroidectomy.",
+      "location": "Endo: RET proto-oncogene, pheochromocytoma, prophylactic thyroidectomy."
+    },
+    {
+      "tag": "options",
+      "topic": "Thyroid cancer histology",
+      "detail": "Path: papillary, follicular, anaplastic distinguishing features.",
+      "location": "Path: papillary, follicular, anaplastic distinguishing features."
+    }
+  ],
+  "memoryHook": "Pheo + family thyroid cancer = MEN2 medullary. C cells dump calcitonin -> AMYLOID nests (Congo red turns it red).",
+  "stem": [
+    {
+      "text": "A 30-year-old man comes to the office with a neck lump. The patient is otherwise asymptomatic and discovered the nodule incidentally while showering. His medical history is significant for a "
+    },
+    {
+      "text": "recently diagnosed pheochromocytoma",
+      "clue": true,
+      "type": "red",
+      "note": "Pheochromocytoma plus thyroid cancer in a young patient is the MEN2 pattern. MEN2A/2B feature medullary thyroid carcinoma + pheochromocytoma (RET proto-oncogene), steering toward medullary, not papillary, cancer."
+    },
+    {
+      "text": ", which was successfully removed. The patient's "
+    },
+    {
+      "text": "father died of thyroid cancer in his 30s",
+      "clue": true,
+      "type": "orange",
+      "note": "A family history of young-onset thyroid cancer indicates an autosomal dominant familial syndrome (MEN2/RET). Hereditary medullary thyroid carcinoma is the unifying diagnosis."
+    },
+    {
+      "text": ". An ultrasound reveals a hypoechoic 3-cm nodule in the right lobe of the thyroid gland. Fine-needle biopsy of the nodule is consistent with a "
+    },
+    {
+      "text": "subtype of thyroid cancer",
+      "clue": true,
+      "type": "green",
+      "note": "The 'subtype' in this MEN2 context is medullary thyroid carcinoma, arising from parafollicular C cells (calcitonin-secreting). Its histology shows nests of polygonal/spindled cells in an amyloid stroma."
+    },
+    {
+      "text": ". The patient undergoes total thyroidectomy with central neck dissection. Which of the following is the most likely histological finding?"
+    }
+  ]
+}

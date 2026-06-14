@@ -1,0 +1,220 @@
+{
+  "id": "q91",
+  "item": 91,
+  "qid": "1405",
+  "title": "Acute promyelocytic leukemia: t(15;17) PML-RARA",
+  "system": "Hematology",
+  "topic": "Leukemia / cytogenetics",
+  "correct": "E",
+  "yourAnswer": "B",
+  "percentCorrect": null,
+  "vignette": "A 43-year-old man comes to the hospital due to recurrent episodes of fever and sore throat despite multiple antibiotic courses. For the past several months, he has also felt \"run down\" and fatigued all the time. His wife adds that he bruises easily and has had bleeding gums on several occasions. Temperature is 37.8 C (100.2 F). On physical examination, he has mucosal pallor, pharyngeal erythema, and multiple ecchymoses on his extremities. Peripheral blood smear shows abnormal promyelocytes with numerous needle-like cytoplasmic inclusions (Auer rods) and bilobed nuclei. Which of the following genetic abnormalities is most likely responsible for this patient's condition?",
+  "clues": [
+    {
+      "text": "recurrent episodes of fever and sore throat",
+      "type": "red",
+      "note": "Recurrent infections reflect neutropenia from marrow replacement by leukemic blasts/promyelocytes. Fever + sore throat in a pancytopenic adult signals acute leukemia."
+    },
+    {
+      "text": "bruises easily and has had bleeding gums",
+      "type": "red",
+      "note": "Easy bruising and gum bleeding indicate thrombocytopenia and, in APL, disseminated intravascular coagulation (DIC). APL's abnormal promyelocytes release procoagulant granules, triggering life-threatening DIC."
+    },
+    {
+      "text": "mucosal pallor",
+      "type": "blue",
+      "note": "Pallor reflects anemia from marrow failure. Pallor (anemia) + infections (neutropenia) + bruising (thrombocytopenia) = pancytopenia from an acute leukemia."
+    },
+    {
+      "text": "abnormal promyelocytes with numerous needle-like cytoplasmic inclusions (Auer rods) and bilobed nuclei",
+      "type": "green",
+      "note": "Promyelocytes packed with Auer rods (sometimes 'faggot cells') and bilobed nuclei are diagnostic of acute promyelocytic leukemia (APL, AML-M3). APL is defined by the t(15;17) translocation fusing PML and RARA."
+    }
+  ],
+  "whatMatters": "Pancytopenia + bleeding (DIC) + a smear full of abnormal promyelocytes with Auer rods = acute promyelocytic leukemia (APL). Its defining genetic lesion is the t(15;17) translocation producing the PML-RARA fusion gene — answer E. (Treat with all-trans retinoic acid, which forces the promyelocytes to differentiate.)",
+  "strategy": "Auer-rod-laden promyelocytes + DIC = APL → t(15;17), PML-RARA. Lock the translocation-to-disease pairs: t(15;17)=APL, t(9;22)=CML, t(8;14)=Burkitt, t(14;18)=follicular lymphoma, t(11;22)=Ewing. ATRA is the targeted therapy.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "t(8;14) translocation",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "t(9;22) translocation",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "t(11;22) translocation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "t(14;18) translocation",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "t(15;17) translocation",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "t(8;14) — Burkitt lymphoma (c-myc)",
+      "detail": "WHAT IT IS: t(8;14) juxtaposes c-myc with the IgH enhancer in Burkitt lymphoma ('starry sky', jaw/abdominal mass). ❌ WHY IT FAILS: Burkitt is a mature B-cell lymphoma, not a promyelocytic leukemia with Auer rods and DIC. ✅ Correct if: the case were a rapidly growing lymphoma with a starry-sky histology."
+    },
+    {
+      "letter": "B",
+      "label": "t(9;22) — CML (BCR-ABL) (your pick)",
+      "detail": "WHAT IT IS: the Philadelphia chromosome t(9;22) creates BCR-ABL in chronic myeloid leukemia (massive granulocytosis, splenomegaly). ❌ WHY IT FAILS: CML is a chronic myeloproliferative disorder, not acute promyelocytic leukemia; the Auer-rod promyelocytes and DIC point to APL/t(15;17). ✅ Correct if: the smear showed a left-shifted granulocytosis with low LAP and splenomegaly (CML)."
+    },
+    {
+      "letter": "C",
+      "label": "t(11;22) — Ewing sarcoma (EWS-FLI1)",
+      "detail": "WHAT IT IS: t(11;22) (EWS-FLI1) defines Ewing sarcoma, a small round blue-cell bone tumor in children. ❌ WHY IT FAILS: it's a bone sarcoma, not a leukemia; nothing here is osseous or pediatric-sarcoma-like. ✅ Correct if: a child had a diaphyseal bone tumor with 'onion-skin' periosteum."
+    },
+    {
+      "letter": "D",
+      "label": "t(14;18) — follicular lymphoma (BCL-2)",
+      "detail": "WHAT IT IS: t(14;18) overexpresses anti-apoptotic BCL-2 in follicular lymphoma (waxing/waning lymphadenopathy). ❌ WHY IT FAILS: it's an indolent B-cell lymphoma, not APL; no promyelocytes/Auer rods/DIC. ✅ Correct if: the case were painless lymphadenopathy with a nodular (follicular) growth pattern."
+    }
+  ],
+  "reasoning": [
+    "Pancytopenia (infections, pallor, bruising) + bleeding = acute leukemia with DIC",
+    "Smear: abnormal promyelocytes with Auer rods (and bilobed nuclei)",
+    "This is acute promyelocytic leukemia (APL, AML-M3)",
+    "APL is defined by t(15;17) → PML-RARA fusion → answer E"
+  ],
+  "mechanism": "APL is an AML subtype in which the t(15;17) translocation fuses the PML gene with the retinoic acid receptor alpha (RARA), producing a fusion protein that blocks myeloid differentiation at the promyelocyte stage. Accumulated abnormal promyelocytes (Auer rods, faggot cells) release procoagulant/granule contents that trigger DIC — a major early cause of death. All-trans retinoic acid (ATRA) and arsenic trioxide overcome the differentiation block, making APL highly treatable.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Hematology/Onc > AML & translocations: APL (M3) = t(15;17) PML-RARA, Auer rods, DIC, ATRA therapy. Memorize the translocation table: t(15;17), t(9;22), t(8;14), t(14;18), t(11;22), t(8;21)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Anchor on Auer-rod promyelocytes + DIC = APL, then recall its translocation t(15;17). Don't get distracted by the general 'acute leukemia' picture."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on promyelocyte, Auer rods, faggot cells, DIC, PML-RARA, ATRA, translocation? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "t(9;22) (B, your pick) is the most famous translocation (CML), which is why it's a tempting reflex — but it's a CHRONIC myeloproliferative disorder, not APL. Auer rods + DIC = t(15;17)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The smear shows abnormal promyelocytes with multiple Auer rods (needle-like azurophilic inclusions) and bilobed nuclei. Learn to recognize Auer rods (AML/APL) and 'faggot cells' (bundles of Auer rods, specific for APL)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Your screenshot of this item had the actual question stem and answer choices scrolled off-screen (only the blood smear and history were visible), so the wording of the question and options here is reconstructed from standard APL content — the diagnosis (acute promyelocytic leukemia) is certain from the smear. If the real question instead asked about treatment (ATRA) or the DIC complication, tell me and I'll regenerate this widget to match. Please verify against UWorld."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Promyelocytes with Auer rods + DIC",
+      "back": "Acute promyelocytic leukemia (APL, AML-M3)"
+    },
+    {
+      "front": "APL defining translocation",
+      "back": "t(15;17) → PML-RARA fusion"
+    },
+    {
+      "front": "APL targeted therapy",
+      "back": "All-trans retinoic acid (ATRA) + arsenic trioxide"
+    },
+    {
+      "front": "Why APL bleeds",
+      "back": "Promyelocyte granules trigger DIC"
+    },
+    {
+      "front": "t(9;22)",
+      "back": "CML (BCR-ABL, Philadelphia chromosome)"
+    },
+    {
+      "front": "t(8;14)",
+      "back": "Burkitt lymphoma (c-myc)"
+    },
+    {
+      "front": "t(14;18)",
+      "back": "Follicular lymphoma (BCL-2)"
+    },
+    {
+      "front": "Faggot cells",
+      "back": "Bundles of Auer rods — specific for APL"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Acute promyelocytic leukemia",
+      "detail": "Heme/Onc: t(15;17) PML-RARA, Auer rods/faggot cells, DIC, ATRA + arsenic trioxide therapy.",
+      "location": "Heme/Onc: t(15;17) PML-RARA, Auer rods/faggot cells, DIC, ATRA + arsenic trioxide therapy."
+    },
+    {
+      "tag": "options",
+      "topic": "Oncogenic translocations",
+      "detail": "Heme/Onc: t(9;22) CML, t(8;14) Burkitt, t(14;18) follicular, t(11;22) Ewing, t(8;21) AML.",
+      "location": "Heme/Onc: t(9;22) CML, t(8;14) Burkitt, t(14;18) follicular, t(11;22) Ewing, t(8;21) AML."
+    },
+    {
+      "tag": "stem",
+      "topic": "Acute leukemia presentation",
+      "detail": "Heme: marrow failure (anemia, neutropenia, thrombocytopenia), Auer rods (AML), DIC.",
+      "location": "Heme: marrow failure (anemia, neutropenia, thrombocytopenia), Auer rods (AML), DIC."
+    }
+  ],
+  "memoryHook": "Auer rods + bleeding (DIC) = APL = t(15;17). 'PML-RARA' → give ATRA (vitamin A) to make the promyelocytes grow up.",
+  "stem": [
+    {
+      "text": "A 43-year-old man comes to the hospital due to "
+    },
+    {
+      "text": "recurrent episodes of fever and sore throat",
+      "clue": true,
+      "type": "red",
+      "note": "Recurrent infections reflect neutropenia from marrow replacement by leukemic blasts/promyelocytes. Fever + sore throat in a pancytopenic adult signals acute leukemia."
+    },
+    {
+      "text": " despite multiple antibiotic courses. For the past several months, he has also felt \"run down\" and fatigued all the time. His wife adds that he "
+    },
+    {
+      "text": "bruises easily and has had bleeding gums",
+      "clue": true,
+      "type": "red",
+      "note": "Easy bruising and gum bleeding indicate thrombocytopenia and, in APL, disseminated intravascular coagulation (DIC). APL's abnormal promyelocytes release procoagulant granules, triggering life-threatening DIC."
+    },
+    {
+      "text": " on several occasions. Temperature is 37.8 C (100.2 F). On physical examination, he has "
+    },
+    {
+      "text": "mucosal pallor",
+      "clue": true,
+      "type": "blue",
+      "note": "Pallor reflects anemia from marrow failure. Pallor (anemia) + infections (neutropenia) + bruising (thrombocytopenia) = pancytopenia from an acute leukemia."
+    },
+    {
+      "text": ", pharyngeal erythema, and multiple ecchymoses on his extremities. Peripheral blood smear shows "
+    },
+    {
+      "text": "abnormal promyelocytes with numerous needle-like cytoplasmic inclusions (Auer rods) and bilobed nuclei",
+      "clue": true,
+      "type": "green",
+      "note": "Promyelocytes packed with Auer rods (sometimes 'faggot cells') and bilobed nuclei are diagnostic of acute promyelocytic leukemia (APL, AML-M3). APL is defined by the t(15;17) translocation fusing PML and RARA."
+    },
+    {
+      "text": ". Which of the following genetic abnormalities is most likely responsible for this patient's condition?"
+    }
+  ]
+}

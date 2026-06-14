@@ -1,0 +1,244 @@
+{
+  "id": "q32",
+  "item": 32,
+  "qid": "14922",
+  "title": "Bacterial pneumonia: alveolar consolidation",
+  "system": "Pulmonary/Pathology",
+  "topic": "Lobar pneumonia / lung exam",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 55,
+  "vignette": "A 68-year-old man comes to the emergency department due to cough, breathlessness, and chest pain. The patient has a medical history of hypertension and type 2 diabetes mellitus. He is a former smoker with a 20-pack-year history. Temperature is 38 C (100.4 F), blood pressure is 130/80 mm Hg, respirations are 22/min, and oxygen saturation is 95% while breathing ambient air. The trachea is central in position. There is dullness to percussion over the lower right lung area compared to the resonancy on the left. Auscultation of the right lower lobe reveals breath sounds that are loud, hollow, and high-pitched. When the patient recites the word \"ninety-nine\" in a normal voice, the sound has higher clarity and intensity over the right base compared to other lung areas. Which of the following is the most likely cause of these findings?",
+  "clues": [
+    {
+      "text": "cough, breathlessness, and chest pain",
+      "type": "blue",
+      "note": "A nonspecific acute respiratory triad; with fever it points toward an infectious/inflammatory lung process. Sets the stage but doesn't localize — the exam findings do that."
+    },
+    {
+      "text": "former smoker with a 20-pack-year history",
+      "type": "orange",
+      "note": "Smoking raises pneumonia risk (and is a backdrop for COPD/cancer). A supporting risk factor, not the diagnosis."
+    },
+    {
+      "text": "dullness to percussion over the lower right lung area",
+      "type": "red",
+      "note": "Dullness means the lung tissue is denser than air — either fluid-filled alveoli (consolidation) or pleural fluid. Combined with the next findings it points to consolidation, not effusion."
+    },
+    {
+      "text": "loud, hollow, and high-pitched",
+      "type": "green",
+      "note": "Bronchial breath sounds heard peripherally indicate consolidated lung transmitting central airway sounds. Fluid/pus-filled alveoli conduct sound BETTER than air, so breath sounds become louder and bronchial — the signature of consolidation."
+    },
+    {
+      "text": "higher clarity and intensity over the right base",
+      "type": "green",
+      "note": "This is bronchophony (increased vocal resonance), seen over consolidation. Increased tactile fremitus, bronchophony, egophony, and whispered pectoriloquy all rise with consolidation and fall with pleural effusion — distinguishing the two."
+    }
+  ],
+  "whatMatters": "The exam pattern — dullness + LOUD bronchial breath sounds + increased bronchophony — means consolidation (fluid-filled alveoli that transmit sound better), i.e., bacterial pneumonia with neutrophil-rich exudate filling the parenchyma. The trap is pleural effusion, where the same dullness comes with DECREASED breath sounds and fremitus.",
+  "strategy": "On lung-exam questions, sort by what happens to breath-sound and fremitus INTENSITY: consolidation increases them (sound travels better through fluid-filled alveoli); effusion/pneumothorax/atelectasis-from-obstruction decrease them. Dullness narrows it to consolidation vs effusion; the increased sounds clinch consolidation.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Accumulation of interstitial fluid within the pleural space",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Embolic occlusion of a pulmonary segmental artery",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Exudation of neutrophil-rich fluid in the lung parenchyma",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Leakage of air from spontaneous rupture of visceral pleura",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Lung collapse due to a mass causing bronchial obstruction",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Transudation of interstitial fluid within the alveolar spaces",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "pleural effusion — would DECREASE breath sounds",
+      "detail": "WHAT IT IS: fluid in the pleural SPACE (effusion) insulates underlying lung. ❌ WHY IT FAILS: it gives dullness too, but breath sounds, fremitus, and bronchophony are DECREASED/absent — the opposite of this patient's loud, clear sounds. ✅ Correct if: dullness came WITH diminished breath sounds and decreased fremitus."
+    },
+    {
+      "letter": "B",
+      "label": "pulmonary embolism — usually clear lungs",
+      "detail": "WHAT IT IS: embolic occlusion of a pulmonary artery (PE) causes acute dyspnea/pleuritic pain and hypoxemia. ❌ WHY IT FAILS: the lungs are typically clear or near-normal on percussion/auscultation; PE does not produce consolidation with bronchophony. ✅ Correct if: the stem stressed sudden dyspnea with clear lungs, tachycardia, and a hypercoagulable risk."
+    },
+    {
+      "letter": "D",
+      "label": "pneumothorax — hyperresonant, not dull",
+      "detail": "WHAT IT IS: air leaking from a ruptured visceral pleura (spontaneous pneumothorax). ❌ WHY IT FAILS: it causes HYPERRESONance to percussion and DECREASED breath sounds/fremitus — the reverse of dullness with loud sounds. ✅ Correct if: a tall thin young man had sudden dyspnea with a hyperresonant, quiet hemithorax."
+    },
+    {
+      "letter": "E",
+      "label": "obstructive atelectasis — collapse mutes sounds (your pick)",
+      "detail": "WHAT IT IS: a mass obstructing a bronchus causes resorptive atelectasis (collapse) distal to it. ❌ WHY IT FAILS: collapsed lung gives dullness but DECREASED/absent breath sounds and fremitus, and the trachea/mediastinum shift TOWARD the collapse — here the trachea is central and sounds are loud, so this is consolidation, not collapse. ✅ Correct if: dullness came with absent breath sounds and the trachea deviated toward the affected side."
+    },
+    {
+      "letter": "F",
+      "label": "transudate in alveoli (edema) — wrong fluid, bilateral",
+      "detail": "WHAT IT IS: transudation of protein-poor fluid into alveoli = cardiogenic pulmonary edema. ❌ WHY IT FAILS: edema gives bilateral crackles, not a focal lobar consolidation with bronchophony; and the pneumonia exudate here is protein/cell-rich (exudate), not a transudate. ✅ Correct if: the patient had heart failure with bilateral basal crackles and a transudative picture."
+    }
+  ],
+  "reasoning": [
+    "Dullness narrows it to consolidation vs effusion",
+    "Breath sounds are LOUD/bronchial and bronchophony is INCREASED",
+    "Increased sound transmission = fluid-filled (consolidated) alveoli",
+    "Bacterial pneumonia fills alveoli with neutrophil-rich exudate → answer C"
+  ],
+  "mechanism": "In bacterial (lobar) pneumonia, alveoli fill with neutrophil-rich inflammatory exudate (pus). Because sound travels faster through liquid than air, consolidated lung transmits central airway sounds to the periphery — producing bronchial breath sounds, increased tactile fremitus, bronchophony, egophony (E→A), and whispered pectoriloquy, with dullness to percussion. Pleural effusion gives dullness but DECREASED transmission because the fluid lies outside the lung.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pulmonary > physical-exam table: compare breath sounds, fremitus, and percussion across consolidation, effusion, pneumothorax, and atelectasis. Make one flashcard: consolidation = dull + INCREASED fremitus/bronchophony; effusion = dull + DECREASED."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate each exam finding into 'is sound transmission up or down?' Up = fluid-filled alveoli (consolidation). The increased bronchophony is the deciding clue over the shared 'dullness.'"
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Which term tripped you — bronchophony, egophony, tactile fremitus, consolidation, transudate vs exudate, resonance? Tell me and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Atelectasis and effusion both give dullness, so they bait you — but both DECREASE breath sounds, and a central trachea rules out collapse. Match dullness to the option whose sound transmission is INCREASED."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference table contrasts exam findings by condition. Drill that grid so you can read any pneumonia/effusion/pneumothorax stem in seconds."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Dull + LOUD bronchial sounds + bronchophony",
+      "back": "Consolidation (bacterial pneumonia)"
+    },
+    {
+      "front": "Dull + DECREASED breath sounds/fremitus",
+      "back": "Pleural effusion"
+    },
+    {
+      "front": "Hyperresonant + decreased breath sounds",
+      "back": "Pneumothorax"
+    },
+    {
+      "front": "Dull + absent sounds + trachea shifts TOWARD",
+      "back": "Obstructive atelectasis (collapse)"
+    },
+    {
+      "front": "E sounds like A on auscultation",
+      "back": "Egophony (consolidation)"
+    },
+    {
+      "front": "Exudate filling alveoli in lobar pneumonia",
+      "back": "Neutrophil-rich (pus)"
+    },
+    {
+      "front": "Most common cause of typical lobar pneumonia",
+      "back": "Streptococcus pneumoniae"
+    },
+    {
+      "front": "Transudate in alveoli",
+      "back": "Cardiogenic pulmonary edema (bilateral crackles)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Lobar pneumonia / consolidation",
+      "detail": "Pulmonary > pneumonia: lobar pattern (S. pneumoniae), alveolar exudate phases (congestion → red → grey hepatization → resolution).",
+      "location": "Pulmonary > pneumonia: lobar pattern (S. pneumoniae), alveolar exudate phases (congestion → red → grey hepatization → resolution)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Lung physical-exam findings",
+      "detail": "Pulmonary > exam table: percussion/breath sounds/fremitus across consolidation, effusion, pneumothorax, atelectasis — the highest-yield differentiator.",
+      "location": "Pulmonary > exam table: percussion/breath sounds/fremitus across consolidation, effusion, pneumothorax, atelectasis — the highest-yield differentiator."
+    },
+    {
+      "tag": "options",
+      "topic": "Effusion / pneumothorax / PE / edema",
+      "detail": "Pulmonary > pleural effusion (transudate vs exudate, Light criteria), pneumothorax, pulmonary embolism, cardiogenic pulmonary edema — to contrast against consolidation.",
+      "location": "Pulmonary > pleural effusion (transudate vs exudate, Light criteria), pneumothorax, pulmonary embolism, cardiogenic pulmonary edema — to contrast against consolidation."
+    }
+  ],
+  "memoryHook": "Sound swims faster through fluid — consolidation is LOUD (bronchophony up); effusion muffles (sound down).",
+  "stem": [
+    {
+      "text": "A 68-year-old man comes to the emergency department due to "
+    },
+    {
+      "text": "cough, breathlessness, and chest pain",
+      "clue": true,
+      "type": "blue",
+      "note": "A nonspecific acute respiratory triad; with fever it points toward an infectious/inflammatory lung process. Sets the stage but doesn't localize — the exam findings do that."
+    },
+    {
+      "text": ". The patient has a medical history of hypertension and type 2 diabetes mellitus. He is a "
+    },
+    {
+      "text": "former smoker with a 20-pack-year history",
+      "clue": true,
+      "type": "orange",
+      "note": "Smoking raises pneumonia risk (and is a backdrop for COPD/cancer). A supporting risk factor, not the diagnosis."
+    },
+    {
+      "text": ". Temperature is 38 C (100.4 F), blood pressure is 130/80 mm Hg, respirations are 22/min, and oxygen saturation is 95% while breathing ambient air. The trachea is central in position. There is "
+    },
+    {
+      "text": "dullness to percussion over the lower right lung area",
+      "clue": true,
+      "type": "red",
+      "note": "Dullness means the lung tissue is denser than air — either fluid-filled alveoli (consolidation) or pleural fluid. Combined with the next findings it points to consolidation, not effusion."
+    },
+    {
+      "text": " compared to the resonancy on the left. Auscultation of the right lower lobe reveals breath sounds that are "
+    },
+    {
+      "text": "loud, hollow, and high-pitched",
+      "clue": true,
+      "type": "green",
+      "note": "Bronchial breath sounds heard peripherally indicate consolidated lung transmitting central airway sounds. Fluid/pus-filled alveoli conduct sound BETTER than air, so breath sounds become louder and bronchial — the signature of consolidation."
+    },
+    {
+      "text": ". When the patient recites the word \"ninety-nine\" in a normal voice, the sound has "
+    },
+    {
+      "text": "higher clarity and intensity over the right base",
+      "clue": true,
+      "type": "green",
+      "note": "This is bronchophony (increased vocal resonance), seen over consolidation. Increased tactile fremitus, bronchophony, egophony, and whispered pectoriloquy all rise with consolidation and fall with pleural effusion — distinguishing the two."
+    },
+    {
+      "text": " compared to other lung areas. Which of the following is the most likely cause of these findings?"
+    }
+  ]
+}

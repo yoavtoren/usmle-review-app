@@ -1,0 +1,198 @@
+{
+  "id": "q127",
+  "item": 127,
+  "qid": "10672",
+  "title": "Meta-analysis: pooled CI excludes null = significant",
+  "system": "Biostatistics",
+  "topic": "Meta-analysis / confidence intervals",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 64,
+  "vignette": "A meta-analysis of several trials on the effect of cocoa intake on systolic blood pressure (SBP) revealed the following results. For each study, the mean SBP in the cocoa group minus the mean SBP in the control group (mm Hg) with its 95% confidence interval was reported: Study 1: -5.2 [-7.3, -3.4]; Study 2: 1.6 [-5.3, 10.4]; Study 3: -4.2 [-8.1, -2.7]; Study 4: -2.9 [-4.1, -1.4]; Study 5: -2.8 [-5.2, -1.1]; Study 6: 0.8 [0.1, 1.2]; Study 7: 1.0 [-1.2, 3.3]; Total (pooled): -2.2 [-2.7, -1.3]. All the trials evaluated the difference in SBP at 2 weeks. Based on the data, which of the following is the most appropriate conclusion?",
+  "clues": [
+    {
+      "text": "meta-analysis",
+      "type": "blue",
+      "note": "A meta-analysis pools multiple trials to produce a single weighted (pooled) effect estimate with greater statistical power. The conclusion should be based on the POOLED row, not on any individual study."
+    },
+    {
+      "text": "Total (pooled): -2.2 [-2.7, -1.3]",
+      "type": "red",
+      "note": "The pooled effect is -2.2 mm Hg with 95% CI [-2.7, -1.3]. For a difference of means, the null value is 0; this CI does NOT include 0, so the result is statistically significant - a decrease in SBP."
+    },
+    {
+      "text": "difference in SBP at 2 weeks",
+      "type": "blue",
+      "note": "The outcome is a difference of means (cocoa minus control), so the null value is 0 (not 1). Because the pooled CI lies entirely below 0, cocoa is associated with a significant SBP reduction."
+    }
+  ],
+  "whatMatters": "Read the pooled estimate: -2.2 mm Hg with 95% CI [-2.7, -1.3]. For a difference of means the null is 0; this interval excludes 0 and sits below it, so cocoa is associated with a statistically significant DECREASE in SBP - answer C.",
+  "strategy": "For meta-analyses, judge significance from the POOLED CI and the correct null: for a DIFFERENCE of means the null is 0, for a ratio (RR/OR) the null is 1. If the CI excludes the null, it's significant; its sign (below 0) tells you direction. Don't be swayed by individual non-significant studies.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "A higher mean SBP was seen in the cocoa groups overall",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cocoa intake should be recommended for blood pressure management",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Cocoa intake was associated with a statistically significant decrease in SBP",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Studies 2, 6, and 7 showed a statistically significant increase in SBP",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "There was no statistically significant change in SBP overall",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "higher SBP overall - wrong direction",
+      "detail": "WHAT IT IS: claims cocoa raised SBP. ❌ WHY IT FAILS: the pooled mean difference is NEGATIVE (-2.2), meaning lower SBP in the cocoa group. ✅ Correct if: the pooled estimate were positive and excluded 0."
+    },
+    {
+      "letter": "B",
+      "label": "recommend cocoa - overreach beyond the data",
+      "detail": "WHAT IT IS: a clinical recommendation. ❌ WHY IT FAILS: a ~2 mm Hg drop at only 2 weeks has uncertain clinical significance, no safety/long-term data, so a treatment recommendation isn't justified. ✅ Correct if: the question asked for statistical (not clinical/policy) interpretation and the effect were large/durable with safety data."
+    },
+    {
+      "letter": "D",
+      "label": "studies 2, 6, 7 show significant increase - misreads CIs",
+      "detail": "WHAT IT IS: claims three studies significantly raised SBP. ❌ WHY IT FAILS: studies 2 and 7 cross 0 (not significant); only study 6 [0.1, 1.2] excludes 0 (a tiny significant increase), so the blanket statement is false. ✅ Correct if: all three CIs lay entirely above 0."
+    },
+    {
+      "letter": "E",
+      "label": "no significant change overall - contradicts pooled CI",
+      "detail": "WHAT IT IS: says the overall effect is null. ❌ WHY IT FAILS: the pooled CI [-2.7, -1.3] excludes 0, so the overall effect IS statistically significant. You chose this - likely by focusing on the non-significant individual studies rather than the pooled estimate. ✅ Correct if: the pooled CI had crossed 0."
+    }
+  ],
+  "reasoning": [
+    "Use the pooled estimate from a meta-analysis",
+    "Pooled mean difference -2.2, 95% CI [-2.7, -1.3]",
+    "Null for a difference of means is 0; CI excludes 0 -> significant",
+    "CI lies below 0 -> significant DECREASE in SBP -> answer C"
+  ],
+  "mechanism": "A meta-analysis weights and combines individual study estimates into a pooled effect with a narrower confidence interval (greater power). Statistical significance is assessed by whether the confidence interval includes the null value: for a difference between two means the null is 0 (for ratio measures like RR/OR it is 1). The pooled mean difference here, -2.2 mm Hg with 95% CI [-2.7, -1.3], excludes 0 and lies entirely below it, indicating a statistically significant reduction in systolic blood pressure with cocoa intake. Individual non-significant trials (CIs crossing 0) do not override the pooled result, and statistical significance does not by itself establish clinical importance or justify a treatment recommendation.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biostatistics > Confidence intervals & meta-analysis: CI excludes null = significant; null = 0 for difference of means, 1 for ratios; pooled estimate has more power; statistical vs clinical significance."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Anchor on the pooled row and the right null (0). The individual studies are distractors; the meta-analytic conclusion comes from the combined CI."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on meta-analysis, pooled/weighted estimate, null value, confidence interval, difference of means vs ratio? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose E (no significant change) - that comes from looking at the non-significant individual studies. The POOLED CI [-2.7, -1.3] excludes 0, so the overall effect is significant."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The forest-plot table's key row is the Total/pooled estimate; check whether its CI crosses 0 before anything else."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Train the reflex: meta-analysis -> read the pooled CI -> compare to the correct null (0 or 1)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Significance from a CI",
+      "back": "Significant if the CI excludes the null value"
+    },
+    {
+      "front": "Null value: difference of means vs ratio",
+      "back": "0 for a difference; 1 for RR/OR"
+    },
+    {
+      "front": "Pooled estimate -2.2 [-2.7,-1.3]",
+      "back": "Statistically significant DECREASE (excludes 0, below 0)"
+    },
+    {
+      "front": "Why use a meta-analysis",
+      "back": "Combine trials -> larger n -> more power, narrower CI"
+    },
+    {
+      "front": "Statistical vs clinical significance",
+      "back": "A significant 2 mm Hg change may be clinically trivial"
+    },
+    {
+      "front": "Individual study crossing 0",
+      "back": "Not statistically significant"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Meta-analysis & confidence intervals",
+      "detail": "Biostatistics: pooled effect, null value, CI interpretation, forest plots.",
+      "location": "Biostatistics: pooled effect, null value, CI interpretation, forest plots."
+    },
+    {
+      "tag": "stem",
+      "topic": "Statistical vs clinical significance",
+      "detail": "Biostats: significance does not equal importance; effect size, duration, safety.",
+      "location": "Biostats: significance does not equal importance; effect size, duration, safety."
+    },
+    {
+      "tag": "options",
+      "topic": "Interpreting study CIs",
+      "detail": "Biostats: which intervals cross the null; direction of effect from sign.",
+      "location": "Biostats: which intervals cross the null; direction of effect from sign."
+    }
+  ],
+  "memoryHook": "Meta-analysis = read the POOLED bar. Difference test? Null is ZERO. CI clears zero and sits below it = real drop.",
+  "stem": [
+    {
+      "text": "A "
+    },
+    {
+      "text": "meta-analysis",
+      "clue": true,
+      "type": "blue",
+      "note": "A meta-analysis pools multiple trials to produce a single weighted (pooled) effect estimate with greater statistical power. The conclusion should be based on the POOLED row, not on any individual study."
+    },
+    {
+      "text": " of several trials on the effect of cocoa intake on systolic blood pressure (SBP) revealed the following results. For each study, the mean SBP in the cocoa group minus the mean SBP in the control group (mm Hg) with its 95% confidence interval was reported: Study 1: -5.2 [-7.3, -3.4]; Study 2: 1.6 [-5.3, 10.4]; Study 3: -4.2 [-8.1, -2.7]; Study 4: -2.9 [-4.1, -1.4]; Study 5: -2.8 [-5.2, -1.1]; Study 6: 0.8 [0.1, 1.2]; Study 7: 1.0 [-1.2, 3.3]; "
+    },
+    {
+      "text": "Total (pooled): -2.2 [-2.7, -1.3]",
+      "clue": true,
+      "type": "red",
+      "note": "The pooled effect is -2.2 mm Hg with 95% CI [-2.7, -1.3]. For a difference of means, the null value is 0; this CI does NOT include 0, so the result is statistically significant - a decrease in SBP."
+    },
+    {
+      "text": ". All the trials evaluated the "
+    },
+    {
+      "text": "difference in SBP at 2 weeks",
+      "clue": true,
+      "type": "blue",
+      "note": "The outcome is a difference of means (cocoa minus control), so the null value is 0 (not 1). Because the pooled CI lies entirely below 0, cocoa is associated with a significant SBP reduction."
+    },
+    {
+      "text": ". Based on the data, which of the following is the most appropriate conclusion?"
+    }
+  ]
+}

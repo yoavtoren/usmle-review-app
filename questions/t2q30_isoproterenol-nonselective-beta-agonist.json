@@ -1,0 +1,230 @@
+{
+  "id": "q59",
+  "item": 59,
+  "qid": "1836",
+  "title": "Isoproterenol: nonselective beta agonist",
+  "system": "Pharmacology",
+  "topic": "Adrenergic drugs",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 52,
+  "vignette": "A 66-year-old man is evaluated for recurrent syncope. He has had 3 episodes of dizziness and palpitations followed by brief loss of consciousness over the last 6 months. He has no chest pain or dyspnea. The patient has a history of hypertension and hyperlipidemia. There is no family history of sudden death. Initial evaluation shows normal ECG and echocardiogram. A cardiac electrophysiologic study is performed. During the study, intravenous infusion of a medication is administered and produces an increase in cardiac contractility and a decrease in vascular resistance, as shown in the graphs. Which of the following medications was most likely administered to this patient?",
+  "clues": [
+    {
+      "text": "recurrent syncope",
+      "type": "blue",
+      "note": "The clinical setup (EP study for syncope) is just a vehicle to administer a drug and study its effects. The diagnosis matters less than reading the hemodynamic response."
+    },
+    {
+      "text": "increase in cardiac contractility",
+      "type": "green",
+      "note": "Increased contractility (positive inotropy) reflects beta-1 adrenergic stimulation on the heart. This is one of the two responses to match to a drug."
+    },
+    {
+      "text": "decrease in vascular resistance",
+      "type": "green",
+      "note": "Decreased systemic vascular resistance reflects beta-2 mediated vasodilation of vascular smooth muscle. Increased contractility (beta-1) PLUS decreased resistance (beta-2), with no alpha effect, points to a NONSELECTIVE BETA agonist — isoproterenol."
+    }
+  ],
+  "whatMatters": "Ignore the syncope wrapper — the answer comes from the two graphed effects: increased contractility (beta-1) and decreased vascular resistance (beta-2). A drug that does both with negligible alpha activity is isoproterenol, a nonselective beta agonist (beta-1 + beta-2). Epinephrine/norepinephrine/phenylephrine would raise resistance via alpha; cholinergics/clonidine/esmolol don't fit.",
+  "strategy": "For adrenergic-drug graphs, read the receptor signature: beta-1 = increased HR/contractility; beta-2 = vasodilation (decreased SVR/diastolic BP); alpha-1 = vasoconstriction (increased SVR). Increased contractility + decreased SVR with no rise in resistance = pure beta (beta-1 + beta-2) = isoproterenol.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acetylcholine",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Adenosine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Clonidine",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Esmolol",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Isoproterenol",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "Norepinephrine",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Phenylephrine",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "acetylcholine — decreases HR/contractility",
+      "detail": "WHAT IT IS: acetylcholine acts on cardiac M2 (slows HR/conduction) and vascular M3 (endothelial NO → vasodilation). ❌ WHY IT FAILS: it DECREASES heart rate/contractility rather than increasing contractility; the inotropic effect is wrong. ✅ Correct if: the graphs showed decreased HR/contractility with vasodilation (muscarinic)."
+    },
+    {
+      "letter": "B",
+      "label": "adenosine — transient AV block, not positive inotropy",
+      "detail": "WHAT IT IS: adenosine briefly blocks AV nodal conduction (used to terminate SVT) and causes flushing/vasodilation. ❌ WHY IT FAILS: it doesn't increase contractility; its hallmark is transient bradycardia/AV block. ✅ Correct if: the goal were terminating a reentrant SVT with transient asystole."
+    },
+    {
+      "letter": "C",
+      "label": "clonidine — central alpha-2 agonist, lowers sympathetic output",
+      "detail": "WHAT IT IS: clonidine stimulates central alpha-2 receptors to REDUCE sympathetic outflow (lowers HR and BP). ❌ WHY IT FAILS: it would decrease contractility and sympathetic tone, not increase contractility. ✅ Correct if: the drug lowered BP via reduced central sympathetic outflow."
+    },
+    {
+      "letter": "D",
+      "label": "esmolol — beta-1 BLOCKER, opposite effect",
+      "detail": "WHAT IT IS: esmolol is a short-acting beta-1 antagonist. ❌ WHY IT FAILS: blocking beta-1 DECREASES contractility — the exact opposite of the graphed increase. ✅ Correct if: the response were decreased HR/contractility (beta blockade)."
+    },
+    {
+      "letter": "F",
+      "label": "norepinephrine — alpha-driven INCREASE in resistance",
+      "detail": "WHAT IT IS: norepinephrine is a potent alpha-1 (and beta-1) agonist with little beta-2 effect. ❌ WHY IT FAILS: it RAISES vascular resistance via alpha-1 (vasoconstriction), opposite to the graphed DECREASE in resistance. ✅ Correct if: the graph showed increased SVR/BP with reflex bradycardia (alpha-1 predominant)."
+    },
+    {
+      "letter": "G",
+      "label": "phenylephrine — pure alpha-1, raises resistance",
+      "detail": "WHAT IT IS: phenylephrine is a selective alpha-1 agonist (vasoconstrictor, nasal decongestant, pressor). ❌ WHY IT FAILS: it INCREASES vascular resistance and causes reflex bradycardia — opposite of decreased resistance and increased contractility. ✅ Correct if: the graph showed increased SVR/BP with reflex bradycardia (pure alpha-1)."
+    }
+  ],
+  "reasoning": [
+    "Graphs: increased contractility (beta-1) + decreased vascular resistance (beta-2)",
+    "No rise in resistance means negligible alpha-1 activity",
+    "A nonselective beta-1 + beta-2 agonist fits both",
+    "Isoproterenol → answer E"
+  ],
+  "mechanism": "Isoproterenol is a nonselective beta-adrenergic agonist (beta-1 and beta-2) with negligible alpha activity. Beta-1 stimulation increases heart rate and contractility (positive inotropy/chronotropy); beta-2 stimulation relaxes vascular smooth muscle, lowering systemic vascular resistance and diastolic blood pressure. The combination — increased contractility with decreased resistance and no vasoconstriction — is the signature that distinguishes it from alpha-active agents (norepinephrine, phenylephrine, epinephrine).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm > adrenergic agonists table: alpha-1 (vasoconstriction), alpha-2 (decrease sympathetic outflow), beta-1 (HR/contractility), beta-2 (vasodilation/bronchodilation); examples (epi, NE, phenylephrine, isoproterenol, dobutamine, clonidine)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Read the two graphed effects as receptor fingerprints (contractility = beta-1; vasodilation = beta-2), then find the drug hitting both with no alpha. Match physiology to receptors before scanning names."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on inotropy/chronotropy, vascular resistance, beta-1 vs beta-2 vs alpha-1, nonselective beta agonist? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Norepinephrine and phenylephrine tempt as 'adrenergic,' but their alpha-1 RAISES resistance. The graphs show DECREASED resistance — only a pure beta (beta-1+beta-2) agonist (isoproterenol) fits."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the adrenergic-drug effects table; the graphs plot contractility (up) and vascular resistance (down) over time. Map each curve to its receptor (beta-1 up, beta-2 down) to ID isoproterenol."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "↑ contractility + ↓ vascular resistance (no alpha)",
+      "back": "Isoproterenol (nonselective beta agonist)"
+    },
+    {
+      "front": "Beta-1 effects",
+      "back": "↑ heart rate, contractility, conduction"
+    },
+    {
+      "front": "Beta-2 effects",
+      "back": "Vasodilation, bronchodilation, ↓ vascular resistance"
+    },
+    {
+      "front": "Alpha-1 effects",
+      "back": "Vasoconstriction (↑ vascular resistance), mydriasis"
+    },
+    {
+      "front": "Phenylephrine",
+      "back": "Selective alpha-1 agonist (vasoconstrictor)"
+    },
+    {
+      "front": "Norepinephrine",
+      "back": "Alpha-1 + beta-1 (raises SVR; reflex bradycardia)"
+    },
+    {
+      "front": "Esmolol",
+      "back": "Short-acting beta-1 blocker"
+    },
+    {
+      "front": "Clonidine",
+      "back": "Central alpha-2 agonist (lowers sympathetic outflow)"
+    },
+    {
+      "front": "Adenosine",
+      "back": "Transient AV block (terminates SVT)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Isoproterenol / beta agonists",
+      "detail": "Pharmacology > sympathomimetics: isoproterenol (nonselective beta), dobutamine (beta-1), receptor effects on contractility and vascular resistance.",
+      "location": "Pharmacology > sympathomimetics: isoproterenol (nonselective beta), dobutamine (beta-1), receptor effects on contractility and vascular resistance."
+    },
+    {
+      "tag": "options",
+      "topic": "Adrenergic & cholinergic agents",
+      "detail": "Pharmacology > adrenergic agonist/antagonist table (epinephrine, NE, phenylephrine, clonidine, esmolol) and acetylcholine/adenosine cardiac effects.",
+      "location": "Pharmacology > adrenergic agonist/antagonist table (epinephrine, NE, phenylephrine, clonidine, esmolol) and acetylcholine/adenosine cardiac effects."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Adrenergic receptor physiology",
+      "detail": "Physiology > alpha-1/alpha-2/beta-1/beta-2 receptor locations and second messengers — to read drug-effect graphs.",
+      "location": "Physiology > alpha-1/alpha-2/beta-1/beta-2 receptor locations and second messengers — to read drug-effect graphs."
+    }
+  ],
+  "memoryHook": "ISO = 'I Stimulate Only beta' (beta-1 ↑contractility + beta-2 ↓resistance), no alpha — so resistance FALLS instead of rising.",
+  "stem": [
+    {
+      "text": "A 66-year-old man is evaluated for "
+    },
+    {
+      "text": "recurrent syncope",
+      "clue": true,
+      "type": "blue",
+      "note": "The clinical setup (EP study for syncope) is just a vehicle to administer a drug and study its effects. The diagnosis matters less than reading the hemodynamic response."
+    },
+    {
+      "text": ". He has had 3 episodes of dizziness and palpitations followed by brief loss of consciousness over the last 6 months. He has no chest pain or dyspnea. The patient has a history of hypertension and hyperlipidemia. There is no family history of sudden death. Initial evaluation shows normal ECG and echocardiogram. A cardiac electrophysiologic study is performed. During the study, intravenous infusion of a medication is administered and produces an "
+    },
+    {
+      "text": "increase in cardiac contractility",
+      "clue": true,
+      "type": "green",
+      "note": "Increased contractility (positive inotropy) reflects beta-1 adrenergic stimulation on the heart. This is one of the two responses to match to a drug."
+    },
+    {
+      "text": " and a "
+    },
+    {
+      "text": "decrease in vascular resistance",
+      "clue": true,
+      "type": "green",
+      "note": "Decreased systemic vascular resistance reflects beta-2 mediated vasodilation of vascular smooth muscle. Increased contractility (beta-1) PLUS decreased resistance (beta-2), with no alpha effect, points to a NONSELECTIVE BETA agonist — isoproterenol."
+    },
+    {
+      "text": ", as shown in the graphs. Which of the following medications was most likely administered to this patient?"
+    }
+  ]
+}

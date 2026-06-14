@@ -1,0 +1,207 @@
+{
+  "id": "q132",
+  "item": 132,
+  "qid": "20428",
+  "title": "Celiac disease: villous atrophy of the small intestine",
+  "system": "Pathology",
+  "topic": "Malabsorption",
+  "correct": "A",
+  "yourAnswer": "E",
+  "percentCorrect": 53,
+  "vignette": "A 30-year-old man comes to the office due to a 4-month history of fatigue that is worse at the end of the day. The patient has also had abdominal bloating and intermittent loose stools after meals. His appetite is normal, and he has had no weight loss. Vital signs are normal. Examination shows pale mucosa. The abdomen is mildly distended and tympanic; there is no tenderness or organomegaly. Rectal examination shows brown stool that is negative for fecal occult blood. Laboratory results are as follows: hematocrit 28%, mean corpuscular volume 75 um3, leukocytes 7,100/mm3, platelets 490,000/mm3. C-reactive protein level is normal. Which of the following pathologic gastrointestinal tract findings is most likely to be present in this patient?",
+  "clues": [
+    {
+      "text": "abdominal bloating and intermittent loose stools after meals",
+      "type": "blue",
+      "note": "Postprandial bloating and loose stools with a normal appetite suggest malabsorption. In a young adult with iron-deficiency anemia and no inflammation, celiac disease is the leading cause."
+    },
+    {
+      "text": "pale mucosa",
+      "type": "orange",
+      "note": "Pallor reflects anemia. Combined with the microcytic indices below, this is iron-deficiency anemia - a common presentation of celiac disease (impaired duodenal iron absorption)."
+    },
+    {
+      "text": "mean corpuscular volume 75 um3",
+      "type": "red",
+      "note": "Microcytic anemia (MCV 75 / normal 80-100) with low hematocrit and reactive thrombocytosis, in the absence of GI blood loss (negative occult blood), points to iron malabsorption - classic for celiac disease."
+    },
+    {
+      "text": "C-reactive protein level is normal",
+      "type": "green",
+      "note": "A normal CRP argues against inflammatory bowel disease/colitis. This steers the diagnosis toward a non-inflammatory malabsorptive process - celiac disease with villous atrophy - rather than Crohn or microscopic colitis."
+    }
+  ],
+  "whatMatters": "A young adult with malabsorptive symptoms, iron-deficiency (microcytic) anemia, no GI bleeding, and a normal CRP has celiac disease. The pathologic finding is atrophy of the small-intestinal mucosa with loss of villi - answer A.",
+  "strategy": "For malabsorption + microcytic (iron-deficiency) anemia without bleeding in a young adult, think celiac disease: duodenal villous blunting impairs iron absorption. Match the histology - villous atrophy with crypt hyperplasia and intraepithelial lymphocytes (small intestine) - and rule out colonic processes (normal CRP, no blood).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Atrophic mucosa with loss of villi in the small intestine",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Autoimmune destruction of gastric parietal cells",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Chronic inflammation within the colonic mucosa and submucosa",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Giardia trophozoites lining the small intestinal mucosa",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Subepithelial collagen deposition in the colon",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "parietal cell destruction - would cause B12 (macrocytic) anemia",
+      "detail": "WHAT IT IS: autoimmune gastritis destroying parietal cells -> loss of intrinsic factor -> B12 deficiency (pernicious anemia). ❌ WHY IT FAILS: that causes MACROCYTIC anemia, but this patient is MICROCYTIC (iron deficiency); the location/anemia type don't fit. ✅ Correct if: macrocytic anemia with low B12 and anti-parietal/IF antibodies."
+    },
+    {
+      "letter": "C",
+      "label": "colonic transmural/mucosal inflammation - IBD, CRP would be up",
+      "detail": "WHAT IT IS: chronic colonic inflammation (inflammatory bowel disease). ❌ WHY IT FAILS: CRP is normal and there's no blood in stool; the picture is non-inflammatory small-bowel malabsorption, not colitis. ✅ Correct if: elevated CRP, bloody diarrhea, and colonic involvement."
+    },
+    {
+      "letter": "D",
+      "label": "Giardia - usually acute/travel-related, not this chronic iron-deficiency picture",
+      "detail": "WHAT IT IS: giardiasis causes small-bowel malabsorption with trophozoites on biopsy. ❌ WHY IT FAILS: it typically follows contaminated-water/travel exposure with acute-subacute foul diarrhea, not chronic iron-deficiency anemia from villous atrophy; nothing suggests exposure here. ✅ Correct if: camping/travel exposure with steatorrhea and trophozoites/cysts identified."
+    },
+    {
+      "letter": "E",
+      "label": "subepithelial collagen in colon - collagenous colitis, wrong demographic/labs",
+      "detail": "WHAT IT IS: collagenous (microscopic) colitis - watery diarrhea with a thickened subepithelial collagen band, typically in older women. ❌ WHY IT FAILS: it doesn't cause iron-deficiency anemia or affect the small bowel; this young man's microcytic anemia and malabsorption fit celiac. You chose this. ✅ Correct if: chronic watery diarrhea in an older woman with normal endoscopy but collagen band on biopsy."
+    }
+  ],
+  "reasoning": [
+    "Young adult, malabsorptive symptoms, iron-deficiency (microcytic) anemia",
+    "No GI blood loss (negative occult blood); normal CRP (non-inflammatory)",
+    "Celiac disease: gluten-driven small-bowel mucosal damage",
+    "Histology = villous atrophy (with crypt hyperplasia, intraepithelial lymphocytes) -> answer A"
+  ],
+  "mechanism": "Celiac disease is an immune reaction to gliadin (gluten) in genetically predisposed (HLA-DQ2/DQ8) individuals. Tissue transglutaminase-modified gliadin peptides activate CD4 T cells, driving mucosal injury concentrated in the duodenum/proximal small intestine: villous atrophy (blunting), crypt hyperplasia, and increased intraepithelial lymphocytes. Loss of absorptive surface impairs iron (and later folate/fat-soluble vitamin) uptake, producing iron-deficiency microcytic anemia and malabsorptive symptoms without colonic inflammation. Diagnosis is by anti-tTG/anti-endomysial IgA antibodies and confirmatory small-bowel biopsy; treatment is a gluten-free diet.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI/Pathology > Celiac disease: HLA-DQ2/DQ8, anti-tTG/anti-endomysial/anti-DGP antibodies, duodenal villous atrophy + crypt hyperplasia + intraepithelial lymphocytes, iron/folate malabsorption, dermatitis herpetiformis, gluten-free diet."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Synthesize the labs: microcytic anemia + malabsorption + no bleeding + normal CRP -> small-bowel villous atrophy. Then choose the histology that matches."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on villous atrophy, malabsorption, microcytic vs macrocytic anemia, intraepithelial lymphocytes, collagenous colitis? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose E (collagenous colitis). That's a COLONIC, watery-diarrhea diagnosis in older women without iron deficiency. The iron-deficiency + small-bowel malabsorption picture is celiac -> villous atrophy."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Anchor: young adult + iron-deficiency anemia + bloating/loose stools + normal CRP = celiac (duodenal villous atrophy)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Malabsorption + iron-deficiency anemia + villous atrophy, young adult",
+      "back": "Celiac disease"
+    },
+    {
+      "front": "Celiac histology",
+      "back": "Villous atrophy + crypt hyperplasia + intraepithelial lymphocytes (duodenum)"
+    },
+    {
+      "front": "Celiac serology / HLA",
+      "back": "Anti-tTG / anti-endomysial IgA; HLA-DQ2/DQ8"
+    },
+    {
+      "front": "Parietal cell autoimmunity -> anemia type",
+      "back": "B12 deficiency -> macrocytic (pernicious anemia)"
+    },
+    {
+      "front": "Collagenous/microscopic colitis",
+      "back": "Watery diarrhea, older women, subepithelial collagen band, normal endoscopy"
+    },
+    {
+      "front": "Celiac skin association",
+      "back": "Dermatitis herpetiformis (IgA deposits)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Celiac disease",
+      "detail": "GI: pathogenesis, duodenal villous atrophy, serology, gluten-free diet, complications.",
+      "location": "GI: pathogenesis, duodenal villous atrophy, serology, gluten-free diet, complications."
+    },
+    {
+      "tag": "stem",
+      "topic": "Malabsorption & microcytic anemia",
+      "detail": "GI/Heme: iron-deficiency from malabsorption vs blood loss; reactive thrombocytosis.",
+      "location": "GI/Heme: iron-deficiency from malabsorption vs blood loss; reactive thrombocytosis."
+    },
+    {
+      "tag": "options",
+      "topic": "Other GI mucosal pathologies",
+      "detail": "GI: autoimmune gastritis, IBD, giardiasis, microscopic (collagenous/lymphocytic) colitis.",
+      "location": "GI: autoimmune gastritis, IBD, giardiasis, microscopic (collagenous/lymphocytic) colitis."
+    }
+  ],
+  "memoryHook": "Celiac = gluten flattens the villi. Lost absorptive carpet -> iron can't get in -> microcytic anemia.",
+  "stem": [
+    {
+      "text": "A 30-year-old man comes to the office due to a 4-month history of fatigue that is worse at the end of the day. The patient has also had "
+    },
+    {
+      "text": "abdominal bloating and intermittent loose stools after meals",
+      "clue": true,
+      "type": "blue",
+      "note": "Postprandial bloating and loose stools with a normal appetite suggest malabsorption. In a young adult with iron-deficiency anemia and no inflammation, celiac disease is the leading cause."
+    },
+    {
+      "text": ". His appetite is normal, and he has had no weight loss. Vital signs are normal. Examination shows "
+    },
+    {
+      "text": "pale mucosa",
+      "clue": true,
+      "type": "orange",
+      "note": "Pallor reflects anemia. Combined with the microcytic indices below, this is iron-deficiency anemia - a common presentation of celiac disease (impaired duodenal iron absorption)."
+    },
+    {
+      "text": ". The abdomen is mildly distended and tympanic; there is no tenderness or organomegaly. Rectal examination shows brown stool that is negative for fecal occult blood. Laboratory results are as follows: hematocrit 28%, "
+    },
+    {
+      "text": "mean corpuscular volume 75 um3",
+      "clue": true,
+      "type": "red",
+      "note": "Microcytic anemia (MCV 75 / normal 80-100) with low hematocrit and reactive thrombocytosis, in the absence of GI blood loss (negative occult blood), points to iron malabsorption - classic for celiac disease."
+    },
+    {
+      "text": ", leukocytes 7,100/mm3, platelets 490,000/mm3. "
+    },
+    {
+      "text": "C-reactive protein level is normal",
+      "clue": true,
+      "type": "green",
+      "note": "A normal CRP argues against inflammatory bowel disease/colitis. This steers the diagnosis toward a non-inflammatory malabsorptive process - celiac disease with villous atrophy - rather than Crohn or microscopic colitis."
+    },
+    {
+      "text": ". Which of the following pathologic gastrointestinal tract findings is most likely to be present in this patient?"
+    }
+  ]
+}

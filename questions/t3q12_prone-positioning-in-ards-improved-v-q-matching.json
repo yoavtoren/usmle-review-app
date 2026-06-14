@@ -1,0 +1,198 @@
+{
+  "id": "q81",
+  "item": 81,
+  "qid": "19624",
+  "title": "Prone positioning in ARDS: improved V/Q matching",
+  "system": "Pulmonary",
+  "topic": "ARDS / ventilation",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 71,
+  "vignette": "A 55-year-old woman with a history of Crohn disease is admitted to the hospital due to perforated appendicitis. The patient quickly develops respiratory difficulty, and acute respiratory distress syndrome is diagnosed. She is intubated and mechanically ventilated with positive pressure ventilation. Despite the use of high positive end-expiratory pressure, the patient's condition continues to deteriorate. She is intermittently placed in the prone position while mechanically ventilated. Which of the following is most likely to occur due to this position change?",
+  "clues": [
+    {
+      "text": "acute respiratory distress syndrome is diagnosed",
+      "type": "red",
+      "note": "ARDS = diffuse alveolar damage with non-cardiogenic pulmonary edema and widespread alveolar COLLAPSE, worst in the dependent (dorsal, when supine) lung. Severe shunt physiology causes refractory hypoxemia. This is the substrate prone positioning targets."
+    },
+    {
+      "text": "high positive end-expiratory pressure, the patient's condition continues to deteriorate",
+      "type": "blue",
+      "note": "Refractory hypoxemia despite high PEEP is the trigger for prone positioning in severe ARDS. The question asks what physiologically improves when you flip the patient."
+    },
+    {
+      "text": "prone position",
+      "type": "green",
+      "note": "Proning lets the previously collapsed DORSAL alveoli re-expand (the abdomen no longer compresses the posterior diaphragm) while perfusion stays relatively even. More alveoli are both ventilated and perfused, so ventilation-perfusion matching improves and oxygenation rises."
+    }
+  ],
+  "whatMatters": "The Crohn/appendicitis story just gives a reason for ARDS. The point: in ARDS the dorsal alveoli collapse; turning the patient PRONE recruits those dependent alveoli and makes ventilation more uniform, so ventilation-perfusion matching improves — answer E.",
+  "strategy": "For 'why does prone positioning help ARDS,' think recruitment of collapsed dependent alveoli + more homogeneous ventilation → reduced shunt → better V/Q matching and oxygenation. Reject options that claim a worsening (hyperdistension, ↓FRC) or a primary hemodynamic mechanism.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alveolar hyperdistension",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased cardiac output",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Decreased functional residual capacity",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Decreased right ventricular preload",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Improved ventilation-perfusion matching",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "alveolar hyperdistension — that's harm, not benefit",
+      "detail": "WHAT IT IS: overdistension of alveoli causes ventilator-induced lung injury (volutrauma). ❌ WHY IT FAILS: proning REDUCES regional overdistension by distributing ventilation more evenly; it doesn't cause hyperdistension. ✅ Correct if: the question asked about a harm of high tidal volumes/pressures."
+    },
+    {
+      "letter": "B",
+      "label": "decreased cardiac output — not the mechanism of benefit",
+      "detail": "WHAT IT IS: positioning and PEEP can affect venous return/CO. ❌ WHY IT FAILS: prone positioning's oxygenation benefit is from alveolar recruitment and better V/Q, not from lowering cardiac output; CO is not reliably decreased. ✅ Correct if: the stem asked about a hemodynamic side effect of high PEEP."
+    },
+    {
+      "letter": "C",
+      "label": "decreased FRC — backwards",
+      "detail": "WHAT IT IS: functional residual capacity is the air left after a normal exhale; recruitment increases it. ❌ WHY IT FAILS: proning RECRUITS collapsed dorsal alveoli, INCREASING aerated lung/FRC, not decreasing it. ✅ Correct if: the question described atelectasis or supine abdominal compression reducing FRC."
+    },
+    {
+      "letter": "D",
+      "label": "decreased RV preload — a PEEP/hemodynamic distractor",
+      "detail": "WHAT IT IS: high intrathoracic pressure can reduce venous return and RV preload. ❌ WHY IT FAILS: that's a consequence of PEEP, not the benefit of proning; the asked effect is improved gas exchange via V/Q matching. ✅ Correct if: the question targeted how positive-pressure ventilation lowers preload/CO."
+    }
+  ],
+  "reasoning": [
+    "ARDS → dependent (dorsal) alveolar collapse → shunt → refractory hypoxemia",
+    "Prone position unloads the posterior diaphragm and recruits dorsal alveoli",
+    "Ventilation becomes more uniform while perfusion stays relatively even",
+    "More alveoli ventilated AND perfused → improved V/Q matching → answer E"
+  ],
+  "mechanism": "In ARDS, edema and the weight of the heart and abdominal contents collapse the dependent (dorsal, when supine) alveoli, creating intrapulmonary shunt and hypoxemia. Prone positioning relieves dorsal compression, recruits those alveoli, and distributes ventilation more homogeneously while perfusion remains relatively uniform, reducing shunt and improving ventilation-perfusion matching and oxygenation. Prone positioning improves oxygenation and mortality in severe ARDS.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid/IM Pulmonary > ARDS: diffuse alveolar damage, non-cardiogenic edema, shunt physiology, lung-protective ventilation (low tidal volume, PEEP), prone positioning to recruit dependent alveoli and improve V/Q."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Frame proning as 'recruit the collapsed dorsal lung → ventilation matches perfusion better → less shunt.' The correct answer is the only one describing improvement in gas exchange."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on ARDS, V/Q matching, shunt, FRC, PEEP, recruitment, dependent alveoli? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Hemodynamic options (B, D) ride on PEEP physiology, and A/C describe worsening — all distract from the oxygenation mechanism. Anchor on 'better V/Q matching.'"
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The figure compares supine (abdomen compresses posterior diaphragm → dorsal alveoli collapse) vs prone (posterior alveoli re-expand, anterior less distended). Practice reading the alveolar collapse/recruitment diagram."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (E). One-liner to retain: proning recruits dependent alveoli → V/Q matching improves → oxygenation up."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Prone positioning in ARDS — benefit",
+      "back": "Recruits dorsal alveoli → improved V/Q matching/oxygenation"
+    },
+    {
+      "front": "ARDS physiology",
+      "back": "Diffuse alveolar damage, non-cardiogenic edema, shunt → refractory hypoxemia"
+    },
+    {
+      "front": "Where alveoli collapse when supine",
+      "back": "Dependent (dorsal) regions"
+    },
+    {
+      "front": "Lung-protective ventilation",
+      "back": "Low tidal volume (~6 mL/kg) + PEEP"
+    },
+    {
+      "front": "Effect of recruitment on FRC",
+      "back": "Increases aerated lung/FRC"
+    },
+    {
+      "front": "Shunt definition",
+      "back": "Perfusion without ventilation (V/Q = 0) → hypoxemia not fixed by O2 alone"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "ARDS & prone positioning",
+      "detail": "Pulmonary: ARDS pathophysiology (diffuse alveolar damage), shunt, prone positioning recruitment, mortality benefit.",
+      "location": "Pulmonary: ARDS pathophysiology (diffuse alveolar damage), shunt, prone positioning recruitment, mortality benefit."
+    },
+    {
+      "tag": "stem",
+      "topic": "V/Q matching & shunt",
+      "detail": "Physiology: V/Q spectrum (shunt vs dead space), regional ventilation/perfusion, effect of positioning.",
+      "location": "Physiology: V/Q spectrum (shunt vs dead space), regional ventilation/perfusion, effect of positioning."
+    },
+    {
+      "tag": "options",
+      "topic": "Mechanical ventilation effects",
+      "detail": "Pulm/Crit care: PEEP effects on FRC and preload, volutrauma/barotrauma, lung-protective strategy.",
+      "location": "Pulm/Crit care: PEEP effects on FRC and preload, volutrauma/barotrauma, lung-protective strategy."
+    }
+  ],
+  "memoryHook": "Flip the patient → the squashed BACK lung opens up → ventilation finally meets perfusion. Prone = better V/Q.",
+  "stem": [
+    {
+      "text": "A 55-year-old woman with a history of Crohn disease is admitted to the hospital due to perforated appendicitis. The patient quickly develops respiratory difficulty, and "
+    },
+    {
+      "text": "acute respiratory distress syndrome is diagnosed",
+      "clue": true,
+      "type": "red",
+      "note": "ARDS = diffuse alveolar damage with non-cardiogenic pulmonary edema and widespread alveolar COLLAPSE, worst in the dependent (dorsal, when supine) lung. Severe shunt physiology causes refractory hypoxemia. This is the substrate prone positioning targets."
+    },
+    {
+      "text": ". She is intubated and mechanically ventilated with positive pressure ventilation. Despite the use of "
+    },
+    {
+      "text": "high positive end-expiratory pressure, the patient's condition continues to deteriorate",
+      "clue": true,
+      "type": "blue",
+      "note": "Refractory hypoxemia despite high PEEP is the trigger for prone positioning in severe ARDS. The question asks what physiologically improves when you flip the patient."
+    },
+    {
+      "text": ". She is intermittently placed in the "
+    },
+    {
+      "text": "prone position",
+      "clue": true,
+      "type": "green",
+      "note": "Proning lets the previously collapsed DORSAL alveoli re-expand (the abdomen no longer compresses the posterior diaphragm) while perfusion stays relatively even. More alveoli are both ventilated and perfused, so ventilation-perfusion matching improves and oxygenation rises."
+    },
+    {
+      "text": " while mechanically ventilated. Which of the following is most likely to occur due to this position change?"
+    }
+  ]
+}

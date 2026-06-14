@@ -1,0 +1,207 @@
+{
+  "id": "q137",
+  "item": 137,
+  "qid": "1668",
+  "title": "Bronchiolitis: respiratory syncytial virus",
+  "system": "Microbiology",
+  "topic": "Pediatric respiratory virus",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 78,
+  "vignette": "A 1-month-old boy is brought to the emergency department during winter with cough and difficulty breathing. He has had rhinorrhea, cough, and congestion for the past 3 days. Today, the patient began breathing harder and faster with increased cough. Temperature is 37.8 C (100 F) and respirations are 68/min. Oxygen saturation is 91%. The patient is alert and awake and has subcostal and suprasternal retractions. Mucous membranes are moist, and the anterior fontanelle is open and flat. Physical examination reveals diffuse expiratory wheezes and scattered rales. Which of the following pathogens is most likely causing this patient's condition?",
+  "clues": [
+    {
+      "text": "during winter",
+      "type": "orange",
+      "note": "RSV bronchiolitis peaks in late fall and winter. Seasonality plus the infant's age strongly favors RSV."
+    },
+    {
+      "text": "rhinorrhea, cough, and congestion for the past 3 days",
+      "type": "blue",
+      "note": "A preceding upper-respiratory prodrome that progresses to lower-airway involvement over a few days is the classic bronchiolitis course."
+    },
+    {
+      "text": "subcostal and suprasternal retractions",
+      "type": "blue",
+      "note": "Retractions and tachypnea (RR 68) indicate increased work of breathing/respiratory distress in a young infant - typical of bronchiolitis."
+    },
+    {
+      "text": "diffuse expiratory wheezes and scattered rales",
+      "type": "red",
+      "note": "Diffuse wheezes + crackles in an infant under 2 years = bronchiolitis, whose most common cause is respiratory syncytial virus (RSV)."
+    }
+  ],
+  "whatMatters": "A wheezing, distressed infant under 2 years in winter with a URI prodrome progressing to lower-airway signs = bronchiolitis, and the most common pathogen is respiratory syncytial virus - answer E.",
+  "strategy": "For an infant (<2 years) with winter onset, URI prodrome, wheezing/crackles, and retractions, diagnose bronchiolitis and default to RSV as the cause. Reserve other pathogens for specific clues (whooping cough for pertussis, staccato cough for Chlamydia, older child for Mycoplasma).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Adenovirus",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Bordetella pertussis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Mycoplasma pneumoniae",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Parainfluenza virus",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Respiratory syncytial virus",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "adenovirus - less common cause of bronchiolitis",
+      "detail": "WHAT IT IS: adenovirus can cause respiratory infection (and pharyngoconjunctival fever). ❌ WHY IT FAILS: it is a far less common bronchiolitis cause than RSV and lacks distinguishing features here. ✅ Correct if: conjunctivitis + pharyngitis + fever (pharyngoconjunctival fever) or severe necrotizing pneumonia were described."
+    },
+    {
+      "letter": "B",
+      "label": "Bordetella pertussis - whooping cough, different pattern",
+      "detail": "WHAT IT IS: pertussis causes paroxysmal coughing fits with inspiratory whoop and post-tussive emesis. ❌ WHY IT FAILS: this infant has wheezing/crackles and a bronchiolitis pattern, not paroxysms with whoop; afebrile-to-low-grade and lymphocytosis would be expected for pertussis. ✅ Correct if: staccato/paroxysmal cough with whoop and marked lymphocytosis."
+    },
+    {
+      "letter": "C",
+      "label": "Mycoplasma pneumoniae - older patients",
+      "detail": "WHAT IT IS: atypical 'walking' pneumonia. ❌ WHY IT FAILS: Mycoplasma affects older children/young adults, not 1-month-olds, and causes interstitial pneumonia, not infantile bronchiolitis. ✅ Correct if: a school-age child/teen with dry cough and patchy infiltrates."
+    },
+    {
+      "letter": "D",
+      "label": "parainfluenza - more classic for croup",
+      "detail": "WHAT IT IS: parainfluenza is the leading cause of croup (laryngotracheobronchitis) and a secondary bronchiolitis cause. ❌ WHY IT FAILS: this is a wheezing lower-airway bronchiolitis picture, most commonly RSV; croup would show barky cough/stridor. ✅ Correct if: barking cough, inspiratory stridor, steeple sign."
+    }
+  ],
+  "reasoning": [
+    "Infant <2 years, winter, URI prodrome -> lower airway",
+    "Wheezes + crackles + retractions = bronchiolitis",
+    "Most common cause of bronchiolitis = RSV",
+    "-> answer E"
+  ],
+  "mechanism": "Respiratory syncytial virus is the most common cause of bronchiolitis, a lower respiratory tract infection of infants and children under 2 years, peaking in fall/winter. After an upper-respiratory prodrome (rhinorrhea, congestion, cough), the virus infects bronchiolar epithelium, causing necrosis, edema, mucus plugging, and small-airway obstruction that produces wheezing, crackles, tachypnea, retractions, and hypoxemia. Diagnosis is clinical and treatment supportive (oxygen, nasal suctioning, hydration); young or premature infants are at risk for apnea and respiratory failure, and high-risk infants may receive RSV prophylaxis.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Microbiology/Peds > Bronchiolitis: RSV most common, age <2, fall/winter, URI prodrome -> wheezes/crackles/retractions, supportive care; RSV is a paramyxovirus (F protein -> syncytia); palivizumab prophylaxis in high-risk infants."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Pattern-match the infant bronchiolitis picture and default to RSV; the clues (age, season, wheezing) are confirmatory."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on bronchiolitis, RSV, retractions, rales/crackles, croup vs bronchiolitis, paramyxovirus? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Parainfluenza (D) tempts as a related virus, but it's the croup classic (barky cough/stridor). The wheezing infant bronchiolitis is RSV."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked E correctly - lock 'infant + winter + wheeze = RSV bronchiolitis.'"
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Most common cause of infant bronchiolitis",
+      "back": "Respiratory syncytial virus (RSV)"
+    },
+    {
+      "front": "Bronchiolitis clinical pattern",
+      "back": "<2 yrs, winter, URI prodrome -> wheezes/crackles, retractions, tachypnea"
+    },
+    {
+      "front": "RSV virus family / hallmark",
+      "back": "Paramyxovirus; F (fusion) protein -> multinucleated syncytia"
+    },
+    {
+      "front": "Parainfluenza classic disease",
+      "back": "Croup (barky cough, stridor, steeple sign)"
+    },
+    {
+      "front": "Pertussis cough pattern",
+      "back": "Paroxysmal cough + inspiratory whoop + post-tussive emesis; lymphocytosis"
+    },
+    {
+      "front": "RSV prophylaxis",
+      "back": "Palivizumab (monoclonal anti-F) in high-risk infants"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "RSV / bronchiolitis",
+      "detail": "Microbiology/Peds: epidemiology, F protein/syncytia, supportive care, palivizumab.",
+      "location": "Microbiology/Peds: epidemiology, F protein/syncytia, supportive care, palivizumab."
+    },
+    {
+      "tag": "stem",
+      "topic": "Infant respiratory distress",
+      "detail": "Peds: retractions, tachypnea, hypoxemia, apnea risk in young infants.",
+      "location": "Peds: retractions, tachypnea, hypoxemia, apnea risk in young infants."
+    },
+    {
+      "tag": "options",
+      "topic": "Pediatric respiratory pathogens",
+      "detail": "Micro: parainfluenza (croup), pertussis, Mycoplasma, adenovirus distinguishing features.",
+      "location": "Micro: parainfluenza (croup), pertussis, Mycoplasma, adenovirus distinguishing features."
+    }
+  ],
+  "memoryHook": "RSV = 'Really Small Victims' - winter wheezing babies. Bronchiolitis under 2 = RSV until proven otherwise.",
+  "stem": [
+    {
+      "text": "A 1-month-old boy is brought to the emergency department "
+    },
+    {
+      "text": "during winter",
+      "clue": true,
+      "type": "orange",
+      "note": "RSV bronchiolitis peaks in late fall and winter. Seasonality plus the infant's age strongly favors RSV."
+    },
+    {
+      "text": " with cough and difficulty breathing. He has had "
+    },
+    {
+      "text": "rhinorrhea, cough, and congestion for the past 3 days",
+      "clue": true,
+      "type": "blue",
+      "note": "A preceding upper-respiratory prodrome that progresses to lower-airway involvement over a few days is the classic bronchiolitis course."
+    },
+    {
+      "text": ". Today, the patient began breathing harder and faster with increased cough. Temperature is 37.8 C (100 F) and respirations are 68/min. Oxygen saturation is 91%. The patient is alert and awake and has "
+    },
+    {
+      "text": "subcostal and suprasternal retractions",
+      "clue": true,
+      "type": "blue",
+      "note": "Retractions and tachypnea (RR 68) indicate increased work of breathing/respiratory distress in a young infant - typical of bronchiolitis."
+    },
+    {
+      "text": ". Mucous membranes are moist, and the anterior fontanelle is open and flat. Physical examination reveals "
+    },
+    {
+      "text": "diffuse expiratory wheezes and scattered rales",
+      "clue": true,
+      "type": "red",
+      "note": "Diffuse wheezes + crackles in an infant under 2 years = bronchiolitis, whose most common cause is respiratory syncytial virus (RSV)."
+    },
+    {
+      "text": ". Which of the following pathogens is most likely causing this patient's condition?"
+    }
+  ]
+}

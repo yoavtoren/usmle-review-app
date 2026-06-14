@@ -1,0 +1,202 @@
+{
+  "id": "q92",
+  "item": 92,
+  "qid": "639",
+  "title": "Osteoclast differentiation: RANKL (Paget disease)",
+  "system": "Musculoskeletal",
+  "topic": "Bone remodeling / RANKL-RANK-OPG",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 52,
+  "vignette": "A 67-year-old man comes to the office with right tibial pain that started 3 months ago and has increased in intensity over time. He also has had progressive hearing impairment for the last year. Physical examination reveals local tenderness and a lumpy protuberance over the right tibia. After extensive evaluation, the patient undergoes a bone biopsy. The pathologist identifies numerous multinucleated cells, some containing over 100 nuclei. Which of the following factors is essential for the differentiation of the cells described by the pathologist?",
+  "clues": [
+    {
+      "text": "progressive hearing impairment",
+      "type": "orange",
+      "note": "Hearing loss in an older adult with bone disease suggests Paget disease of bone: thickened skull bones compress CN VIII (or remodel the ossicles). Paget is a disorder of disordered, excessive bone remodeling driven by overactive osteoclasts."
+    },
+    {
+      "text": "a lumpy protuberance over the right tibia",
+      "type": "blue",
+      "note": "Bone pain with deformity/bowing of a long bone (tibia) is typical Paget disease. The disorganized remodeling enlarges and deforms the bone, raising it as a palpable protuberance."
+    },
+    {
+      "text": "numerous multinucleated cells, some containing over 100 nuclei",
+      "type": "green",
+      "note": "Giant multinucleated cells with dozens to >100 nuclei are abnormal OSTEOCLASTS — the pathologic hallmark of Paget disease. The question asks what drives osteoclast differentiation: RANKL (RANK ligand), made by osteoblasts/stromal cells."
+    }
+  ],
+  "whatMatters": "The bone pain, deformity, hearing loss, and a biopsy full of giant multinucleated cells = Paget disease, and those cells are OSTEOCLASTS. The factor essential for osteoclast differentiation is RANKL (receptor activator of NF-κB ligand), produced by osteoblasts/stromal cells — answer D.",
+  "strategy": "When a biopsy shows giant multinucleated bone cells, name them OSTEOCLASTS, then recall their differentiation switch: osteoblast-derived RANKL binds RANK on osteoclast precursors (with M-CSF) → osteoclast formation. Osteoprotegerin (OPG) is the DECOY that blocks this — so OPG inhibits, RANKL promotes. Pick the activator.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Fibroblast growth factor",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Insulin-like growth factors",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Osteoprotegerin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Receptor activator of nuclear factor kappa-B ligand",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Transforming growth factor beta",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "FGF — growth-plate/skeletal patterning, not osteoclasts",
+      "detail": "WHAT IT IS: FGF (and FGFR3) regulate chondrocyte proliferation at the growth plate (FGFR3 gain-of-function → achondroplasia). ❌ WHY IT FAILS: FGF doesn't drive osteoclast differentiation; the giant cells here form via RANKL. ✅ Correct if: the question were about endochondral growth-plate signaling or achondroplasia."
+    },
+    {
+      "letter": "B",
+      "label": "IGF — bone matrix anabolism, not osteoclastogenesis",
+      "detail": "WHAT IT IS: insulin-like growth factors (GH-stimulated) promote bone/cartilage growth and osteoblast activity. ❌ WHY IT FAILS: IGFs build matrix; they aren't the differentiation signal for bone-resorbing osteoclasts. ✅ Correct if: the topic were growth-hormone-mediated longitudinal bone growth."
+    },
+    {
+      "letter": "C",
+      "label": "osteoprotegerin — the INHIBITOR (decoy), opposite of the answer",
+      "detail": "WHAT IT IS: OPG is a soluble decoy receptor made by osteoblasts that binds RANKL and PREVENTS it from activating RANK — so it BLOCKS osteoclast formation. ❌ WHY IT FAILS: the question asks what's ESSENTIAL for differentiation; OPG does the opposite (a high OPG/RANKL ratio means fewer osteoclasts). ✅ Correct if: the question asked which factor INHIBITS osteoclastogenesis (or modeled denosumab, an anti-RANKL antibody)."
+    },
+    {
+      "letter": "E",
+      "label": "TGF-β — coupling/matrix factor, not the differentiation switch",
+      "detail": "WHAT IT IS: TGF-β, released from resorbed matrix, helps couple resorption to formation and recruits osteoblasts. ❌ WHY IT FAILS: it's a coupling/anabolic signal, not the obligatory osteoclast-differentiation factor (that's RANKL + M-CSF). ✅ Correct if: the question targeted resorption-formation coupling or osteoblast recruitment."
+    }
+  ],
+  "reasoning": [
+    "Bone pain + deformity + hearing loss + giant multinucleated cells = Paget disease",
+    "The giant multinucleated cells are osteoclasts",
+    "Osteoclast differentiation requires osteoblast-derived RANKL (+ M-CSF) binding RANK",
+    "Essential factor = RANKL → answer D"
+  ],
+  "mechanism": "Osteoclasts derive from monocyte/macrophage precursors. Osteoblasts and marrow stromal cells express RANKL (RANK ligand), which binds RANK on precursors and — together with M-CSF — drives their fusion and differentiation into multinucleated, bone-resorbing osteoclasts. Osteoprotegerin (OPG), also made by osteoblasts, is a soluble decoy that sequesters RANKL and inhibits osteoclastogenesis; the OPG/RANKL balance sets resorption. Paget disease features dysregulated, excessive osteoclastic remodeling (giant osteoclasts), producing pain, deformity, and cranial-nerve compression. Denosumab (anti-RANKL) exploits this pathway.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Musculoskeletal > Bone remodeling: RANK-RANKL-OPG axis, M-CSF, osteoclast vs osteoblast origins; Paget disease (mosaic bone, ↑ALP, giant osteoclasts, hearing loss, bisphosphonates). Cross-link denosumab (anti-RANKL)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: giant multinucleated bone cells = osteoclasts; their 'on switch' = RANKL (OPG is the 'off switch'). The question asks for the essential (promoting) factor."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on osteoclast vs osteoblast, RANK/RANKL/OPG, M-CSF, Paget disease, denosumab? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Osteoprotegerin (C) is the trap — it's in the same pathway but it INHIBITS osteoclasts. 'Essential for differentiation' = the activator RANKL, not the decoy OPG."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The osteoclast-differentiation figure shows hematopoietic precursor → (M-CSF) → osteoclast precursor → (RANK-RANKL from osteoblast) → multinucleated osteoclast, with OPG competitively blocking RANKL. Practice reading the RANKL/OPG balance diagram."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (D). Keep the polarity straight: RANKL promotes, OPG blocks; denosumab mimics OPG (anti-RANKL)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Factor essential for osteoclast differentiation",
+      "back": "RANKL (+ M-CSF), from osteoblasts/stromal cells"
+    },
+    {
+      "front": "Osteoprotegerin (OPG) role",
+      "back": "Decoy receptor for RANKL — INHIBITS osteoclastogenesis"
+    },
+    {
+      "front": "Giant multinucleated bone cells",
+      "back": "Osteoclasts"
+    },
+    {
+      "front": "Bone pain + deformity + hearing loss + ↑ALP",
+      "back": "Paget disease of bone"
+    },
+    {
+      "front": "Denosumab mechanism",
+      "back": "Monoclonal anti-RANKL antibody (mimics OPG)"
+    },
+    {
+      "front": "M-CSF role",
+      "back": "Drives osteoclast precursor proliferation"
+    },
+    {
+      "front": "Osteoblast products",
+      "back": "RANKL, OPG, ALP, osteoid (type I collagen)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "RANK-RANKL-OPG / osteoclasts",
+      "detail": "MSK: osteoclast differentiation (RANKL + M-CSF), OPG decoy, denosumab; bone remodeling balance.",
+      "location": "MSK: osteoclast differentiation (RANKL + M-CSF), OPG decoy, denosumab; bone remodeling balance."
+    },
+    {
+      "tag": "stem",
+      "topic": "Paget disease of bone",
+      "detail": "MSK: disordered remodeling, mosaic 'jigsaw' bone, ↑ALP (normal Ca/phos), hearing loss, high-output heart failure, osteosarcoma risk, bisphosphonates.",
+      "location": "MSK: disordered remodeling, mosaic 'jigsaw' bone, ↑ALP (normal Ca/phos), hearing loss, high-output heart failure, osteosarcoma risk, bisphosphonates."
+    },
+    {
+      "tag": "options",
+      "topic": "Bone growth factors",
+      "detail": "MSK/Endo: FGF/FGFR3 (achondroplasia), IGF (GH-mediated growth), TGF-β (coupling) for contrast.",
+      "location": "MSK/Endo: FGF/FGFR3 (achondroplasia), IGF (GH-mediated growth), TGF-β (coupling) for contrast."
+    }
+  ],
+  "memoryHook": "RANKL = 'Rank-and-file soldiers' that MAKE osteoclasts; OPG = the 'Off' decoy that blocks them. Giant osteoclasts = Paget.",
+  "stem": [
+    {
+      "text": "A 67-year-old man comes to the office with right tibial pain that started 3 months ago and has increased in intensity over time. He also has had "
+    },
+    {
+      "text": "progressive hearing impairment",
+      "clue": true,
+      "type": "orange",
+      "note": "Hearing loss in an older adult with bone disease suggests Paget disease of bone: thickened skull bones compress CN VIII (or remodel the ossicles). Paget is a disorder of disordered, excessive bone remodeling driven by overactive osteoclasts."
+    },
+    {
+      "text": " for the last year. Physical examination reveals local tenderness and "
+    },
+    {
+      "text": "a lumpy protuberance over the right tibia",
+      "clue": true,
+      "type": "blue",
+      "note": "Bone pain with deformity/bowing of a long bone (tibia) is typical Paget disease. The disorganized remodeling enlarges and deforms the bone, raising it as a palpable protuberance."
+    },
+    {
+      "text": ". After extensive evaluation, the patient undergoes a bone biopsy. The pathologist identifies "
+    },
+    {
+      "text": "numerous multinucleated cells, some containing over 100 nuclei",
+      "clue": true,
+      "type": "green",
+      "note": "Giant multinucleated cells with dozens to >100 nuclei are abnormal OSTEOCLASTS — the pathologic hallmark of Paget disease. The question asks what drives osteoclast differentiation: RANKL (RANK ligand), made by osteoblasts/stromal cells."
+    },
+    {
+      "text": ". Which of the following factors is essential for the differentiation of the cells described by the pathologist?"
+    }
+  ]
+}

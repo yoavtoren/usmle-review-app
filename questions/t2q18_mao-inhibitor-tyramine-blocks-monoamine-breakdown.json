@@ -1,0 +1,230 @@
+{
+  "id": "q47",
+  "item": 47,
+  "qid": "572",
+  "title": "MAO inhibitor + tyramine: blocks monoamine breakdown",
+  "system": "Pharmacology",
+  "topic": "Antidepressants / tyramine crisis",
+  "correct": "B",
+  "yourAnswer": "E",
+  "percentCorrect": 68,
+  "vignette": "A 34-year-old man is brought to the emergency department due to a severe headache and blurry vision. His symptoms began suddenly after having lunch at a new Italian deli in his neighborhood. The patient says he \"ate a sandwich with lots of fancy meats and cheeses\" and drank an iced tea. His medical history is significant for treatment-resistant major depressive disorder. He has no known medication or food allergies. Blood pressure is 210/130 mm Hg and heart rate is 110/min. On physical examination, he appears tremulous and diaphoretic. The medication used to treat this patient's depression most likely affects which of the following steps of monoamine neurotransmission?",
+  "clues": [
+    {
+      "text": "severe headache and blurry vision",
+      "type": "red",
+      "note": "Sudden severe headache with visual change and very high blood pressure is a hypertensive crisis. The trigger and history point to a tyramine reaction on an MAO inhibitor."
+    },
+    {
+      "text": "after having lunch at a new Italian deli",
+      "type": "blue",
+      "note": "Aged/cured foods (cured meats, aged cheeses) are rich in tyramine. Eating them while on an MAO inhibitor precipitates a hypertensive crisis."
+    },
+    {
+      "text": "resistant major depressive disorder",
+      "type": "orange",
+      "note": "Treatment-resistant depression is a classic indication for MAO inhibitors (after other agents fail). This is the clue that the antidepressant is an MAOI."
+    },
+    {
+      "text": "Blood pressure is 210/130 mm Hg",
+      "type": "green",
+      "note": "Markedly elevated BP (210/130; normal <120/80) defines the hypertensive crisis. MAOI + tyramine → norepinephrine surge → severe hypertension. The MAOI works by blocking monoamine BREAKDOWN."
+    }
+  ],
+  "whatMatters": "Aged-food (tyramine) hypertensive crisis + treatment-resistant depression = the patient is on an MAO inhibitor. The question only asks the MAOI's mechanism within monoamine neurotransmission: it blocks the BREAKDOWN (degradation) of monoamines by monoamine oxidase. The distractors describe reuptake/receptor steps used by other antidepressants.",
+  "strategy": "Identify the drug class from the toxidrome (tyramine crisis = MAOI), then match its step in the synapse. MAOIs block degradation (MAO); SSRIs/SNRIs block reuptake; TCAs block reuptake; antipsychotics block postsynaptic receptors. The asked 'step' is breakdown.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Binding to postsynaptic monoamine receptors",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Monoamine breakdown",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Presynaptic nonselective monoamine uptake",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Presynaptic selective dopamine uptake",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Presynaptic selective norepinephrine uptake",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Presynaptic selective serotonin uptake",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "postsynaptic receptor binding — that's antipsychotics",
+      "detail": "WHAT IT IS: blocking postsynaptic monoamine receptors describes antipsychotics (D2 antagonists) or receptor-active agents. ❌ WHY IT FAILS: MAOIs act presynaptically/intracellularly on the degrading enzyme, not at postsynaptic receptors; this also wouldn't cause a tyramine crisis. ✅ Correct if: the drug were a dopamine-receptor antagonist (antipsychotic)."
+    },
+    {
+      "letter": "C",
+      "label": "nonselective reuptake block — that's TCAs",
+      "detail": "WHAT IT IS: nonselective presynaptic reuptake inhibition (serotonin + norepinephrine) describes tricyclic antidepressants. ❌ WHY IT FAILS: TCAs block the reuptake transporter, not MAO; they don't produce the tyramine reaction. ✅ Correct if: the agent were a TCA (amitriptyline) with anticholinergic/QT effects in overdose."
+    },
+    {
+      "letter": "D",
+      "label": "selective dopamine reuptake — bupropion-like",
+      "detail": "WHAT IT IS: selective dopamine (and NE) reuptake inhibition describes bupropion. ❌ WHY IT FAILS: it's a reuptake mechanism, not degradation, and doesn't cause tyramine crisis. ✅ Correct if: the antidepressant were bupropion (also used for smoking cessation, lowers seizure threshold)."
+    },
+    {
+      "letter": "E",
+      "label": "selective NE reuptake — SNRI/atomoxetine-like (your pick)",
+      "detail": "WHAT IT IS: selective norepinephrine reuptake inhibition describes drugs like atomoxetine or the NE component of SNRIs. ❌ WHY IT FAILS: it targets the reuptake transporter, not MAO; the tyramine crisis specifically indicts an MAO inhibitor (degradation block). ✅ Correct if: the drug were an NRI/SNRI without MAO inhibition."
+    },
+    {
+      "letter": "F",
+      "label": "selective serotonin reuptake — that's SSRIs",
+      "detail": "WHAT IT IS: selective serotonin reuptake inhibition describes SSRIs (fluoxetine, sertraline). ❌ WHY IT FAILS: SSRIs block the serotonin transporter, not MAO, and don't cause tyramine reactions (though combining them with MAOIs risks serotonin syndrome). ✅ Correct if: the agent were an SSRI as first-line depression therapy."
+    }
+  ],
+  "reasoning": [
+    "Aged-food hypertensive crisis + treatment-resistant depression = MAO inhibitor",
+    "Tyramine isn't degraded → massive norepinephrine release → severe hypertension",
+    "MAOIs act by inhibiting monoamine oxidase (the degrading enzyme)",
+    "Affected step = monoamine breakdown → answer B"
+  ],
+  "mechanism": "Monoamine oxidase normally degrades serotonin, norepinephrine, and dopamine in nerve terminals and the gut. MAO inhibitors (e.g., phenelzine, tranylcypromine, selegiline) block this degradation, raising synaptic monoamines to treat refractory depression. Dietary tyramine (aged cheeses, cured meats) is normally broken down by gut/hepatic MAO-A; when MAO is inhibited, tyramine is absorbed and displaces stored norepinephrine, causing a hypertensive crisis (severe headache, hypertension, diaphoresis).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Psych/Pharm > antidepressants: MAOIs (block monoamine breakdown; tyramine and serotonin-syndrome interactions) vs SSRIs/SNRIs/TCAs (reuptake) vs antipsychotics (receptor block). Learn the tyramine-crisis food list."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Convert the toxidrome (tyramine hypertensive crisis) to the class (MAOI), then to its synaptic step (degradation/breakdown). Identify the class before scanning the mechanism options."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on monoamine oxidase, tyramine, reuptake vs degradation, MAO-A vs MAO-B, hypertensive crisis, serotonin syndrome? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Every reuptake option (NE/serotonin/dopamine/nonselective) is a different antidepressant class planted to mislead. The tyramine crisis specifically fingers MAO inhibition (breakdown), not reuptake."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the tyramine-crisis synapse diagram (MAO-A inhibition → tyramine not detoxified → displaces vesicular NE → norepinephrine surge). Use it to see why blocking breakdown causes the crisis."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Aged-food hypertensive crisis + refractory depression",
+      "back": "MAO inhibitor + tyramine"
+    },
+    {
+      "front": "MAOI mechanism",
+      "back": "Block monoamine breakdown (monoamine oxidase)"
+    },
+    {
+      "front": "Tyramine-rich foods",
+      "back": "Aged cheeses, cured/smoked meats, wine"
+    },
+    {
+      "front": "SSRI mechanism",
+      "back": "Block serotonin reuptake transporter"
+    },
+    {
+      "front": "TCA mechanism",
+      "back": "Block nonselective (5-HT + NE) reuptake"
+    },
+    {
+      "front": "Antipsychotic mechanism",
+      "back": "Block postsynaptic dopamine (D2) receptors"
+    },
+    {
+      "front": "MAOI + SSRI danger",
+      "back": "Serotonin syndrome"
+    },
+    {
+      "front": "Example MAOIs",
+      "back": "Phenelzine, tranylcypromine, isocarboxazid, selegiline"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "MAO inhibitors",
+      "detail": "Pharmacology > antidepressants: MAOIs — mechanism (block monoamine breakdown), tyramine hypertensive crisis, serotonin-syndrome interactions, indications (atypical/refractory depression).",
+      "location": "Pharmacology > antidepressants: MAOIs — mechanism (block monoamine breakdown), tyramine hypertensive crisis, serotonin-syndrome interactions, indications (atypical/refractory depression)."
+    },
+    {
+      "tag": "options",
+      "topic": "Antidepressant classes",
+      "detail": "Pharmacology > SSRIs, SNRIs, TCAs, atypicals (bupropion, mirtazapine) — reuptake/receptor mechanisms to contrast with MAO inhibition.",
+      "location": "Pharmacology > SSRIs, SNRIs, TCAs, atypicals (bupropion, mirtazapine) — reuptake/receptor mechanisms to contrast with MAO inhibition."
+    },
+    {
+      "tag": "stem",
+      "topic": "Monoamine neurotransmission",
+      "detail": "Neuro/Pharm > synaptic steps: synthesis, vesicular storage, release, receptor binding, reuptake, and degradation (MAO/COMT) — where each drug class acts.",
+      "location": "Neuro/Pharm > synaptic steps: synthesis, vesicular storage, release, receptor binding, reuptake, and degradation (MAO/COMT) — where each drug class acts."
+    }
+  ],
+  "memoryHook": "MAOI = the enzyme that EATS monoamines is blocked; add tyramine from aged deli food → NE explosion → BP rockets.",
+  "stem": [
+    {
+      "text": "A 34-year-old man is brought to the emergency department due to a "
+    },
+    {
+      "text": "severe headache and blurry vision",
+      "clue": true,
+      "type": "red",
+      "note": "Sudden severe headache with visual change and very high blood pressure is a hypertensive crisis. The trigger and history point to a tyramine reaction on an MAO inhibitor."
+    },
+    {
+      "text": ". His symptoms began suddenly "
+    },
+    {
+      "text": "after having lunch at a new Italian deli",
+      "clue": true,
+      "type": "blue",
+      "note": "Aged/cured foods (cured meats, aged cheeses) are rich in tyramine. Eating them while on an MAO inhibitor precipitates a hypertensive crisis."
+    },
+    {
+      "text": " in his neighborhood. The patient says he \"ate a sandwich with lots of fancy meats and cheeses\" and drank an iced tea. His medical history is significant for treatment-"
+    },
+    {
+      "text": "resistant major depressive disorder",
+      "clue": true,
+      "type": "orange",
+      "note": "Treatment-resistant depression is a classic indication for MAO inhibitors (after other agents fail). This is the clue that the antidepressant is an MAOI."
+    },
+    {
+      "text": ". He has no known medication or food allergies. "
+    },
+    {
+      "text": "Blood pressure is 210/130 mm Hg",
+      "clue": true,
+      "type": "green",
+      "note": "Markedly elevated BP (210/130; normal <120/80) defines the hypertensive crisis. MAOI + tyramine → norepinephrine surge → severe hypertension. The MAOI works by blocking monoamine BREAKDOWN."
+    },
+    {
+      "text": " and heart rate is 110/min. On physical examination, he appears tremulous and diaphoretic. The medication used to treat this patient's depression most likely affects which of the following steps of monoamine neurotransmission?"
+    }
+  ]
+}

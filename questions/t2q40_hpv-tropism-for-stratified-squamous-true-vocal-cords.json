@@ -1,0 +1,202 @@
+{
+  "id": "q69",
+  "item": 69,
+  "qid": "483",
+  "title": "HPV: tropism for stratified squamous (true vocal cords)",
+  "system": "Microbiology/Pathology",
+  "topic": "HPV / epithelium",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 46,
+  "vignette": "A 35-year-old woman, gravida 1, para 0, at 12 weeks gestation comes to the office for evaluation of genital warts. She first noticed the warts last week and is concerned that it has persisted. The patient has occasional mild pruritus but no pain. She is currently sexually active with her boyfriend and engages in oral and vaginal intercourse. Examination shows several verrucous, skin-colored lesions over the labia majora. The patient asks whether the lesion could affect her future child. The virus involved in this patient's condition also has an affinity to infect which of the following structures?",
+  "clues": [
+    {
+      "text": "genital warts",
+      "type": "red",
+      "note": "Genital warts (condyloma acuminatum) are caused by human papillomavirus (HPV), typically types 6 and 11. This sets the causative virus."
+    },
+    {
+      "text": "oral and vaginal intercourse",
+      "type": "blue",
+      "note": "HPV spreads via mucosal/skin contact (vaginal, anal, oral). The vertical/perinatal route can transmit HPV to the neonate's airway, causing recurrent respiratory papillomatosis — relevant to her concern about the future child."
+    },
+    {
+      "text": "verrucous, skin-colored lesions over the labia majora",
+      "type": "green",
+      "note": "Verrucous, skin-colored anogenital lesions are condyloma acuminatum (HPV 6/11). HPV infects basal cells of STRATIFIED SQUAMOUS epithelium."
+    }
+  ],
+  "whatMatters": "Genital warts = HPV (6/11), which preferentially infects STRATIFIED SQUAMOUS epithelium. In the respiratory tract, the only site lined by stratified squamous epithelium is the TRUE VOCAL CORDS — where perinatal HPV causes recurrent respiratory (laryngeal) papillomatosis. So the structure HPV also targets is the true vocal cords.",
+  "strategy": "Tie HPV's tissue tropism to EPITHELIAL type: HPV infects stratified squamous epithelium (skin, anogenital, cervix transformation zone, oropharynx, and the true vocal cords). When asked 'what else does HPV infect,' pick the site lined by stratified squamous epithelium.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alveoli",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "False vocal cords",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Paranasal sinuses",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Trachea",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "True vocal cords",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "alveoli — simple squamous, gas exchange",
+      "detail": "WHAT IT IS: alveoli are lined by simple squamous epithelium (type I pneumocytes) for gas exchange. ❌ WHY IT FAILS: HPV targets STRATIFIED squamous epithelium, not simple squamous; alveoli aren't an HPV site. ✅ Correct if: the question concerned gas-exchange epithelium, not HPV tropism."
+    },
+    {
+      "letter": "B",
+      "label": "false vocal cords — respiratory (pseudostratified) epithelium",
+      "detail": "WHAT IT IS: the false vocal cords are lined by ciliated pseudostratified columnar (respiratory) epithelium. ❌ WHY IT FAILS: HPV prefers stratified squamous epithelium; the false cords aren't squamous, unlike the true cords. ✅ Correct if: the question asked which laryngeal structure has respiratory (pseudostratified) epithelium."
+    },
+    {
+      "letter": "C",
+      "label": "paranasal sinuses — respiratory epithelium",
+      "detail": "WHAT IT IS: paranasal sinuses are lined by respiratory (pseudostratified ciliated columnar) epithelium. ❌ WHY IT FAILS: not stratified squamous, so not a typical HPV target. ✅ Correct if: the question were about respiratory epithelium/mucociliary clearance."
+    },
+    {
+      "letter": "D",
+      "label": "trachea — respiratory (pseudostratified) epithelium",
+      "detail": "WHAT IT IS: the trachea is lined by ciliated pseudostratified columnar epithelium. ❌ WHY IT FAILS: again not stratified squamous; HPV laryngeal papillomas favor the true vocal cords, not the trachea. ✅ Correct if: asked about the conducting-airway respiratory epithelium."
+    }
+  ],
+  "reasoning": [
+    "Genital warts = HPV (types 6/11)",
+    "HPV infects stratified squamous epithelium",
+    "In the respiratory tract, only the TRUE vocal cords are stratified squamous",
+    "HPV also targets the true vocal cords (laryngeal papillomatosis) → answer E"
+  ],
+  "mechanism": "HPV is a nonenveloped double-stranded DNA virus that infects basal keratinocytes of STRATIFIED SQUAMOUS epithelium through microabrasions, causing warts (types 6/11) or, with high-risk types (16/18), squamous dysplasia/carcinoma. Most respiratory tract surfaces are pseudostratified columnar (respiratory) epithelium, but the TRUE vocal cords are stratified squamous — which is why perinatally acquired HPV causes recurrent respiratory (laryngeal) papillomatosis there. This explains the patient's concern about transmission to her child.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro/Repro > HPV: types 6/11 (warts), 16/18 (dysplasia/cancer), tropism for stratified squamous epithelium; recurrent respiratory papillomatosis (perinatal transmission). Cross-ref respiratory epithelium types."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: HPV infects STRATIFIED SQUAMOUS epithelium → find the airway site that's squamous = TRUE vocal cords. Convert the virus's tropism to a histology question."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on stratified squamous vs pseudostratified columnar vs simple squamous, condyloma acuminatum, true vs false vocal cords, recurrent respiratory papillomatosis? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "False vocal cords, trachea, and sinuses are 'airway' baits — but they're RESPIRATORY (pseudostratified) epithelium. Only the TRUE vocal cords are stratified squamous (HPV's target)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the respiratory-epithelium table (ciliated pseudostratified columnar vs stratified squamous true vocal cords vs simple squamous alveoli). Use it to find the squamous airway site HPV targets."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "HPV epithelial tropism",
+      "back": "Stratified squamous epithelium"
+    },
+    {
+      "front": "Respiratory site HPV infects",
+      "back": "True vocal cords (stratified squamous)"
+    },
+    {
+      "front": "Genital warts HPV types",
+      "back": "6 and 11"
+    },
+    {
+      "front": "High-risk oncogenic HPV types",
+      "back": "16 and 18 (E6/E7 → p53/Rb)"
+    },
+    {
+      "front": "Perinatal HPV disease",
+      "back": "Recurrent respiratory (laryngeal) papillomatosis"
+    },
+    {
+      "front": "True vs false vocal cord epithelium",
+      "back": "True = stratified squamous; false = respiratory pseudostratified columnar"
+    },
+    {
+      "front": "Alveolar epithelium",
+      "back": "Simple squamous (type I pneumocytes)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "HPV",
+      "detail": "Micro/Repro > HPV: types 6/11 (condyloma) vs 16/18 (dysplasia/carcinoma, E6/E7), stratified squamous tropism, recurrent respiratory papillomatosis (perinatal).",
+      "location": "Micro/Repro > HPV: types 6/11 (condyloma) vs 16/18 (dysplasia/carcinoma, E6/E7), stratified squamous tropism, recurrent respiratory papillomatosis (perinatal)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Respiratory epithelium types",
+      "detail": "Histology/Pulmonary > airway epithelium: pseudostratified ciliated columnar (most airways), stratified squamous (true vocal cords), simple squamous (alveoli).",
+      "location": "Histology/Pulmonary > airway epithelium: pseudostratified ciliated columnar (most airways), stratified squamous (true vocal cords), simple squamous (alveoli)."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Condyloma & cervical pathology",
+      "detail": "Repro/Path > condyloma acuminatum, cervical transformation zone, Pap/colposcopy, HPV vaccination.",
+      "location": "Repro/Path > condyloma acuminatum, cervical transformation zone, Pap/colposcopy, HPV vaccination."
+    }
+  ],
+  "memoryHook": "HPV loves stratified SQUAMOUS skin — in the airway only the TRUE vocal cords are squamous (so babies get laryngeal papillomas there).",
+  "stem": [
+    {
+      "text": "A 35-year-old woman, gravida 1, para 0, at 12 weeks gestation comes to the office for evaluation of "
+    },
+    {
+      "text": "genital warts",
+      "clue": true,
+      "type": "red",
+      "note": "Genital warts (condyloma acuminatum) are caused by human papillomavirus (HPV), typically types 6 and 11. This sets the causative virus."
+    },
+    {
+      "text": ". She first noticed the warts last week and is concerned that it has persisted. The patient has occasional mild pruritus but no pain. She is currently sexually active with her boyfriend and engages in "
+    },
+    {
+      "text": "oral and vaginal intercourse",
+      "clue": true,
+      "type": "blue",
+      "note": "HPV spreads via mucosal/skin contact (vaginal, anal, oral). The vertical/perinatal route can transmit HPV to the neonate's airway, causing recurrent respiratory papillomatosis — relevant to her concern about the future child."
+    },
+    {
+      "text": ". Examination shows several "
+    },
+    {
+      "text": "verrucous, skin-colored lesions over the labia majora",
+      "clue": true,
+      "type": "green",
+      "note": "Verrucous, skin-colored anogenital lesions are condyloma acuminatum (HPV 6/11). HPV infects basal cells of STRATIFIED SQUAMOUS epithelium."
+    },
+    {
+      "text": ". The patient asks whether the lesion could affect her future child. The virus involved in this patient's condition also has an affinity to infect which of the following structures?"
+    }
+  ]
+}

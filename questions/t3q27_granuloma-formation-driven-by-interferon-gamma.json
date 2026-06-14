@@ -1,0 +1,226 @@
+{
+  "id": "q97",
+  "item": 97,
+  "qid": "301",
+  "title": "Granuloma formation: driven by interferon-gamma",
+  "system": "Immunology",
+  "topic": "Type IV hypersensitivity / TB",
+  "correct": "F",
+  "yourAnswer": "B",
+  "percentCorrect": 60,
+  "vignette": "A 64-year-old man comes to the clinic due to several weeks of persistent cough, fever, and weight loss. He smokes a pack of cigarettes daily and drinks 10-12 beers on weekends. Chest x-ray reveals an infiltrate in the left upper lobe. The patient is prescribed broad-spectrum antibiotic therapy for both aspiration and community-acquired pneumonia, but his symptoms worsen despite taking the medication as prescribed. Sputum Gram stain does not reveal any organisms. Lung biopsy findings are shown in the image below. Which of the following substances is most important for driving the development of this patient's observed microscopic lesion?",
+  "clues": [
+    {
+      "text": "persistent cough, fever, and weight loss",
+      "type": "red",
+      "note": "Weeks of cough, fever, and weight loss with an upper-lobe infiltrate is a classic tuberculosis presentation (a chronic granulomatous infection). Constitutional 'B symptoms' plus apical disease steer away from routine bacterial pneumonia."
+    },
+    {
+      "text": "symptoms worsen despite taking the medication as prescribed",
+      "type": "blue",
+      "note": "Failure to respond to standard antibacterials suggests an organism not covered by them (e.g., Mycobacterium tuberculosis) — a granuloma-forming pathogen. This pushes toward a granulomatous etiology."
+    },
+    {
+      "text": "Sputum Gram stain does not reveal any organisms",
+      "type": "blue",
+      "note": "A negative Gram stain fits mycobacteria, which are acid-fast (don't Gram stain well). Combined with the chronic course and granulomas, this points to TB."
+    },
+    {
+      "text": "Lung biopsy findings are shown",
+      "type": "green",
+      "note": "The biopsy shows a granuloma: epithelioid histiocytes (activated macrophages) and multinucleated giant cells. Granuloma formation is a type IV (delayed) hypersensitivity reaction in which TH1 cells secrete interferon-gamma to activate macrophages."
+    }
+  ],
+  "whatMatters": "Chronic cough/fever/weight loss + apical infiltrate + a biopsy showing epithelioid histiocytes and giant cells = a granuloma (TB). The cytokine most important for DRIVING granuloma formation is interferon-gamma (from TH1 cells), which activates macrophages — answer F.",
+  "strategy": "For 'what drives granuloma formation,' answer interferon-gamma every time: TH1 cells secrete IFN-γ → macrophage activation → epithelioid histiocytes/giant cells (type IV hypersensitivity). TNF-α maintains the granuloma (which is why anti-TNF biologics reactivate TB). Don't pick TH2 cytokines (IL-4) or complement.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "C3a",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Fibroblast growth factor",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Granulocyte-macrophage colony-stimulating factor",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "IL-4",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Interferon-alpha",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Interferon-gamma",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "C3a — complement anaphylatoxin, not granuloma driver",
+      "detail": "WHAT IT IS: C3a is a complement anaphylatoxin causing mast-cell degranulation and inflammation. ❌ WHY IT FAILS: granuloma formation is cell-mediated (TH1/IFN-γ), not complement-driven; C3a doesn't activate macrophages into epithelioid cells. ✅ Correct if: the question were about anaphylatoxins/immediate inflammation."
+    },
+    {
+      "letter": "B",
+      "label": "FGF — angiogenesis/fibrosis, not macrophage activation (your pick)",
+      "detail": "WHAT IT IS: fibroblast growth factor promotes angiogenesis and fibroblast proliferation (wound healing). ❌ WHY IT FAILS: FGF contributes to fibrosis/repair but does NOT drive the macrophage activation that forms the granuloma; that's IFN-γ. ✅ Correct if: the question asked about granulation tissue/angiogenesis or fibrosis, not granuloma formation itself."
+    },
+    {
+      "letter": "C",
+      "label": "GM-CSF — myeloid production, not the granuloma signal",
+      "detail": "WHAT IT IS: GM-CSF stimulates production/differentiation of granulocytes and macrophages. ❌ WHY IT FAILS: it expands myeloid cells but isn't the specific TH1 cytokine that activates macrophages into epithelioid histiocytes; IFN-γ is. ✅ Correct if: the topic were hematopoietic growth-factor support of myeloid lineages."
+    },
+    {
+      "letter": "D",
+      "label": "IL-4 — TH2 cytokine, opposite arm",
+      "detail": "WHAT IT IS: IL-4 drives TH2 differentiation, B-cell IgE class switching, and allergic responses. ❌ WHY IT FAILS: granuloma formation is a TH1 process; IL-4 (TH2) actually opposes the TH1/macrophage-activation axis. ✅ Correct if: the question were about allergy/IgE or TH2 responses (asthma, parasites)."
+    },
+    {
+      "letter": "E",
+      "label": "interferon-alpha — antiviral, not macrophage activation",
+      "detail": "WHAT IT IS: IFN-α is a type I interferon with antiviral activity (from leukocytes/plasmacytoid DCs). ❌ WHY IT FAILS: it fights viruses; it doesn't activate macrophages to form granulomas (that's the type II interferon, IFN-γ). ✅ Correct if: the question concerned antiviral defense or therapeutic IFN-α (e.g., hepatitis)."
+    }
+  ],
+  "reasoning": [
+    "Chronic cough/fever/weight loss + apical infiltrate + negative Gram stain = TB",
+    "Biopsy shows a granuloma (epithelioid histiocytes + giant cells)",
+    "Granuloma formation = type IV hypersensitivity driven by TH1 cells",
+    "TH1 secrete interferon-gamma → macrophage activation → answer F"
+  ],
+  "mechanism": "Granuloma formation is a type IV (delayed) hypersensitivity response. Antigen-presenting cells display mycobacterial antigens to CD4+ T cells, which differentiate into TH1 cells and secrete INTERFERON-GAMMA. IFN-γ activates macrophages, transforming them into epithelioid histiocytes that fuse into multinucleated giant cells and wall off the pathogen. TNF-α (from macrophages) is required to maintain granuloma integrity — anti-TNF therapy (e.g., infliximab) can cause TB reactivation. Defects in the IFN-γ/IL-12 axis predispose to disseminated mycobacterial infection.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Immunology > Granulomatous inflammation & type IV hypersensitivity: TH1 → IFN-γ → macrophage activation (epithelioid histiocytes, giant cells); IL-12/IFN-γ axis; TNF-α maintains granuloma (anti-TNF → TB reactivation). Cross-link TB pathology and the IL-12 receptor deficiency."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reframe to immunology: 'what cytokine builds a granuloma?' → IFN-γ from TH1. The whole TB story just gets you to 'granuloma,' then it's a one-cytokine recall."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on granuloma, epithelioid histiocyte, giant cell, TH1 vs TH2, interferon-gamma vs alpha, type IV hypersensitivity? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "FGF (B, your pick) is a repair/fibrosis factor — it's part of healing but not the macrophage-activating signal that forms the granuloma. IFN-γ is the answer; TNF-α maintains it."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The biopsy shows a granuloma: pink epithelioid histiocytes (activated macrophages) and a multinucleated giant cell. Learn to recognize granulomatous histology and tie it to IFN-γ-driven macrophage activation."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as B → one card: IFN-γ (TH1) FORMS granulomas; TNF-α MAINTAINS them (anti-TNF reactivates TB). IL-4 is TH2 (the wrong arm)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Cytokine that drives granuloma formation",
+      "back": "Interferon-gamma (from TH1 cells)"
+    },
+    {
+      "front": "Cytokine that maintains granuloma integrity",
+      "back": "TNF-α (anti-TNF → TB reactivation)"
+    },
+    {
+      "front": "Granuloma histology",
+      "back": "Epithelioid histiocytes + multinucleated giant cells"
+    },
+    {
+      "front": "Granuloma = which hypersensitivity",
+      "back": "Type IV (delayed, cell-mediated)"
+    },
+    {
+      "front": "IL-12/IFN-γ axis defect",
+      "back": "Disseminated mycobacterial/fungal infection"
+    },
+    {
+      "front": "IFN-γ source and action",
+      "back": "TH1/NK cells → activate macrophages"
+    },
+    {
+      "front": "IL-4 role",
+      "back": "TH2 cytokine — IgE class switching, allergy"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Granuloma formation",
+      "detail": "Immunology: TH1 → IFN-γ → macrophage activation, epithelioid/giant cells, TNF-α maintenance, anti-TNF reactivation risk.",
+      "location": "Immunology: TH1 → IFN-γ → macrophage activation, epithelioid/giant cells, TNF-α maintenance, anti-TNF reactivation risk."
+    },
+    {
+      "tag": "stem",
+      "topic": "Tuberculosis",
+      "detail": "Micro/Pulm: M. tuberculosis, apical disease, caseating granulomas, acid-fast (Gram-negative-staining), latent vs active.",
+      "location": "Micro/Pulm: M. tuberculosis, apical disease, caseating granulomas, acid-fast (Gram-negative-staining), latent vs active."
+    },
+    {
+      "tag": "options",
+      "topic": "Cytokines & interferons",
+      "detail": "Immuno: IFN-γ (type II, macrophage activation) vs IFN-α/β (type I, antiviral), IL-4 (TH2), GM-CSF, complement anaphylatoxins.",
+      "location": "Immuno: IFN-γ (type II, macrophage activation) vs IFN-α/β (type I, antiviral), IL-4 (TH2), GM-CSF, complement anaphylatoxins."
+    }
+  ],
+  "memoryHook": "Granuloma GROWN by interferon-Gamma (TH1 → macrophages). TNF holds it together — block TNF and TB breaks out.",
+  "stem": [
+    {
+      "text": "A 64-year-old man comes to the clinic due to several weeks of "
+    },
+    {
+      "text": "persistent cough, fever, and weight loss",
+      "clue": true,
+      "type": "red",
+      "note": "Weeks of cough, fever, and weight loss with an upper-lobe infiltrate is a classic tuberculosis presentation (a chronic granulomatous infection). Constitutional 'B symptoms' plus apical disease steer away from routine bacterial pneumonia."
+    },
+    {
+      "text": ". He smokes a pack of cigarettes daily and drinks 10-12 beers on weekends. Chest x-ray reveals an infiltrate in the left upper lobe. The patient is prescribed broad-spectrum antibiotic therapy for both aspiration and community-acquired pneumonia, but his "
+    },
+    {
+      "text": "symptoms worsen despite taking the medication as prescribed",
+      "clue": true,
+      "type": "blue",
+      "note": "Failure to respond to standard antibacterials suggests an organism not covered by them (e.g., Mycobacterium tuberculosis) — a granuloma-forming pathogen. This pushes toward a granulomatous etiology."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Sputum Gram stain does not reveal any organisms",
+      "clue": true,
+      "type": "blue",
+      "note": "A negative Gram stain fits mycobacteria, which are acid-fast (don't Gram stain well). Combined with the chronic course and granulomas, this points to TB."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Lung biopsy findings are shown",
+      "clue": true,
+      "type": "green",
+      "note": "The biopsy shows a granuloma: epithelioid histiocytes (activated macrophages) and multinucleated giant cells. Granuloma formation is a type IV (delayed) hypersensitivity reaction in which TH1 cells secrete interferon-gamma to activate macrophages."
+    },
+    {
+      "text": " in the image below. Which of the following substances is most important for driving the development of this patient's observed microscopic lesion?"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "id": "q63",
+  "item": 63,
+  "qid": "11602",
+  "title": "Medicare eligibility: disability",
+  "system": "Health systems",
+  "topic": "Medicare vs Medicaid",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 67,
+  "vignette": "A 38-year-old recently homeless woman and her 35-year-old boyfriend come to a community clinic seeking care for her pregnancy at 27 weeks. She also brings her 19-year-old son, who has cerebral palsy and has not had consistent medical care. The patient explains to the social worker that the family was recently evicted from their apartment for failure to pay rent after her boyfriend lost his job. Which of these individuals is eligible for Medicare coverage?",
+  "clues": [
+    {
+      "text": "cerebral palsy and has not had consistent medical care",
+      "type": "red",
+      "note": "A long-term disability (cerebral palsy) is the key: Medicare covers people under 65 who qualify via long-term disability (typically through SSDI), in addition to those >=65, plus ESRD and ALS. The disabled son is the Medicare-eligible one."
+    }
+  ],
+  "whatMatters": "Medicare is a FEDERAL program for people >=65, OR younger people with qualifying long-term DISABILITY (SSDI), end-stage renal disease, or ALS. Among this family, only the 19-year-old with cerebral palsy (a disability) is eligible for Medicare. The pregnant woman, boyfriend, and unborn child would fall under MEDICAID (state program for low-income/pregnant/needy), not Medicare.",
+  "strategy": "Separate Medicare from Medicaid: Medicare = federal, age >=65 OR disability/ESRD/ALS (a work-history-based entitlement). Medicaid = state-federal, income/category-based (low-income, pregnant women, children, disabled poor). 'Disability in someone <65' = Medicare; 'pregnant/low-income' = Medicaid.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "The woman",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "The woman's boyfriend",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "The woman's child when it is born",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "The woman's disabled son",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "The woman, her boyfriend, and her son",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "the pregnant woman — Medicaid, not Medicare",
+      "detail": "WHAT IT IS: a low-income pregnant woman qualifies for MEDICAID coverage for her pregnancy. ❌ WHY IT FAILS: she's under 65 without a qualifying disability/ESRD/ALS, so she's not Medicare-eligible. ✅ Correct if: the question asked who qualifies for Medicaid."
+    },
+    {
+      "letter": "B",
+      "label": "the boyfriend — neither age nor disability",
+      "detail": "WHAT IT IS: a 35-year-old unemployed man. ❌ WHY IT FAILS: he meets no Medicare criterion (not >=65, no qualifying disability/ESRD/ALS); low income would point to Medicaid, not Medicare. ✅ Correct if: he had ESRD, ALS, or qualifying long-term disability."
+    },
+    {
+      "letter": "C",
+      "label": "the unborn child — Medicaid (children), not Medicare",
+      "detail": "WHAT IT IS: newborns/children of low-income families are typically covered by Medicaid/CHIP. ❌ WHY IT FAILS: a child isn't Medicare-eligible (no age/disability entitlement); coverage would be Medicaid. ✅ Correct if: the question asked about Medicaid/CHIP eligibility."
+    },
+    {
+      "letter": "E",
+      "label": "all of them — only the disabled son qualifies",
+      "detail": "WHAT IT IS: lumping the whole family as Medicare-eligible. ❌ WHY IT FAILS: only the disabled son meets a Medicare criterion; the others would be Medicaid. ✅ Correct if: the question had asked who could be covered by Medicaid (the low-income/pregnant members)."
+    }
+  ],
+  "reasoning": [
+    "Medicare covers >=65 OR disability/ESRD/ALS (federal entitlement)",
+    "The 19-year-old son has cerebral palsy = qualifying long-term disability",
+    "The pregnant woman, boyfriend, and child fit Medicaid (low-income/pregnant), not Medicare",
+    "Only the disabled son is Medicare-eligible → answer D"
+  ],
+  "mechanism": "Medicare is a federal health-insurance entitlement for individuals age 65 and older (with sufficient work/tax history) and for younger people with qualifying long-term disability (generally after a period on Social Security Disability Insurance), end-stage renal disease, or ALS. It has Parts A (inpatient), B (outpatient), C (Advantage), and D (drugs). Medicaid is a joint federal-state, means-tested program covering low-income individuals, pregnant women, children, and the disabled poor — which is why the pregnant woman and child here fall under Medicaid, not Medicare.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Behavioral Science/Public Health > Medicare vs Medicaid: Medicare (federal; >=65, disability/SSDI, ESRD, ALS; Parts A-D) vs Medicaid (state-federal, means-tested: low-income, pregnant, children, disabled)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Match each person to a program by the eligibility rule: disability in someone <65 → Medicare; pregnant/low-income → Medicaid. Only the disabled son fits Medicare."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on Medicare vs Medicaid, SSDI, ESRD, ALS, CHIP, means-tested entitlement? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The pregnant woman and child tempt you toward 'coverage,' but that's MEDICAID. Keep Medicare = age/disability/ESRD/ALS distinct from Medicaid = income/category."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "If you mixed the programs, make a 2-column card: MedicarE = Elderly/disabled (federal); MedicaiD = Destitute/low-income (state-federal)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Medicare eligibility",
+      "back": ">=65, or disability (SSDI)/ESRD/ALS (federal)"
+    },
+    {
+      "front": "Medicaid eligibility",
+      "back": "Low-income, pregnant women, children, disabled poor (state-federal, means-tested)"
+    },
+    {
+      "front": "Disabled person <65",
+      "back": "Medicare (after qualifying disability period)"
+    },
+    {
+      "front": "Pregnant low-income woman",
+      "back": "Medicaid"
+    },
+    {
+      "front": "Medicare Part A / B / C / D",
+      "back": "Inpatient / outpatient / Advantage / drugs"
+    },
+    {
+      "front": "Children of low-income families",
+      "back": "Medicaid / CHIP"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Medicare vs Medicaid",
+      "detail": "Public Health/Behavioral Science > healthcare delivery: Medicare (age/disability/ESRD/ALS, Parts A-D) vs Medicaid (means-tested) eligibility.",
+      "location": "Public Health/Behavioral Science > healthcare delivery: Medicare (age/disability/ESRD/ALS, Parts A-D) vs Medicaid (means-tested) eligibility."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Disability & SSDI",
+      "detail": "Public Health > how long-term disability (SSDI) confers Medicare eligibility before age 65.",
+      "location": "Public Health > how long-term disability (SSDI) confers Medicare eligibility before age 65."
+    },
+    {
+      "tag": "options",
+      "topic": "Coverage for pregnant/children",
+      "detail": "Public Health > Medicaid/CHIP coverage of pregnant women and children.",
+      "location": "Public Health > Medicaid/CHIP coverage of pregnant women and children."
+    }
+  ],
+  "memoryHook": "MedicarE = Elderly/disablEd (federal entitlement); MedicaiD = Destitute (income-based). Disabled son → Medicare; pregnant mom → Medicaid.",
+  "stem": [
+    {
+      "text": "A 38-year-old recently homeless woman and her 35-year-old boyfriend come to a community clinic seeking care for her pregnancy at 27 weeks. She also brings her 19-year-old son, who has "
+    },
+    {
+      "text": "cerebral palsy and has not had consistent medical care",
+      "clue": true,
+      "type": "red",
+      "note": "A long-term disability (cerebral palsy) is the key: Medicare covers people under 65 who qualify via long-term disability (typically through SSDI), in addition to those >=65, plus ESRD and ALS. The disabled son is the Medicare-eligible one."
+    },
+    {
+      "text": ". The patient explains to the social worker that the family was recently evicted from their apartment for failure to pay rent after her boyfriend lost his job. Which of these individuals is eligible for Medicare coverage?"
+    }
+  ]
+}

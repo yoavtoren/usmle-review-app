@@ -1,0 +1,212 @@
+{
+  "id": "q112",
+  "item": 112,
+  "qid": "20910",
+  "title": "Transposition of the great arteries: parallel circuits",
+  "system": "Cardiology",
+  "topic": "Congenital heart / cyanosis",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 63,
+  "vignette": "A term newborn is evaluated for cyanosis immediately after birth. On examination, the patient's oxygen saturation is 70% in all 4 extremities and does not change despite 100% oxygen administration. The lungs are clear to auscultation and there are no heart murmurs or gallops. Peripheral pulses are normal. A chest radiograph reveals clear lungs and a normal cardiac silhouette but a narrowed mediastinal shadow. Which of the following is the most likely cause of cyanosis in this patient?",
+  "clues": [
+    {
+      "text": "cyanosis immediately after birth",
+      "type": "red",
+      "note": "Cyanosis present at/shortly after birth points to a cyanotic congenital heart lesion with right-to-left shunting or parallel circulation. The earlier and more severe the cyanosis, the more it favors transposition of the great arteries (TGA)."
+    },
+    {
+      "text": "does not change despite 100% oxygen administration",
+      "type": "red",
+      "note": "A failed hyperoxia test (sat stays low on 100% O2) indicates the desaturation is from intracardiac mixing/shunting, not a lung problem - oxygen can't reach the systemic circulation because the circuits are separated. This is the single most discriminating clue."
+    },
+    {
+      "text": "no heart murmurs or gallops",
+      "type": "blue",
+      "note": "In TGA the murmur is often ABSENT at birth because shunting through the PFO/PDA is low-velocity. A 'cyanotic newborn with no murmur' should raise TGA rather than a loud-murmur lesion like tetralogy of Fallot."
+    },
+    {
+      "text": "narrowed mediastinal shadow",
+      "type": "green",
+      "note": "A narrow mediastinum ('egg on a string') reflects the anteroposterior alignment of the great vessels and a narrow vascular pedicle in TGA. Combined with clear lungs and normal heart size, it seals the diagnosis."
+    }
+  ],
+  "whatMatters": "Boil it down: severe cyanosis at birth that does NOT improve with 100% oxygen, no murmur, clear lungs, and a narrow mediastinum ('egg on a string'). That is transposition of the great arteries. The mechanism is two PARALLEL (separate) systemic and pulmonary circuits - answer E.",
+  "strategy": "For a cyanotic newborn, first run the hyperoxia test in your head: if sats stay low on 100% O2, it's cardiac (mixing) not pulmonary. Then use the CXR pedicle - narrow ('egg on a string') = TGA, boot-shaped = tetralogy, snowman = TAPVR. No murmur + earliest cyanosis = TGA.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Impairment of alveolar-capillary gas diffusion",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Impairment of left ventricular contractility",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Inability of hemoglobin to bind oxygen",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Mismatch of pulmonary ventilation and perfusion",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Parallel pulmonary and systemic circuits",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "diffusion impairment - would respond to oxygen",
+      "detail": "WHAT IT IS: thickened/edematous alveolar-capillary membrane (e.g., RDS, edema) limits O2 diffusion. ❌ WHY IT FAILS: diffusion defects largely correct with 100% O2 and the CXR shows CLEAR lungs; this hyperoxia test failed. ✅ Correct if: respiratory distress with diffuse infiltrates/ground glass that improves on supplemental O2."
+    },
+    {
+      "letter": "B",
+      "label": "LV contractility failure - wrong picture",
+      "detail": "WHAT IT IS: poor LV contractility causes cardiogenic shock/pulmonary edema. ❌ WHY IT FAILS: lungs are clear, pulses normal, heart size normal, and the problem is mixing physiology, not pump failure. ✅ Correct if: hypotension, gallop, cardiomegaly, and pulmonary edema."
+    },
+    {
+      "letter": "C",
+      "label": "hemoglobin can't bind O2 - methemoglobinemia, but lungs/heart clues fit TGA",
+      "detail": "WHAT IT IS: methemoglobinemia/abnormal Hb prevents O2 binding, giving cyanosis unresponsive to O2. ❌ WHY IT FAILS: it would not produce a narrow mediastinum/'egg on a string' CXR, and there's a clear structural cardiac clue here; chocolate-brown blood and oxidant exposure would be described. ✅ Correct if: cyanosis with normal PaO2, low SpO2, chocolate-colored blood, oxidant trigger (dapsone, nitrites)."
+    },
+    {
+      "letter": "D",
+      "label": "V/Q mismatch - a lung mechanism",
+      "detail": "WHAT IT IS: ventilation-perfusion mismatch is the commonest cause of hypoxemia in lung disease. ❌ WHY IT FAILS: V/Q mismatch generally improves with 100% O2 and the lungs are clear; this is intracardiac parallel-circuit physiology. ✅ Correct if: lung pathology (pneumonia, atelectasis) with hypoxemia partially correctable by O2."
+    }
+  ],
+  "reasoning": [
+    "Severe cyanosis at birth, failed hyperoxia test = cardiac mixing, not lung",
+    "No murmur + clear lungs + normal heart size",
+    "Narrow mediastinum = 'egg on a string' (TGA)",
+    "Aorta off RV and pulmonary artery off LV create two separate circuits -> answer E"
+  ],
+  "mechanism": "In transposition of the great arteries (often from failed aorticopulmonary septum spiraling), the aorta arises from the right ventricle and the pulmonary artery from the left ventricle. This creates two parallel, independent circuits: deoxygenated systemic blood recirculates to the body and oxygenated pulmonary blood recirculates to the lungs. Survival depends on a mixing shunt (PFO, PDA, or VSD), so prostaglandin E1 is given to keep the ductus open and balloon atrial septostomy may be performed; definitive repair is an arterial switch. Because mixing is low-velocity, a murmur is often absent and the hyperoxia test fails.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Cardiology > Congenital cyanotic lesions (5 Ts): TGA - aorta from RV, PA from LV; needs mixing (PDA/PFO/VSD); prostaglandin E1 + atrial septostomy + arterial switch; CXR 'egg on a string'."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The stem hands you a failed hyperoxia test + narrow mediastinum and asks the mechanism. Translate to 'separate/parallel circuits,' the defining hemodynamic of TGA."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on hyperoxia test, mediastinal/vascular pedicle, parallel vs series circulation, PFO/PDA mixing? Tell me which to unpack."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Options A and D are lung mechanisms that the FAILED 100%-O2 test rules out; C (methemoglobin) is the tempting 'O2-unresponsive cyanosis' trap, but the CXR/cardiac clues point structurally to TGA."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The CXR clue is the narrow mediastinum / 'egg on a string.' If you missed it, anchor on: clear lungs + normal heart size + narrow pedicle = TGA."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Correct (E) - keep the CXR shape mnemonics handy: egg-on-a-string TGA, boot tetralogy, snowman TAPVR."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Cyanosis at birth, fails 100% O2, no murmur, narrow mediastinum",
+      "back": "Transposition of the great arteries (TGA)"
+    },
+    {
+      "front": "TGA anatomy",
+      "back": "Aorta from RV, pulmonary artery from LV -> parallel circuits"
+    },
+    {
+      "front": "TGA CXR",
+      "back": "'Egg on a string' (narrow mediastinum)"
+    },
+    {
+      "front": "Keeping a TGA newborn alive",
+      "back": "Prostaglandin E1 (keep PDA open) +/- balloon atrial septostomy; arterial switch repair"
+    },
+    {
+      "front": "Hyperoxia test interpretation",
+      "back": "No rise in PaO2/SpO2 on 100% O2 = cardiac (right-to-left/mixing), not pulmonary"
+    },
+    {
+      "front": "Boot-shaped heart",
+      "back": "Tetralogy of Fallot"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Transposition of the great arteries",
+      "detail": "Cardiology > Cyanotic congenital heart disease: anatomy, mixing requirement, PGE1, CXR appearance.",
+      "location": "Cardiology > Cyanotic congenital heart disease: anatomy, mixing requirement, PGE1, CXR appearance."
+    },
+    {
+      "tag": "stem",
+      "topic": "Cyanotic newborn workup",
+      "detail": "Peds/Cards: hyperoxia test, the 5 Ts, CXR silhouettes (egg-on-string, boot, snowman).",
+      "location": "Peds/Cards: hyperoxia test, the 5 Ts, CXR silhouettes (egg-on-string, boot, snowman)."
+    },
+    {
+      "tag": "options",
+      "topic": "Causes of hypoxemia",
+      "detail": "Physiology: diffusion limitation, V/Q mismatch, shunt, hypoventilation, low inspired O2; which respond to 100% O2.",
+      "location": "Physiology: diffusion limitation, V/Q mismatch, shunt, hypoventilation, low inspired O2; which respond to 100% O2."
+    }
+  ],
+  "memoryHook": "TGA = vessels swapped -> two separate loops that never meet. 'Egg on a string' newborn; open the duct with prostaglandin.",
+  "stem": [
+    {
+      "text": "A term newborn is evaluated for "
+    },
+    {
+      "text": "cyanosis immediately after birth",
+      "clue": true,
+      "type": "red",
+      "note": "Cyanosis present at/shortly after birth points to a cyanotic congenital heart lesion with right-to-left shunting or parallel circulation. The earlier and more severe the cyanosis, the more it favors transposition of the great arteries (TGA)."
+    },
+    {
+      "text": ". On examination, the patient's oxygen saturation is 70% in all 4 extremities and "
+    },
+    {
+      "text": "does not change despite 100% oxygen administration",
+      "clue": true,
+      "type": "red",
+      "note": "A failed hyperoxia test (sat stays low on 100% O2) indicates the desaturation is from intracardiac mixing/shunting, not a lung problem - oxygen can't reach the systemic circulation because the circuits are separated. This is the single most discriminating clue."
+    },
+    {
+      "text": ". The lungs are clear to auscultation and there are "
+    },
+    {
+      "text": "no heart murmurs or gallops",
+      "clue": true,
+      "type": "blue",
+      "note": "In TGA the murmur is often ABSENT at birth because shunting through the PFO/PDA is low-velocity. A 'cyanotic newborn with no murmur' should raise TGA rather than a loud-murmur lesion like tetralogy of Fallot."
+    },
+    {
+      "text": ". Peripheral pulses are normal. A chest radiograph reveals clear lungs and a normal cardiac silhouette but a "
+    },
+    {
+      "text": "narrowed mediastinal shadow",
+      "clue": true,
+      "type": "green",
+      "note": "A narrow mediastinum ('egg on a string') reflects the anteroposterior alignment of the great vessels and a narrow vascular pedicle in TGA. Combined with clear lungs and normal heart size, it seals the diagnosis."
+    },
+    {
+      "text": ". Which of the following is the most likely cause of cyanosis in this patient?"
+    }
+  ]
+}

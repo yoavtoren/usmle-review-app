@@ -1,0 +1,227 @@
+{
+  "id": "q121",
+  "item": 121,
+  "qid": "520",
+  "title": "Lithium-induced hypothyroidism",
+  "system": "Psychiatry",
+  "topic": "Mood stabilizers / endocrine ADRs",
+  "correct": "E",
+  "yourAnswer": "G",
+  "percentCorrect": 48,
+  "vignette": "A 36-year-old woman comes to the office for follow-up of a mood disorder. The patient has a history of several depressive episodes that started in her twenties. Two years ago, she was hospitalized after staying up for several nights without sleeping and claiming that she had special powers to \"end global poverty and climate change.\" Her symptoms responded well to treatment and she has remained on the same drug regimen since then. However, the patient now has new-onset constipation, dry skin, and hair loss. She is also concerned about a weight gain of 2.27 kg (5 lb) over the last 3-4 months despite eating healthy, low-calorie foods. Blood pressure is 110/70 mm Hg and pulse is 55/min. The patient appears tired, but physical examination is otherwise normal. The diagnosis is established and her current condition is attributed to adverse effects from one of her medications. Which of the following is the most likely culprit drug?",
+  "clues": [
+    {
+      "text": "staying up for several nights without sleeping and claiming that she had special powers",
+      "type": "red",
+      "note": "Decreased need for sleep plus grandiose delusions ('special powers to end global poverty') is a manic episode. With prior depressive episodes, this establishes bipolar I disorder - so her chronic 'same drug regimen' is a mood stabilizer."
+    },
+    {
+      "text": "new-onset constipation, dry skin, and hair loss",
+      "type": "green",
+      "note": "Constipation, dry skin, and hair loss are hypothyroid symptoms. In a bipolar patient on long-term therapy, this triad points to lithium-induced hypothyroidism."
+    },
+    {
+      "text": "weight gain of 2.27 kg (5 lb)",
+      "type": "blue",
+      "note": "Unintentional weight gain despite low-calorie eating fits a hypometabolic (hypothyroid) state, reinforcing the thyroid etiology of her new symptoms."
+    },
+    {
+      "text": "pulse is 55/min",
+      "type": "blue",
+      "note": "Bradycardia (HR 55 / normal 60-100) is consistent with hypothyroidism's slowed metabolism, supporting a drug that causes hypothyroidism - lithium."
+    }
+  ],
+  "whatMatters": "She has bipolar I (mania + prior depression) maintained on a mood stabilizer, and now shows classic hypothyroidism (constipation, dry skin, hair loss, weight gain, bradycardia). The mood stabilizer that causes hypothyroidism is lithium - answer E.",
+  "strategy": "Tie the adverse effect to the right mood stabilizer: lithium -> hypothyroidism, nephrogenic DI, tremor, Ebstein anomaly; valproate -> hepatotoxicity, neural tube defects, weight gain; carbamazepine -> agranulocytosis/aplastic anemia, SIADH, neural tube defects; lamotrigine -> Stevens-Johnson syndrome. Hypothyroid symptoms = lithium.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Carbamazepine",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Citalopram",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Clozapine",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Lamotrigine",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Lithium",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "Risperidone",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Trazodone",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "carbamazepine - wrong adverse-effect profile",
+      "detail": "WHAT IT IS: an anticonvulsant mood stabilizer. ❌ WHY IT FAILS: its hallmark toxicities are agranulocytosis/aplastic anemia and SIADH (hyponatremia), plus neural tube defects - not hypothyroidism. ✅ Correct if: the stem showed cytopenias or hyponatremia."
+    },
+    {
+      "letter": "B",
+      "label": "citalopram - an SSRI, not a maintenance bipolar drug here",
+      "detail": "WHAT IT IS: an SSRI antidepressant. ❌ WHY IT FAILS: SSRIs don't cause this hypothyroid picture and aren't first-line monotherapy maintenance in bipolar I (can precipitate mania). ✅ Correct if: serotonergic side effects (GI upset, sexual dysfunction, hyponatremia) were described."
+    },
+    {
+      "letter": "C",
+      "label": "clozapine - different toxicities",
+      "detail": "WHAT IT IS: an atypical antipsychotic. ❌ WHY IT FAILS: it causes agranulocytosis, seizures, myocarditis, and metabolic syndrome - not a hypothyroid triad. ✅ Correct if: the stem flagged neutropenia/agranulocytosis monitoring or myocarditis."
+    },
+    {
+      "letter": "D",
+      "label": "lamotrigine - SJS, not hypothyroidism",
+      "detail": "WHAT IT IS: a mood stabilizer favored for bipolar depression. ❌ WHY IT FAILS: its key risk is Stevens-Johnson syndrome/rash, not thyroid dysfunction. ✅ Correct if: a severe mucocutaneous rash were described."
+    },
+    {
+      "letter": "F",
+      "label": "risperidone - hyperprolactinemia/metabolic, not thyroid",
+      "detail": "WHAT IT IS: an atypical antipsychotic. ❌ WHY IT FAILS: causes hyperprolactinemia, EPS, and metabolic effects, not hypothyroidism. ✅ Correct if: galactorrhea/amenorrhea or extrapyramidal symptoms were present."
+    },
+    {
+      "letter": "G",
+      "label": "trazodone - sedative/antidepressant, wrong effects",
+      "detail": "WHAT IT IS: a serotonin modulator used mainly for insomnia/depression. ❌ WHY IT FAILS: its notable adverse effects are sedation, orthostasis, and priapism - not a hypothyroid syndrome; and it's not the maintenance mood stabilizer here. You chose this. ✅ Correct if: priapism or marked sedation/orthostasis were described."
+    }
+  ],
+  "reasoning": [
+    "Mania + prior depression = bipolar I on a chronic mood stabilizer",
+    "New constipation, dry skin, hair loss, weight gain, bradycardia = hypothyroidism",
+    "Among mood stabilizers, lithium causes hypothyroidism",
+    "-> answer E (lithium)"
+  ],
+  "mechanism": "Lithium concentrates in the thyroid and inhibits thyroid hormone synthesis and release (impairing iodine uptake and thyroglobulin proteolysis), producing hypothyroidism and sometimes goiter; the compensatory rise in TSH can enlarge the gland. Clinically this gives fatigue, cold intolerance, constipation, dry skin, hair loss, weight gain, and bradycardia. Management is to add levothyroxine while continuing lithium if it is controlling the mood disorder, with periodic TSH monitoring. Lithium also causes nephrogenic diabetes insipidus, a fine tremor, and is teratogenic (Ebstein anomaly).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Psychiatry/Pharmacology > Mood stabilizers: lithium (hypothyroidism, nephrogenic DI, tremor, Ebstein anomaly, narrow therapeutic index), valproate (hepatotoxicity, NTDs, weight gain), carbamazepine (aplastic anemia/agranulocytosis, SIADH, NTDs), lamotrigine (SJS)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: diagnose hypothyroidism from the symptom cluster, then recall which mood stabilizer causes it. The mania history pins the drug class as a mood stabilizer."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on bipolar I vs II, mood stabilizer, hypothyroidism features, nephrogenic DI, agranulocytosis, SIADH? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose G (trazodone). Trazodone isn't a maintenance mood stabilizer and doesn't cause hypothyroidism - its red flags are priapism and orthostasis. The hypothyroid triad maps to lithium."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Memorize the four mood-stabilizer ADR fingerprints; the symptom cluster will point you straight to the drug."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Mood stabilizer causing hypothyroidism (and goiter)",
+      "back": "Lithium"
+    },
+    {
+      "front": "Other key lithium toxicities",
+      "back": "Nephrogenic diabetes insipidus, fine tremor, Ebstein anomaly (teratogen)"
+    },
+    {
+      "front": "Carbamazepine signature toxicities",
+      "back": "Agranulocytosis/aplastic anemia, SIADH, neural tube defects"
+    },
+    {
+      "front": "Valproate signature toxicities",
+      "back": "Hepatotoxicity, neural tube defects, weight gain, pancreatitis"
+    },
+    {
+      "front": "Lamotrigine signature risk",
+      "back": "Stevens-Johnson syndrome (titrate slowly)"
+    },
+    {
+      "front": "Management of lithium hypothyroidism",
+      "back": "Add levothyroxine; continue lithium if effective; monitor TSH"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Lithium",
+      "detail": "Psychiatry/Pharm: mechanism, hypothyroidism, nephrogenic DI, tremor, Ebstein anomaly, toxicity/monitoring.",
+      "location": "Psychiatry/Pharm: mechanism, hypothyroidism, nephrogenic DI, tremor, Ebstein anomaly, toxicity/monitoring."
+    },
+    {
+      "tag": "stem",
+      "topic": "Bipolar I disorder",
+      "detail": "Psychiatry: manic episode criteria, maintenance pharmacotherapy.",
+      "location": "Psychiatry: manic episode criteria, maintenance pharmacotherapy."
+    },
+    {
+      "tag": "options",
+      "topic": "Mood stabilizer / antipsychotic adverse effects",
+      "detail": "Pharm: valproate, carbamazepine, lamotrigine, clozapine, risperidone, trazodone profiles.",
+      "location": "Pharm: valproate, carbamazepine, lamotrigine, clozapine, risperidone, trazodone profiles."
+    }
+  ],
+  "memoryHook": "LITHIUM hits the thyroid (low T), the kidney (nephrogenic DI), and the hands (Tremor). New hypothyroid signs on a mood stabilizer = lithium.",
+  "stem": [
+    {
+      "text": "A 36-year-old woman comes to the office for follow-up of a mood disorder. The patient has a history of several depressive episodes that started in her twenties. Two years ago, she was hospitalized after "
+    },
+    {
+      "text": "staying up for several nights without sleeping and claiming that she had special powers",
+      "clue": true,
+      "type": "red",
+      "note": "Decreased need for sleep plus grandiose delusions ('special powers to end global poverty') is a manic episode. With prior depressive episodes, this establishes bipolar I disorder - so her chronic 'same drug regimen' is a mood stabilizer."
+    },
+    {
+      "text": " to \"end global poverty and climate change.\" Her symptoms responded well to treatment and she has remained on the same drug regimen since then. However, the patient now has "
+    },
+    {
+      "text": "new-onset constipation, dry skin, and hair loss",
+      "clue": true,
+      "type": "green",
+      "note": "Constipation, dry skin, and hair loss are hypothyroid symptoms. In a bipolar patient on long-term therapy, this triad points to lithium-induced hypothyroidism."
+    },
+    {
+      "text": ". She is also concerned about a "
+    },
+    {
+      "text": "weight gain of 2.27 kg (5 lb)",
+      "clue": true,
+      "type": "blue",
+      "note": "Unintentional weight gain despite low-calorie eating fits a hypometabolic (hypothyroid) state, reinforcing the thyroid etiology of her new symptoms."
+    },
+    {
+      "text": " over the last 3-4 months despite eating healthy, low-calorie foods. Blood pressure is 110/70 mm Hg and "
+    },
+    {
+      "text": "pulse is 55/min",
+      "clue": true,
+      "type": "blue",
+      "note": "Bradycardia (HR 55 / normal 60-100) is consistent with hypothyroidism's slowed metabolism, supporting a drug that causes hypothyroidism - lithium."
+    },
+    {
+      "text": ". The patient appears tired, but physical examination is otherwise normal. The diagnosis is established and her current condition is attributed to adverse effects from one of her medications. Which of the following is the most likely culprit drug?"
+    }
+  ]
+}

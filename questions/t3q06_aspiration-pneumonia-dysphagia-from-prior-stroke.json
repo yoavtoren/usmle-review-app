@@ -1,0 +1,202 @@
+{
+  "id": "q75",
+  "item": 75,
+  "qid": "2102",
+  "title": "Aspiration pneumonia: dysphagia from prior stroke",
+  "system": "Pulmonary",
+  "topic": "Aspiration / risk factors",
+  "correct": "E",
+  "yourAnswer": "C",
+  "percentCorrect": 55,
+  "vignette": "The patient is treated with intravenous fluids and antibiotics, with improvement in fever, leukocytosis, and hypotension. On the third day of hospitalization, temperature is 36.7 C (98 F), blood pressure is 122/78 mm Hg, and pulse is 86/min. On physical examination, he is mildly lethargic and his voice is soft and breathy. Rhonchi are still heard over the lower right lung. There is left-sided facial droop and hemiparesis from a previous stroke. Chest x-ray demonstrates dense air space opacities in the superior region of the right lower lobe. Which of the following underlying factors most likely predisposed this patient to his current hospitalization?",
+  "clues": [
+    {
+      "text": "his voice is soft and breathy",
+      "type": "blue",
+      "note": "A soft, breathy voice suggests vocal-cord/bulbar dysfunction. Combined with stroke, it hints at impaired airway protection and swallowing — the setup for aspiration."
+    },
+    {
+      "text": "left-sided facial droop and hemiparesis from a previous stroke",
+      "type": "red",
+      "note": "Prior stroke with bulbar/facial involvement causes dysphagia and a weak cough/gag, the dominant risk factor for aspiration pneumonia. Neurologic impairment of swallowing is the predisposing condition the question is after."
+    },
+    {
+      "text": "dense air space opacities in the superior region of the right lower lobe",
+      "type": "green",
+      "note": "Aspiration favors gravity-dependent segments: in a supine patient, the SUPERIOR segment of the right lower lobe (and posterior segments of upper lobes). The right side is favored because the right mainstem bronchus is more vertical. The location confirms aspiration."
+    }
+  ],
+  "whatMatters": "On day 3 the question pivots to WHY he got pneumonia. The stroke left him with facial droop, a breathy voice, and dysphagia; an aspiration-pattern infiltrate sits in the superior segment of the RLL. The predisposing factor is impaired swallowing — swallowing muscle dysfunction — answer E.",
+  "strategy": "When a pneumonia question asks for the 'underlying predisposing factor' and you see a neuro deficit (stroke, dementia, intoxication) plus a dependent-segment infiltrate, the answer is aspiration from impaired airway protection. Use the infiltrate LOCATION (superior RLL/posterior upper lobe) to confirm aspiration.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased enteral feeding",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Extended immobility",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Impaired cellular immunity",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Reduced intercostal muscle strength",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Swallowing muscle dysfunction",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "decreased enteral feeding — backwards",
+      "detail": "WHAT IT IS: reduced oral/enteral intake is sometimes invoked to lower aspiration risk. ❌ WHY IT FAILS: it's not a cause of pneumonia here; if anything, oral intake in a dysphagic patient INCREASES aspiration. The driver is the swallowing deficit itself. ✅ Correct if: the question were about a protective intervention, not a predisposing cause."
+    },
+    {
+      "letter": "B",
+      "label": "immobility — that's the VTE/atelectasis story",
+      "detail": "WHAT IT IS: prolonged immobility predisposes to DVT/PE and basal atelectasis. ❌ WHY IT FAILS: immobility doesn't explain an aspiration-pattern infiltrate in the superior RLL with bulbar signs; the swallowing deficit does. ✅ Correct if: the stem pointed to a pulmonary embolism or postoperative atelectasis."
+    },
+    {
+      "letter": "C",
+      "label": "impaired cellular immunity — wrong host defect (your pick)",
+      "detail": "WHAT IT IS: defective T-cell/cell-mediated immunity predisposes to intracellular and opportunistic infections (TB, fungi, PCP, Listeria). ❌ WHY IT FAILS: he's not described as immunosuppressed; his risk is mechanical (dysphagia from stroke), and the infiltrate location screams aspiration, not opportunistic infection. ✅ Correct if: the stem gave HIV/transplant/steroids with an opportunistic organism."
+    },
+    {
+      "letter": "D",
+      "label": "weak intercostal muscles — wrong mechanism",
+      "detail": "WHAT IT IS: reduced respiratory-muscle strength impairs cough and ventilation (neuromuscular disease). ❌ WHY IT FAILS: his problem is airway PROTECTION during swallowing, not bellows failure; nothing suggests a generalized respiratory myopathy. ✅ Correct if: the stem described a neuromuscular disease with weak cough and hypoventilation as the main issue."
+    }
+  ],
+  "reasoning": [
+    "Day-3 question: WHY did he get pneumonia?",
+    "Prior stroke → bulbar dysfunction (breathy voice, facial droop) → dysphagia",
+    "Aspiration infiltrate in the dependent superior RLL segment",
+    "Predisposing factor = swallowing muscle dysfunction → answer E"
+  ],
+  "mechanism": "Stroke with bulbar/facial involvement impairs the coordinated swallow and the protective cough/gag, allowing oropharyngeal secretions and food to enter the airway (aspiration). Aspirated material seeds gravity-dependent lung segments — the superior segment of the lower lobes and posterior segments of the upper lobes in supine patients, more often on the right because the right mainstem bronchus is wider and more vertical. Predisposing conditions include altered consciousness, dysphagia from neurologic disease, GERD, and nasogastric/endotracheal tubes.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pulmonary > Aspiration pneumonia: predisposing conditions (altered consciousness, dysphagia/neurologic disease, GERD, tubes), dependent-segment localization (superior RLL, posterior upper lobes), right-side predominance from bronchial anatomy."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "This is a 'risk factor' question, not a 'diagnosis' question. Tie the neuro deficit (stroke → dysphagia) to the aspiration-pattern infiltrate and pick the mechanical cause."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on dysphagia, bulbar, aspiration, dependent lung segment, hemiparesis? Tell me which and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Impaired cellular immunity (C) tempts because patients with pneumonia are often framed as immunocompromised — but here the deficit is mechanical (swallowing), and the infiltrate location confirms aspiration."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "On CXR/CT, learn the aspiration-prone segments: supine → superior segment of lower lobes + posterior segments of upper lobes; upright → basal segments. Right side favored. Practice naming the involved segment."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as C → make a rule card: neuro deficit (stroke/dementia/intoxication) + dependent-segment infiltrate = aspiration from impaired swallowing/airway protection."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Stroke + breathy voice + RLL infiltrate",
+      "back": "Aspiration pneumonia from dysphagia"
+    },
+    {
+      "front": "Aspiration segments (supine)",
+      "back": "Superior segment of lower lobes; posterior segments of upper lobes"
+    },
+    {
+      "front": "Why right lung favored in aspiration",
+      "back": "Right mainstem bronchus is wider, more vertical"
+    },
+    {
+      "front": "Top aspiration risk factors",
+      "back": "Altered consciousness, dysphagia (neuro disease), GERD, NG/ET tubes"
+    },
+    {
+      "front": "Impaired cellular immunity → which infections",
+      "back": "TB, fungi, PCP, Listeria (intracellular/opportunistic)"
+    },
+    {
+      "front": "Immobility → pulmonary risks",
+      "back": "DVT/PE, atelectasis"
+    },
+    {
+      "front": "Aspiration pneumonia organisms (modern view)",
+      "back": "Typical aerobic oral flora; anaerobes mainly if abscess/empyema"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Aspiration pneumonia",
+      "detail": "Pulmonary > Infections: predisposing conditions, dependent-segment localization, right-side predominance, organisms and empiric therapy.",
+      "location": "Pulmonary > Infections: predisposing conditions, dependent-segment localization, right-side predominance, organisms and empiric therapy."
+    },
+    {
+      "tag": "stem",
+      "topic": "Stroke & dysphagia",
+      "detail": "Neuro: bulbar dysfunction after stroke, swallow evaluation, airway-protection deficits.",
+      "location": "Neuro: bulbar dysfunction after stroke, swallow evaluation, airway-protection deficits."
+    },
+    {
+      "tag": "options",
+      "topic": "Pneumonia risk-factor differential",
+      "detail": "Pulmonary: immobility (atelectasis/VTE), immunocompromise (opportunistic organisms), neuromuscular weakness vs mechanical aspiration.",
+      "location": "Pulmonary: immobility (atelectasis/VTE), immunocompromise (opportunistic organisms), neuromuscular weakness vs mechanical aspiration."
+    }
+  ],
+  "memoryHook": "Stroke steals the swallow → oral stuff drops into the dependent RLL. Aspiration = a SWALLOWING problem, not an immune one.",
+  "stem": [
+    {
+      "text": "The patient is treated with intravenous fluids and antibiotics, with improvement in fever, leukocytosis, and hypotension. On the third day of hospitalization, temperature is 36.7 C (98 F), blood pressure is 122/78 mm Hg, and pulse is 86/min. On physical examination, he is mildly lethargic and "
+    },
+    {
+      "text": "his voice is soft and breathy",
+      "clue": true,
+      "type": "blue",
+      "note": "A soft, breathy voice suggests vocal-cord/bulbar dysfunction. Combined with stroke, it hints at impaired airway protection and swallowing — the setup for aspiration."
+    },
+    {
+      "text": ". Rhonchi are still heard over the lower right lung. There is "
+    },
+    {
+      "text": "left-sided facial droop and hemiparesis from a previous stroke",
+      "clue": true,
+      "type": "red",
+      "note": "Prior stroke with bulbar/facial involvement causes dysphagia and a weak cough/gag, the dominant risk factor for aspiration pneumonia. Neurologic impairment of swallowing is the predisposing condition the question is after."
+    },
+    {
+      "text": ". Chest x-ray demonstrates "
+    },
+    {
+      "text": "dense air space opacities in the superior region of the right lower lobe",
+      "clue": true,
+      "type": "green",
+      "note": "Aspiration favors gravity-dependent segments: in a supine patient, the SUPERIOR segment of the right lower lobe (and posterior segments of upper lobes). The right side is favored because the right mainstem bronchus is more vertical. The location confirms aspiration."
+    },
+    {
+      "text": ". Which of the following underlying factors most likely predisposed this patient to his current hospitalization?"
+    }
+  ]
+}

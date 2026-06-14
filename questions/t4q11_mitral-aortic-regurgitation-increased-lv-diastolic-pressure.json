@@ -1,0 +1,217 @@
+{
+  "id": "q120",
+  "item": 120,
+  "qid": "234",
+  "title": "Mitral + aortic regurgitation: increased LV diastolic pressure",
+  "system": "Cardiology",
+  "topic": "Valvular disease",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 69,
+  "vignette": "A 33-year-old woman who recently immigrated to the United States is brought to the emergency department with severe shortness of breath and hemoptysis. Physical examination reveals a diastolic murmur. Chest x-ray shows severe pulmonary vascular congestion and edema. She is admitted to the hospital, treated with diuretics, and begins to feel better. However, during her hospitalization, she develops right-sided hemiparesis. Which of the following additional findings in this patient would be most suggestive of combined disease involving the mitral and aortic valves rather than exclusive mitral involvement?",
+  "clues": [
+    {
+      "text": "recently immigrated to the United States",
+      "type": "orange",
+      "note": "Recent immigration raises the pretest probability of rheumatic heart disease, the leading worldwide cause of mitral stenosis and a frequent cause of combined mitral + aortic valve disease."
+    },
+    {
+      "text": "severe shortness of breath and hemoptysis",
+      "type": "blue",
+      "note": "Dyspnea + hemoptysis from pulmonary venous congestion is classic for mitral stenosis: elevated left atrial pressure backs up into the pulmonary circulation, rupturing bronchial veins."
+    },
+    {
+      "text": "diastolic murmur",
+      "type": "green",
+      "note": "Mitral stenosis produces a diastolic (opening snap + mid-diastolic rumble) murmur. Aortic regurgitation is ALSO diastolic, so the murmur alone can't separate isolated MS from combined MS+AR - the question hinges on hemodynamics instead."
+    },
+    {
+      "text": "right-sided hemiparesis",
+      "type": "red",
+      "note": "A systemic embolic stroke from left atrial thrombus (atrial fibrillation in mitral stenosis) confirms left-sided/mitral pathology with stasis. It establishes the rheumatic mitral disease background of the question."
+    }
+  ],
+  "whatMatters": "She has rheumatic mitral stenosis (dyspnea, hemoptysis, diastolic murmur, embolic stroke). The question asks what would also indicate AORTIC REGURGITATION on top of it. Pure mitral stenosis keeps LV filling/pressure LOW; adding aortic regurgitation volume-loads the LV and RAISES LV end-diastolic pressure - answer A.",
+  "strategy": "Contrast the LV loading of the two valve lesions. Isolated mitral stenosis UNDERfills the LV (low LVEDP, normal/small LV). Aortic regurgitation OVERfills the LV in diastole (high LV diastolic volume and pressure, dilated LV). So a finding of elevated LV diastolic pressure is the signature that AR has joined the MS.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Increased left ventricular diastolic pressure",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Increased pulmonary artery pressure",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased pulmonary capillary wedge pressure",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Reduced pulmonary vascular compliance",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Right ventricular dilation",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Tricuspid regurgitation",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "increased PA pressure - happens in mitral stenosis alone",
+      "detail": "WHAT IT IS: pulmonary artery hypertension. ❌ WHY IT FAILS: isolated mitral stenosis already raises PA pressure (backpressure from the left atrium); it doesn't distinguish added aortic disease. ✅ Correct if: asked for a consequence of MS itself."
+    },
+    {
+      "letter": "C",
+      "label": "increased PCWP - reflects left atrial pressure in MS",
+      "detail": "WHAT IT IS: pulmonary capillary wedge pressure approximates left atrial pressure. ❌ WHY IT FAILS: it is already elevated in pure mitral stenosis; not specific for aortic regurgitation. ✅ Correct if: asked to estimate left atrial pressure in MS."
+    },
+    {
+      "letter": "D",
+      "label": "reduced pulmonary vascular compliance - chronic MS change",
+      "detail": "WHAT IT IS: stiff pulmonary vasculature from chronic congestion/remodeling. ❌ WHY IT FAILS: this is a downstream feature of long-standing mitral stenosis, not evidence of aortic involvement. ✅ Correct if: asked about chronic pulmonary vascular remodeling in MS."
+    },
+    {
+      "letter": "E",
+      "label": "RV dilation - from pulmonary hypertension of MS",
+      "detail": "WHAT IT IS: right ventricular dilation/failure. ❌ WHY IT FAILS: it results from the pulmonary hypertension of advanced mitral stenosis, not from aortic regurgitation. ✅ Correct if: asked for a right-heart consequence of MS."
+    },
+    {
+      "letter": "F",
+      "label": "tricuspid regurgitation - secondary to RV/pulmonary HTN",
+      "detail": "WHAT IT IS: functional TR from RV dilation. ❌ WHY IT FAILS: also a downstream effect of MS-related pulmonary hypertension, not a marker of aortic disease. ✅ Correct if: asked about functional TR in advanced MS."
+    }
+  ],
+  "reasoning": [
+    "Rheumatic mitral stenosis: dyspnea, hemoptysis, diastolic murmur, embolic stroke",
+    "Pure MS keeps the LV underfilled -> LOW LV diastolic pressure",
+    "Aortic regurgitation volume-loads the LV -> HIGH LV diastolic pressure",
+    "Elevated LVEDP signals added AR -> answer A"
+  ],
+  "mechanism": "In isolated mitral stenosis, the narrowed mitral orifice limits LV inflow, so the left ventricle is underfilled and LV diastolic pressure/volume stay low or normal while left atrial and pulmonary pressures rise. Aortic regurgitation, by contrast, returns blood into the LV during diastole, increasing LV end-diastolic volume and pressure and dilating the ventricle. Therefore a rise in LV diastolic pressure indicates that aortic regurgitation has been added to the mitral lesion. The other listed findings (elevated PA pressure, PCWP, RV dilation, TR, reduced pulmonary compliance) all arise from mitral stenosis itself and cannot distinguish combined disease.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Cardiology > Valvular disease: mitral stenosis (rheumatic, opening snap + diastolic rumble, LA enlargement, AF/emboli, pulmonary congestion; LV normal/underfilled) vs aortic regurgitation (diastolic decrescendo, wide pulse pressure, LV volume overload -> increased LVEDV/LVEDP)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question asks which finding is UNIQUE to adding aortic regurgitation. Filter out everything caused by MS alone; only LV diastolic pressure changes with AR."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on LVEDP, PCWP, mitral stenosis hemodynamics, aortic regurgitation volume overload, pulmonary vascular compliance? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "PCWP and PA pressure (B, C) feel right because they're 'elevated in this sick patient,' but they're elevated by MS itself. AR is distinguished specifically by high LV diastolic pressure."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked A correctly - bank the LV-loading contrast: MS underfills, AR overfills the LV."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Diastolic murmur + dyspnea + hemoptysis + embolic stroke, immigrant",
+      "back": "Rheumatic mitral stenosis"
+    },
+    {
+      "front": "Finding that signals added aortic regurgitation in an MS patient",
+      "back": "Increased LV diastolic pressure"
+    },
+    {
+      "front": "LV filling in pure mitral stenosis",
+      "back": "Underfilled -> low/normal LVEDP and LV volume"
+    },
+    {
+      "front": "Aortic regurgitation LV effect",
+      "back": "Volume overload -> increased LVEDV and LVEDP, LV dilation"
+    },
+    {
+      "front": "Both MS and AR murmurs occur in",
+      "back": "Diastole"
+    },
+    {
+      "front": "Source of embolic stroke in mitral stenosis",
+      "back": "Left atrial thrombus (atrial fibrillation)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Aortic regurgitation hemodynamics",
+      "detail": "Cardiology: LV volume overload, increased LVEDP, wide pulse pressure, diastolic decrescendo murmur.",
+      "location": "Cardiology: LV volume overload, increased LVEDP, wide pulse pressure, diastolic decrescendo murmur."
+    },
+    {
+      "tag": "stem",
+      "topic": "Mitral stenosis",
+      "detail": "Cardiology: rheumatic etiology, LA enlargement, AF/emboli, pulmonary congestion, opening snap.",
+      "location": "Cardiology: rheumatic etiology, LA enlargement, AF/emboli, pulmonary congestion, opening snap."
+    },
+    {
+      "tag": "options",
+      "topic": "Pulmonary hypertension / right heart in MS",
+      "detail": "Cardiology: PCWP, PA pressure, RV dilation, functional TR as downstream MS effects.",
+      "location": "Cardiology: PCWP, PA pressure, RV dilation, functional TR as downstream MS effects."
+    }
+  ],
+  "memoryHook": "MS starves the LV (low filling pressure); AR floods it (high diastolic pressure). High LVEDP = aortic leak has joined the party.",
+  "stem": [
+    {
+      "text": "A 33-year-old woman who "
+    },
+    {
+      "text": "recently immigrated to the United States",
+      "clue": true,
+      "type": "orange",
+      "note": "Recent immigration raises the pretest probability of rheumatic heart disease, the leading worldwide cause of mitral stenosis and a frequent cause of combined mitral + aortic valve disease."
+    },
+    {
+      "text": " is brought to the emergency department with "
+    },
+    {
+      "text": "severe shortness of breath and hemoptysis",
+      "clue": true,
+      "type": "blue",
+      "note": "Dyspnea + hemoptysis from pulmonary venous congestion is classic for mitral stenosis: elevated left atrial pressure backs up into the pulmonary circulation, rupturing bronchial veins."
+    },
+    {
+      "text": ". Physical examination reveals a "
+    },
+    {
+      "text": "diastolic murmur",
+      "clue": true,
+      "type": "green",
+      "note": "Mitral stenosis produces a diastolic (opening snap + mid-diastolic rumble) murmur. Aortic regurgitation is ALSO diastolic, so the murmur alone can't separate isolated MS from combined MS+AR - the question hinges on hemodynamics instead."
+    },
+    {
+      "text": ". Chest x-ray shows severe pulmonary vascular congestion and edema. She is admitted to the hospital, treated with diuretics, and begins to feel better. However, during her hospitalization, she develops "
+    },
+    {
+      "text": "right-sided hemiparesis",
+      "clue": true,
+      "type": "red",
+      "note": "A systemic embolic stroke from left atrial thrombus (atrial fibrillation in mitral stenosis) confirms left-sided/mitral pathology with stasis. It establishes the rheumatic mitral disease background of the question."
+    },
+    {
+      "text": ". Which of the following additional findings in this patient would be most suggestive of combined disease involving the mitral and aortic valves rather than exclusive mitral involvement?"
+    }
+  ]
+}

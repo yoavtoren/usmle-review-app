@@ -1,0 +1,212 @@
+{
+  "id": "q67",
+  "item": 67,
+  "qid": "808",
+  "title": "Cystic fibrosis: pancreatic enzyme replacement",
+  "system": "GI/Genetics",
+  "topic": "Cystic fibrosis / malabsorption",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 72,
+  "vignette": "A 14-year-old boy is brought to the physician by his mother due to chronic diarrhea and failure to gain weight appropriately. He has a history of recurrent respiratory infections, and prior sputum cultures have been positive for Pseudomonas aeruginosa. His younger brother died from a severe respiratory infection at age 9. Which of the following agents is most likely to improve this patient's condition in the long term?",
+  "clues": [
+    {
+      "text": "chronic diarrhea",
+      "type": "red",
+      "note": "Chronic diarrhea (steatorrhea) with failure to thrive reflects fat/protein malabsorption from exocrine pancreatic insufficiency — a core feature of cystic fibrosis."
+    },
+    {
+      "text": "sputum cultures have been positive for Pseudomonas aeruginosa",
+      "type": "green",
+      "note": "Recurrent Pseudomonas aeruginosa respiratory infection in a child/teen is highly characteristic of cystic fibrosis (thick airway mucus, chronic colonization)."
+    },
+    {
+      "text": "younger brother died from a severe respiratory infection at age 9",
+      "type": "orange",
+      "note": "A sibling death from respiratory infection suggests an autosomal recessive lung disease — cystic fibrosis (CFTR mutation). Family history supports the inherited diagnosis."
+    }
+  ],
+  "whatMatters": "Recurrent Pseudomonas lung infections + steatorrhea/failure to thrive + an affected sibling = cystic fibrosis with exocrine pancreatic insufficiency. The long-term agent that improves the malabsorption/failure-to-thrive is pancreatic enzyme (lipase) replacement, which restores fat/nutrient and fat-soluble vitamin absorption.",
+  "strategy": "For cystic fibrosis GI symptoms, target the pancreatic insufficiency: thick secretions block pancreatic ducts → enzyme deficiency → malabsorption. The fix is pancreatic enzyme replacement (lipase) plus fat-soluble vitamins (A, D, E, K). Don't treat it as an infectious or inflammatory bowel problem.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Antimotility agents",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Gluten-free diet",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Metronidazole",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Octreotide",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Pancreatic lipase",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "Sulfasalazine",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "antimotility agents — symptomatic, don't fix malabsorption",
+      "detail": "WHAT IT IS: antimotility drugs (loperamide) slow gut transit to reduce stool frequency. ❌ WHY IT FAILS: they don't correct the underlying enzyme deficiency/malabsorption causing steatorrhea and failure to thrive. ✅ Correct if: the goal were short-term symptomatic control of nonmalabsorptive diarrhea."
+    },
+    {
+      "letter": "B",
+      "label": "gluten-free diet — that's celiac disease",
+      "detail": "WHAT IT IS: a gluten-free diet treats celiac disease (gluten-triggered villous atrophy). ❌ WHY IT FAILS: this child's malabsorption is from CF pancreatic insufficiency, not gluten sensitivity; respiratory Pseudomonas/sibling death point to CF. ✅ Correct if: the diagnosis were celiac disease (anti-tTG, villous atrophy, dermatitis herpetiformis)."
+    },
+    {
+      "letter": "C",
+      "label": "metronidazole — antibiotic for specific infections, not CF malabsorption",
+      "detail": "WHAT IT IS: metronidazole treats anaerobes/protozoa (e.g., Giardia, C. difficile). ❌ WHY IT FAILS: the diarrhea is malabsorptive (pancreatic insufficiency), not a treatable enteric infection. ✅ Correct if: the diarrhea were due to Giardia or C. difficile."
+    },
+    {
+      "letter": "D",
+      "label": "octreotide — somatostatin analog, wrong target",
+      "detail": "WHAT IT IS: octreotide (somatostatin analog) is used for secretory tumors/variceal bleeding/some secretory diarrheas. ❌ WHY IT FAILS: it doesn't replace pancreatic enzymes or correct CF malabsorption. ✅ Correct if: the diarrhea were from a neuroendocrine tumor (e.g., VIPoma, carcinoid)."
+    },
+    {
+      "letter": "F",
+      "label": "sulfasalazine — for IBD, not CF",
+      "detail": "WHAT IT IS: sulfasalazine is an anti-inflammatory used in inflammatory bowel disease. ❌ WHY IT FAILS: this is malabsorption from pancreatic insufficiency, not colitis; it wouldn't restore nutrient absorption. ✅ Correct if: the diagnosis were ulcerative colitis/IBD."
+    }
+  ],
+  "reasoning": [
+    "Recurrent Pseudomonas lung infections + steatorrhea + affected sibling = cystic fibrosis",
+    "CF causes exocrine pancreatic insufficiency → fat/protein malabsorption",
+    "Replacing pancreatic enzymes restores nutrient absorption",
+    "Pancreatic lipase → answer E"
+  ],
+  "mechanism": "Cystic fibrosis (autosomal recessive CFTR mutation, classically delta-F508) produces thick, viscous secretions that obstruct pancreatic ducts, destroying exocrine pancreas and causing enzyme deficiency. The result is malabsorption of fat and protein with steatorrhea, failure to thrive, and fat-soluble vitamin (A, D, E, K) deficiency. Oral pancreatic enzyme replacement (lipase, protease, amylase) restores digestion/absorption and improves growth; airway disease is managed separately.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI/Genetics > cystic fibrosis: CFTR (delta-F508), thick secretions, recurrent sinopulmonary infections (S. aureus, Pseudomonas), pancreatic insufficiency (steatorrhea, ADEK deficiency), diagnosis (sweat chloride), enzyme replacement."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Diagnose CF from the triad (Pseudomonas lungs + malabsorption + sibling death), then treat the GI problem at its cause: replace the missing pancreatic enzymes."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on CFTR, pancreatic insufficiency, steatorrhea, fat-soluble vitamins (ADEK), failure to thrive? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Gluten-free (celiac) and sulfasalazine (IBD) and antibiotics are GI-diarrhea baits — but CF malabsorption is from pancreatic insufficiency, fixed by pancreatic enzyme replacement."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the cystic-fibrosis features table (pathogenesis, clinical manifestations, diagnosis). Tie pancreatic insufficiency to enzyme replacement therapy."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "CF malabsorption long-term treatment",
+      "back": "Pancreatic enzyme (lipase) replacement"
+    },
+    {
+      "front": "CF GI problem",
+      "back": "Exocrine pancreatic insufficiency → steatorrhea, failure to thrive"
+    },
+    {
+      "front": "CF respiratory pathogens",
+      "back": "S. aureus (early), Pseudomonas aeruginosa (later), B. cepacia"
+    },
+    {
+      "front": "CFTR mutation / inheritance",
+      "back": "Delta-F508; autosomal recessive"
+    },
+    {
+      "front": "CF fat-soluble vitamin deficiencies",
+      "back": "A, D, E, K"
+    },
+    {
+      "front": "CF diagnosis",
+      "back": "Elevated sweat chloride; CFTR genetic testing"
+    },
+    {
+      "front": "Gluten-free diet indication",
+      "back": "Celiac disease"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Cystic fibrosis (GI)",
+      "detail": "GI/Genetics > cystic fibrosis: pancreatic insufficiency, steatorrhea, ADEK deficiency, pancreatic enzyme replacement; CFTR/delta-F508, sweat chloride.",
+      "location": "GI/Genetics > cystic fibrosis: pancreatic insufficiency, steatorrhea, ADEK deficiency, pancreatic enzyme replacement; CFTR/delta-F508, sweat chloride."
+    },
+    {
+      "tag": "stem",
+      "topic": "CF pulmonary disease",
+      "detail": "Pulmonary/Micro > CF airway disease: thick mucus, recurrent infections (S. aureus, Pseudomonas, Burkholderia), bronchiectasis.",
+      "location": "Pulmonary/Micro > CF airway disease: thick mucus, recurrent infections (S. aureus, Pseudomonas, Burkholderia), bronchiectasis."
+    },
+    {
+      "tag": "options",
+      "topic": "Other malabsorption causes",
+      "detail": "GI > celiac (gluten-free), IBD (sulfasalazine), infectious diarrhea (metronidazole), secretory tumors (octreotide) — to contrast.",
+      "location": "GI > celiac (gluten-free), IBD (sulfasalazine), infectious diarrhea (metronidazole), secretory tumors (octreotide) — to contrast."
+    }
+  ],
+  "memoryHook": "CF clogs the pancreatic ducts → no enzymes → fatty diarrhea & poor growth; give back the LIPASE (pancreatic enzymes) to absorb food.",
+  "stem": [
+    {
+      "text": "A 14-year-old boy is brought to the physician by his mother due to "
+    },
+    {
+      "text": "chronic diarrhea",
+      "clue": true,
+      "type": "red",
+      "note": "Chronic diarrhea (steatorrhea) with failure to thrive reflects fat/protein malabsorption from exocrine pancreatic insufficiency — a core feature of cystic fibrosis."
+    },
+    {
+      "text": " and failure to gain weight appropriately. He has a history of recurrent respiratory infections, and prior "
+    },
+    {
+      "text": "sputum cultures have been positive for Pseudomonas aeruginosa",
+      "clue": true,
+      "type": "green",
+      "note": "Recurrent Pseudomonas aeruginosa respiratory infection in a child/teen is highly characteristic of cystic fibrosis (thick airway mucus, chronic colonization)."
+    },
+    {
+      "text": ". His "
+    },
+    {
+      "text": "younger brother died from a severe respiratory infection at age 9",
+      "clue": true,
+      "type": "orange",
+      "note": "A sibling death from respiratory infection suggests an autosomal recessive lung disease — cystic fibrosis (CFTR mutation). Family history supports the inherited diagnosis."
+    },
+    {
+      "text": ". Which of the following agents is most likely to improve this patient's condition in the long term?"
+    }
+  ]
+}

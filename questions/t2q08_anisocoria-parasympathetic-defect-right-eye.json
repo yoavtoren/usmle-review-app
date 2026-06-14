@@ -1,0 +1,212 @@
+{
+  "id": "q37",
+  "item": 37,
+  "qid": "106294",
+  "title": "Anisocoria: parasympathetic defect (right eye)",
+  "system": "Neuro/Ophtho",
+  "topic": "Pupillary control / ANS",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 63,
+  "vignette": "A 32-year-old woman comes to the office to establish medical care. The patient reports no symptoms. Medical history is significant for migraine headaches for which she takes acetaminophen and naproxen as needed. Vital signs are within normal limits. Physical examination is unremarkable except for anisocoria. Pupillary examination findings in normal, bright, and dim light are shown in the image: in room light the right pupil is larger than the left; the difference between the pupils INCREASES in bright light (the right pupil fails to constrict) and decreases in dim light. This patient's pupillary abnormality is likely due to a defect in which of the following pathways?",
+  "clues": [
+    {
+      "text": "anisocoria",
+      "type": "red",
+      "note": "Anisocoria = unequal pupil size. The task is to decide which pupil is abnormal and which autonomic limb is at fault, using how the asymmetry changes with light."
+    },
+    {
+      "text": "the difference between the pupils INCREASES in bright light",
+      "type": "green",
+      "note": "If anisocoria is WORSE in BRIGHT light, the larger pupil that fails to constrict is abnormal — a PARASYMPATHETIC (constrictor) defect. (If it were worse in DIM light, the smaller pupil that fails to dilate would be abnormal — a sympathetic defect, e.g., Horner.)"
+    },
+    {
+      "text": "the right pupil fails to constrict",
+      "type": "green",
+      "note": "The right pupil is the larger one that won't constrict in bright light, so the parasympathetic constrictor pathway TO THE RIGHT EYE is defective. Parasympathetic fibers travel with CN III to the sphincter pupillae."
+    }
+  ],
+  "whatMatters": "Anisocoria that WORSENS in bright light means the abnormal pupil is the larger one that can't constrict — a parasympathetic defect. Here the right pupil is the failing one, so the lesion is in the parasympathetic innervation of the RIGHT eye.",
+  "strategy": "For anisocoria, use the light test: worse in BRIGHT light → the big pupil can't constrict → parasympathetic (CN III) problem; worse in DIM light → the small pupil can't dilate → sympathetic (Horner) problem. Then assign the defect to whichever eye is abnormal.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Optic nerve of the left eye",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Optic nerve of the right eye",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Parasympathetic innervation of the left eye",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Parasympathetic innervation of the right eye",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Sympathetic innervation of the left eye",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Sympathetic innervation of the right eye",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "left optic nerve — afferent, doesn't cause anisocoria",
+      "detail": "WHAT IT IS: the optic nerve is the AFFERENT limb of the light reflex (sensing light). ❌ WHY IT FAILS: an afferent defect (e.g., RAPD) causes abnormal reflex responses but NOT resting anisocoria, because the efferent (constrictor) pathways to both eyes are intact and consensual. ✅ Correct if: asked about a relative afferent pupillary defect (Marcus Gunn) on swinging-flashlight testing."
+    },
+    {
+      "letter": "B",
+      "label": "right optic nerve — same afferent issue",
+      "detail": "WHAT IT IS: again the afferent (sensory) limb, on the right. ❌ WHY IT FAILS: optic-nerve lesions don't produce fixed unequal pupil SIZE at rest; efferent constriction is preserved. ✅ Correct if: testing showed an RAPD rather than baseline anisocoria."
+    },
+    {
+      "letter": "C",
+      "label": "left parasympathetic — wrong eye",
+      "detail": "WHAT IT IS: a parasympathetic (constrictor/CN III) defect would leave the affected pupil large and poorly reactive — correct MECHANISM. ❌ WHY IT FAILS: it's the wrong SIDE; the failing (large, non-constricting) pupil here is the RIGHT, not the left. ✅ Correct if: the LEFT pupil were the larger one failing to constrict in bright light."
+    },
+    {
+      "letter": "E",
+      "label": "left sympathetic — wrong limb (would be dim-worse, small pupil)",
+      "detail": "WHAT IT IS: a sympathetic (dilator) defect = Horner syndrome, giving a small pupil that fails to dilate, worse in DIM light, often with ptosis/anhidrosis. ❌ WHY IT FAILS: this anisocoria is worse in BRIGHT light with a LARGE failing pupil — the opposite limb — and on the wrong side. ✅ Correct if: the small pupil worsened in dim light (Horner) on the left."
+    },
+    {
+      "letter": "F",
+      "label": "right sympathetic — right side but wrong limb",
+      "detail": "WHAT IT IS: a right sympathetic defect = right Horner (small right pupil, worse in dim light). ❌ WHY IT FAILS: correct side but wrong mechanism — here the right pupil is LARGE and worse in BRIGHT light, indicating a parasympathetic (constrictor) defect, not sympathetic. ✅ Correct if: the right pupil were small and the asymmetry worsened in dim light."
+    }
+  ],
+  "reasoning": [
+    "Anisocoria worse in BRIGHT light → the larger pupil can't constrict",
+    "A failed constrictor = parasympathetic (CN III) defect",
+    "The failing (large) pupil is the right one",
+    "Defect = parasympathetic innervation of the right eye → answer D"
+  ],
+  "mechanism": "Pupil size reflects a balance between sympathetic dilation (radial dilator muscle) and parasympathetic constriction (sphincter pupillae via CN III / Edinger-Westphal). In bright light the parasympathetic constrictor dominates; if it's defective on one side, that pupil stays large and the anisocoria worsens in bright light. In dim light the sympathetic dilator dominates; a sympathetic (Horner) defect leaves a small pupil and worsens anisocoria in dim light.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Neuro/Ophtho > pupillary light reflex and autonomic control: parasympathetic (CN III/Edinger-Westphal → sphincter, constriction) vs sympathetic (dilator, Horner). Learn the bright-vs-dim rule cold."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two decisions: (1) WHICH limb (bright-worse = parasympathetic/large pupil; dim-worse = sympathetic/small pupil), (2) WHICH eye (the one that fails). Decide the limb from the light condition before the side."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on anisocoria, sphincter vs dilator pupillae, Edinger-Westphal, Horner syndrome, afferent vs efferent, RAPD? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Sympathetic-on-the-right and parasympathetic-on-the-left are deliberate near-misses. Pin the limb with the light test FIRST (bright-worse → parasympathetic), then choose the correct (right) side."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The image compares pupils in room/bright/dim light. Practice the routine: find which pupil is bigger, then check whether the gap grows in bright (parasympathetic/CN III) or dim (sympathetic/Horner) light."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Anisocoria WORSE in bright light",
+      "back": "Parasympathetic (constrictor/CN III) defect — large pupil fails to constrict"
+    },
+    {
+      "front": "Anisocoria WORSE in dim light",
+      "back": "Sympathetic defect (Horner) — small pupil fails to dilate"
+    },
+    {
+      "front": "Parasympathetic pupillary pathway",
+      "back": "CN III / Edinger-Westphal → sphincter pupillae (constriction)"
+    },
+    {
+      "front": "Sympathetic pupillary pathway",
+      "back": "Dilator pupillae (mydriasis); lesion = Horner (miosis, ptosis, anhidrosis)"
+    },
+    {
+      "front": "Optic nerve role in pupil reflex",
+      "back": "Afferent limb (lesion = RAPD, not resting anisocoria)"
+    },
+    {
+      "front": "Blown pupil + down-and-out eye",
+      "back": "CN III compression (e.g., PCom aneurysm, uncal herniation)"
+    },
+    {
+      "front": "Horner triad",
+      "back": "Miosis, ptosis, anhidrosis"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Pupillary autonomic control",
+      "detail": "Neuro/Ophtho > pupillary light reflex: parasympathetic constriction (CN III/Edinger-Westphal) vs sympathetic dilation; bright-vs-dim localization of anisocoria.",
+      "location": "Neuro/Ophtho > pupillary light reflex: parasympathetic constriction (CN III/Edinger-Westphal) vs sympathetic dilation; bright-vs-dim localization of anisocoria."
+    },
+    {
+      "tag": "options",
+      "topic": "Horner syndrome & RAPD",
+      "detail": "Neuro > Horner syndrome (sympathetic lesion: miosis/ptosis/anhidrosis) and afferent pupillary defect (optic nerve, swinging-flashlight test).",
+      "location": "Neuro > Horner syndrome (sympathetic lesion: miosis/ptosis/anhidrosis) and afferent pupillary defect (optic nerve, swinging-flashlight test)."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "CN III palsy",
+      "detail": "Neuro > oculomotor nerve: compressive CN III palsy — fixed dilated pupil, ptosis, eye 'down and out' (parasympathetic fibers run superficially).",
+      "location": "Neuro > oculomotor nerve: compressive CN III palsy — fixed dilated pupil, ptosis, eye 'down and out' (parasympathetic fibers run superficially)."
+    }
+  ],
+  "memoryHook": "BRIGHT-worse = the BIG pupil's parasympathetic constrictor is broken; DIM-worse = the small pupil's sympathetic dilator (Horner).",
+  "stem": [
+    {
+      "text": "A 32-year-old woman comes to the office to establish medical care. The patient reports no symptoms. Medical history is significant for migraine headaches for which she takes acetaminophen and naproxen as needed. Vital signs are within normal limits. Physical examination is unremarkable except for "
+    },
+    {
+      "text": "anisocoria",
+      "clue": true,
+      "type": "red",
+      "note": "Anisocoria = unequal pupil size. The task is to decide which pupil is abnormal and which autonomic limb is at fault, using how the asymmetry changes with light."
+    },
+    {
+      "text": ". Pupillary examination findings in normal, bright, and dim light are shown in the image: in room light the right pupil is larger than the left; "
+    },
+    {
+      "text": "the difference between the pupils INCREASES in bright light",
+      "clue": true,
+      "type": "green",
+      "note": "If anisocoria is WORSE in BRIGHT light, the larger pupil that fails to constrict is abnormal — a PARASYMPATHETIC (constrictor) defect. (If it were worse in DIM light, the smaller pupil that fails to dilate would be abnormal — a sympathetic defect, e.g., Horner.)"
+    },
+    {
+      "text": " ("
+    },
+    {
+      "text": "the right pupil fails to constrict",
+      "clue": true,
+      "type": "green",
+      "note": "The right pupil is the larger one that won't constrict in bright light, so the parasympathetic constrictor pathway TO THE RIGHT EYE is defective. Parasympathetic fibers travel with CN III to the sphincter pupillae."
+    },
+    {
+      "text": ") and decreases in dim light. This patient's pupillary abnormality is likely due to a defect in which of the following pathways?"
+    }
+  ]
+}

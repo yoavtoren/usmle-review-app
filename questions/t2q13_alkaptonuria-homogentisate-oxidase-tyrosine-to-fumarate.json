@@ -1,0 +1,202 @@
+{
+  "id": "q42",
+  "item": 42,
+  "qid": "1502",
+  "title": "Alkaptonuria: homogentisate oxidase (tyrosine to fumarate)",
+  "system": "Biochemistry",
+  "topic": "Amino acid metabolism",
+  "correct": "D",
+  "yourAnswer": "C",
+  "percentCorrect": 53,
+  "vignette": "A 2-year-old boy is brought to the office by his parents. He is currently toilet-training during the day and at nighttime. After he urinated in the toilet last night, his parents forgot to flush the toilet and noticed that the boy's urine turned black overnight. The child has no significant past medical history and takes no medications. He can say 2-word sentences, follow 2-step directions, and jump with 2 feet off the ground. Examination shows a well-nourished child with no swelling or tenderness of any joints. Urinalysis: Color black, specific gravity 1.022, protein none, blood negative, glucose negative, ketones negative, leukocyte esterase negative. Which of the following conversion pathways is most likely deficient in this patient?",
+  "clues": [
+    {
+      "text": "urine turned black overnight",
+      "type": "red",
+      "note": "Urine that darkens to black on standing/air exposure is the hallmark of alkaptonuria. Homogentisic acid accumulates and oxidizes to a black pigment when exposed to air."
+    },
+    {
+      "text": "no swelling or tenderness of any joints",
+      "type": "blue",
+      "note": "In children, alkaptonuria is usually asymptomatic except for the dark urine; the arthritis (ochronosis) and dark connective tissue develop in adulthood. Normal joints here fit early/childhood alkaptonuria."
+    },
+    {
+      "text": "blood negative",
+      "type": "purple",
+      "note": "A negative dipstick for blood despite black urine helps exclude hematuria/myoglobinuria as the cause of dark urine — pointing to a pigment (homogentisic acid) instead. It's a rule-out clue."
+    }
+  ],
+  "whatMatters": "Black urine on standing in an otherwise healthy toddler = alkaptonuria, a defect in homogentisate oxidase. That enzyme acts in the tyrosine degradation pathway converting tyrosine (via homogentisate) toward fumarate, so the deficient conversion is 'tyrosine to fumarate.'",
+  "strategy": "For amino-acid metabolism stems, name the disease from the buzzword (black urine = alkaptonuria), then map it to the blocked step on the tyrosine pathway. Alkaptonuria = homogentisate oxidase deficiency, downstream of tyrosine and upstream of fumarate/acetoacetate.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Leucine to acetoacetate",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Phenylalanine to tyrosine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Serine to cysteine",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Tyrosine to fumarate",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Valine to glutamic acid",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "leucine catabolism — wrong amino acid",
+      "detail": "WHAT IT IS: leucine is a purely ketogenic amino acid degraded to acetoacetate/acetyl-CoA; a block here (branched-chain ketoacid dehydrogenase) causes maple syrup urine disease. ❌ WHY IT FAILS: MSUD gives sweet-smelling urine and neurologic decline, not black urine. ✅ Correct if: the urine smelled like maple syrup with a branched-chain amino acid (leucine/isoleucine/valine) defect."
+    },
+    {
+      "letter": "B",
+      "label": "phenylalanine to tyrosine — that's PKU",
+      "detail": "WHAT IT IS: phenylalanine hydroxylase converts phenylalanine to tyrosine; its deficiency is phenylketonuria. ❌ WHY IT FAILS: PKU causes musty body odor, intellectual disability, and fair skin — not black urine; and it's UPSTREAM of the alkaptonuria block. ✅ Correct if: the child had a musty odor, developmental delay, and eczema (PKU)."
+    },
+    {
+      "letter": "C",
+      "label": "serine to cysteine — unrelated pathway (your pick)",
+      "detail": "WHAT IT IS: serine contributes to cysteine synthesis (via homocysteine/cystathionine). ❌ WHY IT FAILS: this transsulfuration pathway has nothing to do with tyrosine degradation or homogentisic acid; defects here relate to homocystinuria, not black urine. ✅ Correct if: the question described homocystinuria (Marfanoid habitus, lens dislocation, thrombosis)."
+    },
+    {
+      "letter": "E",
+      "label": "valine catabolism — wrong amino acid",
+      "detail": "WHAT IT IS: valine is a branched-chain amino acid feeding into succinyl-CoA; a block (BCKD) again causes maple syrup urine disease, not glutamate conversion as worded. ❌ WHY IT FAILS: unrelated to the tyrosine/homogentisate pathway and the black-urine phenotype. ✅ Correct if: a branched-chain disorder (MSUD) were described."
+    }
+  ],
+  "reasoning": [
+    "Black urine on standing in a healthy toddler = alkaptonuria",
+    "Alkaptonuria = deficiency of homogentisate oxidase",
+    "This enzyme lies in tyrosine degradation, between tyrosine and fumarate",
+    "Deficient conversion = tyrosine to fumarate → answer D"
+  ],
+  "mechanism": "Tyrosine is degraded through homogentisic acid, which homogentisate oxidase normally converts toward maleylacetoacetate → fumarate and acetoacetate. In alkaptonuria (autosomal recessive), this enzyme is deficient, so homogentisic acid accumulates and is excreted in urine, oxidizing to a black pigment on air exposure. Over decades the pigment deposits in connective tissue and joints (ochronosis), causing dark cartilage and arthropathy — but children typically show only the dark urine.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochem > amino acid metabolism: the tyrosine degradation pathway and the alkaptonuria step (homogentisate oxidase). Contrast PKU (phenylalanine hydroxylase) and MSUD (branched-chain ketoacid dehydrogenase)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate 'black urine' → alkaptonuria → blocked enzyme → which conversion that enzyme catalyzes. The answer is the tyrosine→fumarate segment that contains homogentisate oxidase."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on homogentisic acid, ochronosis, alkaptonuria, ketogenic vs glucogenic, transsulfuration? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Phenylalanine→tyrosine (PKU) sits in the same pathway and tempts you, and 'serine to cysteine' is a clean-looking unrelated option. Place the block at homogentisate (tyrosine→fumarate), not at the upstream PKU step."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the alkaptonuria pathway diagram (phenylalanine → tyrosine → DOPA/melanin branch; tyrosine → homogentisate → [block] → maleylacetoacetate → fumarate). Trace where the enzyme is missing."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Black urine on standing",
+      "back": "Alkaptonuria (homogentisate oxidase deficiency)"
+    },
+    {
+      "front": "Deficient conversion in alkaptonuria",
+      "back": "Tyrosine to fumarate (via homogentisate)"
+    },
+    {
+      "front": "Adult complication of alkaptonuria",
+      "back": "Ochronosis (dark connective tissue, arthropathy)"
+    },
+    {
+      "front": "Phenylalanine hydroxylase deficiency",
+      "back": "Phenylketonuria (musty odor, intellectual disability)"
+    },
+    {
+      "front": "Branched-chain ketoacid dehydrogenase deficiency",
+      "back": "Maple syrup urine disease"
+    },
+    {
+      "front": "Tyrosine also makes",
+      "back": "DOPA → melanin; dopamine/NE/epinephrine; thyroid hormone"
+    },
+    {
+      "front": "Alkaptonuria inheritance",
+      "back": "Autosomal recessive"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Alkaptonuria",
+      "detail": "Biochem > amino acid metabolism: alkaptonuria (homogentisate oxidase, AR) — black urine, ochronosis, arthralgias; tyrosine degradation pathway.",
+      "location": "Biochem > amino acid metabolism: alkaptonuria (homogentisate oxidase, AR) — black urine, ochronosis, arthralgias; tyrosine degradation pathway."
+    },
+    {
+      "tag": "options",
+      "topic": "Other amino-acid disorders",
+      "detail": "Biochem > PKU (phenylalanine hydroxylase), MSUD (branched-chain leucine/isoleucine/valine), homocystinuria (cystathionine/transsulfuration) — pathway and phenotype for each.",
+      "location": "Biochem > PKU (phenylalanine hydroxylase), MSUD (branched-chain leucine/isoleucine/valine), homocystinuria (cystathionine/transsulfuration) — pathway and phenotype for each."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Tyrosine pathway products",
+      "detail": "Biochem/Endocrine > tyrosine → catecholamines, melanin, thyroid hormone — to anchor where degradation vs synthesis branches occur.",
+      "location": "Biochem/Endocrine > tyrosine → catecholamines, melanin, thyroid hormone — to anchor where degradation vs synthesis branches occur."
+    }
+  ],
+  "memoryHook": "alkaptonuria = 'black' homogentisic acid pools because the tyrosine→fumarate gate (homogentisate Oxidase) is shut.",
+  "stem": [
+    {
+      "text": "A 2-year-old boy is brought to the office by his parents. He is currently toilet-training during the day and at nighttime. After he urinated in the toilet last night, his parents forgot to flush the toilet and noticed that the boy's "
+    },
+    {
+      "text": "urine turned black overnight",
+      "clue": true,
+      "type": "red",
+      "note": "Urine that darkens to black on standing/air exposure is the hallmark of alkaptonuria. Homogentisic acid accumulates and oxidizes to a black pigment when exposed to air."
+    },
+    {
+      "text": ". The child has no significant past medical history and takes no medications. He can say 2-word sentences, follow 2-step directions, and jump with 2 feet off the ground. Examination shows a well-nourished child with "
+    },
+    {
+      "text": "no swelling or tenderness of any joints",
+      "clue": true,
+      "type": "blue",
+      "note": "In children, alkaptonuria is usually asymptomatic except for the dark urine; the arthritis (ochronosis) and dark connective tissue develop in adulthood. Normal joints here fit early/childhood alkaptonuria."
+    },
+    {
+      "text": ". Urinalysis: Color black, specific gravity 1.022, protein none, "
+    },
+    {
+      "text": "blood negative",
+      "clue": true,
+      "type": "purple",
+      "note": "A negative dipstick for blood despite black urine helps exclude hematuria/myoglobinuria as the cause of dark urine — pointing to a pigment (homogentisic acid) instead. It's a rule-out clue."
+    },
+    {
+      "text": ", glucose negative, ketones negative, leukocyte esterase negative. Which of the following conversion pathways is most likely deficient in this patient?"
+    }
+  ]
+}

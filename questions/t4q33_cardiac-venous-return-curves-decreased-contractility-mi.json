@@ -1,0 +1,184 @@
+{
+  "id": "q143",
+  "item": 143,
+  "qid": "1624",
+  "title": "Cardiac/venous return curves: decreased contractility (MI)",
+  "system": "Physiology",
+  "topic": "Cardiac output / venous return",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 75,
+  "vignette": "The cardiac output and venous return curves of a healthy person are shown below with solid lines. The dashed lines show a decreased cardiac output (cardiac function) curve with an unchanged venous return curve. Which of the following is the most likely cause of the change depicted by the dashed lines?",
+  "clues": [
+    {
+      "text": "decreased cardiac output (cardiac function) curve",
+      "type": "red",
+      "note": "A downward-shifted cardiac function curve means reduced contractility for any given preload (right atrial pressure). An isolated drop in the cardiac function curve indicates a negative inotropic state or myocardial injury."
+    },
+    {
+      "text": "unchanged venous return curve",
+      "type": "green",
+      "note": "If the venous return curve is UNCHANGED, then blood volume and total peripheral resistance/venous tone are normal (mean systemic filling pressure unchanged). So the problem is not volume or vascular - it's an isolated contractility defect."
+    }
+  ],
+  "whatMatters": "The dashed lines show a depressed cardiac function curve with an UNCHANGED venous return curve. That isolates the defect to decreased contractility (not changed preload or afterload). The cause is myocardial injury - a myocardial infarction - answer D.",
+  "strategy": "Decode the two-curve plot: the cardiac function (CO) curve reflects contractility; the venous return curve reflects blood volume and venous tone (its x-intercept is mean systemic filling pressure). A pure drop in the CO curve with an unchanged VR curve = isolated negative inotropy/myocardial damage. Volume/vascular changes would shift the VR curve.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Excessive hydration",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Acute hemorrhage",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Chronic anemia",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Myocardial infarction",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Anaphylaxis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "excessive hydration - shifts venous return curve right",
+      "detail": "WHAT IT IS: volume overload increases mean systemic filling pressure. ❌ WHY IT FAILS: it shifts the VENOUS RETURN curve rightward (higher x-intercept), but the VR curve here is unchanged. ✅ Correct if: the venous return curve had moved right with higher filling pressure."
+    },
+    {
+      "letter": "B",
+      "label": "acute hemorrhage - shifts venous return curve left",
+      "detail": "WHAT IT IS: blood loss decreases mean systemic filling pressure. ❌ WHY IT FAILS: it shifts the VR curve LEFTWARD (lower x-intercept); but the VR curve is unchanged and the CO curve dropped, so it's not volume loss. ✅ Correct if: the VR curve had shifted left."
+    },
+    {
+      "letter": "C",
+      "label": "chronic anemia - increases cardiac output curve",
+      "detail": "WHAT IT IS: reduced blood viscosity and high-output compensation. ❌ WHY IT FAILS: chronic anemia tends to INCREASE cardiac output and venous return (raise the curves), the opposite of a depressed CO curve. ✅ Correct if: both curves were elevated (high-output state)."
+    },
+    {
+      "letter": "E",
+      "label": "anaphylaxis - decreases venous return (vasodilation/third-spacing)",
+      "detail": "WHAT IT IS: massive vasodilation and capillary leak. ❌ WHY IT FAILS: it lowers mean systemic filling pressure and shifts the VR curve, rather than isolatedly depressing the CO curve; here VR is unchanged. ✅ Correct if: the VR curve had fallen from venodilation/volume loss."
+    }
+  ],
+  "reasoning": [
+    "Cardiac function (CO) curve shifted DOWN = decreased contractility",
+    "Venous return curve UNCHANGED = normal volume and venous tone",
+    "Isolated negative inotropy points to myocardial damage",
+    "Myocardial infarction -> answer D"
+  ],
+  "mechanism": "The Guyton cardiac output/venous return diagram plots two relationships against right atrial pressure: the cardiac function curve (how cardiac output rises with preload, reflecting contractility/Frank-Starling) and the venous return curve (how venous return falls as right atrial pressure rises; its x-intercept is the mean systemic filling pressure, set by blood volume and venous tone). A downward shift of the cardiac function curve with an unchanged venous return curve indicates decreased contractility with normal volume and vascular tone - i.e., an intrinsic myocardial problem such as a myocardial infarction (or a negative inotropic drug). Changes in blood volume (hydration, hemorrhage) or vascular tone (anaphylaxis) would instead shift the venous return curve, and chronic anemia would raise output.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Physiology > Cardiac output & venous return (Guyton) curves: cardiac function curve = contractility (Frank-Starling); venous return curve x-intercept = mean systemic filling pressure (volume + venous tone). Decreased contractility shifts CO curve down; volume/vascular changes shift VR curve."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Read which curve moved: only the CO curve dropped while VR is unchanged -> isolated contractility loss. Then choose the cause that does exactly that."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on cardiac function vs venous return curve, mean systemic filling pressure, contractility/inotropy, Frank-Starling? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The volume/vascular distractors (hydration, hemorrhage, anaphylaxis) all move the VENOUS RETURN curve, but it's unchanged here. Only an inotropy drop (MI) lowers the CO curve in isolation."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "On the graph: the dashed cardiac-output curve sits below the solid one; the venous-return line is identical -> isolated contractility defect."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked D correctly - tie 'CO curve down, VR unchanged' to a contractility/MI problem."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Cardiac function curve shifts down, venous return unchanged",
+      "back": "Decreased contractility (e.g., myocardial infarction)"
+    },
+    {
+      "front": "Venous return curve x-intercept",
+      "back": "Mean systemic filling pressure (blood volume + venous tone)"
+    },
+    {
+      "front": "What raises mean systemic filling pressure",
+      "back": "Volume overload, increased venous tone (shifts VR curve right)"
+    },
+    {
+      "front": "What lowers mean systemic filling pressure",
+      "back": "Hemorrhage, venodilation/anaphylaxis (shifts VR curve left)"
+    },
+    {
+      "front": "Chronic anemia effect on curves",
+      "back": "High-output state - both curves rise"
+    },
+    {
+      "front": "Cardiac function curve reflects",
+      "back": "Contractility / Frank-Starling relationship"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Cardiac output / venous return curves",
+      "detail": "Physiology: Guyton diagram, contractility shifts vs venous return shifts.",
+      "location": "Physiology: Guyton diagram, contractility shifts vs venous return shifts."
+    },
+    {
+      "tag": "stem",
+      "topic": "Frank-Starling & contractility",
+      "detail": "Cards/Physio: preload, afterload, inotropy effects on the curves.",
+      "location": "Cards/Physio: preload, afterload, inotropy effects on the curves."
+    },
+    {
+      "tag": "options",
+      "topic": "Volume/vascular states",
+      "detail": "Physio: hydration, hemorrhage, anaphylaxis, anemia effects on venous return and output.",
+      "location": "Physio: hydration, hemorrhage, anaphylaxis, anemia effects on venous return and output."
+    }
+  ],
+  "memoryHook": "CO curve sags but VR line holds = the pump is weak, not the tank. Weak pump = MI.",
+  "stem": [
+    {
+      "text": "The cardiac output and venous return curves of a healthy person are shown below with solid lines. The dashed lines show a "
+    },
+    {
+      "text": "decreased cardiac output (cardiac function) curve",
+      "clue": true,
+      "type": "red",
+      "note": "A downward-shifted cardiac function curve means reduced contractility for any given preload (right atrial pressure). An isolated drop in the cardiac function curve indicates a negative inotropic state or myocardial injury."
+    },
+    {
+      "text": " with an "
+    },
+    {
+      "text": "unchanged venous return curve",
+      "clue": true,
+      "type": "green",
+      "note": "If the venous return curve is UNCHANGED, then blood volume and total peripheral resistance/venous tone are normal (mean systemic filling pressure unchanged). So the problem is not volume or vascular - it's an isolated contractility defect."
+    },
+    {
+      "text": ". Which of the following is the most likely cause of the change depicted by the dashed lines?"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "id": "q55",
+  "item": 55,
+  "qid": "1906",
+  "title": "West Nile virus: mosquito (insect bite)",
+  "system": "Microbiology",
+  "topic": "Arboviruses / neuroinvasive infection",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 54,
+  "vignette": "A 68-year-old woman is brought to the emergency department due to confusion and lower extremity weakness. Her symptoms began 2 days ago with fever, headache, malaise, and myalgias. Today, the patient became confused and had difficulty ambulating due to left lower extremity weakness. The patient has a history of lymphoma in remission, hypertension, and type 2 diabetes mellitus. She drinks alcohol socially but does not use tobacco or recreational drugs. She is visiting her family in Texas for the summer and has never traveled outside the United States. Temperature is 38.3 C (101 F), blood pressure is 130/70 mm Hg, and pulse is 96/min. The patient is oriented to place and person only and has a coarse hand tremor. There is flaccid paralysis of the left lower extremity with preserved sensation. CT scan of the head shows no abnormalities. Lumbar puncture is performed, and cerebrospinal fluid analysis shows lymphocytic pleocytosis and elevated protein. Cerebrospinal fluid polymerase chain reaction testing yields viral RNA. The infectious agent responsible for this patient's current condition is most likely transmitted via which of the following mechanisms?",
+  "clues": [
+    {
+      "text": "lower extremity weakness",
+      "type": "red",
+      "note": "Asymmetric flaccid paralysis with preserved sensation suggests anterior-horn (poliomyelitis-like) involvement, a feature of neuroinvasive West Nile virus."
+    },
+    {
+      "text": "history of lymphoma in remission",
+      "type": "orange",
+      "note": "Older age and immunocompromise (prior lymphoma) are major risk factors for neuroinvasive West Nile disease (encephalitis, flaccid paralysis)."
+    },
+    {
+      "text": "Texas for the summer and has never traveled outside the United States",
+      "type": "orange",
+      "note": "Summer in the southern US with no foreign travel fits domestic mosquito-borne West Nile virus, which peaks in warm months in regions like the southern US."
+    },
+    {
+      "text": "coarse hand tremor",
+      "type": "green",
+      "note": "Movement abnormalities (tremor, parkinsonism) plus encephalitis and asymmetric flaccid paralysis are characteristic of neuroinvasive West Nile virus."
+    },
+    {
+      "text": "lymphocytic pleocytosis and elevated protein",
+      "type": "green",
+      "note": "CSF with lymphocytic pleocytosis, elevated protein, and viral RNA on PCR indicates a viral (aseptic) meningoencephalitis — here West Nile, a flavivirus transmitted by Culex mosquitoes."
+    }
+  ],
+  "whatMatters": "Older/immunocompromised patient + summer in the southern US + encephalitis with asymmetric flaccid paralysis and tremor + lymphocytic CSF with viral RNA = neuroinvasive West Nile virus. WNV is a flavivirus transmitted by the bite of Culex mosquitoes — so the transmission mechanism is an INSECT BITE.",
+  "strategy": "Identify the pathogen from the syndrome + season + geography, then recall its transmission route. Mosquito-borne arboviruses (West Nile, dengue, Zika, EEE) spread by insect bite; this neuroinvasive summer encephalitis in the US = West Nile (Culex mosquito).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Blood transfusion",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Insect bite",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Exhalation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Sexual activity",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "blood transfusion — rare route, not the main one",
+      "detail": "WHAT IT IS: West Nile can rarely be transmitted via transfusion or organ transplant. ❌ WHY IT FAILS: that's an uncommon, incidental route; the principal and intended mechanism is the mosquito bite. ✅ Correct if: the stem specifically described post-transfusion/transplant transmission."
+    },
+    {
+      "letter": "C",
+      "label": "exhalation (respiratory droplets) — wrong route",
+      "detail": "WHAT IT IS: respiratory/airborne spread characterizes agents like influenza or TB. ❌ WHY IT FAILS: West Nile is not spread person-to-person by respiratory droplets; it's vector-borne. ✅ Correct if: the pathogen were a respiratory virus/bacterium."
+    },
+    {
+      "letter": "D",
+      "label": "sexual activity — not West Nile",
+      "detail": "WHAT IT IS: sexual transmission applies to agents like HIV, HSV, and Zika (a related flavivirus). ❌ WHY IT FAILS: West Nile is mosquito-borne, not sexually transmitted; Zika is the flavivirus with notable sexual spread. ✅ Correct if: the virus were Zika with sexual-transmission emphasis."
+    }
+  ],
+  "reasoning": [
+    "Summer encephalitis in the southern US, older/immunocompromised host",
+    "Asymmetric flaccid paralysis + tremor + lymphocytic CSF with viral RNA = neuroinvasive West Nile",
+    "West Nile is a flavivirus spread by Culex mosquitoes",
+    "Transmission = insect bite → answer B"
+  ],
+  "mechanism": "West Nile virus is a positive-sense, single-stranded RNA flavivirus transmitted to humans by the bite of infected female Culex mosquitoes (birds are the reservoir), most often in summer/fall in warm regions. Most infections are asymptomatic or a flu-like illness; neuroinvasive disease (meningitis, encephalitis, acute asymmetric flaccid paralysis from anterior-horn involvement, sometimes parkinsonian features) occurs more in older and immunocompromised patients. CSF shows lymphocytic pleocytosis with elevated protein; diagnosis is by IgM/PCR.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > flaviviruses/arboviruses: West Nile (Culex mosquito, summer, neuroinvasive flaccid paralysis, older/immunocompromised). Cross-ref aseptic meningitis CSF pattern."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Combine season + geography + neuro syndrome to name West Nile, then state its vector (mosquito = insect bite). Don't stop at 'viral encephalitis' — return to the transmission question."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on arbovirus/flavivirus, neuroinvasive, flaccid paralysis, lymphocytic pleocytosis, Culex, vector-borne? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Transfusion (rare WNV route) and sexual activity (Zika) are flavivirus 'near-miss' baits. The principal West Nile route is the mosquito bite."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the West Nile summary table (clinical syndrome, transmission, risk factors). Tie the neuroinvasive features and summer/southern-US setting to the Culex vector."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Summer encephalitis + flaccid paralysis (US, elderly)",
+      "back": "Neuroinvasive West Nile virus"
+    },
+    {
+      "front": "West Nile transmission",
+      "back": "Culex mosquito bite (birds = reservoir)"
+    },
+    {
+      "front": "West Nile virus family/genome",
+      "back": "Flavivirus; +ssRNA"
+    },
+    {
+      "front": "West Nile risk factors for neuroinvasion",
+      "back": "Older age, immunocompromise (e.g., malignancy/transplant)"
+    },
+    {
+      "front": "West Nile CSF",
+      "back": "Lymphocytic pleocytosis, elevated protein, viral RNA/IgM"
+    },
+    {
+      "front": "Flavivirus spread sexually",
+      "back": "Zika"
+    },
+    {
+      "front": "Asymmetric flaccid paralysis cause",
+      "back": "Anterior horn (poliomyelitis-like) involvement"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "West Nile virus",
+      "detail": "Micro > flaviviruses/arboviruses: West Nile (Culex vector, neuroinvasive disease, risk factors, CSF, diagnosis).",
+      "location": "Micro > flaviviruses/arboviruses: West Nile (Culex vector, neuroinvasive disease, risk factors, CSF, diagnosis)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Aseptic (viral) meningoencephalitis",
+      "detail": "Neuro/Micro > viral meningitis CSF pattern (lymphocytic, normal glucose, elevated protein) and encephalitis causes.",
+      "location": "Neuro/Micro > viral meningitis CSF pattern (lymphocytic, normal glucose, elevated protein) and encephalitis causes."
+    },
+    {
+      "tag": "options",
+      "topic": "Transmission routes / Zika",
+      "detail": "Micro > arbovirus transmission (mosquito vectors); Zika (mosquito + sexual + vertical) for contrast.",
+      "location": "Micro > arbovirus transmission (mosquito vectors); Zika (mosquito + sexual + vertical) for contrast."
+    }
+  ],
+  "memoryHook": "West Nile rides a Culex mosquito (insect bite) — summer encephalitis with polio-like flaccid weakness, worst in the old and immunocompromised.",
+  "stem": [
+    {
+      "text": "A 68-year-old woman is brought to the emergency department due to confusion and "
+    },
+    {
+      "text": "lower extremity weakness",
+      "clue": true,
+      "type": "red",
+      "note": "Asymmetric flaccid paralysis with preserved sensation suggests anterior-horn (poliomyelitis-like) involvement, a feature of neuroinvasive West Nile virus."
+    },
+    {
+      "text": ". Her symptoms began 2 days ago with fever, headache, malaise, and myalgias. Today, the patient became confused and had difficulty ambulating due to left lower extremity weakness. The patient has a "
+    },
+    {
+      "text": "history of lymphoma in remission",
+      "clue": true,
+      "type": "orange",
+      "note": "Older age and immunocompromise (prior lymphoma) are major risk factors for neuroinvasive West Nile disease (encephalitis, flaccid paralysis)."
+    },
+    {
+      "text": ", hypertension, and type 2 diabetes mellitus. She drinks alcohol socially but does not use tobacco or recreational drugs. She is visiting her family in "
+    },
+    {
+      "text": "Texas for the summer and has never traveled outside the United States",
+      "clue": true,
+      "type": "orange",
+      "note": "Summer in the southern US with no foreign travel fits domestic mosquito-borne West Nile virus, which peaks in warm months in regions like the southern US."
+    },
+    {
+      "text": ". Temperature is 38.3 C (101 F), blood pressure is 130/70 mm Hg, and pulse is 96/min. The patient is oriented to place and person only and has a "
+    },
+    {
+      "text": "coarse hand tremor",
+      "clue": true,
+      "type": "green",
+      "note": "Movement abnormalities (tremor, parkinsonism) plus encephalitis and asymmetric flaccid paralysis are characteristic of neuroinvasive West Nile virus."
+    },
+    {
+      "text": ". There is flaccid paralysis of the left lower extremity with preserved sensation. CT scan of the head shows no abnormalities. Lumbar puncture is performed, and cerebrospinal fluid analysis shows "
+    },
+    {
+      "text": "lymphocytic pleocytosis and elevated protein",
+      "clue": true,
+      "type": "green",
+      "note": "CSF with lymphocytic pleocytosis, elevated protein, and viral RNA on PCR indicates a viral (aseptic) meningoencephalitis — here West Nile, a flavivirus transmitted by Culex mosquitoes."
+    },
+    {
+      "text": ". Cerebrospinal fluid polymerase chain reaction testing yields viral RNA. The infectious agent responsible for this patient's current condition is most likely transmitted via which of the following mechanisms?"
+    }
+  ]
+}

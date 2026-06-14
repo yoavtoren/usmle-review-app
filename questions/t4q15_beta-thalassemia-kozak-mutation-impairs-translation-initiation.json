@@ -1,0 +1,207 @@
+{
+  "id": "q124",
+  "item": 124,
+  "qid": "2086",
+  "title": "Beta-thalassemia: Kozak mutation impairs translation initiation",
+  "system": "Biochemistry",
+  "topic": "Protein synthesis / translation",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 44,
+  "vignette": "A 16-year-old girl with a history of anemia since childhood is evaluated for a genetic abnormality after several members of her family are also found to be anemic. It is determined that she has a point mutation in the beta globin gene, which has resulted in the substitution of guanine (G) with cytosine (C) in the mRNA sequence shown below (+1 position indicates start codon). Normal mRNA: 5'---GCCGCCGCCAUGGUGCGCUUCCAC---3'. Patient's mRNA: 5'---GCCGCCCCCAUGGUGCGCUUCCAC---3'. Which of the following cellular processes is most likely impaired due to this patient's gene mutation?",
+  "clues": [
+    {
+      "text": "anemia since childhood",
+      "type": "orange",
+      "note": "Lifelong, familial anemia from a beta globin gene mutation points to beta thalassemia. The mechanism question is about HOW this particular point mutation reduces beta globin output."
+    },
+    {
+      "text": "point mutation in the beta globin gene",
+      "type": "blue",
+      "note": "Beta thalassemia results from beta globin gene mutations, frequently in regulatory/splice/promoter sequences rather than the coding region. The location of THIS mutation (just before AUG) is the key."
+    },
+    {
+      "text": "+1 position indicates start codon",
+      "type": "green",
+      "note": "The +1 = AUG start codon. The G->C substitution is in the sequence immediately 5' of AUG - the Kozak consensus that the 40S ribosome reads to recognize the start codon. Disrupting it impairs translation INITIATION."
+    },
+    {
+      "text": "GCCGCCCCCAUG",
+      "type": "red",
+      "note": "Comparing GCCGCC[G]CCAUG (normal) to GCCGCC[C]CCAUG (patient), the changed base sits in the Kozak context just upstream of AUG. A weakened Kozak sequence reduces efficient start-codon recognition by the small ribosomal subunit."
+    }
+  ],
+  "whatMatters": "The point mutation lies in the Kozak consensus sequence immediately before the AUG start codon, not in the coding region. Weakening the Kozak context impairs start-codon recognition by the 40S subunit - i.e., translation INITIATION - answer B.",
+  "strategy": "When a mutation is mapped relative to landmarks (start codon, splice sites, promoter), localize it before deciding the affected step. A change just 5' of AUG = Kozak/initiation. A change at GT/AG intron borders = splicing. A premature stop = termination/truncation. Use the position, not the amino acid.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Co-translational protein targeting to endoplasmic reticulum",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Initiation of translation",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Peptide bond formation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Ribosomal translocation during polypeptide elongation",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Termination of polypeptide synthesis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "ER targeting (signal sequence) - not affected",
+      "detail": "WHAT IT IS: co-translational targeting uses an N-terminal signal peptide and SRP to direct secretory/membrane proteins to the ER. ❌ WHY IT FAILS: beta globin is a cytosolic protein and the mutation is in the Kozak/initiation region, not a signal sequence. ✅ Correct if: a mutation disrupted a signal peptide of a secreted/membrane protein."
+    },
+    {
+      "letter": "C",
+      "label": "peptide bond formation - elongation step, not start recognition",
+      "detail": "WHAT IT IS: peptidyl transferase (large-subunit rRNA) forms peptide bonds during elongation. ❌ WHY IT FAILS: the mutation affects START-codon recognition, which precedes elongation; peptide-bond chemistry is unaffected. You chose this. ✅ Correct if: the defect were in peptidyl transferase or a drug like chloramphenicol were involved."
+    },
+    {
+      "letter": "D",
+      "label": "ribosomal translocation - elongation, wrong step",
+      "detail": "WHAT IT IS: translocation moves the ribosome codon-by-codon (eEF2/EF-G dependent). ❌ WHY IT FAILS: it is an elongation event downstream of initiation; the Kozak mutation blocks getting started, not moving along. ✅ Correct if: an EF-G/eEF2 defect or diphtheria toxin/aminoglycoside mechanism were described."
+    },
+    {
+      "letter": "E",
+      "label": "termination - no premature stop here",
+      "detail": "WHAT IT IS: termination uses release factors at a stop codon. ❌ WHY IT FAILS: the mutation isn't a nonsense/stop change; it's upstream of AUG affecting initiation. ✅ Correct if: the mutation created a premature stop codon (nonsense) or disrupted a normal stop."
+    }
+  ],
+  "reasoning": [
+    "Familial lifelong anemia + beta globin point mutation = beta thalassemia",
+    "Mutation sits just 5' of the AUG start codon (Kozak consensus)",
+    "Kozak context is read by the 40S subunit to find the start codon",
+    "Disrupting it impairs translation INITIATION -> answer B"
+  ],
+  "mechanism": "Eukaryotic translation initiation requires the 40S ribosomal subunit, loaded with initiator Met-tRNA and initiation factors, to bind the 5' cap and scan to the first favorable AUG. Recognition of the start codon depends on the surrounding Kozak consensus sequence (a purine at -3 and a G at +4 are most important). A point mutation that weakens this consensus just upstream of AUG reduces efficient start-codon selection, lowering beta globin synthesis and causing beta thalassemia. Because the defect is in start recognition, the impaired step is initiation - distinct from elongation (peptide-bond formation, translocation) or termination.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochemistry > Translation: initiation (40S + Met-tRNA scan to AUG within Kozak consensus), elongation (peptidyl transferase, translocation/eEF2), termination (release factors). Beta thalassemia often from promoter/splice/Kozak/regulatory mutations."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Don't translate the codons - localize the mutation. It's adjacent to AUG (Kozak), so the affected process is initiation, regardless of downstream sequence."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on Kozak consensus, start codon (AUG), 40S scanning, initiation vs elongation vs termination, peptidyl transferase? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose C (peptide bond formation). That's an elongation step - but the mutation prevents the ribosome from properly STARTING (Kozak/initiation). Position before AUG = initiation."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Anchor on landmarks: 'just before AUG' should immediately read 'Kozak -> initiation.'"
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Mutation in sequence just 5' of AUG",
+      "back": "Kozak consensus -> impaired translation INITIATION"
+    },
+    {
+      "front": "Kozak consensus role",
+      "back": "Marks the start codon for 40S subunit recognition (purine at -3, G at +4)"
+    },
+    {
+      "front": "Beta thalassemia common mutation types",
+      "back": "Promoter, splice-site, and Kozak/regulatory point mutations (decreased beta globin)"
+    },
+    {
+      "front": "Peptide bond formation enzyme",
+      "back": "Peptidyl transferase (large-subunit rRNA - a ribozyme)"
+    },
+    {
+      "front": "Translocation factor (eukaryotes)",
+      "back": "eEF2 (target of diphtheria toxin)"
+    },
+    {
+      "front": "Initiation requires",
+      "back": "40S, initiator Met-tRNA, eIFs, 5' cap, GTP"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Translation initiation / Kozak sequence",
+      "detail": "Biochemistry: ribosome assembly, start-codon scanning, Kozak consensus.",
+      "location": "Biochemistry: ribosome assembly, start-codon scanning, Kozak consensus."
+    },
+    {
+      "tag": "stem",
+      "topic": "Beta thalassemia",
+      "detail": "Heme/Onc: beta globin mutations, microcytic anemia, HbA2/HbF changes.",
+      "location": "Heme/Onc: beta globin mutations, microcytic anemia, HbA2/HbF changes."
+    },
+    {
+      "tag": "options",
+      "topic": "Elongation & termination",
+      "detail": "Biochem: peptidyl transferase, translocation (eEF2/EF-G), release factors, signal sequence/SRP targeting.",
+      "location": "Biochem: peptidyl transferase, translocation (eEF2/EF-G), release factors, signal sequence/SRP targeting."
+    }
+  ],
+  "memoryHook": "Kozak sits at the START line just before AUG. Hit it and the ribosome never leaves the gate = initiation fails.",
+  "stem": [
+    {
+      "text": "A 16-year-old girl with a history of "
+    },
+    {
+      "text": "anemia since childhood",
+      "clue": true,
+      "type": "orange",
+      "note": "Lifelong, familial anemia from a beta globin gene mutation points to beta thalassemia. The mechanism question is about HOW this particular point mutation reduces beta globin output."
+    },
+    {
+      "text": " is evaluated for a genetic abnormality after several members of her family are also found to be anemic. It is determined that she has a "
+    },
+    {
+      "text": "point mutation in the beta globin gene",
+      "clue": true,
+      "type": "blue",
+      "note": "Beta thalassemia results from beta globin gene mutations, frequently in regulatory/splice/promoter sequences rather than the coding region. The location of THIS mutation (just before AUG) is the key."
+    },
+    {
+      "text": ", which has resulted in the substitution of guanine (G) with cytosine (C) in the mRNA sequence shown below ("
+    },
+    {
+      "text": "+1 position indicates start codon",
+      "clue": true,
+      "type": "green",
+      "note": "The +1 = AUG start codon. The G->C substitution is in the sequence immediately 5' of AUG - the Kozak consensus that the 40S ribosome reads to recognize the start codon. Disrupting it impairs translation INITIATION."
+    },
+    {
+      "text": "). Normal mRNA: 5'---GCCGCCGCCAUGGUGCGCUUCCAC---3'. Patient's mRNA: 5'---"
+    },
+    {
+      "text": "GCCGCCCCCAUG",
+      "clue": true,
+      "type": "red",
+      "note": "Comparing GCCGCC[G]CCAUG (normal) to GCCGCC[C]CCAUG (patient), the changed base sits in the Kozak context just upstream of AUG. A weakened Kozak sequence reduces efficient start-codon recognition by the small ribosomal subunit."
+    },
+    {
+      "text": "GUGCGCUUCCAC---3'. Which of the following cellular processes is most likely impaired due to this patient's gene mutation?"
+    }
+  ]
+}

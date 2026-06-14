@@ -1,0 +1,198 @@
+{
+  "id": "q62",
+  "item": 62,
+  "qid": "487",
+  "title": "Emphysema: flow-volume loop & wall destruction",
+  "system": "Pulmonary/Pathology",
+  "topic": "Obstructive lung disease",
+  "correct": "C",
+  "yourAnswer": "A",
+  "percentCorrect": 45,
+  "vignette": "A 57-year-old man is being evaluated for progressive shortness of breath. His respiratory flow-volume curve is shown in red. The red loop is shifted toward higher (larger) lung volumes and shows a scooped/concave expiratory limb with reduced expiratory flow, compared with the normal loop. Which of the following pathologic findings is most likely to be present in this patient?",
+  "clues": [
+    {
+      "text": "shifted toward higher (larger) lung volumes",
+      "type": "red",
+      "note": "A flow-volume loop shifted toward higher lung volumes (leftward on the reversed-volume axis) indicates air trapping and hyperinflation — the obstructive pattern. This points to emphysema/COPD rather than restriction (which shifts to smaller volumes)."
+    },
+    {
+      "text": "scooped/concave expiratory limb",
+      "type": "green",
+      "note": "A concave ('scooped-out') expiratory limb with reduced flow is the signature of obstructive lung disease. In emphysema, loss of elastic recoil and airway collapse on expiration produce this shape."
+    }
+  ],
+  "whatMatters": "The flow-volume loop shows OBSTRUCTION with hyperinflation (high lung volumes, scooped expiratory limb) = emphysema. Emphysema's defining pathology is destruction of the alveolar (interalveolar) walls, which loses elastic recoil and enlarges airspaces. The traps are restrictive/other pathologies (hyaline membranes = ARDS, fibrosis = restriction).",
+  "strategy": "Read the flow-volume loop first: obstructive = shifted to HIGH volumes with a scooped expiratory limb; restrictive = shifted to LOW volumes, tall narrow loop. Then match the obstructive emphysema picture to its histology: interalveolar wall destruction.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alveolar hyaline membranes",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Compression atelectasis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Interalveolar wall destruction",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Intraalveolar hemorrhage",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Pulmonary fibrosis",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Thromboembolic disease",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "hyaline membranes — ARDS/RDS, not obstructive (your pick)",
+      "detail": "WHAT IT IS: alveolar hyaline membranes are the histologic hallmark of diffuse alveolar damage (ARDS) or neonatal RDS. ❌ WHY IT FAILS: those cause acute restrictive/stiff-lung physiology, not the chronic obstructive hyperinflated loop seen here. ✅ Correct if: the patient had acute hypoxemic respiratory failure with bilateral infiltrates (ARDS)."
+    },
+    {
+      "letter": "B",
+      "label": "compression atelectasis — collapse, not hyperinflation",
+      "detail": "WHAT IT IS: compression atelectasis is lung collapse from external pressure (effusion, mass). ❌ WHY IT FAILS: it reduces lung volume (restrictive), opposite to the hyperinflated obstructive loop. ✅ Correct if: imaging/physiology showed focal collapse with low volumes."
+    },
+    {
+      "letter": "D",
+      "label": "intraalveolar hemorrhage — bleeding, wrong physiology",
+      "detail": "WHAT IT IS: blood filling alveoli (e.g., Goodpasture, vasculitis). ❌ WHY IT FAILS: it doesn't produce a chronic obstructive, hyperinflated flow-volume loop; presentation is hemoptysis/infiltrates. ✅ Correct if: the patient had diffuse alveolar hemorrhage (hemoptysis, anemia, infiltrates)."
+    },
+    {
+      "letter": "E",
+      "label": "pulmonary fibrosis — restrictive, low volumes",
+      "detail": "WHAT IT IS: fibrosis stiffens the lung (restrictive disease). ❌ WHY IT FAILS: restriction shifts the loop to SMALLER lung volumes with supernormal flows — the opposite of this hyperinflated obstructive loop. ✅ Correct if: the loop were shifted to low volumes (tall, narrow) with crackles/clubbing (ILD)."
+    },
+    {
+      "letter": "F",
+      "label": "thromboembolic disease — usually normal spirometry",
+      "detail": "WHAT IT IS: pulmonary embolism obstructs pulmonary arteries. ❌ WHY IT FAILS: PE typically gives near-normal spirometry/flow-volume loops, not an obstructive hyperinflated curve. ✅ Correct if: the scenario stressed acute dyspnea with clear lungs and hypoxemia (PE)."
+    }
+  ],
+  "reasoning": [
+    "Flow-volume loop shifted to high volumes with a scooped expiratory limb = obstruction (emphysema)",
+    "Emphysema destroys alveolar (interalveolar) walls and loses elastic recoil",
+    "This explains the hyperinflation and reduced expiratory flow",
+    "Pathology = interalveolar wall destruction → answer C"
+  ],
+  "mechanism": "Emphysema is permanent enlargement of airspaces distal to terminal bronchioles due to destruction of interalveolar (septal) walls, classically from smoking (centriacinar) or alpha-1 antitrypsin deficiency (panacinar). Loss of elastic recoil and alveolar attachments causes small-airway collapse on expiration, air trapping, and hyperinflation — producing a flow-volume loop shifted to high lung volumes with a concave, low-flow expiratory limb and increased compliance. Reduced surface area lowers DLCO.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pulmonary > obstructive disease & flow-volume loops: emphysema (interalveolar wall destruction, increased compliance, hyperinflation, low DLCO) vs restrictive loops. Compare COPD subtypes (centriacinar vs panacinar)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Read the loop's POSITION and SHAPE first: high-volume + scooped = obstructive emphysema, then recall its histology (septal-wall destruction). Don't jump to a named disease before reading the curve."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on flow-volume loop, hyperinflation/air trapping, interalveolar/septal wall, elastic recoil, DLCO, obstructive vs restrictive? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Hyaline membranes (ARDS) and fibrosis (restriction) are the main traps; both are restrictive, not the hyperinflated obstructive loop shown. Tie the obstructive loop to alveolar-wall destruction (emphysema)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "This is a flow-volume-loop reading task. Practice the reference figure: normal vs obstructive (shifted right/high volume, scooped) vs restrictive (shifted left/low volume, tall narrow) vs fixed/variable obstruction."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Obstructive flow-volume loop",
+      "back": "Shifted to high lung volumes, scooped (concave) expiratory limb"
+    },
+    {
+      "front": "Emphysema histology",
+      "back": "Interalveolar (septal) wall destruction"
+    },
+    {
+      "front": "Emphysema mechanics",
+      "back": "Loss of elastic recoil, increased compliance, air trapping, low DLCO"
+    },
+    {
+      "front": "Centriacinar emphysema",
+      "back": "Smoking (upper lobes)"
+    },
+    {
+      "front": "Panacinar emphysema",
+      "back": "Alpha-1 antitrypsin deficiency (lower lobes)"
+    },
+    {
+      "front": "Restrictive flow-volume loop",
+      "back": "Shifted to low volumes, tall/narrow"
+    },
+    {
+      "front": "Alveolar hyaline membranes",
+      "back": "ARDS / neonatal RDS (diffuse alveolar damage)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Emphysema",
+      "detail": "Pulmonary > obstructive lung disease: emphysema (alveolar wall destruction, centriacinar vs panacinar, increased compliance, flow-volume loop, DLCO).",
+      "location": "Pulmonary > obstructive lung disease: emphysema (alveolar wall destruction, centriacinar vs panacinar, increased compliance, flow-volume loop, DLCO)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Flow-volume loops",
+      "detail": "Pulmonary/Physiology > flow-volume loops: obstructive vs restrictive vs fixed/variable airway obstruction patterns.",
+      "location": "Pulmonary/Physiology > flow-volume loops: obstructive vs restrictive vs fixed/variable airway obstruction patterns."
+    },
+    {
+      "tag": "options",
+      "topic": "ARDS, atelectasis, fibrosis, PE",
+      "detail": "Pulmonary > diffuse alveolar damage (hyaline membranes), atelectasis, pulmonary fibrosis, pulmonary embolism — to contrast pathologies.",
+      "location": "Pulmonary > diffuse alveolar damage (hyaline membranes), atelectasis, pulmonary fibrosis, pulmonary embolism — to contrast pathologies."
+    }
+  ],
+  "memoryHook": "Scooped loop shifted to BIG volumes = trapped air of emphysema; the walls between alveoli are GONE (interalveolar wall destruction).",
+  "stem": [
+    {
+      "text": "A 57-year-old man is being evaluated for progressive shortness of breath. His respiratory flow-volume curve is shown in red. The red loop is "
+    },
+    {
+      "text": "shifted toward higher (larger) lung volumes",
+      "clue": true,
+      "type": "red",
+      "note": "A flow-volume loop shifted toward higher lung volumes (leftward on the reversed-volume axis) indicates air trapping and hyperinflation — the obstructive pattern. This points to emphysema/COPD rather than restriction (which shifts to smaller volumes)."
+    },
+    {
+      "text": " and shows a "
+    },
+    {
+      "text": "scooped/concave expiratory limb",
+      "clue": true,
+      "type": "green",
+      "note": "A concave ('scooped-out') expiratory limb with reduced flow is the signature of obstructive lung disease. In emphysema, loss of elastic recoil and airway collapse on expiration produce this shape."
+    },
+    {
+      "text": " with reduced expiratory flow, compared with the normal loop. Which of the following pathologic findings is most likely to be present in this patient?"
+    }
+  ]
+}

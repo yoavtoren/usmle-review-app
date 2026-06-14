@@ -1,0 +1,211 @@
+{
+  "id": "q98",
+  "item": 98,
+  "qid": "1842",
+  "title": "Sickle cell disease: autosplenectomy from vaso-occlusion",
+  "system": "Hematology",
+  "topic": "Hemoglobinopathy / spleen",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 79,
+  "vignette": "A 12-year-old boy is brought to the emergency room due to high fever, chest pains, and dyspnea. Medical history is significant for 2 prior hospitalizations for abdominal pain that resolved with analgesics and hydration. Evaluation today shows a hematocrit of 23% (normal ~37-49) and reticulocyte count of 9% (normal 0.5-1.5). Several hours after being admitted to the hospital, the patient dies. At autopsy, the spleen is small and firm. This patient's autopsy finding is most likely related to which of the following?",
+  "clues": [
+    {
+      "text": "high fever, chest pains, and dyspnea",
+      "type": "red",
+      "note": "Fever + chest pain + dyspnea in a child with a hemolytic anemia is acute chest syndrome — a life-threatening sickle-cell complication from pulmonary vaso-occlusion. The acute fatal event fits a vaso-occlusive crisis."
+    },
+    {
+      "text": "2 prior hospitalizations for abdominal pain",
+      "type": "orange",
+      "note": "Recurrent pain crises (here abdominal) are the hallmark of sickle cell disease vaso-occlusion. A pattern of episodic, self-resolving severe pain in a young patient points to a hemoglobinopathy."
+    },
+    {
+      "text": "hematocrit of 23% (normal ~37-49) and reticulocyte count of 9% (normal 0.5-1.5)",
+      "type": "green",
+      "note": "Anemia (Hct 23) with a high reticulocyte count (9% / normal 0.5-1.5) = a hemolytic anemia with brisk marrow compensation. In a child with pain crises and acute chest syndrome, this is sickle cell disease."
+    },
+    {
+      "text": "spleen is small and firm",
+      "type": "green",
+      "note": "A small, firm (fibrotic) spleen in sickle cell disease is AUTOSPLENECTOMY: repeated splenic vaso-occlusion and infarction shrink and scar the spleen. Vascular occlusion by sickled cells is the underlying mechanism."
+    }
+  ],
+  "whatMatters": "Recurrent pain crises + hemolytic anemia + acute chest syndrome = sickle cell disease, and the small firm spleen is AUTOSPLENECTOMY. The mechanism is repeated splenic VASCULAR OCCLUSION by sickled cells causing infarction and fibrosis — answer E.",
+  "strategy": "Tie the autopsy finding to the disease mechanism. In sickle cell disease, the small fibrotic spleen results from recurrent micro-infarction (vaso-occlusion), not from atrophy, lipid storage, or pressure. Pick the pathophysiology that matches the disease (sickling → vascular occlusion → infarction).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Extramedullary hematopoiesis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Follicular hyperplasia",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Lipid accumulation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pressure atrophy",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Vascular occlusion",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "extramedullary hematopoiesis — enlarges the spleen, doesn't shrink it",
+      "detail": "WHAT IT IS: extramedullary hematopoiesis (e.g., in thalassemia or myelofibrosis) is blood-cell production outside the marrow, often in the spleen. ❌ WHY IT FAILS: it would cause splenoMEGALY, not a small firm spleen; the finding here is autoinfarction. ✅ Correct if: the spleen were enlarged in a chronic hemolytic anemia like beta-thalassemia major."
+    },
+    {
+      "letter": "B",
+      "label": "follicular hyperplasia — reactive enlargement, wrong direction",
+      "detail": "WHAT IT IS: reactive follicular (white-pulp) hyperplasia occurs with immune stimulation/infection. ❌ WHY IT FAILS: it enlarges lymphoid tissue, not shrinks/fibroses the spleen; it doesn't explain autosplenectomy. ✅ Correct if: the question described reactive splenomegaly/lymphadenopathy."
+    },
+    {
+      "letter": "C",
+      "label": "lipid accumulation — storage disease (Gaucher), causes big spleen",
+      "detail": "WHAT IT IS: lipid-laden macrophages accumulate in lysosomal storage diseases (e.g., Gaucher). ❌ WHY IT FAILS: storage disease causes massive splenoMEGALY, not a small fibrotic spleen, and doesn't fit sickle cell. ✅ Correct if: the case were Gaucher/Niemann-Pick with hepatosplenomegaly and storage cells."
+    },
+    {
+      "letter": "D",
+      "label": "pressure atrophy — wrong mechanism for sickle spleen",
+      "detail": "WHAT IT IS: pressure atrophy is tissue loss from sustained external compression (e.g., by a mass). ❌ WHY IT FAILS: the sickle spleen shrinks from repeated ISCHEMIC INFARCTION (vaso-occlusion), not external pressure. ✅ Correct if: an adjacent mass were compressing and atrophying the organ."
+    }
+  ],
+  "reasoning": [
+    "Pain crises + hemolytic anemia + acute chest syndrome = sickle cell disease",
+    "Small, firm, fibrotic spleen = autosplenectomy",
+    "Sickled cells repeatedly occlude splenic vessels → infarction → fibrosis",
+    "Mechanism = vascular occlusion → answer E"
+  ],
+  "mechanism": "In sickle cell disease, deoxygenated HbS polymerizes, deforming red cells into rigid sickle shapes that occlude the microvasculature. In the spleen, recurrent vaso-occlusion causes repeated infarction and progressive fibrosis, shrinking it to a small, firm organ — 'autosplenectomy,' typically by adolescence. Functional asplenia predisposes to overwhelming infection by encapsulated organisms. Vaso-occlusion also drives pain crises and acute chest syndrome (the likely fatal event here).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Hematology > Sickle cell disease: HbS (Glu→Val), vaso-occlusion (pain crises, acute chest syndrome, autosplenectomy), functional asplenia → encapsulated organism risk, aplastic crisis (parvovirus B19), labs (anemia + reticulocytosis). Cross-link splenic pathology."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Match autopsy finding to disease mechanism: sickle cell → sickling → vascular occlusion → splenic infarction/fibrosis. The small firm spleen is the END result of vaso-occlusion."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on autosplenectomy, vaso-occlusion, acute chest syndrome, reticulocyte, extramedullary hematopoiesis? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Extramedullary hematopoiesis (A) is a tempting 'spleen + anemia' link, but it ENLARGES the spleen (thalassemia). A small, firm spleen = infarction (vaso-occlusion)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (E). Anchor: sickle spleen is small/firm because sickled cells keep clogging vessels → infarction → autosplenectomy → encapsulated-organism risk."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Small firm spleen in sickle cell disease",
+      "back": "Autosplenectomy from recurrent vaso-occlusion/infarction"
+    },
+    {
+      "front": "Sickle cell molecular defect",
+      "back": "HbS: β-globin Glu→Val (point mutation)"
+    },
+    {
+      "front": "Fever + chest pain + dyspnea in sickle cell",
+      "back": "Acute chest syndrome (pulmonary vaso-occlusion)"
+    },
+    {
+      "front": "Functional asplenia → infection risk",
+      "back": "Encapsulated organisms (pneumococcus, H. influenzae, meningococcus, Salmonella)"
+    },
+    {
+      "front": "Anemia + high reticulocytes",
+      "back": "Hemolytic anemia with marrow compensation"
+    },
+    {
+      "front": "Aplastic crisis trigger in sickle cell",
+      "back": "Parvovirus B19"
+    },
+    {
+      "front": "Big spleen mechanism (contrast)",
+      "back": "Extramedullary hematopoiesis / storage disease (e.g., thalassemia, Gaucher)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Sickle cell disease & autosplenectomy",
+      "detail": "Heme: HbS polymerization, vaso-occlusion, splenic infarction/autosplenectomy, functional asplenia, acute chest syndrome.",
+      "location": "Heme: HbS polymerization, vaso-occlusion, splenic infarction/autosplenectomy, functional asplenia, acute chest syndrome."
+    },
+    {
+      "tag": "options",
+      "topic": "Splenic pathology",
+      "detail": "Path: causes of small vs enlarged spleen — infarction/autosplenectomy vs extramedullary hematopoiesis, follicular hyperplasia, storage disease.",
+      "location": "Path: causes of small vs enlarged spleen — infarction/autosplenectomy vs extramedullary hematopoiesis, follicular hyperplasia, storage disease."
+    },
+    {
+      "tag": "stem",
+      "topic": "Hemolytic anemia labs",
+      "detail": "Heme: reticulocytosis, LDH, haptoglobin, indirect bilirubin; sickle cell complications and crises.",
+      "location": "Heme: reticulocytosis, LDH, haptoglobin, indirect bilirubin; sickle cell complications and crises."
+    }
+  ],
+  "memoryHook": "Sickled cells keep clogging the spleen → it infarcts itself into a tiny firm nub = autosplenectomy (mechanism: vascular occlusion).",
+  "stem": [
+    {
+      "text": "A 12-year-old boy is brought to the emergency room due to "
+    },
+    {
+      "text": "high fever, chest pains, and dyspnea",
+      "clue": true,
+      "type": "red",
+      "note": "Fever + chest pain + dyspnea in a child with a hemolytic anemia is acute chest syndrome — a life-threatening sickle-cell complication from pulmonary vaso-occlusion. The acute fatal event fits a vaso-occlusive crisis."
+    },
+    {
+      "text": ". Medical history is significant for "
+    },
+    {
+      "text": "2 prior hospitalizations for abdominal pain",
+      "clue": true,
+      "type": "orange",
+      "note": "Recurrent pain crises (here abdominal) are the hallmark of sickle cell disease vaso-occlusion. A pattern of episodic, self-resolving severe pain in a young patient points to a hemoglobinopathy."
+    },
+    {
+      "text": " that resolved with analgesics and hydration. Evaluation today shows a "
+    },
+    {
+      "text": "hematocrit of 23% (normal ~37-49) and reticulocyte count of 9% (normal 0.5-1.5)",
+      "clue": true,
+      "type": "green",
+      "note": "Anemia (Hct 23) with a high reticulocyte count (9% / normal 0.5-1.5) = a hemolytic anemia with brisk marrow compensation. In a child with pain crises and acute chest syndrome, this is sickle cell disease."
+    },
+    {
+      "text": ". Several hours after being admitted to the hospital, the patient dies. At autopsy, the "
+    },
+    {
+      "text": "spleen is small and firm",
+      "clue": true,
+      "type": "green",
+      "note": "A small, firm (fibrotic) spleen in sickle cell disease is AUTOSPLENECTOMY: repeated splenic vaso-occlusion and infarction shrink and scar the spleen. Vascular occlusion by sickled cells is the underlying mechanism."
+    },
+    {
+      "text": ". This patient's autopsy finding is most likely related to which of the following?"
+    }
+  ]
+}

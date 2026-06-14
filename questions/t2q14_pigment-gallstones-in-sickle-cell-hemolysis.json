@@ -1,0 +1,212 @@
+{
+  "id": "q43",
+  "item": 43,
+  "qid": "16117",
+  "title": "Pigment gallstones in sickle cell (hemolysis)",
+  "system": "GI/Heme",
+  "topic": "Gallstones / bilirubin",
+  "correct": "F",
+  "yourAnswer": "F",
+  "percentCorrect": 58,
+  "vignette": "A 31-year-old woman comes to the emergency department due to worsening right upper quadrant pain, fever, nausea, and vomiting for a day. The pain increases with deep inspiration. Other medical conditions include uterine fibroids and sickle cell anemia. The patient does not use tobacco, alcohol, or illicit drugs. Temperature is 38.6 C (101.5 F), blood pressure is 120/70 mm Hg, and pulse is 102/min. BMI is 24 kg/m2. On examination, the patient appears uncomfortable; there is no jaundice. Tenderness and guarding are present over the right upper quadrant. Bowel sounds are decreased. Hemoglobin is 10.1 g/dL and white blood cell count is 18,000/mm3 with 7% band forms. Abdominal ultrasound shows evidence of cholelithiasis and gallbladder wall thickening. Gross inspection of the specimen reveals small black gallstones. Which of the following is most likely responsible for this patient's symptoms?",
+  "clues": [
+    {
+      "text": "sickle cell anemia",
+      "type": "red",
+      "note": "Chronic hemolysis (sickle cell) is the key risk factor: ongoing red-cell breakdown floods the liver with unconjugated bilirubin. This predisposes to black PIGMENT gallstones (calcium bilirubinate)."
+    },
+    {
+      "text": "Hemoglobin is 10.1 g/dL",
+      "type": "blue",
+      "note": "Anemia (Hgb 10.1 g/dL; normal ~12-16 g/dL in women) reflects the chronic hemolysis. The hemolytic anemia is what drives the bilirubin overload behind pigment-stone formation. WBC 18,000/mm3 with bands signals acute cholecystitis."
+    },
+    {
+      "text": "small black gallstones",
+      "type": "green",
+      "note": "Black pigment stones form when excess bilirubin is secreted into bile and precipitates as calcium bilirubinate. They are the classic stone of chronic hemolysis (sickle cell, hereditary spherocytosis)."
+    }
+  ],
+  "whatMatters": "Sickle cell → chronic hemolysis → too much unconjugated bilirubin delivered to the liver → increased EFFLUX of (conjugated) bilirubin into bile, where it precipitates as calcium bilirubinate (black pigment stones). The black stones plus a hemolytic anemia are the giveaway; the mechanism is bilirubin overload in bile.",
+  "strategy": "Tie stone color to mechanism: black pigment = chronic hemolysis (bilirubin overload); brown pigment = biliary infection/stasis (bacterial beta-glucuronidase); cholesterol = the 4 F's / supersaturation. With hemolysis, the answer is increased bilirubin secretion into bile.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Altered enterohepatic circulation of bilirubin",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Biliary stasis due to lack of enteral stimulation",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Decreased gallbladder motility due to denervation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Impaired bile acid synthesis",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Increased cholesterol synthesis",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Increased efflux of bilirubin into bile",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "enterohepatic recycling — drives BROWN/ileal-disease stones",
+      "detail": "WHAT IT IS: increased enterohepatic cycling of bilirubin (e.g., ileal disease/Crohn) can raise biliary bilirubin and contribute to pigment stones. ❌ WHY IT FAILS: this patient's driver is intravascular/extravascular HEMOLYSIS (sickle cell), not gut recycling; black stones here come from hemolytic bilirubin overload. ✅ Correct if: the stem featured terminal ileal disease/resection altering bile-salt and bilirubin recycling."
+    },
+    {
+      "letter": "B",
+      "label": "biliary stasis (no enteral stimulation) — TPN/fasting stones",
+      "detail": "WHAT IT IS: prolonged fasting/TPN reduces CCK-driven gallbladder emptying, causing stasis and sludge. ❌ WHY IT FAILS: she's eating normally with no TPN/fasting history; her stones are hemolytic pigment stones, not stasis-related. ✅ Correct if: the patient were on long-term TPN or NPO with biliary sludge."
+    },
+    {
+      "letter": "C",
+      "label": "gallbladder denervation — not a stone mechanism here",
+      "detail": "WHAT IT IS: impaired gallbladder motility can promote stasis. ❌ WHY IT FAILS: there's no denervation/dysmotility cause given; the black stones point squarely to bilirubin overload from hemolysis. ✅ Correct if: the stem described an autonomic neuropathy or vagotomy causing gallbladder hypomotility."
+    },
+    {
+      "letter": "D",
+      "label": "impaired bile acid synthesis — would risk cholesterol stones",
+      "detail": "WHAT IT IS: less bile acid relative to cholesterol supersaturates bile and favors CHOLESTEROL stones. ❌ WHY IT FAILS: her stones are black PIGMENT (bilirubin), not cholesterol, and there's no bile-acid synthesis defect. ✅ Correct if: the stones were cholesterol stones from bile-acid deficiency/loss."
+    },
+    {
+      "letter": "E",
+      "label": "increased cholesterol synthesis — wrong stone type",
+      "detail": "WHAT IT IS: excess biliary cholesterol (obesity, estrogen, fibrates) supersaturates bile → cholesterol stones. ❌ WHY IT FAILS: again, this is a pigment (bilirubin) stone from hemolysis, not a cholesterol stone; BMI is normal and no estrogen/fibrate clue. ✅ Correct if: a 'fat, female, forty, fertile' patient had yellow cholesterol stones."
+    }
+  ],
+  "reasoning": [
+    "Sickle cell → chronic hemolysis → excess unconjugated bilirubin to the liver",
+    "Liver conjugates and secretes more bilirubin into bile",
+    "Bilirubin precipitates as calcium bilirubinate = black pigment stones",
+    "Mechanism = increased efflux of bilirubin into bile → answer F"
+  ],
+  "mechanism": "Chronic hemolysis (sickle cell anemia) releases large amounts of heme, producing excess unconjugated bilirubin delivered to the liver. The liver conjugates and secretes more bilirubin into bile, raising biliary bilirubin until it precipitates with calcium as calcium bilirubinate — black pigment stones. These stones can obstruct the cystic duct and trigger acute cholecystitis (RUQ pain, fever, leukocytosis), as in this patient.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI > gallstones: cholesterol (4 F's, supersaturation) vs pigment — black (chronic hemolysis: sickle cell, spherocytosis) vs brown (biliary infection/stasis, beta-glucuronidase). Cross-ref hemolytic anemias."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Connect hemolysis → bilirubin overload → more bilirubin secreted into bile → black stones. The question's wording 'increased efflux of bilirubin into bile' IS that mechanism."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on pigment vs cholesterol stones, unconjugated vs conjugated bilirubin, calcium bilirubinate, enterohepatic circulation, beta-glucuronidase? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Enterohepatic-recycling (brown/ileal) and stasis (TPN) are real pigment-stone mechanisms planted to mislead. With a hemolytic anemia and BLACK stones, the driver is bilirubin efflux into bile."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference image is the pigment-stone pathogenesis figure (black: hemolysis → unconjugated bilirubin; brown: biliary infection → beta-glucuronidase). Gross black stones in a hemolytic patient = the black-stone limb."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Black pigment gallstones",
+      "back": "Chronic hemolysis (sickle cell, hereditary spherocytosis)"
+    },
+    {
+      "front": "Brown pigment gallstones",
+      "back": "Biliary infection/stasis (bacterial beta-glucuronidase)"
+    },
+    {
+      "front": "Cholesterol gallstones risk",
+      "back": "Female, fat, forty, fertile; estrogen, fibrates, native American"
+    },
+    {
+      "front": "Pigment-stone composition",
+      "back": "Calcium bilirubinate"
+    },
+    {
+      "front": "RUQ pain + fever + leukocytosis + stones",
+      "back": "Acute cholecystitis"
+    },
+    {
+      "front": "Pain worse with deep inspiration / Murphy sign",
+      "back": "Cholecystitis"
+    },
+    {
+      "front": "Sickle cell chronic complication (biliary)",
+      "back": "Pigment gallstones from hemolysis"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Pigment gallstones",
+      "detail": "GI > gallstones: black (hemolysis → bilirubin) vs brown (infection/stasis); pathogenesis and risk factors; cholecystitis sequelae.",
+      "location": "GI > gallstones: black (hemolysis → bilirubin) vs brown (infection/stasis); pathogenesis and risk factors; cholecystitis sequelae."
+    },
+    {
+      "tag": "stem",
+      "topic": "Sickle cell anemia",
+      "detail": "Heme > sickle cell: chronic hemolysis, pigment gallstones, complications; cross-ref hereditary spherocytosis (also pigment stones).",
+      "location": "Heme > sickle cell: chronic hemolysis, pigment gallstones, complications; cross-ref hereditary spherocytosis (also pigment stones)."
+    },
+    {
+      "tag": "options",
+      "topic": "Cholesterol stones & cholestasis",
+      "detail": "GI > cholesterol stones (4 F's, supersaturation, bile-acid loss) and biliary stasis (TPN/fasting) to contrast mechanisms.",
+      "location": "GI > cholesterol stones (4 F's, supersaturation, bile-acid loss) and biliary stasis (TPN/fasting) to contrast mechanisms."
+    }
+  ],
+  "memoryHook": "Hemolysis = bilirubin flood → liver dumps it into bile → BLACK calcium-bilirubinate stones (sickle cell's gallstone signature).",
+  "stem": [
+    {
+      "text": "A 31-year-old woman comes to the emergency department due to worsening right upper quadrant pain, fever, nausea, and vomiting for a day. The pain increases with deep inspiration. Other medical conditions include uterine fibroids and "
+    },
+    {
+      "text": "sickle cell anemia",
+      "clue": true,
+      "type": "red",
+      "note": "Chronic hemolysis (sickle cell) is the key risk factor: ongoing red-cell breakdown floods the liver with unconjugated bilirubin. This predisposes to black PIGMENT gallstones (calcium bilirubinate)."
+    },
+    {
+      "text": ". The patient does not use tobacco, alcohol, or illicit drugs. Temperature is 38.6 C (101.5 F), blood pressure is 120/70 mm Hg, and pulse is 102/min. BMI is 24 kg/m2. On examination, the patient appears uncomfortable; there is no jaundice. Tenderness and guarding are present over the right upper quadrant. Bowel sounds are decreased. "
+    },
+    {
+      "text": "Hemoglobin is 10.1 g/dL",
+      "clue": true,
+      "type": "blue",
+      "note": "Anemia (Hgb 10.1 g/dL; normal ~12-16 g/dL in women) reflects the chronic hemolysis. The hemolytic anemia is what drives the bilirubin overload behind pigment-stone formation. WBC 18,000/mm3 with bands signals acute cholecystitis."
+    },
+    {
+      "text": " and white blood cell count is 18,000/mm3 with 7% band forms. Abdominal ultrasound shows evidence of cholelithiasis and gallbladder wall thickening. Gross inspection of the specimen reveals "
+    },
+    {
+      "text": "small black gallstones",
+      "clue": true,
+      "type": "green",
+      "note": "Black pigment stones form when excess bilirubin is secreted into bile and precipitates as calcium bilirubinate. They are the classic stone of chronic hemolysis (sickle cell, hereditary spherocytosis)."
+    },
+    {
+      "text": ". Which of the following is most likely responsible for this patient's symptoms?"
+    }
+  ]
+}

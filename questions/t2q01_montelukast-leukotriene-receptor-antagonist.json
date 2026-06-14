@@ -1,0 +1,252 @@
+{
+  "id": "q30",
+  "item": 30,
+  "qid": "18809",
+  "title": "Montelukast: leukotriene receptor antagonist",
+  "system": "Pharmacology",
+  "topic": "Asthma drugs / leukotrienes",
+  "correct": "E",
+  "yourAnswer": "C",
+  "percentCorrect": 68,
+  "vignette": "An 18-year-old woman comes to the clinic due to intermittent dry cough, wheezing, and shortness of breath. She recently began practicing twice a day for her college track team and has been experiencing these symptoms with running. Her symptoms have been limiting her ability to complete practice but usually resolve after several minutes of rest. Medical history includes childhood asthma that has not required treatment for the past 5 years. The patient is prescribed a medication that reduces bronchoconstriction by inhibiting the interaction of inflammatory mediators with cell surface receptors. Which of the following drugs was most likely used in this patient?",
+  "clues": [
+    {
+      "text": "intermittent dry cough, wheezing, and shortness of breath",
+      "type": "red",
+      "note": "Cough + wheeze + dyspnea brought on by exercise is exercise-induced bronchoconstriction, almost always on a background of underlying asthma. Cold, dry air during exertion triggers airway smooth-muscle contraction. The symptom triad plus the trigger is the whole diagnosis."
+    },
+    {
+      "text": "practicing",
+      "type": "blue",
+      "note": "The trigger is exertion (running twice daily). Exercise-induced bronchoconstriction resolving after rest is the classic pattern. This anchors the mechanism to bronchospasm rather than infection or a fixed structural problem."
+    },
+    {
+      "text": "running",
+      "type": "blue",
+      "note": "Reinforces the exercise trigger. Symptoms with running that resolve with rest = exercise-induced bronchoconstriction."
+    },
+    {
+      "text": "childhood asthma that has not required treatment for the past 5 years",
+      "type": "orange",
+      "note": "Prior asthma marks her as predisposed; the airways are still hyperreactive even after years symptom-free. This is the risk-factor clue that makes asthma-pathway drugs the answer set."
+    },
+    {
+      "text": "inhibiting the interaction of inflammatory mediators with cell surface receptors",
+      "type": "green",
+      "note": "This is the decisive phrase: the drug BLOCKS a mediator at its RECEPTOR. Leukotrienes (LTC4/D4/E4) bind CysLT1 receptors to cause bronchoconstriction; montelukast is a CysLT1 receptor ANTAGONIST. Contrast zileuton, which blocks leukotriene SYNTHESIS (5-lipoxygenase), not the receptor."
+    }
+  ],
+  "whatMatters": "Ignore most of the exercise story — the testable point is the last sentence: a drug that works by blocking an inflammatory mediator AT ITS RECEPTOR. That defines a leukotriene-receptor antagonist (montelukast), not a synthesis inhibitor or a bronchodilator.",
+  "strategy": "In 'identify the drug by its mechanism' questions, the mechanism sentence outranks the clinical story. Match the exact verb: 'blocks the receptor' = receptor antagonist (montelukast); 'blocks synthesis/enzyme' = zileuton; 'relaxes smooth muscle directly' = beta-2 agonist (albuterol).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Albuterol",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Dextromethorphan",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Fluticasone",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Ipratropium",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Montelukast",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "Zileuton",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "beta-2 agonist — relaxes muscle, not a receptor blocker",
+      "detail": "WHAT IT IS: albuterol is a short-acting beta-2 agonist; it activates beta-2 receptors to relax bronchial smooth muscle (first-line rescue and EIB prophylaxis). ❌ WHY IT FAILS: it AGONIZES a receptor to dilate — it does not 'inhibit the interaction of inflammatory mediators with cell surface receptors.' ✅ Correct if: the stem asked for fast relief of acute bronchospasm or a pre-exercise inhaler that works within minutes."
+    },
+    {
+      "letter": "B",
+      "label": "cough suppressant — wrong target entirely",
+      "detail": "WHAT IT IS: dextromethorphan is a central antitussive (NMDA antagonist / sigma agonist) for dry cough. ❌ WHY IT FAILS: it has no effect on bronchoconstriction or inflammatory-mediator receptors; it only blunts the cough reflex. ✅ Correct if: the question wanted symptomatic suppression of a nonproductive cough, not bronchodilation."
+    },
+    {
+      "letter": "C",
+      "label": "inhaled corticosteroid — blocks gene transcription, not a receptor (your pick)",
+      "detail": "WHAT IT IS: fluticasone is an inhaled corticosteroid — the controller for persistent asthma; it suppresses phospholipase A2 and inflammatory gene transcription to reduce airway inflammation over days to weeks. ❌ WHY IT FAILS: its mechanism is genomic anti-inflammatory action, NOT antagonism of a mediator at a surface receptor; it also doesn't act fast enough for episodic EIB. ✅ Correct if: the stem described a daily controller that lowers airway inflammation/hyperresponsiveness over time."
+    },
+    {
+      "letter": "D",
+      "label": "muscarinic antagonist — blocks ACh, not leukotrienes",
+      "detail": "WHAT IT IS: ipratropium is a short-acting antimuscarinic that blocks M3 receptors to reduce vagally mediated bronchoconstriction (mainly used in COPD). ❌ WHY IT FAILS: it does block a receptor, but it antagonizes acetylcholine — a neurotransmitter, not an 'inflammatory mediator.' ✅ Correct if: the stem emphasized cholinergic/vagal bronchoconstriction or COPD."
+    },
+    {
+      "letter": "F",
+      "label": "5-lipoxygenase inhibitor — blocks synthesis, not the receptor",
+      "detail": "WHAT IT IS: zileuton inhibits 5-lipoxygenase, the enzyme that converts arachidonic acid to leukotrienes — so it lowers leukotriene PRODUCTION. ❌ WHY IT FAILS: the stem specifies blocking mediators at their RECEPTOR; zileuton works upstream at synthesis, and it carries hepatotoxicity. ✅ Correct if: the stem said the drug 'inhibits leukotriene synthesis' or '5-lipoxygenase.'"
+    }
+  ],
+  "reasoning": [
+    "Exercise-induced cough/wheeze on a background of prior asthma",
+    "Last sentence: drug blocks an inflammatory mediator AT its receptor",
+    "Leukotrienes act on CysLT1 receptors to cause bronchoconstriction",
+    "CysLT1 receptor antagonist = montelukast → answer E"
+  ],
+  "mechanism": "Mast cells and eosinophils release cysteinyl leukotrienes (LTC4, LTD4, LTE4) derived from arachidonic acid via 5-lipoxygenase. These bind CysLT1 receptors on bronchial smooth muscle to cause bronchoconstriction, increased vascular permeability, and mucus. Montelukast (and zafirlukast) competitively block CysLT1, preventing the mediator-receptor interaction; zileuton instead blocks the 5-LOX enzyme so fewer leukotrienes are made.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology > Respiratory: the asthma drug table and the arachidonic-acid pathway diagram. Lock in: montelukast/zafirlukast = leukotriene RECEPTOR (CysLT1) antagonists; zileuton = 5-lipoxygenase (synthesis) inhibitor; beta-2 agonists relax muscle; ICS reduce inflammation via transcription."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Read the mechanism sentence first, then map the verb. 'Inhibiting interaction of a mediator with its receptor' = receptor antagonist. Build the habit of answering pharmacology stems from the mechanism phrase, not the clinical story."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on leukotriene, CysLT1, 5-lipoxygenase, receptor antagonist vs synthesis inhibitor? Tell me which and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Fluticasone and zileuton both feel 'anti-inflammatory,' but only a RECEPTOR blocker fits. Reject corticosteroids (transcription) and zileuton (enzyme/synthesis); the receptor-blocking leukotriene drug is montelukast."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The explanation image is the arachidonic-acid pathway: phospholipid → (PLA2) → arachidonic acid → 5-LOX → leukotrienes (LTC4/D4/E4 = bronchospasm). Practice reading where each drug acts on this map (zileuton at 5-LOX; montelukast at the LTC4/D4/E4 receptor)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Drug that blocks leukotrienes at the receptor",
+      "back": "Montelukast / zafirlukast (CysLT1 antagonist)"
+    },
+    {
+      "front": "Drug that blocks leukotriene synthesis",
+      "back": "Zileuton (5-lipoxygenase inhibitor)"
+    },
+    {
+      "front": "Leukotrienes causing bronchospasm",
+      "back": "LTC4, LTD4, LTE4 (cysteinyl LTs)"
+    },
+    {
+      "front": "First-line rescue / EIB prophylaxis",
+      "back": "Albuterol (short-acting beta-2 agonist)"
+    },
+    {
+      "front": "Daily asthma controller (anti-inflammatory)",
+      "back": "Inhaled corticosteroid (fluticasone)"
+    },
+    {
+      "front": "Antimuscarinic bronchodilator",
+      "back": "Ipratropium / tiotropium (block M3)"
+    },
+    {
+      "front": "Enzyme converting arachidonic acid to leukotrienes",
+      "back": "5-lipoxygenase"
+    },
+    {
+      "front": "LTB4 function",
+      "back": "Neutrophil chemotaxis"
+    },
+    {
+      "front": "Zileuton notable toxicity",
+      "back": "Hepatotoxicity (check LFTs)"
+    },
+    {
+      "front": "Exercise-induced bronchoconstriction trigger",
+      "back": "Cold, dry air → airway smooth-muscle contraction"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Leukotriene modifiers",
+      "detail": "Pharmacology > Respiratory: montelukast/zafirlukast (CysLT1 receptor antagonists) vs zileuton (5-lipoxygenase inhibitor); uses (aspirin-exacerbated, exercise-induced, allergic asthma).",
+      "location": "Pharmacology > Respiratory: montelukast/zafirlukast (CysLT1 receptor antagonists) vs zileuton (5-lipoxygenase inhibitor); uses (aspirin-exacerbated, exercise-induced, allergic asthma)."
+    },
+    {
+      "tag": "options",
+      "topic": "Asthma pharmacology",
+      "detail": "Pharmacology > Respiratory: beta-2 agonists (albuterol/salmeterol), inhaled corticosteroids (fluticasone), antimuscarinics (ipratropium/tiotropium), methylxanthines — mechanism and step-up therapy.",
+      "location": "Pharmacology > Respiratory: beta-2 agonists (albuterol/salmeterol), inhaled corticosteroids (fluticasone), antimuscarinics (ipratropium/tiotropium), methylxanthines — mechanism and step-up therapy."
+    },
+    {
+      "tag": "stem",
+      "topic": "Arachidonic acid pathway",
+      "detail": "Pharmacology/Biochem > eicosanoids: PLA2 → arachidonic acid → COX (prostaglandins/thromboxane) and LOX (leukotrienes); where NSAIDs, corticosteroids, zileuton, and leukotriene-receptor blockers act.",
+      "location": "Pharmacology/Biochem > eicosanoids: PLA2 → arachidonic acid → COX (prostaglandins/thromboxane) and LOX (leukotrienes); where NSAIDs, corticosteroids, zileuton, and leukotriene-receptor blockers act."
+    }
+  ],
+  "memoryHook": "monteluKast blocks the K (CysLT) receptor; zileuton 'zaps' the 5-LOX enzyme upstream.",
+  "stem": [
+    {
+      "text": "An 18-year-old woman comes to the clinic due to "
+    },
+    {
+      "text": "intermittent dry cough, wheezing, and shortness of breath",
+      "clue": true,
+      "type": "red",
+      "note": "Cough + wheeze + dyspnea brought on by exercise is exercise-induced bronchoconstriction, almost always on a background of underlying asthma. Cold, dry air during exertion triggers airway smooth-muscle contraction. The symptom triad plus the trigger is the whole diagnosis."
+    },
+    {
+      "text": ". She recently began "
+    },
+    {
+      "text": "practicing",
+      "clue": true,
+      "type": "blue",
+      "note": "The trigger is exertion (running twice daily). Exercise-induced bronchoconstriction resolving after rest is the classic pattern. This anchors the mechanism to bronchospasm rather than infection or a fixed structural problem."
+    },
+    {
+      "text": " twice a day for her college track team and has been experiencing these symptoms with "
+    },
+    {
+      "text": "running",
+      "clue": true,
+      "type": "blue",
+      "note": "Reinforces the exercise trigger. Symptoms with running that resolve with rest = exercise-induced bronchoconstriction."
+    },
+    {
+      "text": ". Her symptoms have been limiting her ability to complete practice but usually resolve after several minutes of rest. Medical history includes "
+    },
+    {
+      "text": "childhood asthma that has not required treatment for the past 5 years",
+      "clue": true,
+      "type": "orange",
+      "note": "Prior asthma marks her as predisposed; the airways are still hyperreactive even after years symptom-free. This is the risk-factor clue that makes asthma-pathway drugs the answer set."
+    },
+    {
+      "text": ". The patient is prescribed a medication that reduces bronchoconstriction by "
+    },
+    {
+      "text": "inhibiting the interaction of inflammatory mediators with cell surface receptors",
+      "clue": true,
+      "type": "green",
+      "note": "This is the decisive phrase: the drug BLOCKS a mediator at its RECEPTOR. Leukotrienes (LTC4/D4/E4) bind CysLT1 receptors to cause bronchoconstriction; montelukast is a CysLT1 receptor ANTAGONIST. Contrast zileuton, which blocks leukotriene SYNTHESIS (5-lipoxygenase), not the receptor."
+    },
+    {
+      "text": ". Which of the following drugs was most likely used in this patient?"
+    }
+  ]
+}

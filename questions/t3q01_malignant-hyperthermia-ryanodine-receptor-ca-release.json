@@ -1,0 +1,211 @@
+{
+  "id": "q70",
+  "item": 70,
+  "qid": "18755",
+  "title": "Malignant hyperthermia: ryanodine receptor Ca release",
+  "system": "Pharmacology",
+  "topic": "Anesthesia / RYR1",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 69,
+  "vignette": "A 22-year-old man is undergoing surgical repair of an inguinal hernia. Anesthesia is induced and an endotracheal tube is placed. He then develops severe spasm of the masseter muscles, and there is a dramatic increase in expired carbon dioxide measured from the endotracheal tube. His core body temperature begins to increase and is now 38.9 C (102 F). Which of the following is the most likely underlying mechanism leading to elevated body temperature in this patient?",
+  "clues": [
+    {
+      "text": "Anesthesia is induced and an endotracheal tube is placed",
+      "type": "orange",
+      "note": "General anesthesia is the trigger setting. Inhaled volatile anesthetics (halothane, sevoflurane, isoflurane) and the depolarizing paralytic succinylcholine are the classic precipitants of malignant hyperthermia. The temporal link 'symptoms right after induction' is the key risk-factor clue."
+    },
+    {
+      "text": "severe spasm of the masseter muscles",
+      "type": "red",
+      "note": "Masseter (jaw) rigidity right after anesthesia is the earliest and most specific sign of malignant hyperthermia. Sustained muscle contracture results from uncontrolled sarcoplasmic calcium release. If you see jaw/masseter spasm after succinylcholine or a volatile agent, think MH first."
+    },
+    {
+      "text": "dramatic increase in expired carbon dioxide",
+      "type": "red",
+      "note": "Rising end-tidal CO2 despite ventilation is the earliest physiologic sign of MH. Massive ATP-driven calcium recycling and sustained contraction generate enormous CO2 and heat. This is the metabolic fingerprint of the hypermetabolic crisis."
+    },
+    {
+      "text": "core body temperature begins to increase",
+      "type": "green",
+      "note": "Hyperthermia is a LATE sign of MH (temp 38.9 / normal 36.5-37.5). The fever is downstream of the hypermetabolic muscle activity, not a hypothalamic set-point change. Treat immediately with dantrolene, which blocks the ryanodine receptor."
+    }
+  ],
+  "whatMatters": "Strip the surgical story away: jaw rigidity + rising end-tidal CO2 + late fever right after anesthesia induction = malignant hyperthermia. The asked mechanism of the heat is uncontrolled calcium release into the myoplasm from a defective ryanodine receptor (RYR1) — answer C.",
+  "strategy": "For 'mechanism of the fever' stems, decide first whether heat is from a hypothalamic set-point change (true fever: infection, pyrogens) or from peripheral heat OVER-production (MH, NMS, serotonin syndrome, thyroid storm). Post-anesthetic masseter rigidity + hypercarbia is MH = sarcoplasmic Ca overload, not a set-point shift.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acute elevation of circulating free T4",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Change in hypothalamic set point",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Excessive myoplasmic calcium accumulation",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Impaired cutaneous vasodilation",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Increased serotonergic activity in the CNS",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "thyroid storm physiology — wrong trigger and tempo",
+      "detail": "WHAT IT IS: a surge of free T4/T3 drives thyroid storm with hyperthermia, tachycardia, and agitation. ❌ WHY IT FAILS: thyroid storm is precipitated by illness/surgery in a hyperthyroid patient over hours, not by anesthesia induction with masseter spasm and a CO2 spike. ✅ Correct if: the stem gave a goiter, prior Graves disease, suppressed TSH, or thyroidectomy stress."
+    },
+    {
+      "letter": "B",
+      "label": "true fever (set-point shift) — but this is heat over-production",
+      "detail": "WHAT IT IS: pyrogens (IL-1, IL-6, TNF, PGE2) raise the hypothalamic set point to make a true fever. ❌ WHY IT FAILS: MH heat comes from runaway skeletal-muscle metabolism, not a hypothalamic reset; there is no infection here and the masseter rigidity/hypercarbia point to the muscle. ✅ Correct if: the stem described infection or pyrogen-mediated fever with chills/shivering to reach a new set point."
+    },
+    {
+      "letter": "D",
+      "label": "impaired heat dissipation — wrong category",
+      "detail": "WHAT IT IS: failure of cutaneous vasodilation/sweating impairs heat LOSS (classic/exertional heat stroke, anticholinergic toxicity). ❌ WHY IT FAILS: MH is excess heat PRODUCTION from muscle, with hypercarbia and rigidity — not a dissipation problem, and there is no anticholinergic or environmental clue. ✅ Correct if: the stem emphasized a hot environment, anhidrosis, or anticholinergic 'dry as a bone' findings."
+    },
+    {
+      "letter": "E",
+      "label": "serotonin syndrome — wrong drug class",
+      "detail": "WHAT IT IS: excess CNS serotonin (SSRIs + MAOIs, linezolid, tramadol) causes hyperthermia, clonus, hyperreflexia, and agitation. ❌ WHY IT FAILS: there is no serotonergic drug and the picture is masseter rigidity + CO2 spike under anesthesia, which is MH. ✅ Correct if: the stem listed serotonergic agents with lower-limb clonus and hyperreflexia."
+    }
+  ],
+  "reasoning": [
+    "Symptoms start right after anesthesia induction (volatile agent / succinylcholine)",
+    "Masseter rigidity + rising end-tidal CO2 = hypermetabolic muscle crisis",
+    "Late hyperthermia is downstream, not a set-point change",
+    "Defective RYR1 dumps Ca into the myoplasm → sustained contraction & heat → answer C"
+  ],
+  "mechanism": "Malignant hyperthermia is an autosomal dominant defect of the skeletal-muscle ryanodine receptor (RYR1, occasionally CACNA1S). Volatile anesthetics and succinylcholine trigger uncontrolled Ca2+ release from the sarcoplasmic reticulum into the myoplasm. Sustained actin-myosin contraction consumes ATP, generating CO2, heat, and rigidity; ATP depletion causes rhabdomyolysis (hyperkalemia, myoglobinuria). Dantrolene blocks RYR1 to stop the calcium release and is the antidote.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology > Anesthetics (malignant hyperthermia): RYR1 mutation, triggers = inhaled volatile anesthetics + succinylcholine, signs (masseter rigidity, hypercarbia, rhabdo, hyperthermia), antidote = dantrolene. Cross-link to the muscle excitation-contraction coupling diagram."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question asks the mechanism of the HEAT. Separate 'set-point fever' from 'peripheral heat over-production.' Post-induction rigidity + CO2 spike = MH = sarcoplasmic Ca overload."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on ryanodine receptor, sarcoplasmic reticulum, myoplasm, hypercarbia, excitation-contraction coupling? Tell me which and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Each wrong option is a different hyperthermia syndrome (thyroid storm, true fever, heat stroke, serotonin syndrome). The post-anesthetic masseter spasm + CO2 spike pins it to MH; don't let 'fever = set point' reflex pull you to B."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked C and were right — lock in the trigger list (volatile agents + succinylcholine) and dantrolene as the single must-know antidote."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Masseter rigidity + rising end-tidal CO2 after anesthesia",
+      "back": "Malignant hyperthermia (RYR1)"
+    },
+    {
+      "front": "MH triggers",
+      "back": "Volatile anesthetics (halothane/sevo/iso) + succinylcholine"
+    },
+    {
+      "front": "MH antidote / mechanism",
+      "back": "Dantrolene — blocks ryanodine receptor (RYR1)"
+    },
+    {
+      "front": "Defective channel in MH",
+      "back": "Ryanodine receptor RYR1 (Ca release from SR)"
+    },
+    {
+      "front": "Earliest physiologic sign of MH",
+      "back": "Increased end-tidal CO2 (hypercarbia)"
+    },
+    {
+      "front": "MH downstream complication",
+      "back": "Rhabdomyolysis → hyperkalemia + myoglobinuria"
+    },
+    {
+      "front": "Serotonin syndrome vs MH distinguisher",
+      "back": "Clonus/hyperreflexia (serotonin) vs rigidity+CO2 under anesthesia (MH)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Malignant hyperthermia",
+      "detail": "Pharmacology > Anesthetics: RYR1 mutation, volatile-anesthetic/succinylcholine trigger, dantrolene treatment, autosomal dominant inheritance.",
+      "location": "Pharmacology > Anesthetics: RYR1 mutation, volatile-anesthetic/succinylcholine trigger, dantrolene treatment, autosomal dominant inheritance."
+    },
+    {
+      "tag": "stem",
+      "topic": "Skeletal muscle excitation-contraction coupling",
+      "detail": "Physiology/Musculoskeletal: T-tubule depolarization → DHP receptor → RYR1 → SR Ca2+ release → troponin C → contraction; SERCA reuptake.",
+      "location": "Physiology/Musculoskeletal: T-tubule depolarization → DHP receptor → RYR1 → SR Ca2+ release → troponin C → contraction; SERCA reuptake."
+    },
+    {
+      "tag": "options",
+      "topic": "Hyperthermia syndromes differential",
+      "detail": "Pharm/Psych: thyroid storm (free T4), true fever (PGE2 set point), heat stroke (impaired dissipation), serotonin syndrome (clonus), NMS (D2 blockade, lead-pipe rigidity).",
+      "location": "Pharm/Psych: thyroid storm (free T4), true fever (PGE2 set point), heat stroke (impaired dissipation), serotonin syndrome (clonus), NMS (D2 blockade, lead-pipe rigidity)."
+    }
+  ],
+  "memoryHook": "MH = 'Muscle Heat': RYR1 dumps calcium → jaw locks, CO2 climbs, temp rises. Dantrolene 'dams' the ryanodine channel.",
+  "stem": [
+    {
+      "text": "A 22-year-old man is undergoing surgical repair of an inguinal hernia. "
+    },
+    {
+      "text": "Anesthesia is induced and an endotracheal tube is placed",
+      "clue": true,
+      "type": "orange",
+      "note": "General anesthesia is the trigger setting. Inhaled volatile anesthetics (halothane, sevoflurane, isoflurane) and the depolarizing paralytic succinylcholine are the classic precipitants of malignant hyperthermia. The temporal link 'symptoms right after induction' is the key risk-factor clue."
+    },
+    {
+      "text": ". He then develops "
+    },
+    {
+      "text": "severe spasm of the masseter muscles",
+      "clue": true,
+      "type": "red",
+      "note": "Masseter (jaw) rigidity right after anesthesia is the earliest and most specific sign of malignant hyperthermia. Sustained muscle contracture results from uncontrolled sarcoplasmic calcium release. If you see jaw/masseter spasm after succinylcholine or a volatile agent, think MH first."
+    },
+    {
+      "text": ", and there is a "
+    },
+    {
+      "text": "dramatic increase in expired carbon dioxide",
+      "clue": true,
+      "type": "red",
+      "note": "Rising end-tidal CO2 despite ventilation is the earliest physiologic sign of MH. Massive ATP-driven calcium recycling and sustained contraction generate enormous CO2 and heat. This is the metabolic fingerprint of the hypermetabolic crisis."
+    },
+    {
+      "text": " measured from the endotracheal tube. His "
+    },
+    {
+      "text": "core body temperature begins to increase",
+      "clue": true,
+      "type": "green",
+      "note": "Hyperthermia is a LATE sign of MH (temp 38.9 / normal 36.5-37.5). The fever is downstream of the hypermetabolic muscle activity, not a hypothalamic set-point change. Treat immediately with dantrolene, which blocks the ryanodine receptor."
+    },
+    {
+      "text": " and is now 38.9 C (102 F). Which of the following is the most likely underlying mechanism leading to elevated body temperature in this patient?"
+    }
+  ]
+}

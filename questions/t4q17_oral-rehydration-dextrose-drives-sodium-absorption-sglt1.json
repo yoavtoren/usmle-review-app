@@ -1,0 +1,207 @@
+{
+  "id": "q126",
+  "item": 126,
+  "qid": "105665",
+  "title": "Oral rehydration: dextrose drives sodium absorption (SGLT1)",
+  "system": "Physiology",
+  "topic": "GI absorption",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 55,
+  "vignette": "The mother of a 7-year-old boy calls the clinic due to a 3-day history of diarrhea. The patient initially had nausea with vomiting on the first day but has since been able to keep down crackers soaked in apple juice. He now has voluminous watery diarrhea several times per day. Several other children in his classroom have also been ill with similar symptoms. The physician schedules the family to come to the office in 2 days and recommends an oral rehydration solution in the meantime. The solution contains dextrose and sodium in equimolar amounts, as well as a small amount of potassium and citrate. Which of following best describes the role of dextrose?",
+  "clues": [
+    {
+      "text": "voluminous watery diarrhea",
+      "type": "blue",
+      "note": "Voluminous watery diarrhea with classroom spread suggests viral gastroenteritis. Management is oral rehydration, and the chemistry question is why glucose (dextrose) is included."
+    },
+    {
+      "text": "Several other children in his classroom have also been ill",
+      "type": "orange",
+      "note": "Clustered illness among children indicates a contagious enteric (viral) pathogen, supporting supportive oral rehydration rather than antibiotics."
+    },
+    {
+      "text": "dextrose and sodium in equimolar amounts",
+      "type": "red",
+      "note": "Equimolar glucose:sodium is the design principle of oral rehydration solution: glucose and Na+ are co-transported 1:1 at the brush border by SGLT-1, so glucose drives sodium (and water) absorption."
+    },
+    {
+      "text": "role of dextrose",
+      "type": "green",
+      "note": "Dextrose's job in ORS is to ENHANCE sodium absorption via the sodium-glucose cotransporter (SGLT-1), which then pulls water transcellularly. It is not primarily for calories."
+    }
+  ],
+  "whatMatters": "In ORS, glucose and sodium are absorbed together 1:1 at the enterocyte brush border via SGLT-1; the glucose drives sodium uptake, and water follows osmotically. So dextrose's role is to enhance sodium absorption - answer C.",
+  "strategy": "For oral-rehydration questions, anchor on SGLT-1: Na+/glucose cotransport at the apical membrane couples glucose to sodium 1:1, and water follows. The reason ORS works even in secretory diarrhea is that this cotransporter remains intact. Glucose's role is absorptive coupling, not caloric provision.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Correction of metabolic acidosis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Creation of high osmolarity in the gut lumen",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Enhancement of sodium absorption",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Prevention of osmotic lysis of enterocytes",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Provision of total caloric requirements",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "correct acidosis - that's citrate's job",
+      "detail": "WHAT IT IS: buffering metabolic acidosis from bicarbonate loss in diarrhea. ❌ WHY IT FAILS: that role belongs to CITRATE (metabolized to bicarbonate), not dextrose. ✅ Correct if: the question asked about the citrate component."
+    },
+    {
+      "letter": "B",
+      "label": "raise luminal osmolarity - counterproductive",
+      "detail": "WHAT IT IS: increasing gut-lumen osmolarity. ❌ WHY IT FAILS: high luminal osmolarity would draw water INTO the lumen and worsen diarrhea; ORS is designed to be roughly iso-osmolar, and glucose is there to drive absorption, not osmosis. ✅ Correct if: describing an osmotic laxative or osmotic diarrhea mechanism."
+    },
+    {
+      "letter": "D",
+      "label": "prevent enterocyte lysis - not a real ORS function",
+      "detail": "WHAT IT IS: protecting enterocytes from osmotic swelling/lysis. ❌ WHY IT FAILS: dextrose in ORS is for Na+ cotransport, not cell-volume protection; this isn't its mechanism. ✅ Correct if: never in this context."
+    },
+    {
+      "letter": "E",
+      "label": "provide calories - trivial amount",
+      "detail": "WHAT IT IS: nutritional caloric supply. ❌ WHY IT FAILS: ORS glucose provides only trivial calories; its purpose is to power sodium (and water) absorption, not nutrition. ✅ Correct if: asking about enteral/parenteral nutrition, not rehydration."
+    }
+  ],
+  "reasoning": [
+    "Viral gastroenteritis with watery diarrhea -> oral rehydration",
+    "ORS has glucose:sodium in equimolar (1:1) amounts",
+    "SGLT-1 co-transports Na+ with glucose at the brush border; water follows",
+    "Dextrose's role = enhance sodium absorption -> answer C"
+  ],
+  "mechanism": "At the enterocyte apical membrane, the sodium-glucose cotransporter SGLT-1 moves one glucose with two Na+ down the sodium gradient maintained by the basolateral Na+/K+-ATPase; the absorbed solute draws water transcellularly. Oral rehydration solutions therefore pair glucose and sodium in roughly equimolar amounts so that glucose drives sodium (and water) absorption even when secretory diarrhea (e.g., cholera, viral gastroenteritis) is active, because SGLT-1 remains functional. Citrate in ORS is converted to bicarbonate to buffer the metabolic acidosis from diarrheal bicarbonate loss, and potassium replaces stool losses - separate roles from dextrose.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Physiology/GI > Intestinal absorption: SGLT-1 Na+/glucose cotransport, basolateral Na/K-ATPase, ORS composition (glucose+Na 1:1, K+, citrate->bicarbonate). Why ORS works in secretory diarrhea."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Match each ORS ingredient to its job: glucose-> drive Na absorption; citrate-> buffer acidosis; potassium-> replace losses. The asked component is dextrose."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on SGLT-1, cotransport/symport, oral rehydration solution, osmolarity, brush border? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Calories (E) and acidosis correction (A) are tempting, but calories are trivial and acidosis buffering is citrate's role. Dextrose specifically powers sodium uptake."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked C correctly - keep the ORS ingredient-to-role map handy."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Role of glucose/dextrose in ORS",
+      "back": "Drives sodium absorption via SGLT-1 (water follows)"
+    },
+    {
+      "front": "Apical Na+/glucose cotransporter",
+      "back": "SGLT-1 (2 Na+ : 1 glucose)"
+    },
+    {
+      "front": "Why ORS works in secretory diarrhea",
+      "back": "SGLT-1 cotransport stays intact"
+    },
+    {
+      "front": "Citrate's role in ORS",
+      "back": "Converted to bicarbonate -> buffers metabolic acidosis"
+    },
+    {
+      "front": "Potassium's role in ORS",
+      "back": "Replaces diarrheal K+ losses (prevents hypokalemia)"
+    },
+    {
+      "front": "Basolateral pump maintaining Na gradient",
+      "back": "Na+/K+-ATPase"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "SGLT-1 / oral rehydration",
+      "detail": "Physiology/GI: Na+-glucose cotransport, ORS composition and rationale.",
+      "location": "Physiology/GI: Na+-glucose cotransport, ORS composition and rationale."
+    },
+    {
+      "tag": "stem",
+      "topic": "Acute viral gastroenteritis",
+      "detail": "Peds/ID: rotavirus/norovirus, supportive rehydration, complications.",
+      "location": "Peds/ID: rotavirus/norovirus, supportive rehydration, complications."
+    },
+    {
+      "tag": "options",
+      "topic": "Diarrhea acid-base/electrolytes",
+      "detail": "GI: non-anion-gap metabolic acidosis (bicarbonate loss), hypokalemia, citrate buffering.",
+      "location": "GI: non-anion-gap metabolic acidosis (bicarbonate loss), hypokalemia, citrate buffering."
+    }
+  ],
+  "memoryHook": "Glucose grabs sodium's hand (SGLT-1) and water tags along. Dextrose in ORS = a sodium escort, not a snack.",
+  "stem": [
+    {
+      "text": "The mother of a 7-year-old boy calls the clinic due to a 3-day history of diarrhea. The patient initially had nausea with vomiting on the first day but has since been able to keep down crackers soaked in apple juice. He now has "
+    },
+    {
+      "text": "voluminous watery diarrhea",
+      "clue": true,
+      "type": "blue",
+      "note": "Voluminous watery diarrhea with classroom spread suggests viral gastroenteritis. Management is oral rehydration, and the chemistry question is why glucose (dextrose) is included."
+    },
+    {
+      "text": " several times per day. "
+    },
+    {
+      "text": "Several other children in his classroom have also been ill",
+      "clue": true,
+      "type": "orange",
+      "note": "Clustered illness among children indicates a contagious enteric (viral) pathogen, supporting supportive oral rehydration rather than antibiotics."
+    },
+    {
+      "text": " with similar symptoms. The physician schedules the family to come to the office in 2 days and recommends an oral rehydration solution in the meantime. The solution contains "
+    },
+    {
+      "text": "dextrose and sodium in equimolar amounts",
+      "clue": true,
+      "type": "red",
+      "note": "Equimolar glucose:sodium is the design principle of oral rehydration solution: glucose and Na+ are co-transported 1:1 at the brush border by SGLT-1, so glucose drives sodium (and water) absorption."
+    },
+    {
+      "text": ", as well as a small amount of potassium and citrate. Which of following best describes the "
+    },
+    {
+      "text": "role of dextrose",
+      "clue": true,
+      "type": "green",
+      "note": "Dextrose's job in ORS is to ENHANCE sodium absorption via the sodium-glucose cotransporter (SGLT-1), which then pulls water transcellularly. It is not primarily for calories."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

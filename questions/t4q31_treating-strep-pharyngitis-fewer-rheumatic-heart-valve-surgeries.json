@@ -1,0 +1,193 @@
+{
+  "id": "q141",
+  "item": 141,
+  "qid": "726",
+  "title": "Treating strep pharyngitis: fewer rheumatic heart valve surgeries",
+  "system": "Microbiology",
+  "topic": "Group A strep / rheumatic fever",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 52,
+  "vignette": "The public health department of a developing country performs an epidemiologic study to assess the nationwide incidence of upper respiratory infections among children. The data show a high rate of childhood bacterial pharyngitis. Current practice guidelines indicate that a rapid test should be performed in children to identify the presence of bacterial antigens. If this test is negative, a throat culture, the gold standard for definitive diagnosis, is then performed. To offset cost and avoid losing patients to follow-up, the department is considering recommending the empiric use of penicillin for the treatment of suspected bacterial pharyngitis. Which of the following would be expected to decrease after long-term implementation of this guideline?",
+  "clues": [
+    {
+      "text": "developing country",
+      "type": "orange",
+      "note": "Acute rheumatic fever and rheumatic heart disease remain common in developing countries, where untreated group A streptococcal pharyngitis is prevalent. This frames the public-health benefit of empiric penicillin."
+    },
+    {
+      "text": "high rate of childhood bacterial pharyngitis",
+      "type": "blue",
+      "note": "Childhood bacterial pharyngitis here is largely group A Streptococcus. Treating it promptly prevents the post-streptococcal immune sequela of acute rheumatic fever."
+    },
+    {
+      "text": "empiric use of penicillin for the treatment of suspected bacterial pharyngitis",
+      "type": "red",
+      "note": "Penicillin treatment of group A strep pharyngitis PREVENTS acute rheumatic fever (and thus chronic rheumatic heart disease). Widespread empiric treatment should reduce downstream rheumatic valvular disease and the cardiac surgery it requires."
+    }
+  ],
+  "whatMatters": "Empirically treating childhood strep pharyngitis with penicillin prevents acute rheumatic fever and, over time, chronic rheumatic heart disease. That means fewer damaged heart valves needing repair/replacement - so the need for cardiac surgery decreases - answer D.",
+  "strategy": "Trace the causal chain: group A strep pharyngitis -> (untreated) acute rheumatic fever -> rheumatic heart disease (mitral valve scarring) -> valve surgery. Penicillin interrupts it at the first step, so the LONG-TERM population effect is fewer rheumatic valvular complications and less valve surgery. (Penicillin does NOT prevent post-strep glomerulonephritis.)",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Deaths associated with diarrheal illness",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Diagnoses of serum sickness-like reactions",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Incidence of nephritic syndrome",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Need for cardiac surgery",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Use of broad-spectrum antibiotics",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "diarrheal deaths - unrelated to pharyngitis treatment",
+      "detail": "WHAT IT IS: mortality from diarrheal disease. ❌ WHY IT FAILS: penicillin for strep throat doesn't affect diarrheal illness; different pathogens and route. ✅ Correct if: the intervention targeted enteric infections/sanitation."
+    },
+    {
+      "letter": "B",
+      "label": "serum sickness-like reactions - might INCREASE with more antibiotics",
+      "detail": "WHAT IT IS: immune-complex reactions to drugs (e.g., beta-lactams). ❌ WHY IT FAILS: giving MORE empiric penicillin would, if anything, increase drug-reaction diagnoses, not decrease them. ✅ Correct if: asked what could rise with broader antibiotic exposure."
+    },
+    {
+      "letter": "C",
+      "label": "post-strep glomerulonephritis - NOT prevented by antibiotics",
+      "detail": "WHAT IT IS: nephritic syndrome from post-streptococcal glomerulonephritis (PSGN). ❌ WHY IT FAILS: unlike rheumatic fever, PSGN is NOT prevented by antibiotic treatment of the strep infection, so its incidence wouldn't fall. ✅ Correct if: asked which sequela is NOT prevented by penicillin."
+    },
+    {
+      "letter": "E",
+      "label": "broad-spectrum antibiotic use - likely unchanged/increased",
+      "detail": "WHAT IT IS: consumption of broad-spectrum agents. ❌ WHY IT FAILS: empiric narrow-spectrum penicillin for pharyngitis doesn't reduce broad-spectrum use and could increase overall antibiotic exposure. ✅ Correct if: a stewardship program specifically narrowed therapy."
+    }
+  ],
+  "reasoning": [
+    "Empiric penicillin treats group A strep pharyngitis",
+    "Prevents acute rheumatic fever (immune cross-reactivity)",
+    "Less ARF -> less chronic rheumatic heart disease (valve scarring)",
+    "Fewer damaged valves -> less cardiac surgery -> answer D"
+  ],
+  "mechanism": "Acute rheumatic fever is a delayed immune sequela of group A streptococcal pharyngitis: antibodies against streptococcal antigens cross-react with host tissues (molecular mimicry), damaging the heart (pancarditis), joints, skin, and CNS. Recurrent or severe carditis leads to chronic rheumatic heart disease, classically mitral valve scarring/stenosis, which eventually requires surgical valvotomy or replacement. Prompt antibiotic treatment of streptococcal pharyngitis prevents acute rheumatic fever, so widespread empiric penicillin in a high-incidence population reduces rheumatic heart disease and the cardiac surgeries it necessitates over the long term. Notably, antibiotics do NOT prevent post-streptococcal glomerulonephritis.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Microbiology > Group A Streptococcus: pharyngitis -> acute rheumatic fever (JONES, molecular mimicry) -> rheumatic heart disease (mitral stenosis). Penicillin PREVENTS rheumatic fever but NOT post-streptococcal glomerulonephritis."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Follow the long-term public-health chain to its endpoint: less ARF -> less rheumatic valve disease -> fewer valve surgeries. Choose the downstream cardiac outcome."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on acute rheumatic fever, rheumatic heart disease, molecular mimicry, post-streptococcal glomerulonephritis, serum sickness? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Nephritic syndrome (C) is the classic trap: PSGN is NOT prevented by antibiotics, so its rate wouldn't drop. Rheumatic fever IS prevented -> fewer valve surgeries (D)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked D correctly - memorize 'penicillin prevents rheumatic fever, not PSGN.'"
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Penicillin for strep throat prevents",
+      "back": "Acute rheumatic fever (and thus rheumatic heart disease)"
+    },
+    {
+      "front": "Sequela NOT prevented by antibiotics",
+      "back": "Post-streptococcal glomerulonephritis (nephritic syndrome)"
+    },
+    {
+      "front": "Rheumatic heart disease classic lesion",
+      "back": "Mitral stenosis (valve scarring) -> may need surgery"
+    },
+    {
+      "front": "Mechanism of rheumatic fever",
+      "back": "Molecular mimicry (anti-streptococcal antibodies cross-react with host)"
+    },
+    {
+      "front": "Acute rheumatic fever criteria",
+      "back": "JONES: Joints, carditis (O), Nodules, Erythema marginatum, Sydenham chorea"
+    },
+    {
+      "front": "Long-term effect of treating strep pharyngitis broadly",
+      "back": "Fewer rheumatic valve complications / cardiac surgeries"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Rheumatic fever / rheumatic heart disease",
+      "detail": "Microbiology/Cardiology: group A strep, molecular mimicry, mitral valve disease, prevention.",
+      "location": "Microbiology/Cardiology: group A strep, molecular mimicry, mitral valve disease, prevention."
+    },
+    {
+      "tag": "stem",
+      "topic": "Streptococcal pharyngitis management",
+      "detail": "ID: rapid antigen test, throat culture, penicillin, public-health strategy.",
+      "location": "ID: rapid antigen test, throat culture, penicillin, public-health strategy."
+    },
+    {
+      "tag": "options",
+      "topic": "Post-streptococcal sequelae",
+      "detail": "Micro: PSGN (not antibiotic-preventable) vs rheumatic fever (preventable); drug reactions.",
+      "location": "Micro: PSGN (not antibiotic-preventable) vs rheumatic fever (preventable); drug reactions."
+    }
+  ],
+  "memoryHook": "Treat the throat, save the valve: penicillin stops rheumatic fever -> fewer heart-valve surgeries (but PSGN still happens).",
+  "stem": [
+    {
+      "text": "The public health department of a "
+    },
+    {
+      "text": "developing country",
+      "clue": true,
+      "type": "orange",
+      "note": "Acute rheumatic fever and rheumatic heart disease remain common in developing countries, where untreated group A streptococcal pharyngitis is prevalent. This frames the public-health benefit of empiric penicillin."
+    },
+    {
+      "text": " performs an epidemiologic study to assess the nationwide incidence of upper respiratory infections among children. The data show a "
+    },
+    {
+      "text": "high rate of childhood bacterial pharyngitis",
+      "clue": true,
+      "type": "blue",
+      "note": "Childhood bacterial pharyngitis here is largely group A Streptococcus. Treating it promptly prevents the post-streptococcal immune sequela of acute rheumatic fever."
+    },
+    {
+      "text": ". Current practice guidelines indicate that a rapid test should be performed in children to identify the presence of bacterial antigens. If this test is negative, a throat culture, the gold standard for definitive diagnosis, is then performed. To offset cost and avoid losing patients to follow-up, the department is considering recommending the "
+    },
+    {
+      "text": "empiric use of penicillin for the treatment of suspected bacterial pharyngitis",
+      "clue": true,
+      "type": "red",
+      "note": "Penicillin treatment of group A strep pharyngitis PREVENTS acute rheumatic fever (and thus chronic rheumatic heart disease). Widespread empiric treatment should reduce downstream rheumatic valvular disease and the cardiac surgery it requires."
+    },
+    {
+      "text": ". Which of the following would be expected to decrease after long-term implementation of this guideline?"
+    }
+  ]
+}

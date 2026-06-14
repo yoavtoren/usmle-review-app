@@ -1,0 +1,193 @@
+{
+  "id": "q145",
+  "item": 145,
+  "qid": "14934",
+  "title": "Pneumococcal meningitis despite vaccine: nonvaccine serotype",
+  "system": "Microbiology",
+  "topic": "Vaccines / capsule serotypes",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 51,
+  "vignette": "A 10-month-old boy is brought to the emergency department due to 2 days of fever, irritability, and vomiting. The patient has had no prior significant medical conditions and has received all recommended vaccinations, including protein-conjugated, 13-valent pneumococcal capsular polysaccharide vaccines (PCV13) at ages 2, 4, and 6 months. On physical examination, the patient is febrile and lethargic, with a bulging anterior fontanelle. Lumbar puncture yields turbid fluid with an abundance of neutrophils. Gram stain of cerebrospinal fluid reveals lancet-shaped, gram-positive diplococci. Which of the following best explains this patient's current condition?",
+  "clues": [
+    {
+      "text": "received all recommended vaccinations, including protein-conjugated, 13-valent pneumococcal",
+      "type": "orange",
+      "note": "PCV13 covers only 13 of the >90 pneumococcal capsular serotypes. Being fully vaccinated yet developing pneumococcal disease points to infection by a serotype NOT in the vaccine."
+    },
+    {
+      "text": "turbid fluid with an abundance of neutrophils",
+      "type": "blue",
+      "note": "Turbid CSF with neutrophil predominance indicates acute bacterial meningitis, prompting identification of the organism on Gram stain."
+    },
+    {
+      "text": "lancet-shaped, gram-positive diplococci",
+      "type": "red",
+      "note": "Lancet-shaped gram-positive diplococci = Streptococcus pneumoniae. Since the child got PCV13, disease implies a capsular serotype not included in the vaccine."
+    }
+  ],
+  "whatMatters": "A fully PCV13-vaccinated infant with pneumococcal meningitis (lancet-shaped gram-positive diplococci) most likely has a serotype NOT covered by the vaccine. PCV13 protects against only its 13 serotypes - answer C.",
+  "strategy": "When a vaccinated patient gets the 'vaccine-preventable' organism, suspect a non-vaccine serotype/strain (the vaccine covers a subset). Pneumococcus has >90 capsular serotypes; PCV13 covers 13, so breakthrough disease is usually a non-vaccine serotype - not vaccine failure of the immune system.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Antigenic variation of bacterial cell wall",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Infection from capsule-lacking bacteria",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Infection from nonvaccine serotype",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Primary T-cell immunodeficiency",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "T-cell-independent vaccine response",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "antigenic variation of cell wall - wrong mechanism for pneumococcus",
+      "detail": "WHAT IT IS: changing surface antigens to evade immunity (e.g., Neisseria gonorrhoeae pili). ❌ WHY IT FAILS: pneumococcal immune escape relates to capsular serotype diversity, not cell-wall antigenic variation. ✅ Correct if: an organism known for antigenic/phase variation (gonococcus, Borrelia) were involved."
+    },
+    {
+      "letter": "B",
+      "label": "capsule-lacking bacteria - those are avirulent",
+      "detail": "WHAT IT IS: nonencapsulated pneumococci. ❌ WHY IT FAILS: the capsule is the key virulence factor; unencapsulated strains are minimally virulent and rarely cause invasive meningitis. ✅ Correct if: discussing why capsule is required for invasiveness, not a cause of breakthrough disease."
+    },
+    {
+      "letter": "D",
+      "label": "primary T-cell immunodeficiency - rare, wrong infection profile",
+      "detail": "WHAT IT IS: an inborn T-cell defect. ❌ WHY IT FAILS: T-cell defects predispose to viral/fungal/opportunistic infections; encapsulated bacterial disease relates more to antibody/complement/spleen, and breakthrough here is simply a non-vaccine serotype. ✅ Correct if: recurrent opportunistic (PCP, fungal, viral) infections with failure to thrive."
+    },
+    {
+      "letter": "E",
+      "label": "T-cell-independent response - that's why PLAIN polysaccharide vaccines fail in infants, but PCV13 is conjugated",
+      "detail": "WHAT IT IS: pure polysaccharide antigens elicit a T-cell-INDEPENDENT response that infants under 2 mount poorly. ❌ WHY IT FAILS: PCV13 is protein-CONJUGATED specifically to create a T-cell-DEPENDENT response that works in infants, so this isn't the failure mode; the gap is serotype coverage. ✅ Correct if: the child had received the unconjugated PPSV23 and failed to respond due to age."
+    }
+  ],
+  "reasoning": [
+    "Fully PCV13-vaccinated infant with pneumococcal meningitis",
+    "PCV13 covers only 13 of >90 capsular serotypes",
+    "Conjugate vaccine works in infants (T-cell-dependent), so immune response isn't the gap",
+    "Breakthrough = non-vaccine serotype -> answer C"
+  ],
+  "mechanism": "Streptococcus pneumoniae has more than 90 capsular polysaccharide serotypes, and immunity to one provides little cross-protection against others. PCV13 conjugates 13 capsular polysaccharides to a carrier protein, converting a T-cell-independent polysaccharide response into a T-cell-dependent one so that infants (who respond poorly to plain polysaccharides) develop protective, memory antibody. However, the vaccine only covers its 13 included serotypes; invasive disease can still occur from serotypes not in the vaccine. Thus a fully vaccinated infant with pneumococcal meningitis most likely has a non-vaccine serotype, rather than an immune defect, antigenic variation, or a capsule-deficient strain.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Microbiology/Immunology > Pneumococcus & vaccines: capsule = main virulence factor and serotype determinant; >90 serotypes; PCV13 (conjugate, T-cell-dependent, for infants) vs PPSV23 (polysaccharide, T-cell-independent, poor under age 2). Breakthrough disease = non-vaccine serotype."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reconcile 'fully vaccinated' with 'still got pneumococcus': the vaccine covers a subset of serotypes, so the most parsimonious explanation is a non-covered serotype."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on capsular serotype, conjugate vs polysaccharide vaccine, T-cell-dependent vs -independent response, PCV13 vs PPSV23? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "T-cell-independent response (E) is the trap if you forget PCV13 is CONJUGATED (T-cell-dependent, works in infants). The real gap is serotype coverage (C)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked C correctly - remember conjugate vaccines fix the infant-response problem; remaining breakthroughs are non-vaccine serotypes."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Vaccinated child still gets pneumococcal disease - why?",
+      "back": "Infection from a non-vaccine serotype"
+    },
+    {
+      "front": "Number of pneumococcal capsular serotypes",
+      "back": ">90 (PCV13 covers 13)"
+    },
+    {
+      "front": "PCV13 vaccine type",
+      "back": "Protein-conjugated polysaccharide -> T-cell-dependent (works in infants)"
+    },
+    {
+      "front": "PPSV23 vaccine limitation",
+      "back": "Pure polysaccharide -> T-cell-independent, poor response under age 2"
+    },
+    {
+      "front": "Pneumococcus main virulence factor",
+      "back": "Polysaccharide capsule (antiphagocytic)"
+    },
+    {
+      "front": "Gram stain of S. pneumoniae",
+      "back": "Lancet-shaped gram-positive diplococci"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Pneumococcal serotypes & conjugate vaccines",
+      "detail": "Micro/Immuno: capsule serotypes, PCV13 vs PPSV23, T-cell-dependent conjugate response.",
+      "location": "Micro/Immuno: capsule serotypes, PCV13 vs PPSV23, T-cell-dependent conjugate response."
+    },
+    {
+      "tag": "stem",
+      "topic": "Bacterial meningitis in infants",
+      "detail": "ID/Peds: CSF findings, common pathogens by age, S. pneumoniae.",
+      "location": "ID/Peds: CSF findings, common pathogens by age, S. pneumoniae."
+    },
+    {
+      "tag": "options",
+      "topic": "Vaccine immunology",
+      "detail": "Immuno: T-cell-dependent vs -independent antigens, antigenic variation, capsule virulence.",
+      "location": "Immuno: T-cell-dependent vs -independent antigens, antigenic variation, capsule virulence."
+    }
+  ],
+  "memoryHook": "PCV13 = only 13 of 90+ serotypes. Fully vaccinated but still pneumococcus? It's one of the serotypes NOT in the can.",
+  "stem": [
+    {
+      "text": "A 10-month-old boy is brought to the emergency department due to 2 days of fever, irritability, and vomiting. The patient has had no prior significant medical conditions and has "
+    },
+    {
+      "text": "received all recommended vaccinations, including protein-conjugated, 13-valent pneumococcal",
+      "clue": true,
+      "type": "orange",
+      "note": "PCV13 covers only 13 of the >90 pneumococcal capsular serotypes. Being fully vaccinated yet developing pneumococcal disease points to infection by a serotype NOT in the vaccine."
+    },
+    {
+      "text": " capsular polysaccharide vaccines (PCV13) at ages 2, 4, and 6 months. On physical examination, the patient is febrile and lethargic, with a bulging anterior fontanelle. Lumbar puncture yields "
+    },
+    {
+      "text": "turbid fluid with an abundance of neutrophils",
+      "clue": true,
+      "type": "blue",
+      "note": "Turbid CSF with neutrophil predominance indicates acute bacterial meningitis, prompting identification of the organism on Gram stain."
+    },
+    {
+      "text": ". Gram stain of cerebrospinal fluid reveals "
+    },
+    {
+      "text": "lancet-shaped, gram-positive diplococci",
+      "clue": true,
+      "type": "red",
+      "note": "Lancet-shaped gram-positive diplococci = Streptococcus pneumoniae. Since the child got PCV13, disease implies a capsular serotype not included in the vaccine."
+    },
+    {
+      "text": ". Which of the following best explains this patient's current condition?"
+    }
+  ]
+}

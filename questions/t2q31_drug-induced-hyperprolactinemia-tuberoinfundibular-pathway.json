@@ -1,0 +1,212 @@
+{
+  "id": "q60",
+  "item": 60,
+  "qid": "513",
+  "title": "Drug-induced hyperprolactinemia: tuberoinfundibular pathway",
+  "system": "Neuro/Endocrine",
+  "topic": "Dopamine pathways / prolactin",
+  "correct": "F",
+  "yourAnswer": "F",
+  "percentCorrect": 61,
+  "vignette": "A 26-year-old woman is evaluated in the clinic due to absence of her last 3 menstrual periods. The patient has also developed bilateral milky nipple discharge. Menarche was at age 13. Until now, she has had regular menses, lasting 4-5 days, every 28 days. The patient says she takes acetaminophen for occasional headaches and a medication that \"stops the voices\" in her head. BMI is 29 kg/m2. Pelvic examination is unremarkable. Urine beta-hCG testing is negative. Interruption of which of the following central nervous system pathways is the most likely cause of this patient's presenting symptoms?",
+  "clues": [
+    {
+      "text": "milky nipple discharge",
+      "type": "red",
+      "note": "Galactorrhea plus amenorrhea is the classic picture of hyperprolactinemia. Excess prolactin suppresses GnRH (causing amenorrhea) and stimulates milk production."
+    },
+    {
+      "text": "a medication that \"stops the voices\" in her head",
+      "type": "green",
+      "note": "'Stops the voices' implies an ANTIPSYCHOTIC (dopamine D2 antagonist). Blocking dopamine removes its tonic inhibition of prolactin, raising prolactin and causing galactorrhea/amenorrhea."
+    },
+    {
+      "text": "Urine beta-hCG testing is negative",
+      "type": "purple",
+      "note": "A negative pregnancy test excludes pregnancy as the cause of amenorrhea/galactorrhea, steering you toward a prolactin-mediated, drug-induced cause. It's a rule-out clue."
+    }
+  ],
+  "whatMatters": "Amenorrhea + galactorrhea + an antipsychotic (D2 blocker) = drug-induced hyperprolactinemia. Dopamine normally INHIBITS prolactin via the TUBEROINFUNDIBULAR pathway (hypothalamus → anterior pituitary); the antipsychotic blocks dopamine, so interrupting that inhibitory pathway's effect raises prolactin. The asked 'pathway' is the tuberoinfundibular one.",
+  "strategy": "Know the four dopamine pathways and what blocking each does: mesolimbic (antipsychotic benefit), mesocortical (negative symptoms), nigrostriatal (extrapyramidal symptoms), tuberoinfundibular (hyperprolactinemia → galactorrhea/amenorrhea). Galactorrhea/amenorrhea = tuberoinfundibular.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Arcuate fasciculus",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Hypothalamospinal tract",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Lateral medullary spinothalamic tract",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Mesolimbic pathway",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Nigrostriatal pathway",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Tuberoinfundibular pathway",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "arcuate fasciculus — language tract, unrelated",
+      "detail": "WHAT IT IS: the arcuate fasciculus connects Broca and Wernicke areas; lesions cause conduction aphasia. ❌ WHY IT FAILS: it has nothing to do with prolactin or menses; wrong system entirely. ✅ Correct if: the deficit were conduction aphasia (poor repetition with intact comprehension)."
+    },
+    {
+      "letter": "B",
+      "label": "hypothalamospinal tract — sympathetic (Horner), not prolactin",
+      "detail": "WHAT IT IS: the hypothalamospinal tract carries sympathetic fibers; interruption causes Horner syndrome. ❌ WHY IT FAILS: it doesn't regulate prolactin; galactorrhea/amenorrhea aren't its effects. ✅ Correct if: the finding were ptosis, miosis, and anhidrosis (Horner)."
+    },
+    {
+      "letter": "C",
+      "label": "lateral spinothalamic — pain/temperature, unrelated",
+      "detail": "WHAT IT IS: the spinothalamic tract transmits pain and temperature. ❌ WHY IT FAILS: it's a sensory pathway with no role in prolactin regulation. ✅ Correct if: the deficit were loss of pain/temperature sensation."
+    },
+    {
+      "letter": "D",
+      "label": "mesolimbic — drives positive symptoms, not prolactin",
+      "detail": "WHAT IT IS: the mesolimbic dopamine pathway mediates the positive symptoms of psychosis; antipsychotics block it for therapeutic benefit. ❌ WHY IT FAILS: blocking it treats hallucinations, but it doesn't control prolactin; galactorrhea comes from the tuberoinfundibular pathway. ✅ Correct if: the question asked which pathway's blockade reduces hallucinations/delusions."
+    },
+    {
+      "letter": "E",
+      "label": "nigrostriatal — extrapyramidal symptoms, not prolactin",
+      "detail": "WHAT IT IS: the nigrostriatal dopamine pathway controls movement; its blockade by antipsychotics causes extrapyramidal symptoms (parkinsonism, dystonia, akathisia). ❌ WHY IT FAILS: it produces movement side effects, not galactorrhea/amenorrhea. ✅ Correct if: the side effect were tremor/rigidity/dystonia (EPS)."
+    }
+  ],
+  "reasoning": [
+    "Galactorrhea + amenorrhea + negative pregnancy test = hyperprolactinemia",
+    "Antipsychotic ('stops the voices') blocks dopamine D2 receptors",
+    "Dopamine normally inhibits prolactin via the tuberoinfundibular pathway",
+    "Loss of that inhibition raises prolactin → answer F"
+  ],
+  "mechanism": "Dopamine, released by hypothalamic neurons of the tuberoinfundibular pathway into the hypophyseal portal system, tonically INHIBITS prolactin secretion from anterior pituitary lactotrophs. Antipsychotics (D2 antagonists) block this dopamine signal, disinhibiting prolactin release; high prolactin causes galactorrhea and suppresses GnRH, producing amenorrhea. (Other dopamine pathways explain antipsychotics' therapeutic effects and movement side effects.)",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Psych/Pharm > dopamine pathways: mesolimbic, mesocortical, nigrostriatal, tuberoinfundibular — and the prolactin-inhibition role of dopamine. Cross-ref antipsychotic side effects (hyperprolactinemia, EPS)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate symptoms to physiology: galactorrhea/amenorrhea = high prolactin; dopamine normally inhibits prolactin via the tuberoinfundibular pathway, which the drug disrupts. Name the pathway from the endocrine effect."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on prolactin, galactorrhea, tuberoinfundibular pathway, D2 antagonist, GnRH suppression? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Mesolimbic and nigrostriatal are the dopamine-pathway baits, but they cause antipsychotic benefit and EPS, not galactorrhea. Map the endocrine effect (prolactin) to the tuberoinfundibular pathway."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the prolactin-regulation diagram (hypothalamic dopamine → inhibits pituitary prolactin; antipsychotics block dopamine). Use it to see why blocking dopamine raises prolactin."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Galactorrhea + amenorrhea on an antipsychotic",
+      "back": "Drug-induced hyperprolactinemia (tuberoinfundibular)"
+    },
+    {
+      "front": "Pathway by which dopamine inhibits prolactin",
+      "back": "Tuberoinfundibular"
+    },
+    {
+      "front": "Dopamine's effect on prolactin",
+      "back": "Tonic INHIBITION (block dopamine → prolactin rises)"
+    },
+    {
+      "front": "Mesolimbic pathway blockade",
+      "back": "Reduced positive psychotic symptoms"
+    },
+    {
+      "front": "Nigrostriatal pathway blockade",
+      "back": "Extrapyramidal symptoms"
+    },
+    {
+      "front": "Hyperprolactinemia effect on menses",
+      "back": "Suppresses GnRH → amenorrhea"
+    },
+    {
+      "front": "Antipsychotics most likely to raise prolactin",
+      "back": "High-potency typicals; risperidone"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Dopamine pathways & prolactin",
+      "detail": "Psych/Pharm > dopaminergic pathways (mesolimbic, mesocortical, nigrostriatal, tuberoinfundibular) and dopamine's inhibition of prolactin.",
+      "location": "Psych/Pharm > dopaminergic pathways (mesolimbic, mesocortical, nigrostriatal, tuberoinfundibular) and dopamine's inhibition of prolactin."
+    },
+    {
+      "tag": "stem",
+      "topic": "Hyperprolactinemia",
+      "detail": "Endocrine/Repro > prolactin: galactorrhea/amenorrhea, causes (antipsychotics, prolactinoma, hypothyroidism), GnRH suppression.",
+      "location": "Endocrine/Repro > prolactin: galactorrhea/amenorrhea, causes (antipsychotics, prolactinoma, hypothyroidism), GnRH suppression."
+    },
+    {
+      "tag": "options",
+      "topic": "Antipsychotic side effects",
+      "detail": "Pharm > antipsychotics: EPS (nigrostriatal), hyperprolactinemia (tuberoinfundibular), metabolic effects.",
+      "location": "Pharm > antipsychotics: EPS (nigrostriatal), hyperprolactinemia (tuberoinfundibular), metabolic effects."
+    }
+  ],
+  "memoryHook": "Dopamine is prolactin's brake via the TUBEROINFUNDIBULAR road — block dopamine (antipsychotic) and prolactin floors it (milk + missed periods).",
+  "stem": [
+    {
+      "text": "A 26-year-old woman is evaluated in the clinic due to absence of her last 3 menstrual periods. The patient has also developed bilateral "
+    },
+    {
+      "text": "milky nipple discharge",
+      "clue": true,
+      "type": "red",
+      "note": "Galactorrhea plus amenorrhea is the classic picture of hyperprolactinemia. Excess prolactin suppresses GnRH (causing amenorrhea) and stimulates milk production."
+    },
+    {
+      "text": ". Menarche was at age 13. Until now, she has had regular menses, lasting 4-5 days, every 28 days. The patient says she takes acetaminophen for occasional headaches and "
+    },
+    {
+      "text": "a medication that \"stops the voices\" in her head",
+      "clue": true,
+      "type": "green",
+      "note": "'Stops the voices' implies an ANTIPSYCHOTIC (dopamine D2 antagonist). Blocking dopamine removes its tonic inhibition of prolactin, raising prolactin and causing galactorrhea/amenorrhea."
+    },
+    {
+      "text": ". BMI is 29 kg/m2. Pelvic examination is unremarkable. "
+    },
+    {
+      "text": "Urine beta-hCG testing is negative",
+      "clue": true,
+      "type": "purple",
+      "note": "A negative pregnancy test excludes pregnancy as the cause of amenorrhea/galactorrhea, steering you toward a prolactin-mediated, drug-induced cause. It's a rule-out clue."
+    },
+    {
+      "text": ". Interruption of which of the following central nervous system pathways is the most likely cause of this patient's presenting symptoms?"
+    }
+  ]
+}

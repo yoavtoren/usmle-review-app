@@ -1,0 +1,207 @@
+{
+  "id": "q146",
+  "item": 146,
+  "qid": "544",
+  "title": "Delayed-type hypersensitivity skin test: T lymphocytes",
+  "system": "Immunology",
+  "topic": "Type IV hypersensitivity",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 74,
+  "vignette": "A 3-year-old boy experiences recurrent sinusitis and an episode of severe pneumonia. As part of his evaluation, Candida extract is injected intradermally. Forty-eight hours later, he returns to the clinic with a firm nodule measuring 16 mm in diameter where the extract was injected. Which of the following cell types is most likely responsible for the reaction observed in this patient?",
+  "clues": [
+    {
+      "text": "recurrent sinusitis and an episode of severe pneumonia",
+      "type": "orange",
+      "note": "Recurrent infections prompt an immunodeficiency workup. An intradermal Candida (recall antigen) test assesses cell-mediated (T-cell) immunity - a positive response indicates intact T-cell function."
+    },
+    {
+      "text": "Candida extract is injected intradermally",
+      "type": "blue",
+      "note": "Intradermal injection of a recall antigen the patient has previously encountered tests delayed-type (type IV) hypersensitivity. The response measures T-cell-mediated immunity, used as a control for anergy."
+    },
+    {
+      "text": "Forty-eight hours later",
+      "type": "red",
+      "note": "A reaction peaking at 48-72 hours is the hallmark of type IV (delayed-type) hypersensitivity, mediated by T lymphocytes - not immediate antibody/mast-cell responses."
+    },
+    {
+      "text": "firm nodule measuring 16 mm",
+      "type": "green",
+      "note": "INDURATION (firmness), not just redness, reflects T-cell-driven macrophage recruitment and cytokine-mediated inflammation, the signature of a type IV response."
+    }
+  ],
+  "whatMatters": "An intradermal recall antigen producing firm induration at 48 hours is a type IV (delayed-type) hypersensitivity reaction, mediated by T lymphocytes - answer E.",
+  "strategy": "Use timing + lesion to type the hypersensitivity: delayed (48-72 h) + induration = type IV = T lymphocytes (and recruited macrophages). Immediate wheal-and-flare (minutes) = type I (mast cells/IgE). Choose the effector cell that matches type IV: T cells.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "B lymphocytes",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Eosinophils",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Mast cells",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Neutrophils",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "T lymphocytes",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "B lymphocytes - antibody-mediated, not delayed-type",
+      "detail": "WHAT IT IS: B cells/plasma cells produce antibodies (types I-III). ❌ WHY IT FAILS: type IV delayed reactions are cell-mediated by T cells, not antibody; B cells aren't the effectors of induration. ✅ Correct if: an antibody-mediated reaction (anaphylaxis, cytotoxic, immune-complex) were described."
+    },
+    {
+      "letter": "B",
+      "label": "eosinophils - type I/parasitic, wrong timing",
+      "detail": "WHAT IT IS: eosinophils participate in allergic (type I late-phase) and antiparasitic responses. ❌ WHY IT FAILS: they aren't the central mediators of a delayed induration recall test; that's T cells. ✅ Correct if: allergic/parasitic eosinophil-driven inflammation were the focus."
+    },
+    {
+      "letter": "C",
+      "label": "mast cells - immediate (type I), minutes not days",
+      "detail": "WHAT IT IS: mast cells degranulate in IgE-mediated immediate hypersensitivity. ❌ WHY IT FAILS: that produces a wheal within minutes, not a firm 48-hour nodule; type IV is T-cell mediated. ✅ Correct if: an immediate wheal-and-flare reaction were described."
+    },
+    {
+      "letter": "D",
+      "label": "neutrophils - acute/innate, not the delayed effector",
+      "detail": "WHAT IT IS: neutrophils drive acute pyogenic/innate inflammation. ❌ WHY IT FAILS: the delayed induration is dominated by T cells and macrophages, not neutrophils. ✅ Correct if: an acute bacterial/immune-complex (Arthus, type III) neutrophilic reaction were described."
+    }
+  ],
+  "reasoning": [
+    "Intradermal recall antigen (Candida) tests cell-mediated immunity",
+    "Reaction peaks at 48 hours with induration = type IV (delayed-type) hypersensitivity",
+    "Type IV is mediated by T lymphocytes (with recruited macrophages)",
+    "-> answer E"
+  ],
+  "mechanism": "Delayed-type (type IV) hypersensitivity is mediated by previously sensitized T lymphocytes. When a recall antigen such as Candida extract is injected intradermally in a person with intact cell-mediated immunity, antigen-presenting cells display it to memory CD4 T cells, which proliferate and release cytokines (e.g., IFN-gamma) that recruit and activate macrophages over 24-72 hours, producing firm induration. Such skin testing is used to assess cellular immunity (and as an anergy control when evaluating immunodeficiency or tuberculosis exposure). The reaction is independent of antibodies, mast cells, eosinophils, or neutrophils.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Immunology > Hypersensitivity types: type IV (delayed) = T cells/macrophages, 48-72 h, induration (PPD, contact dermatitis, recall antigen testing); types I-III antibody/mast-cell/immune-complex mediated."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Classify by timing/lesion (48 h, induration -> type IV) and pick the matching effector cell (T lymphocytes)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on delayed-type/type IV hypersensitivity, recall antigen, anergy, induration, cell-mediated immunity? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Mast cells (C) are the type I trap (immediate). The 48-hour induration is delayed-type = T cells."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked E correctly - lock 'delayed + induration = type IV = T cells.'"
+    }
+  ],
+  "keywords": [
+    {
+      "front": "48-72 h induration after intradermal antigen",
+      "back": "Type IV (delayed-type) hypersensitivity - T lymphocytes"
+    },
+    {
+      "front": "Type IV effector cells",
+      "back": "T lymphocytes + recruited macrophages (IFN-gamma)"
+    },
+    {
+      "front": "Purpose of Candida recall skin test",
+      "back": "Assess cell-mediated immunity / anergy control"
+    },
+    {
+      "front": "Type I hypersensitivity cell/timing",
+      "back": "Mast cells/IgE; immediate (minutes)"
+    },
+    {
+      "front": "Examples of type IV reactions",
+      "back": "PPD/TST, contact dermatitis, granulomas, recall antigen tests"
+    },
+    {
+      "front": "Anergy meaning",
+      "back": "Failure to mount a delayed-type response (impaired cell-mediated immunity)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Type IV hypersensitivity",
+      "detail": "Immunology: delayed-type, T-cell/macrophage mediated, skin testing.",
+      "location": "Immunology: delayed-type, T-cell/macrophage mediated, skin testing."
+    },
+    {
+      "tag": "stem",
+      "topic": "Immunodeficiency evaluation",
+      "detail": "Immuno: recall antigen testing, anergy, recurrent infection workup.",
+      "location": "Immuno: recall antigen testing, anergy, recurrent infection workup."
+    },
+    {
+      "tag": "options",
+      "topic": "Hypersensitivity effector cells",
+      "detail": "Immuno: mast cells (I), B cells/antibody (II/III), T cells (IV).",
+      "location": "Immuno: mast cells (I), B cells/antibody (II/III), T cells (IV)."
+    }
+  ],
+  "memoryHook": "Delayed + firm bump at 2 days = Type IV = T cells. (4th type, 4 letters: 'cell'-mediated.)",
+  "stem": [
+    {
+      "text": "A 3-year-old boy experiences "
+    },
+    {
+      "text": "recurrent sinusitis and an episode of severe pneumonia",
+      "clue": true,
+      "type": "orange",
+      "note": "Recurrent infections prompt an immunodeficiency workup. An intradermal Candida (recall antigen) test assesses cell-mediated (T-cell) immunity - a positive response indicates intact T-cell function."
+    },
+    {
+      "text": ". As part of his evaluation, "
+    },
+    {
+      "text": "Candida extract is injected intradermally",
+      "clue": true,
+      "type": "blue",
+      "note": "Intradermal injection of a recall antigen the patient has previously encountered tests delayed-type (type IV) hypersensitivity. The response measures T-cell-mediated immunity, used as a control for anergy."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Forty-eight hours later",
+      "clue": true,
+      "type": "red",
+      "note": "A reaction peaking at 48-72 hours is the hallmark of type IV (delayed-type) hypersensitivity, mediated by T lymphocytes - not immediate antibody/mast-cell responses."
+    },
+    {
+      "text": ", he returns to the clinic with a "
+    },
+    {
+      "text": "firm nodule measuring 16 mm",
+      "clue": true,
+      "type": "green",
+      "note": "INDURATION (firmness), not just redness, reflects T-cell-driven macrophage recruitment and cytokine-mediated inflammation, the signature of a type IV response."
+    },
+    {
+      "text": " in diameter where the extract was injected. Which of the following cell types is most likely responsible for the reaction observed in this patient?"
+    }
+  ]
+}

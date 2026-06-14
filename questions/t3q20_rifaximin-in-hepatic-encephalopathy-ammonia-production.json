@@ -1,0 +1,211 @@
+{
+  "id": "q90",
+  "item": 90,
+  "qid": "11661",
+  "title": "Rifaximin in hepatic encephalopathy: ↓ ammonia production",
+  "system": "Pharmacology",
+  "topic": "Hepatic encephalopathy",
+  "correct": "B",
+  "yourAnswer": "E",
+  "percentCorrect": 48,
+  "vignette": "A 57-year-old man with a history of alcohol-induced cirrhosis is brought to the emergency department due to altered mental status. Over the weekend, he ate a lot of smoked meats at a local barbecue competition. Since then, he has been sleeping most of the day and is confused and disoriented when awake. On examination, he has abdominal distension with shifting dullness. The patient answers correctly when asked for his name but does not know that he is in the hospital and says the year is \"1997.\" When asked to extend his hands as if stopping traffic, the patient makes rhythmic flapping movements. He is started on rifaximin. Which of the following is the most likely mechanism of action of this drug when used to treat this patient's current condition?",
+  "clues": [
+    {
+      "text": "alcohol-induced cirrhosis",
+      "type": "orange",
+      "note": "Cirrhosis is the substrate for hepatic encephalopathy: the failing liver can't convert gut-derived ammonia to urea, and portosystemic shunting lets ammonia bypass the liver and reach the brain. This sets up an ammonia-lowering treatment."
+    },
+    {
+      "text": "ate a lot of smoked meats",
+      "type": "blue",
+      "note": "A large protein (nitrogen) load is a classic precipitant of hepatic encephalopathy: gut bacteria degrade protein to ammonia. Other triggers include GI bleeding, infection, constipation, and hypokalemia. The trigger reinforces the ammonia mechanism."
+    },
+    {
+      "text": "abdominal distension with shifting dullness",
+      "type": "blue",
+      "note": "Ascites confirms decompensated cirrhosis/portal hypertension. It supports the diagnosis of hepatic encephalopathy as the cause of the confusion."
+    },
+    {
+      "text": "rhythmic flapping movements",
+      "type": "green",
+      "note": "Asterixis (flapping tremor of dorsiflexed hands) is the hallmark sign of hepatic encephalopathy. Confusion + asterixis + cirrhosis = HE, treated by lowering ammonia. Rifaximin, a nonabsorbable antibiotic, kills ammonia-producing gut flora to DECREASE intestinal ammonia production."
+    }
+  ],
+  "whatMatters": "The barbecue/ascites/asterixis details all point to hepatic encephalopathy from a protein load. The question is rifaximin's mechanism: it's a nonabsorbable gut antibiotic that kills ammonia-producing colonic bacteria, DECREASING intraluminal ammonia production — answer B. (Lactulose, by contrast, increases conversion of ammonia to ammonium for excretion.)",
+  "strategy": "Separate the two HE drugs by mechanism: rifaximin = nonabsorbable ANTIBIOTIC → fewer ammoniagenic bacteria → less ammonia PRODUCED. Lactulose = nonabsorbable disaccharide → acidifies colon → converts NH3 to NH4+ (trapped/excreted) and acts as a cathartic. The stem names rifaximin, so pick 'decreased production.'",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Binding of dietary phosphate",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased intraluminal ammonia production",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Exchange of intraluminal sodium ions for potassium ions",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Formation of a nonabsorbable complex with bile acids",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Increased conversion of ammonia to ammonium ion",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "phosphate binder — that's calcium acetate/sevelamer for ESRD",
+      "detail": "WHAT IT IS: phosphate binders lower serum phosphate in chronic kidney disease. ❌ WHY IT FAILS: this has nothing to do with ammonia or hepatic encephalopathy; rifaximin doesn't bind phosphate. ✅ Correct if: the patient had ESRD and hyperphosphatemia."
+    },
+    {
+      "letter": "C",
+      "label": "Na/K exchange resin — that's sodium polystyrene sulfonate for hyperkalemia",
+      "detail": "WHAT IT IS: a cation-exchange resin swaps gut sodium for potassium to treat hyperkalemia. ❌ WHY IT FAILS: it doesn't reduce ammonia and isn't how rifaximin works. ✅ Correct if: the question were about lowering serum potassium."
+    },
+    {
+      "letter": "D",
+      "label": "bile-acid sequestrant — that's cholestyramine for cholesterol",
+      "detail": "WHAT IT IS: cholestyramine/colestipol bind intestinal bile acids to lower LDL cholesterol (and treat bile-acid diarrhea/pruritus). ❌ WHY IT FAILS: bile-acid binding doesn't treat HE or lower ammonia; rifaximin is an antibiotic. ✅ Correct if: the goal were lowering cholesterol or treating cholestatic pruritus."
+    },
+    {
+      "letter": "E",
+      "label": "convert ammonia to ammonium — that's LACTULOSE, not rifaximin (your pick)",
+      "detail": "WHAT IT IS: lactulose is metabolized by colonic bacteria to short-chain fatty acids, acidifying the colon so NH3 is converted to non-absorbable NH4+ (and is excreted via its cathartic effect). ❌ WHY IT FAILS: that's lactulose's mechanism; the stem specifies RIFAXIMIN, which acts by killing ammonia-producing bacteria to reduce ammonia PRODUCTION. ✅ Correct if: the drug named were lactulose."
+    }
+  ],
+  "reasoning": [
+    "Cirrhosis + protein load + asterixis + ascites = hepatic encephalopathy",
+    "HE is driven by gut-derived ammonia reaching the brain",
+    "Rifaximin is a nonabsorbable antibiotic acting in the gut lumen",
+    "It kills ammoniagenic bacteria → decreased intraluminal ammonia production → answer B"
+  ],
+  "mechanism": "Hepatic encephalopathy results from accumulation of gut-derived ammonia (and other neurotoxins) that a cirrhotic, shunted liver cannot detoxify; ammonia crosses the blood-brain barrier and impairs neurotransmission/astrocyte function (asterixis, confusion). Rifaximin is a minimally absorbed antibiotic that suppresses ammonia-producing colonic bacteria, decreasing intestinal ammonia PRODUCTION. It is typically added to lactulose, which acidifies the colon to convert NH3 to non-absorbable NH4+ and increase its excretion.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI/Pharm > Hepatic encephalopathy: pathophysiology (ammonia, portosystemic shunt), precipitants (protein load, GI bleed, infection, hypokalemia, constipation), treatments — lactulose (NH3→NH4+, cathartic) and rifaximin (antibiotic, ↓ ammoniagenic flora). Cross-link cirrhosis/portal hypertension."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reframe to: which mechanism belongs to the NAMED drug? Rifaximin = antibiotic → fewer bacteria → less ammonia made. Don't give it lactulose's mechanism."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on hepatic encephalopathy, asterixis, ammonia vs ammonium, nonabsorbable antibiotic, portosystemic shunt? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Option E is the classic trap: it's the correct mechanism for the WRONG drug (lactulose). The stem says rifaximin → 'decreased production.' Map mechanism to the specific agent."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as E → pair them: lactulose = 'trap ammonia as ammonium (NH4+) + flush it out'; rifaximin = 'kill the bug that makes ammonia.' They are complementary, not the same."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Rifaximin mechanism in HE",
+      "back": "Nonabsorbable antibiotic → ↓ ammonia-producing gut bacteria → ↓ ammonia production"
+    },
+    {
+      "front": "Lactulose mechanism in HE",
+      "back": "Acidifies colon → NH3→NH4+ (trapped/excreted) + cathartic"
+    },
+    {
+      "front": "Hallmark sign of hepatic encephalopathy",
+      "back": "Asterixis (flapping tremor)"
+    },
+    {
+      "front": "HE precipitants",
+      "back": "Protein load, GI bleed, infection, constipation, hypokalemia, alkalosis"
+    },
+    {
+      "front": "Why ammonia rises in cirrhosis",
+      "back": "↓ urea cycle capacity + portosystemic shunting"
+    },
+    {
+      "front": "Phosphate binder use",
+      "back": "Hyperphosphatemia in CKD (not HE)"
+    },
+    {
+      "front": "Sodium polystyrene sulfonate use",
+      "back": "Hyperkalemia (Na/K exchange)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Hepatic encephalopathy treatment",
+      "detail": "GI/Pharm: lactulose (NH3→NH4+) and rifaximin (gut antibiotic, ↓ ammonia production); ammonia pathophysiology.",
+      "location": "GI/Pharm: lactulose (NH3→NH4+) and rifaximin (gut antibiotic, ↓ ammonia production); ammonia pathophysiology."
+    },
+    {
+      "tag": "stem",
+      "topic": "Cirrhosis & portal hypertension",
+      "detail": "GI: decompensation (ascites, varices, encephalopathy), shifting dullness, precipitants of HE.",
+      "location": "GI: decompensation (ascites, varices, encephalopathy), shifting dullness, precipitants of HE."
+    },
+    {
+      "tag": "options",
+      "topic": "Luminal-acting drugs",
+      "detail": "Pharm: phosphate binders (CKD), Na/K exchange resin (hyperkalemia), bile-acid sequestrants (cholesterol) for contrast.",
+      "location": "Pharm: phosphate binders (CKD), Na/K exchange resin (hyperkalemia), bile-acid sequestrants (cholesterol) for contrast."
+    }
+  ],
+  "memoryHook": "Rifaximin = antibiotic → fewer ammonia-making bugs (↓ PRODUCTION). Lactulose = traps ammonia as ammonium and flushes it. Different jobs.",
+  "stem": [
+    {
+      "text": "A 57-year-old man with a history of "
+    },
+    {
+      "text": "alcohol-induced cirrhosis",
+      "clue": true,
+      "type": "orange",
+      "note": "Cirrhosis is the substrate for hepatic encephalopathy: the failing liver can't convert gut-derived ammonia to urea, and portosystemic shunting lets ammonia bypass the liver and reach the brain. This sets up an ammonia-lowering treatment."
+    },
+    {
+      "text": " is brought to the emergency department due to altered mental status. Over the weekend, he "
+    },
+    {
+      "text": "ate a lot of smoked meats",
+      "clue": true,
+      "type": "blue",
+      "note": "A large protein (nitrogen) load is a classic precipitant of hepatic encephalopathy: gut bacteria degrade protein to ammonia. Other triggers include GI bleeding, infection, constipation, and hypokalemia. The trigger reinforces the ammonia mechanism."
+    },
+    {
+      "text": " at a local barbecue competition. Since then, he has been sleeping most of the day and is confused and disoriented when awake. On examination, he has "
+    },
+    {
+      "text": "abdominal distension with shifting dullness",
+      "clue": true,
+      "type": "blue",
+      "note": "Ascites confirms decompensated cirrhosis/portal hypertension. It supports the diagnosis of hepatic encephalopathy as the cause of the confusion."
+    },
+    {
+      "text": ". The patient answers correctly when asked for his name but does not know that he is in the hospital and says the year is \"1997.\" When asked to extend his hands as if stopping traffic, the patient makes "
+    },
+    {
+      "text": "rhythmic flapping movements",
+      "clue": true,
+      "type": "green",
+      "note": "Asterixis (flapping tremor of dorsiflexed hands) is the hallmark sign of hepatic encephalopathy. Confusion + asterixis + cirrhosis = HE, treated by lowering ammonia. Rifaximin, a nonabsorbable antibiotic, kills ammonia-producing gut flora to DECREASE intestinal ammonia production."
+    },
+    {
+      "text": ". He is started on rifaximin. Which of the following is the most likely mechanism of action of this drug when used to treat this patient's current condition?"
+    }
+  ]
+}

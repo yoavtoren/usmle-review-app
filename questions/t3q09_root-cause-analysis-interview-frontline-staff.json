@@ -1,0 +1,197 @@
+{
+  "id": "q78",
+  "item": 78,
+  "qid": "10508",
+  "title": "Root cause analysis: interview frontline staff",
+  "system": "Patient Safety",
+  "topic": "Quality improvement",
+  "correct": "D",
+  "yourAnswer": "B",
+  "percentCorrect": 57,
+  "vignette": "Over the next several months, there are more cases in which expired medications fail to be renewed. Finally, a patient on intravenous dobutamine for decompensated heart failure does not receive the medication for 6 hours and experiences worsening of her condition, with resulting hypotensive shock. Hospital administration convenes a committee to address this incident. Which of the following is the most appropriate next step in addressing this problem?",
+  "clues": [
+    {
+      "text": "more cases in which expired medications fail to be renewed",
+      "type": "red",
+      "note": "A RECURRING, systemic failure (not a one-off) is the signal for a root cause analysis. Patterns of the same error across cases point to a process/system flaw, not a single careless person."
+    },
+    {
+      "text": "hypotensive shock",
+      "type": "blue",
+      "note": "A serious adverse outcome triggers a formal safety review. The harm escalates this from a near-miss to a sentinel-type event warranting structured investigation."
+    },
+    {
+      "text": "convenes a committee to address this incident",
+      "type": "green",
+      "note": "A committee tasked to 'address the problem' is doing quality improvement. The FIRST step of a root cause analysis is collecting data — interviewing the people involved to understand what, how, and why it happened, before designing fixes."
+    }
+  ],
+  "whatMatters": "This is a recurrent systemic error causing harm — the committee should run a root cause analysis, and its FIRST step is data collection: interviewing the frontline pharmacy, nursing, and medical staff on the units where it happened to learn what/how/why. Answer D.",
+  "strategy": "Quality-improvement sequencing matters. A root cause analysis is RETROSPECTIVE and starts by gathering data (interview those involved) BEFORE jumping to a solution (alerts, double-checks). If two options are 'investigate' vs 'implement a fix,' the first step is usually to investigate the cause.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Create an alert system in the electronic medical record to notify physicians when orders expire",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Have a second pharmacist double-check expired orders",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increase the hospital's risk management staffing",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Interview pharmacy, nursing, and medical staff on the units where this occurred",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Interview the patients who experienced adverse outcomes from these medication errors",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "EMR alert — a solution before the diagnosis (your B-logic too)",
+      "detail": "WHAT IT IS: an automated expiry alert is a reasonable corrective measure. ❌ WHY IT FAILS: implementing a fix BEFORE identifying the root cause is premature; the real cause might be staffing/culture, not lack of an alert. ✅ Correct if: the question asked for a corrective action AFTER the root cause analysis identified the gap."
+    },
+    {
+      "letter": "B",
+      "label": "second-pharmacist double-check — premature fix (your pick)",
+      "detail": "WHAT IT IS: adding a redundant human check. ❌ WHY IT FAILS: same problem — it's a countermeasure chosen before understanding why renewals are missed; it may not address the true cause and adds workload. ✅ Correct if: the analysis had already pinpointed a missed-verification step as the cause."
+    },
+    {
+      "letter": "C",
+      "label": "more risk-management staffing — addresses litigation, not the error",
+      "detail": "WHAT IT IS: risk management handles liability/claims. ❌ WHY IT FAILS: more staff there doesn't fix the recurrent failure to renew orders; it's not a root cause step. ✅ Correct if: the goal were managing legal exposure rather than preventing recurrence."
+    },
+    {
+      "letter": "E",
+      "label": "interview the patients — wrong data source",
+      "detail": "WHAT IT IS: gathering the patient experience of the adverse outcome. ❌ WHY IT FAILS: patients can describe harm but not the process failures on the unit; the root cause lives in the staff workflow, so interview the staff involved. ✅ Correct if: the aim were disclosure or patient-experience review, not process analysis."
+    }
+  ],
+  "reasoning": [
+    "Recurrent systemic error causing harm → do a root cause analysis",
+    "RCA is retrospective and starts with data collection",
+    "Data = interviewing the staff actually involved on the units",
+    "Interview pharmacy/nursing/medical staff first → answer D"
+  ],
+  "mechanism": "Root cause analysis (RCA) is a retrospective quality-improvement method to determine what, how, and why an adverse event occurred. The first step is collecting data by interviewing the multiple frontline staff involved to map the process and uncover underlying causes (e.g., understaffing, workflow gaps, hierarchical culture). Only after the cause is understood are targeted corrective measures (EMR alerts, redundant checks) designed and implemented. Compare with failure mode and effects analysis (FMEA), which is prospective.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Patient Safety/QI: root cause analysis (retrospective, identify what/how/why; data collection first) vs FMEA (prospective); PDSA cycles; types of error (active vs latent), Swiss-cheese model."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reframe: 'first step' = understand the cause, not deploy a fix. Interviewing the people in the process is data collection — the start of RCA."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on root cause analysis, FMEA, latent vs active error, quality improvement, sentinel event? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Options A and B are plausible FIXES (and B was your pick) — but RCA gathers data before solutions. 'First step' should beat any premature countermeasure."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as B → remember the order: investigate (interview staff) → find root cause → THEN implement alerts/double-checks. Solutions come after diagnosis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Recurrent systemic error causing harm → method",
+      "back": "Root cause analysis (RCA)"
+    },
+    {
+      "front": "First step of RCA",
+      "back": "Collect data — interview the staff involved"
+    },
+    {
+      "front": "RCA vs FMEA",
+      "back": "RCA retrospective (after event); FMEA prospective (before)"
+    },
+    {
+      "front": "Swiss-cheese model",
+      "back": "Multiple latent + active failures align to cause harm"
+    },
+    {
+      "front": "Active vs latent error",
+      "back": "Active = at the sharp end (user); latent = system/design flaw"
+    },
+    {
+      "front": "PDSA cycle",
+      "back": "Plan-Do-Study-Act iterative QI"
+    },
+    {
+      "front": "When to implement EMR alert/double-check",
+      "back": "After RCA identifies the cause (corrective phase)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Root cause analysis",
+      "detail": "Patient Safety/QI: retrospective analysis, data collection by interviewing involved staff, identifying latent system causes.",
+      "location": "Patient Safety/QI: retrospective analysis, data collection by interviewing involved staff, identifying latent system causes."
+    },
+    {
+      "tag": "options",
+      "topic": "QI tools & sequencing",
+      "detail": "Patient Safety: FMEA (prospective), PDSA cycles, corrective measures (forcing functions, alerts, redundancy) come after cause identification.",
+      "location": "Patient Safety: FMEA (prospective), PDSA cycles, corrective measures (forcing functions, alerts, redundancy) come after cause identification."
+    },
+    {
+      "tag": "stem",
+      "topic": "Medical error taxonomy",
+      "detail": "Patient Safety: active vs latent errors, Swiss-cheese model, sentinel events, near-misses.",
+      "location": "Patient Safety: active vs latent errors, Swiss-cheese model, sentinel events, near-misses."
+    }
+  ],
+  "memoryHook": "Diagnose before you treat — even for systems. RCA starts by INTERVIEWING the frontline staff, not by bolting on an alert.",
+  "stem": [
+    {
+      "text": "Over the next several months, there are "
+    },
+    {
+      "text": "more cases in which expired medications fail to be renewed",
+      "clue": true,
+      "type": "red",
+      "note": "A RECURRING, systemic failure (not a one-off) is the signal for a root cause analysis. Patterns of the same error across cases point to a process/system flaw, not a single careless person."
+    },
+    {
+      "text": ". Finally, a patient on intravenous dobutamine for decompensated heart failure does not receive the medication for 6 hours and experiences worsening of her condition, with resulting "
+    },
+    {
+      "text": "hypotensive shock",
+      "clue": true,
+      "type": "blue",
+      "note": "A serious adverse outcome triggers a formal safety review. The harm escalates this from a near-miss to a sentinel-type event warranting structured investigation."
+    },
+    {
+      "text": ". Hospital administration "
+    },
+    {
+      "text": "convenes a committee to address this incident",
+      "clue": true,
+      "type": "green",
+      "note": "A committee tasked to 'address the problem' is doing quality improvement. The FIRST step of a root cause analysis is collecting data — interviewing the people involved to understand what, how, and why it happened, before designing fixes."
+    },
+    {
+      "text": ". Which of the following is the most appropriate next step in addressing this problem?"
+    }
+  ]
+}

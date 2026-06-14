@@ -1,0 +1,216 @@
+{
+  "id": "q86",
+  "item": 86,
+  "qid": "12030",
+  "title": "Brown-Séquard syndrome: spinal cord hemisection",
+  "system": "Neuroanatomy",
+  "topic": "Spinal cord / tracts",
+  "correct": "E",
+  "yourAnswer": "C",
+  "percentCorrect": 81,
+  "vignette": "A 22-year-old man is brought to the emergency department after a bar fight during which he received a knife wound to his neck. The patient is in moderate distress but is alert and can follow commands. Vital signs are stable. Neurologic examination shows right-sided hemiplegia. Loss of proprioception and vibratory sensation is present below the C8 dermatome on the right side. On the left side, there is loss of pain and temperature sensation below the T2 dermatome. MRI of this patient's spine will most likely reveal which of the following?",
+  "clues": [
+    {
+      "text": "knife wound to his neck",
+      "type": "orange",
+      "note": "A penetrating, focal injury to one side of the cord is the classic cause of Brown-Séquard (hemisection). The mechanism predisposes to a clean unilateral cut rather than a diffuse cord lesion."
+    },
+    {
+      "text": "right-sided hemiplegia",
+      "type": "red",
+      "note": "Ipsilateral (same-side) motor loss = lateral corticospinal tract, which has already decussated in the medulla and travels DOWN on the same side. Right-sided weakness localizes the cut to the RIGHT cord."
+    },
+    {
+      "text": "Loss of proprioception and vibratory sensation is present below the C8 dermatome on the right side",
+      "type": "green",
+      "note": "Ipsilateral loss of proprioception/vibration = dorsal columns, which ascend uncrossed until the medulla. Same side (right) as the motor loss confirms a RIGHT-sided lesion."
+    },
+    {
+      "text": "left side, there is loss of pain and temperature sensation below the T2 dermatome",
+      "type": "green",
+      "note": "Contralateral loss of pain/temperature = spinothalamic tract, which crosses within 1-2 levels of entry and ascends on the OPPOSITE side. Left pain/temp loss with right motor/dorsal-column loss = a RIGHT cord hemisection (Brown-Séquard)."
+    }
+  ],
+  "whatMatters": "Three findings localize the lesion: ipsilateral (right) weakness + ipsilateral (right) loss of vibration/proprioception + contralateral (left) loss of pain/temperature. That triad IS Brown-Séquard = a hemisection of the RIGHT side of the cord. Answer E.",
+  "strategy": "Decode by tract crossing: corticospinal and dorsal columns are IPSILATERAL to the lesion below it (cross in the medulla); spinothalamic is CONTRALATERAL (crosses at the cord). When ipsilateral motor + dorsal-column loss pairs with contralateral pain/temp loss → cord HEMISECTION on the side of the motor deficit.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Complete transection of the spinal cord",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Damage to the cervical dorsal roots on the right side",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Lesion of the dorsal columns on the right side",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Lesion of the medial longitudinal fasciculus on the right side",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Right-sided hemisection of the spinal cord",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "complete transection — would be bilateral and total",
+      "detail": "WHAT IT IS: a full cord cut abolishes ALL motor and sensory function below the level bilaterally (with bladder/bowel loss). ❌ WHY IT FAILS: this patient has a split pattern (right motor/dorsal-column vs left pain/temp), which is a HEMI-section, not a complete one. ✅ Correct if: there were total bilateral sensorimotor loss below the lesion."
+    },
+    {
+      "letter": "B",
+      "label": "dorsal root damage — wouldn't cross sides or split modalities this way",
+      "detail": "WHAT IT IS: a dorsal (sensory) root lesion causes dermatomal sensory loss of ALL modalities on that side at that level. ❌ WHY IT FAILS: it can't produce contralateral pain/temp loss or ipsilateral motor weakness; the crossed pattern requires a cord (tract) lesion. ✅ Correct if: there were isolated dermatomal sensory loss without motor or crossed findings."
+    },
+    {
+      "letter": "C",
+      "label": "dorsal columns only — explains one finding, not the whole triad (your pick)",
+      "detail": "WHAT IT IS: an isolated right dorsal-column lesion causes ipsilateral loss of vibration/proprioception (as seen). ❌ WHY IT FAILS: it does NOT explain the right hemiplegia (corticospinal) or the left pain/temp loss (spinothalamic); you need a lesion hitting all three tracts on one side = hemisection. ✅ Correct if: the ONLY deficit were ipsilateral vibration/proprioception loss (e.g., tabes dorsalis, B12/SCD pattern)."
+    },
+    {
+      "letter": "D",
+      "label": "MLF lesion — that's internuclear ophthalmoplegia, wrong region",
+      "detail": "WHAT IT IS: the medial longitudinal fasciculus connects CN VI and III nuclei in the brainstem; a lesion causes internuclear ophthalmoplegia (impaired adduction on lateral gaze). ❌ WHY IT FAILS: the MLF is a brainstem/eye-movement structure, not a spinal-cord tract producing limb/sensory deficits. ✅ Correct if: the finding were a conjugate gaze/adduction problem (e.g., MS)."
+    }
+  ],
+  "reasoning": [
+    "Ipsilateral (right) hemiplegia = lateral corticospinal tract (crossed in medulla, descends ipsilaterally)",
+    "Ipsilateral (right) vibration/proprioception loss = dorsal columns (ascend ipsilaterally until medulla)",
+    "Contralateral (left) pain/temp loss = spinothalamic tract (crosses at the cord)",
+    "All three on one side = right cord hemisection (Brown-Séquard) → answer E"
+  ],
+  "mechanism": "Brown-Séquard syndrome is a hemisection of the spinal cord. The lateral corticospinal tract (already decussated in the medulla) and dorsal columns (ascend uncrossed to the medulla) produce IPSILATERAL motor and vibration/proprioception loss below the lesion. The spinothalamic tract decussates within 1-2 levels of entry, so its damage causes CONTRALATERAL pain and temperature loss beginning a couple of levels below the lesion. At the level of the lesion there may also be ipsilateral LMN signs and sensory loss.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Neuro > Spinal cord tracts & Brown-Séquard: corticospinal (ipsilateral below lesion), dorsal columns (ipsilateral), spinothalamic (contralateral, crosses at cord). Cross-link cord-lesion syndromes (ASA, syringomyelia, tabes, SCD)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate each deficit to its tract and ask 'crossed or uncrossed?' Two ipsilateral (motor + dorsal column) + one contralateral (pain/temp) = hemisection on the ipsilateral (motor) side."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on ipsilateral/contralateral, decussation, dorsal columns vs spinothalamic, hemisection, dermatome? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Dorsal columns alone (C, your pick) explains only the vibration/proprioception loss. The crossed pain/temp loss + ipsilateral weakness force a whole-hemicord lesion (Brown-Séquard)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The Brown-Séquard figure shades ipsilateral dorsal-column + corticospinal damage and contralateral spinothalamic loss on a body map. Practice the cord cross-section: where each tract sits and where it crosses."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as C → make a 3-line card: corticospinal = ipsilateral; dorsal column = ipsilateral; spinothalamic = contralateral. The triad = hemisection."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Ipsilateral motor + dorsal-column loss + contralateral pain/temp loss",
+      "back": "Brown-Séquard (cord hemisection)"
+    },
+    {
+      "front": "Corticospinal tract deficit side (below lesion)",
+      "back": "Ipsilateral (decussates in medulla)"
+    },
+    {
+      "front": "Dorsal column deficit side",
+      "back": "Ipsilateral (crosses in medulla)"
+    },
+    {
+      "front": "Spinothalamic deficit side",
+      "back": "Contralateral (crosses within 1-2 levels at the cord)"
+    },
+    {
+      "front": "Complete cord transection",
+      "back": "Bilateral total sensorimotor loss + autonomic"
+    },
+    {
+      "front": "MLF lesion",
+      "back": "Internuclear ophthalmoplegia (brainstem, eyes)"
+    },
+    {
+      "front": "Spinothalamic crossing site",
+      "back": "Anterior white commissure, 1-2 levels above entry"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Brown-Séquard syndrome",
+      "detail": "Neuro: cord hemisection — ipsilateral corticospinal + dorsal column loss, contralateral spinothalamic loss; level-of-lesion findings.",
+      "location": "Neuro: cord hemisection — ipsilateral corticospinal + dorsal column loss, contralateral spinothalamic loss; level-of-lesion findings."
+    },
+    {
+      "tag": "stem",
+      "topic": "Spinal cord tracts",
+      "detail": "Neuro: corticospinal, dorsal columns (DCML), spinothalamic — locations, crossings, and modalities.",
+      "location": "Neuro: corticospinal, dorsal columns (DCML), spinothalamic — locations, crossings, and modalities."
+    },
+    {
+      "tag": "options",
+      "topic": "Cord lesion syndromes",
+      "detail": "Neuro: complete transection, anterior cord (ASA), syringomyelia, tabes dorsalis, subacute combined degeneration; MLF/INO for contrast.",
+      "location": "Neuro: complete transection, anterior cord (ASA), syringomyelia, tabes dorsalis, subacute combined degeneration; MLF/INO for contrast."
+    }
+  ],
+  "memoryHook": "Hemisection = 'same-side strength & touch, other-side pain/temp.' Knife to one side of the cord = Brown-Séquard.",
+  "stem": [
+    {
+      "text": "A 22-year-old man is brought to the emergency department after a bar fight during which he received a "
+    },
+    {
+      "text": "knife wound to his neck",
+      "clue": true,
+      "type": "orange",
+      "note": "A penetrating, focal injury to one side of the cord is the classic cause of Brown-Séquard (hemisection). The mechanism predisposes to a clean unilateral cut rather than a diffuse cord lesion."
+    },
+    {
+      "text": ". The patient is in moderate distress but is alert and can follow commands. Vital signs are stable. Neurologic examination shows "
+    },
+    {
+      "text": "right-sided hemiplegia",
+      "clue": true,
+      "type": "red",
+      "note": "Ipsilateral (same-side) motor loss = lateral corticospinal tract, which has already decussated in the medulla and travels DOWN on the same side. Right-sided weakness localizes the cut to the RIGHT cord."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Loss of proprioception and vibratory sensation is present below the C8 dermatome on the right side",
+      "clue": true,
+      "type": "green",
+      "note": "Ipsilateral loss of proprioception/vibration = dorsal columns, which ascend uncrossed until the medulla. Same side (right) as the motor loss confirms a RIGHT-sided lesion."
+    },
+    {
+      "text": ". On the "
+    },
+    {
+      "text": "left side, there is loss of pain and temperature sensation below the T2 dermatome",
+      "clue": true,
+      "type": "green",
+      "note": "Contralateral loss of pain/temperature = spinothalamic tract, which crosses within 1-2 levels of entry and ascends on the OPPOSITE side. Left pain/temp loss with right motor/dorsal-column loss = a RIGHT cord hemisection (Brown-Séquard)."
+    },
+    {
+      "text": ". MRI of this patient's spine will most likely reveal which of the following?"
+    }
+  ]
+}

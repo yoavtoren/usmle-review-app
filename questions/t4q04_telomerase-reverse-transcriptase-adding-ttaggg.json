@@ -1,0 +1,193 @@
+{
+  "id": "q113",
+  "item": 113,
+  "qid": "1438",
+  "title": "Telomerase: reverse transcriptase adding TTAGGG",
+  "system": "Biochemistry",
+  "topic": "DNA replication / telomeres",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 66,
+  "vignette": "A cell biologist is studying the role of ribonucleoproteins in normal cellular function. He prepares a cell extract using a specific cell type obtained from a 73-year-old man. Ribonucleoproteins are separated and purified from the cell extract for structural and functional analyses. These cells are found to express higher amounts of a particular protein in comparison to other cell types. This protein has reverse transcriptase activity that functions to add TTAGGG repeats to the 3' end of chromosomes. Which of the following cell types was most likely studied in this experiment?",
+  "clues": [
+    {
+      "text": "ribonucleoproteins",
+      "type": "blue",
+      "note": "Telomerase is a ribonucleoprotein: it carries both a protein catalytic subunit (TERT) and an RNA template subunit (TERC). The 'ribonucleoprotein' framing is a hint that the protein in question is telomerase, not a plain enzyme."
+    },
+    {
+      "text": "reverse transcriptase activity",
+      "type": "red",
+      "note": "Telomerase uses its built-in RNA as a template to synthesize DNA - i.e., it is an RNA-dependent DNA polymerase (reverse transcriptase). This activity is the defining feature distinguishing telomerase from ordinary DNA polymerases."
+    },
+    {
+      "text": "add TTAGGG repeats to the 3' end of chromosomes",
+      "type": "green",
+      "note": "TTAGGG is the human telomere repeat that telomerase appends to chromosome 3' ends, counteracting end-replication shortening. High telomerase activity marks cells that must divide indefinitely: stem cells, germ cells, and cancer cells."
+    }
+  ],
+  "whatMatters": "Ignore the lab packaging: a ribonucleoprotein with reverse transcriptase activity that adds TTAGGG to chromosome ends IS telomerase. The question becomes 'which listed cell has high telomerase?' Among the choices, only the regenerating stem-cell compartment - epidermal basal cells - qualifies. Answer A.",
+  "strategy": "When telomerase shows up, reframe the answer choices by proliferative capacity. High telomerase = continuously dividing cells: germ cells, stem/progenitor cells, and cancer. Terminally differentiated cells (neurons, cardiac myocytes, mature RBCs which lack a nucleus entirely) have little to none. Pick the self-renewing tissue.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Epidermal basal cells",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Erythrocytes",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Myocardial cells",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Neurons",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Pancreatic beta cells",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "erythrocytes - no nucleus, no DNA",
+      "detail": "WHAT IT IS: mature red blood cells. ❌ WHY IT FAILS: erythrocytes are anucleate and contain no chromosomes or DNA-synthesizing machinery, so telomerase activity is irrelevant/absent. ✅ Correct if: the question asked about an anucleate cell or a cell that cannot replicate DNA."
+    },
+    {
+      "letter": "C",
+      "label": "myocardial cells - terminally differentiated",
+      "detail": "WHAT IT IS: cardiac myocytes. ❌ WHY IT FAILS: they are largely post-mitotic with minimal regenerative capacity, so telomerase expression is low. ✅ Correct if: asked which cells have poor regenerative/telomerase capacity."
+    },
+    {
+      "letter": "D",
+      "label": "neurons - permanent cells",
+      "detail": "WHAT IT IS: mature neurons. ❌ WHY IT FAILS: they are permanent (G0), do not divide, and have negligible telomerase. ✅ Correct if: asking for a non-dividing 'permanent' cell type."
+    },
+    {
+      "letter": "E",
+      "label": "pancreatic beta cells - low turnover",
+      "detail": "WHAT IT IS: islet beta cells. ❌ WHY IT FAILS: they have very low proliferative turnover and little telomerase compared with a stem-cell compartment. ✅ Correct if: asking about slowly dividing 'stable' cells rather than a high-telomerase population."
+    }
+  ],
+  "reasoning": [
+    "Ribonucleoprotein + reverse transcriptase + TTAGGG = telomerase",
+    "Telomerase is high in continuously dividing cells (stem/germ/cancer)",
+    "Of the options, only epidermal basal cells are a self-renewing stem compartment",
+    "RBCs/neurons/cardiac myocytes/beta cells divide little or not at all -> answer A"
+  ],
+  "mechanism": "Telomerase is a ribonucleoprotein composed of the catalytic reverse-transcriptase subunit TERT and an RNA template (TERC) that reads 'AAUCCC' to add TTAGGG DNA repeats to the 3' single-stranded overhang of chromosome ends. This offsets the end-replication problem, in which lagging-strand synthesis cannot fully replicate chromosome termini, so telomeres shorten each division. Cells that must proliferate indefinitely - germ cells, stem/progenitor cells (e.g., epidermal basal layer), and most cancers - express high telomerase, whereas terminally differentiated somatic cells do not and undergo progressive telomere shortening leading to senescence.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochemistry > DNA replication: telomerase = RNA-dependent DNA polymerase (TERT + TERC RNA template) adds TTAGGG; high in stem/germ/cancer cells; end-replication problem and telomere shortening with aging."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two-step: identify the protein (telomerase) from its description, then pick the cell with the highest proliferative/telomerase activity (a stem-cell compartment)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on ribonucleoprotein, reverse transcriptase / RNA-dependent DNA polymerase, telomere/TTAGGG, end-replication problem, permanent vs stable vs labile cells? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Neurons (D) tempt because they are long-lived in a 73-year-old, but longevity is not proliferation; telomerase tracks DIVISION capacity, which is highest in the basal keratinocytes."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You got A right - keep the cell-turnover buckets crisp (labile/stable/permanent) so telomerase questions become one-step."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Ribonucleoprotein + reverse transcriptase + adds TTAGGG",
+      "back": "Telomerase"
+    },
+    {
+      "front": "Telomerase subunits",
+      "back": "TERT (catalytic) + TERC (RNA template)"
+    },
+    {
+      "front": "Human telomere repeat",
+      "back": "TTAGGG"
+    },
+    {
+      "front": "Cells with high telomerase",
+      "back": "Germ cells, stem/progenitor cells, cancer cells"
+    },
+    {
+      "front": "End-replication problem",
+      "back": "Lagging strand can't replicate 3' ends -> telomere shortening each division"
+    },
+    {
+      "front": "Labile tissue example (high turnover)",
+      "back": "Epidermal basal cells, gut crypt cells, bone marrow"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Telomerase",
+      "detail": "Biochem > DNA replication: telomerase structure/function, TTAGGG repeats, aging and cancer.",
+      "location": "Biochem > DNA replication: telomerase structure/function, TTAGGG repeats, aging and cancer."
+    },
+    {
+      "tag": "stem",
+      "topic": "End-replication problem",
+      "detail": "Biochem: leading vs lagging strand, why telomeres shorten, senescence.",
+      "location": "Biochem: leading vs lagging strand, why telomeres shorten, senescence."
+    },
+    {
+      "tag": "options",
+      "topic": "Cell types by regenerative capacity",
+      "detail": "Pathology: labile (basal skin, gut, marrow), stable (hepatocytes, beta cells), permanent (neurons, cardiac/skeletal muscle).",
+      "location": "Pathology: labile (basal skin, gut, marrow), stable (hepatocytes, beta cells), permanent (neurons, cardiac/skeletal muscle)."
+    }
+  ],
+  "memoryHook": "Telomerase = the immortality enzyme. Cells that keep dividing (skin basal layer) keep it; couch-potato cells (neurons, cardiac) lose it.",
+  "stem": [
+    {
+      "text": "A cell biologist is studying the role of "
+    },
+    {
+      "text": "ribonucleoproteins",
+      "clue": true,
+      "type": "blue",
+      "note": "Telomerase is a ribonucleoprotein: it carries both a protein catalytic subunit (TERT) and an RNA template subunit (TERC). The 'ribonucleoprotein' framing is a hint that the protein in question is telomerase, not a plain enzyme."
+    },
+    {
+      "text": " in normal cellular function. He prepares a cell extract using a specific cell type obtained from a 73-year-old man. Ribonucleoproteins are separated and purified from the cell extract for structural and functional analyses. These cells are found to express higher amounts of a particular protein in comparison to other cell types. This protein has "
+    },
+    {
+      "text": "reverse transcriptase activity",
+      "clue": true,
+      "type": "red",
+      "note": "Telomerase uses its built-in RNA as a template to synthesize DNA - i.e., it is an RNA-dependent DNA polymerase (reverse transcriptase). This activity is the defining feature distinguishing telomerase from ordinary DNA polymerases."
+    },
+    {
+      "text": " that functions to "
+    },
+    {
+      "text": "add TTAGGG repeats to the 3' end of chromosomes",
+      "clue": true,
+      "type": "green",
+      "note": "TTAGGG is the human telomere repeat that telomerase appends to chromosome 3' ends, counteracting end-replication shortening. High telomerase activity marks cells that must divide indefinitely: stem cells, germ cells, and cancer cells."
+    },
+    {
+      "text": ". Which of the following cell types was most likely studied in this experiment?"
+    }
+  ]
+}

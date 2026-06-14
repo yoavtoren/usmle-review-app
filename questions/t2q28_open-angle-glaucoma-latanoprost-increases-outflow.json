@@ -1,0 +1,202 @@
+{
+  "id": "q57",
+  "item": 57,
+  "qid": "11841",
+  "title": "Open-angle glaucoma: latanoprost increases outflow",
+  "system": "Pharmacology/Ophtho",
+  "topic": "Glaucoma drugs",
+  "correct": "D",
+  "yourAnswer": "C",
+  "percentCorrect": 63,
+  "vignette": "A 58-year-old airline captain comes to the office after he was found to have abnormal vision testing during a pilot medical certification examination. The patient feels well and has no ocular symptoms. Vision testing shows normal visual acuity but moderate loss of peripheral vision in both eyes. Results of the funduscopic examination show increased optic disc cupping. Other neurologic and cardiopulmonary examination findings are unremarkable. He is started on latanoprost eyedrops. The medication is most likely to improve this patient's condition through which of the following mechanisms?",
+  "clues": [
+    {
+      "text": "moderate loss of peripheral vision in both eyes",
+      "type": "red",
+      "note": "Painless, gradual bilateral peripheral (tunnel) vision loss with preserved acuity is classic for open-angle glaucoma. It's often asymptomatic until advanced — found here on screening."
+    },
+    {
+      "text": "increased optic disc cupping",
+      "type": "green",
+      "note": "An enlarged optic cup (increased cup-to-disc ratio) reflects glaucomatous optic-nerve damage from elevated intraocular pressure. Cupping + peripheral field loss = glaucoma."
+    },
+    {
+      "text": "latanoprost",
+      "type": "blue",
+      "note": "Latanoprost is a prostaglandin (PGF2-alpha) analog and first-line for open-angle glaucoma. It lowers intraocular pressure by increasing UVEOSCLERAL OUTFLOW of aqueous humor."
+    }
+  ],
+  "whatMatters": "This is open-angle glaucoma (cupping + peripheral field loss). Latanoprost is a prostaglandin analog that lowers intraocular pressure by INCREASING aqueous humor OUTFLOW (uveoscleral pathway) — not by decreasing aqueous production. The trap answer is 'decreased secretion,' which is how beta-blockers, alpha-2 agonists, and carbonic anhydrase inhibitors work.",
+  "strategy": "Sort glaucoma drugs by mechanism: INCREASE outflow = prostaglandin analogs (latanoprost; uveoscleral) and cholinergics/alpha agonists (trabecular); DECREASE aqueous production = beta-blockers (timolol), alpha-2 agonists (brimonidine), carbonic anhydrase inhibitors (dorzolamide). Latanoprost → increased outflow.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased bicarbonate formation in ciliary body",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased formation of abnormal blood vessels in retina",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Decreased secretion of aqueous humor",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Increased outflow of aqueous humor",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Vasoconstriction in ciliary body",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "decreased ciliary bicarbonate — that's a carbonic anhydrase inhibitor",
+      "detail": "WHAT IT IS: blocking carbonic anhydrase (dorzolamide/acetazolamide) reduces bicarbonate and thus aqueous humor PRODUCTION. ❌ WHY IT FAILS: that's a different drug class; latanoprost works on OUTFLOW, not production. ✅ Correct if: the drug were a carbonic anhydrase inhibitor."
+    },
+    {
+      "letter": "B",
+      "label": "anti-VEGF — wrong disease (diabetic/neovascular)",
+      "detail": "WHAT IT IS: decreasing abnormal retinal neovascularization describes anti-VEGF therapy for diabetic retinopathy/wet AMD/neovascular glaucoma. ❌ WHY IT FAILS: this patient has open-angle glaucoma treated by lowering IOP via outflow, not by suppressing neovascularization. ✅ Correct if: the condition were proliferative diabetic retinopathy or neovascular AMD."
+    },
+    {
+      "letter": "C",
+      "label": "decreased aqueous secretion — beta-blocker/alpha-2/CAI mechanism (your pick)",
+      "detail": "WHAT IT IS: reducing aqueous humor secretion is how beta-blockers (timolol), alpha-2 agonists (brimonidine), and carbonic anhydrase inhibitors lower IOP. ❌ WHY IT FAILS: latanoprost is a prostaglandin analog that increases OUTFLOW; it doesn't reduce production. You picked the other half of the glaucoma-drug mechanism. ✅ Correct if: the drug were timolol, brimonidine, or dorzolamide."
+    },
+    {
+      "letter": "E",
+      "label": "ciliary vasoconstriction — not the mechanism",
+      "detail": "WHAT IT IS: vasoconstriction in the ciliary body is not a recognized IOP-lowering mechanism for latanoprost. ❌ WHY IT FAILS: prostaglandin analogs increase uveoscleral outflow; vasoconstriction isn't how they work. ✅ Correct if: never for latanoprost — it's a distractor."
+    }
+  ],
+  "reasoning": [
+    "Optic disc cupping + bilateral peripheral field loss = open-angle glaucoma",
+    "Latanoprost is a prostaglandin (PGF2-alpha) analog",
+    "It lowers IOP by increasing uveoscleral OUTFLOW of aqueous humor",
+    "Mechanism = increased outflow → answer D"
+  ],
+  "mechanism": "Aqueous humor is secreted by the ciliary body, flows through the pupil to the anterior chamber, and drains mainly via the trabecular meshwork (canal of Schlemm) and partly via the uveoscleral route. In open-angle glaucoma, impaired outflow raises intraocular pressure and damages the optic nerve (cupping, peripheral field loss). Latanoprost (prostaglandin F2-alpha analog) increases UVEOSCLERAL outflow, lowering IOP; common side effects include iris/eyelash pigmentation and lash growth.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm > glaucoma drugs: increase outflow (prostaglandins—latanoprost; cholinergics/alpha agonists—trabecular) vs decrease production (beta-blockers, alpha-2 agonists, carbonic anhydrase inhibitors). Note latanoprost side effects."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two buckets: outflow-up vs production-down. Place latanoprost (prostaglandin) in OUTFLOW-up. The trap is the production-down bucket (most other drops)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on aqueous humor, trabecular meshwork/canal of Schlemm, uveoscleral outflow, prostaglandin analog, carbonic anhydrase inhibitor? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "'Decreased secretion of aqueous humor' is the dominant trap because most glaucoma drops work that way — but prostaglandins increase OUTFLOW. Tie the drug class to its bucket before answering."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the aqueous-humor/glaucoma-medications diagram (inflow at ciliary body vs trabecular and uveoscleral outflow). Map each drug to inflow-reduction or outflow-increase on that figure."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Latanoprost mechanism",
+      "back": "Prostaglandin analog → ↑ uveoscleral outflow"
+    },
+    {
+      "front": "Drugs that DECREASE aqueous production",
+      "back": "Beta-blockers (timolol), alpha-2 agonists (brimonidine), carbonic anhydrase inhibitors (dorzolamide)"
+    },
+    {
+      "front": "Drugs that INCREASE outflow",
+      "back": "Prostaglandins (latanoprost), cholinergics/alpha agonists"
+    },
+    {
+      "front": "Open-angle glaucoma signs",
+      "back": "Optic disc cupping, peripheral (tunnel) vision loss, often asymptomatic"
+    },
+    {
+      "front": "Latanoprost side effects",
+      "back": "Iris/eyelash darkening, eyelash growth"
+    },
+    {
+      "front": "Aqueous humor drainage site",
+      "back": "Trabecular meshwork → canal of Schlemm"
+    },
+    {
+      "front": "Anti-VEGF use",
+      "back": "Diabetic retinopathy, wet AMD, neovascular glaucoma"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Glaucoma pharmacotherapy",
+      "detail": "Pharmacology > glaucoma drugs: prostaglandin analogs (latanoprost, ↑ uveoscleral outflow) and the outflow vs production-reducing classes; side effects.",
+      "location": "Pharmacology > glaucoma drugs: prostaglandin analogs (latanoprost, ↑ uveoscleral outflow) and the outflow vs production-reducing classes; side effects."
+    },
+    {
+      "tag": "stem",
+      "topic": "Open-angle glaucoma",
+      "detail": "Ophtho > glaucoma: open-angle (impaired trabecular outflow, cupping, peripheral field loss) vs angle-closure; IOP and optic-nerve damage.",
+      "location": "Ophtho > glaucoma: open-angle (impaired trabecular outflow, cupping, peripheral field loss) vs angle-closure; IOP and optic-nerve damage."
+    },
+    {
+      "tag": "options",
+      "topic": "Aqueous humor dynamics",
+      "detail": "Ophtho/Physiology > aqueous production (ciliary body) and outflow (trabecular/uveoscleral) — basis for each drug's mechanism.",
+      "location": "Ophtho/Physiology > aqueous production (ciliary body) and outflow (trabecular/uveoscleral) — basis for each drug's mechanism."
+    }
+  ],
+  "memoryHook": "latanoprost = a PROStaglandin that PRiES open the drains (↑ outflow); timolol/dorzolamide/brimonidine turn the FAUCET down (↓ production).",
+  "stem": [
+    {
+      "text": "A 58-year-old airline captain comes to the office after he was found to have abnormal vision testing during a pilot medical certification examination. The patient feels well and has no ocular symptoms. Vision testing shows normal visual acuity but "
+    },
+    {
+      "text": "moderate loss of peripheral vision in both eyes",
+      "clue": true,
+      "type": "red",
+      "note": "Painless, gradual bilateral peripheral (tunnel) vision loss with preserved acuity is classic for open-angle glaucoma. It's often asymptomatic until advanced — found here on screening."
+    },
+    {
+      "text": ". Results of the funduscopic examination show "
+    },
+    {
+      "text": "increased optic disc cupping",
+      "clue": true,
+      "type": "green",
+      "note": "An enlarged optic cup (increased cup-to-disc ratio) reflects glaucomatous optic-nerve damage from elevated intraocular pressure. Cupping + peripheral field loss = glaucoma."
+    },
+    {
+      "text": ". Other neurologic and cardiopulmonary examination findings are unremarkable. He is started on "
+    },
+    {
+      "text": "latanoprost",
+      "clue": true,
+      "type": "blue",
+      "note": "Latanoprost is a prostaglandin (PGF2-alpha) analog and first-line for open-angle glaucoma. It lowers intraocular pressure by increasing UVEOSCLERAL OUTFLOW of aqueous humor."
+    },
+    {
+      "text": " eyedrops. The medication is most likely to improve this patient's condition through which of the following mechanisms?"
+    }
+  ]
+}

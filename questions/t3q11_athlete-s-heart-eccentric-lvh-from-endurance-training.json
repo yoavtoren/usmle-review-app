@@ -1,0 +1,184 @@
+{
+  "id": "q80",
+  "item": 80,
+  "qid": "19570",
+  "title": "Athlete's heart: eccentric LVH from endurance training",
+  "system": "Cardiovascular",
+  "topic": "Exercise physiology / remodeling",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 49,
+  "vignette": "A 32-year-old woman comes to the office for preconception medical evaluation. She feels well, reports no health issues, and has had regular menstruations. The patient has been an elite long-distance swimmer since high school and recently retired from professional competition. She still continues to practice swimming regularly. The patient does not use tobacco, alcohol, or illicit drugs. Blood pressure is 114/66 mm Hg and pulse is 60/min. Physical examination shows no abnormalities. Compared to a person of similar age and sex with sedentary lifestyle, which of the following cardiac changes are most likely present in this patient?",
+  "clues": [
+    {
+      "text": "elite long-distance swimmer since high school and recently retired from professional competition",
+      "type": "green",
+      "note": "Long-distance swimming is ENDURANCE (isotonic, volume) exercise. Chronic volume overload drives eccentric left-ventricular hypertrophy: the chamber dilates (increased cavity size) with proportional wall growth, raising stroke volume and maximum cardiac output. This is the physiologic 'athlete's heart.'"
+    },
+    {
+      "text": "pulse is 60/min",
+      "type": "blue",
+      "note": "Resting bradycardia (60, low-normal) reflects high vagal tone and a large stroke volume from endurance training. A trained heart pumps more per beat, so it needs fewer beats at rest — supporting eccentric remodeling rather than a concentric (pressure) pattern."
+    }
+  ],
+  "whatMatters": "Ignore the preconception framing — the testable point is the exercise TYPE. Endurance (swimming) = chronic volume overload → eccentric LVH: increased LV cavity size with PRESERVED (unchanged) ejection fraction and increased maximum cardiac output. Answer D.",
+  "strategy": "Classify the training: ENDURANCE/isotonic (running, swimming) → volume load → eccentric hypertrophy (dilated cavity, ↑SV/CO, normal EF). STRENGTH/isometric (weightlifting) → pressure load → concentric hypertrophy (thick wall, small cavity). Match the table row to 'unchanged EF + larger cavity + higher max CO.'",
+  "options": [
+    {
+      "letter": "A",
+      "text": "LV ejection fraction Decreased | LV cavity size Increased | Max cardiac output Increased",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "LV ejection fraction Increased | LV cavity size Decreased | Max cardiac output Increased",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "LV ejection fraction Increased | LV cavity size Decreased | Max cardiac output Unchanged",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "LV ejection fraction Unchanged | LV cavity size Increased | Max cardiac output Increased",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "LV ejection fraction Decreased | LV cavity size Unchanged | Max cardiac output Unchanged",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "decreased EF — that's pathologic dilation, not athlete's heart",
+      "detail": "WHAT IT IS: a dilated ventricle with a LOW ejection fraction describes dilated cardiomyopathy/systolic failure. ❌ WHY IT FAILS: physiologic athlete remodeling keeps EF normal; this healthy athlete has no failure. ✅ Correct if: the stem described a failing, dilated heart with reduced contractility."
+    },
+    {
+      "letter": "B",
+      "label": "smaller cavity, higher EF — concentric/strength pattern",
+      "detail": "WHAT IT IS: a thick wall with a small cavity (and a high-looking EF) fits concentric hypertrophy from pressure/strength training or hypertension. ❌ WHY IT FAILS: endurance swimming causes volume overload (dilation), not a small concentric chamber. ✅ Correct if: she were a weightlifter or had chronic hypertension/aortic stenosis."
+    },
+    {
+      "letter": "C",
+      "label": "smaller cavity + unchanged CO — strength without the output gain",
+      "detail": "WHAT IT IS: concentric remodeling with no rise in maximum output. ❌ WHY IT FAILS: endurance training specifically raises stroke volume and maximum cardiac output, and dilates (not shrinks) the cavity. ✅ Correct if: the picture were pure pressure-overload concentric hypertrophy."
+    },
+    {
+      "letter": "E",
+      "label": "decreased EF + unchanged cavity — neither athlete nor a clean pattern",
+      "detail": "WHAT IT IS: a low EF without dilation. ❌ WHY IT FAILS: it captures neither eccentric remodeling (needs a larger cavity) nor the preserved EF/higher CO of a trained heart. ✅ Correct if: there were an infiltrative/restrictive process — not relevant here."
+    }
+  ],
+  "reasoning": [
+    "Endurance swimmer = chronic volume (isotonic) load",
+    "Volume load → eccentric LVH: dilated cavity with proportional wall growth",
+    "Contractility preserved → ejection fraction unchanged",
+    "Larger stroke volume → increased maximum cardiac output → answer D"
+  ],
+  "mechanism": "Endurance (isotonic) exercise imposes a chronic VOLUME load: increased venous return and preload stretch the left ventricle, producing eccentric hypertrophy (sarcomeres added in series → larger chamber with proportional wall thickening). Stroke volume and maximum cardiac output rise, and resting heart rate falls (high vagal tone), while ejection fraction stays normal. Strength (isometric) exercise instead imposes a PRESSURE load, producing concentric hypertrophy (sarcomeres in parallel → thick wall, smaller cavity).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Cardiovascular > Cardiac remodeling/athlete's heart: eccentric (volume/endurance → dilated cavity, normal EF, ↑CO) vs concentric (pressure/strength → thick wall, small cavity); Laplace and wall stress; resting bradycardia in athletes."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The clinical wrapper is irrelevant; sort by exercise TYPE. Endurance/isotonic → eccentric (bigger cavity, preserved EF, higher max CO). Match the table row."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on eccentric vs concentric hypertrophy, isotonic vs isometric, ejection fraction, stroke volume, preload? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The 'preserved EF' is the trick — options pairing a bigger cavity with a CHANGED EF feel right but pathologic. Athlete's heart keeps EF NORMAL while the cavity enlarges."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The figure contrasts normal vs endurance (eccentric — increased LV cavity) vs strength (concentric — increased wall thickness). Practice reading these so you can map training type → chamber geometry."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (D). Keep the two-line rule: endurance = dilate (eccentric); strength = thicken (concentric)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Endurance training cardiac remodeling",
+      "back": "Eccentric LVH — dilated cavity, normal EF, ↑CO"
+    },
+    {
+      "front": "Strength training cardiac remodeling",
+      "back": "Concentric LVH — thick wall, small cavity (pressure load)"
+    },
+    {
+      "front": "Sarcomeres in series vs parallel",
+      "back": "Series = eccentric (volume); parallel = concentric (pressure)"
+    },
+    {
+      "front": "Athlete resting heart rate",
+      "back": "Bradycardia (high vagal tone, large stroke volume)"
+    },
+    {
+      "front": "EF in athlete's heart",
+      "back": "Normal (physiologic, not failure)"
+    },
+    {
+      "front": "Eccentric vs dilated cardiomyopathy",
+      "back": "Athlete: normal EF; DCM: reduced EF"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Athlete's heart / remodeling",
+      "detail": "Cardiovascular: eccentric vs concentric hypertrophy, volume vs pressure overload, exercise physiology, cardiac output and stroke volume changes.",
+      "location": "Cardiovascular: eccentric vs concentric hypertrophy, volume vs pressure overload, exercise physiology, cardiac output and stroke volume changes."
+    },
+    {
+      "tag": "stem",
+      "topic": "Exercise physiology",
+      "detail": "Physiology: isotonic vs isometric exercise, preload/afterload, autonomic effects (resting bradycardia).",
+      "location": "Physiology: isotonic vs isometric exercise, preload/afterload, autonomic effects (resting bradycardia)."
+    },
+    {
+      "tag": "options",
+      "topic": "Ejection fraction & cardiomyopathies",
+      "detail": "Cardio: EF determinants, dilated vs hypertrophic cardiomyopathy contrast.",
+      "location": "Cardio: EF determinants, dilated vs hypertrophic cardiomyopathy contrast."
+    }
+  ],
+  "memoryHook": "Endurance = a balloon that fills MORE (eccentric, bigger cavity, normal squeeze). Weightlifting = thicker walls (concentric).",
+  "stem": [
+    {
+      "text": "A 32-year-old woman comes to the office for preconception medical evaluation. She feels well, reports no health issues, and has had regular menstruations. The patient has been an "
+    },
+    {
+      "text": "elite long-distance swimmer since high school and recently retired from professional competition",
+      "clue": true,
+      "type": "green",
+      "note": "Long-distance swimming is ENDURANCE (isotonic, volume) exercise. Chronic volume overload drives eccentric left-ventricular hypertrophy: the chamber dilates (increased cavity size) with proportional wall growth, raising stroke volume and maximum cardiac output. This is the physiologic 'athlete's heart.'"
+    },
+    {
+      "text": ". She still continues to practice swimming regularly. The patient does not use tobacco, alcohol, or illicit drugs. Blood pressure is 114/66 mm Hg and "
+    },
+    {
+      "text": "pulse is 60/min",
+      "clue": true,
+      "type": "blue",
+      "note": "Resting bradycardia (60, low-normal) reflects high vagal tone and a large stroke volume from endurance training. A trained heart pumps more per beat, so it needs fewer beats at rest — supporting eccentric remodeling rather than a concentric (pressure) pattern."
+    },
+    {
+      "text": ". Physical examination shows no abnormalities. Compared to a person of similar age and sex with sedentary lifestyle, which of the following cardiac changes are most likely present in this patient?"
+    }
+  ]
+}

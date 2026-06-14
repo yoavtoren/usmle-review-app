@@ -1,0 +1,231 @@
+{
+  "id": "q116",
+  "item": 116,
+  "qid": "100",
+  "title": "Cirrhosis hyperestrogenism: gynecomastia and spider angiomata",
+  "system": "Pathology",
+  "topic": "Hepatology / cirrhosis",
+  "correct": "D",
+  "yourAnswer": "F",
+  "percentCorrect": 69,
+  "vignette": "A 45-year-old man with a history of alcohol use disorder, chronic hepatitis C, and HIV is brought to the emergency department due to altered mental status and abdominal distension. He is disoriented and unable to provide an adequate history. He is accompanied by a friend who reports that the patient has recently been drinking heavily. The patient's breath has a sweet, sulfurous odor. Physical examination shows gynecomastia, palmar erythema, and multiple spider angiomata. The abdomen is severely distended, and dilated periumbilical veins are noted. There is 3+ bilateral lower extremity edema. Genital examination shows testicular atrophy. Neurologic examination shows disorientation and asterixis. Abdominal imaging reveals splenomegaly. Development of this patient's gynecomastia most closely resembles the pathogenesis of which of the following additional findings in this patient?",
+  "clues": [
+    {
+      "text": "alcohol use disorder, chronic hepatitis C",
+      "type": "orange",
+      "note": "Alcohol + chronic hepatitis C are the major causes of cirrhosis. This establishes end-stage liver disease, the substrate for portal hypertension AND impaired hepatic clearance of estrogens."
+    },
+    {
+      "text": "sweet, sulfurous odor",
+      "type": "purple",
+      "note": "Fetor hepaticus (sweet/sulfurous breath) reflects failed hepatic clearance of mercaptans/volatile thiols. It signals hepatic synthetic/clearance failure but is a DIFFERENT mechanism than the estrogen-driven sign being asked about - a trap option (F)."
+    },
+    {
+      "text": "gynecomastia, palmar erythema, and multiple spider angiomata",
+      "type": "red",
+      "note": "This triad reflects hyperestrogenism: the cirrhotic liver fails to metabolize estrogens, so estrogen rises. Gynecomastia, palmar erythema, and spider angiomata all share this same estrogen-excess pathogenesis - the key to the question."
+    },
+    {
+      "text": "dilated periumbilical veins",
+      "type": "blue",
+      "note": "Caput medusae from portal hypertension is a SEPARATE mechanism (portosystemic shunting), not hyperestrogenism. It tempts you because it co-occurs with the estrogen signs, but it answers a different 'pathogenesis.'"
+    },
+    {
+      "text": "testicular atrophy",
+      "type": "green",
+      "note": "Testicular atrophy in cirrhosis is also part of the hyperestrogenism/hypogonadism picture - reinforcing that the estrogen-driven findings (gynecomastia, palmar erythema, spider angiomata) cluster together mechanistically."
+    }
+  ],
+  "whatMatters": "The question asks which finding shares gynecomastia's mechanism. Gynecomastia in cirrhosis is from HYPERESTROGENISM (failed hepatic estrogen clearance). Among the options, spider angiomata arise by the SAME estrogen-excess mechanism - answer D. The others (ascites/edema, caput medusae, splenomegaly, fetor hepaticus) come from portal hypertension or clearance failure, not estrogen.",
+  "strategy": "Split cirrhosis findings by mechanism: (1) HYPERESTROGENISM - gynecomastia, palmar erythema, spider angiomata, testicular atrophy; (2) PORTAL HYPERTENSION - ascites, caput medusae, splenomegaly, varices, edema (also hypoalbuminemia); (3) HEPATIC CLEARANCE/SYNTHETIC FAILURE - encephalopathy/asterixis, fetor hepaticus, coagulopathy. Match the asked finding to the SAME bucket as gynecomastia.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Altered mental status",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Dilated periumbilical veins",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Lower extremity edema",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Spider angiomata",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Splenomegaly",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Sweet, sulfurous breath odor",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "hepatic encephalopathy - clearance failure, not estrogen",
+      "detail": "WHAT IT IS: altered mental status/asterixis = hepatic encephalopathy from failure to clear ammonia/nitrogenous toxins. ❌ WHY IT FAILS: this is a detoxification problem, not hyperestrogenism; different mechanism than gynecomastia. ✅ Correct if: the asked finding shared the ammonia/clearance mechanism."
+    },
+    {
+      "letter": "B",
+      "label": "caput medusae - portal hypertension",
+      "detail": "WHAT IT IS: dilated periumbilical veins (caput medusae) from portosystemic shunting via recanalized umbilical vein. ❌ WHY IT FAILS: driven by elevated portal pressure, not estrogen excess. ✅ Correct if: the question grouped findings by portal hypertension (e.g., esophageal varices)."
+    },
+    {
+      "letter": "C",
+      "label": "lower extremity edema - low oncotic pressure / portal HTN",
+      "detail": "WHAT IT IS: peripheral edema from hypoalbuminemia and portal hypertension/sodium retention. ❌ WHY IT FAILS: this is an oncotic/hemodynamic mechanism, not hyperestrogenism. ✅ Correct if: asked which finding shares the hypoalbuminemia/portal-pressure mechanism."
+    },
+    {
+      "letter": "E",
+      "label": "splenomegaly - portal hypertension",
+      "detail": "WHAT IT IS: congestive splenomegaly from portal venous backpressure. ❌ WHY IT FAILS: a portal-hypertension phenomenon, unrelated to estrogen metabolism. ✅ Correct if: grouping by portal hypertension."
+    },
+    {
+      "letter": "F",
+      "label": "fetor hepaticus - clearance failure",
+      "detail": "WHAT IT IS: sweet/sulfurous breath from failed clearance of volatile mercaptans. ❌ WHY IT FAILS: a hepatic clearance problem, not hyperestrogenism; you picked this, but it doesn't share gynecomastia's estrogen mechanism. ✅ Correct if: the asked finding shared the mercaptan/clearance mechanism."
+    }
+  ],
+  "reasoning": [
+    "Cirrhosis from alcohol + HCV",
+    "Gynecomastia = hyperestrogenism (liver can't clear estrogen)",
+    "Spider angiomata + palmar erythema + testicular atrophy share that estrogen mechanism",
+    "Ascites/caput medusae/splenomegaly = portal HTN; encephalopathy/fetor = clearance -> answer D"
+  ],
+  "mechanism": "In cirrhosis, hepatic metabolism of estrogens (and of androstenedione, which is peripherally aromatized to estrogen) is impaired, producing a state of relative hyperestrogenism. Elevated estrogen drives gynecomastia, palmar erythema, spider angiomata (telangiectasias with a central arteriole), and contributes to testicular atrophy and decreased body hair. These are mechanistically distinct from portal-hypertensive signs (ascites, caput medusae, splenomegaly, varices) and from impaired hepatic detoxification/synthesis (encephalopathy, fetor hepaticus, coagulopathy). Because gynecomastia and spider angiomata share the estrogen-excess pathway, spider angiomata is the best match.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Hepatology > Cirrhosis manifestations grouped by mechanism: hyperestrogenism (gynecomastia, palmar erythema, spider angiomata, testicular atrophy), portal hypertension (ascites, caput medusae, splenomegaly, varices), synthetic/clearance failure (encephalopathy, fetor hepaticus, coagulopathy, jaundice)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The stem isn't asking the cause of gynecomastia - it's asking which OTHER finding shares its mechanism. Sort all listed findings into mechanism buckets, then match."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on hyperestrogenism, spider angioma/telangiectasia, caput medusae, fetor hepaticus, asterixis, portal hypertension? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose F (fetor hepaticus). It's a real cirrhosis sign but belongs to the CLEARANCE bucket, not the estrogen bucket. Gynecomastia <-> spider angiomata is the estrogen pair."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Make a 3-column cirrhosis chart (estrogen / portal HTN / clearance) and these 'same-mechanism' questions become sorting tasks."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Gynecomastia + palmar erythema + spider angiomata in cirrhosis",
+      "back": "Hyperestrogenism (failed hepatic estrogen clearance)"
+    },
+    {
+      "front": "Ascites, caput medusae, splenomegaly, varices",
+      "back": "Portal hypertension"
+    },
+    {
+      "front": "Encephalopathy/asterixis, fetor hepaticus, coagulopathy",
+      "back": "Hepatic clearance / synthetic failure"
+    },
+    {
+      "front": "Spider angioma structure",
+      "back": "Central arteriole with radiating vessels; blanches with central pressure"
+    },
+    {
+      "front": "Caput medusae vessel",
+      "back": "Recanalized umbilical vein (portosystemic shunt)"
+    },
+    {
+      "front": "Fetor hepaticus cause",
+      "back": "Volatile mercaptans/thiols not cleared by liver"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Cirrhosis - hyperestrogenism signs",
+      "detail": "Hepatology: gynecomastia, palmar erythema, spider angiomata, testicular atrophy.",
+      "location": "Hepatology: gynecomastia, palmar erythema, spider angiomata, testicular atrophy."
+    },
+    {
+      "tag": "stem",
+      "topic": "Portal hypertension",
+      "detail": "Hepatology: ascites, caput medusae, esophageal varices, splenomegaly; portosystemic shunts.",
+      "location": "Hepatology: ascites, caput medusae, esophageal varices, splenomegaly; portosystemic shunts."
+    },
+    {
+      "tag": "options",
+      "topic": "Hepatic encephalopathy / fetor hepaticus",
+      "detail": "Hepatology: ammonia, precipitants, asterixis, lactulose/rifaximin.",
+      "location": "Hepatology: ammonia, precipitants, asterixis, lactulose/rifaximin."
+    }
+  ],
+  "memoryHook": "Estrogen trio: Gynecomastia, palmar Erythema, Spider angiomata travel together. Portal trio: Ascites, Caput, Spleen. Keep the families apart.",
+  "stem": [
+    {
+      "text": "A 45-year-old man with a history of "
+    },
+    {
+      "text": "alcohol use disorder, chronic hepatitis C",
+      "clue": true,
+      "type": "orange",
+      "note": "Alcohol + chronic hepatitis C are the major causes of cirrhosis. This establishes end-stage liver disease, the substrate for portal hypertension AND impaired hepatic clearance of estrogens."
+    },
+    {
+      "text": ", and HIV is brought to the emergency department due to altered mental status and abdominal distension. He is disoriented and unable to provide an adequate history. He is accompanied by a friend who reports that the patient has recently been drinking heavily. The patient's breath has a "
+    },
+    {
+      "text": "sweet, sulfurous odor",
+      "clue": true,
+      "type": "purple",
+      "note": "Fetor hepaticus (sweet/sulfurous breath) reflects failed hepatic clearance of mercaptans/volatile thiols. It signals hepatic synthetic/clearance failure but is a DIFFERENT mechanism than the estrogen-driven sign being asked about - a trap option (F)."
+    },
+    {
+      "text": ". Physical examination shows "
+    },
+    {
+      "text": "gynecomastia, palmar erythema, and multiple spider angiomata",
+      "clue": true,
+      "type": "red",
+      "note": "This triad reflects hyperestrogenism: the cirrhotic liver fails to metabolize estrogens, so estrogen rises. Gynecomastia, palmar erythema, and spider angiomata all share this same estrogen-excess pathogenesis - the key to the question."
+    },
+    {
+      "text": ". The abdomen is severely distended, and "
+    },
+    {
+      "text": "dilated periumbilical veins",
+      "clue": true,
+      "type": "blue",
+      "note": "Caput medusae from portal hypertension is a SEPARATE mechanism (portosystemic shunting), not hyperestrogenism. It tempts you because it co-occurs with the estrogen signs, but it answers a different 'pathogenesis.'"
+    },
+    {
+      "text": " are noted. There is 3+ bilateral lower extremity edema. Genital examination shows "
+    },
+    {
+      "text": "testicular atrophy",
+      "clue": true,
+      "type": "green",
+      "note": "Testicular atrophy in cirrhosis is also part of the hyperestrogenism/hypogonadism picture - reinforcing that the estrogen-driven findings (gynecomastia, palmar erythema, spider angiomata) cluster together mechanistically."
+    },
+    {
+      "text": ". Neurologic examination shows disorientation and asterixis. Abdominal imaging reveals splenomegaly. Development of this patient's gynecomastia most closely resembles the pathogenesis of which of the following additional findings in this patient?"
+    }
+  ]
+}

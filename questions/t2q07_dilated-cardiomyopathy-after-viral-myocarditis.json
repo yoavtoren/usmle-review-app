@@ -1,0 +1,206 @@
+{
+  "id": "q36",
+  "item": 36,
+  "qid": "75",
+  "title": "Dilated cardiomyopathy after viral myocarditis",
+  "system": "Cardiology",
+  "topic": "Cardiomyopathy / heart failure",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 53,
+  "vignette": "A 35-year-old man comes to the office due to fatigue, dyspnea on exertion, and lower extremity edema that have worsened over the past several weeks. The patient has been generally healthy, but 2 months ago he experienced an episode of fever, runny nose, and myalgia that resolved after a few days. The patient takes no medications and has no significant family history. He occasionally drinks alcohol and does not use tobacco or recreational drugs. Blood pressure is 112/74 mm Hg and pulse is 98/min and regular. Physical examination reveals jugular venous distension, bibasilar lung crackles, and 2+ lower extremity pitting edema. Which of the following echocardiographic findings is most likely to be seen in this patient?",
+  "clues": [
+    {
+      "text": "fatigue, dyspnea on exertion, and lower extremity edema that have worsened over the past several weeks",
+      "type": "red",
+      "note": "This is the syndrome of decompensated heart failure: poor forward output (fatigue, exertional dyspnea) and congestion (edema). In a young man this raises dilated cardiomyopathy."
+    },
+    {
+      "text": "fever, runny nose, and myalgia that resolved",
+      "type": "orange",
+      "note": "A viral prodrome weeks earlier is the key timeline clue: viral myocarditis (e.g., coxsackievirus, adenovirus) can progress to dilated cardiomyopathy. This links the recent 'cold' to the new heart failure."
+    },
+    {
+      "text": "jugular venous distension, bibasilar lung crackles, and 2+ lower extremity pitting edema",
+      "type": "green",
+      "note": "JVD + crackles + pitting edema confirm biventricular congestive heart failure. With a young patient and viral prodrome, the picture is dilated cardiomyopathy from myocarditis."
+    }
+  ],
+  "whatMatters": "Young man + recent viral illness + new biventricular heart-failure signs = viral myocarditis progressing to dilated cardiomyopathy. Dilated cardiomyopathy on echo = diffusely dilated ventricles with reduced systolic function (low ejection fraction), i.e., systolic (eccentric) failure.",
+  "strategy": "Map the heart-failure type to its echo signature: dilated CM = big chambers, low EF (systolic); hypertrophic CM = thick septum, dynamic LVOT obstruction; restrictive = normal size/EF with impaired filling; ischemic = regional wall-motion abnormality. The viral prodrome → dilated.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Concentric left ventricle thickening with abnormal diastolic relaxation",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Diffusely dilated ventricles with decreased systolic function",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Increased systolic pressure gradient across the aortic valve",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Left ventricular outflow obstruction by systolic anterior motion of the mitral valve",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Regional abnormality of ventricular wall motion during systole",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "hypertensive/concentric — diastolic, wrong cause",
+      "detail": "WHAT IT IS: concentric LV hypertrophy with impaired relaxation is the hallmark of hypertensive heart disease / diastolic (HFpEF) dysfunction. ❌ WHY IT FAILS: this young man is normotensive with a viral prodrome — a systolic, dilated process, not chronic pressure overload. ✅ Correct if: there were long-standing uncontrolled hypertension or aortic stenosis with a thick, stiff LV."
+    },
+    {
+      "letter": "C",
+      "label": "aortic stenosis — valve gradient, not myocarditis",
+      "detail": "WHAT IT IS: an increased systolic gradient across the aortic valve indicates aortic stenosis. ❌ WHY IT FAILS: nothing here suggests valvular AS (no murmur, age, syncope); the cause is myocardial (post-viral dilation), not valvular. ✅ Correct if: the stem described a crescendo-decrescendo systolic murmur with syncope/angina."
+    },
+    {
+      "letter": "D",
+      "label": "HCM — SAM/LVOT obstruction, wrong story",
+      "detail": "WHAT IT IS: systolic anterior motion of the mitral valve causing dynamic LVOT obstruction is classic hypertrophic cardiomyopathy. ❌ WHY IT FAILS: HCM is usually inherited (family history of sudden death) with a thickened, NON-dilated ventricle — opposite of this dilated post-viral picture. ✅ Correct if: there were a young athlete with syncope, a murmur that worsens with Valsalva, and FHx of sudden death."
+    },
+    {
+      "letter": "E",
+      "label": "ischemic — regional, not diffuse",
+      "detail": "WHAT IT IS: a REGIONAL wall-motion abnormality reflects ischemic/infarcted territory supplied by one coronary artery. ❌ WHY IT FAILS: myocarditis/dilated CM causes DIFFUSE, global hypokinesis, not a focal segment; and this young patient lacks CAD risk. ✅ Correct if: the patient had prior MI/CAD with a focal akinetic segment."
+    }
+  ],
+  "reasoning": [
+    "Young man with new biventricular heart-failure signs",
+    "Viral prodrome 2 months ago → viral myocarditis",
+    "Myocarditis → dilated cardiomyopathy (systolic dysfunction)",
+    "Echo: diffusely dilated ventricles + low EF → answer B"
+  ],
+  "mechanism": "Viruses (coxsackie B, adenovirus, parvovirus B19) infect myocytes and trigger immune-mediated myocyte injury. Loss of contractile myocytes with subsequent fibrosis weakens systolic function; surviving myocytes dilate (eccentric hypertrophy) to handle volume overload, producing a globally dilated, hypocontractile heart with reduced ejection fraction. Early treatment can be reversible before substantial fibrosis develops.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Cardio > cardiomyopathies table: dilated (systolic, low EF, eccentric; causes incl. myocarditis, alcohol, doxorubicin, peripartum, thiamine) vs hypertrophic (diastolic, septal, SAM) vs restrictive (infiltrative). Cross-ref myocarditis."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Read the prodrome timeline: a viral illness weeks before new heart failure = myocarditis → dilated CM. Then translate 'dilated' into its echo (big chambers, low EF)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on systolic vs diastolic dysfunction, ejection fraction, eccentric vs concentric hypertrophy, SAM, wall-motion abnormality? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "HCM (SAM) and ischemic (regional) are the tempting cardiomyopathy distractors. Anchor on 'diffuse/global' (myocarditis) vs 'focal/septal,' and on the absence of FHx or CAD risk here."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the dilated-cardiomyopathy table; on echo, recognize a dilated LV with global hypokinesis and low EF versus the thick septum of HCM."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Viral prodrome → new heart failure in a young adult",
+      "back": "Myocarditis → dilated cardiomyopathy"
+    },
+    {
+      "front": "Dilated CM echo",
+      "back": "Dilated ventricles + decreased systolic function (low EF)"
+    },
+    {
+      "front": "Dilated CM = which hypertrophy",
+      "back": "Eccentric (volume overload)"
+    },
+    {
+      "front": "Common viral causes of myocarditis",
+      "back": "Coxsackie B, adenovirus, parvovirus B19"
+    },
+    {
+      "front": "Other dilated CM causes (ABCD)",
+      "back": "Alcohol, Beriberi (thiamine), Coxsackie/Cocaine, Doxorubicin; peripartum"
+    },
+    {
+      "front": "HCM echo hallmark",
+      "back": "Asymmetric septal hypertrophy + SAM (dynamic LVOT obstruction)"
+    },
+    {
+      "front": "Restrictive CM echo",
+      "back": "Normal size/EF, impaired diastolic filling"
+    },
+    {
+      "front": "Regional wall-motion abnormality",
+      "back": "Ischemic (prior MI)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Dilated cardiomyopathy",
+      "detail": "Cardiovascular > cardiomyopathies: dilated (systolic dysfunction, eccentric hypertrophy, low EF), causes and reversibility; myocarditis as a precursor.",
+      "location": "Cardiovascular > cardiomyopathies: dilated (systolic dysfunction, eccentric hypertrophy, low EF), causes and reversibility; myocarditis as a precursor."
+    },
+    {
+      "tag": "stem",
+      "topic": "Myocarditis",
+      "detail": "Cardiovascular > myocarditis: viral etiologies (coxsackie B), presentation, progression to dilated CM.",
+      "location": "Cardiovascular > myocarditis: viral etiologies (coxsackie B), presentation, progression to dilated CM."
+    },
+    {
+      "tag": "options",
+      "topic": "Other cardiomyopathies / valve disease",
+      "detail": "Cardiovascular > hypertrophic CM (SAM/LVOT), restrictive CM, hypertensive heart disease, aortic stenosis — each with its echo signature.",
+      "location": "Cardiovascular > hypertrophic CM (SAM/LVOT), restrictive CM, hypertensive heart disease, aortic stenosis — each with its echo signature."
+    }
+  ],
+  "memoryHook": "A cold that won't quit → the heart balloons: dilated chambers, droopy EF (systolic failure).",
+  "stem": [
+    {
+      "text": "A 35-year-old man comes to the office due to "
+    },
+    {
+      "text": "fatigue, dyspnea on exertion, and lower extremity edema that have worsened over the past several weeks",
+      "clue": true,
+      "type": "red",
+      "note": "This is the syndrome of decompensated heart failure: poor forward output (fatigue, exertional dyspnea) and congestion (edema). In a young man this raises dilated cardiomyopathy."
+    },
+    {
+      "text": ". The patient has been generally healthy, but 2 months ago he experienced an episode of "
+    },
+    {
+      "text": "fever, runny nose, and myalgia that resolved",
+      "clue": true,
+      "type": "orange",
+      "note": "A viral prodrome weeks earlier is the key timeline clue: viral myocarditis (e.g., coxsackievirus, adenovirus) can progress to dilated cardiomyopathy. This links the recent 'cold' to the new heart failure."
+    },
+    {
+      "text": " after a few days. The patient takes no medications and has no significant family history. He occasionally drinks alcohol and does not use tobacco or recreational drugs. Blood pressure is 112/74 mm Hg and pulse is 98/min and regular. Physical examination reveals "
+    },
+    {
+      "text": "jugular venous distension, bibasilar lung crackles, and 2+ lower extremity pitting edema",
+      "clue": true,
+      "type": "green",
+      "note": "JVD + crackles + pitting edema confirm biventricular congestive heart failure. With a young patient and viral prodrome, the picture is dilated cardiomyopathy from myocarditis."
+    },
+    {
+      "text": ". Which of the following echocardiographic findings is most likely to be seen in this patient?"
+    }
+  ]
+}

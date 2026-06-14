@@ -1,0 +1,198 @@
+{
+  "id": "q144",
+  "item": 144,
+  "qid": "15197",
+  "title": "AF ablation: transseptal puncture through interatrial septum",
+  "system": "Anatomy",
+  "topic": "Cardiac catheter access",
+  "correct": "B",
+  "yourAnswer": "E",
+  "percentCorrect": 60,
+  "vignette": "A 45-year-old man comes to clinic due to frequent episodes of palpitations accompanied by dizziness, fatigue, and shortness of breath. Prolonged ECG monitoring identifies episodes of atrial fibrillation associated with a rapid ventricular response rate. A radiofrequency ablation procedure is planned. The access site is the right femoral vein. The ablation catheter is advanced to the left atrium where radiofrequency energy is used to eliminate an ectopic focus of abnormal electrical activity. During the procedure, the catheter most likely passes through which of the following structures?",
+  "clues": [
+    {
+      "text": "atrial fibrillation",
+      "type": "orange",
+      "note": "AF foci typically arise near the pulmonary veins in the LEFT atrium, so ablation targets the left atrium. Reaching it from the venous system requires crossing from the right to the left atrium."
+    },
+    {
+      "text": "access site is the right femoral vein",
+      "type": "blue",
+      "note": "Femoral VEIN access enters the venous (right) side: IVC -> right atrium. To reach the LEFT atrium, the catheter must cross the interatrial septum (transseptal puncture), not pass through valves on the arterial side."
+    },
+    {
+      "text": "advanced to the left atrium",
+      "type": "red",
+      "note": "Getting from the right atrium to the left atrium requires a transseptal puncture through the interatrial septum (typically at the fossa ovalis). This is the structure the catheter passes through."
+    }
+  ],
+  "whatMatters": "Femoral vein -> IVC -> right atrium; to reach the LEFT atrium for AF ablation, the catheter crosses the interatrial septum (transseptal puncture at the fossa ovalis) - answer B.",
+  "strategy": "Trace venous catheter paths anatomically: femoral vein -> IVC -> right atrium -> (to reach LA) transseptal puncture across the interatrial septum/fossa ovalis. Right-heart valves (tricuspid/pulmonic) lead toward the lungs, not the left atrium; arterial (aortic) access would be a different route. For left atrial procedures from a vein, the answer is the interatrial septum.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Aortic valve",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Interatrial septum",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Interventricular septum",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pulmonic valve",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Tricuspid valve",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "aortic valve - arterial route, wrong access",
+      "detail": "WHAT IT IS: the aortic valve lies between the LV and aorta. ❌ WHY IT FAILS: reaching it would require retrograde ARTERIAL access (femoral artery -> aorta -> LV), not the femoral VEIN; and it doesn't lead to the left atrium. ✅ Correct if: a retrograde arterial approach to the left ventricle were described."
+    },
+    {
+      "letter": "C",
+      "label": "interventricular septum - not on the path to the LA",
+      "detail": "WHAT IT IS: the wall between the ventricles. ❌ WHY IT FAILS: the catheter goes atrium-to-atrium (transseptal), not across the ventricular septum. ✅ Correct if: a procedure crossed between the ventricles (e.g., certain VSD interventions)."
+    },
+    {
+      "letter": "D",
+      "label": "pulmonic valve - leads to lungs, away from LA",
+      "detail": "WHAT IT IS: the valve between the RV and pulmonary artery. ❌ WHY IT FAILS: passing it sends the catheter toward the lungs, not into the left atrium. ✅ Correct if: catheterizing the pulmonary artery (e.g., right heart cath/PA pressures)."
+    },
+    {
+      "letter": "E",
+      "label": "tricuspid valve - into the RV, not the LA",
+      "detail": "WHAT IT IS: the valve between the right atrium and right ventricle. ❌ WHY IT FAILS: crossing it leads into the right VENTRICLE, away from the left atrium; the LA is reached by crossing the interatrial septum, not the tricuspid valve. You chose this. ✅ Correct if: a right ventricular procedure (e.g., RV pacing lead, RV biopsy) were intended."
+    }
+  ],
+  "reasoning": [
+    "Femoral vein -> IVC -> right atrium",
+    "AF ablation target is the LEFT atrium (near pulmonary veins)",
+    "Crossing RA to LA requires transseptal puncture",
+    "Catheter passes through the interatrial septum (fossa ovalis) -> answer B"
+  ],
+  "mechanism": "Atrial fibrillation foci commonly originate around the pulmonary vein ostia in the left atrium, so ablation requires left atrial access. From a right femoral VEIN, the catheter travels through the inferior vena cava into the right atrium. To enter the left atrium, the electrophysiologist performs a transseptal puncture, crossing the interatrial septum at the thin fossa ovalis. Passing the tricuspid or pulmonic valve would direct the catheter into the right ventricle or pulmonary artery, and the aortic valve is reachable only by retrograde arterial access - none of which reach the left atrium. Therefore the catheter passes through the interatrial septum.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Anatomy/Cardiology > Cardiac catheter routes: venous (femoral vein -> IVC -> RA) vs arterial (femoral artery -> aorta -> LV); transseptal puncture across interatrial septum/fossa ovalis to reach the left atrium for AF ablation (pulmonary vein isolation)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Follow the venous path and the target (LA). The only structure connecting RA to LA is the interatrial septum."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on transseptal puncture, fossa ovalis, interatrial vs interventricular septum, venous vs arterial cardiac access, pulmonary vein isolation? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose E (tricuspid valve) - that leads into the right VENTRICLE, not the left atrium. RA-to-LA = interatrial septum (transseptal)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The diagram shows the catheter crossing the fossa ovalis from RA into LA - that's the interatrial septum."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Anchor: 'left atrium from a vein = transseptal through the interatrial septum.'"
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Reach left atrium from femoral vein for AF ablation",
+      "back": "Transseptal puncture through the interatrial septum (fossa ovalis)"
+    },
+    {
+      "front": "Venous catheter path to the heart",
+      "back": "Femoral vein -> IVC -> right atrium"
+    },
+    {
+      "front": "AF ablation target site",
+      "back": "Pulmonary vein ostia in the left atrium (pulmonary vein isolation)"
+    },
+    {
+      "front": "Tricuspid valve leads to",
+      "back": "Right ventricle"
+    },
+    {
+      "front": "Pulmonic valve leads to",
+      "back": "Pulmonary artery (toward lungs)"
+    },
+    {
+      "front": "Aortic valve access route",
+      "back": "Retrograde arterial (femoral artery -> aorta -> LV)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Transseptal catheterization",
+      "detail": "Anatomy/Cards: interatrial septum/fossa ovalis, left atrial access.",
+      "location": "Anatomy/Cards: interatrial septum/fossa ovalis, left atrial access."
+    },
+    {
+      "tag": "stem",
+      "topic": "Atrial fibrillation ablation",
+      "detail": "Cards: pulmonary vein isolation, rate vs rhythm control.",
+      "location": "Cards: pulmonary vein isolation, rate vs rhythm control."
+    },
+    {
+      "tag": "options",
+      "topic": "Cardiac chambers & valves",
+      "detail": "Anatomy: blood flow path, valve relationships, venous vs arterial access.",
+      "location": "Anatomy: blood flow path, valve relationships, venous vs arterial access."
+    }
+  ],
+  "memoryHook": "Vein to LEFT atrium? You must POKE THE WALL between the atria (fossa ovalis). Valves take you the wrong way.",
+  "stem": [
+    {
+      "text": "A 45-year-old man comes to clinic due to frequent episodes of palpitations accompanied by dizziness, fatigue, and shortness of breath. Prolonged ECG monitoring identifies episodes of "
+    },
+    {
+      "text": "atrial fibrillation",
+      "clue": true,
+      "type": "orange",
+      "note": "AF foci typically arise near the pulmonary veins in the LEFT atrium, so ablation targets the left atrium. Reaching it from the venous system requires crossing from the right to the left atrium."
+    },
+    {
+      "text": " associated with a rapid ventricular response rate. A radiofrequency ablation procedure is planned. The "
+    },
+    {
+      "text": "access site is the right femoral vein",
+      "clue": true,
+      "type": "blue",
+      "note": "Femoral VEIN access enters the venous (right) side: IVC -> right atrium. To reach the LEFT atrium, the catheter must cross the interatrial septum (transseptal puncture), not pass through valves on the arterial side."
+    },
+    {
+      "text": ". The ablation catheter is "
+    },
+    {
+      "text": "advanced to the left atrium",
+      "clue": true,
+      "type": "red",
+      "note": "Getting from the right atrium to the left atrium requires a transseptal puncture through the interatrial septum (typically at the fossa ovalis). This is the structure the catheter passes through."
+    },
+    {
+      "text": " where radiofrequency energy is used to eliminate an ectopic focus of abnormal electrical activity. During the procedure, the catheter most likely passes through which of the following structures?"
+    }
+  ]
+}

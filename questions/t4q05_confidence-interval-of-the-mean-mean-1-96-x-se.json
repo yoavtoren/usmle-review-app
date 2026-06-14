@@ -1,0 +1,193 @@
+{
+  "id": "q114",
+  "item": 114,
+  "qid": "1299",
+  "title": "Confidence interval of the mean: mean +/- 1.96 x SE",
+  "system": "Biostatistics",
+  "topic": "Confidence intervals",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 54,
+  "vignette": "A researcher is interested in assessing the blood folate level of women who live in a population with a high incidence of neural tube defects. She takes a large random sample (n) of women age 18-45 and measures their blood folate levels. The researcher finds that the data are normally distributed, and she reports the mean and standard deviation (SD) of the sample. To account for sampling variation, she decides to calculate a 95% confidence interval to estimate the mean of the entire population. The researcher concludes that 2.4 to 4.6 ng/mL might be a likely range for the true, unknown population mean. Which of the following calculations was most likely used to compute this interval estimate of the population mean?",
+  "clues": [
+    {
+      "text": "account for sampling variation",
+      "type": "blue",
+      "note": "'Sampling variation' is the conceptual tell for the standard error: variability of the sample MEAN across hypothetical repeated samples is captured by SD/sqrt(n), distinguishing it from the SD of individual observations."
+    },
+    {
+      "text": "calculate a 95% confidence interval",
+      "type": "red",
+      "note": "A 95% CI uses the z-score 1.96 (not 2.58, which is for 99%). The phrase '95%' fixes the multiplier in the formula and eliminates the 2.58 options immediately."
+    },
+    {
+      "text": "estimate the mean of the entire population",
+      "type": "green",
+      "note": "A CI for the MEAN uses the standard error of the mean (SEM = SD/sqrt(n)), not the raw SD. SEM measures how far the sample mean is likely to be from the population mean and shrinks as n grows."
+    }
+  ],
+  "whatMatters": "Two decisions only: the confidence level fixes the z-score (95% -> 1.96), and 'CI for the mean' requires the standard error (SD/sqrt(n)), not the SD. Combine them: mean +/- 1.96 x (SD/sqrt(n)) - answer B.",
+  "strategy": "Confidence-interval items reduce to two slots: (1) z-multiplier - 1.96 for 95%, 2.58 for 99%; (2) spread term - use SE = SD/sqrt(n) when estimating a MEAN, use SD when describing the range of individual values. Match both to the stem.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Mean +/- 1.96 x SD",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Mean +/- 1.96 x (SD/sqrt(n))",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Mean +/- 2.58 x SD",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Mean +/- 2.58 x (SD/sqrt(n))",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Mean +/- (SD/n)",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "uses SD not SE - wrong spread term",
+      "detail": "WHAT IT IS: mean +/- 1.96 x SD describes the range covering ~95% of individual observations (a reference/normal range), with the correct 95% z. ❌ WHY IT FAILS: a CI for the MEAN must use the standard error SD/sqrt(n), not the raw SD. ✅ Correct if: the question asked for the interval containing 95% of individual women's folate values."
+    },
+    {
+      "letter": "C",
+      "label": "wrong z (99%) and uses SD",
+      "detail": "WHAT IT IS: mean +/- 2.58 x SD. ❌ WHY IT FAILS: 2.58 is the 99% multiplier (not 95%) AND it uses SD instead of SE - two errors. ✅ Correct if: a 99% reference range of individual values were requested."
+    },
+    {
+      "letter": "D",
+      "label": "right SE but wrong confidence level",
+      "detail": "WHAT IT IS: mean +/- 2.58 x (SD/sqrt(n)) - a 99% CI for the mean. ❌ WHY IT FAILS: the stem specifies a 95% CI, so the multiplier must be 1.96, not 2.58. ✅ Correct if: the question asked for a 99% confidence interval of the mean."
+    },
+    {
+      "letter": "E",
+      "label": "SD/n is not the standard error",
+      "detail": "WHAT IT IS: mean +/- (SD/n). ❌ WHY IT FAILS: the standard error is SD divided by the SQUARE ROOT of n, not n; and there is no z-multiplier here. ✅ Correct if: never - this is not a valid CI formula."
+    }
+  ],
+  "reasoning": [
+    "'95% CI' fixes the z-score at 1.96 (2.58 is for 99%)",
+    "CI for the MEAN uses standard error = SD/sqrt(n), not SD",
+    "Combine: mean +/- 1.96 x (SD/sqrt(n))",
+    "Answer B"
+  ],
+  "mechanism": "A confidence interval for a population mean is point estimate +/- (critical value) x (standard error). For a normally distributed variable and a large sample, the 95% critical z-value is 1.96 and the standard error of the mean is SD/sqrt(n). As sample size increases, SE shrinks and the CI narrows. Using the raw SD instead of SE would instead describe the spread of individual observations (a reference range), and using 2.58 would correspond to 99% confidence - both are conceptually different from estimating the precision of the sample mean.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biostatistics > Confidence intervals: CI = mean +/- Z x SE; SE = SD/sqrt(n); Z = 1.96 (95%), 2.58 (99%). Distinguish CI of the mean (SE) from a reference range of individuals (SD)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Pin the two variables: 95% -> 1.96, and 'mean of population' -> SE not SD. The 2.4-4.6 numbers are flavor; you don't need to compute them."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on standard error vs standard deviation, z-score, confidence interval vs reference/normal range, sqrt(n)? Tell me which to clarify."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You picked C (2.58 x SD) - that doubles the error: 2.58 is the 99% z, and SD (not SE) describes individuals. For a 95% CI of the mean, both pieces must change: 1.96 and SD/sqrt(n)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Drill the slot machine: confidence level -> z; estimating a mean -> divide SD by sqrt(n)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "95% CI z-score",
+      "back": "1.96"
+    },
+    {
+      "front": "99% CI z-score",
+      "back": "2.58"
+    },
+    {
+      "front": "Standard error of the mean",
+      "back": "SD / sqrt(n)"
+    },
+    {
+      "front": "CI of the mean formula",
+      "back": "mean +/- Z x (SD/sqrt(n))"
+    },
+    {
+      "front": "SD vs SE",
+      "back": "SD = spread of individuals; SE = precision of the sample mean"
+    },
+    {
+      "front": "Effect of larger n on CI",
+      "back": "Smaller SE -> narrower CI"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Confidence intervals",
+      "detail": "Biostatistics: CI of the mean, Z-values for 95%/99%, standard error.",
+      "location": "Biostatistics: CI of the mean, Z-values for 95%/99%, standard error."
+    },
+    {
+      "tag": "stem",
+      "topic": "Standard error vs standard deviation",
+      "detail": "Biostats: SEM = SD/sqrt(n); sampling distribution of the mean.",
+      "location": "Biostats: SEM = SD/sqrt(n); sampling distribution of the mean."
+    },
+    {
+      "tag": "options",
+      "topic": "Reference range vs CI",
+      "detail": "Biostats: mean +/- Z x SD covers individuals; mean +/- Z x SE estimates the mean.",
+      "location": "Biostats: mean +/- Z x SD covers individuals; mean +/- Z x SE estimates the mean."
+    }
+  ],
+  "memoryHook": "95 -> 1.96. Estimating a MEAN? Mean uses SE, so divide SD by root-n. Put them together: 1.96 x SD/sqrt(n).",
+  "stem": [
+    {
+      "text": "A researcher is interested in assessing the blood folate level of women who live in a population with a high incidence of neural tube defects. She takes a large random sample (n) of women age 18-45 and measures their blood folate levels. The researcher finds that the data are normally distributed, and she reports the mean and standard deviation (SD) of the sample. To "
+    },
+    {
+      "text": "account for sampling variation",
+      "clue": true,
+      "type": "blue",
+      "note": "'Sampling variation' is the conceptual tell for the standard error: variability of the sample MEAN across hypothetical repeated samples is captured by SD/sqrt(n), distinguishing it from the SD of individual observations."
+    },
+    {
+      "text": ", she decides to "
+    },
+    {
+      "text": "calculate a 95% confidence interval",
+      "clue": true,
+      "type": "red",
+      "note": "A 95% CI uses the z-score 1.96 (not 2.58, which is for 99%). The phrase '95%' fixes the multiplier in the formula and eliminates the 2.58 options immediately."
+    },
+    {
+      "text": " to "
+    },
+    {
+      "text": "estimate the mean of the entire population",
+      "clue": true,
+      "type": "green",
+      "note": "A CI for the MEAN uses the standard error of the mean (SEM = SD/sqrt(n)), not the raw SD. SEM measures how far the sample mean is likely to be from the population mean and shrinks as n grows."
+    },
+    {
+      "text": ". The researcher concludes that 2.4 to 4.6 ng/mL might be a likely range for the true, unknown population mean. Which of the following calculations was most likely used to compute this interval estimate of the population mean?"
+    }
+  ]
+}

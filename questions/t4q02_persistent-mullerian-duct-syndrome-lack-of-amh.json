@@ -1,0 +1,189 @@
+{
+  "id": "q111",
+  "item": 111,
+  "qid": "107790",
+  "title": "Persistent Mullerian duct syndrome: lack of AMH",
+  "system": "Embryology",
+  "topic": "Sexual differentiation",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 84,
+  "vignette": "A 1-month-old boy is brought to the emergency department due to acute onset fussiness. The child was born at term without complications. Temperature is normal. Examination shows a right-sided inguinal hernia that is not reducible. The penis appears normal, but the testes are not palpable. Imaging reveals a mass adjacent to the herniated bowel in the right inguinal canal. During surgical exploration, the mass is consistent with a testicle; an attached epididymis and vas deferens are identified. The left testicle is identified intraabdominally. However, the gonads also appear to be associated with fallopian tubes and a uterus. This patient's findings are most likely due to a lack of which of the following hormones?",
+  "clues": [
+    {
+      "text": "The penis appears normal",
+      "type": "blue",
+      "note": "Normal male external genitalia means androgen action (testosterone -> DHT) is intact. So whatever is missing is NOT the testosterone/DHT pathway; the defect is selective for the Mullerian-regressing signal."
+    },
+    {
+      "text": "an attached epididymis and vas deferens are identified",
+      "type": "green",
+      "note": "Epididymis and vas deferens are Wolffian (mesonephric) duct derivatives that require testosterone. Their normal presence confirms testosterone (and Wolffian development) is working - again pointing away from androgen problems."
+    },
+    {
+      "text": "the gonads also appear to be associated with fallopian tubes and a uterus",
+      "type": "red",
+      "note": "A genetically/gonadally male infant who ALSO has fallopian tubes and a uterus = persistent Mullerian duct syndrome. The Mullerian (paramesonephric) ducts failed to regress, which normally requires Mullerian inhibitory factor from Sertoli cells."
+    }
+  ],
+  "whatMatters": "Cut to the core: a phenotypic male with normal penis, testes, epididymis, and vas (so androgens work) who unexpectedly has a uterus and fallopian tubes. Male internal/external structures intact + retained Mullerian structures = lack of antimullerian hormone (AMH / Mullerian inhibitory factor) - answer A.",
+  "strategy": "For ambiguous-internal-genitalia stems, run two independent switches: (1) Testosterone/DHT -> Wolffian ducts + male external genitalia; (2) AMH (Sertoli cells) -> Mullerian-duct regression. If male structures are NORMAL but Mullerian organs persist, only switch #2 is broken = AMH deficiency.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Antimullerian hormone",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Dehydroepiandrosterone",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Dihydrotestosterone",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Luteinizing hormone",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Testosterone",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "DHEA deficiency - wrong axis",
+      "detail": "WHAT IT IS: DHEA is an adrenal androgen precursor. ❌ WHY IT FAILS: it has no role in Mullerian regression, and this child's androgenization is normal; a uterus persisting is an AMH problem, not an adrenal-androgen problem. ✅ Correct if: the stem described adrenal insufficiency or a steroidogenesis defect affecting cortisol/androgen synthesis."
+    },
+    {
+      "letter": "C",
+      "label": "DHT deficiency (5-alpha-reductase) - external genitalia would be abnormal",
+      "detail": "WHAT IT IS: DHT drives male EXTERNAL genitalia; deficiency (5-alpha-reductase) gives ambiguous/underdeveloped external genitalia. ❌ WHY IT FAILS: this boy has a NORMAL penis, so DHT action is intact; and DHT does not cause Mullerian regression. ✅ Correct if: 46,XY with female-appearing external genitalia at birth that virilize at puberty."
+    },
+    {
+      "letter": "D",
+      "label": "LH deficiency - testosterone would fall",
+      "detail": "WHAT IT IS: LH stimulates Leydig cells to make testosterone. ❌ WHY IT FAILS: low LH would impair testosterone and thus the epididymis/vas and external virilization - all normal here; LH does not control Mullerian regression. ✅ Correct if: hypogonadotropic picture with absent Wolffian structures and poor virilization."
+    },
+    {
+      "letter": "E",
+      "label": "testosterone deficiency - Wolffian structures would be absent",
+      "detail": "WHAT IT IS: testosterone drives Wolffian (epididymis, vas deferens, seminal vesicle) development. ❌ WHY IT FAILS: the epididymis and vas are present and the penis is normal, so testosterone is working; the persistent uterus is an AMH problem. ✅ Correct if: Wolffian structures were absent alongside the retained Mullerian organs."
+    }
+  ],
+  "reasoning": [
+    "Phenotypic male: normal penis (DHT ok), epididymis + vas (testosterone ok)",
+    "Yet fallopian tubes and uterus persist",
+    "Mullerian regression normally driven by AMH from Sertoli cells",
+    "Persistent Mullerian structures with intact androgens = AMH deficiency -> answer A"
+  ],
+  "mechanism": "In males, Sertoli cells secrete antimullerian hormone (AMH, a.k.a. Mullerian inhibitory factor), which causes regression of the paramesonephric (Mullerian) ducts; Leydig-cell testosterone develops the mesonephric (Wolffian) ducts into epididymis, vas deferens, and seminal vesicles, and DHT virilizes the external genitalia. When AMH (or its receptor) is deficient, the Mullerian ducts fail to regress, so a genotypic/phenotypic male retains a uterus and fallopian tubes (persistent Mullerian duct syndrome) while androgen-dependent structures remain normal. The retained structures and cryptorchidism predispose to hernia and gonadal complications.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Embryology > Genital embryology: SRY -> testis -> Sertoli (AMH, Mullerian regression) + Leydig (testosterone -> Wolffian; DHT -> external genitalia). Persistent Mullerian duct syndrome = AMH/AMH-receptor defect."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The asked item is which single signal is missing. Use the dichotomy: androgens build male structures; AMH removes female ducts. Normal male anatomy + retained uterus = isolated AMH loss."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on Mullerian vs Wolffian ducts, AMH/Mullerian inhibitory factor, Sertoli vs Leydig cells, DHT vs testosterone roles? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Testosterone (E) tempts because the gonad is a testis, but testosterone-dependent structures are all present. The only broken switch is Mullerian regression = AMH."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You chose A correctly - memorize the two-switch model so any intersex stem becomes a quick branch point."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Male with normal penis + vas but also uterus/fallopian tubes",
+      "back": "Persistent Mullerian duct syndrome (AMH deficiency)"
+    },
+    {
+      "front": "AMH source and function",
+      "back": "Sertoli cells; causes Mullerian (paramesonephric) duct regression"
+    },
+    {
+      "front": "Testosterone target ducts",
+      "back": "Wolffian (mesonephric): epididymis, vas deferens, seminal vesicle"
+    },
+    {
+      "front": "DHT function",
+      "back": "Male external genitalia + prostate"
+    },
+    {
+      "front": "5-alpha-reductase deficiency",
+      "back": "Normal internal male ducts, ambiguous external genitalia -> virilize at puberty"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Antimullerian hormone / Persistent Mullerian duct syndrome",
+      "detail": "Embryology > Sexual differentiation: Sertoli AMH and Mullerian regression.",
+      "location": "Embryology > Sexual differentiation: Sertoli AMH and Mullerian regression."
+    },
+    {
+      "tag": "stem",
+      "topic": "Wolffian vs Mullerian derivatives",
+      "detail": "Embryology: mesonephric (epididymis, vas, seminal vesicle) vs paramesonephric (fallopian tubes, uterus, upper vagina).",
+      "location": "Embryology: mesonephric (epididymis, vas, seminal vesicle) vs paramesonephric (fallopian tubes, uterus, upper vagina)."
+    },
+    {
+      "tag": "options",
+      "topic": "Androgen physiology",
+      "detail": "Repro: LH->Leydig->testosterone->DHT (5-alpha-reductase); DHEA adrenal precursor.",
+      "location": "Repro: LH->Leydig->testosterone->DHT (5-alpha-reductase); DHEA adrenal precursor."
+    }
+  ],
+  "memoryHook": "AMH = 'Absent -> Mullerian Hangs around.' No AMH, the uterus stays.",
+  "stem": [
+    {
+      "text": "A 1-month-old boy is brought to the emergency department due to acute onset fussiness. The child was born at term without complications. Temperature is normal. Examination shows a right-sided inguinal hernia that is not reducible. "
+    },
+    {
+      "text": "The penis appears normal",
+      "clue": true,
+      "type": "blue",
+      "note": "Normal male external genitalia means androgen action (testosterone -> DHT) is intact. So whatever is missing is NOT the testosterone/DHT pathway; the defect is selective for the Mullerian-regressing signal."
+    },
+    {
+      "text": ", but the testes are not palpable. Imaging reveals a mass adjacent to the herniated bowel in the right inguinal canal. During surgical exploration, the mass is consistent with a testicle; "
+    },
+    {
+      "text": "an attached epididymis and vas deferens are identified",
+      "clue": true,
+      "type": "green",
+      "note": "Epididymis and vas deferens are Wolffian (mesonephric) duct derivatives that require testosterone. Their normal presence confirms testosterone (and Wolffian development) is working - again pointing away from androgen problems."
+    },
+    {
+      "text": ". The left testicle is identified intraabdominally. However, "
+    },
+    {
+      "text": "the gonads also appear to be associated with fallopian tubes and a uterus",
+      "clue": true,
+      "type": "red",
+      "note": "A genetically/gonadally male infant who ALSO has fallopian tubes and a uterus = persistent Mullerian duct syndrome. The Mullerian (paramesonephric) ducts failed to regress, which normally requires Mullerian inhibitory factor from Sertoli cells."
+    },
+    {
+      "text": ". This patient's findings are most likely due to a lack of which of the following hormones?"
+    }
+  ]
+}

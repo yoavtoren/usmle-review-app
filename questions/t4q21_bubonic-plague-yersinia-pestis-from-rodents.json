@@ -1,0 +1,217 @@
+{
+  "id": "q130",
+  "item": 130,
+  "qid": "15400",
+  "title": "Bubonic plague: Yersinia pestis from rodents",
+  "system": "Microbiology",
+  "topic": "Zoonotic bacteria",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 46,
+  "vignette": "A previously healthy 23-year-old man comes to the office due to abrupt-onset high fever, chills, headache, and weakness that developed after he spent a month working on a large ranch. His initial symptoms were quickly followed by intensely painful swellings in the groin. Physical examination is significant for tender and enlarged inguinal lymph nodes with overlying erythematous skin. Blood cultures and fluid aspirated from the lymph nodes grow gram-negative coccobacilli that resemble a closed safety pin on special staining. Which of the following activities is the most likely source of this patient's infection?",
+  "clues": [
+    {
+      "text": "abrupt-onset high fever, chills, headache, and weakness",
+      "type": "blue",
+      "note": "Sudden severe systemic illness after rural exposure fits an acute zoonotic infection. Combined with painful inguinal swellings, this points toward bubonic plague."
+    },
+    {
+      "text": "intensely painful swellings in the groin",
+      "type": "red",
+      "note": "Acutely painful, tender regional lymphadenopathy (buboes) is the hallmark of bubonic plague (Yersinia pestis). Buboes distinguish plague from many other zoonoses."
+    },
+    {
+      "text": "closed safety pin on special staining",
+      "type": "green",
+      "note": "Gram-negative coccobacilli with bipolar ('safety pin') staining on Wright/Giemsa is the classic morphology of Yersinia pestis. This nails the organism."
+    },
+    {
+      "text": "source of this patient's infection",
+      "type": "blue",
+      "note": "Y pestis is maintained in rodents and transmitted by rodent FLEAS. The most likely exposure is contact with rodent-infested areas - e.g., replacing rodent traps - rather than livestock or other animals."
+    }
+  ],
+  "whatMatters": "Acute fever + painful inguinal buboes + bipolar 'safety-pin' gram-negative coccobacilli = bubonic plague (Yersinia pestis). Its reservoir is rodents and the vector is the rodent flea, so the exposure is rodent contact - replacing rodent traps - answer E.",
+  "strategy": "Match zoonosis to exposure by organism: Y pestis -> rodents/fleas (buboes, safety-pin stain); Brucella -> unpasteurized dairy/livestock (undulant fever); Francisella tularensis -> rabbits/ticks (ulceroglandular); Coxiella/Q fever -> parturient livestock; Bartonella -> cat scratch. Use the buboes + safety-pin clue to lock plague, then pick rodents.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Butchering wild pigs",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Handling deer hides",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Hunting rabbits",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Maintaining a chicken coop",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Replacing rodent traps",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "Vaccinating cattle",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "butchering wild pigs - brucellosis/other, not plague",
+      "detail": "WHAT IT IS: contact with swine carcasses risks brucellosis (and others). ❌ WHY IT FAILS: Brucella causes undulant fever without the painful buboes/safety-pin organism of plague; the morphology here is Y pestis from rodents. ✅ Correct if: undulant fever, sweats, and small gram-negative rods from livestock."
+    },
+    {
+      "letter": "B",
+      "label": "handling deer hides - not the Y pestis route",
+      "detail": "WHAT IT IS: deer exposure relates to tick-borne illness (e.g., tularemia, anaplasmosis). ❌ WHY IT FAILS: plague's reservoir/vector is rodents and rodent fleas, not deer hides. ✅ Correct if: a tick-borne deer-associated infection were described."
+    },
+    {
+      "letter": "C",
+      "label": "hunting rabbits - tularemia, not plague",
+      "detail": "WHAT IT IS: skinning rabbits classically transmits Francisella tularensis (ulceroglandular tularemia). ❌ WHY IT FAILS: tularemia gives an ulcer with regional nodes, not the safety-pin Y pestis on staining; the bipolar morphology and buboes are plague. ✅ Correct if: a skin ulcer with regional lymphadenopathy and a tiny pleomorphic gram-negative rod from a rabbit."
+    },
+    {
+      "letter": "D",
+      "label": "chicken coop - not a Y pestis reservoir",
+      "detail": "WHAT IT IS: poultry exposure (histoplasmosis from droppings, avian flu, etc.). ❌ WHY IT FAILS: chickens are not the reservoir for plague; rodents/fleas are. ✅ Correct if: a poultry-associated respiratory/fungal exposure were the point."
+    },
+    {
+      "letter": "F",
+      "label": "vaccinating cattle - brucellosis exposure",
+      "detail": "WHAT IT IS: the live Brucella cattle vaccine can transmit brucellosis to handlers. ❌ WHY IT FAILS: this is a Brucella, not Y pestis, exposure; the clinical/morphologic clues point to plague from rodents. ✅ Correct if: undulant fever from cattle-vaccine inoculation."
+    }
+  ],
+  "reasoning": [
+    "Abrupt fever + painful inguinal buboes",
+    "Gram-negative coccobacilli with bipolar 'safety pin' staining = Yersinia pestis",
+    "Reservoir = rodents; vector = rodent flea",
+    "Most likely exposure is rodent contact -> replacing rodent traps -> answer E"
+  ],
+  "mechanism": "Yersinia pestis is a gram-negative coccobacillus showing bipolar ('safety-pin') staining with Wright/Giemsa. It is a zoonosis maintained in rodent reservoirs and transmitted to humans by the bite of an infected rodent flea (or by direct contact with infected animals). After inoculation, the bacteria travel via lymphatics to regional nodes, triggering intense inflammation that produces painful, swollen buboes (bubonic plague), along with abrupt fever, chills, and weakness; untreated infection can progress to septicemic or pneumonic plague and DIC. Aminoglycosides (e.g., streptomycin/gentamicin) are curative. The key exposure is rodent-infested environments, such as handling/replacing rodent traps.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Microbiology > Zoonotic gram-negatives: Yersinia pestis (rodents/fleas, buboes, bipolar safety-pin stain, aminoglycoside treatment) vs Brucella, Francisella tularensis, Coxiella, Bartonella - know reservoir/vector for each."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question is an exposure match. Identify the organism first (safety-pin Y pestis), then select its reservoir/vector (rodents)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on bubo, bipolar/safety-pin staining, coccobacillus, zoonosis, reservoir vs vector? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Hunting rabbits (C) tempts because tularemia also gives fever + regional nodes, but rabbits = Francisella, not Y pestis. The safety-pin morphology + buboes = plague = rodents."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked E correctly - keep a zoonosis-to-exposure table so the organism clue routes you straight to the source."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Painful buboes + bipolar 'safety-pin' gram-negative coccobacillus",
+      "back": "Yersinia pestis (bubonic plague)"
+    },
+    {
+      "front": "Y pestis reservoir and vector",
+      "back": "Rodents (reservoir); rodent flea (vector)"
+    },
+    {
+      "front": "Plague treatment",
+      "back": "Aminoglycoside (streptomycin/gentamicin)"
+    },
+    {
+      "front": "Rabbit skinning -> which infection",
+      "back": "Tularemia (Francisella tularensis)"
+    },
+    {
+      "front": "Unpasteurized dairy / livestock -> which infection",
+      "back": "Brucellosis (undulant fever)"
+    },
+    {
+      "front": "Safety-pin staining organisms",
+      "back": "Yersinia pestis, also Burkholderia/Klebsiella can show bipolar staining"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Yersinia pestis / plague",
+      "detail": "Microbiology: reservoir, flea vector, buboes, bipolar staining, treatment.",
+      "location": "Microbiology: reservoir, flea vector, buboes, bipolar staining, treatment."
+    },
+    {
+      "tag": "stem",
+      "topic": "Regional lymphadenitis / buboes",
+      "detail": "ID: differential of painful regional lymphadenopathy after animal exposure.",
+      "location": "ID: differential of painful regional lymphadenopathy after animal exposure."
+    },
+    {
+      "tag": "options",
+      "topic": "Zoonotic exposures",
+      "detail": "Micro: Brucella, Francisella, Coxiella, Bartonella reservoirs and routes.",
+      "location": "Micro: Brucella, Francisella, Coxiella, Bartonella reservoirs and routes."
+    }
+  ],
+  "memoryHook": "Plague: painful buboes + 'safety-pin' bugs from RODENTS and their fleas. Rats and traps, not rabbits or cattle.",
+  "stem": [
+    {
+      "text": "A previously healthy 23-year-old man comes to the office due to "
+    },
+    {
+      "text": "abrupt-onset high fever, chills, headache, and weakness",
+      "clue": true,
+      "type": "blue",
+      "note": "Sudden severe systemic illness after rural exposure fits an acute zoonotic infection. Combined with painful inguinal swellings, this points toward bubonic plague."
+    },
+    {
+      "text": " that developed after he spent a month working on a large ranch. His initial symptoms were quickly followed by "
+    },
+    {
+      "text": "intensely painful swellings in the groin",
+      "clue": true,
+      "type": "red",
+      "note": "Acutely painful, tender regional lymphadenopathy (buboes) is the hallmark of bubonic plague (Yersinia pestis). Buboes distinguish plague from many other zoonoses."
+    },
+    {
+      "text": ". Physical examination is significant for tender and enlarged inguinal lymph nodes with overlying erythematous skin. Blood cultures and fluid aspirated from the lymph nodes grow gram-negative coccobacilli that resemble a "
+    },
+    {
+      "text": "closed safety pin on special staining",
+      "clue": true,
+      "type": "green",
+      "note": "Gram-negative coccobacilli with bipolar ('safety pin') staining on Wright/Giemsa is the classic morphology of Yersinia pestis. This nails the organism."
+    },
+    {
+      "text": ". Which of the following activities is the most likely "
+    },
+    {
+      "text": "source of this patient's infection",
+      "clue": true,
+      "type": "blue",
+      "note": "Y pestis is maintained in rodents and transmitted by rodent FLEAS. The most likely exposure is contact with rodent-infested areas - e.g., replacing rodent traps - rather than livestock or other animals."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}
