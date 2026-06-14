@@ -1,0 +1,211 @@
+{
+  "id": "q104",
+  "item": 104,
+  "qid": "1784",
+  "title": "Enoxaparin (LMWH): binds antithrombin III",
+  "system": "Pharmacology",
+  "topic": "Anticoagulation / ACS",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 72,
+  "vignette": "A 52-year-old man comes to the emergency department (ED) due to 2 hours of burning substernal pain. Before coming to the ED, he took several tablets of antacid at home without any relief. The patient's other medical problems include hypertension and hyperlipidemia. His temperature is 36.7 C (98 F), blood pressure is 160/90 mm Hg, and pulse is 92/min. Cardiovascular examination shows normal S1 and S2 without any murmurs. There is no abdominal tenderness. ECG shows ST-segment depression in leads II, III, and aVF. Troponin is 0.06 ng/mL (normal <0.01 ng/mL). As part of this patient's treatment, enoxaparin therapy is initiated. This drug is expected to bind to which of the following substances in this patient's blood?",
+  "clues": [
+    {
+      "text": "burning substernal pain",
+      "type": "red",
+      "note": "Substernal chest pain unrelieved by antacids, with cardiac risk factors, raises acute coronary syndrome. The clinical context just justifies anticoagulation; the tested point is enoxaparin's molecular target."
+    },
+    {
+      "text": "ST-segment depression in leads II, III, and aVF",
+      "type": "blue",
+      "note": "ST depression (without ST elevation) plus elevated troponin = NSTEMI. Treatment includes antiplatelets and an anticoagulant such as enoxaparin (low-molecular-weight heparin)."
+    },
+    {
+      "text": "Troponin is 0.06 ng/mL (normal <0.01 ng/mL)",
+      "type": "blue",
+      "note": "Elevated troponin (0.06 / normal <0.01) confirms myocardial injury (NSTEMI). This indicates the need for anticoagulation; enoxaparin acts by binding antithrombin III."
+    },
+    {
+      "text": "enoxaparin",
+      "type": "green",
+      "note": "Enoxaparin is a low-molecular-weight heparin. Like unfractionated heparin, it binds ANTITHROMBIN III via a pentasaccharide sequence, accelerating ATIII's inactivation of factor Xa (LMWH acts mainly on Xa, with less effect on thrombin). The drug's target is antithrombin III."
+    }
+  ],
+  "whatMatters": "The NSTEMI story leads to enoxaparin (a low-molecular-weight heparin). Its mechanism: it binds ANTITHROMBIN III (via a pentasaccharide), dramatically accelerating ATIII-mediated inactivation of factor Xa. Answer A.",
+  "strategy": "Know what heparins bind: both unfractionated heparin and LMWH (enoxaparin) bind ANTITHROMBIN III. UFH potentiates inactivation of both thrombin (IIa) and Xa; LMWH mainly Xa. The drug binds ATIII — don't confuse with drugs that directly inhibit thrombin or Xa (argatroban, rivaroxaban) or with warfarin (clotting-factor synthesis).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Antithrombin III",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Fibrin",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Plasminogen",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Protein C",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Prothrombin",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "fibrin — substrate of clotting, not heparin's target",
+      "detail": "WHAT IT IS: fibrin is the polymerized mesh of a clot (from fibrinogen via thrombin). ❌ WHY IT FAILS: heparins don't bind fibrin; thrombolytics act on the fibrin-bound plasminogen system, not enoxaparin. ✅ Correct if: the drug were a fibrinolytic (tPA) acting at the clot."
+    },
+    {
+      "letter": "C",
+      "label": "plasminogen — fibrinolysis, wrong drug class",
+      "detail": "WHAT IT IS: plasminogen is converted to plasmin to dissolve clots; tPA/alteplase act here. ❌ WHY IT FAILS: enoxaparin is an anticoagulant that works via antithrombin III, not a thrombolytic acting on plasminogen. ✅ Correct if: the agent were a thrombolytic for STEMI/stroke."
+    },
+    {
+      "letter": "D",
+      "label": "protein C — natural anticoagulant, not heparin's target",
+      "detail": "WHAT IT IS: activated protein C (with protein S) degrades factors Va and VIIIa. ❌ WHY IT FAILS: heparins bind antithrombin III, not protein C; protein C is relevant to warfarin-induced skin necrosis and factor V Leiden, not enoxaparin's mechanism. ✅ Correct if: the question concerned the protein C/S anticoagulant pathway or warfarin skin necrosis."
+    },
+    {
+      "letter": "E",
+      "label": "prothrombin (factor II) — a target downstream, not the binding partner",
+      "detail": "WHAT IT IS: prothrombin (factor II) is converted to thrombin. ❌ WHY IT FAILS: heparin doesn't bind prothrombin; it binds ANTITHROMBIN III, which then inactivates activated factors (Xa and, for UFH, thrombin/IIa). ✅ Correct if: the question asked which factor antithrombin ultimately inactivates (thrombin/Xa), not what the drug binds."
+    }
+  ],
+  "reasoning": [
+    "NSTEMI (ST depression + elevated troponin) → anticoagulation with enoxaparin",
+    "Enoxaparin is a low-molecular-weight heparin",
+    "Heparins bind antithrombin III via a pentasaccharide",
+    "Enoxaparin binds antithrombin III (→ accelerates factor Xa inactivation) → answer A"
+  ],
+  "mechanism": "Heparins (unfractionated and low-molecular-weight like enoxaparin) bind antithrombin III through a specific pentasaccharide sequence, inducing a conformational change that markedly accelerates ATIII's inactivation of clotting proteases. Unfractionated heparin's longer chains bridge ATIII to thrombin (IIa) and factor Xa equally; LMWH's shorter chains preferentially accelerate inactivation of factor Xa (higher anti-Xa:anti-IIa ratio). Fondaparinux is the isolated pentasaccharide (pure anti-Xa).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology > Anticoagulants: heparin/LMWH bind antithrombin III (pentasaccharide), UFH (anti-IIa + anti-Xa) vs LMWH/enoxaparin (mainly anti-Xa) vs fondaparinux (pure anti-Xa); monitoring (aPTT vs anti-Xa), protamine reversal, HIT. Contrast warfarin and DOACs."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The ACS context just gets you to enoxaparin. Recall the one fact: heparins BIND antithrombin III. Then ATIII does the clotting-factor inactivation."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on antithrombin III, pentasaccharide, factor Xa vs thrombin (IIa), LMWH vs UFH, fondaparinux? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Prothrombin (E) and protein C (D) are tempting clotting-cascade names, but enoxaparin BINDS antithrombin III — that's the partner. The factors (Xa/IIa) are what ATIII then inactivates."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (A). Lock it: heparin and LMWH both bind ANTITHROMBIN III; LMWH/fondaparinux skew toward anti-Xa."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Enoxaparin (LMWH) binding partner",
+      "back": "Antithrombin III (via pentasaccharide)"
+    },
+    {
+      "front": "LMWH primary target factor",
+      "back": "Factor Xa (high anti-Xa:anti-IIa ratio)"
+    },
+    {
+      "front": "Unfractionated heparin targets",
+      "back": "Thrombin (IIa) AND factor Xa (bridges ATIII to thrombin)"
+    },
+    {
+      "front": "Fondaparinux",
+      "back": "Synthetic pentasaccharide — pure anti-Xa via ATIII"
+    },
+    {
+      "front": "Heparin reversal agent",
+      "back": "Protamine sulfate"
+    },
+    {
+      "front": "LMWH monitoring",
+      "back": "Anti-Xa level (aPTT for UFH)"
+    },
+    {
+      "front": "Warfarin mechanism (contrast)",
+      "back": "Inhibits vitamin K epoxide reductase → ↓ factors II, VII, IX, X"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Heparin / LMWH",
+      "detail": "Pharmacology > Anticoagulants: antithrombin III binding, anti-Xa vs anti-IIa, enoxaparin/fondaparinux, HIT, protamine.",
+      "location": "Pharmacology > Anticoagulants: antithrombin III binding, anti-Xa vs anti-IIa, enoxaparin/fondaparinux, HIT, protamine."
+    },
+    {
+      "tag": "stem",
+      "topic": "Acute coronary syndrome (NSTEMI)",
+      "detail": "Cardio: ST depression + troponin, antiplatelet + anticoagulant therapy, risk stratification.",
+      "location": "Cardio: ST depression + troponin, antiplatelet + anticoagulant therapy, risk stratification."
+    },
+    {
+      "tag": "options",
+      "topic": "Coagulation/fibrinolysis players",
+      "detail": "Heme/Pharm: fibrin/plasminogen (thrombolytics), protein C/S, prothrombin/thrombin; warfarin and DOACs for contrast.",
+      "location": "Heme/Pharm: fibrin/plasminogen (thrombolytics), protein C/S, prothrombin/thrombin; warfarin and DOACs for contrast."
+    }
+  ],
+  "memoryHook": "Heparins (including enoxaparin) grab ANTITHROMBIN III and supercharge it — LMWH points that power mostly at factor Xa.",
+  "stem": [
+    {
+      "text": "A 52-year-old man comes to the emergency department (ED) due to 2 hours of "
+    },
+    {
+      "text": "burning substernal pain",
+      "clue": true,
+      "type": "red",
+      "note": "Substernal chest pain unrelieved by antacids, with cardiac risk factors, raises acute coronary syndrome. The clinical context just justifies anticoagulation; the tested point is enoxaparin's molecular target."
+    },
+    {
+      "text": ". Before coming to the ED, he took several tablets of antacid at home without any relief. The patient's other medical problems include hypertension and hyperlipidemia. His temperature is 36.7 C (98 F), blood pressure is 160/90 mm Hg, and pulse is 92/min. Cardiovascular examination shows normal S1 and S2 without any murmurs. There is no abdominal tenderness. ECG shows "
+    },
+    {
+      "text": "ST-segment depression in leads II, III, and aVF",
+      "clue": true,
+      "type": "blue",
+      "note": "ST depression (without ST elevation) plus elevated troponin = NSTEMI. Treatment includes antiplatelets and an anticoagulant such as enoxaparin (low-molecular-weight heparin)."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Troponin is 0.06 ng/mL (normal <0.01 ng/mL)",
+      "clue": true,
+      "type": "blue",
+      "note": "Elevated troponin (0.06 / normal <0.01) confirms myocardial injury (NSTEMI). This indicates the need for anticoagulation; enoxaparin acts by binding antithrombin III."
+    },
+    {
+      "text": ". As part of this patient's treatment, "
+    },
+    {
+      "text": "enoxaparin",
+      "clue": true,
+      "type": "green",
+      "note": "Enoxaparin is a low-molecular-weight heparin. Like unfractionated heparin, it binds ANTITHROMBIN III via a pentasaccharide sequence, accelerating ATIII's inactivation of factor Xa (LMWH acts mainly on Xa, with less effect on thrombin). The drug's target is antithrombin III."
+    },
+    {
+      "text": " therapy is initiated. This drug is expected to bind to which of the following substances in this patient's blood?"
+    }
+  ]
+}

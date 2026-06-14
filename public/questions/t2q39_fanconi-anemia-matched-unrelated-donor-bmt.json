@@ -1,0 +1,216 @@
+{
+  "id": "q68",
+  "item": 68,
+  "qid": "20769",
+  "title": "Fanconi anemia: matched unrelated donor BMT",
+  "system": "Heme/Immunology",
+  "topic": "Hematopoietic stem cell transplant",
+  "correct": "B",
+  "yourAnswer": "D",
+  "percentCorrect": 33,
+  "vignette": "A 7-year-old boy is admitted to the hospital after his adoptive parents brought him to the emergency department due to fatigue and pallor. Laboratory evaluation reveals pancytopenia with an absolute neutrophil count consistent with severe neutropenia. Bone marrow examination reveals signs of aplastic anemia, and subsequent genetic testing reveals a congenital genomic defect in DNA repair leading to chromosomal instability. A bone marrow transplant is required for treatment. The patient's only living relatives are an identical twin brother and older sister who were both adopted by the same parents. He also has stored umbilical stem cells that were harvested after birth. Which of the following is the best bone marrow transplantation method for this patient?",
+  "clues": [
+    {
+      "text": "congenital genomic defect in DNA repair leading to chromosomal instability",
+      "type": "red",
+      "note": "A congenital DNA-repair defect with chromosomal instability and aplastic anemia in a child describes Fanconi anemia. Critically, this germline defect is present in EVERY cell of the patient — and in an identical twin."
+    },
+    {
+      "text": "identical twin brother",
+      "type": "purple",
+      "note": "An identical (monozygotic) twin would be a perfect HLA match (syngeneic), but he carries the SAME inherited DNA-repair defect — so his marrow would reintroduce the disease. This is the key trap."
+    },
+    {
+      "text": "older sister who were both adopted by the same parents",
+      "type": "purple",
+      "note": "'Adopted by the same parents' means the sister is NOT genetically related, so she is unlikely to be HLA-matched (and not a reliable sibling donor). It removes the usual matched-sibling option."
+    },
+    {
+      "text": "stored umbilical stem cells that were harvested after birth",
+      "type": "purple",
+      "note": "The patient's own banked cord blood is autologous — but it carries the same congenital Fanconi defect, so it can't cure the disease. Another decoy."
+    }
+  ],
+  "whatMatters": "This is Fanconi anemia (congenital DNA-repair defect). Any source carrying the patient's genome — his identical twin (syngeneic), his own stored cord blood (autologous) — also carries the disease and can't cure it. The adopted sister isn't genetically related (no reliable HLA match). So the best option is a MATCHED UNRELATED DONOR (healthy allogeneic graft).",
+  "strategy": "For transplanting an inherited (germline) bone marrow disease, exclude any donor source that shares the patient's genome: autologous and identical-twin (syngeneic) grafts carry the same defect. You need a healthy ALLOGENEIC donor — a matched related donor if available, otherwise a matched unrelated donor.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Freshly harvested autologous transplant",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Matched unrelated donor",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Stored umbilical cord stem cells from the patient",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Twin sibling syngenetic transplant",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Unmatched sibling allogeneic transplant",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "autologous (fresh) — carries the same defect",
+      "detail": "WHAT IT IS: an autologous transplant uses the patient's OWN marrow/stem cells. ❌ WHY IT FAILS: the patient's cells harbor the congenital DNA-repair defect, so reinfusing them reintroduces Fanconi anemia — no cure. ✅ Correct if: the disease were acquired (e.g., a chemo-sensitive lymphoma) where the patient's own stem cells are healthy."
+    },
+    {
+      "letter": "C",
+      "label": "stored cord blood (patient's own) — autologous, same defect",
+      "detail": "WHAT IT IS: the patient's banked umbilical cord stem cells are also autologous. ❌ WHY IT FAILS: like the fresh autologous graft, these cells carry the inherited defect and won't cure the disease. ✅ Correct if: the condition were an acquired marrow failure/malignancy with genetically normal banked cells."
+    },
+    {
+      "letter": "D",
+      "label": "identical twin (syngeneic) — perfect match but same disease (your pick)",
+      "detail": "WHAT IT IS: a syngeneic transplant from a monozygotic twin is a perfect HLA match with no graft-versus-host disease. ❌ WHY IT FAILS: an identical twin shares the SAME germline DNA-repair defect, so his marrow would also be Fanconi-affected — curing nothing. This is the central trap. ✅ Correct if: the patient's disease were ACQUIRED (not inherited), where an identical-twin graft would be ideal."
+    },
+    {
+      "letter": "E",
+      "label": "unmatched sibling allogeneic — poor HLA match",
+      "detail": "WHAT IT IS: an allogeneic graft from a sibling who is NOT HLA-matched. ❌ WHY IT FAILS: the 'sister' is adopted (not genetically related) and unmatched, so the graft risks rejection and severe graft-versus-host disease — worse than a matched unrelated donor. ✅ Correct if: a genetically related sibling were confirmed HLA-matched (matched related donor, the usual first choice)."
+    }
+  ],
+  "reasoning": [
+    "Congenital DNA-repair defect + aplastic anemia in a child = Fanconi anemia (germline disease)",
+    "Autologous and identical-twin (syngeneic) sources carry the same defect → can't cure",
+    "The adopted sister isn't genetically related (unmatched/unsuitable)",
+    "Best = healthy allogeneic graft from a matched unrelated donor → answer B"
+  ],
+  "mechanism": "Fanconi anemia is an autosomal recessive DNA-repair (interstrand cross-link) disorder causing chromosomal instability, progressive bone marrow failure (aplastic anemia/pancytopenia), congenital anomalies, and cancer risk. Because the defect is in the germline, it is present in all of the patient's cells AND in a monozygotic twin, so autologous or syngeneic transplants reintroduce diseased stem cells. Cure requires replacing the marrow with genetically NORMAL allogeneic stem cells — ideally an HLA-matched related donor, or, when none exists, a matched unrelated donor.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Heme/Immuno > hematopoietic stem cell transplant types (autologous, syngeneic, allogeneic; matched related vs unrelated) and Fanconi anemia (DNA-repair defect, aplastic anemia, chromosomal instability)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Recognize the disease is GERMLINE: exclude any graft that shares the patient's genome (autologous, identical twin). Then choose the best HEALTHY allogeneic source available (matched unrelated donor here)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on autologous vs syngeneic vs allogeneic, HLA matching, Fanconi anemia, chromosomal instability, graft-versus-host disease? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The identical-twin (syngeneic) option is the dominant trap — a perfect MATCH but the twin shares the SAME inherited defect. For inherited marrow disease, perfect-match-but-same-genome sources can't cure."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the HLA-inheritance diagram (parental haplotypes; sibling match probabilities). Use it to see why a genetically unrelated 'sister' won't match and why a matched unrelated donor is needed."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Only 33% nationally — the lesson is: inherited (germline) disease → never autologous/identical-twin; you need a healthy allogeneic donor."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Best BMT for an inherited (germline) marrow disease",
+      "back": "Healthy allogeneic donor (matched related, else matched unrelated)"
+    },
+    {
+      "front": "Why identical-twin (syngeneic) graft fails in Fanconi anemia",
+      "back": "Twin carries the same germline DNA-repair defect"
+    },
+    {
+      "front": "Why autologous/cord blood fails here",
+      "back": "Patient's own cells carry the inherited defect"
+    },
+    {
+      "front": "Fanconi anemia",
+      "back": "AR DNA-repair (cross-link) defect; aplastic anemia, chromosomal instability, cancer risk"
+    },
+    {
+      "front": "Transplant types",
+      "back": "Autologous (self), syngeneic (identical twin), allogeneic (matched related/unrelated)"
+    },
+    {
+      "front": "Allogeneic transplant main risk",
+      "back": "Graft-versus-host disease (HLA matching reduces it)"
+    },
+    {
+      "front": "First-choice allogeneic donor",
+      "back": "HLA-matched related (sibling) donor"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Hematopoietic stem cell transplant",
+      "detail": "Heme/Immuno > transplant types: autologous vs syngeneic vs allogeneic (matched related/unrelated), HLA matching, GVHD — choosing donors for inherited vs acquired disease.",
+      "location": "Heme/Immuno > transplant types: autologous vs syngeneic vs allogeneic (matched related/unrelated), HLA matching, GVHD — choosing donors for inherited vs acquired disease."
+    },
+    {
+      "tag": "stem",
+      "topic": "Fanconi anemia",
+      "detail": "Heme > inherited bone marrow failure: Fanconi anemia (DNA cross-link repair defect, aplastic anemia, chromosomal instability, congenital anomalies, malignancy risk).",
+      "location": "Heme > inherited bone marrow failure: Fanconi anemia (DNA cross-link repair defect, aplastic anemia, chromosomal instability, congenital anomalies, malignancy risk)."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "HLA & transplant immunology",
+      "detail": "Immunology > HLA inheritance and matching; graft-versus-host disease and rejection.",
+      "location": "Immunology > HLA inheritance and matching; graft-versus-host disease and rejection."
+    }
+  ],
+  "memoryHook": "Germline disease = even the identical twin and your own cord blood are 'infected' by the gene → need a HEALTHY outsider: matched unrelated donor.",
+  "stem": [
+    {
+      "text": "A 7-year-old boy is admitted to the hospital after his adoptive parents brought him to the emergency department due to fatigue and pallor. Laboratory evaluation reveals pancytopenia with an absolute neutrophil count consistent with severe neutropenia. Bone marrow examination reveals signs of aplastic anemia, and subsequent genetic testing reveals a "
+    },
+    {
+      "text": "congenital genomic defect in DNA repair leading to chromosomal instability",
+      "clue": true,
+      "type": "red",
+      "note": "A congenital DNA-repair defect with chromosomal instability and aplastic anemia in a child describes Fanconi anemia. Critically, this germline defect is present in EVERY cell of the patient — and in an identical twin."
+    },
+    {
+      "text": ". A bone marrow transplant is required for treatment. The patient's only living relatives are an "
+    },
+    {
+      "text": "identical twin brother",
+      "clue": true,
+      "type": "purple",
+      "note": "An identical (monozygotic) twin would be a perfect HLA match (syngeneic), but he carries the SAME inherited DNA-repair defect — so his marrow would reintroduce the disease. This is the key trap."
+    },
+    {
+      "text": " and "
+    },
+    {
+      "text": "older sister who were both adopted by the same parents",
+      "clue": true,
+      "type": "purple",
+      "note": "'Adopted by the same parents' means the sister is NOT genetically related, so she is unlikely to be HLA-matched (and not a reliable sibling donor). It removes the usual matched-sibling option."
+    },
+    {
+      "text": ". He also has "
+    },
+    {
+      "text": "stored umbilical stem cells that were harvested after birth",
+      "clue": true,
+      "type": "purple",
+      "note": "The patient's own banked cord blood is autologous — but it carries the same congenital Fanconi defect, so it can't cure the disease. Another decoy."
+    },
+    {
+      "text": ". Which of the following is the best bone marrow transplantation method for this patient?"
+    }
+  ]
+}

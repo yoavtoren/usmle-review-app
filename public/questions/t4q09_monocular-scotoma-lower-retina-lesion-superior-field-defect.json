@@ -1,0 +1,222 @@
+{
+  "id": "q118",
+  "item": 118,
+  "qid": "19633",
+  "title": "Monocular scotoma: lower retina lesion (superior field defect)",
+  "system": "Neurology",
+  "topic": "Visual pathways",
+  "correct": "D",
+  "yourAnswer": "A",
+  "percentCorrect": 41,
+  "vignette": "A 60-year-old man comes to the office for a follow-up appointment. The patient underwent coronary catheterization 2 weeks ago due to anginal symptoms and had stenting of the left circumflex artery. He has had no chest pain but reports a dark spot in the upper part of his vision since the procedure. The spot disappears when the patient covers the right eye. Medical history also includes hypertension and type 2 diabetes mellitus. On physical examination, visual acuity is normal bilaterally. Computerized visual field testing shows an isolated dark spot in the superior visual field of the right eye only, with a normal left eye field. Occlusion of an artery supplying which of the following structures is the most likely cause of this patient's symptoms?",
+  "clues": [
+    {
+      "text": "coronary catheterization 2 weeks ago",
+      "type": "orange",
+      "note": "Arterial catheterization is a source of embolic debris (cholesterol/plaque). A retinal artery branch embolus after a recent cath is the mechanism of this acute monocular visual defect."
+    },
+    {
+      "text": "dark spot in the upper part of his vision",
+      "type": "blue",
+      "note": "A SUPERIOR visual-field defect localizes to the INFERIOR retina (the retina inverts the image). Upper-field loss = lower-retina lesion - key to choosing 'lower retina.'"
+    },
+    {
+      "text": "The spot disappears when the patient covers the right eye",
+      "type": "red",
+      "note": "If covering the right eye abolishes the defect, the defect is seen by the RIGHT eye -> it's monocular (one eye only). Monocular loss localizes ANTERIOR to the optic chiasm: retina or optic nerve, not the brain."
+    },
+    {
+      "text": "isolated dark spot in the superior visual field of the right eye only",
+      "type": "green",
+      "note": "A monocular scotoma in the superior field of the right eye = a focal lesion of the right INFERIOR retina (branch retinal artery occlusion). This pins both the eye and the retinal quadrant."
+    }
+  ],
+  "whatMatters": "Two localizing facts: the defect is monocular (covering the right eye removes it -> right eye only -> lesion anterior to chiasm), and it's in the SUPERIOR field (-> INFERIOR/lower retina, because the retina inverts images). A branch retinal artery occlusion of the lower right retina fits - answer D.",
+  "strategy": "Localize visual defects in two moves: (1) monocular vs binocular - monocular = retina/optic nerve (anterior to chiasm); binocular/homonymous = optic tract or behind. (2) Field-to-retina inversion - a SUPERIOR field defect = INFERIOR retina; nasal field = temporal retina. Apply both before reading options.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Left occipital lobe",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Left parietal lobe",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Left temporal lobe",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Lower right retina",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Right lateral geniculate nucleus",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Upper right retina",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "left occipital lobe - would be binocular/homonymous",
+      "detail": "WHAT IT IS: left occipital (visual cortex) lesions cause a RIGHT homonymous hemianopia (often with macular sparing). ❌ WHY IT FAILS: the defect is monocular (vanishes when the right eye is covered), so it must be anterior to the chiasm, not the cortex. You chose this. ✅ Correct if: a binocular right-sided field loss affecting BOTH eyes were described."
+    },
+    {
+      "letter": "B",
+      "label": "left parietal lobe - binocular inferior quadrantanopia",
+      "detail": "WHAT IT IS: parietal (optic radiation, dorsal) lesions cause a contralateral inferior homonymous quadrantanopia ('pie on the floor'). ❌ WHY IT FAILS: that is binocular/homonymous; this defect is monocular. ✅ Correct if: both eyes showed a matching inferior quadrant loss."
+    },
+    {
+      "letter": "C",
+      "label": "left temporal lobe - binocular superior quadrantanopia",
+      "detail": "WHAT IT IS: temporal (Meyer loop) lesions cause a contralateral superior homonymous quadrantanopia ('pie in the sky'). ❌ WHY IT FAILS: homonymous = binocular; the patient's loss is in one eye only. ✅ Correct if: a binocular superior quadrant defect were present."
+    },
+    {
+      "letter": "E",
+      "label": "right lateral geniculate nucleus - binocular homonymous",
+      "detail": "WHAT IT IS: LGN lesions produce a contralateral homonymous hemianopia. ❌ WHY IT FAILS: this is post-chiasmal and binocular, not a single-eye scotoma. ✅ Correct if: a left homonymous hemianopia affecting both eyes were described."
+    },
+    {
+      "letter": "F",
+      "label": "upper right retina - wrong retinal quadrant",
+      "detail": "WHAT IT IS: a lesion of the SUPERIOR retina. ❌ WHY IT FAILS: the upper retina maps to the INFERIOR visual field; this patient's defect is in the SUPERIOR field, which corresponds to the LOWER retina. ✅ Correct if: the field defect were in the inferior visual field."
+    }
+  ],
+  "reasoning": [
+    "Covering the right eye removes the spot -> monocular -> lesion anterior to the chiasm (retina/optic nerve)",
+    "Superior field defect -> inferior (lower) retina due to image inversion",
+    "Embolic source from recent coronary catheterization -> branch retinal artery occlusion",
+    "Lower right retina -> answer D"
+  ],
+  "mechanism": "Light from the superior visual field strikes the inferior retina and vice versa, so visual-field defects map to the opposite retinal quadrant. A monocular field defect localizes anterior to the optic chiasm (retina or optic nerve), because each eye's input has not yet crossed. Here a recent coronary catheterization is the embolic source for a branch retinal artery occlusion; an embolus to a vessel supplying the right inferior retina produces a monocular SUPERIOR field scotoma. Post-chiasmal lesions (optic tract, LGN, optic radiations, occipital cortex) instead cause binocular, homonymous defects.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Neurology > Visual field defects: monocular (retina/optic nerve, anterior to chiasm) vs binocular homonymous (tract/LGN/radiations/cortex); retina-field inversion (superior field <-> inferior retina). Meyer loop (temporal) = superior quadrantanopia; parietal = inferior quadrantanopia."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Decode the two facts the stem hands you: 'disappears when right eye covered' = monocular; 'upper part of vision' = inferior retina. Localize before scanning the cortical options."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on scotoma, monocular vs homonymous, optic chiasm crossing, retina-field inversion, branch retinal artery occlusion, LGN/Meyer loop? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose A (left occipital lobe) - that gives a BINOCULAR right homonymous hemianopia. The cover-test detail proves the defect is in ONE eye, forcing a retinal/optic-nerve answer."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The field diagram shows a spot in the right eye's superior field with a normal left eye. Translate: one eye = monocular; upper field = lower retina."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Train the reflex: cover-test first (mono vs bino), then invert field-to-retina. Two steps, every time."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Monocular field defect localizes where?",
+      "back": "Anterior to the optic chiasm (retina or optic nerve)"
+    },
+    {
+      "front": "Superior visual field defect = which retina?",
+      "back": "Inferior (lower) retina"
+    },
+    {
+      "front": "Embolus after arterial catheterization causing monocular scotoma",
+      "back": "Branch retinal artery occlusion"
+    },
+    {
+      "front": "Left occipital lobe lesion",
+      "back": "Right homonymous hemianopia (with macular sparing)"
+    },
+    {
+      "front": "Meyer loop (temporal) lesion",
+      "back": "Contralateral superior quadrantanopia ('pie in the sky')"
+    },
+    {
+      "front": "Parietal optic radiation lesion",
+      "back": "Contralateral inferior quadrantanopia ('pie on the floor')"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Retinal/optic-nerve lesions",
+      "detail": "Neuro/Ophtho: monocular visual loss, retina-field inversion, branch retinal artery occlusion.",
+      "location": "Neuro/Ophtho: monocular visual loss, retina-field inversion, branch retinal artery occlusion."
+    },
+    {
+      "tag": "stem",
+      "topic": "Visual pathway lesions",
+      "detail": "Neuro: chiasm, optic tract, LGN, Meyer loop, optic radiations, occipital cortex and their field defects.",
+      "location": "Neuro: chiasm, optic tract, LGN, Meyer loop, optic radiations, occipital cortex and their field defects."
+    },
+    {
+      "tag": "options",
+      "topic": "Embolic sources",
+      "detail": "CV: cardiac catheterization/atherosclerotic emboli, Hollenhorst plaque, amaurosis fugax.",
+      "location": "CV: cardiac catheterization/atherosclerotic emboli, Hollenhorst plaque, amaurosis fugax."
+    }
+  ],
+  "memoryHook": "Cover the eye to find the eye; flip top-for-bottom for the retina. Upper-field spot in one eye = LOWER retina of that eye.",
+  "stem": [
+    {
+      "text": "A 60-year-old man comes to the office for a follow-up appointment. The patient underwent "
+    },
+    {
+      "text": "coronary catheterization 2 weeks ago",
+      "clue": true,
+      "type": "orange",
+      "note": "Arterial catheterization is a source of embolic debris (cholesterol/plaque). A retinal artery branch embolus after a recent cath is the mechanism of this acute monocular visual defect."
+    },
+    {
+      "text": " due to anginal symptoms and had stenting of the left circumflex artery. He has had no chest pain but reports a "
+    },
+    {
+      "text": "dark spot in the upper part of his vision",
+      "clue": true,
+      "type": "blue",
+      "note": "A SUPERIOR visual-field defect localizes to the INFERIOR retina (the retina inverts the image). Upper-field loss = lower-retina lesion - key to choosing 'lower retina.'"
+    },
+    {
+      "text": " since the procedure. "
+    },
+    {
+      "text": "The spot disappears when the patient covers the right eye",
+      "clue": true,
+      "type": "red",
+      "note": "If covering the right eye abolishes the defect, the defect is seen by the RIGHT eye -> it's monocular (one eye only). Monocular loss localizes ANTERIOR to the optic chiasm: retina or optic nerve, not the brain."
+    },
+    {
+      "text": ". Medical history also includes hypertension and type 2 diabetes mellitus. On physical examination, visual acuity is normal bilaterally. Computerized visual field testing shows an "
+    },
+    {
+      "text": "isolated dark spot in the superior visual field of the right eye only",
+      "clue": true,
+      "type": "green",
+      "note": "A monocular scotoma in the superior field of the right eye = a focal lesion of the right INFERIOR retina (branch retinal artery occlusion). This pins both the eye and the retinal quadrant."
+    },
+    {
+      "text": ", with a normal left eye field. Occlusion of an artery supplying which of the following structures is the most likely cause of this patient's symptoms?"
+    }
+  ]
+}

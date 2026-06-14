@@ -1,0 +1,207 @@
+{
+  "id": "q115",
+  "item": 115,
+  "qid": "934",
+  "title": "Polyol pathway: sorbitol dehydrogenase to fructose",
+  "system": "Biochemistry",
+  "topic": "Carbohydrate metabolism",
+  "correct": "A",
+  "yourAnswer": "C",
+  "percentCorrect": 58,
+  "vignette": "A 66-year-old man comes to the office due to progressive vision impairment over the last year that has begun to affect his ability to drive. He has difficulty reading road signs at night and reports excessive glare from the headlights of oncoming cars. The patient has a long history of hypertension and type 2 diabetes mellitus. Funduscopy reveals a diminished red reflex bilaterally with obscuration of retinal detail. It is determined that the patient's condition is in part due to intracellular accumulation of sorbitol. In healthy cells, this sugar alcohol is normally metabolized into which of the following substances to facilitate excretion?",
+  "clues": [
+    {
+      "text": "excessive glare from the headlights of oncoming cars",
+      "type": "blue",
+      "note": "Glare and night-driving difficulty are classic cataract symptoms - light scatters through the opacified lens. Combined with a diminished red reflex, this is acquired lens opacity."
+    },
+    {
+      "text": "type 2 diabetes mellitus",
+      "type": "orange",
+      "note": "Chronic hyperglycemia drives the polyol pathway in lens cells. Excess glucose is shunted to sorbitol by aldose reductase, and osmotic trapping of sorbitol promotes diabetic cataract (and contributes to neuropathy, retinopathy)."
+    },
+    {
+      "text": "diminished red reflex bilaterally with obscuration of retinal detail",
+      "type": "green",
+      "note": "A reduced red reflex with loss of retinal detail on funduscopy is the exam signature of a cataract (lens opacity blocking the reflex). This anchors the polyol/sorbitol mechanism being asked about."
+    },
+    {
+      "text": "intracellular accumulation of sorbitol",
+      "type": "red",
+      "note": "Sorbitol is produced from glucose by aldose reductase but is only slowly converted onward by sorbitol dehydrogenase. Tissues with low/absent sorbitol dehydrogenase (lens, retina, Schwann cells, kidney) trap sorbitol, causing osmotic injury."
+    }
+  ],
+  "whatMatters": "The cataract/diabetes story sets up the polyol pathway. The actual question is purely biochemical: what does sorbitol get converted INTO for disposal? Sorbitol dehydrogenase oxidizes sorbitol to FRUCTOSE - answer A.",
+  "strategy": "For polyol-pathway questions, hold the two-enzyme line in mind: glucose --(aldose reductase, uses NADPH)--> sorbitol --(sorbitol dehydrogenase, makes NADH)--> fructose. Damage occurs where sorbitol dehydrogenase is low (lens, retina, Schwann cells, kidney), trapping osmotically active sorbitol.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Fructose",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Galactitol",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Galactose",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Glucose",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Xylulose",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "galactitol - wrong pathway (galactose)",
+      "detail": "WHAT IT IS: galactitol is the sugar alcohol formed when aldose reductase acts on GALACTOSE (classic galactosemia, galactokinase deficiency -> infantile cataracts). ❌ WHY IT FAILS: sorbitol is not converted to galactitol; galactitol is upstream of a different sugar, not a sorbitol product. ✅ Correct if: the stem were about galactose accumulation/galactosemia."
+    },
+    {
+      "letter": "C",
+      "label": "galactose - not a sorbitol product",
+      "detail": "WHAT IT IS: galactose is a dietary monosaccharide processed by the Leloir pathway. ❌ WHY IT FAILS: sorbitol dehydrogenase oxidizes sorbitol to fructose, never to galactose. ✅ Correct if: discussing galactose metabolism, not the polyol pathway."
+    },
+    {
+      "letter": "D",
+      "label": "glucose - that's the precursor, not the product",
+      "detail": "WHAT IT IS: glucose is the SOURCE of sorbitol via aldose reductase. ❌ WHY IT FAILS: the reaction runs glucose -> sorbitol -> fructose; sorbitol is not converted back to glucose. ✅ Correct if: asked what sorbitol is made FROM."
+    },
+    {
+      "letter": "E",
+      "label": "xylulose - pentose phosphate / uronic acid pathway",
+      "detail": "WHAT IT IS: xylulose is a pentose in the HMP shunt / uronic acid pathway. ❌ WHY IT FAILS: it has no role in the polyol pathway and is not derived from sorbitol. ✅ Correct if: a question on pentose phosphate or essential fructosuria/xylitol metabolism."
+    }
+  ],
+  "reasoning": [
+    "Diabetic cataract via the polyol pathway",
+    "Glucose -> sorbitol by aldose reductase (NADPH used)",
+    "Sorbitol -> fructose by sorbitol dehydrogenase (NADH made)",
+    "The disposal product of sorbitol is fructose -> answer A"
+  ],
+  "mechanism": "The polyol pathway has two steps. Aldose reductase reduces glucose to sorbitol using NADPH; sorbitol dehydrogenase then oxidizes sorbitol to fructose, generating NADH. Cells rich in aldose reductase but poor in sorbitol dehydrogenase - the lens, retina, Schwann cells, and renal papillae - cannot clear sorbitol, so in chronic hyperglycemia sorbitol accumulates and draws in water osmotically. In the lens this osmotic swelling and oxidative stress (NADPH depletion) cause diabetic cataract; analogous mechanisms contribute to peripheral neuropathy. The asked product of sorbitol's onward metabolism is fructose.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochemistry > Polyol pathway: aldose reductase (glucose->sorbitol, NADPH) and sorbitol dehydrogenase (sorbitol->fructose, NADH); tissues lacking sorbitol dehydrogenase (lens, retina, Schwann cells, kidney) trap sorbitol -> cataract, neuropathy."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The clinical paragraph is scaffolding; the actual ask is one arrow in a pathway. Recall the two-enzyme sequence and read off the product of sorbitol."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on polyol pathway, aldose reductase vs sorbitol dehydrogenase, sugar alcohol (polyol), galactitol, NADPH vs NADH? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose C (galactose) - that belongs to the galactose/galactitol pathway (a separate cause of cataracts). Keep sorbitol's line straight: sorbitol -> FRUCTOSE."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Anchor the directionality: glucose is the precursor (not the answer), fructose is the disposal product."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Sorbitol is converted to ___ by sorbitol dehydrogenase",
+      "back": "Fructose"
+    },
+    {
+      "front": "Glucose -> sorbitol enzyme/cofactor",
+      "back": "Aldose reductase (uses NADPH)"
+    },
+    {
+      "front": "Tissues that trap sorbitol (low sorbitol dehydrogenase)",
+      "back": "Lens, retina, Schwann cells, kidney"
+    },
+    {
+      "front": "Galactose + aldose reductase ->",
+      "back": "Galactitol (infantile cataracts in galactosemia)"
+    },
+    {
+      "front": "Diabetic cataract mechanism",
+      "back": "Polyol pathway sorbitol osmotic injury + NADPH depletion"
+    },
+    {
+      "front": "Diminished red reflex + glare/night-driving difficulty",
+      "back": "Cataract"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Polyol pathway",
+      "detail": "Biochemistry > Carbohydrate metabolism: aldose reductase and sorbitol dehydrogenase; diabetic complications.",
+      "location": "Biochemistry > Carbohydrate metabolism: aldose reductase and sorbitol dehydrogenase; diabetic complications."
+    },
+    {
+      "tag": "stem",
+      "topic": "Diabetic cataract / chronic hyperglycemia",
+      "detail": "Endocrine/Ophtho: lens sorbitol accumulation, osmotic injury, screening.",
+      "location": "Endocrine/Ophtho: lens sorbitol accumulation, osmotic injury, screening."
+    },
+    {
+      "tag": "options",
+      "topic": "Galactose metabolism",
+      "detail": "Biochem: galactitol and classic galactosemia/galactokinase deficiency vs polyol pathway.",
+      "location": "Biochem: galactitol and classic galactosemia/galactokinase deficiency vs polyol pathway."
+    }
+  ],
+  "memoryHook": "Polyol pathway: glucose -> SORbitol -> fructose. 'SOR-bitol's exit is FRU-ctose' (sorbitol dehydrogenase).",
+  "stem": [
+    {
+      "text": "A 66-year-old man comes to the office due to progressive vision impairment over the last year that has begun to affect his ability to drive. He has difficulty reading road signs at night and reports "
+    },
+    {
+      "text": "excessive glare from the headlights of oncoming cars",
+      "clue": true,
+      "type": "blue",
+      "note": "Glare and night-driving difficulty are classic cataract symptoms - light scatters through the opacified lens. Combined with a diminished red reflex, this is acquired lens opacity."
+    },
+    {
+      "text": ". The patient has a long history of hypertension and "
+    },
+    {
+      "text": "type 2 diabetes mellitus",
+      "clue": true,
+      "type": "orange",
+      "note": "Chronic hyperglycemia drives the polyol pathway in lens cells. Excess glucose is shunted to sorbitol by aldose reductase, and osmotic trapping of sorbitol promotes diabetic cataract (and contributes to neuropathy, retinopathy)."
+    },
+    {
+      "text": ". Funduscopy reveals a "
+    },
+    {
+      "text": "diminished red reflex bilaterally with obscuration of retinal detail",
+      "clue": true,
+      "type": "green",
+      "note": "A reduced red reflex with loss of retinal detail on funduscopy is the exam signature of a cataract (lens opacity blocking the reflex). This anchors the polyol/sorbitol mechanism being asked about."
+    },
+    {
+      "text": ". It is determined that the patient's condition is in part due to "
+    },
+    {
+      "text": "intracellular accumulation of sorbitol",
+      "clue": true,
+      "type": "red",
+      "note": "Sorbitol is produced from glucose by aldose reductase but is only slowly converted onward by sorbitol dehydrogenase. Tissues with low/absent sorbitol dehydrogenase (lens, retina, Schwann cells, kidney) trap sorbitol, causing osmotic injury."
+    },
+    {
+      "text": ". In healthy cells, this sugar alcohol is normally metabolized into which of the following substances to facilitate excretion?"
+    }
+  ]
+}

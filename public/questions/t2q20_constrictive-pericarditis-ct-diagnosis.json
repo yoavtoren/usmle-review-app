@@ -1,0 +1,184 @@
+{
+  "id": "q49",
+  "item": 49,
+  "qid": "2071",
+  "title": "Constrictive pericarditis: CT diagnosis",
+  "system": "Cardiology",
+  "topic": "Pericardial disease / imaging",
+  "correct": "B",
+  "yourAnswer": "A",
+  "percentCorrect": 63,
+  "vignette": "[Item 2 of 2, same patient.] The patient is admitted to the hospital for further work-up and treatment. After initial evaluation, a CT scan of the chest is obtained and shows thickening and calcification of the pericardium. Which of the following is the most likely diagnosis? [Exact answer choices were off-screen in the screenshot and are reconstructed here for review.]",
+  "clues": [
+    {
+      "text": "further work-up and treatment",
+      "type": "blue",
+      "note": "Continues the same patient from item 1 (venous congestion, steep JVP descents). The CT now confirms the structural cause behind the hemodynamics."
+    },
+    {
+      "text": "thickening and calcification of the pericardium",
+      "type": "green",
+      "note": "A thickened, calcified pericardium on CT is essentially diagnostic of constrictive pericarditis. Chronic pericardial scarring (often post-TB) calcifies and forms a rigid shell that limits cardiac filling."
+    }
+  ],
+  "whatMatters": "Same patient with systemic venous congestion and constrictive hemodynamics; the CT shows a THICKENED, CALCIFIED pericardium — diagnostic of constrictive pericarditis. The calcified rigid pericardium is the structural lesion behind the equalized pressures and steep y descent.",
+  "strategy": "Match imaging to physiology: thickened/calcified pericardium = constrictive pericarditis; large pericardial effusion = tamponade; normal pericardium with stiff, infiltrated myocardium = restrictive cardiomyopathy. The CT finding here points straight to constriction.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Restrictive cardiomyopathy",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Constrictive pericarditis",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Cardiac tamponade",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Dilated cardiomyopathy",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Hypertrophic cardiomyopathy",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "restrictive CM — myocardial, normal pericardium (your pick)",
+      "detail": "WHAT IT IS: restrictive cardiomyopathy stiffens the MYOCARDIUM (amyloid, sarcoid, hemochromatosis, fibrosis) with a NORMAL pericardium. ❌ WHY IT FAILS: it's the classic mimic of constriction hemodynamically, but the CT here shows a thickened/CALCIFIED PERICARDIUM — pointing to constriction, not a myocardial process. ✅ Correct if: imaging showed normal pericardium with infiltrated/thick myocardium and the history suggested amyloid/sarcoid."
+    },
+    {
+      "letter": "C",
+      "label": "tamponade — effusion, not calcified pericardium",
+      "detail": "WHAT IT IS: cardiac tamponade is a pericardial EFFUSION compressing the heart (acute, pulsus paradoxus, blunted y). ❌ WHY IT FAILS: CT shows pericardial THICKENING/CALCIFICATION, not fluid; the course is chronic, not acute compression. ✅ Correct if: there were a large pericardial effusion with hypotension and pulsus paradoxus."
+    },
+    {
+      "letter": "D",
+      "label": "dilated CM — dilated chambers, low EF",
+      "detail": "WHAT IT IS: dilated cardiomyopathy shows enlarged ventricles with systolic dysfunction. ❌ WHY IT FAILS: the pericardial calcification and constrictive physiology don't fit a primary dilated, low-EF myocardium. ✅ Correct if: echo showed dilated chambers with globally reduced systolic function."
+    },
+    {
+      "letter": "E",
+      "label": "hypertrophic CM — thick septum, not pericardium",
+      "detail": "WHAT IT IS: HCM shows asymmetric septal hypertrophy with possible LVOT obstruction. ❌ WHY IT FAILS: it's a myocardial thickening problem, not a pericardial calcification; the imaging and venous-congestion picture point to constriction. ✅ Correct if: there were a thick septum, SAM, and a murmur worsening with Valsalva."
+    }
+  ],
+  "reasoning": [
+    "Same patient with constrictive hemodynamics (venous congestion, steep y descent)",
+    "CT shows thickened, calcified pericardium",
+    "A rigid/calcified pericardium that limits filling = constrictive pericarditis",
+    "→ answer B"
+  ],
+  "mechanism": "Chronic pericardial inflammation (classically tuberculous, also post-surgical/radiation) leads to a fibrotic, calcified, rigid pericardium. This stiff shell prevents normal ventricular filling, producing the constrictive hemodynamics (equalized diastolic pressures, square-root sign, prominent y descent, Kussmaul sign) and systemic venous congestion. CT/MRI demonstrating pericardial thickening and calcification confirms constrictive pericarditis and distinguishes it from restrictive cardiomyopathy (normal pericardium).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Cardio > pericardial disease: constrictive pericarditis imaging (pericardial thickening/calcification on CT/MRI), causes (TB, surgery, radiation), and the constriction-vs-restriction distinction."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Let the imaging decide: a thickened/calcified PERICARDIUM = constriction (pericardial disease), not a myocardial cardiomyopathy. Pair the CT with the prior hemodynamics."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on pericardium vs myocardium, constrictive vs restrictive, calcification, tamponade? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Restrictive cardiomyopathy is the big trap (same hemodynamics) — but it has a NORMAL pericardium. The calcified pericardium on CT is what separates constriction from restriction."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference CT highlights a thickened, calcified pericardium. Learn to spot the bright calcified rim around the heart — the imaging signature of constrictive pericarditis."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Heads up: the answer choices for this item were off-screen in your screenshot, so I reconstructed a standard differential (constrictive vs restrictive vs tamponade, etc.). The CT finding makes constrictive pericarditis the answer — tell me if UWorld's wording differs."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Thickened/calcified pericardium on CT",
+      "back": "Constrictive pericarditis"
+    },
+    {
+      "front": "Constriction vs restriction key difference",
+      "back": "Constriction = abnormal PERICARDIUM; restriction = abnormal MYOCARDIUM (normal pericardium)"
+    },
+    {
+      "front": "Restrictive CM causes",
+      "back": "Amyloidosis, sarcoidosis, hemochromatosis, endomyocardial fibrosis"
+    },
+    {
+      "front": "Tamponade imaging",
+      "back": "Pericardial effusion (not calcification)"
+    },
+    {
+      "front": "Constrictive pericarditis classic cause",
+      "back": "Tuberculosis (also post-cardiac surgery, radiation)"
+    },
+    {
+      "front": "Pericardial knock",
+      "back": "Early diastolic sound in constriction"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Constrictive pericarditis (imaging)",
+      "detail": "Cardiovascular > pericardial disease: CT/MRI pericardial thickening & calcification; constriction vs restriction; etiologies and management (pericardiectomy).",
+      "location": "Cardiovascular > pericardial disease: CT/MRI pericardial thickening & calcification; constriction vs restriction; etiologies and management (pericardiectomy)."
+    },
+    {
+      "tag": "options",
+      "topic": "Restrictive cardiomyopathy",
+      "detail": "Cardiovascular > restrictive CM: infiltrative myocardial disease (amyloid, sarcoid, hemochromatosis) with normal pericardium — the main mimic.",
+      "location": "Cardiovascular > restrictive CM: infiltrative myocardial disease (amyloid, sarcoid, hemochromatosis) with normal pericardium — the main mimic."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Tamponade & other cardiomyopathies",
+      "detail": "Cardiovascular > tamponade (effusion, pulsus paradoxus), dilated and hypertrophic CM — to round out the differential.",
+      "location": "Cardiovascular > tamponade (effusion, pulsus paradoxus), dilated and hypertrophic CM — to round out the differential."
+    }
+  ],
+  "memoryHook": "Calcified 'shell' around the heart on CT = constrictive pericarditis; if the pericardium is normal but the muscle is stiff, it's RESTRICTIVE instead.",
+  "stem": [
+    {
+      "text": "[Item 2 of 2, same patient.] The patient is admitted to the hospital for "
+    },
+    {
+      "text": "further work-up and treatment",
+      "clue": true,
+      "type": "blue",
+      "note": "Continues the same patient from item 1 (venous congestion, steep JVP descents). The CT now confirms the structural cause behind the hemodynamics."
+    },
+    {
+      "text": ". After initial evaluation, a CT scan of the chest is obtained and shows "
+    },
+    {
+      "text": "thickening and calcification of the pericardium",
+      "clue": true,
+      "type": "green",
+      "note": "A thickened, calcified pericardium on CT is essentially diagnostic of constrictive pericarditis. Chronic pericardial scarring (often post-TB) calcifies and forms a rigid shell that limits cardiac filling."
+    },
+    {
+      "text": ". Which of the following is the most likely diagnosis? [Exact answer choices were off-screen in the screenshot and are reconstructed here for review.]"
+    }
+  ]
+}

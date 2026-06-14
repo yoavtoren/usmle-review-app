@@ -1,0 +1,188 @@
+{
+  "id": "q99",
+  "item": 99,
+  "qid": "11730",
+  "title": "Cardiac pacemaker: SA node at the SVC-right atrium junction",
+  "system": "Cardiovascular",
+  "topic": "Conduction system",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 79,
+  "vignette": "A 35-year-old previously healthy man is evaluated for several episodes of syncope in the past 6 weeks. Physical examination is unremarkable. Echocardiogram shows no structural heart defect. An electrophysiologic study is performed during which catheters are passed into the patient's right and left atrium to record atrial electric potentials. Cardiac monitor currently shows normal sinus rhythm. Which of the following is the most likely earliest site of electric activation?",
+  "clues": [
+    {
+      "text": "record atrial electric potentials",
+      "type": "blue",
+      "note": "The study maps where atrial electrical activity ORIGINATES. The 'earliest site of activation' is the heart's dominant pacemaker."
+    },
+    {
+      "text": "normal sinus rhythm",
+      "type": "green",
+      "note": "Normal sinus rhythm means the SINOATRIAL (SA) node is the pacemaker. The SA node sits in the right atrium at the junction with the SUPERIOR vena cava — so that's the earliest site of electrical activation."
+    }
+  ],
+  "whatMatters": "During normal sinus rhythm the dominant pacemaker is the SA node, anatomically located in the right atrium at the junction with the SUPERIOR vena cava. That's the earliest site of electrical activation — answer D.",
+  "strategy": "'Earliest site of activation' in normal sinus rhythm = the SA node. Pin its location precisely: right atrium near the SVC opening (upper/posterior). Don't confuse with the AV node (near the coronary sinus/tricuspid septal region) or ectopic foci (pulmonary veins, IVC).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Junction of left atrium and atrial appendage",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Left atrium near the opening of pulmonary veins",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Right atrium near the opening of inferior vena cava",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Right atrium near the opening of superior vena cava",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Right atrium near the septal cusp of tricuspid valve",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "left atrium/appendage — not the normal pacemaker",
+      "detail": "WHAT IT IS: the left atrial appendage is a site of thrombus formation in atrial fibrillation. ❌ WHY IT FAILS: it isn't the origin of normal sinus rhythm; the SA node is in the RIGHT atrium near the SVC. ✅ Correct if: the question asked where clots form in AFib, not the pacemaker location."
+    },
+    {
+      "letter": "B",
+      "label": "pulmonary veins — ectopic AFib trigger, not sinus origin",
+      "detail": "WHAT IT IS: ectopic foci around the pulmonary vein ostia are the classic triggers of atrial fibrillation (targets of ablation). ❌ WHY IT FAILS: that's an abnormal/ectopic source; in NORMAL sinus rhythm the SA node fires first. ✅ Correct if: the rhythm were atrial fibrillation and the question asked for the trigger site."
+    },
+    {
+      "letter": "C",
+      "label": "right atrium near the IVC — wrong end of the atrium",
+      "detail": "WHAT IT IS: the IVC opening is in the lower right atrium (near the eustachian valve/cavotricuspid isthmus, relevant to atrial flutter). ❌ WHY IT FAILS: the SA node is at the SUPERIOR vena cava junction, not the inferior; the cavotricuspid isthmus is the flutter circuit, not the sinus pacemaker. ✅ Correct if: the question concerned typical atrial flutter's reentry isthmus."
+    },
+    {
+      "letter": "E",
+      "label": "near the tricuspid septal cusp — that's the AV node region",
+      "detail": "WHAT IT IS: the AV node lies in the interatrial septum near the coronary sinus and the septal leaflet of the tricuspid valve (within the triangle of Koch). ❌ WHY IT FAILS: the AV node is the secondary pacemaker/delay station, not the EARLIEST site in sinus rhythm. ✅ Correct if: the question asked where conduction is delayed or the location of the AV node/junctional pacemaker."
+    }
+  ],
+  "reasoning": [
+    "Normal sinus rhythm → the SA node is the dominant pacemaker",
+    "The SA node is the earliest site of electrical activation",
+    "Anatomic location: right atrium at the junction with the superior vena cava",
+    "Earliest activation = RA near the SVC opening → answer D"
+  ],
+  "mechanism": "The sinoatrial (SA) node, located in the right atrium near the junction with the superior vena cava, is the heart's dominant pacemaker, generating normal sinus rhythm via the fastest intrinsic automaticity (~60-100/min). The impulse spreads across the atria to the AV node (which delays conduction), then through the bundle of His, bundle branches, and Purkinje fibers to the ventricles. The AV node and lower structures are slower, latent pacemakers that take over only if the SA node fails.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Cardiovascular > Conduction system: SA node (RA near SVC, dominant pacemaker), AV node (interatrial septum near coronary sinus/tricuspid, conduction delay), His-Purkinje; intrinsic rates and pacemaker hierarchy. Cross-link AFib (pulmonary veins) and flutter (cavotricuspid isthmus)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "'Earliest activation in sinus rhythm' = SA node. Then it's pure anatomy: RA at the SUPERIOR vena cava junction."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on SA node, AV node, sinus rhythm, automaticity, superior vs inferior vena cava, triangle of Koch? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Pulmonary veins (B) and the IVC/tricuspid options describe ectopic foci and the AV-node region — relevant to AFib/flutter/AV conduction, not the normal sinus pacemaker. Anchor on SVC junction."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The conduction-system figure shows the SA node high in the RA near the SVC, the AV node in the septum, then the bundle of His → bundle branches → Purkinje. Practice locating each structure and its intrinsic rate."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (D). Memorize the pacemaker location: SA node = right atrium at the SUPERIOR vena cava junction."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Earliest site of activation in sinus rhythm",
+      "back": "SA node — RA at the superior vena cava junction"
+    },
+    {
+      "front": "Dominant cardiac pacemaker",
+      "back": "Sinoatrial (SA) node (~60-100/min)"
+    },
+    {
+      "front": "AV node location",
+      "back": "Interatrial septum near coronary sinus / septal tricuspid (triangle of Koch)"
+    },
+    {
+      "front": "Atrial fibrillation ectopic triggers",
+      "back": "Pulmonary vein ostia"
+    },
+    {
+      "front": "Typical atrial flutter circuit",
+      "back": "Cavotricuspid isthmus (near IVC)"
+    },
+    {
+      "front": "Conduction sequence",
+      "back": "SA → AV (delay) → bundle of His → bundle branches → Purkinje"
+    },
+    {
+      "front": "Left atrial appendage significance",
+      "back": "Thrombus site in atrial fibrillation"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Cardiac conduction system",
+      "detail": "Cardiovascular: SA node location/automaticity, pacemaker hierarchy, AV nodal delay, His-Purkinje.",
+      "location": "Cardiovascular: SA node location/automaticity, pacemaker hierarchy, AV nodal delay, His-Purkinje."
+    },
+    {
+      "tag": "options",
+      "topic": "Atrial arrhythmia anatomy",
+      "detail": "Cardio: pulmonary veins (AFib triggers), cavotricuspid isthmus (flutter), left atrial appendage (thrombus).",
+      "location": "Cardio: pulmonary veins (AFib triggers), cavotricuspid isthmus (flutter), left atrial appendage (thrombus)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Syncope evaluation / EP study",
+      "detail": "Cardio: electrophysiology mapping, sinus node dysfunction, structural vs arrhythmic syncope.",
+      "location": "Cardio: electrophysiology mapping, sinus node dysfunction, structural vs arrhythmic syncope."
+    }
+  ],
+  "memoryHook": "Sinus rhythm starts at the SA node — high in the right atrium where the SUPERIOR vena cava comes in. 'SVC = Sinus.'",
+  "stem": [
+    {
+      "text": "A 35-year-old previously healthy man is evaluated for several episodes of syncope in the past 6 weeks. Physical examination is unremarkable. Echocardiogram shows no structural heart defect. An electrophysiologic study is performed during which catheters are passed into the patient's right and left atrium to "
+    },
+    {
+      "text": "record atrial electric potentials",
+      "clue": true,
+      "type": "blue",
+      "note": "The study maps where atrial electrical activity ORIGINATES. The 'earliest site of activation' is the heart's dominant pacemaker."
+    },
+    {
+      "text": ". Cardiac monitor currently shows "
+    },
+    {
+      "text": "normal sinus rhythm",
+      "clue": true,
+      "type": "green",
+      "note": "Normal sinus rhythm means the SINOATRIAL (SA) node is the pacemaker. The SA node sits in the right atrium at the junction with the SUPERIOR vena cava — so that's the earliest site of electrical activation."
+    },
+    {
+      "text": ". Which of the following is the most likely earliest site of electric activation?"
+    }
+  ]
+}

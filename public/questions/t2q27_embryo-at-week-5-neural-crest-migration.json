@@ -1,0 +1,188 @@
+{
+  "id": "q56",
+  "item": 56,
+  "qid": "108284",
+  "title": "Embryo at week 5: neural crest migration",
+  "system": "Embryology",
+  "topic": "Embryonic timeline",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 49,
+  "vignette": "A 24-year-old woman comes to the clinic due to a missed menstrual period. She has had regular menstrual cycles every 28 days, and her last menstrual period began 7 weeks ago. Since then, she had sexual intercourse once 5 weeks ago. The patient has no chronic medical conditions. Urine pregnancy test is positive. Which of the following embryologic events is most likely occurring in the embryo at this time?",
+  "clues": [
+    {
+      "text": "her last menstrual period began 7 weeks ago",
+      "type": "blue",
+      "note": "Gestational age is dated from the last menstrual period (LMP = 7 weeks). But fertilization/conception occurs about 2 weeks AFTER the LMP, so embryonic (post-conception) age is younger than the gestational age."
+    },
+    {
+      "text": "once 5 weeks ago",
+      "type": "green",
+      "note": "Conception happened ~5 weeks ago, so the embryo is about 5 weeks post-fertilization. At ~week 5 post-conception, the embryo is in organogenesis with active neural crest cell migration."
+    }
+  ],
+  "whatMatters": "Date by CONCEPTION, not LMP: intercourse 5 weeks ago means the embryo is ~5 weeks post-fertilization. At that stage (organogenesis, weeks 3-8), neural crest cells are migrating to form their many derivatives. Implantation (week 1) and gastrulation (week 3) are already past; alveoli form much later.",
+  "strategy": "For 'what's happening in the embryo now,' convert to POST-CONCEPTION age (subtract ~2 weeks from LMP, or use the intercourse date). Then map to the embryology timeline: implantation wk 1, gastrulation wk 3, neural crest migration/organogenesis wks 4-8, fetal growth later.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Blastocyst implantation",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Gastrulation",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Intestinal fixation to abdominal wall",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Neural crest migration",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Primitive alveoli formation",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "implantation — week 1, already past",
+      "detail": "WHAT IT IS: the blastocyst implants into the endometrium about 6-7 days after fertilization (week 1). ❌ WHY IT FAILS: at ~5 weeks post-conception this happened over a month ago; it's far too early an event. ✅ Correct if: the embryo were within the first week post-fertilization."
+    },
+    {
+      "letter": "B",
+      "label": "gastrulation — week 3, already past",
+      "detail": "WHAT IT IS: gastrulation (formation of the 3 germ layers via the primitive streak) occurs in week 3 post-conception. ❌ WHY IT FAILS: it precedes neural crest migration and is finished by ~week 5; not the current event. ✅ Correct if: the embryo were ~3 weeks post-fertilization."
+    },
+    {
+      "letter": "C",
+      "label": "intestinal fixation — much later (weeks 10-11+)",
+      "detail": "WHAT IT IS: midgut rotation and fixation to the posterior abdominal wall occur after physiologic herniation, around weeks 10-12. ❌ WHY IT FAILS: that's well beyond a 5-week embryo; too late for this stage. ✅ Correct if: the question concerned late first-trimester midgut rotation/fixation."
+    },
+    {
+      "letter": "E",
+      "label": "primitive alveoli — late fetal (weeks 24+)",
+      "detail": "WHAT IT IS: alveolar/saccular lung development occurs in the late second to third trimester (alveoli mature even into infancy). ❌ WHY IT FAILS: it's a fetal-period event, nowhere near a 5-week embryo. ✅ Correct if: the fetus were in the late second/third trimester (saccular-alveolar stage)."
+    }
+  ],
+  "reasoning": [
+    "LMP 7 weeks ago, but conception was ~5 weeks ago (intercourse date)",
+    "Embryo is ~5 weeks post-fertilization = organogenesis (weeks 3-8)",
+    "At this stage, neural crest cells are actively migrating",
+    "→ neural crest migration (answer D)"
+  ],
+  "mechanism": "Pregnancy dating uses gestational age (from LMP), which is ~2 weeks more than the post-conception (embryonic) age. Intercourse 5 weeks ago places the embryo at ~5 weeks post-fertilization, within organogenesis (weeks 3-8) — the period of greatest teratogenic susceptibility. During this window neural crest cells delaminate from the dorsal neural tube and migrate to form PNS neurons/Schwann cells, melanocytes, adrenal medulla, craniofacial bones, and more. Implantation and gastrulation are earlier; intestinal fixation and alveoli are later.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Embryology > timeline: week 1 implantation, week 2 bilaminar, week 3 gastrulation/neurulation begins, weeks 3-8 organogenesis (neural crest migration), later fetal events. Memorize the early-week milestones."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate dates: use the conception date (intercourse) for embryonic age, not LMP. Then place ~5 weeks on the timeline (organogenesis → neural crest migration)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on gestational vs post-conception age, gastrulation, neural crest, organogenesis, implantation? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "LMP '7 weeks' baits you to overshoot; implantation/gastrulation are the 'too early' traps and alveoli/intestinal fixation the 'too late' traps. Anchor on conception = 5 weeks → neural crest migration."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the fetal-development/teratogenesis timeline figure. Use it to locate week-5 events and the highly teratogen-sensitive organogenesis window."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Gestational age vs conception age",
+      "back": "Gestational (LMP) is ~2 weeks > post-conception age"
+    },
+    {
+      "front": "~Week 5 post-conception event",
+      "back": "Neural crest migration (organogenesis)"
+    },
+    {
+      "front": "Implantation timing",
+      "back": "~Week 1 post-fertilization"
+    },
+    {
+      "front": "Gastrulation timing",
+      "back": "Week 3 (germ layers via primitive streak)"
+    },
+    {
+      "front": "Organogenesis window",
+      "back": "Weeks 3-8 (peak teratogen sensitivity)"
+    },
+    {
+      "front": "Neural crest derivatives",
+      "back": "PNS/Schwann, melanocytes, adrenal medulla, craniofacial bones (MOTEL PASS)"
+    },
+    {
+      "front": "Primitive alveoli formation",
+      "back": "Late fetal period (saccular/alveolar stage)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Embryologic timeline",
+      "detail": "Embryology > weeks of development: implantation, gastrulation, neurulation/neural crest migration, organogenesis window; gestational vs embryonic age.",
+      "location": "Embryology > weeks of development: implantation, gastrulation, neurulation/neural crest migration, organogenesis window; gestational vs embryonic age."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Neural crest derivatives",
+      "detail": "Embryology > neural crest table (MOTEL PASS) — what neural crest migration ultimately forms.",
+      "location": "Embryology > neural crest table (MOTEL PASS) — what neural crest migration ultimately forms."
+    },
+    {
+      "tag": "stem",
+      "topic": "Teratogenesis timing",
+      "detail": "Embryology > teratogen sensitivity: organogenesis (weeks 3-8) = structural-anomaly window; later = functional defects.",
+      "location": "Embryology > teratogen sensitivity: organogenesis (weeks 3-8) = structural-anomaly window; later = functional defects."
+    }
+  ],
+  "memoryHook": "Date by the bedroom, not the calendar: conception 5 weeks ago → organogenesis → neural crest cells on the move.",
+  "stem": [
+    {
+      "text": "A 24-year-old woman comes to the clinic due to a missed menstrual period. She has had regular menstrual cycles every 28 days, and "
+    },
+    {
+      "text": "her last menstrual period began 7 weeks ago",
+      "clue": true,
+      "type": "blue",
+      "note": "Gestational age is dated from the last menstrual period (LMP = 7 weeks). But fertilization/conception occurs about 2 weeks AFTER the LMP, so embryonic (post-conception) age is younger than the gestational age."
+    },
+    {
+      "text": ". Since then, she had sexual intercourse "
+    },
+    {
+      "text": "once 5 weeks ago",
+      "clue": true,
+      "type": "green",
+      "note": "Conception happened ~5 weeks ago, so the embryo is about 5 weeks post-fertilization. At ~week 5 post-conception, the embryo is in organogenesis with active neural crest cell migration."
+    },
+    {
+      "text": ". The patient has no chronic medical conditions. Urine pregnancy test is positive. Which of the following embryologic events is most likely occurring in the embryo at this time?"
+    }
+  ]
+}

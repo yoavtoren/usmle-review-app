@@ -1,0 +1,221 @@
+{
+  "id": "q122",
+  "item": 122,
+  "qid": "7214",
+  "title": "Congestive splenomegaly: red pulp expansion (portal HTN)",
+  "system": "Pathology",
+  "topic": "Spleen / portal hypertension",
+  "correct": "E",
+  "yourAnswer": "A",
+  "percentCorrect": 56,
+  "vignette": "A 54-year-old man comes to the emergency department after an episode of bloody vomiting. He has had no fever, chills, abdominal pain, diarrhea, or constipation. The patient has a history of alcohol abuse with multiple previous hospital admissions due to alcohol withdrawal and generalized tonic-clonic seizures. He also has a history of intravenous drug abuse and is currently enrolled in a methadone maintenance program. Blood pressure is 96/62 mm Hg and pulse is 102/min. On examination, the patient appears comfortable but develops dizziness when asked to sit up. There is no jugular venous distension. The abdomen is distended with dullness to percussion at both flanks. The liver is enlarged on palpation, and the tip of the spleen is also palpable. There is trace pedal edema. Laboratory studies show a hemoglobin of 9.7 g/dL, a mean corpuscular volume of 98 fL, leukocytes of 5,000/mm3, and platelets of 78,000/mm3. Histopathologic examination of this patient's spleen is most likely to show which of the following?",
+  "clues": [
+    {
+      "text": "bloody vomiting",
+      "type": "red",
+      "note": "Hematemesis in a chronic alcoholic suggests bleeding esophageal varices from portal hypertension. This anchors the whole vignette in cirrhosis/portal hypertension physiology."
+    },
+    {
+      "text": "alcohol abuse with multiple previous hospital admissions",
+      "type": "orange",
+      "note": "Chronic heavy alcohol use is the cause of cirrhosis here, which produces portal hypertension - the upstream driver of congestive splenomegaly."
+    },
+    {
+      "text": "dullness to percussion at both flanks",
+      "type": "blue",
+      "note": "Flank dullness/shifting dullness indicates ascites, a sign of portal hypertension and hypoalbuminemia in cirrhosis. It reinforces elevated portal pressure."
+    },
+    {
+      "text": "the tip of the spleen is also palpable",
+      "type": "green",
+      "note": "Splenomegaly here is CONGESTIVE: portal/splenic venous backpressure engorges the red pulp. Congestive hypersplenism explains the thrombocytopenia (platelet sequestration)."
+    },
+    {
+      "text": "platelets of 78,000/mm3",
+      "type": "blue",
+      "note": "Thrombocytopenia (platelets 78,000 / normal 150,000-400,000) from splenic sequestration is the functional consequence of congestive splenomegaly (hypersplenism)."
+    }
+  ],
+  "whatMatters": "Chronic alcoholic with variceal bleeding, ascites, hepatosplenomegaly, and thrombocytopenia = cirrhosis with portal hypertension and congestive splenomegaly. Portal/splenic venous congestion expands the blood-filled RED PULP - answer E.",
+  "strategy": "Match splenomegaly mechanism to histology: portal hypertension/congestion -> RED PULP (sinusoidal) expansion; infections/immune stimulation -> WHITE PULP/lymphoid follicle expansion; myelofibrosis -> extramedullary hematopoiesis; storage diseases -> histiocyte (macrophage) accumulation; malignancy -> metastatic/infiltrative deposits. Here the driver is portal hypertension.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Extramedullary hematopoiesis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Histiocytic proliferation",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Lymphoid follicle expansion",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Metastatic deposits",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Red pulp expansion",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "extramedullary hematopoiesis - myelofibrosis, not portal HTN",
+      "detail": "WHAT IT IS: hematopoietic precursors colonizing the spleen/liver when marrow fails. ❌ WHY IT FAILS: it occurs in myelofibrosis or severe chronic hemolysis, not congestive splenomegaly from cirrhosis; this patient's splenomegaly is venous-pressure driven. ✅ Correct if: the stem showed a leukoerythroblastic smear, teardrop cells, or marrow fibrosis."
+    },
+    {
+      "letter": "B",
+      "label": "histiocytic proliferation - storage/histiocytic disease",
+      "detail": "WHAT IT IS: macrophage (histiocyte) accumulation, as in Gaucher disease or Langerhans cell histiocytosis. ❌ WHY IT FAILS: no storage/lysosomal disease here; the cause is portal hypertension. ✅ Correct if: lipid-laden macrophages or a storage disorder were described."
+    },
+    {
+      "letter": "C",
+      "label": "lymphoid follicle (white pulp) expansion - immune stimulation",
+      "detail": "WHAT IT IS: white pulp/follicular hyperplasia from infection or immune activation (e.g., mononucleosis, SLE/Felty). ❌ WHY IT FAILS: this patient's splenomegaly is congestive (red pulp), not immune-driven; he is afebrile without infection. ✅ Correct if: systemic infection or autoimmune disease were the cause."
+    },
+    {
+      "letter": "D",
+      "label": "metastatic deposits - no malignancy",
+      "detail": "WHAT IT IS: tumor infiltration of the spleen. ❌ WHY IT FAILS: there is no history of malignancy; the picture is cirrhosis/portal hypertension. ✅ Correct if: a known primary cancer with splenic infiltration were given."
+    }
+  ],
+  "reasoning": [
+    "Alcoholic cirrhosis -> portal hypertension (variceal bleeding, ascites)",
+    "Portal/splenic venous backpressure congests the spleen",
+    "Congestion expands the blood-filled red pulp -> hypersplenism (thrombocytopenia)",
+    "Spleen histology shows red pulp expansion -> answer E"
+  ],
+  "mechanism": "Cirrhosis raises portal venous pressure; because the splenic vein drains into the portal system, this congestion transmits to the spleen and expands the red pulp - the cords and sinusoids filled with blood and lined by reticuloendothelial cells. The enlarged, congested spleen sequesters and destroys cells (hypersplenism), producing thrombocytopenia and sometimes mild anemia/leukopenia. This congestive (red pulp) pattern is distinct from white-pulp/follicular hyperplasia of infections, extramedullary hematopoiesis of myelofibrosis, histiocytic accumulation of storage diseases, and metastatic infiltration.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pathology > Spleen: red pulp (sinusoids, RBC filtering) vs white pulp (lymphoid follicles, PALS); congestive splenomegaly from portal hypertension expands red pulp -> hypersplenism (thrombocytopenia). Linked to cirrhosis/portal hypertension."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Identify the driver (portal hypertension) first, then translate to the splenic compartment it engorges (red pulp). The labs (low platelets) confirm hypersplenism."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on red vs white pulp, hypersplenism, portal hypertension, extramedullary hematopoiesis, congestive splenomegaly? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose A (extramedullary hematopoiesis). That's a myelofibrosis answer - here the spleen is big from venous CONGESTION (red pulp), not marrow takeover. Tie histology to portal hypertension."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Build a 'why is the spleen big' table (congestion/infection/storage/myeloproliferative/tumor) so the histology pattern follows from the cause."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Cirrhosis + portal HTN splenomegaly histology",
+      "back": "Red pulp expansion (congestive)"
+    },
+    {
+      "front": "Congestive splenomegaly consequence",
+      "back": "Hypersplenism -> thrombocytopenia (+/- anemia, leukopenia)"
+    },
+    {
+      "front": "White pulp expansion cause",
+      "back": "Infection/immune stimulation (follicular hyperplasia)"
+    },
+    {
+      "front": "Splenic extramedullary hematopoiesis points to",
+      "back": "Myelofibrosis (or severe chronic hemolysis)"
+    },
+    {
+      "front": "Splenic vein drains into",
+      "back": "Portal system (so portal HTN congests the spleen)"
+    },
+    {
+      "front": "Hematemesis + ascites + low platelets in alcoholic",
+      "back": "Cirrhosis with portal hypertension (variceal bleeding)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Congestive splenomegaly / red pulp",
+      "detail": "Pathology: portal hypertension, hypersplenism, splenic sinusoids.",
+      "location": "Pathology: portal hypertension, hypersplenism, splenic sinusoids."
+    },
+    {
+      "tag": "stem",
+      "topic": "Cirrhosis & portal hypertension",
+      "detail": "Hepatology: varices, ascites, splenomegaly, thrombocytopenia.",
+      "location": "Hepatology: varices, ascites, splenomegaly, thrombocytopenia."
+    },
+    {
+      "tag": "options",
+      "topic": "Splenomegaly differential by histology",
+      "detail": "Pathology: white pulp hyperplasia, extramedullary hematopoiesis, storage histiocytes, metastases.",
+      "location": "Pathology: white pulp hyperplasia, extramedullary hematopoiesis, storage histiocytes, metastases."
+    }
+  ],
+  "memoryHook": "Portal pressure backs up into the spleen -> RED pulp (blood) swells. Congestion = red; infection = white.",
+  "stem": [
+    {
+      "text": "A 54-year-old man comes to the emergency department after an episode of "
+    },
+    {
+      "text": "bloody vomiting",
+      "clue": true,
+      "type": "red",
+      "note": "Hematemesis in a chronic alcoholic suggests bleeding esophageal varices from portal hypertension. This anchors the whole vignette in cirrhosis/portal hypertension physiology."
+    },
+    {
+      "text": ". He has had no fever, chills, abdominal pain, diarrhea, or constipation. The patient has a history of "
+    },
+    {
+      "text": "alcohol abuse with multiple previous hospital admissions",
+      "clue": true,
+      "type": "orange",
+      "note": "Chronic heavy alcohol use is the cause of cirrhosis here, which produces portal hypertension - the upstream driver of congestive splenomegaly."
+    },
+    {
+      "text": " due to alcohol withdrawal and generalized tonic-clonic seizures. He also has a history of intravenous drug abuse and is currently enrolled in a methadone maintenance program. Blood pressure is 96/62 mm Hg and pulse is 102/min. On examination, the patient appears comfortable but develops dizziness when asked to sit up. There is no jugular venous distension. The abdomen is distended with "
+    },
+    {
+      "text": "dullness to percussion at both flanks",
+      "clue": true,
+      "type": "blue",
+      "note": "Flank dullness/shifting dullness indicates ascites, a sign of portal hypertension and hypoalbuminemia in cirrhosis. It reinforces elevated portal pressure."
+    },
+    {
+      "text": ". The liver is enlarged on palpation, and "
+    },
+    {
+      "text": "the tip of the spleen is also palpable",
+      "clue": true,
+      "type": "green",
+      "note": "Splenomegaly here is CONGESTIVE: portal/splenic venous backpressure engorges the red pulp. Congestive hypersplenism explains the thrombocytopenia (platelet sequestration)."
+    },
+    {
+      "text": ". There is trace pedal edema. Laboratory studies show a hemoglobin of 9.7 g/dL, a mean corpuscular volume of 98 fL, leukocytes of 5,000/mm3, and "
+    },
+    {
+      "text": "platelets of 78,000/mm3",
+      "clue": true,
+      "type": "blue",
+      "note": "Thrombocytopenia (platelets 78,000 / normal 150,000-400,000) from splenic sequestration is the functional consequence of congestive splenomegaly (hypersplenism)."
+    },
+    {
+      "text": ". Histopathologic examination of this patient's spleen is most likely to show which of the following?"
+    }
+  ]
+}

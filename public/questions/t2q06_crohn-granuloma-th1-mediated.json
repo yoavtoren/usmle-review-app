@@ -1,0 +1,220 @@
+{
+  "id": "q35",
+  "item": 35,
+  "qid": "406",
+  "title": "Crohn granuloma: Th1-mediated",
+  "system": "Immunology/GI",
+  "topic": "Granuloma / type IV hypersensitivity",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 59,
+  "vignette": "A 27-year-old woman undergoes laparotomy for right lower quadrant pain and is found to have an inflamed terminal ileum. The involved segment of the intestine is removed, and the lesion observed on light microscopy is a noncaseating granuloma. Which of the following cell types most likely mediated the formation of this patient's lesion?",
+  "clues": [
+    {
+      "text": "right lower quadrant pain",
+      "type": "blue",
+      "note": "RLQ pain with terminal-ileum disease points to Crohn disease (which favors the terminal ileum) over appendicitis once the chronic inflamed segment is found. Sets the location, not the mechanism."
+    },
+    {
+      "text": "an inflamed terminal ileum",
+      "type": "red",
+      "note": "Terminal-ileal transmural inflammation is classic for Crohn disease. Crohn is characterized by noncaseating granulomas, skip lesions, and transmural involvement."
+    },
+    {
+      "text": "granuloma",
+      "type": "green",
+      "note": "A granuloma is an organized collection of epithelioid macrophages and giant cells. Granuloma formation is a Th1-driven, type IV (delayed) hypersensitivity response: Th1 cells secrete IFN-gamma to activate macrophages."
+    }
+  ],
+  "whatMatters": "The whole question reduces to: what cell drives granuloma formation? Granulomas are built by Th1 (CD4+) cells that secrete IFN-gamma to activate macrophages into epithelioid/giant cells — a type IV hypersensitivity reaction. Crohn is just the clinical wrapper.",
+  "strategy": "When a question shows a granuloma and asks for the mediating cell, answer Th1 cells → IFN-gamma → macrophage activation. IL-12 from macrophages drives Th1 differentiation; TNF-alpha maintains the granuloma (why anti-TNF biologics treat Crohn and can reactivate TB).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "B-lymphocytes",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Eosinophils",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Neutrophils",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Natural killer cells",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Th1 cells",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "Th2 cells",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "B cells — antibodies, not granulomas",
+      "detail": "WHAT IT IS: B lymphocytes differentiate into plasma cells and make antibodies (humoral immunity). ❌ WHY IT FAILS: granuloma formation is cell-mediated (Th1/macrophage); antibodies don't build epithelioid granulomas. ✅ Correct if: the process were antibody-mediated (type II/III hypersensitivity) or a humoral response."
+    },
+    {
+      "letter": "B",
+      "label": "eosinophils — parasites/allergy, Th2",
+      "detail": "WHAT IT IS: eosinophils combat helminths and drive allergic inflammation, recruited by Th2 cytokines (IL-5). ❌ WHY IT FAILS: they aren't the cells that organize granulomas; that's a Th1 process. ✅ Correct if: the lesion were parasitic/allergic with eosinophil-rich infiltrate."
+    },
+    {
+      "letter": "C",
+      "label": "neutrophils — acute pus, not chronic granuloma",
+      "detail": "WHAT IT IS: neutrophils dominate acute inflammation and form abscesses/pus. ❌ WHY IT FAILS: a granuloma is CHRONIC, macrophage-based inflammation orchestrated by Th1 cells, not a neutrophilic process. ✅ Correct if: the finding were an acute neutrophilic abscess (e.g., pyogenic infection)."
+    },
+    {
+      "letter": "D",
+      "label": "NK cells — innate cytotoxicity, not granuloma orchestration",
+      "detail": "WHAT IT IS: NK cells kill virus-infected and tumor cells via innate cytotoxicity and secrete some IFN-gamma. ❌ WHY IT FAILS: they aren't the principal organizers of granulomas — antigen-specific Th1 CD4+ cells are. ✅ Correct if: the question asked which innate lymphocyte kills cells lacking MHC I."
+    },
+    {
+      "letter": "F",
+      "label": "Th2 cells — wrong helper subset",
+      "detail": "WHAT IT IS: Th2 cells drive humoral/allergic immunity (IL-4, IL-5, IL-13), supporting B cells and eosinophils. ❌ WHY IT FAILS: granuloma formation is the Th1 axis (IFN-gamma, IL-2, macrophage activation), the opposite arm; Th2 is the most tempting distractor because it's the other CD4+ subset. ✅ Correct if: the response were allergic/antiparasitic or class-switching to IgE."
+    }
+  ],
+  "reasoning": [
+    "Terminal-ileal noncaseating granuloma = Crohn disease",
+    "Granulomas are type IV (delayed) hypersensitivity",
+    "Th1 cells secrete IFN-gamma to activate macrophages → epithelioid/giant cells",
+    "Mediating cell = Th1 → answer E"
+  ],
+  "mechanism": "Macrophages present antigen and release IL-12, driving CD4+ T cells toward Th1. Th1 cells secrete IFN-gamma, which activates macrophages into epithelioid and multinucleated giant cells that wall off the stimulus as a granuloma; TNF-alpha maintains it. This is a type IV (delayed-type) hypersensitivity reaction — the same mechanism in TB, sarcoidosis, and Crohn disease (hence anti-TNF therapy works but risks TB reactivation).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Immunology > granulomatous inflammation and type IV hypersensitivity: Th1 → IFN-gamma → macrophage activation; IL-12 induces Th1; TNF-alpha maintains the granuloma. Cross-ref GI > Crohn (noncaseating granulomas, terminal ileum, transmural, skip lesions)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Strip the Crohn story — the question is pure immunology: 'what cell makes a granuloma?' Answer the granuloma mechanism (Th1/macrophage), then the GI context just confirms it."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on granuloma, epithelioid cell, Th1 vs Th2, IFN-gamma, type IV hypersensitivity, caseating vs noncaseating? Tell me which and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Th2 is the trap as the 'other' helper subset, and neutrophils tempt as 'inflammation.' Granulomas are chronic and macrophage-driven — the orchestrator is Th1 (IFN-gamma), not Th2 or neutrophils."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The image is the granuloma-pathogenesis schematic (T cell → Th1, IL-12/IFN-gamma → activated macrophage → giant cells). Use it to memorize the cytokine relay and recognize epithelioid histology."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Cell that mediates granuloma formation",
+      "back": "Th1 cells (→ IFN-gamma)"
+    },
+    {
+      "front": "Cytokine activating macrophages in granulomas",
+      "back": "IFN-gamma (from Th1)"
+    },
+    {
+      "front": "Cytokine that induces Th1 differentiation",
+      "back": "IL-12 (from macrophages)"
+    },
+    {
+      "front": "Cytokine maintaining granulomas",
+      "back": "TNF-alpha (anti-TNF risks TB reactivation)"
+    },
+    {
+      "front": "Hypersensitivity type of granulomas",
+      "back": "Type IV (delayed, cell-mediated)"
+    },
+    {
+      "front": "Noncaseating granuloma + terminal ileum",
+      "back": "Crohn disease"
+    },
+    {
+      "front": "Caseating granuloma",
+      "back": "Tuberculosis"
+    },
+    {
+      "front": "Macrophage-derived granuloma cell type",
+      "back": "Epithelioid cells / multinucleated giant cells"
+    },
+    {
+      "front": "Th2 cytokines",
+      "back": "IL-4, IL-5, IL-13 (humoral/allergic)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Granulomatous inflammation",
+      "detail": "Immunology > type IV hypersensitivity & granuloma formation: Th1/IFN-gamma macrophage activation, IL-12, TNF-alpha; causes (TB, fungi, sarcoid, Crohn, foreign body).",
+      "location": "Immunology > type IV hypersensitivity & granuloma formation: Th1/IFN-gamma macrophage activation, IL-12, TNF-alpha; causes (TB, fungi, sarcoid, Crohn, foreign body)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Crohn disease",
+      "detail": "GI > inflammatory bowel disease: Crohn (transmural, skip lesions, noncaseating granulomas, terminal ileum, cobblestoning) vs ulcerative colitis.",
+      "location": "GI > inflammatory bowel disease: Crohn (transmural, skip lesions, noncaseating granulomas, terminal ileum, cobblestoning) vs ulcerative colitis."
+    },
+    {
+      "tag": "options",
+      "topic": "Immune cell roles",
+      "detail": "Immunology > leukocytes: Th1 vs Th2, B cells/antibodies, neutrophils (acute), eosinophils (parasites/allergy), NK cells (innate cytotoxicity).",
+      "location": "Immunology > leukocytes: Th1 vs Th2, B cells/antibodies, neutrophils (acute), eosinophils (parasites/allergy), NK cells (innate cytotoxicity)."
+    }
+  ],
+  "memoryHook": "Granulomas need '1' helper: Th-ONE → IFN-gamma → angry macrophages; TNF holds it together.",
+  "stem": [
+    {
+      "text": "A 27-year-old woman undergoes laparotomy for "
+    },
+    {
+      "text": "right lower quadrant pain",
+      "clue": true,
+      "type": "blue",
+      "note": "RLQ pain with terminal-ileum disease points to Crohn disease (which favors the terminal ileum) over appendicitis once the chronic inflamed segment is found. Sets the location, not the mechanism."
+    },
+    {
+      "text": " and is found to have "
+    },
+    {
+      "text": "an inflamed terminal ileum",
+      "clue": true,
+      "type": "red",
+      "note": "Terminal-ileal transmural inflammation is classic for Crohn disease. Crohn is characterized by noncaseating granulomas, skip lesions, and transmural involvement."
+    },
+    {
+      "text": ". The involved segment of the intestine is removed, and the lesion observed on light microscopy is a noncaseating "
+    },
+    {
+      "text": "granuloma",
+      "clue": true,
+      "type": "green",
+      "note": "A granuloma is an organized collection of epithelioid macrophages and giant cells. Granuloma formation is a Th1-driven, type IV (delayed) hypersensitivity response: Th1 cells secrete IFN-gamma to activate macrophages."
+    },
+    {
+      "text": ". Which of the following cell types most likely mediated the formation of this patient's lesion?"
+    }
+  ]
+}

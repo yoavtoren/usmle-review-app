@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import {
   loadProgress, getCard, isDue, rate,
   processWizardComplete, saveQuestionIntake, getQIntakeMeta,
-  loadTasks, saveTasks, bumpTopicMiss, loadTopicCounters,
+  loadTasks, saveTasks, bumpTopicMiss, loadTopicCounters, resetQuestions,
 } from "../lib/storage.js";
 import IntakeWizard from "./IntakeWizard.jsx";
 
@@ -24,6 +24,23 @@ export default function TestReview({ onBack }) {
   const [wizardId, setWizardId]     = useState(null);
   const [wizardFull, setWizardFull] = useState(null); // full question JSON (firstAid + keywords)
   const [noteShown, setNoteShown]   = useState(false);
+  const [confirmReset, setConfirmReset] = useState(false);
+
+  // Question ids belonging to a given test block.
+  function blockIds(blk) {
+    if (!deck) return [];
+    return deck.questions
+      .filter(q =>
+        blk === "test1" ? q.block === undefined : q.block === `UWORLD test ${blk.slice(-1)}`)
+      .map(q => q.id);
+  }
+
+  function doResetBlock() {
+    const ids = block === "all" ? deck.questions.map(q => q.id) : blockIds(block);
+    resetQuestions(ids);
+    setProgress(loadProgress());
+    setConfirmReset(false);
+  }
 
   useEffect(() => { setNoteShown(false); }, [selectedId]);
 
@@ -194,6 +211,22 @@ export default function TestReview({ onBack }) {
             {[["all","All tests"],["test1","Test 1"],["test2","Test 2"],["test3","Test 3"],["test4","Test 4"]].map(([key, label]) => (
               <button key={key} className={block === key ? "chip active" : "chip"} onClick={() => setBlock(key)}>{label}</button>
             ))}
+          </div>
+
+          <div className="reset-test-row">
+            {!confirmReset ? (
+              <button className="reset-test-btn" onClick={() => setConfirmReset(true)}>
+                ↺ Reset {block === "all" ? "all tests" : `Test ${block.slice(-1)}`} for re-review
+              </button>
+            ) : (
+              <div className="reset-test-confirm">
+                <span>Clear progress, tags & linked tasks for {block === "all" ? "all tests" : `Test ${block.slice(-1)}`}?</span>
+                <div className="reset-test-actions">
+                  <button className="reset-test-cancel" onClick={() => setConfirmReset(false)}>Cancel</button>
+                  <button className="reset-test-go" onClick={doResetBlock}>Reset</button>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="filters">

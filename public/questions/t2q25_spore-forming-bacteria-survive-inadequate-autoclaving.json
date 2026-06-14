@@ -1,0 +1,193 @@
+{
+  "id": "q54",
+  "item": 54,
+  "qid": "1779",
+  "title": "Spore-forming bacteria survive inadequate autoclaving",
+  "system": "Microbiology",
+  "topic": "Sterilization / bacterial spores",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 64,
+  "vignette": "An epidemiologic study is conducted after a sudden increase in the rate of severe postoperative infections in a rural hospital. It is determined that all the patients who developed the infection were operated on with surgical instruments sterilized by a specific autoclave machine. The machine was found to be inadequately sterilizing the equipment due to a malfunction limiting the temperature to 100 C (212 F) during the 15 minute cycle. These patients most likely developed infection from which of the following bacteria?",
+  "clues": [
+    {
+      "text": "inadequately sterilizing",
+      "type": "blue",
+      "note": "Failed sterilization frames the question: something survived the process. The key is which organisms can withstand the residual conditions."
+    },
+    {
+      "text": "limiting the temperature to 100 C (212 F)",
+      "type": "red",
+      "note": "A proper autoclave reaches ~121-134 C under pressure; capping it at 100 C (boiling) is enough to kill vegetative cells but NOT bacterial spores. Spore-forming bacteria survive boiling."
+    },
+    {
+      "text": "15 minute cycle",
+      "type": "green",
+      "note": "Even 15 minutes at 100 C won't reliably destroy heat-resistant endospores. The surviving pathogens are therefore spore-formers (Bacillus and Clostridium)."
+    }
+  ],
+  "whatMatters": "An autoclave stuck at 100 C kills vegetative bacteria but NOT heat-resistant endospores. So the surviving pathogen is a spore-former — among the choices, Clostridium perfringens (Bacillus and Clostridium are the classic spore-forming genera). The others are non-spore-formers killed by boiling.",
+  "strategy": "For sterilization-failure questions, ask 'what survives heat/chemicals/irradiation?' → bacterial ENDOSPORES (Bacillus, Clostridium). If the only spore-former among the options is a Clostridium or Bacillus, that's the answer; everything else is a vegetative organism killed at 100 C.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Brucella melitensis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Clostridium perfringens",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Escherichia coli",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Listeria monocytogenes",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Streptococcus pyogenes",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Brucella — non-spore-former, killed by boiling",
+      "detail": "WHAT IT IS: Brucella is an intracellular gram-negative coccobacillus (unpasteurized dairy/animal contact, undulant fever). ❌ WHY IT FAILS: it forms no spores and is killed by 100 C, so it wouldn't survive the cycle. ✅ Correct if: the scenario were undulant fever from unpasteurized dairy/livestock exposure."
+    },
+    {
+      "letter": "C",
+      "label": "E. coli — non-spore-former",
+      "detail": "WHAT IT IS: E. coli is a gram-negative enteric rod. ❌ WHY IT FAILS: vegetative gram-negatives are readily killed at 100 C; no endospores to survive. ✅ Correct if: the question concerned a non-sterility cause of gram-negative wound infection."
+    },
+    {
+      "letter": "D",
+      "label": "Listeria — non-spore-former (cold-tolerant, not heat-spore)",
+      "detail": "WHAT IT IS: Listeria monocytogenes grows at refrigeration temperatures and is killed by cooking/boiling. ❌ WHY IT FAILS: cold tolerance is not spore formation; 100 C destroys it. ✅ Correct if: the scenario were foodborne listeriosis from refrigerated deli/dairy in a pregnant/immunocompromised host."
+    },
+    {
+      "letter": "E",
+      "label": "S. pyogenes — non-spore-former",
+      "detail": "WHAT IT IS: Streptococcus pyogenes (group A strep) is a gram-positive coccus. ❌ WHY IT FAILS: it forms no spores and is killed at 100 C; it can't survive the autoclave cycle. ✅ Correct if: the infection were a typical non-sterility surgical-site strep infection."
+    }
+  ],
+  "reasoning": [
+    "Autoclave capped at 100 C kills vegetative cells but not endospores",
+    "Only spore-forming bacteria survive boiling",
+    "Among the options, Clostridium perfringens is the spore-former (Bacillus/Clostridium)",
+    "→ answer B"
+  ],
+  "mechanism": "Bacterial endospores (formed by Bacillus and Clostridium) are dormant, dehydrated structures with a tough keratin-like coat and dipicolinic acid that confer extreme resistance to heat, desiccation, chemicals, and irradiation. A proper autoclave (121-134 C under pressure) destroys spores; a malfunction capping temperature at 100 C kills only vegetative cells, leaving spores viable to germinate and cause infection (e.g., gas gangrene from C. perfringens).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > bacterial structure/sterilization: endospores (Bacillus, Clostridium), dipicolinic acid, resistance to heat/chemicals/irradiation; autoclave conditions (121 C, 15 psi). Cross-ref C. perfringens (gas gangrene)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate 'survived 100 C' into 'must be a spore-former,' then scan the options for the Bacillus/Clostridium. Identify the survival property before the species."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on endospore, vegetative cell, autoclave, dipicolinic acid, spore-forming genera? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Listeria (cold tolerance) and Brucella (intracellular) feel 'hardy,' but neither forms spores. Only the Bacillus/Clostridium endospore survives boiling — pick the Clostridium."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "If you knew spores survive but blanked on which bug, memorize the two spore-forming genera: Bacillus and Clostridium."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Survives 100 C / inadequate autoclaving",
+      "back": "Spore-forming bacteria (Bacillus, Clostridium)"
+    },
+    {
+      "front": "Spore-forming genera",
+      "back": "Bacillus, Clostridium"
+    },
+    {
+      "front": "What makes spores heat-resistant",
+      "back": "Dipicolinic acid + keratin-like coat, dehydrated dormant core"
+    },
+    {
+      "front": "Proper autoclave conditions",
+      "back": "121 C, 15 psi, ~15-20 min (kills spores)"
+    },
+    {
+      "front": "C. perfringens disease",
+      "back": "Gas gangrene (myonecrosis), food poisoning"
+    },
+    {
+      "front": "Non-spore-formers killed by boiling",
+      "back": "E. coli, Strep, Brucella, Listeria"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Bacterial spores & sterilization",
+      "detail": "Micro > spores: Bacillus/Clostridium endospores, dipicolinic acid, resistance to heat/chemicals/radiation; autoclave (steam, 121 C) needed to kill spores.",
+      "location": "Micro > spores: Bacillus/Clostridium endospores, dipicolinic acid, resistance to heat/chemicals/radiation; autoclave (steam, 121 C) needed to kill spores."
+    },
+    {
+      "tag": "stem",
+      "topic": "Clostridium perfringens",
+      "detail": "Micro > Clostridia: C. perfringens (gas gangrene/myonecrosis, alpha-toxin lecithinase, food poisoning).",
+      "location": "Micro > Clostridia: C. perfringens (gas gangrene/myonecrosis, alpha-toxin lecithinase, food poisoning)."
+    },
+    {
+      "tag": "options",
+      "topic": "Listeria / Brucella / E. coli / S. pyogenes",
+      "detail": "Micro > these non-spore-formers' niches and why heat kills them — to contrast spore survival.",
+      "location": "Micro > these non-spore-formers' niches and why heat kills them — to contrast spore survival."
+    }
+  ],
+  "memoryHook": "Only the SPORES survive a half-baked autoclave — and only Bacillus & Clostridium make them (here, Clostridium perfringens).",
+  "stem": [
+    {
+      "text": "An epidemiologic study is conducted after a sudden increase in the rate of severe postoperative infections in a rural hospital. It is determined that all the patients who developed the infection were operated on with surgical instruments sterilized by a specific autoclave machine. The machine was found to be "
+    },
+    {
+      "text": "inadequately sterilizing",
+      "clue": true,
+      "type": "blue",
+      "note": "Failed sterilization frames the question: something survived the process. The key is which organisms can withstand the residual conditions."
+    },
+    {
+      "text": " the equipment due to a malfunction "
+    },
+    {
+      "text": "limiting the temperature to 100 C (212 F)",
+      "clue": true,
+      "type": "red",
+      "note": "A proper autoclave reaches ~121-134 C under pressure; capping it at 100 C (boiling) is enough to kill vegetative cells but NOT bacterial spores. Spore-forming bacteria survive boiling."
+    },
+    {
+      "text": " during the "
+    },
+    {
+      "text": "15 minute cycle",
+      "clue": true,
+      "type": "green",
+      "note": "Even 15 minutes at 100 C won't reliably destroy heat-resistant endospores. The surviving pathogens are therefore spore-formers (Bacillus and Clostridium)."
+    },
+    {
+      "text": ". These patients most likely developed infection from which of the following bacteria?"
+    }
+  ]
+}

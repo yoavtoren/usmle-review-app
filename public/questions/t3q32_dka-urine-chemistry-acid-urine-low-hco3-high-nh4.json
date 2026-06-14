@@ -1,0 +1,202 @@
+{
+  "id": "q102",
+  "item": 102,
+  "qid": "2008",
+  "title": "DKA urine chemistry: acid urine, low HCO3, high NH4+",
+  "system": "Renal",
+  "topic": "Acid-base / renal acid excretion",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 63,
+  "vignette": "A 23-year-old man with type 1 diabetes mellitus is brought to the emergency department due to confusion and weakness. Symptoms began 2 days ago with mild diarrhea. The patient has missed several doses of insulin because his appetite has been poor. On examination, his breath has a fruity odor. This patient is most likely to demonstrate which of the following urine chemistry patterns?",
+  "clues": [
+    {
+      "text": "type 1 diabetes mellitus",
+      "type": "orange",
+      "note": "Type 1 DM with insulin deficiency is the classic setup for diabetic ketoacidosis (DKA). Insulin lack drives lipolysis and hepatic ketogenesis, producing a high-anion-gap metabolic acidosis."
+    },
+    {
+      "text": "missed several doses of insulin",
+      "type": "red",
+      "note": "Insulin omission is a leading DKA precipitant. Without insulin, ketone (beta-hydroxybutyrate/acetoacetate) production surges → metabolic acidosis → the kidney must excrete the acid load."
+    },
+    {
+      "text": "fruity odor",
+      "type": "green",
+      "note": "A fruity breath is exhaled acetone — the hallmark of ketoacidosis. DKA = metabolic acidosis, so the kidney responds by acidifying the urine: low urine pH, minimal urinary HCO3 (it's reabsorbed), and HIGH urinary NH4+ (boosted ammoniagenesis to carry off H+)."
+    }
+  ],
+  "whatMatters": "Insulin-deficient type 1 DM with fruity breath = DKA, a metabolic acidosis. The kidney compensates by excreting acid: urine pH is LOW, urine bicarbonate is LOW (reabsorbed), and urine ammonium (NH4+) is HIGH (increased ammoniagenesis to excrete H+). Answer D (pH ↓, HCO3 ↓, NH4+ ↑).",
+  "strategy": "For metabolic acidosis, predict the renal response: reclaim bicarbonate (low urine HCO3), secrete H+ (low urine pH), and ramp up ammoniagenesis to buffer/excrete acid (high urine NH4+). The correct row is the one combining acidic urine, low HCO3, and high NH4+.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Urine pH ↑ | HCO3- ↑ | NH4+ ↑",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Urine pH ↑ | HCO3- ↓ | NH4+ ↑",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Urine pH ↓ | HCO3- ↓ | NH4+ ↓",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Urine pH ↓ | HCO3- ↓ | NH4+ ↑",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Urine pH ↑ | HCO3- ↑ | NH4+ ↑",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "alkaline urine + high HCO3 — that's metabolic ALKALOSIS",
+      "detail": "WHAT IT IS: raising urine pH and spilling bicarbonate is how the kidney offloads base in metabolic ALKALOSIS. ❌ WHY IT FAILS: DKA is an ACIDOSIS — the kidney should reabsorb HCO3 and acidify urine, the opposite. ✅ Correct if: the patient had a metabolic alkalosis (e.g., vomiting)."
+    },
+    {
+      "letter": "B",
+      "label": "alkaline urine with low HCO3 — internally inconsistent for DKA",
+      "detail": "WHAT IT IS: a high urine pH would mean poor H+ secretion. ❌ WHY IT FAILS: in DKA the kidney secretes H+ avidly, so urine pH should be LOW, not high. ✅ Correct if: there were a distal (type 1) RTA where the kidney CAN'T acidify urine despite acidosis (inappropriately high urine pH)."
+    },
+    {
+      "letter": "C",
+      "label": "acid urine but LOW NH4+ — fails to ramp ammoniagenesis",
+      "detail": "WHAT IT IS: low urinary ammonium indicates impaired ammonia production/excretion. ❌ WHY IT FAILS: a normal kidney in DKA dramatically INCREASES NH4+ excretion to carry off acid; low NH4+ would suggest renal acid-handling failure, not a normal DKA response. ✅ Correct if: there were renal failure or a distal RTA with impaired ammoniagenesis."
+    },
+    {
+      "letter": "E",
+      "label": "alkaline urine + high HCO3 — alkalosis pattern again",
+      "detail": "WHAT IT IS: same as A — base excretion. ❌ WHY IT FAILS: contradicts the acidotic state of DKA; the kidney should conserve bicarbonate and acidify urine. ✅ Correct if: the disorder were metabolic alkalosis."
+    }
+  ],
+  "reasoning": [
+    "Insulin-deficient type 1 DM + fruity breath = DKA (high-anion-gap metabolic acidosis)",
+    "Kidney compensates by excreting the acid load",
+    "Reabsorb HCO3 (low urine HCO3), secrete H+ (low urine pH), increase ammoniagenesis (high urine NH4+)",
+    "Pattern: pH ↓, HCO3 ↓, NH4+ ↑ → answer D"
+  ],
+  "mechanism": "In DKA, insulin deficiency drives ketoacid (β-hydroxybutyrate, acetoacetate) overproduction, causing a high-anion-gap metabolic acidosis. The kidney responds by maximizing acid excretion: proximal tubule reabsorbs filtered bicarbonate (so little appears in urine) and ramps up AMMONIAGENESIS from glutamine, secreting NH3 that traps secreted H+ as NH4+ for excretion; distal H+ secretion acidifies the urine (low pH). Net result: low urine pH, low urine HCO3, high urine NH4+.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Renal > Renal acid excretion & DKA: proximal HCO3 reabsorption, distal H+ secretion (titratable acid), ammoniagenesis (NH3/NH4+) as the major adjustable buffer; DKA pathophysiology and compensation. Cross-link RTAs (where this response fails)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Predict the kidney's job in acidosis: keep base (low urine HCO3), dump acid (low urine pH), make more buffer (high urine NH4+). Choose the row that matches all three."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on ammoniagenesis, ammonium (NH4+), titratable acid, urine pH, bicarbonate reabsorption, DKA? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The alkalosis rows (A, E) and the 'low NH4+' row (C) are traps. In DKA the kidney works HARDER to excrete acid → high NH4+, low pH, low HCO3."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The renal acid-excretion diagram shows HCO3 reabsorption (carbonic anhydrase) and glutamine → NH4+/new HCO3 generation, plus titratable acid (HPO4). Practice reading how the tubule increases NH4+ excretion during acidosis."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (D). Anchor: metabolic acidosis → urine becomes acidic (↓pH), HCO3 is reclaimed (↓urine HCO3), and ammonium excretion rises (↑NH4+)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Urine in metabolic acidosis (DKA)",
+      "back": "↓ pH, ↓ HCO3, ↑ NH4+"
+    },
+    {
+      "front": "Main adjustable urinary buffer for acid",
+      "back": "Ammonium (NH4+) via ammoniagenesis from glutamine"
+    },
+    {
+      "front": "DKA acid-base disorder",
+      "back": "High-anion-gap metabolic acidosis (ketoacids)"
+    },
+    {
+      "front": "Fruity breath",
+      "back": "Exhaled acetone (ketoacidosis)"
+    },
+    {
+      "front": "Distal (type 1) RTA urine",
+      "back": "Inappropriately HIGH urine pH despite acidosis (can't acidify)"
+    },
+    {
+      "front": "Titratable acid buffer",
+      "back": "Phosphate (HPO4 2-)"
+    },
+    {
+      "front": "Common DKA precipitants",
+      "back": "Insulin omission, infection, new-onset T1DM"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Renal acid excretion",
+      "detail": "Renal: HCO3 reabsorption, H+ secretion, ammoniagenesis (NH4+) and titratable acid; response to metabolic acidosis.",
+      "location": "Renal: HCO3 reabsorption, H+ secretion, ammoniagenesis (NH4+) and titratable acid; response to metabolic acidosis."
+    },
+    {
+      "tag": "stem",
+      "topic": "Diabetic ketoacidosis",
+      "detail": "Endo: insulin deficiency → ketogenesis, anion-gap acidosis, precipitants, fruity breath, treatment (insulin, fluids, K+).",
+      "location": "Endo: insulin deficiency → ketogenesis, anion-gap acidosis, precipitants, fruity breath, treatment (insulin, fluids, K+)."
+    },
+    {
+      "tag": "options",
+      "topic": "Renal tubular acidosis / acid-base",
+      "detail": "Renal: distal vs proximal RTA urine pH, metabolic alkalosis renal handling for contrast.",
+      "location": "Renal: distal vs proximal RTA urine pH, metabolic alkalosis renal handling for contrast."
+    }
+  ],
+  "memoryHook": "Acid in the blood (DKA) → kidney makes acid urine: pH DOWN, HCO3 DOWN (kept), NH4+ UP (buffer cranked). That's row D.",
+  "stem": [
+    {
+      "text": "A 23-year-old man with "
+    },
+    {
+      "text": "type 1 diabetes mellitus",
+      "clue": true,
+      "type": "orange",
+      "note": "Type 1 DM with insulin deficiency is the classic setup for diabetic ketoacidosis (DKA). Insulin lack drives lipolysis and hepatic ketogenesis, producing a high-anion-gap metabolic acidosis."
+    },
+    {
+      "text": " is brought to the emergency department due to confusion and weakness. Symptoms began 2 days ago with mild diarrhea. The patient has "
+    },
+    {
+      "text": "missed several doses of insulin",
+      "clue": true,
+      "type": "red",
+      "note": "Insulin omission is a leading DKA precipitant. Without insulin, ketone (beta-hydroxybutyrate/acetoacetate) production surges → metabolic acidosis → the kidney must excrete the acid load."
+    },
+    {
+      "text": " because his appetite has been poor. On examination, his breath has a "
+    },
+    {
+      "text": "fruity odor",
+      "clue": true,
+      "type": "green",
+      "note": "A fruity breath is exhaled acetone — the hallmark of ketoacidosis. DKA = metabolic acidosis, so the kidney responds by acidifying the urine: low urine pH, minimal urinary HCO3 (it's reabsorbed), and HIGH urinary NH4+ (boosted ammoniagenesis to carry off H+)."
+    },
+    {
+      "text": ". This patient is most likely to demonstrate which of the following urine chemistry patterns?"
+    }
+  ]
+}

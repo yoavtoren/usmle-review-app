@@ -1,0 +1,220 @@
+{
+  "id": "q34",
+  "item": 34,
+  "qid": "1247",
+  "title": "Scurvy: collagen hydroxylation in the RER",
+  "system": "Biochemistry",
+  "topic": "Vitamin C / collagen synthesis",
+  "correct": "F",
+  "yourAnswer": "F",
+  "percentCorrect": 50,
+  "vignette": "A 78-year-old woman comes to the office due to tenderness and easy bleeding of the gums when she brushes her teeth. The patient has brushed her teeth twice a day for as long as she can remember and has not experienced these symptoms before. Physical examination shows swollen gingiva that bleed on probing. Her skin findings include perifollicular hemorrhages and coiled (corkscrew) hairs. Further questioning reveals that the patient lives alone and that her diet consists primarily of tea and toast. Her symptoms are most likely caused by hypoactivity of an enzyme found in which of the following compartments?",
+  "clues": [
+    {
+      "text": "bleeding of the gums",
+      "type": "red",
+      "note": "Gingival swelling and bleeding is a classic sign of vitamin C deficiency (scurvy). Defective collagen weakens vessel walls and gum support, so capillaries bleed easily."
+    },
+    {
+      "text": "perifollicular hemorrhages and coiled (corkscrew) hairs",
+      "type": "green",
+      "note": "Perifollicular hemorrhages and corkscrew hairs are highly specific skin findings of scurvy. They reflect impaired collagen around hair follicles and fragile capillaries."
+    },
+    {
+      "text": "tea and toast",
+      "type": "orange",
+      "note": "A 'tea and toast' diet in an isolated elderly person is the classic setup for vitamin C (and other) deficiency — essentially no fresh fruit or vegetables. This is the dietary risk-factor clue."
+    }
+  ],
+  "whatMatters": "Bleeding gums + perifollicular hemorrhages/corkscrew hairs + a tea-and-toast diet = scurvy. Vitamin C is the cofactor for prolyl and lysyl hydroxylase, which hydroxylate procollagen INSIDE the rough endoplasmic reticulum — so the deficient enzyme lives in the RER.",
+  "strategy": "For 'which compartment' questions, identify the deficient enzyme, then recall exactly where in the cell it acts. Collagen synthesis is a stepwise relay: translation → RER (hydroxylation, needs vitamin C; glycosylation) → Golgi → exocytosis → extracellular cleavage/cross-linking. The vitamin C step (hydroxylation) is intracellular, in the RER.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Extracellular space",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Golgi apparatus",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Lysosomes",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Mitochondria",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Nucleus",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Rough endoplasmic reticulum",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "extracellular space — later collagen steps, not hydroxylation",
+      "detail": "WHAT IT IS: in the extracellular space, procollagen is cleaved to tropocollagen and cross-linked by lysyl OXIDASE (a copper-dependent enzyme). ❌ WHY IT FAILS: that's a DIFFERENT, later step; vitamin C–dependent prolyl/lysyl HYDROXYLATION happens earlier, inside the RER. ✅ Correct if: the defect were lysyl oxidase / copper (e.g., Menkes) affecting cross-linking outside the cell."
+    },
+    {
+      "letter": "B",
+      "label": "Golgi — trafficking, not hydroxylation",
+      "detail": "WHAT IT IS: the Golgi modifies and packages procollagen (further glycosylation, sorting) for secretion. ❌ WHY IT FAILS: hydroxylation (the vitamin C step) is complete before the Golgi; the Golgi is downstream. ✅ Correct if: asked where O-linked glycosylation/sorting and vesicle packaging of secreted proteins occur."
+    },
+    {
+      "letter": "C",
+      "label": "lysosomes — degradation, unrelated",
+      "detail": "WHAT IT IS: lysosomes contain acid hydrolases for intracellular degradation. ❌ WHY IT FAILS: they have no role in collagen hydroxylation/synthesis; their deficiencies cause storage diseases, not scurvy. ✅ Correct if: the disease were a lysosomal storage disorder (e.g., Tay-Sachs, Gaucher)."
+    },
+    {
+      "letter": "D",
+      "label": "mitochondria — energy, not collagen",
+      "detail": "WHAT IT IS: mitochondria run oxidative phosphorylation/the TCA cycle. ❌ WHY IT FAILS: collagen hydroxylase is an ER-lumen enzyme; mitochondria are uninvolved in collagen synthesis. ✅ Correct if: the defect were an electron-transport/fatty-acid-oxidation enzyme."
+    },
+    {
+      "letter": "E",
+      "label": "nucleus — transcription, too early",
+      "detail": "WHAT IT IS: the nucleus is where collagen genes are transcribed into mRNA. ❌ WHY IT FAILS: transcription precedes translation and the RER hydroxylation step; the deficient enzyme (prolyl/lysyl hydroxylase) acts post-translationally in the RER, not in the nucleus. ✅ Correct if: asked where collagen mRNA is synthesized."
+    }
+  ],
+  "reasoning": [
+    "Bleeding gums + corkscrew hairs + tea-and-toast diet = scurvy (vitamin C deficiency)",
+    "Vitamin C is the cofactor for prolyl and lysyl hydroxylase",
+    "These enzymes hydroxylate procollagen in the RER lumen",
+    "Deficient enzyme's compartment = rough endoplasmic reticulum → answer F"
+  ],
+  "mechanism": "Collagen alpha-chains are translated on RER-bound ribosomes and threaded into the RER lumen, where prolyl and lysyl hydroxylase — using vitamin C (ascorbate) as a cofactor — hydroxylate proline and lysine residues. Hydroxylation stabilizes the triple helix and enables later cross-linking; without vitamin C the helix is unstable and collagen secretion fails, weakening vessels, gums, and skin. (Later cross-linking by extracellular lysyl oxidase is a separate, copper-dependent step.)",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochem > collagen synthesis steps (with the cell-compartment diagram) and the vitamin C section. Anchor: vitamin C → prolyl/lysyl HYDROXYLASE in the RER; copper → lysyl OXIDASE (cross-linking) extracellularly."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Walk the collagen assembly line in order and tag each step's location; the question wants the compartment of the vitamin C step. Hydroxylation is intracellular (RER), cross-linking is extracellular."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on hydroxylation vs cross-linking, prolyl/lysyl hydroxylase vs lysyl oxidase, procollagen vs tropocollagen, RER? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "'Extracellular space' tempts because cross-linking happens there — but that's lysyl oxidase/copper, not the vitamin C step. Match the vitamin C–dependent enzyme to its compartment (RER), not collagen's general extracellular life."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference image is the defective-collagen-synthesis table (Ehlers-Danlos, osteogenesis imperfecta, scurvy). Use it to map each disorder to its specific step/protein."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Bleeding gums + corkscrew hairs + tea-and-toast",
+      "back": "Scurvy (vitamin C deficiency)"
+    },
+    {
+      "front": "Vitamin C cofactor for which enzymes",
+      "back": "Prolyl & lysyl hydroxylase"
+    },
+    {
+      "front": "Compartment of collagen hydroxylation",
+      "back": "Rough endoplasmic reticulum"
+    },
+    {
+      "front": "Collagen cross-linking enzyme (extracellular)",
+      "back": "Lysyl oxidase (copper-dependent)"
+    },
+    {
+      "front": "Other vitamin C role",
+      "back": "Reduces iron (Fe3+→Fe2+) to aid absorption; antioxidant; dopamine→NE"
+    },
+    {
+      "front": "Defect in lysyl oxidase / copper",
+      "back": "Menkes disease; impaired cross-linking"
+    },
+    {
+      "front": "Type I collagen defect",
+      "back": "Osteogenesis imperfecta"
+    },
+    {
+      "front": "Type V / type III collagen defect",
+      "back": "Ehlers-Danlos syndrome"
+    },
+    {
+      "front": "Procollagen → tropocollagen cleavage location",
+      "back": "Extracellular space"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Collagen synthesis",
+      "detail": "Biochemistry > collagen: stepwise synthesis with compartments (translation → RER hydroxylation/glycosylation → Golgi → exocytosis → extracellular cleavage and lysyl-oxidase cross-linking).",
+      "location": "Biochemistry > collagen: stepwise synthesis with compartments (translation → RER hydroxylation/glycosylation → Golgi → exocytosis → extracellular cleavage and lysyl-oxidase cross-linking)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Vitamin C (scurvy)",
+      "detail": "Biochem/Nutrition > vitamin C: cofactor for prolyl/lysyl hydroxylase; deficiency = scurvy (bleeding gums, corkscrew hairs, perifollicular hemorrhage, poor wound healing).",
+      "location": "Biochem/Nutrition > vitamin C: cofactor for prolyl/lysyl hydroxylase; deficiency = scurvy (bleeding gums, corkscrew hairs, perifollicular hemorrhage, poor wound healing)."
+    },
+    {
+      "tag": "options",
+      "topic": "Organelles & collagen disorders",
+      "detail": "Cell biology > organelle functions; Biochem > collagen diseases (Ehlers-Danlos, osteogenesis imperfecta, Menkes/lysyl oxidase) to contrast the defective step/site.",
+      "location": "Cell biology > organelle functions; Biochem > collagen diseases (Ehlers-Danlos, osteogenesis imperfecta, Menkes/lysyl oxidase) to contrast the defective step/site."
+    }
+  ],
+  "memoryHook": "Vitamin C Cross-stitches collagen inside the RER (hydroxylation); copper does the OUTside cross-links (lysyl Oxidase).",
+  "stem": [
+    {
+      "text": "A 78-year-old woman comes to the office due to tenderness and easy "
+    },
+    {
+      "text": "bleeding of the gums",
+      "clue": true,
+      "type": "red",
+      "note": "Gingival swelling and bleeding is a classic sign of vitamin C deficiency (scurvy). Defective collagen weakens vessel walls and gum support, so capillaries bleed easily."
+    },
+    {
+      "text": " when she brushes her teeth. The patient has brushed her teeth twice a day for as long as she can remember and has not experienced these symptoms before. Physical examination shows swollen gingiva that bleed on probing. Her skin findings include "
+    },
+    {
+      "text": "perifollicular hemorrhages and coiled (corkscrew) hairs",
+      "clue": true,
+      "type": "green",
+      "note": "Perifollicular hemorrhages and corkscrew hairs are highly specific skin findings of scurvy. They reflect impaired collagen around hair follicles and fragile capillaries."
+    },
+    {
+      "text": ". Further questioning reveals that the patient lives alone and that her diet consists primarily of "
+    },
+    {
+      "text": "tea and toast",
+      "clue": true,
+      "type": "orange",
+      "note": "A 'tea and toast' diet in an isolated elderly person is the classic setup for vitamin C (and other) deficiency — essentially no fresh fruit or vegetables. This is the dietary risk-factor clue."
+    },
+    {
+      "text": ". Her symptoms are most likely caused by hypoactivity of an enzyme found in which of the following compartments?"
+    }
+  ]
+}

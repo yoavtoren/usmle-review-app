@@ -1,0 +1,236 @@
+{
+  "id": "q103",
+  "item": 103,
+  "qid": "14891",
+  "title": "HSV esophagitis: treat with acyclovir",
+  "system": "Microbiology",
+  "topic": "Esophagitis in immunocompromise",
+  "correct": "A",
+  "yourAnswer": "G",
+  "percentCorrect": 68,
+  "vignette": "A 58-year-old woman comes to the office due to a week of pain with swallowing. Her symptoms have progressively worsened, and now she cannot eat comfortably. The patient has a history of hypertension, osteoporosis, and primary biliary cholangitis progressing to cirrhosis. She underwent a liver transplant 2 years ago and is on immunosuppressive therapy. She does not use tobacco, alcohol, or illicit drugs. Vital signs are within normal limits. The oropharynx is normal in appearance. Cardiopulmonary examination is unremarkable. The patient has epigastric tenderness with no abdominal distension or guarding. Upper endoscopy shows several small esophageal ulcerations with distinct borders located in the middle and lower portions of the esophagus. A biopsy taken at the edge of an ulcer shows giant cells and intranuclear eosinophilic inclusions. Which of the following is the most appropriate treatment for this patient?",
+  "clues": [
+    {
+      "text": "pain with swallowing",
+      "type": "blue",
+      "note": "Odynophagia (painful swallowing) is typical of infectious/ulcerative esophagitis. Combined with discrete ulcers on endoscopy, this points to a viral or candidal cause rather than simple reflux."
+    },
+    {
+      "text": "liver transplant 2 years ago and is on immunosuppressive therapy",
+      "type": "orange",
+      "note": "Chronic immunosuppression predisposes to infectious esophagitis (Candida, CMV, HSV). The host context narrows the differential to opportunistic infections and frames a biopsy-based diagnosis."
+    },
+    {
+      "text": "small esophageal ulcerations with distinct borders",
+      "type": "blue",
+      "note": "Small, sharply demarcated 'punched-out' ulcers are characteristic of HSV esophagitis (vs the large, linear ulcers of CMV and the white pseudomembranes of Candida). The morphology supports HSV."
+    },
+    {
+      "text": "giant cells and intranuclear eosinophilic inclusions",
+      "type": "green",
+      "note": "Multinucleated giant cells with eosinophilic intranuclear (Cowdry type A) inclusions are diagnostic of HSV. Sampling the ULCER EDGE (where squamous cells are infected) maximizes yield. HSV esophagitis is treated with acyclovir."
+    }
+  ],
+  "whatMatters": "An immunosuppressed transplant patient with odynophagia, small punched-out esophageal ulcers, and biopsy showing multinucleated giant cells with Cowdry A intranuclear inclusions = HSV esophagitis. The treatment is acyclovir — answer A.",
+  "strategy": "Match esophagitis by biopsy fingerprint, then treat: HSV = punched-out ulcers + multinucleated giant cells + Cowdry A inclusions → ACYCLOVIR; CMV = large linear ulcers + intranuclear AND cytoplasmic inclusions ('owl eye') → ganciclovir; Candida = white plaques + pseudohyphae → fluconazole. The histology dictates the drug.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acyclovir",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Alendronate",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Azithromycin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Fluconazole",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Misoprostol",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Omeprazole",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Tenofovir",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "alendronate — a CAUSE of esophagitis, not a treatment",
+      "detail": "WHAT IT IS: alendronate is a bisphosphonate for osteoporosis that can cause pill-induced (erosive) esophagitis. ❌ WHY IT FAILS: it would worsen, not treat, esophageal ulcers, and doesn't address an HSV infection. ✅ Correct if: the question asked which of her medications could CAUSE esophagitis."
+    },
+    {
+      "letter": "C",
+      "label": "azithromycin — wrong pathogen class",
+      "detail": "WHAT IT IS: azithromycin is a macrolide antibiotic for atypical bacteria. ❌ WHY IT FAILS: HSV is a virus; antibacterials don't treat it. ✅ Correct if: the infection were a susceptible bacterial process (it isn't here)."
+    },
+    {
+      "letter": "D",
+      "label": "fluconazole — that's for Candida esophagitis",
+      "detail": "WHAT IT IS: fluconazole treats candidal esophagitis (white plaques, pseudohyphae) — the MOST common infectious esophagitis in immunocompromise. ❌ WHY IT FAILS: the biopsy shows viral cytopathic changes (giant cells, Cowdry A inclusions), not yeast; this is HSV. ✅ Correct if: endoscopy showed white pseudomembranes and biopsy showed budding yeast/pseudohyphae."
+    },
+    {
+      "letter": "E",
+      "label": "misoprostol — PGE1 analog, not antiviral",
+      "detail": "WHAT IT IS: misoprostol prevents NSAID-induced ulcers. ❌ WHY IT FAILS: it doesn't treat viral esophagitis. ✅ Correct if: the issue were NSAID gastropathy prevention."
+    },
+    {
+      "letter": "F",
+      "label": "omeprazole — for reflux/GERD esophagitis, not infection",
+      "detail": "WHAT IT IS: a PPI treats acid (reflux) esophagitis. ❌ WHY IT FAILS: this is infectious (HSV) esophagitis with diagnostic viral inclusions; acid suppression won't clear the virus. ✅ Correct if: the cause were erosive reflux esophagitis."
+    },
+    {
+      "letter": "G",
+      "label": "tenofovir — antiviral but for HBV/HIV, not HSV (your pick)",
+      "detail": "WHAT IT IS: tenofovir is a nucleotide reverse-transcriptase inhibitor for hepatitis B and HIV. ❌ WHY IT FAILS: it doesn't treat herpes simplex; HSV requires acyclovir (a guanosine analog activated by viral thymidine kinase). Both are 'antivirals,' but the target virus differs. ✅ Correct if: the infection were HBV or HIV."
+    }
+  ],
+  "reasoning": [
+    "Immunosuppressed transplant patient with odynophagia + esophageal ulcers",
+    "Small punched-out ulcers; biopsy of the ulcer EDGE shows giant cells + Cowdry A inclusions",
+    "These are diagnostic of HSV esophagitis",
+    "HSV is treated with acyclovir → answer A"
+  ],
+  "mechanism": "Impaired cell-mediated immunity (transplant, chemotherapy, AIDS) predisposes to infectious esophagitis. HSV esophagitis causes painful, small 'punched-out' ulcers; biopsy from the ulcer EDGE (infected squamous epithelium) shows multinucleated giant cells with eosinophilic intranuclear (Cowdry type A) inclusions. Acyclovir, a guanosine analog phosphorylated by viral thymidine kinase and then host kinases, inhibits viral DNA polymerase and is the treatment. (CMV → ganciclovir; Candida → fluconazole.)",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro/GI > Infectious esophagitis: HSV (punched-out ulcers, multinucleated giant cells, Cowdry A, biopsy ulcer EDGE → acyclovir) vs CMV (linear ulcers, 'owl-eye' intranuclear + cytoplasmic inclusions, biopsy base → ganciclovir) vs Candida (white plaques, pseudohyphae → fluconazole)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: histology → HSV; then the matching antiviral → acyclovir. The transplant/immunosuppression sets the stage; the inclusions name the bug."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on odynophagia, Cowdry type A inclusion, multinucleated giant cell, punched-out ulcer, acyclovir? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Tenofovir (G, your pick) is an antiviral — but for HBV/HIV, not HSV. The herpesvirus drug is acyclovir. Match the antiviral to the specific virus, not just 'antiviral.'"
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The esophagitis table contrasts endoscopic and microscopic findings: HSV (small ulcers, giant cells, Cowdry A), CMV (linear ulcers, owl-eye inclusions), Candida (plaques, pseudohyphae). Practice these triads."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as G → flashcard the trio: HSV→acyclovir (Cowdry A, edge biopsy); CMV→ganciclovir (owl-eye, base biopsy); Candida→fluconazole (pseudohyphae)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Punched-out esophageal ulcers + multinucleated giant cells + Cowdry A",
+      "back": "HSV esophagitis → acyclovir"
+    },
+    {
+      "front": "Large linear ulcers + intranuclear & cytoplasmic 'owl-eye' inclusions",
+      "back": "CMV esophagitis → ganciclovir"
+    },
+    {
+      "front": "White plaques + pseudohyphae",
+      "back": "Candida esophagitis → fluconazole"
+    },
+    {
+      "front": "Where to biopsy HSV vs CMV ulcer",
+      "back": "HSV = ulcer EDGE (squamous); CMV = ulcer BASE (endothelium/stroma)"
+    },
+    {
+      "front": "Acyclovir mechanism",
+      "back": "Guanosine analog; viral thymidine kinase activates → inhibits viral DNA polymerase"
+    },
+    {
+      "front": "Alendronate + esophagitis",
+      "back": "Pill-induced (erosive) esophagitis — a cause, not a treatment"
+    },
+    {
+      "front": "Most common infectious esophagitis in immunocompromise",
+      "back": "Candida"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "HSV esophagitis & acyclovir",
+      "detail": "Micro/GI: HSV cytopathic changes (Cowdry A, giant cells), punched-out ulcers, acyclovir; viral thymidine kinase activation.",
+      "location": "Micro/GI: HSV cytopathic changes (Cowdry A, giant cells), punched-out ulcers, acyclovir; viral thymidine kinase activation."
+    },
+    {
+      "tag": "options",
+      "topic": "Infectious esophagitis differential",
+      "detail": "GI: CMV (ganciclovir), Candida (fluconazole); reflux (PPI), pill esophagitis (bisphosphonates).",
+      "location": "GI: CMV (ganciclovir), Candida (fluconazole); reflux (PPI), pill esophagitis (bisphosphonates)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Immunocompromised host infections",
+      "detail": "Micro: impaired cell-mediated immunity (transplant/AIDS) → opportunistic esophagitis and other infections.",
+      "location": "Micro: impaired cell-mediated immunity (transplant/AIDS) → opportunistic esophagitis and other infections."
+    }
+  ],
+  "memoryHook": "Punched-out ulcers + Cowdry A giant cells = HSV → ACYCLOVIR. (Owl-eye = CMV/ganciclovir; plaques = Candida/fluconazole.)",
+  "stem": [
+    {
+      "text": "A 58-year-old woman comes to the office due to a week of "
+    },
+    {
+      "text": "pain with swallowing",
+      "clue": true,
+      "type": "blue",
+      "note": "Odynophagia (painful swallowing) is typical of infectious/ulcerative esophagitis. Combined with discrete ulcers on endoscopy, this points to a viral or candidal cause rather than simple reflux."
+    },
+    {
+      "text": ". Her symptoms have progressively worsened, and now she cannot eat comfortably. The patient has a history of hypertension, osteoporosis, and primary biliary cholangitis progressing to cirrhosis. She underwent a "
+    },
+    {
+      "text": "liver transplant 2 years ago and is on immunosuppressive therapy",
+      "clue": true,
+      "type": "orange",
+      "note": "Chronic immunosuppression predisposes to infectious esophagitis (Candida, CMV, HSV). The host context narrows the differential to opportunistic infections and frames a biopsy-based diagnosis."
+    },
+    {
+      "text": ". She does not use tobacco, alcohol, or illicit drugs. Vital signs are within normal limits. The oropharynx is normal in appearance. Cardiopulmonary examination is unremarkable. The patient has epigastric tenderness with no abdominal distension or guarding. Upper endoscopy shows several "
+    },
+    {
+      "text": "small esophageal ulcerations with distinct borders",
+      "clue": true,
+      "type": "blue",
+      "note": "Small, sharply demarcated 'punched-out' ulcers are characteristic of HSV esophagitis (vs the large, linear ulcers of CMV and the white pseudomembranes of Candida). The morphology supports HSV."
+    },
+    {
+      "text": " located in the middle and lower portions of the esophagus. A biopsy taken at the edge of an ulcer shows "
+    },
+    {
+      "text": "giant cells and intranuclear eosinophilic inclusions",
+      "clue": true,
+      "type": "green",
+      "note": "Multinucleated giant cells with eosinophilic intranuclear (Cowdry type A) inclusions are diagnostic of HSV. Sampling the ULCER EDGE (where squamous cells are infected) maximizes yield. HSV esophagitis is treated with acyclovir."
+    },
+    {
+      "text": ". Which of the following is the most appropriate treatment for this patient?"
+    }
+  ]
+}

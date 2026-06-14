@@ -1,0 +1,216 @@
+{
+  "id": "q94",
+  "item": 94,
+  "qid": "12046",
+  "title": "Subclavian steal syndrome: proximal subclavian occlusion",
+  "system": "Cardiovascular",
+  "topic": "Vascular / collateral flow",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 43,
+  "vignette": "A 64-year-old man with type 2 diabetes mellitus is evaluated in the clinic due to occasional dizziness. His symptoms usually occur while playing table tennis. The patient has not had any falls or loss of consciousness. He has no known history of coronary artery disease or stroke. The patient has smoked a pack of cigarettes daily for the past 40 years and occasionally drinks alcohol. Orthostatic vital signs are normal. ECG shows normal sinus rhythm. Doppler ultrasound evaluation of the left vertebral artery reveals retrograde (caudal) flow instead of normal antegrade flow. Which of the following arteries is most likely to be occluded based on these ultrasound findings?",
+  "clues": [
+    {
+      "text": "dizziness",
+      "type": "blue",
+      "note": "Dizziness/vertebrobasilar symptoms triggered by arm use point to subclavian steal: blood is 'stolen' from the posterior brain circulation to supply the arm. Posterior-circulation symptoms (dizziness, ataxia, diplopia) localize the steal to the vertebral artery territory."
+    },
+    {
+      "text": "playing table tennis",
+      "type": "red",
+      "note": "Symptoms during ARM EXERCISE are the signature of subclavian steal. Exercising the arm increases its demand, augmenting reversed (steal) flow down the vertebral artery and starving the brainstem briefly. The exertional-arm trigger is the key."
+    },
+    {
+      "text": "40 years",
+      "type": "orange",
+      "note": "Heavy smoking (40 pack-years) + diabetes drives atherosclerosis, the usual cause of the proximal subclavian stenosis that creates the steal. Risk-factor clue pointing to an atherosclerotic occlusion."
+    },
+    {
+      "text": "left vertebral artery reveals retrograde (caudal) flow",
+      "type": "green",
+      "note": "Reversed (caudal/retrograde) flow down the LEFT vertebral artery means the blockage is in the LEFT subclavian artery PROXIMAL to the vertebral origin. Blood detours up the contralateral vertebral, across the basilar, and back DOWN the ipsilateral vertebral to feed the arm — that's the 'steal.'"
+    }
+  ],
+  "whatMatters": "Arm-exercise dizziness + retrograde flow down the LEFT vertebral artery = subclavian steal. The lesion must be in the LEFT subclavian artery proximal to the vertebral origin, so the arm pulls blood backward down the vertebral. Answer D.",
+  "strategy": "Trace the plumbing: retrograde flow in a vertebral artery means an obstruction in the SUBCLAVIAN proximal to that vertebral's origin (most commonly the left subclavian). Arm exercise worsens it (more demand → more steal). Localize one step proximal to the reversed vessel.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Innominate artery",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Left internal carotid",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Left internal mammary",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Left subclavian",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Right vertebral",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "innominate (brachiocephalic) — would affect the RIGHT side",
+      "detail": "WHAT IT IS: the innominate (brachiocephalic) artery gives rise to the RIGHT subclavian and right common carotid. ❌ WHY IT FAILS: its occlusion would cause right-arm/right-vertebral steal, but here the LEFT vertebral flow is reversed; the lesion is on the left. ✅ Correct if: the retrograde flow were in the RIGHT vertebral with right-arm symptoms."
+    },
+    {
+      "letter": "B",
+      "label": "left internal carotid — anterior circulation, no vertebral steal",
+      "detail": "WHAT IT IS: the internal carotid supplies the anterior cerebral circulation. ❌ WHY IT FAILS: carotid disease causes anterior-circulation TIA/stroke (amaurosis, hemiparesis), not arm-exercise vertebral steal; it doesn't reverse vertebral flow. ✅ Correct if: symptoms were anterior-circulation (monocular blindness, contralateral weakness)."
+    },
+    {
+      "letter": "C",
+      "label": "left internal mammary — too distal/small to steal the brain",
+      "detail": "WHAT IT IS: the internal mammary (thoracic) artery is a branch of the subclavian (used in CABG). ❌ WHY IT FAILS: coronary steal can occur after LIMA grafting, but it doesn't reverse vertebral flow or cause this vertebrobasilar picture. ✅ Correct if: the scenario were post-CABG angina from coronary-subclavian steal."
+    },
+    {
+      "letter": "E",
+      "label": "right vertebral — wrong vessel; it's the CONDUIT, not the blockage",
+      "detail": "WHAT IT IS: the right vertebral helps supply the basilar and, in left subclavian steal, carries the DETOURED antegrade flow. ❌ WHY IT FAILS: the right vertebral isn't occluded — it's the route blood takes to reach the basilar before flowing retrograde down the left vertebral. ✅ Correct if: the question asked which vessel supplies the compensatory flow, not which is occluded."
+    }
+  ],
+  "reasoning": [
+    "Arm-exercise dizziness = vertebrobasilar steal",
+    "Retrograde flow down the LEFT vertebral artery",
+    "Obstruction must be in the LEFT subclavian, proximal to the vertebral origin",
+    "Occluded artery = left subclavian → answer D"
+  ],
+  "mechanism": "Subclavian steal syndrome arises from hemodynamically significant stenosis/occlusion of the subclavian artery PROXIMAL to the vertebral artery origin (usually the left, from atherosclerosis). The low-pressure distal subclavian draws blood retrograde DOWN the ipsilateral vertebral artery (via the contralateral vertebral → basilar) to perfuse the arm. Arm exercise increases demand and 'steals' more flow from the posterior brain, producing vertebrobasilar symptoms (dizziness, ataxia, visual changes) and an arm blood-pressure differential.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid/IM Cardiovascular > Subclavian steal: proximal subclavian stenosis (left > right), retrograde vertebral flow, arm-exercise vertebrobasilar symptoms, interarm BP difference, atherosclerosis/Takayasu etiologies."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reframe the Doppler: 'reversed vertebral flow' → the block is one step UPSTREAM (the subclavian proximal to that vertebral). Localize to the vessel feeding the reversed branch."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on retrograde/antegrade flow, vertebrobasilar, subclavian steal, innominate/brachiocephalic, collateral flow? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Right vertebral (E) tempts because it's a vertebral artery in the loop — but it's the CONDUIT for compensatory flow, not the occluded vessel. The block is the left subclavian (proximal to the left vertebral)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The figure contrasts normal flow with subclavian steal: severe stenosis at the proximal subclavian reverses flow down the ipsilateral vertebral. Practice tracing the aortic arch branches (innominate → R subclavian/R carotid; L carotid; L subclavian) to localize lesions."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (D). Rule to keep: reversed vertebral flow → occlusion in the subclavian proximal to that vertebral's origin (usually left)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Arm-exercise dizziness + reversed vertebral flow",
+      "back": "Subclavian steal syndrome"
+    },
+    {
+      "front": "Lesion location in subclavian steal",
+      "back": "Subclavian artery PROXIMAL to vertebral origin (usually left)"
+    },
+    {
+      "front": "Direction of vertebral flow in steal",
+      "back": "Retrograde (caudal) down the ipsilateral vertebral"
+    },
+    {
+      "front": "Classic exam finding",
+      "back": "Interarm systolic BP difference (>15 mm Hg)"
+    },
+    {
+      "front": "Innominate (brachiocephalic) supplies",
+      "back": "Right subclavian + right common carotid"
+    },
+    {
+      "front": "Common cause of subclavian steal",
+      "back": "Atherosclerosis (also Takayasu, prior surgery)"
+    },
+    {
+      "front": "Coronary-subclavian steal",
+      "back": "Post-CABG angina via LIMA graft with proximal subclavian stenosis"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Subclavian steal syndrome",
+      "detail": "Cardiovascular: proximal subclavian stenosis, retrograde vertebral flow, vertebrobasilar symptoms with arm use, interarm BP gradient.",
+      "location": "Cardiovascular: proximal subclavian stenosis, retrograde vertebral flow, vertebrobasilar symptoms with arm use, interarm BP gradient."
+    },
+    {
+      "tag": "stem",
+      "topic": "Aortic arch & great vessels",
+      "detail": "Anatomy/Cardio: branches (brachiocephalic → R subclavian/R carotid; L carotid; L subclavian), vertebral and basilar circulation.",
+      "location": "Anatomy/Cardio: branches (brachiocephalic → R subclavian/R carotid; L carotid; L subclavian), vertebral and basilar circulation."
+    },
+    {
+      "tag": "options",
+      "topic": "Atherosclerotic cerebrovascular disease",
+      "detail": "Cardio/Neuro: carotid (anterior) vs vertebrobasilar (posterior) syndromes, risk factors (smoking, diabetes).",
+      "location": "Cardio/Neuro: carotid (anterior) vs vertebrobasilar (posterior) syndromes, risk factors (smoking, diabetes)."
+    }
+  ],
+  "memoryHook": "Exercise the arm → it STEALS blood backward down the vertebral. Reversed LEFT vertebral = LEFT subclavian is blocked upstream.",
+  "stem": [
+    {
+      "text": "A 64-year-old man with type 2 diabetes mellitus is evaluated in the clinic due to occasional "
+    },
+    {
+      "text": "dizziness",
+      "clue": true,
+      "type": "blue",
+      "note": "Dizziness/vertebrobasilar symptoms triggered by arm use point to subclavian steal: blood is 'stolen' from the posterior brain circulation to supply the arm. Posterior-circulation symptoms (dizziness, ataxia, diplopia) localize the steal to the vertebral artery territory."
+    },
+    {
+      "text": ". His symptoms usually occur while "
+    },
+    {
+      "text": "playing table tennis",
+      "clue": true,
+      "type": "red",
+      "note": "Symptoms during ARM EXERCISE are the signature of subclavian steal. Exercising the arm increases its demand, augmenting reversed (steal) flow down the vertebral artery and starving the brainstem briefly. The exertional-arm trigger is the key."
+    },
+    {
+      "text": ". The patient has not had any falls or loss of consciousness. He has no known history of coronary artery disease or stroke. The patient has smoked a pack of cigarettes daily for the past "
+    },
+    {
+      "text": "40 years",
+      "clue": true,
+      "type": "orange",
+      "note": "Heavy smoking (40 pack-years) + diabetes drives atherosclerosis, the usual cause of the proximal subclavian stenosis that creates the steal. Risk-factor clue pointing to an atherosclerotic occlusion."
+    },
+    {
+      "text": " and occasionally drinks alcohol. Orthostatic vital signs are normal. ECG shows normal sinus rhythm. Doppler ultrasound evaluation of the "
+    },
+    {
+      "text": "left vertebral artery reveals retrograde (caudal) flow",
+      "clue": true,
+      "type": "green",
+      "note": "Reversed (caudal/retrograde) flow down the LEFT vertebral artery means the blockage is in the LEFT subclavian artery PROXIMAL to the vertebral origin. Blood detours up the contralateral vertebral, across the basilar, and back DOWN the ipsilateral vertebral to feed the arm — that's the 'steal.'"
+    },
+    {
+      "text": " instead of normal antegrade flow. Which of the following arteries is most likely to be occluded based on these ultrasound findings?"
+    }
+  ]
+}

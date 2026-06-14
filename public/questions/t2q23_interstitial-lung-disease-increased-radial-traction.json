@@ -1,0 +1,216 @@
+{
+  "id": "q52",
+  "item": 52,
+  "qid": "1543",
+  "title": "Interstitial lung disease: increased radial traction",
+  "system": "Pulmonary/Physiology",
+  "topic": "Restrictive lung disease / airway mechanics",
+  "correct": "D",
+  "yourAnswer": "A",
+  "percentCorrect": 41,
+  "vignette": "A 54-year-old man comes to the office due to shortness of breath that has slowly worsened over the last 6 months. He also has a persistent, nonproductive cough. The patient does not use alcohol, tobacco, or illicit drugs. Temperature is 36.8 C (98 F), blood pressure is 132/78 mm Hg, pulse is 74/min, and respirations are 16/min. Physical examination reveals fine crackles bilaterally on pulmonary auscultation and drumstick-shaped fingers. Chest x-ray reveals diffuse reticular opacities. Pulmonary function testing shows decreased FVC, increased FEV1/FVC ratio, and expiratory flow rates that are higher than normal when corrected for lung volume. This patient's supernormal expiratory flow rates are best explained by an increase in which of the following parameters?",
+  "clues": [
+    {
+      "text": "fine crackles bilaterally",
+      "type": "red",
+      "note": "Fine bibasilar 'Velcro' crackles with insidious dyspnea and clubbing point to interstitial lung disease / pulmonary fibrosis. This is a restrictive process with stiff lungs."
+    },
+    {
+      "text": "drumstick-shaped fingers",
+      "type": "green",
+      "note": "Digital clubbing accompanies chronic interstitial lung disease (e.g., idiopathic pulmonary fibrosis). It supports a fibrotic, restrictive pattern."
+    },
+    {
+      "text": "decreased FVC, increased FEV1/FVC ratio",
+      "type": "green",
+      "note": "Low FVC with a HIGH (or normal) FEV1/FVC is the restrictive PFT pattern. FEV1 falls less than FVC because the airways are actually held more open by surrounding fibrosis."
+    },
+    {
+      "text": "expiratory flow rates that are higher than normal when corrected for lung volume",
+      "type": "blue",
+      "note": "In fibrosis, increased elastic recoil and INCREASED radial traction on the airways widen them, so flow at a given lung volume is supernormal. The fibrotic tissue tethers airways open."
+    }
+  ],
+  "whatMatters": "This is interstitial lung disease (restrictive: low FVC, high FEV1/FVC). The supernormal expiratory flows are explained by increased RADIAL TRACTION on the airway walls — the fibrotic parenchyma pulls airways open, lowering resistance, so flow at any given lung volume is higher than normal.",
+  "strategy": "For restrictive-disease PFT quirks, remember fibrosis does two things: stiffens lungs (low volumes, high recoil) AND tethers airways open (increased radial traction → wider airways → higher flow per volume). Don't confuse increased recoil/traction with increased compliance, which is the opposite.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Lung compliance",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Outward recoil of the chest wall",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Physiological dead space",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Radial traction on airway walls",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Wall thickness of bronchioles",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "lung compliance — DECREASED in fibrosis (your pick)",
+      "detail": "WHAT IT IS: compliance is the change in volume per change in pressure ('stretchiness'). ❌ WHY IT FAILS: fibrosis DECREASES compliance (stiff lungs) and INCREASES elastic recoil; that recoil/traction is what raises flows, so 'increased compliance' is the opposite of the truth. ✅ Correct if: the disease were emphysema, where compliance is increased and recoil lost."
+    },
+    {
+      "letter": "B",
+      "label": "chest-wall outward recoil — not the airway mechanism",
+      "detail": "WHAT IT IS: the chest wall's tendency to spring outward sets resting lung volume (FRC). ❌ WHY IT FAILS: supernormal expiratory flow is explained by airway TETHERING (radial traction from lung parenchyma), not chest-wall recoil; and fibrosis lowers overall volumes. ✅ Correct if: the question concerned what determines FRC/chest-wall mechanics."
+    },
+    {
+      "letter": "C",
+      "label": "physiologic dead space — gas exchange, not flow",
+      "detail": "WHAT IT IS: dead space is ventilated-but-not-perfused lung (wasted ventilation). ❌ WHY IT FAILS: it affects gas exchange/PaCO2, not the mechanical expiratory flow rate at a given volume. ✅ Correct if: the question asked about V/Q mismatch or wasted ventilation."
+    },
+    {
+      "letter": "E",
+      "label": "bronchiolar wall thickness — would RAISE resistance",
+      "detail": "WHAT IT IS: thicker bronchiolar walls narrow the lumen and increase airway resistance (as in asthma/chronic bronchitis). ❌ WHY IT FAILS: that would LOWER flow, the opposite of this patient's supernormal flows; fibrosis widens airways via traction. ✅ Correct if: the disease were obstructive with airway-wall thickening (asthma/bronchitis)."
+    }
+  ],
+  "reasoning": [
+    "Insidious dyspnea + Velcro crackles + clubbing + reticular opacities = interstitial lung disease",
+    "PFTs: low FVC, high FEV1/FVC = restrictive",
+    "Fibrosis increases elastic recoil and tethers airways open (radial traction)",
+    "Wider airways → higher flow per lung volume → answer D"
+  ],
+  "mechanism": "In interstitial lung disease/pulmonary fibrosis the parenchyma becomes stiff (decreased compliance, increased elastic recoil) and pulls outward on the airway walls — increased radial traction. The tethered airways are held more open, reducing airway resistance, so expiratory flow at any given (low) lung volume is higher than normal. FEV1 falls less than FVC, giving the characteristic high FEV1/FVC ratio of restriction, while DLCO is reduced.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pulmonary > restrictive vs obstructive disease and lung mechanics: fibrosis → decreased compliance, increased recoil/radial traction, low FVC, high FEV1/FVC, reduced DLCO. Contrast emphysema (increased compliance, lost recoil)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Hold two facts together: fibrosis stiffens lungs AND tethers airways open. The 'supernormal flow' is the airway-tethering (radial traction) effect, not increased compliance."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on compliance vs recoil, radial traction, FEV1/FVC, restrictive vs obstructive, DLCO, dead space? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "'Lung compliance' is the classic trap — fibrosis DECREASES compliance. Pick the airway-widening mechanism (radial traction), not the stiffness measure."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the radial-traction figure (normal vs emphysema vs fibrosis airway tethering). Visualize fibrotic tissue pulling the airway open in pulmonary fibrosis."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Why expiratory flows are supernormal in fibrosis",
+      "back": "Increased radial traction (airways tethered open)"
+    },
+    {
+      "front": "Restrictive PFT pattern",
+      "back": "Low FVC, high/normal FEV1/FVC, reduced DLCO"
+    },
+    {
+      "front": "Lung compliance in fibrosis",
+      "back": "Decreased (stiff lungs, increased recoil)"
+    },
+    {
+      "front": "Lung compliance in emphysema",
+      "back": "Increased (lost recoil)"
+    },
+    {
+      "front": "Velcro crackles + clubbing + reticular opacities",
+      "back": "Interstitial lung disease / pulmonary fibrosis"
+    },
+    {
+      "front": "Bronchiolar wall thickening effect",
+      "back": "Increased resistance, decreased flow (obstructive)"
+    },
+    {
+      "front": "Physiologic dead space",
+      "back": "Ventilated but not perfused (wasted ventilation)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Restrictive lung disease mechanics",
+      "detail": "Pulmonary > restrictive disease and lung volumes/compliance: fibrosis → low compliance, increased recoil and radial traction, high FEV1/FVC, low DLCO.",
+      "location": "Pulmonary > restrictive disease and lung volumes/compliance: fibrosis → low compliance, increased recoil and radial traction, high FEV1/FVC, low DLCO."
+    },
+    {
+      "tag": "stem",
+      "topic": "Interstitial lung disease",
+      "detail": "Pulmonary > ILD/idiopathic pulmonary fibrosis: clinical (Velcro crackles, clubbing), imaging (reticular/honeycomb), PFTs.",
+      "location": "Pulmonary > ILD/idiopathic pulmonary fibrosis: clinical (Velcro crackles, clubbing), imaging (reticular/honeycomb), PFTs."
+    },
+    {
+      "tag": "options",
+      "topic": "Airway resistance & dead space",
+      "detail": "Pulmonary/Physiology > determinants of airway resistance (radius, wall thickness, traction) and dead space/V-Q concepts.",
+      "location": "Pulmonary/Physiology > determinants of airway resistance (radius, wall thickness, traction) and dead space/V-Q concepts."
+    }
+  ],
+  "memoryHook": "Fibrosis = stiff lungs that yank airways OPEN (radial traction) → flows run high; compliance goes DOWN, not up.",
+  "stem": [
+    {
+      "text": "A 54-year-old man comes to the office due to shortness of breath that has slowly worsened over the last 6 months. He also has a persistent, nonproductive cough. The patient does not use alcohol, tobacco, or illicit drugs. Temperature is 36.8 C (98 F), blood pressure is 132/78 mm Hg, pulse is 74/min, and respirations are 16/min. Physical examination reveals "
+    },
+    {
+      "text": "fine crackles bilaterally",
+      "clue": true,
+      "type": "red",
+      "note": "Fine bibasilar 'Velcro' crackles with insidious dyspnea and clubbing point to interstitial lung disease / pulmonary fibrosis. This is a restrictive process with stiff lungs."
+    },
+    {
+      "text": " on pulmonary auscultation and "
+    },
+    {
+      "text": "drumstick-shaped fingers",
+      "clue": true,
+      "type": "green",
+      "note": "Digital clubbing accompanies chronic interstitial lung disease (e.g., idiopathic pulmonary fibrosis). It supports a fibrotic, restrictive pattern."
+    },
+    {
+      "text": ". Chest x-ray reveals diffuse reticular opacities. Pulmonary function testing shows "
+    },
+    {
+      "text": "decreased FVC, increased FEV1/FVC ratio",
+      "clue": true,
+      "type": "green",
+      "note": "Low FVC with a HIGH (or normal) FEV1/FVC is the restrictive PFT pattern. FEV1 falls less than FVC because the airways are actually held more open by surrounding fibrosis."
+    },
+    {
+      "text": ", and "
+    },
+    {
+      "text": "expiratory flow rates that are higher than normal when corrected for lung volume",
+      "clue": true,
+      "type": "blue",
+      "note": "In fibrosis, increased elastic recoil and INCREASED radial traction on the airways widen them, so flow at a given lung volume is supernormal. The fibrotic tissue tethers airways open."
+    },
+    {
+      "text": ". This patient's supernormal expiratory flow rates are best explained by an increase in which of the following parameters?"
+    }
+  ]
+}

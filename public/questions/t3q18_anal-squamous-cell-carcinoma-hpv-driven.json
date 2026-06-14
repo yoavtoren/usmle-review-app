@@ -1,0 +1,226 @@
+{
+  "id": "q88",
+  "item": 88,
+  "qid": "19112",
+  "title": "Anal squamous cell carcinoma: HPV-driven",
+  "system": "Pathology",
+  "topic": "Anogenital cancer / oncovirus",
+  "correct": "C",
+  "yourAnswer": "B",
+  "percentCorrect": 68,
+  "vignette": "A 63-year-old man comes to the office due to intermittent rectal bleeding. The bleeding worsens with defecation and is associated with itchiness. Ten years ago, he had a kidney transplant for diabetic nephropathy and reports compliance with posttransplant immunosuppression medications. Vital signs are normal. Physical examination reveals a 2-cm ulcerated mass extending from the anal verge into the rectum. Biopsy shows large, eosinophilic squamous epithelial cells arranged in islands; cells have hyperchromatic, irregular nuclei, and scant cytoplasm. Significant keratinization is present. Which of the following factors is most likely responsible for the development of this patient's anal lesion?",
+  "clues": [
+    {
+      "text": "kidney transplant",
+      "type": "orange",
+      "note": "Chronic immunosuppression after transplant is a major risk factor for HPV persistence and progression to anogenital squamous cancers. Loss of immune surveillance lets HPV-driven dysplasia advance. This is the key host-risk clue."
+    },
+    {
+      "text": "2-cm ulcerated mass extending from the anal verge into the rectum",
+      "type": "red",
+      "note": "An ulcerated/exophytic anal mass with bleeding and pruritus is the classic presentation of anal squamous cell carcinoma. Location at the anal verge points to squamous, HPV-related cancer rather than a glandular rectal adenocarcinoma."
+    },
+    {
+      "text": "large, eosinophilic squamous epithelial cells arranged in islands",
+      "type": "green",
+      "note": "Islands/nests of large eosinophilic squamous cells with nuclear atypia and KERATINIZATION = squamous cell carcinoma. Anogenital SCC is strongly tied to high-risk HPV (16/18)."
+    },
+    {
+      "text": "keratinization",
+      "type": "green",
+      "note": "Keratin pearls/keratinization confirm a SQUAMOUS lineage. Anal SCC — like cervical, vulvar, penile, and oropharyngeal SCC — is driven by HPV (E6/E7 inactivating p53/Rb)."
+    }
+  ],
+  "whatMatters": "An immunosuppressed transplant patient with an ulcerated anal-verge mass and biopsy showing keratinizing squamous-cell carcinoma = anal SCC. Its key causal factor is high-risk human papillomavirus (types 16/18) — answer C.",
+  "strategy": "For anogenital/oropharyngeal squamous cancers, the default etiology is HPV (16/18 via E6/E7 → p53/Rb). Immunosuppression (HIV, transplant), receptive anal intercourse, and smoking amplify risk. Don't pick HHV-8 (Kaposi, vascular) or other viruses that cause non-squamous lesions.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "BRAF mutation",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Human herpesvirus 8",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Human papillomavirus",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Mismatch repair gene mutation",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Poxvirus",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Treponema pallidum",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "BRAF mutation — melanoma/colon, not anal SCC",
+      "detail": "WHAT IT IS: BRAF V600E drives melanoma and a subset of colorectal cancers. ❌ WHY IT FAILS: anal SQUAMOUS carcinoma is virally driven (HPV), not a BRAF-mutant tumor; the histology is keratinizing squamous, not melanocytic/glandular. ✅ Correct if: the lesion were a melanoma or BRAF-mutant colon cancer."
+    },
+    {
+      "letter": "B",
+      "label": "HHV-8 — causes Kaposi (vascular), not squamous (your pick)",
+      "detail": "WHAT IT IS: human herpesvirus 8 causes Kaposi sarcoma (a vascular/spindle-cell tumor in immunosuppressed patients) and some lymphomas. ❌ WHY IT FAILS: the biopsy shows keratinizing SQUAMOUS cells in islands — that's SCC (HPV), not the vascular proliferation of Kaposi. ✅ Correct if: the lesion were violaceous vascular plaques with spindle cells and slit-like vessels."
+    },
+    {
+      "letter": "D",
+      "label": "mismatch repair mutation — Lynch/colorectal adenocarcinoma",
+      "detail": "WHAT IT IS: MMR defects (MSI) cause Lynch-associated colorectal and endometrial ADENOcarcinomas. ❌ WHY IT FAILS: this is squamous, HPV-driven anal cancer, not a glandular MMR-deficient tumor; histology shows squamous islands, not gland-forming adenocarcinoma. ✅ Correct if: the tumor were a colorectal adenocarcinoma with MSI/Lynch features."
+    },
+    {
+      "letter": "E",
+      "label": "poxvirus — molluscum, a benign lesion",
+      "detail": "WHAT IT IS: poxvirus (molluscum contagiosum) causes small umbilicated papules. ❌ WHY IT FAILS: molluscum is benign and not carcinogenic; it doesn't produce an invasive keratinizing SCC. ✅ Correct if: the finding were umbilicated papules with Henderson-Patterson (molluscum) bodies."
+    },
+    {
+      "letter": "F",
+      "label": "Treponema pallidum — syphilis, not malignancy",
+      "detail": "WHAT IT IS: T. pallidum causes syphilis (painless chancre, condyloma lata). ❌ WHY IT FAILS: it's an infection, not an oncogenic driver of squamous carcinoma; the biopsy shows invasive SCC, not a spirochetal lesion. ✅ Correct if: the lesion were a painless ulcer (chancre) or moist condyloma lata of secondary syphilis."
+    }
+  ],
+  "reasoning": [
+    "Immunosuppressed transplant patient with an ulcerated anal-verge mass",
+    "Biopsy = keratinizing squamous cell carcinoma (islands of atypical squamous cells)",
+    "Anogenital SCC is strongly HPV-associated (16/18, E6/E7)",
+    "Causal factor = human papillomavirus → answer C"
+  ],
+  "mechanism": "High-risk HPV types 16/18 express E6 and E7 oncoproteins that inactivate p53 and Rb, driving squamous dysplasia and carcinoma at anogenital and oropharyngeal sites. Anal SCC presents with rectal bleeding, pruritus, and an ulcerated/nodular anal mass; histology shows islands of large eosinophilic squamous cells with nuclear atypia and keratin pearls. Immunocompromise (transplant, HIV), receptive anal intercourse, smoking, and female sex increase risk.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro/Path > Oncogenic viruses & anogenital cancer: HPV 16/18 (E6→p53, E7→Rb), anal/cervical/vulvar/penile/oropharyngeal SCC, immunosuppression risk. Contrast HHV-8 (Kaposi), EBV, HBV/HCV, HTLV-1."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: histology → SCC (keratinizing squamous islands); site + virus link → anogenital SCC = HPV. Immunosuppression is the amplifier, not the answer."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on squamous cell carcinoma, keratin pearls, E6/E7, p53/Rb, anal verge, Kaposi sarcoma? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "HHV-8 (B, your pick) is the transplant/immunosuppression virus you remember — but it causes Kaposi (vascular), not keratinizing SCC. Let the squamous histology pick HPV."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The histology table contrasts anal SCC (islands of eosinophilic squamous cells, keratin pearls, atypia) with other anogenital lesions. Practice recognizing keratinizing SCC vs vascular Kaposi vs glandular adenocarcinoma."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as B → make a virus-to-tumor card: HPV→squamous (cervix/anus/oropharynx); HHV-8→Kaposi; EBV→nasopharyngeal/Burkitt; HBV/HCV→HCC; HTLV-1→adult T-cell leukemia."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Ulcerated anal mass + keratinizing SCC",
+      "back": "Anal squamous cell carcinoma (HPV)"
+    },
+    {
+      "front": "HPV oncoproteins/targets",
+      "back": "E6→p53, E7→Rb (types 16/18)"
+    },
+    {
+      "front": "HPV-driven squamous cancers",
+      "back": "Cervical, anal, vulvar, penile, oropharyngeal"
+    },
+    {
+      "front": "Anal SCC risk factors",
+      "back": "HPV, immunosuppression (HIV/transplant), receptive anal intercourse, smoking, female sex"
+    },
+    {
+      "front": "HHV-8 tumor",
+      "back": "Kaposi sarcoma (vascular, immunosuppressed)"
+    },
+    {
+      "front": "MMR/MSI tumors",
+      "back": "Lynch — colorectal & endometrial adenocarcinoma"
+    },
+    {
+      "front": "Squamous histology hallmark",
+      "back": "Keratin pearls + intercellular bridges"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "HPV & anal SCC",
+      "detail": "Micro/Path: HPV 16/18 E6/E7, anogenital + oropharyngeal SCC, immunosuppression risk, vaccination.",
+      "location": "Micro/Path: HPV 16/18 E6/E7, anogenital + oropharyngeal SCC, immunosuppression risk, vaccination."
+    },
+    {
+      "tag": "options",
+      "topic": "Oncogenic viruses & driver mutations",
+      "detail": "Path: HHV-8 (Kaposi), EBV, HBV/HCV (HCC), HTLV-1; BRAF (melanoma/colon), MMR/MSI (Lynch).",
+      "location": "Path: HHV-8 (Kaposi), EBV, HBV/HCV (HCC), HTLV-1; BRAF (melanoma/colon), MMR/MSI (Lynch)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Squamous cell carcinoma histology",
+      "detail": "Path: keratin pearls, intercellular bridges, nests/islands of atypical squamous cells.",
+      "location": "Path: keratin pearls, intercellular bridges, nests/islands of atypical squamous cells."
+    }
+  ],
+  "memoryHook": "Anogenital/oropharyngeal SQUAMOUS cancer = HPV (16/18). HHV-8 is the VASCULAR (Kaposi) one — don't swap them.",
+  "stem": [
+    {
+      "text": "A 63-year-old man comes to the office due to intermittent rectal bleeding. The bleeding worsens with defecation and is associated with itchiness. Ten years ago, he had a "
+    },
+    {
+      "text": "kidney transplant",
+      "clue": true,
+      "type": "orange",
+      "note": "Chronic immunosuppression after transplant is a major risk factor for HPV persistence and progression to anogenital squamous cancers. Loss of immune surveillance lets HPV-driven dysplasia advance. This is the key host-risk clue."
+    },
+    {
+      "text": " for diabetic nephropathy and reports compliance with posttransplant immunosuppression medications. Vital signs are normal. Physical examination reveals a "
+    },
+    {
+      "text": "2-cm ulcerated mass extending from the anal verge into the rectum",
+      "clue": true,
+      "type": "red",
+      "note": "An ulcerated/exophytic anal mass with bleeding and pruritus is the classic presentation of anal squamous cell carcinoma. Location at the anal verge points to squamous, HPV-related cancer rather than a glandular rectal adenocarcinoma."
+    },
+    {
+      "text": ". Biopsy shows "
+    },
+    {
+      "text": "large, eosinophilic squamous epithelial cells arranged in islands",
+      "clue": true,
+      "type": "green",
+      "note": "Islands/nests of large eosinophilic squamous cells with nuclear atypia and KERATINIZATION = squamous cell carcinoma. Anogenital SCC is strongly tied to high-risk HPV (16/18)."
+    },
+    {
+      "text": "; cells have hyperchromatic, irregular nuclei, and scant cytoplasm. Significant "
+    },
+    {
+      "text": "keratinization",
+      "clue": true,
+      "type": "green",
+      "note": "Keratin pearls/keratinization confirm a SQUAMOUS lineage. Anal SCC — like cervical, vulvar, penile, and oropharyngeal SCC — is driven by HPV (E6/E7 inactivating p53/Rb)."
+    },
+    {
+      "text": " is present. Which of the following factors is most likely responsible for the development of this patient's anal lesion?"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "id": "q33",
+  "item": 33,
+  "qid": "114784",
+  "title": "Spinal muscular atrophy: autosomal recessive (SMN1)",
+  "system": "Genetics/Neuro",
+  "topic": "Inheritance patterns",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 41,
+  "vignette": "A 13-year-old boy is brought to the office by his father for progressive muscle weakness over the past year. The boy can no longer play soccer due to muscle fatigue, and he struggles to climb the stairs at home. He has no other medical conditions, and family history is unknown due to adoption. Vital signs are normal. Extraocular muscles are intact, and lid lag is absent. Tongue fasciculations are present, and he has a fine tremor in his hands. Strength and reflexes are diminished in the proximal upper and lower extremities, and sensation is intact. He walks his hands up his legs to go from a squatting position to standing, and he has a clumsy gait. Results of genetic testing show a loss of function mutation in the SMN1 gene. This patient's disorder is most likely transmitted in which of the following inheritance patterns?",
+  "clues": [
+    {
+      "text": "progressive muscle weakness",
+      "type": "red",
+      "note": "Slowly worsening weakness in a child suggests a chronic neuromuscular disorder. With the later clues (tongue fasciculations, proximal weakness, SMN1) it points to spinal muscular atrophy."
+    },
+    {
+      "text": "Tongue fasciculations",
+      "type": "green",
+      "note": "Fasciculations are a hallmark of LOWER motor neuron (anterior horn cell) disease. In a child with proximal weakness and areflexia, tongue fasciculations strongly suggest spinal muscular atrophy."
+    },
+    {
+      "text": "diminished in the proximal upper and lower extremities",
+      "type": "green",
+      "note": "Proximal > distal weakness with diminished reflexes and intact sensation fits a motor-neuron/anterior-horn disorder. The milder, later-onset SMA variant shows symmetric proximal weakness (legs > arms)."
+    },
+    {
+      "text": "SMN1 gene",
+      "type": "blue",
+      "note": "SMN1 (survival motor neuron 1) loss-of-function causes spinal muscular atrophy. SMA is autosomal recessive: a homozygous SMN1 deletion leads to degeneration of anterior horn cells and lower brainstem motor nuclei."
+    }
+  ],
+  "whatMatters": "The only thing being asked is the inheritance pattern. SMN1 loss-of-function = spinal muscular atrophy, which is autosomal recessive (homozygous SMN1 deletion). The clinical detail just confirms SMA so you trust the SMN1 label.",
+  "strategy": "When a specific gene is named, answer the inheritance from the gene/disease, not the family history. 'Family history unknown' (adoption) is a deliberate nudge — recessive diseases often appear with no known affected relatives because carriers are silent.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Autosomal dominant",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Autosomal recessive",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Mitochondrial",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "X-linked dominant",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "X-linked recessive",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "autosomal dominant — wrong; SMA is recessive",
+      "detail": "WHAT IT IS: AD diseases manifest with one mutant allele and usually show an affected parent in each generation (vertical transmission). ❌ WHY IT FAILS: SMA requires two defective SMN1 copies (recessive); a single SMN1 hit doesn't cause disease. ✅ Correct if: the disorder were an AD neuromuscular/neurocutaneous condition (e.g., NF1, myotonic dystrophy)."
+    },
+    {
+      "letter": "C",
+      "label": "mitochondrial — maternal, multisystem (your pick)",
+      "detail": "WHAT IT IS: mitochondrial inheritance passes only from mother to all children, often with ragged-red fibers and multi-organ (CNS, muscle, eye) involvement and variable severity (heteroplasmy). ❌ WHY IT FAILS: SMN1 is a NUCLEAR gene on chromosome 5, not mitochondrial DNA; SMA isn't maternally transmitted. ✅ Correct if: the stem named MELAS/MERRF/Leber or stressed maternal transmission to all offspring."
+    },
+    {
+      "letter": "D",
+      "label": "X-linked dominant — wrong pattern/gene",
+      "detail": "WHAT IT IS: XLD affects both sexes, transmits from affected fathers to ALL daughters and no sons, and is often lethal in males (e.g., Alport, hypophosphatemic rickets). ❌ WHY IT FAILS: SMN1 is autosomal (chr 5), so the disease isn't X-linked at all. ✅ Correct if: the gene were X-linked and showed the no-male-to-male, all-daughters-affected pattern."
+    },
+    {
+      "letter": "E",
+      "label": "X-linked recessive — boy is tempting but gene is autosomal",
+      "detail": "WHAT IT IS: XLR predominantly affects males through carrier mothers, with no male-to-male transmission (e.g., Duchenne, hemophilia). ❌ WHY IT FAILS: the patient is male, which baits XLR, but SMN1 sits on an autosome (chr 5) — sex is irrelevant; SMA is autosomal recessive. ✅ Correct if: the disorder were Duchenne/Becker or another X-linked myopathy."
+    }
+  ],
+  "reasoning": [
+    "Proximal weakness + tongue fasciculations + areflexia + intact sensation = anterior-horn disease",
+    "SMN1 loss-of-function = spinal muscular atrophy",
+    "SMA results from a homozygous SMN1 deletion (chr 5)",
+    "Two defective copies needed = autosomal recessive → answer B"
+  ],
+  "mechanism": "Spinal muscular atrophy is caused by homozygous loss of SMN1 on chromosome 5q. SMN protein is needed for snRNP assembly and motor-neuron survival; its deficiency causes degeneration of anterior horn cells and lower brainstem motor nuclei, producing lower-motor-neuron signs (hypotonia, hyporeflexia, fasciculations, proximal weakness). The number of SMN2 copies modifies severity (more SMN2 = milder, later-onset disease).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Genetics > inheritance patterns table + Neuro > spinal muscular atrophy. Lock: SMA = AR, SMN1 (chr 5), anterior horn cells, LMN signs, tongue fasciculations; SMN2 copy number sets severity."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two reads: confirm the disease from the gene (SMN1 → SMA), then recall its inheritance (AR). Don't let 'family history unknown' or 'a boy' steer you — the named gene decides."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on fasciculation, anterior horn cell, loss-of-function, autosomal vs X-linked, heteroplasmy? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "'Boy' baits X-linked recessive and 'tremor/fatigue' baits mitochondrial — but SMN1 is autosomal. When a gene is named, ground the inheritance in the gene's chromosome, not the patient's sex."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "If you knew SMA but slipped on AR vs X-linked, make a 2-column AR-vs-XLR list of high-yield diseases and quiz yourself."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "SMN1 loss-of-function disease",
+      "back": "Spinal muscular atrophy (AR, chr 5)"
+    },
+    {
+      "front": "SMA inheritance",
+      "back": "Autosomal recessive"
+    },
+    {
+      "front": "Tongue fasciculations + proximal weakness in a child",
+      "back": "Anterior horn cell disease (SMA)"
+    },
+    {
+      "front": "SMA severity modifier",
+      "back": "SMN2 copy number (more = milder)"
+    },
+    {
+      "front": "Anterior horn signs",
+      "back": "LMN: hypotonia, hyporeflexia, fasciculations, weakness"
+    },
+    {
+      "front": "Gower sign (hands up legs to stand)",
+      "back": "Proximal muscle weakness"
+    },
+    {
+      "front": "Maternal transmission to all offspring",
+      "back": "Mitochondrial inheritance"
+    },
+    {
+      "front": "No male-to-male transmission, mostly males affected",
+      "back": "X-linked recessive"
+    },
+    {
+      "front": "Werdnig-Hoffmann disease",
+      "back": "Severe infantile SMA (floppy baby)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Modes of inheritance",
+      "detail": "Genetics > inheritance patterns: AR (two carriers, horizontal pedigree, often no known affected relatives), AD, XLR, XLD, mitochondrial — with the classic disease list for each.",
+      "location": "Genetics > inheritance patterns: AR (two carriers, horizontal pedigree, often no known affected relatives), AD, XLR, XLD, mitochondrial — with the classic disease list for each."
+    },
+    {
+      "tag": "stem",
+      "topic": "Spinal muscular atrophy",
+      "detail": "Neuro > anterior horn/lower-motor-neuron disorders: SMA (SMN1, chr 5, AR), variants (Werdnig-Hoffmann), tongue fasciculations, SMN2 modifier; contrast ALS.",
+      "location": "Neuro > anterior horn/lower-motor-neuron disorders: SMA (SMN1, chr 5, AR), variants (Werdnig-Hoffmann), tongue fasciculations, SMN2 modifier; contrast ALS."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Lower vs upper motor neuron signs",
+      "detail": "Neuro > UMN vs LMN: LMN lesions → atrophy, fasciculations, hypotonia, hyporeflexia (as in SMA).",
+      "location": "Neuro > UMN vs LMN: LMN lesions → atrophy, fasciculations, hypotonia, hyporeflexia (as in SMA)."
+    }
+  ],
+  "memoryHook": "SMN1 = 'Survival Motor Neuron' — lose BOTH copies (recessive) and the anterior horn cells die; tongue fasciculations give it away.",
+  "stem": [
+    {
+      "text": "A 13-year-old boy is brought to the office by his father for "
+    },
+    {
+      "text": "progressive muscle weakness",
+      "clue": true,
+      "type": "red",
+      "note": "Slowly worsening weakness in a child suggests a chronic neuromuscular disorder. With the later clues (tongue fasciculations, proximal weakness, SMN1) it points to spinal muscular atrophy."
+    },
+    {
+      "text": " over the past year. The boy can no longer play soccer due to muscle fatigue, and he struggles to climb the stairs at home. He has no other medical conditions, and family history is unknown due to adoption. Vital signs are normal. Extraocular muscles are intact, and lid lag is absent. "
+    },
+    {
+      "text": "Tongue fasciculations",
+      "clue": true,
+      "type": "green",
+      "note": "Fasciculations are a hallmark of LOWER motor neuron (anterior horn cell) disease. In a child with proximal weakness and areflexia, tongue fasciculations strongly suggest spinal muscular atrophy."
+    },
+    {
+      "text": " are present, and he has a fine tremor in his hands. Strength and reflexes are "
+    },
+    {
+      "text": "diminished in the proximal upper and lower extremities",
+      "clue": true,
+      "type": "green",
+      "note": "Proximal > distal weakness with diminished reflexes and intact sensation fits a motor-neuron/anterior-horn disorder. The milder, later-onset SMA variant shows symmetric proximal weakness (legs > arms)."
+    },
+    {
+      "text": ", and sensation is intact. He walks his hands up his legs to go from a squatting position to standing, and he has a clumsy gait. Results of genetic testing show a loss of function mutation in the "
+    },
+    {
+      "text": "SMN1 gene",
+      "clue": true,
+      "type": "blue",
+      "note": "SMN1 (survival motor neuron 1) loss-of-function causes spinal muscular atrophy. SMA is autosomal recessive: a homozygous SMN1 deletion leads to degeneration of anterior horn cells and lower brainstem motor nuclei."
+    },
+    {
+      "text": ". This patient's disorder is most likely transmitted in which of the following inheritance patterns?"
+    }
+  ]
+}

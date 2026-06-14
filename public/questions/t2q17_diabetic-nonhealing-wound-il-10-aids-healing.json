@@ -1,0 +1,211 @@
+{
+  "id": "q46",
+  "item": 46,
+  "qid": "17855",
+  "title": "Diabetic nonhealing wound: IL-10 aids healing",
+  "system": "Pathology",
+  "topic": "Wound healing / inflammation",
+  "correct": "D",
+  "yourAnswer": "E",
+  "percentCorrect": 53,
+  "vignette": "A 55-year-old man is evaluated due to a nonhealing left forearm wound. The patient had an excisional biopsy of a suspicious skin lesion at the site of the wound several weeks ago. He has a history of uncontrolled type 2 diabetes mellitus and hypertension. Vital signs are within normal limits. Physical examination shows a 2.5-cm wound surrounded by erythema on the left forearm. Upregulation of which of the following would most likely improve fibroblast proliferation and reepithelization in this nonhealing wound?",
+  "clues": [
+    {
+      "text": "nonhealing left forearm wound",
+      "type": "red",
+      "note": "A wound that won't close points to a stalled healing process. In diabetes, persistent inflammation prevents the transition to the proliferative phase (granulation, fibroblast proliferation, reepithelialization)."
+    },
+    {
+      "text": "excisional biopsy",
+      "type": "blue",
+      "note": "Explains the wound's origin (recent procedure) and that it should normally be healing by now — emphasizing the abnormal delay rather than a new injury."
+    },
+    {
+      "text": "uncontrolled type 2 diabetes mellitus",
+      "type": "orange",
+      "note": "Hyperglycemia sustains a pro-inflammatory state and decreases IL-10, impairing the switch to healing. Uncontrolled diabetes is the central reason this wound won't progress."
+    },
+    {
+      "text": "erythema",
+      "type": "green",
+      "note": "Surrounding erythema signals ongoing inflammation. Healing requires DAMPENING this inflammation (anti-inflammatory cytokines like IL-10) so fibroblasts can proliferate and the wound can reepithelialize."
+    }
+  ],
+  "whatMatters": "The wound is stuck in the inflammatory phase (diabetes keeps inflammation high and IL-10 low). To advance to the proliferative phase, you need MORE anti-inflammatory signaling — upregulating IL-10 (from macrophages/Tregs) suppresses inflammation and enables fibroblast proliferation and reepithelialization. The trap answers are PRO-inflammatory or harmful (ROS, glycation), which worsen healing.",
+  "strategy": "For 'what improves healing' questions, healing requires RESOLVING inflammation, not adding more. Favor anti-inflammatory/growth-promoting signals (IL-10, growth factors) and reject pro-inflammatory or tissue-damaging options (ROS, more cytokines, AGEs).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bradykinin release from endothelial cells",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cortisol release from the adrenal cortex",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Glycation cross-links in collagen fibers",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Production of IL-10 by macrophages",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Release of reactive oxygen species from neutrophils",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "bradykinin — pro-inflammatory vasodilator",
+      "detail": "WHAT IT IS: bradykinin is a vasoactive mediator of the inflammatory phase (vasodilation, pain, permeability). ❌ WHY IT FAILS: more inflammatory mediator keeps the wound in the inflammatory phase; it doesn't drive fibroblast proliferation/reepithelialization. ✅ Correct if: the question asked which mediator increases vascular permeability/pain in early inflammation."
+    },
+    {
+      "letter": "B",
+      "label": "cortisol — impairs healing",
+      "detail": "WHAT IT IS: cortisol is anti-inflammatory but also suppresses fibroblast/collagen synthesis and immune function. ❌ WHY IT FAILS: excess cortisol IMPAIRS wound healing (and diabetics often have elevated cortisol); upregulating it would worsen, not help. ✅ Correct if: asked which hormone, in excess, DELAYS wound healing."
+    },
+    {
+      "letter": "C",
+      "label": "glycation cross-links (AGEs) — damages tissue",
+      "detail": "WHAT IT IS: nonenzymatic glycation of proteins (AGEs) accumulates in hyperglycemia, stiffening and weakening collagen and fueling inflammation. ❌ WHY IT FAILS: this is part of WHY diabetic wounds don't heal — more glycation harms collagen integrity, not helps. ✅ Correct if: asked what contributes to diabetic vascular/tissue damage."
+    },
+    {
+      "letter": "E",
+      "label": "neutrophil ROS — sustains injury (your pick)",
+      "detail": "WHAT IT IS: reactive oxygen species from neutrophils kill microbes during the inflammatory phase. ❌ WHY IT FAILS: in uncontrolled diabetes, EXCESS ROS prolongs inflammation and damages the tissue needed for granulation — upregulating it deepens the problem rather than promoting fibroblast proliferation. ✅ Correct if: asked about microbial killing or oxidative tissue injury in early inflammation."
+    }
+  ],
+  "reasoning": [
+    "Diabetic wound stuck in the inflammatory phase (high inflammation, low IL-10)",
+    "Healing requires resolving inflammation to start the proliferative phase",
+    "IL-10 (from macrophages/Tregs) suppresses inflammation → fibroblast proliferation & reepithelialization",
+    "Upregulate IL-10 → answer D"
+  ],
+  "mechanism": "Normal wound healing moves from an inflammatory phase to a proliferative phase. Macrophages and regulatory T cells release anti-inflammatory cytokines (notably IL-10) and growth factors that quiet inflammation and stimulate fibroblast proliferation, angiogenesis, and reepithelialization. In uncontrolled diabetes, hyperglycemia keeps pro-inflammatory cytokines and neutrophil ROS high and markedly DECREASES IL-10, trapping the wound in inflammation; restoring IL-10 would restart the proliferative phase.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pathology > wound healing phases (inflammatory → proliferative → remodeling) and the cytokines/growth factors (IL-10/TGF-beta, PDGF, FGF, VEGF). Cross-ref diabetes complications (impaired healing, AGEs)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reframe the question: healing needs LESS inflammation, not more. Pick the anti-inflammatory signal (IL-10) and reject options that add inflammation or damage (ROS, bradykinin, AGEs, cortisol)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on IL-10, fibroblast/reepithelialization, ROS, glycation/AGEs, inflammatory vs proliferative phase? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "ROS and bradykinin feel 'active and healing-related,' but they belong to the INFLAMMATORY phase that's already stuck. Choose the cytokine that RESOLVES inflammation (IL-10)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "If you instinctively picked an 'active immune' option, make a rule: chronic nonhealing wound = needs RESOLUTION (anti-inflammatory IL-10/growth factors), not more inflammation."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Cytokine that resolves inflammation to allow healing",
+      "back": "IL-10 (from macrophages/Tregs)"
+    },
+    {
+      "front": "Why diabetic wounds don't heal",
+      "back": "Persistent inflammation, high ROS, decreased IL-10, AGEs"
+    },
+    {
+      "front": "Wound healing phases",
+      "back": "Inflammatory → proliferative → remodeling"
+    },
+    {
+      "front": "Proliferative-phase growth factors",
+      "back": "PDGF, FGF, VEGF, TGF-beta"
+    },
+    {
+      "front": "Effect of excess cortisol on healing",
+      "back": "Impaired (↓ fibroblasts/collagen)"
+    },
+    {
+      "front": "AGEs (glycation) effect",
+      "back": "Stiffen/weaken collagen, promote inflammation"
+    },
+    {
+      "front": "Anti-inflammatory cytokines",
+      "back": "IL-10, TGF-beta"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Wound healing",
+      "detail": "Pathology > tissue repair: phases (inflammatory/proliferative/remodeling), key cells and cytokines (macrophages, IL-10/TGF-beta, PDGF, FGF, VEGF), causes of impaired healing.",
+      "location": "Pathology > tissue repair: phases (inflammatory/proliferative/remodeling), key cells and cytokines (macrophages, IL-10/TGF-beta, PDGF, FGF, VEGF), causes of impaired healing."
+    },
+    {
+      "tag": "stem",
+      "topic": "Diabetic complications",
+      "detail": "Endocrine/Path > diabetes: hyperglycemia, AGEs, impaired immunity and microvascular disease causing nonhealing wounds.",
+      "location": "Endocrine/Path > diabetes: hyperglycemia, AGEs, impaired immunity and microvascular disease causing nonhealing wounds."
+    },
+    {
+      "tag": "options",
+      "topic": "Inflammatory mediators",
+      "detail": "Immunology/Path > bradykinin, neutrophil ROS, cortisol effects — pro- vs anti-inflammatory roles in tissue repair.",
+      "location": "Immunology/Path > bradykinin, neutrophil ROS, cortisol effects — pro- vs anti-inflammatory roles in tissue repair."
+    }
+  ],
+  "memoryHook": "A stuck diabetic wound needs the 'calm-down' cytokine: IL-10 turns OFF inflammation so fibroblasts can finally build.",
+  "stem": [
+    {
+      "text": "A 55-year-old man is evaluated due to a "
+    },
+    {
+      "text": "nonhealing left forearm wound",
+      "clue": true,
+      "type": "red",
+      "note": "A wound that won't close points to a stalled healing process. In diabetes, persistent inflammation prevents the transition to the proliferative phase (granulation, fibroblast proliferation, reepithelialization)."
+    },
+    {
+      "text": ". The patient had an "
+    },
+    {
+      "text": "excisional biopsy",
+      "clue": true,
+      "type": "blue",
+      "note": "Explains the wound's origin (recent procedure) and that it should normally be healing by now — emphasizing the abnormal delay rather than a new injury."
+    },
+    {
+      "text": " of a suspicious skin lesion at the site of the wound several weeks ago. He has a history of "
+    },
+    {
+      "text": "uncontrolled type 2 diabetes mellitus",
+      "clue": true,
+      "type": "orange",
+      "note": "Hyperglycemia sustains a pro-inflammatory state and decreases IL-10, impairing the switch to healing. Uncontrolled diabetes is the central reason this wound won't progress."
+    },
+    {
+      "text": " and hypertension. Vital signs are within normal limits. Physical examination shows a 2.5-cm wound surrounded by "
+    },
+    {
+      "text": "erythema",
+      "clue": true,
+      "type": "green",
+      "note": "Surrounding erythema signals ongoing inflammation. Healing requires DAMPENING this inflammation (anti-inflammatory cytokines like IL-10) so fibroblasts can proliferate and the wound can reepithelialize."
+    },
+    {
+      "text": " on the left forearm. Upregulation of which of the following would most likely improve fibroblast proliferation and reepithelization in this nonhealing wound?"
+    }
+  ]
+}

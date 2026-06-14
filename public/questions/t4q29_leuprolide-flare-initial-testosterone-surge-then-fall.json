@@ -1,0 +1,198 @@
+{
+  "id": "q138",
+  "item": 138,
+  "qid": "209",
+  "title": "Leuprolide flare: initial testosterone surge then fall",
+  "system": "Pharmacology",
+  "topic": "GnRH analogs / prostate cancer",
+  "correct": "B",
+  "yourAnswer": "D",
+  "percentCorrect": 52,
+  "vignette": "A 60-year-old man comes to the office due to 2 months of low back pain unresponsive to over-the-counter analgesics. The pain is worse at night and interferes with sleep. On examination, the lumbar vertebrae are tender to palpation, and the prostate is indurated and firm. After a thorough evaluation, leuprolide therapy is started. Which of the following changes in testosterone (solid line) and dihydrotestosterone (dashed line) levels are most likely to occur in this patient after initiation of therapy?",
+  "clues": [
+    {
+      "text": "lumbar vertebrae are tender to palpation",
+      "type": "blue",
+      "note": "Nocturnal back pain with vertebral tenderness in an older man suggests bony metastases - classic for advanced prostate cancer spreading to the axial skeleton."
+    },
+    {
+      "text": "prostate is indurated and firm",
+      "type": "red",
+      "note": "A hard, indurated prostate signals prostate adenocarcinoma. Because the tumor is androgen-dependent, treatment aims to reduce androgen signaling (medical castration with a GnRH analog)."
+    },
+    {
+      "text": "leuprolide therapy is started",
+      "type": "green",
+      "note": "Leuprolide is a GnRH analog. Given CONTINUOUSLY it ultimately downregulates pituitary GnRH receptors and suppresses LH -> low testosterone, but the INITIAL effect is an agonist surge: a transient rise in LH and testosterone (the 'flare') before suppression."
+    }
+  ],
+  "whatMatters": "Leuprolide is a GnRH agonist used as medical castration for androgen-dependent prostate cancer. After starting it, testosterone (and DHT) first SURGE transiently (the flare) and then fall to castrate levels with continuous dosing. The curve showing an initial rise followed by a decline is answer B.",
+  "strategy": "For GnRH-analog questions, distinguish pulsatile vs continuous and acute vs chronic: continuous GnRH agonist first ACTS as an agonist (initial LH/testosterone surge = flare), then downregulates receptors to SUPPRESS. DHT tracks testosterone (DHT is its 5-alpha-reduced product). Pick the curve with an early peak then a sustained drop.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Curve A (steady decline from baseline, no surge)",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Curve B (initial surge then decline below baseline)",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Curve C (immediate sharp drop)",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Curve D (rise then partial decline staying elevated)",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Curve E (no change / flat)",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "steady decline, no surge - misses the flare",
+      "detail": "WHAT IT IS: testosterone falling immediately without an initial rise. ❌ WHY IT FAILS: continuous GnRH agonist first causes an agonist FLARE (transient testosterone rise) before suppression; this curve omits it. ✅ Correct if: a GnRH ANTAGONIST (e.g., degarelix) were used, which suppresses without a flare."
+    },
+    {
+      "letter": "C",
+      "label": "immediate sharp drop - wrong initial direction",
+      "detail": "WHAT IT IS: an abrupt fall right at initiation. ❌ WHY IT FAILS: leuprolide initially RAISES testosterone (flare) before levels fall; the first move is up, not straight down. ✅ Correct if: a 5-alpha-reductase inhibitor (selective DHT drop) or antagonist were given - and even then not a sharp total-testosterone crash."
+    },
+    {
+      "letter": "D",
+      "label": "rise then stays elevated - missing the suppression",
+      "detail": "WHAT IT IS: an initial rise that doesn't fall to low levels. ❌ WHY IT FAILS: with continued leuprolide, receptor downregulation drives testosterone DOWN to castrate levels after the flare; it doesn't remain elevated. You chose this. ✅ Correct if: pulsatile GnRH (fertility use) were given, which sustains gonadotropin/testosterone stimulation."
+    },
+    {
+      "letter": "E",
+      "label": "no change - leuprolide clearly alters levels",
+      "detail": "WHAT IT IS: flat testosterone/DHT. ❌ WHY IT FAILS: leuprolide markedly changes androgen levels (surge then suppression); a flat curve is wrong. ✅ Correct if: an inert agent were given."
+    }
+  ],
+  "reasoning": [
+    "Indurated prostate + bony back pain = metastatic androgen-dependent prostate cancer",
+    "Leuprolide (GnRH agonist) is medical castration",
+    "Continuous dosing: initial agonist surge (flare) -> then receptor downregulation -> suppression",
+    "DHT tracks testosterone: surge then fall -> answer B (Curve B)"
+  ],
+  "mechanism": "GnRH is normally released in pulses to stimulate pituitary gonadotrophs (LH/FSH) and thus testicular testosterone. Leuprolide, a GnRH analog given continuously, initially acts as an agonist, transiently increasing LH and testosterone (the testosterone 'flare,' which can briefly worsen bone pain/obstruction). With sustained continuous exposure, the pituitary GnRH receptors downregulate, LH falls, and testosterone declines to castrate levels - the therapeutic goal in androgen-dependent prostate cancer. Dihydrotestosterone, produced from testosterone by 5-alpha-reductase, parallels these changes. To prevent flare-related harm, an antiandrogen (e.g., flutamide) is co-administered initially, or a GnRH antagonist (degarelix) is used to avoid the surge.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology > GnRH analogs: leuprolide is agonist with continuous use (initial flare, then suppression) and stimulatory if pulsatile; uses (prostate cancer, endometriosis, fibroids, precocious puberty); flare prevented by antiandrogen or use a GnRH antagonist (degarelix)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Map the time course: continuous agonist -> surge first, suppression later. DHT follows testosterone. Choose the curve with an early peak then a drop below baseline."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on GnRH agonist vs antagonist, flare phenomenon, pulsatile vs continuous GnRH, 5-alpha-reductase/DHT, medical castration? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose D (rise then stays high). The defining feature of continuous leuprolide is that after the flare, levels FALL to castrate range. Curve B captures surge-then-suppression."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "On the graph, find the line that first goes UP (flare) then DOWN below baseline; the dashed DHT line parallels the solid testosterone line."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Anchor: leuprolide = 'up then down.' Antagonist (degarelix) = straight down, no flare."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Leuprolide (continuous) effect on testosterone",
+      "back": "Initial surge (flare) then suppression to castrate levels"
+    },
+    {
+      "front": "Why a testosterone flare is dangerous in prostate cancer",
+      "back": "Transient tumor stimulation (worsening bone pain/obstruction)"
+    },
+    {
+      "front": "Preventing leuprolide flare",
+      "back": "Co-administer antiandrogen (flutamide) or use GnRH antagonist (degarelix)"
+    },
+    {
+      "front": "Pulsatile vs continuous GnRH",
+      "back": "Pulsatile = stimulates (fertility); continuous = suppresses"
+    },
+    {
+      "front": "DHT source",
+      "back": "Testosterone -> DHT via 5-alpha-reductase (so DHT tracks testosterone)"
+    },
+    {
+      "front": "GnRH antagonist example",
+      "back": "Degarelix (suppresses without flare)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Leuprolide / GnRH analogs",
+      "detail": "Pharmacology: agonist flare then suppression, indications, flare prevention.",
+      "location": "Pharmacology: agonist flare then suppression, indications, flare prevention."
+    },
+    {
+      "tag": "stem",
+      "topic": "Prostate adenocarcinoma",
+      "detail": "Onc/Urology: androgen dependence, bony metastases, PSA, androgen deprivation.",
+      "location": "Onc/Urology: androgen dependence, bony metastases, PSA, androgen deprivation."
+    },
+    {
+      "tag": "options",
+      "topic": "Androgen axis pharmacology",
+      "detail": "Pharm: GnRH antagonists, antiandrogens (flutamide), 5-alpha-reductase inhibitors.",
+      "location": "Pharm: GnRH antagonists, antiandrogens (flutamide), 5-alpha-reductase inhibitors."
+    }
+  ],
+  "memoryHook": "Continuous leuprolide = 'flare then fall.' It teases the gland up first, then shuts it down to castrate levels.",
+  "stem": [
+    {
+      "text": "A 60-year-old man comes to the office due to 2 months of low back pain unresponsive to over-the-counter analgesics. The pain is worse at night and interferes with sleep. On examination, the "
+    },
+    {
+      "text": "lumbar vertebrae are tender to palpation",
+      "clue": true,
+      "type": "blue",
+      "note": "Nocturnal back pain with vertebral tenderness in an older man suggests bony metastases - classic for advanced prostate cancer spreading to the axial skeleton."
+    },
+    {
+      "text": ", and the "
+    },
+    {
+      "text": "prostate is indurated and firm",
+      "clue": true,
+      "type": "red",
+      "note": "A hard, indurated prostate signals prostate adenocarcinoma. Because the tumor is androgen-dependent, treatment aims to reduce androgen signaling (medical castration with a GnRH analog)."
+    },
+    {
+      "text": ". After a thorough evaluation, "
+    },
+    {
+      "text": "leuprolide therapy is started",
+      "clue": true,
+      "type": "green",
+      "note": "Leuprolide is a GnRH analog. Given CONTINUOUSLY it ultimately downregulates pituitary GnRH receptors and suppresses LH -> low testosterone, but the INITIAL effect is an agonist surge: a transient rise in LH and testosterone (the 'flare') before suppression."
+    },
+    {
+      "text": ". Which of the following changes in testosterone (solid line) and dihydrotestosterone (dashed line) levels are most likely to occur in this patient after initiation of therapy?"
+    }
+  ]
+}

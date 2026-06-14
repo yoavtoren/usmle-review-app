@@ -1,0 +1,198 @@
+{
+  "id": "q128",
+  "item": 128,
+  "qid": "821",
+  "title": "Brown adipose tissue: nonshivering thermogenesis (UCP1)",
+  "system": "Physiology",
+  "topic": "Bioenergetics / neonatal",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 69,
+  "vignette": "Researchers are studying factors contributing to higher morbidity and mortality in infants born prematurely. They find that, compared to term infants, preterm infants have a lesser amount of specialized connective tissue found in the supraclavicular area and around major blood vessels and abdominal organs. These highly vascular tissues are composed of cells containing multiple lipid droplets and abundant mitochondria. Which of the following processes is most likely to be impaired in the preterm infants lacking these tissues?",
+  "clues": [
+    {
+      "text": "infants born prematurely",
+      "type": "orange",
+      "note": "Preterm infants have immature thermoregulation and less brown adipose tissue, putting them at high risk for hypothermia. The tissue being described is brown fat."
+    },
+    {
+      "text": "supraclavicular area and around major blood vessels and abdominal organs",
+      "type": "blue",
+      "note": "These are the classic deposition sites of brown adipose tissue in neonates (interscapular/supraclavicular, perivascular, perirenal). Location helps confirm the tissue identity."
+    },
+    {
+      "text": "multiple lipid droplets and abundant mitochondria",
+      "type": "red",
+      "note": "Cells with MULTIPLE small lipid droplets (multilocular) and ABUNDANT mitochondria (rich in cytochromes, hence brown color) define brown adipocytes. Their mitochondria carry uncoupling protein 1 (thermogenin)."
+    }
+  ],
+  "whatMatters": "The described tissue - multilocular, mitochondria-rich fat in the supraclavicular/perivascular/perirenal regions - is brown adipose tissue. Its function, lost in preterm infants, is nonshivering thermogenesis (heat production via UCP1/thermogenin) - answer E.",
+  "strategy": "Identify the tissue from histology (multilocular lipid + many mitochondria = brown fat), then recall its single key function: nonshivering thermogenesis through uncoupling protein 1 (thermogenin), which dissipates the proton gradient as heat instead of making ATP. Newborns rely on this because they cannot shiver effectively.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Collagen synthesis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Gluconeogenesis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Glycogen storage",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Ketone body production",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Thermogenesis",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "collagen synthesis - wrong cell function",
+      "detail": "WHAT IT IS: fibroblasts make collagen for connective tissue. ❌ WHY IT FAILS: brown adipocytes are specialized for heat production, not matrix synthesis; the histology (lipid droplets + mitochondria) is fat, not fibroblast. ✅ Correct if: the tissue described were fibroblast-rich connective tissue or a collagen disorder."
+    },
+    {
+      "letter": "B",
+      "label": "gluconeogenesis - liver/kidney function",
+      "detail": "WHAT IT IS: glucose synthesis from non-carbohydrate precursors, mainly in liver. ❌ WHY IT FAILS: brown fat's role is thermogenesis, not glucose production. ✅ Correct if: asking about hepatic/renal glucose synthesis during fasting."
+    },
+    {
+      "letter": "C",
+      "label": "glycogen storage - liver/muscle",
+      "detail": "WHAT IT IS: storing glucose as glycogen (liver, muscle). ❌ WHY IT FAILS: brown adipocytes store lipid for oxidation/heat, not glycogen; wrong tissue function. ✅ Correct if: discussing hepatic/muscle glycogen metabolism."
+    },
+    {
+      "letter": "D",
+      "label": "ketone body production - hepatic",
+      "detail": "WHAT IT IS: hepatic ketogenesis from fatty acids during fasting. ❌ WHY IT FAILS: brown fat oxidizes fatty acids to make HEAT (uncoupled), not to export ketones; ketogenesis is a liver function. ✅ Correct if: a fasting/MCAD-type ketone question about the liver."
+    }
+  ],
+  "reasoning": [
+    "Preterm infant lacking multilocular, mitochondria-rich fat in supraclavicular/perivascular sites",
+    "That tissue is brown adipose tissue",
+    "Brown fat performs nonshivering thermogenesis via UCP1 (thermogenin)",
+    "Lacking it impairs thermogenesis -> answer E (risk of neonatal hypothermia)"
+  ],
+  "mechanism": "Brown adipose tissue contains multilocular adipocytes packed with mitochondria whose inner membrane expresses uncoupling protein 1 (thermogenin, UCP1). UCP1 allows protons to leak back into the matrix, bypassing ATP synthase, so the energy of the proton-motive force is released as heat rather than captured as ATP (nonshivering thermogenesis). Stimulated by sympathetic norepinephrine acting on beta-3 receptors after cold exposure, brown fat is the newborn's main defense against hypothermia because infants cannot shiver effectively. Preterm infants have little brown fat (and high surface-area-to-mass ratio), so they are especially prone to cold stress.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Physiology/Biochem > Oxidative phosphorylation & brown fat: UCP1/thermogenin uncouples the proton gradient -> heat; nonshivering thermogenesis; neonatal/perivascular/supraclavicular brown adipose tissue; beta-3 sympathetic activation."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: name the tissue from its histology/location (brown fat), then state its one job (thermogenesis). The 'preterm/morbidity' framing is the hypothermia hint."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on brown vs white adipose, multilocular, uncoupling protein 1/thermogenin, nonshivering thermogenesis, proton-motive force? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The metabolic distractors (gluconeogenesis, glycogen, ketones) are all LIVER functions, not adipocyte ones. Brown fat = heat (thermogenesis)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "If a histology slide were shown: multiple small lipid droplets + many mitochondria = brown adipocyte; single large droplet = white adipocyte."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked E correctly - lock UCP1/thermogenin as the molecule behind nonshivering thermogenesis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Multilocular, mitochondria-rich fat (supraclavicular/perivascular)",
+      "back": "Brown adipose tissue"
+    },
+    {
+      "front": "Brown fat function",
+      "back": "Nonshivering thermogenesis (heat production)"
+    },
+    {
+      "front": "Uncoupling protein in brown fat",
+      "back": "UCP1 / thermogenin (dissipates proton gradient as heat)"
+    },
+    {
+      "front": "Why newborns rely on brown fat",
+      "back": "Cannot shiver effectively; high surface-area-to-mass ratio"
+    },
+    {
+      "front": "Sympathetic trigger for brown fat",
+      "back": "Norepinephrine on beta-3 receptors (cold exposure)"
+    },
+    {
+      "front": "White vs brown adipocyte",
+      "back": "White = single large lipid droplet; brown = many droplets + many mitochondria"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Brown adipose tissue / UCP1",
+      "detail": "Physiology/Biochem: nonshivering thermogenesis, uncoupling oxidative phosphorylation.",
+      "location": "Physiology/Biochem: nonshivering thermogenesis, uncoupling oxidative phosphorylation."
+    },
+    {
+      "tag": "stem",
+      "topic": "Neonatal thermoregulation",
+      "detail": "Peds: hypothermia risk in preterm infants, brown fat distribution.",
+      "location": "Peds: hypothermia risk in preterm infants, brown fat distribution."
+    },
+    {
+      "tag": "options",
+      "topic": "Hepatic metabolic pathways",
+      "detail": "Biochem: gluconeogenesis, glycogen storage, ketogenesis (contrast with adipose function).",
+      "location": "Biochem: gluconeogenesis, glycogen storage, ketogenesis (contrast with adipose function)."
+    }
+  ],
+  "memoryHook": "Brown fat = the baby's furnace. UCP1 'uncouples' the gradient so it leaks out as HEAT, not ATP.",
+  "stem": [
+    {
+      "text": "Researchers are studying factors contributing to higher morbidity and mortality in "
+    },
+    {
+      "text": "infants born prematurely",
+      "clue": true,
+      "type": "orange",
+      "note": "Preterm infants have immature thermoregulation and less brown adipose tissue, putting them at high risk for hypothermia. The tissue being described is brown fat."
+    },
+    {
+      "text": ". They find that, compared to term infants, preterm infants have a lesser amount of specialized connective tissue found in the "
+    },
+    {
+      "text": "supraclavicular area and around major blood vessels and abdominal organs",
+      "clue": true,
+      "type": "blue",
+      "note": "These are the classic deposition sites of brown adipose tissue in neonates (interscapular/supraclavicular, perivascular, perirenal). Location helps confirm the tissue identity."
+    },
+    {
+      "text": ". These highly vascular tissues are composed of cells containing "
+    },
+    {
+      "text": "multiple lipid droplets and abundant mitochondria",
+      "clue": true,
+      "type": "red",
+      "note": "Cells with MULTIPLE small lipid droplets (multilocular) and ABUNDANT mitochondria (rich in cytochromes, hence brown color) define brown adipocytes. Their mitochondria carry uncoupling protein 1 (thermogenin)."
+    },
+    {
+      "text": ". Which of the following processes is most likely to be impaired in the preterm infants lacking these tissues?"
+    }
+  ]
+}

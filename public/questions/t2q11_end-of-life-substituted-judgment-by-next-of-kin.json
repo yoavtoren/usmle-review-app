@@ -1,0 +1,197 @@
+{
+  "id": "q40",
+  "item": 40,
+  "qid": "1124",
+  "title": "End-of-life: substituted judgment by next of kin",
+  "system": "Ethics",
+  "topic": "Surrogate decision-making / DNR",
+  "correct": "A",
+  "yourAnswer": "C",
+  "percentCorrect": 54,
+  "vignette": "An 82-year-old man is admitted to the hospital in the middle of the night. He is noncommunicative and has multiple comorbidities, including end-stage lung cancer. The patient has neither a designated power of attorney nor an advance directive on file. His wife of many years, who is at the hospital with him, has an extensive conversation with the physician in charge of his care. During the conversation, she says that, on several occasions, the patient said not to resuscitate him if he were near death because he did not want to live \"attached to machines or brain dead.\" She says that he just wants to die in peace when the time comes. What would be the most appropriate course of action if the patient enters ventricular fibrillation?",
+  "clues": [
+    {
+      "text": "end-stage lung cancer",
+      "type": "blue",
+      "note": "Terminal illness sets the context: the patient is near the end of life, making prior expressed wishes about resuscitation directly relevant. It frames why DNR/comfort care is being considered."
+    },
+    {
+      "text": "neither a designated power of attorney nor an advance directive",
+      "type": "red",
+      "note": "With no written directive and no chosen healthcare proxy, decision-making falls to the next of kin (default surrogate). The legally recognized first surrogate is usually the spouse."
+    },
+    {
+      "text": "on several occasions, the patient said not to resuscitate him",
+      "type": "green",
+      "note": "The wife is relaying the patient's previously stated wishes. The surrogate's job is SUBSTITUTED JUDGMENT — to choose what the patient would have wanted, not what the family prefers. Clear, repeated prior statements should be honored."
+    }
+  ],
+  "whatMatters": "There's no advance directive, so the spouse acts as default surrogate using substituted judgment — and she reports the patient repeatedly said he didn't want resuscitation. The right action in VF is to honor that: comfort care, allow family to be present, and not resuscitate. The trap answers either ignore his wishes (full code) or over-formalize (court order).",
+  "strategy": "In surrogate/end-of-life questions: no advance directive → next of kin (spouse first) decides by substituted judgment (what the PATIENT would want). Honor clearly expressed prior wishes; you don't need written documentation or a court when the surrogate credibly relays them. Avoid both 'resuscitate anyway' and 'suspend ALL care.'",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Attend to the patient's comfort and allow his family to be present with him as he is dying",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Begin full resuscitation because the patient's wife has no official documentation of her husband's wishes",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Inform the nursing staff that the patient is \"do not resuscitate\" and suspend all treatment",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Obtain a court order to confirm the patient's wishes and have legal documentation",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Perform resuscitation without using a defibrillator but use only cardiac medications",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "full code — ignores valid substituted judgment",
+      "detail": "WHAT IT IS: defaulting to full resuscitation because the wishes weren't written down. ❌ WHY IT FAILS: a valid surrogate's credible report of the patient's wishes does NOT require written documentation; overriding it violates autonomy and substituted judgment. ✅ Correct if: there were no surrogate and no evidence of the patient's wishes at all (then act in best interest, often resuscitate)."
+    },
+    {
+      "letter": "C",
+      "label": "DNR but 'suspend ALL treatment' — too far (your pick)",
+      "detail": "WHAT IT IS: making him DNR and stopping all care. ❌ WHY IT FAILS: DNR means no CPR/ACLS — it does NOT mean withdrawing comfort, symptom control, or other care; 'suspend all treatment' wrongly equates DNR with abandonment. ✅ Correct if: the option said 'do not resuscitate but continue comfort-directed care.'"
+    },
+    {
+      "letter": "D",
+      "label": "court order — unnecessary",
+      "detail": "WHAT IT IS: seeking judicial confirmation before acting. ❌ WHY IT FAILS: courts are reserved for genuine disputes or absent/conflicting surrogates; here a clear surrogate credibly relays consistent wishes, so a court order needlessly delays appropriate end-of-life care. ✅ Correct if: family members were in irreconcilable conflict or the surrogate's authority was contested."
+    },
+    {
+      "letter": "E",
+      "label": "partial resuscitation — still against his wishes",
+      "detail": "WHAT IT IS: 'half' resuscitation (meds but no defibrillation). ❌ WHY IT FAILS: there's no such standard, and it still contradicts the patient's wish not to be resuscitated; resuscitation is all-or-none per his expressed values. ✅ Correct if: never — it's a nonstandard compromise that violates autonomy."
+    }
+  ],
+  "reasoning": [
+    "No advance directive or proxy → next of kin (wife) is default surrogate",
+    "Surrogate uses substituted judgment = what the patient would want",
+    "Patient repeatedly stated he did not want resuscitation",
+    "In VF: honor DNR with comfort care and family presence → answer A"
+  ],
+  "mechanism": "When a patient lacks capacity and has no advance directive or healthcare proxy, decisions pass to the next of kin in a priority order (typically spouse → adult children → parents → siblings). The surrogate should apply substituted judgment — deciding as the patient would have, based on prior statements and values — and otherwise the patient's best interest. A credible report of consistent wishes is honored without requiring written proof or court involvement; DNR limits CPR/ACLS but never withdraws comfort care.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Behavioral Science > end-of-life & decision-making: advance directives, surrogate priority order, substituted judgment vs best interest, DNR scope (no CPR but continue comfort care)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two judgments: who decides (spouse, by substituted judgment) and what they decide (honor his stated DNR wishes with comfort care). Reject extremes — full code and 'stop everything' are both wrong."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on advance directive, durable power of attorney, surrogate/next-of-kin, substituted judgment vs best interest, DNR? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "'No documentation → resuscitate' and 'DNR → suspend all care' are the two traps. Remember a surrogate's credible account suffices, and DNR never means abandoning comfort care."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "If you over-weighted 'documentation,' make a rule card: credible surrogate report of wishes = honor it; courts only for disputes."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "No advance directive / proxy — who decides?",
+      "back": "Next of kin (spouse first) as default surrogate"
+    },
+    {
+      "front": "How surrogates should decide",
+      "back": "Substituted judgment (what the patient would want)"
+    },
+    {
+      "front": "Fallback when wishes unknown",
+      "back": "Best-interest standard"
+    },
+    {
+      "front": "What DNR means",
+      "back": "No CPR/ACLS — comfort care continues"
+    },
+    {
+      "front": "Surrogate priority order",
+      "back": "Spouse → adult children → parents → adult siblings"
+    },
+    {
+      "front": "When is a court needed?",
+      "back": "Genuine disputes or absent/contested surrogate"
+    },
+    {
+      "front": "Does a verbal wish need documentation to honor?",
+      "back": "No — credible surrogate report suffices"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Surrogate decision-making",
+      "detail": "Behavioral Science > end-of-life ethics: default surrogate (next of kin) order, substituted judgment, DNR/DNI scope, comfort/palliative care.",
+      "location": "Behavioral Science > end-of-life ethics: default surrogate (next of kin) order, substituted judgment, DNR/DNI scope, comfort/palliative care."
+    },
+    {
+      "tag": "stem",
+      "topic": "Advance directives",
+      "detail": "Behavioral Science > advance directives: living will vs durable power of attorney; what happens when neither exists.",
+      "location": "Behavioral Science > advance directives: living will vs durable power of attorney; what happens when neither exists."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Capacity & autonomy",
+      "detail": "Behavioral Science > decision-making capacity, autonomy, and when to involve ethics committees vs courts.",
+      "location": "Behavioral Science > decision-making capacity, autonomy, and when to involve ethics committees vs courts."
+    }
+  ],
+  "memoryHook": "No paper, no proxy → the spouse speaks for him (substituted judgment); DNR stops the shocks, never the comfort.",
+  "stem": [
+    {
+      "text": "An 82-year-old man is admitted to the hospital in the middle of the night. He is noncommunicative and has multiple comorbidities, including "
+    },
+    {
+      "text": "end-stage lung cancer",
+      "clue": true,
+      "type": "blue",
+      "note": "Terminal illness sets the context: the patient is near the end of life, making prior expressed wishes about resuscitation directly relevant. It frames why DNR/comfort care is being considered."
+    },
+    {
+      "text": ". The patient has "
+    },
+    {
+      "text": "neither a designated power of attorney nor an advance directive",
+      "clue": true,
+      "type": "red",
+      "note": "With no written directive and no chosen healthcare proxy, decision-making falls to the next of kin (default surrogate). The legally recognized first surrogate is usually the spouse."
+    },
+    {
+      "text": " on file. His wife of many years, who is at the hospital with him, has an extensive conversation with the physician in charge of his care. During the conversation, she says that, "
+    },
+    {
+      "text": "on several occasions, the patient said not to resuscitate him",
+      "clue": true,
+      "type": "green",
+      "note": "The wife is relaying the patient's previously stated wishes. The surrogate's job is SUBSTITUTED JUDGMENT — to choose what the patient would have wanted, not what the family prefers. Clear, repeated prior statements should be honored."
+    },
+    {
+      "text": " if he were near death because he did not want to live \"attached to machines or brain dead.\" She says that he just wants to die in peace when the time comes. What would be the most appropriate course of action if the patient enters ventricular fibrillation?"
+    }
+  ]
+}

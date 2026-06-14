@@ -1,8 +1,16 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
-import { loadFATopics, saveFATopics } from "../lib/storage.js";
+import { loadFATopics, saveFATopics, loadTasks, saveTasks, touchFASection } from "../lib/storage.js";
+import { chaptersFromText } from "../lib/faMap.js";
 import ReviewCharts from "./ReviewCharts.jsx";
 
 const BASE = import.meta.env.BASE_URL;
+
+// Resolve which FA chapters a "Read FA" task targets (new tasks carry faChapters;
+// older ones are matched from their text/body).
+function taskChapterFiles(t) {
+  if (Array.isArray(t.faChapters) && t.faChapters.length) return t.faChapters.map(c => c.file);
+  return chaptersFromText(`${t.text || ""} ${t.body || ""}`).map(c => c.file);
+}
 
 const FA_REVIEW_INTERVALS = {
   1: [14],
@@ -230,6 +238,34 @@ export default function FADashboard({ onBack, onTrack }) {
   const [search, setSearch] = useState("");
   const [expanded, setExpanded] = useState(null);
   const [chaptersLoaded, setChaptersLoaded] = useState(false);
+  const [tasks, setTasks] = useState(loadTasks);
+
+  // Pending "Read FA" tasks (from missed questions), grouped by FA chapter file.
+  const faReviewsByChapter = useMemo(() => {
+    const map = {};
+    for (const t of tasks) {
+      if (t.type !== "read-fa" || t.done) continue;
+      for (const file of taskChapterFiles(t)) {
+        (map[file] = map[file] || []).push(t);
+      }
+    }
+    return map;
+  }, [tasks]);
+
+  const totalFAReviews = useMemo(
+    () => tasks.filter(t => t.type === "read-fa" && !t.done).length,
+    [tasks]
+  );
+
+  function completeFAReview(taskId) {
+    const next = tasks.map(t => {
+      if (t.id !== taskId) return t;
+      if (t.linkedFaSectionId) touchFASection(t.linkedFaSectionId);
+      return { ...t, done: true };
+    });
+    setTasks(next);
+    saveTasks(next);
+  }
 
   useEffect(() => {
     fetch(`${BASE}fa/fa-progress.json`)
@@ -592,6 +628,38 @@ export default function FADashboard({ onBack, onTrack }) {
         </div>
       )}
 
+      {/* Targeted FA reviews queued from missed questions */}
+      {!search && totalFAReviews > 0 && (
+        <div className="fad-review-panel">
+          <div className="fad-review-head">
+            <span className="fad-review-title">🔔 From your missed questions</span>
+            <span className="fad-review-count">{totalFAReviews} to read</span>
+          </div>
+          <div className="fad-review-list">
+            {chapterStats
+              .filter(ch => faReviewsByChapter[ch.file]?.length)
+              .map(ch => (
+                <div key={ch.file} className="fad-review-group">
+                  <button className="fad-review-ch" style={{ "--c": ch.color }}
+                    onClick={() => setExpanded(ch.idx)}>
+                    <span className="fad-review-ch-dot" style={{ background: ch.color }} />
+                    {ch.name}
+                    <span className="fad-review-ch-n">{faReviewsByChapter[ch.file].length}</span>
+                  </button>
+                  {faReviewsByChapter[ch.file].map(t => (
+                    <div key={t.id} className="fad-review-item">
+                      <span className="fad-review-item-txt">{t.body || t.text}</span>
+                      <button className="fad-review-done" onClick={() => completeFAReview(t.id)}>
+                        ✓ Read
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+
       {/* Chapter grid */}
       {!search && (
         <div className="fad-chapters">
@@ -609,6 +677,11 @@ export default function FADashboard({ onBack, onTrack }) {
                   <button className="fad-ch-header" onClick={() => setExpanded(isOpen ? null : idx)}>
                     <span className="fad-ch-accent" style={{ background: ch.color }} />
                     <span className="fad-ch-name">{ch.name}</span>
+                    {faReviewsByChapter[ch.file]?.length > 0 && (
+                      <span className="fad-ch-bell" title={`${faReviewsByChapter[ch.file].length} review${faReviewsByChapter[ch.file].length > 1 ? "s" : ""} waiting from missed questions`}>
+                        🔔 {faReviewsByChapter[ch.file].length}
+                      </span>
+                    )}
                     <div className="fad-ch-bar-wrap">
                       <div className="fad-ch-bar-fill" style={{ width: `${ch.pct}%`, background: ch.color }} />
                     </div>

@@ -1,0 +1,202 @@
+{
+  "id": "q82",
+  "item": 82,
+  "qid": "14872",
+  "title": "Proton pump inhibitor: blocks H+/K+ ATPase",
+  "system": "Pharmacology",
+  "topic": "GERD / acid secretion",
+  "correct": "C",
+  "yourAnswer": "A",
+  "percentCorrect": 93,
+  "vignette": "A 42-year-old woman comes to the office due to a 2-month history of an intermittent burning sensation in her chest with an occasional simultaneous acidic taste at the back of her throat. The symptoms occur soon after she eats a meal. The patient has no shortness of breath, lightheadedness, nausea, vomiting, or weight loss. She has no other medical conditions. The patient has smoked a pack of cigarettes daily for the last 10 years but does not use alcohol. Family history is unremarkable. Vital signs are within normal limits. BMI is 32 kg/m2. Physical examination shows no abnormalities. Urine pregnancy test is negative. Smoking cessation is discussed, and a medication is prescribed for treatment of her symptoms. The patient returns in 2 weeks for a follow-up visit and reports near-complete resolution of her symptoms. Which of the following is the most likely mechanism of action of this drug?",
+  "clues": [
+    {
+      "text": "burning sensation in her chest with an occasional simultaneous acidic taste",
+      "type": "red",
+      "note": "Postprandial retrosternal burning + acid regurgitation (acid taste) is classic GERD. The acid symptoms point treatment at gastric acid SECRETION."
+    },
+    {
+      "text": "occur soon after she eats a meal",
+      "type": "blue",
+      "note": "Symptoms right after meals are typical reflux. Risk factors here (smoking, BMI 32 / obese) lower LES tone and raise intra-abdominal pressure, worsening reflux."
+    },
+    {
+      "text": "near-complete resolution of her symptoms",
+      "type": "green",
+      "note": "Near-complete relief of GERD within 2 weeks fits a potent acid suppressant — a proton pump inhibitor (PPI). PPIs irreversibly block the final common step of acid secretion, the parietal-cell H+/K+ ATPase."
+    }
+  ],
+  "whatMatters": "The whole vignette is a GERD setup; the question is the DRUG mechanism. A potent acid-suppressant giving near-complete relief is a PPI (omeprazole), which irreversibly inhibits the parietal-cell H+/K+ ATPase (the proton pump) — the final common step of acid secretion. Answer C.",
+  "strategy": "Match GERD/acid drugs to their exact target: PPI = H+/K+ ATPase (final step, most potent); H2 blocker = histamine H2 receptor; sucralfate/bismuth = cytoprotective coating; misoprostol = PGE1 (↓acid, ↑mucus); antacids = neutralize. 'Near-complete resolution' favors the most potent (PPI).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Blockade of gastrin receptors",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Creation of a cytoprotective layer in the stomach",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Inhibition of H+/K+ ATPase activity",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Inhibition of synthesis of gastrin",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Prostaglandin-mediated inhibition of acid secretion",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "gastrin-receptor blockade — not a real GERD drug (your pick)",
+      "detail": "WHAT IT IS: gastrin (via CCK-B receptors) stimulates parietal-cell acid secretion. ❌ WHY IT FAILS: there is no routinely used gastrin-RECEPTOR antagonist for GERD; standard therapy blocks H2 receptors or the proton pump, not gastrin receptors. ✅ Correct if: the question were testing the physiology of gastrin/CCK-B stimulation, not a prescribed drug."
+    },
+    {
+      "letter": "B",
+      "label": "cytoprotective coating — that's sucralfate/bismuth",
+      "detail": "WHAT IT IS: sucralfate and bismuth form a protective barrier over mucosa/ulcers. ❌ WHY IT FAILS: they don't suppress acid secretion and rarely give near-complete GERD relief; the potent response here fits acid suppression. ✅ Correct if: the drug were described as forming a protective gel over an ulcer base."
+    },
+    {
+      "letter": "D",
+      "label": "inhibit gastrin synthesis — not a drug mechanism",
+      "detail": "WHAT IT IS: blocking gastrin production. ❌ WHY IT FAILS: no GERD drug works by inhibiting gastrin synthesis; acid drugs act at the H2 receptor or the proton pump. ✅ Correct if: never — this isn't a real therapeutic mechanism here."
+    },
+    {
+      "letter": "E",
+      "label": "prostaglandin-mediated acid suppression — that's misoprostol",
+      "detail": "WHAT IT IS: misoprostol is a PGE1 analog that decreases acid and increases mucus/bicarbonate. ❌ WHY IT FAILS: it's used mainly for NSAID-induced ulcer prevention (and causes diarrhea/abortifacient effects), not first-line GERD, and the near-complete relief points to a PPI. ✅ Correct if: the drug were a prostaglandin analog for NSAID gastropathy."
+    }
+  ],
+  "reasoning": [
+    "Postprandial burning + acid regurgitation = GERD",
+    "Treatment targets gastric acid secretion",
+    "Near-complete relief in 2 weeks = potent acid suppressant (PPI)",
+    "PPI irreversibly blocks parietal-cell H+/K+ ATPase → answer C"
+  ],
+  "mechanism": "Proton pump inhibitors (omeprazole, etc.) are prodrugs activated in the acidic parietal-cell canaliculus, where they irreversibly inhibit the H+/K+ ATPase — the final common step pumping H+ into the gastric lumen. This blocks acid secretion regardless of the upstream stimulus (gastrin/CCK-B, histamine/H2, ACh/M3), making PPIs the most potent acid suppressants and effective for GERD and peptic ulcer disease.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology > GI acid drugs: PPIs (H+/K+ ATPase, final step), H2 blockers (H2 receptor), antacids, sucralfate/bismuth (cytoprotective), misoprostol (PGE1). Cross-link the parietal-cell secretion diagram (M3/H2/CCK-B inputs)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The clinical part just says 'GERD.' The asked item is the mechanism. 'Near-complete relief' → most potent acid suppressant → PPI → H+/K+ ATPase."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on H+/K+ ATPase, proton pump, parietal cell, gastrin/CCK-B, H2 receptor, cytoprotective, prostaglandin analog? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Gastrin-receptor blockade (A, your pick) sounds physiologic but isn't a real drug class for GERD; the prescribed drug acts at the pump (PPI) or H2 receptor. Map mechanism to an actual agent."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The parietal-cell diagram shows three stimulatory inputs (M3 from ACh/vagus, CCK-B from gastrin, H2 from histamine/ECL cells) converging on the H+/K+ ATPase. Cimetidine blocks H2; PPIs block the pump itself."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as A → flashcard each acid drug to its exact target; remember PPI = the FINAL step (H+/K+ ATPase), so it's the most powerful."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "GERD drug giving near-complete relief",
+      "back": "PPI (omeprazole) — irreversible H+/K+ ATPase inhibitor"
+    },
+    {
+      "front": "Final common step of acid secretion",
+      "back": "Parietal-cell H+/K+ ATPase (proton pump)"
+    },
+    {
+      "front": "H2 blocker target",
+      "back": "Histamine H2 receptor (e.g., cimetidine)"
+    },
+    {
+      "front": "Cytoprotective agents",
+      "back": "Sucralfate, bismuth (coat mucosa)"
+    },
+    {
+      "front": "Misoprostol mechanism",
+      "back": "PGE1 analog: ↓acid, ↑mucus/HCO3 (NSAID ulcer prevention)"
+    },
+    {
+      "front": "Parietal-cell stimulatory receptors",
+      "back": "M3 (ACh), H2 (histamine), CCK-B (gastrin)"
+    },
+    {
+      "front": "GERD risk factors",
+      "back": "Obesity, smoking, ↓LES tone, hiatal hernia"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Proton pump inhibitors",
+      "detail": "Pharmacology > GI: PPI mechanism (irreversible H+/K+ ATPase), uses (GERD, PUD, ZE), adverse effects (B12/Mg/Ca, C. diff).",
+      "location": "Pharmacology > GI: PPI mechanism (irreversible H+/K+ ATPase), uses (GERD, PUD, ZE), adverse effects (B12/Mg/Ca, C. diff)."
+    },
+    {
+      "tag": "options",
+      "topic": "Acid-suppression & mucosal drugs",
+      "detail": "Pharm: H2 blockers, antacids, sucralfate/bismuth, misoprostol — mechanisms and uses.",
+      "location": "Pharm: H2 blockers, antacids, sucralfate/bismuth, misoprostol — mechanisms and uses."
+    },
+    {
+      "tag": "stem",
+      "topic": "GERD",
+      "detail": "GI: pathophysiology (LES dysfunction), risk factors, alarm features, stepwise therapy.",
+      "location": "GI: pathophysiology (LES dysfunction), risk factors, alarm features, stepwise therapy."
+    }
+  ],
+  "memoryHook": "PPI = Pump Permanently Inhibited (H+/K+ ATPase). It hits the LAST step, so it's the strongest acid blocker.",
+  "stem": [
+    {
+      "text": "A 42-year-old woman comes to the office due to a 2-month history of an intermittent "
+    },
+    {
+      "text": "burning sensation in her chest with an occasional simultaneous acidic taste",
+      "clue": true,
+      "type": "red",
+      "note": "Postprandial retrosternal burning + acid regurgitation (acid taste) is classic GERD. The acid symptoms point treatment at gastric acid SECRETION."
+    },
+    {
+      "text": " at the back of her throat. The symptoms "
+    },
+    {
+      "text": "occur soon after she eats a meal",
+      "clue": true,
+      "type": "blue",
+      "note": "Symptoms right after meals are typical reflux. Risk factors here (smoking, BMI 32 / obese) lower LES tone and raise intra-abdominal pressure, worsening reflux."
+    },
+    {
+      "text": ". The patient has no shortness of breath, lightheadedness, nausea, vomiting, or weight loss. She has no other medical conditions. The patient has smoked a pack of cigarettes daily for the last 10 years but does not use alcohol. Family history is unremarkable. Vital signs are within normal limits. BMI is 32 kg/m2. Physical examination shows no abnormalities. Urine pregnancy test is negative. Smoking cessation is discussed, and a medication is prescribed for treatment of her symptoms. The patient returns in 2 weeks for a follow-up visit and reports "
+    },
+    {
+      "text": "near-complete resolution of her symptoms",
+      "clue": true,
+      "type": "green",
+      "note": "Near-complete relief of GERD within 2 weeks fits a potent acid suppressant — a proton pump inhibitor (PPI). PPIs irreversibly block the final common step of acid secretion, the parietal-cell H+/K+ ATPase."
+    },
+    {
+      "text": ". Which of the following is the most likely mechanism of action of this drug?"
+    }
+  ]
+}

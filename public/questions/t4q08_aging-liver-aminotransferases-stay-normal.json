@@ -1,0 +1,189 @@
+{
+  "id": "q117",
+  "item": 117,
+  "qid": "21033",
+  "title": "Aging liver: aminotransferases stay normal",
+  "system": "Physiology",
+  "topic": "Pharmacology of aging",
+  "correct": "D",
+  "yourAnswer": "E",
+  "percentCorrect": 35,
+  "vignette": "An 87-year-old woman comes to the office to discuss treatment for colon cancer, which was recently diagnosed by colonoscopy. CT scan was negative for metastatic disease. The patient has no other medical conditions, and family history is unremarkable. She does not drink alcohol. Vital signs are normal. A chemotherapy regimen containing a medication that is primarily metabolized by the liver is chosen for therapy. Because of the patient's age, the physician is considering adjusting the dose to prevent adverse effects. Which of the following parameters is likely to be the most similar between this patient and a healthy 40-year-old individual?",
+  "clues": [
+    {
+      "text": "87-year-old woman",
+      "type": "orange",
+      "note": "Advanced age is the entire point: the stem tests which hepatic parameters DECLINE with normal aging and which stay UNCHANGED. Most metabolic/structural measures decline; you must find the exception."
+    },
+    {
+      "text": "medication that is primarily metabolized by the liver",
+      "type": "blue",
+      "note": "Hepatic drug clearance falls with age mainly due to reduced liver mass and reduced hepatic blood flow (and some decline in phase I/CYP activity), which is why dose reduction is considered - framing all the 'decreased' options."
+    },
+    {
+      "text": "adjusting the dose to prevent adverse effects",
+      "type": "green",
+      "note": "The clinical concern is age-related decline in hepatic clearance. The asked exception - the parameter UNCHANGED with age - is the serum aminotransferase level, which does not fall in healthy aging."
+    }
+  ],
+  "whatMatters": "The question wants the hepatic parameter that does NOT change with age. With normal aging the liver shrinks, hepatic blood flow drops, CYP450 activity and regenerative capacity decline - but serum aminotransferase (AST/ALT) levels remain unchanged. Answer D.",
+  "strategy": "For 'what stays the same with aging' liver questions, recall that aging reduces liver size, hepatic blood flow, CYP450/phase I metabolism, and regenerative capacity - all DECREASE. Aminotransferase levels are the classic exception (normal aging does not raise/lower them), so elevated transaminases in an elderly patient still imply real disease.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Hepatic concentration of cytochrome P-450",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Liver blood perfusion",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Rate of hepatic regeneration",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Serum aminotransferase levels",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Size of the liver",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "CYP450 activity - decreases with age",
+      "detail": "WHAT IT IS: hepatic cytochrome P-450 content/phase I metabolism. ❌ WHY IT FAILS: it declines with aging, slowing oxidative drug metabolism - a reason to reduce dose, so it differs between the two patients. ✅ Correct if: asked which parameter DECREASES with age."
+    },
+    {
+      "letter": "B",
+      "label": "hepatic blood flow - decreases with age",
+      "detail": "WHAT IT IS: liver perfusion. ❌ WHY IT FAILS: hepatic blood flow falls substantially with age, reducing first-pass extraction and clearance of high-extraction drugs - it is different, not similar. ✅ Correct if: asked which parameter drops with aging."
+    },
+    {
+      "letter": "C",
+      "label": "hepatic regeneration - decreases with age",
+      "detail": "WHAT IT IS: the liver's capacity to regenerate after injury. ❌ WHY IT FAILS: regenerative capacity declines with age, so it is not the same as a young adult. ✅ Correct if: asked about reduced repair/regeneration in the elderly."
+    },
+    {
+      "letter": "E",
+      "label": "liver size - decreases with age",
+      "detail": "WHAT IT IS: total liver mass/volume. ❌ WHY IT FAILS: liver size decreases with aging (partly from reduced perfusion), contributing to lower metabolic capacity - you chose this, but it does change. ✅ Correct if: asked which parameter shrinks with age."
+    }
+  ],
+  "reasoning": [
+    "Normal aging reduces liver size, perfusion, CYP450, and regeneration",
+    "These declines justify chemo dose reduction in the elderly",
+    "Serum aminotransferases are NOT altered by healthy aging",
+    "So AST/ALT are the parameter most similar to a 40-year-old -> answer D"
+  ],
+  "mechanism": "With normal aging the liver loses mass and receives less blood flow, and phase I (cytochrome P-450) metabolism and regenerative capacity decline; phase II conjugation is relatively preserved. These changes reduce clearance of hepatically metabolized and high-extraction drugs, raising toxicity risk and prompting dose adjustment in elderly patients. Serum aminotransferases (AST, ALT), however, are not changed by aging itself - so an elevation should not be dismissed as 'just age' but investigated as genuine hepatocellular injury. Hence aminotransferase levels are the parameter most similar between an 87-year-old and a healthy 40-year-old.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid/Physiology > Aging and the liver: decreased liver mass, hepatic blood flow, CYP450/phase I metabolism, regenerative capacity; aminotransferases UNCHANGED. Implication: reduce doses of hepatically cleared drugs in elderly."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Read the polarity carefully - it asks what is the SAME (unchanged), not what changes. Everything that changes is a distractor; pick the one stable parameter."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on aminotransferases (AST/ALT), cytochrome P-450/phase I vs phase II, hepatic extraction/first-pass, regenerative capacity? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose E (liver size). Liver size DOES shrink with age - it's a 'changes' option. The only 'stays the same' choice is aminotransferase levels."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Flip the question into a list: aging liver = smaller, less flow, less CYP, less regeneration; transaminases unchanged. The exception is the answer."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Liver parameter UNCHANGED with normal aging",
+      "back": "Serum aminotransferases (AST/ALT)"
+    },
+    {
+      "front": "Hepatic changes that DECREASE with age",
+      "back": "Liver mass, hepatic blood flow, CYP450/phase I metabolism, regeneration"
+    },
+    {
+      "front": "Phase I vs phase II in elderly",
+      "back": "Phase I (CYP) declines; phase II conjugation relatively preserved"
+    },
+    {
+      "front": "Why reduce drug doses in elderly",
+      "back": "Lower hepatic clearance + lower renal clearance -> higher drug levels"
+    },
+    {
+      "front": "Elevated AST/ALT in an elderly patient",
+      "back": "Real hepatocellular injury (not explained by age)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Aging and hepatic drug metabolism",
+      "detail": "Pharmacology/Physiology: age-related decline in liver mass, flow, CYP450; aminotransferases unchanged.",
+      "location": "Pharmacology/Physiology: age-related decline in liver mass, flow, CYP450; aminotransferases unchanged."
+    },
+    {
+      "tag": "stem",
+      "topic": "Pharmacokinetics in the elderly",
+      "detail": "Pharm: reduced hepatic/renal clearance, altered volume of distribution, dose adjustment.",
+      "location": "Pharm: reduced hepatic/renal clearance, altered volume of distribution, dose adjustment."
+    },
+    {
+      "tag": "options",
+      "topic": "Liver function tests",
+      "detail": "Hepatology: AST/ALT meaning, hepatocellular vs cholestatic patterns.",
+      "location": "Hepatology: AST/ALT meaning, hepatocellular vs cholestatic patterns."
+    }
+  ],
+  "memoryHook": "Aging liver: Smaller, Slower flow, less CYP, less regrowth - but transaminases hold steady. The 'unchanged' one is the answer.",
+  "stem": [
+    {
+      "text": "An "
+    },
+    {
+      "text": "87-year-old woman",
+      "clue": true,
+      "type": "orange",
+      "note": "Advanced age is the entire point: the stem tests which hepatic parameters DECLINE with normal aging and which stay UNCHANGED. Most metabolic/structural measures decline; you must find the exception."
+    },
+    {
+      "text": " comes to the office to discuss treatment for colon cancer, which was recently diagnosed by colonoscopy. CT scan was negative for metastatic disease. The patient has no other medical conditions, and family history is unremarkable. She does not drink alcohol. Vital signs are normal. A chemotherapy regimen containing a "
+    },
+    {
+      "text": "medication that is primarily metabolized by the liver",
+      "clue": true,
+      "type": "blue",
+      "note": "Hepatic drug clearance falls with age mainly due to reduced liver mass and reduced hepatic blood flow (and some decline in phase I/CYP activity), which is why dose reduction is considered - framing all the 'decreased' options."
+    },
+    {
+      "text": " is chosen for therapy. Because of the patient's age, the physician is considering "
+    },
+    {
+      "text": "adjusting the dose to prevent adverse effects",
+      "clue": true,
+      "type": "green",
+      "note": "The clinical concern is age-related decline in hepatic clearance. The asked exception - the parameter UNCHANGED with age - is the serum aminotransferase level, which does not fall in healthy aging."
+    },
+    {
+      "text": ". Which of the following parameters is likely to be the most similar between this patient and a healthy 40-year-old individual?"
+    }
+  ]
+}

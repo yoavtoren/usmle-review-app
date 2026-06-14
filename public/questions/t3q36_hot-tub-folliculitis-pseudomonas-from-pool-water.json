@@ -1,0 +1,221 @@
+{
+  "id": "q106",
+  "item": 106,
+  "qid": "974",
+  "title": "Hot tub folliculitis: Pseudomonas from pool water",
+  "system": "Microbiology",
+  "topic": "Skin infection / Pseudomonas",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 72,
+  "vignette": "A 35-year-old woman comes to the emergency department due to an itchy rash that appeared earlier this morning. She recently returned from a family vacation at a resort in Cancun. Two days ago, the patient's husband developed similar symptoms. The patient has no significant past medical history and takes no medications. She has no known allergies. Her temperature is 37.6 C (99.7 F). On examination, there is a diffuse, pruritic, papulopustular rash that is most noticeable on the trunk and extremities. Microbiologic analysis of a pustular fluid sample demonstrates oxidase-positive gram-negative rods that produce pigment on culture medium. Which of the following is the most likely source of this patient's infection?",
+  "clues": [
+    {
+      "text": "resort in Cancun",
+      "type": "orange",
+      "note": "A recent resort vacation with pools/hot tubs is the classic exposure for 'hot tub folliculitis.' Inadequately chlorinated water lets Pseudomonas proliferate and infect hair follicles."
+    },
+    {
+      "text": "husband developed similar symptoms",
+      "type": "blue",
+      "note": "A shared, common-source outbreak (two people exposed to the same water) supports an environmental water source rather than person-to-person spread. This points to contaminated pool/hot tub water."
+    },
+    {
+      "text": "diffuse, pruritic, papulopustular rash that is most noticeable on the trunk and extremities",
+      "type": "red",
+      "note": "A pruritic papulopustular folliculitis on the trunk/extremities (areas covered by a swimsuit soaking in water) is 'hot tub folliculitis,' a superficial Pseudomonas infection of hair follicles."
+    },
+    {
+      "text": "oxidase-positive gram-negative rods that produce pigment on culture medium",
+      "type": "green",
+      "note": "Oxidase-POSITIVE, gram-negative rods producing pigment (blue-green pyocyanin/pyoverdin) = Pseudomonas aeruginosa. It thrives in water and is nearly always the cause of hot tub folliculitis — so the source is pool/hot tub water."
+    }
+  ],
+  "whatMatters": "A pruritic papulopustular folliculitis after a resort stay, with oxidase-positive, pigment-producing gram-negative rods = Pseudomonas aeruginosa ('hot tub folliculitis'). Pseudomonas is a water organism, so the source is contaminated pool/hot tub water. Answer E.",
+  "strategy": "ID the bug from the lab fingerprint (oxidase-positive GNR + blue-green pigment = Pseudomonas), then answer the asked sub-question (SOURCE). Pseudomonas = water/moist environments (hot tubs, swimmer's ear, burns). Reject person-to-person, food, insect, soil, or pet routes that don't fit a waterborne organism.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Food",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Human contact",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Insects",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pets",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Pool water",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "Soil",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "food — wrong route for Pseudomonas folliculitis",
+      "detail": "WHAT IT IS: foodborne illness causes GI symptoms. ❌ WHY IT FAILS: hot tub folliculitis is a skin infection acquired from water, not ingestion; Pseudomonas here colonizes follicles from contaminated water. ✅ Correct if: the illness were a foodborne GI infection."
+    },
+    {
+      "letter": "B",
+      "label": "human contact — not the mode here",
+      "detail": "WHAT IT IS: person-to-person spread fits scabies, impetigo, many viruses. ❌ WHY IT FAILS: although the husband is also affected, that reflects a shared WATER exposure (common source), not direct transmission; Pseudomonas folliculitis comes from the water. ✅ Correct if: the organism were a contact-spread mite (scabies) or contagious skin infection."
+    },
+    {
+      "letter": "C",
+      "label": "insects — wrong vector",
+      "detail": "WHAT IT IS: insect-borne diseases (mosquitoes, ticks, fleas) cause vector-transmitted illnesses. ❌ WHY IT FAILS: Pseudomonas isn't vector-borne; the rash is waterborne folliculitis, not bites. ✅ Correct if: the lesions were insect bites or a vector-borne infection."
+    },
+    {
+      "letter": "D",
+      "label": "pets — not a Pseudomonas reservoir here",
+      "detail": "WHAT IT IS: pets transmit organisms like Bartonella (cats), Toxoplasma, or ringworm. ❌ WHY IT FAILS: nothing implicates animals, and Pseudomonas folliculitis is from water. ✅ Correct if: the history pointed to an animal-associated pathogen."
+    },
+    {
+      "letter": "F",
+      "label": "soil — possible for Pseudomonas, but water is the source here",
+      "detail": "WHAT IT IS: Pseudomonas is ubiquitous and can be found in soil. ❌ WHY IT FAILS: the clinical pattern (resort, shared exposure, swimsuit-distribution folliculitis) specifically indicates contaminated WATER (hot tub/pool), the most likely source. ✅ Correct if: the exposure were a soil/plant injury rather than recreational water."
+    }
+  ],
+  "reasoning": [
+    "Pruritic papulopustular folliculitis after a resort stay, shared with spouse",
+    "Lab: oxidase-positive gram-negative rods producing pigment = Pseudomonas aeruginosa",
+    "Pseudomonas causes 'hot tub folliculitis' from water",
+    "Most likely source = pool/hot tub water → answer E"
+  ],
+  "mechanism": "Pseudomonas aeruginosa is a ubiquitous, motile, oxidase-positive gram-negative rod that thrives in water and moist environments and produces blue-green pigments (pyocyanin, pyoverdin). Inadequately chlorinated pools/hot tubs allow it to proliferate and infect hair follicles, causing 'hot tub folliculitis' — a self-limited, pruritic papulopustular rash in the swimsuit distribution. Other water-associated Pseudomonas infections include otitis externa ('swimmer's ear') and infections of burns.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > Pseudomonas aeruginosa: oxidase-positive GNR, pyocyanin/pyoverdin pigment, water/moist niche, hot tub folliculitis, swimmer's ear (otitis externa), burns, ecthyma gangrenosum, neutropenic/CF infections."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: lab fingerprint → Pseudomonas; then the asked item is SOURCE → water (pool/hot tub). The shared-exposure detail confirms a common water source, not person-to-person spread."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on folliculitis, papulopustular, oxidase test, pyocyanin/pyoverdin, gram-negative rod, common-source outbreak? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Human contact (B) is tempting because the husband is also affected, but that's a shared WATER exposure, not direct transmission. Soil (F) is a near-miss for ubiquitous Pseudomonas — the resort/swim history points to pool water."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (E). Anchor: oxidase-positive GNR + blue-green pigment + folliculitis after a hot tub = Pseudomonas from water."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Hot tub folliculitis organism",
+      "back": "Pseudomonas aeruginosa"
+    },
+    {
+      "front": "Pseudomonas lab clues",
+      "back": "Oxidase-positive GNR, blue-green pigment (pyocyanin/pyoverdin), grape-like odor"
+    },
+    {
+      "front": "Source of hot tub folliculitis",
+      "back": "Contaminated pool/hot tub water (inadequate chlorination)"
+    },
+    {
+      "front": "Other water-related Pseudomonas infections",
+      "back": "Otitis externa (swimmer's ear), burns, contact-lens keratitis"
+    },
+    {
+      "front": "Pseudomonas in neutropenia",
+      "back": "Ecthyma gangrenosum, sepsis"
+    },
+    {
+      "front": "Pseudomonas + cystic fibrosis",
+      "back": "Chronic respiratory colonization (mucoid biofilm)"
+    },
+    {
+      "front": "Oxidase-positive significance",
+      "back": "Has cytochrome c oxidase (Pseudomonas, Neisseria, etc.)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Pseudomonas aeruginosa",
+      "detail": "Micro: oxidase-positive GNR, pigments, hot tub folliculitis, swimmer's ear, burns, CF, ecthyma gangrenosum, exotoxin A.",
+      "location": "Micro: oxidase-positive GNR, pigments, hot tub folliculitis, swimmer's ear, burns, CF, ecthyma gangrenosum, exotoxin A."
+    },
+    {
+      "tag": "stem",
+      "topic": "Folliculitis & skin infections",
+      "detail": "Derm/Micro: folliculitis causes (S. aureus vs Pseudomonas), distribution, self-limited course.",
+      "location": "Derm/Micro: folliculitis causes (S. aureus vs Pseudomonas), distribution, self-limited course."
+    },
+    {
+      "tag": "options",
+      "topic": "Transmission routes",
+      "detail": "Micro: water/environmental (Pseudomonas, Legionella), foodborne, vector-borne, contact, zoonotic — matching organism to source.",
+      "location": "Micro: water/environmental (Pseudomonas, Legionella), foodborne, vector-borne, contact, zoonotic — matching organism to source."
+    }
+  ],
+  "memoryHook": "Hot tub + itchy pustules + blue-green oxidase-positive rod = Pseudomonas from the WATER. (Also swimmer's ear.)",
+  "stem": [
+    {
+      "text": "A 35-year-old woman comes to the emergency department due to an itchy rash that appeared earlier this morning. She recently returned from a family vacation at a "
+    },
+    {
+      "text": "resort in Cancun",
+      "clue": true,
+      "type": "orange",
+      "note": "A recent resort vacation with pools/hot tubs is the classic exposure for 'hot tub folliculitis.' Inadequately chlorinated water lets Pseudomonas proliferate and infect hair follicles."
+    },
+    {
+      "text": ". Two days ago, the patient's "
+    },
+    {
+      "text": "husband developed similar symptoms",
+      "clue": true,
+      "type": "blue",
+      "note": "A shared, common-source outbreak (two people exposed to the same water) supports an environmental water source rather than person-to-person spread. This points to contaminated pool/hot tub water."
+    },
+    {
+      "text": ". The patient has no significant past medical history and takes no medications. She has no known allergies. Her temperature is 37.6 C (99.7 F). On examination, there is a "
+    },
+    {
+      "text": "diffuse, pruritic, papulopustular rash that is most noticeable on the trunk and extremities",
+      "clue": true,
+      "type": "red",
+      "note": "A pruritic papulopustular folliculitis on the trunk/extremities (areas covered by a swimsuit soaking in water) is 'hot tub folliculitis,' a superficial Pseudomonas infection of hair follicles."
+    },
+    {
+      "text": ". Microbiologic analysis of a pustular fluid sample demonstrates "
+    },
+    {
+      "text": "oxidase-positive gram-negative rods that produce pigment on culture medium",
+      "clue": true,
+      "type": "green",
+      "note": "Oxidase-POSITIVE, gram-negative rods producing pigment (blue-green pyocyanin/pyoverdin) = Pseudomonas aeruginosa. It thrives in water and is nearly always the cause of hot tub folliculitis — so the source is pool/hot tub water."
+    },
+    {
+      "text": ". Which of the following is the most likely source of this patient's infection?"
+    }
+  ]
+}

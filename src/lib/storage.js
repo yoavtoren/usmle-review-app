@@ -283,6 +283,26 @@ export function saveQuestionIntake(id, meta) {
   saveQIntakeRaw(all);
 }
 
+// Reset a set of questions back to "unreviewed" for a fresh re-review:
+// clears SR progress + done, intake tags, and any auto-generated linked tasks.
+export function resetQuestions(ids) {
+  const set = new Set(ids);
+  if (set.size === 0) return 0;
+
+  const progress = loadProgress();
+  for (const id of set) delete progress[id];
+  save(progress);
+
+  const intake = loadQIntake();
+  for (const id of set) delete intake[id];
+  saveQIntakeRaw(intake);
+
+  const tasks = loadTasks().filter(t => !set.has(t.linkedQuestionId));
+  saveTasks(tasks);
+
+  return set.size;
+}
+
 // ── Atomic wizard completion (schedule + mark done in one write) ───────────
 export function processWizardComplete(id, schedule) {
   const progress = loadProgress();

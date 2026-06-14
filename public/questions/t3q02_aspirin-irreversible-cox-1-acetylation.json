@@ -1,0 +1,211 @@
+{
+  "id": "q71",
+  "item": 71,
+  "qid": "714",
+  "title": "Aspirin: irreversible COX-1 acetylation",
+  "system": "Pharmacology",
+  "topic": "Antiplatelets / perioperative",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 72,
+  "vignette": "A 60-year-old man comes to the clinic for a preoperative evaluation. The patient has severe osteoarthritis of the right knee, and an elective total knee arthroplasty has been planned. Other medical conditions are well-controlled hypertension and stable coronary artery disease. Vital signs are within normal limits. Physical examination is unremarkable. The patient is educated to avoid taking over-the-counter NSAIDs immediately prior to surgery due to risk of excessive perioperative bleeding. He is also instructed to discontinue low-dose aspirin at least 5 days prior to surgery. Which of the following is the most likely reason for stopping this drug well in advance of surgery?",
+  "clues": [
+    {
+      "text": "stable coronary artery disease",
+      "type": "orange",
+      "note": "CAD is why he is on low-dose aspirin (secondary prevention). This frames the drug as an antiplatelet, so the bleeding risk is about platelet function, not the COX-anti-inflammatory effect."
+    },
+    {
+      "text": "avoid taking over-the-counter NSAIDs",
+      "type": "purple",
+      "note": "Reversible NSAIDs (ibuprofen) only need to be held ~1-3 days because they competitively, reversibly inhibit COX and wash out. This contrast is the trap: it makes you think all the drugs behave the same, but aspirin is different."
+    },
+    {
+      "text": "discontinue low-dose aspirin at least 5 days prior",
+      "type": "red",
+      "note": "The 5-7 day window is the giveaway: it matches the time needed to regenerate a fresh platelet pool. Aspirin's effect lasts the LIFESPAN of the platelet (~7-10 days) because it cannot be undone in the anucleate cell."
+    },
+    {
+      "text": "well in advance of surgery",
+      "type": "green",
+      "note": "The asked point: why hold aspirin so much longer than reversible NSAIDs? Because aspirin IRREVERSIBLY acetylates COX-1; affected platelets are disabled for life, so you must wait for new platelets to be made."
+    }
+  ],
+  "whatMatters": "The whole knee/CAD story just establishes he takes low-dose aspirin. The testable contrast is in the last lines: aspirin must be stopped 5+ days early (vs ~1-3 for reversible NSAIDs) because it IRREVERSIBLY acetylates COX-1 in anucleate platelets, which cannot synthesize new enzyme — answer B.",
+  "strategy": "When a drug must be held far longer than its plasma half-life suggests, the mechanism is usually IRREVERSIBLE target inactivation in a long-lived/anucleate cell. Aspirin + platelets is the prototype: recovery depends on cell turnover (~10% new platelets/day), not drug clearance.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Delayed release of the protein-bound drug",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Irreversible inhibition of the target enzyme",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Persistence of active form of drug metabolites",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Prolonged time required for hepatic coagulation factor synthesis",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Selective inhibition of inducible form of the target enzyme",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "protein-binding depot — not the reason",
+      "detail": "WHAT IT IS: highly protein-bound drugs can have prolonged effect from a plasma reservoir. ❌ WHY IT FAILS: aspirin is rapidly hydrolyzed (half-life ~15-20 min); its durable effect is in the platelet, not a protein-bound depot. ✅ Correct if: the drug were long-acting purely because of slow release from albumin binding."
+    },
+    {
+      "letter": "C",
+      "label": "active metabolite persistence — wrong pharmacokinetics",
+      "detail": "WHAT IT IS: some drugs act long after the parent is gone via active metabolites. ❌ WHY IT FAILS: salicylate is not why platelets stay disabled; the platelets are permanently acetylated regardless of metabolite levels. ✅ Correct if: the prolonged effect were due to a long-lived active metabolite (e.g., diazepam → nordiazepam)."
+    },
+    {
+      "letter": "D",
+      "label": "warfarin logic — wrong drug, wrong target",
+      "detail": "WHAT IT IS: depleting/regenerating vitamin K-dependent clotting factors (II, VII, IX, X) is the basis of warfarin's slow on/off. ❌ WHY IT FAILS: aspirin is an antiplatelet, not an anticoagulant; it has no effect on hepatic coagulation-factor synthesis. ✅ Correct if: the patient were on warfarin and you were explaining the INR lag."
+    },
+    {
+      "letter": "E",
+      "label": "COX-2 selectivity — opposite of aspirin",
+      "detail": "WHAT IT IS: celecoxib selectively inhibits the inducible COX-2 isoform, sparing platelet COX-1 (so it has little antiplatelet/bleeding effect). ❌ WHY IT FAILS: low-dose aspirin acts on constitutive COX-1 in platelets; that's exactly why it causes bleeding and must be held. ✅ Correct if: the drug were a coxib being discussed for low bleeding risk."
+    }
+  ],
+  "reasoning": [
+    "Low-dose aspirin = antiplatelet for his CAD",
+    "Held 5+ days, far longer than reversible NSAIDs (~1-3 days)",
+    "Long hold = irreversible target inactivation needing new cells",
+    "Aspirin irreversibly acetylates COX-1 in anucleate platelets → answer B"
+  ],
+  "mechanism": "Aspirin irreversibly acetylates a serine residue in cyclooxygenase (COX-1 in platelets), permanently blocking thromboxane A2 synthesis. Platelets lack a nucleus and cannot make new COX, so the antiplatelet effect lasts the platelet's lifespan (~7-10 days); roughly 10% of platelets are replaced per day, so ~5 days off aspirin restores enough functional platelets for surgery. Reversible NSAIDs compete at COX and wash out within a couple of half-lives.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology > Antiplatelets & NSAIDs: aspirin = irreversible COX-1/2 acetylation (TXA2 down), platelets anucleate so effect lasts their lifespan; reversible NSAIDs vs aspirin vs COX-2 selective. Note clopidogrel (irreversible P2Y12) also needs ~5-7 day hold."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reframe: 'why hold it longer than the drug stays in blood?' → irreversible damage to a cell that can't repair (anucleate platelet). The 5-day number maps to platelet turnover."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on acetylation, irreversible vs competitive inhibition, COX-1 vs COX-2, anucleate, thromboxane A2? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Option D (clotting-factor synthesis) is warfarin's story and tempts you because both 'cause bleeding.' Aspirin is antiplatelet, not anticoagulant — keep the two mechanisms separate."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (B). Bank the rule: irreversible inhibitor + anucleate/long-lived cell = recovery time set by cell turnover, not half-life."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Aspirin mechanism",
+      "back": "Irreversible acetylation of COX-1/2 → ↓ thromboxane A2"
+    },
+    {
+      "front": "Why aspirin effect lasts ~7-10 days",
+      "back": "Platelets are anucleate — cannot resynthesize COX"
+    },
+    {
+      "front": "Reversible NSAID (ibuprofen) on COX",
+      "back": "Competitive, reversible — short washout (~1-3 days)"
+    },
+    {
+      "front": "COX-2 selective (celecoxib)",
+      "back": "Spares platelet COX-1 → low bleeding/antiplatelet effect"
+    },
+    {
+      "front": "Other irreversible antiplatelet needing ~5-7 day hold",
+      "back": "Clopidogrel/prasugrel (irreversible P2Y12 blockers)"
+    },
+    {
+      "front": "Warfarin's slow on/off mechanism",
+      "back": "Depletion/regeneration of vitamin K-dependent factors II,VII,IX,X"
+    },
+    {
+      "front": "Thromboxane A2 function",
+      "back": "Platelet aggregation + vasoconstriction"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Aspirin",
+      "detail": "Pharmacology > Antiplatelets: irreversible COX acetylation, TXA2 suppression, platelet lifespan, bleeding/Reye/tinnitus toxicities.",
+      "location": "Pharmacology > Antiplatelets: irreversible COX acetylation, TXA2 suppression, platelet lifespan, bleeding/Reye/tinnitus toxicities."
+    },
+    {
+      "tag": "options",
+      "topic": "NSAIDs & COX isoforms",
+      "detail": "Pharm: reversible nonselective NSAIDs (ibuprofen/naproxen), COX-2 selective (celecoxib), and warfarin's vitamin K-dependent factor mechanism for contrast.",
+      "location": "Pharm: reversible nonselective NSAIDs (ibuprofen/naproxen), COX-2 selective (celecoxib), and warfarin's vitamin K-dependent factor mechanism for contrast."
+    },
+    {
+      "tag": "stem",
+      "topic": "Arachidonic acid / platelet physiology",
+      "detail": "Physiology: COX-1 (constitutive, platelets/GI) vs COX-2 (inducible, inflammation); platelet TXA2 vs endothelial PGI2 balance.",
+      "location": "Physiology: COX-1 (constitutive, platelets/GI) vs COX-2 (inducible, inflammation); platelet TXA2 vs endothelial PGI2 balance."
+    }
+  ],
+  "memoryHook": "Aspirin 'A'cetylates for the platelet's whole life — no nucleus, no comeback. Wait ~5 days for fresh platelets.",
+  "stem": [
+    {
+      "text": "A 60-year-old man comes to the clinic for a preoperative evaluation. The patient has severe osteoarthritis of the right knee, and an elective total knee arthroplasty has been planned. Other medical conditions are well-controlled hypertension and "
+    },
+    {
+      "text": "stable coronary artery disease",
+      "clue": true,
+      "type": "orange",
+      "note": "CAD is why he is on low-dose aspirin (secondary prevention). This frames the drug as an antiplatelet, so the bleeding risk is about platelet function, not the COX-anti-inflammatory effect."
+    },
+    {
+      "text": ". Vital signs are within normal limits. Physical examination is unremarkable. The patient is educated to "
+    },
+    {
+      "text": "avoid taking over-the-counter NSAIDs",
+      "clue": true,
+      "type": "purple",
+      "note": "Reversible NSAIDs (ibuprofen) only need to be held ~1-3 days because they competitively, reversibly inhibit COX and wash out. This contrast is the trap: it makes you think all the drugs behave the same, but aspirin is different."
+    },
+    {
+      "text": " immediately prior to surgery due to risk of excessive perioperative bleeding. He is also instructed to "
+    },
+    {
+      "text": "discontinue low-dose aspirin at least 5 days prior",
+      "clue": true,
+      "type": "red",
+      "note": "The 5-7 day window is the giveaway: it matches the time needed to regenerate a fresh platelet pool. Aspirin's effect lasts the LIFESPAN of the platelet (~7-10 days) because it cannot be undone in the anucleate cell."
+    },
+    {
+      "text": " to surgery. Which of the following is the most likely reason for stopping this drug "
+    },
+    {
+      "text": "well in advance of surgery",
+      "clue": true,
+      "type": "green",
+      "note": "The asked point: why hold aspirin so much longer than reversible NSAIDs? Because aspirin IRREVERSIBLY acetylates COX-1; affected platelets are disabled for life, so you must wait for new platelets to be made."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

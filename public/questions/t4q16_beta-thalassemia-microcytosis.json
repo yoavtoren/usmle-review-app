@@ -1,0 +1,179 @@
+{
+  "id": "q125",
+  "item": 125,
+  "qid": "2087",
+  "title": "Beta-thalassemia: microcytosis",
+  "system": "Hematology",
+  "topic": "Microcytic anemia",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 70,
+  "vignette": "The patient's genetic defect has resulted in decreased beta globin chain synthesis. Which of the following is most likely to be seen on laboratory testing?",
+  "clues": [
+    {
+      "text": "decreased beta globin chain synthesis",
+      "type": "red",
+      "note": "Reduced beta globin synthesis = beta thalassemia. Less hemoglobin per red cell yields small, pale (microcytic, hypochromic) erythrocytes. This directly predicts a low MCV."
+    },
+    {
+      "text": "most likely to be seen on laboratory testing",
+      "type": "blue",
+      "note": "The expected lab signature of beta thalassemia is microcytosis (low MCV) with often a normal/high RBC count and elevated HbA2; the smear shows hypochromic microcytic cells with target cells."
+    }
+  ],
+  "whatMatters": "Decreased beta globin -> less hemoglobin per cell -> small red cells. The lab finding is microcytosis (low MCV) - answer C.",
+  "strategy": "Tie the defective globin to the red-cell index: any cause of reduced hemoglobin content (thalassemia, iron deficiency, sideroblastic, chronic disease late) produces MICROCYTOSIS. Beta thalassemia specifically adds elevated HbA2 and target cells, distinguishing it from iron deficiency (low ferritin).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Hyperchromia",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Iron deficiency",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Microcytosis",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Red blood cell sickling",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Spherocytosis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "hyperchromia - opposite finding",
+      "detail": "WHAT IT IS: increased cellular hemoglobin concentration (more color). ❌ WHY IT FAILS: thalassemia makes cells HYPOchromic (pale) from low hemoglobin, not hyperchromic. ✅ Correct if: hereditary spherocytosis (increased MCHC) were the diagnosis."
+    },
+    {
+      "letter": "B",
+      "label": "iron deficiency - different cause of microcytosis",
+      "detail": "WHAT IT IS: low body iron stores. ❌ WHY IT FAILS: beta thalassemia is a globin-synthesis problem with NORMAL or increased iron (risk of overload from transfusions); iron studies are normal/high, not deficient. ✅ Correct if: the stem showed low ferritin/high TIBC microcytic anemia."
+    },
+    {
+      "letter": "D",
+      "label": "RBC sickling - wrong mutation",
+      "detail": "WHAT IT IS: sickling from HbS polymerization. ❌ WHY IT FAILS: that is a qualitative point mutation (Glu->Val) in sickle cell disease, not the quantitative globin reduction of thalassemia. ✅ Correct if: the defect produced abnormal HbS rather than reduced beta chains."
+    },
+    {
+      "letter": "E",
+      "label": "spherocytosis - membrane defect",
+      "detail": "WHAT IT IS: spherical RBCs from membrane-protein (ankyrin/spectrin) defects. ❌ WHY IT FAILS: that is hereditary spherocytosis, a membrane disorder, not a globin-chain synthesis defect. ✅ Correct if: increased MCHC, positive osmotic fragility, and spherocytes were described."
+    }
+  ],
+  "reasoning": [
+    "Decreased beta globin synthesis = beta thalassemia",
+    "Less hemoglobin per cell -> small, pale erythrocytes",
+    "Lab index = low MCV (microcytosis)",
+    "-> answer C"
+  ],
+  "mechanism": "In beta thalassemia, reduced beta globin chain production limits hemoglobin tetramer formation, so each red cell contains less hemoglobin and is microcytic and hypochromic; excess unpaired alpha chains precipitate, causing ineffective erythropoiesis and hemolysis. Characteristic findings include a low MCV with a relatively preserved or elevated RBC count, target cells on smear, and elevated HbA2 (beta-thalassemia minor). Iron studies are normal to increased, distinguishing it from iron-deficiency anemia, which also causes microcytosis but with depleted iron stores.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Hematology > Microcytic anemias: thalassemia (low MCV, normal/high RBC count, elevated HbA2 in beta-thal minor, target cells), iron deficiency (low ferritin), sideroblastic, anemia of chronic disease. Beta thalassemia = decreased beta chains."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "One-step inference: less globin -> less Hb per cell -> small cells. Pick the index that means 'small' (microcytosis)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on microcytosis/MCV, hypochromia vs hyperchromia, HbA2, target cells, thalassemia vs iron deficiency? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Iron deficiency (B) tempts because it's the other classic microcytic anemia, but thalassemia has NORMAL/high iron. The shared finding asked for is microcytosis itself."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You got C right - keep the microcytic differential and their iron studies paired so the distractors fall away."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Lab hallmark of beta thalassemia",
+      "back": "Microcytosis (low MCV), hypochromia, target cells"
+    },
+    {
+      "front": "Beta-thalassemia minor electrophoresis",
+      "back": "Elevated HbA2 (+/- HbF)"
+    },
+    {
+      "front": "Iron studies in thalassemia",
+      "back": "Normal to increased iron (NOT deficient)"
+    },
+    {
+      "front": "Microcytic anemia differential",
+      "back": "Thalassemia, Iron deficiency, Sideroblastic, Chronic disease (late) - 'TICS'"
+    },
+    {
+      "front": "Sickle cell vs thalassemia",
+      "back": "Qualitative HbS mutation (sickling) vs quantitative reduced globin (microcytosis)"
+    },
+    {
+      "front": "Hereditary spherocytosis index",
+      "back": "Increased MCHC, spherocytes, positive osmotic fragility"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Beta thalassemia labs",
+      "detail": "Hematology: microcytic hypochromic anemia, HbA2, target cells, ineffective erythropoiesis.",
+      "location": "Hematology: microcytic hypochromic anemia, HbA2, target cells, ineffective erythropoiesis."
+    },
+    {
+      "tag": "stem",
+      "topic": "Globin synthesis",
+      "detail": "Heme: alpha vs beta thalassemia, hemoglobin chain composition.",
+      "location": "Heme: alpha vs beta thalassemia, hemoglobin chain composition."
+    },
+    {
+      "tag": "options",
+      "topic": "Microcytic anemia differential",
+      "detail": "Heme: iron deficiency, sideroblastic, chronic disease; spherocytosis (membrane), sickle cell (qualitative).",
+      "location": "Heme: iron deficiency, sideroblastic, chronic disease; spherocytosis (membrane), sickle cell (qualitative)."
+    }
+  ],
+  "memoryHook": "Less globin = less hemoglobin = littler cells. Beta-thal -> low MCV (microcytosis).",
+  "stem": [
+    {
+      "text": "The patient's genetic defect has resulted in "
+    },
+    {
+      "text": "decreased beta globin chain synthesis",
+      "clue": true,
+      "type": "red",
+      "note": "Reduced beta globin synthesis = beta thalassemia. Less hemoglobin per red cell yields small, pale (microcytic, hypochromic) erythrocytes. This directly predicts a low MCV."
+    },
+    {
+      "text": ". Which of the following is "
+    },
+    {
+      "text": "most likely to be seen on laboratory testing",
+      "clue": true,
+      "type": "blue",
+      "note": "The expected lab signature of beta thalassemia is microcytosis (low MCV) with often a normal/high RBC count and elevated HbA2; the smear shows hypochromic microcytic cells with target cells."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

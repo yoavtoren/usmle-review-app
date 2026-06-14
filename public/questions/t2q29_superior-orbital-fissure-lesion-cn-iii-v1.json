@@ -1,0 +1,226 @@
+{
+  "id": "q58",
+  "item": 58,
+  "qid": "1703",
+  "title": "Superior orbital fissure lesion (CN III + V1)",
+  "system": "Neuroanatomy",
+  "topic": "Skull foramina / cranial nerves",
+  "correct": "F",
+  "yourAnswer": "F",
+  "percentCorrect": 69,
+  "vignette": "A 62-year-old man comes to the office reporting double vision. He first noticed mild difficulty focusing his eyes about 3 weeks ago, and his symptoms have progressively worsened. The patient's other medical problems include metastatic prostate cancer. On neurologic examination, he is unable to adduct his left eye, and stimulation of the left cornea does not elicit a corneal reflex. A lesion involving which of the following anatomical structures is most likely responsible for this patient's symptoms?",
+  "clues": [
+    {
+      "text": "reporting double vision",
+      "type": "red",
+      "note": "Diplopia indicates an extraocular-movement (cranial nerve) problem. Progressive over weeks with metastatic cancer suggests a structural lesion at the skull base/orbit."
+    },
+    {
+      "text": "metastatic prostate cancer",
+      "type": "orange",
+      "note": "Prostate cancer is osteophilic and can metastasize to the skull base, compressing nerves as they pass through a bony foramen/fissure. This sets up a localizing lesion."
+    },
+    {
+      "text": "adduct his left eye",
+      "type": "green",
+      "note": "Failure to ADDUCT the eye implicates the medial rectus, innervated by the oculomotor nerve (CN III). CN III runs through the superior orbital fissure."
+    },
+    {
+      "text": "left cornea does not elicit a corneal reflex",
+      "type": "green",
+      "note": "An absent corneal reflex on the affected side (with intact other side) localizes the AFFERENT limb to the ophthalmic nerve (CN V1). CN V1 also traverses the superior orbital fissure — so one lesion hits both CN III and CN V1."
+    }
+  ],
+  "whatMatters": "Two deficits — failure to adduct (CN III) and a lost corneal reflex afferent (CN V1) — share one passageway: the superior orbital fissure, which transmits CN III, IV, VI, and V1. A single metastatic lesion there explains both. The task is to pick the foramen/fissure carrying BOTH nerves.",
+  "strategy": "For 'which foramen' questions, list each affected cranial nerve, then find the ONE opening that carries all of them. CN III + V1 (and IV, VI) → superior orbital fissure. Match the combination of nerves to the shared passage rather than any single nerve's other routes.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Foramen lacerum",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Foramen ovale",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Foramen rotundum",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Inferior orbital fissure",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Optic canal",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Superior orbital fissure",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "foramen lacerum — no major CN passes through it",
+      "detail": "WHAT IT IS: foramen lacerum is a cartilage-filled gap; the internal carotid travels in its canal ABOVE it, but no cranial nerve to the eye passes through. ❌ WHY IT FAILS: it carries neither CN III nor V1, so it can't explain these deficits. ✅ Correct if: the question involved the internal carotid's course at the skull base."
+    },
+    {
+      "letter": "B",
+      "label": "foramen ovale — carries V3, not V1/III",
+      "detail": "WHAT IT IS: foramen ovale transmits the mandibular nerve (CN V3) (and accessory meningeal vessels). ❌ WHY IT FAILS: V3 is jaw sensation/mastication — not eye adduction or corneal-reflex afferent (V1); wrong nerves. ✅ Correct if: the deficit were jaw numbness/weak mastication (V3)."
+    },
+    {
+      "letter": "C",
+      "label": "foramen rotundum — carries V2, not V1/III",
+      "detail": "WHAT IT IS: foramen rotundum transmits the maxillary nerve (CN V2). ❌ WHY IT FAILS: V2 is midface sensation, not the corneal-reflex afferent (V1) or CN III; wrong trigeminal division and no motor eye nerve. ✅ Correct if: the deficit were midface/cheek numbness (V2)."
+    },
+    {
+      "letter": "D",
+      "label": "inferior orbital fissure — V2 branches/vessels, not CN III",
+      "detail": "WHAT IT IS: the inferior orbital fissure transmits infraorbital/zygomatic (V2) branches and the inferior ophthalmic vein. ❌ WHY IT FAILS: it doesn't carry CN III or V1, so it can't cause both adduction failure and a lost corneal reflex. ✅ Correct if: the deficit were limited to V2-territory sensation."
+    },
+    {
+      "letter": "E",
+      "label": "optic canal — CN II and ophthalmic artery only",
+      "detail": "WHAT IT IS: the optic canal transmits the optic nerve (CN II) and ophthalmic artery. ❌ WHY IT FAILS: a CN II lesion causes vision loss/afferent pupillary defect, not adduction failure or absent corneal reflex; wrong nerves entirely. ✅ Correct if: the deficit were monocular vision loss/RAPD (optic nerve)."
+    }
+  ],
+  "reasoning": [
+    "Failure to adduct the eye = CN III (medial rectus) lesion",
+    "Absent corneal reflex (afferent) on that side = CN V1 (ophthalmic) lesion",
+    "CN III and CN V1 both traverse the superior orbital fissure",
+    "A single metastatic lesion there explains both → answer F"
+  ],
+  "mechanism": "The superior orbital fissure transmits cranial nerves III (oculomotor), IV (trochlear), VI (abducens), and V1 (ophthalmic division of trigeminal), plus the superior ophthalmic vein. A mass here (e.g., skull-base metastasis from prostate cancer) compresses multiple nerves at once: CN III loss impairs eye adduction (medial rectus) and other movements, while CN V1 loss removes the afferent limb of the corneal (blink) reflex. Recognizing the COMBINATION of nerves localizes the lesion to the shared fissure.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Neuro > skull foramina and their contents: superior orbital fissure (CN III, IV, VI, V1), optic canal (II), rotundum (V2), ovale (V3), and the corneal reflex (V1 afferent, VII efferent). Memorize the foramina table."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "List the affected nerves first (CN III for adduction, V1 for corneal afferent), then find the single opening carrying both. The shared passage — not one nerve's other routes — is the answer."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on superior orbital fissure, corneal reflex afferent/efferent, V1/V2/V3 divisions, foramen rotundum/ovale, optic canal? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The trigeminal-division foramina (rotundum V2, ovale V3) and optic canal (II) are baits — but the corneal-reflex afferent is V1, and adduction is CN III, both via the SUPERIOR ORBITAL FISSURE."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the orbital-apex/superior orbital fissure anatomy figure (nerves passing through the fissure). Use it to see CN III, IV, VI, and V1 sharing the fissure."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "CN III + V1 deficits localize to",
+      "back": "Superior orbital fissure"
+    },
+    {
+      "front": "Superior orbital fissure contents",
+      "back": "CN III, IV, VI, V1 + superior ophthalmic vein"
+    },
+    {
+      "front": "Failure to adduct the eye",
+      "back": "CN III (medial rectus)"
+    },
+    {
+      "front": "Corneal reflex limbs",
+      "back": "Afferent CN V1; efferent CN VII"
+    },
+    {
+      "front": "Optic canal contents",
+      "back": "CN II + ophthalmic artery"
+    },
+    {
+      "front": "Foramen rotundum / ovale",
+      "back": "V2 / V3 respectively"
+    },
+    {
+      "front": "Skull-base metastasis source (osteophilic)",
+      "back": "Prostate cancer"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Superior orbital fissure",
+      "detail": "Neuro > skull foramina: superior orbital fissure contents (CN III, IV, VI, V1) and the syndromes from orbital-apex/cavernous-region lesions.",
+      "location": "Neuro > skull foramina: superior orbital fissure contents (CN III, IV, VI, V1) and the syndromes from orbital-apex/cavernous-region lesions."
+    },
+    {
+      "tag": "stem",
+      "topic": "Corneal reflex & CN III",
+      "detail": "Neuro > corneal/blink reflex (V1 afferent, VII efferent) and oculomotor nerve function (medial rectus adduction).",
+      "location": "Neuro > corneal/blink reflex (V1 afferent, VII efferent) and oculomotor nerve function (medial rectus adduction)."
+    },
+    {
+      "tag": "options",
+      "topic": "Cranial foramina table",
+      "detail": "Neuro > foramina and contents: optic canal (II), rotundum (V2), ovale (V3), lacerum (ICA path), inferior orbital fissure (V2 branches).",
+      "location": "Neuro > foramina and contents: optic canal (II), rotundum (V2), ovale (V3), lacerum (ICA path), inferior orbital fissure (V2 branches)."
+    }
+  ],
+  "memoryHook": "Adduction (III) + lost corneal reflex (V1) share ONE door — the SUPERIOR ORBITAL FISSURE (III, IV, VI, V1).",
+  "stem": [
+    {
+      "text": "A 62-year-old man comes to the office "
+    },
+    {
+      "text": "reporting double vision",
+      "clue": true,
+      "type": "red",
+      "note": "Diplopia indicates an extraocular-movement (cranial nerve) problem. Progressive over weeks with metastatic cancer suggests a structural lesion at the skull base/orbit."
+    },
+    {
+      "text": ". He first noticed mild difficulty focusing his eyes about 3 weeks ago, and his symptoms have progressively worsened. The patient's other medical problems include "
+    },
+    {
+      "text": "metastatic prostate cancer",
+      "clue": true,
+      "type": "orange",
+      "note": "Prostate cancer is osteophilic and can metastasize to the skull base, compressing nerves as they pass through a bony foramen/fissure. This sets up a localizing lesion."
+    },
+    {
+      "text": ". On neurologic examination, he is unable to "
+    },
+    {
+      "text": "adduct his left eye",
+      "clue": true,
+      "type": "green",
+      "note": "Failure to ADDUCT the eye implicates the medial rectus, innervated by the oculomotor nerve (CN III). CN III runs through the superior orbital fissure."
+    },
+    {
+      "text": ", and stimulation of the "
+    },
+    {
+      "text": "left cornea does not elicit a corneal reflex",
+      "clue": true,
+      "type": "green",
+      "note": "An absent corneal reflex on the affected side (with intact other side) localizes the AFFERENT limb to the ophthalmic nerve (CN V1). CN V1 also traverses the superior orbital fissure — so one lesion hits both CN III and CN V1."
+    },
+    {
+      "text": ". A lesion involving which of the following anatomical structures is most likely responsible for this patient's symptoms?"
+    }
+  ]
+}

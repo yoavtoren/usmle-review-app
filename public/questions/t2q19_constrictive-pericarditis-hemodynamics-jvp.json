@@ -1,0 +1,202 @@
+{
+  "id": "q48",
+  "item": 48,
+  "qid": "2070",
+  "title": "Constrictive pericarditis: hemodynamics (JVP)",
+  "system": "Cardiology",
+  "topic": "Constrictive pericarditis / JVP",
+  "correct": "A",
+  "yourAnswer": "C",
+  "percentCorrect": 55,
+  "vignette": "The following vignette applies to a 2-item set. A 34-year-old Russian immigrant comes to the office with a 2-month history of exertional dyspnea and progressive lower extremity swelling. He also reports abdominal distension and decreased appetite. The patient has gained 4.5 kg (9.9 lb) over the last 2 months. Medical history is significant for hypertension and recurrent lung infections requiring prolonged antibiotic therapy. The patient has no history of coronary artery disease. He has smoked a pack of cigarettes daily for the past 15 years. The patient undergoes noninvasive cardiac testing, followed by cardiac catheterization. A jugular venous pressure tracing is shown, with the arrow indicating a prominent, steep descent. Cardiac catheterization in this patient is most likely to reveal which of the following? [Item 1 of 2 — exact answer choices were off-screen in the screenshot and are reconstructed here for review.]",
+  "clues": [
+    {
+      "text": "abdominal distension and decreased appetite",
+      "type": "red",
+      "note": "Ascites, weight gain, and edema reflect systemic venous congestion from impaired right heart filling. With a rigid pericardium, the right heart can't fill, so venous pressures rise (peripheral edema, hepatic congestion, ascites)."
+    },
+    {
+      "text": "recurrent lung infections requiring prolonged antibiotic therapy",
+      "type": "orange",
+      "note": "Prolonged-antibiotic respiratory infections in a patient from Eastern Europe hint at prior tuberculosis. TB is a leading cause of constrictive pericarditis worldwide (chronic pericardial scarring and calcification)."
+    },
+    {
+      "text": "prominent, steep descent",
+      "type": "green",
+      "note": "Constrictive pericarditis classically shows prominent x and especially a steep y descent on the JVP (rapid early diastolic filling that abruptly halts against the rigid pericardium). This 'W'/'M' waveform is the hemodynamic signature."
+    }
+  ],
+  "whatMatters": "Eastern-European patient with prior TB-type infections, signs of systemic venous congestion (edema, ascites), and a JVP with prominent steep descents = constrictive pericarditis. On catheterization the hallmark is EQUALIZATION of diastolic pressures across all chambers with a 'dip-and-plateau' (square-root sign) — the rigid pericardium limits filling equally.",
+  "strategy": "For constrictive pericarditis hemodynamics, expect: elevated and EQUALIZED diastolic pressures in all 4 chambers, a 'dip-and-plateau' (square-root) ventricular pressure tracing, prominent x and y descents on JVP, and Kussmaul sign. Contrast tamponade (pulsus paradoxus, blunted y descent).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Equalization of diastolic pressures across all cardiac chambers (dip-and-plateau)",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Markedly elevated left-sided pressures with normal right-sided pressures",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "A blunted/absent y descent with pulsus paradoxus",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "A large systolic pressure gradient across the aortic valve",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Progressive rise in ventricular diastolic pressure throughout diastole",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "isolated left-sided elevation — not constriction",
+      "detail": "WHAT IT IS: predominantly elevated left-sided (pulmonary) pressures with normal right-sided pressures suggests left heart failure or mitral disease. ❌ WHY IT FAILS: constriction affects BOTH ventricles equally — diastolic pressures equalize across all chambers, not one side. ✅ Correct if: the problem were isolated left ventricular failure or mitral stenosis."
+    },
+    {
+      "letter": "C",
+      "label": "blunted y + pulsus paradoxus — that's tamponade",
+      "detail": "WHAT IT IS: a blunted/absent y descent with pulsus paradoxus is the hemodynamic picture of cardiac TAMPONADE. ❌ WHY IT FAILS: constriction gives a PROMINENT, steep y descent (rapid early filling), the opposite; pulsus paradoxus is more characteristic of tamponade. ✅ Correct if: there were an acute pericardial effusion with tamponade physiology."
+    },
+    {
+      "letter": "D",
+      "label": "aortic valve gradient — wrong disease",
+      "detail": "WHAT IT IS: a large systolic gradient across the aortic valve indicates aortic stenosis. ❌ WHY IT FAILS: this is a pericardial filling problem, not a valvular outflow obstruction. ✅ Correct if: the stem pointed to aortic stenosis (syncope, angina, crescendo-decrescendo murmur)."
+    },
+    {
+      "letter": "E",
+      "label": "progressive diastolic rise — that's restrictive/normal-ish filling",
+      "detail": "WHAT IT IS: a gradual rise in ventricular diastolic pressure throughout diastole describes more typical/restrictive filling. ❌ WHY IT FAILS: constriction shows a rapid early dip followed by an abrupt plateau (square-root sign), not a smooth progressive rise. ✅ Correct if: the tracing described restrictive cardiomyopathy's filling pattern without the dip-and-plateau."
+    }
+  ],
+  "reasoning": [
+    "Prior TB + systemic venous congestion + JVP with steep descents = constrictive pericarditis",
+    "Rigid pericardium limits filling of all chambers equally",
+    "Catheterization: equalized diastolic pressures + dip-and-plateau (square-root sign)",
+    "→ answer A"
+  ],
+  "mechanism": "In constrictive pericarditis a thickened, often calcified pericardium encases the heart. Early diastolic filling is rapid (prominent y descent) but abruptly stops when ventricular volume hits the rigid pericardial shell, producing a 'dip-and-plateau' (square-root sign) and EQUALIZATION of diastolic pressures across all four chambers. Impaired filling raises systemic venous pressure (JVD, hepatomegaly, ascites, edema) and may show Kussmaul sign (JVP rises with inspiration). TB is a classic cause worldwide.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Cardio > pericardial disease: constrictive pericarditis — causes (TB, prior surgery/radiation), JVP (prominent x/y, Kussmaul), cath (equalized diastolic pressures, square-root sign), pericardial calcification. Contrast tamponade and restrictive CM."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Build the chain: rigid pericardium → equal filling limitation → equalized diastolic pressures + steep y descent. Distinguish from tamponade (blunted y, pulsus paradoxus)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on JVP x/y descents, Kussmaul sign, dip-and-plateau/square-root sign, equalization of pressures, pulsus paradoxus? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Tamponade's blunted-y + pulsus paradoxus is the main trap. Remember constriction = PROMINENT y descent and equalized diastolic pressures; tamponade = blunted y."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the normal JVP waveform (a, c, v waves; x, y descents). Learn to read the constrictive pattern (steep y) vs the tamponade pattern (blunted y) on a tracing."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Heads up: the exact answer choices for this item were cut off in your screenshot, so I reconstructed them around constrictive-pericarditis hemodynamics — verify against UWorld and tell me if the wording differs."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Prior TB + venous congestion + steep JVP descents",
+      "back": "Constrictive pericarditis"
+    },
+    {
+      "front": "Constriction cath hallmark",
+      "back": "Equalized diastolic pressures + dip-and-plateau (square-root sign)"
+    },
+    {
+      "front": "Constriction JVP",
+      "back": "Prominent x and y descents; Kussmaul sign"
+    },
+    {
+      "front": "Tamponade JVP/hemodynamics",
+      "back": "Blunted/absent y descent; pulsus paradoxus"
+    },
+    {
+      "front": "Kussmaul sign",
+      "back": "JVP rises with inspiration (constriction, RV infarct)"
+    },
+    {
+      "front": "Worldwide cause of constrictive pericarditis",
+      "back": "Tuberculosis (also post-surgical, radiation)"
+    },
+    {
+      "front": "Pericardial calcification on imaging",
+      "back": "Suggests chronic constrictive pericarditis"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Constrictive pericarditis",
+      "detail": "Cardiovascular > pericardial disease: constrictive pericarditis — etiology (TB, surgery, radiation), JVP (prominent x/y, Kussmaul), cath (equalized diastolic pressures, square-root sign), pericardial knock/calcification.",
+      "location": "Cardiovascular > pericardial disease: constrictive pericarditis — etiology (TB, surgery, radiation), JVP (prominent x/y, Kussmaul), cath (equalized diastolic pressures, square-root sign), pericardial knock/calcification."
+    },
+    {
+      "tag": "stem",
+      "topic": "JVP waveform",
+      "detail": "Cardiovascular > jugular venous pulse: a/c/v waves and x/y descents through the cardiac cycle — and how disease alters them.",
+      "location": "Cardiovascular > jugular venous pulse: a/c/v waves and x/y descents through the cardiac cycle — and how disease alters them."
+    },
+    {
+      "tag": "options",
+      "topic": "Tamponade vs restrictive CM",
+      "detail": "Cardiovascular > cardiac tamponade (pulsus paradoxus, blunted y) and restrictive cardiomyopathy — key contrasts with constriction.",
+      "location": "Cardiovascular > cardiac tamponade (pulsus paradoxus, blunted y) and restrictive cardiomyopathy — key contrasts with constriction."
+    }
+  ],
+  "memoryHook": "Stiff pericardial 'cage' → all chambers fill to the same wall: equalized diastolic pressures + a steep y dip-and-plateau (constriction = prominent y; tamponade = blunted y).",
+  "stem": [
+    {
+      "text": "The following vignette applies to a 2-item set. A 34-year-old Russian immigrant comes to the office with a 2-month history of exertional dyspnea and progressive lower extremity swelling. He also reports "
+    },
+    {
+      "text": "abdominal distension and decreased appetite",
+      "clue": true,
+      "type": "red",
+      "note": "Ascites, weight gain, and edema reflect systemic venous congestion from impaired right heart filling. With a rigid pericardium, the right heart can't fill, so venous pressures rise (peripheral edema, hepatic congestion, ascites)."
+    },
+    {
+      "text": ". The patient has gained 4.5 kg (9.9 lb) over the last 2 months. Medical history is significant for hypertension and "
+    },
+    {
+      "text": "recurrent lung infections requiring prolonged antibiotic therapy",
+      "clue": true,
+      "type": "orange",
+      "note": "Prolonged-antibiotic respiratory infections in a patient from Eastern Europe hint at prior tuberculosis. TB is a leading cause of constrictive pericarditis worldwide (chronic pericardial scarring and calcification)."
+    },
+    {
+      "text": ". The patient has no history of coronary artery disease. He has smoked a pack of cigarettes daily for the past 15 years. The patient undergoes noninvasive cardiac testing, followed by cardiac catheterization. A jugular venous pressure tracing is shown, with the arrow indicating a "
+    },
+    {
+      "text": "prominent, steep descent",
+      "clue": true,
+      "type": "green",
+      "note": "Constrictive pericarditis classically shows prominent x and especially a steep y descent on the JVP (rapid early diastolic filling that abruptly halts against the rigid pericardium). This 'W'/'M' waveform is the hemodynamic signature."
+    },
+    {
+      "text": ". Cardiac catheterization in this patient is most likely to reveal which of the following? [Item 1 of 2 — exact answer choices were off-screen in the screenshot and are reconstructed here for review.]"
+    }
+  ]
+}

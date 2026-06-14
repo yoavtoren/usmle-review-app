@@ -1,0 +1,197 @@
+{
+  "id": "q84",
+  "item": 84,
+  "qid": "14953",
+  "title": "PTU vs methimazole in pregnancy: avoid PTU hepatotoxicity",
+  "system": "Pharmacology",
+  "topic": "Thionamides / pregnancy",
+  "correct": "C",
+  "yourAnswer": "A",
+  "percentCorrect": 42,
+  "vignette": "A 26-year-old pregnant woman at 16 weeks gestation comes to the office for prenatal follow-up. The patient has a 2-year history of mild hyperthyroidism due to Graves disease and started taking propylthiouracil when she decided to attempt pregnancy. The patient has had no tremulousness, palpitations, diarrhea, or heat intolerance. She has no other medical problems and no drug allergies. She takes a prenatal vitamin. The patient does not use tobacco, alcohol, or illicit drugs. Temperature is 36.7 C (98 F), blood pressure is 110/60 mm Hg, and pulse is 88/min. Physical examination reveals no lid lag, exophthalmos, or hand tremors. The thyroid gland is normal to palpation. Fetal heart rate is normal. Thyroid hormone levels are within the laboratory's reference ranges. During this visit, her thyroid treatment is changed from propylthiouracil to methimazole. Switching the patient's therapy at this time is aimed at decreasing which of the following complications?",
+  "clues": [
+    {
+      "text": "at 16 weeks gestation",
+      "type": "blue",
+      "note": "16 weeks = second trimester. Now past the period of methimazole teratogenicity, the priority shifts to avoiding PTU's main danger with continued use: hepatotoxicity. Timing is the key to the answer."
+    },
+    {
+      "text": "started taking propylthiouracil when she decided to attempt pregnancy",
+      "type": "orange",
+      "note": "PTU is preferred in the FIRST trimester because methimazole is teratogenic early (aplasia cutis, esophageal atresia, choanal atresia). The strategy is PTU early, then switch — setting up the timing logic of the question."
+    },
+    {
+      "text": "changed from propylthiouracil to methimazole",
+      "type": "green",
+      "note": "Switching PTU → methimazole after the first trimester is done to AVOID PTU's risk of severe idiosyncratic hepatotoxicity/acute liver failure. Methimazole is preferred thereafter (PTU reserved for first trimester and thyroid storm)."
+    }
+  ],
+  "whatMatters": "All the reassuring exam details are filler. The point is the timing: PTU is used first trimester (methimazole is teratogenic early); at 16 weeks she's switched to methimazole to avoid PTU's serious risk of maternal HEPATOTOXICITY/liver failure. Answer C.",
+  "strategy": "Pregnancy thyroid rule: PTU in the FIRST trimester (avoid methimazole teratogens), then switch to methimazole because PTU carries hepatotoxicity. The question asks what the SWITCH prevents → the drug you're leaving (PTU) → its toxicity (liver). Don't answer with methimazole's risks.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Fetal skin abnormalities",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Fetal thyroid agenesis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Maternal hepatotoxicity",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Maternal ophthalmopathy",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Maternal thyroid cancer",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "fetal skin abnormalities — that's methimazole's risk, the drug she's switching TO (your pick)",
+      "detail": "WHAT IT IS: aplasia cutis (and esophageal/choanal atresia) is the teratogenic signature of METHIMAZOLE in early pregnancy. ❌ WHY IT FAILS: she's switching TO methimazole at 16 weeks, past the teratogenic window — the switch is to avoid PTU's liver toxicity, not to reduce a methimazole effect. ✅ Correct if: the question asked why PTU (not methimazole) is preferred in the FIRST trimester."
+    },
+    {
+      "letter": "B",
+      "label": "fetal thyroid agenesis — not how thionamides work",
+      "detail": "WHAT IT IS: thionamides can cause transient fetal hypothyroidism/goiter, not agenesis (the gland is normally formed by week 12). ❌ WHY IT FAILS: switching agents doesn't change agenesis risk, and that's not the recognized complication driving the switch. ✅ Correct if: the question described a developmental thyroid dysgenesis, which thionamides don't cause."
+    },
+    {
+      "letter": "D",
+      "label": "maternal ophthalmopathy — Graves antibody-driven, not drug-driven",
+      "detail": "WHAT IT IS: Graves ophthalmopathy is from TSH-receptor autoantibodies on orbital fibroblasts; radioiodine can worsen it. ❌ WHY IT FAILS: switching PTU to methimazole doesn't target eye disease; both are antithyroid drugs and neither switch changes ophthalmopathy. ✅ Correct if: the question asked about radioiodine acutely worsening eye disease."
+    },
+    {
+      "letter": "E",
+      "label": "maternal thyroid cancer — wrong risk factor entirely",
+      "detail": "WHAT IT IS: thyroid cancer risk relates to radiation exposure, iodine deficiency, and familial syndromes. ❌ WHY IT FAILS: antithyroid drugs don't cause thyroid cancer, so the switch has nothing to do with it. ✅ Correct if: the stem involved ionizing radiation or a familial cancer syndrome."
+    }
+  ],
+  "reasoning": [
+    "PTU preferred in first trimester (methimazole teratogenic early)",
+    "At 16 weeks (2nd trimester), teratogenic window has passed",
+    "Continued PTU risks severe hepatotoxicity/liver failure",
+    "Switch to methimazole to decrease maternal hepatotoxicity → answer C"
+  ],
+  "mechanism": "Thionamides (PTU, methimazole) block thyroid peroxidase to reduce thyroid hormone synthesis; PTU additionally inhibits peripheral T4→T3 conversion. Methimazole is teratogenic in the first trimester (aplasia cutis, esophageal/choanal atresia), so PTU is used early; however, PTU carries a risk of severe idiosyncratic hepatotoxicity and acute liver failure, so after the first trimester patients are switched to methimazole. The switch is timed to avoid each drug's worst risk in the relevant window.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology/Endocrine > Antithyroid drugs: thionamide mechanism (TPO inhibition; PTU also blocks T4→T3), PTU hepatotoxicity, methimazole teratogenicity (aplasia cutis), pregnancy sequencing (PTU 1st trimester → methimazole thereafter), agranulocytosis (both)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question is about the SWITCH: what does leaving PTU prevent? PTU's signature danger is liver failure. Don't answer with methimazole's teratogenicity (that's why PTU was used first)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on thionamide, thyroid peroxidase, hepatotoxicity, aplasia cutis, teratogen, ophthalmopathy? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Fetal skin abnormalities (A, your pick) is the famous methimazole teratogen — but she's switching TO methimazole after the teratogenic window. The switch avoids PTU's LIVER toxicity."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as A → memorize the timeline: PTU first trimester (avoid methimazole teratogens) → methimazole after (avoid PTU hepatotoxicity). Map the question to which drug is being stopped."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Antithyroid drug preferred in 1st trimester",
+      "back": "PTU (methimazole is teratogenic early)"
+    },
+    {
+      "front": "Why switch PTU → methimazole after 1st trimester",
+      "back": "Avoid PTU hepatotoxicity/liver failure"
+    },
+    {
+      "front": "Methimazole teratogenic effects",
+      "back": "Aplasia cutis, esophageal/choanal atresia"
+    },
+    {
+      "front": "Thionamide mechanism",
+      "back": "Inhibit thyroid peroxidase (PTU also blocks T4→T3)"
+    },
+    {
+      "front": "Shared serious thionamide toxicity",
+      "back": "Agranulocytosis"
+    },
+    {
+      "front": "Graves ophthalmopathy driver",
+      "back": "TSH-receptor autoantibodies (worsened by radioiodine)"
+    },
+    {
+      "front": "PTU's two niche uses",
+      "back": "First-trimester pregnancy + thyroid storm"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Thionamides (PTU/methimazole)",
+      "detail": "Pharmacology > Endocrine: mechanism, PTU hepatotoxicity, methimazole teratogenicity, pregnancy sequencing, agranulocytosis.",
+      "location": "Pharmacology > Endocrine: mechanism, PTU hepatotoxicity, methimazole teratogenicity, pregnancy sequencing, agranulocytosis."
+    },
+    {
+      "tag": "stem",
+      "topic": "Graves disease & hyperthyroidism",
+      "detail": "Endocrine: TSH-receptor antibodies, ophthalmopathy, treatment options (thionamides, radioiodine, surgery).",
+      "location": "Endocrine: TSH-receptor antibodies, ophthalmopathy, treatment options (thionamides, radioiodine, surgery)."
+    },
+    {
+      "tag": "options",
+      "topic": "Drug effects in pregnancy",
+      "detail": "Pharm/OB: teratogen timing windows, fetal vs maternal complications, thyroid in pregnancy.",
+      "location": "Pharm/OB: teratogen timing windows, fetal vs maternal complications, thyroid in pregnancy."
+    }
+  ],
+  "memoryHook": "PTU = 'Pregnancy, Trimester 1.' Switch off it later because PTU = 'Pretty Toxic to liver.' Methimazole = teratogen early.",
+  "stem": [
+    {
+      "text": "A 26-year-old pregnant woman "
+    },
+    {
+      "text": "at 16 weeks gestation",
+      "clue": true,
+      "type": "blue",
+      "note": "16 weeks = second trimester. Now past the period of methimazole teratogenicity, the priority shifts to avoiding PTU's main danger with continued use: hepatotoxicity. Timing is the key to the answer."
+    },
+    {
+      "text": " comes to the office for prenatal follow-up. The patient has a 2-year history of mild hyperthyroidism due to Graves disease and "
+    },
+    {
+      "text": "started taking propylthiouracil when she decided to attempt pregnancy",
+      "clue": true,
+      "type": "orange",
+      "note": "PTU is preferred in the FIRST trimester because methimazole is teratogenic early (aplasia cutis, esophageal atresia, choanal atresia). The strategy is PTU early, then switch — setting up the timing logic of the question."
+    },
+    {
+      "text": ". The patient has had no tremulousness, palpitations, diarrhea, or heat intolerance. She has no other medical problems and no drug allergies. She takes a prenatal vitamin. The patient does not use tobacco, alcohol, or illicit drugs. Temperature is 36.7 C (98 F), blood pressure is 110/60 mm Hg, and pulse is 88/min. Physical examination reveals no lid lag, exophthalmos, or hand tremors. The thyroid gland is normal to palpation. Fetal heart rate is normal. Thyroid hormone levels are within the laboratory's reference ranges. During this visit, her thyroid treatment is "
+    },
+    {
+      "text": "changed from propylthiouracil to methimazole",
+      "clue": true,
+      "type": "green",
+      "note": "Switching PTU → methimazole after the first trimester is done to AVOID PTU's risk of severe idiosyncratic hepatotoxicity/acute liver failure. Methimazole is preferred thereafter (PTU reserved for first trimester and thyroid storm)."
+    },
+    {
+      "text": ". Switching the patient's therapy at this time is aimed at decreasing which of the following complications?"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "id": "q135",
+  "item": 135,
+  "qid": "18764",
+  "title": "Tuberculin skin test: CD28-CD80 costimulation (type IV)",
+  "system": "Immunology",
+  "topic": "T-cell activation / hypersensitivity",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 65,
+  "vignette": "A 24-year-old nurse comes to the office for his annual wellness visit that includes tuberculosis screening. The patient has no chronic medical conditions and does not have recent fever, cough, or other health changes. He receives an intradermal injection of tuberculin on the inner surface of his forearm. Two days later, he has a distinct area of induration 20 mm across at the injection site. Which of the following interactions likely contributes the most to the development of this patient's skin reaction?",
+  "clues": [
+    {
+      "text": "intradermal injection of tuberculin",
+      "type": "blue",
+      "note": "The tuberculin skin test introduces mycobacterial antigens into the dermis to detect prior sensitization. The response is a cell-mediated (type IV) reaction requiring antigen presentation to T cells."
+    },
+    {
+      "text": "Two days later, he has a distinct area of induration",
+      "type": "red",
+      "note": "A delayed (48-72 hour) INDURATED reaction is the signature of type IV (delayed-type) hypersensitivity. The timing reflects antigen processing, T-cell activation, and recruitment - not immediate antibody-mediated responses."
+    },
+    {
+      "text": "20 mm across at the injection site",
+      "type": "green",
+      "note": "Firm induration (not just erythema) is produced by T-cell-driven macrophage recruitment and cytokine release. The pivotal molecular event is T-cell activation, which requires costimulation."
+    }
+  ],
+  "whatMatters": "A delayed indurated tuberculin reaction is type IV hypersensitivity driven by T-cell activation. Full T-cell activation needs costimulation: CD28 on the T cell binding CD80/86 on the antigen-presenting (dendritic) cell - answer D.",
+  "strategy": "For T-cell activation questions, recall the two-signal rule: Signal 1 = TCR recognizing antigen on MHC; Signal 2 = costimulation via CD28 (T cell) binding CD80/86 (APC). CTLA-4 binding CD80/86 is INHIBITORY. The activating interaction is CD28-CD80/86.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "CD14 on epidermal macrophages with bacterial lipopolysaccharide",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "CD16 on natural killer cells with IgG bound to infected cells",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "CD18 on neutrophils with ICAM-1 on endothelial cells",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "CD28 on T lymphocytes with CD80 on epidermal dendritic cells",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "CTLA4 on T lymphocytes with CD80 on epidermal dendritic cells",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "CD14-LPS - innate macrophage sensing, not the key here",
+      "detail": "WHAT IT IS: CD14 on macrophages recognizes lipopolysaccharide to trigger innate immunity. ❌ WHY IT FAILS: the tuberculin reaction is an adaptive, T-cell-mediated (type IV) response; CD14-LPS innate sensing is not the central interaction. ✅ Correct if: asked about innate recognition of gram-negative LPS/sepsis."
+    },
+    {
+      "letter": "B",
+      "label": "CD16-IgG (NK ADCC) - antibody-dependent, not type IV",
+      "detail": "WHAT IT IS: CD16 on NK cells binds IgG on target cells for antibody-dependent cellular cytotoxicity. ❌ WHY IT FAILS: that is antibody-mediated killing (type II-like), whereas TST is a T-cell delayed-type reaction; antibodies aren't central. ✅ Correct if: asked about NK-mediated ADCC."
+    },
+    {
+      "letter": "C",
+      "label": "CD18-ICAM-1 - leukocyte adhesion, supportive not pivotal",
+      "detail": "WHAT IT IS: beta-2 integrin (CD18) on leukocytes binding ICAM-1 mediates firm adhesion/transmigration. ❌ WHY IT FAILS: adhesion helps cells reach the site but is not the activating interaction that DRIVES the type IV response; the pivotal step is T-cell costimulation. ✅ Correct if: asked about leukocyte adhesion or leukocyte adhesion deficiency type 1."
+    },
+    {
+      "letter": "E",
+      "label": "CTLA4-CD80 - inhibitory, opposite effect",
+      "detail": "WHAT IT IS: CTLA-4 on T cells binds CD80/86 with high affinity to DELIVER AN INHIBITORY signal (downregulates activation). ❌ WHY IT FAILS: this dampens, not promotes, the reaction; the activating costimulus is CD28-CD80/86. ✅ Correct if: asked which interaction terminates/limits T-cell activation (target of ipilimumab/abatacept)."
+    }
+  ],
+  "reasoning": [
+    "Delayed (48-72 h) indurated tuberculin reaction = type IV hypersensitivity (T-cell mediated)",
+    "T-cell activation requires two signals: TCR-MHC + costimulation",
+    "Costimulation = CD28 (T cell) binding CD80/86 (APC/dendritic cell)",
+    "-> answer D (CD28-CD80)"
+  ],
+  "mechanism": "The tuberculin skin test is a type IV (delayed-type) hypersensitivity reaction. Antigen-presenting dendritic cells display tuberculin peptides on MHC class II to previously sensitized CD4 T cells (Signal 1: TCR-MHC). Full activation requires Signal 2, costimulation, in which CD28 on the T cell engages CD80/CD86 on the dendritic cell. Activated TH1 cells then secrete IFN-gamma and other cytokines that recruit and activate macrophages over 48-72 hours, producing the indurated lesion. CTLA-4 binding CD80/86 instead inhibits T-cell activation; CD14-LPS, CD16-IgG (NK ADCC), and CD18-ICAM-1 adhesion are not the pivotal activating interactions.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Immunology > T-cell activation: two-signal model (TCR-MHC + CD28-CD80/86 costimulation); CTLA-4-CD80/86 is inhibitory; type IV (delayed) hypersensitivity (TST, contact dermatitis, PPD) is T-cell/macrophage mediated."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Recognize the reaction type (delayed/type IV -> T-cell) and then identify the activating costimulatory pair (CD28-CD80/86), not adhesion or innate molecules."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on costimulation, CD28 vs CTLA-4, CD80/86, type IV hypersensitivity, ICAM-1/CD18, ADCC/CD16? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "CTLA4-CD80 (E) is the classic trap - same ligand, opposite (inhibitory) effect. The ACTIVATING costimulus is CD28-CD80/86 (D)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked D correctly - keep CD28 (go) vs CTLA-4 (stop) straight; both bind CD80/86."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Costimulatory (activating) T-cell signal",
+      "back": "CD28 (T cell) - CD80/86 (APC)"
+    },
+    {
+      "front": "Inhibitory checkpoint with same ligand",
+      "back": "CTLA-4 (T cell) - CD80/86 (target of abatacept/ipilimumab)"
+    },
+    {
+      "front": "Tuberculin skin test reaction type",
+      "back": "Type IV (delayed-type) hypersensitivity (48-72 h induration)"
+    },
+    {
+      "front": "Type IV effector cytokine",
+      "back": "IFN-gamma (TH1) -> macrophage activation"
+    },
+    {
+      "front": "Two-signal T-cell activation",
+      "back": "Signal 1 = TCR-MHC; Signal 2 = CD28-CD80/86"
+    },
+    {
+      "front": "CD18-ICAM-1 interaction",
+      "back": "Leukocyte firm adhesion (deficiency = LAD-1)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "T-cell costimulation",
+      "detail": "Immunology: CD28-CD80/86 activation, CTLA-4 inhibition, two-signal model.",
+      "location": "Immunology: CD28-CD80/86 activation, CTLA-4 inhibition, two-signal model."
+    },
+    {
+      "tag": "stem",
+      "topic": "Type IV hypersensitivity",
+      "detail": "Immuno: delayed-type reactions (PPD, contact dermatitis, granulomas), TH1/macrophages.",
+      "location": "Immuno: delayed-type reactions (PPD, contact dermatitis, granulomas), TH1/macrophages."
+    },
+    {
+      "tag": "options",
+      "topic": "Immune cell surface molecules",
+      "detail": "Immuno: CD14/LPS, CD16/ADCC, CD18-ICAM-1 adhesion.",
+      "location": "Immuno: CD14/LPS, CD16/ADCC, CD18-ICAM-1 adhesion."
+    }
+  ],
+  "memoryHook": "CD28 = the GAS pedal, CTLA-4 = the BRAKE - both plug into CD80/86. PPD induration needs the gas: CD28-CD80.",
+  "stem": [
+    {
+      "text": "A 24-year-old nurse comes to the office for his annual wellness visit that includes tuberculosis screening. The patient has no chronic medical conditions and does not have recent fever, cough, or other health changes. He receives an "
+    },
+    {
+      "text": "intradermal injection of tuberculin",
+      "clue": true,
+      "type": "blue",
+      "note": "The tuberculin skin test introduces mycobacterial antigens into the dermis to detect prior sensitization. The response is a cell-mediated (type IV) reaction requiring antigen presentation to T cells."
+    },
+    {
+      "text": " on the inner surface of his forearm. "
+    },
+    {
+      "text": "Two days later, he has a distinct area of induration",
+      "clue": true,
+      "type": "red",
+      "note": "A delayed (48-72 hour) INDURATED reaction is the signature of type IV (delayed-type) hypersensitivity. The timing reflects antigen processing, T-cell activation, and recruitment - not immediate antibody-mediated responses."
+    },
+    {
+      "text": " "
+    },
+    {
+      "text": "20 mm across at the injection site",
+      "clue": true,
+      "type": "green",
+      "note": "Firm induration (not just erythema) is produced by T-cell-driven macrophage recruitment and cytokine release. The pivotal molecular event is T-cell activation, which requires costimulation."
+    },
+    {
+      "text": ". Which of the following interactions likely contributes the most to the development of this patient's skin reaction?"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { FA_SECTIONS, RESOURCE_GUIDANCE, SUBJECTS, SYSTEMS, makeFASectionId, inferTags } from "../lib/intakeData.js";
+import { chaptersForFA, resolveFAChapters } from "../lib/faMap.js";
 
 function buildActions(form, questionId, qFull) {
   const { subject, system, faChapter, faSubsection, outcome, whyMissed, mechanismNote } = form;
@@ -14,24 +15,37 @@ function buildActions(form, questionId, qFull) {
   const keywords = Array.isArray(qFull?.keywords) ? qFull.keywords : [];
   const ankiLabel = qFull?.topic || topic;
 
-  // One FA-reading task per First-Aid location the question points to.
-  // Falls back to the manually-picked section only when the question has none.
+  // One FA-reading task per First-Aid location the question points to, each
+  // tagged with the real FA chapter(s) it maps to so the FA tracker can flag them.
+  const qBlob = `${qFull?.topic || ""} ${qFull?.title || ""} ${qFull?.system || ""}`;
   function pushFAReadTasks(prefix) {
     if (faLocs.length) {
-      faLocs.forEach((fa, i) => tasks.push({
-        id: `t-${stamp}-fa${i}`, type: "read-fa", priority: "high", subject, system,
-        text: `📖 Read FA: ${fa.location || fa.topic}`,
-        body: `${fa.topic}${fa.location ? ` — ${fa.location}` : ""}`,
-        linkedQuestionId: questionId, linkedFaSectionId: sid || undefined,
-        done: false, createdAt: stamp,
-      }));
-    } else if (sid) {
-      tasks.push({
-        id: `t-${stamp}-fa`, type: "read-fa", priority: "high", subject, system,
-        text: `📖 Read FA: ${sid}`,
-        body: `${prefix} — ${topic}`,
-        linkedQuestionId: questionId, linkedFaSectionId: sid, done: false, createdAt: stamp,
+      faLocs.forEach((fa, i) => {
+        const chapters = chaptersForFA(fa, qBlob);
+        const chLabel = chapters.map(c => c.name).join(" / ");
+        const loc = fa.location || fa.detail || "";
+        tasks.push({
+          id: `t-${stamp}-fa${i}`, type: "read-fa", priority: "high", subject, system,
+          text: chLabel ? `📖 Read FA: ${chLabel} — ${fa.topic}` : `📖 Read FA: ${loc || fa.topic}`,
+          body: `${fa.topic}${loc ? ` — ${loc}` : ""}`,
+          faChapters: chapters,
+          linkedQuestionId: questionId, linkedFaSectionId: sid || undefined,
+          done: false, createdAt: stamp,
+        });
       });
+    } else {
+      const chapters = resolveFAChapters(qFull, { subject, system });
+      const chLabel = chapters.map(c => c.name).join(" / ");
+      if (sid || chapters.length) {
+        tasks.push({
+          id: `t-${stamp}-fa`, type: "read-fa", priority: "high", subject, system,
+          text: chLabel ? `📖 Read FA: ${chLabel} — ${topic}` : `📖 Read FA: ${sid}`,
+          body: `${prefix} — ${topic}`,
+          faChapters: chapters,
+          linkedQuestionId: questionId, linkedFaSectionId: sid || undefined,
+          done: false, createdAt: stamp,
+        });
+      }
     }
   }
 
@@ -116,17 +130,21 @@ export default function IntakeWizard({ questionId, questionMeta, questionFull, e
 
   // Auto-tag from the question itself once its data loads. If both subject and
   // system are confidently inferred, skip the manual tag step entirely.
+  // Merged question data: full JSON when available, deck metadata as fallback
+  // (so FA targeting still works for questions whose JSON failed to load).
+  const qData = { ...(questionMeta || {}), ...(questionFull || {}) };
+
   const autoRef = useRef(false);
   useEffect(() => {
     if (autoRef.current || existingIntake) return;
-    if (!questionFull) return;
+    if (!questionFull && !questionMeta) return;
     autoRef.current = true;
-    const t = inferTags(questionFull);
+    const t = inferTags(qData);
     if (!t.subject && !t.system) return;
     setForm(f => ({ ...f, subject: f.subject || t.subject, system: f.system || t.system }));
     setAutoTagged(true);
     if (t.confident) setStep(s => (s === 0 ? 1 : s));
-  }, [questionFull, existingIntake]);
+  }, [questionFull, questionMeta, existingIntake]);
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }));
   const selectedChapter = FA_SECTIONS.find(f => f.chapter === form.faChapter);
@@ -145,7 +163,7 @@ export default function IntakeWizard({ questionId, questionMeta, questionFull, e
     if (needsNote) {
       setTimeout(() => setStep(3), 130);
     } else {
-      const a = buildActions(updated, questionId, questionFull);
+      const a = buildActions(updated, questionId, qData);
       setActions(a);
       setTimeout(() => setStep(4), 130);
     }
@@ -154,7 +172,7 @@ export default function IntakeWizard({ questionId, questionMeta, questionFull, e
   function next() {
     if (step === 0 && canNext0) { setStep(1); return; }
     if (step === 3) {
-      const a = buildActions(form, questionId, questionFull);
+      const a = buildActions(form, questionId, qData);
       setActions(a);
       setStep(4);
     }

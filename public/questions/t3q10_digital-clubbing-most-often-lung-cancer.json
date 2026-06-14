@@ -1,0 +1,206 @@
+{
+  "id": "q79",
+  "item": 79,
+  "qid": "820",
+  "title": "Digital clubbing: most often lung cancer",
+  "system": "Pulmonary",
+  "topic": "Clubbing / paraneoplastic",
+  "correct": "D",
+  "yourAnswer": "C",
+  "percentCorrect": 43,
+  "vignette": "A 66-year-old man is brought to the office by his daughter for medical evaluation. The patient reports no chronic medical conditions but has not seen a physician for many years. He takes no medications. The patient is a retired veteran and recently relocated to live closer to his daughter. He is an ex-smoker and does not use alcohol or recreational drugs. Oxygen saturation on room air is 98%. On physical examination, normal breath sounds are heard throughout both lungs. Hand examination findings are shown in the exhibit. The patient's hand findings are most suggestive of which of the following underlying conditions?",
+  "clues": [
+    {
+      "text": "He is an ex-smoker",
+      "type": "orange",
+      "note": "Smoking history is the key risk factor steering the differential toward bronchogenic carcinoma. Clubbing in a smoker should raise concern for lung cancer until proven otherwise."
+    },
+    {
+      "text": "normal breath sounds are heard throughout both lungs",
+      "type": "blue",
+      "note": "Normal lung auscultation doesn't exclude a tumor; clubbing can precede other findings. It argues against an obvious chronic infectious/obstructive cause and keeps malignancy on top."
+    },
+    {
+      "text": "Hand examination findings are shown in the exhibit",
+      "type": "green",
+      "note": "The exhibit shows digital clubbing: bulbous fingertips with loss of the normal nail-fold angle (Lovibond angle), obliterating the diamond window. In an adult smoker, the most common cause of new clubbing is lung adenocarcinoma."
+    }
+  ],
+  "whatMatters": "The hand image shows digital clubbing. The most-tested association in an adult — especially a smoker — is bronchogenic carcinoma (lung adenocarcinoma, via tumor-secreted VEGF). Answer D.",
+  "strategy": "For 'what does this hand finding suggest,' first name the sign from the image (clubbing = lost nail-fold angle, bulbous tips), then choose its MOST COMMON cause for the given patient. In an adult smoker, clubbing → lung cancer beats chronic lung/cardiac/GI causes statistically.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Chronic bronchitis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Chronic kidney disease",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Iron deficiency anemia",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Lung cancer",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Plaque psoriasis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "chronic bronchitis (COPD) — usually does NOT club",
+      "detail": "WHAT IT IS: chronic bronchitis is a COPD phenotype (productive cough, airflow obstruction). ❌ WHY IT FAILS: uncomplicated COPD characteristically does NOT cause clubbing; new clubbing in a smoker should prompt a search for cancer instead. ✅ Correct if: the question linked clubbing to bronchiectasis/abscess (chronic suppurative lung disease) rather than simple COPD."
+    },
+    {
+      "letter": "C",
+      "label": "iron deficiency anemia — gives koilonychia, not clubbing (your pick)",
+      "detail": "WHAT IT IS: chronic iron deficiency causes KOILONYCHIA (spoon-shaped, concave nails) and pallor. ❌ WHY IT FAILS: that's the opposite nail contour from clubbing's bulbous convexity; the exhibit shows clubbing, not spooning. ✅ Correct if: the image showed thin, concave 'spoon' nails."
+    },
+    {
+      "letter": "B",
+      "label": "chronic kidney disease — not a clubbing cause",
+      "detail": "WHAT IT IS: CKD causes nail changes like half-and-half (Lindsay) nails. ❌ WHY IT FAILS: CKD is not a recognized cause of digital clubbing; nothing here suggests renal disease. ✅ Correct if: the nails showed the proximal-white/distal-brown half-and-half pattern."
+    },
+    {
+      "letter": "E",
+      "label": "plaque psoriasis — pitting/onycholysis, not clubbing",
+      "detail": "WHAT IT IS: psoriasis causes nail PITTING, onycholysis, and 'oil-drop' changes. ❌ WHY IT FAILS: those are surface/attachment changes, not the bulbous fingertip enlargement of clubbing. ✅ Correct if: the image showed pitted nails with scaly plaques."
+    }
+  ],
+  "reasoning": [
+    "Hand exhibit = digital clubbing (lost Lovibond angle, bulbous tips)",
+    "Adult, ex-smoker → highest-yield association is malignancy",
+    "Lung adenocarcinoma (tumor VEGF) is the most common cause of new clubbing in adults",
+    "Underlying condition = lung cancer → answer D"
+  ],
+  "mechanism": "Digital clubbing is bulbous enlargement of the distal fingers from fibrovascular proliferation in the nail beds, mediated by platelet-derived and vascular endothelial growth factors (VEGF) that escape pulmonary clearance or are tumor-secreted. The Lovibond (nail-fold) angle is lost and the Schamroth diamond window obliterates. In adults the most common cause is bronchogenic carcinoma (lung adenocarcinoma); other causes include bronchiectasis, lung abscess, cyanotic congenital heart disease, and IBD. Painful periostitis with clubbing = hypertrophic pulmonary osteoarthropathy, strongly linked to lung adenocarcinoma.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pulmonary > Lung cancer & clubbing: conditions associated with digital clubbing (lung neoplasms, cardiopulmonary disease with hypoxemia, chronic infections, IBD), VEGF mechanism, hypertrophic osteoarthropathy. Contrast nail signs (koilonychia, pitting, half-and-half)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: name the sign (clubbing) then pick the most likely cause for THIS patient (adult smoker → lung cancer). Statistics + smoking history break the tie."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on clubbing, Lovibond angle, Schamroth window, koilonychia, hypertrophic osteoarthropathy, VEGF? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Iron deficiency (C) is the classic trap because it has a famous NAIL sign — but that's KOILONYCHIA (spoon nails), the opposite of clubbing. Read the image contour carefully."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "Clubbing on exam: lost nail-fold angle (>180°), floating/spongy nail bed, positive Schamroth sign (no diamond gap when nails are opposed). Practice distinguishing clubbing vs koilonychia vs psoriatic pitting vs half-and-half nails."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as C → make a nail-sign card: clubbing = lung cancer; koilonychia = iron deficiency; pitting = psoriasis; half-and-half = CKD; splinter hemorrhages = endocarditis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Digital clubbing in an adult smoker",
+      "back": "Lung cancer (bronchogenic carcinoma, adenocarcinoma)"
+    },
+    {
+      "front": "Clubbing mechanism",
+      "back": "VEGF/platelet-derived growth factors → distal fibrovascular proliferation"
+    },
+    {
+      "front": "Clubbing exam sign",
+      "back": "Lost Lovibond angle; positive Schamroth (no diamond window)"
+    },
+    {
+      "front": "Koilonychia",
+      "back": "Spoon nails — iron deficiency anemia"
+    },
+    {
+      "front": "Nail pitting / onycholysis",
+      "back": "Psoriasis"
+    },
+    {
+      "front": "Half-and-half (Lindsay) nails",
+      "back": "Chronic kidney disease"
+    },
+    {
+      "front": "Clubbing + painful periostitis",
+      "back": "Hypertrophic pulmonary osteoarthropathy (lung adenocarcinoma)"
+    },
+    {
+      "front": "Non-malignant clubbing causes",
+      "back": "Bronchiectasis, lung abscess, cyanotic CHD, IBD"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Digital clubbing & lung cancer",
+      "detail": "Pulmonary: conditions associated with clubbing, VEGF mechanism, lung adenocarcinoma as most common adult cause, hypertrophic osteoarthropathy.",
+      "location": "Pulmonary: conditions associated with clubbing, VEGF mechanism, lung adenocarcinoma as most common adult cause, hypertrophic osteoarthropathy."
+    },
+    {
+      "tag": "options",
+      "topic": "Nail findings differential",
+      "detail": "Derm/IM: koilonychia (iron deficiency), pitting (psoriasis), half-and-half (CKD), splinter hemorrhages (endocarditis), Terry/Muehrcke lines.",
+      "location": "Derm/IM: koilonychia (iron deficiency), pitting (psoriasis), half-and-half (CKD), splinter hemorrhages (endocarditis), Terry/Muehrcke lines."
+    },
+    {
+      "tag": "stem",
+      "topic": "Lung cancer overview",
+      "detail": "Pulmonary/Onc: smoking risk, adenocarcinoma vs squamous vs small cell, paraneoplastic syndromes.",
+      "location": "Pulmonary/Onc: smoking risk, adenocarcinoma vs squamous vs small cell, paraneoplastic syndromes."
+    }
+  ],
+  "memoryHook": "Bulbous fingertips in a smoker → think CLUB → lung Cancer. Spoon nails would be iron; clubbing is the tumor.",
+  "stem": [
+    {
+      "text": "A 66-year-old man is brought to the office by his daughter for medical evaluation. The patient reports no chronic medical conditions but has not seen a physician for many years. He takes no medications. The patient is a retired veteran and recently relocated to live closer to his daughter. "
+    },
+    {
+      "text": "He is an ex-smoker",
+      "clue": true,
+      "type": "orange",
+      "note": "Smoking history is the key risk factor steering the differential toward bronchogenic carcinoma. Clubbing in a smoker should raise concern for lung cancer until proven otherwise."
+    },
+    {
+      "text": " and does not use alcohol or recreational drugs. Oxygen saturation on room air is 98%. On physical examination, "
+    },
+    {
+      "text": "normal breath sounds are heard throughout both lungs",
+      "clue": true,
+      "type": "blue",
+      "note": "Normal lung auscultation doesn't exclude a tumor; clubbing can precede other findings. It argues against an obvious chronic infectious/obstructive cause and keeps malignancy on top."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Hand examination findings are shown in the exhibit",
+      "clue": true,
+      "type": "green",
+      "note": "The exhibit shows digital clubbing: bulbous fingertips with loss of the normal nail-fold angle (Lovibond angle), obliterating the diamond window. In an adult smoker, the most common cause of new clubbing is lung adenocarcinoma."
+    },
+    {
+      "text": ". The patient's hand findings are most suggestive of which of the following underlying conditions?"
+    }
+  ]
+}

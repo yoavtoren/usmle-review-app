@@ -1,0 +1,212 @@
+{
+  "id": "q105",
+  "item": 105,
+  "qid": "441",
+  "title": "Acute pancreatitis: premature trypsinogen activation",
+  "system": "Gastrointestinal",
+  "topic": "Pancreatitis / zymogens",
+  "correct": "F",
+  "yourAnswer": "F",
+  "percentCorrect": 72,
+  "vignette": "A 38-year-old man comes to the emergency department with severe abdominal pain and vomiting. The pain radiates to his back and improves by bending forward. Physical examination shows tenderness over the epigastrium and decreased bowel sounds. The patient is admitted to the hospital and treated with intravenous fluids and pain medication, but his condition fails to improve. An abdominal CT scan reveals diffuse pancreatic enlargement with areas of necrosis. The inappropriate activation of which of the following most likely initiated this patient's condition?",
+  "clues": [
+    {
+      "text": "radiates to his back and improves by bending forward",
+      "type": "red",
+      "note": "Epigastric pain boring through to the back, relieved by leaning forward, is the classic presentation of acute pancreatitis. The retroperitoneal pancreas refers pain posteriorly. This localizes the disease."
+    },
+    {
+      "text": "diffuse pancreatic enlargement with areas of necrosis",
+      "type": "green",
+      "note": "CT showing an edematous/necrotic pancreas confirms acute (necrotizing) pancreatitis. Pancreatic autodigestion is the mechanism — the question asks which zymogen, activated prematurely, started the cascade."
+    },
+    {
+      "text": "inappropriate activation",
+      "type": "green",
+      "note": "Acute pancreatitis is initiated by PREMATURE intra-acinar activation of TRYPSINOGEN to trypsin. Active trypsin then activates the other pancreatic zymogens (chymotrypsinogen, proelastase, prophospholipase) and more trypsinogen, driving autodigestion. Trypsinogen is the trigger."
+    }
+  ],
+  "whatMatters": "Epigastric pain radiating to the back + necrotic pancreas on CT = acute pancreatitis from autodigestion. The initiating event is inappropriate intra-acinar activation of TRYPSINOGEN → trypsin, which then activates all the other pancreatic zymogens. Answer F.",
+  "strategy": "Identify the MASTER zymogen. Trypsin is the central activator: premature trypsinogen→trypsin conversion sets off the whole proteolytic cascade (it activates chymotrypsinogen, proelastase, prophospholipase, and more trypsinogen). When asked which inappropriate activation INITIATES pancreatitis, choose trypsinogen, not its downstream targets.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Amylase",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Chymotrypsinogen",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Lipase",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Proelastase",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Prophospholipase",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Trypsinogen",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "amylase — a marker, not a trigger and not a zymogen",
+      "detail": "WHAT IT IS: amylase digests carbohydrates and is a serum MARKER of pancreatitis. ❌ WHY IT FAILS: it isn't a protease zymogen and doesn't initiate autodigestion; it's released when acini are injured, not the cause. ✅ Correct if: the question asked which enzyme is measured to diagnose pancreatitis."
+    },
+    {
+      "letter": "B",
+      "label": "chymotrypsinogen — downstream of trypsin",
+      "detail": "WHAT IT IS: chymotrypsinogen is a protease zymogen activated BY trypsin. ❌ WHY IT FAILS: it's a downstream effector, not the initiator; trypsin must activate it first. ✅ Correct if: the question asked which enzyme trypsin activates, not which one starts the cascade."
+    },
+    {
+      "letter": "C",
+      "label": "lipase — effector of fat necrosis, not the initiator",
+      "detail": "WHAT IT IS: pancreatic lipase causes peripancreatic fat necrosis (saponification) and is also a diagnostic marker. ❌ WHY IT FAILS: it contributes to tissue damage but doesn't trigger the proteolytic cascade; trypsin does. ✅ Correct if: the question asked what causes fat necrosis or which marker is most specific for pancreatitis."
+    },
+    {
+      "letter": "D",
+      "label": "proelastase — downstream zymogen",
+      "detail": "WHAT IT IS: proelastase is activated by trypsin into elastase, which degrades vessel walls (hemorrhage). ❌ WHY IT FAILS: it's activated by trypsin, so it's downstream, not the initiating step. ✅ Correct if: asked which enzyme causes vascular damage/hemorrhagic pancreatitis."
+    },
+    {
+      "letter": "E",
+      "label": "prophospholipase — downstream zymogen",
+      "detail": "WHAT IT IS: prophospholipase A2 is activated by trypsin and damages cell membranes/surfactant. ❌ WHY IT FAILS: again downstream of trypsin, not the trigger. ✅ Correct if: asked which enzyme trypsin activates to damage membranes."
+    }
+  ],
+  "reasoning": [
+    "Epigastric pain to the back + necrotic pancreas = acute pancreatitis (autodigestion)",
+    "Autodigestion is driven by active pancreatic proteases",
+    "Trypsin is the central activator of all pancreatic zymogens",
+    "Premature trypsinogen→trypsin activation initiates the cascade → answer F"
+  ],
+  "mechanism": "Acute pancreatitis begins with PREMATURE intra-acinar conversion of trypsinogen to trypsin (normally activated only in the duodenum by enterokinase). Active trypsin then activates additional trypsinogen plus the other zymogens — chymotrypsinogen, proelastase, prophospholipase — and lipase, producing autodigestion: proteolysis, fat necrosis (lipase, saponification → hypocalcemia), vascular injury (elastase → hemorrhage), and inflammation. Common causes are gallstones and alcohol.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI > Acute pancreatitis: premature trypsinogen activation, zymogen cascade, autodigestion, causes (GET SMASHED — gallstones, ethanol), complications (necrosis, pseudocyst, hypocalcemia, ARDS), amylase/lipase markers."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Find the FIRST domino. Trypsin activates everything else, so 'what INITIATES' = trypsinogen. The other zymogens are downstream effectors."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on zymogen, trypsinogen/trypsin, enterokinase, autodigestion, chymotrypsinogen, proelastase, saponification? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The downstream zymogens (B, D, E) and the markers (A amylase, C lipase) are tempting, but only trypsinogen's premature activation STARTS the cascade. Pick the master activator."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The pathogenesis figure shows ductal obstruction or direct acinar injury → intra-acinar trypsinogen activation → release of other autodigestive enzymes. Practice tracing the cascade from trigger to effectors."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (F). Anchor: trypsin is the 'master switch' — premature trypsinogen activation initiates pancreatitis; everything else is downstream."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Initiating event in acute pancreatitis",
+      "back": "Premature intra-acinar trypsinogen → trypsin activation"
+    },
+    {
+      "front": "Role of trypsin",
+      "back": "Activates all other pancreatic zymogens (master activator)"
+    },
+    {
+      "front": "Normal trypsinogen activator (duodenum)",
+      "back": "Enterokinase (enteropeptidase)"
+    },
+    {
+      "front": "Pancreatitis serum markers",
+      "back": "Lipase (more specific) and amylase"
+    },
+    {
+      "front": "Elastase effect in pancreatitis",
+      "back": "Vascular wall damage → hemorrhage"
+    },
+    {
+      "front": "Lipase/phospholipase effect",
+      "back": "Fat necrosis/saponification → hypocalcemia"
+    },
+    {
+      "front": "Common causes (GET SMASHED)",
+      "back": "Gallstones, Ethanol, Trauma, Scorpion, Mumps, Autoimmune, Steroids, Hypertriglyceridemia/Hypercalcemia, ERCP, Drugs"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Acute pancreatitis pathogenesis",
+      "detail": "GI: premature trypsinogen activation, zymogen cascade, autodigestion, necrosis; causes and complications.",
+      "location": "GI: premature trypsinogen activation, zymogen cascade, autodigestion, necrosis; causes and complications."
+    },
+    {
+      "tag": "options",
+      "topic": "Pancreatic enzymes/zymogens",
+      "detail": "GI/Biochem: trypsinogen (master), chymotrypsinogen, proelastase, prophospholipase, amylase, lipase; enterokinase activation.",
+      "location": "GI/Biochem: trypsinogen (master), chymotrypsinogen, proelastase, prophospholipase, amylase, lipase; enterokinase activation."
+    },
+    {
+      "tag": "stem",
+      "topic": "Pancreatitis clinical",
+      "detail": "GI: presentation (epigastric pain to back), labs (lipase/amylase), imaging, severity/complications (pseudocyst, necrosis, hypocalcemia).",
+      "location": "GI: presentation (epigastric pain to back), labs (lipase/amylase), imaging, severity/complications (pseudocyst, necrosis, hypocalcemia)."
+    }
+  ],
+  "memoryHook": "Trypsin is the master switch — premature trypsinogen activation flips ON the whole autodigestion cascade. The pancreas eats itself.",
+  "stem": [
+    {
+      "text": "A 38-year-old man comes to the emergency department with severe abdominal pain and vomiting. The pain "
+    },
+    {
+      "text": "radiates to his back and improves by bending forward",
+      "clue": true,
+      "type": "red",
+      "note": "Epigastric pain boring through to the back, relieved by leaning forward, is the classic presentation of acute pancreatitis. The retroperitoneal pancreas refers pain posteriorly. This localizes the disease."
+    },
+    {
+      "text": ". Physical examination shows tenderness over the epigastrium and decreased bowel sounds. The patient is admitted to the hospital and treated with intravenous fluids and pain medication, but his condition fails to improve. An abdominal CT scan reveals "
+    },
+    {
+      "text": "diffuse pancreatic enlargement with areas of necrosis",
+      "clue": true,
+      "type": "green",
+      "note": "CT showing an edematous/necrotic pancreas confirms acute (necrotizing) pancreatitis. Pancreatic autodigestion is the mechanism — the question asks which zymogen, activated prematurely, started the cascade."
+    },
+    {
+      "text": ". The "
+    },
+    {
+      "text": "inappropriate activation",
+      "clue": true,
+      "type": "green",
+      "note": "Acute pancreatitis is initiated by PREMATURE intra-acinar activation of TRYPSINOGEN to trypsin. Active trypsin then activates the other pancreatic zymogens (chymotrypsinogen, proelastase, prophospholipase) and more trypsinogen, driving autodigestion. Trypsinogen is the trigger."
+    },
+    {
+      "text": " of which of the following most likely initiated this patient's condition?"
+    }
+  ]
+}

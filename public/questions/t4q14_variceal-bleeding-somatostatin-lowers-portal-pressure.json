@@ -1,0 +1,193 @@
+{
+  "id": "q123",
+  "item": 123,
+  "qid": "7215",
+  "title": "Variceal bleeding: somatostatin lowers portal pressure",
+  "system": "Pharmacology",
+  "topic": "GI / portal hypertension",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 83,
+  "vignette": "After initial stabilization with intravenous fluids and blood products, the patient develops another bout of bloody emesis. Urgent upper gastrointestinal endoscopy confirms esophageal varices. Which of the following peptides is most likely to immediately decrease the portal venous pressure in this patient?",
+  "clues": [
+    {
+      "text": "another bout of bloody emesis",
+      "type": "red",
+      "note": "Recurrent hematemesis from confirmed esophageal varices is a portal-hypertensive emergency. Acute management requires rapidly lowering portal pressure plus endoscopic therapy."
+    },
+    {
+      "text": "esophageal varices",
+      "type": "green",
+      "note": "Esophageal varices form at the portosystemic junction due to portal hypertension. The drug target is to reduce splanchnic/portal inflow - achieved by somatostatin or its analog octreotide."
+    },
+    {
+      "text": "immediately decrease the portal venous pressure",
+      "type": "blue",
+      "note": "'Immediately decrease portal pressure' is the pharmacology cue for somatostatin/octreotide (or vasopressin/terlipressin): inhibit splanchnic vasodilatory hormones -> splanchnic vasoconstriction -> reduced portal inflow."
+    }
+  ],
+  "whatMatters": "In acute variceal bleeding, the peptide that immediately lowers portal pressure is somatostatin (or its analog octreotide). It inhibits release of splanchnic vasodilators (glucagon, VIP), causing splanchnic vasoconstriction and reduced portal blood flow - answer E.",
+  "strategy": "For acute variceal hemorrhage pharmacology, remember the splanchnic logic: portal inflow falls if you constrict splanchnic arterioles. Somatostatin/octreotide do this indirectly by suppressing vasodilatory peptides (glucagon, VIP). Vasopressin/terlipressin act directly but with more systemic vasoconstriction. Glucagon, CCK, secretin, gastrin would WORSEN portal flow.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cholecystokinin",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Glucagon",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Pentagastrin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Secretin",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Somatostatin",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "cholecystokinin - increases splanchnic flow",
+      "detail": "WHAT IT IS: CCK stimulates gallbladder contraction and pancreatic enzyme secretion. ❌ WHY IT FAILS: it does not lower portal pressure and tends to increase splanchnic activity/glucagon; wrong direction. ✅ Correct if: asked about gallbladder/pancreatic exocrine stimulation."
+    },
+    {
+      "letter": "B",
+      "label": "glucagon - splanchnic vasodilator, raises portal pressure",
+      "detail": "WHAT IT IS: glucagon causes splanchnic vasodilation. ❌ WHY IT FAILS: it RAISES portal flow/pressure and worsens variceal bleeding - the opposite of what's needed; somatostatin works partly by suppressing glucagon. ✅ Correct if: asked what increases splanchnic blood flow."
+    },
+    {
+      "letter": "C",
+      "label": "pentagastrin - gastric acid stimulant",
+      "detail": "WHAT IT IS: a synthetic gastrin analog that stimulates gastric acid (and is a diagnostic agent for calcitonin/serotonin). ❌ WHY IT FAILS: no effect lowering portal pressure; would not help variceal bleeding. ✅ Correct if: asked about gastric acid secretion or a provocative test for medullary thyroid carcinoma/carcinoid."
+    },
+    {
+      "letter": "D",
+      "label": "secretin - alkalinizes duodenum, increases glucagon",
+      "detail": "WHAT IT IS: secretin stimulates pancreatic bicarbonate secretion. ❌ WHY IT FAILS: it does not reduce portal pressure and increases glucagon secretion (would raise splanchnic flow). ✅ Correct if: asked about pancreatic bicarbonate/duodenal alkalinization or the secretin stimulation test for gastrinoma."
+    }
+  ],
+  "reasoning": [
+    "Acute esophageal variceal bleeding from portal hypertension",
+    "Need to immediately lower portal venous pressure",
+    "Somatostatin/octreotide inhibit splanchnic vasodilators (glucagon, VIP) -> splanchnic vasoconstriction",
+    "Reduced portal inflow -> answer E"
+  ],
+  "mechanism": "Somatostatin and its long-acting analog octreotide inhibit the release of splanchnic vasodilatory hormones (notably glucagon and vasoactive intestinal peptide). The resulting unopposed splanchnic vasoconstriction reduces mesenteric/portal venous inflow and thus portal pressure, helping control variceal hemorrhage; they are given alongside endoscopic band ligation and antibiotic prophylaxis. Vasopressin and terlipressin lower portal pressure by direct splanchnic vasoconstriction but cause more systemic vasoconstriction (cardiac/ischemic risk). Glucagon, CCK, secretin, and gastrin/pentagastrin do not reduce - and may increase - splanchnic blood flow.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology/GI > Variceal hemorrhage: octreotide/somatostatin lower portal pressure by inhibiting splanchnic vasodilators; combine with endoscopic ligation + prophylactic antibiotics (ceftriaxone). Vasopressin/terlipressin alternative."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The ask is a single peptide that acutely drops portal pressure. Filter the GI peptides by their effect on splanchnic flow; only somatostatin reduces it."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on splanchnic circulation, portal pressure, somatostatin vs octreotide, vasopressin/terlipressin, glucagon's vasodilation? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Glucagon (B) is the classic trap - it's a peptide, but it's a splanchnic VASODILATOR that worsens portal pressure. Somatostatin lowers it."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked E correctly - bank that somatostatin/octreotide work by suppressing glucagon/VIP to constrict the splanchnic bed."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Peptide that immediately lowers portal pressure in variceal bleed",
+      "back": "Somatostatin (or octreotide)"
+    },
+    {
+      "front": "Somatostatin mechanism in varices",
+      "back": "Inhibits splanchnic vasodilators (glucagon, VIP) -> splanchnic vasoconstriction -> less portal inflow"
+    },
+    {
+      "front": "Glucagon effect on splanchnic flow",
+      "back": "Vasodilation -> increased portal pressure (bad for varices)"
+    },
+    {
+      "front": "Alternative vasoconstrictor for varices",
+      "back": "Vasopressin / terlipressin (more systemic vasoconstriction)"
+    },
+    {
+      "front": "Full acute variceal bleed bundle",
+      "back": "Octreotide + endoscopic band ligation + prophylactic ceftriaxone"
+    },
+    {
+      "front": "Pentagastrin diagnostic use",
+      "back": "Provokes calcitonin (medullary thyroid CA) / serotonin (carcinoid)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Octreotide / somatostatin",
+      "detail": "Pharmacology: uses (variceal bleeding, acromegaly, VIPoma, carcinoid), splanchnic vasoconstriction.",
+      "location": "Pharmacology: uses (variceal bleeding, acromegaly, VIPoma, carcinoid), splanchnic vasoconstriction."
+    },
+    {
+      "tag": "stem",
+      "topic": "Esophageal varices / portal hypertension",
+      "detail": "GI: acute management bundle, band ligation, antibiotics, TIPS.",
+      "location": "GI: acute management bundle, band ligation, antibiotics, TIPS."
+    },
+    {
+      "tag": "options",
+      "topic": "GI peptide hormones",
+      "detail": "Physiology: CCK, secretin, gastrin, glucagon functions and stimulation tests.",
+      "location": "Physiology: CCK, secretin, gastrin, glucagon functions and stimulation tests."
+    }
+  ],
+  "memoryHook": "Somatostatin = the 'somato-STOP' hormone: it stops splanchnic vasodilators, squeezing the gut vessels and dropping portal pressure.",
+  "stem": [
+    {
+      "text": "After initial stabilization with intravenous fluids and blood products, the patient develops "
+    },
+    {
+      "text": "another bout of bloody emesis",
+      "clue": true,
+      "type": "red",
+      "note": "Recurrent hematemesis from confirmed esophageal varices is a portal-hypertensive emergency. Acute management requires rapidly lowering portal pressure plus endoscopic therapy."
+    },
+    {
+      "text": ". Urgent upper gastrointestinal endoscopy confirms "
+    },
+    {
+      "text": "esophageal varices",
+      "clue": true,
+      "type": "green",
+      "note": "Esophageal varices form at the portosystemic junction due to portal hypertension. The drug target is to reduce splanchnic/portal inflow - achieved by somatostatin or its analog octreotide."
+    },
+    {
+      "text": ". Which of the following peptides is most likely to "
+    },
+    {
+      "text": "immediately decrease the portal venous pressure",
+      "clue": true,
+      "type": "blue",
+      "note": "'Immediately decrease portal pressure' is the pharmacology cue for somatostatin/octreotide (or vasopressin/terlipressin): inhibit splanchnic vasodilatory hormones -> splanchnic vasoconstriction -> reduced portal inflow."
+    },
+    {
+      "text": " in this patient?"
+    }
+  ]
+}

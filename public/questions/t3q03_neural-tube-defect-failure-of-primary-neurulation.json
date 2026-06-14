@@ -1,0 +1,210 @@
+{
+  "id": "q72",
+  "item": 72,
+  "qid": "21405",
+  "title": "Neural tube defect: failure of primary neurulation",
+  "system": "Embryology",
+  "topic": "Neural tube / Chiari II",
+  "correct": "E",
+  "yourAnswer": "C",
+  "percentCorrect": 43,
+  "vignette": "A 35-year-old woman, gravida 2 para 0, is seen in the clinic for an early anatomy ultrasound at 18 weeks after she was noted to have an elevated alpha fetoprotein on prenatal screening. Ultrasound shows a complex cystic lesion overlying the lumbosacral spine, ventriculomegaly, and hindbrain herniation. These abnormalities are most likely due to failure of which of the following processes?",
+  "clues": [
+    {
+      "text": "elevated alpha fetoprotein",
+      "type": "red",
+      "note": "Elevated maternal serum AFP signals an open neural tube defect: AFP leaks from exposed fetal neural tissue into amniotic fluid and maternal blood. This single lab points straight at a neural tube closure failure."
+    },
+    {
+      "text": "complex cystic lesion overlying the lumbosacral spine",
+      "type": "green",
+      "note": "A cystic sac over the lumbosacral spine is a myelomeningocele — herniation of meninges and neural tissue through an unfused vertebral arch. This is the structural hallmark of failed posterior neuropore closure."
+    },
+    {
+      "text": "ventriculomegaly, and hindbrain herniation",
+      "type": "green",
+      "note": "Ventriculomegaly + downward hindbrain herniation = Chiari II (Arnold-Chiari) malformation, which is tethered to the myelomeningocele. The open spinal defect pulls the hindbrain caudally, obstructing CSF and causing hydrocephalus."
+    }
+  ],
+  "whatMatters": "Elevated AFP + a cystic lumbosacral sac + Chiari II (ventriculomegaly/hindbrain herniation) = an open neural tube defect (myelomeningocele). These all stem from failure of PRIMARY NEURULATION — incomplete closure of the neural tube (posterior neuropore) by week 4 — answer E.",
+  "strategy": "When AFP is up and a spinal cystic defect + Chiari II appear, classify the embryologic step: the neural TUBE itself fails to close = primary neurulation. Don't jump to neural CREST (those cells form PNS/melanocytes/etc.) — crest migration failure gives different syndromes, not a myelomeningocele.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Disappearance of the primitive streak",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Formation of the cerebellar vermis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Neural crest cell migration",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Neuronal migration within the cerebral cortex",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Primary neurulation",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "primitive streak regression — gives sacrococcygeal teratoma",
+      "detail": "WHAT IT IS: the primitive streak normally regresses by week 4; persistent remnants are pluripotent. ❌ WHY IT FAILS: failed regression causes a sacrococcygeal teratoma (a germ-cell tumor), not an open spinal sac with Chiari II. ✅ Correct if: imaging showed a heterogeneous mass with mixed tissue types at the coccyx."
+    },
+    {
+      "letter": "B",
+      "label": "cerebellar vermis aplasia — Dandy-Walker, not this",
+      "detail": "WHAT IT IS: the cerebellar vermis forms the midline cerebellum; its agenesis causes Dandy-Walker malformation (large posterior fossa, 4th-ventricle cyst). ❌ WHY IT FAILS: Dandy-Walker is a posterior-fossa cyst, not a lumbosacral sac with elevated AFP; the hindbrain herniation here is Chiari II tied to a spinal NTD. ✅ Correct if: the cyst were in the posterior fossa with an absent vermis and no spinal defect."
+    },
+    {
+      "letter": "C",
+      "label": "neural crest migration — wrong cell population (your pick)",
+      "detail": "WHAT IT IS: neural crest cells migrate to form PNS ganglia, Schwann cells, melanocytes, adrenal medulla, craniofacial bones, and more. ❌ WHY IT FAILS: their failure causes things like Hirschsprung disease, Waardenburg, or DiGeorge — NOT closure of the neural tube; a myelomeningocele is the TUBE failing to close, which is neurulation, not crest migration. ✅ Correct if: the defect were aganglionic colon, pigment/hearing anomalies, or conotruncal cardiac/parathyroid defects."
+    },
+    {
+      "letter": "D",
+      "label": "cortical neuronal migration — gives lissencephaly",
+      "detail": "WHAT IT IS: neurons migrate radially to build the six-layer cortex during weeks 12-24. ❌ WHY IT FAILS: migration defects cause lissencephaly/heterotopias (smooth brain, seizures), not an open lumbosacral defect with raised AFP. ✅ Correct if: imaging showed a smooth (agyric) cortex or gray-matter heterotopia."
+    }
+  ],
+  "reasoning": [
+    "Elevated AFP → open neural tube defect",
+    "Cystic lumbosacral sac = myelomeningocele",
+    "Ventriculomegaly + hindbrain herniation = Chiari II (tethered to the NTD)",
+    "Open tube = neural tube failed to close → failure of primary neurulation → answer E"
+  ],
+  "mechanism": "During primary neurulation (weeks 3-4) the neural plate folds and fuses into the neural tube; the posterior neuropore normally closes by day ~28. Failure of fusion leaves an open spinal defect (spina bifida → myelomeningocele) that leaks AFP and acetylcholinesterase into amniotic fluid. The associated Chiari II malformation (caudal hindbrain herniation) obstructs CSF flow, producing ventriculomegaly/hydrocephalus. Folate deficiency is the major modifiable risk factor.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Embryology > Nervous system: primary neurulation and neuropore closure, neural tube defects (spina bifida occulta/meningocele/myelomeningocele), Chiari II + hydrocephalus, AFP & acetylcholinesterase markers, folate prevention. Contrast neural crest derivatives table."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate the findings to the failed STEP, not just the diagnosis: open spinal sac + Chiari II + high AFP = the neural TUBE didn't close (neurulation). Map each distractor to the structure it would actually damage."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on neurulation, neuropore, myelomeningocele, Chiari II, ventriculomegaly, primitive streak, alpha fetoprotein? Tell me which and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Neural crest (C) is the classic trap because 'neural' is in the name. Crest = PNS/melanocyte/adrenal medulla derivatives; the TUBE closing is neurulation. Keep crest vs tube straight."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The teaching figure shows neural tube formation (neural plate → folds → neural crest pinches off → tube closes). Practice identifying the neural groove, crest, surface ectoderm, and notochord so you can pinpoint which structure failed."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as C → build one flashcard contrasting neural TUBE (neurulation → NTDs) vs neural CREST (migration → Hirschsprung/Waardenburg/DiGeorge)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Elevated maternal AFP + spinal cystic sac",
+      "back": "Open neural tube defect (myelomeningocele)"
+    },
+    {
+      "front": "Embryologic step that failed in spina bifida",
+      "back": "Primary neurulation (neuropore closure)"
+    },
+    {
+      "front": "Ventriculomegaly + hindbrain herniation with a spinal NTD",
+      "back": "Chiari II (Arnold-Chiari) malformation"
+    },
+    {
+      "front": "Confirmatory amniotic-fluid marker for open NTD",
+      "back": "Acetylcholinesterase (+ ↑ AFP)"
+    },
+    {
+      "front": "Neural crest derivatives (NOT the tube)",
+      "back": "PNS ganglia, Schwann cells, melanocytes, adrenal medulla, craniofacial"
+    },
+    {
+      "front": "Persistent primitive streak",
+      "back": "Sacrococcygeal teratoma"
+    },
+    {
+      "front": "Cerebellar vermis agenesis",
+      "back": "Dandy-Walker malformation"
+    },
+    {
+      "front": "Cortical neuronal migration failure",
+      "back": "Lissencephaly / heterotopia"
+    },
+    {
+      "front": "NTD prevention",
+      "back": "Periconceptional folate"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Neural tube defects",
+      "detail": "Embryology > CNS: primary neurulation, spina bifida spectrum, myelomeningocele, Chiari II, AFP/AChE markers, folate prevention.",
+      "location": "Embryology > CNS: primary neurulation, spina bifida spectrum, myelomeningocele, Chiari II, AFP/AChE markers, folate prevention."
+    },
+    {
+      "tag": "options",
+      "topic": "Embryologic missteps differential",
+      "detail": "Embryology: primitive streak persistence (sacrococcygeal teratoma), vermis agenesis (Dandy-Walker), neural crest migration disorders, cortical migration (lissencephaly).",
+      "location": "Embryology: primitive streak persistence (sacrococcygeal teratoma), vermis agenesis (Dandy-Walker), neural crest migration disorders, cortical migration (lissencephaly)."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Neural crest derivatives",
+      "detail": "Embryology: full neural crest list — important to separate from neural tube so you don't mix the two failure modes.",
+      "location": "Embryology: full neural crest list — important to separate from neural tube so you don't mix the two failure modes."
+    }
+  ],
+  "memoryHook": "Open tube → AFP escapes → sac on the spine + Chiari II. The TUBE failing to close is NEURULATION (not crest).",
+  "stem": [
+    {
+      "text": "A 35-year-old woman, gravida 2 para 0, is seen in the clinic for an early anatomy ultrasound at 18 weeks after she was noted to have an "
+    },
+    {
+      "text": "elevated alpha fetoprotein",
+      "clue": true,
+      "type": "red",
+      "note": "Elevated maternal serum AFP signals an open neural tube defect: AFP leaks from exposed fetal neural tissue into amniotic fluid and maternal blood. This single lab points straight at a neural tube closure failure."
+    },
+    {
+      "text": " on prenatal screening. Ultrasound shows a "
+    },
+    {
+      "text": "complex cystic lesion overlying the lumbosacral spine",
+      "clue": true,
+      "type": "green",
+      "note": "A cystic sac over the lumbosacral spine is a myelomeningocele — herniation of meninges and neural tissue through an unfused vertebral arch. This is the structural hallmark of failed posterior neuropore closure."
+    },
+    {
+      "text": ", "
+    },
+    {
+      "text": "ventriculomegaly, and hindbrain herniation",
+      "clue": true,
+      "type": "green",
+      "note": "Ventriculomegaly + downward hindbrain herniation = Chiari II (Arnold-Chiari) malformation, which is tethered to the myelomeningocele. The open spinal defect pulls the hindbrain caudally, obstructing CSF and causing hydrocephalus."
+    },
+    {
+      "text": ". These abnormalities are most likely due to failure of which of the following processes?"
+    }
+  ]
+}

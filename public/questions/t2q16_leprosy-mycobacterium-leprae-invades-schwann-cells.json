@@ -1,0 +1,244 @@
+{
+  "id": "q45",
+  "item": 45,
+  "qid": "1313",
+  "title": "Leprosy: Mycobacterium leprae invades Schwann cells",
+  "system": "Microbiology",
+  "topic": "Mycobacteria / peripheral neuropathy",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 83,
+  "vignette": "A 34-year-old woman comes to the office due to skin changes. Blotches of skin on her arms appear to be of a different color, and she also has a tingling sensation in her hands. These symptoms have developed over the past several months. The patient has no other past medical history. She is a political refugee from East Africa. On examination, there are patchy areas of skin anesthesia and hypopigmentation on her upper extremities. Nerve biopsy evaluated under light microscopy shows many organisms invading Schwann cells. HIV testing is negative. Which of the following organisms is the most likely cause of this patient's condition?",
+  "clues": [
+    {
+      "text": "Blotches",
+      "type": "blue",
+      "note": "Hypopigmented patches are a hallmark skin finding of leprosy (Hansen disease). Combined with sensory loss they suggest peripheral nerve involvement by Mycobacterium leprae."
+    },
+    {
+      "text": "skin",
+      "type": "blue",
+      "note": "The skin-and-nerve combination is characteristic: leprosy preferentially affects cool, superficial tissues (skin and peripheral nerves)."
+    },
+    {
+      "text": "arms",
+      "type": "blue",
+      "note": "Lesions on the cooler upper extremities fit M. leprae's preference for cooler body regions (skin, peripheral nerves, ears, nose)."
+    },
+    {
+      "text": "tingling sensation in her hands",
+      "type": "red",
+      "note": "Sensory neuropathy (paresthesias, anesthesia) results from M. leprae infecting Schwann cells of peripheral nerves. Skin anesthesia plus hypopigmented patches is the leprosy signature."
+    },
+    {
+      "text": "refugee from East Africa",
+      "type": "orange",
+      "note": "Epidemiologic risk: leprosy is rare in the US but endemic in parts of Africa/Asia. Migration from an endemic area supports the diagnosis."
+    },
+    {
+      "text": "Schwann cells",
+      "type": "green",
+      "note": "M. leprae is an obligate intracellular acid-fast bacillus that invades Schwann cells, causing demyelination and the sensory loss of leprosy. It cannot be cultured in vitro and grows in the armadillo and mouse footpad."
+    }
+  ],
+  "whatMatters": "Hypopigmented anesthetic skin patches + peripheral sensory loss + organisms inside Schwann cells in a patient from an endemic region = leprosy, caused by Mycobacterium leprae. The Schwann-cell tropism is the pathognomonic detail.",
+  "strategy": "Pattern-match the triad: hypopigmented anesthetic skin + peripheral neuropathy + Schwann-cell invasion = M. leprae. For nerve-tropic infections, the Schwann-cell detail is the clincher; it cannot be cultured and is acid-fast.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Borrelia burgdorferi",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Campylobacter fetus",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Corynebacterium diphtheriae",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Mycobacterium leprae",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Treponema pallidum",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Lyme — erythema migrans, not anesthetic patches",
+      "detail": "WHAT IT IS: Borrelia burgdorferi (Lyme) causes erythema migrans (target rash), arthritis, carditis, and facial palsy via Ixodes ticks. ❌ WHY IT FAILS: it doesn't invade Schwann cells or cause hypopigmented anesthetic patches; the skin/nerve pattern is wrong. ✅ Correct if: there were a bull's-eye rash after a tick bite with arthritis or bilateral facial palsy."
+    },
+    {
+      "letter": "B",
+      "label": "Campylobacter — diarrhea / GBS trigger, not skin",
+      "detail": "WHAT IT IS: Campylobacter causes bloody diarrhea and can trigger Guillain-Barre syndrome. ❌ WHY IT FAILS: it doesn't cause hypopigmented skin lesions or directly infect peripheral nerves; GBS is autoimmune demyelination, not bacterial Schwann-cell invasion. ✅ Correct if: the patient had ascending paralysis weeks after gastroenteritis (GBS)."
+    },
+    {
+      "letter": "C",
+      "label": "diphtheria — pseudomembrane/toxin, not leprosy",
+      "detail": "WHAT IT IS: Corynebacterium diphtheriae produces a pharyngeal pseudomembrane and an exotoxin causing demyelinating neuropathy and myocarditis. ❌ WHY IT FAILS: it doesn't produce hypopigmented anesthetic skin patches or invade Schwann cells with visible organisms; the presentation differs. ✅ Correct if: there were a gray pharyngeal pseudomembrane with bull-neck and cardiac/neuro toxin effects."
+    },
+    {
+      "letter": "E",
+      "label": "syphilis — varied rash but not Schwann-cell invasion",
+      "detail": "WHAT IT IS: Treponema pallidum causes syphilis (chancre, diffuse rash incl. palms/soles, tabes dorsalis later). ❌ WHY IT FAILS: it doesn't cause hypopigmented anesthetic patches with organisms inside Schwann cells; neurosyphilis differs mechanistically and is not acid-fast/Schwann-tropic. ✅ Correct if: there were a painless chancre, palm/sole rash, or tabes dorsalis."
+    }
+  ],
+  "reasoning": [
+    "Hypopigmented anesthetic skin patches + sensory neuropathy",
+    "Organisms invading Schwann cells on nerve biopsy",
+    "Endemic-region exposure (East Africa)",
+    "All point to Mycobacterium leprae (leprosy) → answer D"
+  ],
+  "mechanism": "Mycobacterium leprae is an obligate intracellular acid-fast bacillus with tropism for cool tissues and Schwann cells. Invasion of Schwann cells damages peripheral nerves, producing the sensory loss (anesthesia, paresthesias) and the hypopigmented skin patches of leprosy. The clinical form depends on the host immune response: tuberculoid (strong Th1/cell-mediated, few bacilli, positive lepromin test) vs lepromatous (Th2-skewed, many bacilli, negative lepromin). It cannot be grown in culture (uses armadillo/mouse footpad).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > Mycobacteria: M. leprae — Schwann-cell tropism, cool tissues, acid-fast, can't culture; tuberculoid (Th1, paucibacillary) vs lepromatous (Th2, multibacillary); treatment (dapsone, rifampin, clofazimine)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Pattern-match the triad (hypopigmented anesthetic patches + neuropathy + Schwann-cell invasion) to leprosy, then pick the bug. The Schwann-cell line is the decisive detail."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on hypopigmentation, anesthesia/paresthesia, Schwann cell, acid-fast, tuberculoid vs lepromatous, lepromin test? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Diphtheria and Campylobacter are 'neuropathy' baits, and syphilis/Lyme are 'rash + nerve' baits — but only M. leprae invades Schwann cells and gives anesthetic hypopigmented patches."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference graph contrasts the immune response in leprosy (tuberculoid Th1/cell-mediated vs lepromatous Th2/humoral, with bacterial load). Tie skin-smear bacillary load to the tuberculoid-vs-lepromatous spectrum."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Hypopigmented anesthetic patches + nerve invasion",
+      "back": "Leprosy (Mycobacterium leprae)"
+    },
+    {
+      "front": "Cell M. leprae invades",
+      "back": "Schwann cells (peripheral nerve)"
+    },
+    {
+      "front": "M. leprae tissue preference",
+      "back": "Cool areas (skin, peripheral nerves, ears, nose)"
+    },
+    {
+      "front": "Tuberculoid leprosy immunity",
+      "back": "Strong Th1/cell-mediated; few bacilli; positive lepromin"
+    },
+    {
+      "front": "Lepromatous leprosy immunity",
+      "back": "Th2/humoral; many bacilli; negative lepromin; diffuse"
+    },
+    {
+      "front": "Culturing M. leprae",
+      "back": "Cannot culture in vitro (armadillo / mouse footpad)"
+    },
+    {
+      "front": "Leprosy treatment",
+      "back": "Dapsone + rifampin (+ clofazimine for lepromatous)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Mycobacterium leprae",
+      "detail": "Micro > Mycobacteria: leprosy — Schwann-cell/peripheral-nerve tropism, cool tissues, tuberculoid vs lepromatous spectrum, lepromin test, treatment.",
+      "location": "Micro > Mycobacteria: leprosy — Schwann-cell/peripheral-nerve tropism, cool tissues, tuberculoid vs lepromatous spectrum, lepromin test, treatment."
+    },
+    {
+      "tag": "stem",
+      "topic": "Peripheral neuropathy infections",
+      "detail": "Micro/Neuro > infectious neuropathies (leprosy, diphtheria toxin, Campylobacter-triggered GBS) to contrast mechanisms.",
+      "location": "Micro/Neuro > infectious neuropathies (leprosy, diphtheria toxin, Campylobacter-triggered GBS) to contrast mechanisms."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Th1 vs Th2 in disease",
+      "detail": "Immunology > Th1 (cell-mediated, tuberculoid) vs Th2 (humoral, lepromatous) — how host response shapes leprosy form.",
+      "location": "Immunology > Th1 (cell-mediated, tuberculoid) vs Th2 (humoral, lepromatous) — how host response shapes leprosy form."
+    }
+  ],
+  "memoryHook": "leprae loves cool skin and the Schwann cells of nerves → numb pale patches; you can't grow it except in an armadillo.",
+  "stem": [
+    {
+      "text": "A 34-year-old woman comes to the office due to skin changes. "
+    },
+    {
+      "text": "Blotches",
+      "clue": true,
+      "type": "blue",
+      "note": "Hypopigmented patches are a hallmark skin finding of leprosy (Hansen disease). Combined with sensory loss they suggest peripheral nerve involvement by Mycobacterium leprae."
+    },
+    {
+      "text": " of "
+    },
+    {
+      "text": "skin",
+      "clue": true,
+      "type": "blue",
+      "note": "The skin-and-nerve combination is characteristic: leprosy preferentially affects cool, superficial tissues (skin and peripheral nerves)."
+    },
+    {
+      "text": " on her "
+    },
+    {
+      "text": "arms",
+      "clue": true,
+      "type": "blue",
+      "note": "Lesions on the cooler upper extremities fit M. leprae's preference for cooler body regions (skin, peripheral nerves, ears, nose)."
+    },
+    {
+      "text": " appear to be of a different color, and she also has a "
+    },
+    {
+      "text": "tingling sensation in her hands",
+      "clue": true,
+      "type": "red",
+      "note": "Sensory neuropathy (paresthesias, anesthesia) results from M. leprae infecting Schwann cells of peripheral nerves. Skin anesthesia plus hypopigmented patches is the leprosy signature."
+    },
+    {
+      "text": ". These symptoms have developed over the past several months. The patient has no other past medical history. She is a political "
+    },
+    {
+      "text": "refugee from East Africa",
+      "clue": true,
+      "type": "orange",
+      "note": "Epidemiologic risk: leprosy is rare in the US but endemic in parts of Africa/Asia. Migration from an endemic area supports the diagnosis."
+    },
+    {
+      "text": ". On examination, there are patchy areas of skin anesthesia and hypopigmentation on her upper extremities. Nerve biopsy evaluated under light microscopy shows many organisms invading "
+    },
+    {
+      "text": "Schwann cells",
+      "clue": true,
+      "type": "green",
+      "note": "M. leprae is an obligate intracellular acid-fast bacillus that invades Schwann cells, causing demyelination and the sensory loss of leprosy. It cannot be cultured in vitro and grows in the armadillo and mouse footpad."
+    },
+    {
+      "text": ". HIV testing is negative. Which of the following organisms is the most likely cause of this patient's condition?"
+    }
+  ]
+}

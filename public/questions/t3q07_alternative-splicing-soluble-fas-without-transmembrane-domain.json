@@ -1,0 +1,206 @@
+{
+  "id": "q76",
+  "item": 76,
+  "qid": "11913",
+  "title": "Alternative splicing: soluble Fas without transmembrane domain",
+  "system": "Molecular Biology",
+  "topic": "RNA processing / apoptosis evasion",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 67,
+  "vignette": "A researcher is studying the Fas receptor (FasR), a protein widely expressed on cell surfaces. The signaling cascade of programmed cell death is initiated when FasR binds to its ligand (FasL), which is expressed on cytotoxic T cells. In an experiment, cancer cells that escaped elimination by the immune system were found to contain soluble Fas proteins that did not promote apoptosis. The soluble Fas proteins were shorter and lacked the transmembrane domain. DNA analysis of these cells revealed no FAS gene mutations. Which of the following is the most likely explanation for the formation of altered Fas proteins in these cancer cells?",
+  "clues": [
+    {
+      "text": "soluble Fas proteins that did not promote apoptosis",
+      "type": "blue",
+      "note": "A SOLUBLE (secreted, non-membrane) Fas that can't trigger apoptosis means the death receptor isn't anchored where it can signal. The cancer evades cytotoxic T-cell killing. The question is how one gene yields this altered protein."
+    },
+    {
+      "text": "shorter and lacked the transmembrane domain",
+      "type": "red",
+      "note": "A shorter protein missing a specific DOMAIN (the transmembrane segment) implies an exon was left out of the mRNA. Removing the exon that encodes the membrane anchor yields a soluble decoy receptor. This points to mRNA processing, not the DNA."
+    },
+    {
+      "text": "no FAS gene mutations",
+      "type": "green",
+      "note": "Identical DNA but a different protein = the change happened AFTER transcription. With no coding mutation, the same pre-mRNA must be spliced differently (exon skipping). That is alternative splicing."
+    }
+  ],
+  "whatMatters": "Same gene, no DNA mutation, but a shorter protein missing the transmembrane domain = an exon was skipped during RNA processing. One gene generating multiple protein isoforms by including/excluding exons is ALTERNATIVE SPLICING — answer A.",
+  "strategy": "When the protein changes but the DNA sequence is normal, the lesion is post-transcriptional. A protein that is shorter and missing a whole DOMAIN (not a point change) = exon skipping = alternative splicing. Reserve other mechanisms for their specific fingerprints (poly-A tail, methylation/silencing, ubiquitin/degradation).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alternative splicing",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Defective polyadenylation",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "DNA methylation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Polycistronic mRNA",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Protein ubiquitination",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "polyadenylation defect — affects stability, not domain content",
+      "detail": "WHAT IT IS: the poly-A tail is added to the 3' end for mRNA stability and export. ❌ WHY IT FAILS: defective polyadenylation degrades/destabilizes transcripts; it doesn't selectively delete the transmembrane exon to make a shorter functional isoform. ✅ Correct if: the finding were reduced mRNA stability or failed nuclear export."
+    },
+    {
+      "letter": "C",
+      "label": "DNA methylation — silences genes, doesn't reshape the protein",
+      "detail": "WHAT IT IS: promoter CpG methylation silences transcription (epigenetic gene OFF). ❌ WHY IT FAILS: methylation would reduce expression, not produce a shorter membrane-less isoform; the cells DO make Fas protein, just an altered form. ✅ Correct if: the question described loss of expression of a tumor-suppressor via promoter hypermethylation."
+    },
+    {
+      "letter": "D",
+      "label": "polycistronic mRNA — prokaryotic concept",
+      "detail": "WHAT IT IS: a single mRNA encoding multiple proteins (operons) is a bacterial feature. ❌ WHY IT FAILS: human (eukaryotic) mRNAs are monocistronic; this doesn't explain a truncated single protein isoform. ✅ Correct if: the organism were a prokaryote with an operon."
+    },
+    {
+      "letter": "E",
+      "label": "ubiquitination — tags protein for degradation, not for truncation",
+      "detail": "WHAT IT IS: ubiquitin marks proteins for proteasomal destruction (post-translational). ❌ WHY IT FAILS: it would remove Fas entirely, not generate a stable shorter soluble isoform lacking a domain. ✅ Correct if: the stem said the protein was being rapidly degraded by the proteasome."
+    }
+  ],
+  "reasoning": [
+    "Soluble, non-functional Fas helps the cancer dodge T-cell killing",
+    "Protein is shorter and lacks a whole domain (transmembrane) = exon skipped",
+    "DNA is unmutated → change is post-transcriptional (RNA processing)",
+    "One gene → multiple isoforms by exon inclusion/exclusion = alternative splicing → answer A"
+  ],
+  "mechanism": "Alternative splicing lets one gene encode multiple protein isoforms by selectively including or excluding exons from the pre-mRNA. Skipping the exon that codes the transmembrane domain yields a soluble, secreted Fas 'decoy' that binds FasL but cannot transmit the death signal, so cancer cells evade cytotoxic-T-cell (FasL-mediated) apoptosis. Because only the mRNA processing changed, the genomic FAS sequence remains wild-type.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochemistry > RNA processing: alternative splicing (one gene → many isoforms via exon inclusion/exclusion), 5' cap, 3' poly-A tail, splicing by the spliceosome; contrast epigenetic silencing (methylation) and proteasomal degradation (ubiquitin)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Anchor on two facts: (1) DNA is normal → post-transcriptional, (2) a whole DOMAIN is missing → an exon was skipped. That uniquely fits alternative splicing."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on exon/intron, splicing, transmembrane domain, isoform, polyadenylation, polycistronic, ubiquitin? Tell me which and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "DNA methylation (C) and ubiquitination (E) feel 'molecular' but cause loss of expression/degradation, not a stable truncated isoform. Match the exact phenotype (shorter, soluble, still present)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The figure shows one gene transcribed to pre-mRNA, then two splice variants — one keeping exon 3, one skipping it — yielding Protein A vs B. Practice reading splice diagrams: included vs excluded exons → different protein domains."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Correct (A). Reinforce the rule: normal DNA + missing protein domain = exon skipping = alternative splicing."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "One gene → many protein isoforms",
+      "back": "Alternative splicing (exon inclusion/exclusion)"
+    },
+    {
+      "front": "Normal DNA but altered (shorter) protein",
+      "back": "Post-transcriptional — splicing change"
+    },
+    {
+      "front": "Soluble decoy Fas → effect",
+      "back": "Binds FasL but can't signal → evades T-cell apoptosis"
+    },
+    {
+      "front": "Fas/FasL pathway",
+      "back": "Extrinsic apoptosis; FasL on cytotoxic T cells → FasR death domain → caspase 8"
+    },
+    {
+      "front": "Poly-A tail role",
+      "back": "mRNA stability + nuclear export"
+    },
+    {
+      "front": "DNA promoter methylation",
+      "back": "Epigenetic gene silencing (transcription OFF)"
+    },
+    {
+      "front": "Ubiquitin tag",
+      "back": "Targets protein for proteasomal degradation"
+    },
+    {
+      "front": "Polycistronic mRNA",
+      "back": "Prokaryotic (operon) feature — not human"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Alternative splicing",
+      "detail": "Biochem > RNA processing: spliceosome, exon inclusion/exclusion, multiple isoforms from one gene; splice-site mutations.",
+      "location": "Biochem > RNA processing: spliceosome, exon inclusion/exclusion, multiple isoforms from one gene; splice-site mutations."
+    },
+    {
+      "tag": "stem",
+      "topic": "Apoptosis (Fas/FasL)",
+      "detail": "Pathology/Immuno: extrinsic pathway — FasL (CD95L) on cytotoxic T cells, Fas death domain, caspase 8; defects → autoimmunity/tumor immune evasion.",
+      "location": "Pathology/Immuno: extrinsic pathway — FasL (CD95L) on cytotoxic T cells, Fas death domain, caspase 8; defects → autoimmunity/tumor immune evasion."
+    },
+    {
+      "tag": "options",
+      "topic": "Gene-expression control points",
+      "detail": "Biochem: transcription (methylation/epigenetics), processing (cap, splicing, poly-A), translation, post-translational (ubiquitin-proteasome).",
+      "location": "Biochem: transcription (methylation/epigenetics), processing (cap, splicing, poly-A), translation, post-translational (ubiquitin-proteasome)."
+    }
+  ],
+  "memoryHook": "Same DNA, shorter protein missing a domain = SPLICE it out. Cancer splices away Fas's anchor to dodge the T-cell death signal.",
+  "stem": [
+    {
+      "text": "A researcher is studying the Fas receptor (FasR), a protein widely expressed on cell surfaces. The signaling cascade of programmed cell death is initiated when FasR binds to its ligand (FasL), which is expressed on cytotoxic T cells. In an experiment, cancer cells that escaped elimination by the immune system were found to contain "
+    },
+    {
+      "text": "soluble Fas proteins that did not promote apoptosis",
+      "clue": true,
+      "type": "blue",
+      "note": "A SOLUBLE (secreted, non-membrane) Fas that can't trigger apoptosis means the death receptor isn't anchored where it can signal. The cancer evades cytotoxic T-cell killing. The question is how one gene yields this altered protein."
+    },
+    {
+      "text": ". The soluble Fas proteins were "
+    },
+    {
+      "text": "shorter and lacked the transmembrane domain",
+      "clue": true,
+      "type": "red",
+      "note": "A shorter protein missing a specific DOMAIN (the transmembrane segment) implies an exon was left out of the mRNA. Removing the exon that encodes the membrane anchor yields a soluble decoy receptor. This points to mRNA processing, not the DNA."
+    },
+    {
+      "text": ". DNA analysis of these cells revealed "
+    },
+    {
+      "text": "no FAS gene mutations",
+      "clue": true,
+      "type": "green",
+      "note": "Identical DNA but a different protein = the change happened AFTER transcription. With no coding mutation, the same pre-mRNA must be spliced differently (exon skipping). That is alternative splicing."
+    },
+    {
+      "text": ". Which of the following is the most likely explanation for the formation of altered Fas proteins in these cancer cells?"
+    }
+  ]
+}

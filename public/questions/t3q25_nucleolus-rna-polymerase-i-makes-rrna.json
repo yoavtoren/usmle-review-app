@@ -1,0 +1,192 @@
+{
+  "id": "q95",
+  "item": 95,
+  "qid": "2039",
+  "title": "Nucleolus: RNA polymerase I makes rRNA",
+  "system": "Molecular Biology",
+  "topic": "Transcription / nucleolus",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 46,
+  "vignette": "A 58-year-old man comes to the office with a persistent dry cough. He also has involuntarily lost 10 kg (22 lb) over the past 3 months. The patient drinks 2 or 3 beers daily and has a 40-pack-year smoking history. Physical examination shows dullness to percussion over the right lower lung base. CT scan of the chest reveals a right-sided pleural effusion and a mass in the lower lobe of the right lung. Microscopic examination of the mass demonstrates malignant cells with large nuclei that contain prominent, round, basophilic bodies, as shown in the image below. Which of the following enzymes is most likely to function only within this basophilic region of the nucleus?",
+  "clues": [
+    {
+      "text": "40-pack-year smoking history",
+      "type": "orange",
+      "note": "Heavy smoking + weight loss + a lung mass = bronchogenic carcinoma. This is the clinical wrapper; the real question is a cell-biology one about a subnuclear structure seen on the slide."
+    },
+    {
+      "text": "mass in the lower lobe of the right lung",
+      "type": "blue",
+      "note": "Confirms a lung malignancy. Cancer cells are highly proliferative and need lots of ribosomes, so their nucleoli are large and prominent — setting up the nucleolus question."
+    },
+    {
+      "text": "prominent, round, basophilic bodies",
+      "type": "green",
+      "note": "Prominent round basophilic intranuclear bodies are NUCLEOLI (dark blue/purple on H&E because they're RNA-rich). The nucleolus is the site of ribosomal RNA (rRNA) synthesis. The enzyme that functions ONLY there is RNA polymerase I."
+    }
+  ],
+  "whatMatters": "The lung-cancer story is scaffolding. The 'prominent round basophilic body' in the nucleus is the NUCLEOLUS, the site of rRNA transcription. The enzyme that works exclusively in the nucleolus is RNA polymerase I — answer B.",
+  "strategy": "Identify the structure first (basophilic intranuclear body = nucleolus), then map function to enzyme. RNA polymerase I = nucleolus → rRNA (18S/5.8S/28S). RNA pol II = nucleoplasm → mRNA/snRNA. RNA pol III = nucleoplasm → tRNA/5S rRNA. The 'only in the nucleolus' qualifier selects RNA pol I.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Peptidyltransferase",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "RNA polymerase I",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "RNA polymerase II",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Ubiquitin ligase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "peptidyltransferase — ribosome (cytoplasm), and it's RNA not protein",
+      "detail": "WHAT IT IS: peptidyltransferase is the ribozyme activity of the large ribosomal subunit (28S rRNA) that forms peptide bonds during translation. ❌ WHY IT FAILS: it acts in the cytoplasm/rough ER during translation, not within the nucleolus; the nucleolus ASSEMBLES ribosomal subunits but peptidyltransferase functions later, outside it. ✅ Correct if: the question asked where peptide bonds are formed during translation."
+    },
+    {
+      "letter": "C",
+      "label": "RNA polymerase II — nucleoplasm (mRNA), not nucleolus (your pick)",
+      "detail": "WHAT IT IS: RNA polymerase II transcribes mRNA (and most snRNA) in the nucleoplasm. ❌ WHY IT FAILS: it does NOT function within the nucleolus; the nucleolar enzyme is RNA pol I (rRNA). The 'only within this basophilic region' qualifier excludes pol II. ✅ Correct if: the question asked which enzyme makes mRNA (α-amanitin-sensitive)."
+    },
+    {
+      "letter": "D",
+      "label": "ubiquitin ligase — protein degradation, cytoplasm/nucleus broadly",
+      "detail": "WHAT IT IS: ubiquitin ligases (E3) tag proteins for proteasomal degradation. ❌ WHY IT FAILS: this is protein turnover, unrelated to nucleolar rRNA transcription; not nucleolus-specific. ✅ Correct if: the topic were targeting proteins for degradation."
+    }
+  ],
+  "reasoning": [
+    "Prominent round basophilic intranuclear body = nucleolus",
+    "The nucleolus is the site of ribosomal RNA (rRNA) transcription",
+    "RNA polymerase I works exclusively in the nucleolus to make rRNA",
+    "Enzyme functioning only there = RNA polymerase I → answer B"
+  ],
+  "mechanism": "The nucleolus is the dense, RNA-rich (basophilic) subnuclear region where ribosomal DNA (in nucleolar organizing regions) is transcribed. RNA polymerase I functions exclusively here, transcribing the 45S pre-rRNA that is processed into 18S, 5.8S, and 28S rRNAs and assembled with proteins into ribosomal subunits. RNA polymerase II (mRNA) and III (tRNA, 5S rRNA) operate in the nucleoplasm. Highly proliferative cells (e.g., cancer) have prominent nucleoli reflecting heavy ribosome production.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochemistry > Transcription & the nucleolus: RNA pol I (nucleolus, rRNA 18S/5.8S/28S), pol II (mRNA, α-amanitin-sensitive), pol III (tRNA, 5S rRNA); nucleolus = rRNA synthesis + ribosome assembly. Cross-link translation/ribosome structure."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: name the structure (basophilic intranuclear body = nucleolus), then the enzyme unique to it (RNA pol I). The 'only within' phrasing is the discriminator."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on nucleolus, basophilic, rRNA, RNA polymerase I/II/III, peptidyltransferase, nucleolar organizing region? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "RNA pol II (C, your pick) is the most-discussed polymerase (mRNA), so it's a reflex — but it's in the nucleoplasm. Only RNA pol I works inside the nucleolus."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The slide shows malignant cells with large nuclei and prominent dark (basophilic) nucleoli. Learn to recognize the nucleolus on H&E and recall its function (rRNA via RNA pol I). The accompanying table lists each polymerase's product."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as C → memorize the polymerase table: I = rRNA (nucleolus), II = mRNA, III = tRNA/5S. 'Only in the nucleolus' always means pol I."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Prominent round basophilic intranuclear body",
+      "back": "Nucleolus (rRNA synthesis site)"
+    },
+    {
+      "front": "Enzyme functioning only in the nucleolus",
+      "back": "RNA polymerase I (makes rRNA)"
+    },
+    {
+      "front": "RNA polymerase I product",
+      "back": "rRNA (18S, 5.8S, 28S from 45S pre-rRNA)"
+    },
+    {
+      "front": "RNA polymerase II product",
+      "back": "mRNA (and snRNA); α-amanitin-sensitive"
+    },
+    {
+      "front": "RNA polymerase III product",
+      "back": "tRNA and 5S rRNA"
+    },
+    {
+      "front": "Peptidyltransferase",
+      "back": "28S rRNA ribozyme — forms peptide bonds (translation)"
+    },
+    {
+      "front": "Why cancer cells have prominent nucleoli",
+      "back": "High ribosome demand for rapid proliferation"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Nucleolus & RNA polymerase I",
+      "detail": "Biochem: nucleolar rRNA transcription (RNA pol I), ribosome subunit assembly, nucleolar organizing regions.",
+      "location": "Biochem: nucleolar rRNA transcription (RNA pol I), ribosome subunit assembly, nucleolar organizing regions."
+    },
+    {
+      "tag": "options",
+      "topic": "RNA polymerases & translation",
+      "detail": "Biochem: pol I/II/III products, α-amanitin (pol II), peptidyltransferase (ribozyme), ubiquitin-proteasome for contrast.",
+      "location": "Biochem: pol I/II/III products, α-amanitin (pol II), peptidyltransferase (ribozyme), ubiquitin-proteasome for contrast."
+    },
+    {
+      "tag": "stem",
+      "topic": "Lung cancer (incidental)",
+      "detail": "Pulm/Onc: smoking-related bronchogenic carcinoma, weight loss, pleural effusion — clinical wrapper.",
+      "location": "Pulm/Onc: smoking-related bronchogenic carcinoma, weight loss, pleural effusion — clinical wrapper."
+    }
+  ],
+  "memoryHook": "Nucleolus = 'rRNA factory' run by RNA pol ONE (I). Big dark nucleoli = cancer cranking out ribosomes.",
+  "stem": [
+    {
+      "text": "A 58-year-old man comes to the office with a persistent dry cough. He also has involuntarily lost 10 kg (22 lb) over the past 3 months. The patient drinks 2 or 3 beers daily and has a "
+    },
+    {
+      "text": "40-pack-year smoking history",
+      "clue": true,
+      "type": "orange",
+      "note": "Heavy smoking + weight loss + a lung mass = bronchogenic carcinoma. This is the clinical wrapper; the real question is a cell-biology one about a subnuclear structure seen on the slide."
+    },
+    {
+      "text": ". Physical examination shows dullness to percussion over the right lower lung base. CT scan of the chest reveals a right-sided pleural effusion and a "
+    },
+    {
+      "text": "mass in the lower lobe of the right lung",
+      "clue": true,
+      "type": "blue",
+      "note": "Confirms a lung malignancy. Cancer cells are highly proliferative and need lots of ribosomes, so their nucleoli are large and prominent — setting up the nucleolus question."
+    },
+    {
+      "text": ". Microscopic examination of the mass demonstrates malignant cells with large nuclei that contain "
+    },
+    {
+      "text": "prominent, round, basophilic bodies",
+      "clue": true,
+      "type": "green",
+      "note": "Prominent round basophilic intranuclear bodies are NUCLEOLI (dark blue/purple on H&E because they're RNA-rich). The nucleolus is the site of ribosomal RNA (rRNA) synthesis. The enzyme that functions ONLY there is RNA polymerase I."
+    },
+    {
+      "text": ", as shown in the image below. Which of the following enzymes is most likely to function only within this basophilic region of the nucleus?"
+    }
+  ]
+}

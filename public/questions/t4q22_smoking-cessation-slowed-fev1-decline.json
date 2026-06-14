@@ -1,0 +1,194 @@
+{
+  "id": "q131",
+  "item": 131,
+  "qid": "7558",
+  "title": "Smoking cessation: slowed FEV1 decline",
+  "system": "Pulmonology",
+  "topic": "COPD / smoking",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 21,
+  "vignette": "A 48-year-old man comes to the office for an initial visit. He says that he feels well and has no known medical conditions. The patient has a 20-pack-year smoking history and does not use alcohol or recreational drugs. He is counseled on smoking cessation. During the discussion of how smoking affects lung function, the patient is shown a graph of the expected change in forced expiratory volume in 1 second (FEV1) over time if he continues to smoke at the same rate (Curve D shown below). Which of the following curves most likely demonstrates the expected FEV1 over time if this patient were to stop smoking now?",
+  "clues": [
+    {
+      "text": "20-pack-year smoking history",
+      "type": "orange",
+      "note": "A substantial smoking history means his FEV1 has already declined faster than a never-smoker's and cannot fully return to baseline. Quitting changes the future SLOPE, not the past loss."
+    },
+    {
+      "text": "continues to smoke at the same rate (Curve D shown below)",
+      "type": "blue",
+      "note": "Curve D is the continued-smoking trajectory (steep ongoing decline). The correct answer must branch UPWARD/flatter from the cessation point relative to D, but not recover lost function."
+    },
+    {
+      "text": "expected FEV1 over time if this patient were to stop smoking now",
+      "type": "red",
+      "note": "After cessation, the RATE of FEV1 decline slows toward that of a never-smoker (~25-30 mL/year), but already-lost lung function is not regained. So the curve flattens (slower decline) from the quit point - it does not rise back to normal."
+    }
+  ],
+  "whatMatters": "After quitting, the rate of FEV1 decline slows toward a never-smoker's, but previously lost function isn't recovered. The correct curve branches off the continued-smoking curve at the cessation point and declines more GENTLY (without returning to baseline) - that is Curve B, answer B.",
+  "strategy": "For Fletcher-Peto smoking-cessation graphs, apply two rules: (1) lung function does NOT bounce back to normal (rules out a near-flat/rising curve), and (2) the future decline rate slows to roughly that of a never-smoker (a gentler slope than continued smoking). Pick the curve with a modestly improved slope from the quit point, not the flattest one.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Curve A (near-flat / minimal further decline)",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Curve B (gently declining, parallel to never-smokers)",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Curve C (intermediate decline)",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Curve D (continued-smoking, steep decline)",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Curve E (steepest decline)",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "near-flat curve - overstates recovery",
+      "detail": "WHAT IT IS: an almost horizontal curve implying lung function is essentially preserved/recovered after quitting. ❌ WHY IT FAILS: cessation slows decline but does NOT halt aging-related loss or restore lost function; a flat curve overestimates benefit. ✅ Correct if: the question asked for the never-smoker baseline trajectory."
+    },
+    {
+      "letter": "C",
+      "label": "intermediate decline - still too steep",
+      "detail": "WHAT IT IS: a moderately declining curve between cessation and continued smoking. ❌ WHY IT FAILS: after true cessation the slope should approach the gentle never-smoker rate, not stay intermediate; this overstates ongoing damage. ✅ Correct if: the patient cut down but did not fully quit."
+    },
+    {
+      "letter": "D",
+      "label": "continued-smoking curve - that's the reference, not cessation",
+      "detail": "WHAT IT IS: Curve D = ongoing smoking. ❌ WHY IT FAILS: it shows no change in the steep decline, the opposite of stopping. ✅ Correct if: the patient kept smoking at the same rate."
+    },
+    {
+      "letter": "E",
+      "label": "steepest decline - worse than continued smoking",
+      "detail": "WHAT IT IS: the most rapid FEV1 fall. ❌ WHY IT FAILS: quitting can't accelerate decline; this is the wrong direction entirely. ✅ Correct if: an additional insult worsened lung function (e.g., new exposure), which is not the scenario."
+    }
+  ],
+  "reasoning": [
+    "20 pack-years -> lung function already reduced, cannot fully recover",
+    "Quitting slows the future decline rate toward never-smoker levels",
+    "Curve branches gently off the continued-smoking curve (D) without returning to baseline",
+    "Gently declining curve = Curve B -> answer B"
+  ],
+  "mechanism": "In never-smokers, FEV1 peaks near age 25-30 and then declines ~25-30 mL/year. Susceptible smokers lose lung function roughly 2-3 times faster. Smoking cessation does not restore already-lost FEV1, but it resets the RATE of decline to approximately that of a never-smoker, so the cessation curve diverges upward in slope from the continued-smoking curve at the quit point and then runs roughly parallel to (but below) the never-smoker line. The best-matching option is a gently declining curve branching off the continued-smoking trajectory - not a flat/recovering curve and not a steeper one.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pulmonology > COPD/smoking: Fletcher-Peto curve - smoking accelerates FEV1 decline; cessation slows the rate of decline toward normal but does not recover lost function."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate the graph rules into a shape: from the quit point, the curve must be GENTLER than continued smoking but still declining (no rebound to baseline)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on FEV1, pack-years, Fletcher-Peto curve, rate of decline vs absolute recovery? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The flattest curve (A) is the classic trap - it implies lungs 'heal' back to normal. Reality: slope improves, but lost function stays gone -> a gently declining curve (B)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "Read the cessation point on the graph: pick the curve that bends to a SHALLOWER decline there (not flat, not steeper)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "You picked B correctly - remember 'slower decline, not recovery' for any smoking-cessation graph."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Effect of quitting smoking on FEV1",
+      "back": "Slows rate of decline toward never-smoker; does NOT recover lost function"
+    },
+    {
+      "front": "Never-smoker FEV1 decline rate",
+      "back": "~25-30 mL/year after age ~30"
+    },
+    {
+      "front": "Smoker FEV1 decline vs never-smoker",
+      "back": "~2-3x faster in susceptible smokers"
+    },
+    {
+      "front": "Fletcher-Peto curve teaching point",
+      "back": "Cessation changes future slope, not past loss"
+    },
+    {
+      "front": "Correct cessation curve shape",
+      "back": "Gentle decline branching off the continued-smoking curve, parallel to never-smokers"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Smoking cessation & FEV1",
+      "detail": "Pulmonology: Fletcher-Peto curve, benefits of quitting at any age.",
+      "location": "Pulmonology: Fletcher-Peto curve, benefits of quitting at any age."
+    },
+    {
+      "tag": "stem",
+      "topic": "COPD pathophysiology",
+      "detail": "Pulm: proteolytic airway/alveolar damage, FEV1/FVC, accelerated decline.",
+      "location": "Pulm: proteolytic airway/alveolar damage, FEV1/FVC, accelerated decline."
+    },
+    {
+      "tag": "options",
+      "topic": "Spirometry interpretation",
+      "detail": "Pulm: FEV1 trajectories, obstructive patterns over time.",
+      "location": "Pulm: FEV1 trajectories, obstructive patterns over time."
+    }
+  ],
+  "memoryHook": "Quitting bends the curve to a gentler slope - it stops digging the hole, it doesn't fill it back in.",
+  "stem": [
+    {
+      "text": "A 48-year-old man comes to the office for an initial visit. He says that he feels well and has no known medical conditions. The patient has a "
+    },
+    {
+      "text": "20-pack-year smoking history",
+      "clue": true,
+      "type": "orange",
+      "note": "A substantial smoking history means his FEV1 has already declined faster than a never-smoker's and cannot fully return to baseline. Quitting changes the future SLOPE, not the past loss."
+    },
+    {
+      "text": " and does not use alcohol or recreational drugs. He is counseled on smoking cessation. During the discussion of how smoking affects lung function, the patient is shown a graph of the expected change in forced expiratory volume in 1 second (FEV1) over time if he "
+    },
+    {
+      "text": "continues to smoke at the same rate (Curve D shown below)",
+      "clue": true,
+      "type": "blue",
+      "note": "Curve D is the continued-smoking trajectory (steep ongoing decline). The correct answer must branch UPWARD/flatter from the cessation point relative to D, but not recover lost function."
+    },
+    {
+      "text": ". Which of the following curves most likely demonstrates the "
+    },
+    {
+      "text": "expected FEV1 over time if this patient were to stop smoking now",
+      "clue": true,
+      "type": "red",
+      "note": "After cessation, the RATE of FEV1 decline slows toward that of a never-smoker (~25-30 mL/year), but already-lost lung function is not regained. So the curve flattens (slower decline) from the quit point - it does not rise back to normal."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

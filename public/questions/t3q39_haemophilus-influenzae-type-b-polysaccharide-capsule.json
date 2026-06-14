@@ -1,0 +1,197 @@
+{
+  "id": "q109",
+  "item": 109,
+  "qid": "964",
+  "title": "Haemophilus influenzae type b: polysaccharide capsule",
+  "system": "Microbiology",
+  "topic": "Encapsulated bacteria / virulence",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 68,
+  "vignette": "A 3-year-old boy who recently immigrated to the United States is brought to the emergency department with fever, malaise, and a painful, swollen right knee. He is hypotensive and tachycardic. Medical history is significant for a recent episode of acute otitis media and several vaccinations that are not up to date. Arthrocentesis of the right knee shows cloudy synovial fluid. Gram stain of the aspirate reveals pleomorphic, gram-negative coccobacilli. Cultures performed on a blood agar plate supplemented with a disk containing hematin and nicotinamide adenine dinucleotide (NAD+) grow colonies only near the disk. The organism responsible for this patient's condition most likely produces which of the following virulence factors?",
+  "clues": [
+    {
+      "text": "vaccinations that are not up to date",
+      "type": "orange",
+      "note": "Under-vaccination (no Hib conjugate vaccine) leaves a young child susceptible to invasive Haemophilus influenzae type b disease (meningitis, epiglottitis, septic arthritis, sepsis). This risk-factor clue points to Hib."
+    },
+    {
+      "text": "pleomorphic, gram-negative coccobacilli",
+      "type": "blue",
+      "note": "Pleomorphic gram-negative coccobacilli fit Haemophilus influenzae. Combined with the culture requirements below, this identifies the organism."
+    },
+    {
+      "text": "hematin and nicotinamide adenine dinucleotide (NAD+) grow colonies only near the disk",
+      "type": "green",
+      "note": "Growth only near a disk supplying hematin (factor X) and NAD+ (factor V) is the defining lab feature of Haemophilus influenzae (it requires both factors V and X). Also grows around S. aureus colonies (satellite phenomenon)."
+    }
+  ],
+  "whatMatters": "An under-vaccinated toddler with septic arthritis/sepsis, gram-negative coccobacilli requiring factors V (NAD+) and X (hematin) = Haemophilus influenzae type b. Its principal virulence factor is the polyribosylribitol phosphate (PRP) polysaccharide CAPSULE, which resists phagocytosis. Answer A.",
+  "strategy": "ID the organism from the factor V + X requirement (Hib), then recall its key virulence factor. For invasive encapsulated bacteria (Hib, pneumococcus, meningococcus), the capsule is the dominant virulence factor (anti-phagocytic) — and the target of conjugate vaccines. Choose 'capsule.'",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Capsule",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Cytotoxic exotoxin",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Fimbriae",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Hemolysins",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Hyaluronidase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "cytotoxic exotoxin — not Hib's key invasive factor",
+      "detail": "WHAT IT IS: cytotoxic exotoxins (e.g., diphtheria, Pseudomonas exotoxin A, Shiga toxin) damage host cells/inhibit protein synthesis. ❌ WHY IT FAILS: invasive Hib disease is driven by its anti-phagocytic CAPSULE (PRP), not a classic cytotoxin. ✅ Correct if: the organism were a toxin-mediated pathogen (Corynebacterium, EHEC, etc.)."
+    },
+    {
+      "letter": "C",
+      "label": "fimbriae — adhesion, not the main invasive factor",
+      "detail": "WHAT IT IS: fimbriae/pili mediate attachment (e.g., gonococcus, E. coli, Bordetella). ❌ WHY IT FAILS: while H. influenzae has adhesins, the factor enabling invasive bloodstream disease and evasion of phagocytosis is the capsule. ✅ Correct if: the question asked specifically about mucosal ATTACHMENT/colonization."
+    },
+    {
+      "letter": "D",
+      "label": "hemolysins — not the defining Hib factor",
+      "detail": "WHAT IT IS: hemolysins lyse red cells (e.g., streptolysin, Staph/Strep hemolysins). ❌ WHY IT FAILS: Hib's invasive capacity comes from its capsule, not hemolysin production. ✅ Correct if: the organism were a hemolytic strep/staph defined by its hemolysis pattern."
+    },
+    {
+      "letter": "E",
+      "label": "hyaluronidase — spreading factor, not the answer",
+      "detail": "WHAT IT IS: hyaluronidase ('spreading factor') degrades connective-tissue ground substance (e.g., group A strep). ❌ WHY IT FAILS: it's not the principal Hib virulence factor; the capsule is. ✅ Correct if: the question highlighted tissue-spreading enzymes of group A streptococcus."
+    }
+  ],
+  "reasoning": [
+    "Under-vaccinated toddler with invasive disease (septic arthritis/sepsis)",
+    "Gram-negative coccobacilli requiring factors V (NAD+) and X (hematin) = H. influenzae",
+    "Type b (Hib) causes invasive disease via its anti-phagocytic capsule",
+    "Key virulence factor = polysaccharide capsule (PRP) → answer A"
+  ],
+  "mechanism": "Haemophilus influenzae is a pleomorphic gram-negative coccobacillus requiring factor X (hematin) and factor V (NAD+) for growth (chocolate agar; satellites around S. aureus). The type b (Hib) polyribosylribitol phosphate (PRP) CAPSULE is its major virulence factor: it inhibits complement-mediated opsonization/phagocytosis, enabling invasive disease (meningitis, epiglottitis, septic arthritis, sepsis) in unimmunized young children. The Hib conjugate vaccine targets this capsule, generating protective anticapsular antibody.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > Haemophilus influenzae: factor V (NAD+) + X (hematin) requirement, chocolate agar, satellite phenomenon, type b PRP capsule as the key virulence factor, invasive disease in unvaccinated children, Hib conjugate vaccine. Cross-link encapsulated organisms and asplenia risk."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: factor V+X requirement → H. influenzae; then its main virulence factor → the anti-phagocytic capsule (the vaccine target). Under-vaccination is the risk clue."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on factor V/X, NAD+, hematin, coccobacilli, polysaccharide capsule (PRP), opsonization, satellite phenomenon? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The other options (exotoxin, fimbriae, hemolysins, hyaluronidase) are real virulence factors of OTHER bugs. For invasive Hib, the dominant factor is the CAPSULE — the one the conjugate vaccine targets."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (A). Anchor: encapsulated invasive bacteria (Hib, pneumococcus, meningococcus) → capsule is the key virulence factor and the vaccine target."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "GNR needing factors V (NAD+) + X (hematin)",
+      "back": "Haemophilus influenzae"
+    },
+    {
+      "front": "Hib major virulence factor",
+      "back": "Polyribosylribitol phosphate (PRP) capsule (anti-phagocytic)"
+    },
+    {
+      "front": "Hib invasive diseases (unvaccinated child)",
+      "back": "Meningitis, epiglottitis, septic arthritis, sepsis"
+    },
+    {
+      "front": "H. influenzae satellite phenomenon",
+      "back": "Grows around S. aureus (provides factor V/NAD+)"
+    },
+    {
+      "front": "Hib vaccine type",
+      "back": "Conjugate vaccine (PRP linked to protein → T-cell help)"
+    },
+    {
+      "front": "Encapsulated organisms (asplenia risk)",
+      "back": "Pneumococcus, H. influenzae b, Neisseria meningitidis, others"
+    },
+    {
+      "front": "Capsule function",
+      "back": "Inhibits opsonization/phagocytosis (complement evasion)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Haemophilus influenzae (type b)",
+      "detail": "Micro: factor V/X growth requirement, chocolate agar, PRP capsule virulence, invasive disease, Hib conjugate vaccine.",
+      "location": "Micro: factor V/X growth requirement, chocolate agar, PRP capsule virulence, invasive disease, Hib conjugate vaccine."
+    },
+    {
+      "tag": "options",
+      "topic": "Bacterial virulence factors",
+      "detail": "Micro: capsule (anti-phagocytic), exotoxins, fimbriae/pili (adhesion), hemolysins, hyaluronidase (spreading) — match factor to organism.",
+      "location": "Micro: capsule (anti-phagocytic), exotoxins, fimbriae/pili (adhesion), hemolysins, hyaluronidase (spreading) — match factor to organism."
+    },
+    {
+      "tag": "stem",
+      "topic": "Encapsulated bacteria & vaccines",
+      "detail": "Micro/Immuno: encapsulated organisms, opsonization, conjugate vaccines, asplenia/complement risk.",
+      "location": "Micro/Immuno: encapsulated organisms, opsonization, conjugate vaccines, asplenia/complement risk."
+    }
+  ],
+  "memoryHook": "Factor V + X = Haemophilus. The unvaccinated toddler gets invasive Hib because of its anti-phagocytic CAPSULE (what the vaccine targets).",
+  "stem": [
+    {
+      "text": "A 3-year-old boy who recently immigrated to the United States is brought to the emergency department with fever, malaise, and a painful, swollen right knee. He is hypotensive and tachycardic. Medical history is significant for a recent episode of acute otitis media and several "
+    },
+    {
+      "text": "vaccinations that are not up to date",
+      "clue": true,
+      "type": "orange",
+      "note": "Under-vaccination (no Hib conjugate vaccine) leaves a young child susceptible to invasive Haemophilus influenzae type b disease (meningitis, epiglottitis, septic arthritis, sepsis). This risk-factor clue points to Hib."
+    },
+    {
+      "text": ". Arthrocentesis of the right knee shows cloudy synovial fluid. Gram stain of the aspirate reveals "
+    },
+    {
+      "text": "pleomorphic, gram-negative coccobacilli",
+      "clue": true,
+      "type": "blue",
+      "note": "Pleomorphic gram-negative coccobacilli fit Haemophilus influenzae. Combined with the culture requirements below, this identifies the organism."
+    },
+    {
+      "text": ". Cultures performed on a blood agar plate supplemented with a disk containing "
+    },
+    {
+      "text": "hematin and nicotinamide adenine dinucleotide (NAD+) grow colonies only near the disk",
+      "clue": true,
+      "type": "green",
+      "note": "Growth only near a disk supplying hematin (factor X) and NAD+ (factor V) is the defining lab feature of Haemophilus influenzae (it requires both factors V and X). Also grows around S. aureus colonies (satellite phenomenon)."
+    },
+    {
+      "text": ". The organism responsible for this patient's condition most likely produces which of the following virulence factors?"
+    }
+  ]
+}

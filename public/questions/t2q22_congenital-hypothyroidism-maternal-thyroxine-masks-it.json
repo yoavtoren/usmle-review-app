@@ -1,0 +1,206 @@
+{
+  "id": "q51",
+  "item": 51,
+  "qid": "19753",
+  "title": "Congenital hypothyroidism: maternal thyroxine masks it",
+  "system": "Endocrine",
+  "topic": "Thyroid / fetal physiology",
+  "correct": "D",
+  "yourAnswer": "C",
+  "percentCorrect": 51,
+  "vignette": "A newborn boy is found to have markedly elevated serum TSH and low thyroxine on routine screening. Laboratory findings using a venous blood sample confirm the diagnosis. The patient was born at 39 weeks gestation to a 34-year-old healthy woman, who had been taking prenatal vitamins regularly. He has no symptoms or abnormal findings on clinical examination. Imaging studies reveal an ectopic thyroid gland just below the tongue. Which of the following is the most likely cause of this patient's otherwise normal physical examination despite abnormal thyroid laboratory findings?",
+  "clues": [
+    {
+      "text": "elevated serum TSH and low thyroxine",
+      "type": "red",
+      "note": "High TSH with low T4 is primary hypothyroidism. In a newborn detected on screening, this is congenital hypothyroidism."
+    },
+    {
+      "text": "no symptoms or abnormal findings",
+      "type": "green",
+      "note": "The paradox the question targets: despite biochemical hypothyroidism, the newborn looks normal. This is because maternal thyroid hormone crossed the placenta and protected the fetus."
+    },
+    {
+      "text": "ectopic thyroid gland just below the tongue",
+      "type": "blue",
+      "note": "A lingual/ectopic thyroid is a common cause of congenital hypothyroidism (thyroid dysgenesis). The gland forms in the wrong location and functions poorly, but it explains the lab abnormality, not the normal exam."
+    }
+  ],
+  "whatMatters": "The newborn has congenital (primary) hypothyroidism from an ectopic thyroid, yet looks normal. The reason for the normal exam is that MATERNAL thyroxine (T4) crossed the placenta during gestation, temporarily protecting the baby — symptoms appear only after maternal hormone wanes over weeks. That's why newborn screening exists.",
+  "strategy": "When a newborn with an abnormal lab is clinically NORMAL, think 'maternal protection that fades.' For congenital hypothyroidism, transplacental maternal T4 masks symptoms early; treat promptly (levothyroxine) to prevent intellectual disability before the protection runs out.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Excess thyroxine production by an ectopic thyroid",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Increased thyroid-binding globulin in pregnancy",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Transplacental transfer of thyroid-stimulating antibody",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Transplacental transfer of thyroxine",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Transplacental transfer of TSH",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "ectopic gland making excess T4 — contradicts low T4",
+      "detail": "WHAT IT IS: the idea that the ectopic thyroid overproduces hormone. ❌ WHY IT FAILS: the labs show LOW thyroxine — the ectopic gland is hypofunctional, so it can't be the source of normal/excess hormone. ✅ Correct if: the labs showed hyperthyroidism from autonomous ectopic tissue."
+    },
+    {
+      "letter": "B",
+      "label": "increased TBG in pregnancy — affects total, not free, hormone",
+      "detail": "WHAT IT IS: estrogen raises thyroid-binding globulin in pregnancy, increasing TOTAL T4 while free T4 stays normal. ❌ WHY IT FAILS: TBG is a maternal phenomenon affecting the mother's measurements; it doesn't supply the fetus with active hormone or explain a normal newborn exam. ✅ Correct if: the question asked why TOTAL T4 rises in a pregnant woman with normal free T4."
+    },
+    {
+      "letter": "C",
+      "label": "thyroid-stimulating antibody — that's Graves, not this (your pick)",
+      "detail": "WHAT IT IS: maternal thyroid-stimulating immunoglobulins (Graves disease) can cross the placenta and cause neonatal HYPERthyroidism. ❌ WHY IT FAILS: this newborn is HYPOthyroid (high TSH, low T4) from an ectopic gland — TSI would cause the opposite picture and isn't the protective factor. ✅ Correct if: the mother had Graves disease and the neonate showed transient hyperthyroidism."
+    },
+    {
+      "letter": "E",
+      "label": "transplacental TSH — TSH barely crosses",
+      "detail": "WHAT IT IS: the notion that maternal TSH crosses to stimulate the fetal thyroid. ❌ WHY IT FAILS: TSH does NOT cross the placenta appreciably; and stimulating a dysgenetic ectopic gland wouldn't normalize hormone anyway. The protective factor is maternal T4, which does cross in small amounts. ✅ Correct if: never for this purpose — TSH is essentially placenta-impermeable."
+    }
+  ],
+  "reasoning": [
+    "High TSH + low T4 in a newborn = congenital (primary) hypothyroidism",
+    "Ectopic thyroid explains the lab abnormality (dysgenesis)",
+    "Baby looks normal because maternal T4 crossed the placenta during gestation",
+    "Cause of normal exam = transplacental transfer of thyroxine → answer D"
+  ],
+  "mechanism": "Maternal thyroxine (T4) crosses the placenta in small amounts and supports the fetus, so a baby with congenital hypothyroidism is typically ASYMPTOMATIC at birth. As maternal hormone is cleared over the first weeks, signs emerge (lethargy, poor feeding, constipation, enlarged fontanelle, protruding tongue, jaundice). Because untreated congenital hypothyroidism causes irreversible intellectual disability, universal newborn screening detects it early for prompt levothyroxine therapy.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Endocrine > congenital hypothyroidism: causes (thyroid dysgenesis/ectopy, dyshormonogenesis), screening (high TSH/low T4), why neonates are asymptomatic (maternal T4), treatment (levothyroxine), risk if delayed (cretinism)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question targets the NORMAL-exam paradox, not the diagnosis. Ask 'what protected the baby despite low T4?' → maternal hormone that crosses the placenta and later wanes."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on thyroid dysgenesis/ectopic thyroid, transplacental transfer, TBG, thyroid-stimulating antibody, T4 vs TSH? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Thyroid-stimulating antibody (Graves) and TBG are planted thyroid concepts, but both give the wrong direction or are maternal-only. Only transplacental T4 explains a hypothyroid newborn who looks normal."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The reference is the congenital-hypothyroidism table (clinical manifestations after maternal T4 wanes, diagnosis, levothyroxine). Tie the timeline of symptom onset to maternal-hormone clearance."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Newborn high TSH + low T4 on screening",
+      "back": "Congenital (primary) hypothyroidism"
+    },
+    {
+      "front": "Why congenital hypothyroidism is asymptomatic at birth",
+      "back": "Transplacental maternal thyroxine (T4)"
+    },
+    {
+      "front": "Most common cause of congenital hypothyroidism",
+      "back": "Thyroid dysgenesis (ectopic/lingual thyroid)"
+    },
+    {
+      "front": "Untreated congenital hypothyroidism",
+      "back": "Cretinism (intellectual disability) — irreversible if delayed"
+    },
+    {
+      "front": "Treatment of congenital hypothyroidism",
+      "back": "Levothyroxine, started promptly"
+    },
+    {
+      "front": "Maternal Graves antibody crossing placenta",
+      "back": "Neonatal HYPERthyroidism (TSI)"
+    },
+    {
+      "front": "Does TSH cross the placenta?",
+      "back": "No (negligibly)"
+    },
+    {
+      "front": "TBG rise in pregnancy effect",
+      "back": "↑ total T4, normal free T4"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Congenital hypothyroidism",
+      "detail": "Endocrine > thyroid: congenital hypothyroidism — dysgenesis/ectopy, newborn screening, asymptomatic early (maternal T4), 6 P's of cretinism, levothyroxine.",
+      "location": "Endocrine > thyroid: congenital hypothyroidism — dysgenesis/ectopy, newborn screening, asymptomatic early (maternal T4), 6 P's of cretinism, levothyroxine."
+    },
+    {
+      "tag": "options",
+      "topic": "Pregnancy thyroid physiology",
+      "detail": "Endocrine > thyroid in pregnancy: TBG rise (↑ total T4), placental transfer of T4 vs impermeability to TSH; neonatal Graves (TSI).",
+      "location": "Endocrine > thyroid in pregnancy: TBG rise (↑ total T4), placental transfer of T4 vs impermeability to TSH; neonatal Graves (TSI)."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Thyroid embryology",
+      "detail": "Embryology > thyroid descent from foramen cecum; ectopic/lingual thyroid and thyroglossal duct cyst.",
+      "location": "Embryology > thyroid descent from foramen cecum; ectopic/lingual thyroid and thyroglossal duct cyst."
+    }
+  ],
+  "memoryHook": "Mom's T4 babysits the fetus across the placenta — the hypothyroid newborn looks fine until that borrowed hormone runs out (so we SCREEN).",
+  "stem": [
+    {
+      "text": "A newborn boy is found to have markedly "
+    },
+    {
+      "text": "elevated serum TSH and low thyroxine",
+      "clue": true,
+      "type": "red",
+      "note": "High TSH with low T4 is primary hypothyroidism. In a newborn detected on screening, this is congenital hypothyroidism."
+    },
+    {
+      "text": " on routine screening. Laboratory findings using a venous blood sample confirm the diagnosis. The patient was born at 39 weeks gestation to a 34-year-old healthy woman, who had been taking prenatal vitamins regularly. He has "
+    },
+    {
+      "text": "no symptoms or abnormal findings",
+      "clue": true,
+      "type": "green",
+      "note": "The paradox the question targets: despite biochemical hypothyroidism, the newborn looks normal. This is because maternal thyroid hormone crossed the placenta and protected the fetus."
+    },
+    {
+      "text": " on clinical examination. Imaging studies reveal an "
+    },
+    {
+      "text": "ectopic thyroid gland just below the tongue",
+      "clue": true,
+      "type": "blue",
+      "note": "A lingual/ectopic thyroid is a common cause of congenital hypothyroidism (thyroid dysgenesis). The gland forms in the wrong location and functions poorly, but it explains the lab abnormality, not the normal exam."
+    },
+    {
+      "text": ". Which of the following is the most likely cause of this patient's otherwise normal physical examination despite abnormal thyroid laboratory findings?"
+    }
+  ]
+}

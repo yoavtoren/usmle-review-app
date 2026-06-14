@@ -1,0 +1,215 @@
+{
+  "id": "q73",
+  "item": 73,
+  "qid": "1392",
+  "title": "Listeria monocytogenes: foodborne meningitis",
+  "system": "Microbiology",
+  "topic": "CNS infection / transmission",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 65,
+  "vignette": "A 58-year-old man comes to the emergency department with fever, headache, and nausea for the past day. He underwent kidney transplantation last year. His temperature is 39.4 C (103 F), blood pressure is 130/80 mm Hg, pulse is 98/min, and respirations are 16/min. Neck stiffness is present on physical examination. Cerebrospinal fluid (CSF) results show glucose 40 mg/dL (normal 40-70), protein 80 mg/dL (normal 15-45), leukocytes 900/mm3 (normal 0-5), and neutrophils 80%. Gram-positive rods with tumbling motility at room temperature are seen on CSF microscopy. This patient's infection was most likely transmitted through which of the following mechanisms?",
+  "clues": [
+    {
+      "text": "kidney transplantation last year",
+      "type": "orange",
+      "note": "A transplant means chronic immunosuppression (impaired cell-mediated immunity). Listeria is an intracellular pathogen controlled by T cells/macrophages, so transplant recipients, neonates, pregnant women, and the elderly are the classic at-risk hosts."
+    },
+    {
+      "text": "Neck stiffness is present",
+      "type": "red",
+      "note": "Fever + headache + nuchal rigidity = bacterial meningitis. Combined with the CSF picture it sets up the 'which organism / how transmitted' question."
+    },
+    {
+      "text": "leukocytes 900/mm3 (normal 0-5), and neutrophils 80%",
+      "type": "blue",
+      "note": "Neutrophil-predominant pleocytosis with high protein (80 / normal 15-45) and low-normal glucose (40 / normal 40-70) is bacterial meningitis. This frames the search around a bacterial cause."
+    },
+    {
+      "text": "Gram-positive rods with tumbling motility at room temperature",
+      "type": "green",
+      "note": "Gram-positive ROD + tumbling motility (actin-based, best at ~25 C) = Listeria monocytogenes. It's a facultative intracellular bacterium that also grows in the cold (refrigeration). This is the species-defining clue."
+    }
+  ],
+  "whatMatters": "The immunosuppression + bacterial-meningitis CSF set up the organism, and the gram-positive rod with tumbling motility nails Listeria monocytogenes. The actual question is the route of transmission: Listeria is FOODBORNE (unpasteurized dairy, deli meats, soft cheeses) — answer B.",
+  "strategy": "Two-step microbiology stems: first ID the bug from the lab fingerprint (GPR + tumbling motility + cold growth = Listeria), then answer the specific sub-question (here, transmission). Don't stop at the diagnosis — reread the last sentence to see what's actually being asked.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Arthropod bite",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Contaminated food",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Needlestick",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Respiratory droplets",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Unprotected sex",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "arthropod bite — wrong vector class",
+      "detail": "WHAT IT IS: arthropod-borne infections include malaria (Anopheles), Lyme (Ixodes), Rickettsia (ticks), Chagas (reduviid). ❌ WHY IT FAILS: none are gram-positive tumbling rods, and Listeria is not vector-borne; it's ingested. ✅ Correct if: the organism were a Plasmodium, Borrelia, or Rickettsia with a bite-exposure history."
+    },
+    {
+      "letter": "C",
+      "label": "needlestick — bloodborne viruses, not Listeria",
+      "detail": "WHAT IT IS: needlesticks transmit HIV, hepatitis B, and hepatitis C. ❌ WHY IT FAILS: Listeria isn't a classic percutaneous/bloodborne pathogen; the clue is a gram-positive rod from food. ✅ Correct if: the question targeted occupational exposure to HBV/HCV/HIV."
+    },
+    {
+      "letter": "D",
+      "label": "respiratory droplets — wrong portal",
+      "detail": "WHAT IT IS: droplet meningitis pathogens include Neisseria meningitidis (GN diplococcus), Streptococcus pneumoniae (GP diplococcus), and Haemophilus influenzae. ❌ WHY IT FAILS: those match different Gram morphologies; Listeria is a rod acquired by ingestion, not inhalation. ✅ Correct if: the smear showed gram-negative diplococci (Neisseria) or gram-positive diplococci (pneumococcus)."
+    },
+    {
+      "letter": "E",
+      "label": "unprotected sex — wrong route",
+      "detail": "WHAT IT IS: sexually transmitted organisms include Treponema, Neisseria gonorrhoeae, Chlamydia, HIV, HPV. ❌ WHY IT FAILS: Listeria is foodborne (and can cross the placenta), not sexually transmitted. ✅ Correct if: the stem described a genital lesion/discharge or an STI-associated organism."
+    }
+  ],
+  "reasoning": [
+    "Immunosuppressed transplant patient with bacterial meningitis",
+    "Gram-positive rod + tumbling motility + cold growth = Listeria monocytogenes",
+    "Listeria is acquired by ingesting contaminated food",
+    "Transmission = contaminated food (unpasteurized dairy/deli meats) → answer B"
+  ],
+  "mechanism": "Listeria monocytogenes is a facultative anaerobic, motile (actin rocket / 'tumbling') gram-positive rod that grows at refrigeration temperatures. It is acquired by eating contaminated foods (unpasteurized milk/soft cheeses, deli meats, raw vegetables) and is a facultative intracellular pathogen cleared by cell-mediated immunity — hence disease in neonates, pregnant women, the elderly, and immunosuppressed transplant patients. It can also cross the placenta (transplacental) causing neonatal meningitis. Ampicillin is the treatment of choice.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Microbiology > Gram-positive rods: Listeria monocytogenes — tumbling motility, cold (psychrophilic) growth, foodborne + transplacental, intracellular, at-risk hosts (neonate/pregnant/elderly/immunosuppressed), ampicillin Rx. Cross-link the bacterial-meningitis CSF table."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Don't stop at 'it's Listeria.' The asked item is TRANSMISSION. Identify bug → then answer the sub-question (foodborne)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on tumbling motility, facultative intracellular, pleocytosis, psychrophilic (cold growth), transplacental? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Respiratory droplets (D) baits because most meningitis bugs spread that way — but those are diplococci/coccobacilli, not a tumbling gram-positive rod. Let the Gram morphology gate the route."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Correct (B). Reinforce: gram-positive ROD + tumbling/cold growth = Listeria; foodborne and transplacental are its two signature routes."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Gram-positive rod, tumbling motility, grows in cold",
+      "back": "Listeria monocytogenes"
+    },
+    {
+      "front": "Listeria transmission routes",
+      "back": "Contaminated food (dairy/deli) + transplacental"
+    },
+    {
+      "front": "Listeria at-risk hosts",
+      "back": "Neonates, pregnant women, elderly, immunosuppressed/transplant"
+    },
+    {
+      "front": "Listeria treatment",
+      "back": "Ampicillin (± gentamicin)"
+    },
+    {
+      "front": "Bacterial meningitis CSF",
+      "back": "↑ neutrophils, ↑ protein, ↓ glucose"
+    },
+    {
+      "front": "Droplet meningitis bugs",
+      "back": "Neisseria meningitidis, S. pneumoniae, H. influenzae"
+    },
+    {
+      "front": "Listeria intracellular movement",
+      "back": "Actin polymerization ('rocket tails')"
+    },
+    {
+      "front": "Neonatal Listeria acquisition",
+      "back": "Transplacental or vaginal during delivery"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Listeria monocytogenes",
+      "detail": "Micro > Gram-positive rods: tumbling motility, cold growth, foodborne/transplacental, intracellular, meningitis in immunocompromised/neonates, ampicillin.",
+      "location": "Micro > Gram-positive rods: tumbling motility, cold growth, foodborne/transplacental, intracellular, meningitis in immunocompromised/neonates, ampicillin."
+    },
+    {
+      "tag": "stem",
+      "topic": "Bacterial meningitis CSF",
+      "detail": "Micro/Neuro: CSF profiles — bacterial (↑PMNs, ↑protein, ↓glucose) vs viral vs fungal/TB; age-based common organisms.",
+      "location": "Micro/Neuro: CSF profiles — bacterial (↑PMNs, ↑protein, ↓glucose) vs viral vs fungal/TB; age-based common organisms."
+    },
+    {
+      "tag": "options",
+      "topic": "Transmission routes",
+      "detail": "Micro: arthropod-borne (malaria/Lyme/Rickettsia), bloodborne (HBV/HCV/HIV), droplet (Neisseria/pneumococcus), STI (Treponema/GC/Chlamydia) — match organism to route.",
+      "location": "Micro: arthropod-borne (malaria/Lyme/Rickettsia), bloodborne (HBV/HCV/HIV), droplet (Neisseria/pneumococcus), STI (Treponema/GC/Chlamydia) — match organism to route."
+    }
+  ],
+  "memoryHook": "Listeria 'tumbles' out of the cold fridge into food — dangerous for transplant/pregnant/neonatal hosts; treat with ampicillin.",
+  "stem": [
+    {
+      "text": "A 58-year-old man comes to the emergency department with fever, headache, and nausea for the past day. He underwent "
+    },
+    {
+      "text": "kidney transplantation last year",
+      "clue": true,
+      "type": "orange",
+      "note": "A transplant means chronic immunosuppression (impaired cell-mediated immunity). Listeria is an intracellular pathogen controlled by T cells/macrophages, so transplant recipients, neonates, pregnant women, and the elderly are the classic at-risk hosts."
+    },
+    {
+      "text": ". His temperature is 39.4 C (103 F), blood pressure is 130/80 mm Hg, pulse is 98/min, and respirations are 16/min. "
+    },
+    {
+      "text": "Neck stiffness is present",
+      "clue": true,
+      "type": "red",
+      "note": "Fever + headache + nuchal rigidity = bacterial meningitis. Combined with the CSF picture it sets up the 'which organism / how transmitted' question."
+    },
+    {
+      "text": " on physical examination. Cerebrospinal fluid (CSF) results show glucose 40 mg/dL (normal 40-70), protein 80 mg/dL (normal 15-45), "
+    },
+    {
+      "text": "leukocytes 900/mm3 (normal 0-5), and neutrophils 80%",
+      "clue": true,
+      "type": "blue",
+      "note": "Neutrophil-predominant pleocytosis with high protein (80 / normal 15-45) and low-normal glucose (40 / normal 40-70) is bacterial meningitis. This frames the search around a bacterial cause."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Gram-positive rods with tumbling motility at room temperature",
+      "clue": true,
+      "type": "green",
+      "note": "Gram-positive ROD + tumbling motility (actin-based, best at ~25 C) = Listeria monocytogenes. It's a facultative intracellular bacterium that also grows in the cold (refrigeration). This is the species-defining clue."
+    },
+    {
+      "text": " are seen on CSF microscopy. This patient's infection was most likely transmitted through which of the following mechanisms?"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "id": "q96",
+  "item": 96,
+  "qid": "80",
+  "title": "Acute cholecystitis: nonvisualization on HIDA scan",
+  "system": "Gastrointestinal",
+  "topic": "Biliary imaging / cholescintigraphy",
+  "correct": "C",
+  "yourAnswer": "B",
+  "percentCorrect": 33,
+  "vignette": "A 50-year-old woman comes to the emergency department with severe upper abdominal pain. The pain started suddenly and is sharp and colicky. She has also vomited several times throughout the day, including once while in the emergency department. The patient describes several prior episodes of similar abdominal pain that resolved spontaneously without treatment. Her other medical problems include complicated appendicitis when she was 22 years old. Her temperature is 37.8 C (100 F) and pulse is 112/min. Abdominal examination shows cessation of inspiration with deep palpation of the right upper quadrant. Laboratory assessment shows a serum bilirubin of 0.8 mg/dL (normal 0.1-1.0) and a serum alkaline phosphatase of 100 U/L (normal 30-120). Initial imaging studies are equivocal. Which of the following diagnostic test results would be most specific for acute cholecystitis?",
+  "clues": [
+    {
+      "text": "sharp and colicky",
+      "type": "blue",
+      "note": "Sudden RUQ colicky pain after (often) fatty meals, with prior self-resolving episodes, is classic biliary colic progressing to cholecystitis from a stone impacted in the cystic duct."
+    },
+    {
+      "text": "cessation of inspiration with deep palpation of the right upper quadrant",
+      "type": "red",
+      "note": "A positive Murphy sign (inspiratory arrest on RUQ palpation) strongly suggests acute cholecystitis. It reflects an inflamed gallbladder hitting the examiner's hand on inspiration."
+    },
+    {
+      "text": "serum bilirubin of 0.8 mg/dL (normal 0.1-1.0) and a serum alkaline phosphatase of 100 U/L (normal 30-120)",
+      "type": "blue",
+      "note": "Normal bilirubin (0.8) and ALP (100) argue against common-bile-duct obstruction (choledocholithiasis/cholangitis). The problem is isolated to the gallbladder/cystic duct — supporting cholecystitis."
+    },
+    {
+      "text": "Initial imaging studies are equivocal",
+      "type": "green",
+      "note": "When ultrasound is equivocal, the MOST SPECIFIC test is hepatobiliary (HIDA) scintigraphy. In acute cholecystitis the cystic duct is obstructed, so tracer fills the liver and duct but the gallbladder FAILS to visualize — a non-visualizing gallbladder is highly specific."
+    }
+  ],
+  "whatMatters": "Stones + Murphy sign + normal bilirubin/ALP = acute cholecystitis from cystic-duct obstruction. With equivocal ultrasound, the MOST SPECIFIC confirmatory result is failure of the gallbladder to fill on a HIDA (radionuclide biliary) scan — answer C.",
+  "strategy": "Separate SENSITIVE/first-line (ultrasound — stones, wall thickening) from MOST SPECIFIC (HIDA scan). A non-visualizing gallbladder on HIDA = cystic-duct obstruction = the most specific finding for acute cholecystitis. Gallstones alone (on US) are common and not specific, since many people have asymptomatic stones.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Distended duodenum on upper gastrointestinal series",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Echogenic structures inside the gallbladder on abdominal ultrasound",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Failed gallbladder visualization on radionuclide biliary scan",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Increased serum aspartate and alanine aminotransferase levels",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Opacities in the right subcostal area on abdominal x-ray",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "distended duodenum on UGI — wrong organ/test",
+      "detail": "WHAT IT IS: an upper GI series evaluates the esophagus/stomach/duodenum. ❌ WHY IT FAILS: a distended duodenum reflects bowel obstruction/ileus, not gallbladder inflammation; it's neither sensitive nor specific for cholecystitis. ✅ Correct if: the question targeted duodenal obstruction (e.g., SMA syndrome)."
+    },
+    {
+      "letter": "B",
+      "label": "gallstones on ultrasound — sensitive but NOT specific (your pick)",
+      "detail": "WHAT IT IS: echogenic foci with shadowing = gallstones (cholelithiasis) on US — the first-line test. ❌ WHY IT FAILS: stones are extremely common and often asymptomatic, so merely seeing them isn't SPECIFIC for ACUTE cholecystitis; the question asks for the most specific result, which is non-visualization on HIDA. ✅ Correct if: the question asked for the best initial/most sensitive test, not the most specific."
+    },
+    {
+      "letter": "D",
+      "label": "elevated AST/ALT — hepatocellular, not gallbladder-specific",
+      "detail": "WHAT IT IS: rising transaminases indicate hepatocellular injury. ❌ WHY IT FAILS: they point to hepatitis or biliary obstruction with liver involvement, not specifically to cystic-duct cholecystitis (and his bilirubin/ALP are normal). ✅ Correct if: the picture were hepatitis or choledocholithiasis with hepatocellular injury."
+    },
+    {
+      "letter": "E",
+      "label": "RUQ opacity on x-ray — most stones are radiolucent",
+      "detail": "WHAT IT IS: plain-film opacities could be calcified (radiopaque) stones — but only ~10-15% of gallstones are radiopaque. ❌ WHY IT FAILS: x-ray is insensitive and nonspecific for cholecystitis; even a visible stone doesn't confirm acute inflammation. ✅ Correct if: looking for porcelain gallbladder or radiopaque stones incidentally, not diagnosing acute cholecystitis."
+    }
+  ],
+  "reasoning": [
+    "Biliary colic + Murphy sign + normal bilirubin/ALP = acute cholecystitis (cystic-duct stone)",
+    "Ultrasound is first-line but here equivocal",
+    "Most SPECIFIC test = HIDA (cholescintigraphy)",
+    "Cystic-duct obstruction → gallbladder fails to visualize on HIDA → answer C"
+  ],
+  "mechanism": "Acute cholecystitis is caused by a stone impacted in the cystic duct, obstructing gallbladder outflow and causing inflammation. Ultrasound (first-line) shows stones, wall thickening, and pericholecystic fluid but stones alone are nonspecific. Hepatobiliary iminodiacetic acid (HIDA) scintigraphy is most specific: IV tracer is taken up by hepatocytes and excreted into bile; with a patent cystic duct the gallbladder fills, but in acute cholecystitis the obstructed cystic duct prevents tracer entry, so the gallbladder does NOT visualize.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI > Cholecystitis & biliary imaging: cystic-duct stone, Murphy sign, ultrasound (first-line, stones/wall thickening) vs HIDA scan (most specific, non-visualizing GB); choledocholithiasis/cholangitis labs for contrast."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reframe: the question wants MOST SPECIFIC, not most common/first-line. Non-visualizing gallbladder on HIDA is the specific confirmatory result; gallstones on US are merely sensitive."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on HIDA/cholescintigraphy, Murphy sign, cystic duct, sensitivity vs specificity, cholelithiasis vs cholecystitis? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Gallstones on ultrasound (B, your pick) is the classic trap because US is the first test — but stones are common and nonspecific. The 'most specific' qualifier points to HIDA non-visualization."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The HIDA images show tracer in liver/duct/bowel but ABSENT gallbladder filling in cholecystitis (vs a normally filling gallbladder when the cystic duct is patent). Practice reading cholescintigraphy: gallbladder seen = patent; not seen = obstructed."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Missed as B → distinguish sensitive (US, gallstones) from specific (HIDA, non-visualization). 'Most specific' = HIDA every time."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Most specific test for acute cholecystitis",
+      "back": "HIDA scan — non-visualization of the gallbladder"
+    },
+    {
+      "front": "First-line/most sensitive test",
+      "back": "Right upper quadrant ultrasound (stones, wall thickening)"
+    },
+    {
+      "front": "Cause of acute cholecystitis",
+      "back": "Stone impacted in the cystic duct"
+    },
+    {
+      "front": "Murphy sign",
+      "back": "Inspiratory arrest on RUQ palpation (inflamed gallbladder)"
+    },
+    {
+      "front": "Why non-visualization occurs on HIDA",
+      "back": "Cystic-duct obstruction blocks tracer entry into gallbladder"
+    },
+    {
+      "front": "Normal bilirubin/ALP significance",
+      "back": "Argues against common-bile-duct obstruction (choledocholithiasis/cholangitis)"
+    },
+    {
+      "front": "% of radiopaque gallstones",
+      "back": "~10-15% (most are radiolucent → x-ray insensitive)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Acute cholecystitis & HIDA scan",
+      "detail": "GI: cystic-duct stone, ultrasound vs cholescintigraphy (most specific, non-visualizing gallbladder), Murphy sign.",
+      "location": "GI: cystic-duct stone, ultrasound vs cholescintigraphy (most specific, non-visualizing gallbladder), Murphy sign."
+    },
+    {
+      "tag": "options",
+      "topic": "Biliary disease spectrum & labs",
+      "detail": "GI: cholelithiasis vs cholecystitis vs choledocholithiasis vs cholangitis; bilirubin/ALP/AST-ALT patterns.",
+      "location": "GI: cholelithiasis vs cholecystitis vs choledocholithiasis vs cholangitis; bilirubin/ALP/AST-ALT patterns."
+    },
+    {
+      "tag": "stem",
+      "topic": "Diagnostic test characteristics",
+      "detail": "Biostat: sensitivity vs specificity — first-line/screening vs confirmatory tests.",
+      "location": "Biostat: sensitivity vs specificity — first-line/screening vs confirmatory tests."
+    }
+  ],
+  "memoryHook": "Stones on US are everywhere (sensitive). A gallbladder that WON'T light up on HIDA = blocked cystic duct = SPECIFIC for cholecystitis.",
+  "stem": [
+    {
+      "text": "A 50-year-old woman comes to the emergency department with severe upper abdominal pain. The pain started suddenly and is "
+    },
+    {
+      "text": "sharp and colicky",
+      "clue": true,
+      "type": "blue",
+      "note": "Sudden RUQ colicky pain after (often) fatty meals, with prior self-resolving episodes, is classic biliary colic progressing to cholecystitis from a stone impacted in the cystic duct."
+    },
+    {
+      "text": ". She has also vomited several times throughout the day, including once while in the emergency department. The patient describes several prior episodes of similar abdominal pain that resolved spontaneously without treatment. Her other medical problems include complicated appendicitis when she was 22 years old. Her temperature is 37.8 C (100 F) and pulse is 112/min. Abdominal examination shows "
+    },
+    {
+      "text": "cessation of inspiration with deep palpation of the right upper quadrant",
+      "clue": true,
+      "type": "red",
+      "note": "A positive Murphy sign (inspiratory arrest on RUQ palpation) strongly suggests acute cholecystitis. It reflects an inflamed gallbladder hitting the examiner's hand on inspiration."
+    },
+    {
+      "text": ". Laboratory assessment shows a "
+    },
+    {
+      "text": "serum bilirubin of 0.8 mg/dL (normal 0.1-1.0) and a serum alkaline phosphatase of 100 U/L (normal 30-120)",
+      "clue": true,
+      "type": "blue",
+      "note": "Normal bilirubin (0.8) and ALP (100) argue against common-bile-duct obstruction (choledocholithiasis/cholangitis). The problem is isolated to the gallbladder/cystic duct — supporting cholecystitis."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Initial imaging studies are equivocal",
+      "clue": true,
+      "type": "green",
+      "note": "When ultrasound is equivocal, the MOST SPECIFIC test is hepatobiliary (HIDA) scintigraphy. In acute cholecystitis the cystic duct is obstructed, so tracer fills the liver and duct but the gallbladder FAILS to visualize — a non-visualizing gallbladder is highly specific."
+    },
+    {
+      "text": ". Which of the following diagnostic test results would be most specific for acute cholecystitis?"
+    }
+  ]
+}

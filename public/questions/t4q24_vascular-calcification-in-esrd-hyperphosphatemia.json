@@ -1,0 +1,198 @@
+{
+  "id": "q133",
+  "item": 133,
+  "qid": "15280",
+  "title": "Vascular calcification in ESRD: hyperphosphatemia",
+  "system": "Pathology",
+  "topic": "Renal / mineral metabolism",
+  "correct": "B",
+  "yourAnswer": "D",
+  "percentCorrect": 64,
+  "vignette": "A 67-year-old woman is hospitalized due to worsening abdominal pain. The patient has long-standing end-stage renal disease from diabetic nephropathy for which she undergoes hemodialysis 3 times a week. Temperature is 37 C (98.6 F), blood pressure is 159/79 mm Hg, pulse is 97/min, and respirations are 16/min. Abdominal examination shows high-pitched bowel sounds and mild distension without rebound tenderness. Laboratory results show elevated blood urea nitrogen and creatinine. Noncontrast CT scan of the abdomen shows a small bowel obstruction. The patient also has extensive vascular calcifications demonstrated by the arrows in the abdominal CT scan. Which of the following most likely contributed to the observed findings?",
+  "clues": [
+    {
+      "text": "end-stage renal disease from diabetic nephropathy",
+      "type": "orange",
+      "note": "ESRD is the central risk factor. Failing kidneys cannot excrete phosphate or make active vitamin D, deranging mineral metabolism and predisposing to vascular calcification."
+    },
+    {
+      "text": "undergoes hemodialysis 3 times a week",
+      "type": "blue",
+      "note": "Chronic dialysis patients are highly prone to vascular calcification from disordered calcium-phosphate balance (CKD-mineral bone disorder). This frames the asked contributing electrolyte abnormality."
+    },
+    {
+      "text": "extensive vascular calcifications",
+      "type": "red",
+      "note": "Medial vascular calcifications in ESRD result from elevated calcium-phosphate product driving smooth muscle cells toward an osteoblast-like phenotype. The principal driver is hyperphosphatemia from impaired renal excretion."
+    }
+  ],
+  "whatMatters": "An ESRD/dialysis patient with extensive vascular calcifications: the key driver is impaired phosphate excretion. Hyperphosphatemia (with secondary mineral derangements) pushes vascular smooth muscle toward osteogenic calcification - answer B.",
+  "strategy": "In CKD/ESRD mineral-bone disorder, reason from failed phosphate excretion: phosphate RISES (hyperphosphatemia), which lowers calcium and raises PTH (secondary hyperparathyroidism). A high calcium-phosphate product deposits in vessels. So vascular calcification's leading contributor is hyperphosphatemia, not hypophosphatemia.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Hypermagnesemia",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Hyperphosphatemia",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Hypocalcemia",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Hypophosphatemia",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Recurrent hypoglycemia",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "hypermagnesemia - actually protective",
+      "detail": "WHAT IT IS: elevated magnesium. ❌ WHY IT FAILS: magnesium inhibits extraosseous (vascular) calcification, so HYPERmagnesemia would reduce, not cause, calcifications; hypomagnesemia is the risk. ✅ Correct if: asked which electrolyte protects against vascular calcification."
+    },
+    {
+      "letter": "C",
+      "label": "hypocalcemia - a consequence, not the prime driver",
+      "detail": "WHAT IT IS: low serum calcium, common in CKD. ❌ WHY IT FAILS: while CKD lowers calcium and drives secondary hyperparathyroidism, the dominant driver of the high calcium-phosphate product and vascular calcification is the elevated PHOSPHATE; calcification needs adequate/iatrogenically raised calcium plus high phosphate. ✅ Correct if: asked what stimulates PTH secretion in CKD."
+    },
+    {
+      "letter": "D",
+      "label": "hypophosphatemia - wrong direction in ESRD",
+      "detail": "WHAT IT IS: low phosphate. ❌ WHY IT FAILS: ESRD causes phosphate RETENTION (hyperphosphatemia) from impaired excretion; hypophosphatemia is the opposite of the CKD picture and would not cause calcification. You chose this. ✅ Correct if: refeeding syndrome, malnutrition, or proximal tubular wasting were the setting."
+    },
+    {
+      "letter": "E",
+      "label": "recurrent hypoglycemia - unrelated",
+      "detail": "WHAT IT IS: low blood glucose episodes. ❌ WHY IT FAILS: hypoglycemia has no role in vascular calcification. ✅ Correct if: asking about counterregulatory hormones or neuroglycopenia, not calcification."
+    }
+  ],
+  "reasoning": [
+    "ESRD impairs renal phosphate excretion -> hyperphosphatemia",
+    "High phosphate raises the calcium-phosphate product",
+    "Vascular smooth muscle cells differentiate into osteoblast-like cells -> medial calcification",
+    "Leading contributor = hyperphosphatemia -> answer B"
+  ],
+  "mechanism": "In chronic kidney disease, reduced GFR impairs phosphate excretion (and reduces active vitamin D), producing hyperphosphatemia, a fall in serum calcium, and secondary hyperparathyroidism (CKD-mineral and bone disorder). A persistently elevated calcium-phosphate product, together with uremia-driven inflammation and loss of calcification inhibitors, drives vascular smooth-muscle cells to transdifferentiate into osteoblast-like cells that actively deposit calcium-phosphate in the arterial media. The result is extensive vascular calcification, a marker of cardiovascular risk. Hyperphosphatemia is the principal contributor; magnesium is protective, hypophosphatemia is the wrong direction, and hypoglycemia is irrelevant.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Renal > CKD-mineral and bone disorder: decreased phosphate excretion -> hyperphosphatemia; decreased 1,25-vitamin D -> hypocalcemia -> secondary hyperparathyroidism; high Ca x P product -> vascular/soft-tissue calcification; phosphate binders, magnesium protective."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reason from the failed organ: kidneys can't dump phosphate -> it builds up. Calcification is driven by the high phosphate (and Ca x P product), so pick hyperphosphatemia."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on calcium-phosphate product, secondary hyperparathyroidism, osteogenic differentiation of smooth muscle, CKD-MBD? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose D (hypophosphatemia) - the wrong sign. ESRD RETAINS phosphate (hyperphosphatemia). Keep the CKD direction straight: phosphate up, calcium down, PTH up."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The CT arrows mark calcified vessel walls; in an ESRD patient that immediately implicates phosphate retention / CKD-MBD."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Anchor the CKD electrolyte cascade once: high PO4, low Ca, high PTH, calcification - then these become automatic."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Vascular calcification in ESRD/dialysis - main driver",
+      "back": "Hyperphosphatemia (high Ca x P product)"
+    },
+    {
+      "front": "CKD-MBD electrolyte pattern",
+      "back": "High phosphate, low calcium, low active vitamin D, high PTH"
+    },
+    {
+      "front": "Magnesium and vascular calcification",
+      "back": "Magnesium INHIBITS calcification (protective)"
+    },
+    {
+      "front": "Why smooth muscle calcifies in CKD",
+      "back": "Osteoblast-like transdifferentiation under high phosphate/uremia"
+    },
+    {
+      "front": "Treatment to lower phosphate in CKD",
+      "back": "Dietary restriction + phosphate binders (e.g., sevelamer)"
+    },
+    {
+      "front": "Secondary hyperparathyroidism cause",
+      "back": "Hyperphosphatemia + hypocalcemia + low calcitriol in CKD"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "CKD-mineral and bone disorder",
+      "detail": "Renal: hyperphosphatemia, calcium-phosphate product, vascular calcification, secondary hyperparathyroidism.",
+      "location": "Renal: hyperphosphatemia, calcium-phosphate product, vascular calcification, secondary hyperparathyroidism."
+    },
+    {
+      "tag": "stem",
+      "topic": "End-stage renal disease / dialysis",
+      "detail": "Renal: complications, electrolyte management, cardiovascular risk.",
+      "location": "Renal: complications, electrolyte management, cardiovascular risk."
+    },
+    {
+      "tag": "options",
+      "topic": "Phosphate/calcium/magnesium balance",
+      "detail": "Renal/Physiology: regulation and disorders of phosphate, calcium, magnesium.",
+      "location": "Renal/Physiology: regulation and disorders of phosphate, calcium, magnesium."
+    }
+  ],
+  "memoryHook": "Dead kidneys can't dump phosphate -> phosphate piles up -> arteries turn to bone. High PO4 = calcified vessels.",
+  "stem": [
+    {
+      "text": "A 67-year-old woman is hospitalized due to worsening abdominal pain. The patient has long-standing "
+    },
+    {
+      "text": "end-stage renal disease from diabetic nephropathy",
+      "clue": true,
+      "type": "orange",
+      "note": "ESRD is the central risk factor. Failing kidneys cannot excrete phosphate or make active vitamin D, deranging mineral metabolism and predisposing to vascular calcification."
+    },
+    {
+      "text": " for which she "
+    },
+    {
+      "text": "undergoes hemodialysis 3 times a week",
+      "clue": true,
+      "type": "blue",
+      "note": "Chronic dialysis patients are highly prone to vascular calcification from disordered calcium-phosphate balance (CKD-mineral bone disorder). This frames the asked contributing electrolyte abnormality."
+    },
+    {
+      "text": ". Temperature is 37 C (98.6 F), blood pressure is 159/79 mm Hg, pulse is 97/min, and respirations are 16/min. Abdominal examination shows high-pitched bowel sounds and mild distension without rebound tenderness. Laboratory results show elevated blood urea nitrogen and creatinine. Noncontrast CT scan of the abdomen shows a small bowel obstruction. The patient also has "
+    },
+    {
+      "text": "extensive vascular calcifications",
+      "clue": true,
+      "type": "red",
+      "note": "Medial vascular calcifications in ESRD result from elevated calcium-phosphate product driving smooth muscle cells toward an osteoblast-like phenotype. The principal driver is hyperphosphatemia from impaired renal excretion."
+    },
+    {
+      "text": " demonstrated by the arrows in the abdominal CT scan. Which of the following most likely contributed to the observed findings?"
+    }
+  ]
+}

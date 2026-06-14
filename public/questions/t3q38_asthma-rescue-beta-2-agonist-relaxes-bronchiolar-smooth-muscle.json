@@ -1,0 +1,197 @@
+{
+  "id": "q108",
+  "item": 108,
+  "qid": "15156",
+  "title": "Asthma rescue: beta-2 agonist relaxes bronchiolar smooth muscle",
+  "system": "Pulmonary",
+  "topic": "Asthma / bronchodilation",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 91,
+  "vignette": "An 8-year-old girl is brought to the emergency department due to worsening shortness of breath and chest tightness for the past 2 hours. On physical examination, the patient speaks in short sentences. Lung auscultation reveals diffuse wheezing. During the evaluation, the patient is instructed to take a deep breath and blow as hard as possible into the mouthpiece of a hand-held device. The measured airflow rate is significantly lower than expected. Treatment with an inhaled medication is begun. A repeat evaluation several minutes later shows an increase in the airflow rate. The administered medication most likely affected which of the following to produce the observed finding in this patient?",
+  "clues": [
+    {
+      "text": "diffuse wheezing",
+      "type": "red",
+      "note": "Acute dyspnea, chest tightness, and diffuse wheezing in a child = an asthma exacerbation from airway smooth-muscle bronchoconstriction. The reversible airflow obstruction is the target of a bronchodilator."
+    },
+    {
+      "text": "airflow rate is significantly lower than expected",
+      "type": "blue",
+      "note": "A low peak expiratory flow (the hand-held device is a peak flow meter) quantifies airflow obstruction. It sets up the before/after comparison that defines reversibility."
+    },
+    {
+      "text": "increase in the airflow rate",
+      "type": "green",
+      "note": "Rapid improvement in airflow within minutes of an inhaled drug = bronchodilation by a short-acting beta-2 agonist (albuterol). Beta-2 agonists relax BRONCHIOLAR SMOOTH MUSCLE (via cAMP), reducing airway tone and obstruction."
+    }
+  ],
+  "whatMatters": "A child with an asthma attack gets an inhaled drug that rapidly raises peak flow — that's a short-acting beta-2 agonist (albuterol). It works by RELAXING bronchiolar smooth muscle (decreasing airway smooth-muscle tone), which widens the airways. Answer C.",
+  "strategy": "For 'what did the rescue inhaler affect,' separate fast bronchodilation (beta-2 agonist → smooth-muscle relaxation, works in minutes) from slow anti-inflammatory control (corticosteroids → gene transcription, days). Rapid airflow improvement = smooth-muscle tone, not inflammation.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Airway inflammatory response",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Alveolar surfactant production",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Bronchiolar smooth muscle tone",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Lower-airway bacterial load",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Pulmonary vascular resistance",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "airway inflammation — that's corticosteroids, and it's slow",
+      "detail": "WHAT IT IS: inhaled/systemic corticosteroids reduce airway inflammation by modulating gene transcription. ❌ WHY IT FAILS: anti-inflammatory effects take hours to days, not minutes; the rapid airflow gain here is from smooth-muscle relaxation (beta-2 agonist). ✅ Correct if: the question asked about the controller that reduces inflammation/hyperresponsiveness over time."
+    },
+    {
+      "letter": "B",
+      "label": "alveolar surfactant — neonatal RDS, wrong target",
+      "detail": "WHAT IT IS: surfactant reduces alveolar surface tension; corticosteroids stimulate fetal surfactant to prevent neonatal RDS. ❌ WHY IT FAILS: asthma is a conducting-airway smooth-muscle problem, not an alveolar surfactant issue. ✅ Correct if: the case were a premature neonate with respiratory distress syndrome."
+    },
+    {
+      "letter": "D",
+      "label": "bacterial load — antibiotics, not the rescue mechanism",
+      "detail": "WHAT IT IS: reducing lower-airway bacteria is the job of antibiotics (e.g., in cystic fibrosis/pneumonia). ❌ WHY IT FAILS: an acute asthma attack isn't relieved by killing bacteria, and improvement was within minutes — that's bronchodilation. ✅ Correct if: the problem were a bacterial airway infection."
+    },
+    {
+      "letter": "E",
+      "label": "pulmonary vascular resistance — pulmonary hypertension drugs",
+      "detail": "WHAT IT IS: lowering pulmonary vascular resistance is the aim in pulmonary arterial hypertension (endothelin antagonists, PDE-5 inhibitors, prostacyclins). ❌ WHY IT FAILS: that's the vasculature, not the airways; asthma airflow obstruction is fixed by relaxing airway smooth muscle. ✅ Correct if: the disease were pulmonary arterial hypertension."
+    }
+  ],
+  "reasoning": [
+    "Child with acute wheezing + low peak flow = asthma exacerbation",
+    "Inhaled drug rapidly increases airflow (within minutes)",
+    "Fast bronchodilation = short-acting beta-2 agonist (albuterol)",
+    "Mechanism: relax bronchiolar smooth muscle (↓ tone) → answer C"
+  ],
+  "mechanism": "Acute asthma involves airway smooth-muscle contraction (bronchoconstriction) and inflammation. Short-acting beta-2 agonists (albuterol) stimulate beta-2 adrenergic receptors on bronchial smooth muscle, raising cAMP and relaxing the muscle within minutes — reducing airway tone and widening the airways, which rapidly improves airflow (peak flow). Corticosteroids address the slower inflammatory component over hours to days. The rapid airflow improvement here reflects decreased bronchiolar smooth-muscle tone.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology > Asthma: short-acting beta-2 agonists (albuterol) → cAMP → smooth-muscle relaxation (rapid bronchodilation) vs inhaled corticosteroids (anti-inflammatory controller, slow). Cross-link the cell-receptor signaling (Gs/cAMP) diagram."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Anchor on timing: improvement in MINUTES = smooth-muscle relaxation (beta-2 agonist), not anti-inflammatory action (steroids, days). The rescue inhaler changes airway tone."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on bronchodilation, beta-2 agonist, cAMP, peak expiratory flow, smooth-muscle tone, corticosteroid mechanism? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Airway inflammation (A) is the steroid target — true in asthma but SLOW. The rapid peak-flow gain is bronchodilation (smooth-muscle tone), so C."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Right answer (C). Keep the split: fast relief = beta-2 agonist (relax smooth muscle); long-term control = inhaled corticosteroid (reduce inflammation)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Rapid airflow improvement in asthma — mechanism",
+      "back": "Beta-2 agonist relaxes bronchiolar smooth muscle (↓ tone)"
+    },
+    {
+      "front": "Asthma rescue drug",
+      "back": "Short-acting beta-2 agonist (albuterol)"
+    },
+    {
+      "front": "Beta-2 agonist signaling",
+      "back": "Gs → ↑ cAMP → smooth-muscle relaxation"
+    },
+    {
+      "front": "Asthma controller (anti-inflammatory)",
+      "back": "Inhaled corticosteroid (slow, transcription)"
+    },
+    {
+      "front": "Hand-held airflow device",
+      "back": "Peak flow meter (peak expiratory flow rate)"
+    },
+    {
+      "front": "Corticosteroid + surfactant",
+      "back": "Stimulate fetal surfactant (prevent neonatal RDS)"
+    },
+    {
+      "front": "Pulmonary vascular resistance drugs",
+      "back": "Endothelin antagonists, PDE-5 inhibitors, prostacyclins (PAH)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Beta-2 agonists / asthma",
+      "detail": "Pharmacology > Respiratory: SABA (albuterol) bronchodilation via cAMP, LABA, vs inhaled corticosteroids; stepwise asthma therapy.",
+      "location": "Pharmacology > Respiratory: SABA (albuterol) bronchodilation via cAMP, LABA, vs inhaled corticosteroids; stepwise asthma therapy."
+    },
+    {
+      "tag": "stem",
+      "topic": "Asthma pathophysiology",
+      "detail": "Pulm: bronchoconstriction + inflammation, reversible airflow obstruction, peak flow/spirometry.",
+      "location": "Pulm: bronchoconstriction + inflammation, reversible airflow obstruction, peak flow/spirometry."
+    },
+    {
+      "tag": "options",
+      "topic": "Respiratory drug targets",
+      "detail": "Pharm: inflammation (steroids), smooth-muscle tone (beta-2 agonists/antimuscarinics), surfactant, PAH vasodilators.",
+      "location": "Pharm: inflammation (steroids), smooth-muscle tone (beta-2 agonists/antimuscarinics), surfactant, PAH vasodilators."
+    }
+  ],
+  "memoryHook": "Puffer works in minutes → it RELAXED the airway muscle (beta-2 → cAMP). Steroids fix inflammation later; the quick fix is smooth-muscle tone.",
+  "stem": [
+    {
+      "text": "An 8-year-old girl is brought to the emergency department due to worsening shortness of breath and chest tightness for the past 2 hours. On physical examination, the patient speaks in short sentences. Lung auscultation reveals "
+    },
+    {
+      "text": "diffuse wheezing",
+      "clue": true,
+      "type": "red",
+      "note": "Acute dyspnea, chest tightness, and diffuse wheezing in a child = an asthma exacerbation from airway smooth-muscle bronchoconstriction. The reversible airflow obstruction is the target of a bronchodilator."
+    },
+    {
+      "text": ". During the evaluation, the patient is instructed to take a deep breath and blow as hard as possible into the mouthpiece of a hand-held device. The measured "
+    },
+    {
+      "text": "airflow rate is significantly lower than expected",
+      "clue": true,
+      "type": "blue",
+      "note": "A low peak expiratory flow (the hand-held device is a peak flow meter) quantifies airflow obstruction. It sets up the before/after comparison that defines reversibility."
+    },
+    {
+      "text": ". Treatment with an inhaled medication is begun. A repeat evaluation several minutes later shows an "
+    },
+    {
+      "text": "increase in the airflow rate",
+      "clue": true,
+      "type": "green",
+      "note": "Rapid improvement in airflow within minutes of an inhaled drug = bronchodilation by a short-acting beta-2 agonist (albuterol). Beta-2 agonists relax BRONCHIOLAR SMOOTH MUSCLE (via cAMP), reducing airway tone and obstruction."
+    },
+    {
+      "text": ". The administered medication most likely affected which of the following to produce the observed finding in this patient?"
+    }
+  ]
+}

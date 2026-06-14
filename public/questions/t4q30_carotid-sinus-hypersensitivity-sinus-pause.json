@@ -1,0 +1,207 @@
+{
+  "id": "q140",
+  "item": 140,
+  "qid": "19561",
+  "title": "Carotid sinus hypersensitivity: sinus pause",
+  "system": "Cardiology",
+  "topic": "Syncope / autonomic",
+  "correct": "D",
+  "yourAnswer": "C",
+  "percentCorrect": 68,
+  "vignette": "A 72-year-old man comes to the clinic due to episodic lightheadedness. The episodes typically occur in the morning when the patient adjusts his shirt collar or tightens his tie and he briefly feels like he is going to pass out. The patient had a thyroidectomy 5 years ago for a large benign tumor. He also has hypertension and takes amlodipine. Blood pressure is 135/78 mm Hg and pulse is 78/min. Physical examination reveals no heart murmurs or carotid bruits. ECG shows normal sinus rhythm. The patient is given an ambulatory ECG monitoring device. During symptomatic episodes, the device is most likely to show which of the following?",
+  "clues": [
+    {
+      "text": "episodic lightheadedness",
+      "type": "blue",
+      "note": "Episodic presyncope (near-fainting) suggests a transient drop in cerebral perfusion. The trigger pattern that follows localizes the cause to the carotid sinus reflex."
+    },
+    {
+      "text": "when the patient adjusts his shirt collar or tightens his tie",
+      "type": "red",
+      "note": "Symptoms provoked by neck/collar pressure are pathognomonic for carotid sinus hypersensitivity: mechanical stimulation of overly sensitive carotid baroreceptors triggers an exaggerated vagal reflex."
+    },
+    {
+      "text": "thyroidectomy 5 years ago",
+      "type": "orange",
+      "note": "Prior neck surgery (and carotid atherosclerosis in an elderly man) are risk factors for carotid sinus hypersensitivity, as scarring/manipulation can sensitize the baroreceptor reflex."
+    },
+    {
+      "text": "no heart murmurs or carotid bruits",
+      "type": "blue",
+      "note": "Absence of murmurs/bruits argues against structural valvular disease or significant carotid stenosis as the cause, supporting a reflex (neurally mediated) mechanism."
+    }
+  ],
+  "whatMatters": "Presyncope triggered by collar/tie pressure in an elderly man with prior neck surgery = carotid sinus hypersensitivity. The exaggerated vagal response causes a marked sinus pause (and/or AV block) during episodes - answer D.",
+  "strategy": "When neck pressure triggers near-syncope, think carotid sinus hypersensitivity: a cardioinhibitory vagal surge produces transient sinus pause/bradycardia (and a vasodepressor drop in BP). Expect the monitor to capture a SINUS PAUSE during symptoms, not a tachyarrhythmia.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Atrial fibrillation",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Mobitz type II second-degree heart block",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Paroxysmal supraventricular tachycardia",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Sinus pause",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Ventricular tachycardia",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "atrial fibrillation - a tachyarrhythmia, wrong mechanism",
+      "detail": "WHAT IT IS: irregular atrial tachyarrhythmia. ❌ WHY IT FAILS: the trigger is vagal (collar pressure) causing a PAUSE/bradycardia, not a rapid irregular rhythm; AF wouldn't be provoked by neck pressure. ✅ Correct if: irregularly irregular pulse and palpitations unrelated to neck stimulation."
+    },
+    {
+      "letter": "B",
+      "label": "Mobitz II block - structural conduction disease, less linked to neck pressure",
+      "detail": "WHAT IT IS: a His-Purkinje conduction block with dropped beats and risk of progression. ❌ WHY IT FAILS: although advanced AV block can cause syncope, it is not provoked by carotid/collar stimulation; carotid sinus hypersensitivity classically yields sinus pause from vagal output. ✅ Correct if: fixed PR with sudden non-conducted P waves and a wide QRS, independent of neck pressure."
+    },
+    {
+      "letter": "C",
+      "label": "paroxysmal SVT - tachyarrhythmia, wrong trigger",
+      "detail": "WHAT IT IS: a reentrant supraventricular tachycardia. ❌ WHY IT FAILS: vagal maneuvers (including carotid pressure) TERMINATE SVT rather than cause symptoms; the scenario is vagally INDUCED bradycardia/pause. You chose this. ✅ Correct if: sudden palpitations with narrow-complex tachycardia that breaks with vagal maneuvers."
+    },
+    {
+      "letter": "E",
+      "label": "ventricular tachycardia - not neck-pressure triggered",
+      "detail": "WHAT IT IS: a wide-complex ventricular tachyarrhythmia, often with structural heart disease. ❌ WHY IT FAILS: VT causes syncope but isn't provoked by collar pressure; the reflex here is cardioinhibitory (pause). ✅ Correct if: syncope with palpitations, structural/ischemic heart disease, and wide-complex tachycardia on monitor."
+    }
+  ],
+  "reasoning": [
+    "Near-syncope triggered by neck/collar pressure",
+    "Risk factors: elderly, prior neck (thyroid) surgery",
+    "Carotid sinus hypersensitivity -> exaggerated vagal output",
+    "Cardioinhibitory response = sinus pause on monitor -> answer D"
+  ],
+  "mechanism": "In carotid sinus hypersensitivity, baroreceptors in the carotid sinus are abnormally sensitive to mechanical stimulation (e.g., a tight collar, head turning). Stimulation triggers an exaggerated reflex: increased parasympathetic (vagal) output to the SA and AV nodes causes a cardioinhibitory response - a prolonged sinus pause (often >=3 seconds) and/or AV block - while reduced sympathetic tone produces vasodepressor hypotension. The resulting transient cerebral hypoperfusion causes presyncope or syncope. It is most common in elderly men and is associated with carotid atherosclerosis and prior neck surgery. An ambulatory monitor during symptoms typically captures a sinus pause/bradycardia.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Cardiology > Syncope/autonomic: carotid sinus hypersensitivity - neck-pressure-triggered vagal reflex -> cardioinhibitory sinus pause/AV block and/or vasodepressor hypotension; elderly men, prior neck surgery/atherosclerosis; treatment may include pacemaker for cardioinhibitory type."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The trigger (collar/tie) and risk factors point to a vagal reflex; predict the monitor finding from the mechanism (vagus slows the SA node -> pause)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on carotid sinus hypersensitivity, baroreceptor reflex, cardioinhibitory vs vasodepressor, sinus pause, presyncope? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You chose C (PSVT). Carotid/vagal stimulation TERMINATES SVT - it doesn't cause this presyncope. The expected capture is a vagally induced sinus PAUSE."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Anchor: neck pressure -> vagus -> bradycardia/pause. Tachyarrhythmias are the wrong direction."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Near-syncope triggered by collar/tie or head turning",
+      "back": "Carotid sinus hypersensitivity"
+    },
+    {
+      "front": "Carotid sinus hypersensitivity ECG during episode",
+      "back": "Sinus pause (cardioinhibitory) +/- AV block"
+    },
+    {
+      "front": "Two response types in CSH",
+      "back": "Cardioinhibitory (pause/bradycardia) and vasodepressor (hypotension)"
+    },
+    {
+      "front": "Risk factors for CSH",
+      "back": "Elderly men, carotid atherosclerosis, prior neck surgery"
+    },
+    {
+      "front": "Effect of carotid massage on SVT",
+      "back": "Vagal maneuver that TERMINATES SVT (opposite scenario)"
+    },
+    {
+      "front": "Treatment of cardioinhibitory CSH",
+      "back": "Permanent pacemaker (for recurrent symptomatic pauses)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Carotid sinus hypersensitivity",
+      "detail": "Cardiology: baroreceptor reflex, cardioinhibitory/vasodepressor responses, pacemaker.",
+      "location": "Cardiology: baroreceptor reflex, cardioinhibitory/vasodepressor responses, pacemaker."
+    },
+    {
+      "tag": "stem",
+      "topic": "Syncope workup",
+      "detail": "Cards: reflex (neurally mediated) vs cardiac vs orthostatic; ambulatory monitoring.",
+      "location": "Cards: reflex (neurally mediated) vs cardiac vs orthostatic; ambulatory monitoring."
+    },
+    {
+      "tag": "options",
+      "topic": "Brady vs tachyarrhythmias",
+      "detail": "Cards: sinus pause, AV blocks, AF, SVT, VT distinguishing features and triggers.",
+      "location": "Cards: sinus pause, AV blocks, AF, SVT, VT distinguishing features and triggers."
+    }
+  ],
+  "memoryHook": "Tight collar -> tickled carotid -> vagus slams the brakes -> sinus PAUSE. Neck pressure faint = CSH.",
+  "stem": [
+    {
+      "text": "A 72-year-old man comes to the clinic due to "
+    },
+    {
+      "text": "episodic lightheadedness",
+      "clue": true,
+      "type": "blue",
+      "note": "Episodic presyncope (near-fainting) suggests a transient drop in cerebral perfusion. The trigger pattern that follows localizes the cause to the carotid sinus reflex."
+    },
+    {
+      "text": ". The episodes typically occur in the morning "
+    },
+    {
+      "text": "when the patient adjusts his shirt collar or tightens his tie",
+      "clue": true,
+      "type": "red",
+      "note": "Symptoms provoked by neck/collar pressure are pathognomonic for carotid sinus hypersensitivity: mechanical stimulation of overly sensitive carotid baroreceptors triggers an exaggerated vagal reflex."
+    },
+    {
+      "text": " and he briefly feels like he is going to pass out. The patient had a "
+    },
+    {
+      "text": "thyroidectomy 5 years ago",
+      "clue": true,
+      "type": "orange",
+      "note": "Prior neck surgery (and carotid atherosclerosis in an elderly man) are risk factors for carotid sinus hypersensitivity, as scarring/manipulation can sensitize the baroreceptor reflex."
+    },
+    {
+      "text": " for a large benign tumor. He also has hypertension and takes amlodipine. Blood pressure is 135/78 mm Hg and pulse is 78/min. Physical examination reveals "
+    },
+    {
+      "text": "no heart murmurs or carotid bruits",
+      "clue": true,
+      "type": "blue",
+      "note": "Absence of murmurs/bruits argues against structural valvular disease or significant carotid stenosis as the cause, supporting a reflex (neurally mediated) mechanism."
+    },
+    {
+      "text": ". ECG shows normal sinus rhythm. The patient is given an ambulatory ECG monitoring device. During symptomatic episodes, the device is most likely to show which of the following?"
+    }
+  ]
+}

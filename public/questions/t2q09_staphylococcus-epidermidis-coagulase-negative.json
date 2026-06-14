@@ -1,0 +1,225 @@
+{
+  "id": "q38",
+  "item": 38,
+  "qid": "679",
+  "title": "Staphylococcus epidermidis: coagulase-negative",
+  "system": "Microbiology",
+  "topic": "Gram-positive cocci / endocarditis",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 74,
+  "vignette": "A 52-year-old man is hospitalized due to 2 weeks of low-grade fever, malaise, anorexia, and fatigue. The patient has a history of bicuspid aortic valve and underwent aortic valve replacement a year ago. Physical examination reveals a new regurgitation murmur. Blood cultures repeatedly grow gram-positive cocci in clusters, which are identified as Staphylococcus epidermidis. This pathogen most likely demonstrates which of the following characteristics?",
+  "clues": [
+    {
+      "text": "aortic valve replacement a year ago",
+      "type": "orange",
+      "note": "A prosthetic valve is the key risk factor: Staphylococcus epidermidis adheres to and forms biofilm on artificial surfaces, causing prosthetic-valve endocarditis and device infections."
+    },
+    {
+      "text": "new regurgitation murmur",
+      "type": "red",
+      "note": "A new regurgitant murmur plus subacute fever signals infective endocarditis — here on the prosthetic valve. Repeated positive cultures confirm true infection rather than contamination."
+    },
+    {
+      "text": "gram-positive cocci in clusters",
+      "type": "green",
+      "note": "Gram-positive cocci in clusters = Staphylococcus (vs streptococci in chains). Staph are catalase-positive; speciation then uses coagulase."
+    },
+    {
+      "text": "Staphylococcus epidermidis",
+      "type": "blue",
+      "note": "S. epidermidis is a coagulase-NEGATIVE, novobiocin-SENSITIVE skin commensal that infects prosthetic material via biofilm. This identity directly drives the lab-characteristic answer."
+    }
+  ],
+  "whatMatters": "Once the organism is named S. epidermidis, the question is just its lab fingerprint. Staphylococci are catalase-positive; S. epidermidis is coagulase-NEGATIVE (unlike S. aureus) and novobiocin-sensitive — so 'negative coagulase test' is the defining feature.",
+  "strategy": "For 'which characteristic' microbiology stems, run the identification algorithm: gram-positive cocci in clusters → catalase + (Staph) → coagulase splits S. aureus (+) from coagulase-negative staph (S. epidermidis, S. saprophyticus) → novobiocin splits epidermidis (sensitive) from saprophyticus (resistant).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alpha hemolysis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Mannitol fermentation",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Negative catalase test",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Negative coagulase test",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Novobiocin resistance",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Yellow pigment production",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "alpha hemolysis — that's viridans strep",
+      "detail": "WHAT IT IS: alpha (partial/green) hemolysis on blood agar is characteristic of viridans streptococci and S. pneumoniae. ❌ WHY IT FAILS: S. epidermidis is gamma-hemolytic (non-hemolytic), and hemolysis isn't its identifier. ✅ Correct if: the organism were a viridans streptococcus (subacute endocarditis on a native valve after dental work)."
+    },
+    {
+      "letter": "B",
+      "label": "mannitol fermentation — that's S. aureus",
+      "detail": "WHAT IT IS: mannitol fermentation (yellow on mannitol salt agar) is typical of S. aureus. ❌ WHY IT FAILS: S. epidermidis does NOT ferment mannitol; this trait points to aureus, not epidermidis. ✅ Correct if: the organism were S. aureus."
+    },
+    {
+      "letter": "C",
+      "label": "negative catalase — that's streptococci",
+      "detail": "WHAT IT IS: a catalase-NEGATIVE gram-positive coccus is a streptococcus/enterococcus. ❌ WHY IT FAILS: ALL staphylococci (including S. epidermidis) are catalase-POSITIVE; calling it catalase-negative contradicts the genus. ✅ Correct if: the organism were a Streptococcus/Enterococcus."
+    },
+    {
+      "letter": "E",
+      "label": "novobiocin resistance — that's S. saprophyticus",
+      "detail": "WHAT IT IS: novobiocin RESISTANCE distinguishes S. saprophyticus (a cause of UTIs in young women). ❌ WHY IT FAILS: S. epidermidis is novobiocin-SENSITIVE; resistance points to saprophyticus instead. ✅ Correct if: the coagulase-negative staph caused a UTI and was novobiocin-resistant (saprophyticus)."
+    },
+    {
+      "letter": "F",
+      "label": "yellow pigment — that's S. aureus (aureus = gold)",
+      "detail": "WHAT IT IS: a golden-yellow pigment is the namesake of S. aureus ('aureus' = gold). ❌ WHY IT FAILS: S. epidermidis colonies are white, not pigmented; pigment indicates aureus. ✅ Correct if: the organism were S. aureus."
+    }
+  ],
+  "reasoning": [
+    "Subacute prosthetic-valve endocarditis with repeated positive cultures",
+    "Gram-positive cocci in clusters = staphylococci (catalase +)",
+    "Identified as S. epidermidis = coagulase-negative, novobiocin-sensitive",
+    "Defining lab feature = negative coagulase test → answer D"
+  ],
+  "mechanism": "Staphylococcus epidermidis is a low-virulence skin commensal that produces adhesins and a polysaccharide biofilm, letting it colonize prosthetic valves, catheters, and joints. Like all staph it is catalase-positive, but unlike S. aureus it is coagulase-negative (can't clot plasma) and is novobiocin-sensitive. Repeatedly positive cultures plus a prosthetic device shift it from 'contaminant' to true pathogen.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > gram-positive cocci algorithm: catalase (Staph + / Strep −), coagulase (S. aureus + / CoNS −), novobiocin (S. epidermidis sensitive / S. saprophyticus resistant). Note epidermidis = biofilm on prosthetics."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The organism is already named, so the question only wants its position in the identification tree. Recall S. epidermidis = catalase +, coagulase −, novobiocin-sensitive, white, gamma-hemolytic."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on catalase vs coagulase, hemolysis types, novobiocin testing, biofilm, commensal vs contaminant? Tell me which and I'll explain."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Every wrong option is a real staph/strep trait planted on the wrong bug (mannitol/pigment = aureus; catalase−/alpha = strep; novobiocin-R = saprophyticus). Match each test to the species before picking."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "If you mixed up coagulase vs catalase, build a one-line ladder: clusters → catalase → coagulase → novobiocin, and rehearse where each species falls."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Coagulase-negative, novobiocin-sensitive staph on a prosthetic valve",
+      "back": "Staphylococcus epidermidis"
+    },
+    {
+      "front": "Coagulase test result for S. epidermidis",
+      "back": "Negative"
+    },
+    {
+      "front": "Catalase test for all staphylococci",
+      "back": "Positive"
+    },
+    {
+      "front": "Coagulase-positive staph",
+      "back": "Staphylococcus aureus"
+    },
+    {
+      "front": "Novobiocin-resistant CoNS (UTI in young women)",
+      "back": "Staphylococcus saprophyticus"
+    },
+    {
+      "front": "How S. epidermidis infects devices",
+      "back": "Adhesins + biofilm on prosthetic material"
+    },
+    {
+      "front": "Mannitol fermentation / yellow pigment",
+      "back": "S. aureus"
+    },
+    {
+      "front": "Alpha (green) hemolysis",
+      "back": "Viridans streptococci / S. pneumoniae"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Coagulase-negative staphylococci",
+      "detail": "Micro > gram-positive cocci: S. epidermidis (coagulase −, novobiocin-sensitive, biofilm, prosthetic-device/valve infections, common blood-culture contaminant).",
+      "location": "Micro > gram-positive cocci: S. epidermidis (coagulase −, novobiocin-sensitive, biofilm, prosthetic-device/valve infections, common blood-culture contaminant)."
+    },
+    {
+      "tag": "stem",
+      "topic": "Infective endocarditis",
+      "detail": "Cardio/Micro > endocarditis: prosthetic-valve endocarditis (S. epidermidis early; S. aureus), subacute (viridans strep), culture criteria (Duke).",
+      "location": "Cardio/Micro > endocarditis: prosthetic-valve endocarditis (S. epidermidis early; S. aureus), subacute (viridans strep), culture criteria (Duke)."
+    },
+    {
+      "tag": "options",
+      "topic": "Staph/Strep identification",
+      "detail": "Micro > catalase, coagulase, novobiocin, hemolysis, mannitol fermentation — the gram-positive-coccus algorithm distinguishing aureus, epidermidis, saprophyticus, and streptococci.",
+      "location": "Micro > catalase, coagulase, novobiocin, hemolysis, mannitol fermentation — the gram-positive-coccus algorithm distinguishing aureus, epidermidis, saprophyticus, and streptococci."
+    }
+  ],
+  "memoryHook": "epidermidis = skin bug that gloms onto plastic; coagulase-NEGative, novobiocin-NICE (sensitive). aureus is the gold, mannitol-loving, coagulase-positive one.",
+  "stem": [
+    {
+      "text": "A 52-year-old man is hospitalized due to 2 weeks of low-grade fever, malaise, anorexia, and fatigue. The patient has a history of bicuspid aortic valve and underwent "
+    },
+    {
+      "text": "aortic valve replacement a year ago",
+      "clue": true,
+      "type": "orange",
+      "note": "A prosthetic valve is the key risk factor: Staphylococcus epidermidis adheres to and forms biofilm on artificial surfaces, causing prosthetic-valve endocarditis and device infections."
+    },
+    {
+      "text": ". Physical examination reveals a "
+    },
+    {
+      "text": "new regurgitation murmur",
+      "clue": true,
+      "type": "red",
+      "note": "A new regurgitant murmur plus subacute fever signals infective endocarditis — here on the prosthetic valve. Repeated positive cultures confirm true infection rather than contamination."
+    },
+    {
+      "text": ". Blood cultures repeatedly grow "
+    },
+    {
+      "text": "gram-positive cocci in clusters",
+      "clue": true,
+      "type": "green",
+      "note": "Gram-positive cocci in clusters = Staphylococcus (vs streptococci in chains). Staph are catalase-positive; speciation then uses coagulase."
+    },
+    {
+      "text": ", which are identified as "
+    },
+    {
+      "text": "Staphylococcus epidermidis",
+      "clue": true,
+      "type": "blue",
+      "note": "S. epidermidis is a coagulase-NEGATIVE, novobiocin-SENSITIVE skin commensal that infects prosthetic material via biofilm. This identity directly drives the lab-characteristic answer."
+    },
+    {
+      "text": ". This pathogen most likely demonstrates which of the following characteristics?"
+    }
+  ]
+}
