@@ -80,7 +80,7 @@ export function PopCenter({ onClose }) {
 }
 
 // Auto-checking toast stack rendered in the corner.
-export default function ReminderToasts({ limit = 3 }) {
+export default function ReminderToasts({ limit = 2 }) {
   const [reminders, setReminders] = useState([]);
 
   const refresh = useCallback(() => {

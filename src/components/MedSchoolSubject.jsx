@@ -46,11 +46,35 @@ function StudyNotesModal({ htmlFile, topicTitle, onClose }) {
 
 /* ── Review Tab ── */
 const RATINGS = [
-  { key: 0, emoji: "❌", label: "Blank",  sub: "No recall",   color: "#dc2626", bg: "#fef2f2", days: 1  },
-  { key: 2, emoji: "😐", label: "Fuzzy",  sub: "Bits missing", color: "#f97316", bg: "#fff7ed", days: 2  },
-  { key: 4, emoji: "✅", label: "Know it", sub: "Solid",        color: "#16a34a", bg: "#f0fdf4", days: 7  },
-  { key: 5, emoji: "⭐", label: "Nailed",  sub: "Effortless",   color: "#4f46e5", bg: "#eef2ff", days: 14 },
+  { key: 1, label: "Blank",   sub: "No recall",    color: "#dc2626", bg: "#fef2f2", days: 1  },
+  { key: 2, label: "Fuzzy",   sub: "Bits missing", color: "#f97316", bg: "#fff7ed", days: 2  },
+  { key: 3, label: "Okay",    sub: "Getting there", color: "#eab308", bg: "#fefce8", days: 4  },
+  { key: 4, label: "Know it", sub: "Solid",        color: "#16a34a", bg: "#f0fdf4", days: 7  },
+  { key: 5, label: "Nailed",  sub: "Effortless",   color: "#4f46e5", bg: "#eef2ff", days: 14 },
 ];
+
+/* Shared 1–5 circle ranking meter (colored fill) */
+function CircleRank({ value, onPick, className = "" }) {
+  const v = value || 0;
+  const active = RATINGS.find(r => r.key === v);
+  const color = active ? active.color : undefined;
+  return (
+    <span className={`circle-rank ${className}`} onClick={e => e.stopPropagation()}>
+      {RATINGS.map(r => {
+        const on = r.key <= v;
+        const props = {
+          key: r.key,
+          className: `cr-dot${on ? " on" : ""}`,
+          style: on ? { color } : undefined,
+          title: onPick ? `${r.label} · review +${r.days}d` : r.label,
+        };
+        return onPick
+          ? <button type="button" {...props} onClick={() => onPick(r)}>{on ? "●" : "○"}</button>
+          : <span {...props}>{on ? "●" : "○"}</span>;
+      })}
+    </span>
+  );
+}
 
 const SECTION_COLORS = {
   "External Ear":        "#f97316",
@@ -276,9 +300,9 @@ function ReviewTab({ subject, update }) {
           <div className="rv-topic-title">{topic.topic}</div>
           {prevRs && (
             <div className="rv-topic-prev">
-              {prevRs.confidence >= 5 ? "⭐ Previously: Mastered" :
-               prevRs.confidence >= 4 ? "✅ Previously: Know it" :
-               prevRs.confidence >= 2 ? "😐 Previously: Fuzzy" : "❌ Previously: Blank"}
+              <span style={{ marginRight: 6 }}>Previously:</span>
+              <CircleRank value={prevRs.confidence} />
+              <span style={{ marginLeft: 6 }}>{confMeta(prevRs.confidence).label}</span>
               {" · "}{prevRs.reviewCount}× reviewed
             </div>
           )}
@@ -329,7 +353,7 @@ function ReviewTab({ subject, update }) {
             <button key={r.key} className={`rv-rate-btn${lastRating === r.key ? " selected" : ""}`}
               style={{ "--rb": r.color, "--rbb": r.bg }}
               onClick={() => rate(r)}>
-              <span className="rv-rate-emoji">{r.emoji}</span>
+              <span className="rv-rate-emoji"><CircleRank value={r.key} /></span>
               <span className="rv-rate-label">{r.label}</span>
               <span className="rv-rate-sub">{r.sub}</span>
               <span className="rv-rate-interval">+{r.days}d</span>
@@ -652,26 +676,16 @@ function ExamsTab({ subject, update }) {
 
 /* ── Confidence helpers (shared with Review tab) ── */
 function confMeta(conf) {
-  if (conf == null)  return { emoji: "·",  label: "Not started", color: "#94a3b8", bg: "#f1f5f9" };
-  if (conf >= 5)     return { emoji: "⭐", label: "Mastered",    color: "#4f46e5", bg: "#eef2ff" };
-  if (conf >= 4)     return { emoji: "✅", label: "Know it",      color: "#16a34a", bg: "#f0fdf4" };
-  if (conf >= 2)     return { emoji: "😐", label: "Fuzzy",        color: "#f97316", bg: "#fff7ed" };
-  return                    { emoji: "❌", label: "Blank",        color: "#dc2626", bg: "#fef2f2" };
+  if (conf == null || conf <= 0) return { char: "·", label: "Not started", color: "#94a3b8", bg: "#f1f5f9" };
+  const r = RATINGS.find(x => x.key === Math.round(conf)) || RATINGS[RATINGS.length - 1];
+  return { char: "●", label: r.label, color: r.color, bg: r.bg };
 }
 
 /* Inline rating pills used in the syllabus list */
 function InlineRater({ current, onRate }) {
   return (
     <div className="ms-inline-rate" onClick={e => e.stopPropagation()}>
-      {RATINGS.map(r => (
-        <button key={r.key}
-          className={`ms-ir-btn${current === r.key ? " active" : ""}`}
-          style={{ "--rb": r.color, "--rbb": r.bg }}
-          title={`${r.label} · review +${r.days}d`}
-          onClick={() => onRate(r)}>
-          {r.emoji}
-        </button>
-      ))}
+      <CircleRank value={current} onPick={onRate} />
     </div>
   );
 }
@@ -834,7 +848,7 @@ function SyllabusTab({ subject, update }) {
                 return (
                   <div key={t.id} className="ms-syl-item3">
                     <span className="ms-conf-dot" style={{ background: cm.bg, color: cm.color, borderColor: cm.color + "55" }} title={cm.label}>
-                      {cm.emoji}
+                      {cm.char}
                     </span>
                     <span className="ms-syl-topic3">
                       {t.num ? <span className="ms-syl-num">#{t.num}</span> : null}

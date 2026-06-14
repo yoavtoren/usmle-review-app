@@ -74,17 +74,21 @@ function ProgressRing({ pct, color = "var(--accent)", size = 110 }) {
 }
 
 function DifficultyStars({ value, onChange }) {
+  const color = DIFF_COLORS[value || 0];
   return (
     <span className="fa-diff-stars" onClick={e => e.stopPropagation()}>
-      {[1, 2, 3, 4, 5].map(i => (
-        <button
-          key={i}
-          className={`fa-diff-star${i <= (value || 0) ? " fa-diff-star-on" : ""}`}
-          style={i <= (value || 0) ? { color: DIFF_COLORS[i] } : {}}
-          onClick={e => { e.stopPropagation(); onChange(i === value ? 0 : i); }}
-          title={`Difficulty ${i}`}
-        >★</button>
-      ))}
+      {[1, 2, 3, 4, 5].map(i => {
+        const on = i <= (value || 0);
+        return (
+          <button
+            key={i}
+            className={`fa-diff-star${on ? " fa-diff-star-on" : ""}`}
+            style={on ? { color } : {}}
+            onClick={e => { e.stopPropagation(); onChange(i === value ? 0 : i); }}
+            title={`Difficulty ${i}`}
+          >{on ? "●" : "○"}</button>
+        );
+      })}
     </span>
   );
 }

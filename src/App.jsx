@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import WelcomeScreen from "./components/WelcomeScreen.jsx";
 import TestDashboard from "./components/TestDashboard.jsx";
 import TestReview from "./components/TestReview.jsx";
@@ -7,13 +7,15 @@ import FADashboard from "./components/FADashboard.jsx";
 import FATracker from "./components/FATracker.jsx";
 import Timeline from "./components/Timeline.jsx";
 import AIMSDashboard from "./components/AIMSDashboard.jsx";
-import NavBar from "./components/NavBar.jsx";
+import Sidebar from "./components/Sidebar.jsx";
 import ReminderToasts, { PopCenter } from "./components/ReminderToasts.jsx";
+import EmailCenter from "./components/EmailCenter.jsx";
 import { loadProgress, getCard, isDueRespectingMode, getStreak } from "./lib/storage.js";
 import { getDueCount } from "./lib/reminderEngine.js";
 import { generateICS, downloadICS } from "./lib/calendarExport.js";
 import { loadTimelineEvents } from "./lib/timelineData.js";
 import { loadAllWorkstreamTasks } from "./lib/workstreamData.js";
+import { maybeSendDailyDigest } from "./lib/emailService.js";
 import WorkstreamPage from "./components/WorkstreamPage.jsx";
 import HomePage from "./components/HomePage.jsx";
 import MedSchoolHub from "./components/MedSchoolHub.jsx";
@@ -64,14 +66,21 @@ function useAppData() {
 export default function App() {
   const { testStats, faStats, questions } = useAppData();
   const nav = useNavigate();
+  const loc = useLocation();
 
   const [dueCount, setDueCount]     = useState(getDueCount);
   const [showPopCenter, setShowPopCenter] = useState(false);
+  const [showMail, setShowMail]     = useState(false);
 
   // Refresh bell count every 60s
   useEffect(() => {
     const id = setInterval(() => setDueCount(getDueCount()), 60_000);
     return () => clearInterval(id);
+  }, []);
+
+  // Fire the daily email digest once per day if the user enabled it.
+  useEffect(() => {
+    maybeSendDailyDigest().catch(() => {});
   }, []);
 
   function handleExportICS() {
@@ -80,51 +89,58 @@ export default function App() {
   }
 
   return (
-    <>
-      <NavBar
+    <div className="app-shell">
+      <Sidebar
         dueCount={dueCount}
         onBellClick={() => setShowPopCenter(true)}
+        onMailClick={() => setShowMail(true)}
       />
-      <ReminderToasts />
-      {showPopCenter && <PopCenter onClose={() => setShowPopCenter(false)} />}
 
-      <Routes>
-        <Route path="/" element={
-          <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} />
-        } />
-        <Route path="/step1" element={
-          <WelcomeScreen
-            onNav={nav}
-            testStats={testStats}
-            faStats={faStats}
-            streak={getStreak()}
-            questions={questions}
-          />
-        } />
-        <Route path="/tests" element={
-          <TestDashboard onBack={() => nav("/step1")} onStudy={(deckFile, block) => nav("/tests/review", { state: { deckFile, block } })} />
-        } />
-        <Route path="/tests/review" element={
-          <TestReview onBack={() => nav("/tests")} />
-        } />
-        <Route path="/fa" element={
-          <FADashboard onBack={() => nav("/step1")} onTrack={() => nav("/fa/study")} />
-        } />
-        <Route path="/fa/study" element={
-          <FATracker onBack={() => nav("/fa")} />
-        } />
-        <Route path="/timeline" element={
-          <Timeline onExportICS={handleExportICS} />
-        } />
-        <Route path="/aims"     element={<AIMSDashboard />} />
-        <Route path="/medcross"  element={<WorkstreamPage categoryId="medcross" />} />
-        <Route path="/selfcare"  element={<WorkstreamPage categoryId="selfcare" />} />
-        <Route path="/medschool" element={<MedSchoolHub />} />
-        <Route path="/medschool/subject/:subjectId" element={<MedSchoolSubject />} />
-        <Route path="*" element={
-          <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} />
-        } />
-      </Routes>
-    </>
+      <main className="app-main">
+        <ReminderToasts />
+        {showPopCenter && <PopCenter onClose={() => setShowPopCenter(false)} />}
+        {showMail && <EmailCenter onClose={() => setShowMail(false)} testStats={testStats} faStats={faStats} />}
+
+        <div className="route-fade" key={loc.pathname}>
+          <Routes>
+            <Route path="/" element={
+              <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} />
+            } />
+            <Route path="/step1" element={
+              <WelcomeScreen
+                onNav={nav}
+                testStats={testStats}
+                faStats={faStats}
+                streak={getStreak()}
+                questions={questions}
+              />
+            } />
+            <Route path="/tests" element={
+              <TestDashboard onBack={() => nav("/step1")} onStudy={(deckFile, block) => nav("/tests/review", { state: { deckFile, block } })} />
+            } />
+            <Route path="/tests/review" element={
+              <TestReview onBack={() => nav("/tests")} />
+            } />
+            <Route path="/fa" element={
+              <FADashboard onBack={() => nav("/step1")} onTrack={() => nav("/fa/study")} />
+            } />
+            <Route path="/fa/study" element={
+              <FATracker onBack={() => nav("/fa")} />
+            } />
+            <Route path="/timeline" element={
+              <Timeline onExportICS={handleExportICS} />
+            } />
+            <Route path="/aims"     element={<AIMSDashboard />} />
+            <Route path="/medcross"  element={<WorkstreamPage categoryId="medcross" />} />
+            <Route path="/selfcare"  element={<WorkstreamPage categoryId="selfcare" />} />
+            <Route path="/medschool" element={<MedSchoolHub />} />
+            <Route path="/medschool/subject/:subjectId" element={<MedSchoolSubject />} />
+            <Route path="*" element={
+              <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} />
+            } />
+          </Routes>
+        </div>
+      </main>
+    </div>
   );
 }
