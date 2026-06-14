@@ -222,6 +222,17 @@ export function saveTasks(tasks) {
   localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
 }
 
+// ── General tasks & events (dedicated task area) ─────────────────────────────
+const GTASKS_KEY = "general-tasks-v1";
+
+export function loadGeneralTasks() {
+  try { return JSON.parse(localStorage.getItem(GTASKS_KEY)) || []; }
+  catch { return []; }
+}
+export function saveGeneralTasks(tasks) {
+  localStorage.setItem(GTASKS_KEY, JSON.stringify(tasks));
+}
+
 // ── FA topic manual tracking ──────────────────────────────────────────────────
 const FA_TOPICS_KEY = "fa-topics-v2";
 

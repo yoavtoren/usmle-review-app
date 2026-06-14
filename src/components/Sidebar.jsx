@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   IconHome, IconDash, IconClipboard, IconBook, IconCap, IconCalendar,
-  IconTarget, IconPulse, IconHeart, IconBell, IconMail, IconChevron,
+  IconTarget, IconPulse, IconHeart, IconBell, IconMail, IconChevron, IconCheck,
 } from "./icons.jsx";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
 
@@ -78,6 +78,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
     {
       label: "ניהול",
       items: [
+        { to: "/tasks", label: "משימות", Icon: IconCheck },
         { to: "/timeline", label: "ציר זמן", Icon: IconCalendar },
         { to: "/aims", label: "AIMS", Icon: IconTarget, count: stats.aimsOver, alert: stats.aimsOver > 0 },
         { to: "/medcross", label: "MedCross", Icon: IconPulse, count: stats.medcrossOver, alert: stats.medcrossOver > 0 },
