@@ -520,7 +520,27 @@ export default function Timeline() {
   function toggleEventDone(id)  { const n = { ...eventsDone, [id]: !eventsDone[id] }; setEventsDone(n); saveEventsDone(n); }
   function toggleFront(f)       { setActiveF(p => { const n = new Set(p); n.has(f) ? n.delete(f) : n.add(f); return n; }); }
   function toggleType(t)        { setActiveT(p => { const n = new Set(p); n.has(t) ? n.delete(t) : n.add(t); return n; }); }
-  function handleDelete(id)     { setTlEvents(prev => prev.filter(ev => ev.id !== id)); }
+  function handleDelete(id) {
+    if (id.startsWith("ws-derived-")) {
+      const wsId = id.replace("ws-derived-", "");
+      setWsTasksAll(prev => {
+        const next = prev.filter(t => t.id !== wsId);
+        // persist to the right category store
+        const task = prev.find(t => t.id === wsId);
+        if (task?.category) {
+          const catTasks = next.filter(t => t.category === task.category);
+          saveCategoryTasks(task.category, catTasks);
+        }
+        return next;
+      });
+    } else {
+      setTlEvents(prev => {
+        const next = prev.filter(ev => ev.id !== id);
+        saveTimelineEvents(next);
+        return next;
+      });
+    }
+  }
   function handleAdd(ev)        { setTlEvents(prev => [...prev, ev]); setShowAdd(false); }
   function handleUpdate(id, patch) { setTlEvents(prev => prev.map(ev => ev.id === id ? { ...ev, ...patch } : ev)); }
 
