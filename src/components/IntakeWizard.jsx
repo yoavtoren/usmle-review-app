@@ -1,28 +1,56 @@
-import { useState, useEffect } from "react";
-import { FA_SECTIONS, RESOURCE_GUIDANCE, SUBJECTS, SYSTEMS, makeFASectionId } from "../lib/intakeData.js";
+import { useState, useEffect, useRef } from "react";
+import { FA_SECTIONS, RESOURCE_GUIDANCE, SUBJECTS, SYSTEMS, makeFASectionId, inferTags } from "../lib/intakeData.js";
 
-function buildActions(form, questionId) {
+function buildActions(form, questionId, qFull) {
   const { subject, system, faChapter, faSubsection, outcome, whyMissed, mechanismNote } = form;
   const sid = makeFASectionId(faChapter, faSubsection);
-  const topic = [subject, system].filter(Boolean).join(" — ");
+  const topic = [subject, system].filter(Boolean).join(" — ") || qFull?.topic || qFull?.title || "this topic";
   const stamp = Date.now();
   const tasks = [];
   let schedule = "unchanged";
 
-  if (outcome === "incorrect") {
-    if (whyMissed === "A") {
+  // Content pulled straight from the question's own data (its HTML/JSON).
+  const faLocs   = Array.isArray(qFull?.firstAid) ? qFull.firstAid : [];
+  const keywords = Array.isArray(qFull?.keywords) ? qFull.keywords : [];
+  const ankiLabel = qFull?.topic || topic;
+
+  // One FA-reading task per First-Aid location the question points to.
+  // Falls back to the manually-picked section only when the question has none.
+  function pushFAReadTasks(prefix) {
+    if (faLocs.length) {
+      faLocs.forEach((fa, i) => tasks.push({
+        id: `t-${stamp}-fa${i}`, type: "read-fa", priority: "high", subject, system,
+        text: `📖 Read FA: ${fa.location || fa.topic}`,
+        body: `${fa.topic}${fa.location ? ` — ${fa.location}` : ""}`,
+        linkedQuestionId: questionId, linkedFaSectionId: sid || undefined,
+        done: false, createdAt: stamp,
+      }));
+    } else if (sid) {
       tasks.push({
-        id: `t-${stamp}-a`, type: "anki-todo", priority: "high", subject, system,
-        text: `🃏 Anki: make/find card — ${topic}`,
-        body: mechanismNote || "Locate or make the AnKing card for this atomic fact.",
-        linkedQuestionId: questionId, done: false, createdAt: stamp,
-      });
-      if (sid) tasks.push({
         id: `t-${stamp}-fa`, type: "read-fa", priority: "high", subject, system,
         text: `📖 Read FA: ${sid}`,
-        body: `First Aid — ${topic}`,
+        body: `${prefix} — ${topic}`,
         linkedQuestionId: questionId, linkedFaSectionId: sid, done: false, createdAt: stamp,
       });
+    }
+  }
+
+  if (outcome === "incorrect") {
+    if (whyMissed === "A") {
+      // Anki task carries the actual flashcards from the question.
+      const cardCount = keywords.length;
+      tasks.push({
+        id: `t-${stamp}-a`, type: "anki-todo", priority: "high", subject, system,
+        text: cardCount
+          ? `🃏 Anki: ${ankiLabel} — ${cardCount} card${cardCount > 1 ? "s" : ""}`
+          : `🃏 Anki: make/find card — ${topic}`,
+        body: cardCount
+          ? keywords.map(k => `• ${k.front} → ${k.back}`).join("\n")
+          : (mechanismNote || "Locate or make the AnKing card for this atomic fact."),
+        cards: cardCount ? keywords : undefined,
+        linkedQuestionId: questionId, done: false, createdAt: stamp,
+      });
+      pushFAReadTasks("First Aid");
       schedule = "again";
     } else if (whyMissed === "B") {
       tasks.push({
@@ -40,12 +68,7 @@ function buildActions(form, questionId) {
         body: resources.join(" · "),
         linkedQuestionId: questionId, done: false, createdAt: stamp,
       });
-      if (sid) tasks.push({
-        id: `t-${stamp}-cfa`, type: "read-fa", priority: "high", subject, system,
-        text: `📖 Read FA: ${sid}`,
-        body: `Understand mechanism — ${topic}`,
-        linkedQuestionId: questionId, linkedFaSectionId: sid, done: false, createdAt: stamp,
-      });
+      pushFAReadTasks("Understand mechanism");
       schedule = "again";
     } else if (whyMissed === "D") {
       schedule = "again"; // no tasks, just log
@@ -76,11 +99,11 @@ const SCHEDULE_LABELS = {
   unchanged: "📌 Logged.",
 };
 
-export default function IntakeWizard({ questionId, questionMeta, existingIntake, onComplete, onDismiss }) {
+export default function IntakeWizard({ questionId, questionMeta, questionFull, existingIntake, onComplete, onDismiss }) {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState({
     subject:       existingIntake?.subject       || "",
-    system:        existingIntake?.system        || questionMeta?.system || "",
+    system:        existingIntake?.system        || "",
     faChapter:     existingIntake?.faChapter     || "",
     faSubsection:  existingIntake?.faSubsection  || "",
     uworldQId:     existingIntake?.uworldQId     || "",
@@ -89,10 +112,26 @@ export default function IntakeWizard({ questionId, questionMeta, existingIntake,
     mechanismNote: existingIntake?.mechanismNote || "",
   });
   const [actions, setActions] = useState(null);
+  const [autoTagged, setAutoTagged] = useState(false);
+
+  // Auto-tag from the question itself once its data loads. If both subject and
+  // system are confidently inferred, skip the manual tag step entirely.
+  const autoRef = useRef(false);
+  useEffect(() => {
+    if (autoRef.current || existingIntake) return;
+    if (!questionFull) return;
+    autoRef.current = true;
+    const t = inferTags(questionFull);
+    if (!t.subject && !t.system) return;
+    setForm(f => ({ ...f, subject: f.subject || t.subject, system: f.system || t.system }));
+    setAutoTagged(true);
+    if (t.confident) setStep(s => (s === 0 ? 1 : s));
+  }, [questionFull, existingIntake]);
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }));
   const selectedChapter = FA_SECTIONS.find(f => f.chapter === form.faChapter);
-  const canNext0 = form.subject && form.system;
+  // Subject/system are now optional — auto-tagged from the question when possible.
+  const canNext0 = true;
 
   function pickOutcome(o) {
     setForm(f => ({ ...f, outcome: o, whyMissed: "" }));
@@ -106,7 +145,7 @@ export default function IntakeWizard({ questionId, questionMeta, existingIntake,
     if (needsNote) {
       setTimeout(() => setStep(3), 130);
     } else {
-      const a = buildActions(updated, questionId);
+      const a = buildActions(updated, questionId, questionFull);
       setActions(a);
       setTimeout(() => setStep(4), 130);
     }
@@ -115,7 +154,7 @@ export default function IntakeWizard({ questionId, questionMeta, existingIntake,
   function next() {
     if (step === 0 && canNext0) { setStep(1); return; }
     if (step === 3) {
-      const a = buildActions(form, questionId);
+      const a = buildActions(form, questionId, questionFull);
       setActions(a);
       setStep(4);
     }
@@ -173,18 +212,22 @@ export default function IntakeWizard({ questionId, questionMeta, existingIntake,
           {step === 0 && (
             <div className="intake-step">
               <h3 className="intake-step-h">Tag this question</h3>
-              <p className="intake-step-p">Takes 10 seconds. This routes everything downstream.</p>
+              <p className="intake-step-p">
+                {autoTagged
+                  ? "✦ Auto-tagged from the question — adjust if needed, or just continue."
+                  : "Optional — auto-filled from the question when possible. This routes weak-spot tracking."}
+              </p>
 
               <div className="intake-row-2">
                 <div className="intake-field">
-                  <label className="intake-lbl">Subject <span className="i-req">*</span></label>
+                  <label className="intake-lbl">Subject <span className="i-opt">(auto)</span></label>
                   <select className="intake-sel" value={form.subject} onChange={e => set("subject", e.target.value)}>
                     <option value="">Select…</option>
                     {SUBJECTS.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
                 </div>
                 <div className="intake-field">
-                  <label className="intake-lbl">System <span className="i-req">*</span></label>
+                  <label className="intake-lbl">System <span className="i-opt">(auto)</span></label>
                   <select className="intake-sel" value={form.system} onChange={e => set("system", e.target.value)}>
                     <option value="">Select…</option>
                     {SYSTEMS.map(s => <option key={s} value={s}>{s}</option>)}

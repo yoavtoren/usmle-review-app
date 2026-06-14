@@ -171,3 +171,49 @@ export function makeFASectionId(chapter, subsection) {
   if (!chapter) return null;
   return subsection ? `${chapter} › ${subsection}` : chapter;
 }
+
+// ── Auto-tagging ────────────────────────────────────────────────────────────
+// Map a question's free-form `system` / `topic` strings onto the wizard's
+// Subject + System taxonomy, so the "Tag this question" step can be skipped.
+const SUBJECT_SYNONYMS = {
+  Pharm:      ["pharm", "pharmacology"],
+  Biochem:    ["biochem", "biochemistry", "molecular biology", "cell biology", "genetics", "nutrition"],
+  Immuno:     ["immuno", "immunology"],
+  Micro:      ["micro", "microbiology", "id", "infectious"],
+  Path:       ["path", "pathology", "oncology", "onc"],
+  Physio:     ["physio", "physiology"],
+  Behavioral: ["ethics", "communication", "behavioral", "patient safety", "health systems", "public health"],
+  Biostats:   ["biostat", "biostatistics", "statistics", "epidemiology"],
+  Psych:      ["psych", "psychiatry"],
+  Anatomy:    ["anatomy", "embryology", "neuroanatomy", "histology"],
+};
+const SYSTEM_SYNONYMS = {
+  Cardio:     ["cardio", "cardiology", "cardiovascular"],
+  Resp:       ["pulmonary", "pulmonology", "respiratory", "resp", "lung"],
+  GI:         ["gi", "gastrointestinal", "hepat", "liver"],
+  Renal:      ["renal", "nephro", "kidney"],
+  Endo:       ["endo", "endocrine", "thyroid"],
+  Repro:      ["repro", "reproductive", "obgyn", "gynec"],
+  "Heme/Onc": ["heme", "hematology", "oncology", "onc", "blood"],
+  "MSK/Skin": ["musculoskeletal", "msk", "dermatology", "derm", "skin", "rheumatology", "rheum", "ortho"],
+  Neuro:      ["neuro", "neurology", "neuroanatomy", "ophtho", "ophthalmology", "special senses"],
+  General:    ["ethics", "communication", "patient safety", "health systems", "biostat",
+               "pediatrics", "public health", "general", "nutrition"],
+};
+
+function matchToken(tokens, synonyms) {
+  for (const [key, words] of Object.entries(synonyms)) {
+    if (tokens.some(tok => words.some(w => tok === w || tok.includes(w)))) return key;
+  }
+  return "";
+}
+
+// Returns { subject, system, confident } inferred from the question.
+export function inferTags(qFull) {
+  if (!qFull) return { subject: "", system: "", confident: false };
+  const raw = `${qFull.system || ""} / ${qFull.topic || ""}`.toLowerCase();
+  const tokens = raw.split(/[\/,>·—–-]| and | & |\s{2,}/).map(t => t.trim()).filter(Boolean);
+  const subject = matchToken(tokens, SUBJECT_SYNONYMS);
+  const system  = matchToken(tokens, SYSTEM_SYNONYMS);
+  return { subject, system, confident: Boolean(subject && system) };
+}

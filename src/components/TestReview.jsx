@@ -22,9 +22,24 @@ export default function TestReview({ onBack }) {
   const [query, setQuery]           = useState("");
   const [progress, setProgress]     = useState(loadProgress);
   const [wizardId, setWizardId]     = useState(null);
+  const [wizardFull, setWizardFull] = useState(null); // full question JSON (firstAid + keywords)
   const [noteShown, setNoteShown]   = useState(false);
 
   useEffect(() => { setNoteShown(false); }, [selectedId]);
+
+  // Load the full question JSON for the wizard so FA + Anki tasks can be
+  // auto-built from the question's own content.
+  useEffect(() => {
+    if (!wizardId) { setWizardFull(null); return; }
+    const meta = deck?.questions.find(q => q.id === wizardId);
+    if (!meta?.file) { setWizardFull(null); return; }
+    let live = true;
+    fetch(`${BASE}questions/${meta.file}`)
+      .then(r => r.json())
+      .then(j => { if (live) setWizardFull(j); })
+      .catch(() => { if (live) setWizardFull(null); });
+    return () => { live = false; };
+  }, [wizardId, deck]);
 
   useEffect(() => {
     setDeck(null); setSelectedId(null);
@@ -138,9 +153,13 @@ export default function TestReview({ onBack }) {
       }
     }
 
-    // 5. Persist new tasks
+    // 5. Persist new tasks — replace any prior auto-tasks for this question
+    //    (other than the cross-topic consolidation task) so re-running the
+    //    wizard refreshes rather than duplicates.
     if (newTasks.length > 0) {
-      const existing = loadTasks();
+      const existing = loadTasks().filter(
+        t => !(t.linkedQuestionId === qId && t.type !== "consolidation")
+      );
       saveTasks([...existing, ...newTasks]);
     }
 
@@ -293,6 +312,7 @@ export default function TestReview({ onBack }) {
         <IntakeWizard
           questionId={wizardId}
           questionMeta={deck?.questions.find(q => q.id === wizardId)}
+          questionFull={wizardFull}
           existingIntake={getQIntakeMeta(wizardId)}
           onComplete={handleWizardComplete}
           onDismiss={() => setWizardId(null)}
