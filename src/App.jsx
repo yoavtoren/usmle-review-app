@@ -20,6 +20,7 @@ import WorkstreamPage from "./components/WorkstreamPage.jsx";
 import HomePage from "./components/HomePage.jsx";
 import MedSchoolHub from "./components/MedSchoolHub.jsx";
 import MedSchoolSubject from "./components/MedSchoolSubject.jsx";
+import FirstAidBook from "./components/FirstAidBook.jsx";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -88,6 +89,11 @@ export default function App() {
     downloadICS(ics);
   }
 
+  // Step 1 & Med School are English / left-to-right; everything else is Hebrew / right-to-left.
+  const isEnglishArea = /^\/(step1|tests|fa|medschool)(\/|$)/.test(loc.pathname);
+  const areaDir  = isEnglishArea ? "ltr" : "rtl";
+  const areaLang = isEnglishArea ? "en" : "he";
+
   return (
     <div className="app-shell">
       <Sidebar
@@ -101,7 +107,7 @@ export default function App() {
         {showPopCenter && <PopCenter onClose={() => setShowPopCenter(false)} />}
         {showMail && <EmailCenter onClose={() => setShowMail(false)} testStats={testStats} faStats={faStats} />}
 
-        <div className="route-fade" key={loc.pathname}>
+        <div className={`route-fade${isEnglishArea ? " area-ltr" : " area-rtl"}`} key={loc.pathname} dir={areaDir} lang={areaLang}>
           <Routes>
             <Route path="/" element={
               <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} />
@@ -127,6 +133,7 @@ export default function App() {
             <Route path="/fa/study" element={
               <FATracker onBack={() => nav("/fa")} />
             } />
+            <Route path="/fa/book" element={<FirstAidBook />} />
             <Route path="/timeline" element={
               <Timeline onExportICS={handleExportICS} />
             } />

@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { loadMedSchool, saveMedSchool, patchSubject } from "../lib/medSchoolData.js";
+import ReviewCharts from "./ReviewCharts.jsx";
 
 const TABS = [
   { id: "review",    icon: "🔁", label: "Review"    },
@@ -29,16 +30,55 @@ function gradeColor(pct) {
 /* ── Study Notes Iframe Modal ── */
 const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") || "";
 
-function StudyNotesModal({ htmlFile, topicTitle, onClose }) {
-  const src = `${BASE}/ent/${htmlFile}`;
+function StudyNotesModal({
+  htmlFile, topicTitle, onClose,
+  topic, conf, reviewCount = 0, onRate, onLogReview, onNext, hasNext,
+}) {
+  const file  = htmlFile || topic?.htmlFile;
+  const title = topicTitle || (topic ? `#${topic.num} — ${topic.topic}` : "");
+  const src   = `${BASE}/ent/${file}`;
+  const showTools = Boolean(onRate);          // rich controls only when wired
+  const reviewed  = reviewCount > 0;
+  const active    = RATINGS.find(r => r.key === conf);
+
   return (
     <div className="sn-overlay" onClick={onClose}>
       <div className="sn-modal" onClick={e => e.stopPropagation()}>
         <div className="sn-modal-hd">
-          <span className="sn-modal-title">{topicTitle}</span>
+          <span className="sn-modal-title">{title}</span>
           <button className="sn-close-btn" onClick={onClose}>✕ Close</button>
         </div>
-        <iframe className="sn-iframe" src={src} title={topicTitle} />
+        <iframe className="sn-iframe" src={src} title={title} />
+
+        {showTools && (
+          <div className="sn-toolbar">
+            <div className="sn-tool-rate">
+              <span className="sn-tool-lbl">Difficulty</span>
+              <CircleRank value={conf} onPick={onRate} className="sn-rank" />
+              <span className="sn-tool-state" style={active ? { color: active.color } : undefined}>
+                {active ? active.label : "Not rated"}
+              </span>
+            </div>
+
+            <div className="sn-tool-actions">
+              <button
+                className={`sn-tool-btn sn-tool-review${reviewed ? " done" : ""}`}
+                onClick={onLogReview}
+                title="Log that you finished a review pass of this topic"
+              >
+                {reviewed ? `✓ Reviewed ×${reviewCount}` : "✓ First review done"}
+              </button>
+              <button
+                className="sn-tool-btn sn-tool-next"
+                onClick={onNext}
+                disabled={!hasNext}
+                title={hasNext ? "Open the next topic" : "Last topic"}
+              >
+                Next topic →
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -692,7 +732,7 @@ function InlineRater({ current, onRate }) {
 
 /* ── Syllabus Tab ── */
 function SyllabusTab({ subject, update }) {
-  const [htmlModal, setHtmlModal] = useState(null); // { htmlFile, title }
+  const [htmlModal, setHtmlModal] = useState(null); // topic object being viewed
   const [newTopic,   setNewTopic]   = useState("");
   const [newSection, setNewSection] = useState("");
   const [sectionFilter, setSF]      = useState("all");
@@ -722,18 +762,51 @@ function SyllabusTab({ subject, update }) {
   function remove(id) { update({ syllabus: syllabus.filter(t => t.id !== id) }); }
 
   function rateTopic(id, rating) {
+    const prev = rs[id] || {};
     const newRs = {
       ...rs,
       [id]: {
         confidence:  rating.key,
         lastReview:  today,
         nextReview:  addDaysFromToday(rating.days),
-        reviewCount: (rs[id]?.reviewCount || 0) + 1,
+        reviewCount: (prev.reviewCount || 0) + 1,
+        reviewLog:   [...(prev.reviewLog || []), { at: today, rank: rating.key }],
       },
     };
     const newSyl = syllabus.map(t => t.id === id ? { ...t, done: rating.key >= 5 } : t);
     update({ reviewState: newRs, syllabus: newSyl });
   }
+
+  // Manually log a review without re-rating (keeps current confidence & schedule).
+  function logReview(id) {
+    const prev = rs[id] || {};
+    update({
+      reviewState: {
+        ...rs,
+        [id]: {
+          ...prev,
+          lastReview:  today,
+          reviewCount: (prev.reviewCount || 0) + 1,
+          reviewLog:   [...(prev.reviewLog || []), { at: today, rank: prev.confidence ?? null }],
+        },
+      },
+    });
+  }
+
+  // Flatten per-topic review logs into chart events (seeds legacy data lacking a log).
+  const reviewEvents = useMemo(() => {
+    const evs = [];
+    for (const t of syllabus) {
+      const r = rs[t.id];
+      if (!r) continue;
+      if (r.reviewLog?.length) {
+        for (const e of r.reviewLog) if (e.at) evs.push({ at: e.at.slice(0, 10), rank: e.rank ?? null, topicId: t.id });
+      } else if ((r.reviewCount || 0) > 0 && r.lastReview) {
+        evs.push({ at: r.lastReview.slice(0, 10), rank: r.confidence ?? null, topicId: t.id });
+      }
+    }
+    return evs;
+  }, [syllabus, rs]);
 
   function matchStatus(t) {
     const cf = rs[t.id]?.confidence ?? -1;
@@ -792,6 +865,9 @@ function SyllabusTab({ subject, update }) {
         </div>
       )}
 
+      {/* Review-progress charts (this subject only) */}
+      <ReviewCharts events={reviewEvents} color={c} />
+
       {/* Section + status filters */}
       <div className="ms-syl-filter-row">
         {sections.length > 1 && (
@@ -845,6 +921,7 @@ function SyllabusTab({ subject, update }) {
                 const conf = rs[t.id]?.confidence;
                 const cm   = confMeta(conf);
                 const isDue = rs[t.id] && rs[t.id].nextReview <= today;
+                const revCount = rs[t.id]?.reviewCount || 0;
                 return (
                   <div key={t.id} className="ms-syl-item3">
                     <span className="ms-conf-dot" style={{ background: cm.bg, color: cm.color, borderColor: cm.color + "55" }} title={cm.label}>
@@ -855,10 +932,14 @@ function SyllabusTab({ subject, update }) {
                       {t.topic}
                       {isDue && <span className="ms-due-tag">due</span>}
                     </span>
+                    <button className={`ms-syl-rev${revCount > 0 ? " has" : ""}`} title="Log a review (+1)"
+                      onClick={e => { e.stopPropagation(); logReview(t.id); }}>
+                      🔁 {revCount}
+                    </button>
                     <InlineRater current={conf} onRate={r => rateTopic(t.id, r)} />
                     {t.htmlFile && (
                       <button className="ms-syl-html-btn" title="Open study notes"
-                        onClick={e => { e.stopPropagation(); setHtmlModal({ htmlFile: t.htmlFile, title: `#${t.num} — ${t.topic}` }); }}>
+                        onClick={e => { e.stopPropagation(); setHtmlModal(t); }}>
                         📖
                       </button>
                     )}
@@ -871,13 +952,27 @@ function SyllabusTab({ subject, update }) {
         );
       })}
     </div>
-    {htmlModal && (
-      <StudyNotesModal
-        htmlFile={htmlModal.htmlFile}
-        topicTitle={htmlModal.title}
-        onClose={() => setHtmlModal(null)}
-      />
-    )}
+    {htmlModal && (() => {
+      // Ordered list of openable topics (have an HTML page), in syllabus order.
+      const openable = syllabus.filter(t => t.htmlFile);
+      const pos      = openable.findIndex(t => t.id === htmlModal.id);
+      // Re-read live review state so the toolbar reflects the latest save.
+      const live     = syllabus.find(t => t.id === htmlModal.id) || htmlModal;
+      const r         = rs[htmlModal.id] || {};
+      const hasNext   = pos >= 0 && pos < openable.length - 1;
+      return (
+        <StudyNotesModal
+          topic={live}
+          conf={r.confidence}
+          reviewCount={r.reviewCount || 0}
+          onRate={rating => rateTopic(htmlModal.id, rating)}
+          onLogReview={() => logReview(htmlModal.id)}
+          hasNext={hasNext}
+          onNext={() => hasNext && setHtmlModal(openable[pos + 1])}
+          onClose={() => setHtmlModal(null)}
+        />
+      );
+    })()}
     </>
   );
 }

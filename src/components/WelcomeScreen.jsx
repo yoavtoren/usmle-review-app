@@ -9,9 +9,9 @@ import {
 import { SUBJECT_SORT_WEIGHT, FRONT_LOAD_SUBJECTS } from "../lib/intakeData.js";
 
 const PRIOS = [
-  { key: "high",   label: "גבוה",   color: "#ef4444", bg: "rgba(239,68,68,0.09)" },
-  { key: "medium", label: "בינוני", color: "#d97706", bg: "rgba(217,119,6,0.09)" },
-  { key: "low",    label: "נמוך",   color: "#059669", bg: "rgba(5,150,105,0.09)" },
+  { key: "high",   label: "High",   color: "#ef4444", bg: "rgba(239,68,68,0.09)" },
+  { key: "medium", label: "Medium", color: "#d97706", bg: "rgba(217,119,6,0.09)" },
+  { key: "low",    label: "Low",    color: "#059669", bg: "rgba(5,150,105,0.09)" },
 ];
 
 const TYPE_META = {
@@ -36,8 +36,8 @@ function SmartInsights({ insights, tasks, onAdd }) {
   return (
     <div className="insights-panel">
       <div className="insights-hd">
-        <span className="insights-title">💡 תובנות לימוד</span>
-        <span className="insights-sub">מתגובות הקושי שלך</span>
+        <span className="insights-title">💡 Study Insights</span>
+        <span className="insights-sub">From your difficulty ratings</span>
       </div>
       <div className="insights-list">
         {insights.map(ins => {
@@ -53,8 +53,8 @@ function SmartInsights({ insights, tasks, onAdd }) {
               </div>
               <button className={`insight-add-btn${added ? " insight-added" : ""}`}
                 onClick={() => !added && onAdd(ins)} disabled={added}
-                title={added ? "כבר במשימות" : "הוסף למשימות"}>
-                {added ? "✓ נוסף" : "+ משימות"}
+                title={added ? "Already in tasks" : "Add to tasks"}>
+                {added ? "✓ Added" : "+ Task"}
               </button>
             </div>
           );
@@ -69,7 +69,7 @@ function WeakSubjectsStrip({ data }) {
   const max = data[0].count;
   return (
     <div className="weak-strip">
-      <span className="weak-strip-lbl">נקודות חולשה חוזרות</span>
+      <span className="weak-strip-lbl">Recurring weak spots</span>
       <div className="weak-chips">
         {data.map(({ subject, count }) => (
           <div key={subject} className="weak-chip">
@@ -77,7 +77,7 @@ function WeakSubjectsStrip({ data }) {
             <div className="weak-chip-bar">
               <div className="weak-chip-fill" style={{ width: `${Math.round((count / max) * 100)}%` }} />
             </div>
-            <span className="weak-chip-count">{count} פספוסים</span>
+            <span className="weak-chip-count">{count} misses</span>
           </div>
         ))}
       </div>
@@ -135,7 +135,7 @@ function TaskManager({ tasks, setTasks }) {
     reader.onload = ev => {
       const ok = importAllData(ev.target.result);
       if (ok) window.location.reload();
-      else setImportError("ייבוא נכשל — קובץ לא תקין.");
+      else setImportError("Import failed — invalid file.");
     };
     reader.readAsText(file);
     e.target.value = "";
@@ -155,11 +155,11 @@ function TaskManager({ tasks, setTasks }) {
     <div className="task-manager">
       <div className="task-hd">
         <div className="task-hd-left">
-          <span className="task-hd-title">משימות</span>
+          <span className="task-hd-title">Tasks</span>
           {activeCount > 0 && <span className="task-badge">{activeCount}</span>}
         </div>
         <div className="task-tabs">
-          {[["active","פעיל"],["all","הכל"],["done","הושלם"]].map(([k,l]) => (
+          {[["active","Active"],["all","All"],["done","Done"]].map(([k,l]) => (
             <button key={k} className={`task-tab${filter===k?" selected":""}`} onClick={() => setFilter(k)}>{l}</button>
           ))}
         </div>
@@ -174,16 +174,16 @@ function TaskManager({ tasks, setTasks }) {
           ))}
         </div>
         <div className="task-row">
-          <input className="task-input" placeholder="הוסף משימה…" value={input}
+          <input className="task-input" placeholder="Add a task…" value={input}
             onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === "Enter" && add()} />
-          <button className="task-add" onClick={add} disabled={!input.trim()}>הוסף</button>
+          <button className="task-add" onClick={add} disabled={!input.trim()}>Add</button>
         </div>
       </div>
 
       <ul className="task-list">
         {shown.length === 0 && (
           <li className="task-empty">
-            {filter === "done" ? "עדיין לא הושלם כלום." : "אין משימות פעילות — הוסף אחת..."}
+            {filter === "done" ? "Nothing completed yet." : "No active tasks — add one…"}
           </li>
         )}
         {shown.map(t => {
@@ -193,7 +193,7 @@ function TaskManager({ tasks, setTasks }) {
             <li key={t.id} className={`task-item${t.done ? " task-done" : ""}${t.type === "consolidation" ? " task-consolidation" : ""}`}>
               <button className="task-check"
                 style={{ borderColor: p.color, background: t.done ? p.color : "transparent" }}
-                onClick={() => toggle(t.id)} aria-label={t.done ? "סמן לא הושלם" : "סמן הושלם"}>
+                onClick={() => toggle(t.id)} aria-label={t.done ? "Mark incomplete" : "Mark complete"}>
                 {t.done && <span className="task-check-mark">✓</span>}
               </button>
               <span className="task-text">
@@ -202,19 +202,19 @@ function TaskManager({ tasks, setTasks }) {
               </span>
               {tm && <span className={`task-type-badge ${tm.cls}`}>{tm.label}</span>}
               <span className="task-dot" style={{ background: p.color }} title={p.label} />
-              <button className="task-del" onClick={() => remove(t.id)} aria-label="מחק משימה">×</button>
+              <button className="task-del" onClick={() => remove(t.id)} aria-label="Delete task">×</button>
             </li>
           );
         })}
       </ul>
 
       {doneCount > 0 && (
-        <button className="task-clear" onClick={clearDone}>נקה {doneCount} שהושלמו</button>
+        <button className="task-clear" onClick={clearDone}>Clear {doneCount} completed</button>
       )}
 
       <div className="task-io">
-        <button className="task-io-btn" onClick={handleExport}>↓ ייצא נתונים</button>
-        <button className="task-io-btn" onClick={() => importRef.current?.click()}>↑ ייבא נתונים</button>
+        <button className="task-io-btn" onClick={handleExport}>↓ Export data</button>
+        <button className="task-io-btn" onClick={() => importRef.current?.click()}>↑ Import data</button>
         <input ref={importRef} type="file" accept=".json" style={{ display: "none" }} onChange={handleImport} />
       </div>
       {importError && (
@@ -286,8 +286,8 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
       <div className="welcome-banner">
         <div className="welcome-logo"><CaduceusIcon /></div>
         <h1 className="welcome-title">USMLE Step 1</h1>
-        <p className="welcome-sub">לוח ביקורת אישי</p>
-        {streak > 0 && <div className="streak-badge">🔥 רצף {streak} ימים</div>}
+        <p className="welcome-sub">Personal review dashboard</p>
+        {streak > 0 && <div className="streak-badge">🔥 {streak} day streak</div>}
 
         {/* Light mode toggle — Step 1 tool, keep in English */}
         <div className="lm-row">
@@ -307,7 +307,7 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
             <div className="reset-confirm-title">Reset schedule to Oct 11 2026?</div>
             <div className="reset-confirm-body">All review cards will be redistributed evenly between now and your test date. Mastered cards are untouched.</div>
             <div className="reset-confirm-btns">
-              <button className="intake-back" onClick={() => setShowReset(false)}>ביטול</button>
+              <button className="intake-back" onClick={() => setShowReset(false)}>Cancel</button>
               <button className="intake-save" onClick={handleResetSchedule}>Reset schedule</button>
             </div>
           </div>
@@ -319,19 +319,19 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
 
         {/* Floating stats bar */}
         <div className="quick-stats">
-          <div className="qs-item">{dueDisplay}<span className="qs-label">לביקורת היום</span></div>
+          <div className="qs-item">{dueDisplay}<span className="qs-label">Due today</span></div>
           <div className="qs-divider" />
           <div className="qs-item">
             <span className="qs-num">{testStats.mastered}</span>
-            <span className="qs-label">שלטתי{masteredThisWeek > 0 && <span className="qs-week-badge"> +{masteredThisWeek} השבוע</span>}</span>
+            <span className="qs-label">Mastered{masteredThisWeek > 0 && <span className="qs-week-badge"> +{masteredThisWeek} this week</span>}</span>
           </div>
           <div className="qs-divider" />
-          <div className="qs-item"><span className="qs-num">{remaining}</span><span className="qs-label">נותרו</span></div>
+          <div className="qs-item"><span className="qs-num">{remaining}</span><span className="qs-label">Remaining</span></div>
           <div className="qs-divider" />
-          <div className="qs-item"><span className="qs-num">{faPct}%</span><span className="qs-label">כיסוי FA</span></div>
+          <div className="qs-item"><span className="qs-num">{faPct}%</span><span className="qs-label">FA coverage</span></div>
           {faSectionsRead > 0 && <>
             <div className="qs-divider" />
-            <div className="qs-item"><span className="qs-num">{faSectionsRead}</span><span className="qs-label">פרקי FA שנקראו</span></div>
+            <div className="qs-item"><span className="qs-num">{faSectionsRead}</span><span className="qs-label">FA sections read</span></div>
           </>}
         </div>
 
@@ -350,28 +350,28 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
               <div className="wcard-body">
                 <h2>Tests</h2>
                 <p className="wcard-desc">
-                  בקר כל שאלה שהוחטאה עם חזרה מרווחת. סמן הושלם ← אשף הקליטה ממלא את המשימות, כיסוי FA ולוח הביקורות אוטומטית.
+                  Review every missed question with spaced repetition. Mark complete → the intake wizard fills tasks, FA coverage, and the review schedule automatically.
                 </p>
                 <div className="wcard-stats">
                   <div className="wstat-block">
                     <span className="wstat-big">{testStats.missed}</span>
-                    <span className="wstat-lbl">הוחטאו</span>
+                    <span className="wstat-lbl">Missed</span>
                   </div>
                   <div className="wstat-block wstat-ok">
                     <span className="wstat-big">{testStats.mastered}</span>
-                    <span className="wstat-lbl">שלטתי</span>
+                    <span className="wstat-lbl">Mastered</span>
                   </div>
                   {testStats.due > 0 && !lightMode && (
                     <div className="wstat-block wstat-warn">
                       <span className="wstat-big">{testStats.due}</span>
-                      <span className="wstat-lbl">לביקורת עכשיו</span>
+                      <span className="wstat-lbl">Due now</span>
                     </div>
                   )}
                 </div>
                 <div className="wcard-prog">
                   <div className="wcard-prog-bar" style={{ width: `${testPct || 2}%` }} />
                 </div>
-                <span className="wcard-cta">פתח לוח ←</span>
+                <span className="wcard-cta">Open dashboard →</span>
               </div>
             </button>
 
@@ -383,26 +383,26 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
               <div className="wcard-body">
                 <h2>First Aid Tracker</h2>
                 <p className="wcard-desc">
-                  עקוב אחר הכיסוי שלך בכל פרקי First Aid. השלמת משימות "קרא FA" מסמנת פרקים אוטומטית.
+                  Track your coverage across every First Aid section. Completing "Read FA" tasks marks sections automatically.
                 </p>
                 <div className="wcard-stats">
                   <div className="wstat-block">
                     <span className="wstat-big">{faStats.seen}</span>
-                    <span className="wstat-lbl">נושאים שהושלמו</span>
+                    <span className="wstat-lbl">Topics done</span>
                   </div>
                   <div className="wstat-block">
                     <span className="wstat-big">{faStats.total}</span>
-                    <span className="wstat-lbl">סה"כ נושאים</span>
+                    <span className="wstat-lbl">Total topics</span>
                   </div>
                   <div className="wstat-block wstat-ok">
                     <span className="wstat-big">{faPct}%</span>
-                    <span className="wstat-lbl">כוסה</span>
+                    <span className="wstat-lbl">Covered</span>
                   </div>
                 </div>
                 <div className="wcard-prog">
                   <div className="wcard-prog-bar" style={{ width: `${faPct || 2}%` }} />
                 </div>
-                <span className="wcard-cta">פתח עוקב ←</span>
+                <span className="wcard-cta">Open tracker →</span>
               </div>
             </button>
 
@@ -414,7 +414,7 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
           </div>
         </div>
 
-        <p className="welcome-footer">100% אופליין · ההתקדמות שמורה בדפדפן · 11 אוק׳ 2026</p>
+        <p className="welcome-footer">100% offline · Progress saved in your browser · Oct 11 2026</p>
       </div>
     </div>
   );

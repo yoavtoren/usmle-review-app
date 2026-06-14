@@ -68,6 +68,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
         { to: "/step1", label: "לוח Step 1", Icon: IconDash },
         { to: "/tests", label: "Tests", Icon: IconClipboard },
         { to: "/fa", label: "First Aid", Icon: IconBook },
+        { to: "/fa/book", label: "ספר First Aid", Icon: IconBook },
       ],
     },
     {

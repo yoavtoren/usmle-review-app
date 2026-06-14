@@ -48,6 +48,13 @@ export const URGENCY_COLORS = {
   Low:      "#22c55e",
 };
 
+export const URGENCY_LABELS = {
+  Critical: "קריטי",
+  High:     "גבוה",
+  Medium:   "בינוני",
+  Low:      "נמוך",
+};
+
 // ── Phases ────────────────────────────────────────────────────────────────
 export const PHASES = [
   { id:"ph1", name:"התחלה",             start:"2026-06-10", end:"2026-06-12", color:"#475569", note:"Sell-off groundwork; set contract end-dates; watch flights; ECFMG with faculty." },

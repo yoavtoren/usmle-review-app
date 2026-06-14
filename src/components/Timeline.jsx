@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import {
-  PHASES, GOALS, FRONT_COLORS, FRONT_LABELS, TYPE_ICONS, TYPE_LABELS, URGENCY_COLORS,
+  PHASES, GOALS, FRONT_COLORS, FRONT_LABELS, TYPE_ICONS, TYPE_LABELS, URGENCY_COLORS, URGENCY_LABELS,
   loadTimelineEvents, saveTimelineEvents,
   loadGoalsDone, saveGoalsDone, loadEventsDone, saveEventsDone,
 } from "../lib/timelineData.js";
@@ -133,7 +133,7 @@ function EventModal({ initial, defaultDate, onSave, onClose }) {
             </select>
             <label className="ev-modal-lbl">דחיפות</label>
             <select className="ev-modal-sel" value={form.urgency} onChange={e => upd("urgency", e.target.value)}>
-              {Object.keys(URGENCY_COLORS).map(u => <option key={u} value={u}>{u}</option>)}
+              {Object.keys(URGENCY_COLORS).map(u => <option key={u} value={u}>{URGENCY_LABELS[u] || u}</option>)}
             </select>
             <label className="ev-modal-lbl">הערות</label>
             <textarea className="ev-modal-ta" rows={2} value={form.note} onChange={e => upd("note", e.target.value)} placeholder="הוסף הערות..." />
@@ -235,7 +235,7 @@ function EventTable({ events, eventsDone, onUpdate, onDelete, onToggleDone, onAd
                   <td className="ev-td-type">{TYPE_ICONS[ev.type]} {TYPE_LABELS[ev.type] || ev.type}</td>
                   <td>
                     {urgColor
-                      ? <span className="ev-td-urgency" style={{ color: urgColor }}>{ev.urgency}</span>
+                      ? <span className="ev-td-urgency" style={{ color: urgColor }}>{URGENCY_LABELS[ev.urgency] || ev.urgency}</span>
                       : <span className="muted">—</span>}
                   </td>
                   <td className="ev-td-contact">

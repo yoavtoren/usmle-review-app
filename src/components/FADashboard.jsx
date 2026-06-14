@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
 import { loadFATopics, saveFATopics } from "../lib/storage.js";
+import ReviewCharts from "./ReviewCharts.jsx";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -322,6 +323,18 @@ export default function FADashboard({ onBack, onTrack }) {
     });
   }, []);
 
+  // Flatten FA reviews into chart events; rank = the topic's difficulty.
+  const reviewEvents = useMemo(() => {
+    const evs = [];
+    for (const [key, val] of Object.entries(lsTopics)) {
+      const rank = val.difficulty ?? null;
+      for (const rev of (val.reviews || [])) {
+        if (rev.completedAt) evs.push({ at: rev.completedAt.slice(0, 10), rank, topicId: key });
+      }
+    }
+    return evs;
+  }, [lsTopics]);
+
   const chapterStats = useMemo(() => {
     if (!data) return [];
     return data.chapters.map((ch, idx) => {
@@ -489,6 +502,9 @@ export default function FADashboard({ onBack, onTrack }) {
 
       {/* Progress chart */}
       <ProgressChart lsTopics={lsTopics} chapterStats={chapterStats} />
+
+      {/* Review-progress charts (whole First Aid) */}
+      <ReviewCharts events={reviewEvents} color="#4f46e5" />
 
       {/* Due reviews panel */}
       <DueReviewsPanel
@@ -659,11 +675,17 @@ export default function FADashboard({ onBack, onTrack }) {
                                           onChange={d => handleSetDifficulty(key, d)}
                                         />
                                         {hasDiff && (
-                                          <ReviewBadge
-                                            reviews={ls?.reviews || []}
-                                            total={ls?.totalReviewsTarget || FA_REVIEW_INTERVALS[ls.difficulty]?.length || 1}
-                                            nextDueAt={ls?.nextDueAt}
-                                          />
+                                          <>
+                                            <ReviewBadge
+                                              reviews={ls?.reviews || []}
+                                              total={ls?.totalReviewsTarget || FA_REVIEW_INTERVALS[ls.difficulty]?.length || 1}
+                                              nextDueAt={ls?.nextDueAt}
+                                            />
+                                            <button className="fad-rev-log" title="Log a review (+1)"
+                                              onClick={() => handleMarkReviewed(key)}>
+                                              🔁 +
+                                            </button>
+                                          </>
                                         )}
                                       </div>
                                     )}
