@@ -4,7 +4,7 @@ import {
   loadTimelineEvents, saveTimelineEvents,
   loadGoalsDone, saveGoalsDone, loadEventsDone, saveEventsDone,
 } from "../lib/timelineData.js";
-import { loadAllWorkstreamTasks } from "../lib/workstreamData.js";
+import { loadAllWorkstreamTasks, saveCategoryTasks } from "../lib/workstreamData.js";
 import { buildGCalLink } from "../lib/calendarExport.js";
 
 const TL_START   = new Date("2026-06-10T00:00:00Z");
@@ -426,7 +426,7 @@ export default function Timeline() {
   const phase     = currentPhase(today);
 
   const [tlEvents, setTlEventsRaw] = useState(loadTimelineEvents);
-  const [wsTasksAll]               = useState(loadAllWorkstreamTasks);
+  const [wsTasksAll, setWsTasksAll] = useState(loadAllWorkstreamTasks);
   const [goalsDone,   setGoalsDone]   = useState(loadGoalsDone);
   const [eventsDone,  setEventsDone]  = useState(loadEventsDone);
   const [selectedEv,  setSelectedEv]  = useState(null);
@@ -470,7 +470,17 @@ export default function Timeline() {
       dragRef.current = null;
       setDragState(null);
       if (d.currentDate && d.currentDate !== d.origDate) {
-        setTlEvents(prev => prev.map(ev => ev.id === d.evId ? { ...ev, date: d.currentDate } : ev));
+        if (d.wsId) {
+          // Workstream-derived node → persist the underlying task's deadline
+          setWsTasksAll(prev => {
+            const next = prev.map(t => t.id === d.wsId ? { ...t, deadline: d.currentDate } : t);
+            if (d.wsCategory) saveCategoryTasks(d.wsCategory, next.filter(t => t.category === d.wsCategory));
+            return next;
+          });
+        } else {
+          // Regular timeline event
+          setTlEvents(prev => prev.map(ev => ev.id === d.evId ? { ...ev, date: d.currentDate } : ev));
+        }
       }
     }
     window.addEventListener("pointermove", onMove);
@@ -485,6 +495,7 @@ export default function Timeline() {
     dragRef.current = {
       evId: ev.id, origDate: ev.date, origX: dateToX(ev.date),
       startClientX: e.clientX, startScrollLeft: scroll.scrollLeft, currentDate: ev.date,
+      wsId: ev._wsId || null, wsCategory: ev._wsId ? (ev.source || ev.front) : null,
     };
     setDragState({ evId: ev.id, currentDate: ev.date, mouseX: e.clientX, mouseY: e.clientY });
   }
