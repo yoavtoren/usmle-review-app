@@ -106,20 +106,38 @@ async function loadIndex() {
   return _indexPromise;
 }
 
+const normTitle = s => (s || "").toLowerCase().replace(/[^a-z0-9]/g, " ").replace(/\s+/g, " ").trim();
+
 // Best-effort precise page for a topic name; falls back to the chapter page.
 export async function lookupPage(topicName, chapterFile) {
   const fallback = FA_CHAPTER_BY_FILE[chapterFile]?.page ?? null;
   const idx = await loadIndex();
   if (!idx.length || !topicName) return fallback;
+
+  // 1) Exact main-entry match (e.g. "Sarcoidosis") always wins — these are the
+  // authoritative "where the topic is taught" pages, not cross-references.
+  const want = normTitle(topicName);
+  if (want) {
+    const exact = idx.find(e => normTitle(e.t) === want);
+    if (exact) return exact.p;
+  }
+
   const need = tokens(topicName);
   if (!need.length) return fallback;
-  // Require at least one strong token match; prefer concise index entries that
-  // cover more of the needle.
+  // 2) Otherwise score by token overlap, but strongly prefer the main entry for
+  // the topic (a head term, not a "Topic — sub-aspect" cross-reference) and
+  // penalize index entries that pull in extra words the topic didn't ask for.
   let best = null, bestScore = 0.9;
   for (const e of idx) {
     const sc = score(need, e.t);
     if (sc < 1) continue;
-    const norm = sc - Math.max(0, tokens(e.t).length - need.length) * 0.2;
+    const etoks = tokens(e.t);
+    const extra = Math.max(0, etoks.length - need.length);
+    // Bonus when the index entry is a clean head term (no " — sub" cross-ref)
+    // and the needle covers all of it — i.e. it *is* the topic.
+    const isHead = !e.t.includes("—");
+    const coversAll = sc >= etoks.length;
+    const norm = sc - extra * 0.25 + (isHead ? 0.3 : 0) + (coversAll ? 0.3 : 0);
     if (norm > bestScore) { bestScore = norm; best = e; }
   }
   return best ? best.p : fallback;
