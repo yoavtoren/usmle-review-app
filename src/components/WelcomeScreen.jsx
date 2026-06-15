@@ -1,4 +1,5 @@
 import { useRef, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   loadTasks, saveTasks, loadProgress, computeInsights,
   getWeakSubjects, getLightMode, setLightMode,
@@ -7,6 +8,7 @@ import {
   resetScheduleToDate, getMasteredThisWeek,
 } from "../lib/storage.js";
 import { SUBJECT_SORT_WEIGHT, FRONT_LOAD_SUBJECTS } from "../lib/intakeData.js";
+import { chaptersFromText } from "../lib/faMap.js";
 
 const PRIOS = [
   { key: "high",   label: "High",   color: "#ef4444", bg: "rgba(239,68,68,0.09)" },
@@ -86,11 +88,19 @@ function WeakSubjectsStrip({ data }) {
 }
 
 function TaskManager({ tasks, setTasks }) {
+  const nav = useNavigate();
   const [input, setInput]       = useState("");
   const [prio, setPrio]         = useState("medium");
   const [filter, setFilter]     = useState("active");
   const [importError, setImportError] = useState("");
   const importRef = useRef(null);
+
+  // Open the FA tracker focused on the chapter a "Read FA" task targets.
+  function openFA(t) {
+    const file = t.faChapters?.[0]?.file
+      || chaptersFromText(`${t.text || ""} ${t.body || ""}`)[0]?.file;
+    nav("/fa", { state: file ? { focusChapter: file } : undefined });
+  }
 
   function add() {
     const text = input.trim();
@@ -197,7 +207,11 @@ function TaskManager({ tasks, setTasks }) {
                 {t.done && <span className="task-check-mark">✓</span>}
               </button>
               <span className="task-text">
-                {t.text}
+                {t.type === "read-fa"
+                  ? <button className="task-fa-link" onClick={() => openFA(t)} title="פתח את הפרק ב‑First Aid">
+                      {t.text}<span className="task-fa-go"> →</span>
+                    </button>
+                  : t.text}
                 {t.body && <span className="task-body-hint"> — {t.body}</span>}
               </span>
               {tm && <span className={`task-type-badge ${tm.cls}`}>{tm.label}</span>}

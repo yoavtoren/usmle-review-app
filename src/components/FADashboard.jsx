@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 import { loadFATopics, saveFATopics, loadTasks, saveTasks, touchFASection } from "../lib/storage.js";
 import { chaptersFromText } from "../lib/faMap.js";
 import ReviewCharts from "./ReviewCharts.jsx";
@@ -403,6 +404,30 @@ export default function FADashboard({ onBack, onTrack }) {
     return { done, total, pct: total > 0 ? Math.round((done / total) * 100) : 0 };
   }, [chapterStats]);
 
+  // Expand + scroll to a chapter (used by FA-review links and arriving navigation).
+  const focusChapter = useCallback((file) => {
+    const ch = chapterStats.find(c => c.file === file);
+    if (!ch) return;
+    setSearch("");
+    setExpanded(ch.idx);
+    setTimeout(() => {
+      const el = document.getElementById(`fad-ch-${ch.idx}`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.classList.add("fad-ch-flash");
+        setTimeout(() => el.classList.remove("fad-ch-flash"), 1500);
+      }
+    }, 80);
+  }, [chapterStats]);
+
+  // Arriving from a "Read FA" task elsewhere → jump straight to that chapter.
+  const location = useLocation();
+  const focusFile = location.state?.focusChapter;
+  useEffect(() => {
+    if (focusFile && chapterStats.length) focusChapter(focusFile);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focusFile, chapterStats.length]);
+
   const activityLog = useMemo(() => {
     const byDate = {};
     for (const val of Object.values(lsTopics)) {
@@ -641,14 +666,17 @@ export default function FADashboard({ onBack, onTrack }) {
               .map(ch => (
                 <div key={ch.file} className="fad-review-group">
                   <button className="fad-review-ch" style={{ "--c": ch.color }}
-                    onClick={() => setExpanded(ch.idx)}>
+                    onClick={() => focusChapter(ch.file)}>
                     <span className="fad-review-ch-dot" style={{ background: ch.color }} />
                     {ch.name}
                     <span className="fad-review-ch-n">{faReviewsByChapter[ch.file].length}</span>
                   </button>
                   {faReviewsByChapter[ch.file].map(t => (
                     <div key={t.id} className="fad-review-item">
-                      <span className="fad-review-item-txt">{t.body || t.text}</span>
+                      <button className="fad-review-item-txt" title="Open this chapter in the list below"
+                        onClick={() => focusChapter(ch.file)}>
+                        {t.body || t.text} <span className="fad-review-go">→</span>
+                      </button>
                       <button className="fad-review-done" onClick={() => completeFAReview(t.id)}>
                         ✓ Read
                       </button>
@@ -673,7 +701,7 @@ export default function FADashboard({ onBack, onTrack }) {
               const isOpen = expanded === idx;
               const sections = allTopics[ch.file] || [];
               return (
-                <div key={idx} className={`fad-ch-card${isOpen ? " fad-ch-open" : ""}`}>
+                <div key={idx} id={`fad-ch-${idx}`} className={`fad-ch-card${isOpen ? " fad-ch-open" : ""}`}>
                   <button className="fad-ch-header" onClick={() => setExpanded(isOpen ? null : idx)}>
                     <span className="fad-ch-accent" style={{ background: ch.color }} />
                     <span className="fad-ch-name">{ch.name}</span>

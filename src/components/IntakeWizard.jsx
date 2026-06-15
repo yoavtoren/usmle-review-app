@@ -10,10 +10,8 @@ function buildActions(form, questionId, qFull) {
   const tasks = [];
   let schedule = "unchanged";
 
-  // Content pulled straight from the question's own data (its HTML/JSON).
-  const faLocs   = Array.isArray(qFull?.firstAid) ? qFull.firstAid : [];
-  const keywords = Array.isArray(qFull?.keywords) ? qFull.keywords : [];
-  const ankiLabel = qFull?.topic || topic;
+  // First Aid locations pulled straight from the question's own data.
+  const faLocs = Array.isArray(qFull?.firstAid) ? qFull.firstAid : [];
 
   // One FA-reading task per First-Aid location the question points to, each
   // tagged with the real FA chapter(s) it maps to so the FA tracker can flag them.
@@ -51,19 +49,7 @@ function buildActions(form, questionId, qFull) {
 
   if (outcome === "incorrect") {
     if (whyMissed === "A") {
-      // Anki task carries the actual flashcards from the question.
-      const cardCount = keywords.length;
-      tasks.push({
-        id: `t-${stamp}-a`, type: "anki-todo", priority: "high", subject, system,
-        text: cardCount
-          ? `🃏 Anki: ${ankiLabel} — ${cardCount} card${cardCount > 1 ? "s" : ""}`
-          : `🃏 Anki: make/find card — ${topic}`,
-        body: cardCount
-          ? keywords.map(k => `• ${k.front} → ${k.back}`).join("\n")
-          : (mechanismNote || "Locate or make the AnKing card for this atomic fact."),
-        cards: cardCount ? keywords : undefined,
-        linkedQuestionId: questionId, done: false, createdAt: stamp,
-      });
+      // Knowledge gap → straight to targeted First Aid reading.
       pushFAReadTasks("First Aid");
       schedule = "again";
     } else if (whyMissed === "B") {
@@ -96,7 +82,7 @@ function buildActions(form, questionId, qFull) {
 }
 
 const WHY_WRONG = [
-  { key: "A", icon: "📚", label: "Didn't know the fact",      desc: "Knowledge gap → Anki card + FA reading" },
+  { key: "A", icon: "📚", label: "Didn't know the fact",      desc: "Knowledge gap → targeted First Aid reading" },
   { key: "B", icon: "🔀", label: "Knew fact, reasoning error",desc: "Trap → re-do 3 similar Qs" },
   { key: "C", icon: "🧠", label: "Didn't understand mechanism",desc: "Concept gap → resource guidance" },
   { key: "D", icon: "😅", label: "Misread / silly error",     desc: "Log only — keeps queue clean" },

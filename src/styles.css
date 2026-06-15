@@ -4159,7 +4159,17 @@ button.cr-dot:hover { transform: scale(1.18); color: #9ca3af; }
   padding: 8px 12px; margin-right: 17px; border-radius: var(--r-sm);
   background: var(--surface-2); border: 1px solid var(--line);
 }
-.fad-review-item-txt { font-size: 12.5px; color: var(--text-2); line-height: 1.45; }
+.fad-review-item-txt {
+  flex: 1; text-align: left; font-family: inherit; cursor: pointer;
+  background: none; border: none; padding: 0;
+  font-size: 12.5px; color: var(--text-2); line-height: 1.45;
+  transition: color var(--t);
+}
+.fad-review-item-txt:hover { color: var(--accent-ink); }
+.fad-review-go { color: var(--accent); font-weight: 700; opacity: 0; transition: opacity var(--t); }
+.fad-review-item-txt:hover .fad-review-go { opacity: 1; }
+@keyframes fad-flash { 0%,100% { box-shadow: var(--sh-xs); } 30% { box-shadow: 0 0 0 3px var(--accent-mid); } }
+.fad-ch-flash { animation: fad-flash 1.4s var(--ease-out); border-color: var(--accent-mid) !important; }
 .fad-review-done {
   flex-shrink: 0; font-size: 11.5px; font-weight: 650; font-family: inherit; cursor: pointer;
   background: var(--ok-soft); color: var(--ok); border: 1px solid var(--ok-mid);
@@ -4189,3 +4199,12 @@ button.cr-dot:hover { transform: scale(1.18); color: #9ca3af; }
 .reset-test-cancel:hover { background: var(--surface-2); }
 .reset-test-go { background: var(--bad); color: #fff; border-color: var(--bad); }
 .reset-test-go:hover { filter: brightness(1.05); }
+
+/* Pressable "Read FA" task → jumps to the chapter in the FA tracker */
+.task-fa-link {
+  background: none; border: none; padding: 0; font-family: inherit; cursor: pointer;
+  font-size: inherit; color: var(--accent-ink); font-weight: 600; text-align: inherit;
+  transition: color var(--t);
+}
+.task-fa-link:hover { color: var(--accent); text-decoration: underline; }
+.task-fa-go { color: var(--accent); font-weight: 700; }
