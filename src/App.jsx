@@ -48,7 +48,9 @@ function useAppData() {
     for (const q of deck.questions) {
       const c = getCard(progress, q.id);
       if (c.status === "mastered") mastered++;
-      if (c.status !== "new" && isDueRespectingMode(c)) due++;
+      // Only "review" cards can be due — new cards aren't scheduled yet and
+      // mastered cards have retired (null dueAt must not read as due).
+      if (c.status === "review" && isDueRespectingMode(c)) due++;
     }
     return {
       total: deck.questions.length,
@@ -81,10 +83,12 @@ export default function App() {
     return () => clearInterval(id);
   }, []);
 
-  // Fire the daily email digest once per day if the user enabled it.
+  const reviewDue = testStats.due || 0;
+
+  // Fire the daily email digest once per day if the user enabled it (includes due reviews).
   useEffect(() => {
-    maybeSendDailyDigest().catch(() => {});
-  }, []);
+    maybeSendDailyDigest({ dueReviews: reviewDue }).catch(() => {});
+  }, [reviewDue]);
 
   function handleExportICS() {
     const ics = generateICS(loadTimelineEvents(), loadAllWorkstreamTasks());
@@ -99,14 +103,20 @@ export default function App() {
   return (
     <div className="app-shell">
       <Sidebar
-        dueCount={dueCount}
+        dueCount={dueCount + reviewDue}
         onBellClick={() => setShowPopCenter(true)}
         onMailClick={() => setShowMail(true)}
       />
 
       <main className="app-main">
         <ReminderToasts />
-        {showPopCenter && <PopCenter onClose={() => setShowPopCenter(false)} />}
+        {showPopCenter && (
+          <PopCenter
+            onClose={() => setShowPopCenter(false)}
+            dueReviews={reviewDue}
+            onReview={() => { setShowPopCenter(false); nav("/tests/review", { state: { filter: "due" } }); }}
+          />
+        )}
         {showMail && <EmailCenter onClose={() => setShowMail(false)} testStats={testStats} faStats={faStats} />}
 
         <div className={`route-fade${isEnglishArea ? " area-ltr" : " area-rtl"}`} key={loc.pathname} dir={areaDir} lang={areaLang}>

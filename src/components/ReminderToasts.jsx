@@ -38,8 +38,23 @@ function Toast({ rem, onDismiss, onSnooze }) {
   );
 }
 
-// Pop center modal — full list of due reminders.
-export function PopCenter({ onClose }) {
+// A pinned card for spaced-repetition reviews that are due now.
+function ReviewDueCard({ count, onReview }) {
+  if (!count) return null;
+  return (
+    <button className="popcenter-review" onClick={onReview}>
+      <span className="popcenter-review-ico">📚</span>
+      <span className="popcenter-review-body">
+        <span className="popcenter-review-title">{count} {count === 1 ? "שאלה" : "שאלות"} לחזרה היום</span>
+        <span className="popcenter-review-sub">חזרה מרווחת — לחץ כדי להתחיל עכשיו</span>
+      </span>
+      <span className="popcenter-review-go">→</span>
+    </button>
+  );
+}
+
+// Pop center modal — due spaced-repetition reviews + active reminders.
+export function PopCenter({ onClose, dueReviews = 0, onReview }) {
   const [reminders, setReminders] = useState(getActiveReminders);
 
   function refresh() { setReminders(getActiveReminders()); }
@@ -47,32 +62,27 @@ export function PopCenter({ onClose }) {
   function handleDismiss(remId) { dismissReminder(remId); refresh(); }
   function handleSnooze(remId)  { snoozeReminder(remId);  refresh(); }
 
-  if (reminders.length === 0) return (
-    <div className="popcenter-overlay" onClick={onClose}>
-      <div className="popcenter-modal" onClick={e => e.stopPropagation()}>
-        <div className="popcenter-hd">
-          <span className="popcenter-title">תזכורות</span>
-          <button className="intake-close" onClick={onClose}>✕</button>
-        </div>
-        <div className="popcenter-empty">הכל נקי — אין תזכורות פעילות.</div>
-      </div>
-    </div>
-  );
+  const total = reminders.length + (dueReviews > 0 ? 1 : 0);
 
   return (
     <div className="popcenter-overlay" onClick={onClose}>
       <div className="popcenter-modal" onClick={e => e.stopPropagation()}>
         <div className="popcenter-hd">
-          <span className="popcenter-title">תזכורות ({reminders.length})</span>
+          <span className="popcenter-title">התראות{total > 0 ? ` (${total})` : ""}</span>
           <button className="intake-close" onClick={onClose}>✕</button>
         </div>
-        <div className="popcenter-list">
-          {reminders.map(rem => (
-            <Toast key={rem.remId} rem={rem} onDismiss={handleDismiss} onSnooze={handleSnooze} />
-          ))}
-        </div>
+        {total === 0 ? (
+          <div className="popcenter-empty">הכל נקי — אין תזכורות או חזרות פעילות.</div>
+        ) : (
+          <div className="popcenter-list">
+            <ReviewDueCard count={dueReviews} onReview={onReview} />
+            {reminders.map(rem => (
+              <Toast key={rem.remId} rem={rem} onDismiss={handleDismiss} onSnooze={handleSnooze} />
+            ))}
+          </div>
+        )}
         <div className="popcenter-footer muted small">
-          לתזכורות כשהאפליקציה סגורה → ייצא לגוגל קלנדר (📅 .ics).
+          חזרות מתוזמנות מופיעות גם בלוח Step 1. לתזכורות כשהאפליקציה סגורה → ייצא ל‑Google Calendar (📅 .ics) או הפעל אימייל יומי.
         </div>
       </div>
     </div>

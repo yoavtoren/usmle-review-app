@@ -9,6 +9,7 @@ import {
 } from "../lib/storage.js";
 import { SUBJECT_SORT_WEIGHT, FRONT_LOAD_SUBJECTS } from "../lib/intakeData.js";
 import { chaptersFromText } from "../lib/faMap.js";
+import ReviewSchedule from "./ReviewSchedule.jsx";
 
 const PRIOS = [
   { key: "high",   label: "High",   color: "#ef4444", bg: "rgba(239,68,68,0.09)" },
@@ -353,6 +354,11 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
         <WeakSubjectsStrip data={weakSubjects} />
 
         {/* ── 2-column main area ── */}
+        <ReviewSchedule
+          questions={questions}
+          onStart={() => onNav("/tests/review", { state: { filter: "due" } })}
+        />
+
         <div className="welcome-main-grid">
           <div className="welcome-left">
 

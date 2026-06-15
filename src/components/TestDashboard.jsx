@@ -2,6 +2,8 @@ import { useState, useMemo, useEffect } from "react";
 import { loadTestLog, saveTestLog, loadProgress } from "../lib/storage.js";
 
 const BASE = import.meta.env.BASE_URL;
+const QBANK_TOTAL = 3400;   // UWorld Step 1 Qbank (~3,400 questions)
+const DEFAULT_BLOCK = 40;   // standard UWorld block size when count not given
 
 function fmt(d) {
   return new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
@@ -146,10 +148,20 @@ export default function TestDashboard({ onBack, onStudy }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tests]);
 
+  // Ascending by date — used by the chart and "latest/trend" stats.
   const sorted = useMemo(
     () => [...tests].sort((a, b) => new Date(a.date) - new Date(b.date)),
     [tests]
   );
+  // Descending — newest test at the head of the list.
+  const listSorted = useMemo(() => [...sorted].reverse(), [sorted]);
+
+  // Total UWorld questions completed (counts entered per test; standard block as fallback).
+  const totalQs = useMemo(
+    () => tests.reduce((s, t) => s + (t.questionCount ?? DEFAULT_BLOCK), 0),
+    [tests]
+  );
+  const qbankPct = Math.min(100, Math.round((totalQs / QBANK_TOTAL) * 100));
 
   const stats = useMemo(() => {
     if (!tests.length) return null;
@@ -161,8 +173,9 @@ export default function TestDashboard({ onBack, onStudy }) {
       best: Math.max(...scores),
       latest: sorted.at(-1)?.score,
       trend: sorted.length >= 2 ? sorted.at(-1).score - sorted.at(-2).score : null,
+      // Net change from the first recorded test to the latest — the real trajectory.
+      net: sorted.length >= 2 ? sorted.at(-1).score - sorted[0].score : null,
       avgGap: gaps.length ? Math.round(gaps.reduce((a, b) => a + b, 0) / gaps.length) : null,
-      avgUW: withUW.length ? Math.round(withUW.reduce((a, t) => a + t.uworldAvg, 0) / withUW.length) : null,
     };
   }, [tests, sorted]);
 
@@ -275,9 +288,9 @@ export default function TestDashboard({ onBack, onStudy }) {
 
           {tests.length > 0 ? (
             <div className="td-test-list">
-              {sorted.map((t, i) => {
+              {listSorted.map((t, i) => {
                 const gap      = t.uworldAvg != null ? t.score - t.uworldAvg : null;
-                const isLatest = i === sorted.length - 1;
+                const isLatest = i === 0;
                 const qTotal   = t.questionCount ?? null;
                 const doneCount = getDoneCount(t);
 
@@ -332,6 +345,22 @@ export default function TestDashboard({ onBack, onStudy }) {
         <div className="td-col-dash">
           {stats ? (
             <>
+              {/* UWorld Qbank completion */}
+              <div className="td-qbank">
+                <div className="td-qbank-head">
+                  <span className="td-qbank-title">UWorld Qbank progress</span>
+                  <span className="td-qbank-count">
+                    {totalQs.toLocaleString()} / {QBANK_TOTAL.toLocaleString()} Qs
+                  </span>
+                </div>
+                <div className="td-qbank-bar">
+                  <div className="td-qbank-fill" style={{ width: `${Math.max(qbankPct, 1)}%` }} />
+                </div>
+                <span className="td-qbank-sub">
+                  {qbankPct}% of the Qbank · {(QBANK_TOTAL - totalQs).toLocaleString()} left
+                </span>
+              </div>
+
               <div className="td-stats-row">
                 <div className="td-stat-card">
                   <span className="td-stat-num">{stats.avg}%</span>
@@ -352,10 +381,12 @@ export default function TestDashboard({ onBack, onStudy }) {
                   </span>
                   <span className="td-stat-label">Latest</span>
                 </div>
-                {stats.avgUW != null && (
+                {stats.net != null && (
                   <div className="td-stat-card">
-                    <span className="td-stat-num td-uw-num">{stats.avgUW}%</span>
-                    <span className="td-stat-label">UWorld avg</span>
+                    <span className={`td-stat-num ${stats.net > 0 ? "td-gap-pos-num" : stats.net < 0 ? "td-gap-neg-num" : ""}`}>
+                      {stats.net > 0 ? "▲ +" : stats.net < 0 ? "▼ −" : ""}{stats.net === 0 ? "0" : Math.abs(stats.net)}%
+                    </span>
+                    <span className="td-stat-label">Trend since first</span>
                   </div>
                 )}
                 {stats.avgGap != null && (

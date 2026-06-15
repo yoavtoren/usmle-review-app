@@ -17,7 +17,7 @@ export default function TestReview({ onBack }) {
   const [deck, setDeck]             = useState(null);
   const [error, setError]           = useState(null);
   const [selectedId, setSelectedId] = useState(null);
-  const [filter, setFilter]         = useState("missed");
+  const [filter, setFilter]         = useState(location.state?.filter || "missed");
   const [block, setBlock]           = useState(initialBlock);
   const [query, setQuery]           = useState("");
   const [progress, setProgress]     = useState(loadProgress);
@@ -79,7 +79,7 @@ export default function TestReview({ onBack }) {
       if (block === "test3" && q.block !== "UWORLD test 3")     return false;
       if (block === "test4" && q.block !== "UWORLD test 4")     return false;
       if (filter === "missed"   && !q.missed)                                return false;
-      if (filter === "due"      && !(card.status !== "new" && isDue(card)))  return false;
+      if (filter === "due"      && !(card.status === "review" && isDue(card))) return false;
       if (filter === "mastered" && card.status !== "mastered")               return false;
       if (query) {
         const hay = `${q.title} ${q.system} ${q.topic}`.toLowerCase();
@@ -95,7 +95,7 @@ export default function TestReview({ onBack }) {
     for (const q of deck.questions) {
       const c = getCard(progress, q.id);
       if (c.status === "mastered") mastered++;
-      if (c.status !== "new" && isDue(c)) due++;
+      if (c.status === "review" && isDue(c)) due++;
     }
     return { total: deck.questions.length, missed: deck.questions.filter(q => q.missed).length, mastered, due };
   }, [deck, progress]);

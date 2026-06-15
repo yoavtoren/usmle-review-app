@@ -93,9 +93,9 @@ const WHY_RIGHT = [
 ];
 
 const SCHEDULE_LABELS = {
-  mastered:  "🏆 Marked mastered — retired from review queue.",
-  got:       "📅 One light review scheduled.",
-  again:     "🔄 Schedule reset to Day 1.",
+  mastered:  "🏆 Mastered — retired from your review queue.",
+  got:       "📅 Scheduled — it moves up the spaced-repetition ladder and returns when due.",
+  again:     "🔄 Back to Day 1 — it returns in tomorrow's review queue.",
   unchanged: "📌 Logged.",
 };
 
@@ -352,6 +352,12 @@ export default function IntakeWizard({ questionId, questionMeta, questionFull, e
               )}
 
               <div className="result-schedule">{SCHEDULE_LABELS[actions.schedule] || SCHEDULE_LABELS.unchanged}</div>
+
+              {actions.schedule !== "unchanged" && (
+                <div className="result-where">
+                  📍 Find it under <b>Step 1 → Review schedule</b> or <b>Tests → Due</b> — due reviews also show in the 🔔 bell{" "}and your daily email.
+                </div>
+              )}
 
               {form.faChapter && (
                 <div className="result-fa">

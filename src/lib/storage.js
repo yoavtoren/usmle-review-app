@@ -5,7 +5,7 @@ const KEY = "usmle-review-progress-v1";
 const DAY = 24 * 60 * 60 * 1000;
 
 // Lightweight spaced-repetition intervals (days) as you mark "Got it".
-const INTERVALS = [1, 3, 7, 16, 35];
+export const INTERVALS = [1, 3, 7, 16, 35];
 
 export function loadProgress() {
   try {
@@ -68,6 +68,63 @@ export function toggleDone(id) {
 
 export function isDue(card) {
   return !card.dueAt || card.dueAt <= Date.now();
+}
+
+// Human label for when a card is next due, e.g. "in 3 days · Jun 18".
+export function nextReviewLabel(card) {
+  if (!card?.dueAt) return null;
+  const diff = card.dueAt - Date.now();
+  const days = Math.round(diff / DAY);
+  const dateStr = new Date(card.dueAt).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  if (diff <= 0)   return `due now · ${dateStr}`;
+  if (days <= 1)   return `tomorrow · ${dateStr}`;
+  return `in ${days} days · ${dateStr}`;
+}
+
+// Build the full spaced-repetition picture from the deck + saved progress:
+// what's overdue / due today, a 14-day upcoming distribution, and tallies.
+export function getReviewSchedule(questions = [], progress = loadProgress()) {
+  const now = Date.now();
+  const paused = getLightMode().paused;
+  const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
+  const t0 = todayStart.getTime();
+
+  let overdue = 0, dueToday = 0, mastered = 0, reviewing = 0, fresh = 0;
+  const upcoming = []; // { dueAt }
+
+  for (const q of questions) {
+    const c = getCard(progress, q.id);
+    if (c.status === "mastered") { mastered++; continue; }
+    if (c.status === "new")      { fresh++; continue; }
+    reviewing++;
+    const dueAt = c.dueAt || now;
+    if (dueAt <= now) {
+      if (dueAt < t0) overdue++; else dueToday++;
+    } else {
+      upcoming.push(dueAt);
+    }
+  }
+
+  const dueNow = paused ? 0 : overdue + dueToday;
+
+  // 14-day distribution (day 0 = today, counts overdue + due-today together).
+  const days = [];
+  for (let i = 0; i < 14; i++) {
+    const dStart = t0 + i * DAY;
+    const dEnd = dStart + DAY;
+    const count = i === 0
+      ? overdue + dueToday
+      : upcoming.filter(d => d >= dStart && d < dEnd).length;
+    days.push({ ms: dStart, count, isToday: i === 0 });
+  }
+
+  return {
+    paused, dueNow, overdue, dueToday,
+    upcomingTotal: upcoming.length,
+    mastered, reviewing, fresh,
+    nextDueAt: upcoming.length ? Math.min(...upcoming) : null,
+    days,
+  };
 }
 
 const STREAK_KEY = "usmle-streak-v1";
