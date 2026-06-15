@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { loadFATopics, saveFATopics, loadTasks, saveTasks, touchFASection } from "../lib/storage.js";
 import { chaptersFromText } from "../lib/faMap.js";
+import { markTaskInFA, lookupPage } from "../lib/faSync.js";
 import ReviewCharts from "./ReviewCharts.jsx";
 
 const BASE = import.meta.env.BASE_URL;
@@ -258,7 +259,25 @@ export default function FADashboard({ onBack, onTrack }) {
     [tasks]
   );
 
-  function completeFAReview(taskId) {
+  // Precise FA page per pending review (resolved from the book index).
+  const [pages, setPages] = useState({});
+  useEffect(() => {
+    let live = true;
+    (async () => {
+      const out = {};
+      for (const t of tasks.filter(t => t.type === "read-fa" && !t.done)) {
+        const file = t.faChapters?.[0]?.file;
+        const pg = await lookupPage(t.faTopic || t.body, file);
+        if (pg) out[t.id] = pg;
+      }
+      if (live) setPages(out);
+    })();
+    return () => { live = false; };
+  }, [tasks]);
+
+  // Completing a review marks it done AND signs the matching topic in the FA tracker.
+  async function completeFAReview(taskId) {
+    const task = tasks.find(t => t.id === taskId);
     const next = tasks.map(t => {
       if (t.id !== taskId) return t;
       if (t.linkedFaSectionId) touchFASection(t.linkedFaSectionId);
@@ -266,6 +285,10 @@ export default function FADashboard({ onBack, onTrack }) {
     });
     setTasks(next);
     saveTasks(next);
+    if (task) {
+      await markTaskInFA(task);   // tick the matching chapter topic(s)
+      setLsTopics(loadFATopics()); // reflect the new coverage immediately
+    }
   }
 
   useEffect(() => {
@@ -671,17 +694,21 @@ export default function FADashboard({ onBack, onTrack }) {
                     {ch.name}
                     <span className="fad-review-ch-n">{faReviewsByChapter[ch.file].length}</span>
                   </button>
-                  {faReviewsByChapter[ch.file].map(t => (
-                    <div key={t.id} className="fad-review-item">
-                      <button className="fad-review-item-txt" title="Open this chapter in the list below"
-                        onClick={() => focusChapter(ch.file)}>
-                        {t.body || t.text} <span className="fad-review-go">→</span>
-                      </button>
-                      <button className="fad-review-done" onClick={() => completeFAReview(t.id)}>
-                        ✓ Read
-                      </button>
-                    </div>
-                  ))}
+                  {faReviewsByChapter[ch.file].map(t => {
+                    const pg = pages[t.id] || t.faPage;
+                    return (
+                      <div key={t.id} className="fad-review-item">
+                        <button className="fad-review-item-txt" title="Open this chapter in the list below"
+                          onClick={() => focusChapter(ch.file)}>
+                          {t.body || t.text} <span className="fad-review-go">→</span>
+                        </button>
+                        {pg && <span className="fad-review-page" title="First Aid 2025 page">p.{pg}</span>}
+                        <button className="fad-review-done" onClick={() => completeFAReview(t.id)}>
+                          ✓ Read
+                        </button>
+                      </div>
+                    );
+                  })}
                 </div>
               ))}
           </div>

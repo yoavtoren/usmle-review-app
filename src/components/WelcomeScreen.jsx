@@ -9,6 +9,7 @@ import {
 } from "../lib/storage.js";
 import { SUBJECT_SORT_WEIGHT, FRONT_LOAD_SUBJECTS } from "../lib/intakeData.js";
 import { chaptersFromText } from "../lib/faMap.js";
+import { markTaskInFA } from "../lib/faSync.js";
 import ReviewSchedule from "./ReviewSchedule.jsx";
 
 const PRIOS = [
@@ -112,8 +113,10 @@ function TaskManager({ tasks, setTasks }) {
 
   function toggle(id) {
     const task = tasks.find(t => t.id === id);
-    if (task && task.type === "read-fa" && !task.done && task.linkedFaSectionId) {
-      touchFASection(task.linkedFaSectionId);
+    if (task && task.type === "read-fa" && !task.done) {
+      // Completing a "Read FA" task signs the matching topic in the FA tracker.
+      if (task.linkedFaSectionId) touchFASection(task.linkedFaSectionId);
+      markTaskInFA(task).catch(() => {});
     }
     const next = tasks.map(t => t.id === id ? { ...t, done: !t.done } : t);
     setTasks(next); saveTasks(next);

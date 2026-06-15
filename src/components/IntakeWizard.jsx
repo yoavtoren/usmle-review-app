@@ -21,12 +21,15 @@ function buildActions(form, questionId, qFull) {
       faLocs.forEach((fa, i) => {
         const chapters = chaptersForFA(fa, qBlob);
         const chLabel = chapters.map(c => c.name).join(" / ");
+        const page = chapters[0]?.page;
         const loc = fa.location || fa.detail || "";
         tasks.push({
           id: `t-${stamp}-fa${i}`, type: "read-fa", priority: "high", subject, system,
-          text: chLabel ? `📖 Read FA: ${chLabel} — ${fa.topic}` : `📖 Read FA: ${loc || fa.topic}`,
+          text: chLabel
+            ? `📖 Read FA: ${chLabel} — ${fa.topic}${page ? ` · p.${page}` : ""}`
+            : `📖 Read FA: ${loc || fa.topic}`,
           body: `${fa.topic}${loc ? ` — ${loc}` : ""}`,
-          faChapters: chapters,
+          faChapters: chapters, faTopic: fa.topic, faPage: page,
           linkedQuestionId: questionId, linkedFaSectionId: sid || undefined,
           done: false, createdAt: stamp,
         });
@@ -34,12 +37,13 @@ function buildActions(form, questionId, qFull) {
     } else {
       const chapters = resolveFAChapters(qFull, { subject, system });
       const chLabel = chapters.map(c => c.name).join(" / ");
+      const page = chapters[0]?.page;
       if (sid || chapters.length) {
         tasks.push({
           id: `t-${stamp}-fa`, type: "read-fa", priority: "high", subject, system,
-          text: chLabel ? `📖 Read FA: ${chLabel} — ${topic}` : `📖 Read FA: ${sid}`,
+          text: chLabel ? `📖 Read FA: ${chLabel} — ${topic}${page ? ` · p.${page}` : ""}` : `📖 Read FA: ${sid}`,
           body: `${prefix} — ${topic}`,
-          faChapters: chapters,
+          faChapters: chapters, faTopic: qFull?.topic || topic, faPage: page,
           linkedQuestionId: questionId, linkedFaSectionId: sid || undefined,
           done: false, createdAt: stamp,
         });

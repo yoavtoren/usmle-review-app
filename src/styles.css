@@ -4300,3 +4300,10 @@ button.cr-dot:hover { transform: scale(1.18); color: #9ca3af; }
 /* Wizard — where-to-find note */
 .result-where { font-size: 11.5px; line-height: 1.55; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 9px 12px; margin-top: 10px; }
 .result-where b { color: var(--accent-ink); font-weight: 700; }
+
+/* FA review page chip */
+.fad-review-page {
+  flex-shrink: 0; font-size: 10.5px; font-weight: 700; color: var(--gold-deep);
+  background: var(--gold-soft); border: 1px solid var(--gold-mid); border-radius: 6px;
+  padding: 2px 7px; font-variant-numeric: tabular-nums; white-space: nowrap;
+}
