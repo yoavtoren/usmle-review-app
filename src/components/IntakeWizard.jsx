@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { FA_SECTIONS, RESOURCE_GUIDANCE, SUBJECTS, SYSTEMS, makeFASectionId, inferTags } from "../lib/intakeData.js";
 import { chaptersForFA, resolveFAChapters } from "../lib/faMap.js";
+import { lookupPage } from "../lib/faSync.js";
 
-function buildActions(form, questionId, qFull) {
+async function buildActions(form, questionId, qFull) {
   const { subject, system, faChapter, faSubsection, outcome, whyMissed, mechanismNote } = form;
   const sid = makeFASectionId(faChapter, faSubsection);
   const topic = [subject, system].filter(Boolean).join(" — ") || qFull?.topic || qFull?.title || "this topic";
@@ -16,12 +17,14 @@ function buildActions(form, questionId, qFull) {
   // One FA-reading task per First-Aid location the question points to, each
   // tagged with the real FA chapter(s) it maps to so the FA tracker can flag them.
   const qBlob = `${qFull?.topic || ""} ${qFull?.title || ""} ${qFull?.system || ""}`;
-  function pushFAReadTasks(prefix) {
+  async function pushFAReadTasks(prefix) {
     if (faLocs.length) {
-      faLocs.forEach((fa, i) => {
+      for (let i = 0; i < faLocs.length; i++) {
+        const fa = faLocs[i];
         const chapters = chaptersForFA(fa, qBlob);
         const chLabel = chapters.map(c => c.name).join(" / ");
-        const page = chapters[0]?.page;
+        // Precise topic page from the book index (falls back to chapter page).
+        const page = await lookupPage(fa.topic, chapters[0]?.file);
         const loc = fa.location || fa.detail || "";
         tasks.push({
           id: `t-${stamp}-fa${i}`, type: "read-fa", priority: "high", subject, system,
@@ -33,11 +36,11 @@ function buildActions(form, questionId, qFull) {
           linkedQuestionId: questionId, linkedFaSectionId: sid || undefined,
           done: false, createdAt: stamp,
         });
-      });
+      }
     } else {
       const chapters = resolveFAChapters(qFull, { subject, system });
       const chLabel = chapters.map(c => c.name).join(" / ");
-      const page = chapters[0]?.page;
+      const page = await lookupPage(qFull?.topic || topic, chapters[0]?.file);
       if (sid || chapters.length) {
         tasks.push({
           id: `t-${stamp}-fa`, type: "read-fa", priority: "high", subject, system,
@@ -54,7 +57,7 @@ function buildActions(form, questionId, qFull) {
   if (outcome === "incorrect") {
     if (whyMissed === "A") {
       // Knowledge gap → straight to targeted First Aid reading.
-      pushFAReadTasks("First Aid");
+      await pushFAReadTasks("First Aid");
       schedule = "again";
     } else if (whyMissed === "B") {
       tasks.push({
@@ -72,7 +75,7 @@ function buildActions(form, questionId, qFull) {
         body: resources.join(" · "),
         linkedQuestionId: questionId, done: false, createdAt: stamp,
       });
-      pushFAReadTasks("Understand mechanism");
+      await pushFAReadTasks("Understand mechanism");
       schedule = "again";
     } else if (whyMissed === "D") {
       schedule = "again"; // no tasks, just log
@@ -146,23 +149,23 @@ export default function IntakeWizard({ questionId, questionMeta, questionFull, e
     setTimeout(() => setStep(2), 130);
   }
 
-  function pickWhy(key) {
+  async function pickWhy(key) {
     const updated = { ...form, whyMissed: key };
     setForm(updated);
     const needsNote = updated.outcome === "incorrect" && (key === "B" || key === "C");
     if (needsNote) {
       setTimeout(() => setStep(3), 130);
     } else {
-      const a = buildActions(updated, questionId, qData);
+      const a = await buildActions(updated, questionId, qData);
       setActions(a);
       setTimeout(() => setStep(4), 130);
     }
   }
 
-  function next() {
+  async function next() {
     if (step === 0 && canNext0) { setStep(1); return; }
     if (step === 3) {
-      const a = buildActions(form, questionId, qData);
+      const a = await buildActions(form, questionId, qData);
       setActions(a);
       setStep(4);
     }
