@@ -5,6 +5,22 @@ const BASE = import.meta.env.BASE_URL;
 const QBANK_TOTAL = 3400;   // UWorld Step 1 Qbank (~3,400 questions)
 const DEFAULT_BLOCK = 40;   // standard UWorld block size when count not given
 
+// Resolve which deck block a logged test maps to. Prefer explicit fields, else
+// infer from the test name ("UWORLD test 5" → "test5") so manually-added tests
+// still link to their questions.
+function blockOf(test) {
+  if (test.block) return test.block;
+  const m = String(test.testNum || "").match(/test\s*(\d+)/i);
+  return m ? `test${m[1]}` : null;
+}
+function deckFileOf(test) {
+  return test.deckFile || (blockOf(test) ? "questions/deck.json" : null);
+}
+// Does a deck question belong to the given block? Test 1 = no block field.
+function qInBlock(q, block) {
+  return block === "test1" ? q.block === undefined : q.block === `UWORLD test ${block.slice(-1)}`;
+}
+
 function fmt(d) {
   return new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
@@ -137,7 +153,7 @@ export default function TestDashboard({ onBack, onStudy }) {
 
   // Load the deck for every test that has a deckFile
   useEffect(() => {
-    const files = [...new Set(tests.filter(t => t.deckFile).map(t => t.deckFile))];
+    const files = [...new Set(tests.map(deckFileOf).filter(Boolean))];
     files.forEach(f => {
       if (deckQuestions[f]) return;
       fetch(`${BASE}${f}`)
@@ -179,12 +195,17 @@ export default function TestDashboard({ onBack, onStudy }) {
     };
   }, [tests, sorted]);
 
-  // Done count per test (using that test's own deck questions)
+  // Questions belonging to a test's block (from its resolved deck).
+  function blockQuestions(test) {
+    const df = deckFileOf(test), bl = blockOf(test);
+    const all = df && deckQuestions[df];
+    if (!all || !bl) return null;
+    return all.filter(q => qInBlock(q, bl));
+  }
+  // Done count per test (only that test's own block questions).
   function getDoneCount(test) {
-    if (!test.deckFile) return 0;
-    const qs = deckQuestions[test.deckFile];
-    if (!qs) return 0;
-    return qs.filter(q => progress[q.id]?.done).length;
+    const qs = blockQuestions(test);
+    return qs ? qs.filter(q => progress[q.id]?.done).length : 0;
   }
 
   function setField(k, v) { setForm(f => ({ ...f, [k]: v })); setFormErr(""); }
@@ -291,7 +312,8 @@ export default function TestDashboard({ onBack, onStudy }) {
               {listSorted.map((t, i) => {
                 const gap      = t.uworldAvg != null ? t.score - t.uworldAvg : null;
                 const isLatest = i === 0;
-                const qTotal   = t.questionCount ?? null;
+                const bq       = blockQuestions(t);
+                const qTotal   = t.questionCount ?? (bq ? bq.length : null);
                 const doneCount = getDoneCount(t);
 
                 return (
@@ -323,8 +345,8 @@ export default function TestDashboard({ onBack, onStudy }) {
                       </div>
                     )}
 
-                    {t.hasQuestions && onStudy && (
-                      <button className="td-review-btn" onClick={() => onStudy(t.deckFile, t.block)}>
+                    {bq && bq.length > 0 && onStudy && (
+                      <button className="td-review-btn" onClick={() => onStudy(deckFileOf(t), blockOf(t))}>
                         Review questions →
                       </button>
                     )}
