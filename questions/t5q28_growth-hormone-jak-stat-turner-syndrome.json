@@ -1,0 +1,211 @@
+{
+  "id": "q177",
+  "item": 177,
+  "qid": "1720",
+  "title": "Growth hormone JAK-STAT (Turner syndrome)",
+  "system": "Biochemistry",
+  "topic": "Cell signaling pathways",
+  "correct": "E",
+  "yourAnswer": "B",
+  "percentCorrect": 53,
+  "vignette": "A 6-year-old girl is brought to the office for evaluation of short stature. Her parents have noticed that she bears little resemblance to her 2 older siblings. The patient's mother and father are 172.5 cm (5'8\") and 183 cm (6') tall, respectively. On physical examination, the patient's height is 3 standard deviations below the mean for her age. Other findings include low-set ears, a high arched palate, a webbed neck, and cubitus valgus. Chromosomal analysis reveals a 45,XO karyotype. The patient is started on a medication to improve growth and normalize her height. Which of the following intracellular pathways is stimulated by the medication used in this patient?",
+  "clues": [
+    {
+      "text": "short stature",
+      "type": "red",
+      "note": "Short stature 3 SD below the mean is the chief complaint and the treatment target. The medication chosen to fix it is what the question is really testing."
+    },
+    {
+      "text": "low-set ears, a high arched palate, a webbed neck, and cubitus valgus",
+      "type": "green",
+      "note": "This dysmorphology cluster (webbed neck, cubitus valgus, low-set ears, high-arched palate) is classic Turner syndrome. It steers you to a 45,XO girl."
+    },
+    {
+      "text": "45,XO karyotype",
+      "type": "green",
+      "note": "A 45,XO karyotype confirms Turner syndrome. Turner-related growth failure is treated with recombinant human growth hormone."
+    },
+    {
+      "text": "medication to improve growth and normalize her height",
+      "type": "blue",
+      "note": "The drug is recombinant GROWTH HORMONE. The question asks for ITS intracellular signaling pathway — growth hormone (a peptide) signals through cell-surface receptors and JAK-STAT."
+    }
+  ],
+  "whatMatters": "Chain it: Turner syndrome (45,XO + webbed neck/cubitus valgus) -> treated with growth hormone -> name growth hormone's signaling pathway. The disease is just the route to the drug; the testable point is that GH (and prolactin, cytokines, EPO, G-CSF) act through the JAK-STAT pathway. Answer E.",
+  "strategy": "Classify hormones by signaling: JAK-STAT (growth hormone, prolactin, cytokines, EPO, G-CSF, leptin); cAMP/PKA via Gs (glucagon, PTH, ACTH, ADH-V2, FSH/LH/TSH, beta-agonists); IP3/DAG via Gq (GnRH, TRH, angiotensin II, ADH-V1, alpha-1); intracellular DNA-binding receptors (steroids, thyroid, vitamin D); receptor tyrosine kinases (insulin, IGF, growth factors).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Binding of activated receptors to DNA to modify transcription",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cyclic AMP-Protein kinase A pathway",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Diacylglycerol-Protein kinase C pathway",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Inositol triphosphate-calcium-calmodulin pathway",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "JAK-STAT pathway",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "intracellular DNA-binding receptor = steroid/thyroid",
+      "detail": "WHAT IT IS: the mechanism of STEROID and THYROID hormones — lipophilic ligands bind intracellular receptors that act directly on DNA to modify transcription. ❌ WHY IT FAILS: growth hormone is a peptide using a cell-SURFACE receptor (JAK-STAT), not an intracellular DNA-binding receptor. ✅ Correct if: cortisol, aldosterone, estrogen, testosterone, T3/T4, or vitamin D."
+    },
+    {
+      "letter": "B",
+      "label": "cAMP-PKA (Gs) — not GH's pathway (your pick)",
+      "detail": "WHAT IT IS: Gs-coupled receptors raise cAMP and activate protein kinase A (e.g., glucagon, PTH, ACTH, ADH-V2, beta-agonists). ❌ WHY IT FAILS: GH does not signal through cAMP/PKA; it dimerizes its receptor and activates JAK2-STAT. The trap is defaulting to the most familiar second messenger. ✅ Correct if: a Gs-protein hormone (glucagon, PTH, ACTH, FSH/LH/TSH, ADH-V2)."
+    },
+    {
+      "letter": "C",
+      "label": "DAG-PKC (Gq) — wrong hormone class",
+      "detail": "WHAT IT IS: Gq-coupled receptors activate phospholipase C -> DAG -> protein kinase C. ❌ WHY IT FAILS: GH isn't a Gq hormone, so DAG/PKC isn't its pathway. ✅ Correct if: a Gq hormone (GnRH, TRH, angiotensin II, ADH-V1, alpha-1 agonists)."
+    },
+    {
+      "letter": "D",
+      "label": "IP3-calcium-calmodulin (Gq) — wrong hormone class",
+      "detail": "WHAT IT IS: the other Gq arm — phospholipase C makes IP3, releasing Ca2+ that acts via calmodulin. ❌ WHY IT FAILS: same Gq family, not used by growth hormone. ✅ Correct if: a Gq hormone driving IP3/Ca2+ signaling."
+    }
+  ],
+  "reasoning": [
+    "Short stature + webbed neck + cubitus valgus + low-set ears + 45,XO = Turner syndrome",
+    "Turner-related growth failure is treated with recombinant human GROWTH HORMONE",
+    "Growth hormone binds a cell-surface receptor that dimerizes and signals through JAK2-STAT (inducing IGF-1)",
+    "-> JAK-STAT pathway, answer E"
+  ],
+  "mechanism": "The clinical picture (short stature, webbed neck, cubitus valgus, low-set ears, 45,XO) is Turner syndrome, treated with recombinant human growth hormone to normalize height. Growth hormone binds a single-pass cell-surface receptor; one GH molecule bridges two receptors, causing dimerization and activation of receptor-associated Janus kinase (JAK2), a nonreceptor tyrosine kinase. JAK2 phosphorylates tyrosine residues that dock STAT proteins; phosphorylated STATs dimerize, translocate to the nucleus, and induce transcription of IGF-1 and other growth genes. Cytokines (e.g., interferon), erythropoietin, G-CSF, and prolactin use the same JAK-STAT pathway.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochem/Cell > signaling by receptor class: cAMP/PKA (Gs), IP3/DAG (Gq), JAK-STAT (GH, prolactin, cytokines, EPO, G-CSF), intracellular/steroid receptors (steroid, thyroid, vitamin D), RTKs (insulin, IGF). Plus Turner syndrome features and GH therapy."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: diagnose Turner (45,XO + features) -> the drug is growth hormone -> recall GH's pathway (JAK-STAT). The question tests the DRUG's signaling, not the disease."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on JAK-STAT, Janus kinase, STAT, IGF-1, second messengers (cAMP, IP3, DAG), cubitus valgus, 45,XO? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "cAMP-PKA (B) is the trap — it's the most-memorized hormone pathway, an easy default. But GH uses JAK-STAT, not cAMP."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the JAK-STAT users: Growth hormone, Prolactin, cytokines/interferons, EPO, G-CSF, thrombopoietin, leptin."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Growth hormone (and prolactin) signaling pathway",
+      "back": "JAK-STAT"
+    },
+    {
+      "front": "Short stature + webbed neck + cubitus valgus + 45,XO",
+      "back": "Turner syndrome"
+    },
+    {
+      "front": "Turner short-stature treatment",
+      "back": "Recombinant growth hormone"
+    },
+    {
+      "front": "cAMP/PKA hormones (Gs)",
+      "back": "Glucagon, PTH, ACTH, ADH-V2, FSH/LH/TSH, beta-agonists"
+    },
+    {
+      "front": "IP3/DAG hormones (Gq)",
+      "back": "GnRH, TRH, angiotensin II, ADH-V1, alpha-1"
+    },
+    {
+      "front": "Intracellular DNA-binding receptors",
+      "back": "Steroid, thyroid, vitamin D"
+    },
+    {
+      "front": "Other JAK-STAT users",
+      "back": "Cytokines, EPO, G-CSF, prolactin, leptin"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "JAK-STAT signaling",
+      "detail": "Biochem/Cell > GH/prolactin/cytokines/EPO/G-CSF use JAK-STAT -> IGF-1; receptor dimerization, JAK2, STAT phosphorylation.",
+      "location": "Biochem/Cell > GH/prolactin/cytokines/EPO/G-CSF use JAK-STAT -> IGF-1; receptor dimerization, JAK2, STAT phosphorylation."
+    },
+    {
+      "tag": "options",
+      "topic": "Signaling pathways",
+      "detail": "Cell > cAMP/PKA (Gs), DAG-PKC and IP3-Ca2+ (Gq), intracellular/steroid receptors, receptor tyrosine kinases (insulin/IGF).",
+      "location": "Cell > cAMP/PKA (Gs), DAG-PKC and IP3-Ca2+ (Gq), intracellular/steroid receptors, receptor tyrosine kinases (insulin/IGF)."
+    },
+    {
+      "tag": "context",
+      "topic": "Turner syndrome",
+      "detail": "Repro/Genetics > 45,XO: short stature, webbed neck, cubitus valgus, streak ovaries, coarctation/bicuspid valve; GH + estrogen therapy.",
+      "location": "Repro/Genetics > 45,XO: short stature, webbed neck, cubitus valgus, streak ovaries, coarctation/bicuspid valve; GH + estrogen therapy."
+    }
+  ],
+  "memoryHook": "GH, Prolactin, EPO, G-CSF, and cytokines all JACK each other up the STATs (JAK-STAT). The Turner girl gets growth hormone -> JAK-STAT.",
+  "stem": [
+    {
+      "text": "A 6-year-old girl is brought to the office for evaluation of "
+    },
+    {
+      "text": "short stature",
+      "clue": true,
+      "type": "red",
+      "note": "Short stature 3 SD below the mean is the chief complaint and the treatment target. The medication chosen to fix it is what the question is really testing."
+    },
+    {
+      "text": ". Her parents have noticed that she bears little resemblance to her 2 older siblings. The patient's mother and father are 172.5 cm (5'8\") and 183 cm (6') tall, respectively. On physical examination, the patient's height is 3 standard deviations below the mean for her age. Other findings include "
+    },
+    {
+      "text": "low-set ears, a high arched palate, a webbed neck, and cubitus valgus",
+      "clue": true,
+      "type": "green",
+      "note": "This dysmorphology cluster (webbed neck, cubitus valgus, low-set ears, high-arched palate) is classic Turner syndrome. It steers you to a 45,XO girl."
+    },
+    {
+      "text": ". Chromosomal analysis reveals a "
+    },
+    {
+      "text": "45,XO karyotype",
+      "clue": true,
+      "type": "green",
+      "note": "A 45,XO karyotype confirms Turner syndrome. Turner-related growth failure is treated with recombinant human growth hormone."
+    },
+    {
+      "text": ". The patient is started on a "
+    },
+    {
+      "text": "medication to improve growth and normalize her height",
+      "clue": true,
+      "type": "blue",
+      "note": "The drug is recombinant GROWTH HORMONE. The question asks for ITS intracellular signaling pathway — growth hormone (a peptide) signals through cell-surface receptors and JAK-STAT."
+    },
+    {
+      "text": ". Which of the following intracellular pathways is stimulated by the medication used in this patient?"
+    }
+  ]
+}

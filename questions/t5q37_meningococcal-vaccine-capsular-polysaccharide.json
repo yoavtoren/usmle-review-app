@@ -1,0 +1,216 @@
+{
+  "id": "q186",
+  "item": 186,
+  "qid": "1853",
+  "title": "Meningococcal vaccine: capsular polysaccharide",
+  "system": "Microbiology",
+  "topic": "Vaccines / Neisseria meningitidis",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 75,
+  "vignette": "A 22-year-old woman is brought to the emergency department due to fever, headaches, nausea, vomiting, and myalgias that began suddenly last night. This morning, the patient was lethargic, difficult to arouse, and confused. She is an exchange student who came to the United States 3 months ago, and her medical history is unknown. Temperature is 39.4 C (102.9 F), blood pressure is 100/60 mm Hg, pulse is 112/min, and respirations are 18/min. Physical examination shows nuchal rigidity. Skin examination findings are shown in the image. Leukocyte count is elevated, and lumbar puncture with cerebrospinal fluid Gram stain establishes the diagnosis. Which of the following is most likely to be the primary antigenic component of the vaccine that could have prevented this patient's infection?",
+  "clues": [
+    {
+      "text": "fever, headaches, nausea, vomiting, and myalgias that began suddenly last night",
+      "type": "blue",
+      "note": "A sudden, severe febrile prodrome that rapidly progresses to altered mental status is the tempo of acute bacterial meningitis - here, meningococcal."
+    },
+    {
+      "text": "exchange student",
+      "type": "orange",
+      "note": "A young adult in a close-living/communal setting (and possibly unvaccinated coming from abroad) is the classic at-risk host for Neisseria meningitidis, which spreads via respiratory droplets in crowded conditions."
+    },
+    {
+      "text": "nuchal rigidity",
+      "type": "red",
+      "note": "Nuchal rigidity is meningismus - strong evidence of meningitis. With fever and altered mental status, this is bacterial meningitis until proven otherwise."
+    },
+    {
+      "text": "Skin examination findings are shown in the image",
+      "type": "green",
+      "note": "The skin image shows a petechial/purpuric rash - characteristic of meningococcemia (Neisseria meningitidis). This pins the organism and tells you which vaccine could have prevented it."
+    }
+  ],
+  "whatMatters": "Strip the story to: a young exchange student with acute meningitis (fever, nuchal rigidity, confusion) plus a petechial/purpuric rash = meningococcal meningitis (Neisseria meningitidis). The vaccine that prevents it is based on the CAPSULAR POLYSACCHARIDE (conjugated to a carrier protein). Answer A.",
+  "strategy": "Identify the organism, then recall the vaccine's antigenic basis. Encapsulated bacteria (meningococcus, pneumococcus, Hib) -> CAPSULAR POLYSACCHARIDE vaccines (conjugated to a protein so young children respond). Match the rest: toxoid vaccines = toxin-mediated diseases (tetanus/diphtheria); live attenuated = MMR/varicella; virus-like particles = HPV/HBV.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Capsular polysaccharide",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Inactivated (killed) organisms",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Inactivated toxic compounds",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Live attenuated organisms",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Virus-like particles",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "killed organisms - not the meningococcal antigen",
+      "detail": "WHAT IT IS: whole-killed-pathogen vaccines (eg, inactivated polio, hepatitis A, rabies). ❌ WHY IT FAILS: the meningococcal vaccine's protective antigen is the capsular polysaccharide, not whole killed bacteria. ✅ Correct if: asked about a killed-virus vaccine (eg, inactivated polio)."
+    },
+    {
+      "letter": "C",
+      "label": "toxoid - for toxin diseases (and only the carrier here)",
+      "detail": "WHAT IT IS: toxoid vaccines (inactivated toxins) protect against toxin-mediated diseases - tetanus and diphtheria. ❌ WHY IT FAILS: meningococcal disease is prevented by anticapsular antibodies, not antitoxin; the diphtheria toxoid is only the CARRIER protein in the conjugate vaccine, not the primary antigen. ✅ Correct if: tetanus/diphtheria prevention."
+    },
+    {
+      "letter": "D",
+      "label": "live attenuated - no live meningococcal vaccine",
+      "detail": "WHAT IT IS: weakened live pathogens (MMR, varicella, oral polio, yellow fever). ❌ WHY IT FAILS: there is no live attenuated meningococcal vaccine; protection comes from the capsular polysaccharide. ✅ Correct if: a vaccine-preventable disease using a live attenuated agent (measles, varicella)."
+    },
+    {
+      "letter": "E",
+      "label": "virus-like particles - for viral vaccines",
+      "detail": "WHAT IT IS: noninfectious multiprotein shells that mimic a virus (HPV, hepatitis B vaccines). ❌ WHY IT FAILS: these are for viral diseases; meningococcus is a bacterium prevented by its capsular polysaccharide. ✅ Correct if: HPV or hepatitis B vaccination."
+    }
+  ],
+  "reasoning": [
+    "Acute meningitis + petechial/purpuric rash + young adult in close quarters",
+    "= meningococcal meningitis (Neisseria meningitidis)",
+    "Protective immunity comes from antibodies against the polysaccharide capsule",
+    "Vaccine's primary antigen = capsular polysaccharide (conjugated) -> answer A"
+  ],
+  "mechanism": "Neisseria meningitidis is an encapsulated gram-negative diplococcus; antibodies against its POLYSACCHARIDE CAPSULE confer protection by promoting opsonization and complement-mediated killing. The quadrivalent conjugate vaccine uses capsular polysaccharide antigens (serogroups A, C, Y, W) fused to a diphtheria-toxoid carrier so they can be presented on MHC for a strong, lasting T-cell-dependent response. (Serogroup B's capsule mimics human neural adhesion molecules, so its vaccine instead uses recombinant proteins.) The diphtheria toxoid is only the carrier; the primary antigen is the capsular polysaccharide.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro/Immuno > Neisseria meningitidis and the meningococcal conjugate vaccine (capsular polysaccharide); encapsulated-organism vaccines (also pneumococcus, Hib). Cross-ref vaccine types table."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: (1) identify N. meningitidis from meningitis + petechial rash + close-living host; (2) recall that encapsulated-bacteria vaccines target the capsular polysaccharide."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on capsular polysaccharide, conjugate vaccine, toxoid, live attenuated, virus-like particle, nuchal rigidity, petechiae/purpura? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Toxoid (C) tempts because the diphtheria toxoid is in the vaccine - but it's only the CARRIER. The primary antigen is the capsular polysaccharide."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "A clinical photo shows a petechial/purpuric rash. Recognizing it confirms meningococcemia: non-blanching pinpoint petechiae coalescing into purpura, often on the trunk/extremities. Let the rash + meningismus pin the organism."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Acute meningitis + petechial/purpuric rash + young adult/dorm",
+      "back": "Meningococcal meningitis (Neisseria meningitidis)"
+    },
+    {
+      "front": "Meningococcal vaccine primary antigen",
+      "back": "Capsular polysaccharide (conjugated)"
+    },
+    {
+      "front": "Why conjugate to diphtheria toxoid",
+      "back": "T-cell-dependent response (works in young children)"
+    },
+    {
+      "front": "Serogroup B meningococcal vaccine",
+      "back": "Recombinant proteins (capsule mimics neural antigens)"
+    },
+    {
+      "front": "Toxoid vaccines",
+      "back": "Tetanus, diphtheria"
+    },
+    {
+      "front": "Live attenuated vaccines",
+      "back": "MMR, varicella, oral polio, yellow fever"
+    },
+    {
+      "front": "Virus-like particle vaccines",
+      "back": "HPV, hepatitis B"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Meningococcal vaccine",
+      "detail": "Micro/Immuno > Neisseria meningitidis: capsular polysaccharide conjugate vaccine; encapsulated organisms and anticapsular immunity.",
+      "location": "Micro/Immuno > Neisseria meningitidis: capsular polysaccharide conjugate vaccine; encapsulated organisms and anticapsular immunity."
+    },
+    {
+      "tag": "options",
+      "topic": "Vaccine types",
+      "detail": "Immuno > vaccine types table: live attenuated, killed, toxoid, subunit/conjugate, virus-like particle, with examples.",
+      "location": "Immuno > vaccine types table: live attenuated, killed, toxoid, subunit/conjugate, virus-like particle, with examples."
+    },
+    {
+      "tag": "context",
+      "topic": "Bacterial meningitis",
+      "detail": "Micro > meningitis by age, CSF findings, petechial rash of meningococcemia.",
+      "location": "Micro > meningitis by age, CSF findings, petechial rash of meningococcemia."
+    }
+  ],
+  "memoryHook": "Encapsulated bug, anticapsule vaccine. Meningococcus = capsular polysaccharide (conjugated so even kids respond).",
+  "stem": [
+    {
+      "text": "A 22-year-old woman is brought to the emergency department due to "
+    },
+    {
+      "text": "fever, headaches, nausea, vomiting, and myalgias that began suddenly last night",
+      "clue": true,
+      "type": "blue",
+      "note": "A sudden, severe febrile prodrome that rapidly progresses to altered mental status is the tempo of acute bacterial meningitis - here, meningococcal."
+    },
+    {
+      "text": ". This morning, the patient was lethargic, difficult to arouse, and confused. She is an "
+    },
+    {
+      "text": "exchange student",
+      "clue": true,
+      "type": "orange",
+      "note": "A young adult in a close-living/communal setting (and possibly unvaccinated coming from abroad) is the classic at-risk host for Neisseria meningitidis, which spreads via respiratory droplets in crowded conditions."
+    },
+    {
+      "text": " who came to the United States 3 months ago, and her medical history is unknown. Temperature is 39.4 C (102.9 F), blood pressure is 100/60 mm Hg, pulse is 112/min, and respirations are 18/min. Physical examination shows "
+    },
+    {
+      "text": "nuchal rigidity",
+      "clue": true,
+      "type": "red",
+      "note": "Nuchal rigidity is meningismus - strong evidence of meningitis. With fever and altered mental status, this is bacterial meningitis until proven otherwise."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Skin examination findings are shown in the image",
+      "clue": true,
+      "type": "green",
+      "note": "The skin image shows a petechial/purpuric rash - characteristic of meningococcemia (Neisseria meningitidis). This pins the organism and tells you which vaccine could have prevented it."
+    },
+    {
+      "text": ". Leukocyte count is elevated, and lumbar puncture with cerebrospinal fluid Gram stain establishes the diagnosis. Which of the following is most likely to be the primary antigenic component of the vaccine that could have prevented this patient's infection?"
+    }
+  ]
+}

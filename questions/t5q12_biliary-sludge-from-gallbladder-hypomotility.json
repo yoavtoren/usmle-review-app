@@ -1,0 +1,207 @@
+{
+  "id": "q161",
+  "item": 161,
+  "qid": "71",
+  "title": "Biliary sludge from gallbladder hypomotility",
+  "system": "Pathology",
+  "topic": "Gallstone disease",
+  "correct": "A",
+  "yourAnswer": "C",
+  "percentCorrect": 52,
+  "vignette": "A 45-year-old woman comes to the office due to several months of episodic right upper quadrant abdominal pain associated with nausea. The pain is often brought on by fatty meals and subsides in 1-2 hours. The patient has no fever, vomiting, diarrhea, melena, or bright red blood per rectum. Her BMI is 31.2 kg/m2. Physical examination is unremarkable. A cholecystokinin stimulation test is performed and shows slow and incomplete gallbladder emptying. This patient is most likely to have which of the following pathologic findings?",
+  "clues": [
+    {
+      "text": "episodic right upper quadrant abdominal pain associated with nausea",
+      "type": "red",
+      "note": "Episodic RUQ pain with nausea is biliary colic - transient pain from the gallbladder contracting against an obstructed or sluggish outflow. It frames the problem as a gallbladder/biliary process."
+    },
+    {
+      "text": "brought on by fatty meals and subsides in 1-2 hours",
+      "type": "green",
+      "note": "Fatty meals release cholecystokinin, which contracts the gallbladder; pain that is triggered by fatty food and self-resolves in 1-2 hours is the classic time course of biliary colic, not an acute inflammatory or ulcer process."
+    },
+    {
+      "text": "BMI is 31.2 kg/m2",
+      "type": "orange",
+      "note": "Obesity increases biliary cholesterol secretion and supersaturation, a key risk factor for cholesterol-type biliary disease (sludge and cholesterol stones) - one of the classic 'F's (female, forty, fat, fertile)."
+    },
+    {
+      "text": "slow and incomplete gallbladder emptying",
+      "type": "red",
+      "note": "The CCK stimulation test shows gallbladder HYPOMOTILITY. Stasis lets the gallbladder over-concentrate bile, precipitating particulate material into viscous biliary sludge - a precursor to cholesterol stones. This mechanism is the crux of the answer."
+    }
+  ],
+  "whatMatters": "Boil it down: an obese woman with fatty-food-triggered biliary colic and a CCK test showing gallbladder HYPOMOTILITY. Stasis concentrates bile and precipitates particulate matter = biliary sludge (the precursor to cholesterol stones). With no hemolysis or biliary infection, sludge - not pigment stones - is the best answer (A).",
+  "strategy": "For gallbladder questions, connect the MECHANISM in the stem to the pathology. Gallbladder hypomotility/stasis -> over-concentrated bile -> biliary sludge -> cholesterol stones. Reserve pigment stones for specific triggers: BLACK = chronic hemolysis; BROWN = biliary tract infection. No hemolysis or infection here, so choose sludge.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Biliary sludge",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Black pigment stones",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Brown pigment stones",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Cystine stones",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Uric acid stones",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "black pigment stones - need chronic hemolysis",
+      "detail": "WHAT IT IS: black pigment stones form from increased unconjugated bilirubin in CHRONIC HEMOLYSIS (sickle cell disease, hereditary spherocytosis) or ineffective erythropoiesis. ❌ WHY IT FAILS: no hemolytic anemia is described; the mechanism here is dysmotility/stasis producing sludge. ✅ Correct if: a patient with chronic hemolysis (eg, sickle cell)."
+    },
+    {
+      "letter": "C",
+      "label": "brown pigment stones - need biliary infection (your pick)",
+      "detail": "WHAT IT IS: brown pigment stones arise from BILIARY TRACT INFECTION - bacteria producing beta-glucuronidase deconjugate bilirubin (often with biliary stasis/parasites in the ducts). ❌ WHY IT FAILS: there is no cholangitis or biliary infection here; the picture is gallbladder hypomotility -> sludge. The trap is jumping to a pigment stone without an infection clue. ✅ Correct if: ascending cholangitis or a biliary parasitic infection."
+    },
+    {
+      "letter": "D",
+      "label": "cystine stones - those are kidney stones",
+      "detail": "WHAT IT IS: cystine stones are KIDNEY stones from cystinuria, an autosomal recessive defect in a renal amino acid transporter. ❌ WHY IT FAILS: wrong organ entirely - this is gallbladder pathology, not nephrolithiasis. ✅ Correct if: a child/young adult with recurrent renal cystine stones (hexagonal crystals)."
+    },
+    {
+      "letter": "E",
+      "label": "uric acid stones - also kidney stones",
+      "detail": "WHAT IT IS: uric acid stones are KIDNEY stones from hyperuricemia and acidic urine (gout, tumor lysis syndrome). ❌ WHY IT FAILS: again a urinary stone, not gallbladder pathology. ✅ Correct if: radiolucent renal stones with low urine pH and high uric acid."
+    }
+  ],
+  "reasoning": [
+    "Fatty-meal biliary colic + obesity + CCK test showing gallbladder hypomotility",
+    "Stasis lets the gallbladder over-concentrate bile",
+    "Particulate material precipitates into viscous biliary sludge (precursor to cholesterol stones)",
+    "No hemolysis or biliary infection to suggest pigment stones -> answer A"
+  ],
+  "mechanism": "The gallbladder concentrates bile by absorbing water; conditions that cause gallbladder HYPOMOTILITY (the slow/incomplete emptying on CCK testing - also seen with pregnancy, rapid weight loss, prolonged total parenteral nutrition, octreotide, and high spinal cord injury) cause bile stasis and excessive concentration. This precipitates particulate material - cholesterol monohydrate crystals, calcium bilirubinate, and mucin - into viscous BILIARY SLUDGE, which may be asymptomatic or cause biliary colic and is a recognized precursor to (cholesterol) gallstones and to complications such as cholecystitis and cholangitis. Pigment stones form differently: black from chronic hemolysis, brown from biliary infection.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI > gallstones/biliary sludge: cholesterol stone pathogenesis (supersaturation, stasis, nucleation), biliary colic, CCK physiology, risk factors (female, forty, fat, fertile). Contrast pigment stones (black = hemolysis, brown = infection)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question gives a MECHANISM (hypomotility on CCK testing) and asks for the resulting pathology. Translate 'sluggish gallbladder' -> 'bile stasis/concentration' -> 'sludge' before scanning the options."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on biliary sludge, biliary colic, cholecystokinin, gallbladder hypomotility, pigment stones, cholesterol supersaturation? Tell me which term and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Brown pigment stones (C) tempt because they ARE gallbladder stones - but they require biliary infection, which isn't here. Cystine/uric acid stones are kidney stones (wrong organ). Match the stasis mechanism to sludge."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the table: stasis -> sludge/cholesterol stones; hemolysis -> black stones; infection -> brown stones; cystine/uric acid = kidney."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Fatty-meal RUQ pain + gallbladder hypomotility on CCK test",
+      "back": "Biliary sludge (precursor to cholesterol stones)"
+    },
+    {
+      "front": "Biliary sludge composition",
+      "back": "Cholesterol crystals, calcium bilirubinate, mucin"
+    },
+    {
+      "front": "Causes of gallbladder stasis",
+      "back": "Pregnancy, rapid weight loss, TPN, octreotide, spinal cord injury"
+    },
+    {
+      "front": "Black pigment stones",
+      "back": "Chronic hemolysis (sickle cell, spherocytosis)"
+    },
+    {
+      "front": "Brown pigment stones",
+      "back": "Biliary tract infection (beta-glucuronidase)"
+    },
+    {
+      "front": "Cystine vs uric acid stones",
+      "back": "Kidney stones (cystinuria; hyperuricemia/acidic urine)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Biliary sludge / cholesterol gallstones",
+      "detail": "GI > gallstone disease: cholesterol stone pathogenesis (supersaturation, stasis, nucleation); biliary colic; CCK; risk factors.",
+      "location": "GI > gallstone disease: cholesterol stone pathogenesis (supersaturation, stasis, nucleation); biliary colic; CCK; risk factors."
+    },
+    {
+      "tag": "options B/C",
+      "topic": "Pigment stones",
+      "detail": "GI > black pigment stones (chronic hemolysis) and brown pigment stones (biliary infection, beta-glucuronidase).",
+      "location": "GI > black pigment stones (chronic hemolysis) and brown pigment stones (biliary infection, beta-glucuronidase)."
+    },
+    {
+      "tag": "options D/E",
+      "topic": "Nephrolithiasis",
+      "detail": "Renal > cystine stones (cystinuria) and uric acid stones (hyperuricemia, low urine pH) - note these are KIDNEY stones.",
+      "location": "Renal > cystine stones (cystinuria) and uric acid stones (hyperuricemia, low urine pH) - note these are KIDNEY stones."
+    }
+  ],
+  "memoryHook": "Sluggish gallbladder -> settled SLUDGE. No hemolysis, no infection = sludge, not pigment stones.",
+  "stem": [
+    {
+      "text": "A 45-year-old woman comes to the office due to several months of "
+    },
+    {
+      "text": "episodic right upper quadrant abdominal pain associated with nausea",
+      "clue": true,
+      "type": "red",
+      "note": "Episodic RUQ pain with nausea is biliary colic - transient pain from the gallbladder contracting against an obstructed or sluggish outflow. It frames the problem as a gallbladder/biliary process."
+    },
+    {
+      "text": ". The pain is often "
+    },
+    {
+      "text": "brought on by fatty meals and subsides in 1-2 hours",
+      "clue": true,
+      "type": "green",
+      "note": "Fatty meals release cholecystokinin, which contracts the gallbladder; pain that is triggered by fatty food and self-resolves in 1-2 hours is the classic time course of biliary colic, not an acute inflammatory or ulcer process."
+    },
+    {
+      "text": ". The patient has no fever, vomiting, diarrhea, melena, or bright red blood per rectum. Her "
+    },
+    {
+      "text": "BMI is 31.2 kg/m2",
+      "clue": true,
+      "type": "orange",
+      "note": "Obesity increases biliary cholesterol secretion and supersaturation, a key risk factor for cholesterol-type biliary disease (sludge and cholesterol stones) - one of the classic 'F's (female, forty, fat, fertile)."
+    },
+    {
+      "text": ". Physical examination is unremarkable. A cholecystokinin stimulation test is performed and shows "
+    },
+    {
+      "text": "slow and incomplete gallbladder emptying",
+      "clue": true,
+      "type": "red",
+      "note": "The CCK stimulation test shows gallbladder HYPOMOTILITY. Stasis lets the gallbladder over-concentrate bile, precipitating particulate material into viscous biliary sludge - a precursor to cholesterol stones. This mechanism is the crux of the answer."
+    },
+    {
+      "text": ". This patient is most likely to have which of the following pathologic findings?"
+    }
+  ]
+}

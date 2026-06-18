@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allergic contact dermatitis: type IV (CD8 + IFN-gamma)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 5 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q158", "item": 158, "qid": "20556", "title": "Allergic contact dermatitis: type IV (CD8 + IFN-gamma)", "system": "Immunology", "topic": "Hypersensitivity reactions", "correct": "A", "yourAnswer": "B", "percentCorrect": 43, "vignette": "A 62-year-old man comes to the office due to an intensely pruritic facial rash for the past 3 days. The patient uses no facial cosmetic products but has frequently dyed his hair during the past year; he last dyed his hair 5 days ago and also recalls developing a similar rash the previous time he used hair dye. The patient has a history of asthma, hypertension, and diabetes mellitus. He does not use tobacco, alcohol, or illicit drugs. Vital signs are within normal limits. Physical examination findings are shown in the exhibit. Which of the following are primarily involved in the pathogenesis of this patient's rash?", "clues": [{"text": "intensely pruritic facial rash for the past 3 days", "type": "blue", "note": "An itchy (pruritic) eczematous rash appearing 2-3 days after an exposure is a DELAYED reaction. The timing alone already separates this from an immediate (minutes) hypersensitivity and points toward a T-cell-mediated process."}, {"text": "frequently dyed his hair during the past year", "type": "orange", "note": "Repeated hair-dye use is the sensitizing exposure. Hair dyes contain allergens such as p-phenylenediamine that act as haptens; repeated contact over the year primed hapten-specific T cells (the sensitization phase)."}, {"text": "developing a similar rash the previous time he used hair dye", "type": "green", "note": "A recurrent, identical rash on RE-exposure is the fingerprint of a sensitized, memory T-cell response - the elicitation phase of allergic contact dermatitis. Prior sensitization + recurrence on re-exposure = type IV hypersensitivity."}], "whatMatters": "Cut to it: a pruritic rash appearing ~2-3 days AFTER re-exposure to hair dye, identical to a prior reaction = allergic contact dermatitis, a TYPE IV (delayed, T-cell) hypersensitivity. The effector cells are sensitized T cells - CD8+ T cells releasing interferon gamma (with CD4 Th1 help) that injure keratinocytes. Answer A.", "strategy": "Use TIMING to assign the hypersensitivity type. IMMEDIATE (minutes, hives/anaphylaxis) = type I, mast cells/histamine/IgE. DELAYED (2-3 days, eczematous plaque) = type IV, T cells, NO antibody. Contact dermatitis is the prototype type IV, so pick the T-cell/cytokine option, not mast cells.", "options": [{"letter": "A", "text": "CD8+ T cells and interferon gamma", "correct": true}, {"letter": "B", "text": "Mast cells and histamine", "correct": false}, {"letter": "C", "text": "Neutrophils and myeloperoxidase", "correct": false}, {"letter": "D", "text": "Plasma cells and immunoglobulins", "correct": false}, {"letter": "E", "text": "Regulatory T cells and interleukin-10", "correct": false}], "eliminations": [{"letter": "B", "label": "mast cells/histamine = type I (immediate), your pick", "detail": "WHAT IT IS: mast cells and histamine are the effectors of TYPE I (immediate) IgE-mediated hypersensitivity - urticaria, angioedema, and anaphylaxis within minutes. ❌ WHY IT FAILS: this rash is DELAYED (2-3 days) and eczematous, not immediate hives; type IV uses T cells, not mast-cell histamine. This is the most tempting wrong answer. ✅ Correct if: hives or anaphylaxis appeared within minutes of exposure."}, {"letter": "C", "label": "neutrophils/MPO = acute bacterial defense", "detail": "WHAT IT IS: neutrophils killing via reactive oxygen species and myeloperoxidase mediate acute pyogenic/innate defense (eg, cellulitis, abscess). ❌ WHY IT FAILS: allergic contact dermatitis is T-cell mediated, not a neutrophilic infection; the lesion is pruritic, not a painful spreading infection. ✅ Correct if: a painful bacterial skin infection (cellulitis/abscess)."}, {"letter": "D", "label": "plasma cells/immunoglobulins = antibody-mediated", "detail": "WHAT IT IS: plasma cells and immunoglobulins drive antibody-mediated (type II cytotoxic and type III immune-complex) reactions. ❌ WHY IT FAILS: allergic contact dermatitis does NOT involve antibodies; it is purely cell-mediated (type IV). ✅ Correct if: a type II (eg, autoimmune cytopenia) or type III (eg, serum sickness) antibody/immune-complex disease."}, {"letter": "E", "label": "Tregs/IL-10 = the suppressive arm", "detail": "WHAT IT IS: regulatory T cells secreting IL-10/TGF-beta DAMPEN immune responses and maintain tolerance. ❌ WHY IT FAILS: this is the anti-inflammatory/suppressive arm - the opposite of the active effector response producing the rash. ✅ Correct if: asked what limits or terminates the response or maintains peripheral tolerance."}], "reasoning": ["Delayed (2-3 day), recurrent eczematous rash after hair dye re-exposure", "= allergic contact dermatitis = type IV (delayed, T-cell) hypersensitivity", "Effector cells are sensitized CD8+ T cells releasing interferon gamma (with CD4 Th1)", "Primary mediators -> answer A"], "mechanism": "Allergic contact dermatitis is a type IV (delayed, T-cell-mediated) hypersensitivity with two phases. SENSITIZATION: a small hapten (eg, p-phenylenediamine in hair dye, nickel, urushiol) binds a self-protein; Langerhans/dendritic cells carry it to regional lymph nodes and prime hapten-specific CD4 and CD8 T cells over ~10-14 days, with no rash. ELICITATION: on re-exposure, sensitized CD8+ effector T cells are recruited to the skin and induce keratinocyte apoptosis (perforin/granzyme, Fas ligand) while releasing INTERFERON GAMMA to amplify inflammation - producing the pruritic eczematous rash 2-3 days later. No antibody or mast cell is required.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Immunology > hypersensitivity type IV (delayed, T-cell): contact dermatitis (PPD, poison ivy/urushiol, nickel); sensitization vs elicitation; CD8 + IFN-gamma effectors. Contrast types I-III."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Decode by timing: 2-3 days = delayed = type IV = T cells. Once you label it type IV, choose the T-cell/cytokine option and reject anything antibody- or mast-cell-based."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on hapten, sensitization vs elicitation, type I-IV hypersensitivity, Langerhans cell, interferon gamma, regulatory T cell? Tell me which and I'll explain it."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Mast cells and histamine (B) is the reflex 'allergy' answer, but that is IMMEDIATE (type I) hypersensitivity. The 2-3 day delay and recurrence on re-exposure define a T-cell (type IV) reaction."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "An exhibit photo shows the rash; you don't need it to answer, but recognizing the morphology helps: allergic contact dermatitis is an eczematous, often weepy/vesicular, well-demarcated plaque in the contact distribution. Let the history/timing drive the immunology, not the picture."}, {"key": "other", "label": "✍️ Something else", "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."}], "keywords": [{"front": "Delayed (2-3 day) eczematous rash after a contact allergen", "back": "Allergic contact dermatitis = type IV hypersensitivity"}, {"front": "Hair dye allergen", "back": "p-phenylenediamine (a hapten)"}, {"front": "Type IV effector cells/cytokine", "back": "T cells (CD4 Th1 + CD8); interferon gamma; NO antibody"}, {"front": "Cell that presents the hapten in skin", "back": "Langerhans (dendritic) cell"}, {"front": "Type I hypersensitivity effectors", "back": "Mast cells, histamine, IgE (immediate)"}, {"front": "Poison ivy mechanism", "back": "Urushiol hapten -> type IV contact dermatitis"}, {"front": "Regulatory T-cell suppressive cytokines", "back": "IL-10, TGF-beta"}], "firstAid": [{"tag": "answer / stem", "topic": "Type IV hypersensitivity / contact dermatitis", "detail": "Immuno > hypersensitivity type IV (delayed): allergic contact dermatitis (PPD, poison ivy, nickel); sensitization vs elicitation; CD8 + IFN-gamma."}, {"tag": "option B", "topic": "Type I hypersensitivity", "detail": "Immuno > type I: mast cells, IgE, histamine; urticaria/anaphylaxis (immediate)."}, {"tag": "option D", "topic": "Type II / III hypersensitivity", "detail": "Immuno > antibody-mediated: type II cytotoxic and type III immune-complex reactions."}, {"tag": "option E", "topic": "Regulatory T cells / tolerance", "detail": "Immuno > Tregs, IL-10/TGF-beta, peripheral tolerance."}], "memoryHook": "Contact dermatitis = type IV: '4 = delayed, T-cell, no antibody.' Hair dye 3 days later -> CD8 T cells + IFN-gamma, not histamine.", "stem": [{"text": "A 62-year-old man comes to the office due to an "}, {"text": "intensely pruritic facial rash for the past 3 days", "clue": true, "type": "blue", "note": "An itchy (pruritic) eczematous rash appearing 2-3 days after an exposure is a DELAYED reaction. The timing alone already separates this from an immediate (minutes) hypersensitivity and points toward a T-cell-mediated process."}, {"text": ". The patient uses no facial cosmetic products but has "}, {"text": "frequently dyed his hair during the past year", "clue": true, "type": "orange", "note": "Repeated hair-dye use is the sensitizing exposure. Hair dyes contain allergens such as p-phenylenediamine that act as haptens; repeated contact over the year primed hapten-specific T cells (the sensitization phase)."}, {"text": "; he last dyed his hair 5 days ago and also recalls "}, {"text": "developing a similar rash the previous time he used hair dye", "clue": true, "type": "green", "note": "A recurrent, identical rash on RE-exposure is the fingerprint of a sensitized, memory T-cell response - the elicitation phase of allergic contact dermatitis. Prior sensitization + recurrence on re-exposure = type IV hypersensitivity."}, {"text": ". The patient has a history of asthma, hypertension, and diabetes mellitus. He does not use tobacco, alcohol, or illicit drugs. Vital signs are within normal limits. Physical examination findings are shown in the exhibit. Which of the following are primarily involved in the pathogenesis of this patient's rash?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

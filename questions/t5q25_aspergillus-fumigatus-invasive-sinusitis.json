@@ -1,0 +1,280 @@
+{
+  "id": "q174",
+  "item": 174,
+  "qid": "105",
+  "title": "Aspergillus fumigatus invasive sinusitis",
+  "system": "Microbiology",
+  "topic": "Fungal infections",
+  "correct": "A",
+  "yourAnswer": "I",
+  "percentCorrect": 58,
+  "vignette": "A 47-year-old man comes to the office due to persistent fever, night sweats, and fatigue. Thorough evaluation yields a diagnosis of chronic myeloid leukemia. While undergoing treatment for his malignancy, the patient experiences headaches, scant nasal discharge, and left eye symptoms. Physical examination reveals tenderness over the paranasal sinuses and left-sided orbital swelling and cellulitis. Mild proptosis and ptosis of the left eye are also present. Biopsy of the sinus mucosa shows septate hyphae branching at acute angles (45 degrees). Which of the following is the most likely cause of this patient's condition?",
+  "clues": [
+    {
+      "text": "chronic myeloid leukemia",
+      "type": "orange",
+      "note": "A hematologic malignancy marks an immunocompromised host. The setup is priming you for an opportunistic infection."
+    },
+    {
+      "text": "undergoing treatment for his malignancy",
+      "type": "red",
+      "note": "Chemotherapy for leukemia causes prolonged NEUTROPENIA — the single biggest risk factor for invasive mold infection (invasive aspergillosis/mucormycosis). This is the key host clue."
+    },
+    {
+      "text": "left-sided orbital swelling and cellulitis",
+      "type": "blue",
+      "note": "Spread from the paranasal sinuses into the orbit indicates INVASIVE (angioinvasive) fungal rhinosinusitis, not a benign colonization."
+    },
+    {
+      "text": "Mild proptosis and ptosis of the left eye",
+      "type": "blue",
+      "note": "Proptosis and ptosis signal orbital invasion (rhino-orbital disease). This aggressive local spread fits an angioinvasive mold."
+    },
+    {
+      "text": "septate hyphae branching at acute angles (45 degrees)",
+      "type": "green",
+      "note": "The decisive histology: NARROW, SEPTATE hyphae branching at ACUTE (~45 degrees) angles are Aspergillus. Mucorales (Rhizopus/Mucor) instead show broad, ribbon-like, NONseptate hyphae branching at wide (~90 degrees) angles."
+    }
+  ],
+  "whatMatters": "The clinical picture (immunocompromised host + invasive rhino-orbital sinusitis) narrows it to an angioinvasive mold: Aspergillus vs Mucorales. They look clinically identical, so the HISTOLOGY decides it. Septate hyphae with acute (45-degree) branching = Aspergillus fumigatus. Answer A. (Broad nonseptate, 90-degree = Mucor/Rhizopus.)",
+  "strategy": "For invasive fungal sinusitis in a neutropenic/diabetic host, don't stop at 'mold' — read the hyphae. Two features separate the big two: SEPTATION (present = Aspergillus; absent = Mucor) and BRANCHING ANGLE (acute 45 deg = Aspergillus; wide 90 deg = Mucor). Match host + morphology together.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Aspergillus fumigatus",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Blastomyces dermatitidis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Candida albicans",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Coccidioides immitis",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Cryptococcus neoformans",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Histoplasma capsulatum",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Malassezia furfur",
+      "correct": false
+    },
+    {
+      "letter": "H",
+      "text": "Microsporum canis",
+      "correct": false
+    },
+    {
+      "letter": "I",
+      "text": "Rhizopus species",
+      "correct": false
+    },
+    {
+      "letter": "J",
+      "text": "Sporothrix schenckii",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Blastomyces — broad-based budding yeast, not hyphae",
+      "detail": "WHAT IT IS: a dimorphic fungus (Ohio/Mississippi valley) that in tissue is a broad-based budding YEAST; causes pulmonary/skin/bone disease. ❌ WHY IT FAILS: tissue shows yeast, not septate hyphae, and it doesn't cause angioinvasive sinusitis. ✅ Correct if: broad-based budding yeast, granulomatous lung/skin lesions."
+    },
+    {
+      "letter": "C",
+      "label": "Candida — budding yeast + pseudohyphae",
+      "detail": "WHAT IT IS: normal-flora yeast causing thrush, esophagitis, and line sepsis; shows oval budding yeast with pseudohyphae (and germ tubes). ❌ WHY IT FAILS: it isn't true septate hyphae with acute branching, and invasive rhinosinusitis isn't its pattern. ✅ Correct if: oral/esophageal plaques, budding yeast with pseudohyphae."
+    },
+    {
+      "letter": "D",
+      "label": "Coccidioides — spherules with endospores",
+      "detail": "WHAT IT IS: a dimorphic fungus of the southwestern US; tissue form is a spherule packed with endospores. ❌ WHY IT FAILS: tissue shows spherules, not hyphae. ✅ Correct if: desert (San Joaquin) exposure with spherules on biopsy."
+    },
+    {
+      "letter": "E",
+      "label": "Cryptococcus — encapsulated yeast, CNS",
+      "detail": "WHAT IT IS: an encapsulated budding yeast causing meningitis in AIDS (India ink / mucicarmine). ❌ WHY IT FAILS: it's a thick-capsule yeast, not septate hyphae, and causes meningitis, not invasive sinusitis. ✅ Correct if: narrow-based budding yeast with a clear capsule halo, CNS disease."
+    },
+    {
+      "letter": "F",
+      "label": "Histoplasma — tiny intracellular yeast",
+      "detail": "WHAT IT IS: a dimorphic fungus (bird/bat droppings, Ohio/Mississippi); tissue form is small yeasts inside macrophages. ❌ WHY IT FAILS: intracellular yeast, not hyphae. ✅ Correct if: macrophages stuffed with small yeasts, cave/bird exposure."
+    },
+    {
+      "letter": "G",
+      "label": "Malassezia — superficial skin yeast",
+      "detail": "WHAT IT IS: skin yeast causing tinea versicolor ('spaghetti and meatballs' on KOH) and catheter sepsis with lipid infusions. ❌ WHY IT FAILS: a superficial skin organism, not an invasive sinus mold. ✅ Correct if: hypo/hyperpigmented trunk macules, KOH with yeast + short hyphae."
+    },
+    {
+      "letter": "H",
+      "label": "Microsporum — dermatophyte (tinea)",
+      "detail": "WHAT IT IS: a dermatophyte infecting keratinized tissue (skin, hair, nails). ❌ WHY IT FAILS: it never causes invasive rhinosinusitis. ✅ Correct if: scaly annular skin lesions, fluorescent infected hairs."
+    },
+    {
+      "letter": "I",
+      "label": "Rhizopus — broad NONseptate hyphae, 90 deg (your pick)",
+      "detail": "WHAT IT IS: a Mucorales mold causing rhino-orbital-cerebral MUCORMYCOSIS in diabetics (DKA) and neutropenics — clinically identical to invasive aspergillosis. ❌ WHY IT FAILS: Mucor/Rhizopus hyphae are BROAD, ribbon-like, NONseptate, branching at WIDE (~90-degree) angles — but this biopsy shows NARROW, SEPTATE hyphae at ACUTE (45-degree) angles = Aspergillus. The histology is the differentiator. ✅ Correct if: broad nonseptate hyphae with right-angle branching, especially in DKA."
+    },
+    {
+      "letter": "J",
+      "label": "Sporothrix — cigar-shaped yeast, lymphocutaneous",
+      "detail": "WHAT IT IS: a dimorphic soil/plant fungus ('rose gardener') causing ascending nodular lymphangitis; tissue shows cigar-shaped yeast. ❌ WHY IT FAILS: it causes cutaneous/lymphocutaneous disease, not invasive sinusitis. ✅ Correct if: a thorn prick followed by nodules ascending along lymphatics."
+    }
+  ],
+  "reasoning": [
+    "Immunocompromised host (CML on chemotherapy -> neutropenia) with invasive rhino-orbital sinusitis (proptosis, orbital cellulitis)",
+    "The differential is an angioinvasive mold: Aspergillus vs Mucorales (Rhizopus/Mucor)",
+    "Biopsy shows SEPTATE hyphae branching at ACUTE (45-degree) angles = Aspergillus (Mucor is broad, nonseptate, ~90 degrees)",
+    "-> Aspergillus fumigatus, answer A"
+  ],
+  "mechanism": "Aspergillus fumigatus is a monomorphic mold that exists only as multicellular hyphae; in tissue it appears as narrow, SEPTATE hyphae branching at acute (~45-degree) angles. In neutropenic, immunocompromised patients (e.g., leukemia chemotherapy) it causes invasive aspergillosis, including angioinvasive rhino-orbital sinusitis with proptosis, orbital cellulitis, and tissue infarction; treatment is voriconazole. The key histologic contrast is with Mucorales (Rhizopus, Mucor), which form broad, ribbon-like, NONseptate hyphae branching at wide (~90-degree) angles and cause clinically similar rhino-orbital-cerebral mucormycosis, classically in diabetic ketoacidosis.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > Aspergillus (septate, acute-angle, monomorphic mold; invasive aspergillosis in neutropenia; voriconazole) vs Mucor/Rhizopus (broad, nonseptate, wide-angle; DKA; amphotericin + surgery). Memorize the hyphae contrast."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: (1) recognize an invasive mold from the immunocompromised host + orbital invasion, then (2) let the hyphae morphology choose Aspergillus vs Mucor."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on septate vs nonseptate hyphae, acute vs right-angle branching, angioinvasion, rhino-orbital-cerebral, monomorphic vs dimorphic fungi? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Rhizopus (I) is THE trap — clinically identical invasive rhino-orbital sinusitis, but its hyphae are broad, nonseptate, wide-angle; the biopsy's narrow septate acute-angle hyphae mean Aspergillus."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "For fungal histology, anchor on two features — SEPTATION (present = Aspergillus, absent = Mucor) and BRANCHING ANGLE (acute 45 deg = Aspergillus, wide 90 deg = Mucor). Practice telling thin septate hyphae from broad ribbon-like nonseptate hyphae on H&E/GMS."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: septate + 45 deg = Aspergillus; broad nonseptate + 90 deg = Mucor/Rhizopus."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Septate hyphae, acute (45 deg) branching, neutropenic sinusitis",
+      "back": "Aspergillus fumigatus"
+    },
+    {
+      "front": "Broad nonseptate hyphae, 90 deg branching, DKA",
+      "back": "Mucor / Rhizopus (mucormycosis)"
+    },
+    {
+      "front": "Invasive aspergillosis treatment",
+      "back": "Voriconazole"
+    },
+    {
+      "front": "Mucormycosis treatment",
+      "back": "Amphotericin B + surgical debridement"
+    },
+    {
+      "front": "Broad-based budding yeast",
+      "back": "Blastomyces"
+    },
+    {
+      "front": "Encapsulated yeast, India ink, AIDS meningitis",
+      "back": "Cryptococcus neoformans"
+    },
+    {
+      "front": "Spherules with endospores, SW desert",
+      "back": "Coccidioides"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Aspergillus",
+      "detail": "Micro > molds: septate, acute-angle hyphae; invasive aspergillosis in neutropenia/leukemia; aspergilloma; ABPA; voriconazole.",
+      "location": "Micro > molds: septate, acute-angle hyphae; invasive aspergillosis in neutropenia/leukemia; aspergilloma; ABPA; voriconazole."
+    },
+    {
+      "tag": "options",
+      "topic": "Other fungi",
+      "detail": "Micro > Mucor/Rhizopus (nonseptate, 90 deg, DKA), Candida, Cryptococcus, Blastomyces, Coccidioides, Histoplasma, Malassezia, dermatophytes (Microsporum), Sporothrix.",
+      "location": "Micro > Mucor/Rhizopus (nonseptate, 90 deg, DKA), Candida, Cryptococcus, Blastomyces, Coccidioides, Histoplasma, Malassezia, dermatophytes (Microsporum), Sporothrix."
+    },
+    {
+      "tag": "context",
+      "topic": "Immunocompromise / neutropenia",
+      "detail": "Micro/Onc > leukemia chemotherapy -> neutropenia as the key risk for invasive mold; rhino-orbital-cerebral spread.",
+      "location": "Micro/Onc > leukemia chemotherapy -> neutropenia as the key risk for invasive mold; rhino-orbital-cerebral spread."
+    }
+  ],
+  "memoryHook": "Aspergillus = Acute Angles + septations. Mucor = Massive nonseptate ribbons at right angles. Same sinus picture — the hyphae tell them apart.",
+  "stem": [
+    {
+      "text": "A 47-year-old man comes to the office due to persistent fever, night sweats, and fatigue. Thorough evaluation yields a diagnosis of "
+    },
+    {
+      "text": "chronic myeloid leukemia",
+      "clue": true,
+      "type": "orange",
+      "note": "A hematologic malignancy marks an immunocompromised host. The setup is priming you for an opportunistic infection."
+    },
+    {
+      "text": ". While "
+    },
+    {
+      "text": "undergoing treatment for his malignancy",
+      "clue": true,
+      "type": "red",
+      "note": "Chemotherapy for leukemia causes prolonged NEUTROPENIA — the single biggest risk factor for invasive mold infection (invasive aspergillosis/mucormycosis). This is the key host clue."
+    },
+    {
+      "text": ", the patient experiences headaches, scant nasal discharge, and left eye symptoms. Physical examination reveals tenderness over the paranasal sinuses and "
+    },
+    {
+      "text": "left-sided orbital swelling and cellulitis",
+      "clue": true,
+      "type": "blue",
+      "note": "Spread from the paranasal sinuses into the orbit indicates INVASIVE (angioinvasive) fungal rhinosinusitis, not a benign colonization."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Mild proptosis and ptosis of the left eye",
+      "clue": true,
+      "type": "blue",
+      "note": "Proptosis and ptosis signal orbital invasion (rhino-orbital disease). This aggressive local spread fits an angioinvasive mold."
+    },
+    {
+      "text": " are also present. Biopsy of the sinus mucosa shows "
+    },
+    {
+      "text": "septate hyphae branching at acute angles (45 degrees)",
+      "clue": true,
+      "type": "green",
+      "note": "The decisive histology: NARROW, SEPTATE hyphae branching at ACUTE (~45 degrees) angles are Aspergillus. Mucorales (Rhizopus/Mucor) instead show broad, ribbon-like, NONseptate hyphae branching at wide (~90 degrees) angles."
+    },
+    {
+      "text": ". Which of the following is the most likely cause of this patient's condition?"
+    }
+  ]
+}

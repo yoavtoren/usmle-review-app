@@ -1,0 +1,193 @@
+{
+  "id": "q178",
+  "item": 178,
+  "qid": "19274",
+  "title": "C7 cord injury: normal MIP, low MEP",
+  "system": "Physiology",
+  "topic": "Respiratory mechanics / spinal cord injury",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 44,
+  "vignette": "A 44-year-old woman comes to the office for follow-up. The patient sustained a complete C7 spinal cord injury a year ago after falling off a cliff while hiking. She is able to move her shoulders and upper arms but has paraplegia and uses a wheelchair. The patient has a suprapubic catheter due to neurogenic bladder. She has no other medical conditions. She is a lifelong nonsmoker. Which of the following changes in respiratory parameters are most likely present in this patient?",
+  "clues": [
+    {
+      "text": "complete C7 spinal cord injury",
+      "type": "red",
+      "note": "The injury LEVEL determines which respiratory muscles still work. A complete C7 lesion spares everything innervated at/above C7 (diaphragm, accessory inspiratory muscles) but cuts off the thoracic/lumbar expiratory muscles below."
+    },
+    {
+      "text": "move her shoulders and upper arms but has paraplegia",
+      "type": "blue",
+      "note": "Preserved shoulder/upper-arm movement with paraplegia confirms a mid/low cervical level: the upper limbs and neck are largely spared, the trunk and legs are not — consistent with C7."
+    },
+    {
+      "text": "lifelong nonsmoker",
+      "type": "green",
+      "note": "Being a lifelong nonsmoker removes obstructive lung disease as a confounder, so any change in respiratory pressures is due to the cord injury's effect on respiratory muscles, not COPD."
+    }
+  ],
+  "whatMatters": "The ask is which way each pressure moves after a C7 cord injury. Decide it from muscle innervation: inspiration uses the diaphragm (C3-C5) + accessory muscles (all at/above C7) -> preserved, so maximal inspiratory pressure (MIP) is roughly NORMAL. Active expiration uses internal intercostals (T1-T11) + abdominals (T7-L1), all BELOW C7 -> denervated, so maximal expiratory pressure (MEP) is DECREASED. Answer C.",
+  "strategy": "In spinal cord injury, work out respiratory effects by which muscles survive the level. Inspiration: diaphragm (phrenic C3-C5) + SCM/scalenes (high) — usually spared unless the lesion is high cervical. Active expiration: internal intercostals + abdominals (thoraco-lumbar) — lost first. Passive expiration needs no innervation, so quiet breathing persists but cough/forced expiration weakens.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Maximal inspiratory pressure: decreased; Maximal expiratory pressure: increased",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Maximal inspiratory pressure: decreased; Maximal expiratory pressure: normal",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Maximal inspiratory pressure: normal; Maximal expiratory pressure: decreased",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Maximal inspiratory pressure: increased; Maximal expiratory pressure: decreased",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Maximal inspiratory pressure: increased; Maximal expiratory pressure: increased",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "decreased MIP / increased MEP — backwards on both",
+      "detail": "WHAT IT IS: would imply impaired inspiration but stronger expiration. ❌ WHY IT FAILS: at C7 the diaphragm (C3-C5) and accessory muscles are intact, so MIP isn't decreased; and denervated abdominal/intercostal muscles can't make MEP INCREASE. ✅ Correct if: a high cervical lesion knocking out the diaphragm (which would lower MIP) — but never raising MEP."
+    },
+    {
+      "letter": "B",
+      "label": "decreased MIP / normal MEP — wrong direction",
+      "detail": "WHAT IT IS: would fit a higher lesion that weakens inspiration while sparing expiration. ❌ WHY IT FAILS: that's the opposite of a C7 injury, where inspiratory muscles are spared (MIP ~normal) and expiratory muscles are lost (MEP low). ✅ Correct if: a lesion at/above C3-C5 dropping inspiratory strength with intact expiration."
+    },
+    {
+      "letter": "D",
+      "label": "increased MIP / decreased MEP — MIP can't rise",
+      "detail": "WHAT IT IS: the MEP-decreased half is right, but it claims inspiratory pressure is INCREASED. ❌ WHY IT FAILS: denervation/injury doesn't strengthen muscles above baseline; MIP stays roughly normal, not increased. ✅ Correct if: never — injury doesn't raise MIP above normal."
+    },
+    {
+      "letter": "E",
+      "label": "increased MIP / increased MEP — impossible here",
+      "detail": "WHAT IT IS: would require both efforts to be stronger than normal. ❌ WHY IT FAILS: a cord injury can't strengthen either effort, and the expiratory muscles are denervated, so MEP must fall. ✅ Correct if: never in this setting."
+    }
+  ],
+  "reasoning": [
+    "Inspiration is driven by the diaphragm (phrenic nerve, C3-C5) plus accessory muscles (SCM, scalenes) — all at/above C7, so inspiration is preserved -> MIP roughly NORMAL",
+    "Active/forced expiration uses the internal intercostals (T1-T11) and abdominal muscles (T7-L1) — all BELOW C7, so they are denervated -> MEP DECREASED",
+    "Passive expiration (elastic recoil) needs no innervation, so quiet breathing persists but forced expiration/cough is weak",
+    "-> Normal MIP / Decreased MEP, answer C"
+  ],
+  "mechanism": "Respiratory muscles have different spinal sources, so a cord lesion impairs inspiration and expiration unequally. Inspiration depends on the diaphragm (phrenic nerve, C3-C5) and accessory muscles — sternocleidomastoid and scalenes (high cervical) — all at or above C7, so a complete C7 injury leaves inspiratory strength (maximal inspiratory pressure) largely normal. Active/forced expiration depends on the internal intercostals (thoracic roots, T1-T11) and abdominal muscles (T7-L1), which are below C7 and therefore denervated, reducing maximal expiratory pressure. Passive expiration via elastic recoil needs no innervation, so resting breathing is preserved while cough and forced expiration are weak.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Physio/Anatomy > respiratory muscle innervation: diaphragm (phrenic C3-C5), accessory inspiratory (SCM, scalenes), expiratory (internal intercostals T1-T11, abdominals T7-L1); passive vs active expiration; spinal cord injury levels."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Map the lesion: C7 spares inspiratory muscles (at/above C5) but cuts expiratory muscles (thoracic/lumbar) -> MIP normal, MEP low. Decide each parameter from which muscles survive BEFORE matching to the lettered grid."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on maximal inspiratory/expiratory pressure, phrenic nerve, accessory muscles of respiration, active vs passive expiration, paraplegia vs tetraplegia? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The 'decreased MIP' rows (A, B) tempt if you assume any cord injury weakens inspiration — but at C7 the diaphragm (C3-C5) is intact, so MIP stays normal; only expiration drops."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: inspiration = diaphragm C3-C5 (high, usually spared); active expiration = intercostals/abdominals (thoraco-lumbar, lost first in cord injury)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Respiratory pressures after a C7 cord injury",
+      "back": "Normal MIP, decreased MEP"
+    },
+    {
+      "front": "Diaphragm innervation",
+      "back": "Phrenic nerve (C3-C5)"
+    },
+    {
+      "front": "Accessory inspiratory muscles",
+      "back": "SCM and scalenes (high cervical)"
+    },
+    {
+      "front": "Active expiration muscles",
+      "back": "Internal intercostals (T1-T11), abdominals (T7-L1)"
+    },
+    {
+      "front": "Passive expiration depends on",
+      "back": "Elastic recoil (no innervation needed)"
+    },
+    {
+      "front": "Phrenic nerve roots mnemonic",
+      "back": "C3-4-5 keep the diaphragm alive"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Respiratory mechanics in spinal cord injury",
+      "detail": "Physio > inspiratory (diaphragm C3-C5 + accessory) vs expiratory (intercostal/abdominal) muscle innervation; MIP vs MEP.",
+      "location": "Physio > inspiratory (diaphragm C3-C5 + accessory) vs expiratory (intercostal/abdominal) muscle innervation; MIP vs MEP."
+    },
+    {
+      "tag": "options",
+      "topic": "Active vs passive expiration",
+      "detail": "Physio > quiet expiration = passive elastic recoil; forced expiration recruits abdominals and internal intercostals.",
+      "location": "Physio > quiet expiration = passive elastic recoil; forced expiration recruits abdominals and internal intercostals."
+    },
+    {
+      "tag": "context",
+      "topic": "Spinal cord injury levels",
+      "detail": "Neuro/Anatomy > C3-C5 diaphragm/ventilation dependence, paraplegia vs tetraplegia, neurogenic bladder.",
+      "location": "Neuro/Anatomy > C3-C5 diaphragm/ventilation dependence, paraplegia vs tetraplegia, neurogenic bladder."
+    }
+  ],
+  "memoryHook": "C3-4-5 keep the diaphragm alive — so a C7 hit leaves breathing IN okay (normal MIP) but wrecks the cough OUT (low MEP).",
+  "stem": [
+    {
+      "text": "A 44-year-old woman comes to the office for follow-up. The patient sustained a "
+    },
+    {
+      "text": "complete C7 spinal cord injury",
+      "clue": true,
+      "type": "red",
+      "note": "The injury LEVEL determines which respiratory muscles still work. A complete C7 lesion spares everything innervated at/above C7 (diaphragm, accessory inspiratory muscles) but cuts off the thoracic/lumbar expiratory muscles below."
+    },
+    {
+      "text": " a year ago after falling off a cliff while hiking. She is able to "
+    },
+    {
+      "text": "move her shoulders and upper arms but has paraplegia",
+      "clue": true,
+      "type": "blue",
+      "note": "Preserved shoulder/upper-arm movement with paraplegia confirms a mid/low cervical level: the upper limbs and neck are largely spared, the trunk and legs are not — consistent with C7."
+    },
+    {
+      "text": " and uses a wheelchair. The patient has a suprapubic catheter due to neurogenic bladder. She has no other medical conditions. She is a "
+    },
+    {
+      "text": "lifelong nonsmoker",
+      "clue": true,
+      "type": "green",
+      "note": "Being a lifelong nonsmoker removes obstructive lung disease as a confounder, so any change in respiratory pressures is due to the cord injury's effect on respiratory muscles, not COPD."
+    },
+    {
+      "text": ". Which of the following changes in respiratory parameters are most likely present in this patient?"
+    }
+  ]
+}

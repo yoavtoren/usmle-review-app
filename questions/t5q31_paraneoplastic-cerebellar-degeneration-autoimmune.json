@@ -1,0 +1,231 @@
+{
+  "id": "q180",
+  "item": 180,
+  "qid": "595",
+  "title": "Paraneoplastic cerebellar degeneration (autoimmune)",
+  "system": "Neurology",
+  "topic": "Paraneoplastic syndromes",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 20,
+  "vignette": "A 66-year-old man comes to the emergency department due to dizziness, dysarthria, and bilateral limb ataxia. His symptoms have been steadily worsening over the last 2 weeks. He has no other medical problems and takes no medications. He has a 50-pack-year smoking history and does not use alcohol or illicit drugs. Chest x-ray shows a mass in his right lung. He is admitted to the hospital for evaluation, but his neurologic symptoms continue to progress. He dies several months later despite receiving appropriate treatment. Autopsy shows extensive cerebellar Purkinje cell degeneration. Which of the following best describes the etiology of this patient's neurologic condition?",
+  "clues": [
+    {
+      "text": "dizziness, dysarthria, and bilateral limb ataxia",
+      "type": "red",
+      "note": "Dizziness, slurred speech, and limb ataxia are a CEREBELLAR syndrome. Bilateral, symmetric cerebellar dysfunction with a subacute course is the hallmark presentation of paraneoplastic cerebellar degeneration."
+    },
+    {
+      "text": "steadily worsening over the last 2 weeks",
+      "type": "blue",
+      "note": "A subacute, steadily progressive course over weeks (not sudden like a stroke, not chronic over years) fits a paraneoplastic process - an immune attack that rapidly destroys neurons."
+    },
+    {
+      "text": "50-pack-year smoking history",
+      "type": "orange",
+      "note": "Heavy smoking is the key risk factor for small cell lung cancer, the malignancy most commonly behind paraneoplastic cerebellar degeneration. It links the lung mass to the neurologic syndrome."
+    },
+    {
+      "text": "mass in his right lung",
+      "type": "green",
+      "note": "A lung mass in a heavy smoker points to small cell lung cancer. The tumor triggers an antibody response that cross-reacts with cerebellar neurons - the cancer itself need not invade the brain."
+    },
+    {
+      "text": "extensive cerebellar Purkinje cell degeneration",
+      "type": "green",
+      "note": "Autopsy shows loss of cerebellar PURKINJE CELLS, not metastatic tumor cells. Degeneration of neurons (rather than tumor infiltration) is the signature of a paraneoplastic (immune-mediated) process."
+    }
+  ],
+  "whatMatters": "Strip the story to: a heavy smoker with a lung mass develops subacute, progressive cerebellar signs, and autopsy shows Purkinje cell loss (not tumor cells) = paraneoplastic cerebellar degeneration. This is an AUTOIMMUNE phenomenon - antibodies against tumor antigens (anti-Yo, anti-P/Q, anti-Hu) cross-react with Purkinje neurons. Answer A. It is NOT metastatic.",
+  "strategy": "When a known/likely cancer causes neurologic deficits that DON'T fit direct tumor invasion (no mass effect, and autopsy shows neuronal DEGENERATION rather than tumor cells), think PARANEOPLASTIC = autoimmune cross-reaction. The classic trap is 'metastatic'; paraneoplastic syndromes are immune, not metastatic.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Autoimmune",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Endocrine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Infectious",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Metastatic",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Toxic",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Vascular",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "endocrine - wrong paraneoplastic type",
+      "detail": "WHAT IT IS: some paraneoplastic syndromes are endocrine/hormonal - ectopic ACTH (Cushing), ADH (SIADH), or PTHrP (hypercalcemia) from small cell or squamous lung cancer. ❌ WHY IT FAILS: those cause metabolic syndromes, not cerebellar Purkinje cell degeneration. ✅ Correct if: the stem described hyponatremia, Cushing features, or hypercalcemia."
+    },
+    {
+      "letter": "C",
+      "label": "infectious - no infectious signs",
+      "detail": "WHAT IT IS: CNS infections (encephalitis, abscess, PML) can cause progressive neurologic decline. ❌ WHY IT FAILS: there are no fevers or infectious findings, and autopsy shows neuronal degeneration rather than inflammation/organisms; the lung mass points to a paraneoplastic cause. ✅ Correct if: fever + CSF pleocytosis + an identified pathogen."
+    },
+    {
+      "letter": "D",
+      "label": "metastatic - would show tumor cells, not Purkinje loss",
+      "detail": "WHAT IT IS: cancer spreading to the cerebellum could cause ataxia. ❌ WHY IT FAILS: a metastasis would show TUMOR cells (and usually mass effect/headache) on imaging or autopsy, not isolated PURKINJE CELL degeneration; this is the classic paraneoplastic trap. ✅ Correct if: autopsy showed metastatic tumor cells in the cerebellum or a ring-enhancing brain lesion."
+    },
+    {
+      "letter": "E",
+      "label": "toxic - no toxin exposure",
+      "detail": "WHAT IT IS: toxins (alcohol, chemotherapy, phenytoin) can cause cerebellar damage. ❌ WHY IT FAILS: he does NOT use alcohol or illicit drugs, and symptoms began before treatment; a toxic cause doesn't fit. ✅ Correct if: chronic alcohol use (anterior vermis degeneration) or a known cerebellar toxin."
+    },
+    {
+      "letter": "F",
+      "label": "vascular - too gradual, no infarct",
+      "detail": "WHAT IT IS: a cerebellar stroke/infarct causes ataxia. ❌ WHY IT FAILS: vascular events are SUDDEN (and would show infarction/liquefactive necrosis), not a 2-week progressive course with Purkinje degeneration. ✅ Correct if: abrupt-onset ataxia with a cerebellar infarct on imaging."
+    }
+  ],
+  "reasoning": [
+    "Heavy smoker + lung mass + subacute progressive cerebellar signs",
+    "Autopsy shows Purkinje cell degeneration (not tumor cells)",
+    "= paraneoplastic cerebellar degeneration",
+    "Mechanism is an immune cross-reaction against Purkinje antigens -> autoimmune -> answer A"
+  ],
+  "mechanism": "Paraneoplastic cerebellar degeneration is an autoimmune syndrome most often linked to small cell lung cancer (also breast, ovarian, and uterine cancer). The immune response against tumor antigens cross-reacts with Purkinje neuron antigens (anti-Yo, anti-P/Q, and anti-Hu antibodies), causing rapid, progressive degeneration of cerebellar Purkinje cells. Patients develop subacute ataxia, dysarthria, and visual disturbances; antibodies are not always detectable, so it is often a clinical diagnosis after excluding metastasis and other causes. It is distinct from metastatic disease (tumor cells in the cerebellum) and from hormonal paraneoplastic syndromes.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Neuro/Onc > paraneoplastic syndromes: cerebellar degeneration (anti-Yo, anti-Hu, anti-P/Q), small cell lung cancer association, autoimmune mechanism. Cross-ref Lambert-Eaton and endocrine paraneoplastic syndromes."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The autopsy detail is decisive: Purkinje cell DEGENERATION (immune) vs tumor cells (metastatic). Translate 'cancer + neuronal degeneration without tumor invasion' into 'paraneoplastic = autoimmune' before reading the options."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on paraneoplastic, Purkinje cells, ataxia, dysarthria, anti-Yo/Hu antibodies, small cell lung cancer? Tell me which term and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Metastatic (D) is the trap - the patient has cancer, so spread feels intuitive. But the autopsy shows Purkinje degeneration, not tumor cells; that is immune-mediated (autoimmune)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the pattern: cancer + neurologic syndrome that doesn't match direct invasion = paraneoplastic = autoimmune."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Lung cancer + subacute cerebellar ataxia + Purkinje cell loss",
+      "back": "Paraneoplastic cerebellar degeneration"
+    },
+    {
+      "front": "Paraneoplastic cerebellar degeneration antibodies",
+      "back": "Anti-Yo, anti-P/Q, anti-Hu"
+    },
+    {
+      "front": "Cancer most often behind paraneoplastic syndromes",
+      "back": "Small cell lung cancer"
+    },
+    {
+      "front": "Lambert-Eaton myasthenic syndrome antibody",
+      "back": "Anti-voltage-gated calcium channel (SCLC)"
+    },
+    {
+      "front": "SIADH / Cushing from small cell lung cancer",
+      "back": "Ectopic ADH / ACTH (endocrine paraneoplastic)"
+    },
+    {
+      "front": "Paraneoplastic neurologic syndromes are due to",
+      "back": "Autoimmune cross-reaction (not metastasis)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Paraneoplastic cerebellar degeneration",
+      "detail": "Neuro/Onc > paraneoplastic syndromes: cerebellar degeneration (anti-Yo/Hu/P-Q), SCLC; autoimmune cross-reaction with Purkinje neurons.",
+      "location": "Neuro/Onc > paraneoplastic syndromes: cerebellar degeneration (anti-Yo/Hu/P-Q), SCLC; autoimmune cross-reaction with Purkinje neurons."
+    },
+    {
+      "tag": "options",
+      "topic": "Other paraneoplastic/etiologies",
+      "detail": "Onc > endocrine paraneoplastic (ACTH/ADH/PTHrP), Lambert-Eaton; Neuro > cerebellar stroke vs alcoholic (toxic) cerebellar degeneration.",
+      "location": "Onc > endocrine paraneoplastic (ACTH/ADH/PTHrP), Lambert-Eaton; Neuro > cerebellar stroke vs alcoholic (toxic) cerebellar degeneration."
+    },
+    {
+      "tag": "context",
+      "topic": "Small cell lung cancer",
+      "detail": "Onc > SCLC: central tumor, smoking, neuroendocrine origin, numerous paraneoplastic syndromes.",
+      "location": "Onc > SCLC: central tumor, smoking, neuroendocrine origin, numerous paraneoplastic syndromes."
+    }
+  ],
+  "memoryHook": "Cancer + Purkinje cells dying (not tumor cells) = paraneoplastic = the immune system attacking the cerebellum (autoimmune), not metastasis.",
+  "stem": [
+    {
+      "text": "A 66-year-old man comes to the emergency department due to "
+    },
+    {
+      "text": "dizziness, dysarthria, and bilateral limb ataxia",
+      "clue": true,
+      "type": "red",
+      "note": "Dizziness, slurred speech, and limb ataxia are a CEREBELLAR syndrome. Bilateral, symmetric cerebellar dysfunction with a subacute course is the hallmark presentation of paraneoplastic cerebellar degeneration."
+    },
+    {
+      "text": ". His symptoms have been "
+    },
+    {
+      "text": "steadily worsening over the last 2 weeks",
+      "clue": true,
+      "type": "blue",
+      "note": "A subacute, steadily progressive course over weeks (not sudden like a stroke, not chronic over years) fits a paraneoplastic process - an immune attack that rapidly destroys neurons."
+    },
+    {
+      "text": ". He has no other medical problems and takes no medications. He has a "
+    },
+    {
+      "text": "50-pack-year smoking history",
+      "clue": true,
+      "type": "orange",
+      "note": "Heavy smoking is the key risk factor for small cell lung cancer, the malignancy most commonly behind paraneoplastic cerebellar degeneration. It links the lung mass to the neurologic syndrome."
+    },
+    {
+      "text": " and does not use alcohol or illicit drugs. Chest x-ray shows a "
+    },
+    {
+      "text": "mass in his right lung",
+      "clue": true,
+      "type": "green",
+      "note": "A lung mass in a heavy smoker points to small cell lung cancer. The tumor triggers an antibody response that cross-reacts with cerebellar neurons - the cancer itself need not invade the brain."
+    },
+    {
+      "text": ". He is admitted to the hospital for evaluation, but his neurologic symptoms continue to progress. He dies several months later despite receiving appropriate treatment. Autopsy shows "
+    },
+    {
+      "text": "extensive cerebellar Purkinje cell degeneration",
+      "clue": true,
+      "type": "green",
+      "note": "Autopsy shows loss of cerebellar PURKINJE CELLS, not metastatic tumor cells. Degeneration of neurons (rather than tumor infiltration) is the signature of a paraneoplastic (immune-mediated) process."
+    },
+    {
+      "text": ". Which of the following best describes the etiology of this patient's neurologic condition?"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": "q164",
+  "item": 164,
+  "qid": "1005",
+  "title": "N. meningitidis pili: attachment to nasopharynx",
+  "system": "Microbiology",
+  "topic": "Bacterial virulence factors",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 57,
+  "vignette": "A pharmaceutical researcher is developing a novel agent to prevent meningococcal disease in people exposed to the bacteria. Pili antigens from Neisseria meningitidis are extracted and used to generate antibodies that impair normal pili function. The antibodies are administered to experimental animals with no prior exposure to N meningitidis. These animals, along with control animals that had not received the antibodies, are subsequently exposed to the bacteria. Compared to the control animals, a significantly greater proportion of the animals that received the antibodies remain healthy and develop no symptoms. The efficacy of these antibodies in preventing meningococcal disease is most likely due to direct interference with which of the following microbial processes?",
+  "clues": [
+    {
+      "text": "prevent meningococcal disease in people exposed to the bacteria",
+      "type": "blue",
+      "note": "The intervention is PREVENTION at the point of exposure - i.e., it must block the earliest step of infection (initial colonization), before the organism can disseminate or invade. This frames the answer as the first stage of the infection sequence."
+    },
+    {
+      "text": "antibodies that impair normal pili function",
+      "type": "red",
+      "note": "The antibodies specifically target PILI (fimbriae). Pili mediate ADHESION - the initial attachment of the bacterium to host epithelium. So blocking pili interferes with the attachment/colonization step, not later steps."
+    }
+  ],
+  "whatMatters": "Cut to the core: the antibodies block PILI. Pili (fimbriae) mediate the FIRST step of infection - attachment to and colonization of the NASOPHARYNGEAL epithelium. Blocking pili prevents initial attachment, so disease never starts. Answer B. The other options are LATER steps (dissemination, meningeal invasion, phagocyte survival) that anti-pili antibodies would not directly target.",
+  "strategy": "For 'which step does this virulence factor mediate,' map the factor to its role in the infection sequence. PILI = adhesion/attachment - the earliest step. An anti-adhesion intervention acts at colonization, before dissemination or invasion, so choose the earliest 'attachment/colonization' option, not a downstream step.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Adhesion to vascular endothelial cells",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Attachment to nasopharyngeal epithelial cells",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Hematogenous dissemination",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Invasion of the meninges",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Survival inside phagocytes",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "endothelial adhesion - that's opacity proteins, later",
+      "detail": "WHAT IT IS: attachment to vascular endothelial cells is mediated by opacity (Opa) proteins during the bloodstream phase. ❌ WHY IT FAILS: that is a later, vascular step; pili mediate attachment to the NASOPHARYNGEAL (epithelial) surface, not vascular endothelium. ✅ Correct if: asked about the opacity-protein endothelial attachment/invasion step."
+    },
+    {
+      "letter": "C",
+      "label": "hematogenous dissemination - downstream of colonization (your pick)",
+      "detail": "WHAT IT IS: spread of bacteria through the bloodstream (meningococcemia). ❌ WHY IT FAILS: dissemination occurs AFTER nasopharyngeal colonization; blocking pili prevents the initial attachment, so it does not act 'directly' on bloodstream spread. The trap is targeting the later, more dramatic step. ✅ Correct if: asked what the capsule enables (immune evasion during bloodstream survival)."
+    },
+    {
+      "letter": "D",
+      "label": "meningeal invasion - the final step",
+      "detail": "WHAT IT IS: crossing the blood-brain barrier to cause meningitis - the last step in the sequence. ❌ WHY IT FAILS: it is far downstream; anti-pili antibodies act at the very first (nasopharyngeal) attachment step. ✅ Correct if: asked which step a therapy acting at the blood-brain barrier would block."
+    },
+    {
+      "letter": "E",
+      "label": "survival inside phagocytes - a capsule function",
+      "detail": "WHAT IT IS: the polysaccharide capsule resists phagocytosis and phagolysosomal killing, letting the organism survive in blood/phagocytes. ❌ WHY IT FAILS: that is a capsule function, not a pilus function. ✅ Correct if: asked what the capsular polysaccharide does."
+    }
+  ],
+  "reasoning": [
+    "The antibodies impair PILI",
+    "Pili mediate the initial attachment to nasopharyngeal epithelial cells (the first step)",
+    "Blocking attachment prevents colonization, so disease never begins",
+    "Process directly interfered with -> attachment to nasopharyngeal epithelium -> answer B"
+  ],
+  "mechanism": "Neisseria meningitidis colonizes the nasopharynx via PILI (fimbriae), which mediate the initial ATTACHMENT to nasopharyngeal epithelial cells - the required first step before colonization, bloodstream dissemination, and meningeal invasion. Antibodies that impair pili block this attachment, reducing colonization/carriage and thereby preventing disease. (Pili undergo antigenic and phase variation, which limits pilus-based vaccines; most meningococcal vaccines instead target the capsular polysaccharide.) Other virulence factors act later: opacity proteins (endothelial attachment/invasion), the capsule (antiphagocytic survival and dissemination), and lipooligosaccharide endotoxin (toxicity).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Microbiology > Neisseria meningitidis virulence factors: pili (attachment + antigenic variation), capsule (antiphagocytic, vaccine target), IgA protease, lipooligosaccharide. Map each factor to its infection step."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Identify the targeted factor (pili) and recall its job (adhesion). Then place that job in the infection timeline (attachment is FIRST) and pick the matching, earliest option."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on pili/fimbriae, adhesion vs invasion, colonization, hematogenous dissemination, opacity proteins, capsule, antigenic/phase variation? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Hematogenous dissemination (C) and meningeal invasion (D) are tempting because they sound like 'the disease' - but they are downstream. Anti-pili antibodies act at the first attachment step, so choose nasopharyngeal attachment."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the sequence: attachment (pili) -> colonization -> bloodstream/capsule -> meningeal invasion. Match each virulence factor to its stage."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Pili/fimbriae function",
+      "back": "Attachment/adhesion to (nasopharyngeal) epithelium - first step of colonization"
+    },
+    {
+      "front": "N. meningitidis carriage site",
+      "back": "Nasopharynx"
+    },
+    {
+      "front": "Why pilus-based vaccines fail",
+      "back": "Antigenic/phase variation of pili"
+    },
+    {
+      "front": "Meningococcal vaccine target",
+      "back": "Capsular polysaccharide"
+    },
+    {
+      "front": "Capsule function",
+      "back": "Antiphagocytic (survival in blood/phagocytes)"
+    },
+    {
+      "front": "Opacity (Opa) proteins",
+      "back": "Endothelial attachment/invasion"
+    },
+    {
+      "front": "Meningococcal endotoxin",
+      "back": "Lipooligosaccharide (LOS)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Neisseria meningitidis virulence",
+      "detail": "Micro > N. meningitidis: pili (attachment, antigenic variation), capsule (vaccine), IgA protease, LOS endotoxin.",
+      "location": "Micro > N. meningitidis: pili (attachment, antigenic variation), capsule (vaccine), IgA protease, LOS endotoxin."
+    },
+    {
+      "tag": "options",
+      "topic": "Stages of meningococcal infection",
+      "detail": "Micro > nasopharyngeal colonization -> bloodstream dissemination -> meningeal invasion; which factor mediates each.",
+      "location": "Micro > nasopharyngeal colonization -> bloodstream dissemination -> meningeal invasion; which factor mediates each."
+    },
+    {
+      "tag": "context",
+      "topic": "Bacterial adhesion",
+      "detail": "Micro > pili/fimbriae adhesion across organisms; phase/antigenic variation as immune evasion.",
+      "location": "Micro > pili/fimbriae adhesion across organisms; phase/antigenic variation as immune evasion."
+    }
+  ],
+  "memoryHook": "Pili = the grappling hooks that ATTACH first. Block the hooks, and the meningococcus never gets a grip on the nasopharynx.",
+  "stem": [
+    {
+      "text": "A pharmaceutical researcher is developing a novel agent to "
+    },
+    {
+      "text": "prevent meningococcal disease in people exposed to the bacteria",
+      "clue": true,
+      "type": "blue",
+      "note": "The intervention is PREVENTION at the point of exposure - i.e., it must block the earliest step of infection (initial colonization), before the organism can disseminate or invade. This frames the answer as the first stage of the infection sequence."
+    },
+    {
+      "text": ". Pili antigens from Neisseria meningitidis are extracted and used to generate "
+    },
+    {
+      "text": "antibodies that impair normal pili function",
+      "clue": true,
+      "type": "red",
+      "note": "The antibodies specifically target PILI (fimbriae). Pili mediate ADHESION - the initial attachment of the bacterium to host epithelium. So blocking pili interferes with the attachment/colonization step, not later steps."
+    },
+    {
+      "text": ". The antibodies are administered to experimental animals with no prior exposure to N meningitidis. These animals, along with control animals that had not received the antibodies, are subsequently exposed to the bacteria. Compared to the control animals, a significantly greater proportion of the animals that received the antibodies remain healthy and develop no symptoms. The efficacy of these antibodies in preventing meningococcal disease is most likely due to direct interference with which of the following microbial processes?"
+    }
+  ]
+}

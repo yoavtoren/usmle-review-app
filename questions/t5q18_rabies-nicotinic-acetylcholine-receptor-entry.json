@@ -1,0 +1,211 @@
+{
+  "id": "q167",
+  "item": 167,
+  "qid": "8324",
+  "title": "Rabies: nicotinic acetylcholine receptor entry",
+  "system": "Microbiology",
+  "topic": "Viral receptors / neurotropic virus",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 58,
+  "vignette": "A 32-year-old man is brought to the emergency department due to fever, agitation, and disorientation. According to his family, the patient has been acting strangely and seeing and hearing things that do not exist. He also drools excessively and has severe, painful throat spasms when he attempts to eat or drink. The patient returned 4 weeks ago from a camping trip in New Mexico. Physical examination shows a confused and combative patient with mydriasis and neck rigidity. Which of the following acts as an entry receptor for the causative agent of this patient's condition?",
+  "clues": [
+    {
+      "text": "agitation, and disorientation",
+      "type": "blue",
+      "note": "Encephalitis features - agitation, confusion, hallucinations - localize the disease to the central nervous system. In the right exposure context, this is the encephalitic phase of rabies."
+    },
+    {
+      "text": "drools excessively and has severe, painful throat spasms when he attempts to eat or drink",
+      "type": "red",
+      "note": "Hypersalivation plus painful pharyngeal spasms on attempting to drink is HYDROPHOBIA - the hallmark of rabies encephalitis. This combination is essentially pathognomonic and drives the diagnosis."
+    },
+    {
+      "text": "returned 4 weeks ago from a camping trip",
+      "type": "orange",
+      "note": "A camping trip (potential bat or other animal exposure) several weeks earlier fits the rabies incubation period. Exposure to infected animal saliva, often unnoticed (bats), is the typical route."
+    },
+    {
+      "text": "mydriasis",
+      "type": "green",
+      "note": "Autonomic dysfunction such as pupil dilation (mydriasis) and hypersalivation accompanies rabies encephalitis, supporting CNS plus autonomic involvement by a neurotropic virus."
+    }
+  ],
+  "whatMatters": "Strip the story to: encephalitis with HYDROPHOBIA (painful pharyngeal spasms on drinking), hypersalivation, agitation, and autonomic signs after a likely animal/bat exposure = rabies. Rabies virus enters cells via the NICOTINIC ACETYLCHOLINE RECEPTOR at the neuromuscular junction. Answer B.",
+  "strategy": "First nail the disease from the buzzwords (hydrophobia + hypersalivation + encephalitis + animal exposure -> rabies), then recall the virus-receptor pairing. This is a 'match the virus to its entry receptor' question: rabies -> nicotinic ACh receptor; EBV -> CD21; HIV -> CD4/CCR5; rhinovirus -> ICAM-1; influenza -> sialic acid.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "B-lymphocyte CD21",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Muscle acetylcholine receptors",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Nasopharyngeal intracellular adhesion molecule-1",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Respiratory epithelial sialic acids",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Vascular endothelial integrins",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "CD21 - that's the EBV receptor",
+      "detail": "WHAT IT IS: CD21 (CR2) on B lymphocytes is the entry receptor for EPSTEIN-BARR VIRUS. ❌ WHY IT FAILS: EBV causes infectious mononucleosis, not hydrophobic encephalitis. ✅ Correct if: mono (sore throat, posterior cervical lymphadenopathy, atypical lymphocytes)."
+    },
+    {
+      "letter": "C",
+      "label": "ICAM-1 - that's the rhinovirus receptor",
+      "detail": "WHAT IT IS: intracellular adhesion molecule-1 (ICAM-1/CD54) is the receptor for RHINOVIRUS on respiratory epithelium. ❌ WHY IT FAILS: rhinovirus causes the common cold, not encephalitis with hydrophobia. ✅ Correct if: common cold symptoms."
+    },
+    {
+      "letter": "D",
+      "label": "sialic acid - that's the influenza receptor",
+      "detail": "WHAT IT IS: INFLUENZA hemagglutinin binds sialic acid on respiratory epithelium. ❌ WHY IT FAILS: influenza is a respiratory illness, not rabies encephalitis. ✅ Correct if: fever, myalgias, and cough during flu season."
+    },
+    {
+      "letter": "E",
+      "label": "endothelial integrins - not rabies",
+      "detail": "WHAT IT IS: integrins on vascular endothelium are used by some viruses (eg, in cytomegalovirus entry). ❌ WHY IT FAILS: CMV causes a mononucleosis-like illness, retinitis, or colitis (often in the immunocompromised), not hydrophobic encephalitis; rabies uses the nicotinic ACh receptor. ✅ Correct if: CMV disease in an immunocompromised host."
+    }
+  ],
+  "reasoning": [
+    "Hydrophobia + hypersalivation + encephalitis + recent camping/animal exposure = rabies",
+    "Rabies is a neurotropic Rhabdovirus",
+    "Its glycoprotein binds the nicotinic acetylcholine receptor at the neuromuscular junction",
+    "Entry receptor -> muscle acetylcholine receptors -> answer B"
+  ],
+  "mechanism": "Rabies is a fatal encephalitis caused by a bullet-shaped, enveloped Rhabdovirus transmitted in animal saliva (dogs, bats). Its surface glycoprotein binds the NICOTINIC ACETYLCHOLINE RECEPTOR at the neuromuscular junction; the virus replicates locally in muscle, then travels RETROGRADE along peripheral nerve axons to the dorsal root ganglia and ascends the spinal cord to the brain (Negri bodies form in hippocampal and Purkinje neurons). Clinically there is a prodrome (fever, paresthesias at the bite), then encephalitis with hydrophobia, pharyngeal spasms, hypersalivation, agitation, and autonomic instability; once symptomatic, it is nearly always fatal - hence postexposure prophylaxis before symptoms appear.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Microbiology > Rabies (Rhabdovirus): nicotinic ACh receptor entry, retrograde axonal transport, Negri bodies, hydrophobia, postexposure prophylaxis. Cross-ref the viral-receptor table."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: (1) recognize rabies from hydrophobia + hypersalivation + encephalitis + animal exposure; (2) recall its entry receptor (nicotinic ACh receptor). The question tests the receptor, so don't stop at the diagnosis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on hydrophobia, Rhabdovirus, nicotinic acetylcholine receptor, retrograde transport, Negri bodies, mydriasis? Tell me which term and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The other options are all real viral receptors (EBV-CD21, rhinovirus-ICAM-1, influenza-sialic acid, CMV-integrins). They distract by being true for the WRONG virus. Anchor on the rabies clinical picture first."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the receptor table: rabies = nicotinic ACh receptor; EBV = CD21; rhinovirus = ICAM-1; influenza = sialic acid; HIV = CD4 + CCR5/CXCR4."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Hydrophobia + hypersalivation + encephalitis after animal/bat exposure",
+      "back": "Rabies"
+    },
+    {
+      "front": "Rabies entry receptor",
+      "back": "Nicotinic acetylcholine receptor (neuromuscular junction)"
+    },
+    {
+      "front": "Rabies spread to CNS",
+      "back": "Retrograde axonal transport; Negri bodies"
+    },
+    {
+      "front": "EBV receptor",
+      "back": "CD21 (CR2) on B cells"
+    },
+    {
+      "front": "Rhinovirus receptor",
+      "back": "ICAM-1 (CD54)"
+    },
+    {
+      "front": "Influenza receptor",
+      "back": "Sialic acid (hemagglutinin)"
+    },
+    {
+      "front": "HIV receptor/coreceptor",
+      "back": "CD4 + CCR5/CXCR4"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Rabies",
+      "detail": "Micro > Rhabdovirus/rabies: nicotinic ACh receptor entry, retrograde transport, Negri bodies, hydrophobia, postexposure prophylaxis.",
+      "location": "Micro > Rhabdovirus/rabies: nicotinic ACh receptor entry, retrograde transport, Negri bodies, hydrophobia, postexposure prophylaxis."
+    },
+    {
+      "tag": "options",
+      "topic": "Viral entry receptors",
+      "detail": "Micro > receptor table: EBV-CD21, rhinovirus-ICAM-1, influenza-sialic acid, CMV-integrins, HIV-CD4/CCR5.",
+      "location": "Micro > receptor table: EBV-CD21, rhinovirus-ICAM-1, influenza-sialic acid, CMV-integrins, HIV-CD4/CCR5."
+    },
+    {
+      "tag": "context",
+      "topic": "Encephalitis differential",
+      "detail": "Micro/Neuro > viral encephalitis causes and clues (HSV temporal lobe, arboviruses, rabies).",
+      "location": "Micro/Neuro > viral encephalitis causes and clues (HSV temporal lobe, arboviruses, rabies)."
+    }
+  ],
+  "memoryHook": "Rabies docks at the nicotinic ACh receptor, then rides the nerves backward to the brain - hydrophobia + drooling = rabies.",
+  "stem": [
+    {
+      "text": "A 32-year-old man is brought to the emergency department due to fever, "
+    },
+    {
+      "text": "agitation, and disorientation",
+      "clue": true,
+      "type": "blue",
+      "note": "Encephalitis features - agitation, confusion, hallucinations - localize the disease to the central nervous system. In the right exposure context, this is the encephalitic phase of rabies."
+    },
+    {
+      "text": ". According to his family, the patient has been acting strangely and seeing and hearing things that do not exist. He also "
+    },
+    {
+      "text": "drools excessively and has severe, painful throat spasms when he attempts to eat or drink",
+      "clue": true,
+      "type": "red",
+      "note": "Hypersalivation plus painful pharyngeal spasms on attempting to drink is HYDROPHOBIA - the hallmark of rabies encephalitis. This combination is essentially pathognomonic and drives the diagnosis."
+    },
+    {
+      "text": ". The patient "
+    },
+    {
+      "text": "returned 4 weeks ago from a camping trip",
+      "clue": true,
+      "type": "orange",
+      "note": "A camping trip (potential bat or other animal exposure) several weeks earlier fits the rabies incubation period. Exposure to infected animal saliva, often unnoticed (bats), is the typical route."
+    },
+    {
+      "text": " in New Mexico. Physical examination shows a confused and combative patient with "
+    },
+    {
+      "text": "mydriasis",
+      "clue": true,
+      "type": "green",
+      "note": "Autonomic dysfunction such as pupil dilation (mydriasis) and hypersalivation accompanies rabies encephalitis, supporting CNS plus autonomic involvement by a neurotropic virus."
+    },
+    {
+      "text": " and neck rigidity. Which of the following acts as an entry receptor for the causative agent of this patient's condition?"
+    }
+  ]
+}

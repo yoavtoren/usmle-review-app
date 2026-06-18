@@ -1,0 +1,221 @@
+{
+  "id": "q172",
+  "item": 172,
+  "qid": "19823",
+  "title": "Myositis ossificans (heterotopic bone)",
+  "system": "Pathology",
+  "topic": "Heterotopic ossification",
+  "correct": "A",
+  "yourAnswer": "E",
+  "percentCorrect": 48,
+  "vignette": "A 20-year-old man comes to the office due to pain in the left thigh. Three months ago, a horse kicked him in the left midthigh, resulting in deep pain and swelling in the thigh muscles; x-ray was normal, and, over the next several days, the symptoms resolved with rest and ice packs. However, a few weeks later, the patient gradually developed recurrent pain and swelling in the same area. Vital signs are normal. Examination shows a solitary, hard, mobile, oval mass of approximately 4 x 5 cm in the anterior aspect of the left thigh. Excision of the mass is performed. Histologic examination is likely to show which of the following?",
+  "clues": [
+    {
+      "text": "a horse kicked him in the left midthigh",
+      "type": "orange",
+      "note": "A blunt-force muscle contusion is the classic trigger for myositis ossificans. Severe or repeated muscle trauma sets off heterotopic bone formation."
+    },
+    {
+      "text": "deep pain and swelling in the thigh muscles",
+      "type": "blue",
+      "note": "The injury is INTRAMUSCULAR (deep, within the muscle belly). Heterotopic ossification develops within the injured muscle, not in a joint or tendon sheath."
+    },
+    {
+      "text": "x-ray was normal",
+      "type": "blue",
+      "note": "An initially normal x-ray fits a fresh contusion with no lesion yet. Ossification takes weeks to appear, which is why the early film is clean."
+    },
+    {
+      "text": "a few weeks later, the patient gradually developed recurrent pain and swelling",
+      "type": "red",
+      "note": "The telltale time course: injury seems to resolve, then a mass and pain RECUR over weeks in the same muscle. This delayed-recurrence pattern is the signature of myositis ossificans."
+    },
+    {
+      "text": "solitary, hard, mobile, oval mass",
+      "type": "green",
+      "note": "A HARD (ossified) yet MOBILE mass within muscle fits heterotopic bone, not a soft cyst or a malignant tumor fixed to bone. The firmness comes from metaplastic bone."
+    }
+  ],
+  "whatMatters": "The real ask is 'what will the EXCISED mass look like under the microscope.' First convert the story — blunt muscle trauma, then a hard, mobile, recurring intramuscular mass over weeks — into the diagnosis: myositis ossificans (heterotopic bone in soft tissue). Its histology is benign metaplastic bone with surrounding fibroblastic proliferation (no atypia). Answer A.",
+  "strategy": "When a hard mass appears WEEKS after muscle trauma in a young patient, think myositis ossificans and expect a benign 'zonal' pattern (mature bone rim, fibroblastic/immature center, no mitotic atypia). Its danger is being mistaken for osteosarcoma — but the bone here is benign and metaplastic, and a true sarcoma wouldn't appear within 2 months on a previously normal x-ray.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Benign metaplastic bone with surrounding fibroblastic proliferation",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Closely packed, small, round, uniform neoplastic cells",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Mature adipocytes with focal large, atypical hyperchromatic cells",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pleomorphic neoplastic spindle cells producing new woven bone",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Synovial cyst filled with gelatinous mucoid material",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "small round blue cells = Ewing sarcoma",
+      "detail": "WHAT IT IS: closely packed small round uniform cells are the histology of Ewing sarcoma (t(11;22)), which causes bone pain/swelling, sometimes with fever, in young patients. ❌ WHY IT FAILS: that's a malignant primary bone tumor fixed to bone — not a mobile, post-traumatic muscle mass that came up over weeks. ✅ Correct if: a destructive diaphyseal bone lesion with onion-skin periosteal reaction."
+    },
+    {
+      "letter": "C",
+      "label": "atypical cells in fat = liposarcoma",
+      "detail": "WHAT IT IS: mature adipocytes with large, atypical, hyperchromatic cells (lipoblasts) describe liposarcoma. ❌ WHY IT FAILS: liposarcoma is rare, usually age >50, and grows as a slow, painless deep mass — not a hard mass appearing weeks after a kick. ✅ Correct if: an older adult with a deep, enlarging, painless fatty mass."
+    },
+    {
+      "letter": "D",
+      "label": "malignant cells making osteoid = osteosarcoma",
+      "detail": "WHAT IT IS: pleomorphic spindle cells producing woven bone/osteoid are osteosarcoma. ❌ WHY IT FAILS: osteosarcoma arises in the metaphysis (e.g., distal femur), is fixed to bone, and can't appear within ~2 months on a previously normal x-ray; myositis-ossificans bone is BENIGN and metaplastic (no atypia). ✅ Correct if: Codman triangle/sunburst pattern, metaphyseal mass with malignant osteoid."
+    },
+    {
+      "letter": "E",
+      "label": "gelatinous cyst = ganglion/synovial cyst (your pick)",
+      "detail": "WHAT IT IS: a synovial/ganglion cyst is an outpouching of joint capsule or tendon sheath filled with clear, gelatinous mucoid fluid — soft and rubbery. ❌ WHY IT FAILS: those occur near joints (dorsal wrist, foot), are SOFT and cystic, and don't follow muscle trauma; this is a HARD mass in the mid-thigh muscle. ✅ Correct if: a soft, transilluminating nodule over the dorsal wrist."
+    }
+  ],
+  "reasoning": [
+    "Blunt muscle trauma -> initial injury resolves, then a hard mass recurs over weeks in the same muscle",
+    "A hard, mobile, intramuscular mass weeks after trauma = myositis ossificans (heterotopic bone)",
+    "Histology shows a zonal pattern: benign metaplastic bone with surrounding fibroblastic proliferation, no malignant atypia",
+    "-> answer A"
+  ],
+  "mechanism": "Myositis ossificans is heterotopic (extraskeletal) ossification triggered by trauma — typically muscle contusion or fracture — that induces expression of bone morphogenetic proteins. Spindle-shaped stem cells migrate in and differentiate into fibroblasts, then chondrocytes and osteoblasts, producing a characteristic ZONAL pattern: a more mature, ossified outer rim around an inner zone of fibroblastic proliferation and immature tissue, all WITHOUT mitotic atypia. It presents weeks after injury as a painful, firm, mobile mass, classically in the quadriceps. The benign metaplastic bone distinguishes it from osteosarcoma, which it can mimic radiographically.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid MSK/Path > myositis ossificans: post-traumatic heterotopic ossification, benign zonal metaplastic bone, radiographically mimics but is NOT osteosarcoma. Contrast Ewing, osteosarcoma, liposarcoma, ganglion cyst."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: (1) diagnose myositis ossificans from the clinical story (trauma -> hard, mobile, recurring muscle mass), then (2) pick its histology. Don't answer straight from the word 'mass.'"
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on heterotopic/metaplastic ossification, zonal pattern, woven bone, fibroblastic proliferation, ganglion cyst, lipoblast? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Synovial/ganglion cyst (E) is the trap if you anchor on 'mass' without the hard, post-traumatic, intramuscular details — cysts are soft, juxta-articular, and gelatinous, not hard ossified muscle."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: trauma + hard, mobile muscle mass appearing over weeks = myositis ossificans; benign metaplastic bone, NOT osteosarcoma."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Trauma -> hard, mobile muscle mass weeks later",
+      "back": "Myositis ossificans"
+    },
+    {
+      "front": "Myositis ossificans histology",
+      "back": "Zonal benign metaplastic bone + fibroblastic proliferation (no atypia)"
+    },
+    {
+      "front": "Myositis ossificans driver",
+      "back": "Bone morphogenetic proteins (heterotopic ossification)"
+    },
+    {
+      "front": "Small round blue cells, bone, t(11;22)",
+      "back": "Ewing sarcoma"
+    },
+    {
+      "front": "Pleomorphic spindle cells making osteoid, metaphysis",
+      "back": "Osteosarcoma"
+    },
+    {
+      "front": "Soft gelatinous cyst at dorsal wrist",
+      "back": "Ganglion (synovial) cyst"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Myositis ossificans",
+      "detail": "MSK Path > heterotopic ossification after trauma; benign zonal metaplastic bone; radiographically mimics but is NOT osteosarcoma.",
+      "location": "MSK Path > heterotopic ossification after trauma; benign zonal metaplastic bone; radiographically mimics but is NOT osteosarcoma."
+    },
+    {
+      "tag": "options",
+      "topic": "Soft-tissue / bone tumors",
+      "detail": "MSK Path > Ewing (small round blue, t(11;22), onion-skin), osteosarcoma (metaphysis, Codman/sunburst), liposarcoma (older, painless), ganglion cyst.",
+      "location": "MSK Path > Ewing (small round blue, t(11;22), onion-skin), osteosarcoma (metaphysis, Codman/sunburst), liposarcoma (older, painless), ganglion cyst."
+    },
+    {
+      "tag": "context",
+      "topic": "Bone morphogenetic protein / ossification",
+      "detail": "Embryo/Path > endochondral ossification and BMP signaling driving osteoblast differentiation.",
+      "location": "Embryo/Path > endochondral ossification and BMP signaling driving osteoblast differentiation."
+    }
+  ],
+  "memoryHook": "Bruised muscle that turns to BONE = myositis ossificans — benign metaplastic bone, NOT cancer.",
+  "stem": [
+    {
+      "text": "A 20-year-old man comes to the office due to pain in the left thigh. Three months ago, "
+    },
+    {
+      "text": "a horse kicked him in the left midthigh",
+      "clue": true,
+      "type": "orange",
+      "note": "A blunt-force muscle contusion is the classic trigger for myositis ossificans. Severe or repeated muscle trauma sets off heterotopic bone formation."
+    },
+    {
+      "text": ", resulting in "
+    },
+    {
+      "text": "deep pain and swelling in the thigh muscles",
+      "clue": true,
+      "type": "blue",
+      "note": "The injury is INTRAMUSCULAR (deep, within the muscle belly). Heterotopic ossification develops within the injured muscle, not in a joint or tendon sheath."
+    },
+    {
+      "text": "; "
+    },
+    {
+      "text": "x-ray was normal",
+      "clue": true,
+      "type": "blue",
+      "note": "An initially normal x-ray fits a fresh contusion with no lesion yet. Ossification takes weeks to appear, which is why the early film is clean."
+    },
+    {
+      "text": ", and, over the next several days, the symptoms resolved with rest and ice packs. However, "
+    },
+    {
+      "text": "a few weeks later, the patient gradually developed recurrent pain and swelling",
+      "clue": true,
+      "type": "red",
+      "note": "The telltale time course: injury seems to resolve, then a mass and pain RECUR over weeks in the same muscle. This delayed-recurrence pattern is the signature of myositis ossificans."
+    },
+    {
+      "text": " in the same area. Vital signs are normal. Examination shows a "
+    },
+    {
+      "text": "solitary, hard, mobile, oval mass",
+      "clue": true,
+      "type": "green",
+      "note": "A HARD (ossified) yet MOBILE mass within muscle fits heterotopic bone, not a soft cyst or a malignant tumor fixed to bone. The firmness comes from metaplastic bone."
+    },
+    {
+      "text": " of approximately 4 x 5 cm in the anterior aspect of the left thigh. Excision of the mass is performed. Histologic examination is likely to show which of the following?"
+    }
+  ]
+}

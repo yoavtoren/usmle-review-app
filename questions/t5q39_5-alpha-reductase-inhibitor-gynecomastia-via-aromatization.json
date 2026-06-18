@@ -1,0 +1,207 @@
+{
+  "id": "q188",
+  "item": 188,
+  "qid": "14818",
+  "title": "5-alpha-reductase inhibitor: gynecomastia via aromatization",
+  "system": "Pharmacology",
+  "topic": "BPH drugs / gynecomastia",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 61,
+  "vignette": "A 65-year-old man with benign prostatic hyperplasia comes to the office for a follow-up appointment. He has a history of obstructive urinary symptoms that were unrelieved with tamsulosin, and a new medication was prescribed at his last visit 8 months ago. Since starting the new medication, the patient has experienced gradual improvement in urinary hesitancy and strength of urinary stream. However, he also has noticed a significant increase in the size of his breasts. The patient reports no pain or changes in weight. Glandular tissue, approximately 2 cm in diameter, is palpated under the nipples and is mildly tender to palpation. There is no nipple discharge, breast asymmetry, or rash. This patient's breast findings are most likely due to which of the following drug effects?",
+  "clues": [
+    {
+      "text": "benign prostatic hyperplasia",
+      "type": "blue",
+      "note": "BPH is the condition being treated. Its therapies are alpha-1 blockers (tamsulosin) and 5-alpha-reductase inhibitors (finasteride/dutasteride) - the latter is the drug class behind this side effect."
+    },
+    {
+      "text": "obstructive urinary symptoms that were unrelieved with tamsulosin",
+      "type": "orange",
+      "note": "Failure of the alpha-blocker tamsulosin is the clue that he was switched to a 5-ALPHA-REDUCTASE INHIBITOR (finasteride/dutasteride), the BPH drug that can cause gynecomastia."
+    },
+    {
+      "text": "improvement in urinary hesitancy and strength of urinary stream",
+      "type": "green",
+      "note": "Symptom improvement over months fits a 5-alpha-reductase inhibitor, which shrinks the prostate by blocking DHT - confirming the drug class responsible."
+    },
+    {
+      "text": "significant increase in the size of his breasts",
+      "type": "red",
+      "note": "Gynecomastia (palpable subareolar glandular tissue) is the adverse effect in question. It reflects an increased estrogen/androgen ratio, here from aromatization of the testosterone spared by 5-alpha-reductase inhibition."
+    }
+  ],
+  "whatMatters": "Strip the story to: BPH not helped by tamsulosin, so he was switched to a 5-alpha-reductase inhibitor (finasteride/dutasteride). It improved his stream but caused gynecomastia. Blocking testosterone -> DHT leaves EXCESS testosterone that is aromatized to ESTRADIOL, raising the estrogen/androgen ratio -> gynecomastia. Answer D.",
+  "strategy": "Identify the drug from the BPH context (alpha-blocker failed -> 5-alpha-reductase inhibitor), then reason its endocrine side effect. Gynecomastia = increased estrogen/androgen ratio. A 5-ARI shunts testosterone away from DHT, so more testosterone is AROMATIZED to estradiol -> relative estrogen excess -> breast tissue growth.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Blockade of androgen receptors",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased testicular production of testosterone",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Displacement of estrogen from sex hormone-binding globulin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Increased peripheral conversion of testosterone to estradiol",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Increased prolactin production",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "androgen-receptor blockade - that's antiandrogens",
+      "detail": "WHAT IT IS: androgen-receptor antagonists (flutamide, bicalutamide) cause gynecomastia and are used in prostate CANCER. ❌ WHY IT FAILS: a 5-alpha-reductase inhibitor doesn't block androgen receptors; it inhibits the enzyme making DHT, and the gynecomastia here is via aromatization. ✅ Correct if: the drug were flutamide/bicalutamide."
+    },
+    {
+      "letter": "B",
+      "label": "decreased testosterone - 5-ARIs slightly RAISE it",
+      "detail": "WHAT IT IS: lowering testosterone (eg, GnRH agonists) can cause gynecomastia. ❌ WHY IT FAILS: 5-alpha-reductase inhibitors do NOT decrease testosterone - testosterone actually rises slightly because it is not converted to DHT. ✅ Correct if: a GnRH agonist or orchiectomy lowering testosterone."
+    },
+    {
+      "letter": "C",
+      "label": "displacement from SHBG - that's spironolactone/ketoconazole",
+      "detail": "WHAT IT IS: some drugs (spironolactone, ketoconazole) raise free estrogen by displacing it from sex hormone-binding globulin. ❌ WHY IT FAILS: that is not the 5-ARI mechanism; finasteride works by blocking DHT synthesis and increasing aromatization. ✅ Correct if: spironolactone- or ketoconazole-induced gynecomastia."
+    },
+    {
+      "letter": "E",
+      "label": "increased prolactin - that's dopamine antagonists",
+      "detail": "WHAT IT IS: dopamine antagonists (antipsychotics) raise prolactin, causing galactorrhea and sometimes gynecomastia. ❌ WHY IT FAILS: 5-ARIs don't affect prolactin, there is no nipple discharge, and the drug context is BPH. ✅ Correct if: an antipsychotic/dopamine blocker with hyperprolactinemia."
+    }
+  ],
+  "reasoning": [
+    "BPH unrelieved by tamsulosin -> switched to a 5-alpha-reductase inhibitor (finasteride/dutasteride)",
+    "The drug blocks conversion of testosterone to DHT",
+    "The spared testosterone is aromatized to estradiol",
+    "Increased estrogen/androgen ratio -> gynecomastia -> answer D"
+  ],
+  "mechanism": "Gynecomastia results from an increased ESTROGEN/ANDROGEN ratio in breast tissue. This patient, who failed the alpha-blocker tamsulosin, was started on a 5-ALPHA-REDUCTASE INHIBITOR (finasteride/dutasteride), which blocks conversion of testosterone to dihydrotestosterone (DHT) - improving BPH because DHT drives prostatic growth. The 'spared' testosterone is then available for AROMATIZATION to estradiol in peripheral tissues (eg, adipose), raising the estrogen/androgen ratio and stimulating ductal epithelial proliferation -> gynecomastia. The effect develops gradually over months, consistent with the 8-month timeline.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm/Endo > 5-alpha-reductase inhibitors (finasteride, dutasteride): BPH and male-pattern baldness; gynecomastia via increased aromatization to estradiol. Cross-ref drug-induced gynecomastia list."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: (1) identify the drug from the BPH/alpha-blocker-failure context (5-ARI); (2) explain gynecomastia as an increased estrogen/androgen ratio from aromatizing the spared testosterone."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on 5-alpha-reductase, dihydrotestosterone (DHT), aromatase/aromatization, estradiol, gynecomastia, SHBG, tamsulosin? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Decreased testosterone (B) feels intuitive, but 5-ARIs slightly RAISE testosterone (it isn't converted to DHT). The mechanism is conversion of that testosterone to estradiol (D)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank it: finasteride -> less DHT -> more testosterone -> more estradiol (aromatase) -> gynecomastia (estrogen up relative to androgen)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "BPH unrelieved by alpha-blocker -> next drug",
+      "back": "5-alpha-reductase inhibitor (finasteride/dutasteride)"
+    },
+    {
+      "front": "Finasteride gynecomastia mechanism",
+      "back": "Spared testosterone aromatized to estradiol (increased estrogen/androgen ratio)"
+    },
+    {
+      "front": "5-alpha-reductase inhibitor action",
+      "back": "Blocks testosterone -> DHT"
+    },
+    {
+      "front": "Gynecomastia general cause",
+      "back": "Increased estrogen/androgen ratio"
+    },
+    {
+      "front": "Drugs causing gynecomastia",
+      "back": "Spironolactone, ketoconazole, cimetidine, antiandrogens, anabolic steroids, digoxin"
+    },
+    {
+      "front": "Antiandrogens (flutamide/bicalutamide)",
+      "back": "Prostate cancer (androgen-receptor blockade)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "5-alpha-reductase inhibitors",
+      "detail": "Pharm/Endo > finasteride/dutasteride: BPH and baldness; gynecomastia via aromatization of spared testosterone to estradiol.",
+      "location": "Pharm/Endo > finasteride/dutasteride: BPH and baldness; gynecomastia via aromatization of spared testosterone to estradiol."
+    },
+    {
+      "tag": "options",
+      "topic": "Drug-induced gynecomastia",
+      "detail": "Pharm > spironolactone, ketoconazole, cimetidine, antiandrogens, digoxin; dopamine antagonists/prolactin.",
+      "location": "Pharm > spironolactone, ketoconazole, cimetidine, antiandrogens, digoxin; dopamine antagonists/prolactin."
+    },
+    {
+      "tag": "context",
+      "topic": "Androgen metabolism",
+      "detail": "Endo > testosterone, DHT, aromatase -> estradiol; SHBG; estrogen/androgen ratio in gynecomastia.",
+      "location": "Endo > testosterone, DHT, aromatase -> estradiol; SHBG; estrogen/androgen ratio in gynecomastia."
+    }
+  ],
+  "memoryHook": "Finasteride blocks DHT, so testosterone spills into estrogen (aromatase) -> man-boobs. Gynecomastia = estrogen up relative to androgen.",
+  "stem": [
+    {
+      "text": "A 65-year-old man with "
+    },
+    {
+      "text": "benign prostatic hyperplasia",
+      "clue": true,
+      "type": "blue",
+      "note": "BPH is the condition being treated. Its therapies are alpha-1 blockers (tamsulosin) and 5-alpha-reductase inhibitors (finasteride/dutasteride) - the latter is the drug class behind this side effect."
+    },
+    {
+      "text": " comes to the office for a follow-up appointment. He has a history of "
+    },
+    {
+      "text": "obstructive urinary symptoms that were unrelieved with tamsulosin",
+      "clue": true,
+      "type": "orange",
+      "note": "Failure of the alpha-blocker tamsulosin is the clue that he was switched to a 5-ALPHA-REDUCTASE INHIBITOR (finasteride/dutasteride), the BPH drug that can cause gynecomastia."
+    },
+    {
+      "text": ", and a new medication was prescribed at his last visit 8 months ago. Since starting the new medication, the patient has experienced gradual "
+    },
+    {
+      "text": "improvement in urinary hesitancy and strength of urinary stream",
+      "clue": true,
+      "type": "green",
+      "note": "Symptom improvement over months fits a 5-alpha-reductase inhibitor, which shrinks the prostate by blocking DHT - confirming the drug class responsible."
+    },
+    {
+      "text": ". However, he also has noticed a "
+    },
+    {
+      "text": "significant increase in the size of his breasts",
+      "clue": true,
+      "type": "red",
+      "note": "Gynecomastia (palpable subareolar glandular tissue) is the adverse effect in question. It reflects an increased estrogen/androgen ratio, here from aromatization of the testosterone spared by 5-alpha-reductase inhibition."
+    },
+    {
+      "text": ". The patient reports no pain or changes in weight. Glandular tissue, approximately 2 cm in diameter, is palpated under the nipples and is mildly tender to palpation. There is no nipple discharge, breast asymmetry, or rash. This patient's breast findings are most likely due to which of the following drug effects?"
+    }
+  ]
+}

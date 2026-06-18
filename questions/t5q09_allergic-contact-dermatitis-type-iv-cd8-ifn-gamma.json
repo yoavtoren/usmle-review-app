@@ -1,0 +1,208 @@
+{
+  "id": "q158",
+  "item": 158,
+  "qid": "20556",
+  "title": "Allergic contact dermatitis: type IV (CD8 + IFN-gamma)",
+  "system": "Immunology",
+  "topic": "Hypersensitivity reactions",
+  "correct": "A",
+  "yourAnswer": "B",
+  "percentCorrect": 43,
+  "vignette": "A 62-year-old man comes to the office due to an intensely pruritic facial rash for the past 3 days. The patient uses no facial cosmetic products but has frequently dyed his hair during the past year; he last dyed his hair 5 days ago and also recalls developing a similar rash the previous time he used hair dye. The patient has a history of asthma, hypertension, and diabetes mellitus. He does not use tobacco, alcohol, or illicit drugs. Vital signs are within normal limits. Physical examination findings are shown in the exhibit. Which of the following are primarily involved in the pathogenesis of this patient's rash?",
+  "clues": [
+    {
+      "text": "intensely pruritic facial rash for the past 3 days",
+      "type": "blue",
+      "note": "An itchy (pruritic) eczematous rash appearing 2-3 days after an exposure is a DELAYED reaction. The timing alone already separates this from an immediate (minutes) hypersensitivity and points toward a T-cell-mediated process."
+    },
+    {
+      "text": "frequently dyed his hair during the past year",
+      "type": "orange",
+      "note": "Repeated hair-dye use is the sensitizing exposure. Hair dyes contain allergens such as p-phenylenediamine that act as haptens; repeated contact over the year primed hapten-specific T cells (the sensitization phase)."
+    },
+    {
+      "text": "developing a similar rash the previous time he used hair dye",
+      "type": "green",
+      "note": "A recurrent, identical rash on RE-exposure is the fingerprint of a sensitized, memory T-cell response - the elicitation phase of allergic contact dermatitis. Prior sensitization + recurrence on re-exposure = type IV hypersensitivity."
+    }
+  ],
+  "whatMatters": "Cut to it: a pruritic rash appearing ~2-3 days AFTER re-exposure to hair dye, identical to a prior reaction = allergic contact dermatitis, a TYPE IV (delayed, T-cell) hypersensitivity. The effector cells are sensitized T cells - CD8+ T cells releasing interferon gamma (with CD4 Th1 help) that injure keratinocytes. Answer A.",
+  "strategy": "Use TIMING to assign the hypersensitivity type. IMMEDIATE (minutes, hives/anaphylaxis) = type I, mast cells/histamine/IgE. DELAYED (2-3 days, eczematous plaque) = type IV, T cells, NO antibody. Contact dermatitis is the prototype type IV, so pick the T-cell/cytokine option, not mast cells.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "CD8+ T cells and interferon gamma",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Mast cells and histamine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Neutrophils and myeloperoxidase",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Plasma cells and immunoglobulins",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Regulatory T cells and interleukin-10",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "mast cells/histamine = type I (immediate), your pick",
+      "detail": "WHAT IT IS: mast cells and histamine are the effectors of TYPE I (immediate) IgE-mediated hypersensitivity - urticaria, angioedema, and anaphylaxis within minutes. ❌ WHY IT FAILS: this rash is DELAYED (2-3 days) and eczematous, not immediate hives; type IV uses T cells, not mast-cell histamine. This is the most tempting wrong answer. ✅ Correct if: hives or anaphylaxis appeared within minutes of exposure."
+    },
+    {
+      "letter": "C",
+      "label": "neutrophils/MPO = acute bacterial defense",
+      "detail": "WHAT IT IS: neutrophils killing via reactive oxygen species and myeloperoxidase mediate acute pyogenic/innate defense (eg, cellulitis, abscess). ❌ WHY IT FAILS: allergic contact dermatitis is T-cell mediated, not a neutrophilic infection; the lesion is pruritic, not a painful spreading infection. ✅ Correct if: a painful bacterial skin infection (cellulitis/abscess)."
+    },
+    {
+      "letter": "D",
+      "label": "plasma cells/immunoglobulins = antibody-mediated",
+      "detail": "WHAT IT IS: plasma cells and immunoglobulins drive antibody-mediated (type II cytotoxic and type III immune-complex) reactions. ❌ WHY IT FAILS: allergic contact dermatitis does NOT involve antibodies; it is purely cell-mediated (type IV). ✅ Correct if: a type II (eg, autoimmune cytopenia) or type III (eg, serum sickness) antibody/immune-complex disease."
+    },
+    {
+      "letter": "E",
+      "label": "Tregs/IL-10 = the suppressive arm",
+      "detail": "WHAT IT IS: regulatory T cells secreting IL-10/TGF-beta DAMPEN immune responses and maintain tolerance. ❌ WHY IT FAILS: this is the anti-inflammatory/suppressive arm - the opposite of the active effector response producing the rash. ✅ Correct if: asked what limits or terminates the response or maintains peripheral tolerance."
+    }
+  ],
+  "reasoning": [
+    "Delayed (2-3 day), recurrent eczematous rash after hair dye re-exposure",
+    "= allergic contact dermatitis = type IV (delayed, T-cell) hypersensitivity",
+    "Effector cells are sensitized CD8+ T cells releasing interferon gamma (with CD4 Th1)",
+    "Primary mediators -> answer A"
+  ],
+  "mechanism": "Allergic contact dermatitis is a type IV (delayed, T-cell-mediated) hypersensitivity with two phases. SENSITIZATION: a small hapten (eg, p-phenylenediamine in hair dye, nickel, urushiol) binds a self-protein; Langerhans/dendritic cells carry it to regional lymph nodes and prime hapten-specific CD4 and CD8 T cells over ~10-14 days, with no rash. ELICITATION: on re-exposure, sensitized CD8+ effector T cells are recruited to the skin and induce keratinocyte apoptosis (perforin/granzyme, Fas ligand) while releasing INTERFERON GAMMA to amplify inflammation - producing the pruritic eczematous rash 2-3 days later. No antibody or mast cell is required.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Immunology > hypersensitivity type IV (delayed, T-cell): contact dermatitis (PPD, poison ivy/urushiol, nickel); sensitization vs elicitation; CD8 + IFN-gamma effectors. Contrast types I-III."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Decode by timing: 2-3 days = delayed = type IV = T cells. Once you label it type IV, choose the T-cell/cytokine option and reject anything antibody- or mast-cell-based."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on hapten, sensitization vs elicitation, type I-IV hypersensitivity, Langerhans cell, interferon gamma, regulatory T cell? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Mast cells and histamine (B) is the reflex 'allergy' answer, but that is IMMEDIATE (type I) hypersensitivity. The 2-3 day delay and recurrence on re-exposure define a T-cell (type IV) reaction."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "An exhibit photo shows the rash; you don't need it to answer, but recognizing the morphology helps: allergic contact dermatitis is an eczematous, often weepy/vesicular, well-demarcated plaque in the contact distribution. Let the history/timing drive the immunology, not the picture."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Delayed (2-3 day) eczematous rash after a contact allergen",
+      "back": "Allergic contact dermatitis = type IV hypersensitivity"
+    },
+    {
+      "front": "Hair dye allergen",
+      "back": "p-phenylenediamine (a hapten)"
+    },
+    {
+      "front": "Type IV effector cells/cytokine",
+      "back": "T cells (CD4 Th1 + CD8); interferon gamma; NO antibody"
+    },
+    {
+      "front": "Cell that presents the hapten in skin",
+      "back": "Langerhans (dendritic) cell"
+    },
+    {
+      "front": "Type I hypersensitivity effectors",
+      "back": "Mast cells, histamine, IgE (immediate)"
+    },
+    {
+      "front": "Poison ivy mechanism",
+      "back": "Urushiol hapten -> type IV contact dermatitis"
+    },
+    {
+      "front": "Regulatory T-cell suppressive cytokines",
+      "back": "IL-10, TGF-beta"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Type IV hypersensitivity / contact dermatitis",
+      "detail": "Immuno > hypersensitivity type IV (delayed): allergic contact dermatitis (PPD, poison ivy, nickel); sensitization vs elicitation; CD8 + IFN-gamma.",
+      "location": "Immuno > hypersensitivity type IV (delayed): allergic contact dermatitis (PPD, poison ivy, nickel); sensitization vs elicitation; CD8 + IFN-gamma."
+    },
+    {
+      "tag": "option B",
+      "topic": "Type I hypersensitivity",
+      "detail": "Immuno > type I: mast cells, IgE, histamine; urticaria/anaphylaxis (immediate).",
+      "location": "Immuno > type I: mast cells, IgE, histamine; urticaria/anaphylaxis (immediate)."
+    },
+    {
+      "tag": "option D",
+      "topic": "Type II / III hypersensitivity",
+      "detail": "Immuno > antibody-mediated: type II cytotoxic and type III immune-complex reactions.",
+      "location": "Immuno > antibody-mediated: type II cytotoxic and type III immune-complex reactions."
+    },
+    {
+      "tag": "option E",
+      "topic": "Regulatory T cells / tolerance",
+      "detail": "Immuno > Tregs, IL-10/TGF-beta, peripheral tolerance.",
+      "location": "Immuno > Tregs, IL-10/TGF-beta, peripheral tolerance."
+    }
+  ],
+  "memoryHook": "Contact dermatitis = type IV: '4 = delayed, T-cell, no antibody.' Hair dye 3 days later -> CD8 T cells + IFN-gamma, not histamine.",
+  "stem": [
+    {
+      "text": "A 62-year-old man comes to the office due to an "
+    },
+    {
+      "text": "intensely pruritic facial rash for the past 3 days",
+      "clue": true,
+      "type": "blue",
+      "note": "An itchy (pruritic) eczematous rash appearing 2-3 days after an exposure is a DELAYED reaction. The timing alone already separates this from an immediate (minutes) hypersensitivity and points toward a T-cell-mediated process."
+    },
+    {
+      "text": ". The patient uses no facial cosmetic products but has "
+    },
+    {
+      "text": "frequently dyed his hair during the past year",
+      "clue": true,
+      "type": "orange",
+      "note": "Repeated hair-dye use is the sensitizing exposure. Hair dyes contain allergens such as p-phenylenediamine that act as haptens; repeated contact over the year primed hapten-specific T cells (the sensitization phase)."
+    },
+    {
+      "text": "; he last dyed his hair 5 days ago and also recalls "
+    },
+    {
+      "text": "developing a similar rash the previous time he used hair dye",
+      "clue": true,
+      "type": "green",
+      "note": "A recurrent, identical rash on RE-exposure is the fingerprint of a sensitized, memory T-cell response - the elicitation phase of allergic contact dermatitis. Prior sensitization + recurrence on re-exposure = type IV hypersensitivity."
+    },
+    {
+      "text": ". The patient has a history of asthma, hypertension, and diabetes mellitus. He does not use tobacco, alcohol, or illicit drugs. Vital signs are within normal limits. Physical examination findings are shown in the exhibit. Which of the following are primarily involved in the pathogenesis of this patient's rash?"
+    }
+  ]
+}

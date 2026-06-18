@@ -1,0 +1,193 @@
+{
+  "id": "q157",
+  "item": 157,
+  "qid": "767",
+  "title": "Potassium iodide blocks thyroid uptake of I-131",
+  "system": "Pharmacology",
+  "topic": "Thyroid / radiation injury",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 62,
+  "vignette": "A nuclear waste disposal plant suffers a containment failure and several grams of iodine-131 are released into the local environment. A number of workers are believed to have been exposed to dangerous levels of the radioactive material. Which of the following should be immediately administered to help prevent tissue damage in these individuals?",
+  "clues": [
+    {
+      "text": "iodine-131 are released",
+      "type": "red",
+      "note": "Radioactive iodine-131 is the key exposure. Like all iodine, it is avidly taken up and CONCENTRATED by the thyroid via the sodium-iodide symporter, where its radiation causes thyroiditis, hypothyroidism, and - especially in the young - thyroid carcinoma."
+    },
+    {
+      "text": "exposed to dangerous levels of the radioactive material",
+      "type": "blue",
+      "note": "A dangerous acute exposure means you need PROPHYLAXIS that works immediately to keep the radioiodine out of the gland, not a slow regulatory or symptomatic drug."
+    },
+    {
+      "text": "prevent tissue damage",
+      "type": "green",
+      "note": "The goal is to BLOCK thyroid uptake of I-131. Saturating the gland with non-radioactive iodide competitively prevents radioiodine entry (and transiently inhibits organification), protecting the thyroid from radiation injury."
+    }
+  ],
+  "whatMatters": "Strip it down: radioactive I-131 concentrates in the thyroid via the sodium-iodide symporter and irradiates it. Flood the body with NON-radioactive iodide (potassium iodide) and you competitively block I-131 uptake (plus trigger the Wolff-Chaikoff effect), protecting the gland. Answer B.",
+  "strategy": "When a stem gives a radioactive element and asks for prophylaxis, identify the organ that concentrates it and 'saturate/block' it with the cold (non-radioactive) analog. Iodine -> thyroid -> potassium iodide. Don't reach for antithyroid drugs, steroids, or beta blockers - those treat hyperthyroid symptoms, not rapid uptake-blocking.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Levothyroxine",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Potassium iodide",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Prednisone",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Propranolol",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Propylthiouracil",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "levothyroxine - too slow",
+      "detail": "WHAT IT IS: synthetic T4; high doses suppress TSH, and because TSH drives thyroid iodine trapping, this would eventually reduce uptake. ❌ WHY IT FAILS: TSH-mediated suppression takes days to weeks - far too slow for an acute exposure where you must block uptake immediately. ✅ Correct if: the goal were chronic suppression of thyroid activity, not emergent radioprotection."
+    },
+    {
+      "letter": "C",
+      "label": "prednisone - no effect on uptake",
+      "detail": "WHAT IT IS: a glucocorticoid used for anti-inflammatory/immunosuppressive effects (eg, Graves ophthalmopathy). ❌ WHY IT FAILS: it has no effect on thyroid iodide uptake and does not protect against radioiodine. ✅ Correct if: treating inflammatory eye disease or an autoimmune flare."
+    },
+    {
+      "letter": "D",
+      "label": "propranolol - symptom control only",
+      "detail": "WHAT IT IS: a beta blocker that controls the adrenergic SYMPTOMS of thyrotoxicosis (tachycardia, tremor). ❌ WHY IT FAILS: it does nothing to block iodine uptake or shield the gland from radiation. ✅ Correct if: symptomatic control of hyperthyroid adrenergic symptoms or thyroid storm."
+    },
+    {
+      "letter": "E",
+      "label": "propylthiouracil - blocks synthesis, not uptake (the 25% trap)",
+      "detail": "WHAT IT IS: a thioamide that inhibits thyroid peroxidase (blocking organification) and also blocks peripheral T4->T3 conversion. ❌ WHY IT FAILS: it blocks hormone SYNTHESIS downstream, but does NOT block the sodium-iodide symporter that imports I-131; saturating with cold iodide blocks uptake more rapidly and efficiently. ✅ Correct if: treating ongoing hyperthyroidism (Graves disease, thyroid storm)."
+    }
+  ],
+  "reasoning": [
+    "I-131 is concentrated in the thyroid via the sodium-iodide symporter",
+    "Give a large dose of NON-radioactive iodide (potassium iodide) to competitively saturate the symporter",
+    "High intrathyroidal iodide also transiently inhibits organification (Wolff-Chaikoff)",
+    "Blocks radioiodine uptake -> protects the gland -> answer B"
+  ],
+  "mechanism": "The thyroid follicular cell's basolateral sodium-iodide symporter traps ALL iodide isotopes, concentrating I-131 and exposing the gland to damaging radiation (radiation thyroiditis, hypothyroidism, and especially thyroid carcinoma in younger patients). A large dose of NON-radioactive potassium iodide competitively saturates the symporter so that little I-131 is taken up; the high intrathyroidal iodide also transiently inhibits organification and hormone release (Wolff-Chaikoff effect). Potassium iodide must be given promptly - ideally just before or at the time of exposure - to be protective.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology/Endocrine > thyroid: potassium iodide for radioiodine exposure; sodium-iodide symporter (NIS); Wolff-Chaikoff effect. Cross-ref thyroid hormone synthesis steps."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reframe as 'how do I keep radioactive iodine OUT of the thyroid right now?' Block the transporter by flooding it with cold iodide. Pick the agent that competes at the uptake step, not one acting downstream or on symptoms."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on sodium-iodide symporter, organification, Wolff-Chaikoff effect, thioamide, thyroid peroxidase, radioiodine? Tell me which term and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Propylthiouracil (E) tempts because it is an 'antithyroid drug,' but it blocks SYNTHESIS, not UPTAKE, and works slower. The fast, specific block of I-131 entry is cold potassium iodide."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the rule: radioactive iodine emergency -> potassium iodide ASAP (saturate the symporter)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Radioactive iodine (I-131) exposure prophylaxis",
+      "back": "Potassium iodide (KI)"
+    },
+    {
+      "front": "Thyroid iodide uptake transporter",
+      "back": "Sodium-iodide symporter (NIS, basolateral)"
+    },
+    {
+      "front": "High iodide transiently blocks organification",
+      "back": "Wolff-Chaikoff effect"
+    },
+    {
+      "front": "Thioamide (PTU / methimazole) mechanism",
+      "back": "Block thyroid peroxidase (organification); PTU also blocks peripheral T4->T3"
+    },
+    {
+      "front": "Beta blocker in thyrotoxicosis",
+      "back": "Symptom control (eg, propranolol)"
+    },
+    {
+      "front": "Late risk of childhood I-131 exposure",
+      "back": "Thyroid carcinoma (papillary)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Potassium iodide / radioiodine",
+      "detail": "Pharm/Endo > thyroid: potassium iodide for radiation exposure; sodium-iodide symporter; Wolff-Chaikoff effect.",
+      "location": "Pharm/Endo > thyroid: potassium iodide for radiation exposure; sodium-iodide symporter; Wolff-Chaikoff effect."
+    },
+    {
+      "tag": "options",
+      "topic": "Thyroid drugs",
+      "detail": "Pharm > thioamides (PTU/methimazole - peroxidase), levothyroxine (T4), propranolol (symptom control), glucocorticoids.",
+      "location": "Pharm > thioamides (PTU/methimazole - peroxidase), levothyroxine (T4), propranolol (symptom control), glucocorticoids."
+    },
+    {
+      "tag": "stem",
+      "topic": "Thyroid hormone synthesis",
+      "detail": "Endo > synthesis steps: iodide trapping (NIS) -> organification (peroxidase) -> coupling -> storage/release - know where each drug acts.",
+      "location": "Endo > synthesis steps: iodide trapping (NIS) -> organification (peroxidase) -> coupling -> storage/release - know where each drug acts."
+    }
+  ],
+  "memoryHook": "Flood the thyroid with COLD iodide (KI) so the HOT iodine (I-131) can't get a seat at the symporter.",
+  "stem": [
+    {
+      "text": "A nuclear waste disposal plant suffers a containment failure and several grams of "
+    },
+    {
+      "text": "iodine-131 are released",
+      "clue": true,
+      "type": "red",
+      "note": "Radioactive iodine-131 is the key exposure. Like all iodine, it is avidly taken up and CONCENTRATED by the thyroid via the sodium-iodide symporter, where its radiation causes thyroiditis, hypothyroidism, and - especially in the young - thyroid carcinoma."
+    },
+    {
+      "text": " into the local environment. A number of workers are believed to have been "
+    },
+    {
+      "text": "exposed to dangerous levels of the radioactive material",
+      "clue": true,
+      "type": "blue",
+      "note": "A dangerous acute exposure means you need PROPHYLAXIS that works immediately to keep the radioiodine out of the gland, not a slow regulatory or symptomatic drug."
+    },
+    {
+      "text": ". Which of the following should be immediately administered to help "
+    },
+    {
+      "text": "prevent tissue damage",
+      "clue": true,
+      "type": "green",
+      "note": "The goal is to BLOCK thyroid uptake of I-131. Saturating the gland with non-radioactive iodide competitively prevents radioiodine entry (and transiently inhibits organification), protecting the thyroid from radiation injury."
+    },
+    {
+      "text": " in these individuals?"
+    }
+  ]
+}

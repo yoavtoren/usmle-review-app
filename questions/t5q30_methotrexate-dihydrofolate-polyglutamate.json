@@ -1,0 +1,211 @@
+{
+  "id": "q179",
+  "item": 179,
+  "qid": "1857",
+  "title": "Methotrexate: dihydrofolate polyglutamate",
+  "system": "Pharmacology",
+  "topic": "Antifolates / folate metabolism",
+  "correct": "A",
+  "yourAnswer": "D",
+  "percentCorrect": 50,
+  "vignette": "A 23-year-old woman comes to the emergency department with vaginal bleeding and lower abdominal cramps. Her last menstrual period was 6 weeks ago, and a home pregnancy test was positive. She has no medical history and does not use tobacco or alcohol. Pelvic ultrasonography reveals a gestational sac in the left fallopian tube without evidence of rupture. A single dose of methotrexate is administered to treat her condition. Which of the following substances will most likely accumulate in embryonic tissues as a result of treatment?",
+  "clues": [
+    {
+      "text": "vaginal bleeding and lower abdominal cramps",
+      "type": "blue",
+      "note": "Early-pregnancy bleeding with cramping raises concern for an abnormal (ectopic) pregnancy, setting up the indication for methotrexate."
+    },
+    {
+      "text": "last menstrual period was 6 weeks ago, and a home pregnancy test was positive",
+      "type": "blue",
+      "note": "A positive pregnancy test at ~6 weeks confirms an early pregnancy. The question is where that pregnancy is implanted."
+    },
+    {
+      "text": "gestational sac in the left fallopian tube without evidence of rupture",
+      "type": "red",
+      "note": "A gestational sac in the fallopian tube = ectopic pregnancy; 'without rupture' makes it a candidate for medical (non-surgical) management with methotrexate."
+    },
+    {
+      "text": "single dose of methotrexate",
+      "type": "green",
+      "note": "Single-dose methotrexate treats an early unruptured ectopic by halting rapidly dividing trophoblast. The question tests its mechanism on the folate pathway."
+    }
+  ],
+  "whatMatters": "The clinical wrapper just establishes 'early unruptured ectopic -> methotrexate.' The testable point is MTX's biochemistry: it inhibits dihydrofolate (DHF) reductase, so the SUBSTRATE upstream of the blocked enzyme accumulates while the product falls. DHF builds up (trapped as dihydrofolate POLYGLUTAMATE); tetrahydrofolate and downstream DNA precursors fall. Answer A.",
+  "strategy": "For any enzyme-inhibitor question, ask which side of the block you're on: the SUBSTRATE accumulates, the PRODUCT decreases. MTX blocks DHF reductase (DHF -> THF). So DHF rises (as polyglutamate, because folates are trapped intracellularly by polyglutamation) and THF/thymidylate/DNA synthesis fall.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Dihydrofolate polyglutamate",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Folinic acid",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Para-aminobenzoic acid",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Tetrahydrofolate",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Thymidylic acid",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "folinic acid — the rescue you GIVE, not what accumulates",
+      "detail": "WHAT IT IS: leucovorin, a reduced folate that bypasses DHF reductase and 'rescues' normal cells from methotrexate toxicity. ❌ WHY IT FAILS: it's an antidote you administer, not a substance that builds up from MTX; it would be consumed, not accumulate. ✅ Correct if: asked what reverses MTX toxicity (leucovorin rescue)."
+    },
+    {
+      "letter": "C",
+      "label": "PABA — a bacterial folate precursor",
+      "detail": "WHAT IT IS: para-aminobenzoic acid is a folate precursor in BACTERIA; sulfonamides block its conversion (dihydropteroate synthase). ❌ WHY IT FAILS: humans don't synthesize folate from PABA, and MTX acts at DHF reductase, not the PABA step. ✅ Correct if: a sulfonamide/antibacterial folate-synthesis question."
+    },
+    {
+      "letter": "D",
+      "label": "tetrahydrofolate — DECREASES with MTX (your pick)",
+      "detail": "WHAT IT IS: THF is the active reduced folate (the PRODUCT of DHF reductase) needed for one-carbon transfers and DNA synthesis. ❌ WHY IT FAILS: MTX BLOCKS DHF reductase, so THF formation FALLS — it doesn't accumulate; the upstream substrate (DHF) builds up instead. The trap is grabbing the famous active folate. ✅ Correct if: asked what DECREASES with MTX (THF/DNA synthesis)."
+    },
+    {
+      "letter": "E",
+      "label": "thymidylic acid — its synthesis falls",
+      "detail": "WHAT IT IS: dTMP, a pyrimidine nucleotide made by thymidylate synthase using a folate cofactor. ❌ WHY IT FAILS: with less folate cofactor, dTMP synthesis is impaired, so it falls rather than accumulates (the basis of the antiproliferative effect). ✅ Correct if: asked which nucleotide DROPS with MTX/5-FU."
+    }
+  ],
+  "reasoning": [
+    "Methotrexate competitively and irreversibly inhibits dihydrofolate (DHF) reductase",
+    "Blocking DHF reductase stops conversion of DHF -> tetrahydrofolate, so the SUBSTRATE upstream (DHF) accumulates while products fall",
+    "Inside cells, folates are trapped by polyglutamation, so DHF builds up specifically as dihydrofolate POLYGLUTAMATE; downstream THF, thymidylate, and DNA synthesis decrease",
+    "-> Dihydrofolate polyglutamate, answer A"
+  ],
+  "mechanism": "Methotrexate is a folate analog that competitively and irreversibly inhibits dihydrofolate reductase, the enzyme that reduces dihydrofolate (DHF) to tetrahydrofolate (THF). With the enzyme blocked, THF — and downstream thymidylate and purines for DNA synthesis — falls, while the upstream substrate DHF accumulates. After entering cells, methotrexate and folates undergo polyglutamation, which traps them intracellularly; thus DHF accumulates specifically as dihydrofolate polyglutamate. The antiproliferative effect is strongest in rapidly dividing tissue such as a developing embryo, which is why single-dose methotrexate treats an early unruptured ectopic pregnancy; leucovorin (folinic acid) can rescue normal cells from toxicity.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm/Biochem > folate pathway and antifolates: DHF reductase (methotrexate, trimethoprim, pyrimethamine), thymidylate synthase (5-FU), dihydropteroate synthase (sulfonamides, PABA step); leucovorin rescue; intracellular polyglutamation."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Trace the pathway and ask which side of the BLOCKED enzyme you're on. MTX blocks DHF reductase -> product (THF) down, SUBSTRATE (DHF) up -> DHF accumulates (as polyglutamate)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on DHF reductase, tetrahydrofolate, polyglutamation, thymidylate synthase, leucovorin/folinic acid, PABA? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Tetrahydrofolate (D) is the trap — it's the 'important' active folate, so it feels right; but MTX blocks its formation, so THF DROPS. What accumulates is the upstream DHF."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the rule: inhibit an enzyme -> substrate accumulates, product falls. MTX -> DHF up, THF down."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Substance accumulating with methotrexate",
+      "back": "Dihydrofolate (DHF) polyglutamate"
+    },
+    {
+      "front": "Methotrexate mechanism",
+      "back": "Inhibits dihydrofolate reductase (DHF -> THF)"
+    },
+    {
+      "front": "Leucovorin / folinic acid",
+      "back": "Reduced folate that rescues normal cells from MTX"
+    },
+    {
+      "front": "5-fluorouracil target",
+      "back": "Thymidylate synthase (lowers dTMP)"
+    },
+    {
+      "front": "Sulfonamides / PABA",
+      "back": "Block dihydropteroate synthase (bacterial folate synthesis)"
+    },
+    {
+      "front": "Single-dose MTX indication",
+      "back": "Early unruptured ectopic pregnancy"
+    },
+    {
+      "front": "Why folates stay in cells",
+      "back": "Polyglutamation traps them intracellularly"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Methotrexate & folate pathway",
+      "detail": "Pharm > DHF reductase inhibition: THF falls, DHF (polyglutamate) accumulates; antiproliferative; leucovorin rescue.",
+      "location": "Pharm > DHF reductase inhibition: THF falls, DHF (polyglutamate) accumulates; antiproliferative; leucovorin rescue."
+    },
+    {
+      "tag": "options",
+      "topic": "Folate-pathway players",
+      "detail": "Biochem/Pharm > THF (active folate), thymidylate synthase/dTMP (5-FU target), PABA/dihydropteroate synthase (sulfonamides), leucovorin.",
+      "location": "Biochem/Pharm > THF (active folate), thymidylate synthase/dTMP (5-FU target), PABA/dihydropteroate synthase (sulfonamides), leucovorin."
+    },
+    {
+      "tag": "context",
+      "topic": "Ectopic pregnancy",
+      "detail": "Repro > unruptured tubal pregnancy: single-dose MTX criteria, beta-hCG follow-up, vs surgical salpingostomy/salpingectomy.",
+      "location": "Repro > unruptured tubal pregnancy: single-dose MTX criteria, beta-hCG follow-up, vs surgical salpingostomy/salpingectomy."
+    }
+  ],
+  "memoryHook": "Block the enzyme -> the stuff BEFORE it piles up. MTX blocks DHF reductase -> DHF (polyglutamate) accumulates; THF crashes.",
+  "stem": [
+    {
+      "text": "A 23-year-old woman comes to the emergency department with "
+    },
+    {
+      "text": "vaginal bleeding and lower abdominal cramps",
+      "clue": true,
+      "type": "blue",
+      "note": "Early-pregnancy bleeding with cramping raises concern for an abnormal (ectopic) pregnancy, setting up the indication for methotrexate."
+    },
+    {
+      "text": ". Her "
+    },
+    {
+      "text": "last menstrual period was 6 weeks ago, and a home pregnancy test was positive",
+      "clue": true,
+      "type": "blue",
+      "note": "A positive pregnancy test at ~6 weeks confirms an early pregnancy. The question is where that pregnancy is implanted."
+    },
+    {
+      "text": ". She has no medical history and does not use tobacco or alcohol. Pelvic ultrasonography reveals a "
+    },
+    {
+      "text": "gestational sac in the left fallopian tube without evidence of rupture",
+      "clue": true,
+      "type": "red",
+      "note": "A gestational sac in the fallopian tube = ectopic pregnancy; 'without rupture' makes it a candidate for medical (non-surgical) management with methotrexate."
+    },
+    {
+      "text": ". A "
+    },
+    {
+      "text": "single dose of methotrexate",
+      "clue": true,
+      "type": "green",
+      "note": "Single-dose methotrexate treats an early unruptured ectopic by halting rapidly dividing trophoblast. The question tests its mechanism on the folate pathway."
+    },
+    {
+      "text": " is administered to treat her condition. Which of the following substances will most likely accumulate in embryonic tissues as a result of treatment?"
+    }
+  ]
+}

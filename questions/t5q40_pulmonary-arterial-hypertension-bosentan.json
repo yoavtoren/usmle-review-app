@@ -1,0 +1,198 @@
+{
+  "id": "q189",
+  "item": 189,
+  "qid": "903",
+  "title": "Pulmonary arterial hypertension: bosentan",
+  "system": "Pharmacology",
+  "topic": "Pulmonary hypertension",
+  "correct": "A",
+  "yourAnswer": "D",
+  "percentCorrect": 72,
+  "vignette": "A 36-year-old woman comes to the office due to dyspnea and weakness that are brought on while doing ordinary chores around the house. The patient has no other medical conditions and takes no medications. She does not use tobacco, alcohol, or illicit drugs. Her mother had similar symptoms and died at age 42. After an extensive workup, a lung biopsy is performed. Light microscopy of the tissue sample shows medial hypertrophy, intimal fibrosis, and decreased intraluminal diameter of the small branches of the pulmonary artery. Which of the following is the most appropriate pharmacotherapy for this patient's current condition?",
+  "clues": [
+    {
+      "text": "dyspnea and weakness that are brought on while doing ordinary chores",
+      "type": "blue",
+      "note": "Exertional dyspnea and exercise intolerance in a young woman are the typical presenting symptoms of pulmonary arterial hypertension (PAH)."
+    },
+    {
+      "text": "Her mother had similar symptoms and died at age 42",
+      "type": "orange",
+      "note": "A young woman with an affected mother suggests HERITABLE PAH, most often from inactivating BMPR2 mutations. The family history plus the age/sex profile strongly favors PAH."
+    },
+    {
+      "text": "medial hypertrophy, intimal fibrosis, and decreased intraluminal diameter of the small branches of the pulmonary artery",
+      "type": "red",
+      "note": "This is the histology of pulmonary vascular REMODELING in PAH: medial hypertrophy, intimal fibrosis, and luminal narrowing of small pulmonary arteries (progressing to plexiform lesions). It pins the diagnosis and the drug target (endothelial dysfunction)."
+    }
+  ],
+  "whatMatters": "Strip the story to: a young woman with exertional dyspnea, a family history (mother died at 42), and pulmonary arteriole remodeling (medial hypertrophy, intimal fibrosis, luminal narrowing) = pulmonary arterial hypertension (often heritable, BMPR2). Treatment targets endothelial dysfunction: BOSENTAN, an endothelin-receptor antagonist, blocks the vasoconstrictor/proliferative endothelin. Answer A.",
+  "strategy": "Recognize PAH (young woman + exertional dyspnea + arteriolar remodeling +/- family history), then pick a pulmonary-vascular-targeted drug. PAH therapies counter endothelial dysfunction: endothelin-receptor antagonists (bosentan), PDE-5 inhibitors (sildenafil), prostacyclin analogs (epoprostenol). Reject drugs for unrelated diseases (antiplatelets, ACE inhibitors, anti-TNF, NSAIDs).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bosentan",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Clopidogrel",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Enalapril",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Etanercept",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Indomethacin",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "clopidogrel - antiplatelet, wrong disease",
+      "detail": "WHAT IT IS: an antiplatelet (P2Y12 inhibitor) used in atherosclerotic disease and after stents. ❌ WHY IT FAILS: PAH is vascular remodeling, not platelet-mediated thrombosis; clopidogrel doesn't treat it. ✅ Correct if: acute coronary syndrome or post-PCI."
+    },
+    {
+      "letter": "C",
+      "label": "enalapril - systemic ACE inhibitor, not PAH",
+      "detail": "WHAT IT IS: an ACE inhibitor for systemic hypertension, heart failure, and diabetic nephropathy. ❌ WHY IT FAILS: it targets the systemic RAAS, not the pulmonary endothelin pathway; it is not a PAH therapy. ✅ Correct if: systemic hypertension or HFrEF."
+    },
+    {
+      "letter": "D",
+      "label": "etanercept - TNF inhibitor, wrong target (your pick)",
+      "detail": "WHAT IT IS: a TNF inhibitor for rheumatoid arthritis and psoriasis. ❌ WHY IT FAILS: PAH is not a TNF-driven inflammatory arthritis; anti-TNF doesn't treat pulmonary vascular remodeling. The trap may be linking 'remodeling/fibrosis' to an anti-inflammatory biologic. ✅ Correct if: rheumatoid or psoriatic arthritis."
+    },
+    {
+      "letter": "E",
+      "label": "indomethacin - NSAID, opposite of prostacyclin therapy",
+      "detail": "WHAT IT IS: an NSAID (COX inhibitor) for pain/inflammation (and to close a PDA). ❌ WHY IT FAILS: it suppresses prostaglandins and has no role in PAH - PAH treatment uses prostacyclin ANALOGS, the opposite idea. ✅ Correct if: pain/inflammation, or closing a patent ductus arteriosus."
+    }
+  ],
+  "reasoning": [
+    "Young woman + exertional dyspnea + family history + pulmonary arteriole remodeling",
+    "= pulmonary arterial hypertension (often heritable, BMPR2)",
+    "Medical therapy targets endothelial dysfunction",
+    "Bosentan (endothelin-receptor antagonist) -> answer A"
+  ],
+  "mechanism": "Pulmonary arterial hypertension (often heritable via inactivating BMPR2 mutations) features endothelial and smooth-muscle proliferation that remodels the small pulmonary arteries - medial hypertrophy, intimal fibrosis, luminal narrowing, and eventually plexiform lesions - raising pulmonary vascular resistance and pressure. Medical therapy targets the underlying endothelial dysfunction: BOSENTAN is an ENDOTHELIN-RECEPTOR ANTAGONIST that blocks endothelin (a potent vasoconstrictor that also stimulates proliferation), lowering pulmonary arterial pressure and slowing remodeling and right-ventricular hypertrophy. Other PAH agents include PDE-5 inhibitors (sildenafil) and prostacyclin analogs (epoprostenol).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pulm > pulmonary hypertension/PAH: BMPR2, vascular remodeling/plexiform lesions; treatments (endothelin-receptor antagonists, PDE-5 inhibitors, prostacyclin analogs). Cross-ref WHO PH groups."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: (1) recognize PAH from the young woman + family history + arteriolar remodeling; (2) pick a pulmonary-vascular drug. Bosentan blocks endothelin (the vasoconstrictor)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on pulmonary arterial hypertension, endothelin, bosentan, BMPR2, medial hypertrophy/intimal fibrosis, plexiform lesion? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Etanercept (D) tempts if you read 'fibrosis/remodeling' as inflammation - but PAH isn't a TNF-driven disease. The target is endothelin (bosentan), not TNF."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "A pathogenesis diagram shows progressive remodeling (medial hypertrophy -> intimal/onion-skin changes -> plexiform lesion). Recognize narrowed, thick-walled small pulmonary arteries as PAH, then choose an endothelial-dysfunction-targeted drug."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Young woman + exertional dyspnea + family history + pulmonary arteriole remodeling",
+      "back": "Pulmonary arterial hypertension (PAH)"
+    },
+    {
+      "front": "Heritable PAH gene",
+      "back": "BMPR2 (inactivating mutation)"
+    },
+    {
+      "front": "PAH vascular pathology",
+      "back": "Medial hypertrophy, intimal fibrosis, plexiform lesions"
+    },
+    {
+      "front": "Bosentan mechanism",
+      "back": "Endothelin-receptor antagonist"
+    },
+    {
+      "front": "Other PAH drugs",
+      "back": "PDE-5 inhibitors (sildenafil), prostacyclin analogs (epoprostenol)"
+    },
+    {
+      "front": "Acute vasoreactivity responders in PAH",
+      "back": "Calcium channel blockers"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Pulmonary arterial hypertension",
+      "detail": "Pulm > PAH: BMPR2, vascular remodeling/plexiform lesions; treatment with endothelin-receptor antagonists (bosentan), PDE-5 inhibitors, prostacyclin analogs.",
+      "location": "Pulm > PAH: BMPR2, vascular remodeling/plexiform lesions; treatment with endothelin-receptor antagonists (bosentan), PDE-5 inhibitors, prostacyclin analogs."
+    },
+    {
+      "tag": "options",
+      "topic": "Drug indications",
+      "detail": "Pharm > clopidogrel (antiplatelet), enalapril (ACE inhibitor), etanercept (TNF inhibitor), indomethacin (NSAID).",
+      "location": "Pharm > clopidogrel (antiplatelet), enalapril (ACE inhibitor), etanercept (TNF inhibitor), indomethacin (NSAID)."
+    },
+    {
+      "tag": "context",
+      "topic": "Pulmonary hypertension classification",
+      "detail": "CV/Pulm > WHO PH groups; cor pulmonale and right-heart effects.",
+      "location": "CV/Pulm > WHO PH groups; cor pulmonale and right-heart effects."
+    }
+  ],
+  "memoryHook": "Young woman, family history, remodeled pulmonary arteries = PAH -> bosentan blocks endotheliN (the constrictor). Not an anti-TNF.",
+  "stem": [
+    {
+      "text": "A 36-year-old woman comes to the office due to "
+    },
+    {
+      "text": "dyspnea and weakness that are brought on while doing ordinary chores",
+      "clue": true,
+      "type": "blue",
+      "note": "Exertional dyspnea and exercise intolerance in a young woman are the typical presenting symptoms of pulmonary arterial hypertension (PAH)."
+    },
+    {
+      "text": " around the house. The patient has no other medical conditions and takes no medications. She does not use tobacco, alcohol, or illicit drugs. "
+    },
+    {
+      "text": "Her mother had similar symptoms and died at age 42",
+      "clue": true,
+      "type": "orange",
+      "note": "A young woman with an affected mother suggests HERITABLE PAH, most often from inactivating BMPR2 mutations. The family history plus the age/sex profile strongly favors PAH."
+    },
+    {
+      "text": ". After an extensive workup, a lung biopsy is performed. Light microscopy of the tissue sample shows "
+    },
+    {
+      "text": "medial hypertrophy, intimal fibrosis, and decreased intraluminal diameter of the small branches of the pulmonary artery",
+      "clue": true,
+      "type": "red",
+      "note": "This is the histology of pulmonary vascular REMODELING in PAH: medial hypertrophy, intimal fibrosis, and luminal narrowing of small pulmonary arteries (progressing to plexiform lesions). It pins the diagnosis and the drug target (endothelial dysfunction)."
+    },
+    {
+      "text": ". Which of the following is the most appropriate pharmacotherapy for this patient's current condition?"
+    }
+  ]
+}

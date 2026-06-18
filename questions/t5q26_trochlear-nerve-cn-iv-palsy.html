@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trochlear nerve (CN IV) palsy</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 5 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q175", "item": 175, "qid": "1933", "title": "Trochlear nerve (CN IV) palsy", "system": "Anatomy", "topic": "Cranial nerve palsies", "correct": "E", "yourAnswer": "B", "percentCorrect": 55, "vignette": "A 53-year-old man comes to the office due to double vision. The patient lives in a two-story house and has had difficulty walking down stairs because he sees duplicates of every step and doesn't \"know which ones are real.\" He does not have significant problems walking up stairs. The patient is also frustrated because he has trouble reading certain things, such as the morning newspaper and work-related documents. He has had no eye trauma, headache, focal weakness, or numbness. The patient has a history of hypertension and type 2 diabetes mellitus. He exercises regularly and does not use tobacco, alcohol, or illicit drugs. A lesion affecting which of the following structures is most likely responsible for this patient's visual symptoms?", "clues": [{"text": "double vision", "type": "red", "note": "Binocular diplopia (resolves when one eye is covered) means an extraocular-muscle/cranial-nerve misalignment, not a problem within one eye. The pattern of the diplopia localizes the nerve."}, {"text": "difficulty walking down stairs because he sees duplicates of every step", "type": "red", "note": "VERTICAL diplopia that is worst on DOWNGAZE is the classic signature of superior oblique weakness — i.e., a trochlear (CN IV) palsy. Going down stairs forces downward gaze and unmasks it."}, {"text": "does not have significant problems walking up stairs", "type": "green", "note": "Trouble looking DOWN but not UP confirms the deficit is in depression of the eye (superior oblique / CN IV), not elevation. This asymmetry pins the lesion to CN IV."}, {"text": "trouble reading certain things, such as the morning newspaper", "type": "blue", "note": "Reading requires downward and convergent gaze — the exact action the superior oblique assists. Worsening with near/downgaze tasks reinforces a CN IV palsy."}, {"text": "history of hypertension and type 2 diabetes mellitus", "type": "orange", "note": "Hypertension and diabetes cause microvascular (ischemic) cranial mononeuropathies. CN IV's long, thin course makes it vulnerable, giving an isolated trochlear palsy in a vasculopath."}], "whatMatters": "The real ask: which structure, when lesioned, gives binocular VERTICAL diplopia worst on downgaze (stairs, reading) but spared on upgaze? That maps to the superior oblique muscle, innervated by the trochlear nerve (CN IV) — here an ischemic microvascular palsy from HTN/diabetes. Answer E.", "strategy": "Localize ocular-motor palsies by the diplopia pattern: CN VI = horizontal diplopia, can't abduct (esotropia); CN III = 'down-and-out' eye + ptosis + dilated pupil; CN IV = vertical diplopia worse on DOWNGAZE/reading, head tilt away from the lesion. 'Worse going down stairs' is a CN IV buzzphrase.", "options": [{"letter": "A", "text": "Abducens nerve", "correct": false}, {"letter": "B", "text": "Medial longitudinal fasciculus", "correct": false}, {"letter": "C", "text": "Oculomotor nerve", "correct": false}, {"letter": "D", "text": "Optic nerve", "correct": false}, {"letter": "E", "text": "Trochlear nerve", "correct": true}], "eliminations": [{"letter": "A", "label": "abducens (CN VI) — horizontal, not vertical", "detail": "WHAT IT IS: CN VI innervates the lateral rectus (abduction). ❌ WHY IT FAILS: a CN VI palsy gives HORIZONTAL diplopia and esotropia (the eye can't abduct), not vertical diplopia worse on downgaze. ✅ Correct if: horizontal double vision, inward-turned eye, failure to look laterally."}, {"letter": "B", "label": "medial longitudinal fasciculus — INO, a horizontal problem (your pick)", "detail": "WHAT IT IS: the MLF links the CN VI and CN III nuclei for conjugate horizontal gaze; a lesion causes internuclear ophthalmoplegia (INO). ❌ WHY IT FAILS: INO gives impaired ADDUCTION on the lesioned side with abducting nystagmus of the other eye (often MS) — a horizontal gaze defect, not vertical diplopia on stairs. The trap is picking the fancy brainstem tract. ✅ Correct if: failure of adduction + contralateral abducting nystagmus in a young MS patient."}, {"letter": "C", "label": "oculomotor (CN III) — would give ptosis + blown pupil", "detail": "WHAT IT IS: CN III innervates most extraocular muscles plus the levator and the pupillary constrictor. ❌ WHY IT FAILS: a CN III palsy gives a 'down-and-out' eye with ptosis and often a dilated pupil — none of which are present here. ✅ Correct if: ptosis, mydriasis, and an eye deviated down and out."}, {"letter": "D", "label": "optic nerve (CN II) — vision loss, not diplopia", "detail": "WHAT IT IS: CN II carries afferent visual information. ❌ WHY IT FAILS: optic-nerve lesions cause LOSS of vision or visual-field defects, not binocular diplopia that resolves on covering one eye. ✅ Correct if: monocular vision loss, an afferent pupillary defect, or a field cut."}], "reasoning": ["Binocular VERTICAL diplopia, worst going DOWN stairs and reading (downgaze), better looking up", "The superior oblique depresses the adducted eye and intorts it; it is innervated by the trochlear nerve (CN IV)", "HTN + diabetes cause a microvascular (ischemic) CN IV mononeuropathy", "-> Trochlear nerve, answer E"], "mechanism": "The trochlear nerve (CN IV) innervates the superior oblique muscle, which intorts the eye and depresses it when the eye is adducted. A CN IV palsy therefore produces vertical diplopia that is worst on downgaze and convergence — exactly the difficulty going down stairs and reading. Because of its long, thin intracranial course, CN IV is especially vulnerable to microvascular ischemia in hypertension and diabetes (and to trauma). Patients often tilt the head away from the affected side to compensate for the resulting hypertropia and extorsion.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Neuro/Anatomy > extraocular muscles and CN III/IV/VI palsies; superior oblique (CN IV) intorts and depresses the adducted eye; vertical diplopia worse on downgaze; microvascular causes (HTN, DM)."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Translate the behavior ('worse going DOWN stairs / reading, better up') into 'downgaze diplopia -> superior oblique -> CN IV' before scanning the options."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on binocular vs monocular diplopia, superior oblique, intorsion, hypertropia, internuclear ophthalmoplegia, microvascular mononeuropathy? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "MLF / INO (B) is the trap — it sounds like the sophisticated answer, but INO is a HORIZONTAL gaze (adduction) defect, not vertical diplopia on stairs."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: vertical diplopia worse on downgaze / stairs / reading = CN IV (superior oblique)."}], "keywords": [{"front": "Vertical diplopia worse going down stairs / reading", "back": "Trochlear nerve (CN IV) palsy"}, {"front": "Superior oblique actions", "back": "Intort + depress the adducted eye (CN IV)"}, {"front": "Head tilt AWAY from the lesion to compensate", "back": "CN IV palsy"}, {"front": "Horizontal diplopia, esotropia, can't abduct", "back": "Abducens (CN VI) palsy"}, {"front": "Down-and-out eye, ptosis, blown pupil", "back": "Oculomotor (CN III) palsy"}, {"front": "Impaired adduction + abducting nystagmus (MS)", "back": "MLF lesion = internuclear ophthalmoplegia"}], "firstAid": [{"tag": "answer / stem", "topic": "Trochlear nerve palsy", "detail": "Neuro > CN IV / superior oblique: vertical diplopia worse on downgaze, compensatory head tilt; microvascular (HTN/DM) or trauma."}, {"tag": "options", "topic": "Eye-movement structures", "detail": "Neuro > CN III (down-and-out, ptosis, mydriasis), CN VI (lateral rectus, esotropia), MLF (INO), CN II (vision loss)."}, {"tag": "context", "topic": "Microvascular cranial mononeuropathy", "detail": "Neuro > diabetic/hypertensive ischemic CN III/IV/VI palsies; classically pupil-sparing CN III."}], "memoryHook": "CN IV = superior oblique = the 'down-and-in' muscle. Lose it and you can't look DOWN-and-in -> trips going DOWN stairs and struggles to read.", "stem": [{"text": "A 53-year-old man comes to the office due to "}, {"text": "double vision", "clue": true, "type": "red", "note": "Binocular diplopia (resolves when one eye is covered) means an extraocular-muscle/cranial-nerve misalignment, not a problem within one eye. The pattern of the diplopia localizes the nerve."}, {"text": ". The patient lives in a two-story house and has had "}, {"text": "difficulty walking down stairs because he sees duplicates of every step", "clue": true, "type": "red", "note": "VERTICAL diplopia that is worst on DOWNGAZE is the classic signature of superior oblique weakness — i.e., a trochlear (CN IV) palsy. Going down stairs forces downward gaze and unmasks it."}, {"text": " and doesn't \"know which ones are real.\" He "}, {"text": "does not have significant problems walking up stairs", "clue": true, "type": "green", "note": "Trouble looking DOWN but not UP confirms the deficit is in depression of the eye (superior oblique / CN IV), not elevation. This asymmetry pins the lesion to CN IV."}, {"text": ". The patient is also frustrated because he has "}, {"text": "trouble reading certain things, such as the morning newspaper", "clue": true, "type": "blue", "note": "Reading requires downward and convergent gaze — the exact action the superior oblique assists. Worsening with near/downgaze tasks reinforces a CN IV palsy."}, {"text": " and work-related documents. He has had no eye trauma, headache, focal weakness, or numbness. The patient has a "}, {"text": "history of hypertension and type 2 diabetes mellitus", "clue": true, "type": "orange", "note": "Hypertension and diabetes cause microvascular (ischemic) cranial mononeuropathies. CN IV's long, thin course makes it vulnerable, giving an isolated trochlear palsy in a vasculopath."}, {"text": ". He exercises regularly and does not use tobacco, alcohol, or illicit drugs. A lesion affecting which of the following structures is most likely responsible for this patient's visual symptoms?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

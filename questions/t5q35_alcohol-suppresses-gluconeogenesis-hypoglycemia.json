@@ -1,0 +1,193 @@
+{
+  "id": "q184",
+  "item": 184,
+  "qid": "1866",
+  "title": "Alcohol suppresses gluconeogenesis (hypoglycemia)",
+  "system": "Biochemistry",
+  "topic": "Ethanol metabolism",
+  "correct": "A",
+  "yourAnswer": "B",
+  "percentCorrect": 73,
+  "vignette": "A 27-year-old man is brought to the emergency department due to confusion. His roommate says that he has been binge drinking for the last 5 days and probably has had very little to eat. The patient's medical history is significant for alcohol-related seizures 1 year ago. He had been sober until 2 weeks ago, when he started drinking again. The patient's past medical history is otherwise unremarkable. On examination, he responds to voice but does not follow commands. Fingerstick glucose is 35 mg/dL and urine is strongly positive for ketones. Suppression of which of the following is the primary cause of this patient's hypoglycemia?",
+  "clues": [
+    {
+      "text": "binge drinking for the last 5 days and probably has had very little to eat",
+      "type": "red",
+      "note": "Prolonged heavy drinking with poor intake depletes hepatic glycogen, so the body must rely on GLUCONEOGENESIS to maintain glucose. Ethanol metabolism specifically impairs gluconeogenesis, setting up hypoglycemia."
+    },
+    {
+      "text": "Fingerstick glucose is 35 mg/dL",
+      "type": "red",
+      "note": "Glucose 35 mg/dL (normal 70-100) is significant hypoglycemia and explains the confusion. The question asks which glucose-producing process is being suppressed."
+    },
+    {
+      "text": "urine is strongly positive for ketones",
+      "type": "green",
+      "note": "Ketonuria reflects alcoholic ketoacidosis: the high NADH/NAD+ ratio from ethanol metabolism drives ketogenesis. It confirms the alcohol-related metabolic state and points to the NADH-mediated block of gluconeogenesis."
+    }
+  ],
+  "whatMatters": "Strip the story to: days of binge drinking with little food, now hypoglycemic (glucose 35) with ketones = alcoholic ketoacidosis/hypoglycemia. After a prolonged binge, hepatic glycogen is already depleted, so the body depends on GLUCONEOGENESIS - which ethanol metabolism suppresses (high NADH/NAD+ ratio). The suppressed pathway is gluconeogenesis. Answer A.",
+  "strategy": "Tie alcohol + fasting hypoglycemia to ethanol biochemistry: oxidizing ethanol raises the NADH/NAD+ ratio, which blocks NAD+-requiring reactions - diverting pyruvate to lactate and oxaloacetate to malate, starving GLUCONEOGENESIS. After a multi-day binge, glycogen is gone, so glycogenolysis can't help; the lesion is at gluconeogenesis.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Gluconeogenesis",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Glycogenolysis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Insulin clearance",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Insulin sensitivity",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Lipolysis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "glycogenolysis - not inhibited, and glycogen is gone (your pick)",
+      "detail": "WHAT IT IS: breakdown of hepatic glycogen to glucose - the first-line defense against early hypoglycemia. ❌ WHY IT FAILS: ethanol does NOT inhibit glycogenolysis, and after 5 days of binging with little food the glycogen stores are already EXHAUSTED, so the failing process is gluconeogenesis. The trap is picking the other glucose-producing pathway. ✅ Correct if: an early/short fast where glycogen is still available (and even then ethanol doesn't block it)."
+    },
+    {
+      "letter": "C",
+      "label": "insulin clearance - no renal disease",
+      "detail": "WHAT IT IS: impaired insulin clearance (eg, in renal failure) can raise insulin levels and cause hypoglycemia. ❌ WHY IT FAILS: ethanol has no direct effect on insulin clearance, and there is no renal disease here. ✅ Correct if: hypoglycemia in advanced renal insufficiency."
+    },
+    {
+      "letter": "D",
+      "label": "insulin sensitivity - not the mechanism",
+      "detail": "WHAT IT IS: increased insulin sensitivity could lower glucose. ❌ WHY IT FAILS: ethanol does not increase insulin sensitivity; the mechanism here is impaired hepatic glucose production. ✅ Correct if: a setting that genuinely heightens insulin action."
+    },
+    {
+      "letter": "E",
+      "label": "lipolysis - a ketone source, not the cause of low glucose",
+      "detail": "WHAT IT IS: breakdown of fat to free fatty acids. ❌ WHY IT FAILS: lipolysis actually supplies the free fatty acids that become ketones here; the high NADH inhibits fatty-acid oxidation and promotes ketogenesis/steatosis, but suppressed lipolysis is not what causes the hypoglycemia. ✅ Correct if: asked what contributes to hepatic steatosis (impaired fatty-acid oxidation), not hypoglycemia."
+    }
+  ],
+  "reasoning": [
+    "Multi-day binge with poor intake -> hepatic glycogen depleted",
+    "Glucose now depends on gluconeogenesis",
+    "Ethanol metabolism raises NADH/NAD+ -> pyruvate to lactate, oxaloacetate to malate",
+    "Gluconeogenesis is blocked -> hypoglycemia -> answer A"
+  ],
+  "mechanism": "Metabolism of ethanol by alcohol dehydrogenase and aldehyde dehydrogenase converts NAD+ to NADH, raising the NADH/NAD+ ratio. This inhibits reactions requiring NAD+, including key gluconeogenic steps: pyruvate is driven toward lactate (rather than being available for gluconeogenesis), and malate accumulates instead of oxaloacetate - both pyruvate and oxaloacetate are gluconeogenic intermediates. With hepatic glycogen already depleted after a prolonged binge with poor intake, the liver cannot make new glucose, producing hypoglycemia. The same high NADH promotes ketogenesis (alcoholic ketoacidosis) and hepatic steatosis.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochemistry > ethanol metabolism: increased NADH/NAD+ ratio, inhibition of gluconeogenesis, lactic acidosis, ketoacidosis, hepatic steatosis. Cross-ref fasting glucose sources by time."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Sequence the fast: glycogen first (hours), gluconeogenesis later (after ~1 day). A 5-day binge with no food means glycogen is gone, so the relevant (and ethanol-blocked) process is gluconeogenesis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on gluconeogenesis vs glycogenolysis, NADH/NAD+ ratio, pyruvate/oxaloacetate, ketogenesis, alcoholic ketoacidosis? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Glycogenolysis (B) is the trap because it also makes glucose - but ethanol doesn't block it, and the glycogen is already used up. The blocked, glucose-limiting step is gluconeogenesis."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the chain: ethanol -> high NADH -> gluconeogenesis off; prolonged binge -> glycogen empty -> hypoglycemia + ketosis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Alcohol + fasting hypoglycemia",
+      "back": "Suppressed gluconeogenesis (high NADH/NAD+)"
+    },
+    {
+      "front": "Ethanol metabolism effect on redox",
+      "back": "Increased NADH/NAD+ ratio (alcohol & aldehyde dehydrogenase)"
+    },
+    {
+      "front": "High NADH diverts",
+      "back": "Pyruvate to lactate, oxaloacetate to malate (blocks gluconeogenesis)"
+    },
+    {
+      "front": "Alcoholic ketoacidosis",
+      "back": "Ketones from NADH-driven ketogenesis"
+    },
+    {
+      "front": "After a prolonged fast/binge",
+      "back": "Glycogen depleted (glycogenolysis can't help)"
+    },
+    {
+      "front": "Alcoholic hepatic steatosis",
+      "back": "Impaired fatty-acid oxidation (high NADH)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Ethanol metabolism",
+      "detail": "Biochem > NADH/NAD+ ratio: inhibits gluconeogenesis (hypoglycemia), promotes lactic acidosis, ketoacidosis, and fatty liver.",
+      "location": "Biochem > NADH/NAD+ ratio: inhibits gluconeogenesis (hypoglycemia), promotes lactic acidosis, ketoacidosis, and fatty liver."
+    },
+    {
+      "tag": "options",
+      "topic": "Glucose sources",
+      "detail": "Biochem > glycogenolysis vs gluconeogenesis; sequence of fasting fuel use.",
+      "location": "Biochem > glycogenolysis vs gluconeogenesis; sequence of fasting fuel use."
+    },
+    {
+      "tag": "context",
+      "topic": "Alcoholic ketoacidosis",
+      "detail": "Endo/Tox > AKA and hypoglycemia management (dextrose + thiamine).",
+      "location": "Endo/Tox > AKA and hypoglycemia management (dextrose + thiamine)."
+    }
+  ],
+  "memoryHook": "Booze makes NADH, and NADH jams gluconeogenesis. After a 5-day binge the glycogen's gone, so blocked gluconeogenesis = low sugar.",
+  "stem": [
+    {
+      "text": "A 27-year-old man is brought to the emergency department due to confusion. His roommate says that he has been "
+    },
+    {
+      "text": "binge drinking for the last 5 days and probably has had very little to eat",
+      "clue": true,
+      "type": "red",
+      "note": "Prolonged heavy drinking with poor intake depletes hepatic glycogen, so the body must rely on GLUCONEOGENESIS to maintain glucose. Ethanol metabolism specifically impairs gluconeogenesis, setting up hypoglycemia."
+    },
+    {
+      "text": ". The patient's medical history is significant for alcohol-related seizures 1 year ago. He had been sober until 2 weeks ago, when he started drinking again. The patient's past medical history is otherwise unremarkable. On examination, he responds to voice but does not follow commands. "
+    },
+    {
+      "text": "Fingerstick glucose is 35 mg/dL",
+      "clue": true,
+      "type": "red",
+      "note": "Glucose 35 mg/dL (normal 70-100) is significant hypoglycemia and explains the confusion. The question asks which glucose-producing process is being suppressed."
+    },
+    {
+      "text": " and "
+    },
+    {
+      "text": "urine is strongly positive for ketones",
+      "clue": true,
+      "type": "green",
+      "note": "Ketonuria reflects alcoholic ketoacidosis: the high NADH/NAD+ ratio from ethanol metabolism drives ketogenesis. It confirms the alcohol-related metabolic state and points to the NADH-mediated block of gluconeogenesis."
+    },
+    {
+      "text": ". Suppression of which of the following is the primary cause of this patient's hypoglycemia?"
+    }
+  ]
+}

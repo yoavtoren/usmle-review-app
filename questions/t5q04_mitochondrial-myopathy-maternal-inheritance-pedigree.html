@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mitochondrial myopathy: maternal inheritance pedigree</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 5 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q153", "item": 153, "qid": "11914", "title": "Mitochondrial myopathy: maternal inheritance pedigree", "system": "Genetics", "topic": "Modes of inheritance", "correct": "E", "yourAnswer": "E", "percentCorrect": 77, "vignette": "A 19-year-old woman is evaluated for new onset generalized tonic-clonic seizures. For the past several years, she has also been having erratic jerks of her arms and legs, and intermittent muscle weakness. The girl has multiple family members with similar symptoms. Neurological examination reveals decreased sensation in the lower extremities and a broad-based gait. Skeletal muscle biopsy shows ragged, red-appearing muscle fibers. Further analysis reveals that the patient's symptoms are due to a mutation affecting extranuclear DNA. Which of the following pedigrees is most likely to represent this patient's family history? (The arrow points to the patient.)", "clues": [{"text": "generalized tonic-clonic seizures", "type": "blue", "note": "Seizures/myoclonus signal central nervous system involvement, which together with myopathy is the multi-system pattern of a mitochondrial disorder (the brain and muscle are the most energy-hungry tissues and fail first)."}, {"text": "muscle weakness", "type": "blue", "note": "Myopathy (weakness) plus a CNS syndrome is the classic mitochondrial combination - high oxidative-demand tissues (muscle, brain) suffer when ATP production fails."}, {"text": "multiple family members with similar symptoms", "type": "orange", "note": "A heritable disorder affecting many relatives. The exact distribution of WHO is affected across the generations is what the pedigree question turns on."}, {"text": "ragged, red-appearing muscle fibers", "type": "green", "note": "Ragged red fibers on muscle biopsy (subsarcolemmal accumulation of abnormal mitochondria on Gomori trichrome) are the histologic signature of mitochondrial myopathy, eg, MERRF (myoclonic epilepsy with ragged red fibers)."}, {"text": "mutation affecting extranuclear DNA", "type": "red", "note": "'Extranuclear DNA' = mitochondrial DNA. Mitochondria are inherited only from the egg's cytoplasm, so mtDNA disease shows MATERNAL inheritance: an affected mother transmits to ALL her children, an affected father to NONE. This single phrase decides the pedigree."}], "whatMatters": "Cut to the core: 'extranuclear DNA' means mitochondrial DNA, which is inherited maternally. Pick the pedigree where every child of an affected MOTHER is affected and NO child of an affected FATHER is affected. That is pedigree E. The seizures, weakness, and ragged red fibers only confirm a mitochondrial myopathy; the inheritance phrase is the whole answer.", "strategy": "When a stem says 'mitochondrial,' 'extranuclear/cytoplasmic DNA,' or 'ragged red fibers,' jump straight to maternal inheritance and its two pedigree fingerprints: (1) affected mothers pass to ALL offspring; (2) affected fathers pass to NONE. Scan each pedigree for any father-to-child transmission (or an affected mother with an unaffected child) and eliminate it. Heteroplasmy explains variable severity.", "options": [{"letter": "A", "text": "Pedigree A - an affected father transmits to offspring", "correct": false}, {"letter": "B", "text": "Pedigree B - isolated affected individuals with unaffected parents", "correct": false}, {"letter": "C", "text": "Pedigree C - an affected father transmits to multiple children", "correct": false}, {"letter": "D", "text": "Pedigree D - vertical transmission through affected males and females", "correct": false}, {"letter": "E", "text": "Pedigree E - only affected mothers transmit, and to all of their children", "correct": true}], "eliminations": [{"letter": "A", "label": "shows paternal transmission", "detail": "WHAT IT IS: a pedigree in which an affected FATHER passes the trait to one or more children. ❌ WHY IT FAILS: in mitochondrial inheritance affected MALES transmit to NONE of their offspring (sperm mitochondria are not inherited), so any father-to-child transmission excludes maternal inheritance. ✅ Correct if: the trait were autosomal dominant (either parent can transmit, vertically)."}, {"letter": "B", "label": "sporadic / too few affected", "detail": "WHAT IT IS: a pedigree with isolated affected individuals whose parents are unaffected. ❌ WHY IT FAILS: a mitochondrial disorder runs down the maternal line with MANY affected relatives, and an affected mother must pass it to ALL of her children; an unaffected-mother/affected-child pattern doesn't fit. ✅ Correct if: autosomal recessive (carriers, skips generations) or a sporadic new mutation."}, {"letter": "C", "label": "affected father -> affected children", "detail": "WHAT IT IS: again a pedigree with an affected father transmitting to offspring. ❌ WHY IT FAILS: paternal transmission is impossible for mtDNA; the trait can only come from the mother. ✅ Correct if: autosomal dominant or X-linked dominant (but note X-linked dominant has NO male-to-male transmission)."}, {"letter": "D", "label": "male transmission present (autosomal dominant look-alike)", "detail": "WHAT IT IS: vertical transmission in which affected MALES (not just females) pass the trait to their children. ❌ WHY IT FAILS: any affected male transmitting offspring rules out maternal/mitochondrial inheritance; this is the autosomal dominant pattern, the classic trap that resembles maternal at first glance. ✅ Correct if: the disorder were autosomal dominant."}], "reasoning": ["'Extranuclear DNA' = mitochondrial DNA", "mtDNA is inherited only from the mother (maternal inheritance)", "Affected mothers transmit to ALL children; affected fathers transmit to NONE", "Choose the pedigree matching that rule -> pedigree E"], "mechanism": "Mitochondria carry their own small circular DNA (extranuclear), passed on only through the oocyte cytoplasm, so mtDNA disorders show MATERNAL inheritance: an affected mother transmits to all of her children, while an affected father transmits to none. Each cell contains many mitochondria carrying a mix of mutant and wild-type mtDNA (heteroplasmy), and the proportion of mutant genomes determines disease severity, explaining wide variability within a family. Ragged red fibers with myoclonic seizures suggest MERRF; related mtDNA diseases include MELAS, Leber hereditary optic neuropathy, and Leigh syndrome.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Genetics > modes of inheritance > mitochondrial (maternal): pedigree rules, heteroplasmy, variable expressivity. Cross-ref Neuro/Biochem mitochondrial myopathies (MERRF, MELAS, LHON, Leigh)."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The whole question is one translation: 'extranuclear DNA' -> mitochondrial -> maternal inheritance. Apply the two-line rule (mothers -> all kids; fathers -> none) and scan pedigrees for violations."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on extranuclear/mitochondrial DNA, maternal inheritance, heteroplasmy, ragged red fibers, MERRF/MELAS, pedigree symbols? Tell me which and I'll explain it."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "The autosomal dominant pedigree (D) looks 'vertical' like maternal inheritance - but it includes affected MALES transmitting. Reject any pedigree with father-to-child transmission."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "This is a pedigree-reading task. Method: find the affected females and check that ALL their children are affected; find the affected males and confirm that NONE of theirs are. The pedigree passing both tests is the maternal/mitochondrial one."}, {"key": "other", "label": "✍️ Something else", "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."}], "keywords": [{"front": "'Extranuclear' / cytoplasmic DNA mutation", "back": "Mitochondrial (maternal) inheritance"}, {"front": "Maternal inheritance pedigree rule", "back": "Affected mother -> all children; affected father -> none"}, {"front": "Ragged red fibers + myoclonic seizures", "back": "MERRF (mitochondrial myopathy)"}, {"front": "Stroke-like episodes + lactic acidosis + ragged red fibers", "back": "MELAS"}, {"front": "Variable severity within a mitochondrial family", "back": "Heteroplasmy"}, {"front": "Subacute bilateral vision loss, mtDNA", "back": "Leber hereditary optic neuropathy"}], "firstAid": [{"tag": "answer", "topic": "Mitochondrial (maternal) inheritance", "detail": "Genetics > modes of inheritance: mitochondrial - maternal transmission, heteroplasmy, variable expressivity; pedigree fingerprint."}, {"tag": "stem dx", "topic": "Mitochondrial myopathies", "detail": "Neuro/Biochem > MERRF, MELAS, LHON, Leigh syndrome; ragged red fibers on biopsy."}, {"tag": "options", "topic": "Other inheritance patterns", "detail": "Genetics > autosomal dominant/recessive and X-linked recessive/dominant pedigree patterns - learn each fingerprint to distinguish on sight."}], "memoryHook": "Mito = Mom's. Extranuclear DNA rides in the egg - affected moms give it to everyone, dads to no one.", "stem": [{"text": "A 19-year-old woman is evaluated for new onset "}, {"text": "generalized tonic-clonic seizures", "clue": true, "type": "blue", "note": "Seizures/myoclonus signal central nervous system involvement, which together with myopathy is the multi-system pattern of a mitochondrial disorder (the brain and muscle are the most energy-hungry tissues and fail first)."}, {"text": ". For the past several years, she has also been having erratic jerks of her arms and legs, and intermittent "}, {"text": "muscle weakness", "clue": true, "type": "blue", "note": "Myopathy (weakness) plus a CNS syndrome is the classic mitochondrial combination - high oxidative-demand tissues (muscle, brain) suffer when ATP production fails."}, {"text": ". The girl has "}, {"text": "multiple family members with similar symptoms", "clue": true, "type": "orange", "note": "A heritable disorder affecting many relatives. The exact distribution of WHO is affected across the generations is what the pedigree question turns on."}, {"text": ". Neurological examination reveals decreased sensation in the lower extremities and a broad-based gait. Skeletal muscle biopsy shows "}, {"text": "ragged, red-appearing muscle fibers", "clue": true, "type": "green", "note": "Ragged red fibers on muscle biopsy (subsarcolemmal accumulation of abnormal mitochondria on Gomori trichrome) are the histologic signature of mitochondrial myopathy, eg, MERRF (myoclonic epilepsy with ragged red fibers)."}, {"text": ". Further analysis reveals that the patient's symptoms are due to a "}, {"text": "mutation affecting extranuclear DNA", "clue": true, "type": "red", "note": "'Extranuclear DNA' = mitochondrial DNA. Mitochondria are inherited only from the egg's cytoplasm, so mtDNA disease shows MATERNAL inheritance: an affected mother transmits to ALL her children, an affected father to NONE. This single phrase decides the pedigree."}, {"text": ". Which of the following pedigrees is most likely to represent this patient's family history? (The arrow points to the patient.)"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

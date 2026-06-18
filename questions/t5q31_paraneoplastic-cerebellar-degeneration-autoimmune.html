@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paraneoplastic cerebellar degeneration (autoimmune)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 5 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q180", "item": 180, "qid": "595", "title": "Paraneoplastic cerebellar degeneration (autoimmune)", "system": "Neurology", "topic": "Paraneoplastic syndromes", "correct": "A", "yourAnswer": "A", "percentCorrect": 20, "vignette": "A 66-year-old man comes to the emergency department due to dizziness, dysarthria, and bilateral limb ataxia. His symptoms have been steadily worsening over the last 2 weeks. He has no other medical problems and takes no medications. He has a 50-pack-year smoking history and does not use alcohol or illicit drugs. Chest x-ray shows a mass in his right lung. He is admitted to the hospital for evaluation, but his neurologic symptoms continue to progress. He dies several months later despite receiving appropriate treatment. Autopsy shows extensive cerebellar Purkinje cell degeneration. Which of the following best describes the etiology of this patient's neurologic condition?", "clues": [{"text": "dizziness, dysarthria, and bilateral limb ataxia", "type": "red", "note": "Dizziness, slurred speech, and limb ataxia are a CEREBELLAR syndrome. Bilateral, symmetric cerebellar dysfunction with a subacute course is the hallmark presentation of paraneoplastic cerebellar degeneration."}, {"text": "steadily worsening over the last 2 weeks", "type": "blue", "note": "A subacute, steadily progressive course over weeks (not sudden like a stroke, not chronic over years) fits a paraneoplastic process - an immune attack that rapidly destroys neurons."}, {"text": "50-pack-year smoking history", "type": "orange", "note": "Heavy smoking is the key risk factor for small cell lung cancer, the malignancy most commonly behind paraneoplastic cerebellar degeneration. It links the lung mass to the neurologic syndrome."}, {"text": "mass in his right lung", "type": "green", "note": "A lung mass in a heavy smoker points to small cell lung cancer. The tumor triggers an antibody response that cross-reacts with cerebellar neurons - the cancer itself need not invade the brain."}, {"text": "extensive cerebellar Purkinje cell degeneration", "type": "green", "note": "Autopsy shows loss of cerebellar PURKINJE CELLS, not metastatic tumor cells. Degeneration of neurons (rather than tumor infiltration) is the signature of a paraneoplastic (immune-mediated) process."}], "whatMatters": "Strip the story to: a heavy smoker with a lung mass develops subacute, progressive cerebellar signs, and autopsy shows Purkinje cell loss (not tumor cells) = paraneoplastic cerebellar degeneration. This is an AUTOIMMUNE phenomenon - antibodies against tumor antigens (anti-Yo, anti-P/Q, anti-Hu) cross-react with Purkinje neurons. Answer A. It is NOT metastatic.", "strategy": "When a known/likely cancer causes neurologic deficits that DON'T fit direct tumor invasion (no mass effect, and autopsy shows neuronal DEGENERATION rather than tumor cells), think PARANEOPLASTIC = autoimmune cross-reaction. The classic trap is 'metastatic'; paraneoplastic syndromes are immune, not metastatic.", "options": [{"letter": "A", "text": "Autoimmune", "correct": true}, {"letter": "B", "text": "Endocrine", "correct": false}, {"letter": "C", "text": "Infectious", "correct": false}, {"letter": "D", "text": "Metastatic", "correct": false}, {"letter": "E", "text": "Toxic", "correct": false}, {"letter": "F", "text": "Vascular", "correct": false}], "eliminations": [{"letter": "B", "label": "endocrine - wrong paraneoplastic type", "detail": "WHAT IT IS: some paraneoplastic syndromes are endocrine/hormonal - ectopic ACTH (Cushing), ADH (SIADH), or PTHrP (hypercalcemia) from small cell or squamous lung cancer. ❌ WHY IT FAILS: those cause metabolic syndromes, not cerebellar Purkinje cell degeneration. ✅ Correct if: the stem described hyponatremia, Cushing features, or hypercalcemia."}, {"letter": "C", "label": "infectious - no infectious signs", "detail": "WHAT IT IS: CNS infections (encephalitis, abscess, PML) can cause progressive neurologic decline. ❌ WHY IT FAILS: there are no fevers or infectious findings, and autopsy shows neuronal degeneration rather than inflammation/organisms; the lung mass points to a paraneoplastic cause. ✅ Correct if: fever + CSF pleocytosis + an identified pathogen."}, {"letter": "D", "label": "metastatic - would show tumor cells, not Purkinje loss", "detail": "WHAT IT IS: cancer spreading to the cerebellum could cause ataxia. ❌ WHY IT FAILS: a metastasis would show TUMOR cells (and usually mass effect/headache) on imaging or autopsy, not isolated PURKINJE CELL degeneration; this is the classic paraneoplastic trap. ✅ Correct if: autopsy showed metastatic tumor cells in the cerebellum or a ring-enhancing brain lesion."}, {"letter": "E", "label": "toxic - no toxin exposure", "detail": "WHAT IT IS: toxins (alcohol, chemotherapy, phenytoin) can cause cerebellar damage. ❌ WHY IT FAILS: he does NOT use alcohol or illicit drugs, and symptoms began before treatment; a toxic cause doesn't fit. ✅ Correct if: chronic alcohol use (anterior vermis degeneration) or a known cerebellar toxin."}, {"letter": "F", "label": "vascular - too gradual, no infarct", "detail": "WHAT IT IS: a cerebellar stroke/infarct causes ataxia. ❌ WHY IT FAILS: vascular events are SUDDEN (and would show infarction/liquefactive necrosis), not a 2-week progressive course with Purkinje degeneration. ✅ Correct if: abrupt-onset ataxia with a cerebellar infarct on imaging."}], "reasoning": ["Heavy smoker + lung mass + subacute progressive cerebellar signs", "Autopsy shows Purkinje cell degeneration (not tumor cells)", "= paraneoplastic cerebellar degeneration", "Mechanism is an immune cross-reaction against Purkinje antigens -> autoimmune -> answer A"], "mechanism": "Paraneoplastic cerebellar degeneration is an autoimmune syndrome most often linked to small cell lung cancer (also breast, ovarian, and uterine cancer). The immune response against tumor antigens cross-reacts with Purkinje neuron antigens (anti-Yo, anti-P/Q, and anti-Hu antibodies), causing rapid, progressive degeneration of cerebellar Purkinje cells. Patients develop subacute ataxia, dysarthria, and visual disturbances; antibodies are not always detectable, so it is often a clinical diagnosis after excluding metastasis and other causes. It is distinct from metastatic disease (tumor cells in the cerebellum) and from hormonal paraneoplastic syndromes.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Neuro/Onc > paraneoplastic syndromes: cerebellar degeneration (anti-Yo, anti-Hu, anti-P/Q), small cell lung cancer association, autoimmune mechanism. Cross-ref Lambert-Eaton and endocrine paraneoplastic syndromes."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The autopsy detail is decisive: Purkinje cell DEGENERATION (immune) vs tumor cells (metastatic). Translate 'cancer + neuronal degeneration without tumor invasion' into 'paraneoplastic = autoimmune' before reading the options."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on paraneoplastic, Purkinje cells, ataxia, dysarthria, anti-Yo/Hu antibodies, small cell lung cancer? Tell me which term and I'll explain it."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Metastatic (D) is the trap - the patient has cancer, so spread feels intuitive. But the autopsy shows Purkinje degeneration, not tumor cells; that is immune-mediated (autoimmune)."}, {"key": "other", "label": "✍️ Something else", "message": "Bank the pattern: cancer + neurologic syndrome that doesn't match direct invasion = paraneoplastic = autoimmune."}], "keywords": [{"front": "Lung cancer + subacute cerebellar ataxia + Purkinje cell loss", "back": "Paraneoplastic cerebellar degeneration"}, {"front": "Paraneoplastic cerebellar degeneration antibodies", "back": "Anti-Yo, anti-P/Q, anti-Hu"}, {"front": "Cancer most often behind paraneoplastic syndromes", "back": "Small cell lung cancer"}, {"front": "Lambert-Eaton myasthenic syndrome antibody", "back": "Anti-voltage-gated calcium channel (SCLC)"}, {"front": "SIADH / Cushing from small cell lung cancer", "back": "Ectopic ADH / ACTH (endocrine paraneoplastic)"}, {"front": "Paraneoplastic neurologic syndromes are due to", "back": "Autoimmune cross-reaction (not metastasis)"}], "firstAid": [{"tag": "answer / stem", "topic": "Paraneoplastic cerebellar degeneration", "detail": "Neuro/Onc > paraneoplastic syndromes: cerebellar degeneration (anti-Yo/Hu/P-Q), SCLC; autoimmune cross-reaction with Purkinje neurons."}, {"tag": "options", "topic": "Other paraneoplastic/etiologies", "detail": "Onc > endocrine paraneoplastic (ACTH/ADH/PTHrP), Lambert-Eaton; Neuro > cerebellar stroke vs alcoholic (toxic) cerebellar degeneration."}, {"tag": "context", "topic": "Small cell lung cancer", "detail": "Onc > SCLC: central tumor, smoking, neuroendocrine origin, numerous paraneoplastic syndromes."}], "memoryHook": "Cancer + Purkinje cells dying (not tumor cells) = paraneoplastic = the immune system attacking the cerebellum (autoimmune), not metastasis.", "stem": [{"text": "A 66-year-old man comes to the emergency department due to "}, {"text": "dizziness, dysarthria, and bilateral limb ataxia", "clue": true, "type": "red", "note": "Dizziness, slurred speech, and limb ataxia are a CEREBELLAR syndrome. Bilateral, symmetric cerebellar dysfunction with a subacute course is the hallmark presentation of paraneoplastic cerebellar degeneration."}, {"text": ". His symptoms have been "}, {"text": "steadily worsening over the last 2 weeks", "clue": true, "type": "blue", "note": "A subacute, steadily progressive course over weeks (not sudden like a stroke, not chronic over years) fits a paraneoplastic process - an immune attack that rapidly destroys neurons."}, {"text": ". He has no other medical problems and takes no medications. He has a "}, {"text": "50-pack-year smoking history", "clue": true, "type": "orange", "note": "Heavy smoking is the key risk factor for small cell lung cancer, the malignancy most commonly behind paraneoplastic cerebellar degeneration. It links the lung mass to the neurologic syndrome."}, {"text": " and does not use alcohol or illicit drugs. Chest x-ray shows a "}, {"text": "mass in his right lung", "clue": true, "type": "green", "note": "A lung mass in a heavy smoker points to small cell lung cancer. The tumor triggers an antibody response that cross-reacts with cerebellar neurons - the cancer itself need not invade the brain."}, {"text": ". He is admitted to the hospital for evaluation, but his neurologic symptoms continue to progress. He dies several months later despite receiving appropriate treatment. Autopsy shows "}, {"text": "extensive cerebellar Purkinje cell degeneration", "clue": true, "type": "green", "note": "Autopsy shows loss of cerebellar PURKINJE CELLS, not metastatic tumor cells. Degeneration of neurons (rather than tumor infiltration) is the signature of a paraneoplastic (immune-mediated) process."}, {"text": ". Which of the following best describes the etiology of this patient's neurologic condition?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

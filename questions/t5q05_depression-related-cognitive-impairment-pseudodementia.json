@@ -1,0 +1,235 @@
+{
+  "id": "q154",
+  "item": 154,
+  "qid": "15447",
+  "title": "Depression-related cognitive impairment (pseudodementia)",
+  "system": "Psychiatry",
+  "topic": "Mood disorders / dementia differential",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 73,
+  "vignette": "A 79-year-old man is brought to the office by his wife for evaluation of memory impairment. The patient is a recently retired professor who began having memory problems a month ago. He has been forgetting to take his medication, has had difficulty remembering the names of his grandchildren, and has neglected to turn off the stove on more than one occasion. The patient used to enjoy reading and playing with his grandchildren but has recently stopped doing both of these activities. He also has difficulty staying asleep, low appetite, and decreased energy. The patient has hypertension and type 2 diabetes, for which he takes medications. He has a family history of Alzheimer disease. The patient says, \"I just feel so worthless since retiring.\" Temperature is 36.7 C (98.1 F), blood pressure is 119/78 mm Hg, pulse is 74/min, and respirations are 14/min. Neurological examination reveals no focal deficits. Montreal Cognitive Assessment score is 23 (normal: >=26/30). Which of the following is the most likely diagnosis?",
+  "clues": [
+    {
+      "text": "began having memory problems a month ago",
+      "type": "red",
+      "note": "The TIME COURSE is the key. Cognitive decline over only ~1 month is far too fast for a neurodegenerative dementia (which progresses insidiously over years). An acute/subacute onset should immediately raise a treatable/reversible cause such as depression."
+    },
+    {
+      "text": "used to enjoy reading and playing with his grandchildren but has recently stopped",
+      "type": "red",
+      "note": "Loss of interest/pleasure in previously enjoyed activities is anhedonia - a core symptom of major depression, not of early dementia (where insight and interests are often preserved at first)."
+    },
+    {
+      "text": "difficulty staying asleep, low appetite, and decreased energy",
+      "type": "green",
+      "note": "Insomnia, decreased appetite, and low energy are the neurovegetative symptoms of depression (the S, A, and E of SIG-E-CAPS). Their presence alongside cognitive complaints points to a mood disorder driving the picture."
+    },
+    {
+      "text": "I just feel so worthless since retiring",
+      "type": "green",
+      "note": "Feelings of worthlessness are a core depressive symptom, and retirement is a plausible precipitating stressor/loss. This quote ties the cognitive complaints to an underlying major depressive episode."
+    },
+    {
+      "text": "Montreal Cognitive Assessment score is 23",
+      "type": "blue",
+      "note": "A MoCA of 23 (normal >=26) is objectively abnormal but only mildly so. Depression-related cognitive impairment can lower cognitive scores; the abnormal score does NOT by itself prove a neurodegenerative dementia, especially given the acute onset and mood symptoms."
+    }
+  ],
+  "whatMatters": "Strip the story to: an ACUTE (~1 month) cognitive decline PLUS a full depressive syndrome - anhedonia, insomnia, low appetite/energy, worthlessness, after the stressor of retirement. That combination is depression-related cognitive impairment ('pseudodementia'). The Alzheimer family history and low MoCA are bait toward dementia; the rapid onset and mood symptoms make depression the answer - C.",
+  "strategy": "In an elderly 'memory loss' stem, use TIME COURSE + MOOD as the discriminators. True dementia is insidious (months-years) with intact mood early; depression-related cognitive impairment is subacute (weeks) WITH neurovegetative/mood symptoms and is REVERSIBLE with treatment. Count the SIG-E-CAPS features before defaulting to Alzheimer disease.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alzheimer disease",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Dementia with Lewy bodies",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Depression-related cognitive impairment",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Frontotemporal dementia",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Normal aging",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Vascular dementia",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Alzheimer disease - too fast, mood-driven",
+      "detail": "WHAT IT IS: the most common dementia - insidious, progressive memory loss over YEARS, with early short-term memory/hippocampal involvement. ❌ WHY IT FAILS: this decline is ~1 month and comes with a full depressive syndrome; Alzheimer disease does not begin abruptly with anhedonia and worthlessness. The family history is the bait. ✅ Correct if: gradual multi-year memory decline without prominent mood symptoms."
+    },
+    {
+      "letter": "B",
+      "label": "dementia with Lewy bodies - missing core features",
+      "detail": "WHAT IT IS: dementia plus visual hallucinations, FLUCTUATING cognition, parkinsonism, and REM-sleep behavior disorder. ❌ WHY IT FAILS: none of those hallmark features are present; instead there is a depressive syndrome. ✅ Correct if: visual hallucinations + parkinsonism + fluctuating attention."
+    },
+    {
+      "letter": "D",
+      "label": "frontotemporal dementia - wrong syndrome/age",
+      "detail": "WHAT IT IS: early personality/behavior change (disinhibition) or progressive aphasia, usually onset before age 65, with frontal/temporal atrophy. ❌ WHY IT FAILS: there is no behavioral disinhibition or language deficit; the picture is mood-driven in a 79-year-old. ✅ Correct if: early behavioral disinhibition or progressive aphasia in a younger patient."
+    },
+    {
+      "letter": "E",
+      "label": "normal aging - he has real impairment",
+      "detail": "WHAT IT IS: benign age-related slowing and word-finding/forgetfulness with PRESERVED daily function and NORMAL cognitive testing. ❌ WHY IT FAILS: he has functional impairment (left the stove on, missed medications), an abnormal MoCA (23), and depressive symptoms - not normal aging. ✅ Correct if: purely subjective forgetfulness with normal testing and intact function."
+    },
+    {
+      "letter": "F",
+      "label": "vascular dementia - no stepwise/focal pattern",
+      "detail": "WHAT IT IS: STEPWISE cognitive decline with focal neurologic signs, linked to cerebrovascular disease and infarcts. ❌ WHY IT FAILS: the onset is subacute and continuous with NO focal deficits; his vascular risk factors (HTN, diabetes) are bait. ✅ Correct if: stepwise deterioration with focal findings and infarcts on imaging."
+    }
+  ],
+  "reasoning": [
+    "Acute ~1-month cognitive decline (too fast for neurodegeneration)",
+    "Plus anhedonia, insomnia, low appetite/energy, worthlessness, after retirement",
+    "= major depressive episode causing reversible cognitive impairment (pseudodementia)",
+    "Most likely diagnosis -> answer C"
+  ],
+  "mechanism": "Late-life major depression can present with prominent cognitive impairment ('pseudodementia') that mimics dementia but is REVERSIBLE with treatment of the mood disorder. Features favoring depression over a neurodegenerative dementia include a relatively ACUTE/subacute onset, prominent neurovegetative symptoms (insomnia, anorexia, low energy), anhedonia and feelings of worthlessness, an identifiable stressor (eg, retirement), and patients who tend to answer 'I don't know' rather than confabulate. Treating the underlying major depressive disorder (psychotherapy and/or an antidepressant) improves the cognition; by contrast, dementia is insidious, progressive, and not reversed by antidepressants.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Psychiatry > major depressive disorder + late-life depression/pseudodementia; SIG-E-CAPS criteria and the reversibility point. Cross-ref Neuro dementias table to contrast."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Frame it as 'dementia vs depression.' Two levers: onset speed (weeks = depression, years = dementia) and mood/neurovegetative symptoms. Tally the depressive criteria before picking a dementia."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on pseudodementia, anhedonia, neurovegetative symptoms, SIG-E-CAPS, MoCA, insidious vs stepwise? Tell me which term and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The Alzheimer family history (A) and an abnormal MoCA pull you toward dementia. But a 1-month onset plus a full depressive syndrome outweighs both - depression-related cognitive impairment is the reversible mimic being tested."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the rule: acute cognitive decline + depressive symptoms in an elder = treat the depression first; the cognition often follows."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Acute memory loss + depressive symptoms in an elderly patient",
+      "back": "Depression-related cognitive impairment (pseudodementia)"
+    },
+    {
+      "front": "Reversible cognitive impairment with treatment",
+      "back": "Late-life major depression"
+    },
+    {
+      "front": "Insidious progressive memory loss over years",
+      "back": "Alzheimer disease"
+    },
+    {
+      "front": "Stepwise decline + focal deficits",
+      "back": "Vascular dementia"
+    },
+    {
+      "front": "Visual hallucinations + parkinsonism + fluctuations",
+      "back": "Dementia with Lewy bodies"
+    },
+    {
+      "front": "Disinhibition/personality change before age 65",
+      "back": "Frontotemporal dementia"
+    },
+    {
+      "front": "Depression screen mnemonic",
+      "back": "SIG-E-CAPS (sleep, interest, guilt, energy, concentration, appetite, psychomotor, suicidality)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Major depression / pseudodementia",
+      "detail": "Psychiatry > major depressive disorder + late-life depression: SIG-E-CAPS, depression-related cognitive impairment (reversible), distinguishing from dementia.",
+      "location": "Psychiatry > major depressive disorder + late-life depression: SIG-E-CAPS, depression-related cognitive impairment (reversible), distinguishing from dementia."
+    },
+    {
+      "tag": "options",
+      "topic": "Dementia subtypes",
+      "detail": "Neuro > dementias table: Alzheimer, vascular, Lewy body, frontotemporal - key distinguishing features; normal aging vs MCI vs dementia.",
+      "location": "Neuro > dementias table: Alzheimer, vascular, Lewy body, frontotemporal - key distinguishing features; normal aging vs MCI vs dementia."
+    },
+    {
+      "tag": "stem",
+      "topic": "Depression vs dementia workup",
+      "detail": "Psychiatry/Neuro > onset, effort on testing ('I don't know' vs confabulation), neurovegetative symptoms, response to antidepressants.",
+      "location": "Psychiatry/Neuro > onset, effort on testing ('I don't know' vs confabulation), neurovegetative symptoms, response to antidepressants."
+    }
+  ],
+  "memoryHook": "Fast memory loss + 'I feel worthless' + can't sleep or eat = depression wearing a dementia mask (pseudodementia), and it's reversible.",
+  "stem": [
+    {
+      "text": "A 79-year-old man is brought to the office by his wife for evaluation of memory impairment. The patient is a recently retired professor who "
+    },
+    {
+      "text": "began having memory problems a month ago",
+      "clue": true,
+      "type": "red",
+      "note": "The TIME COURSE is the key. Cognitive decline over only ~1 month is far too fast for a neurodegenerative dementia (which progresses insidiously over years). An acute/subacute onset should immediately raise a treatable/reversible cause such as depression."
+    },
+    {
+      "text": ". He has been forgetting to take his medication, has had difficulty remembering the names of his grandchildren, and has neglected to turn off the stove on more than one occasion. The patient "
+    },
+    {
+      "text": "used to enjoy reading and playing with his grandchildren but has recently stopped",
+      "clue": true,
+      "type": "red",
+      "note": "Loss of interest/pleasure in previously enjoyed activities is anhedonia - a core symptom of major depression, not of early dementia (where insight and interests are often preserved at first)."
+    },
+    {
+      "text": " doing both of these activities. He also has "
+    },
+    {
+      "text": "difficulty staying asleep, low appetite, and decreased energy",
+      "clue": true,
+      "type": "green",
+      "note": "Insomnia, decreased appetite, and low energy are the neurovegetative symptoms of depression (the S, A, and E of SIG-E-CAPS). Their presence alongside cognitive complaints points to a mood disorder driving the picture."
+    },
+    {
+      "text": ". The patient has hypertension and type 2 diabetes, for which he takes medications. He has a family history of Alzheimer disease. The patient says, \""
+    },
+    {
+      "text": "I just feel so worthless since retiring",
+      "clue": true,
+      "type": "green",
+      "note": "Feelings of worthlessness are a core depressive symptom, and retirement is a plausible precipitating stressor/loss. This quote ties the cognitive complaints to an underlying major depressive episode."
+    },
+    {
+      "text": ".\" Temperature is 36.7 C (98.1 F), blood pressure is 119/78 mm Hg, pulse is 74/min, and respirations are 14/min. Neurological examination reveals no focal deficits. "
+    },
+    {
+      "text": "Montreal Cognitive Assessment score is 23",
+      "clue": true,
+      "type": "blue",
+      "note": "A MoCA of 23 (normal >=26) is objectively abnormal but only mildly so. Depression-related cognitive impairment can lower cognitive scores; the abnormal score does NOT by itself prove a neurodegenerative dementia, especially given the acute onset and mood symptoms."
+    },
+    {
+      "text": " (normal: >=26/30). Which of the following is the most likely diagnosis?"
+    }
+  ]
+}

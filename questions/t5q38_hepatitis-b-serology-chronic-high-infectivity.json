@@ -1,0 +1,202 @@
+{
+  "id": "q187",
+  "item": 187,
+  "qid": "379",
+  "title": "Hepatitis B serology: chronic, high infectivity",
+  "system": "Microbiology",
+  "topic": "Hepatitis B serologic markers",
+  "correct": "D",
+  "yourAnswer": "A",
+  "percentCorrect": 83,
+  "vignette": "A 25-year-old man is hospitalized with fever, anorexia, and fatigue. He admits to IV drug abuse and many episodes of unprotected sex over the past few years. His condition is treated and he is discharged from the hospital. The patient follows up with his physician regularly over the next 8 months, and the following serologic marker dynamics are obtained (see the graph below). This patient most likely:",
+  "clues": [
+    {
+      "text": "IV drug abuse and many episodes of unprotected sex",
+      "type": "orange",
+      "note": "Bloodborne and sexual exposures are the classic risk factors for hepatitis B (and other bloodborne viruses). This sets up an HBV infection and the serologic question that follows."
+    },
+    {
+      "text": "over the next 8 months",
+      "type": "blue",
+      "note": "An 8-month follow-up is the key timeframe: HBsAg persisting beyond ~6 months defines CHRONIC hepatitis B. The graph must be read against this clock."
+    },
+    {
+      "text": "serologic marker dynamics",
+      "type": "red",
+      "note": "The graph shows HBsAg AND HBeAg persisting, anti-HBcAg IgG present, and NO anti-HBs. Persistent HBsAg = chronic infection; persistent HBeAg = high infectivity; absent anti-HBs = not recovered."
+    }
+  ],
+  "whatMatters": "Cut to the graph: HBsAg AND HBeAg persist past 6 months, anti-HBc IgG is present, and there is NO anti-HBs. Persistent HBsAg > 6 months = CHRONIC hepatitis B; persistent HBeAg = HIGH infectivity (active replication). So this is chronic HBV with high infectivity. Answer D. Recovery would require HBsAg to clear and anti-HBs to appear.",
+  "strategy": "Read HBV serology with two questions: (1) acute vs chronic - does HBsAg clear (acute/recovered) or persist > 6 months (chronic)? (2) infectivity - is HBeAg present (high) or replaced by anti-HBe (low)? Recovery = HBsAg gone + anti-HBs positive. Vaccination = anti-HBs only (no anti-HBc).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Had acute hepatitis B and has successfully recovered",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Had an exacerbation of preexisting hepatitis B",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Had acute hepatitis B that has progressed to chronic hepatitis with low infectivity",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Had acute hepatitis B that has progressed to chronic hepatitis with high infectivity",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Was vaccinated against HBV during the hospitalization",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "recovered - would have cleared HBsAg + made anti-HBs (your pick)",
+      "detail": "WHAT IT IS: full recovery from acute HBV - HBsAg clears and anti-HBs (with anti-HBc IgG) appears, conferring lifelong immunity. ❌ WHY IT FAILS: HBsAg PERSISTS and there is NO anti-HBs, so he has not recovered. The trap is assuming 'treated and discharged' means cured; the serology says otherwise. ✅ Correct if: HBsAg undetectable with positive anti-HBs and anti-HBc IgG."
+    },
+    {
+      "letter": "B",
+      "label": "exacerbation of preexisting HBV - wrong pattern",
+      "detail": "WHAT IT IS: a flare of established chronic HBV. ❌ WHY IT FAILS: a flare would show a decline-then-spike in antigen levels; here HBsAg/HBeAg are persistently present from an apparent acute infection, indicating progression to chronicity, not a flare. ✅ Correct if: a documented prior chronic infection with a rise in markers."
+    },
+    {
+      "letter": "C",
+      "label": "chronic but LOW infectivity - HBeAg persists here",
+      "detail": "WHAT IT IS: chronic HBV in which HBeAg has cleared and anti-HBe appeared (low replication/infectivity). ❌ WHY IT FAILS: HBeAg PERSISTS here (no anti-HBe), so infectivity is HIGH, not low. ✅ Correct if: persistent HBsAg but HBeAg gone / anti-HBe present."
+    },
+    {
+      "letter": "E",
+      "label": "vaccinated - would show isolated anti-HBs",
+      "detail": "WHAT IT IS: HBV vaccination produces isolated anti-HBs with NO anti-HBc and no antigens. ❌ WHY IT FAILS: he has HBsAg, HBeAg, and anti-HBc - active infection, not vaccine immunity. ✅ Correct if: anti-HBs positive with everything else negative."
+    }
+  ],
+  "reasoning": [
+    "HBsAg persists beyond 6 months -> chronic hepatitis B",
+    "HBeAg persists (no anti-HBe) -> high infectivity (active replication)",
+    "No anti-HBs -> not recovered",
+    "Chronic hepatitis B with high infectivity -> answer D"
+  ],
+  "mechanism": "In HBV infection, HBsAg appears first and, if it persists beyond ~6 months, defines CHRONIC infection (failure to clear). HBeAg and HBV DNA mark active viral replication and HIGH infectivity; seroconversion from HBeAg to anti-HBe signals a shift to low infectivity. Anti-HBc IgM indicates acute/recent infection and is replaced by anti-HBc IgG over time. Recovery is marked by clearance of HBsAg and appearance of anti-HBs (lifelong immunity); vaccination produces anti-HBs alone (no anti-HBc). This patient's persistent HBsAg + HBeAg with anti-HBc IgG and absent anti-HBs indicates chronic HBV with high infectivity.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > hepatitis B serology: HBsAg (infection; chronic if >6 months), HBeAg (infectivity), anti-HBc IgM/IgG, anti-HBs (recovery/vaccine). Memorize the window period."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate the graph into two yes/no reads: HBsAg still present (chronic) and HBeAg still present (high infectivity). Absent anti-HBs rules out recovery."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on HBsAg, HBeAg, anti-HBc IgM vs IgG, anti-HBs, infectivity, window period, seroconversion? Tell me which marker and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Recovery (A) is the trap because he was 'treated and discharged' - but persistent HBsAg with no anti-HBs means he didn't clear the virus. Read the markers, not the discharge."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The graph plots serum markers over months. Method: check whether HBsAg drops to zero (recovery) or stays up (chronic), then whether HBeAg stays up (high infectivity) or converts to anti-HBe. Persistent HBsAg + HBeAg = chronic, highly infectious."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "HBsAg persists > 6 months",
+      "back": "Chronic hepatitis B"
+    },
+    {
+      "front": "HBeAg present",
+      "back": "Active replication / high infectivity"
+    },
+    {
+      "front": "HBeAg -> anti-HBe seroconversion",
+      "back": "Low infectivity"
+    },
+    {
+      "front": "Recovery from HBV",
+      "back": "HBsAg cleared + anti-HBs positive (+ anti-HBc IgG)"
+    },
+    {
+      "front": "Vaccinated against HBV",
+      "back": "Anti-HBs only (no anti-HBc)"
+    },
+    {
+      "front": "Anti-HBc IgM vs IgG",
+      "back": "Acute/recent vs prior/chronic infection"
+    },
+    {
+      "front": "Window period",
+      "back": "Anti-HBc IgM positive; HBsAg and anti-HBs negative"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Hepatitis B serology",
+      "detail": "Micro > HBV markers: HBsAg (chronic if >6 mo), HBeAg (infectivity), anti-HBc IgM/IgG, anti-HBs (recovery/vaccine).",
+      "location": "Micro > HBV markers: HBsAg (chronic if >6 mo), HBeAg (infectivity), anti-HBc IgM/IgG, anti-HBs (recovery/vaccine)."
+    },
+    {
+      "tag": "options",
+      "topic": "Acute vs chronic vs vaccinated",
+      "detail": "Micro > distinguishing acute, chronic (high/low infectivity), recovered, vaccinated, and window-period serologic patterns.",
+      "location": "Micro > distinguishing acute, chronic (high/low infectivity), recovered, vaccinated, and window-period serologic patterns."
+    },
+    {
+      "tag": "context",
+      "topic": "HBV transmission",
+      "detail": "Micro > bloodborne/sexual/perinatal transmission; chronicity risk inversely related to age at infection.",
+      "location": "Micro > bloodborne/sexual/perinatal transmission; chronicity risk inversely related to age at infection."
+    }
+  ],
+  "memoryHook": "HBsAg still up at 8 months = chronic; HBeAg still up = highly infectious. No anti-HBs = not recovered.",
+  "stem": [
+    {
+      "text": "A 25-year-old man is hospitalized with fever, anorexia, and fatigue. He admits to "
+    },
+    {
+      "text": "IV drug abuse and many episodes of unprotected sex",
+      "clue": true,
+      "type": "orange",
+      "note": "Bloodborne and sexual exposures are the classic risk factors for hepatitis B (and other bloodborne viruses). This sets up an HBV infection and the serologic question that follows."
+    },
+    {
+      "text": " over the past few years. His condition is treated and he is discharged from the hospital. The patient follows up with his physician regularly "
+    },
+    {
+      "text": "over the next 8 months",
+      "clue": true,
+      "type": "blue",
+      "note": "An 8-month follow-up is the key timeframe: HBsAg persisting beyond ~6 months defines CHRONIC hepatitis B. The graph must be read against this clock."
+    },
+    {
+      "text": ", and the following "
+    },
+    {
+      "text": "serologic marker dynamics",
+      "clue": true,
+      "type": "red",
+      "note": "The graph shows HBsAg AND HBeAg persisting, anti-HBcAg IgG present, and NO anti-HBs. Persistent HBsAg = chronic infection; persistent HBeAg = high infectivity; absent anti-HBs = not recovered."
+    },
+    {
+      "text": " are obtained (see the graph below). This patient most likely:"
+    }
+  ]
+}

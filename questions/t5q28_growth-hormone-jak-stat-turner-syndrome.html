@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth hormone JAK-STAT (Turner syndrome)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 5 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q177", "item": 177, "qid": "1720", "title": "Growth hormone JAK-STAT (Turner syndrome)", "system": "Biochemistry", "topic": "Cell signaling pathways", "correct": "E", "yourAnswer": "B", "percentCorrect": 53, "vignette": "A 6-year-old girl is brought to the office for evaluation of short stature. Her parents have noticed that she bears little resemblance to her 2 older siblings. The patient's mother and father are 172.5 cm (5'8\") and 183 cm (6') tall, respectively. On physical examination, the patient's height is 3 standard deviations below the mean for her age. Other findings include low-set ears, a high arched palate, a webbed neck, and cubitus valgus. Chromosomal analysis reveals a 45,XO karyotype. The patient is started on a medication to improve growth and normalize her height. Which of the following intracellular pathways is stimulated by the medication used in this patient?", "clues": [{"text": "short stature", "type": "red", "note": "Short stature 3 SD below the mean is the chief complaint and the treatment target. The medication chosen to fix it is what the question is really testing."}, {"text": "low-set ears, a high arched palate, a webbed neck, and cubitus valgus", "type": "green", "note": "This dysmorphology cluster (webbed neck, cubitus valgus, low-set ears, high-arched palate) is classic Turner syndrome. It steers you to a 45,XO girl."}, {"text": "45,XO karyotype", "type": "green", "note": "A 45,XO karyotype confirms Turner syndrome. Turner-related growth failure is treated with recombinant human growth hormone."}, {"text": "medication to improve growth and normalize her height", "type": "blue", "note": "The drug is recombinant GROWTH HORMONE. The question asks for ITS intracellular signaling pathway — growth hormone (a peptide) signals through cell-surface receptors and JAK-STAT."}], "whatMatters": "Chain it: Turner syndrome (45,XO + webbed neck/cubitus valgus) -> treated with growth hormone -> name growth hormone's signaling pathway. The disease is just the route to the drug; the testable point is that GH (and prolactin, cytokines, EPO, G-CSF) act through the JAK-STAT pathway. Answer E.", "strategy": "Classify hormones by signaling: JAK-STAT (growth hormone, prolactin, cytokines, EPO, G-CSF, leptin); cAMP/PKA via Gs (glucagon, PTH, ACTH, ADH-V2, FSH/LH/TSH, beta-agonists); IP3/DAG via Gq (GnRH, TRH, angiotensin II, ADH-V1, alpha-1); intracellular DNA-binding receptors (steroids, thyroid, vitamin D); receptor tyrosine kinases (insulin, IGF, growth factors).", "options": [{"letter": "A", "text": "Binding of activated receptors to DNA to modify transcription", "correct": false}, {"letter": "B", "text": "Cyclic AMP-Protein kinase A pathway", "correct": false}, {"letter": "C", "text": "Diacylglycerol-Protein kinase C pathway", "correct": false}, {"letter": "D", "text": "Inositol triphosphate-calcium-calmodulin pathway", "correct": false}, {"letter": "E", "text": "JAK-STAT pathway", "correct": true}], "eliminations": [{"letter": "A", "label": "intracellular DNA-binding receptor = steroid/thyroid", "detail": "WHAT IT IS: the mechanism of STEROID and THYROID hormones — lipophilic ligands bind intracellular receptors that act directly on DNA to modify transcription. ❌ WHY IT FAILS: growth hormone is a peptide using a cell-SURFACE receptor (JAK-STAT), not an intracellular DNA-binding receptor. ✅ Correct if: cortisol, aldosterone, estrogen, testosterone, T3/T4, or vitamin D."}, {"letter": "B", "label": "cAMP-PKA (Gs) — not GH's pathway (your pick)", "detail": "WHAT IT IS: Gs-coupled receptors raise cAMP and activate protein kinase A (e.g., glucagon, PTH, ACTH, ADH-V2, beta-agonists). ❌ WHY IT FAILS: GH does not signal through cAMP/PKA; it dimerizes its receptor and activates JAK2-STAT. The trap is defaulting to the most familiar second messenger. ✅ Correct if: a Gs-protein hormone (glucagon, PTH, ACTH, FSH/LH/TSH, ADH-V2)."}, {"letter": "C", "label": "DAG-PKC (Gq) — wrong hormone class", "detail": "WHAT IT IS: Gq-coupled receptors activate phospholipase C -> DAG -> protein kinase C. ❌ WHY IT FAILS: GH isn't a Gq hormone, so DAG/PKC isn't its pathway. ✅ Correct if: a Gq hormone (GnRH, TRH, angiotensin II, ADH-V1, alpha-1 agonists)."}, {"letter": "D", "label": "IP3-calcium-calmodulin (Gq) — wrong hormone class", "detail": "WHAT IT IS: the other Gq arm — phospholipase C makes IP3, releasing Ca2+ that acts via calmodulin. ❌ WHY IT FAILS: same Gq family, not used by growth hormone. ✅ Correct if: a Gq hormone driving IP3/Ca2+ signaling."}], "reasoning": ["Short stature + webbed neck + cubitus valgus + low-set ears + 45,XO = Turner syndrome", "Turner-related growth failure is treated with recombinant human GROWTH HORMONE", "Growth hormone binds a cell-surface receptor that dimerizes and signals through JAK2-STAT (inducing IGF-1)", "-> JAK-STAT pathway, answer E"], "mechanism": "The clinical picture (short stature, webbed neck, cubitus valgus, low-set ears, 45,XO) is Turner syndrome, treated with recombinant human growth hormone to normalize height. Growth hormone binds a single-pass cell-surface receptor; one GH molecule bridges two receptors, causing dimerization and activation of receptor-associated Janus kinase (JAK2), a nonreceptor tyrosine kinase. JAK2 phosphorylates tyrosine residues that dock STAT proteins; phosphorylated STATs dimerize, translocate to the nucleus, and induce transcription of IGF-1 and other growth genes. Cytokines (e.g., interferon), erythropoietin, G-CSF, and prolactin use the same JAK-STAT pathway.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Biochem/Cell > signaling by receptor class: cAMP/PKA (Gs), IP3/DAG (Gq), JAK-STAT (GH, prolactin, cytokines, EPO, G-CSF), intracellular/steroid receptors (steroid, thyroid, vitamin D), RTKs (insulin, IGF). Plus Turner syndrome features and GH therapy."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Two steps: diagnose Turner (45,XO + features) -> the drug is growth hormone -> recall GH's pathway (JAK-STAT). The question tests the DRUG's signaling, not the disease."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on JAK-STAT, Janus kinase, STAT, IGF-1, second messengers (cAMP, IP3, DAG), cubitus valgus, 45,XO? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "cAMP-PKA (B) is the trap — it's the most-memorized hormone pathway, an easy default. But GH uses JAK-STAT, not cAMP."}, {"key": "other", "label": "✍️ Something else", "message": "Bank the JAK-STAT users: Growth hormone, Prolactin, cytokines/interferons, EPO, G-CSF, thrombopoietin, leptin."}], "keywords": [{"front": "Growth hormone (and prolactin) signaling pathway", "back": "JAK-STAT"}, {"front": "Short stature + webbed neck + cubitus valgus + 45,XO", "back": "Turner syndrome"}, {"front": "Turner short-stature treatment", "back": "Recombinant growth hormone"}, {"front": "cAMP/PKA hormones (Gs)", "back": "Glucagon, PTH, ACTH, ADH-V2, FSH/LH/TSH, beta-agonists"}, {"front": "IP3/DAG hormones (Gq)", "back": "GnRH, TRH, angiotensin II, ADH-V1, alpha-1"}, {"front": "Intracellular DNA-binding receptors", "back": "Steroid, thyroid, vitamin D"}, {"front": "Other JAK-STAT users", "back": "Cytokines, EPO, G-CSF, prolactin, leptin"}], "firstAid": [{"tag": "answer / stem", "topic": "JAK-STAT signaling", "detail": "Biochem/Cell > GH/prolactin/cytokines/EPO/G-CSF use JAK-STAT -> IGF-1; receptor dimerization, JAK2, STAT phosphorylation."}, {"tag": "options", "topic": "Signaling pathways", "detail": "Cell > cAMP/PKA (Gs), DAG-PKC and IP3-Ca2+ (Gq), intracellular/steroid receptors, receptor tyrosine kinases (insulin/IGF)."}, {"tag": "context", "topic": "Turner syndrome", "detail": "Repro/Genetics > 45,XO: short stature, webbed neck, cubitus valgus, streak ovaries, coarctation/bicuspid valve; GH + estrogen therapy."}], "memoryHook": "GH, Prolactin, EPO, G-CSF, and cytokines all JACK each other up the STATs (JAK-STAT). The Turner girl gets growth hormone -> JAK-STAT.", "stem": [{"text": "A 6-year-old girl is brought to the office for evaluation of "}, {"text": "short stature", "clue": true, "type": "red", "note": "Short stature 3 SD below the mean is the chief complaint and the treatment target. The medication chosen to fix it is what the question is really testing."}, {"text": ". Her parents have noticed that she bears little resemblance to her 2 older siblings. The patient's mother and father are 172.5 cm (5'8\") and 183 cm (6') tall, respectively. On physical examination, the patient's height is 3 standard deviations below the mean for her age. Other findings include "}, {"text": "low-set ears, a high arched palate, a webbed neck, and cubitus valgus", "clue": true, "type": "green", "note": "This dysmorphology cluster (webbed neck, cubitus valgus, low-set ears, high-arched palate) is classic Turner syndrome. It steers you to a 45,XO girl."}, {"text": ". Chromosomal analysis reveals a "}, {"text": "45,XO karyotype", "clue": true, "type": "green", "note": "A 45,XO karyotype confirms Turner syndrome. Turner-related growth failure is treated with recombinant human growth hormone."}, {"text": ". The patient is started on a "}, {"text": "medication to improve growth and normalize her height", "clue": true, "type": "blue", "note": "The drug is recombinant GROWTH HORMONE. The question asks for ITS intracellular signaling pathway — growth hormone (a peptide) signals through cell-surface receptors and JAK-STAT."}, {"text": ". Which of the following intracellular pathways is stimulated by the medication used in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

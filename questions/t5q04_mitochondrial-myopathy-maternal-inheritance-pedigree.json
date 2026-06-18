@@ -1,0 +1,226 @@
+{
+  "id": "q153",
+  "item": 153,
+  "qid": "11914",
+  "title": "Mitochondrial myopathy: maternal inheritance pedigree",
+  "system": "Genetics",
+  "topic": "Modes of inheritance",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 77,
+  "vignette": "A 19-year-old woman is evaluated for new onset generalized tonic-clonic seizures. For the past several years, she has also been having erratic jerks of her arms and legs, and intermittent muscle weakness. The girl has multiple family members with similar symptoms. Neurological examination reveals decreased sensation in the lower extremities and a broad-based gait. Skeletal muscle biopsy shows ragged, red-appearing muscle fibers. Further analysis reveals that the patient's symptoms are due to a mutation affecting extranuclear DNA. Which of the following pedigrees is most likely to represent this patient's family history? (The arrow points to the patient.)",
+  "clues": [
+    {
+      "text": "generalized tonic-clonic seizures",
+      "type": "blue",
+      "note": "Seizures/myoclonus signal central nervous system involvement, which together with myopathy is the multi-system pattern of a mitochondrial disorder (the brain and muscle are the most energy-hungry tissues and fail first)."
+    },
+    {
+      "text": "muscle weakness",
+      "type": "blue",
+      "note": "Myopathy (weakness) plus a CNS syndrome is the classic mitochondrial combination - high oxidative-demand tissues (muscle, brain) suffer when ATP production fails."
+    },
+    {
+      "text": "multiple family members with similar symptoms",
+      "type": "orange",
+      "note": "A heritable disorder affecting many relatives. The exact distribution of WHO is affected across the generations is what the pedigree question turns on."
+    },
+    {
+      "text": "ragged, red-appearing muscle fibers",
+      "type": "green",
+      "note": "Ragged red fibers on muscle biopsy (subsarcolemmal accumulation of abnormal mitochondria on Gomori trichrome) are the histologic signature of mitochondrial myopathy, eg, MERRF (myoclonic epilepsy with ragged red fibers)."
+    },
+    {
+      "text": "mutation affecting extranuclear DNA",
+      "type": "red",
+      "note": "'Extranuclear DNA' = mitochondrial DNA. Mitochondria are inherited only from the egg's cytoplasm, so mtDNA disease shows MATERNAL inheritance: an affected mother transmits to ALL her children, an affected father to NONE. This single phrase decides the pedigree."
+    }
+  ],
+  "whatMatters": "Cut to the core: 'extranuclear DNA' means mitochondrial DNA, which is inherited maternally. Pick the pedigree where every child of an affected MOTHER is affected and NO child of an affected FATHER is affected. That is pedigree E. The seizures, weakness, and ragged red fibers only confirm a mitochondrial myopathy; the inheritance phrase is the whole answer.",
+  "strategy": "When a stem says 'mitochondrial,' 'extranuclear/cytoplasmic DNA,' or 'ragged red fibers,' jump straight to maternal inheritance and its two pedigree fingerprints: (1) affected mothers pass to ALL offspring; (2) affected fathers pass to NONE. Scan each pedigree for any father-to-child transmission (or an affected mother with an unaffected child) and eliminate it. Heteroplasmy explains variable severity.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Pedigree A - an affected father transmits to offspring",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Pedigree B - isolated affected individuals with unaffected parents",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Pedigree C - an affected father transmits to multiple children",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pedigree D - vertical transmission through affected males and females",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Pedigree E - only affected mothers transmit, and to all of their children",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "shows paternal transmission",
+      "detail": "WHAT IT IS: a pedigree in which an affected FATHER passes the trait to one or more children. ❌ WHY IT FAILS: in mitochondrial inheritance affected MALES transmit to NONE of their offspring (sperm mitochondria are not inherited), so any father-to-child transmission excludes maternal inheritance. ✅ Correct if: the trait were autosomal dominant (either parent can transmit, vertically)."
+    },
+    {
+      "letter": "B",
+      "label": "sporadic / too few affected",
+      "detail": "WHAT IT IS: a pedigree with isolated affected individuals whose parents are unaffected. ❌ WHY IT FAILS: a mitochondrial disorder runs down the maternal line with MANY affected relatives, and an affected mother must pass it to ALL of her children; an unaffected-mother/affected-child pattern doesn't fit. ✅ Correct if: autosomal recessive (carriers, skips generations) or a sporadic new mutation."
+    },
+    {
+      "letter": "C",
+      "label": "affected father -> affected children",
+      "detail": "WHAT IT IS: again a pedigree with an affected father transmitting to offspring. ❌ WHY IT FAILS: paternal transmission is impossible for mtDNA; the trait can only come from the mother. ✅ Correct if: autosomal dominant or X-linked dominant (but note X-linked dominant has NO male-to-male transmission)."
+    },
+    {
+      "letter": "D",
+      "label": "male transmission present (autosomal dominant look-alike)",
+      "detail": "WHAT IT IS: vertical transmission in which affected MALES (not just females) pass the trait to their children. ❌ WHY IT FAILS: any affected male transmitting offspring rules out maternal/mitochondrial inheritance; this is the autosomal dominant pattern, the classic trap that resembles maternal at first glance. ✅ Correct if: the disorder were autosomal dominant."
+    }
+  ],
+  "reasoning": [
+    "'Extranuclear DNA' = mitochondrial DNA",
+    "mtDNA is inherited only from the mother (maternal inheritance)",
+    "Affected mothers transmit to ALL children; affected fathers transmit to NONE",
+    "Choose the pedigree matching that rule -> pedigree E"
+  ],
+  "mechanism": "Mitochondria carry their own small circular DNA (extranuclear), passed on only through the oocyte cytoplasm, so mtDNA disorders show MATERNAL inheritance: an affected mother transmits to all of her children, while an affected father transmits to none. Each cell contains many mitochondria carrying a mix of mutant and wild-type mtDNA (heteroplasmy), and the proportion of mutant genomes determines disease severity, explaining wide variability within a family. Ragged red fibers with myoclonic seizures suggest MERRF; related mtDNA diseases include MELAS, Leber hereditary optic neuropathy, and Leigh syndrome.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Genetics > modes of inheritance > mitochondrial (maternal): pedigree rules, heteroplasmy, variable expressivity. Cross-ref Neuro/Biochem mitochondrial myopathies (MERRF, MELAS, LHON, Leigh)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The whole question is one translation: 'extranuclear DNA' -> mitochondrial -> maternal inheritance. Apply the two-line rule (mothers -> all kids; fathers -> none) and scan pedigrees for violations."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on extranuclear/mitochondrial DNA, maternal inheritance, heteroplasmy, ragged red fibers, MERRF/MELAS, pedigree symbols? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The autosomal dominant pedigree (D) looks 'vertical' like maternal inheritance - but it includes affected MALES transmitting. Reject any pedigree with father-to-child transmission."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "This is a pedigree-reading task. Method: find the affected females and check that ALL their children are affected; find the affected males and confirm that NONE of theirs are. The pedigree passing both tests is the maternal/mitochondrial one."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "'Extranuclear' / cytoplasmic DNA mutation",
+      "back": "Mitochondrial (maternal) inheritance"
+    },
+    {
+      "front": "Maternal inheritance pedigree rule",
+      "back": "Affected mother -> all children; affected father -> none"
+    },
+    {
+      "front": "Ragged red fibers + myoclonic seizures",
+      "back": "MERRF (mitochondrial myopathy)"
+    },
+    {
+      "front": "Stroke-like episodes + lactic acidosis + ragged red fibers",
+      "back": "MELAS"
+    },
+    {
+      "front": "Variable severity within a mitochondrial family",
+      "back": "Heteroplasmy"
+    },
+    {
+      "front": "Subacute bilateral vision loss, mtDNA",
+      "back": "Leber hereditary optic neuropathy"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Mitochondrial (maternal) inheritance",
+      "detail": "Genetics > modes of inheritance: mitochondrial - maternal transmission, heteroplasmy, variable expressivity; pedigree fingerprint.",
+      "location": "Genetics > modes of inheritance: mitochondrial - maternal transmission, heteroplasmy, variable expressivity; pedigree fingerprint."
+    },
+    {
+      "tag": "stem dx",
+      "topic": "Mitochondrial myopathies",
+      "detail": "Neuro/Biochem > MERRF, MELAS, LHON, Leigh syndrome; ragged red fibers on biopsy.",
+      "location": "Neuro/Biochem > MERRF, MELAS, LHON, Leigh syndrome; ragged red fibers on biopsy."
+    },
+    {
+      "tag": "options",
+      "topic": "Other inheritance patterns",
+      "detail": "Genetics > autosomal dominant/recessive and X-linked recessive/dominant pedigree patterns - learn each fingerprint to distinguish on sight.",
+      "location": "Genetics > autosomal dominant/recessive and X-linked recessive/dominant pedigree patterns - learn each fingerprint to distinguish on sight."
+    }
+  ],
+  "memoryHook": "Mito = Mom's. Extranuclear DNA rides in the egg - affected moms give it to everyone, dads to no one.",
+  "stem": [
+    {
+      "text": "A 19-year-old woman is evaluated for new onset "
+    },
+    {
+      "text": "generalized tonic-clonic seizures",
+      "clue": true,
+      "type": "blue",
+      "note": "Seizures/myoclonus signal central nervous system involvement, which together with myopathy is the multi-system pattern of a mitochondrial disorder (the brain and muscle are the most energy-hungry tissues and fail first)."
+    },
+    {
+      "text": ". For the past several years, she has also been having erratic jerks of her arms and legs, and intermittent "
+    },
+    {
+      "text": "muscle weakness",
+      "clue": true,
+      "type": "blue",
+      "note": "Myopathy (weakness) plus a CNS syndrome is the classic mitochondrial combination - high oxidative-demand tissues (muscle, brain) suffer when ATP production fails."
+    },
+    {
+      "text": ". The girl has "
+    },
+    {
+      "text": "multiple family members with similar symptoms",
+      "clue": true,
+      "type": "orange",
+      "note": "A heritable disorder affecting many relatives. The exact distribution of WHO is affected across the generations is what the pedigree question turns on."
+    },
+    {
+      "text": ". Neurological examination reveals decreased sensation in the lower extremities and a broad-based gait. Skeletal muscle biopsy shows "
+    },
+    {
+      "text": "ragged, red-appearing muscle fibers",
+      "clue": true,
+      "type": "green",
+      "note": "Ragged red fibers on muscle biopsy (subsarcolemmal accumulation of abnormal mitochondria on Gomori trichrome) are the histologic signature of mitochondrial myopathy, eg, MERRF (myoclonic epilepsy with ragged red fibers)."
+    },
+    {
+      "text": ". Further analysis reveals that the patient's symptoms are due to a "
+    },
+    {
+      "text": "mutation affecting extranuclear DNA",
+      "clue": true,
+      "type": "red",
+      "note": "'Extranuclear DNA' = mitochondrial DNA. Mitochondria are inherited only from the egg's cytoplasm, so mtDNA disease shows MATERNAL inheritance: an affected mother transmits to ALL her children, an affected father to NONE. This single phrase decides the pedigree."
+    },
+    {
+      "text": ". Which of the following pedigrees is most likely to represent this patient's family history? (The arrow points to the patient.)"
+    }
+  ]
+}

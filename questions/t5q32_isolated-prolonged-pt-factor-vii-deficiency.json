@@ -1,0 +1,225 @@
+{
+  "id": "q181",
+  "item": 181,
+  "qid": "1903",
+  "title": "Isolated prolonged PT: factor VII deficiency",
+  "system": "Hematology",
+  "topic": "Coagulation pathways",
+  "correct": "A",
+  "yourAnswer": "B",
+  "percentCorrect": 60,
+  "vignette": "A 12-year-old boy experiences excessive bleeding following a tooth extraction. His past medical history includes episodes of painful joint swelling from minor trauma. Physical examination shows a soft and nontender abdomen with a liver span of 10 cm. The spleen is not palpable. Laboratory results are as follows:\nBleeding time: 5 min\nActivated partial thromboplastin time: 25 sec\nProthrombin time: 23 sec\nThis patient most likely has a deficiency involving which of the following factors?",
+  "clues": [
+    {
+      "text": "excessive bleeding following a tooth extraction",
+      "type": "red",
+      "note": "Bleeding provoked by a surgical/hemostatic challenge (tooth extraction) signals a bleeding disorder. Combined with the lab pattern, it points to a clotting-factor problem rather than a vessel or platelet issue."
+    },
+    {
+      "text": "painful joint swelling from minor trauma",
+      "type": "red",
+      "note": "Hemarthrosis (painful joint bleeding) is DEEP-TISSUE bleeding, characteristic of a COAGULATION FACTOR deficiency (coagulopathy), as opposed to the mucocutaneous bleeding seen with platelet/von Willebrand disorders."
+    },
+    {
+      "text": "Bleeding time: 5 min",
+      "type": "blue",
+      "note": "A normal bleeding time (normal ~2-7 min) indicates adequate platelet number and function and normal von Willebrand factor - so this is not a platelet/vWF problem."
+    },
+    {
+      "text": "Activated partial thromboplastin time: 25 sec",
+      "type": "green",
+      "note": "A normal aPTT (normal ~25-40 sec) indicates an intact INTRINSIC pathway (factors VIII, IX, XI, XII). This rules out hemophilia A/B and the other intrinsic-factor deficiencies."
+    },
+    {
+      "text": "Prothrombin time: 23 sec",
+      "type": "green",
+      "note": "An isolated prolonged PT (normal ~11-15 sec) with a normal aPTT localizes the defect to the EXTRINSIC pathway. Factor VII is the only factor unique to the extrinsic pathway, so factor VII deficiency is the answer."
+    }
+  ],
+  "whatMatters": "Boil it down: deep-tissue/joint bleeding (a coagulopathy) with a NORMAL bleeding time, NORMAL aPTT (25 / normal ~25-40), and an ISOLATED prolonged PT (23 / normal ~11-15). An isolated prolonged PT points to the EXTRINSIC pathway, and factor VII is the only factor unique to it - so this is factor VII deficiency. Answer A.",
+  "strategy": "Localize a bleeding disorder with the three screening tests. Platelet/vWF problems -> prolonged bleeding time + mucocutaneous bleeding. Coagulation-factor problems -> deep-tissue/joint bleeding + prolonged PT and/or aPTT. Then: isolated high PT = extrinsic = factor VII; isolated high aPTT = intrinsic (VIII, IX, XI, XII); both high = common pathway (X, V, II, fibrinogen).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Factor VII",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Factor VIII",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Factor XI",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Hageman factor",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "von Willebrand factor",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "factor VIII (hemophilia A) - would prolong aPTT (your pick)",
+      "detail": "WHAT IT IS: factor VIII deficiency is hemophilia A (X-linked), causing hemarthroses and deep bleeding. ❌ WHY IT FAILS: factor VIII is in the INTRINSIC pathway, so it prolongs the aPTT - but this patient's aPTT is NORMAL (25); the abnormal test is the PT. The trap is matching 'joint bleeding' to hemophilia without checking which test is abnormal. ✅ Correct if: prolonged aPTT with a normal PT and normal bleeding time."
+    },
+    {
+      "letter": "C",
+      "label": "factor XI (hemophilia C) - intrinsic, normal here",
+      "detail": "WHAT IT IS: factor XI deficiency is hemophilia C (autosomal recessive), with bleeding mainly after surgery/trauma. ❌ WHY IT FAILS: factor XI is intrinsic and prolongs the aPTT, which is normal here; the abnormal test is the PT. ✅ Correct if: a prolonged aPTT with a normal PT."
+    },
+    {
+      "letter": "D",
+      "label": "Hageman factor (XII) - prolongs aPTT but NO bleeding",
+      "detail": "WHAT IT IS: factor XII (Hageman factor) deficiency prolongs the aPTT but causes NO clinical bleeding (it can even predispose to thrombosis). ❌ WHY IT FAILS: it affects the aPTT (normal here) and wouldn't explain bleeding at all. ✅ Correct if: an incidentally prolonged aPTT with no bleeding history."
+    },
+    {
+      "letter": "E",
+      "label": "von Willebrand factor - prolongs bleeding time, mucocutaneous",
+      "detail": "WHAT IT IS: von Willebrand factor deficiency is the most common inherited bleeding disorder, with MUCOCUTANEOUS bleeding and a prolonged bleeding time (sometimes a high aPTT from low factor VIII). ❌ WHY IT FAILS: this patient has a NORMAL bleeding time and DEEP (joint) bleeding; the abnormal test is the PT, which vWD doesn't isolate. ✅ Correct if: mucocutaneous bleeding with a prolonged bleeding time."
+    }
+  ],
+  "reasoning": [
+    "Deep-tissue/joint bleeding (a coagulopathy) provoked by tooth extraction",
+    "Normal bleeding time (platelets/vWF intact) and normal aPTT (intrinsic intact)",
+    "Isolated prolonged PT = extrinsic pathway defect",
+    "Factor VII is the only factor unique to the extrinsic pathway -> answer A"
+  ],
+  "mechanism": "The PT measures the EXTRINSIC and common pathways; the aPTT measures the INTRINSIC and common pathways; the bleeding time reflects platelet/vWF function. Factor VII is the ONLY clotting factor unique to the extrinsic pathway, so its deficiency produces an ISOLATED prolonged PT with a normal aPTT and normal bleeding time. Coagulation-factor deficiencies cause deep-tissue and joint bleeding (hemarthroses), in contrast to the mucocutaneous bleeding of platelet/vWF disorders. Factor VII also has the shortest half-life of the clotting factors, which is why the PT rises first in early warfarin therapy and in liver disease.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Hematology > coagulation cascade and lab interpretation: PT (extrinsic, factor VII) vs aPTT (intrinsic) vs bleeding time (platelets/vWF); factor VII has the shortest half-life."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Read the three tests as a grid: which is abnormal? Only the PT here -> extrinsic -> factor VII. Don't let 'joint bleeding' lock you onto hemophilia before checking the aPTT."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on PT vs aPTT vs bleeding time, extrinsic/intrinsic/common pathway, hemarthrosis, coagulopathy vs platelet disorder? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Factor VIII/hemophilia (B) is the trap because of the joint bleeding - but hemophilia prolongs the aPTT, which is normal here. The isolated prolonged PT is factor VII."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the rule: isolated high PT = factor VII; isolated high aPTT = intrinsic factor; both high = common pathway."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Isolated prolonged PT (normal aPTT, normal bleeding time)",
+      "back": "Factor VII deficiency"
+    },
+    {
+      "front": "PT measures",
+      "back": "Extrinsic + common pathway"
+    },
+    {
+      "front": "aPTT measures",
+      "back": "Intrinsic + common pathway"
+    },
+    {
+      "front": "Deep-tissue / joint bleeding (hemarthrosis)",
+      "back": "Coagulation factor deficiency"
+    },
+    {
+      "front": "Mucocutaneous bleeding + prolonged bleeding time",
+      "back": "Platelet / von Willebrand disorder"
+    },
+    {
+      "front": "Factor VIII / IX deficiency",
+      "back": "Hemophilia A / B (prolonged aPTT)"
+    },
+    {
+      "front": "Factor XII (Hageman) deficiency",
+      "back": "Prolonged aPTT, NO bleeding"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Coagulation pathway labs",
+      "detail": "Heme > PT (extrinsic, factor VII) vs aPTT (intrinsic) vs bleeding time; isolated prolonged PT = factor VII deficiency.",
+      "location": "Heme > PT (extrinsic, factor VII) vs aPTT (intrinsic) vs bleeding time; isolated prolonged PT = factor VII deficiency."
+    },
+    {
+      "tag": "options",
+      "topic": "Factor deficiencies",
+      "detail": "Heme > hemophilia A (VIII), B (IX), C (XI), factor XII (Hageman); von Willebrand disease.",
+      "location": "Heme > hemophilia A (VIII), B (IX), C (XI), factor XII (Hageman); von Willebrand disease."
+    },
+    {
+      "tag": "context",
+      "topic": "Coagulation cascade",
+      "detail": "Heme > extrinsic/intrinsic/common pathways; factor VII shortest half-life (warfarin, liver disease raise PT first).",
+      "location": "Heme > extrinsic/intrinsic/common pathways; factor VII shortest half-life (warfarin, liver disease raise PT first)."
+    }
+  ],
+  "memoryHook": "A lonely prolonged PT = factor SEVEN, the EXtrinsic loner. Joint bleeding but a normal aPTT? Not hemophilia - it's factor VII.",
+  "stem": [
+    {
+      "text": "A 12-year-old boy experiences "
+    },
+    {
+      "text": "excessive bleeding following a tooth extraction",
+      "clue": true,
+      "type": "red",
+      "note": "Bleeding provoked by a surgical/hemostatic challenge (tooth extraction) signals a bleeding disorder. Combined with the lab pattern, it points to a clotting-factor problem rather than a vessel or platelet issue."
+    },
+    {
+      "text": ". His past medical history includes episodes of "
+    },
+    {
+      "text": "painful joint swelling from minor trauma",
+      "clue": true,
+      "type": "red",
+      "note": "Hemarthrosis (painful joint bleeding) is DEEP-TISSUE bleeding, characteristic of a COAGULATION FACTOR deficiency (coagulopathy), as opposed to the mucocutaneous bleeding seen with platelet/von Willebrand disorders."
+    },
+    {
+      "text": ". Physical examination shows a soft and nontender abdomen with a liver span of 10 cm. The spleen is not palpable. Laboratory results are as follows:\n"
+    },
+    {
+      "text": "Bleeding time: 5 min",
+      "clue": true,
+      "type": "blue",
+      "note": "A normal bleeding time (normal ~2-7 min) indicates adequate platelet number and function and normal von Willebrand factor - so this is not a platelet/vWF problem."
+    },
+    {
+      "text": "\n"
+    },
+    {
+      "text": "Activated partial thromboplastin time: 25 sec",
+      "clue": true,
+      "type": "green",
+      "note": "A normal aPTT (normal ~25-40 sec) indicates an intact INTRINSIC pathway (factors VIII, IX, XI, XII). This rules out hemophilia A/B and the other intrinsic-factor deficiencies."
+    },
+    {
+      "text": "\n"
+    },
+    {
+      "text": "Prothrombin time: 23 sec",
+      "clue": true,
+      "type": "green",
+      "note": "An isolated prolonged PT (normal ~11-15 sec) with a normal aPTT localizes the defect to the EXTRINSIC pathway. Factor VII is the only factor unique to the extrinsic pathway, so factor VII deficiency is the answer."
+    },
+    {
+      "text": "\nThis patient most likely has a deficiency involving which of the following factors?"
+    }
+  ]
+}
