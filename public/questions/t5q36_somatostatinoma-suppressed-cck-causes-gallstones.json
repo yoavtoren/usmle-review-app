@@ -1,0 +1,207 @@
+{
+  "id": "q185",
+  "item": 185,
+  "qid": "601",
+  "title": "Somatostatinoma: suppressed CCK causes gallstones",
+  "system": "Endocrine",
+  "topic": "GI hormones / pancreatic tumors",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 87,
+  "vignette": "A 50-year-old female presents with abdominal pain, diarrhea, and weight loss. She was diagnosed with diabetes mellitus two months ago. Her serum somatostatin level is highly elevated. Further evaluation reveals biliary stones. Suppression of which of the following hormones is most likely responsible for biliary stones?",
+  "clues": [
+    {
+      "text": "diabetes mellitus two months ago",
+      "type": "blue",
+      "note": "New-onset hyperglycemia/diabetes reflects somatostatin's inhibition of INSULIN. It is one arm of the somatostatinoma triad but is not what causes the gallstones."
+    },
+    {
+      "text": "serum somatostatin level is highly elevated",
+      "type": "red",
+      "note": "A markedly elevated somatostatin indicates a SOMATOSTATINOMA - a pancreatic delta-cell tumor. Somatostatin broadly inhibits GI hormones, and the question asks which suppressed hormone explains the gallstones."
+    },
+    {
+      "text": "biliary stones",
+      "type": "green",
+      "note": "Gallstones in a somatostatinoma result specifically from suppressed CHOLECYSTOKININ: without CCK, the gallbladder fails to contract, bile stagnates and concentrates, and stones form."
+    }
+  ],
+  "whatMatters": "Cut to it: a somatostatinoma (high somatostatin) inhibits many GI hormones. The gallstones specifically result from suppressed CHOLECYSTOKININ - without CCK the gallbladder doesn't contract, bile stagnates and concentrates, and stones form. Answer B.",
+  "strategy": "For somatostatinoma, remember somatostatin 'turns everything off,' then map each feature to the suppressed hormone: hyperglycemia/diabetes <- inhibited insulin; steatorrhea <- inhibited secretin/pancreatic enzymes; GALLSTONES <- inhibited CCK (no gallbladder contraction). The question asks about gallstones, so the answer is CCK.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Secretin",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cholecystokinin",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Glucagon",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Insulin",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Gastrin",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Growth hormone",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "secretin - explains steatorrhea, not stones",
+      "detail": "WHAT IT IS: secretin stimulates pancreatic bicarbonate; its suppression contributes to STEATORRHEA. ❌ WHY IT FAILS: secretin doesn't drive gallbladder contraction, so its loss doesn't cause gallstones. ✅ Correct if: asked the cause of steatorrhea/fat malabsorption."
+    },
+    {
+      "letter": "C",
+      "label": "glucagon - no role in the gallbladder",
+      "detail": "WHAT IT IS: glucagon raises blood glucose; somatostatin suppresses it too. ❌ WHY IT FAILS: glucagon has no role in gallbladder emptying; because insulin is suppressed more, the net effect is hyperglycemia, not gallstones. ✅ Correct if: asked about glucose-regulation balance."
+    },
+    {
+      "letter": "D",
+      "label": "insulin - explains the diabetes, not the stones",
+      "detail": "WHAT IT IS: suppression of insulin by somatostatin causes the HYPERGLYCEMIA/new diabetes. ❌ WHY IT FAILS: insulin does not control gallbladder contraction; it explains the diabetes, not the stones. ✅ Correct if: asked the cause of this patient's diabetes/hyperglycemia."
+    },
+    {
+      "letter": "E",
+      "label": "gastrin - causes hypochlorhydria, not stones",
+      "detail": "WHAT IT IS: gastrin drives gastric acid; its suppression causes HYPOCHLORHYDRIA. ❌ WHY IT FAILS: gastrin doesn't affect the gallbladder, so it doesn't cause stones. ✅ Correct if: asked about decreased gastric acid."
+    },
+    {
+      "letter": "F",
+      "label": "growth hormone - no gallbladder role",
+      "detail": "WHAT IT IS: somatostatin classically inhibits pituitary GH release. ❌ WHY IT FAILS: GH has no role in gallbladder contraction or stone formation. ✅ Correct if: asked what somatostatin analogs (octreotide) suppress in acromegaly."
+    }
+  ],
+  "reasoning": [
+    "High somatostatin (somatostatinoma) broadly inhibits GI hormones",
+    "Gallstones arise specifically from suppressed cholecystokinin",
+    "Without CCK, the gallbladder doesn't contract -> bile stasis/concentration -> stones",
+    "Hormone responsible for the stones -> CCK -> answer B"
+  ],
+  "mechanism": "Somatostatin (from pancreatic delta cells) broadly inhibits GI and pancreatic hormones. A somatostatinoma therefore presents with a classic triad: hyperglycemia/diabetes (inhibited insulin), steatorrhea (inhibited secretin and pancreatic enzyme secretion), and GALLSTONES. The gallstones specifically arise from suppressed CHOLECYSTOKININ: CCK normally triggers gallbladder contraction after meals, so without it the gallbladder empties poorly, bile stagnates and concentrates, and stones form. Notably, somatostatin analogs such as octreotide can likewise cause gallstones.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Endo/GI > somatostatinoma: delta-cell tumor; suppresses insulin (diabetes), secretin/enzymes (steatorrhea), and CCK (gallstones). Cross-ref gut hormone functions."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Map the asked symptom (gallstones) to the responsible hormone (CCK -> gallbladder contraction). Each feature of the triad has its own suppressed hormone - pick the one that controls the gallbladder."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on somatostatinoma, cholecystokinin, secretin, delta cells, steatorrhea, hypochlorhydria, octreotide? Tell me which term and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Insulin (D) is tempting because the diabetes is right there - but the question specifically asks about the GALLSTONES, which are a CCK problem. Match the hormone to the symptom asked."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the triad: somatostatinoma = diabetes (insulin down) + steatorrhea (secretin/enzymes down) + gallstones (CCK down)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Somatostatinoma triad",
+      "back": "Diabetes/hyperglycemia + steatorrhea + gallstones"
+    },
+    {
+      "front": "Gallstones in somatostatinoma",
+      "back": "Suppressed CCK (poor gallbladder contraction)"
+    },
+    {
+      "front": "CCK function",
+      "back": "Gallbladder contraction + pancreatic enzyme release (I cells)"
+    },
+    {
+      "front": "Somatostatinoma hyperglycemia",
+      "back": "Suppressed insulin"
+    },
+    {
+      "front": "Somatostatinoma steatorrhea",
+      "back": "Suppressed secretin/pancreatic enzymes"
+    },
+    {
+      "front": "Somatostatin analog",
+      "back": "Octreotide (also causes gallstones)"
+    },
+    {
+      "front": "Somatostatin source",
+      "back": "Pancreatic delta cells"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Somatostatinoma",
+      "detail": "Endo/GI > somatostatinoma: delta-cell tumor suppressing insulin (diabetes), secretin (steatorrhea), CCK (gallstones).",
+      "location": "Endo/GI > somatostatinoma: delta-cell tumor suppressing insulin (diabetes), secretin (steatorrhea), CCK (gallstones)."
+    },
+    {
+      "tag": "options",
+      "topic": "Gut hormones",
+      "detail": "GI > CCK (gallbladder/enzymes), secretin (bicarbonate), gastrin (acid), glucagon/insulin, growth hormone.",
+      "location": "GI > CCK (gallbladder/enzymes), secretin (bicarbonate), gastrin (acid), glucagon/insulin, growth hormone."
+    },
+    {
+      "tag": "context",
+      "topic": "Cholelithiasis",
+      "detail": "GI > gallstone formation from gallbladder stasis/poor contraction.",
+      "location": "GI > gallstone formation from gallbladder stasis/poor contraction."
+    }
+  ],
+  "memoryHook": "Somatostatin says 'shush' to all gut hormones. No CCK shout = gallbladder won't squeeze = stones.",
+  "stem": [
+    {
+      "text": "A 50-year-old female presents with abdominal pain, diarrhea, and weight loss. She was diagnosed with "
+    },
+    {
+      "text": "diabetes mellitus two months ago",
+      "clue": true,
+      "type": "blue",
+      "note": "New-onset hyperglycemia/diabetes reflects somatostatin's inhibition of INSULIN. It is one arm of the somatostatinoma triad but is not what causes the gallstones."
+    },
+    {
+      "text": ". Her "
+    },
+    {
+      "text": "serum somatostatin level is highly elevated",
+      "clue": true,
+      "type": "red",
+      "note": "A markedly elevated somatostatin indicates a SOMATOSTATINOMA - a pancreatic delta-cell tumor. Somatostatin broadly inhibits GI hormones, and the question asks which suppressed hormone explains the gallstones."
+    },
+    {
+      "text": ". Further evaluation reveals "
+    },
+    {
+      "text": "biliary stones",
+      "clue": true,
+      "type": "green",
+      "note": "Gallstones in a somatostatinoma result specifically from suppressed CHOLECYSTOKININ: without CCK, the gallbladder fails to contract, bile stagnates and concentrates, and stones form."
+    },
+    {
+      "text": ". Suppression of which of the following hormones is most likely responsible for biliary stones?"
+    }
+  ]
+}

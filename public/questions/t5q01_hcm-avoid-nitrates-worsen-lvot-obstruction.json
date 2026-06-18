@@ -1,0 +1,231 @@
+{
+  "id": "q150",
+  "item": 150,
+  "qid": "141",
+  "title": "HCM: avoid nitrates (worsen LVOT obstruction)",
+  "system": "Pharmacology",
+  "topic": "Cardiomyopathy / HCM",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 50,
+  "vignette": "A 23-year-old man comes to the office due to chest discomfort that usually occurs during exercise, such as jogging or climbing stairs. The symptoms go away 5 to 10 minutes after he stops. The patient has not had syncope but mentions some shortness of breath that accompanies the chest pain. Family history includes an uncle who died suddenly at age 35. Blood pressure is 122/70 mm Hg and pulse is 70/min and regular. The apical impulse is strong and sustained. While supine, the patient has a soft crescendo-decrescendo systolic murmur at the apex and left sternal border; it becomes quite pronounced when he stands. Which of the following medications should be avoided while treating this patient's condition?",
+  "clues": [
+    {
+      "text": "chest discomfort that usually occurs during exercise",
+      "type": "blue",
+      "note": "Exertional chest discomfort that resolves with rest is anginal in quality. In a young person this is not coronary atherosclerosis but demand ischemia from a thick, poorly compliant left ventricle that cannot raise output enough during exercise - a pointer to hypertrophic cardiomyopathy (HCM)."
+    },
+    {
+      "text": "uncle who died suddenly at age 35",
+      "type": "orange",
+      "note": "A first/second-degree relative with sudden cardiac death at a young age is the classic family-history red flag for HCM, which is autosomal dominant (sarcomere gene mutations). HCM is the leading cause of sudden cardiac death in young athletes."
+    },
+    {
+      "text": "apical impulse is strong and sustained",
+      "type": "green",
+      "note": "A forceful, sustained (heaving) apical impulse reflects left ventricular hypertrophy. Combined with the family history and exertional symptoms, it supports a hypertrophied, stiff ventricle rather than a volume-overloaded one."
+    },
+    {
+      "text": "soft crescendo-decrescendo systolic murmur at the apex and left sternal border",
+      "type": "red",
+      "note": "A systolic ejection (crescendo-decrescendo) murmur best heard at the apex/left sternal border is the murmur of dynamic left ventricular outflow tract (LVOT) obstruction in HCM, produced by systolic anterior motion of the mitral valve against the hypertrophied septum."
+    },
+    {
+      "text": "it becomes quite pronounced when he stands",
+      "type": "red",
+      "note": "The single most discriminating maneuver: standing (and Valsalva) decreases venous return and LV cavity volume, which WORSENS the dynamic LVOT obstruction and makes the murmur LOUDER. This rising-with-decreased-preload behavior is characteristic of HCM (and MVP) and is the key to which drugs are dangerous."
+    }
+  ],
+  "whatMatters": "Strip the story to: young man, exertional angina, family history of sudden death, sustained apical impulse, and a systolic murmur that gets LOUDER on standing. That is HCM with dynamic LVOT obstruction. The asked point is which drug to AVOID - anything that drops LV volume worsens the obstruction, so nitrates (isosorbide dinitrate) are the answer - C.",
+  "strategy": "For 'which medication should be avoided,' first nail the mechanism of the disease, then ask what each drug does to it. HCM obstruction worsens when the LV cavity shrinks: drugs that drop PRELOAD (nitrates, diuretics) or AFTERLOAD (arterial vasodilators, dihydropyridine CCBs, ACE inhibitors) are harmful. Drugs that slow the heart and reduce contractility (beta blockers, verapamil, disopyramide) HELP by giving the ventricle more volume and time to fill.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Amiodarone",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Disopyramide",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Isosorbide dinitrate",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Metoprolol",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Verapamil",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "amiodarone - treats HCM arrhythmias, not harmful",
+      "detail": "WHAT IT IS: a class III antiarrhythmic (K+ channel blocker) used to control atrial fibrillation or ventricular arrhythmias that complicate HCM. ❌ WHY IT FAILS: it has no vasodilator/preload-lowering effect, so it does not worsen the outflow gradient; it is actually useful in HCM. ✅ Correct if: the question asked what to give for an arrhythmia in an HCM patient."
+    },
+    {
+      "letter": "B",
+      "label": "disopyramide - negative inotrope that HELPS HCM",
+      "detail": "WHAT IT IS: a class IA antiarrhythmic with a strong NEGATIVE INOTROPIC effect; it is specifically used in obstructive HCM to lower contractility and reduce the LVOT gradient. ❌ WHY IT FAILS: it relieves the obstruction rather than worsening it, so it is not a drug to avoid. ✅ Correct if: asked which agent reduces the outflow gradient via negative inotropy."
+    },
+    {
+      "letter": "D",
+      "label": "metoprolol - first-line beta blocker for HCM",
+      "detail": "WHAT IT IS: a beta-1 selective blocker that is negatively chronotropic and inotropic - first-line therapy in HCM because slowing the heart lengthens diastolic filling and reduces contractility, increasing LV volume. ❌ WHY IT FAILS: it improves the obstruction; giving it is the goal, not the danger. ✅ Correct if: asked for first-line symptomatic therapy in HCM."
+    },
+    {
+      "letter": "E",
+      "label": "verapamil - rate-slowing CCB used in HCM (your pick)",
+      "detail": "WHAT IT IS: a non-dihydropyridine calcium channel blocker that is negatively inotropic/chronotropic and is used in HCM when beta blockers are insufficient. ❌ WHY IT FAILS: unlike the vasodilating dihydropyridines, verapamil does not predominantly drop afterload, so it does not worsen obstruction in the way nitrates do; it is therapeutic, not contraindicated. The trap is lumping all 'calcium channel blockers' together. ✅ Correct if: the option had been a dihydropyridine arterial vasodilator (eg, nifedipine, amlodipine)."
+    }
+  ],
+  "reasoning": [
+    "Exertional angina + family history of sudden death + sustained apical impulse + systolic murmur that gets LOUDER on standing = HCM with dynamic LVOT obstruction",
+    "The gradient worsens whenever LV cavity volume falls",
+    "Nitrates are venodilators that drop preload -> smaller LV -> worse obstruction",
+    "Therefore isosorbide dinitrate must be AVOIDED -> answer C"
+  ],
+  "mechanism": "HCM is an autosomal dominant disease of sarcomere proteins (eg, beta-myosin heavy chain MYH7, myosin-binding protein C MYBPC3) causing asymmetric septal hypertrophy. Dynamic LVOT obstruction arises from systolic anterior motion of the mitral valve against the thick septum, and its severity depends on LV cavity size: anything that reduces preload (nitrates, diuretics, standing, Valsalva) or afterload (arterial vasodilators) shrinks the cavity and intensifies the gradient and murmur. Isosorbide dinitrate is a venodilator that markedly lowers preload, so it is avoided. Beneficial drugs are negative inotropes/chronotropes - beta blockers, verapamil, and disopyramide.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharmacology + CV: HCM management - AVOID preload/afterload reducers (nitrates, diuretics, dihydropyridine CCBs, ACE inhibitors); USE beta blockers, verapamil, disopyramide. Cross-ref the murmur-maneuvers table (standing/Valsalva increase HCM and MVP murmurs)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question is really 'what shrinks the left ventricle?' Translate the standing-louder murmur into 'obstruction worsens when preload falls,' then reject any preload/afterload reducer. Map drug -> effect on LV volume before answering."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on LVOT obstruction, systolic anterior motion, preload vs afterload, crescendo-decrescendo, negative inotrope, dihydropyridine vs non-dihydropyridine CCB? Tell me which and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "You picked verapamil because it is a calcium channel blocker, but rate-slowing verapamil HELPS HCM; the dangerous CCBs are the vasodilating dihydropyridines. The clean answer is the nitrate - a pure preload reducer."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Build the two-column reflex card: HCM HELP (beta blocker, verapamil, disopyramide) vs HCM AVOID (nitrates, diuretics, dihydropyridine CCB, ACE inhibitor, digoxin)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Exertional angina + FHx sudden death + murmur louder on standing",
+      "back": "Hypertrophic cardiomyopathy (HCM)"
+    },
+    {
+      "front": "Murmur increases with standing / Valsalva (decreased preload)",
+      "back": "HCM or mitral valve prolapse"
+    },
+    {
+      "front": "Drugs to AVOID in obstructive HCM",
+      "back": "Nitrates, diuretics, dihydropyridine CCBs, ACE inhibitors (anything that lowers LV volume)"
+    },
+    {
+      "front": "Drugs that HELP obstructive HCM",
+      "back": "Beta blockers, verapamil, disopyramide (negative inotropes/chronotropes)"
+    },
+    {
+      "front": "HCM inheritance / genes",
+      "back": "Autosomal dominant; beta-myosin heavy chain (MYH7), MYBPC3"
+    },
+    {
+      "front": "#1 cause of sudden cardiac death in young athletes",
+      "back": "HCM"
+    },
+    {
+      "front": "Mechanism of dynamic LVOT obstruction",
+      "back": "Systolic anterior motion (SAM) of the mitral valve"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "HCM pharmacology",
+      "detail": "Pharm/CV > hypertrophic cardiomyopathy management: avoid preload/afterload reducers (nitrates, diuretics, dihydropyridine CCBs, ACE inhibitors, digoxin); use beta blockers, verapamil, disopyramide.",
+      "location": "Pharm/CV > hypertrophic cardiomyopathy management: avoid preload/afterload reducers (nitrates, diuretics, dihydropyridine CCBs, ACE inhibitors, digoxin); use beta blockers, verapamil, disopyramide."
+    },
+    {
+      "tag": "stem dx",
+      "topic": "Hypertrophic cardiomyopathy",
+      "detail": "CV > cardiomyopathies: HCM - autosomal dominant sarcomere mutations, asymmetric septal hypertrophy, dynamic LVOT obstruction/SAM, murmur maneuvers, sudden cardiac death risk.",
+      "location": "CV > cardiomyopathies: HCM - autosomal dominant sarcomere mutations, asymmetric septal hypertrophy, dynamic LVOT obstruction/SAM, murmur maneuvers, sudden cardiac death risk."
+    },
+    {
+      "tag": "options",
+      "topic": "Antiarrhythmics & CCBs",
+      "detail": "Pharm > amiodarone (class III), disopyramide (class IA, negative inotrope), verapamil (non-dihydropyridine CCB) vs dihydropyridines, nitrates (venodilators).",
+      "location": "Pharm > amiodarone (class III), disopyramide (class IA, negative inotrope), verapamil (non-dihydropyridine CCB) vs dihydropyridines, nitrates (venodilators)."
+    },
+    {
+      "tag": "maneuvers",
+      "topic": "Murmur maneuvers",
+      "detail": "CV > effect of maneuvers on murmurs: standing/Valsalva (decreased preload) make HCM and MVP LOUDER; squatting/handgrip make them softer.",
+      "location": "CV > effect of maneuvers on murmurs: standing/Valsalva (decreased preload) make HCM and MVP LOUDER; squatting/handgrip make them softer."
+    }
+  ],
+  "memoryHook": "HCM hates an empty ventricle - anything that drops LV volume (Nitrates, diuretics) makes the obstruction worse.",
+  "stem": [
+    {
+      "text": "A 23-year-old man comes to the office due to "
+    },
+    {
+      "text": "chest discomfort that usually occurs during exercise",
+      "clue": true,
+      "type": "blue",
+      "note": "Exertional chest discomfort that resolves with rest is anginal in quality. In a young person this is not coronary atherosclerosis but demand ischemia from a thick, poorly compliant left ventricle that cannot raise output enough during exercise - a pointer to hypertrophic cardiomyopathy (HCM)."
+    },
+    {
+      "text": ", such as jogging or climbing stairs. The symptoms go away 5 to 10 minutes after he stops. The patient has not had syncope but mentions some shortness of breath that accompanies the chest pain. Family history includes an "
+    },
+    {
+      "text": "uncle who died suddenly at age 35",
+      "clue": true,
+      "type": "orange",
+      "note": "A first/second-degree relative with sudden cardiac death at a young age is the classic family-history red flag for HCM, which is autosomal dominant (sarcomere gene mutations). HCM is the leading cause of sudden cardiac death in young athletes."
+    },
+    {
+      "text": ". Blood pressure is 122/70 mm Hg and pulse is 70/min and regular. The "
+    },
+    {
+      "text": "apical impulse is strong and sustained",
+      "clue": true,
+      "type": "green",
+      "note": "A forceful, sustained (heaving) apical impulse reflects left ventricular hypertrophy. Combined with the family history and exertional symptoms, it supports a hypertrophied, stiff ventricle rather than a volume-overloaded one."
+    },
+    {
+      "text": ". While supine, the patient has a "
+    },
+    {
+      "text": "soft crescendo-decrescendo systolic murmur at the apex and left sternal border",
+      "clue": true,
+      "type": "red",
+      "note": "A systolic ejection (crescendo-decrescendo) murmur best heard at the apex/left sternal border is the murmur of dynamic left ventricular outflow tract (LVOT) obstruction in HCM, produced by systolic anterior motion of the mitral valve against the hypertrophied septum."
+    },
+    {
+      "text": "; "
+    },
+    {
+      "text": "it becomes quite pronounced when he stands",
+      "clue": true,
+      "type": "red",
+      "note": "The single most discriminating maneuver: standing (and Valsalva) decreases venous return and LV cavity volume, which WORSENS the dynamic LVOT obstruction and makes the murmur LOUDER. This rising-with-decreased-preload behavior is characteristic of HCM (and MVP) and is the key to which drugs are dangerous."
+    },
+    {
+      "text": ". Which of the following medications should be avoided while treating this patient's condition?"
+    }
+  ]
+}

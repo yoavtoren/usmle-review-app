@@ -1,0 +1,208 @@
+{
+  "id": "q152",
+  "item": 152,
+  "qid": "19780",
+  "title": "Congenital diaphragmatic hernia: pulmonary hypoplasia",
+  "system": "Embryology",
+  "topic": "Neonatal respiratory distress",
+  "correct": "E",
+  "yourAnswer": "D",
+  "percentCorrect": 46,
+  "vignette": "A neonate at 38 weeks gestation is delivered vaginally following an uncomplicated pregnancy. Immediately after delivery, the neonate experiences respiratory distress. Examination shows cyanosis, tachypnea, and poor perfusion. The patient is urgently intubated, and mechanical ventilation is initiated. A nasogastric tube is also inserted. On auscultation, asymmetric aeration with decreased left-sided breath sounds is noted. The abdomen is scaphoid. A chest x-ray is shown in the exhibit. Which of the following is the most likely cause of this patient's respiratory distress?",
+  "clues": [
+    {
+      "text": "experiences respiratory distress",
+      "type": "red",
+      "note": "Respiratory distress in the FIRST minutes of life in a TERM infant narrows the differential to structural problems (diaphragmatic hernia, airway anomaly) rather than the surfactant deficiency seen in premature babies. Term + immediate distress is a clue against RDS."
+    },
+    {
+      "text": "decreased left-sided breath sounds",
+      "type": "red",
+      "note": "Unilateral (left-sided) decreased breath sounds means one hemithorax is filled with something other than aerated lung. With a scaphoid abdomen, that 'something' is herniated bowel - congenital diaphragmatic hernia is most often a left posterolateral (Bochdalek) defect."
+    },
+    {
+      "text": "abdomen is scaphoid",
+      "type": "green",
+      "note": "A sunken, scaphoid abdomen is the giveaway: the abdominal viscera have shifted UP into the chest, so the belly looks empty. Decreased unilateral breath sounds + scaphoid abdomen = congenital diaphragmatic hernia until proven otherwise."
+    }
+  ],
+  "whatMatters": "Boil it down: a TERM newborn with immediate distress, decreased LEFT breath sounds, and a SCAPHOID abdomen = congenital diaphragmatic hernia. Abdominal organs herniate into the chest and compress the developing lung, so the lung never grows normally - the distress is from underdeveloped (hypoplastic) lung tissue, not missing surfactant. Answer E.",
+  "strategy": "For neonatal respiratory distress, split by TERM vs PRETERM plus the exam. Preterm + diffuse ground-glass/air bronchograms = surfactant deficiency (RDS). Term + scaphoid abdomen + unilateral absent breath sounds + bowel loops in the chest on x-ray = congenital diaphragmatic hernia with pulmonary hypoplasia. The scaphoid abdomen is the single best discriminator.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acute loss of negative pressure between visceral and parietal pleurae",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Dilated airspaces with bronchiolar metaplasia",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased pulmonary capillary wedge pressure",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pulmonary surfactant deficiency",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Underdevelopment of pulmonary tissue",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "pneumothorax - no scaphoid abdomen",
+      "detail": "WHAT IT IS: acute loss of negative intrapleural pressure = pneumothorax, where air between the visceral and parietal pleura collapses the lung and can cause asymmetric breath sounds and mediastinal shift. ❌ WHY IT FAILS: a pneumothorax shows a lucent hemithorax with a collapsed lung edge and would NOT cause a scaphoid abdomen or bowel in the chest; the herniated viscera point to CDH. ✅ Correct if: sudden decompensation with hyperresonance and a visceral pleural line on x-ray."
+    },
+    {
+      "letter": "B",
+      "label": "bronchopulmonary dysplasia - far too early",
+      "detail": "WHAT IT IS: dilated airspaces with bronchiolar metaplasia describes bronchopulmonary dysplasia, a CHRONIC lung injury from prolonged oxygen/ventilation in PREMATURE infants (develops over weeks). ❌ WHY IT FAILS: this is a term newborn distressed at BIRTH - there has been no time for a chronic ventilator-related process. ✅ Correct if: a preterm infant ventilated for weeks who remains oxygen-dependent."
+    },
+    {
+      "letter": "C",
+      "label": "pulmonary edema / left heart - wrong picture",
+      "detail": "WHAT IT IS: increased pulmonary capillary wedge pressure reflects elevated left atrial/LV filling pressure and causes cardiogenic pulmonary edema. ❌ WHY IT FAILS: that implies left-heart disease with bilateral congestion, not a unilateral silent hemithorax with a scaphoid abdomen; the findings here are structural (CDH). ✅ Correct if: a neonate with critical left-heart obstruction and pulmonary venous congestion."
+    },
+    {
+      "letter": "D",
+      "label": "surfactant deficiency (RDS) - wrong patient (your pick)",
+      "detail": "WHAT IT IS: pulmonary surfactant deficiency causes neonatal respiratory distress syndrome (RDS) from immature type II pneumocytes; x-ray shows diffuse, bilateral ground-glass opacities with air bronchograms. ❌ WHY IT FAILS: RDS is a disease of PREMATURE infants; this baby is 38 weeks with a scaphoid abdomen and unilateral findings - that is CDH, not RDS. The trap is the generic 'neonatal distress -> surfactant.' ✅ Correct if: a premature infant with diffuse bilateral ground-glass lungs."
+    }
+  ],
+  "reasoning": [
+    "Term neonate, immediate distress, decreased LEFT breath sounds + scaphoid abdomen = congenital diaphragmatic hernia",
+    "Abdominal viscera herniate into the thorax and compress the developing lung",
+    "Compression prevents normal lung growth -> pulmonary hypoplasia",
+    "Cause of distress = underdevelopment of pulmonary tissue -> answer E"
+  ],
+  "mechanism": "Congenital diaphragmatic hernia results from failure of the pleuroperitoneal membrane to close in the first trimester - most often a left posterolateral (Bochdalek) defect - allowing abdominal viscera to herniate into the thorax. This both produces the scaphoid abdomen and decreased ipsilateral breath sounds AND compresses the developing lung, causing pulmonary HYPOPLASIA with associated pulmonary hypertension; the underdeveloped lung is what drives the refractory hypoxemia. Chest x-ray shows bowel loops in the hemithorax with mediastinal shift, and the nasogastric tube tip may sit within the chest. Management is stabilization (including the NG tube to decompress the gut) followed by surgical repair.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Embryology/Pulmonary > congenital diaphragmatic hernia: pleuroperitoneal membrane failure, Bochdalek (posterolateral, usually left), pulmonary hypoplasia + pulmonary hypertension, scaphoid abdomen, bowel in chest. Contrast with neonatal RDS."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question asks for the MECHANISM of the distress, not just the diagnosis. Once you see CDH, connect 'organs in chest -> lung couldn't grow -> hypoplasia.' Choose the cause that explains a structurally underdeveloped lung."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on scaphoid abdomen, pleuroperitoneal membrane, Bochdalek vs Morgagni, pulmonary hypoplasia, surfactant, air bronchograms? Tell me which and I'll define it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Surfactant deficiency (D) is the reflex 'newborn can't breathe' answer, but it belongs to PREMATURE infants with diffuse ground-glass lungs. The scaphoid abdomen + unilateral findings + term gestation redirect you to CDH."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The CXR shows bowel loops (air-filled rings) in the left chest, a mediastinal shift, and an NG tube curving up into the thorax. Practice spotting bowel-gas pattern in the chest vs the diffuse ground-glass of RDS; let the scaphoid abdomen prime you before you read the film."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Term neonate + scaphoid abdomen + unilateral absent breath sounds",
+      "back": "Congenital diaphragmatic hernia (CDH)"
+    },
+    {
+      "front": "Most common CDH defect/location",
+      "back": "Left posterolateral (Bochdalek)"
+    },
+    {
+      "front": "Why CDH causes refractory hypoxemia",
+      "back": "Pulmonary hypoplasia + pulmonary hypertension"
+    },
+    {
+      "front": "CXR: bowel loops in chest, NG tube in thorax",
+      "back": "Congenital diaphragmatic hernia"
+    },
+    {
+      "front": "Preterm + diffuse ground-glass + air bronchograms",
+      "back": "Neonatal RDS (surfactant deficiency)"
+    },
+    {
+      "front": "Surfactant source / maturity test",
+      "back": "Type II pneumocytes; lecithin:sphingomyelin ratio >=2"
+    },
+    {
+      "front": "Anterior diaphragmatic hernia",
+      "back": "Morgagni (less common)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Congenital diaphragmatic hernia",
+      "detail": "Embryology/Pulm > CDH: pleuroperitoneal membrane failure, Bochdalek (posterolateral left), pulmonary hypoplasia, scaphoid abdomen, bowel in chest, pulmonary hypertension.",
+      "location": "Embryology/Pulm > CDH: pleuroperitoneal membrane failure, Bochdalek (posterolateral left), pulmonary hypoplasia, scaphoid abdomen, bowel in chest, pulmonary hypertension."
+    },
+    {
+      "tag": "option D",
+      "topic": "Neonatal respiratory distress syndrome",
+      "detail": "Pulm/Peds > surfactant deficiency RDS: prematurity, type II pneumocytes, L:S ratio, ground-glass + air bronchograms; antenatal steroids, surfactant therapy.",
+      "location": "Pulm/Peds > surfactant deficiency RDS: prematurity, type II pneumocytes, L:S ratio, ground-glass + air bronchograms; antenatal steroids, surfactant therapy."
+    },
+    {
+      "tag": "option B",
+      "topic": "Bronchopulmonary dysplasia",
+      "detail": "Pulm > chronic lung disease of prematurity from prolonged O2/ventilation.",
+      "location": "Pulm > chronic lung disease of prematurity from prolonged O2/ventilation."
+    },
+    {
+      "tag": "option A",
+      "topic": "Pneumothorax / pleural pressure",
+      "detail": "Pulm > intrapleural pressure physiology and pneumothorax findings.",
+      "location": "Pulm > intrapleural pressure physiology and pneumothorax findings."
+    }
+  ],
+  "memoryHook": "Scaphoid belly = guts up in the chest = squashed lung (hypoplasia) - that's CDH, not surfactant.",
+  "stem": [
+    {
+      "text": "A neonate at 38 weeks gestation is delivered vaginally following an uncomplicated pregnancy. Immediately after delivery, the neonate "
+    },
+    {
+      "text": "experiences respiratory distress",
+      "clue": true,
+      "type": "red",
+      "note": "Respiratory distress in the FIRST minutes of life in a TERM infant narrows the differential to structural problems (diaphragmatic hernia, airway anomaly) rather than the surfactant deficiency seen in premature babies. Term + immediate distress is a clue against RDS."
+    },
+    {
+      "text": ". Examination shows cyanosis, tachypnea, and poor perfusion. The patient is urgently intubated, and mechanical ventilation is initiated. A nasogastric tube is also inserted. On auscultation, asymmetric aeration with "
+    },
+    {
+      "text": "decreased left-sided breath sounds",
+      "clue": true,
+      "type": "red",
+      "note": "Unilateral (left-sided) decreased breath sounds means one hemithorax is filled with something other than aerated lung. With a scaphoid abdomen, that 'something' is herniated bowel - congenital diaphragmatic hernia is most often a left posterolateral (Bochdalek) defect."
+    },
+    {
+      "text": " is noted. The "
+    },
+    {
+      "text": "abdomen is scaphoid",
+      "clue": true,
+      "type": "green",
+      "note": "A sunken, scaphoid abdomen is the giveaway: the abdominal viscera have shifted UP into the chest, so the belly looks empty. Decreased unilateral breath sounds + scaphoid abdomen = congenital diaphragmatic hernia until proven otherwise."
+    },
+    {
+      "text": ". A chest x-ray is shown in the exhibit. Which of the following is the most likely cause of this patient's respiratory distress?"
+    }
+  ]
+}

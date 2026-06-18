@@ -1,0 +1,247 @@
+{
+  "id": "q159",
+  "item": 159,
+  "qid": "21132",
+  "title": "Reye syndrome: diffuse astrocyte swelling (cerebral edema)",
+  "system": "Pathology",
+  "topic": "Toxic-metabolic encephalopathy",
+  "correct": "A",
+  "yourAnswer": "F",
+  "percentCorrect": 52,
+  "vignette": "A 2-year-old boy with no chronic medical conditions is brought to the emergency department after he was found unresponsive with vomitus in his mouth. The patient has had muscle aches, cough, rhinorrhea, diarrhea, vomiting, and fever for the past 3 days. His parents gave him aspirin twice daily for symptom control. Vital signs are within normal limits. On examination, the patient is somnolent but withdraws from pain. Pupils are equal in size and reactive to light. Cardiopulmonary examination shows no abnormalities. Hepatomegaly is present. Extremities are well perfused. Laboratory results are as follows:\nAspartate aminotransferase (SGOT): 2,170 U/L\nAlanine aminotransferase (SGPT): 1,587 U/L\nTotal bilirubin: 1.7 mg/dL\nDirect bilirubin: 1.2 mg/dL\nSerum ammonia: 106 umol/L (normal: 11-32)\nOver the next day, the patient's condition deteriorates and he dies despite supportive care. Examination of the brain would most likely reveal which of the following findings?",
+  "clues": [
+    {
+      "text": "found unresponsive with vomitus in his mouth",
+      "type": "red",
+      "note": "Acute encephalopathy (unresponsiveness, vomiting) in a previously healthy toddler signals a rapidly progressive brain process. Paired with liver findings below, this is the encephalopathy of Reye syndrome."
+    },
+    {
+      "text": "muscle aches, cough, rhinorrhea, diarrhea, vomiting, and fever for the past 3 days",
+      "type": "blue",
+      "note": "A preceding VIRAL illness (influenza-like or varicella) is the setup for Reye syndrome - the syndrome classically follows a viral infection treated with aspirin in a child."
+    },
+    {
+      "text": "aspirin twice daily",
+      "type": "red",
+      "note": "Aspirin (salicylate) given to a CHILD during a viral illness is the critical exposure. Salicylates are mitochondrial toxins that impair hepatic fatty-acid oxidation, triggering Reye syndrome - this is why aspirin is avoided in children."
+    },
+    {
+      "text": "Hepatomegaly is present",
+      "type": "green",
+      "note": "Hepatomegaly plus the markedly elevated transaminases below reflect acute liver injury (microvesicular steatosis) - the hepatic arm of Reye syndrome."
+    },
+    {
+      "text": "Serum ammonia: 106 umol/L (normal: 11-32)",
+      "type": "green",
+      "note": "Hyperammonemia (106 vs normal 11-32) results from hepatic dysfunction/reduced urea-cycle activity. Ammonia is the link to the brain finding: astrocytes detoxify it to glutamine, which is osmotically active and makes them swell."
+    }
+  ],
+  "whatMatters": "Strip the story to: a young child given ASPIRIN during a viral illness who develops encephalopathy (unresponsive) plus acute liver failure (hepatomegaly, AST/ALT in the thousands, hyperammonemia) = Reye syndrome. At autopsy the brain shows cerebral edema from DIFFUSE ASTROCYTE SWELLING, driven by ammonia. Answer A.",
+  "strategy": "Tie aspirin + viral infection + child + liver dysfunction together = Reye syndrome, every time. Then, for the BRAIN in any HYPERAMMONEMIC encephalopathy, the pathology is astrocyte swelling/cerebral edema (ammonia -> glutamine in astrocytes -> osmotic swelling). Map 'high ammonia' to 'swollen astrocytes.'",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Diffuse astrocyte swelling",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Dural venous thrombosis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Hemorrhagic necrosis",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Inflammation of vessel walls",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Long-chain fatty acid deposits",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Pontine myelinolysis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "dural venous thrombosis - wrong mechanism",
+      "detail": "WHAT IT IS: cerebral venous sinus thrombosis - headache and raised intracranial pressure, usually in hypercoagulable states. ❌ WHY IT FAILS: it doesn't explain the liver failure and hyperammonemia, and is not the Reye brain finding. ✅ Correct if: headache + venous infarct in a hypercoagulable patient (eg, OCPs, dehydration)."
+    },
+    {
+      "letter": "C",
+      "label": "hemorrhagic necrosis - that's HSV encephalitis",
+      "detail": "WHAT IT IS: hemorrhagic necrosis of the TEMPORAL lobes is characteristic of HSV-1 encephalitis. ❌ WHY IT FAILS: HSV encephalitis gives focal temporal-lobe signs and seizures, not acute liver failure after aspirin; the picture here is metabolic. ✅ Correct if: fever + focal temporal findings, CSF lymphocytes/RBCs, HSV PCR positive."
+    },
+    {
+      "letter": "D",
+      "label": "inflammation of vessel walls - CNS vasculitis",
+      "detail": "WHAT IT IS: vessel-wall inflammation = CNS vasculitis, causing ischemia/multifocal deficits. ❌ WHY IT FAILS: there is no vasculitic/systemic inflammatory picture; the liver injury and hyperammonemia point to Reye -> astrocyte swelling. ✅ Correct if: multifocal strokes with systemic vasculitis."
+    },
+    {
+      "letter": "E",
+      "label": "long-chain fatty acid deposits - wrong organ/chronicity",
+      "detail": "WHAT IT IS: brain lipid deposition seen in some chronic leukodystrophies/degenerative disease. ❌ WHY IT FAILS: in Reye the microvesicular FAT is in the LIVER, not long-chain fatty acid deposits in the brain; the lethal acute change is astrocyte swelling/edema. ✅ Correct if: a chronic neurodegenerative or peroxisomal disorder."
+    },
+    {
+      "letter": "F",
+      "label": "pontine myelinolysis - no sodium story (your pick)",
+      "detail": "WHAT IT IS: osmotic demyelination of the central pons from RAPID correction of hyponatremia. ❌ WHY IT FAILS: there is no hyponatremia or rapid sodium shift here; the mechanism is hyperammonemic cerebral edema (astrocyte swelling), not osmotic demyelination. The trap is matching 'coma' to a named brain lesion without the sodium history. ✅ Correct if: rapid overcorrection of chronic hyponatremia -> locked-in/quadriparesis."
+    }
+  ],
+  "reasoning": [
+    "Child + viral illness + ASPIRIN = Reye syndrome",
+    "Salicylate is a mitochondrial toxin -> impaired hepatic fatty-acid oxidation -> acute liver failure + hyperammonemia",
+    "Astrocytes detoxify ammonia to glutamine, which is osmotically active",
+    "Astrocytes swell -> diffuse cerebral edema -> answer A"
+  ],
+  "mechanism": "Reye syndrome follows salicylate (aspirin) use in a child during a viral illness (eg, influenza, varicella). Salicylate is a mitochondrial toxin that impairs hepatic fatty-acid oxidation, producing microvesicular hepatic steatosis and acute liver failure (massive transaminitis, hepatomegaly) with reduced urea-cycle activity and HYPERAMMONEMIA. In the brain, ammonia is detoxified by astrocytes via glutamine synthetase; the accumulating glutamine is osmotically active, drawing in water and causing DIFFUSE ASTROCYTE SWELLING and cerebral edema, which raises intracranial pressure and is the major cause of death. This is why aspirin is avoided in children.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pathology/Peds > Reye syndrome: aspirin + viral infection, mitochondrial toxicity, microvesicular steatosis, hyperammonemia, cerebral edema/astrocyte swelling. Cross-ref urea cycle/hyperammonemia."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: (1) recognize Reye from aspirin + virus + liver failure; (2) connect hyperammonemia to the brain finding (astrocyte swelling via glutamine). Let the ammonia value point you to the astrocyte."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on Reye syndrome, microvesicular steatosis, hyperammonemia, astrocyte, glutamine synthetase, central pontine myelinolysis, osmotic demyelination? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Pontine myelinolysis (F) is a named coma lesion, but it requires a rapid SODIUM correction that isn't in this stem. The hyperammonemia (not hyponatremia) makes diffuse astrocyte swelling the answer."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the chain: aspirin + virus in a kid -> Reye -> fatty liver + high ammonia -> astrocytes swell (cerebral edema)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Aspirin + viral illness in a child -> encephalopathy + liver failure",
+      "back": "Reye syndrome"
+    },
+    {
+      "front": "Reye syndrome brain pathology",
+      "back": "Diffuse astrocyte swelling / cerebral edema (hyperammonemia)"
+    },
+    {
+      "front": "Reye syndrome liver pathology",
+      "back": "Microvesicular steatosis (mitochondrial fatty-acid oxidation block)"
+    },
+    {
+      "front": "How astrocytes are injured by ammonia",
+      "back": "Glutamine synthetase -> osmotic glutamine accumulation -> swelling"
+    },
+    {
+      "front": "Central pontine myelinolysis cause",
+      "back": "Rapid correction of hyponatremia"
+    },
+    {
+      "front": "Temporal-lobe hemorrhagic necrosis",
+      "back": "HSV-1 encephalitis"
+    },
+    {
+      "front": "Why avoid aspirin in children",
+      "back": "Risk of Reye syndrome"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Reye syndrome",
+      "detail": "Path/Peds > Reye syndrome: aspirin + viral infection, mitochondrial toxicity, microvesicular hepatic steatosis, hyperammonemia, cerebral edema (astrocyte swelling).",
+      "location": "Path/Peds > Reye syndrome: aspirin + viral infection, mitochondrial toxicity, microvesicular hepatic steatosis, hyperammonemia, cerebral edema (astrocyte swelling)."
+    },
+    {
+      "tag": "option F",
+      "topic": "Central pontine myelinolysis",
+      "detail": "Neuro > osmotic demyelination syndrome from rapid correction of hyponatremia.",
+      "location": "Neuro > osmotic demyelination syndrome from rapid correction of hyponatremia."
+    },
+    {
+      "tag": "option C",
+      "topic": "HSV-1 encephalitis",
+      "detail": "Micro/Neuro > temporal-lobe hemorrhagic necrosis; HSV PCR; treat with acyclovir.",
+      "location": "Micro/Neuro > temporal-lobe hemorrhagic necrosis; HSV PCR; treat with acyclovir."
+    },
+    {
+      "tag": "options B/D",
+      "topic": "Cerebral venous thrombosis / CNS vasculitis",
+      "detail": "Neuro > venous sinus thrombosis (hypercoagulable) and CNS vasculitis (vessel-wall inflammation).",
+      "location": "Neuro > venous sinus thrombosis (hypercoagulable) and CNS vasculitis (vessel-wall inflammation)."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Hyperammonemia / urea cycle",
+      "detail": "Biochem > urea cycle and ammonia -> astrocyte glutamine swelling (also hepatic encephalopathy).",
+      "location": "Biochem > urea cycle and ammonia -> astrocyte glutamine swelling (also hepatic encephalopathy)."
+    }
+  ],
+  "memoryHook": "Aspirin + a virus in a kid = Reye: fatty liver + sky-high ammonia -> astrocytes swell (brain edema). It's not a sodium problem.",
+  "stem": [
+    {
+      "text": "A 2-year-old boy with no chronic medical conditions is brought to the emergency department after he was "
+    },
+    {
+      "text": "found unresponsive with vomitus in his mouth",
+      "clue": true,
+      "type": "red",
+      "note": "Acute encephalopathy (unresponsiveness, vomiting) in a previously healthy toddler signals a rapidly progressive brain process. Paired with liver findings below, this is the encephalopathy of Reye syndrome."
+    },
+    {
+      "text": ". The patient has had "
+    },
+    {
+      "text": "muscle aches, cough, rhinorrhea, diarrhea, vomiting, and fever for the past 3 days",
+      "clue": true,
+      "type": "blue",
+      "note": "A preceding VIRAL illness (influenza-like or varicella) is the setup for Reye syndrome - the syndrome classically follows a viral infection treated with aspirin in a child."
+    },
+    {
+      "text": ". His parents gave him "
+    },
+    {
+      "text": "aspirin twice daily",
+      "clue": true,
+      "type": "red",
+      "note": "Aspirin (salicylate) given to a CHILD during a viral illness is the critical exposure. Salicylates are mitochondrial toxins that impair hepatic fatty-acid oxidation, triggering Reye syndrome - this is why aspirin is avoided in children."
+    },
+    {
+      "text": " for symptom control. Vital signs are within normal limits. On examination, the patient is somnolent but withdraws from pain. Pupils are equal in size and reactive to light. Cardiopulmonary examination shows no abnormalities. "
+    },
+    {
+      "text": "Hepatomegaly is present",
+      "clue": true,
+      "type": "green",
+      "note": "Hepatomegaly plus the markedly elevated transaminases below reflect acute liver injury (microvesicular steatosis) - the hepatic arm of Reye syndrome."
+    },
+    {
+      "text": ". Extremities are well perfused. Laboratory results are as follows:\nAspartate aminotransferase (SGOT): 2,170 U/L\nAlanine aminotransferase (SGPT): 1,587 U/L\nTotal bilirubin: 1.7 mg/dL\nDirect bilirubin: 1.2 mg/dL\n"
+    },
+    {
+      "text": "Serum ammonia: 106 umol/L (normal: 11-32)",
+      "clue": true,
+      "type": "green",
+      "note": "Hyperammonemia (106 vs normal 11-32) results from hepatic dysfunction/reduced urea-cycle activity. Ammonia is the link to the brain finding: astrocytes detoxify it to glutamine, which is osmotically active and makes them swell."
+    },
+    {
+      "text": "\nOver the next day, the patient's condition deteriorates and he dies despite supportive care. Examination of the brain would most likely reveal which of the following findings?"
+    }
+  ]
+}

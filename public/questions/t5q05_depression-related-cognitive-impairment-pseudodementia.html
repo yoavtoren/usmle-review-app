@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depression-related cognitive impairment (pseudodementia)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 5 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q154", "item": 154, "qid": "15447", "title": "Depression-related cognitive impairment (pseudodementia)", "system": "Psychiatry", "topic": "Mood disorders / dementia differential", "correct": "C", "yourAnswer": "C", "percentCorrect": 73, "vignette": "A 79-year-old man is brought to the office by his wife for evaluation of memory impairment. The patient is a recently retired professor who began having memory problems a month ago. He has been forgetting to take his medication, has had difficulty remembering the names of his grandchildren, and has neglected to turn off the stove on more than one occasion. The patient used to enjoy reading and playing with his grandchildren but has recently stopped doing both of these activities. He also has difficulty staying asleep, low appetite, and decreased energy. The patient has hypertension and type 2 diabetes, for which he takes medications. He has a family history of Alzheimer disease. The patient says, \"I just feel so worthless since retiring.\" Temperature is 36.7 C (98.1 F), blood pressure is 119/78 mm Hg, pulse is 74/min, and respirations are 14/min. Neurological examination reveals no focal deficits. Montreal Cognitive Assessment score is 23 (normal: >=26/30). Which of the following is the most likely diagnosis?", "clues": [{"text": "began having memory problems a month ago", "type": "red", "note": "The TIME COURSE is the key. Cognitive decline over only ~1 month is far too fast for a neurodegenerative dementia (which progresses insidiously over years). An acute/subacute onset should immediately raise a treatable/reversible cause such as depression."}, {"text": "used to enjoy reading and playing with his grandchildren but has recently stopped", "type": "red", "note": "Loss of interest/pleasure in previously enjoyed activities is anhedonia - a core symptom of major depression, not of early dementia (where insight and interests are often preserved at first)."}, {"text": "difficulty staying asleep, low appetite, and decreased energy", "type": "green", "note": "Insomnia, decreased appetite, and low energy are the neurovegetative symptoms of depression (the S, A, and E of SIG-E-CAPS). Their presence alongside cognitive complaints points to a mood disorder driving the picture."}, {"text": "I just feel so worthless since retiring", "type": "green", "note": "Feelings of worthlessness are a core depressive symptom, and retirement is a plausible precipitating stressor/loss. This quote ties the cognitive complaints to an underlying major depressive episode."}, {"text": "Montreal Cognitive Assessment score is 23", "type": "blue", "note": "A MoCA of 23 (normal >=26) is objectively abnormal but only mildly so. Depression-related cognitive impairment can lower cognitive scores; the abnormal score does NOT by itself prove a neurodegenerative dementia, especially given the acute onset and mood symptoms."}], "whatMatters": "Strip the story to: an ACUTE (~1 month) cognitive decline PLUS a full depressive syndrome - anhedonia, insomnia, low appetite/energy, worthlessness, after the stressor of retirement. That combination is depression-related cognitive impairment ('pseudodementia'). The Alzheimer family history and low MoCA are bait toward dementia; the rapid onset and mood symptoms make depression the answer - C.", "strategy": "In an elderly 'memory loss' stem, use TIME COURSE + MOOD as the discriminators. True dementia is insidious (months-years) with intact mood early; depression-related cognitive impairment is subacute (weeks) WITH neurovegetative/mood symptoms and is REVERSIBLE with treatment. Count the SIG-E-CAPS features before defaulting to Alzheimer disease.", "options": [{"letter": "A", "text": "Alzheimer disease", "correct": false}, {"letter": "B", "text": "Dementia with Lewy bodies", "correct": false}, {"letter": "C", "text": "Depression-related cognitive impairment", "correct": true}, {"letter": "D", "text": "Frontotemporal dementia", "correct": false}, {"letter": "E", "text": "Normal aging", "correct": false}, {"letter": "F", "text": "Vascular dementia", "correct": false}], "eliminations": [{"letter": "A", "label": "Alzheimer disease - too fast, mood-driven", "detail": "WHAT IT IS: the most common dementia - insidious, progressive memory loss over YEARS, with early short-term memory/hippocampal involvement. ❌ WHY IT FAILS: this decline is ~1 month and comes with a full depressive syndrome; Alzheimer disease does not begin abruptly with anhedonia and worthlessness. The family history is the bait. ✅ Correct if: gradual multi-year memory decline without prominent mood symptoms."}, {"letter": "B", "label": "dementia with Lewy bodies - missing core features", "detail": "WHAT IT IS: dementia plus visual hallucinations, FLUCTUATING cognition, parkinsonism, and REM-sleep behavior disorder. ❌ WHY IT FAILS: none of those hallmark features are present; instead there is a depressive syndrome. ✅ Correct if: visual hallucinations + parkinsonism + fluctuating attention."}, {"letter": "D", "label": "frontotemporal dementia - wrong syndrome/age", "detail": "WHAT IT IS: early personality/behavior change (disinhibition) or progressive aphasia, usually onset before age 65, with frontal/temporal atrophy. ❌ WHY IT FAILS: there is no behavioral disinhibition or language deficit; the picture is mood-driven in a 79-year-old. ✅ Correct if: early behavioral disinhibition or progressive aphasia in a younger patient."}, {"letter": "E", "label": "normal aging - he has real impairment", "detail": "WHAT IT IS: benign age-related slowing and word-finding/forgetfulness with PRESERVED daily function and NORMAL cognitive testing. ❌ WHY IT FAILS: he has functional impairment (left the stove on, missed medications), an abnormal MoCA (23), and depressive symptoms - not normal aging. ✅ Correct if: purely subjective forgetfulness with normal testing and intact function."}, {"letter": "F", "label": "vascular dementia - no stepwise/focal pattern", "detail": "WHAT IT IS: STEPWISE cognitive decline with focal neurologic signs, linked to cerebrovascular disease and infarcts. ❌ WHY IT FAILS: the onset is subacute and continuous with NO focal deficits; his vascular risk factors (HTN, diabetes) are bait. ✅ Correct if: stepwise deterioration with focal findings and infarcts on imaging."}], "reasoning": ["Acute ~1-month cognitive decline (too fast for neurodegeneration)", "Plus anhedonia, insomnia, low appetite/energy, worthlessness, after retirement", "= major depressive episode causing reversible cognitive impairment (pseudodementia)", "Most likely diagnosis -> answer C"], "mechanism": "Late-life major depression can present with prominent cognitive impairment ('pseudodementia') that mimics dementia but is REVERSIBLE with treatment of the mood disorder. Features favoring depression over a neurodegenerative dementia include a relatively ACUTE/subacute onset, prominent neurovegetative symptoms (insomnia, anorexia, low energy), anhedonia and feelings of worthlessness, an identifiable stressor (eg, retirement), and patients who tend to answer 'I don't know' rather than confabulate. Treating the underlying major depressive disorder (psychotherapy and/or an antidepressant) improves the cognition; by contrast, dementia is insidious, progressive, and not reversed by antidepressants.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Psychiatry > major depressive disorder + late-life depression/pseudodementia; SIG-E-CAPS criteria and the reversibility point. Cross-ref Neuro dementias table to contrast."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Frame it as 'dementia vs depression.' Two levers: onset speed (weeks = depression, years = dementia) and mood/neurovegetative symptoms. Tally the depressive criteria before picking a dementia."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on pseudodementia, anhedonia, neurovegetative symptoms, SIG-E-CAPS, MoCA, insidious vs stepwise? Tell me which term and I'll explain it."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "The Alzheimer family history (A) and an abnormal MoCA pull you toward dementia. But a 1-month onset plus a full depressive syndrome outweighs both - depression-related cognitive impairment is the reversible mimic being tested."}, {"key": "other", "label": "✍️ Something else", "message": "Bank the rule: acute cognitive decline + depressive symptoms in an elder = treat the depression first; the cognition often follows."}], "keywords": [{"front": "Acute memory loss + depressive symptoms in an elderly patient", "back": "Depression-related cognitive impairment (pseudodementia)"}, {"front": "Reversible cognitive impairment with treatment", "back": "Late-life major depression"}, {"front": "Insidious progressive memory loss over years", "back": "Alzheimer disease"}, {"front": "Stepwise decline + focal deficits", "back": "Vascular dementia"}, {"front": "Visual hallucinations + parkinsonism + fluctuations", "back": "Dementia with Lewy bodies"}, {"front": "Disinhibition/personality change before age 65", "back": "Frontotemporal dementia"}, {"front": "Depression screen mnemonic", "back": "SIG-E-CAPS (sleep, interest, guilt, energy, concentration, appetite, psychomotor, suicidality)"}], "firstAid": [{"tag": "answer", "topic": "Major depression / pseudodementia", "detail": "Psychiatry > major depressive disorder + late-life depression: SIG-E-CAPS, depression-related cognitive impairment (reversible), distinguishing from dementia."}, {"tag": "options", "topic": "Dementia subtypes", "detail": "Neuro > dementias table: Alzheimer, vascular, Lewy body, frontotemporal - key distinguishing features; normal aging vs MCI vs dementia."}, {"tag": "stem", "topic": "Depression vs dementia workup", "detail": "Psychiatry/Neuro > onset, effort on testing ('I don't know' vs confabulation), neurovegetative symptoms, response to antidepressants."}], "memoryHook": "Fast memory loss + 'I feel worthless' + can't sleep or eat = depression wearing a dementia mask (pseudodementia), and it's reversible.", "stem": [{"text": "A 79-year-old man is brought to the office by his wife for evaluation of memory impairment. The patient is a recently retired professor who "}, {"text": "began having memory problems a month ago", "clue": true, "type": "red", "note": "The TIME COURSE is the key. Cognitive decline over only ~1 month is far too fast for a neurodegenerative dementia (which progresses insidiously over years). An acute/subacute onset should immediately raise a treatable/reversible cause such as depression."}, {"text": ". He has been forgetting to take his medication, has had difficulty remembering the names of his grandchildren, and has neglected to turn off the stove on more than one occasion. The patient "}, {"text": "used to enjoy reading and playing with his grandchildren but has recently stopped", "clue": true, "type": "red", "note": "Loss of interest/pleasure in previously enjoyed activities is anhedonia - a core symptom of major depression, not of early dementia (where insight and interests are often preserved at first)."}, {"text": " doing both of these activities. He also has "}, {"text": "difficulty staying asleep, low appetite, and decreased energy", "clue": true, "type": "green", "note": "Insomnia, decreased appetite, and low energy are the neurovegetative symptoms of depression (the S, A, and E of SIG-E-CAPS). Their presence alongside cognitive complaints points to a mood disorder driving the picture."}, {"text": ". The patient has hypertension and type 2 diabetes, for which he takes medications. He has a family history of Alzheimer disease. The patient says, \""}, {"text": "I just feel so worthless since retiring", "clue": true, "type": "green", "note": "Feelings of worthlessness are a core depressive symptom, and retirement is a plausible precipitating stressor/loss. This quote ties the cognitive complaints to an underlying major depressive episode."}, {"text": ".\" Temperature is 36.7 C (98.1 F), blood pressure is 119/78 mm Hg, pulse is 74/min, and respirations are 14/min. Neurological examination reveals no focal deficits. "}, {"text": "Montreal Cognitive Assessment score is 23", "clue": true, "type": "blue", "note": "A MoCA of 23 (normal >=26) is objectively abnormal but only mildly so. Depression-related cognitive impairment can lower cognitive scores; the abnormal score does NOT by itself prove a neurodegenerative dementia, especially given the acute onset and mood symptoms."}, {"text": " (normal: >=26/30). Which of the following is the most likely diagnosis?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

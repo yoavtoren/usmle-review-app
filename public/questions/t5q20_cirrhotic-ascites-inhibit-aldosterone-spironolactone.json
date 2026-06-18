@@ -1,0 +1,207 @@
+{
+  "id": "q169",
+  "item": 169,
+  "qid": "18549",
+  "title": "Cirrhotic ascites: inhibit aldosterone (spironolactone)",
+  "system": "Pharmacology",
+  "topic": "Cirrhosis / ascites",
+  "correct": "A",
+  "yourAnswer": "E",
+  "percentCorrect": 43,
+  "vignette": "A 42-year-old man comes to the office due to increased abdominal girth associated with a 9-kg (19.8-lb) weight gain over the past month. He drinks a liter of vodka daily and denies smoking or using intravenous drugs. Blood pressure is 110/70 mm Hg. The abdomen is moderately distended, and a fluid wave is elicited. Multiple spider angiomas are present. Laboratory studies reveal thrombocytopenia, hypoalbuminemia, a normal sodium level, and an elevated PT. An upper endoscopy is performed, which shows no esophageal or gastric varices. Pharmacotherapy aimed at inhibiting which of the following should be considered for this patient?",
+  "clues": [
+    {
+      "text": "drinks a liter of vodka daily",
+      "type": "orange",
+      "note": "Heavy chronic alcohol use is the leading risk factor for cirrhosis. It sets up the entire picture: portal hypertension, ascites, and the synthetic/portal lab abnormalities below."
+    },
+    {
+      "text": "a fluid wave is elicited",
+      "type": "red",
+      "note": "A positive fluid wave indicates ASCITES. In a heavy drinker with stigmata of chronic liver disease, the ascites is due to cirrhosis with portal hypertension - the target of therapy."
+    },
+    {
+      "text": "Multiple spider angiomas are present",
+      "type": "green",
+      "note": "Spider angiomas are a cutaneous stigma of chronic liver disease (impaired estrogen metabolism). Together with the labs, they confirm cirrhosis as the cause of the ascites."
+    },
+    {
+      "text": "thrombocytopenia, hypoalbuminemia, a normal sodium level, and an elevated PT",
+      "type": "green",
+      "note": "This lab cluster is classic cirrhosis: thrombocytopenia from portal hypertension/splenic sequestration; hypoalbuminemia and elevated PT from impaired hepatic synthesis. A NORMAL sodium also tells you an ADH antagonist (for hyponatremia) is not what's needed here."
+    }
+  ],
+  "whatMatters": "Strip the story to: heavy alcohol use + ascites (fluid wave) + spider angiomas + thrombocytopenia/hypoalbuminemia/elevated PT = alcoholic cirrhosis with ascites. Portal hypertension -> splanchnic vasodilation -> RAAS activation -> aldosterone-driven sodium/water retention. The drug to use INHIBITS ALDOSTERONE (spironolactone). Answer A.",
+  "strategy": "For cirrhotic ascites, trace the hemodynamics: portal HTN -> splanchnic vasodilation -> low effective arterial volume -> RAAS activation -> aldosterone -> sodium/water retention -> ascites. The first-line diuretic INHIBITS ALDOSTERONE (spironolactone), usually with furosemide. Avoid drugs that blunt the compensatory RAAS/vasoconstriction (ACE inhibitors, ARBs, alpha-blockers) or impair renal perfusion (NSAIDs).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Aldosterone",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Alpha-adrenergic receptors",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Angiotensin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Antidiuretic hormone",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Prostaglandins",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "alpha-adrenergic receptors - more vasodilation is harmful",
+      "detail": "WHAT IT IS: alpha-1 blockade causes vasodilation (used in BPH/hypertension). ❌ WHY IT FAILS: cirrhotics already have splanchnic vasodilation and low effective arterial volume; further vasodilation worsens hypotension and renal perfusion, aggravating ascites. ✅ Correct if: a condition that needs vasodilation (eg, BPH), not cirrhotic ascites."
+    },
+    {
+      "letter": "C",
+      "label": "angiotensin - cirrhotics depend on it",
+      "detail": "WHAT IT IS: blocking angiotensin (ACE inhibitor/ARB) lowers blood pressure and is renoprotective in hypertension/diabetes. ❌ WHY IT FAILS: cirrhotics DEPEND on the renin-angiotensin system to maintain blood pressure and renal perfusion; blunting it promotes hypoperfusion and acute kidney injury. ✅ Correct if: hypertension or diabetic nephropathy - not decompensated cirrhosis."
+    },
+    {
+      "letter": "D",
+      "label": "ADH - only for hyponatremia, which he doesn't have",
+      "detail": "WHAT IT IS: ADH (vasopressin) antagonists (eg, tolvaptan) treat hypervolemic HYPONATREMIA. ❌ WHY IT FAILS: his sodium is NORMAL, so an ADH antagonist is not indicated; the driver of ascites to target is aldosterone. ✅ Correct if: symptomatic hyponatremia in cirrhosis."
+    },
+    {
+      "letter": "E",
+      "label": "prostaglandins - inhibiting them harms the kidney (your pick)",
+      "detail": "WHAT IT IS: NSAIDs inhibit prostaglandins. ❌ WHY IT FAILS: renal prostaglandins maintain perfusion in cirrhosis - blocking them causes renal vasoconstriction/AKI and raises GI bleeding risk; you want to inhibit ALDOSTERONE, not prostaglandins. The trap is picking an 'inhibit' target that is actually harmful here. ✅ Correct if: never for cirrhotic ascites; NSAIDs are contraindicated."
+    }
+  ],
+  "reasoning": [
+    "Alcoholic cirrhosis with ascites (fluid wave, spider angiomas, low albumin/platelets, elevated PT)",
+    "Portal HTN -> splanchnic vasodilation -> low effective arterial volume -> RAAS activation",
+    "Aldosterone drives renal sodium/water retention -> ascites",
+    "Treat by inhibiting aldosterone (spironolactone) -> answer A"
+  ],
+  "mechanism": "In cirrhosis, portal hypertension causes splanchnic arterial vasodilation, which lowers effective arterial blood volume and activates the renin-angiotensin-ALDOSTERONE system. Aldosterone drives renal sodium and water retention; combined with high portal hydrostatic pressure and low oncotic pressure (hypoalbuminemia), this produces ascites. The first-line diuretic is SPIRONOLACTONE, an aldosterone antagonist that induces natriuresis without blocking the angiotensin-mediated vasoconstriction the patient depends on; it is often paired with furosemide. Drugs that blunt compensatory vasoconstriction (ACE inhibitors/ARBs, alpha-blockers) or renal prostaglandins (NSAIDs) worsen renal perfusion and are avoided.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI > cirrhosis and ascites: portal hypertension, splanchnic vasodilation, RAAS activation, spironolactone (+furosemide), SAAG. Cross-ref diuretics and the drugs to avoid in cirrhosis."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question asks what to INHIBIT. Trace the cascade to the actionable target (aldosterone) and avoid options that block compensatory mechanisms (angiotensin, alpha receptors) or harm the kidney (prostaglandins)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on ascites, portal hypertension, splanchnic vasodilation, RAAS, aldosterone antagonist, spironolactone, fluid wave, SAAG? Tell me which term and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Prostaglandins (E) tempt as an 'inhibit' target, but inhibiting them (NSAIDs) is harmful in cirrhosis. Angiotensin (C) and alpha receptors (B) are also protective here. The safe, effective target is aldosterone."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the rule: cirrhotic ascites -> spironolactone (block aldosterone), often with furosemide; avoid NSAIDs, ACE inhibitors/ARBs."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "First-line diuretic for cirrhotic ascites",
+      "back": "Spironolactone (aldosterone antagonist), often with furosemide"
+    },
+    {
+      "front": "Why aldosterone is high in cirrhosis",
+      "back": "Portal HTN -> splanchnic vasodilation -> low effective volume -> RAAS activation"
+    },
+    {
+      "front": "Spider angiomas, hypoalbuminemia, elevated PT, thrombocytopenia",
+      "back": "Cirrhosis (synthetic dysfunction + portal hypertension)"
+    },
+    {
+      "front": "Avoid in cirrhosis (renal perfusion)",
+      "back": "NSAIDs (block prostaglandins), ACE inhibitors/ARBs"
+    },
+    {
+      "front": "ADH antagonist (tolvaptan) indication",
+      "back": "Hypervolemic hyponatremia"
+    },
+    {
+      "front": "Ascites bedside signs",
+      "back": "Fluid wave, shifting dullness"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Cirrhosis & ascites management",
+      "detail": "GI > cirrhosis: portal hypertension, RAAS activation, spironolactone (+furosemide); SAAG to characterize ascites.",
+      "location": "GI > cirrhosis: portal hypertension, RAAS activation, spironolactone (+furosemide); SAAG to characterize ascites."
+    },
+    {
+      "tag": "options",
+      "topic": "Vasoactive/diuretic targets",
+      "detail": "Pharm > spironolactone (K-sparing aldosterone antagonist), ADH antagonists (tolvaptan), RAAS (ACE inhibitors/ARBs), alpha blockers; NSAID renal effects.",
+      "location": "Pharm > spironolactone (K-sparing aldosterone antagonist), ADH antagonists (tolvaptan), RAAS (ACE inhibitors/ARBs), alpha blockers; NSAID renal effects."
+    },
+    {
+      "tag": "context",
+      "topic": "Stigmata of chronic liver disease",
+      "detail": "GI > spider angiomas, hypoalbuminemia, coagulopathy (elevated PT), thrombocytopenia from portal hypertension.",
+      "location": "GI > spider angiomas, hypoalbuminemia, coagulopathy (elevated PT), thrombocytopenia from portal hypertension."
+    }
+  ],
+  "memoryHook": "Cirrhotic ascites = too much aldosterone -> block it with spironolactone (not NSAIDs or ACE inhibitors, which starve the kidney).",
+  "stem": [
+    {
+      "text": "A 42-year-old man comes to the office due to increased abdominal girth associated with a 9-kg (19.8-lb) weight gain over the past month. He "
+    },
+    {
+      "text": "drinks a liter of vodka daily",
+      "clue": true,
+      "type": "orange",
+      "note": "Heavy chronic alcohol use is the leading risk factor for cirrhosis. It sets up the entire picture: portal hypertension, ascites, and the synthetic/portal lab abnormalities below."
+    },
+    {
+      "text": " and denies smoking or using intravenous drugs. Blood pressure is 110/70 mm Hg. The abdomen is moderately distended, and "
+    },
+    {
+      "text": "a fluid wave is elicited",
+      "clue": true,
+      "type": "red",
+      "note": "A positive fluid wave indicates ASCITES. In a heavy drinker with stigmata of chronic liver disease, the ascites is due to cirrhosis with portal hypertension - the target of therapy."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Multiple spider angiomas are present",
+      "clue": true,
+      "type": "green",
+      "note": "Spider angiomas are a cutaneous stigma of chronic liver disease (impaired estrogen metabolism). Together with the labs, they confirm cirrhosis as the cause of the ascites."
+    },
+    {
+      "text": ". Laboratory studies reveal "
+    },
+    {
+      "text": "thrombocytopenia, hypoalbuminemia, a normal sodium level, and an elevated PT",
+      "clue": true,
+      "type": "green",
+      "note": "This lab cluster is classic cirrhosis: thrombocytopenia from portal hypertension/splenic sequestration; hypoalbuminemia and elevated PT from impaired hepatic synthesis. A NORMAL sodium also tells you an ADH antagonist (for hyponatremia) is not what's needed here."
+    },
+    {
+      "text": ". An upper endoscopy is performed, which shows no esophageal or gastric varices. Pharmacotherapy aimed at inhibiting which of the following should be considered for this patient?"
+    }
+  ]
+}

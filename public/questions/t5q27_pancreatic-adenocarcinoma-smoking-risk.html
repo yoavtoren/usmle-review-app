@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pancreatic adenocarcinoma: smoking risk</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 5 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q176", "item": 176, "qid": "436", "title": "Pancreatic adenocarcinoma: smoking risk", "system": "Pathology", "topic": "Pancreatic cancer risk factors", "correct": "B", "yourAnswer": "A", "percentCorrect": 44, "vignette": "A 65-year-old man comes to the office due to progressive weight loss, jaundice, and anorexia over the last 3 months. His urine has been dark and his stools have been pale. The patient has no prior medical conditions and takes no medications. He has smoked a pack of cigarettes a day for 40 years. He drinks 2 cups of coffee every day and 1 or 2 glasses of wine on most nights. He used illicit drugs for 2 years when he was in his teens but has used none since. The patient has a sedentary lifestyle and frequently consumes red and processed meats. Vital signs are within normal limits. BMI is 28 kg/m2. Physical examination shows scleral icterus. The chest is clear to auscultation and percussion. Abdominal examination shows an enlarged but nontender gallbladder. There is no ascites. Which of the following is the strongest factor predisposing to this patient's current condition?", "clues": [{"text": "progressive weight loss, jaundice, and anorexia", "type": "red", "note": "Painless progressive jaundice with weight loss and anorexia in an older adult is the classic presentation of pancreatic head adenocarcinoma compressing the common bile duct."}, {"text": "His urine has been dark and his stools have been pale", "type": "blue", "note": "Dark urine + pale (acholic) stools indicate OBSTRUCTIVE (conjugated) hyperbilirubinemia — bile can't reach the gut. This points to biliary obstruction, e.g., a pancreatic head tumor."}, {"text": "smoked a pack of cigarettes a day for 40 years", "type": "green", "note": "Cigarette smoking is the single most important environmental/modifiable risk factor for pancreatic cancer, roughly doubling the risk. This is the answer the stem is after."}, {"text": "1 or 2 glasses of wine on most nights", "type": "purple", "note": "Bait toward 'alcohol.' Moderate alcohol without chronic pancreatitis is NOT an established pancreatic-cancer risk factor; alcohol's cancer links are liver, esophagus, and head/neck."}, {"text": "frequently consumes red and processed meats", "type": "purple", "note": "Bait toward 'diet.' High red/processed-meat and low-fiber diets raise COLORECTAL (and gastric) cancer risk, not pancreatic. A decoy aimed at the wrong cancer."}, {"text": "enlarged but nontender gallbladder", "type": "green", "note": "A palpable, nontender, distended gallbladder in a jaundiced patient is the Courvoisier sign, suggesting malignant distal biliary obstruction (pancreatic head cancer) rather than gallstones."}], "whatMatters": "This is a two-step item. Step 1: the painless obstructive jaundice (dark urine, pale stools, scleral icterus) + Courvoisier sign + weight loss = pancreatic head adenocarcinoma. Step 2 (the actual ask): of his many exposures, which is the STRONGEST risk factor? Cigarette smoking. Answer B. The wine/coffee/meat lines are decoys mapped to other cancers.", "strategy": "When a vignette lists many lifestyle exposures and asks for the STRONGEST predisposing factor, match each exposure to the cancer it actually causes: smoking -> pancreatic (and many others), alcohol -> liver/esophageal/head-neck, hot beverages -> esophageal, low-fiber/processed meat -> colorectal, viral hepatitis -> hepatocellular. For pancreatic cancer, smoking dominates.", "options": [{"letter": "A", "text": "Alcohol use", "correct": false}, {"letter": "B", "text": "Cigarette smoking", "correct": true}, {"letter": "C", "text": "Coffee consumption", "correct": false}, {"letter": "D", "text": "Low-fiber diet", "correct": false}, {"letter": "E", "text": "Processed meat consumption", "correct": false}, {"letter": "F", "text": "Viral hepatitis", "correct": false}], "eliminations": [{"letter": "A", "label": "alcohol — links to liver/esophagus, not pancreas (your pick)", "detail": "WHAT IT IS: alcohol raises risk of head/neck, esophageal, and liver cancer and can cause chronic pancreatitis. ❌ WHY IT FAILS: moderate alcohol WITHOUT chronic pancreatitis is not an established pancreatic-cancer risk factor, and smoking is far stronger. The trap is equating nightly wine with pancreatic risk. ✅ Correct if: the tumor were hepatocellular, esophageal, or head/neck — or there were chronic alcoholic pancreatitis."}, {"letter": "C", "label": "coffee — no pancreatic risk", "detail": "WHAT IT IS: very hot beverages are linked to esophageal cancer. ❌ WHY IT FAILS: coffee does not increase pancreatic-cancer risk (0% chose it for good reason). ✅ Correct if: esophageal squamous cell cancer from chronic hot-beverage intake."}, {"letter": "D", "label": "low-fiber diet — colorectal, not pancreatic", "detail": "WHAT IT IS: low-fiber / high red-and-processed-meat diets raise COLORECTAL cancer risk. ❌ WHY IT FAILS: that's colon-cancer epidemiology, not pancreatic. ✅ Correct if: a colorectal adenocarcinoma question."}, {"letter": "E", "label": "processed meat — colorectal/gastric, not pancreatic", "detail": "WHAT IT IS: processed meats (nitrosamines) are associated with colorectal and gastric cancer. ❌ WHY IT FAILS: again colorectal/gastric — at most weakly pancreatic; smoking dominates. ✅ Correct if: colon or gastric adenocarcinoma."}, {"letter": "F", "label": "viral hepatitis — hepatocellular carcinoma", "detail": "WHAT IT IS: chronic HBV/HCV strongly cause HEPATOCELLULAR carcinoma. ❌ WHY IT FAILS: hepatitis raises pancreatic risk only slightly; this Courvoisier picture is pancreatic and the dominant risk is smoking. ✅ Correct if: cirrhosis with a liver mass and a rising AFP."}], "reasoning": ["Painless obstructive jaundice (dark urine, pale stools, scleral icterus) + weight loss + Courvoisier sign (enlarged nontender gallbladder) in an older man = pancreatic head adenocarcinoma", "The question asks for the STRONGEST predisposing factor among his exposures", "Cigarette smoking is the most important environmental risk factor for pancreatic cancer (roughly doubles risk)", "-> Cigarette smoking, answer B"], "mechanism": "Pancreatic ductal adenocarcinoma classically presents with painless obstructive jaundice (dark urine, pale stools, scleral icterus), weight loss, anorexia, and a Courvoisier sign (palpable, nontender, distended gallbladder) when a head tumor compresses the common bile duct. Among environmental exposures, cigarette smoking is the single most important risk factor, roughly doubling risk; other contributors include advanced age, chronic pancreatitis, obesity, and genetic predisposition (e.g., Peutz-Jeghers, hereditary pancreatitis, Lynch syndrome). The wine, coffee, and red-meat details are decoys that map to liver/esophageal/colorectal cancer, not the pancreas.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid GI/Onc > pancreatic adenocarcinoma: risk factors (smoking is the #1 environmental, plus age, chronic pancreatitis, genetics), Courvoisier sign, painless obstructive jaundice, migratory thrombophlebitis (Trousseau), CA 19-9."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Two-step: (1) diagnose pancreatic head cancer from the jaundice + Courvoisier picture, then (2) pick the STRONGEST risk factor. Read past the decoy exposures to smoking."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on Courvoisier sign, obstructive vs hemolytic jaundice, scleral icterus, conjugated hyperbilirubinemia, Trousseau sign? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Alcohol (A) is the trap because he drinks nightly and alcohol 'feels' carcinogenic — but moderate alcohol isn't a pancreatic-cancer risk factor; smoking is strongest. Coffee/meat are decoys for esophageal/colon cancer."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: pancreatic cancer's #1 environmental risk = smoking; don't be lured by alcohol/coffee/diet decoys aimed at other cancers."}], "keywords": [{"front": "Painless obstructive jaundice + Courvoisier sign + weight loss", "back": "Pancreatic head adenocarcinoma"}, {"front": "Strongest environmental risk for pancreatic cancer", "back": "Cigarette smoking"}, {"front": "Enlarged nontender gallbladder in a jaundiced patient", "back": "Courvoisier sign"}, {"front": "Migratory thrombophlebitis + pancreatic cancer", "back": "Trousseau sign"}, {"front": "Pancreatic cancer tumor marker", "back": "CA 19-9"}, {"front": "Low-fiber / processed-meat diet cancer", "back": "Colorectal cancer"}, {"front": "Chronic HBV/HCV cancer", "back": "Hepatocellular carcinoma"}], "firstAid": [{"tag": "answer / stem", "topic": "Pancreatic adenocarcinoma", "detail": "GI/Onc > risk factors (smoking #1, age, chronic pancreatitis, genetics), painless jaundice, Courvoisier sign, CA 19-9, Trousseau."}, {"tag": "options", "topic": "Exposure -> cancer map", "detail": "Onc > alcohol (liver/esophageal/head-neck), hot beverages/coffee (esophageal), low-fiber/processed meat (colorectal), viral hepatitis (HCC)."}, {"tag": "context", "topic": "Obstructive jaundice", "detail": "GI > conjugated hyperbilirubinemia: dark urine, pale stools, pruritus; causes of biliary obstruction."}], "memoryHook": "Pancreatic cancer's biggest risk is the SMOKE, not the wine. A big painless gallbladder (Courvoisier) -> think pancreatic head.", "stem": [{"text": "A 65-year-old man comes to the office due to "}, {"text": "progressive weight loss, jaundice, and anorexia", "clue": true, "type": "red", "note": "Painless progressive jaundice with weight loss and anorexia in an older adult is the classic presentation of pancreatic head adenocarcinoma compressing the common bile duct."}, {"text": " over the last 3 months. "}, {"text": "His urine has been dark and his stools have been pale", "clue": true, "type": "blue", "note": "Dark urine + pale (acholic) stools indicate OBSTRUCTIVE (conjugated) hyperbilirubinemia — bile can't reach the gut. This points to biliary obstruction, e.g., a pancreatic head tumor."}, {"text": ". The patient has no prior medical conditions and takes no medications. He has "}, {"text": "smoked a pack of cigarettes a day for 40 years", "clue": true, "type": "green", "note": "Cigarette smoking is the single most important environmental/modifiable risk factor for pancreatic cancer, roughly doubling the risk. This is the answer the stem is after."}, {"text": ". He drinks 2 cups of coffee every day and "}, {"text": "1 or 2 glasses of wine on most nights", "clue": true, "type": "purple", "note": "Bait toward 'alcohol.' Moderate alcohol without chronic pancreatitis is NOT an established pancreatic-cancer risk factor; alcohol's cancer links are liver, esophagus, and head/neck."}, {"text": ". He used illicit drugs for 2 years when he was in his teens but has used none since. The patient has a sedentary lifestyle and "}, {"text": "frequently consumes red and processed meats", "clue": true, "type": "purple", "note": "Bait toward 'diet.' High red/processed-meat and low-fiber diets raise COLORECTAL (and gastric) cancer risk, not pancreatic. A decoy aimed at the wrong cancer."}, {"text": ". Vital signs are within normal limits. BMI is 28 kg/m2. Physical examination shows scleral icterus. The chest is clear to auscultation and percussion. Abdominal examination shows an "}, {"text": "enlarged but nontender gallbladder", "clue": true, "type": "green", "note": "A palpable, nontender, distended gallbladder in a jaundiced patient is the Courvoisier sign, suggesting malignant distal biliary obstruction (pancreatic head cancer) rather than gallstones."}, {"text": ". There is no ascites. Which of the following is the strongest factor predisposing to this patient's current condition?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

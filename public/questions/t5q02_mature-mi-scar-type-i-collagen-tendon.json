@@ -1,0 +1,208 @@
+{
+  "id": "q151",
+  "item": 151,
+  "qid": "8711",
+  "title": "Mature MI scar = type I collagen (tendon)",
+  "system": "Histology",
+  "topic": "Collagen types / wound healing",
+  "correct": "E",
+  "yourAnswer": "B",
+  "percentCorrect": 33,
+  "vignette": "A 67-year-old man is found dead in his home. The cause of death is not apparent; he had a long history of hypertension and he had a myocardial infarction a year ago. An autopsy is performed. Gross examination of the heart shows white scarring and enlargement of the left ventricle. Histologic findings from a section of the left ventricle are shown below. The type of collagen seen in the autopsy sample is most likely to be extensively found in which of the following normal body tissues?",
+  "clues": [
+    {
+      "text": "myocardial infarction a year ago",
+      "type": "red",
+      "note": "The timing is everything. An infarct that healed a YEAR ago is a fully mature scar. Early granulation tissue (days to ~2 weeks) is rich in type III collagen, but by weeks-to-months it is remodeled into dense type I collagen - so 'a year ago' tells you the collagen type before you even see the slide."
+    },
+    {
+      "text": "white scarring and enlargement of the left ventricle",
+      "type": "green",
+      "note": "A firm, gray-white scar replacing myocardium is the gross appearance of a mature collagenous scar, which is composed predominantly of type I collagen. The enlargement reflects post-infarct remodeling of the left ventricle."
+    },
+    {
+      "text": "type of collagen seen in the autopsy sample",
+      "type": "blue",
+      "note": "The question pivots from 'what is this scar' to 'where else is this same collagen abundant.' Identify the scar collagen (type I), then pick the normal tissue where type I predominates."
+    }
+  ],
+  "whatMatters": "Cut to it: a 1-year-old MI is a mature scar made of TYPE I collagen. The question then asks which normal tissue is rich in that same collagen. Type I is the collagen of bone, skin, tendon, and ligament - of the options, Tendon (E). The histology image is decoration; the word 'year' picks the collagen type.",
+  "strategy": "For scar-collagen questions, anchor on the AGE of the wound. Fresh granulation tissue/early healing = type III collagen; a mature scar (weeks-to-months later) is remodeled to type I. Then map type I to its classic locations - 'type I = bONE' (bone, skin, tendon, dentin). Don't let the slide override the timeline.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Basement membrane",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Granulation tissue",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Hyaline cartilage",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Nucleus pulposus",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Tendon",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "basement membrane = type IV collagen",
+      "detail": "WHAT IT IS: basement membranes (and the lens, glomerulus) are built from type IV collagen, a sheet-forming network collagen. ❌ WHY IT FAILS: a mature myocardial scar is type I, not type IV; wrong collagen entirely. ✅ Correct if: the question asked where type IV collagen is found, or referenced Alport/Goodpasture disease."
+    },
+    {
+      "letter": "B",
+      "label": "granulation tissue = type III collagen (your pick)",
+      "detail": "WHAT IT IS: granulation tissue is the EARLY healing tissue (capillaries + fibroblasts) laid down with weak, pliable type III collagen during the first days to ~2 weeks after injury. ❌ WHY IT FAILS: this infarct is a YEAR old and has already remodeled type III into dense type I; type III is the early phase only. The trap is reflexively linking 'scar' to wound-healing tissue instead of the MATURE scar. ✅ Correct if: the MI had occurred ~1 week earlier (fresh granulation tissue)."
+    },
+    {
+      "letter": "C",
+      "label": "hyaline cartilage = type II collagen",
+      "detail": "WHAT IT IS: hyaline cartilage (articular surfaces), the vitreous, and the nucleus pulposus are type II collagen. ❌ WHY IT FAILS: type II is not the collagen of a healed scar; wrong type. ✅ Correct if: asked for a normal tissue rich in type II collagen."
+    },
+    {
+      "letter": "D",
+      "label": "nucleus pulposus = type II collagen",
+      "detail": "WHAT IT IS: the gelatinous center of the intervertebral disc, also predominantly type II collagen. ❌ WHY IT FAILS: same problem as hyaline cartilage - type II, not the type I of a mature scar. ✅ Correct if: asked where type II collagen is abundant."
+    }
+  ],
+  "reasoning": [
+    "MI healed a YEAR ago -> mature, dense, gray-white scar",
+    "Mature scar collagen = type I (remodeled from early type III)",
+    "Type I collagen is abundant in bone, skin, tendon, ligament",
+    "Among the options, tendon is the type I tissue -> answer E"
+  ],
+  "mechanism": "Myocardial infarct healing is staged. Around 1-2 weeks, granulation tissue deposits weak TYPE III collagen. Over the next weeks to months this is replaced and cross-linked into dense, strong TYPE I collagen, producing the firm gray-white scar seen at one year. Type I is the most abundant collagen in the body and predominates in bone, skin (dermis), tendon, ligament, and dentin. By contrast, type II = cartilage/vitreous/nucleus pulposus, type III = granulation tissue/reticulin/vasculature, and type IV = basement membrane.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochemistry > collagen types table (I-IV: locations + disease) and Pathology > MI evolution timeline (type III granulation tissue -> type I collagen scar by ~2 months). Flashcard: 'mature scar = type I; early granulation = type III.'"
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two-step: (1) what collagen is in a 1-year-old scar (type I)? (2) which listed NORMAL tissue is rich in type I (tendon)? Anchor on the timeline word 'year' before interpreting the slide."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on granulation tissue, collagen types I-IV, reticulin, nucleus pulposus, basement membrane, remodeling? Tell me which term and I'll explain it plainly."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Granulation tissue (B) is the bait because it IS scar-related - but it is the EARLY (type III) phase. A year-old infarct has remodeled to type I; match the age of the wound to the collagen type."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "This pairs a gross/histology image with a timeline. You don't actually need to read the slide - the 'year ago' fixes the answer. For practice: a mature scar looks like dense, paucicellular pink collagen replacing myocardium. Decide the wound's age first, then name the collagen."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Collagen of a mature (remote) scar",
+      "back": "Type I (eg, old myocardial infarct)"
+    },
+    {
+      "front": "Type I collagen locations",
+      "back": "Bone, skin, tendon, ligament, dentin ('type I = bONE')"
+    },
+    {
+      "front": "Collagen of early granulation tissue",
+      "back": "Type III"
+    },
+    {
+      "front": "Type II collagen locations",
+      "back": "Cartilage, vitreous, nucleus pulposus ('carTWOlage')"
+    },
+    {
+      "front": "Type IV collagen location",
+      "back": "Basement membrane (Alport, Goodpasture)"
+    },
+    {
+      "front": "Defective type I collagen disease",
+      "back": "Osteogenesis imperfecta"
+    },
+    {
+      "front": "Defective type III collagen disease",
+      "back": "Vascular (type IV) Ehlers-Danlos syndrome"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Collagen type I",
+      "detail": "Biochem > connective tissue: type I collagen - most abundant; bone, skin, tendon, ligament, dentin, late wound repair/scar.",
+      "location": "Biochem > connective tissue: type I collagen - most abundant; bone, skin, tendon, ligament, dentin, late wound repair/scar."
+    },
+    {
+      "tag": "stem",
+      "topic": "MI evolution / wound healing",
+      "detail": "Path > myocardial infarction timeline + tissue repair: granulation tissue (type III) at ~1-2 weeks remodels to dense type I collagenous scar by ~2 months.",
+      "location": "Path > myocardial infarction timeline + tissue repair: granulation tissue (type III) at ~1-2 weeks remodels to dense type I collagenous scar by ~2 months."
+    },
+    {
+      "tag": "options",
+      "topic": "Collagen types II / IV / III",
+      "detail": "Biochem > collagen table: type II (cartilage, vitreous, nucleus pulposus), type IV (basement membrane), type III (granulation tissue, reticulin, blood vessels).",
+      "location": "Biochem > collagen table: type II (cartilage, vitreous, nucleus pulposus), type IV (basement membrane), type III (granulation tissue, reticulin, blood vessels)."
+    },
+    {
+      "tag": "cross-ref",
+      "topic": "Collagen disorders",
+      "detail": "Biochem/Genetics > osteogenesis imperfecta (type I), Ehlers-Danlos (type III/V), Alport (type IV).",
+      "location": "Biochem/Genetics > osteogenesis imperfecta (type I), Ehlers-Danlos (type III/V), Alport (type IV)."
+    }
+  ],
+  "memoryHook": "Be type ONE with bone, skin, and tendon - a year-old scar has matured into type I collagen.",
+  "stem": [
+    {
+      "text": "A 67-year-old man is found dead in his home. The cause of death is not apparent; he had a long history of hypertension and he had a "
+    },
+    {
+      "text": "myocardial infarction a year ago",
+      "clue": true,
+      "type": "red",
+      "note": "The timing is everything. An infarct that healed a YEAR ago is a fully mature scar. Early granulation tissue (days to ~2 weeks) is rich in type III collagen, but by weeks-to-months it is remodeled into dense type I collagen - so 'a year ago' tells you the collagen type before you even see the slide."
+    },
+    {
+      "text": ". An autopsy is performed. Gross examination of the heart shows "
+    },
+    {
+      "text": "white scarring and enlargement of the left ventricle",
+      "clue": true,
+      "type": "green",
+      "note": "A firm, gray-white scar replacing myocardium is the gross appearance of a mature collagenous scar, which is composed predominantly of type I collagen. The enlargement reflects post-infarct remodeling of the left ventricle."
+    },
+    {
+      "text": ". Histologic findings from a section of the left ventricle are shown below. The "
+    },
+    {
+      "text": "type of collagen seen in the autopsy sample",
+      "clue": true,
+      "type": "blue",
+      "note": "The question pivots from 'what is this scar' to 'where else is this same collagen abundant.' Identify the scar collagen (type I), then pick the normal tissue where type I predominates."
+    },
+    {
+      "text": " is most likely to be extensively found in which of the following normal body tissues?"
+    }
+  ]
+}

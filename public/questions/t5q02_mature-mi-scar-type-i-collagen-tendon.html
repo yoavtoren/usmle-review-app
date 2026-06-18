@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mature MI scar = type I collagen (tendon)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 5 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q151", "item": 151, "qid": "8711", "title": "Mature MI scar = type I collagen (tendon)", "system": "Histology", "topic": "Collagen types / wound healing", "correct": "E", "yourAnswer": "B", "percentCorrect": 33, "vignette": "A 67-year-old man is found dead in his home. The cause of death is not apparent; he had a long history of hypertension and he had a myocardial infarction a year ago. An autopsy is performed. Gross examination of the heart shows white scarring and enlargement of the left ventricle. Histologic findings from a section of the left ventricle are shown below. The type of collagen seen in the autopsy sample is most likely to be extensively found in which of the following normal body tissues?", "clues": [{"text": "myocardial infarction a year ago", "type": "red", "note": "The timing is everything. An infarct that healed a YEAR ago is a fully mature scar. Early granulation tissue (days to ~2 weeks) is rich in type III collagen, but by weeks-to-months it is remodeled into dense type I collagen - so 'a year ago' tells you the collagen type before you even see the slide."}, {"text": "white scarring and enlargement of the left ventricle", "type": "green", "note": "A firm, gray-white scar replacing myocardium is the gross appearance of a mature collagenous scar, which is composed predominantly of type I collagen. The enlargement reflects post-infarct remodeling of the left ventricle."}, {"text": "type of collagen seen in the autopsy sample", "type": "blue", "note": "The question pivots from 'what is this scar' to 'where else is this same collagen abundant.' Identify the scar collagen (type I), then pick the normal tissue where type I predominates."}], "whatMatters": "Cut to it: a 1-year-old MI is a mature scar made of TYPE I collagen. The question then asks which normal tissue is rich in that same collagen. Type I is the collagen of bone, skin, tendon, and ligament - of the options, Tendon (E). The histology image is decoration; the word 'year' picks the collagen type.", "strategy": "For scar-collagen questions, anchor on the AGE of the wound. Fresh granulation tissue/early healing = type III collagen; a mature scar (weeks-to-months later) is remodeled to type I. Then map type I to its classic locations - 'type I = bONE' (bone, skin, tendon, dentin). Don't let the slide override the timeline.", "options": [{"letter": "A", "text": "Basement membrane", "correct": false}, {"letter": "B", "text": "Granulation tissue", "correct": false}, {"letter": "C", "text": "Hyaline cartilage", "correct": false}, {"letter": "D", "text": "Nucleus pulposus", "correct": false}, {"letter": "E", "text": "Tendon", "correct": true}], "eliminations": [{"letter": "A", "label": "basement membrane = type IV collagen", "detail": "WHAT IT IS: basement membranes (and the lens, glomerulus) are built from type IV collagen, a sheet-forming network collagen. ❌ WHY IT FAILS: a mature myocardial scar is type I, not type IV; wrong collagen entirely. ✅ Correct if: the question asked where type IV collagen is found, or referenced Alport/Goodpasture disease."}, {"letter": "B", "label": "granulation tissue = type III collagen (your pick)", "detail": "WHAT IT IS: granulation tissue is the EARLY healing tissue (capillaries + fibroblasts) laid down with weak, pliable type III collagen during the first days to ~2 weeks after injury. ❌ WHY IT FAILS: this infarct is a YEAR old and has already remodeled type III into dense type I; type III is the early phase only. The trap is reflexively linking 'scar' to wound-healing tissue instead of the MATURE scar. ✅ Correct if: the MI had occurred ~1 week earlier (fresh granulation tissue)."}, {"letter": "C", "label": "hyaline cartilage = type II collagen", "detail": "WHAT IT IS: hyaline cartilage (articular surfaces), the vitreous, and the nucleus pulposus are type II collagen. ❌ WHY IT FAILS: type II is not the collagen of a healed scar; wrong type. ✅ Correct if: asked for a normal tissue rich in type II collagen."}, {"letter": "D", "label": "nucleus pulposus = type II collagen", "detail": "WHAT IT IS: the gelatinous center of the intervertebral disc, also predominantly type II collagen. ❌ WHY IT FAILS: same problem as hyaline cartilage - type II, not the type I of a mature scar. ✅ Correct if: asked where type II collagen is abundant."}], "reasoning": ["MI healed a YEAR ago -> mature, dense, gray-white scar", "Mature scar collagen = type I (remodeled from early type III)", "Type I collagen is abundant in bone, skin, tendon, ligament", "Among the options, tendon is the type I tissue -> answer E"], "mechanism": "Myocardial infarct healing is staged. Around 1-2 weeks, granulation tissue deposits weak TYPE III collagen. Over the next weeks to months this is replaced and cross-linked into dense, strong TYPE I collagen, producing the firm gray-white scar seen at one year. Type I is the most abundant collagen in the body and predominates in bone, skin (dermis), tendon, ligament, and dentin. By contrast, type II = cartilage/vitreous/nucleus pulposus, type III = granulation tissue/reticulin/vasculature, and type IV = basement membrane.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Biochemistry > collagen types table (I-IV: locations + disease) and Pathology > MI evolution timeline (type III granulation tissue -> type I collagen scar by ~2 months). Flashcard: 'mature scar = type I; early granulation = type III.'"}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Two-step: (1) what collagen is in a 1-year-old scar (type I)? (2) which listed NORMAL tissue is rich in type I (tendon)? Anchor on the timeline word 'year' before interpreting the slide."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on granulation tissue, collagen types I-IV, reticulin, nucleus pulposus, basement membrane, remodeling? Tell me which term and I'll explain it plainly."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Granulation tissue (B) is the bait because it IS scar-related - but it is the EARLY (type III) phase. A year-old infarct has remodeled to type I; match the age of the wound to the collagen type."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "This pairs a gross/histology image with a timeline. You don't actually need to read the slide - the 'year ago' fixes the answer. For practice: a mature scar looks like dense, paucicellular pink collagen replacing myocardium. Decide the wound's age first, then name the collagen."}, {"key": "other", "label": "✍️ Something else", "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."}], "keywords": [{"front": "Collagen of a mature (remote) scar", "back": "Type I (eg, old myocardial infarct)"}, {"front": "Type I collagen locations", "back": "Bone, skin, tendon, ligament, dentin ('type I = bONE')"}, {"front": "Collagen of early granulation tissue", "back": "Type III"}, {"front": "Type II collagen locations", "back": "Cartilage, vitreous, nucleus pulposus ('carTWOlage')"}, {"front": "Type IV collagen location", "back": "Basement membrane (Alport, Goodpasture)"}, {"front": "Defective type I collagen disease", "back": "Osteogenesis imperfecta"}, {"front": "Defective type III collagen disease", "back": "Vascular (type IV) Ehlers-Danlos syndrome"}], "firstAid": [{"tag": "answer", "topic": "Collagen type I", "detail": "Biochem > connective tissue: type I collagen - most abundant; bone, skin, tendon, ligament, dentin, late wound repair/scar."}, {"tag": "stem", "topic": "MI evolution / wound healing", "detail": "Path > myocardial infarction timeline + tissue repair: granulation tissue (type III) at ~1-2 weeks remodels to dense type I collagenous scar by ~2 months."}, {"tag": "options", "topic": "Collagen types II / IV / III", "detail": "Biochem > collagen table: type II (cartilage, vitreous, nucleus pulposus), type IV (basement membrane), type III (granulation tissue, reticulin, blood vessels)."}, {"tag": "cross-ref", "topic": "Collagen disorders", "detail": "Biochem/Genetics > osteogenesis imperfecta (type I), Ehlers-Danlos (type III/V), Alport (type IV)."}], "memoryHook": "Be type ONE with bone, skin, and tendon - a year-old scar has matured into type I collagen.", "stem": [{"text": "A 67-year-old man is found dead in his home. The cause of death is not apparent; he had a long history of hypertension and he had a "}, {"text": "myocardial infarction a year ago", "clue": true, "type": "red", "note": "The timing is everything. An infarct that healed a YEAR ago is a fully mature scar. Early granulation tissue (days to ~2 weeks) is rich in type III collagen, but by weeks-to-months it is remodeled into dense type I collagen - so 'a year ago' tells you the collagen type before you even see the slide."}, {"text": ". An autopsy is performed. Gross examination of the heart shows "}, {"text": "white scarring and enlargement of the left ventricle", "clue": true, "type": "green", "note": "A firm, gray-white scar replacing myocardium is the gross appearance of a mature collagenous scar, which is composed predominantly of type I collagen. The enlargement reflects post-infarct remodeling of the left ventricle."}, {"text": ". Histologic findings from a section of the left ventricle are shown below. The "}, {"text": "type of collagen seen in the autopsy sample", "clue": true, "type": "blue", "note": "The question pivots from 'what is this scar' to 'where else is this same collagen abundant.' Identify the scar collagen (type I), then pick the normal tissue where type I predominates."}, {"text": " is most likely to be extensively found in which of the following normal body tissues?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

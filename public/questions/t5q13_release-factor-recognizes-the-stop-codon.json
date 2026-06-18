@@ -1,0 +1,212 @@
+{
+  "id": "q162",
+  "item": 162,
+  "qid": "2029",
+  "title": "Release factor recognizes the stop codon",
+  "system": "Biochemistry",
+  "topic": "Translation termination",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 43,
+  "vignette": "A pharmaceutical researcher develops a new drug that affects bacterial protein synthesis. In an experiment, Escherichia coli is exposed to the drug and then cultured in media containing tagged nucleotides and amino acids. It is found that the drug inhibits molecules that recognize the highlighted codon in the bacterial mRNA fragment shown in the image below. Which of the following molecules is the most likely target of this drug?",
+  "clues": [
+    {
+      "text": "affects bacterial protein synthesis",
+      "type": "blue",
+      "note": "The drug acts on bacterial (prokaryotic) TRANSLATION. This immediately makes eukaryote-only machinery - splicing snRNPs, transcription factors - unlikely targets, and points to a component of the ribosomal translation cycle."
+    },
+    {
+      "text": "Escherichia coli",
+      "type": "green",
+      "note": "A prokaryote. Prokaryotes do not perform nuclear pre-mRNA splicing or use eukaryotic transcription factors like TFIID, so any option describing those processes can be eliminated on organism grounds."
+    },
+    {
+      "text": "recognize the highlighted codon",
+      "type": "red",
+      "note": "The highlighted codon in the image is UAA - a STOP codon. Stop codons (UAA, UAG, UGA) are not read by tRNAs; they are recognized by RELEASE (termination) FACTORS, which trigger release of the finished polypeptide. The molecule that 'recognizes' this codon is therefore a release factor."
+    }
+  ],
+  "whatMatters": "Cut to the core: the drug blocks whatever recognizes the highlighted codon, which is UAA - a STOP codon. In bacteria, stop codons are recognized by RELEASE FACTORS (RF1/RF2), which terminate translation and release the polypeptide. So the target is releasing factor 1 (C). 'Bacterial / E. coli' also rules out eukaryote-only molecules (snRNP, TFIID).",
+  "strategy": "First read the highlighted codon and classify it. If it is a STOP codon (UAA/UAG/UGA), the recognizing molecule is a release factor - stop codons are NOT read by tRNAs. Then use the organism: 'bacterial / E. coli' eliminates eukaryote-only machinery (snRNP splicing, TFIID transcription).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Charged transfer RNA",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Elongation factor 2",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Releasing factor 1",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Small nuclear ribonucleoprotein",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Transcription factor IID",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Uncharged transfer RNA",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "charged tRNA - reads SENSE codons, not stop",
+      "detail": "WHAT IT IS: an aminoacyl- (charged) tRNA carries an amino acid and reads SENSE codons in the ribosomal A site, adding amino acids to the chain. ❌ WHY IT FAILS: stop codons are NOT recognized by any tRNA - no tRNA pairs with UAA; release factors read it instead. ✅ Correct if: the highlighted codon coded for an amino acid (a sense codon)."
+    },
+    {
+      "letter": "B",
+      "label": "elongation factor - powers elongation, doesn't read codons",
+      "detail": "WHAT IT IS: elongation factors facilitate aminoacyl-tRNA delivery (EF-Tu) and ribosomal translocation (EF-G; eukaryotic EF-2). ❌ WHY IT FAILS: they drive the mechanics of elongation but do not RECOGNIZE a codon, and they are not involved in termination. ✅ Correct if: asked what mediates translocation or aminoacyl-tRNA delivery during elongation."
+    },
+    {
+      "letter": "D",
+      "label": "snRNP - eukaryotic splicing, wrong organism",
+      "detail": "WHAT IT IS: small nuclear ribonucleoproteins (the spliceosome) remove introns from pre-mRNA in the EUKARYOTIC nucleus. ❌ WHY IT FAILS: this is bacterial protein synthesis (no such nuclear splicing), and snRNPs do not read codons. ✅ Correct if: a eukaryotic pre-mRNA splicing question (eg, anti-Smith antibodies in lupus)."
+    },
+    {
+      "letter": "E",
+      "label": "TFIID - eukaryotic transcription, not translation (your pick)",
+      "detail": "WHAT IT IS: transcription factor IID binds the TATA box to initiate eukaryotic TRANSCRIPTION. ❌ WHY IT FAILS: it acts in transcription, not translation, and is eukaryotic; the drug targets a codon-recognizing molecule in bacterial translation. The trap is confusing transcription with translation. ✅ Correct if: asked what initiates eukaryotic transcription at the promoter."
+    },
+    {
+      "letter": "F",
+      "label": "uncharged tRNA - doesn't read stop codons either",
+      "detail": "WHAT IT IS: a tRNA lacking its amino acid. ❌ WHY IT FAILS: uncharged tRNA does not productively read codons to build protein and does not recognize stop codons. ✅ Correct if: discussing the bacterial stringent response (uncharged tRNA in the A site triggering (p)ppGpp)."
+    }
+  ],
+  "reasoning": [
+    "The highlighted codon is UAA - a stop codon",
+    "Stop codons are recognized by release (termination) factors, not tRNAs",
+    "In bacteria, RF1 recognizes UAA/UAG",
+    "Drug inhibits the molecule that recognizes the stop codon -> releasing factor 1 -> answer C"
+  ],
+  "mechanism": "During translation, charged tRNAs read sense codons in the ribosomal A site to elongate the polypeptide. When a STOP codon (UAA, UAG, UGA) enters the A site, no tRNA recognizes it; instead, RELEASE (termination) FACTORS bind the stop codon and hydrolyze the bond between the polypeptide and the P-site tRNA, releasing the finished protein and dissociating the ribosome-mRNA complex. In bacteria, RF1 recognizes UAA/UAG and RF2 recognizes UAA/UGA. A drug that inhibits the molecule recognizing the highlighted UAA therefore targets a release factor.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochemistry > translation: termination - release factors recognize stop codons and hydrolyze the polypeptide; elongation (A/P/E sites, EF-Tu/EF-G); start (AUG) and stop (UAA/UAG/UGA) codons."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The whole question hinges on reading ONE codon. Identify the highlighted codon (UAA = stop), recall that stop codons are read by release factors (not tRNAs), then use 'bacterial' to drop eukaryotic options."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on release/termination factor, sense vs stop codon, charged vs uncharged tRNA, elongation factor, snRNP, TFIID? Tell me which and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "TFIID (E) is the trap - it sounds like the obvious molecular-biology answer, but it belongs to eukaryotic TRANSCRIPTION, not bacterial translation termination. Read the codon and the organism first."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The image is an mRNA strand with one codon highlighted. Practice: write 5'->3', split into triplets, and check if the highlighted triplet is a stop codon (UAA/UAG/UGA). If it is, the recognizing molecule is a release factor."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Molecule that recognizes a STOP codon",
+      "back": "Release (termination) factor (RF1/RF2)"
+    },
+    {
+      "front": "Stop codons",
+      "back": "UAA, UAG, UGA"
+    },
+    {
+      "front": "Reads sense codons in the A site",
+      "back": "Charged (aminoacyl) tRNA"
+    },
+    {
+      "front": "Elongation factors",
+      "back": "EF-Tu (tRNA delivery), EF-G (translocation); eukaryotic EF-2"
+    },
+    {
+      "front": "snRNP function",
+      "back": "Eukaryotic pre-mRNA splicing (spliceosome)"
+    },
+    {
+      "front": "TFIID / TATA box",
+      "back": "Eukaryotic transcription initiation"
+    },
+    {
+      "front": "Prokaryotic vs eukaryotic ribosome",
+      "back": "70S (50S + 30S) vs 80S (60S + 40S)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer",
+      "topic": "Translation termination",
+      "detail": "Biochem > protein synthesis: release factors recognize stop codons and release the polypeptide; ribosome-mRNA complex disassembles.",
+      "location": "Biochem > protein synthesis: release factors recognize stop codons and release the polypeptide; ribosome-mRNA complex disassembles."
+    },
+    {
+      "tag": "options A/B/F",
+      "topic": "Translation elongation",
+      "detail": "Biochem > elongation: charged tRNA in A site, EF translocation; uncharged tRNA and the stringent response.",
+      "location": "Biochem > elongation: charged tRNA in A site, EF translocation; uncharged tRNA and the stringent response."
+    },
+    {
+      "tag": "options D/E",
+      "topic": "Eukaryotic transcription / splicing",
+      "detail": "Biochem > TFIID/TATA box (transcription) and snRNP splicing - eukaryotic, distinguish from bacterial translation.",
+      "location": "Biochem > TFIID/TATA box (transcription) and snRNP splicing - eukaryotic, distinguish from bacterial translation."
+    }
+  ],
+  "memoryHook": "A stop codon means RELEASE the chain - no tRNA reads a stop, a release factor does.",
+  "stem": [
+    {
+      "text": "A pharmaceutical researcher develops a new drug that "
+    },
+    {
+      "text": "affects bacterial protein synthesis",
+      "clue": true,
+      "type": "blue",
+      "note": "The drug acts on bacterial (prokaryotic) TRANSLATION. This immediately makes eukaryote-only machinery - splicing snRNPs, transcription factors - unlikely targets, and points to a component of the ribosomal translation cycle."
+    },
+    {
+      "text": ". In an experiment, "
+    },
+    {
+      "text": "Escherichia coli",
+      "clue": true,
+      "type": "green",
+      "note": "A prokaryote. Prokaryotes do not perform nuclear pre-mRNA splicing or use eukaryotic transcription factors like TFIID, so any option describing those processes can be eliminated on organism grounds."
+    },
+    {
+      "text": " is exposed to the drug and then cultured in media containing tagged nucleotides and amino acids. It is found that the drug inhibits molecules that "
+    },
+    {
+      "text": "recognize the highlighted codon",
+      "clue": true,
+      "type": "red",
+      "note": "The highlighted codon in the image is UAA - a STOP codon. Stop codons (UAA, UAG, UGA) are not read by tRNAs; they are recognized by RELEASE (termination) FACTORS, which trigger release of the finished polypeptide. The molecule that 'recognizes' this codon is therefore a release factor."
+    },
+    {
+      "text": " in the bacterial mRNA fragment shown in the image below. Which of the following molecules is the most likely target of this drug?"
+    }
+  ]
+}

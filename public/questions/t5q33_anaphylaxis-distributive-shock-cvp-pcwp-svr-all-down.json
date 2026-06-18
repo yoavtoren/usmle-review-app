@@ -1,0 +1,202 @@
+{
+  "id": "q182",
+  "item": 182,
+  "qid": "19284",
+  "title": "Anaphylaxis = distributive shock (CVP/PCWP/SVR all down)",
+  "system": "Physiology",
+  "topic": "Shock",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 56,
+  "vignette": "A previously healthy 15-year-old girl is brought to the emergency department due to respiratory distress and continuous cough after eating at a buffet in a local restaurant. Blood pressure is 80/40 mm Hg, pulse is 130/min, and respirations are 32/min. She is in marked respiratory distress but is able to speak. Diffuse wheezing and erythematous skin rash are present. Which of the following hemodynamic changes are most likely present in this patient?",
+  "clues": [
+    {
+      "text": "respiratory distress and continuous cough after eating at a buffet",
+      "type": "red",
+      "note": "Acute respiratory symptoms triggered by FOOD exposure raise immediate concern for an allergic reaction. With hypotension and rash, this is anaphylaxis."
+    },
+    {
+      "text": "Blood pressure is 80/40 mm Hg, pulse is 130/min",
+      "type": "red",
+      "note": "Hypotension (80/40) with compensatory tachycardia (130/min) defines SHOCK. The task is to identify which type and its hemodynamic profile."
+    },
+    {
+      "text": "Diffuse wheezing and erythematous skin rash",
+      "type": "green",
+      "note": "Wheezing (bronchospasm) plus an erythematous/urticarial rash after a food trigger confirms ANAPHYLAXIS - a distributive shock from massive mediator (histamine) release."
+    }
+  ],
+  "whatMatters": "Boil it down: a teen with a food trigger, hypotension, tachycardia, wheezing, and an urticarial rash = anaphylaxis = DISTRIBUTIVE shock. The primary problem is massive peripheral vasodilation: SVR falls, and venodilation/capillary leak drop venous return, so CVP and PCWP also fall. All three decrease. Answer A.",
+  "strategy": "Identify the SHOCK TYPE, then recall its CVP/PCWP/SVR signature. Distributive (anaphylactic/septic/neurogenic): vasodilation -> SVR down, and venodilation/leak -> CVP and PCWP down (everything down). Hypovolemic: CVP down, PCWP down, SVR up. Cardiogenic: CVP up, PCWP up, SVR up. Obstructive: CVP up, PCWP down, SVR up.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "CVP decreased / PCWP decreased / SVR decreased",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "CVP decreased / PCWP decreased / SVR increased",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "CVP increased / PCWP decreased / SVR increased",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "CVP increased / PCWP increased / SVR decreased",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "CVP increased / PCWP increased / SVR increased",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "that's hypovolemic shock",
+      "detail": "WHAT IT IS: low filling pressures (CVP, PCWP down) with reflex vasoconstriction (SVR up) is the pattern of HYPOVOLEMIC shock. ❌ WHY IT FAILS: anaphylaxis is distributive, where SVR FALLS from vasodilation; here SVR is increased. ✅ Correct if: hemorrhage or severe dehydration (hypovolemic shock)."
+    },
+    {
+      "letter": "C",
+      "label": "that's obstructive shock",
+      "detail": "WHAT IT IS: high right-sided pressure (CVP up), low left filling (PCWP down), and reflex SVR up is the pattern of OBSTRUCTIVE shock (eg, massive PE, tamponade). ❌ WHY IT FAILS: there is no obstruction here; anaphylaxis lowers SVR and filling pressures. ✅ Correct if: pulmonary embolism or cardiac tamponade."
+    },
+    {
+      "letter": "D",
+      "label": "high filling pressures with low SVR - not anaphylaxis",
+      "detail": "WHAT IT IS: high CVP and PCWP with a low SVR is a mixed/high-output volume-overloaded picture, not a standard shock category. ❌ WHY IT FAILS: anaphylaxis LOWERS CVP and PCWP (venodilation + capillary leak), it does not raise them. ✅ Correct if: a high-output state with volume overload, not anaphylaxis."
+    },
+    {
+      "letter": "E",
+      "label": "that's cardiogenic shock",
+      "detail": "WHAT IT IS: pump failure backs up pressures (CVP up, PCWP up) with reflex SVR up - the pattern of CARDIOGENIC shock. ❌ WHY IT FAILS: this patient has vasodilatory distributive shock (low SVR), not pump failure. ✅ Correct if: acute MI or heart failure causing cardiogenic shock."
+    }
+  ],
+  "reasoning": [
+    "Food trigger + hypotension + tachycardia + wheeze + urticaria = anaphylaxis (distributive shock)",
+    "Arteriolar vasodilation lowers SVR (causing hypotension)",
+    "Venodilation and capillary leak lower venous return -> CVP and PCWP fall",
+    "All three (CVP, PCWP, SVR) decreased -> answer A"
+  ],
+  "mechanism": "Anaphylaxis is a distributive shock driven by IgE-mediated mast-cell release of histamine and other mediators, causing profound peripheral vasodilation. Arteriolar dilation lowers SYSTEMIC VASCULAR RESISTANCE (causing hypotension), while venodilation and capillary leak reduce venous return, lowering CENTRAL VENOUS PRESSURE and PULMONARY CAPILLARY WEDGE PRESSURE. Cardiac output is often normal or even increased early (reflex tachycardia plus low afterload), but the hallmark is that CVP, PCWP, and SVR are all decreased. Treatment is intramuscular epinephrine: alpha-1 vasoconstriction restores SVR while beta effects bronchodilate and support the heart.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid CV > shock types and hemodynamic profiles (CVP/PCWP/SVR/CO grid): distributive (anaphylactic, septic, neurogenic) vs hypovolemic, cardiogenic, obstructive. Cross-ref anaphylaxis treatment (epinephrine)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: (1) name the shock (distributive/anaphylactic), (2) read the hemodynamic row. Distributive = vasodilation = everything down. Anchor on 'dilation drops resistance AND filling.'"
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on CVP, PCWP, SVR, distributive vs hypovolemic vs cardiogenic vs obstructive shock, preload, afterload? Tell me which term and I'll explain it."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Cardiogenic (E) and hypovolemic (B) tempt by sharing one or two arrows - but only distributive shock has ALL THREE decreased. Don't match a single value; match the whole row."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The answer choices are a hemodynamic grid. Memorize the shock table once: distributive (down/down/down), hypovolemic (down/down/up), cardiogenic (up/up/up), obstructive (up/down/up). Then match the diagnosis to its row."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Tell me what happened (timing, second-guessing, careless click) and I'll suggest a fix for future questions."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Anaphylaxis / distributive shock hemodynamics",
+      "back": "CVP down, PCWP down, SVR down (all down)"
+    },
+    {
+      "front": "Hypovolemic shock",
+      "back": "CVP down, PCWP down, SVR up"
+    },
+    {
+      "front": "Cardiogenic shock",
+      "back": "CVP up, PCWP up, SVR up"
+    },
+    {
+      "front": "Obstructive shock (PE, tamponade)",
+      "back": "CVP up, PCWP down, SVR up"
+    },
+    {
+      "front": "Anaphylaxis treatment",
+      "back": "Intramuscular epinephrine"
+    },
+    {
+      "front": "Distributive shock causes",
+      "back": "Anaphylactic, septic, neurogenic"
+    },
+    {
+      "front": "Anaphylaxis mediator",
+      "back": "Histamine (IgE, mast cells)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Shock hemodynamics",
+      "detail": "CV > shock types and CVP/PCWP/SVR/CO table; distributive (anaphylaxis) = all pressures and resistance down.",
+      "location": "CV > shock types and CVP/PCWP/SVR/CO table; distributive (anaphylaxis) = all pressures and resistance down."
+    },
+    {
+      "tag": "options",
+      "topic": "Other shock types",
+      "detail": "CV > hypovolemic, cardiogenic, obstructive shock hemodynamic patterns.",
+      "location": "CV > hypovolemic, cardiogenic, obstructive shock hemodynamic patterns."
+    },
+    {
+      "tag": "context",
+      "topic": "Anaphylaxis",
+      "detail": "Immuno/Pharm > type I hypersensitivity, histamine; epinephrine as first-line treatment.",
+      "location": "Immuno/Pharm > type I hypersensitivity, histamine; epinephrine as first-line treatment."
+    }
+  ],
+  "memoryHook": "Anaphylaxis = everything DILATES and DROPS - CVP, PCWP, and SVR all go down. Epinephrine clamps the vessels back up.",
+  "stem": [
+    {
+      "text": "A previously healthy 15-year-old girl is brought to the emergency department due to "
+    },
+    {
+      "text": "respiratory distress and continuous cough after eating at a buffet",
+      "clue": true,
+      "type": "red",
+      "note": "Acute respiratory symptoms triggered by FOOD exposure raise immediate concern for an allergic reaction. With hypotension and rash, this is anaphylaxis."
+    },
+    {
+      "text": " in a local restaurant. "
+    },
+    {
+      "text": "Blood pressure is 80/40 mm Hg, pulse is 130/min",
+      "clue": true,
+      "type": "red",
+      "note": "Hypotension (80/40) with compensatory tachycardia (130/min) defines SHOCK. The task is to identify which type and its hemodynamic profile."
+    },
+    {
+      "text": ", and respirations are 32/min. She is in marked respiratory distress but is able to speak. "
+    },
+    {
+      "text": "Diffuse wheezing and erythematous skin rash",
+      "clue": true,
+      "type": "green",
+      "note": "Wheezing (bronchospasm) plus an erythematous/urticarial rash after a food trigger confirms ANAPHYLAXIS - a distributive shock from massive mediator (histamine) release."
+    },
+    {
+      "text": " are present. Which of the following hemodynamic changes are most likely present in this patient?"
+    }
+  ]
+}

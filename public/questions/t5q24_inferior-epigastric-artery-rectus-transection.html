@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inferior epigastric artery (rectus transection)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 5 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q173", "item": 173, "qid": "11850", "title": "Inferior epigastric artery (rectus transection)", "system": "Anatomy", "topic": "Abdominal wall vasculature", "correct": "D", "yourAnswer": "D", "percentCorrect": 72, "vignette": "A 27-year-old woman, gravida 1 para 0, with gestational diabetes mellitus comes to the hospital at 38 weeks gestation for evaluation of abdominal pain. The patient is scheduled for an elective cesarean section at 39 weeks as a recent ultrasound revealed that the estimated fetal weight is 5200 g (11 lb 4 oz). Examination reveals that the patient is in active labor and the fetus is in breech presentation; an urgent cesarean section is performed. During the surgery, the rectus abdominus muscle is split vertically, but space appears to be limited. In anticipation of a large-for-gestational-age baby, a decision is made to transect the rectus abdominis muscle. If the rectus abdominis muscle is incised laterally, which of the following structures is at greatest risk of injury?", "clues": [{"text": "gestational diabetes mellitus", "type": "orange", "note": "Gestational diabetes predisposes to fetal macrosomia (a large-for-gestational-age baby), which is why extra surgical exposure — and a muscle transection — becomes necessary."}, {"text": "estimated fetal weight is 5200 g", "type": "blue", "note": "5200 g is well above the macrosomia threshold (~4000-4500 g). The big baby is the reason the surgeon must transect the rectus to gain room."}, {"text": "rectus abdominus muscle is split vertically", "type": "blue", "note": "A midline vertical split between the two rectus bellies is the standard cesarean approach. Splitting vertically is bloodless; the danger arises only when the muscle is cut across (transected) laterally."}, {"text": "the rectus abdominis muscle is incised laterally", "type": "red", "note": "This is the decisive spatial detail. A LATERAL/transverse cut of the rectus threatens the vessel that enters the muscle at its lateral edge near the arcuate line — the inferior epigastric artery."}], "whatMatters": "The clinical wrapper (macrosomia, breech, GDM) just explains WHY the rectus is transected. The testable point is pure anatomy: which structure runs where the rectus is cut LATERALLY? The inferior epigastric artery ascends on the posterior rectus and enters at its lateral aspect near the arcuate line — so a lateral transection puts it at greatest risk. Answer D.", "strategy": "For anterior abdominal wall questions, map the rectus sheath vessels: the SUPERIOR epigastric (from the internal thoracic) feeds the upper rectus; the INFERIOR epigastric (from the external iliac) climbs the posterior rectus and enters laterally near the arcuate line. Below the arcuate line there's no posterior sheath, so inferior epigastric injury bleeds freely (rectus sheath hematoma).", "options": [{"letter": "A", "text": "Deep circumflex iliac artery", "correct": false}, {"letter": "B", "text": "Deep inguinal ring", "correct": false}, {"letter": "C", "text": "Femoral sheath", "correct": false}, {"letter": "D", "text": "Inferior epigastric artery", "correct": true}, {"letter": "E", "text": "Lateral femoral cutaneous nerve", "correct": false}, {"letter": "F", "text": "Superior epigastric artery", "correct": false}], "eliminations": [{"letter": "A", "label": "deep circumflex iliac artery — too lateral/inferior", "detail": "WHAT IT IS: a branch of the external iliac that runs along the iliac crest to supply the lower lateral abdominal wall. ❌ WHY IT FAILS: it sits far LATERAL and inferior to the rectus, not where the muscle is transected. ✅ Correct if: dissection along the iliac crest / anterior superior iliac spine."}, {"letter": "B", "label": "deep inguinal ring — an inguinal landmark, not in the sheath", "detail": "WHAT IT IS: the opening in the transversalis fascia where the spermatic cord/round ligament leaves the abdomen, lateral to the inferior epigastric vessels. ❌ WHY IT FAILS: it's an inguinal-canal landmark, not a structure cut within the rectus during a C-section. ✅ Correct if: indirect inguinal hernia anatomy."}, {"letter": "C", "label": "femoral sheath — in the groin, not the abdomen", "detail": "WHAT IT IS: the fascial sleeve below the inguinal ligament enclosing the femoral artery, vein, and canal. ❌ WHY IT FAILS: it lies in the thigh/groin, nowhere near a rectus incision. ✅ Correct if: femoral hernia or femoral vascular access."}, {"letter": "E", "label": "lateral femoral cutaneous nerve — thigh sensation", "detail": "WHAT IT IS: a sensory nerve to the anterolateral thigh; its entrapment causes meralgia paresthetica. ❌ WHY IT FAILS: it passes under the inguinal ligament, far from the rectus muscle belly. ✅ Correct if: anterolateral thigh numbness/burning in pregnancy or obesity."}, {"letter": "F", "label": "superior epigastric artery — supplies the UPPER rectus", "detail": "WHAT IT IS: the continuation of the internal thoracic artery; it descends on the posterior rectus to supply its upper part and anastomoses with the inferior epigastric. ❌ WHY IT FAILS: a LATERAL transection near the arcuate line endangers the INFERIOR epigastric where it enters; the superior epigastric is up near the costal margin. ✅ Correct if: injury high on the rectus near the xiphoid/costal margin."}], "reasoning": ["A transverse (lateral) transection of the rectus threatens the vessel entering the muscle's lateral edge", "The inferior epigastric artery (from the external iliac) ascends on the posterior rectus and enters its lateral aspect near the arcuate line", "Below the arcuate line there is NO posterior rectus sheath, so injury here bleeds significantly (rectus sheath hematoma)", "-> Inferior epigastric artery, answer D"], "mechanism": "The inferior epigastric artery arises from the external iliac artery, ascends along the posterior surface of the rectus abdominis, and enters the muscle at its lateral aspect around the arcuate line, where it anastomoses with the superior epigastric artery. Because the rectus sheath has no posterior layer below the arcuate line, a lateral/transverse transection of the rectus there can lacerate the inferior epigastric vessels and produce a significant rectus sheath hematoma. Surgeons identify and ligate the inferior epigastric arteries bilaterally when the rectus must be cut horizontally.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Anatomy > anterior abdominal wall: rectus sheath, arcuate line, superior (internal thoracic) vs inferior (external iliac) epigastric arteries; rectus sheath hematoma below the arcuate line."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The ask is purely spatial: which vessel sits where the rectus is cut LATERALLY/transversely. Place each option on a mental map, then pick the one entering the rectus' lateral edge (inferior epigastric)."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on arcuate line, rectus sheath, superior vs inferior epigastric, deep circumflex iliac, deep inguinal ring, meralgia paresthetica? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Superior epigastric (F) tempts because it's the OTHER epigastric vessel — but it feeds the UPPER rectus; a lateral cut near the arcuate line hits the INFERIOR epigastric."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: transverse rectus transection -> ligate the inferior epigastric arteries (no posterior sheath below the arcuate line -> hematoma risk)."}], "keywords": [{"front": "Lateral/transverse rectus transection — vessel at risk", "back": "Inferior epigastric artery"}, {"front": "Inferior epigastric artery origin", "back": "External iliac artery"}, {"front": "Superior epigastric artery origin", "back": "Internal thoracic (mammary) artery"}, {"front": "No posterior rectus sheath below the…", "back": "Arcuate line (-> rectus sheath hematoma)"}, {"front": "Lateral femoral cutaneous nerve entrapment", "back": "Meralgia paresthetica"}, {"front": "Deep inguinal ring location", "back": "Lateral to the inferior epigastric vessels"}], "firstAid": [{"tag": "answer / stem", "topic": "Inferior epigastric artery", "detail": "Anatomy > abdominal wall: from external iliac, ascends posterior rectus, enters at the arcuate line; lateral transection -> rectus sheath hematoma."}, {"tag": "options", "topic": "Abdominal wall / groin structures", "detail": "Anatomy > superior epigastric (internal thoracic), deep circumflex iliac, deep inguinal ring, femoral sheath, lateral femoral cutaneous nerve (meralgia paresthetica)."}, {"tag": "context", "topic": "Fetal macrosomia / cesarean", "detail": "Repro > gestational diabetes -> macrosomia (>4000-4500 g), breech and large fetus as C-section indications."}], "memoryHook": "Cut the rectus SIDEWAYS -> you hit the INFERIOR epigastric (climbs up from the external iliac). The superior epigastric is up top, from the internal thoracic.", "stem": [{"text": "A 27-year-old woman, gravida 1 para 0, with "}, {"text": "gestational diabetes mellitus", "clue": true, "type": "orange", "note": "Gestational diabetes predisposes to fetal macrosomia (a large-for-gestational-age baby), which is why extra surgical exposure — and a muscle transection — becomes necessary."}, {"text": " comes to the hospital at 38 weeks gestation for evaluation of abdominal pain. The patient is scheduled for an elective cesarean section at 39 weeks as a recent ultrasound revealed that the "}, {"text": "estimated fetal weight is 5200 g", "clue": true, "type": "blue", "note": "5200 g is well above the macrosomia threshold (~4000-4500 g). The big baby is the reason the surgeon must transect the rectus to gain room."}, {"text": " (11 lb 4 oz). Examination reveals that the patient is in active labor and the fetus is in breech presentation; an urgent cesarean section is performed. During the surgery, the "}, {"text": "rectus abdominus muscle is split vertically", "clue": true, "type": "blue", "note": "A midline vertical split between the two rectus bellies is the standard cesarean approach. Splitting vertically is bloodless; the danger arises only when the muscle is cut across (transected) laterally."}, {"text": ", but space appears to be limited. In anticipation of a large-for-gestational-age baby, a decision is made to transect the rectus abdominis muscle. If "}, {"text": "the rectus abdominis muscle is incised laterally", "clue": true, "type": "red", "note": "This is the decisive spatial detail. A LATERAL/transverse cut of the rectus threatens the vessel that enters the muscle at its lateral edge near the arcuate line — the inferior epigastric artery."}, {"text": ", which of the following structures is at greatest risk of injury?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

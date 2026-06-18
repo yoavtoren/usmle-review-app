@@ -1,0 +1,221 @@
+{
+  "id": "q175",
+  "item": 175,
+  "qid": "1933",
+  "title": "Trochlear nerve (CN IV) palsy",
+  "system": "Anatomy",
+  "topic": "Cranial nerve palsies",
+  "correct": "E",
+  "yourAnswer": "B",
+  "percentCorrect": 55,
+  "vignette": "A 53-year-old man comes to the office due to double vision. The patient lives in a two-story house and has had difficulty walking down stairs because he sees duplicates of every step and doesn't \"know which ones are real.\" He does not have significant problems walking up stairs. The patient is also frustrated because he has trouble reading certain things, such as the morning newspaper and work-related documents. He has had no eye trauma, headache, focal weakness, or numbness. The patient has a history of hypertension and type 2 diabetes mellitus. He exercises regularly and does not use tobacco, alcohol, or illicit drugs. A lesion affecting which of the following structures is most likely responsible for this patient's visual symptoms?",
+  "clues": [
+    {
+      "text": "double vision",
+      "type": "red",
+      "note": "Binocular diplopia (resolves when one eye is covered) means an extraocular-muscle/cranial-nerve misalignment, not a problem within one eye. The pattern of the diplopia localizes the nerve."
+    },
+    {
+      "text": "difficulty walking down stairs because he sees duplicates of every step",
+      "type": "red",
+      "note": "VERTICAL diplopia that is worst on DOWNGAZE is the classic signature of superior oblique weakness — i.e., a trochlear (CN IV) palsy. Going down stairs forces downward gaze and unmasks it."
+    },
+    {
+      "text": "does not have significant problems walking up stairs",
+      "type": "green",
+      "note": "Trouble looking DOWN but not UP confirms the deficit is in depression of the eye (superior oblique / CN IV), not elevation. This asymmetry pins the lesion to CN IV."
+    },
+    {
+      "text": "trouble reading certain things, such as the morning newspaper",
+      "type": "blue",
+      "note": "Reading requires downward and convergent gaze — the exact action the superior oblique assists. Worsening with near/downgaze tasks reinforces a CN IV palsy."
+    },
+    {
+      "text": "history of hypertension and type 2 diabetes mellitus",
+      "type": "orange",
+      "note": "Hypertension and diabetes cause microvascular (ischemic) cranial mononeuropathies. CN IV's long, thin course makes it vulnerable, giving an isolated trochlear palsy in a vasculopath."
+    }
+  ],
+  "whatMatters": "The real ask: which structure, when lesioned, gives binocular VERTICAL diplopia worst on downgaze (stairs, reading) but spared on upgaze? That maps to the superior oblique muscle, innervated by the trochlear nerve (CN IV) — here an ischemic microvascular palsy from HTN/diabetes. Answer E.",
+  "strategy": "Localize ocular-motor palsies by the diplopia pattern: CN VI = horizontal diplopia, can't abduct (esotropia); CN III = 'down-and-out' eye + ptosis + dilated pupil; CN IV = vertical diplopia worse on DOWNGAZE/reading, head tilt away from the lesion. 'Worse going down stairs' is a CN IV buzzphrase.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Abducens nerve",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Medial longitudinal fasciculus",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Oculomotor nerve",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Optic nerve",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Trochlear nerve",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "abducens (CN VI) — horizontal, not vertical",
+      "detail": "WHAT IT IS: CN VI innervates the lateral rectus (abduction). ❌ WHY IT FAILS: a CN VI palsy gives HORIZONTAL diplopia and esotropia (the eye can't abduct), not vertical diplopia worse on downgaze. ✅ Correct if: horizontal double vision, inward-turned eye, failure to look laterally."
+    },
+    {
+      "letter": "B",
+      "label": "medial longitudinal fasciculus — INO, a horizontal problem (your pick)",
+      "detail": "WHAT IT IS: the MLF links the CN VI and CN III nuclei for conjugate horizontal gaze; a lesion causes internuclear ophthalmoplegia (INO). ❌ WHY IT FAILS: INO gives impaired ADDUCTION on the lesioned side with abducting nystagmus of the other eye (often MS) — a horizontal gaze defect, not vertical diplopia on stairs. The trap is picking the fancy brainstem tract. ✅ Correct if: failure of adduction + contralateral abducting nystagmus in a young MS patient."
+    },
+    {
+      "letter": "C",
+      "label": "oculomotor (CN III) — would give ptosis + blown pupil",
+      "detail": "WHAT IT IS: CN III innervates most extraocular muscles plus the levator and the pupillary constrictor. ❌ WHY IT FAILS: a CN III palsy gives a 'down-and-out' eye with ptosis and often a dilated pupil — none of which are present here. ✅ Correct if: ptosis, mydriasis, and an eye deviated down and out."
+    },
+    {
+      "letter": "D",
+      "label": "optic nerve (CN II) — vision loss, not diplopia",
+      "detail": "WHAT IT IS: CN II carries afferent visual information. ❌ WHY IT FAILS: optic-nerve lesions cause LOSS of vision or visual-field defects, not binocular diplopia that resolves on covering one eye. ✅ Correct if: monocular vision loss, an afferent pupillary defect, or a field cut."
+    }
+  ],
+  "reasoning": [
+    "Binocular VERTICAL diplopia, worst going DOWN stairs and reading (downgaze), better looking up",
+    "The superior oblique depresses the adducted eye and intorts it; it is innervated by the trochlear nerve (CN IV)",
+    "HTN + diabetes cause a microvascular (ischemic) CN IV mononeuropathy",
+    "-> Trochlear nerve, answer E"
+  ],
+  "mechanism": "The trochlear nerve (CN IV) innervates the superior oblique muscle, which intorts the eye and depresses it when the eye is adducted. A CN IV palsy therefore produces vertical diplopia that is worst on downgaze and convergence — exactly the difficulty going down stairs and reading. Because of its long, thin intracranial course, CN IV is especially vulnerable to microvascular ischemia in hypertension and diabetes (and to trauma). Patients often tilt the head away from the affected side to compensate for the resulting hypertropia and extorsion.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Neuro/Anatomy > extraocular muscles and CN III/IV/VI palsies; superior oblique (CN IV) intorts and depresses the adducted eye; vertical diplopia worse on downgaze; microvascular causes (HTN, DM)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate the behavior ('worse going DOWN stairs / reading, better up') into 'downgaze diplopia -> superior oblique -> CN IV' before scanning the options."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on binocular vs monocular diplopia, superior oblique, intorsion, hypertropia, internuclear ophthalmoplegia, microvascular mononeuropathy? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "MLF / INO (B) is the trap — it sounds like the sophisticated answer, but INO is a HORIZONTAL gaze (adduction) defect, not vertical diplopia on stairs."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: vertical diplopia worse on downgaze / stairs / reading = CN IV (superior oblique)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Vertical diplopia worse going down stairs / reading",
+      "back": "Trochlear nerve (CN IV) palsy"
+    },
+    {
+      "front": "Superior oblique actions",
+      "back": "Intort + depress the adducted eye (CN IV)"
+    },
+    {
+      "front": "Head tilt AWAY from the lesion to compensate",
+      "back": "CN IV palsy"
+    },
+    {
+      "front": "Horizontal diplopia, esotropia, can't abduct",
+      "back": "Abducens (CN VI) palsy"
+    },
+    {
+      "front": "Down-and-out eye, ptosis, blown pupil",
+      "back": "Oculomotor (CN III) palsy"
+    },
+    {
+      "front": "Impaired adduction + abducting nystagmus (MS)",
+      "back": "MLF lesion = internuclear ophthalmoplegia"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Trochlear nerve palsy",
+      "detail": "Neuro > CN IV / superior oblique: vertical diplopia worse on downgaze, compensatory head tilt; microvascular (HTN/DM) or trauma.",
+      "location": "Neuro > CN IV / superior oblique: vertical diplopia worse on downgaze, compensatory head tilt; microvascular (HTN/DM) or trauma."
+    },
+    {
+      "tag": "options",
+      "topic": "Eye-movement structures",
+      "detail": "Neuro > CN III (down-and-out, ptosis, mydriasis), CN VI (lateral rectus, esotropia), MLF (INO), CN II (vision loss).",
+      "location": "Neuro > CN III (down-and-out, ptosis, mydriasis), CN VI (lateral rectus, esotropia), MLF (INO), CN II (vision loss)."
+    },
+    {
+      "tag": "context",
+      "topic": "Microvascular cranial mononeuropathy",
+      "detail": "Neuro > diabetic/hypertensive ischemic CN III/IV/VI palsies; classically pupil-sparing CN III.",
+      "location": "Neuro > diabetic/hypertensive ischemic CN III/IV/VI palsies; classically pupil-sparing CN III."
+    }
+  ],
+  "memoryHook": "CN IV = superior oblique = the 'down-and-in' muscle. Lose it and you can't look DOWN-and-in -> trips going DOWN stairs and struggles to read.",
+  "stem": [
+    {
+      "text": "A 53-year-old man comes to the office due to "
+    },
+    {
+      "text": "double vision",
+      "clue": true,
+      "type": "red",
+      "note": "Binocular diplopia (resolves when one eye is covered) means an extraocular-muscle/cranial-nerve misalignment, not a problem within one eye. The pattern of the diplopia localizes the nerve."
+    },
+    {
+      "text": ". The patient lives in a two-story house and has had "
+    },
+    {
+      "text": "difficulty walking down stairs because he sees duplicates of every step",
+      "clue": true,
+      "type": "red",
+      "note": "VERTICAL diplopia that is worst on DOWNGAZE is the classic signature of superior oblique weakness — i.e., a trochlear (CN IV) palsy. Going down stairs forces downward gaze and unmasks it."
+    },
+    {
+      "text": " and doesn't \"know which ones are real.\" He "
+    },
+    {
+      "text": "does not have significant problems walking up stairs",
+      "clue": true,
+      "type": "green",
+      "note": "Trouble looking DOWN but not UP confirms the deficit is in depression of the eye (superior oblique / CN IV), not elevation. This asymmetry pins the lesion to CN IV."
+    },
+    {
+      "text": ". The patient is also frustrated because he has "
+    },
+    {
+      "text": "trouble reading certain things, such as the morning newspaper",
+      "clue": true,
+      "type": "blue",
+      "note": "Reading requires downward and convergent gaze — the exact action the superior oblique assists. Worsening with near/downgaze tasks reinforces a CN IV palsy."
+    },
+    {
+      "text": " and work-related documents. He has had no eye trauma, headache, focal weakness, or numbness. The patient has a "
+    },
+    {
+      "text": "history of hypertension and type 2 diabetes mellitus",
+      "clue": true,
+      "type": "orange",
+      "note": "Hypertension and diabetes cause microvascular (ischemic) cranial mononeuropathies. CN IV's long, thin course makes it vulnerable, giving an isolated trochlear palsy in a vasculopath."
+    },
+    {
+      "text": ". He exercises regularly and does not use tobacco, alcohol, or illicit drugs. A lesion affecting which of the following structures is most likely responsible for this patient's visual symptoms?"
+    }
+  ]
+}
