@@ -1,0 +1,246 @@
+{
+  "id": "q214",
+  "item": 214,
+  "qid": "12119",
+  "title": "Anoxic brain injury: midbrain controls pupillary light reflex",
+  "system": "Anatomy",
+  "topic": "Pupillary light reflex / brainstem localization",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 63,
+  "vignette": "A 65-year-old man is brought to the emergency department after he suddenly became unresponsive at home. When the paramedics arrived at his residence, they found him pulseless with ventricular fibrillation. After 10 minutes of cardiopulmonary resuscitation, the patient regained spontaneous circulation. In the hospital, he is intubated and placed on mechanical ventilation. Vital signs remain stable. A therapeutic hypothermia protocol is initiated for the next 72 hours. Following rewarming, he remains comatose with fixed and dilated pupils. There is no direct or consensual pupillary response to light. MRI of the brain reveals diffuse loss of gray-white matter differentiation with sulcal effacement. This patient's pupillary findings are most likely caused by damage to which of the following brain regions?",
+  "clues": [
+    {
+      "text": "pulseless with ventricular fibrillation",
+      "type": "red",
+      "note": "Cardiac arrest (VFib) causes global cerebral hypoperfusion -> anoxic (hypoxic-ischemic) brain injury. This is the root insult behind every downstream finding."
+    },
+    {
+      "text": "regained spontaneous circulation",
+      "type": "blue",
+      "note": "Return of spontaneous circulation after prolonged CPR sets up post-cardiac-arrest brain injury; the longer the arrest, the worse the anoxic damage."
+    },
+    {
+      "text": "fixed and dilated pupils",
+      "type": "green",
+      "note": "Fixed, dilated pupils mean the parasympathetic constrictor pathway is not working. That pathway's relay nuclei live in the upper MIDBRAIN, so this localizes the lesion."
+    },
+    {
+      "text": "no direct or consensual pupillary response to light",
+      "type": "green",
+      "note": "Loss of BOTH direct and consensual responses points to damage at the efferent/integration center common to both eyes - the midbrain pretectal/Edinger-Westphal-CN III circuitry - rather than a single optic nerve."
+    },
+    {
+      "text": "diffuse loss of gray-white matter differentiation with sulcal effacement",
+      "type": "red",
+      "note": "This MRI pattern is classic anoxic brain injury (cytotoxic edema). Diffuse injury that knocks out the brainstem pupillary reflex carries a poor prognosis."
+    }
+  ],
+  "whatMatters": "The pupillary light reflex is integrated in the upper MIDBRAIN: optic input -> pretectal nucleus -> bilateral Edinger-Westphal nuclei -> CN III parasympathetics -> ciliary ganglion -> pupillary constriction (direct + consensual). Anoxic injury to the midbrain abolishes both responses, giving fixed, dilated pupils. Answer B.",
+  "strategy": "Trace the reflex arc and find where BOTH eyes' responses converge. Bilateral loss of direct AND consensual constriction = a central integration lesion, not one optic nerve. That center is the upper midbrain (pretectal + Edinger-Westphal + CN III). Match distractors to their reflexes: pons = corneal/horizontal gaze, medulla = gag - none control the pupil.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Medulla",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Midbrain",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Occipital lobe",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Parietal lobe",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Pons",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Temporal lobe",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Thalamus",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Medulla - gag reflex, not pupils",
+      "detail": "WHAT IT IS: the medulla houses CN IX/X (gag reflex) and cardiorespiratory centers. ❌ WHY IT FAILS: it has no role in the pupillary light reflex, so medullary damage doesn't produce fixed/dilated pupils. ✅ Correct if: absent gag reflex or loss of respiratory drive."
+    },
+    {
+      "letter": "C",
+      "label": "Occipital lobe - vision, but reflex intact",
+      "detail": "WHAT IT IS: primary visual cortex; bilateral damage causes cortical blindness. ❌ WHY IT FAILS: the pupillary light reflex bypasses the cortex (synapses at the pretectal midbrain), so occipital injury leaves pupils REACTIVE. ✅ Correct if: cortical blindness with preserved pupillary reflexes."
+    },
+    {
+      "letter": "D",
+      "label": "Parietal lobe - optic radiations, not pupils",
+      "detail": "WHAT IT IS: superior optic radiations pass through the parietal lobe. ❌ WHY IT FAILS: a radiation lesion causes inferior quadrantanopia, not loss of the pupillary reflex. ✅ Correct if: contralateral homonymous inferior quadrantanopia."
+    },
+    {
+      "letter": "E",
+      "label": "Pons - corneal/horizontal gaze reflexes",
+      "detail": "WHAT IT IS: the pons contains the horizontal gaze center (PPRF) and CN V/VII (corneal reflex). ❌ WHY IT FAILS: it mediates gaze and corneal reflexes, not pupillary constriction - that's the midbrain. ✅ Correct if: loss of horizontal gaze or corneal reflex."
+    },
+    {
+      "letter": "F",
+      "label": "Temporal lobe - Meyer loop, not pupils",
+      "detail": "WHAT IT IS: inferior optic radiations (Meyer loop) loop through the temporal lobe. ❌ WHY IT FAILS: damage gives superior quadrantanopia, not an abolished pupillary reflex. ✅ Correct if: contralateral homonymous superior quadrantanopia ('pie in the sky')."
+    },
+    {
+      "letter": "G",
+      "label": "Thalamus (LGN) - visual relay, reflex spared",
+      "detail": "WHAT IT IS: the lateral geniculate nucleus relays visual information to the cortex. ❌ WHY IT FAILS: pupillary reflex fibers branch off to the pretectal nucleus BEFORE the LGN, so thalamic damage causes hemianopia with intact pupils. ✅ Correct if: contralateral homonymous hemianopia from an LGN lesion."
+    }
+  ],
+  "reasoning": [
+    "Cardiac arrest -> global anoxic brain injury (MRI: loss of gray-white differentiation, sulcal effacement)",
+    "Fixed, dilated, nonreactive pupils (no direct or consensual response) localize to the pupillary reflex integration center",
+    "That center is the upper midbrain: pretectal nucleus -> bilateral Edinger-Westphal -> CN III -> ciliary ganglion",
+    "-> midbrain damage abolishes the reflex; answer B"
+  ],
+  "mechanism": "The pupillary light reflex is integrated in the UPPER MIDBRAIN. Light signals travel via the optic nerve and tract to the midbrain at the level of the superior colliculus, synapse in the pretectal nucleus, and project bilaterally to the Edinger-Westphal nuclei; these send preganglionic parasympathetic fibers through CN III to the ciliary ganglion, whose postganglionic fibers innervate the sphincter pupillae to constrict the pupil. Because the pretectal projection is bilateral, light in one eye constricts both pupils (direct and consensual responses). Global anoxic injury from cardiac arrest damages this midbrain circuitry, abolishing both responses and leaving fixed, dilated pupils - a poor prognostic sign after arrest. Cortical and thalamic visual structures are not involved because the reflex branches to the pretectum before reaching them.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Neuro > pupillary light reflex: optic nerve -> pretectal nucleus (midbrain) -> bilateral Edinger-Westphal -> CN III -> ciliary ganglion -> sphincter pupillae; brainstem levels (midbrain=pupil/CN III-IV, pons=CN V-VIII/gaze/corneal, medulla=CN IX-XII/gag)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The stem asks where damage abolishes BOTH direct and consensual pupillary responses - the central integration site (midbrain), not the optic nerve or cortex."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on direct vs consensual response, pretectal nucleus, Edinger-Westphal nucleus, sulcal effacement, or anoxic brain injury? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Pons (12%) and occipital lobe (12%) draw votes - pons handles gaze/corneal reflexes (not pupils), and the occipital cortex isn't in the reflex arc (pupils stay reactive in cortical blindness)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The MRI (loss of gray-white differentiation, sulcal effacement) confirms anoxic injury but doesn't localize the pupil finding - the localization is anatomic (midbrain reflex arc). If the film distracted you, anchor on 'fixed pupils, no light reflex = midbrain.'"
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: pupillary light reflex = MIDBRAIN (pretectal + Edinger-Westphal + CN III); pons = corneal/horizontal gaze; medulla = gag; cortex/LGN lesions spare the pupil reflex."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Fixed, dilated pupils with no direct OR consensual light response",
+      "back": "Upper midbrain damage (pupillary light reflex center)"
+    },
+    {
+      "front": "Pupillary light reflex pathway",
+      "back": "Optic nerve -> pretectal nucleus -> bilateral Edinger-Westphal -> CN III -> ciliary ganglion -> sphincter pupillae"
+    },
+    {
+      "front": "Why both pupils constrict to light in one eye",
+      "back": "Pretectal nucleus projects BILATERALLY to Edinger-Westphal nuclei (direct + consensual)"
+    },
+    {
+      "front": "Pons reflexes",
+      "back": "Horizontal gaze (PPRF) and corneal reflex (CN V/VII)"
+    },
+    {
+      "front": "MRI of anoxic brain injury",
+      "back": "Diffuse loss of gray-white differentiation, sulcal effacement"
+    },
+    {
+      "front": "Cortical blindness vs midbrain lesion (pupils)",
+      "back": "Occipital lesion: pupils REACTIVE; midbrain lesion: pupils FIXED"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Pupillary light reflex",
+      "detail": "Neuro > midbrain pretectal nucleus + Edinger-Westphal + CN III; bilateral projection = direct & consensual constriction.",
+      "location": "Neuro > midbrain pretectal nucleus + Edinger-Westphal + CN III; bilateral projection = direct & consensual constriction."
+    },
+    {
+      "tag": "options",
+      "topic": "Brainstem cranial nerve levels",
+      "detail": "Neuro > midbrain (III, IV; pupil), pons (V-VIII; gaze/corneal), medulla (IX-XII; gag).",
+      "location": "Neuro > midbrain (III, IV; pupil), pons (V-VIII; gaze/corneal), medulla (IX-XII; gag)."
+    },
+    {
+      "tag": "context",
+      "topic": "Anoxic brain injury & brain death",
+      "detail": "Neuro/Crit care > post-arrest exam; absent brainstem reflexes; poor prognosis.",
+      "location": "Neuro/Crit care > post-arrest exam; absent brainstem reflexes; poor prognosis."
+    }
+  ],
+  "memoryHook": "Pupils are a MIDBRAIN job (CN III + Edinger-Westphal). Knock out the midbrain and the lights stay off: fixed, dilated, no direct or consensual response.",
+  "stem": [
+    {
+      "text": "A 65-year-old man is brought to the emergency department after he suddenly became unresponsive at home. When the paramedics arrived at his residence, they found him "
+    },
+    {
+      "text": "pulseless with ventricular fibrillation",
+      "clue": true,
+      "type": "red",
+      "note": "Cardiac arrest (VFib) causes global cerebral hypoperfusion -> anoxic (hypoxic-ischemic) brain injury. This is the root insult behind every downstream finding."
+    },
+    {
+      "text": ". After 10 minutes of cardiopulmonary resuscitation, the patient "
+    },
+    {
+      "text": "regained spontaneous circulation",
+      "clue": true,
+      "type": "blue",
+      "note": "Return of spontaneous circulation after prolonged CPR sets up post-cardiac-arrest brain injury; the longer the arrest, the worse the anoxic damage."
+    },
+    {
+      "text": ". In the hospital, he is intubated and placed on mechanical ventilation. Vital signs remain stable. A therapeutic hypothermia protocol is initiated for the next 72 hours. Following rewarming, he remains comatose with "
+    },
+    {
+      "text": "fixed and dilated pupils",
+      "clue": true,
+      "type": "green",
+      "note": "Fixed, dilated pupils mean the parasympathetic constrictor pathway is not working. That pathway's relay nuclei live in the upper MIDBRAIN, so this localizes the lesion."
+    },
+    {
+      "text": ". There is "
+    },
+    {
+      "text": "no direct or consensual pupillary response to light",
+      "clue": true,
+      "type": "green",
+      "note": "Loss of BOTH direct and consensual responses points to damage at the efferent/integration center common to both eyes - the midbrain pretectal/Edinger-Westphal-CN III circuitry - rather than a single optic nerve."
+    },
+    {
+      "text": ". MRI of the brain reveals "
+    },
+    {
+      "text": "diffuse loss of gray-white matter differentiation with sulcal effacement",
+      "clue": true,
+      "type": "red",
+      "note": "This MRI pattern is classic anoxic brain injury (cytotoxic edema). Diffuse injury that knocks out the brainstem pupillary reflex carries a poor prognosis."
+    },
+    {
+      "text": ". This patient's pupillary findings are most likely caused by damage to which of the following brain regions?"
+    }
+  ]
+}

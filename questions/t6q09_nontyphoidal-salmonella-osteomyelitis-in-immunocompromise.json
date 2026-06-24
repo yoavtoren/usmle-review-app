@@ -1,0 +1,239 @@
+{
+  "id": "q198",
+  "item": 198,
+  "qid": "15205",
+  "title": "Nontyphoidal Salmonella: osteomyelitis in immunocompromise",
+  "system": "Microbiology",
+  "topic": "Salmonella gastroenteritis / invasive complications",
+  "correct": "E",
+  "yourAnswer": "D",
+  "percentCorrect": 40,
+  "vignette": "A 64-year-old man comes to the office due to 3 days of diarrhea. He began to have nausea, vomiting, abdominal cramps, and diarrhea 24 hours after eating chicken salad at a fast-food restaurant. The patient has had 4-6 episodes of diarrhea per day with no blood in the stool. He has no tenesmus. His wife, who ate the same food, had a few loose stools but felt well afterward. The patient takes a tumor necrosis factor inhibitor for psoriatic arthritis and a proton pump inhibitor for gastritis. Temperature is 38 C (100 F), blood pressure is 120/70 mm Hg, and pulse is 88/min. Abdominal examination reveals mild diffuse tenderness to palpation and increased bowel sounds. Cultures of the stool yield gram-negative bacilli that are nonlactose fermenting and oxidase negative. Which of the following is the most likely complication associated with this patient's current infection?",
+  "clues": [
+    {
+      "text": "eating chicken salad at a fast-food restaurant",
+      "type": "blue",
+      "note": "Contaminated poultry and eggs are the classic source of nontyphoidal Salmonella (chicken salad). Campylobacter is also poultry-associated, so the source alone doesn't clinch it - the culture does."
+    },
+    {
+      "text": "no blood in the stool",
+      "type": "blue",
+      "note": "Non-bloody, watery diarrhea fits nontyphoidal Salmonella and argues against the bloody dysentery of Shigella and Shiga toxin-producing E. coli - the two HUS-causing organisms."
+    },
+    {
+      "text": "He has no tenesmus",
+      "type": "blue",
+      "note": "Absence of tenesmus (painful urge to pass stool) argues against Shigella, which typically causes fever, tenesmus, and bloody/mucoid stool. This pushes away from the HUS and seizure (Shigella) answers."
+    },
+    {
+      "text": "tumor necrosis factor inhibitor for psoriatic arthritis",
+      "type": "red",
+      "note": "TNF-alpha inhibitors cripple macrophage killing of intracellular organisms, the key defense against Salmonella. Impaired immunity is the major risk factor for INVASIVE nontyphoidal Salmonella - bacteremia that seeds bone (osteomyelitis), vessels, or heart valves."
+    },
+    {
+      "text": "a proton pump inhibitor for gastritis",
+      "type": "orange",
+      "note": "Salmonella must survive gastric acid to infect. Acid suppression (PPI) lowers the infectious dose and raises the risk and severity of Salmonella infection."
+    },
+    {
+      "text": "gram-negative bacilli that are nonlactose fermenting and oxidase negative",
+      "type": "green",
+      "note": "Nonlactose-fermenting, oxidase-NEGATIVE gram-negative rods = Salmonella or Shigella (Campylobacter is oxidase-POSITIVE and curved). Combined with non-bloody diarrhea from poultry in an immunocompromised host, this is nontyphoidal Salmonella."
+    }
+  ],
+  "whatMatters": "Pin the organism, then the host. Nonlactose-fermenting, oxidase-negative GNR + non-bloody diarrhea from poultry = nontyphoidal Salmonella (not Campylobacter, which is oxidase-positive). The TNF-inhibitor + PPI mark an immunocompromised, acid-suppressed host prone to INVASIVE disease. Invasive nontyphoidal Salmonella seeds bone -> osteomyelitis (also mycotic aneurysm, endocarditis). Answer E.",
+  "strategy": "Two-step infectious-disease question: (1) ID the bug from culture + stool character, (2) match the COMPLICATION to that bug and host. Salmonella -> osteomyelitis / endovascular infection (worst in sickle cell or immunosuppression). HUS and seizure belong to Shigella/EHEC (bloody diarrhea + tenesmus). Guillain-Barre follows Campylobacter (oxidase-positive, bloody). Chronic malabsorption follows Giardia.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Chronic malabsorption",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Generalized seizure",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Guillain-Barre syndrome",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Hemolytic uremic syndrome",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Osteomyelitis",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Chronic malabsorption - Giardia, not Salmonella",
+      "detail": "WHAT IT IS: villous blunting from chronic Giardia infection causes fat malabsorption and foul, watery diarrhea. ❌ WHY IT FAILS: Salmonella gastroenteritis is self-limited and does not cause chronic malabsorption. ✅ Correct if: prolonged greasy diarrhea after camping / contaminated water."
+    },
+    {
+      "letter": "B",
+      "label": "Generalized seizure - Shigella, wrong organism",
+      "detail": "WHAT IT IS: Shigella can cause neurotoxicity (including seizures, especially in children) and is itself a nonlactose-fermenting, oxidase-negative GNR. ❌ WHY IT FAILS: Shigella causes a bloody, febrile dysentery WITH tenesmus - this patient has non-bloody stool and no tenesmus, favoring Salmonella. ✅ Correct if: bloody diarrhea with tenesmus and seizures in a young child."
+    },
+    {
+      "letter": "C",
+      "label": "Guillain-Barre syndrome - Campylobacter, not this bug",
+      "detail": "WHAT IT IS: Guillain-Barre (ascending paralysis) is classically triggered by Campylobacter jejuni, a poultry-associated enteric pathogen. ❌ WHY IT FAILS: C. jejuni is OXIDASE-POSITIVE and causes bloody diarrhea; this culture is oxidase-negative and the stool is non-bloody -> Salmonella. ✅ Correct if: ascending weakness/areflexia weeks after a diarrheal illness."
+    },
+    {
+      "letter": "D",
+      "label": "Hemolytic uremic syndrome - Shigella/EHEC (your pick)",
+      "detail": "WHAT IT IS: HUS (microangiopathic hemolytic anemia, thrombocytopenia, AKI) follows Shiga toxin from EHEC (O157:H7) or Shigella dysenteriae. ❌ WHY IT FAILS: those cause BLOODY diarrhea (and EHEC is lactose-FERMENTING); this is a non-bloody, nonlactose-fermenting, oxidase-negative Salmonella. The trap is matching a nonlactose-fermenting GNR to Shigella while ignoring the non-bloody, no-tenesmus stool. ✅ Correct if: bloody diarrhea after undercooked beef, then oliguria and anemia."
+    }
+  ],
+  "reasoning": [
+    "Nonlactose-fermenting, oxidase-negative GNR + non-bloody diarrhea from poultry = nontyphoidal Salmonella (Campylobacter is oxidase-positive)",
+    "Host is immunosuppressed (TNF-alpha inhibitor) and acid-suppressed (PPI) -> prone to invasive disease",
+    "Invasive nontyphoidal Salmonella spreads hematogenously and seeds bone",
+    "-> osteomyelitis (also mycotic aneurysm, endocarditis); answer E"
+  ],
+  "mechanism": "Nontyphoidal Salmonella is acquired from contaminated poultry, eggs, or reptiles and usually causes self-limited gastroenteritis. Gastric acid is a key barrier, so acid suppression (PPI) lowers the infectious dose. The organism invades enterocytes and is taken up by macrophages; control of this intracellular infection depends on TNF-alpha-driven macrophage activation, so TNF-alpha inhibitors (and other impaired immunity, plus extremes of age) predispose to INVASIVE disease. Bacteremia can seed the vasculature (mycotic aneurysm), heart valves (endocarditis), and bone, producing osteomyelitis - classically also in sickle cell disease. Shigella and Shiga toxin-producing E. coli (HUS, seizures) cause bloody diarrhea with tenesmus, and Campylobacter (Guillain-Barre) is oxidase-positive, which distinguishes them here.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > Salmonella vs Shigella vs Campylobacter (lactose, oxidase, bloody vs non-bloody); invasive nontyphoidal Salmonella -> osteomyelitis (sickle cell, immunocompromise); post-diarrheal complications (HUS = EHEC/Shigella, GBS = Campylobacter)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: identify the organism from culture + stool, THEN pick the complication that matches that organism and an immunocompromised host. The thing being asked is the COMPLICATION, not the diagnosis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on nonlactose-fermenting, the oxidase test, tenesmus, mycotic aneurysm, nontyphoidal Salmonella, osteomyelitis, or HUS? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "HUS (D) lures you because a nonlactose-fermenting GNR could be Shigella - but the non-bloody stool, absent tenesmus, and poultry source say Salmonella, whose invasive complication is osteomyelitis."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: Salmonella + immunocompromise/sickle cell -> osteomyelitis & endovascular infection; bloody diarrhea + HUS/seizure -> Shigella/EHEC; GBS -> Campylobacter (oxidase +)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Nonlactose-fermenting, oxidase-negative GNR, non-bloody diarrhea from poultry",
+      "back": "Nontyphoidal Salmonella"
+    },
+    {
+      "front": "Salmonella + sickle cell or immunocompromise",
+      "back": "Osteomyelitis (and endovascular: mycotic aneurysm, endocarditis)"
+    },
+    {
+      "front": "Risk factors for invasive Salmonella",
+      "back": "Extremes of age, impaired immunity (AIDS, TNF-alpha inhibitor), acid suppression (PPI)"
+    },
+    {
+      "front": "Bloody diarrhea + HUS",
+      "back": "EHEC (O157:H7, lactose-fermenting) or Shigella"
+    },
+    {
+      "front": "Guillain-Barre after diarrhea",
+      "back": "Campylobacter jejuni (oxidase-positive)"
+    },
+    {
+      "front": "Chronic fat malabsorption after diarrhea",
+      "back": "Giardia"
+    },
+    {
+      "front": "Oxidase-positive, curved GNR, poultry",
+      "back": "Campylobacter"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Salmonella (nontyphoidal)",
+      "detail": "Micro > poultry/egg source; acid-labile (PPI raises risk); invasive disease -> osteomyelitis (esp sickle cell), mycotic aneurysm, endocarditis.",
+      "location": "Micro > poultry/egg source; acid-labile (PPI raises risk); invasive disease -> osteomyelitis (esp sickle cell), mycotic aneurysm, endocarditis."
+    },
+    {
+      "tag": "options",
+      "topic": "Enteric pathogen complications",
+      "detail": "Micro > HUS (EHEC/Shigella), seizure (Shigella), Guillain-Barre (Campylobacter), chronic malabsorption (Giardia).",
+      "location": "Micro > HUS (EHEC/Shigella), seizure (Shigella), Guillain-Barre (Campylobacter), chronic malabsorption (Giardia)."
+    },
+    {
+      "tag": "context",
+      "topic": "Lactose & oxidase differentiation",
+      "detail": "Micro > nonlactose fermenters (Salmonella, Shigella); Campylobacter oxidase-positive & curved; EHEC lactose-positive.",
+      "location": "Micro > nonlactose fermenters (Salmonella, Shigella); Campylobacter oxidase-positive & curved; EHEC lactose-positive."
+    }
+  ],
+  "memoryHook": "Salmon swim to the bone: Salmonella + sickle cell/immunosuppression = osteomyelitis. Bloody stool + HUS = Shigella/EHEC; Campylobacter (oxidase +) = Guillain-Barre.",
+  "stem": [
+    {
+      "text": "A 64-year-old man comes to the office due to 3 days of diarrhea. He began to have nausea, vomiting, abdominal cramps, and diarrhea 24 hours after "
+    },
+    {
+      "text": "eating chicken salad at a fast-food restaurant",
+      "clue": true,
+      "type": "blue",
+      "note": "Contaminated poultry and eggs are the classic source of nontyphoidal Salmonella (chicken salad). Campylobacter is also poultry-associated, so the source alone doesn't clinch it - the culture does."
+    },
+    {
+      "text": ". The patient has had 4-6 episodes of diarrhea per day with "
+    },
+    {
+      "text": "no blood in the stool",
+      "clue": true,
+      "type": "blue",
+      "note": "Non-bloody, watery diarrhea fits nontyphoidal Salmonella and argues against the bloody dysentery of Shigella and Shiga toxin-producing E. coli - the two HUS-causing organisms."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "He has no tenesmus",
+      "clue": true,
+      "type": "blue",
+      "note": "Absence of tenesmus (painful urge to pass stool) argues against Shigella, which typically causes fever, tenesmus, and bloody/mucoid stool. This pushes away from the HUS and seizure (Shigella) answers."
+    },
+    {
+      "text": ". His wife, who ate the same food, had a few loose stools but felt well afterward. The patient takes a "
+    },
+    {
+      "text": "tumor necrosis factor inhibitor for psoriatic arthritis",
+      "clue": true,
+      "type": "red",
+      "note": "TNF-alpha inhibitors cripple macrophage killing of intracellular organisms, the key defense against Salmonella. Impaired immunity is the major risk factor for INVASIVE nontyphoidal Salmonella - bacteremia that seeds bone (osteomyelitis), vessels, or heart valves."
+    },
+    {
+      "text": " and "
+    },
+    {
+      "text": "a proton pump inhibitor for gastritis",
+      "clue": true,
+      "type": "orange",
+      "note": "Salmonella must survive gastric acid to infect. Acid suppression (PPI) lowers the infectious dose and raises the risk and severity of Salmonella infection."
+    },
+    {
+      "text": ". Temperature is 38 C (100 F), blood pressure is 120/70 mm Hg, and pulse is 88/min. Abdominal examination reveals mild diffuse tenderness to palpation and increased bowel sounds. Cultures of the stool yield "
+    },
+    {
+      "text": "gram-negative bacilli that are nonlactose fermenting and oxidase negative",
+      "clue": true,
+      "type": "green",
+      "note": "Nonlactose-fermenting, oxidase-NEGATIVE gram-negative rods = Salmonella or Shigella (Campylobacter is oxidase-POSITIVE and curved). Combined with non-bloody diarrhea from poultry in an immunocompromised host, this is nontyphoidal Salmonella."
+    },
+    {
+      "text": ". Which of the following is the most likely complication associated with this patient's current infection?"
+    }
+  ]
+}

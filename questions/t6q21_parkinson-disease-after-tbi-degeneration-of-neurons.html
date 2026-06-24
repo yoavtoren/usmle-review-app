@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parkinson disease after TBI: degeneration of neurons</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 6 · all 30</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q210", "item": 210, "qid": "106622", "title": "Parkinson disease after TBI: degeneration of neurons", "system": "Pathology", "topic": "Parkinson disease / neurodegeneration", "correct": "B", "yourAnswer": "B", "percentCorrect": 58, "vignette": "A 40-year-old man comes to the office due to a 6-month history of sleep abnormalities, constipation, and generalized slowing of activity. In addition, he has difficulty rising from a seated position. Medical history is significant for a traumatic head injury 3 years ago, which required a prolonged hospital stay. The patient has no other medical conditions and takes no medication. He does not use tobacco, alcohol, or recreational drugs. Vital signs are normal. Examination shows resistance to passive movement in the upper extremities, which is slightly greater on the left than on the right. Left hand tremor and decreased arm swing occur during walking. Which of the following is the most likely explanation for this patient's current condition?", "clues": [{"text": "generalized slowing of activity", "type": "green", "note": "Bradykinesia (slowness of movement) is the cardinal, required feature of parkinsonism. Together with rest tremor and rigidity it defines the syndrome."}, {"text": "difficulty rising from a seated position", "type": "blue", "note": "Trouble standing up reflects bradykinesia and rigidity of axial/proximal muscles - a typical early Parkinson complaint."}, {"text": "traumatic head injury 3 years ago, which required a prolonged hospital stay", "type": "orange", "note": "Significant TBI (especially with prolonged loss of consciousness) increases the incidence and hastens the onset of Parkinson disease - which is why this man is parkinsonian at only 40. It accelerates dopaminergic neurodegeneration."}, {"text": "resistance to passive movement in the upper extremities, which is slightly greater on the left", "type": "green", "note": "ASYMMETRIC rigidity (cogwheel) is characteristic of idiopathic Parkinson disease; symmetric findings would suggest drug-induced or atypical parkinsonism."}, {"text": "Left hand tremor and decreased arm swing", "type": "green", "note": "A resting tremor and reduced arm swing on one side complete the triad (tremor + rigidity + bradykinesia) and confirm asymmetric Parkinson disease."}], "whatMatters": "Bradykinesia + asymmetric resting tremor + rigidity (plus prodromal REM sleep changes and constipation) = Parkinson disease, caused by DEGENERATION of dopaminergic NEURONS in the substantia nigra (with alpha-synuclein/Lewy bodies). Prior significant TBI accelerates this neurodegeneration, explaining onset at 40. Answer B.", "strategy": "Recognize the parkinsonian triad, then pick the cell that dies. Parkinson = loss of dopaminergic NEURONS (substantia nigra). Match the other options to their diseases: astrocyte swelling (acute TBI edema/hepatic), oligodendrocyte loss (demyelination/MS), endothelial disruption (vascular/diffuse axonal injury), vascular amyloid (cerebral amyloid angiopathy/Alzheimer). TBI here is a RISK accelerant, not a competing mechanism.", "options": [{"letter": "A", "text": "Astrocyte swelling", "correct": false}, {"letter": "B", "text": "Degeneration of neurons", "correct": true}, {"letter": "C", "text": "Degeneration of oligodendrocytes", "correct": false}, {"letter": "D", "text": "Disruption of vascular endothelial cells", "correct": false}, {"letter": "E", "text": "Vascular amyloid deposition", "correct": false}], "eliminations": [{"letter": "A", "label": "Astrocyte swelling - acute injury/edema, not PD", "detail": "WHAT IT IS: astrocyte (cytotoxic) swelling occurs in acute TBI edema and in hyperammonemia (Alzheimer type II astrocytes). ❌ WHY IT FAILS: it is an acute, early phenomenon and does not produce a chronic asymmetric parkinsonian syndrome years later. ✅ Correct if: acute cerebral edema/raised ICP or hepatic encephalopathy."}, {"letter": "C", "label": "Degeneration of oligodendrocytes - demyelination", "detail": "WHAT IT IS: oligodendrocytes make CNS myelin; their loss causes demyelination (e.g., multiple sclerosis). ❌ WHY IT FAILS: demyelination gives UMN/sensory/optic deficits, not a hypokinetic rest-tremor parkinsonism from nigral dopamine loss. ✅ Correct if: relapsing neurologic deficits with white-matter lesions."}, {"letter": "D", "label": "Disruption of vascular endothelial cells - DAI/vascular injury", "detail": "WHAT IT IS: endothelial/axonal shearing and blood-brain-barrier disruption occur in diffuse axonal injury and vascular disease. ❌ WHY IT FAILS: that explains acute post-traumatic deficits, not the delayed dopaminergic neurodegeneration causing this triad. ✅ Correct if: acute coma after rotational head trauma (DAI) or stroke."}, {"letter": "E", "label": "Vascular amyloid deposition - cerebral amyloid angiopathy", "detail": "WHAT IT IS: beta-amyloid in vessel walls (CAA) causes lobar hemorrhages and associates with Alzheimer disease. ❌ WHY IT FAILS: Parkinson pathology is alpha-synuclein in neurons (Lewy bodies), not vascular amyloid; CAA causes hemorrhage/dementia, not parkinsonism. ✅ Correct if: recurrent lobar ICH in an elderly patient."}], "reasoning": ["Bradykinesia + asymmetric rest tremor + rigidity (with REM sleep change, constipation) = Parkinson disease", "Parkinson disease is loss of dopaminergic NEURONS in the substantia nigra (alpha-synuclein/Lewy bodies)", "Prior significant TBI accelerates this neurodegeneration, explaining onset at age 40", "-> degeneration of neurons; answer B"], "mechanism": "Parkinson disease is a synucleinopathy in which dopaminergic NEURONS of the substantia nigra pars compacta progressively degenerate, accumulating intracytoplasmic alpha-synuclein (Lewy bodies). Loss of nigrostriatal dopamine produces the cardinal motor signs - bradykinesia, asymmetric resting tremor, and cogwheel rigidity - often preceded by nonmotor features such as REM sleep behavior disorder and constipation, all present here. Moderate-to-severe traumatic brain injury, particularly with prolonged loss of consciousness, is an established risk factor that increases the incidence and advances the age of onset of Parkinson disease through accelerated neurodegenerative and neurotoxic cascades, accounting for parkinsonism in a 40-year-old. The other options describe glial, vascular, or amyloid processes that underlie different diseases.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Neuro > Parkinson disease: loss of dopaminergic neurons in substantia nigra; alpha-synuclein/Lewy bodies; TRAP (tremor, rigidity, akinesia/bradykinesia, postural instability); REM sleep disorder & constipation prodrome; TBI as risk factor."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The question asks for the CELLULAR explanation. Diagnose Parkinson from the triad, then choose 'degeneration of neurons' (dopaminergic), not a glial/vascular process."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on bradykinesia, cogwheel rigidity, substantia nigra, alpha-synuclein/Lewy body, oligodendrocyte, or cerebral amyloid angiopathy? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Because of the TBI history, vascular/endothelial (D) or astrocyte (A) injury can tempt - but those are acute trauma effects; the chronic asymmetric triad is dopaminergic NEURON loss."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: Parkinson = dopaminergic NEURON degeneration (substantia nigra, Lewy bodies); oligodendrocyte loss = MS; astrocyte swelling = edema/hepatic; vascular amyloid = CAA/Alzheimer."}], "keywords": [{"front": "Bradykinesia + asymmetric resting tremor + cogwheel rigidity", "back": "Parkinson disease"}, {"front": "Cell that degenerates in Parkinson disease", "back": "Dopaminergic NEURONS of the substantia nigra pars compacta"}, {"front": "Histologic hallmark of Parkinson disease", "back": "Alpha-synuclein aggregates (Lewy bodies)"}, {"front": "Nonmotor prodrome of Parkinson disease", "back": "REM sleep behavior disorder, constipation, hyposmia"}, {"front": "Moderate-severe TBI and Parkinson", "back": "Increased incidence and earlier onset (accelerated neurodegeneration)"}, {"front": "Oligodendrocyte degeneration", "back": "Demyelination (multiple sclerosis)"}], "firstAid": [{"tag": "answer / stem", "topic": "Parkinson disease", "detail": "Neuro > dopaminergic neuron loss in substantia nigra; Lewy bodies (alpha-synuclein); TRAP signs; asymmetric onset."}, {"tag": "options", "topic": "Cell-specific injury", "detail": "Neuro/Path > astrocyte swelling (edema/hepatic), oligodendrocyte (MS), endothelial (DAI/vascular), vascular amyloid (CAA)."}, {"tag": "context", "topic": "Parkinson risk & prodrome", "detail": "Neuro > TBI risk factor; REM sleep behavior disorder, constipation, hyposmia precede motor signs."}], "memoryHook": "Parkinson kills the black-substance NEURONS (substantia nigra). A bad head injury speeds the clock - that's why this triad shows up at 40, not 70.", "stem": [{"text": "A 40-year-old man comes to the office due to a 6-month history of sleep abnormalities, constipation, and "}, {"text": "generalized slowing of activity", "clue": true, "type": "green", "note": "Bradykinesia (slowness of movement) is the cardinal, required feature of parkinsonism. Together with rest tremor and rigidity it defines the syndrome."}, {"text": ". In addition, he has "}, {"text": "difficulty rising from a seated position", "clue": true, "type": "blue", "note": "Trouble standing up reflects bradykinesia and rigidity of axial/proximal muscles - a typical early Parkinson complaint."}, {"text": ". Medical history is significant for a "}, {"text": "traumatic head injury 3 years ago, which required a prolonged hospital stay", "clue": true, "type": "orange", "note": "Significant TBI (especially with prolonged loss of consciousness) increases the incidence and hastens the onset of Parkinson disease - which is why this man is parkinsonian at only 40. It accelerates dopaminergic neurodegeneration."}, {"text": ". The patient has no other medical conditions and takes no medication. He does not use tobacco, alcohol, or recreational drugs. Vital signs are normal. Examination shows "}, {"text": "resistance to passive movement in the upper extremities, which is slightly greater on the left", "clue": true, "type": "green", "note": "ASYMMETRIC rigidity (cogwheel) is characteristic of idiopathic Parkinson disease; symmetric findings would suggest drug-induced or atypical parkinsonism."}, {"text": " than on the right. "}, {"text": "Left hand tremor and decreased arm swing", "clue": true, "type": "green", "note": "A resting tremor and reduced arm swing on one side complete the triad (tremor + rigidity + bradykinesia) and confirm asymmetric Parkinson disease."}, {"text": " occur during walking. Which of the following is the most likely explanation for this patient's current condition?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

@@ -1,0 +1,225 @@
+{
+  "id": "q194",
+  "item": 194,
+  "qid": "11584",
+  "title": "Proteasome inhibitor -> apoptosis (multiple myeloma)",
+  "system": "Pharmacology",
+  "topic": "Proteasome inhibitors / myeloma",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 58,
+  "vignette": "A 67-year-old man is evaluated for persistent lower back pain and fatigue. The patient has no other medical conditions and takes no medications. Laboratory testing shows anemia and renal dysfunction. Serum total protein levels are elevated, and electrophoresis of the serum proteins reveals a narrow spike in the gamma globulin region. A subsequent bone marrow biopsy shows abnormal marrow cells. A medication that blocks cellular proteasome action is administered. This treatment is most likely to cause which of the following effects on the abnormal cells?",
+  "clues": [
+    {
+      "text": "persistent lower back pain and fatigue",
+      "type": "blue",
+      "note": "Back/bone pain plus fatigue (from anemia) in an older adult is the classic opening of multiple myeloma - lytic bone disease and marrow replacement."
+    },
+    {
+      "text": "anemia and renal dysfunction",
+      "type": "blue",
+      "note": "Anemia and renal failure are two of the CRAB features of myeloma (with hyperCalcemia and Bone lesions). They point to a plasma cell malignancy."
+    },
+    {
+      "text": "narrow spike in the gamma globulin region",
+      "type": "green",
+      "note": "A narrow spike on serum protein electrophoresis = a monoclonal (M) protein, the secretory product of a clonal plasma cell population. This nails multiple myeloma."
+    },
+    {
+      "text": "abnormal marrow cells",
+      "type": "green",
+      "note": "The 'abnormal marrow cells' are clonal plasma cells. They synthesize enormous amounts of immunoglobulin, which is exactly why they are so vulnerable to proteasome inhibition."
+    },
+    {
+      "text": "blocks cellular proteasome action",
+      "type": "red",
+      "note": "This is the drug class: a proteasome inhibitor (e.g., bortezomib). The question turns on what happens when a protein-overproducing plasma cell can no longer degrade its misfolded proteins."
+    }
+  ],
+  "whatMatters": "Recognize multiple myeloma (older adult, back pain, anemia, renal failure, M-spike in the gamma region, abnormal marrow plasma cells), then attach the drug: 'blocks the proteasome' = bortezomib. Myeloma cells make huge amounts of immunoglobulin; blocking proteasomal degradation lets misfolded protein accumulate -> ER stress / unfolded protein response -> APOPTOSIS. Answer E.",
+  "strategy": "Two-step: diagnose myeloma (CRAB + M-spike + marrow plasma cells), then map the mechanism. Proteasome = the cell's protein 'trash compactor.' Plasma cells have a massive protein output, so inhibiting the proteasome floods them with misfolded protein and triggers apoptosis. Match 'blocks proteasome' -> 'misfolded protein accumulates -> apoptosis.'",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Augmented cytotoxic T-cell response",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased DNA methylation",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Impaired RNA splicing",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Improved differentiation",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Increased apoptosis",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "augmented cytotoxic T cells - checkpoint inhibitors",
+      "detail": "WHAT IT IS: boosting cytotoxic T-cell killing is the mechanism of checkpoint inhibitors (anti-PD-1, anti-CTLA-4). ❌ WHY IT FAILS: proteasome inhibitors act intracellularly on protein turnover, not on T-cell costimulation. ✅ Correct if: the drug were a checkpoint inhibitor (e.g., nivolumab, ipilimumab)."
+    },
+    {
+      "letter": "B",
+      "label": "decreased DNA methylation - hypomethylating agents",
+      "detail": "WHAT IT IS: lowering DNA methylation is how azacitidine/decitabine work (used in MDS). ❌ WHY IT FAILS: proteasome inhibition doesn't change DNA methylation. ✅ Correct if: the drug were a hypomethylating agent."
+    },
+    {
+      "letter": "C",
+      "label": "impaired RNA splicing - wrong machinery",
+      "detail": "WHAT IT IS: splicing is performed by the spliceosome. ❌ WHY IT FAILS: the proteasome degrades proteins; it has nothing to do with RNA splicing. ✅ Correct if: a spliceosome-targeting agent."
+    },
+    {
+      "letter": "D",
+      "label": "improved differentiation - ATRA in APL",
+      "detail": "WHAT IT IS: forcing malignant cells to mature (differentiation therapy) is how all-trans retinoic acid treats acute promyelocytic leukemia. ❌ WHY IT FAILS: proteasome inhibitors kill via apoptosis, they don't mature the cells. ✅ Correct if: ATRA/APL."
+    }
+  ],
+  "reasoning": [
+    "Older adult with back pain, anemia, renal failure, an M-spike, and abnormal marrow plasma cells = multiple myeloma",
+    "A drug that 'blocks the proteasome' = a proteasome inhibitor (bortezomib)",
+    "Plasma cells overproduce immunoglobulin; blocking degradation makes misfolded protein accumulate (ER stress / unfolded protein response)",
+    "-> caspase activation and apoptosis, answer E"
+  ],
+  "mechanism": "The proteasome is a barrel-shaped complex that degrades ubiquitin-tagged, damaged, or misfolded proteins. Multiple myeloma plasma cells synthesize enormous quantities of monoclonal immunoglobulin, much of which misfolds. Proteasome inhibitors (e.g., bortezomib, carfilzomib) block degradation of these proteins, so misfolded protein accumulates in the endoplasmic reticulum, triggering an unfolded protein response and ER stress that activate caspases and apoptosis. Because myeloma cells are exquisitely dependent on proteasomal clearance of their protein load, they are selectively driven into apoptosis.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Onc/Pharm > proteasome inhibitors (bortezomib, carfilzomib): block proteasome -> misfolded protein accumulation -> apoptosis; peripheral neuropathy. Plus multiple myeloma (CRAB, M-spike)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two steps: diagnose myeloma from CRAB + M-spike + marrow plasma cells, then recall the proteasome-inhibitor mechanism. The ask is the DRUG's effect on the cells, not the diagnosis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on proteasome, ubiquitin, unfolded protein response, ER stress, apoptosis, M-spike/SPEP, CRAB? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The other options are real anticancer mechanisms (checkpoint inhibitors, hypomethylating agents, ATRA) - tempting if you don't anchor 'blocks proteasome' to 'misfolded protein -> apoptosis.'"
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: proteasome inhibitor in a protein-factory plasma cell = self-poisoning by misfolded protein -> apoptosis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Drug that blocks the proteasome",
+      "back": "Bortezomib / carfilzomib (proteasome inhibitor)"
+    },
+    {
+      "front": "Proteasome inhibition in myeloma ->",
+      "back": "Misfolded protein accumulation -> apoptosis"
+    },
+    {
+      "front": "Older adult: back pain, anemia, renal failure, hyperCa, M-spike",
+      "back": "Multiple myeloma (CRAB)"
+    },
+    {
+      "front": "Narrow spike in the gamma region (SPEP)",
+      "back": "Monoclonal (M) protein"
+    },
+    {
+      "front": "Hypomethylating agents (azacitidine, decitabine)",
+      "back": "Decrease DNA methylation (MDS)"
+    },
+    {
+      "front": "All-trans retinoic acid (ATRA)",
+      "back": "Differentiation therapy (APL)"
+    },
+    {
+      "front": "Checkpoint inhibitors",
+      "back": "Augment cytotoxic T cells"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Proteasome inhibitors",
+      "detail": "Pharm/Onc > bortezomib/carfilzomib: block proteasome -> misfolded protein buildup -> apoptosis of plasma cells; peripheral neuropathy.",
+      "location": "Pharm/Onc > bortezomib/carfilzomib: block proteasome -> misfolded protein buildup -> apoptosis of plasma cells; peripheral neuropathy."
+    },
+    {
+      "tag": "options",
+      "topic": "Other anticancer mechanisms",
+      "detail": "Onc > checkpoint inhibitors (T cells), hypomethylating agents (azacitidine), ATRA (differentiation, APL), spliceosome targets.",
+      "location": "Onc > checkpoint inhibitors (T cells), hypomethylating agents (azacitidine), ATRA (differentiation, APL), spliceosome targets."
+    },
+    {
+      "tag": "context",
+      "topic": "Multiple myeloma",
+      "detail": "Heme/Onc > CRAB, M-spike, rouleaux, Bence-Jones protein, lytic bone lesions.",
+      "location": "Heme/Onc > CRAB, M-spike, rouleaux, Bence-Jones protein, lytic bone lesions."
+    }
+  ],
+  "memoryHook": "Myeloma cells are protein factories; jam the proteasome (the trash compactor) and they choke on their own misfolded protein -> apoptosis.",
+  "stem": [
+    {
+      "text": "A 67-year-old man is evaluated for "
+    },
+    {
+      "text": "persistent lower back pain and fatigue",
+      "clue": true,
+      "type": "blue",
+      "note": "Back/bone pain plus fatigue (from anemia) in an older adult is the classic opening of multiple myeloma - lytic bone disease and marrow replacement."
+    },
+    {
+      "text": ". The patient has no other medical conditions and takes no medications. Laboratory testing shows "
+    },
+    {
+      "text": "anemia and renal dysfunction",
+      "clue": true,
+      "type": "blue",
+      "note": "Anemia and renal failure are two of the CRAB features of myeloma (with hyperCalcemia and Bone lesions). They point to a plasma cell malignancy."
+    },
+    {
+      "text": ". Serum total protein levels are elevated, and electrophoresis of the serum proteins reveals a "
+    },
+    {
+      "text": "narrow spike in the gamma globulin region",
+      "clue": true,
+      "type": "green",
+      "note": "A narrow spike on serum protein electrophoresis = a monoclonal (M) protein, the secretory product of a clonal plasma cell population. This nails multiple myeloma."
+    },
+    {
+      "text": ". A subsequent bone marrow biopsy shows "
+    },
+    {
+      "text": "abnormal marrow cells",
+      "clue": true,
+      "type": "green",
+      "note": "The 'abnormal marrow cells' are clonal plasma cells. They synthesize enormous amounts of immunoglobulin, which is exactly why they are so vulnerable to proteasome inhibition."
+    },
+    {
+      "text": ". A medication that "
+    },
+    {
+      "text": "blocks cellular proteasome action",
+      "clue": true,
+      "type": "red",
+      "note": "This is the drug class: a proteasome inhibitor (e.g., bortezomib). The question turns on what happens when a protein-overproducing plasma cell can no longer degrade its misfolded proteins."
+    },
+    {
+      "text": " is administered. This treatment is most likely to cause which of the following effects on the abnormal cells?"
+    }
+  ]
+}

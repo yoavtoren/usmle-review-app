@@ -1,0 +1,235 @@
+{
+  "id": "q190",
+  "item": 190,
+  "qid": "1597",
+  "title": "IL-10 anti-inflammatory cytokine (Crohn regression)",
+  "system": "Immunology",
+  "topic": "Inflammatory bowel disease / cytokines",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 64,
+  "vignette": "A 23-year-old man is referred to the gastroenterology clinic due to a 3-year history of recurring abdominal pain accompanied by cramps and diarrhea. The patient has noticed an increased frequency of episodes lately with worsening pain. He also says that his urine occasionally appears dark brown and his urine stream sometimes sputters. Imaging studies reveal a colovesical fistula. Biopsy obtained during colonoscopy shows chronic ileocolitis with discontinuous transmural inflammation and noncaseating granulomas. When given the diagnosis of Crohn disease, the patient becomes skeptical and says, \"There's no way I'm getting a colostomy bag.\" He then refuses treatment and pursues a second opinion once his symptoms subside. A second biopsy demonstrates reduced inflammation in regions of previously active ileocolitis. An increase in which of the following cytokines is most likely responsible for this patient's clinical regression?",
+  "clues": [
+    {
+      "text": "recurring abdominal pain accompanied by cramps and diarrhea",
+      "type": "blue",
+      "note": "Chronic relapsing abdominal pain with diarrhea over years is the clinical backdrop of inflammatory bowel disease - here Crohn disease. It's context; the testable point comes at the end."
+    },
+    {
+      "text": "urine occasionally appears dark brown and his urine stream sometimes sputters",
+      "type": "blue",
+      "note": "Dark, sputtering urine (pneumaturia/fecaluria) signals a connection between bowel and bladder. This is the symptom of a colovesical fistula, a transmural complication characteristic of Crohn disease."
+    },
+    {
+      "text": "colovesical fistula",
+      "type": "green",
+      "note": "A fistula from colon to bladder requires inflammation through the FULL bowel wall. Transmural (full-thickness) disease with fistulae is a hallmark of Crohn (not ulcerative colitis, which is mucosal)."
+    },
+    {
+      "text": "chronic ileocolitis with discontinuous transmural inflammation and noncaseating granulomas",
+      "type": "green",
+      "note": "Skip lesions (discontinuous), transmural inflammation, and noncaseating granulomas are the classic Crohn histology. This confirms the diagnosis and that the disease is Th1/inflammatory-cytokine driven."
+    },
+    {
+      "text": "reduced inflammation in regions of previously active ileocolitis",
+      "type": "red",
+      "note": "The actual question: inflammation spontaneously REGRESSED. The cytokine responsible must be ANTI-inflammatory - it dampens the immune attack. That points to IL-10 (or TGF-beta), not the pro-inflammatory mediators."
+    }
+  ],
+  "whatMatters": "The long Crohn story is wrapper. The real ask: which cytokine, when INCREASED, REDUCES inflammation (clinical regression)? That requires an ANTI-inflammatory cytokine. Of the choices, only IL-10 is anti-inflammatory (the other partner is TGF-beta). IL-10 inhibits Th1 cytokines (IL-2, IFN-gamma), MHC II, and macrophage/dendritic activation. Answer C.",
+  "strategy": "Sort cytokines into pro- vs anti-inflammatory before reading the options. 'Symptoms IMPROVED / inflammation went DOWN' demands an anti-inflammatory mediator. The two anti-inflammatory cytokines are IL-10 and TGF-beta (regulatory T cells). Everything else here (IL-1, IL-5, IL-12, IFN-gamma, TNF-alpha) is pro-inflammatory and would worsen disease.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "IL-1",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "IL-5",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "IL-10",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "IL-12",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Interferon gamma",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Tumor necrosis factor-alpha",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "IL-1 - pro-inflammatory pyrogen",
+      "detail": "WHAT IT IS: IL-1 (from macrophages) is an endogenous pyrogen that activates endothelium, increases chemokines, and induces fever; IL-1beta drives Th17 differentiation. ❌ WHY IT FAILS: it PROMOTES inflammation, so an increase would worsen, not regress, the disease. ✅ Correct if: asked which cytokine drives fever/acute inflammation."
+    },
+    {
+      "letter": "B",
+      "label": "IL-5 - Th2 / eosinophils, not the driver here",
+      "detail": "WHAT IT IS: IL-5 is a Th2 cytokine that stimulates eosinophil growth and B-cell IgA production (implicated in allergy/asthma). ❌ WHY IT FAILS: it doesn't suppress the Th1 inflammation of Crohn, so it can't explain the regression. ✅ Correct if: an eosinophilic/allergic process."
+    },
+    {
+      "letter": "D",
+      "label": "IL-12 - drives Th1 (pro-inflammatory)",
+      "detail": "WHAT IT IS: IL-12 from macrophages/dendritic cells induces Th1 differentiation and activates NK cells. ❌ WHY IT FAILS: it amplifies the cell-mediated inflammation behind Crohn; increasing it would worsen disease. ✅ Correct if: asked what promotes Th1 differentiation."
+    },
+    {
+      "letter": "E",
+      "label": "interferon gamma - Th1 macrophage activator",
+      "detail": "WHAT IT IS: IFN-gamma is the signature Th1 cytokine; it activates macrophages and sustains granuloma formation. ❌ WHY IT FAILS: it is central to Crohn's pro-inflammatory granulomatous response - more IFN-gamma means more inflammation. ✅ Correct if: asked what activates macrophages / forms granulomas."
+    },
+    {
+      "letter": "F",
+      "label": "TNF-alpha - key pro-inflammatory target",
+      "detail": "WHAT IT IS: TNF-alpha (macrophages, NK, T cells) is a major pro-inflammatory mediator that recruits leukocytes and activates endothelium; it's the target of anti-TNF drugs (infliximab) in Crohn. ❌ WHY IT FAILS: you BLOCK TNF to treat Crohn - an increase would worsen it. ✅ Correct if: asked which cytokine anti-TNF biologics neutralize."
+    }
+  ],
+  "reasoning": [
+    "Crohn disease (transmural skip lesions, noncaseating granulomas, colovesical fistula) is a Th1/cytokine-driven inflammation",
+    "The disease spontaneously REGRESSED - inflammation decreased",
+    "Lower inflammation requires an ANTI-inflammatory cytokine",
+    "Of the options, only IL-10 is anti-inflammatory (with TGF-beta) -> answer C"
+  ],
+  "mechanism": "IL-10 and TGF-beta are the principal anti-inflammatory cytokines, secreted by regulatory T cells and macrophages. IL-10 inhibits production of pro-inflammatory Th1 cytokines (IL-2, IFN-gamma), downregulates MHC class II and costimulatory molecules, and suppresses activated macrophages and dendritic cells. The net effect is attenuation of cell-mediated immunity, which dampens the transmural granulomatous inflammation of Crohn disease and explains symptom regression when IL-10 rises. By contrast, IL-1, IL-5, IL-12, IFN-gamma, and TNF-alpha are pro-inflammatory and drive disease activity.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Immunology > cytokines: anti-inflammatory IL-10 and TGF-beta (Treg) vs pro-inflammatory IL-1, IL-6, IL-12, IFN-gamma, TNF-alpha; plus Crohn pathology (Th1, granulomas)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate 'inflammation regressed / symptoms improved' into 'an ANTI-inflammatory cytokine rose,' then pick the only anti-inflammatory option (IL-10) - don't get pulled into diagnosing Crohn (already given)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on pro- vs anti-inflammatory cytokines, Th1/Th2/Treg, IL-10, TGF-beta, transmural, noncaseating granuloma, colovesical fistula? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "TNF-alpha and IFN-gamma (E, F) tempt because they're the famous Crohn cytokines - but they're PRO-inflammatory; you block them to treat. The regression is driven by the anti-inflammatory IL-10."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank the pair: IL-10 and TGF-beta calm inflammation; IL-1/IL-6/IL-12/IFN-gamma/TNF rev it up."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Only anti-inflammatory cytokine among IL-1/5/10/12, IFN-gamma, TNF",
+      "back": "IL-10"
+    },
+    {
+      "front": "Two main anti-inflammatory cytokines",
+      "back": "IL-10 and TGF-beta (regulatory T cells)"
+    },
+    {
+      "front": "IL-10 actions",
+      "back": "Inhibits Th1 cytokines, MHC II, macrophage/dendritic activation"
+    },
+    {
+      "front": "Transmural skip lesions + noncaseating granulomas + fistula",
+      "back": "Crohn disease"
+    },
+    {
+      "front": "Colovesical fistula (pneumaturia/fecaluria)",
+      "back": "Crohn (transmural) complication"
+    },
+    {
+      "front": "Anti-TNF biologics (infliximab) target",
+      "back": "TNF-alpha (pro-inflammatory) in Crohn/RA"
+    },
+    {
+      "front": "IL-12",
+      "back": "Drives Th1 differentiation"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Anti-inflammatory cytokines",
+      "detail": "Immuno > IL-10 and TGF-beta (Treg): suppress Th1 cytokines, MHC II, and macrophages.",
+      "location": "Immuno > IL-10 and TGF-beta (Treg): suppress Th1 cytokines, MHC II, and macrophages."
+    },
+    {
+      "tag": "options",
+      "topic": "Pro-inflammatory cytokines",
+      "detail": "Immuno > IL-1 (pyrogen), IL-5 (Th2/eosinophils), IL-12 (Th1 induction), IFN-gamma (macrophage activation), TNF-alpha (acute inflammation; anti-TNF target).",
+      "location": "Immuno > IL-1 (pyrogen), IL-5 (Th2/eosinophils), IL-12 (Th1 induction), IFN-gamma (macrophage activation), TNF-alpha (acute inflammation; anti-TNF target)."
+    },
+    {
+      "tag": "context",
+      "topic": "Crohn disease",
+      "detail": "GI > transmural skip lesions, noncaseating granulomas, fistulae (colovesical), Th1-mediated; vs ulcerative colitis (mucosal).",
+      "location": "GI > transmural skip lesions, noncaseating granulomas, fistulae (colovesical), Th1-mediated; vs ulcerative colitis (mucosal)."
+    }
+  ],
+  "memoryHook": "IL-10 (and TGF-beta) are the 'calm-down' cytokines. The inflammatory crowd (IL-1, IL-12, IFN-gamma, TNF) revs disease UP.",
+  "stem": [
+    {
+      "text": "A 23-year-old man is referred to the gastroenterology clinic due to a 3-year history of "
+    },
+    {
+      "text": "recurring abdominal pain accompanied by cramps and diarrhea",
+      "clue": true,
+      "type": "blue",
+      "note": "Chronic relapsing abdominal pain with diarrhea over years is the clinical backdrop of inflammatory bowel disease - here Crohn disease. It's context; the testable point comes at the end."
+    },
+    {
+      "text": ". The patient has noticed an increased frequency of episodes lately with worsening pain. He also says that his "
+    },
+    {
+      "text": "urine occasionally appears dark brown and his urine stream sometimes sputters",
+      "clue": true,
+      "type": "blue",
+      "note": "Dark, sputtering urine (pneumaturia/fecaluria) signals a connection between bowel and bladder. This is the symptom of a colovesical fistula, a transmural complication characteristic of Crohn disease."
+    },
+    {
+      "text": ". Imaging studies reveal a "
+    },
+    {
+      "text": "colovesical fistula",
+      "clue": true,
+      "type": "green",
+      "note": "A fistula from colon to bladder requires inflammation through the FULL bowel wall. Transmural (full-thickness) disease with fistulae is a hallmark of Crohn (not ulcerative colitis, which is mucosal)."
+    },
+    {
+      "text": ". Biopsy obtained during colonoscopy shows "
+    },
+    {
+      "text": "chronic ileocolitis with discontinuous transmural inflammation and noncaseating granulomas",
+      "clue": true,
+      "type": "green",
+      "note": "Skip lesions (discontinuous), transmural inflammation, and noncaseating granulomas are the classic Crohn histology. This confirms the diagnosis and that the disease is Th1/inflammatory-cytokine driven."
+    },
+    {
+      "text": ". When given the diagnosis of Crohn disease, the patient becomes skeptical and says, \"There's no way I'm getting a colostomy bag.\" He then refuses treatment and pursues a second opinion once his symptoms subside. A second biopsy demonstrates "
+    },
+    {
+      "text": "reduced inflammation in regions of previously active ileocolitis",
+      "clue": true,
+      "type": "red",
+      "note": "The actual question: inflammation spontaneously REGRESSED. The cytokine responsible must be ANTI-inflammatory - it dampens the immune attack. That points to IL-10 (or TGF-beta), not the pro-inflammatory mediators."
+    },
+    {
+      "text": ". An increase in which of the following cytokines is most likely responsible for this patient's clinical regression?"
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "id": "q199",
+  "item": 199,
+  "qid": "1380",
+  "title": "Action potential: K+ permeability peaks at repolarization",
+  "system": "Physiology",
+  "topic": "Resting membrane potential and action potential",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 67,
+  "vignette": "Neurophysiologists are studying recordings of the membrane potential from a giant squid axon. A portion of their recordings is shown as a tracing of membrane potential versus time over a single action potential, with five labeled points: point A on the flat resting baseline just before the upstroke, point B on the steep rising (depolarization) phase, point C at the peak/overshoot, point D on the falling (repolarization) phase, and point E on the late tail that dips slightly below baseline before returning. The membrane is most permeable to potassium ions at which of the following points?",
+  "clues": [
+    {
+      "text": "giant squid axon",
+      "type": "blue",
+      "note": "The squid giant axon is the classic Hodgkin-Huxley preparation for recording action potentials. Context only - it tells you this is a textbook action-potential tracing."
+    },
+    {
+      "text": "point A on the flat resting baseline just before the upstroke",
+      "type": "purple",
+      "note": "At REST the membrane is most permeable to K+ RELATIVE to Na+ (leak channels hold the -70 mV resting potential). This tempts you to pick A - but the ABSOLUTE peak of K+ permeance comes later, during repolarization."
+    },
+    {
+      "text": "point B on the steep rising (depolarization) phase",
+      "type": "blue",
+      "note": "Depolarization is driven by voltage-gated Na+ channels opening; Na+ permeability (not K+) is what surges here as Na+ rushes in."
+    },
+    {
+      "text": "point C at the peak/overshoot",
+      "type": "blue",
+      "note": "The overshoot (~+35 mV) is the moment Na+ permeability is maximal and voltage-gated K+ channels are just beginning to open - not the K+ peak."
+    },
+    {
+      "text": "point D on the falling (repolarization) phase",
+      "type": "green",
+      "note": "Repolarization: Na+ channels inactivate and voltage-gated K+ channels open widely, so K+ efflux - and K+ permeance - reach their MAXIMUM, exceeding even the resting value. This is the answer."
+    }
+  ],
+  "whatMatters": "Trick of absolute vs relative permeability. At REST (A) K+ permeability dominates over Na+ - but the ABSOLUTE maximum of K+ permeance occurs during REPOLARIZATION (D), when voltage-gated K+ channels open en masse and K+ efflux exceeds the resting level. Answer D. B/C are the Na+-permeability phase; E (hyperpolarization) is those K+ channels closing.",
+  "strategy": "Map each labeled point to a phase: A = resting, B = depolarization, C = overshoot/peak, D = repolarization, E = hyperpolarization. 'Most permeable to K+' = where voltage-gated K+ channels are maximally open = repolarization (D). Don't reflexively pick resting (A): there K+ only dominates RELATIVE to Na+; absolute K+ permeance is higher during repolarization.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "A",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "B",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "C",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "D",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "E",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Point A (resting) - relative, not absolute, K+ peak",
+      "detail": "WHAT IT IS: at rest (-70 mV) the membrane is held by K+ leak channels, so it is far more permeable to K+ than to Na+. ❌ WHY IT FAILS: that is RELATIVE dominance; the ABSOLUTE maximum of K+ permeance is higher during repolarization, when voltage-gated K+ channels add to the leak. ✅ Correct if: asked when K+ permeability most exceeds Na+ permeability."
+    },
+    {
+      "letter": "B",
+      "label": "Point B (depolarization) - the Na+ phase",
+      "detail": "WHAT IT IS: the upstroke is voltage-gated Na+ channels opening with rapid Na+ influx. ❌ WHY IT FAILS: Na+ permeability, not K+, surges here. ✅ Correct if: asked when the membrane is most permeable to sodium."
+    },
+    {
+      "letter": "C",
+      "label": "Point C (overshoot/peak) - Na+ maximal, K+ just starting",
+      "detail": "WHAT IT IS: the peak (~+35 mV) is maximal depolarization. ❌ WHY IT FAILS: Na+ permeability is still dominant and K+ channels are only beginning to open. ✅ Correct if: asked for the point of maximal Na+ permeability / the overshoot."
+    },
+    {
+      "letter": "E",
+      "label": "Point E (hyperpolarization) - K+ channels closing",
+      "detail": "WHAT IT IS: after repolarization, slow voltage-gated K+ channels stay open briefly, dipping the membrane toward the K+ equilibrium (~-85 mV). ❌ WHY IT FAILS: K+ permeance is already DECLINING from its repolarization peak here. ✅ Correct if: asked why the membrane briefly hyperpolarizes below the resting potential."
+    }
+  ],
+  "reasoning": [
+    "Label the phases: A resting, B depolarization, C overshoot, D repolarization, E hyperpolarization",
+    "Depolarization (B/C) is the Na+-permeability phase",
+    "Repolarization (D) opens voltage-gated K+ channels widely -> K+ efflux and K+ permeance peak, exceeding the resting level",
+    "-> the membrane is most permeable to K+ at D"
+  ],
+  "mechanism": "Resting potential (~-70 mV) is set by K+ leak channels, so at rest the membrane is more permeable to K+ than to Na+. The upstroke (depolarization, B) is produced by voltage-gated Na+ channels, making Na+ permeability dominant through the overshoot/peak (~+35 mV, C). Repolarization (D) follows as Na+ channels inactivate and voltage-gated K+ channels open fully; the resulting K+ efflux drives the membrane potential back down, and K+ permeance at this point EXCEEDS the resting value - the absolute maximum. Hyperpolarization (E) occurs because these K+ channels close slowly, transiently approaching the K+ equilibrium potential (~-85 mV) before the resting state is restored.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Physio > action potential phases and ion permeabilities: resting K+ leak; depolarization = voltage-gated Na+; repolarization = voltage-gated K+ (K+ permeance peaks, exceeds rest); hyperpolarization approaches E_K (-85 mV)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Recognize the question asks for ABSOLUTE K+ permeability across the whole cycle, not 'where does K+ dominate Na+.' That points to repolarization (D), not resting (A)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on depolarization, repolarization, overshoot, hyperpolarization, equilibrium potential, or voltage-gated vs leak K+ channels? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Resting point A is the classic trap - K+ dominates Na+ there, but the absolute K+ permeance peak rides the repolarization downstroke (D)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The graph is a standard action-potential tracing; match each labeled point to its phase (A rest, B up, C peak, D down, E undershoot). If you misread which point is the downstroke, the physiology won't save you - re-anchor A on the baseline and D on the falling limb."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: K+ permeability PEAKS at repolarization (D); it only DOMINATES (vs Na+) at rest."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Membrane MOST permeable to K+ (absolute peak)",
+      "back": "Repolarization phase (voltage-gated K+ channels open)"
+    },
+    {
+      "front": "Resting membrane potential maintained by",
+      "back": "K+ leak channels (K+ >> Na+ permeability)"
+    },
+    {
+      "front": "Depolarization upstroke",
+      "back": "Voltage-gated Na+ channel opening (Na+ influx)"
+    },
+    {
+      "front": "Overshoot / peak (~+35 mV)",
+      "back": "Maximal Na+ permeability"
+    },
+    {
+      "front": "Hyperpolarization (undershoot)",
+      "back": "Slow K+ channel closure; approaches E_K (-85 mV)"
+    },
+    {
+      "front": "Squid giant axon",
+      "back": "Hodgkin-Huxley action potential model"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Action potential - K+ permeability",
+      "detail": "Physio (Neuro) > repolarization = voltage-gated K+ channels open; K+ permeance peaks above resting; K+ efflux returns Vm toward rest.",
+      "location": "Physio (Neuro) > repolarization = voltage-gated K+ channels open; K+ permeance peaks above resting; K+ efflux returns Vm toward rest."
+    },
+    {
+      "tag": "options",
+      "topic": "Action potential phases",
+      "detail": "Physio > resting (K+ leak), depolarization (Na+ in), overshoot (peak Na+), repolarization (K+ out), hyperpolarization (toward E_K).",
+      "location": "Physio > resting (K+ leak), depolarization (Na+ in), overshoot (peak Na+), repolarization (K+ out), hyperpolarization (toward E_K)."
+    },
+    {
+      "tag": "context",
+      "topic": "Equilibrium potentials",
+      "detail": "Physio > E_K ~ -90 mV, E_Na ~ +60 mV; Nernst/Goldman; leak vs voltage-gated channels.",
+      "location": "Physio > E_K ~ -90 mV, E_Na ~ +60 mV; Nernst/Goldman; leak vs voltage-gated channels."
+    }
+  ],
+  "memoryHook": "K+ goes OUT to bring you DOWN: the K+ permeability peak rides the repolarization downstroke (D), not the resting flat line (A).",
+  "stem": [
+    {
+      "text": "Neurophysiologists are studying recordings of the membrane potential from a "
+    },
+    {
+      "text": "giant squid axon",
+      "clue": true,
+      "type": "blue",
+      "note": "The squid giant axon is the classic Hodgkin-Huxley preparation for recording action potentials. Context only - it tells you this is a textbook action-potential tracing."
+    },
+    {
+      "text": ". A portion of their recordings is shown as a tracing of membrane potential versus time over a single action potential, with five labeled points: "
+    },
+    {
+      "text": "point A on the flat resting baseline just before the upstroke",
+      "clue": true,
+      "type": "purple",
+      "note": "At REST the membrane is most permeable to K+ RELATIVE to Na+ (leak channels hold the -70 mV resting potential). This tempts you to pick A - but the ABSOLUTE peak of K+ permeance comes later, during repolarization."
+    },
+    {
+      "text": ", "
+    },
+    {
+      "text": "point B on the steep rising (depolarization) phase",
+      "clue": true,
+      "type": "blue",
+      "note": "Depolarization is driven by voltage-gated Na+ channels opening; Na+ permeability (not K+) is what surges here as Na+ rushes in."
+    },
+    {
+      "text": ", "
+    },
+    {
+      "text": "point C at the peak/overshoot",
+      "clue": true,
+      "type": "blue",
+      "note": "The overshoot (~+35 mV) is the moment Na+ permeability is maximal and voltage-gated K+ channels are just beginning to open - not the K+ peak."
+    },
+    {
+      "text": ", "
+    },
+    {
+      "text": "point D on the falling (repolarization) phase",
+      "clue": true,
+      "type": "green",
+      "note": "Repolarization: Na+ channels inactivate and voltage-gated K+ channels open widely, so K+ efflux - and K+ permeance - reach their MAXIMUM, exceeding even the resting value. This is the answer."
+    },
+    {
+      "text": ", and point E on the late tail that dips slightly below baseline before returning. The membrane is most permeable to potassium ions at which of the following points?"
+    }
+  ]
+}

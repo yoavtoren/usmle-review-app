@@ -1,0 +1,189 @@
+{
+  "id": "q211",
+  "item": 211,
+  "qid": "11514",
+  "title": "Hospital MSSA: hand hygiene reduces transmission",
+  "system": "Microbiology",
+  "topic": "Infection control",
+  "correct": "B",
+  "yourAnswer": "D",
+  "percentCorrect": 69,
+  "vignette": "A 25-year-old man with multiple injuries sustained in a motorcycle accident develops osteomyelitis while in the hospital. The organism is identified as methicillin-sensitive Staphylococcus aureus, and antibiotics are started. Which of the following is the most important measure to reduce the risk of transmission to other patients?",
+  "clues": [
+    {
+      "text": "osteomyelitis while in the hospital",
+      "type": "blue",
+      "note": "A hospital-onset (nosocomial) infection raises the question of how to keep it from spreading to other patients - i.e., infection control, not just treatment of this patient."
+    },
+    {
+      "text": "methicillin-sensitive Staphylococcus aureus",
+      "type": "green",
+      "note": "MSSA (NOT MRSA) is key: methicillin-SENSITIVE S aureus does not require contact precautions. Standard precautions - centered on hand hygiene - are sufficient. The 'sensitive' wording is the discriminator the question hinges on."
+    },
+    {
+      "text": "reduce the risk of transmission to other patients",
+      "type": "blue",
+      "note": "This phrasing names the goal: prevent patient-to-patient spread. Across virtually all hospital-acquired organisms, the single most effective measure is hand hygiene by health care workers."
+    }
+  ],
+  "whatMatters": "Hand hygiene by health care workers is THE single most important measure to reduce transmission of hospital-acquired infections between patients. MSSA (unlike MRSA/VRE) does not even require contact precautions, so standard precautions - hand hygiene first - apply. Answer B.",
+  "strategy": "For 'most important measure to prevent patient-to-patient spread,' default to HAND HYGIENE unless the organism demands a specific tier (airborne TB -> isolation/respirator; MRSA/VRE/C. difficile -> contact). MSSA needs only standard precautions, so the generic-but-correct answer wins. Don't upgrade to masks or contact precautions the organism doesn't require.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Contact precautions",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Hand hygiene",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Isolation precautions",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Masks",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Restricting visitors",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Contact precautions - for MRSA/VRE, not MSSA",
+      "detail": "WHAT IT IS: gowns and gloves to block contact spread of specific multidrug-resistant organisms (MRSA, VRE) and certain pathogens. ❌ WHY IT FAILS: methicillin-SENSITIVE S aureus does not require contact precautions; standard precautions suffice, and hand hygiene is the core of those. ✅ Correct if: the organism were MRSA, VRE, or C. difficile (add contact precautions)."
+    },
+    {
+      "letter": "C",
+      "label": "Isolation precautions - airborne pathogens",
+      "detail": "WHAT IT IS: airborne isolation (negative-pressure room, respirators) for organisms like M. tuberculosis, measles, varicella. ❌ WHY IT FAILS: S aureus is not airborne-transmitted; isolation is unnecessary and not the key transmission control here. ✅ Correct if: suspected/confirmed airborne disease (TB, measles, varicella)."
+    },
+    {
+      "letter": "D",
+      "label": "Masks - respiratory barrier, not the main measure (your pick)",
+      "detail": "WHAT IT IS: facemasks block droplet/respiratory secretions. ❌ WHY IT FAILS: MSSA spreads chiefly via contaminated HANDS, not respiratory droplets; masks are not a substitute for hand hygiene and are not the single most important measure. ✅ Correct if: droplet-spread pathogens (influenza, meningococcus, pertussis)."
+    },
+    {
+      "letter": "E",
+      "label": "Restricting visitors - low yield",
+      "detail": "WHAT IT IS: limiting visitors to reduce exposure. ❌ WHY IT FAILS: it does little for patient-to-patient spread; visitors should simply perform hand hygiene. ✅ Correct if: protecting a severely immunocompromised patient (and even then hand hygiene is primary)."
+    }
+  ],
+  "reasoning": [
+    "Hospital-onset infection -> question is about preventing patient-to-patient transmission",
+    "Organism is MSSA, which requires only standard precautions (no contact precautions)",
+    "Across hospital-acquired infections, hand hygiene by staff is the single most effective transmission control",
+    "-> hand hygiene; answer B"
+  ],
+  "mechanism": "Most hospital-acquired pathogens, including Staphylococcus aureus, are transmitted between patients on the contaminated hands of health care workers, which is why hand hygiene - soap-and-water or alcohol-based hand rub before and after every patient contact - is the single most important and effective measure to interrupt transmission. Transmission-based precautions are added ON TOP of standard precautions only for specific organisms: contact precautions for multidrug-resistant bacteria (MRSA, VRE) and C. difficile, droplet precautions/masks for organisms like influenza and meningococcus, and airborne isolation for tuberculosis, measles, and varicella. Methicillin-SENSITIVE S aureus does not trigger any of these special tiers, so standard precautions centered on hand hygiene apply. Masks, isolation, and visitor restriction address transmission routes that are not the primary concern for MSSA.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid/IM > infection control: hand hygiene = single most important measure to prevent nosocomial transmission; contact (MRSA/VRE/C. difficile), droplet (flu/meningococcus), airborne (TB/measles/varicella) precautions; MSSA = standard precautions only."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The stem asks for the MOST IMPORTANT measure to prevent patient-to-patient spread - a general principle (hand hygiene) - not organism-specific add-ons."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on standard vs contact vs droplet vs airborne precautions, MSSA vs MRSA, or nosocomial/hospital-acquired? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Masks (your pick) and contact precautions feel proactive, but MSSA spreads by hands and needs no special tier - hand hygiene is the highest-yield, correct answer."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: hand hygiene = #1 to stop hospital transmission; contact = MRSA/VRE/C. diff; droplet/mask = flu/meningococcus; airborne/isolation = TB/measles/varicella; MSSA = standard precautions only."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Single most important measure to prevent hospital transmission",
+      "back": "Hand hygiene (soap/water or alcohol rub)"
+    },
+    {
+      "front": "MSSA precautions",
+      "back": "Standard precautions only (no contact precautions)"
+    },
+    {
+      "front": "Contact precautions indicated for",
+      "back": "MRSA, VRE, C. difficile (gowns + gloves)"
+    },
+    {
+      "front": "Airborne (isolation) precautions",
+      "back": "TB, measles, varicella (negative-pressure room, respirator)"
+    },
+    {
+      "front": "Droplet precautions / masks",
+      "back": "Influenza, meningococcus, pertussis"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Hand hygiene",
+      "detail": "IM/Micro > #1 measure to prevent nosocomial transmission; before/after every patient contact.",
+      "location": "IM/Micro > #1 measure to prevent nosocomial transmission; before/after every patient contact."
+    },
+    {
+      "tag": "options",
+      "topic": "Transmission-based precautions",
+      "detail": "Micro > contact (MRSA/VRE/C. diff), droplet (flu/meningococcus), airborne (TB/measles/varicella).",
+      "location": "Micro > contact (MRSA/VRE/C. diff), droplet (flu/meningococcus), airborne (TB/measles/varicella)."
+    },
+    {
+      "tag": "context",
+      "topic": "MSSA vs MRSA",
+      "detail": "Micro > MRSA/VRE add contact precautions; MSSA needs only standard precautions.",
+      "location": "Micro > MRSA/VRE add contact precautions; MSSA needs only standard precautions."
+    }
+  ],
+  "memoryHook": "Wash first. Hand hygiene beats every fancier intervention - and plain MSSA never earned the contact-precautions upgrade.",
+  "stem": [
+    {
+      "text": "A 25-year-old man with multiple injuries sustained in a motorcycle accident develops "
+    },
+    {
+      "text": "osteomyelitis while in the hospital",
+      "clue": true,
+      "type": "blue",
+      "note": "A hospital-onset (nosocomial) infection raises the question of how to keep it from spreading to other patients - i.e., infection control, not just treatment of this patient."
+    },
+    {
+      "text": ". The organism is identified as "
+    },
+    {
+      "text": "methicillin-sensitive Staphylococcus aureus",
+      "clue": true,
+      "type": "green",
+      "note": "MSSA (NOT MRSA) is key: methicillin-SENSITIVE S aureus does not require contact precautions. Standard precautions - centered on hand hygiene - are sufficient. The 'sensitive' wording is the discriminator the question hinges on."
+    },
+    {
+      "text": ", and antibiotics are started. Which of the following is the most important measure to "
+    },
+    {
+      "text": "reduce the risk of transmission to other patients",
+      "clue": true,
+      "type": "blue",
+      "note": "This phrasing names the goal: prevent patient-to-patient spread. Across virtually all hospital-acquired organisms, the single most effective measure is hand hygiene by health care workers."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

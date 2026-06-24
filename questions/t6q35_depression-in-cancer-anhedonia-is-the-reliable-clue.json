@@ -1,0 +1,231 @@
+{
+  "id": "q224",
+  "item": 224,
+  "qid": "15384",
+  "title": "Depression in cancer: anhedonia is the reliable clue",
+  "system": "Behavioral science",
+  "topic": "Major depressive disorder in medical illness",
+  "correct": "A",
+  "yourAnswer": "D",
+  "percentCorrect": 68,
+  "vignette": "A 63-year-old woman with a history of metastatic breast cancer comes to the office due to depressed mood. Over the past month, the patient has become increasingly sad and frequently cries when thinking about her poor prognosis and dying. She has lost 4.5 kg (10 lb) over the past month. Her energy level is low, and she has difficulty falling asleep and frequent nighttime awakenings. The patient has become very withdrawn, doesn't answer the phone, and no longer looks forward to family visits. She feels bad about not wanting to be around her grandchildren. On mental status examination, the patient is alert and oriented with depressed mood and affect. She has no suicidal ideation. Which of the following symptoms is most indicative of major depressive disorder in this patient?",
+  "clues": [
+    {
+      "text": "metastatic breast cancer",
+      "type": "orange",
+      "note": "Advanced cancer is the key confounder: the SOMATIC symptoms of depression (weight loss, low energy, sleep disturbance) overlap heavily with cancer and its treatment, so they are unreliable for diagnosing depression here."
+    },
+    {
+      "text": "frequently cries when thinking about her poor prognosis and dying",
+      "type": "purple",
+      "note": "Sadness and thoughts about death/dying are expected, normal responses to a terminal prognosis. They are NOT specific for major depression unless they include suicidal ideation, intent, or plan."
+    },
+    {
+      "text": "lost 4.5 kg (10 lb) over the past month",
+      "type": "purple",
+      "note": "Weight loss is a somatic depressive symptom, but in metastatic cancer it is far more likely due to the malignancy or treatment - so it is a poor indicator of depression in this patient."
+    },
+    {
+      "text": "difficulty falling asleep and frequent nighttime awakenings",
+      "type": "purple",
+      "note": "Sleep disturbance is another somatic symptom that overlaps with cancer/chemotherapy effects, making it unreliable for diagnosing depression in advanced illness."
+    },
+    {
+      "text": "withdrawn, doesn't answer the phone, and no longer looks forward to family visits",
+      "type": "green",
+      "note": "Loss of interest and inability to enjoy previously meaningful activities (anhedonia) is a NONsomatic, core depressive symptom that does NOT overlap with cancer - making it the most reliable indicator of major depression here."
+    },
+    {
+      "text": "no suicidal ideation",
+      "type": "blue",
+      "note": "Because she has no suicidal ideation, intent, or plan, her thoughts of dying are not pathologic markers of depression - confirming that the answer should be the anhedonia, not 'thoughts of dying.'"
+    }
+  ],
+  "whatMatters": "In a patient with advanced cancer, somatic depressive symptoms (weight loss, low energy, insomnia) overlap with the illness and are unreliable. NONsomatic, core symptoms - especially anhedonia (loss of interest/enjoyment), worthlessness, excessive guilt, suicidality - best indicate major depression. Her withdrawal and loss of interest in family = loss of interest. Answer A.",
+  "strategy": "When depression is questioned in a patient with serious medical illness, discount the somatic symptoms (they overlap with the disease) and weight the NONsomatic ones (anhedonia, worthlessness, excessive guilt, suicidal ideation). Thoughts of death are normal near end of life unless suicidal. So pick 'loss of interest in family' (anhedonia), not weight loss, low energy, sleep, or thoughts of dying.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Loss of interest in family",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Low energy",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Sleep disturbance",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Thoughts of dying",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Weight loss",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Low energy - somatic, overlaps with cancer",
+      "detail": "WHAT IT IS: fatigue/low energy is one of the DSM somatic symptoms of depression. ❌ WHY IT FAILS: in metastatic cancer (and during treatment), low energy is expected from the illness itself, so it is an unreliable indicator of depression. ✅ Correct if: low energy in a medically healthy patient with other depressive symptoms."
+    },
+    {
+      "letter": "C",
+      "label": "Sleep disturbance - somatic, overlaps with cancer",
+      "detail": "WHAT IT IS: insomnia/hypersomnia is a somatic depressive criterion. ❌ WHY IT FAILS: sleep disruption is common with cancer, pain, and chemotherapy, so it cannot reliably distinguish depression here. ✅ Correct if: new sleep disturbance in an otherwise well patient with mood symptoms."
+    },
+    {
+      "letter": "D",
+      "label": "Thoughts of dying - normal in terminal illness (your pick)",
+      "detail": "WHAT IT IS: thinking about death and dying. ❌ WHY IT FAILS: in advanced cancer with a poor prognosis this is a normal, expected reaction; it indicates depression only if it includes suicidal ideation, intent, or plan - which she explicitly lacks. The trap is equating sadness about dying with major depression. ✅ Correct if: thoughts of death include active suicidal ideation/intent/plan."
+    },
+    {
+      "letter": "E",
+      "label": "Weight loss - somatic, overlaps with cancer",
+      "detail": "WHAT IT IS: appetite/weight change is a somatic depressive criterion. ❌ WHY IT FAILS: weight loss in metastatic cancer is most likely from the malignancy/cachexia or treatment, not depression. ✅ Correct if: unexplained weight change from appetite loss in a medically well patient."
+    }
+  ],
+  "reasoning": [
+    "In advanced cancer, somatic depressive symptoms (weight loss, low energy, insomnia) overlap with the illness and are unreliable",
+    "Thoughts of dying are normal in terminal illness unless accompanied by suicidal ideation (absent here)",
+    "Nonsomatic core symptoms - especially anhedonia - best indicate major depression",
+    "-> her loss of interest in/enjoyment of family is most indicative; answer A"
+  ],
+  "mechanism": "Diagnosing major depressive disorder in patients with advanced medical illness is challenging because the SOMATIC criteria - appetite/weight change, low energy, sleep disturbance, psychomotor change - overlap with the disease and its treatment, reducing their specificity. NONsomatic, psychological symptoms are therefore weighted more heavily: anhedonia (loss of interest or pleasure), feelings of worthlessness, excessive or inappropriate guilt, and suicidal ideation are more reliable indicators of comorbid depression. This patient's social withdrawal and loss of interest in family visits represent anhedonia, a core (non-overlapping) symptom, making it the most indicative finding. Her sadness and thoughts about dying are an expected reaction to a terminal prognosis and, absent suicidal ideation, do not by themselves establish major depression.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Psych > MDD criteria (SIG E CAPS); diagnosing depression in medically ill/cancer patients: discount overlapping somatic symptoms, weight nonsomatic ones (anhedonia, worthlessness, guilt, suicidality)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question asks which symptom is MOST INDICATIVE of MDD given a confounding terminal illness. Filter out somatic overlap and normal grief; choose the core nonsomatic symptom (anhedonia)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on anhedonia, somatic vs nonsomatic symptoms, suicidal ideation vs thoughts of dying, or anticipatory grief? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "'Thoughts of dying' (your pick) feels depressive, but it is a normal response to a terminal prognosis unless suicidal - and she has no suicidal ideation. The reliable clue is anhedonia."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: in medically ill patients, diagnose depression by NONsomatic symptoms (anhedonia, worthlessness, guilt, suicidality); somatic symptoms (weight, energy, sleep) overlap with the disease."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Diagnosing depression in advanced cancer",
+      "back": "Weight NONsomatic symptoms (anhedonia, worthlessness, guilt, suicidality); somatic symptoms overlap with illness"
+    },
+    {
+      "front": "Anhedonia",
+      "back": "Loss of interest/pleasure in previously enjoyed activities (core, reliable depressive symptom)"
+    },
+    {
+      "front": "Thoughts of dying in terminal illness",
+      "back": "Normal unless suicidal ideation/intent/plan present"
+    },
+    {
+      "front": "Unreliable (somatic) depressive symptoms in cancer",
+      "back": "Weight loss, low energy, sleep disturbance"
+    },
+    {
+      "front": "MDD core symptoms (must have >=1)",
+      "back": "Depressed mood or loss of interest/pleasure (anhedonia)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Depression in the medically ill",
+      "detail": "Psych > favor nonsomatic symptoms (anhedonia, guilt, worthlessness, suicidality); somatic symptoms confounded by illness.",
+      "location": "Psych > favor nonsomatic symptoms (anhedonia, guilt, worthlessness, suicidality); somatic symptoms confounded by illness."
+    },
+    {
+      "tag": "options",
+      "topic": "MDD diagnostic criteria",
+      "detail": "Psych > SIG E CAPS; >=5 symptoms >=2 weeks, >=1 being depressed mood or anhedonia.",
+      "location": "Psych > SIG E CAPS; >=5 symptoms >=2 weeks, >=1 being depressed mood or anhedonia."
+    },
+    {
+      "tag": "context",
+      "topic": "Normal grief vs depression",
+      "detail": "Psych > anticipatory grief/thoughts of death are normal; suicidality, worthlessness, anhedonia flag MDD.",
+      "location": "Psych > anticipatory grief/thoughts of death are normal; suicidality, worthlessness, anhedonia flag MDD."
+    }
+  ],
+  "memoryHook": "In cancer, the body symptoms lie. Anhedonia tells the truth: she's stopped enjoying her own grandchildren - that loss of interest is the real depression flag, not sadness about dying.",
+  "stem": [
+    {
+      "text": "A 63-year-old woman with a history of "
+    },
+    {
+      "text": "metastatic breast cancer",
+      "clue": true,
+      "type": "orange",
+      "note": "Advanced cancer is the key confounder: the SOMATIC symptoms of depression (weight loss, low energy, sleep disturbance) overlap heavily with cancer and its treatment, so they are unreliable for diagnosing depression here."
+    },
+    {
+      "text": " comes to the office due to depressed mood. Over the past month, the patient has become increasingly sad and "
+    },
+    {
+      "text": "frequently cries when thinking about her poor prognosis and dying",
+      "clue": true,
+      "type": "purple",
+      "note": "Sadness and thoughts about death/dying are expected, normal responses to a terminal prognosis. They are NOT specific for major depression unless they include suicidal ideation, intent, or plan."
+    },
+    {
+      "text": ". She has "
+    },
+    {
+      "text": "lost 4.5 kg (10 lb) over the past month",
+      "clue": true,
+      "type": "purple",
+      "note": "Weight loss is a somatic depressive symptom, but in metastatic cancer it is far more likely due to the malignancy or treatment - so it is a poor indicator of depression in this patient."
+    },
+    {
+      "text": ". Her energy level is low, and she has "
+    },
+    {
+      "text": "difficulty falling asleep and frequent nighttime awakenings",
+      "clue": true,
+      "type": "purple",
+      "note": "Sleep disturbance is another somatic symptom that overlaps with cancer/chemotherapy effects, making it unreliable for diagnosing depression in advanced illness."
+    },
+    {
+      "text": ". The patient has become very "
+    },
+    {
+      "text": "withdrawn, doesn't answer the phone, and no longer looks forward to family visits",
+      "clue": true,
+      "type": "green",
+      "note": "Loss of interest and inability to enjoy previously meaningful activities (anhedonia) is a NONsomatic, core depressive symptom that does NOT overlap with cancer - making it the most reliable indicator of major depression here."
+    },
+    {
+      "text": ". She feels bad about not wanting to be around her grandchildren. On mental status examination, the patient is alert and oriented with depressed mood and affect. She has "
+    },
+    {
+      "text": "no suicidal ideation",
+      "clue": true,
+      "type": "blue",
+      "note": "Because she has no suicidal ideation, intent, or plan, her thoughts of dying are not pathologic markers of depression - confirming that the answer should be the anhedonia, not 'thoughts of dying.'"
+    },
+    {
+      "text": ". Which of the following symptoms is most indicative of major depressive disorder in this patient?"
+    }
+  ]
+}

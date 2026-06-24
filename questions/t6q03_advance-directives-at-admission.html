@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advance directives at admission</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 6 · all 8</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q192", "item": 192, "qid": "1235", "title": "Advance directives at admission", "system": "Behavioral science", "topic": "Advance directives / code status", "correct": "B", "yourAnswer": "C", "percentCorrect": 69, "vignette": "A 79-year-old man is undergoing evaluation for hospital admission due to an exacerbation of chronic obstructive pulmonary disease. His wife expresses concern about his health due to multiple hospitalizations over the last year for various complications related to his comorbidities. The patient has smoked cigarettes daily for more than 50 years. Medical history includes coronary artery disease, type 2 diabetes mellitus, and obesity. After performing a thorough history and physical examination, the physician prepares to admit the patient and decides to continue his existing medications for diabetes and heart disease. Admission orders also include supplemental oxygen, bronchodilators, antibiotics, and systemic corticosteroids. Which of the following additional components is most critical to include during the admission process?", "clues": [{"text": "exacerbation of chronic obstructive pulmonary disease", "type": "blue", "note": "A serious, potentially life-threatening illness prompting admission. The severity is what makes clarifying goals of care time-sensitive."}, {"text": "multiple hospitalizations over the last year", "type": "orange", "note": "Recurrent admissions signal advanced, progressive disease with real risk of deterioration. This is exactly the patient for whom code status / advance directives must be established."}, {"text": "coronary artery disease, type 2 diabetes mellitus, and obesity", "type": "blue", "note": "A heavy comorbidity burden compounds his risk of acute decompensation, reinforcing the need to clarify his wishes up front rather than during a crisis."}], "whatMatters": "The medical management (oxygen, bronchodilators, steroids, antibiotics) is already ordered - the question asks what ELSE is most critical AT ADMISSION. For a seriously ill patient who could deteriorate unexpectedly, establishing advance directives / code status (and a health care proxy) is the required, time-sensitive step. Smoking cessation, diet, social work, and insurance matter but are not admission-critical. Answer B.", "strategy": "When a sick patient is being ADMITTED and the options mix 'good medical advice' (smoking cessation, diet) with 'advance directives / code status,' choose the time-sensitive task: documenting advance directives and resuscitation preferences - because acute deterioration can happen at any time. Lifestyle counseling and logistics belong to the hospital course or discharge.", "options": [{"letter": "A", "text": "Discussion about diet and exercise to improve glycemic control and heart health", "correct": false}, {"letter": "B", "text": "Discussion of whether the patient has advance directives or a health care proxy", "correct": true}, {"letter": "C", "text": "Discussion regarding smoking cessation to reduce the patient's risk of dying from heart or lung disease", "correct": false}, {"letter": "D", "text": "Facilitation of a social work assessment to arrange for home health care and expedite discharge", "correct": false}, {"letter": "E", "text": "Verification of insurance coverage to determine eligibility for supplemental oxygen at home", "correct": false}], "eliminations": [{"letter": "A", "label": "diet/exercise counseling - not admission-critical", "detail": "WHAT IT IS: lifestyle counseling for diabetes and coronary disease - appropriate preventive care. ❌ WHY IT FAILS: it's not time-sensitive and can be addressed during the hospital course or at discharge, not specifically 'during admission.' ✅ Correct if: a clinic visit focused on long-term risk-factor modification."}, {"letter": "C", "label": "smoking cessation - best long-term, but not most critical now (your pick)", "detail": "WHAT IT IS: smoking cessation is the single most effective long-term step to reduce his cardiopulmonary mortality. ❌ WHY IT FAILS: it's hugely important but NOT what's most critical to complete during admission; code status/advance directives are time-sensitive because he could deteriorate at any moment. The trap is picking the 'most medically beneficial' over the 'most critical at admission.' ✅ Correct if: asked for the best intervention to reduce future morbidity/mortality."}, {"letter": "D", "label": "social work / home health - a discharge task", "detail": "WHAT IT IS: arranging home health care is part of discharge planning. ❌ WHY IT FAILS: it belongs later in the hospital course, not the critical admission step. ✅ Correct if: planning a safe discharge."}, {"letter": "E", "label": "insurance verification - logistics, not clinical priority", "detail": "WHAT IT IS: an administrative eligibility check. ❌ WHY IT FAILS: it isn't a clinical priority and isn't what must occur during admission. ✅ Correct if: a billing/logistics question."}], "reasoning": ["A seriously ill patient with advanced COPD + multiple comorbidities is being admitted", "Acute deterioration can occur unexpectedly, so his wishes must be known in advance", "All admitted patients should be asked about resuscitation preferences and advance directives / health care proxy", "This is the time-sensitive admission-critical step -> answer B"], "mechanism": "Advance directives record a patient's care preferences if they lose decision-making capacity; they include a living will (specific end-of-life wishes) and a health care proxy (a surrogate decision-maker who applies substituted judgment - deciding what the patient would have wanted). On hospital admission, all patients should be asked about resuscitation preferences (e.g., full code vs DNR) and whether advance directives exist, because serious clinical deterioration can occur unexpectedly. For a patient with severe COPD and multiple comorbidities this is especially pressing. The other items (smoking cessation, diet, social work, insurance) are appropriate during the hospital course or at discharge but are not the critical admission step.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Ethics > advance directives: living will vs health care proxy/durable power of attorney; substituted judgment; code status discussion required at admission."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Notice the qualifier 'most critical to include DURING THE ADMISSION PROCESS.' That favors the time-sensitive ethics step (advance directives/code status) over generally-good counseling."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on advance directive, living will, health care proxy, durable power of attorney, substituted judgment, code status/DNR? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Smoking cessation (C) is the trap - it's the most medically valuable long-term advice, so it 'feels' right. But the admission-critical task is establishing code status / advance directives."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: at admission of a seriously ill patient, clarify code status / advance directives first - deterioration can be sudden."}], "keywords": [{"front": "Most critical to address at hospital admission of a seriously ill patient", "back": "Advance directives / code status"}, {"front": "Living will", "back": "Specifies end-of-life wishes"}, {"front": "Health care proxy / durable power of attorney", "back": "Surrogate decision-maker"}, {"front": "Substituted judgment", "back": "Decide what the patient would have wanted"}, {"front": "Best long-term intervention in a COPD/CAD smoker", "back": "Smoking cessation (important, but not admission-critical)"}], "firstAid": [{"tag": "answer / stem", "topic": "Advance directives", "detail": "Ethics > living will vs health care proxy; ask all admitted patients about code status because deterioration can be unexpected."}, {"tag": "options", "topic": "Prevention vs goals of care", "detail": "Ethics/Prevention > smoking cessation and lifestyle counseling (valuable but not admission-critical); discharge planning and insurance (logistics)."}, {"tag": "context", "topic": "COPD exacerbation management", "detail": "Pulm > bronchodilators, systemic steroids, antibiotics, controlled O2 (already ordered here)."}], "memoryHook": "Sick patient hitting the hospital door -> clarify code status / advance directives FIRST; he could crash before the smoking-cessation talk ever matters.", "stem": [{"text": "A 79-year-old man is undergoing evaluation for hospital admission due to an "}, {"text": "exacerbation of chronic obstructive pulmonary disease", "clue": true, "type": "blue", "note": "A serious, potentially life-threatening illness prompting admission. The severity is what makes clarifying goals of care time-sensitive."}, {"text": ". His wife expresses concern about his health due to "}, {"text": "multiple hospitalizations over the last year", "clue": true, "type": "orange", "note": "Recurrent admissions signal advanced, progressive disease with real risk of deterioration. This is exactly the patient for whom code status / advance directives must be established."}, {"text": " for various complications related to his comorbidities. The patient has smoked cigarettes daily for more than 50 years. Medical history includes "}, {"text": "coronary artery disease, type 2 diabetes mellitus, and obesity", "clue": true, "type": "blue", "note": "A heavy comorbidity burden compounds his risk of acute decompensation, reinforcing the need to clarify his wishes up front rather than during a crisis."}, {"text": ". After performing a thorough history and physical examination, the physician prepares to admit the patient and decides to continue his existing medications for diabetes and heart disease. Admission orders also include supplemental oxygen, bronchodilators, antibiotics, and systemic corticosteroids. Which of the following additional components is most critical to include during the admission process?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

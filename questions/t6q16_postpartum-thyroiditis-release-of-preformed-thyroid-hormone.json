@@ -1,0 +1,221 @@
+{
+  "id": "q205",
+  "item": 205,
+  "qid": "20204",
+  "title": "Postpartum thyroiditis: release of preformed thyroid hormone",
+  "system": "Endocrinology",
+  "topic": "Thyroiditis / hyperthyroidism",
+  "correct": "D",
+  "yourAnswer": "A",
+  "percentCorrect": 42,
+  "vignette": "A 28-year-old woman comes to the office due to unintentional weight loss, fatigue, and sweating. The patient has no neck pain. Two months before this visit, she delivered a healthy male baby without complications. The patient has no chronic medical conditions and takes no medications. Blood pressure is 140/70 mm Hg, pulse is 110/min, and respirations are 16/min. Oxygen saturation is 98% on room air. Neck examination shows mild, diffuse enlargement of the thyroid gland with no tenderness. The remainder of the physical examination is normal. Laboratory evaluation shows low serum TSH and elevated serum thyroxine (T4) and triiodothyronine (T3). Thyroid ultrasound with Doppler flow reveals a mildly enlarged gland with decreased blood flow. Which of the following is most likely responsible for this patient's disorder?",
+  "clues": [
+    {
+      "text": "unintentional weight loss, fatigue, and sweating",
+      "type": "blue",
+      "note": "Weight loss, heat intolerance/sweating, and a fast pulse are classic thyrotoxic symptoms. They tell you the patient is HYPERthyroid but not WHY - the mechanism is what the question is really after."
+    },
+    {
+      "text": "no neck pain",
+      "type": "green",
+      "note": "A NONtender thyroid argues strongly against subacute (de Quervain) granulomatous thyroiditis, which is painful/tender and post-viral. Painless destruction points to the silent/postpartum (lymphocytic) family instead."
+    },
+    {
+      "text": "she delivered a healthy male baby",
+      "type": "orange",
+      "note": "Onset within 12 months of delivery is the demographic anchor for POSTPARTUM thyroiditis - autoimmune (lymphocytic) destruction of follicles. It classically runs hyperthyroid -> hypothyroid -> euthyroid."
+    },
+    {
+      "text": "low serum TSH and elevated serum thyroxine (T4) and triiodothyronine (T3)",
+      "type": "blue",
+      "note": "Primary hyperthyroidism: TSH low (normal 0.4-4.0 mIU/L) with high free T4 (normal ~0.9-1.7 ng/dL) and T3. This pattern is shared by Graves, toxic nodules, AND destructive thyroiditis - so labs alone don't separate them; the Doppler does."
+    },
+    {
+      "text": "mildly enlarged gland with decreased blood flow",
+      "type": "red",
+      "note": "DECREASED thyroid blood flow (and low radioiodine uptake) means the gland is NOT overproducing hormone - it is leaking preformed hormone as follicles are destroyed. Graves and toxic nodules instead show INCREASED flow and uptake. This single finding makes the answer 'release of preformed hormone.'"
+    }
+  ],
+  "whatMatters": "Separate hormone SYNTHESIS from hormone RELEASE. Postpartum timing + nontender diffuse goiter + biochemical hyperthyroidism + DECREASED Doppler flow = destructive (postpartum/lymphocytic) thyroiditis, which leaks preformed T4/T3 from injured follicles. Increased synthesis (Graves, toxic nodule) would show INCREASED flow and radioiodine uptake. Answer D - release of preformed thyroid hormones.",
+  "strategy": "In a hyperthyroid stem, immediately ask 'making too much, or leaking stored hormone?' Decreased blood flow / low radioiodine uptake = destructive thyroiditis (release). Increased flow / high uptake = Graves or autonomous nodule (synthesis). Pain = subacute (de Quervain); painless + postpartum = lymphocytic/postpartum. Suppressed TSH + low uptake + NO goiter = exogenous hormone.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Antibodies stimulating the TSH receptor",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Autonomous production of thyroid hormones",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Exogenous thyroxine intake",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Release of preformed thyroid hormones",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Viral infection of the thyroid gland",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "TSH-receptor stimulating antibodies - Graves (your pick)",
+      "detail": "WHAT IT IS: thyroid-stimulating immunoglobulin (TSI) activates the TSH receptor in Graves disease, driving hormone SYNTHESIS. ❌ WHY IT FAILS: Graves increases gland metabolic activity, so Doppler shows INCREASED blood flow and radioiodine uptake is HIGH - the opposite of this patient's decreased flow. The postpartum timing + low flow point to destructive release, not stimulation. ✅ Correct if: hyperthyroidism with diffuse goiter, ophthalmopathy/pretibial myxedema, and increased uptake/flow."
+    },
+    {
+      "letter": "B",
+      "label": "Autonomous hormone production - toxic nodule/goiter",
+      "detail": "WHAT IT IS: a toxic adenoma or toxic multinodular goiter makes hormone independent of TSH. ❌ WHY IT FAILS: like Graves, autonomous synthesis raises uptake and blood flow and produces a NODULAR (not diffusely tender-free destructive) gland - not the low-flow leak seen here. ✅ Correct if: older patient, nodular gland, focal/patchy increased uptake on scan."
+    },
+    {
+      "letter": "C",
+      "label": "Exogenous thyroxine intake - factitious",
+      "detail": "WHAT IT IS: taking thyroid hormone suppresses TSH and lowers radioiodine uptake and blood flow. ❌ WHY IT FAILS: exogenous hormone causes the gland to ATROPHY - there would be no goiter, whereas this patient has a diffusely enlarged gland. ✅ Correct if: thyrotoxic labs, low uptake, SMALL/normal gland, low thyroglobulin, access to thyroid pills."
+    },
+    {
+      "letter": "E",
+      "label": "Viral infection - subacute (de Quervain) thyroiditis",
+      "detail": "WHAT IT IS: subacute granulomatous thyroiditis follows a viral illness and transiently leaks preformed hormone. ❌ WHY IT FAILS: it is classically PAINFUL with a tender gland and elevated ESR - this patient explicitly has NO neck pain, and the postpartum timing fits painless lymphocytic thyroiditis. ✅ Correct if: tender thyroid, jaw/ear pain, recent URI, high ESR."
+    }
+  ],
+  "reasoning": [
+    "Thyrotoxic symptoms + low TSH with high T4/T3 = primary hyperthyroidism",
+    "Nontender diffuse goiter within 2 months of delivery = postpartum (lymphocytic) thyroiditis",
+    "DECREASED Doppler flow (low uptake) means the gland is leaking stored hormone, not synthesizing more",
+    "-> release of preformed thyroid hormones; answer D"
+  ],
+  "mechanism": "Postpartum thyroiditis is an autoimmune (lymphocytic) destructive thyroiditis occurring within 12 months of delivery, on the same spectrum as silent/sporadic thyroiditis and Hashimoto disease. Autoimmune injury to thyroid follicles releases PREFORMED stored T4 and T3, producing a transient hyperthyroid phase (typically 1-3 months), often followed by a hypothyroid phase as stores deplete, then recovery. Because the gland is being destroyed rather than overdriven, thyroid metabolic activity is low: radioiodine uptake falls and Doppler shows DECREASED blood flow - the key contrast with Graves disease and toxic nodules, which increase synthesis, uptake, and flow. TPO antibodies are usually positive and serum thyroglobulin is elevated.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Endo > thyroiditis: postpartum/silent (painless, low uptake, autoimmune, hyper->hypo->euthyroid) vs subacute de Quervain (painful, post-viral) vs Graves/toxic nodule (high uptake, high flow); release of preformed hormone vs increased synthesis."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question asks for the MECHANISM of thyrotoxicosis (synthesis vs release), not the diagnosis. Decreased blood flow is the deciding data point - destructive leak, not stimulation."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on preformed hormone, radioiodine uptake, Doppler flow, autonomous production, TSH-receptor antibody (TSI), or de Quervain? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Graves (A) is the reflex pick for any diffuse goiter + hyperthyroidism - but Graves raises blood flow and uptake; this gland has DECREASED flow, so it is leaking, not synthesizing."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: postpartum/silent/de Quervain thyroiditis = release of preformed hormone, LOW uptake & flow; Graves/toxic nodule = increased synthesis, HIGH uptake & flow; exogenous hormone = low uptake, NO goiter."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Hyperthyroidism within 12 months of delivery, nontender goiter",
+      "back": "Postpartum (lymphocytic) thyroiditis"
+    },
+    {
+      "front": "Thyrotoxicosis with DECREASED blood flow / low radioiodine uptake",
+      "back": "Destructive thyroiditis - release of preformed hormone"
+    },
+    {
+      "front": "Thyrotoxicosis with INCREASED blood flow / high uptake",
+      "back": "Graves disease or toxic nodule (increased synthesis)"
+    },
+    {
+      "front": "PAINFUL/tender thyroid after viral illness, high ESR",
+      "back": "Subacute (de Quervain) granulomatous thyroiditis"
+    },
+    {
+      "front": "Thyrotoxic labs, low uptake, NO goiter, low thyroglobulin",
+      "back": "Exogenous (factitious) thyroid hormone"
+    },
+    {
+      "front": "Phases of postpartum thyroiditis",
+      "back": "Hyperthyroid -> hypothyroid -> euthyroid (TPO Ab positive)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Postpartum & silent thyroiditis",
+      "detail": "Endo > painless destructive thyroiditis; release of preformed hormone; low uptake; hyper-then-hypo-then-euthyroid; TPO antibodies.",
+      "location": "Endo > painless destructive thyroiditis; release of preformed hormone; low uptake; hyper-then-hypo-then-euthyroid; TPO antibodies."
+    },
+    {
+      "tag": "options",
+      "topic": "Hyperthyroidism differential",
+      "detail": "Endo > Graves (TSI, high uptake/flow), toxic nodule (autonomous), de Quervain (painful, post-viral), exogenous (no goiter).",
+      "location": "Endo > Graves (TSI, high uptake/flow), toxic nodule (autonomous), de Quervain (painful, post-viral), exogenous (no goiter)."
+    },
+    {
+      "tag": "context",
+      "topic": "Radioiodine uptake & Doppler",
+      "detail": "Endo > high uptake/flow = synthesis (Graves, nodule); low uptake/flow = release (thyroiditis) or exogenous hormone.",
+      "location": "Endo > high uptake/flow = synthesis (Graves, nodule); low uptake/flow = release (thyroiditis) or exogenous hormone."
+    }
+  ],
+  "memoryHook": "Leak vs make: low flow = the gland is LEAKING stored hormone (postpartum/de Quervain); high flow = the gland is MAKING too much (Graves/nodule).",
+  "stem": [
+    {
+      "text": "A 28-year-old woman comes to the office due to "
+    },
+    {
+      "text": "unintentional weight loss, fatigue, and sweating",
+      "clue": true,
+      "type": "blue",
+      "note": "Weight loss, heat intolerance/sweating, and a fast pulse are classic thyrotoxic symptoms. They tell you the patient is HYPERthyroid but not WHY - the mechanism is what the question is really after."
+    },
+    {
+      "text": ". The patient has "
+    },
+    {
+      "text": "no neck pain",
+      "clue": true,
+      "type": "green",
+      "note": "A NONtender thyroid argues strongly against subacute (de Quervain) granulomatous thyroiditis, which is painful/tender and post-viral. Painless destruction points to the silent/postpartum (lymphocytic) family instead."
+    },
+    {
+      "text": ". Two months before this visit, "
+    },
+    {
+      "text": "she delivered a healthy male baby",
+      "clue": true,
+      "type": "orange",
+      "note": "Onset within 12 months of delivery is the demographic anchor for POSTPARTUM thyroiditis - autoimmune (lymphocytic) destruction of follicles. It classically runs hyperthyroid -> hypothyroid -> euthyroid."
+    },
+    {
+      "text": " without complications. The patient has no chronic medical conditions and takes no medications. Blood pressure is 140/70 mm Hg, pulse is 110/min, and respirations are 16/min. Oxygen saturation is 98% on room air. Neck examination shows mild, diffuse enlargement of the thyroid gland with no tenderness. The remainder of the physical examination is normal. Laboratory evaluation shows "
+    },
+    {
+      "text": "low serum TSH and elevated serum thyroxine (T4) and triiodothyronine (T3)",
+      "clue": true,
+      "type": "blue",
+      "note": "Primary hyperthyroidism: TSH low (normal 0.4-4.0 mIU/L) with high free T4 (normal ~0.9-1.7 ng/dL) and T3. This pattern is shared by Graves, toxic nodules, AND destructive thyroiditis - so labs alone don't separate them; the Doppler does."
+    },
+    {
+      "text": ". Thyroid ultrasound with Doppler flow reveals a "
+    },
+    {
+      "text": "mildly enlarged gland with decreased blood flow",
+      "clue": true,
+      "type": "red",
+      "note": "DECREASED thyroid blood flow (and low radioiodine uptake) means the gland is NOT overproducing hormone - it is leaking preformed hormone as follicles are destroyed. Graves and toxic nodules instead show INCREASED flow and uptake. This single finding makes the answer 'release of preformed hormone.'"
+    },
+    {
+      "text": ". Which of the following is most likely responsible for this patient's disorder?"
+    }
+  ]
+}

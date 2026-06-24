@@ -1,0 +1,231 @@
+{
+  "id": "q196",
+  "item": 196,
+  "qid": "15312",
+  "title": "Sevelamer: decreased intestinal phosphate absorption",
+  "system": "Pharmacology",
+  "topic": "CKD-mineral bone disorder / phosphate binders",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 59,
+  "vignette": "A 55-year-old woman with stage IV chronic kidney disease due to type 2 diabetes mellitus comes to the office for a follow-up visit. Blood pressure is 140/90 mm Hg and pulse is 78/min. BMI is 31 kg/m2. Laboratory results are as follows:\nHemoglobin: 10.5 g/dL\nCalcium: 8.8 mg/dL\nAlbumin: 3.7 g/dL\nPhosphorus: 7.2 mg/dL\nCreatinine: 3.3 mg/dL\nBlood urea nitrogen: 88 mg/dL\nParathyroid hormone: 100 pg/mL (normal: 10-65)\nThe patient's serum phosphorus has been persistently elevated despite strict dietary phosphate restriction. Treatment with sevelamer is initiated. This medication reduces the serum phosphorus level by which of the following mechanisms?",
+  "clues": [
+    {
+      "text": "stage IV chronic kidney disease",
+      "type": "orange",
+      "note": "Advanced CKD impairs renal phosphate excretion, which is the root cause of hyperphosphatemia and the downstream CKD-mineral bone disorder."
+    },
+    {
+      "text": "Phosphorus: 7.2 mg/dL",
+      "type": "red",
+      "note": "Hyperphosphatemia - patient's value 7.2 vs normal ~2.5-4.5 mg/dL. The failing kidney can't excrete phosphate, so it accumulates; this is the target of therapy."
+    },
+    {
+      "text": "Parathyroid hormone: 100 pg/mL (normal: 10-65)",
+      "type": "green",
+      "note": "Elevated PTH (100 vs normal 10-65) = secondary hyperparathyroidism, driven by high phosphate and low calcitriol/calcium in CKD. It confirms CKD-mineral bone disorder."
+    },
+    {
+      "text": "persistently elevated despite strict dietary phosphate restriction",
+      "type": "blue",
+      "note": "Diet alone wasn't enough, so an oral phosphate BINDER is added. The question asks how that binder lowers phosphate."
+    },
+    {
+      "text": "sevelamer",
+      "type": "green",
+      "note": "Sevelamer is a nonabsorbable anion-exchange resin. It binds dietary phosphate in the gut lumen so it is excreted in stool - acting in the intestine, not the kidney."
+    }
+  ],
+  "whatMatters": "CKD causes hyperphosphatemia (phosphorus 7.2 / normal 2.5-4.5) and secondary hyperparathyroidism (PTH 100 / normal 10-65). Sevelamer is a nonabsorbable resin that BINDS dietary phosphate in the GUT, so less is absorbed and it leaves in the stool. Mechanism = decreased intestinal absorption of phosphorus. Answer B.",
+  "strategy": "For phosphate-binder drugs (sevelamer, calcium acetate/carbonate, lanthanum) the mechanism is always luminal GUT binding -> decreased intestinal phosphate absorption (excreted in feces). They act in the gut, NOT on the renal tubule, PTH, FGF23, or vitamin D receptors. Map 'binder' -> 'blocks GI absorption.'",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Blocking of vitamin D receptors",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased intestinal absorption of phosphorus",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Reduction of proximal renal tubular reabsorption of phosphorus",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Stimulation of fibroblast growth factor 23 release",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Suppression of parathyroid hormone secretion",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Transcellular movement of phosphorus",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "blocking vitamin D receptors - opposite of CKD care",
+      "detail": "WHAT IT IS: vitamin D receptor antagonists are largely experimental; most CKD patients actually NEED vitamin D (calcitriol) supplementation. ❌ WHY IT FAILS: sevelamer doesn't touch vitamin D receptors - it binds gut phosphate. ✅ Correct if: an experimental VDR antagonist question."
+    },
+    {
+      "letter": "C",
+      "label": "reduce proximal tubular reabsorption - that's PTH/FGF23 (your pick)",
+      "detail": "WHAT IT IS: PTH and FGF23 lower phosphate by downregulating NPT2 cotransporters in the proximal tubule (renal phosphate wasting). ❌ WHY IT FAILS: sevelamer works in the GUT lumen, not the kidney - and in stage IV CKD renal phosphate handling is already failing. The trap is picking the physiologic RENAL mechanism instead of the drug's GI action. ✅ Correct if: asked how PTH/FGF23 (not sevelamer) lower phosphate."
+    },
+    {
+      "letter": "D",
+      "label": "stimulate FGF23 release - endogenous hormone, not the drug",
+      "detail": "WHAT IT IS: FGF23 is a phosphaturic hormone released by bone in response to high phosphate. ❌ WHY IT FAILS: sevelamer doesn't stimulate FGF23; it binds luminal phosphate. ✅ Correct if: asked about endogenous phosphaturic hormones."
+    },
+    {
+      "letter": "E",
+      "label": "suppress PTH secretion - calcimimetics/vitamin D",
+      "detail": "WHAT IT IS: directly lowering PTH is the action of calcimimetics (cinacalcet) and vitamin D analogs. ❌ WHY IT FAILS: sevelamer lowers phosphate by GI binding; any PTH improvement is a downstream consequence, not its mechanism. ✅ Correct if: cinacalcet or calcitriol."
+    },
+    {
+      "letter": "F",
+      "label": "transcellular shift - insulin, not a binder",
+      "detail": "WHAT IT IS: shifting phosphate into cells (e.g., with insulin/glucose) transiently lowers serum phosphate. ❌ WHY IT FAILS: sevelamer doesn't move phosphate into cells; it removes it via the gut. ✅ Correct if: an insulin-driven intracellular phosphate shift."
+    }
+  ],
+  "reasoning": [
+    "Stage IV CKD -> the kidney can't excrete phosphate -> hyperphosphatemia (7.2) and secondary hyperparathyroidism (PTH 100)",
+    "Diet alone failed, so an oral phosphate binder (sevelamer) is added",
+    "Sevelamer is a nonabsorbable resin that binds dietary phosphate in the intestinal lumen",
+    "The phosphate-binder complex is excreted in stool -> decreased intestinal absorption, answer B"
+  ],
+  "mechanism": "Chronic kidney disease causes hyperphosphatemia because the failing kidney cannot excrete phosphate; the resulting high phosphate (with low calcitriol and calcium) drives secondary hyperparathyroidism. Dietary phosphate restriction is first-line, but oral phosphate binders are usually needed. Sevelamer is a nonabsorbable anion-exchange resin that binds dietary phosphate within the intestinal lumen, forming a complex eliminated in the feces, thereby DECREASING intestinal phosphate absorption and lowering serum phosphorus. It does not act on the renal tubule, PTH, FGF23, or vitamin D receptors.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Renal/Pharm > phosphate binders (sevelamer, calcium acetate/carbonate, lanthanum): bind gut phosphate -> decreased intestinal absorption; CKD-mineral bone disorder; PTH/FGF23 physiology."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The drug is a 'binder' - that word means it acts in the GUT lumen. Don't pick the renal/PTH mechanisms that describe normal phosphate physiology; pick the drug's GI action."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on phosphate binder, anion-exchange resin, NPT2 cotransporter, FGF23, calcitriol, calcimimetic, secondary hyperparathyroidism? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "'Reduction of proximal tubular reabsorption' (C) is the trap - it's a real way to lower phosphate, but that's how PTH/FGF23 act on the KIDNEY, not how sevelamer acts in the GUT."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: any phosphate BINDER works in the gut -> decreased intestinal absorption, excreted in stool."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Sevelamer / calcium acetate / lanthanum mechanism",
+      "back": "Bind gut phosphate -> decreased intestinal absorption"
+    },
+    {
+      "front": "CKD + high phosphate + high PTH",
+      "back": "Secondary hyperparathyroidism (CKD-MBD)"
+    },
+    {
+      "front": "How PTH and FGF23 lower phosphate",
+      "back": "Decrease proximal tubule NPT2 reabsorption (phosphaturia)"
+    },
+    {
+      "front": "FGF23",
+      "back": "Phosphaturic hormone; lowers calcitriol"
+    },
+    {
+      "front": "Cinacalcet",
+      "back": "Calcimimetic -> decreases PTH"
+    },
+    {
+      "front": "Normal serum phosphorus",
+      "back": "~2.5-4.5 mg/dL"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Phosphate binders",
+      "detail": "Renal/Pharm > sevelamer (nonabsorbable resin), calcium acetate/carbonate, lanthanum: bind gut phosphate -> decreased absorption, excreted in stool.",
+      "location": "Renal/Pharm > sevelamer (nonabsorbable resin), calcium acetate/carbonate, lanthanum: bind gut phosphate -> decreased absorption, excreted in stool."
+    },
+    {
+      "tag": "options",
+      "topic": "Phosphate / Ca-PTH physiology",
+      "detail": "Renal > PTH & FGF23 (decrease proximal NPT2 reabsorption), calcitriol, calcimimetics (cinacalcet lowers PTH).",
+      "location": "Renal > PTH & FGF23 (decrease proximal NPT2 reabsorption), calcitriol, calcimimetics (cinacalcet lowers PTH)."
+    },
+    {
+      "tag": "context",
+      "topic": "CKD-mineral bone disorder",
+      "detail": "Renal > hyperphosphatemia, low calcitriol, low calcium, secondary hyperparathyroidism, renal osteodystrophy.",
+      "location": "Renal > hyperphosphatemia, low calcitriol, low calcium, secondary hyperparathyroidism, renal osteodystrophy."
+    }
+  ],
+  "memoryHook": "Sevelamer is a SPONGE in the gut - it soaks up dietary phosphate so it leaves in the stool. It never touches the kidney, PTH, or vitamin D.",
+  "stem": [
+    {
+      "text": "A 55-year-old woman with "
+    },
+    {
+      "text": "stage IV chronic kidney disease",
+      "clue": true,
+      "type": "orange",
+      "note": "Advanced CKD impairs renal phosphate excretion, which is the root cause of hyperphosphatemia and the downstream CKD-mineral bone disorder."
+    },
+    {
+      "text": " due to type 2 diabetes mellitus comes to the office for a follow-up visit. Blood pressure is 140/90 mm Hg and pulse is 78/min. BMI is 31 kg/m2. Laboratory results are as follows:\nHemoglobin: 10.5 g/dL\nCalcium: 8.8 mg/dL\nAlbumin: 3.7 g/dL\n"
+    },
+    {
+      "text": "Phosphorus: 7.2 mg/dL",
+      "clue": true,
+      "type": "red",
+      "note": "Hyperphosphatemia - patient's value 7.2 vs normal ~2.5-4.5 mg/dL. The failing kidney can't excrete phosphate, so it accumulates; this is the target of therapy."
+    },
+    {
+      "text": "\nCreatinine: 3.3 mg/dL\nBlood urea nitrogen: 88 mg/dL\n"
+    },
+    {
+      "text": "Parathyroid hormone: 100 pg/mL (normal: 10-65)",
+      "clue": true,
+      "type": "green",
+      "note": "Elevated PTH (100 vs normal 10-65) = secondary hyperparathyroidism, driven by high phosphate and low calcitriol/calcium in CKD. It confirms CKD-mineral bone disorder."
+    },
+    {
+      "text": "\nThe patient's serum phosphorus has been "
+    },
+    {
+      "text": "persistently elevated despite strict dietary phosphate restriction",
+      "clue": true,
+      "type": "blue",
+      "note": "Diet alone wasn't enough, so an oral phosphate BINDER is added. The question asks how that binder lowers phosphate."
+    },
+    {
+      "text": ". Treatment with "
+    },
+    {
+      "text": "sevelamer",
+      "clue": true,
+      "type": "green",
+      "note": "Sevelamer is a nonabsorbable anion-exchange resin. It binds dietary phosphate in the gut lumen so it is excreted in stool - acting in the intestine, not the kidney."
+    },
+    {
+      "text": " is initiated. This medication reduces the serum phosphorus level by which of the following mechanisms?"
+    }
+  ]
+}

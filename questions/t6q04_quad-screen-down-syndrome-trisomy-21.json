@@ -1,0 +1,221 @@
+{
+  "id": "q193",
+  "item": 193,
+  "qid": "312",
+  "title": "Quad screen: Down syndrome (trisomy 21)",
+  "system": "Obstetrics",
+  "topic": "Prenatal screening",
+  "correct": "E",
+  "yourAnswer": "D",
+  "percentCorrect": 74,
+  "vignette": "A 32-year-old woman, gravida 1 para 0, comes to the office to discuss abnormal laboratory results. The patient is at 18 weeks gestation based on her last menstrual period. She has no chronic medical conditions and takes no daily medications. Results of the quadruple screen performed previously are as follows:\nMaternal serum alpha-fetoprotein: Low\nUnconjugated estriol: Low\nbeta-hCG: High\nInhibin A: High\nWhich of the following is the most likely diagnosis?",
+  "clues": [
+    {
+      "text": "18 weeks gestation",
+      "type": "blue",
+      "note": "The quadruple screen is a second-trimester (~15-20 week) test. The timing tells you to read the four analytes as a quad-screen pattern."
+    },
+    {
+      "text": "Maternal serum alpha-fetoprotein: Low",
+      "type": "green",
+      "note": "LOW AFP is the key discriminator. It rules OUT the high-AFP conditions (open neural tube defects, abdominal wall defects, multiple gestation) and points toward aneuploidy."
+    },
+    {
+      "text": "Unconjugated estriol: Low",
+      "type": "green",
+      "note": "Low estriol (reduced fetal/placental production) accompanies low AFP in Down syndrome - and would also be low in trisomy 18."
+    },
+    {
+      "text": "beta-hCG: High",
+      "type": "green",
+      "note": "HIGH beta-hCG is one of the two 'ups' that define Down syndrome on the quad screen (placental hyperfunction). Trisomy 18 instead has LOW hCG."
+    },
+    {
+      "text": "Inhibin A: High",
+      "type": "green",
+      "note": "HIGH inhibin A is the second 'up.' Two highs (hCG + inhibin A) with two lows (AFP + estriol) is the classic trisomy-21 quad-screen fingerprint."
+    }
+  ],
+  "whatMatters": "Pure pattern recognition. Down syndrome (trisomy 21) on the quad screen = LOW AFP, LOW estriol, HIGH hCG, HIGH inhibin A. The two highs (hCG + inhibin A) separate it from trisomy 18 (all four low); the LOW AFP separates it from the high-AFP options (neural tube/abdominal wall defects, multiple gestation). Answer E.",
+  "strategy": "Memorize the quad-screen grids. Trisomy 21 = down-down-UP-UP (AFP low, estriol low, hCG high, inhibin A high). Trisomy 18 = all four low. High maternal AFP = open neural tube defect, ventral wall defect, or multiple gestation. So first read AFP: LOW here, which kills every 'high-AFP' choice.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Amniotic band sequence",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Gastroschisis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Multiple gestation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Myelomeningocele",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Trisomy 21",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "amniotic band sequence - would raise AFP",
+      "detail": "WHAT IT IS: amniotic bands constrict and disrupt fetal structures; if they breach the abdominal wall or neural tube, AFP leaks and rises. ❌ WHY IT FAILS: this pattern has LOW AFP and high hCG/inhibin - the opposite. ✅ Correct if: HIGH AFP with limb/craniofacial disruption."
+    },
+    {
+      "letter": "B",
+      "label": "gastroschisis - high AFP",
+      "detail": "WHAT IT IS: a ventral abdominal wall defect with exposed bowel that allows AFP to leak into amniotic fluid, RAISING maternal AFP. ❌ WHY IT FAILS: AFP here is LOW. ✅ Correct if: markedly elevated maternal AFP with a paraumbilical wall defect."
+    },
+    {
+      "letter": "C",
+      "label": "multiple gestation - all analytes high",
+      "detail": "WHAT IT IS: twins/more produce more fetal tissue and placenta, raising ALL quad-screen analytes (including AFP and estriol). ❌ WHY IT FAILS: this pattern has LOW AFP and LOW estriol, not uniformly high values. ✅ Correct if: every analyte is elevated."
+    },
+    {
+      "letter": "D",
+      "label": "myelomeningocele - open NTD raises AFP (your pick)",
+      "detail": "WHAT IT IS: an open neural tube defect; leaking AFP (and acetylcholinesterase) RAISES maternal serum AFP. ❌ WHY IT FAILS: this screen shows LOW AFP - neural tube defects elevate it. The trap is jumping to a structural defect without checking the AFP direction. ✅ Correct if: HIGH AFP (+/- elevated amniotic acetylcholinesterase)."
+    }
+  ],
+  "reasoning": [
+    "Second-trimester quad screen: AFP low, estriol low, hCG high, inhibin A high",
+    "The two HIGHS (hCG + inhibin A) with two lows is the trisomy-21 fingerprint",
+    "LOW AFP excludes the high-AFP options (neural tube/abdominal wall defect, multiple gestation)",
+    "-> Down syndrome (trisomy 21), answer E"
+  ],
+  "mechanism": "The second-trimester quadruple screen measures maternal serum AFP, unconjugated estriol, beta-hCG, and inhibin A. Down syndrome (trisomy 21) produces LOW AFP and estriol (reduced fetal production) with HIGH beta-hCG and inhibin A (placental hyperfunction). This contrasts with trisomy 18 (all four low) and with open neural tube defects, ventral wall defects, and multiple gestation (HIGH AFP). The single most useful discriminator here is AFP: it is LOW, which excludes the high-AFP options; definitive diagnosis is by fetal karyotype from amniocentesis.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Repro > quad screen patterns: trisomy 21 (AFP down, estriol down, hCG up, inhibin A up), trisomy 18 (all down), high AFP (open NTD, ventral wall defect, multiple gestation); confirm with amniocentesis karyotype."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Read AFP first: it's LOW, so cross off every condition that RAISES AFP (myelomeningocele, gastroschisis, multiple gestation). The remaining low-AFP + high-hCG/inhibin pattern is Down syndrome."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on AFP, unconjugated estriol, beta-hCG, inhibin A, quad screen, aneuploidy, open neural tube defect? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Myelomeningocele (D) tempts as a 'structural defect' answer - but neural tube defects RAISE AFP; this screen has LOW AFP, so it's trisomy 21."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: Down = 2 lows (AFP, estriol) + 2 highs (hCG, inhibin A). High AFP = a 'hole' (neural tube / ventral wall) or multiples - not Down."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "AFP low, estriol low, hCG high, inhibin A high",
+      "back": "Down syndrome (trisomy 21)"
+    },
+    {
+      "front": "All four quad-screen analytes low",
+      "back": "Edwards syndrome (trisomy 18)"
+    },
+    {
+      "front": "High maternal serum AFP",
+      "back": "Open neural tube / ventral wall defect, multiple gestation"
+    },
+    {
+      "front": "High AFP + high amniotic acetylcholinesterase",
+      "back": "Open neural tube defect"
+    },
+    {
+      "front": "Confirm an abnormal screen",
+      "back": "Amniocentesis (fetal karyotype)"
+    },
+    {
+      "front": "Most common chromosomal cause of intellectual disability",
+      "back": "Trisomy 21"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Quad screen / Down syndrome",
+      "detail": "Repro > trisomy 21: AFP low, estriol low, hCG high, inhibin A high; advanced maternal age, Robertsonian translocation.",
+      "location": "Repro > trisomy 21: AFP low, estriol low, hCG high, inhibin A high; advanced maternal age, Robertsonian translocation."
+    },
+    {
+      "tag": "options",
+      "topic": "High-AFP conditions",
+      "detail": "Repro > open NTD (myelomeningocele, anencephaly), ventral wall defects (gastroschisis, omphalocele), multiple gestation raise AFP.",
+      "location": "Repro > open NTD (myelomeningocele, anencephaly), ventral wall defects (gastroschisis, omphalocele), multiple gestation raise AFP."
+    },
+    {
+      "tag": "context",
+      "topic": "Prenatal screening / diagnosis",
+      "detail": "Repro > first- vs second-trimester screens; amniocentesis for definitive karyotype.",
+      "location": "Repro > first- vs second-trimester screens; amniocentesis for definitive karyotype."
+    }
+  ],
+  "memoryHook": "Down's quad screen has 2 UP and 2 DOWN: hCG & inhibin A UP, AFP & estriol DOWN. A HIGH AFP means a hole (neural tube/belly), not Down.",
+  "stem": [
+    {
+      "text": "A 32-year-old woman, gravida 1 para 0, comes to the office to discuss abnormal laboratory results. The patient is at "
+    },
+    {
+      "text": "18 weeks gestation",
+      "clue": true,
+      "type": "blue",
+      "note": "The quadruple screen is a second-trimester (~15-20 week) test. The timing tells you to read the four analytes as a quad-screen pattern."
+    },
+    {
+      "text": " based on her last menstrual period. She has no chronic medical conditions and takes no daily medications. Results of the quadruple screen performed previously are as follows:\n"
+    },
+    {
+      "text": "Maternal serum alpha-fetoprotein: Low",
+      "clue": true,
+      "type": "green",
+      "note": "LOW AFP is the key discriminator. It rules OUT the high-AFP conditions (open neural tube defects, abdominal wall defects, multiple gestation) and points toward aneuploidy."
+    },
+    {
+      "text": "\n"
+    },
+    {
+      "text": "Unconjugated estriol: Low",
+      "clue": true,
+      "type": "green",
+      "note": "Low estriol (reduced fetal/placental production) accompanies low AFP in Down syndrome - and would also be low in trisomy 18."
+    },
+    {
+      "text": "\n"
+    },
+    {
+      "text": "beta-hCG: High",
+      "clue": true,
+      "type": "green",
+      "note": "HIGH beta-hCG is one of the two 'ups' that define Down syndrome on the quad screen (placental hyperfunction). Trisomy 18 instead has LOW hCG."
+    },
+    {
+      "text": "\n"
+    },
+    {
+      "text": "Inhibin A: High",
+      "clue": true,
+      "type": "green",
+      "note": "HIGH inhibin A is the second 'up.' Two highs (hCG + inhibin A) with two lows (AFP + estriol) is the classic trisomy-21 quad-screen fingerprint."
+    },
+    {
+      "text": "\nWhich of the following is the most likely diagnosis?"
+    }
+  ]
+}

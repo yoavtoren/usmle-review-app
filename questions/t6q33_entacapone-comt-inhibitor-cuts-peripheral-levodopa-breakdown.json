@@ -1,0 +1,221 @@
+{
+  "id": "q222",
+  "item": 222,
+  "qid": "265",
+  "title": "Entacapone: COMT inhibitor cuts peripheral levodopa breakdown",
+  "system": "Pharmacology",
+  "topic": "Parkinson disease pharmacology",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 67,
+  "vignette": "A 72-year-old man with a history of Parkinson disease comes to the office for follow-up. The patient has been taking carbidopa-levodopa since being diagnosed 5 years ago and has required increasing doses to control his symptoms. He is now taking the maximum dose but has experienced bothersome motor fluctuations for the past several months. The patient also reports worsening stiffness and difficulty moving between his scheduled doses; these symptoms improve after he takes the medication. Entacapone is added to his treatment regimen. This drug is most likely to improve this patient's symptoms through which of the following mechanisms?",
+  "clues": [
+    {
+      "text": "history of Parkinson disease",
+      "type": "blue",
+      "note": "Parkinson disease is dopaminergic neuron loss in the substantia nigra; treatment centers on restoring dopamine, classically with levodopa."
+    },
+    {
+      "text": "carbidopa-levodopa since being diagnosed 5 years ago",
+      "type": "blue",
+      "note": "Levodopa (the dopamine precursor that crosses the blood-brain barrier) is given with carbidopa, a peripheral DOPA decarboxylase inhibitor that already reduces peripheral breakdown - a hint to the answer's category."
+    },
+    {
+      "text": "bothersome motor fluctuations",
+      "type": "green",
+      "note": "As Parkinson disease progresses, the therapeutic window narrows and patients develop motor fluctuations. Adjuncts are added to smooth and extend each levodopa dose."
+    },
+    {
+      "text": "worsening stiffness and difficulty moving between his scheduled doses; these symptoms improve after he takes the medication",
+      "type": "green",
+      "note": "Symptoms returning BETWEEN doses and improving AFTER a dose is the classic 'wearing-off' phenomenon. The fix is to prolong levodopa availability - exactly what a COMT inhibitor does."
+    },
+    {
+      "text": "Entacapone is added",
+      "type": "red",
+      "note": "Entacapone is a peripheral catechol-O-methyltransferase (COMT) inhibitor. By blocking peripheral conversion of levodopa to 3-O-methyldopa, it decreases peripheral levodopa degradation, raising the amount that reaches the brain."
+    }
+  ],
+  "whatMatters": "Entacapone is a peripheral COMT inhibitor. Levodopa is degraded peripherally by DOPA decarboxylase and COMT; blocking COMT DECREASES peripheral levodopa degradation, increasing bioavailability and smoothing 'wearing-off' fluctuations. Answer A. It does not enter the brain or act on dopamine receptors directly.",
+  "strategy": "Identify the drug class, then its peripheral action. Entacapone/tolcapone = COMT inhibitors that protect levodopa from peripheral breakdown (like carbidopa protects it from decarboxylase). Distinguish from dopamine agonists (direct receptor stimulation), amantadine (enhances endogenous dopamine), and anticholinergics/AChE drugs (muscarinic/cholinergic effects). 'Wearing off' on max levodopa = add a COMT inhibitor.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreasing peripheral levodopa degradation",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Directly stimulating dopamine receptors",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Enhancing the effect of endogenous dopamine",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Inhibiting central muscarinic receptors",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Inhibiting centrally active acetylcholinesterase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Directly stimulating dopamine receptors - dopamine agonists",
+      "detail": "WHAT IT IS: dopamine agonists (pramipexole, ropinirole, bromocriptine) directly activate dopamine receptors without needing metabolic conversion. ❌ WHY IT FAILS: entacapone has no direct receptor activity and does not cross the blood-brain barrier; it works peripherally on COMT. ✅ Correct if: the added drug were a dopamine agonist."
+    },
+    {
+      "letter": "C",
+      "label": "Enhancing the effect of endogenous dopamine - amantadine",
+      "detail": "WHAT IT IS: amantadine increases dopamine release and blocks its reuptake (and antagonizes NMDA receptors). ❌ WHY IT FAILS: that is amantadine's mechanism, not entacapone's; entacapone instead protects exogenous levodopa from peripheral degradation. ✅ Correct if: amantadine were added (also reduces levodopa-induced dyskinesia)."
+    },
+    {
+      "letter": "D",
+      "label": "Inhibiting central muscarinic receptors - anticholinergics",
+      "detail": "WHAT IT IS: antimuscarinics (trihexyphenidyl, benztropine) counter the relative cholinergic excess in Parkinson disease, mainly helping tremor. ❌ WHY IT FAILS: entacapone is not an anticholinergic; it acts on COMT peripherally. ✅ Correct if: a tremor-predominant patient given an anticholinergic."
+    },
+    {
+      "letter": "E",
+      "label": "Inhibiting centrally active acetylcholinesterase - would worsen PD",
+      "detail": "WHAT IT IS: central acetylcholinesterase inhibitors (donepezil, rivastigmine) raise CNS acetylcholine and are used in Alzheimer disease. ❌ WHY IT FAILS: increasing central acetylcholine would WORSEN parkinsonism, and entacapone does neither - it inhibits COMT. ✅ Correct if: treating Alzheimer-type dementia (or DLB cognition), not Parkinson motor symptoms."
+    }
+  ],
+  "reasoning": [
+    "Long-standing Parkinson disease on max carbidopa-levodopa with 'wearing-off' between doses",
+    "Goal: prolong/raise levodopa availability to smooth fluctuations",
+    "Entacapone is a peripheral COMT inhibitor; COMT normally degrades levodopa to 3-O-methyldopa",
+    "-> entacapone decreases peripheral levodopa degradation; answer A"
+  ],
+  "mechanism": "Levodopa is the blood-brain-barrier-permeable precursor used to replenish dopamine in Parkinson disease, but in the periphery it is rapidly metabolized by aromatic amino acid (DOPA) decarboxylase and by catechol-O-methyltransferase (COMT, to 3-O-methyldopa), so only a small fraction reaches the brain. Carbidopa already inhibits peripheral decarboxylase; entacapone adds peripheral COMT inhibition, further DECREASING peripheral levodopa degradation and increasing the amount available to cross into the CNS. As Parkinson disease advances, the therapeutic window narrows and patients develop 'wearing-off' motor fluctuations; adding entacapone raises and stabilizes plasma levodopa, prolonging each dose's benefit. It neither crosses into the brain nor stimulates dopamine receptors directly.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm (Neuro) > Parkinson drugs: levodopa + carbidopa (peripheral DOPA decarboxylase inhibitor); COMT inhibitors (entacapone peripheral, tolcapone central+peripheral) reduce levodopa breakdown for wearing-off; dopamine agonists; amantadine; anticholinergics (tremor)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The stem asks for entacapone's MECHANISM. Recognize 'wearing off' + COMT inhibitor -> decreased peripheral levodopa degradation; don't pick a different drug class's action."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on COMT, DOPA decarboxylase, 3-O-methyldopa, 'wearing off'/motor fluctuations, or dopamine agonist vs precursor? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Dopamine agonists (B) and amantadine (C) are real Parkinson drugs, so they tempt - but entacapone neither stimulates receptors nor enhances endogenous dopamine; it blocks peripheral COMT."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: entacapone/tolcapone = COMT inhibitors (decrease peripheral levodopa degradation, treat wearing-off); carbidopa = DOPA decarboxylase inhibitor; agonists = pramipexole/ropinirole."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Entacapone / tolcapone mechanism",
+      "back": "COMT inhibitor - decreases peripheral levodopa degradation"
+    },
+    {
+      "front": "Carbidopa mechanism",
+      "back": "Peripheral DOPA decarboxylase inhibitor (limits peripheral levodopa breakdown/side effects)"
+    },
+    {
+      "front": "'Wearing-off' on max levodopa",
+      "back": "Add a COMT inhibitor (entacapone) to prolong each dose"
+    },
+    {
+      "front": "Dopamine agonists",
+      "back": "Pramipexole, ropinirole, bromocriptine (direct receptor stimulation)"
+    },
+    {
+      "front": "Amantadine mechanism",
+      "back": "Increases dopamine release/blocks reuptake; NMDA antagonist; reduces dyskinesia"
+    },
+    {
+      "front": "Entacapone vs tolcapone",
+      "back": "Entacapone peripheral only; tolcapone also central (hepatotoxicity risk)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "COMT inhibitors",
+      "detail": "Pharm > entacapone (peripheral) decreases levodopa breakdown -> more reaches brain; used for wearing-off.",
+      "location": "Pharm > entacapone (peripheral) decreases levodopa breakdown -> more reaches brain; used for wearing-off."
+    },
+    {
+      "tag": "options",
+      "topic": "Parkinson drug classes",
+      "detail": "Pharm > levodopa/carbidopa, dopamine agonists, MAO-B inhibitors, amantadine, anticholinergics.",
+      "location": "Pharm > levodopa/carbidopa, dopamine agonists, MAO-B inhibitors, amantadine, anticholinergics."
+    },
+    {
+      "tag": "context",
+      "topic": "Levodopa metabolism",
+      "detail": "Pharm > peripheral DOPA decarboxylase + COMT degrade levodopa; inhibit both to boost CNS delivery.",
+      "location": "Pharm > peripheral DOPA decarboxylase + COMT degrade levodopa; inhibit both to boost CNS delivery."
+    }
+  ],
+  "memoryHook": "'-capone' caps the COMT enzyme. Entacapone guards levodopa from peripheral breakdown so more reaches the brain - smoothing the wear-off.",
+  "stem": [
+    {
+      "text": "A 72-year-old man with a "
+    },
+    {
+      "text": "history of Parkinson disease",
+      "clue": true,
+      "type": "blue",
+      "note": "Parkinson disease is dopaminergic neuron loss in the substantia nigra; treatment centers on restoring dopamine, classically with levodopa."
+    },
+    {
+      "text": " comes to the office for follow-up. The patient has been taking "
+    },
+    {
+      "text": "carbidopa-levodopa since being diagnosed 5 years ago",
+      "clue": true,
+      "type": "blue",
+      "note": "Levodopa (the dopamine precursor that crosses the blood-brain barrier) is given with carbidopa, a peripheral DOPA decarboxylase inhibitor that already reduces peripheral breakdown - a hint to the answer's category."
+    },
+    {
+      "text": " and has required increasing doses to control his symptoms. He is now taking the maximum dose but has experienced "
+    },
+    {
+      "text": "bothersome motor fluctuations",
+      "clue": true,
+      "type": "green",
+      "note": "As Parkinson disease progresses, the therapeutic window narrows and patients develop motor fluctuations. Adjuncts are added to smooth and extend each levodopa dose."
+    },
+    {
+      "text": " for the past several months. The patient also reports "
+    },
+    {
+      "text": "worsening stiffness and difficulty moving between his scheduled doses; these symptoms improve after he takes the medication",
+      "clue": true,
+      "type": "green",
+      "note": "Symptoms returning BETWEEN doses and improving AFTER a dose is the classic 'wearing-off' phenomenon. The fix is to prolong levodopa availability - exactly what a COMT inhibitor does."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Entacapone is added",
+      "clue": true,
+      "type": "red",
+      "note": "Entacapone is a peripheral catechol-O-methyltransferase (COMT) inhibitor. By blocking peripheral conversion of levodopa to 3-O-methyldopa, it decreases peripheral levodopa degradation, raising the amount that reaches the brain."
+    },
+    {
+      "text": " to his treatment regimen. This drug is most likely to improve this patient's symptoms through which of the following mechanisms?"
+    }
+  ]
+}

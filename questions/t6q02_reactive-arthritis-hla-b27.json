@@ -1,0 +1,211 @@
+{
+  "id": "q191",
+  "item": 191,
+  "qid": "1600",
+  "title": "Reactive arthritis: HLA-B27",
+  "system": "Rheumatology",
+  "topic": "Seronegative spondyloarthropathy",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 57,
+  "vignette": "A 35-year-old man comes to the clinic with acute right knee pain and swelling. His symptoms have been present for a week and have moderately worsened over this period. The patient is able to bear weight but has significant pain when climbing stairs or walking for extended distances. He attempted treatment with ibuprofen, which provided prompt but only temporary relief. Past medical history is unremarkable, though the patient was seen by his primary care provider for a diarrheal illness 2 weeks before onset of the current symptoms. Examination shows a moderate-sized effusion at the right knee. Cultures of a joint aspirate reveal no bacteria. Which of the following is most likely associated with this patient's joint symptoms?",
+  "clues": [
+    {
+      "text": "acute right knee pain and swelling",
+      "type": "blue",
+      "note": "An acute large-joint monoarthritis of the lower extremity. This pattern (knee/ankle) is typical of reactive arthritis and other spondyloarthropathies, not symmetric small-joint RA."
+    },
+    {
+      "text": "diarrheal illness 2 weeks before onset of the current symptoms",
+      "type": "red",
+      "note": "A GI infection days-to-weeks before the arthritis is the defining trigger of reactive arthritis. Common culprits: Campylobacter, Shigella, Salmonella, Yersinia, C. difficile (or genitourinary Chlamydia)."
+    },
+    {
+      "text": "moderate-sized effusion at the right knee",
+      "type": "blue",
+      "note": "A sterile inflammatory effusion. The joint is inflamed by an immune reaction, not direct infection."
+    },
+    {
+      "text": "Cultures of a joint aspirate reveal no bacteria",
+      "type": "green",
+      "note": "A STERILE aspirate rules out septic arthritis. The arthritis is 'reactive' (immune-mediated deposition of antigen/immune complexes), which fits reactive arthritis and its HLA-B27 association."
+    }
+  ],
+  "whatMatters": "Strip it to: an acute, sterile, large-joint (lower-extremity) arthritis appearing 1-2 weeks AFTER a diarrheal infection = reactive arthritis, a seronegative spondyloarthropathy. The ask is the associated marker -> HLA-B27. Answer C. The sterile aspirate excludes septic arthritis; RF/ANA are negative (seronegative).",
+  "strategy": "Pattern: 'arthritis days-to-weeks after a GI (Campylobacter/Shigella/Salmonella/Yersinia) or GU (Chlamydia) infection + sterile joint' = reactive arthritis -> HLA-B27. All seronegative spondyloarthropathies (reactive, psoriatic, ankylosing spondylitis, IBD-associated) are RF/ANA-negative and HLA-B27-associated.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "C1 inhibitor deficiency",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "High titers of antistreptolysin O antibodies",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Histocompatibility antigen HLA-B27",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Positive serum antinuclear antibodies",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Positive serum rheumatoid factor",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "C1 inhibitor deficiency - angioedema, not arthritis",
+      "detail": "WHAT IT IS: C1 inhibitor deficiency causes hereditary angioedema (recurrent angioedema without urticaria). ❌ WHY IT FAILS: it has nothing to do with a post-infectious arthritis. ✅ Correct if: recurrent episodic facial/airway/bowel swelling."
+    },
+    {
+      "letter": "B",
+      "label": "high ASO titers - post-streptococcal, wrong pattern",
+      "detail": "WHAT IT IS: high antistreptolysin O titers mark recent group A strep infection (rheumatic fever, PSGN). ❌ WHY IT FAILS: rheumatic fever causes a MIGRATORY polyarthritis after PHARYNGITIS, not a single knee after diarrhea; ASO isn't linked to reactive arthritis. ✅ Correct if: migratory polyarthritis + carditis after strep throat."
+    },
+    {
+      "letter": "D",
+      "label": "ANA - marker of SLE, not this",
+      "detail": "WHAT IT IS: antinuclear antibodies are a sensitive marker of SLE and other connective tissue disease. ❌ WHY IT FAILS: SLE arthritis is symmetric and polyarticular, typically in women, and isn't triggered by a diarrheal illness; reactive arthritis is ANA-negative. ✅ Correct if: a young woman with malar rash, serositis, multisystem disease."
+    },
+    {
+      "letter": "E",
+      "label": "rheumatoid factor - RA, but this is seronegative (your pick)",
+      "detail": "WHAT IT IS: rheumatoid factor is associated with rheumatoid arthritis - a symmetric small-joint polyarthritis with morning stiffness. ❌ WHY IT FAILS: this is an acute, asymmetric, large-joint monoarthritis after a gut infection, i.e., a SERONEGATIVE spondyloarthropathy (RF-negative). The trap is matching 'arthritis' to RF reflexively. ✅ Correct if: symmetric MCP/PIP polyarthritis with morning stiffness."
+    }
+  ],
+  "reasoning": [
+    "Acute, asymmetric, large lower-extremity arthritis (knee) following a diarrheal infection by ~2 weeks",
+    "Joint aspirate is sterile -> reactive (immune-mediated), not septic",
+    "This is reactive arthritis, a seronegative spondyloarthropathy",
+    "Seronegative spondyloarthropathies are RF/ANA-negative and HLA-B27-associated -> answer C"
+  ],
+  "mechanism": "Reactive arthritis is a seronegative spondyloarthropathy that follows a GI (Campylobacter, Shigella, Salmonella, Yersinia, C. difficile) or GU (Chlamydia) infection by days to weeks. It is strongly associated with HLA-B27 and presents as an asymmetric oligo/monoarthritis of large lower-extremity joints, often with enthesitis, dactylitis, and extra-articular features (conjunctivitis, urethritis, keratoderma blennorrhagicum). Joint aspirates are STERILE because the inflammation is immune-mediated (deposited bacterial antigen/immune complexes), not a direct joint infection, and the disease is RF- and ANA-negative, distinguishing it from RA and SLE.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Rheum > seronegative spondyloarthropathies (reactive, psoriatic, ankylosing spondylitis, IBD-associated): HLA-B27, RF/ANA negative; reactive arthritis triggers and the 'can't see/pee/climb a tree' triad."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The ask is the ASSOCIATED MARKER, not the diagnosis. Recognize reactive arthritis (post-diarrheal sterile large-joint arthritis), then recall its association: HLA-B27."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on reactive arthritis, seronegative spondyloarthropathy, HLA-B27, enthesitis, dactylitis, keratoderma blennorrhagicum, septic vs sterile aspirate? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Rheumatoid factor (E) is the trap - 'arthritis' pulls you to RF. But this is a seronegative (RF-negative) reactive arthritis; the association is HLA-B27."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: post-GI/GU sterile large-joint arthritis = reactive arthritis = HLA-B27, seronegative."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Sterile large-joint arthritis after diarrheal/GU infection",
+      "back": "Reactive arthritis (HLA-B27)"
+    },
+    {
+      "front": "Seronegative spondyloarthropathies share",
+      "back": "HLA-B27; RF and ANA negative"
+    },
+    {
+      "front": "Reactive arthritis GI triggers",
+      "back": "Campylobacter, Shigella, Salmonella, Yersinia, C. difficile"
+    },
+    {
+      "front": "Reactive arthritis classic triad",
+      "back": "Conjunctivitis, urethritis, arthritis ('can't see/pee/climb a tree')"
+    },
+    {
+      "front": "Rheumatoid factor positive",
+      "back": "Rheumatoid arthritis"
+    },
+    {
+      "front": "ANA positive",
+      "back": "SLE"
+    },
+    {
+      "front": "High ASO titers",
+      "back": "Post-streptococcal (rheumatic fever, PSGN)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Reactive arthritis / HLA-B27",
+      "detail": "Rheum > seronegative spondyloarthropathies (reactive, psoriatic, ankylosing, IBD); post-GI/GU, sterile, asymmetric large lower-extremity joints.",
+      "location": "Rheum > seronegative spondyloarthropathies (reactive, psoriatic, ankylosing, IBD); post-GI/GU, sterile, asymmetric large lower-extremity joints."
+    },
+    {
+      "tag": "options",
+      "topic": "Serologic markers",
+      "detail": "Rheum > RF (RA), ANA (SLE), ASO (post-strep), C1 inhibitor (hereditary angioedema).",
+      "location": "Rheum > RF (RA), ANA (SLE), ASO (post-strep), C1 inhibitor (hereditary angioedema)."
+    },
+    {
+      "tag": "context",
+      "topic": "Septic vs reactive arthritis",
+      "detail": "Rheum > sterile aspirate (reactive) vs organisms / very high WBC (septic).",
+      "location": "Rheum > sterile aspirate (reactive) vs organisms / very high WBC (septic)."
+    }
+  ],
+  "memoryHook": "Can't see, can't pee, can't climb a tree - reactive arthritis after a gut/GU bug: HLA-B27, sterile joint, seronegative.",
+  "stem": [
+    {
+      "text": "A 35-year-old man comes to the clinic with "
+    },
+    {
+      "text": "acute right knee pain and swelling",
+      "clue": true,
+      "type": "blue",
+      "note": "An acute large-joint monoarthritis of the lower extremity. This pattern (knee/ankle) is typical of reactive arthritis and other spondyloarthropathies, not symmetric small-joint RA."
+    },
+    {
+      "text": ". His symptoms have been present for a week and have moderately worsened over this period. The patient is able to bear weight but has significant pain when climbing stairs or walking for extended distances. He attempted treatment with ibuprofen, which provided prompt but only temporary relief. Past medical history is unremarkable, though the patient was seen by his primary care provider for a "
+    },
+    {
+      "text": "diarrheal illness 2 weeks before onset of the current symptoms",
+      "clue": true,
+      "type": "red",
+      "note": "A GI infection days-to-weeks before the arthritis is the defining trigger of reactive arthritis. Common culprits: Campylobacter, Shigella, Salmonella, Yersinia, C. difficile (or genitourinary Chlamydia)."
+    },
+    {
+      "text": ". Examination shows a "
+    },
+    {
+      "text": "moderate-sized effusion at the right knee",
+      "clue": true,
+      "type": "blue",
+      "note": "A sterile inflammatory effusion. The joint is inflamed by an immune reaction, not direct infection."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Cultures of a joint aspirate reveal no bacteria",
+      "clue": true,
+      "type": "green",
+      "note": "A STERILE aspirate rules out septic arthritis. The arthritis is 'reactive' (immune-mediated deposition of antigen/immune complexes), which fits reactive arthritis and its HLA-B27 association."
+    },
+    {
+      "text": ". Which of the following is most likely associated with this patient's joint symptoms?"
+    }
+  ]
+}

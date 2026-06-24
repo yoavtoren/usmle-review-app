@@ -1,0 +1,197 @@
+{
+  "id": "q202",
+  "item": 202,
+  "qid": "21310",
+  "title": "MGMT repairs DNA (alkylator susceptibility in GBM)",
+  "system": "Pathology",
+  "topic": "DNA repair / epigenetics in cancer",
+  "correct": "C",
+  "yourAnswer": "B",
+  "percentCorrect": 46,
+  "vignette": "Pharmacologic researchers develop a novel alkylating chemotherapeutic agent against glioblastoma multiforme. They find that malignant cells with methylation of the promoter region for the O6-methylguanine-DNA methyltransferase (MGMT) gene are more susceptible to this drug than cells without methylation. Which of the following is the most likely function of the protein encoded by the gene?",
+  "clues": [
+    {
+      "text": "alkylating chemotherapeutic agent",
+      "type": "blue",
+      "note": "Alkylating agents (eg, temozolomide) damage DNA by adding alkyl groups - notably O6-methylguanine - which mispairs and creates cytotoxic lesions."
+    },
+    {
+      "text": "glioblastoma multiforme",
+      "type": "orange",
+      "note": "GBM frequently silences MGMT by promoter methylation; MGMT status predicts response to alkylators such as temozolomide."
+    },
+    {
+      "text": "methylation of the promoter region for the O6-methylguanine-DNA methyltransferase (MGMT) gene",
+      "type": "red",
+      "note": "Promoter (CpG) methylation SILENCES a gene. A methylated MGMT promoter means little or no MGMT protein is made."
+    },
+    {
+      "text": "more susceptible to this drug than cells without methylation",
+      "type": "green",
+      "note": "If silencing MGMT makes cells MORE vulnerable to an alkylator, MGMT's normal job must be to UNDO alkylation damage - i.e., repair DNA. Without it, alkylation lesions persist and kill the cell."
+    }
+  ],
+  "whatMatters": "Promoter methylation silences MGMT. Cells lacking MGMT are MORE sensitive to an alkylating drug -> MGMT normally protects against alkylation by REPAIRING DNA (it removes the methyl group from O6-methylguanine, restoring guanine). The name says it: O6-methylguanine-DNA methyltransferase. Answer C.",
+  "strategy": "Reason from the experiment: lose the gene -> more drug-killing. So the gene's protein normally DEFENDS against that drug's damage. The drug is an alkylator (makes O6-methylguanine), so the defense is direct DNA repair. Also parse the enzyme's name - 'O6-methylguanine-DNA methyltransferase' literally transfers the offending methyl group off the DNA.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Induction of apoptosis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Reducing major histocompatibility complex expression",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Repairing DNA damage",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Upregulation of telomerase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Induction of apoptosis - wrong direction & wrong gene",
+      "detail": "WHAT IT IS: proapoptotic genes (eg, BAX, p53 targets) trigger programmed death. ❌ WHY IT FAILS: if MGMT induced apoptosis, silencing it would make cells MORE resistant, not more susceptible; MGMT is a repair enzyme, not an apoptosis inducer. ✅ Correct if: asked about a proapoptotic tumor-suppressor pathway."
+    },
+    {
+      "letter": "B",
+      "label": "Reducing MHC expression - immune evasion, not MGMT (your pick)",
+      "detail": "WHAT IT IS: tumors often downregulate MHC class I to hide from cytotoxic T cells. ❌ WHY IT FAILS: that immune-evasion mechanism is unrelated to MGMT and to alkylator sensitivity; MGMT's effect here is on DNA repair, not antigen presentation. The trap is linking 'methyltransferase' to a regulatory/immune role instead of reading it as a DNA-repair enzyme. ✅ Correct if: asked how tumors escape CD8 T-cell killing."
+    },
+    {
+      "letter": "D",
+      "label": "Upregulation of telomerase - immortality, not repair",
+      "detail": "WHAT IT IS: telomerase extends telomeres so cancer cells avoid senescence. ❌ WHY IT FAILS: telomerase doesn't repair alkylation damage and isn't MGMT's function; losing it wouldn't sensitize cells to an alkylator. ✅ Correct if: asked how tumors achieve replicative immortality."
+    }
+  ],
+  "reasoning": [
+    "An alkylating drug damages DNA (forms O6-methylguanine)",
+    "Promoter methylation SILENCES MGMT, so methylated cells make little MGMT",
+    "Those cells are MORE susceptible to the alkylator -> MGMT normally PROTECTS against alkylation damage",
+    "Therefore MGMT's function is to repair DNA (remove the methyl group from O6-methylguanine) -> answer C"
+  ],
+  "mechanism": "Alkylating chemotherapeutics (eg, temozolomide) add alkyl groups to DNA bases; O6-methylguanine is a key cytotoxic lesion because it mispairs with thymine and triggers lethal repair cycles. MGMT (O6-methylguanine-DNA methyltransferase) is a direct-reversal DNA repair enzyme that transfers the offending methyl group from guanine onto its own cysteine residue, restoring normal guanine and neutralizing the damage. Many glioblastomas epigenetically silence MGMT by CpG methylation of its promoter; with little MGMT, alkylation lesions go unrepaired and the cells become far more sensitive to alkylating chemotherapy. This is why MGMT promoter methylation is a favorable predictive marker for temozolomide response in GBM.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochem > DNA repair (direct reversal/MGMT, base & nucleotide excision, mismatch); epigenetics (promoter CpG methylation silences genes); temozolomide/alkylators in GBM."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reason from the experiment: silencing the gene INCREASES drug killing, so the gene normally DEFENDS against the drug's DNA damage -> it's a repair enzyme. Then confirm with the enzyme's name."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on alkylating agent, O6-methylguanine, promoter/CpG methylation = silencing, direct DNA repair, MGMT, or temozolomide? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "'Reducing MHC expression' (B) lures you toward a generic tumor immune-evasion mechanism, but MGMT is a DNA-repair enzyme; the alkylator clue is the tell."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: MGMT = DNA repair (removes O6-methylguanine); methylated/silenced MGMT = more sensitive to alkylators (temozolomide) in GBM."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "MGMT protein function",
+      "back": "Direct DNA repair (removes methyl from O6-methylguanine -> guanine)"
+    },
+    {
+      "front": "MGMT promoter methylation in glioblastoma",
+      "back": "Silences MGMT -> more sensitive to alkylating chemo (temozolomide)"
+    },
+    {
+      "front": "Promoter / CpG methylation effect",
+      "back": "Gene silencing"
+    },
+    {
+      "front": "Alkylating agent key DNA lesion",
+      "back": "O6-methylguanine (mispairs with thymine)"
+    },
+    {
+      "front": "Tumor MHC class I downregulation",
+      "back": "Immune evasion from cytotoxic T cells (not MGMT)"
+    },
+    {
+      "front": "Telomerase reactivation",
+      "back": "Replicative immortality"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "DNA repair - MGMT",
+      "detail": "Biochem > direct reversal repair; MGMT removes O6-methylguanine; silenced by promoter methylation in GBM -> temozolomide sensitivity.",
+      "location": "Biochem > direct reversal repair; MGMT removes O6-methylguanine; silenced by promoter methylation in GBM -> temozolomide sensitivity."
+    },
+    {
+      "tag": "options",
+      "topic": "Cancer cell mechanisms",
+      "detail": "Path > apoptosis (BAX/p53), MHC I downregulation (immune evasion), telomerase (immortality).",
+      "location": "Path > apoptosis (BAX/p53), MHC I downregulation (immune evasion), telomerase (immortality)."
+    },
+    {
+      "tag": "context",
+      "topic": "Epigenetics in cancer",
+      "detail": "Biochem > CpG promoter methylation silences genes; histone modification; transcription-factor expression.",
+      "location": "Biochem > CpG promoter methylation silences genes; histone modification; transcription-factor expression."
+    }
+  ],
+  "memoryHook": "MGMT = a methyl-group MOVER that erases alkylation scars. Silence it (methylate the promoter) and the alkylating drug's damage sticks - the tumor dies.",
+  "stem": [
+    {
+      "text": "Pharmacologic researchers develop a novel "
+    },
+    {
+      "text": "alkylating chemotherapeutic agent",
+      "clue": true,
+      "type": "blue",
+      "note": "Alkylating agents (eg, temozolomide) damage DNA by adding alkyl groups - notably O6-methylguanine - which mispairs and creates cytotoxic lesions."
+    },
+    {
+      "text": " against "
+    },
+    {
+      "text": "glioblastoma multiforme",
+      "clue": true,
+      "type": "orange",
+      "note": "GBM frequently silences MGMT by promoter methylation; MGMT status predicts response to alkylators such as temozolomide."
+    },
+    {
+      "text": ". They find that malignant cells with "
+    },
+    {
+      "text": "methylation of the promoter region for the O6-methylguanine-DNA methyltransferase (MGMT) gene",
+      "clue": true,
+      "type": "red",
+      "note": "Promoter (CpG) methylation SILENCES a gene. A methylated MGMT promoter means little or no MGMT protein is made."
+    },
+    {
+      "text": " are "
+    },
+    {
+      "text": "more susceptible to this drug than cells without methylation",
+      "clue": true,
+      "type": "green",
+      "note": "If silencing MGMT makes cells MORE vulnerable to an alkylator, MGMT's normal job must be to UNDO alkylation damage - i.e., repair DNA. Without it, alkylation lesions persist and kill the cell."
+    },
+    {
+      "text": ". Which of the following is the most likely function of the protein encoded by the gene?"
+    }
+  ]
+}

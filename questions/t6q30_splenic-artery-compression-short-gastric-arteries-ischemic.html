@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splenic artery compression: short gastric arteries ischemic</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 6 · all 30</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q219", "item": 219, "qid": "8574", "title": "Splenic artery compression: short gastric arteries ischemic", "system": "Anatomy", "topic": "Foregut blood supply / anastomoses", "correct": "E", "yourAnswer": "B", "percentCorrect": 54, "vignette": "A 56-year-old man comes to the physician complaining of early satiety, nausea, and vague epigastric pain for the past 4 months. He has a 36-pack-year smoking history and admits to drinking alcohol daily for the past 15 years. On physical examination, the patient appears thin and cachectic. Palpation of his abdomen reveals splenomegaly. Abdominal CT scan shows a large irregular mass extending posteriorly from the greater curvature of the stomach, impinging on the splenic artery and vein as they pass below. Tissues supplied by which of the following arteries would most likely be affected by compression of the splenic artery?", "clues": [{"text": "early satiety, nausea, and vague epigastric pain", "type": "blue", "note": "Early satiety with epigastric symptoms over months suggests a gastric mass (e.g., gastric carcinoma) - the lesion that will compress the splenic vessels."}, {"text": "36-pack-year smoking history", "type": "orange", "note": "Heavy smoking is a risk factor for gastric adenocarcinoma, supporting a malignant gastric mass as the compressing lesion."}, {"text": "thin and cachectic", "type": "blue", "note": "Cachexia points to an underlying malignancy, consistent with gastric cancer producing the mass."}, {"text": "splenomegaly", "type": "blue", "note": "Splenomegaly here reflects splenic VEIN compression by the mass (impaired splenic venous outflow) - it confirms the lesion involves the splenic vessels."}, {"text": "large irregular mass extending posteriorly from the greater curvature of the stomach, impinging on the splenic artery", "type": "red", "note": "The mass compresses the SPLENIC ARTERY. The branch most vulnerable to the resulting ischemia is the one with the POOREST collateral supply - the short gastric arteries."}], "whatMatters": "The splenic artery gives off the SHORT GASTRIC arteries and the left gastroepiploic artery near the greater curvature. The short gastric arteries have POOR anastomoses, so the gastric fundus they supply is most vulnerable to ischemia if the splenic artery is compressed. The left gastroepiploic is protected by its strong anastomosis with the right gastroepiploic. Answer E.", "strategy": "When an artery is occluded, the tissue at risk is the one with the WEAKEST collateral (anastomotic) backup. Both short gastric and left gastroepiploic arise from the splenic artery, but only the short gastrics lack good anastomoses - so they're the ones that ischemize. The left gastroepiploic (your pick) is rescued by the right gastroepiploic loop along the greater curvature.", "options": [{"letter": "A", "text": "Gastroduodenal", "correct": false}, {"letter": "B", "text": "Left gastroepiploic", "correct": false}, {"letter": "C", "text": "Right gastric", "correct": false}, {"letter": "D", "text": "Right gastroepiploic", "correct": false}, {"letter": "E", "text": "Short gastric", "correct": true}], "eliminations": [{"letter": "A", "label": "Gastroduodenal - off the common hepatic, not splenic", "detail": "WHAT IT IS: the gastroduodenal artery arises from the COMMON HEPATIC artery and supplies the pylorus and proximal duodenum. ❌ WHY IT FAILS: it is not a branch of the splenic artery, so splenic artery compression doesn't threaten its territory. ✅ Correct if: asked about pyloric/duodenal supply or a bleeding posterior duodenal ulcer."}, {"letter": "B", "label": "Left gastroepiploic - splenic branch, but well anastomosed (your pick)", "detail": "WHAT IT IS: the left gastroepiploic DOES arise from the splenic artery and runs along the greater curvature. ❌ WHY IT FAILS: it has a STRONG anastomosis with the right gastroepiploic artery, so its territory is collaterally supplied and protected from ischemia - unlike the poorly anastomosed short gastrics. The trap is stopping at 'it's a splenic branch' without weighing collaterals. ✅ Correct if: the question asked which branch is most PROTECTED, or about greater-curvature anastomoses."}, {"letter": "C", "label": "Right gastric - off the hepatic/proper hepatic", "detail": "WHAT IT IS: the right gastric artery supplies the distal lesser curvature and arises from the proper hepatic (or common hepatic) artery. ❌ WHY IT FAILS: not a splenic artery branch, so it is unaffected by splenic artery compression. ✅ Correct if: asked about lesser-curvature supply via the hepatic system."}, {"letter": "D", "label": "Right gastroepiploic - off the gastroduodenal", "detail": "WHAT IT IS: the right gastroepiploic arises from the gastroduodenal artery and supplies the distal greater curvature. ❌ WHY IT FAILS: it derives from the hepatic (celiac) system, not the splenic artery, and it is the collateral that PROTECTS the left gastroepiploic - it isn't the ischemic territory. ✅ Correct if: asked which artery anastomoses with/backs up the left gastroepiploic."}], "reasoning": ["A gastric mass compresses the splenic artery (and vein, causing splenomegaly)", "The splenic artery's gastric branches are the short gastric and left gastroepiploic arteries", "Short gastric arteries have POOR anastomoses; left gastroepiploic has a strong anastomosis with the right gastroepiploic", "-> short gastric territory (fundus) is most vulnerable to ischemia; answer E"], "mechanism": "The splenic artery arises from the celiac trunk and runs along the superior pancreas, giving off the SHORT GASTRIC arteries and the left gastroepiploic artery as it nears the greater curvature before reaching the spleen. The short gastric arteries supplying the gastric fundus have very POOR anastomotic connections, so their territory is highly vulnerable to ischemia if splenic arterial inflow is compromised. By contrast, the left gastroepiploic artery is protected because it anastomoses strongly with the right gastroepiploic artery (a gastroduodenal branch) along the greater curvature, providing collateral flow. Therefore, compression of the splenic artery most likely produces ischemia in the short gastric distribution.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Anatomy (GI) > foregut blood supply: splenic artery -> short gastric (poor anastomoses, fundus) + left gastroepiploic (anastomoses with right gastroepiploic); collateral networks determine ischemic vulnerability."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The question asks which tissue is most AFFECTED by splenic artery compression - i.e., the splenic branch with the WORST collateral supply (short gastrics), not just any splenic branch."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on short gastric vs gastroepiploic arteries, anastomosis/collateral circulation, celiac trunk branches, or watershed/poorly anastomosed territory? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Left gastroepiploic (your pick) is a real splenic branch, so it feels right - but its robust anastomosis with the right gastroepiploic protects it; the short gastrics, lacking collaterals, are the ones that ischemize."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "The upper-abdominal artery diagram maps the celiac branches (short gastric and gastroepiploic arteries off the splenic). If it confused you, the principle is collateral-based: poorest anastomosis (short gastric) = most ischemic."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: splenic artery branches = short gastric (poor anastomoses -> ischemia-prone fundus) + left gastroepiploic (well anastomosed with right gastroepiploic -> protected)."}], "keywords": [{"front": "Splenic artery gastric branches", "back": "Short gastric arteries + left gastroepiploic artery"}, {"front": "Most ischemia-prone branch with splenic artery occlusion", "back": "Short gastric arteries (POOR anastomoses; supply fundus)"}, {"front": "Why left gastroepiploic is protected", "back": "Strong anastomosis with the right gastroepiploic artery"}, {"front": "Right gastroepiploic origin", "back": "Gastroduodenal artery (from common hepatic; celiac system)"}, {"front": "Splenic artery origin & course", "back": "Celiac trunk; runs superior to the pancreas to the spleen"}, {"front": "Splenomegaly from a gastric mass", "back": "Splenic VEIN compression (impaired outflow)"}], "firstAid": [{"tag": "answer / stem", "topic": "Foregut arterial supply", "detail": "Anatomy > celiac trunk -> splenic artery -> short gastric (poor anastomoses) + left gastroepiploic (anastomoses w/ right gastroepiploic)."}, {"tag": "options", "topic": "Gastric arteries & anastomoses", "detail": "Anatomy > left/right gastric (lesser curvature), left/right gastroepiploic (greater curvature), short gastrics (fundus)."}, {"tag": "context", "topic": "Collateral circulation principle", "detail": "Anatomy > poorly anastomosed territory (short gastrics) is most vulnerable to ischemia on occlusion."}], "memoryHook": "Short gastrics = short on backup. They have lousy anastomoses, so when the splenic artery gets squeezed, the fundus they feed is the first to starve.", "stem": [{"text": "A 56-year-old man comes to the physician complaining of "}, {"text": "early satiety, nausea, and vague epigastric pain", "clue": true, "type": "blue", "note": "Early satiety with epigastric symptoms over months suggests a gastric mass (e.g., gastric carcinoma) - the lesion that will compress the splenic vessels."}, {"text": " for the past 4 months. He has a "}, {"text": "36-pack-year smoking history", "clue": true, "type": "orange", "note": "Heavy smoking is a risk factor for gastric adenocarcinoma, supporting a malignant gastric mass as the compressing lesion."}, {"text": " and admits to drinking alcohol daily for the past 15 years. On physical examination, the patient appears "}, {"text": "thin and cachectic", "clue": true, "type": "blue", "note": "Cachexia points to an underlying malignancy, consistent with gastric cancer producing the mass."}, {"text": ". Palpation of his abdomen reveals "}, {"text": "splenomegaly", "clue": true, "type": "blue", "note": "Splenomegaly here reflects splenic VEIN compression by the mass (impaired splenic venous outflow) - it confirms the lesion involves the splenic vessels."}, {"text": ". Abdominal CT scan shows a "}, {"text": "large irregular mass extending posteriorly from the greater curvature of the stomach, impinging on the splenic artery", "clue": true, "type": "red", "note": "The mass compresses the SPLENIC ARTERY. The branch most vulnerable to the resulting ischemia is the one with the POOREST collateral supply - the short gastric arteries."}, {"text": " and vein as they pass below. Tissues supplied by which of the following arteries would most likely be affected by compression of the splenic artery?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>
