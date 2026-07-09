@@ -2,6 +2,8 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { loadTestLog, saveTestLog, loadProgress, testScore } from "../lib/storage.js";
 import TestEntryForm, { emptyEntry, MOODS } from "./TestEntryForm.jsx";
+import { useLongPress } from "../lib/longPress.js";
+import { impact, notification } from "../lib/haptics.js";
 
 const BASE = import.meta.env.BASE_URL;
 const QBANK_TOTAL = 3400;   // UWorld Step 1 Qbank (~3,400 questions)
@@ -25,6 +27,32 @@ function qInBlock(q, block) {
 
 function fmt(d) {
   return new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+// Long-press / right-click popover for a test card: Edit · Delete.
+function CtxMenu({ x, y, onEdit, onDelete, onClose }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const away = (e) => { if (!ref.current?.contains(e.target)) onClose(); };
+    const key = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("pointerdown", away, true);
+    window.addEventListener("scroll", onClose, true);
+    window.addEventListener("keydown", key);
+    return () => {
+      document.removeEventListener("pointerdown", away, true);
+      window.removeEventListener("scroll", onClose, true);
+      window.removeEventListener("keydown", key);
+    };
+  }, [onClose]);
+  const left = Math.min(x, window.innerWidth - 200);
+  const top = Math.min(y, window.innerHeight - 110);
+  return (
+    <div className="ctx-menu" ref={ref} role="menu" style={{ left, top }}>
+      <button className="ctx-item" role="menuitem" onClick={onEdit}>✎ Edit</button>
+      <div className="ctx-sep" />
+      <button className="ctx-item danger" role="menuitem" onClick={onDelete}>✕ Delete…</button>
+    </div>
+  );
 }
 
 function LineChart({ tests }) {
@@ -176,6 +204,16 @@ export default function TestDashboard({ onBack, onStudy }) {
   const confirmTimer = useRef(null);
   const [savedId, setSavedId] = useState(null);   // just-saved entry → brief "Saved ✓" + card flash
   const savedTimer = useRef(null);
+  const [ctx, setCtx] = useState(null);           // { id, x, y } — long-press context menu
+
+  // One shared long-press handler for every card; the card is resolved from
+  // the pressed element (hooks can't be called per list item).
+  const cardPress = useLongPress((e) => {
+    const el = e.target?.closest?.("[data-test-id]");
+    if (!el) return;
+    impact("medium");
+    setCtx({ id: el.dataset.testId, x: e.clientX, y: e.clientY });
+  });
 
   useEffect(() => () => {
     clearTimeout(confirmTimer.current);
@@ -297,6 +335,7 @@ export default function TestDashboard({ onBack, onStudy }) {
     setTests(next);
     saveTestLog(next);
     setEditing(null);
+    notification("success");
     // Brief acknowledgment: "Saved ✓" by the list header + flash the card.
     setSavedId(entry.id);
     clearTimeout(savedTimer.current);
@@ -308,6 +347,7 @@ export default function TestDashboard({ onBack, onStudy }) {
   function handleDelete(id) {
     if (confirmDelId !== id) {
       setConfirmDelId(id);
+      impact("medium");
       clearTimeout(confirmTimer.current);
       confirmTimer.current = setTimeout(() => setConfirmDelId(null), 3000);
       return;
@@ -326,6 +366,27 @@ export default function TestDashboard({ onBack, onStudy }) {
   return (
     <div className="td-page">
       <button className="back-btn" onClick={onBack}>← Step 1</button>
+
+      {ctx && (
+        <CtxMenu
+          x={ctx.x}
+          y={ctx.y}
+          onClose={() => setCtx(null)}
+          onEdit={() => {
+            const t = tests.find((x) => String(x.id) === String(ctx.id));
+            setCtx(null);
+            if (t) { setEditing(draftFrom(t)); window.scrollTo({ top: 0, behavior: "smooth" }); }
+          }}
+          onDelete={() => {
+            const id = ctx.id;
+            setCtx(null);
+            // arm the same two-tap confirm the ✕ button uses — the card's
+            // button turns into "Sure?" so behavior stays consistent
+            const t = tests.find((x) => String(x.id) === String(id));
+            if (t) handleDelete(t.id);
+          }}
+        />
+      )}
 
       {/* Header */}
       <div className="td-header">
@@ -380,7 +441,12 @@ export default function TestDashboard({ onBack, onStudy }) {
                 const statCount = Object.keys(t.subjects || {}).length + Object.keys(t.systems || {}).length;
 
                 return (
-                  <div key={t.id} className={`td-test-card${isLatest ? " td-test-latest" : ""}${savedId === t.id ? " fad-ch-flash" : ""}`}>
+                  <div
+                    key={t.id}
+                    data-test-id={t.id}
+                    className={`td-test-card${isLatest ? " td-test-latest" : ""}${savedId === t.id ? " fad-ch-flash" : ""}`}
+                    {...cardPress}
+                  >
                     <div className="td-test-top-row">
                       <div className="td-test-name">{t.testNum}</div>
                       <div className="td-test-tools">

@@ -2,6 +2,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { loadGeneralTasks, saveGeneralTasks } from "../lib/storage.js";
 import { localISODate } from "../lib/config.js";
 import { IconCheck, IconCalendar, IconClose } from "./icons.jsx";
+import { impact } from "../lib/haptics.js";
 
 // Two-tap destructive action: first tap arms ("בטוח?"), second executes; disarms after 3s.
 function ConfirmButton({ className, label, armedLabel = "בטוח?", onConfirm, ...rest }) {
@@ -264,7 +265,10 @@ export default function TasksPage() {
     persist(tasks.map(t => t.id === id ? { ...t, ...data } : t));
     setEditing(null);
   }
-  function toggle(id) { persist(tasks.map(t => t.id === id ? { ...t, done: !t.done } : t)); }
+  function toggle(id) {
+    if (!tasks.find(t => t.id === id)?.done) impact("light");
+    persist(tasks.map(t => t.id === id ? { ...t, done: !t.done } : t));
+  }
   function remove(id) { persist(tasks.filter(t => t.id !== id)); }
   function clearDone() { persist(tasks.filter(t => !t.done)); }
 

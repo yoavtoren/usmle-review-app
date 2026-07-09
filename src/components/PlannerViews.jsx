@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { projectSchedule, calendarModel, todayISO } from "../lib/scheduler.js";
 import { buildPlanICS, downloadICS } from "../lib/calendarExport.js";
 import { IconCheck, IconCalendar } from "./icons.jsx";
+import { selection as hSelection } from "../lib/haptics.js";
 import { colorFor, TRACKS } from "../lib/subjectColors.js";
 
 // Subject color/emoji for a plan unit (falls back to raw system string).
@@ -293,13 +294,23 @@ export function CalendarView({ sched, units, nav }) {
           <button className="plc-arrow" onClick={() => shift(1)} aria-label="Next">›</button>
           <span className="plc-title">{title}</span>
         </div>
-        <div className="plc-modes">
-          {["month", "week", "day"].map((mo) => (
-            <button key={mo} className={`plc-mode${mode === mo ? " on" : ""}`} onClick={() => setMode(mo)}>
-              {mo[0].toUpperCase() + mo.slice(1)}
-            </button>
-          ))}
-          <button className="plc-mode" onClick={exportICS} title="Download the upcoming plan as an .ics calendar file">Export .ics</button>
+        <div className="plc-tools">
+          <div
+            className="plc-modes has-thumb"
+            style={{ "--seg-i": ["month", "week", "day"].indexOf(mode), "--seg-n": 3 }}
+          >
+            <span className="plc-thumb" aria-hidden="true" />
+            {["month", "week", "day"].map((mo) => (
+              <button
+                key={mo}
+                className={`plc-mode${mode === mo ? " on" : ""}`}
+                onClick={() => { if (mo !== mode) hSelection(); setMode(mo); }}
+              >
+                {mo[0].toUpperCase() + mo.slice(1)}
+              </button>
+            ))}
+          </div>
+          <button className="plc-today" onClick={exportICS} title="Download the upcoming plan as an .ics calendar file">Export .ics</button>
         </div>
       </div>
 

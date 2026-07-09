@@ -16,6 +16,7 @@ import {
   todayISO, REASONS,
 } from "../lib/scheduler.js";
 import { colorFor, TRACKS } from "../lib/subjectColors.js";
+import { impact, notification } from "../lib/haptics.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -81,6 +82,7 @@ export default function Planner() {
   const pickCapacity = (cap) => mutate((s) => planDay(s, units, date, cap));
   const markDone = (key, mins) => {
     recordActivity();
+    impact("light");
     mutate((s) => recordDone(s, key, mins, date));
     setUndoable({ key });
     clearTimeout(undoTimer.current);
@@ -94,7 +96,7 @@ export default function Planner() {
   };
   const markMiss = (key, reason, note) => mutate((s) => recordMiss(s, key, reason, note, date));
   const doSwap = (key) => mutate((s) => swapIn(s, units, key, date));
-  const flipAnki = () => mutate((s) => toggleAnki(s, date));
+  const flipAnki = () => { if (!today?.ankiDone) impact("light"); mutate((s) => toggleAnki(s, date)); };
   const runTriage = () => mutate((s) => applyTriage(s, units, date).state);
   const onGoal = (patch) => mutate((s) => setGoal(s, patch));
   const onSettings = (patch) => mutate((s) => updateSettings(s, patch));
@@ -106,7 +108,11 @@ export default function Planner() {
   const onResetSchedule = () => mutate((s) => seedAssessments(s, { force: true }));
   const onLogUworld = (result) => { recordActivity(); mutate((s) => recordUworld(s, units, result, date)); };
   const onAddTask = (text, opts) => { recordActivity(); mutate((s) => addTask(s, text, opts)); };
-  const onToggleTask = (id) => { recordActivity(); mutate((s) => toggleTask(s, id)); };
+  const onToggleTask = (id) => {
+    recordActivity();
+    if (!sched.tasks?.find((t) => t.id === id)?.done) impact("light");
+    mutate((s) => toggleTask(s, id));
+  };
   const onDeleteTask = (id) => mutate((s) => deleteTask(s, id));
 
   const dedicated = sched.phase === "dedicated";
@@ -120,6 +126,12 @@ export default function Planner() {
   // Read-only peek at the general (non-study) task store for a cross-link.
   const generalToday = loadGeneralTasks().filter((t) => !t.done && t.date && t.date <= date).length;
   const allDone = capacity && plannedKeys.length > 0 && plannedKeys.every((k) => completed.has(k)) && today?.ankiDone;
+  // Success chord exactly once, when the day first completes.
+  const prevAllDone = useRef(false);
+  useEffect(() => {
+    if (allDone && !prevAllDone.current) notification("success");
+    prevAllDone.current = !!allDone;
+  }, [allDone]);
   const simToday = today?.assessmentToday
     ? (sched.assessments || []).find((a) => a.id === today.assessmentToday)
     : null;
@@ -283,6 +295,7 @@ function ConfirmButton({ className, label, armedLabel = "Sure?", onConfirm, ...r
   const click = () => {
     if (armed) { clearTimeout(timer.current); setArmed(false); onConfirm(); return; }
     setArmed(true);
+    impact("medium");
     clearTimeout(timer.current);
     timer.current = setTimeout(() => setArmed(false), 3000);
   };

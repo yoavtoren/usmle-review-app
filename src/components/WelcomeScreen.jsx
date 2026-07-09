@@ -207,7 +207,7 @@ function TaskManager({ tasks, setTasks }) {
           const tm = TYPE_META[t.type];
           return (
             <li key={t.id} className={`task-item${t.done ? " task-done" : ""}${t.type === "consolidation" ? " task-consolidation" : ""}`}>
-              <button className="task-check"
+              <button className={`task-check${t.done ? " task-check-on" : ""}`}
                 style={{ borderColor: p.color, background: t.done ? p.color : "transparent" }}
                 onClick={() => toggle(t.id)} aria-label={t.done ? "Mark incomplete" : "Mark complete"}>
                 {t.done && <span className="task-check-mark">✓</span>}

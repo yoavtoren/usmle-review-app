@@ -1,104 +1,119 @@
-# iCloud progress sync — setup
+# Apple-account sync — every device, one Apple ID
 
-Your study progress (test scores, First Aid coverage, spaced-repetition schedule,
-streak, tasks) now syncs to **iCloud Key-Value Store**, tied to your Apple ID, and
-mirrors automatically across every device signed into that Apple ID.
+Your study progress (test log, planner, First Aid coverage, spaced-repetition
+schedule, streak, tasks) syncs through your **Apple account** on all platforms:
 
-The code is done. One one-time step remains — it needs **your Apple ID** and a
-**paid Apple Developer account** ($99/yr), because Apple only grants the iCloud
-entitlement to paid accounts.
+| Platform | How it connects | Login needed? |
+| --- | --- | --- |
+| iPhone / iPad / Mac app | CloudKit via the device's iCloud sign-in | No — automatic |
+| Web (GitHub Pages, any browser) | CloudKit JS + **Sign in with Apple** login page | Yes — once per browser |
+
+Everything lands in the same **CloudKit private database** (container
+`iCloud.com.yoavtoren.usmlereview`), so a test logged in Safari shows up on the
+iPad and vice versa. Merging is per-key last-write-wins, exactly like the old
+KVS sync. If CloudKit isn't set up yet, native builds silently fall back to the
+legacy iCloud Key-Value Store bridge (Mac ↔ iPad keep syncing as before), and
+the web shows "setup needed" on the login/Account page.
 
 ---
 
-## What's already in the repo
+## What's in the repo
 
 | File | Purpose |
-|------|---------|
-| `ios/App/App/ICloudKVPlugin.swift` | Native bridge to `NSUbiquitousKeyValueStore` |
-| `ios/App/App/MainViewController.swift` | Registers the plugin with the Capacitor bridge |
-| `ios/App/App/App.entitlements` | Grants the iCloud key-value permission |
-| `src/lib/icloudSync.js` | Mirrors localStorage ↔ iCloud (per-key last-write-wins) |
-| `src/main.jsx` | Pulls iCloud data before first render |
+| --- | --- |
+| `ios/App/App/CloudKitKVPlugin.swift` | Native bridge to the CloudKit private DB (record type `KV`) |
+| `ios/App/App/ICloudKVPlugin.swift` | Legacy `NSUbiquitousKeyValueStore` bridge (fallback) |
+| `ios/App/App/MainViewController.swift` | Registers both plugins with the Capacitor bridge |
+| `ios/App/App/App.entitlements` | iCloud CloudKit + KVS entitlements, container pinned to Production |
+| `src/lib/cloudConfig.js` | Container ID + CloudKit JS API token (**paste your token here**) |
+| `src/lib/cloudkitWeb.js` | CloudKit JS backend — Apple sign-in + record fetch/save |
+| `src/lib/icloudSync.js` | Sync engine: localStorage ↔ cloud, per-key last-write-wins |
+| `src/components/AccountPage.jsx` | `/account` page + the first-visit web login gate |
 
-On the **web build** and when **not signed into iCloud**, sync is a silent no-op —
-the app works exactly as before.
+Data model: one record per localStorage key — record type `KV`, single string
+field `payload` = JSON `{t, v}` (timestamp + raw value). Records are fetched by
+known record names, so no CloudKit queries or indexes are needed.
 
 ---
 
-## Rebuilding the web bundle into the app
+## One-time setup (needs your Apple ID — ~10 minutes)
 
-From the project root:
+### 1. Xcode — enable the CloudKit capability
+
+1. Open `ios/App/App.xcodeproj`, select the **App** target → **Signing & Capabilities**.
+2. Confirm Team = your paid developer team, bundle ID `com.yoavtoren.usmlereview`.
+3. **+ Capability → iCloud** (if not already there), then check **CloudKit**
+   (keep **Key-value storage** checked too — it's the fallback).
+4. Under **Containers**, tick/add `iCloud.com.yoavtoren.usmlereview`.
+   Xcode registers the container with Apple automatically.
+
+The committed `App.entitlements` already contains the matching keys, including
+`com.apple.developer.icloud-container-environment = Production` so debug builds,
+TestFlight and the web all share **one** database.
+
+### 2. CloudKit Console — create the schema and deploy it
+
+1. Go to <https://icloud.developer.apple.com> → sign in → open container
+   `iCloud.com.yoavtoren.usmlereview`.
+2. **Schema → Record Types → +**: create type `KV` with one field
+   `payload` of type **String**. Save.
+3. **Deploy Schema Changes… → Deploy to Production** (required — the app pins
+   the Production environment, which never auto-creates types).
+
+### 3. CloudKit Console — create the web API token
+
+1. Same container → **API Access** (a.k.a. Tokens) → **New CloudKit JS API Token**.
+2. Name it (e.g. `web-app`), environment **Production**, and allow
+   **Sign in with Apple ID** (the default web-auth flow). Create and copy the token.
+3. Paste it into `src/lib/cloudConfig.js` → `apiToken: "…"`.
+   The token is safe to ship publicly — it only lets a signed-in user touch
+   their *own* private database.
+
+### 4. Rebuild
 
 ```bash
-npm run sync:ios
+npm run sync:ios     # native bundle (dist-ios) + cap sync
 ```
 
-⚠️ Always use `sync:ios` (never a plain `npm run build` before `cap sync`) — the
-iOS app needs the relative-base build. `sync:ios` builds it into `dist-ios/`,
-which Capacitor copies into the app; the web build in `dist/` keeps the GitHub
-Pages base and would blank-screen inside the app.
-
-The plugin file and its registration (`MainViewController.swift`) are already part
-of the Xcode project — no manual Xcode file steps needed.
-
-## Step — Turn on signing + the iCloud capability
-
-1. Select the blue **App** project → **App** target → **Signing & Capabilities**.
-2. Under **Signing**, set **Team** to your paid Apple Developer team and make sure
-   *Automatically manage signing* is checked. Confirm the Bundle Identifier is
-   `com.yoavtoren.usmlereview`.
-3. Click **+ Capability** (top-left of that tab) → add **iCloud**.
-4. In the iCloud section that appears, check **Key-value storage**.
-
-Xcode wires the entitlement into your provisioning profile automatically. It may
-create/point to its own `App.entitlements` — that's fine; the committed one has the
-same single key (`com.apple.developer.ubiquity-kvstore-identifier =
-$(TeamIdentifierPrefix)$(CFBundleIdentifier)`).
+⚠️ Always `sync:ios` for the app (never plain `npm run build` before `cap sync`) —
+the iOS app needs the relative-base build. The web deploy + Mac app rebuild happen
+automatically via the auto-sync hook.
 
 ---
 
-## Run it
+## Using it
 
-- Sign the iPad/iPhone into iCloud (Settings → your name → iCloud must be on).
-- Build & run from Xcode onto the device.
-- Progress now pushes to iCloud on every change and pulls on launch / when the app
-  returns to the foreground / when another device changes something.
+- **Native (iPhone/iPad/Mac):** just be signed into iCloud in system settings.
+  No login screen; sync starts on launch, pulls on foreground, pushes ~1s after
+  any change, and polls every 2 minutes while open.
+- **Web:** first visit shows the **Sign in with Apple** gate (skippable with
+  "לא עכשיו"). The session persists in the browser. The sidebar's
+  **חשבון וסנכרון** (`/account`) page shows status, last sync time, "Sync now"
+  and sign-out.
 
-## How to verify sync works
+### Verify it works
 
-1. Run on device A, log a test or mark a review — wait a couple of seconds.
-2. Run on device B (same Apple ID) → your data appears on launch.
-3. Change something on B, foreground A → A reloads with B's change.
+1. Sign in on the web, log a test → within a couple of seconds open the iPad
+   app → the test is there.
+2. Change something on the iPad, refocus the browser tab → it reloads with the
+   change (pull happens on tab focus and every 2 min).
 
-## Safety net
+## Safety nets
 
-The first time iCloud sync applies remote data, your original untouched local state
-is saved to the `usmle:icloud-prelink-backup` localStorage key, so nothing you had
-before linking can be lost. The existing JSON export/import in
-`src/lib/storage.js` (`exportAllData` / `importAllData`) remains as a manual backup.
-
-## Mac app
-
-The same app runs natively on the MacBook (Apple Silicon, "Designed for iPad"
-mode) as **/Applications/USMLE Tracker.app**. It shares the exact same iCloud
-key-value container (`QNP44Q5Q3X.com.yoavtoren.usmlereview`) as the iPad, so
-progress syncs both ways automatically — no extra setup beyond being signed
-into the same Apple ID.
-
-- `scripts/build-mac-app.sh` rebuilds it and reinstalls to /Applications.
-  iPad binaries can't launch as a plain `.app` on macOS — the script installs
-  the App Store-style *wrapped bundle* layout (`Wrapper/` + `WrappedBundle`
-  symlink), which is what makes it double-clickable.
-- `scripts/auto-sync.sh` (the Stop hook) calls it after every green build, so
-  the installed Mac app always has the latest update — it takes effect the
-  next time the app is launched (quit + reopen to pick it up).
+- Before the cloud ever overwrites anything, the untouched local state is
+  snapshotted to the `usmle:icloud-prelink-backup` localStorage key.
+- Manual JSON export/import lives in `src/lib/storage.js`
+  (`exportAllData` / `importAllData`).
+- Conflicts: per-key last-write-wins — editing tasks on one device and First
+  Aid on another both survive; editing the *same* key on two offline devices
+  keeps whichever synced last.
 
 ## Notes & limits
 
-- iCloud KVS budget is **1 MB total / 1024 keys** — this app uses ~15 small JSON
-  keys, far under the limit.
-- Conflict handling is **per-key last-write-wins**: editing tasks on one device and
-  First Aid on another both survive; editing the *same* key on two offline devices
-  keeps whichever synced last.
-- Sync needs iCloud Drive enabled and network access; offline changes push on
-  reconnect.
+- CloudKit private-DB storage counts against *your* iCloud quota — these ~18
+  small JSON records are negligible.
+- The legacy Mac ↔ iPad KVS sync keeps working on builds made before the
+  CloudKit capability was enabled; once rebuilt, those devices switch to
+  CloudKit automatically (their local data seeds the new database on first run).
+- Browsers have no CloudKit push channel, so remote changes appear on tab
+  focus / every 2 minutes / on "Sync now" — not instantly.

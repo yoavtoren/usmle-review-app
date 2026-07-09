@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { vtNavigate } from "../lib/vt.js";
 import {
   IconHome, IconDash, IconClipboard, IconBook, IconBox,
-  IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar,
+  IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar, IconCloud,
 } from "./icons.jsx";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
 import { EXAM_DATE, daysUntilExam, localISODate } from "../lib/config.js";
@@ -25,8 +26,24 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
   const loc = useLocation();
   const p = loc.pathname;
 
+  const go = (to) => vtNavigate(nav, to);
+
   const [mini, setMini] = useState(() => localStorage.getItem(RAIL_KEY) === "1");
   const [drawer, setDrawer] = useState(false);
+
+  // Wiggle the bell only when the due count grows — not on mount or decrease.
+  const [wiggle, setWiggle] = useState(false);
+  const prevDue = useRef(dueCount);
+  const wiggleTimer = useRef(null);
+  useEffect(() => {
+    if (dueCount > prevDue.current) {
+      setWiggle(true);
+      clearTimeout(wiggleTimer.current);
+      wiggleTimer.current = setTimeout(() => setWiggle(false), 700);
+    }
+    prevDue.current = dueCount;
+  }, [dueCount]);
+  useEffect(() => () => clearTimeout(wiggleTimer.current), []);
 
   useEffect(() => { localStorage.setItem(RAIL_KEY, mini ? "1" : "0"); }, [mini]);
   useEffect(() => { setDrawer(false); }, [p]); // close mobile drawer on navigate
@@ -64,6 +81,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
       label: "עוד",
       items: [
         { to: "/aims", label: "AIMS", Icon: IconTarget, count: stats.aimsOver, alert: stats.aimsOver > 0 },
+        { to: "/account", label: "חשבון וסנכרון", Icon: IconCloud },
       ],
     },
   ];
@@ -98,7 +116,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
 
       <aside className="rail">
         <div className="rail-head" role="button" tabIndex={0}
-          onClick={() => nav("/")} onKeyDown={(e) => e.key === "Enter" && nav("/")}>
+          onClick={() => go("/")} onKeyDown={(e) => e.key === "Enter" && go("/")}>
           {Mark}
           <span className="rail-wordmark">
             <span className="rail-wordmark-title">לוח ההישרדות</span>
@@ -117,7 +135,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
                   <button
                     key={it.to}
                     className={`rail-link${active ? " active" : ""}${it.alert ? " has-alert" : ""}`}
-                    onClick={() => nav(it.to)}
+                    onClick={() => go(it.to)}
                     title={it.label}
                   >
                     <span className="rail-ico"><Icon size={19} /></span>
@@ -142,7 +160,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
           </div>
 
           <div className="rail-foot-row">
-            <button className="rail-foot-btn" onClick={onBellClick} title="תזכורות">
+            <button className={`rail-foot-btn${wiggle ? " bell-wiggle" : ""}`} onClick={onBellClick} title="תזכורות">
               <IconBell size={16} />
               <span className="rail-foot-label">תזכורות</span>
               {dueCount > 0 && <span className="rail-foot-badge">{dueCount > 99 ? "99+" : dueCount}</span>}

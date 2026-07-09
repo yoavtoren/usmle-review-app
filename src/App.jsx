@@ -18,6 +18,8 @@ import TasksPage from "./components/TasksPage.jsx";
 import QuestionBank from "./components/QuestionBank.jsx";
 import ProgressTracker from "./components/ProgressTracker.jsx";
 import Planner from "./components/Planner.jsx";
+import AccountPage, { LoginGate } from "./components/AccountPage.jsx";
+import { vtNavigate } from "./lib/vt.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -107,6 +109,25 @@ export default function App() {
     return () => clearInterval(id);
   }, []);
 
+  // Drive the fixed scroll-edge header material (html[data-scrolled]),
+  // throttled to one dataset write per frame.
+  useEffect(() => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      document.documentElement.dataset.scrolled = window.scrollY > 8 ? "true" : "false";
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const reviewDue = testStats.due || 0;
 
   // Fire the daily email digest once per day if the user enabled it (includes due reviews).
@@ -121,6 +142,8 @@ export default function App() {
 
   return (
     <div className="app-shell">
+      {/* Web-only Apple sign-in gate; hidden on /account, which hosts the same button. */}
+      {loc.pathname !== "/account" && <LoginGate />}
       <Sidebar
         dueCount={dueCount + reviewDue}
         onBellClick={() => setShowPopCenter(true)}
@@ -128,6 +151,7 @@ export default function App() {
       />
 
       <main className="app-main">
+        <div className="scroll-edge-top" aria-hidden="true" />
         {dataError && !errorDismissed && (
           <DataErrorBanner
             onRetry={() => { setErrorDismissed(false); retry(); }}
@@ -151,7 +175,7 @@ export default function App() {
             } />
             <Route path="/step1" element={
               <WelcomeScreen
-                onNav={nav}
+                onNav={(to, opts) => vtNavigate(nav, to, opts)}
                 testStats={testStats}
                 faStats={faStats}
                 streak={getStreak()}
@@ -177,6 +201,7 @@ export default function App() {
             <Route path="/progress" element={<ProgressTracker />} />
             <Route path="/tasks" element={<TasksPage />} />
             <Route path="/aims"     element={<AIMSDashboard />} />
+            <Route path="/account" element={<AccountPage />} />
             <Route path="*" element={
               <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} loading={dataLoading} />
             } />

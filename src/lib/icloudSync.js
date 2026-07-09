@@ -1,19 +1,28 @@
-// iCloud sync for all study progress.
+// Apple-account sync for all study progress — every device, one Apple ID.
 //
-// Mirrors the app's localStorage keys into Apple's iCloud Key-Value Store via
-// the native ICloudKV plugin (see ios/App/App/ICloudKVPlugin.swift). Data syncs
-// automatically across every device signed into the same Apple ID.
+// The app's localStorage keys mirror into the app's CloudKit PRIVATE DATABASE
+// (record type "KV", one record per key), which is tied to the user's Apple
+// account:
+//   • Native builds (iPhone/iPad/Mac): the CloudKitKV plugin talks to CloudKit
+//     with the device's iCloud sign-in — no login screen. If CloudKit isn't
+//     available it falls back to the legacy iCloud Key-Value Store bridge.
+//   • Web build (GitHub Pages): CloudKit JS — the user signs in with their
+//     Apple ID on the login page (see AccountPage.jsx); the session persists.
 //
 // Strategy: per-key last-write-wins. Each synced key carries a timestamp; on
-// reconcile the newer side wins for that key (so editing tasks on one device and
-// First Aid on another both survive). On the very first link we stash a full
-// local snapshot in `usmle:icloud-prelink-backup` so the original state is always
-// recoverable. On the web build (no native plugin) this module is a no-op and the
-// app behaves exactly as before.
+// reconcile the newer side wins for that key (so editing tasks on one device
+// and First Aid on another both survive). On the very first link we stash a
+// full local snapshot in `usmle:icloud-prelink-backup` so the original state
+// is always recoverable.
 
 import { Capacitor, registerPlugin } from "@capacitor/core";
+import {
+  initWebCloud, webBackend, onAuthChange, isSignedIn, userLabel,
+} from "./cloudkitWeb.js";
+import { isWebCloudConfigured } from "./cloudConfig.js";
 
-const ICloudKV = registerPlugin("ICloudKV");
+const CloudKitKV = registerPlugin("CloudKitKV");
+const ICloudKV = registerPlugin("ICloudKV"); // legacy KVS fallback
 
 // Data keys worth syncing. UI-only prefs (e.g. rail-collapsed) are intentionally
 // excluded so device-local layout choices don't bounce between devices.
@@ -41,18 +50,46 @@ const SYNC_SET = new Set(SYNC_KEYS);
 
 const META_KEY = "usmle:icloud-meta";           // { localKey: lastChangeMs }
 const PRELINK_BACKUP_KEY = "usmle:icloud-prelink-backup";
-const CLOUD_PREFIX = "kv:";                       // iCloud key namespace
+const LOGIN_SKIP_KEY = "usmle-app:login-skip-v1"; // device-local "not now" on the web gate
+const KVS_PREFIX = "kv:";                        // legacy iCloud KVS namespace
+const POLL_MS = 120_000;                         // background pull cadence
 
 // Original, un-patched storage methods — used for applying remote changes so we
 // don't re-trigger a push loop.
 const rawSet = localStorage.setItem.bind(localStorage);
 const rawRemove = localStorage.removeItem.bind(localStorage);
 
+let backend = null;    // { kind, getAll(keys), setItems(entries) }
 let enabled = false;
 let meta = loadMeta();
 const pendingPush = new Set();
 let pushTimer = null;
 let reloadTimer = null;
+let pollTimer = null;
+let patched = false;
+
+// ── status (consumed by the login gate + Account page) ─────────────────────
+// state: "off" | "unavailable" | "loading" | "unconfigured" | "signed-out" | "on"
+const status = {
+  platform: Capacitor.isNativePlatform() ? "native" : "web",
+  state: "off",
+  backendKind: null,
+  user: null,
+  lastSyncAt: null,
+  error: null,
+};
+const statusSubs = new Set();
+function setStatus(patch) {
+  Object.assign(status, patch);
+  for (const cb of statusSubs) { try { cb({ ...status }); } catch {} }
+}
+export function getSyncStatus() { return { ...status }; }
+export function subscribeSyncStatus(cb) {
+  statusSubs.add(cb);
+  return () => statusSubs.delete(cb);
+}
+export function isLoginSkipped() { return localStorage.getItem(LOGIN_SKIP_KEY) === "1"; }
+export function setLoginSkipped() { rawSet(LOGIN_SKIP_KEY, "1"); setStatus({}); }
 
 function loadMeta() {
   try { return JSON.parse(localStorage.getItem(META_KEY)) || {}; }
@@ -62,27 +99,51 @@ function saveMeta() {
   try { rawSet(META_KEY, JSON.stringify(meta)); } catch {}
 }
 
-// ── native bridge helpers ────────────────────────────────────────────────
-async function cloudSetItem(localKey, t, v) {
-  await ICloudKV.setItem({
-    key: CLOUD_PREFIX + localKey,
-    value: JSON.stringify({ t, v }),
-  });
-}
-async function cloudGetAll() {
-  const { items } = await ICloudKV.getAll();
+// ── native backends ─────────────────────────────────────────────────────────
+const nativeCloudKitBackend = {
+  kind: "cloudkit-native",
+  async getAll(keys) {
+    const { items } = await CloudKitKV.getItems({ keys });
+    return parsePayloadMap(items);
+  },
+  async setItems(entries) {
+    await CloudKitKV.setItems({
+      items: entries.map(({ key, t, v }) => ({ key, value: JSON.stringify({ t, v }) })),
+    });
+  },
+};
+
+const nativeKVSBackend = {
+  kind: "kvs-native",
+  async getAll() {
+    await ICloudKV.sync().catch(() => {});
+    const { items } = await ICloudKV.getAll();
+    const scoped = {};
+    for (const [k, raw] of Object.entries(items || {})) {
+      if (k.startsWith(KVS_PREFIX)) scoped[k.slice(KVS_PREFIX.length)] = raw;
+    }
+    return parsePayloadMap(scoped);
+  },
+  async setItems(entries) {
+    for (const { key, t, v } of entries) {
+      await ICloudKV.setItem({ key: KVS_PREFIX + key, value: JSON.stringify({ t, v }) });
+    }
+    await ICloudKV.sync().catch(() => {});
+  },
+};
+
+function parsePayloadMap(items) {
   const out = {};
   for (const [k, raw] of Object.entries(items || {})) {
-    if (!k.startsWith(CLOUD_PREFIX)) continue;
     try {
       const parsed = JSON.parse(raw);
-      if (parsed && typeof parsed.t === "number") out[k.slice(CLOUD_PREFIX.length)] = parsed;
+      if (parsed && typeof parsed.t === "number") out[k] = parsed;
     } catch {}
   }
   return out; // { localKey: { t, v } }
 }
 
-// ── push (local → iCloud) ────────────────────────────────────────────────
+// ── push (local → cloud) ────────────────────────────────────────────────────
 function schedulePush(localKey) {
   if (!enabled) return;
   pendingPush.add(localKey);
@@ -93,19 +154,21 @@ async function flushPush() {
   if (!enabled || pendingPush.size === 0) return;
   const keys = [...pendingPush];
   pendingPush.clear();
-  for (const k of keys) {
-    const v = localStorage.getItem(k); // null if removed
-    const t = meta[k] || Date.now();
-    try { await cloudSetItem(k, t, v); } catch {}
-  }
-  try { await ICloudKV.sync(); } catch {}
+  const entries = keys.map((k) => ({
+    key: k,
+    t: meta[k] || Date.now(),
+    v: localStorage.getItem(k), // null if removed
+  }));
+  try { await backend.setItems(entries); setStatus({ lastSyncAt: Date.now(), error: null }); }
+  catch (e) { keys.forEach((k) => pendingPush.add(k)); setStatus({ error: String(e?.message || e) }); }
 }
 
-// ── reconcile (merge iCloud ↔ local, per-key LWW) ─────────────────────────
+// ── reconcile (merge cloud ↔ local, per-key LWW) ────────────────────────────
 async function reconcile({ startup } = {}) {
   if (!enabled) return false;
   let cloud;
-  try { cloud = await cloudGetAll(); } catch { return false; }
+  try { cloud = await backend.getAll(SYNC_KEYS); }
+  catch (e) { setStatus({ error: String(e?.message || e) }); return false; }
 
   let localChanged = false;
   const toPush = [];
@@ -116,40 +179,43 @@ async function reconcile({ startup } = {}) {
     const localT = meta[K] || 0;
 
     if (entry && entry.t > localT) {
-      // iCloud is newer for this key → apply it locally.
+      // Cloud is newer for this key → apply it locally.
       if (entry.v == null) rawRemove(K);
       else rawSet(K, entry.v);
       meta[K] = entry.t;
       localChanged = true;
     } else if (localV != null && localT > (entry ? entry.t : 0)) {
       // Local is newer → push up.
-      toPush.push([K, localT, localV]);
+      toPush.push({ key: K, t: localT, v: localV });
     } else if (localV != null && !entry && localT === 0) {
-      // Never synced but we have local data → seed iCloud.
+      // Never synced but we have local data → seed the cloud.
       const t = Date.now();
       meta[K] = t;
-      toPush.push([K, t, localV]);
+      toPush.push({ key: K, t, v: localV });
     }
   }
 
   saveMeta();
-  for (const [K, t, v] of toPush) {
-    try { await cloudSetItem(K, t, v); } catch {}
+  if (toPush.length) {
+    try { await backend.setItems(toPush); } catch {}
   }
-  if (toPush.length) { try { await ICloudKV.sync(); } catch {} }
+  setStatus({ lastSyncAt: Date.now(), error: null });
 
-  if (localChanged && !startup) scheduleReload();
+  // On the pre-render startup pull a change needs no reload; any later pull
+  // does (screens re-read localStorage only on mount).
+  const rendered = Boolean(document.getElementById("root")?.hasChildNodes());
+  if (localChanged && (!startup || rendered)) scheduleReload();
   return localChanged;
 }
 
-// External iCloud changes arrive mid-session; reload so every screen re-reads
-// the freshly-applied data consistently. Debounced and only when data changed.
+// External changes arrive mid-session; reload so every screen re-reads the
+// freshly-applied data consistently. Debounced and only when data changed.
 function scheduleReload() {
   clearTimeout(reloadTimer);
   reloadTimer = setTimeout(() => window.location.reload(), 900);
 }
 
-// Save the untouched local state once, before iCloud ever overwrites anything.
+// Save the untouched local state once, before the cloud ever overwrites anything.
 function backupBeforeFirstLink() {
   if (localStorage.getItem(PRELINK_BACKUP_KEY)) return;
   const snapshot = {};
@@ -163,9 +229,11 @@ function backupBeforeFirstLink() {
   }
 }
 
-// Patch localStorage so every write to a synced key is mirrored to iCloud,
+// Patch localStorage so every write to a synced key is mirrored to the cloud,
 // without touching each call site across the app.
 function installStoragePatch() {
+  if (patched) return;
+  patched = true;
   localStorage.setItem = function (k, v) {
     rawSet(k, v);
     if (SYNC_SET.has(k)) { meta[k] = Date.now(); saveMeta(); schedulePush(k); }
@@ -176,44 +244,109 @@ function installStoragePatch() {
   };
 }
 
-/**
- * Initialise iCloud sync. Safe to await on every startup; returns immediately
- * on the web build or when the device isn't signed into iCloud.
- */
-export async function initICloudSync() {
-  if (!Capacitor.isNativePlatform()) return;
-  try {
-    const { available } = await ICloudKV.isAvailable();
-    if (!available) return; // not signed into iCloud / entitlement missing
-  } catch {
-    return; // plugin not present (e.g. capability not enabled yet)
-  }
+// Periodic + focus-driven pulls: CloudKit has no push channel to a browser (and
+// we skip silent-push complexity on native), so poll while visible.
+function installPullTriggers() {
+  clearInterval(pollTimer);
+  pollTimer = setInterval(() => {
+    if (document.visibilityState === "visible") reconcile({ startup: false });
+  }, POLL_MS);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible" && enabled) reconcile({ startup: false });
+  });
+}
 
+async function enableSync(b, { startup } = {}) {
+  backend = b;
   enabled = true;
   backupBeforeFirstLink();
   installStoragePatch();
+  await reconcile({ startup: Boolean(startup) });
+  installPullTriggers();
+  setStatus({ state: "on", backendKind: b.kind, error: null });
+}
 
-  // Pull latest before the first render so screens show synced data immediately.
-  try { await ICloudKV.sync(); } catch {}
-  await reconcile({ startup: true });
+function disableSync() {
+  enabled = false;
+  backend = null;
+  clearInterval(pollTimer);
+  pendingPush.clear();
+}
 
-  // React to changes pushed from other devices while the app is open.
+// ── init ────────────────────────────────────────────────────────────────────
+async function initNativeSync() {
+  // Prefer CloudKit (shared with the web); fall back to the legacy KVS bridge
+  // so sync keeps working on builds/devices where CloudKit isn't enabled yet.
+  try {
+    const { available } = await CloudKitKV.isAvailable();
+    if (available) {
+      await enableSync(nativeCloudKitBackend, { startup: true });
+      hookNativeResume();
+      return;
+    }
+  } catch {}
+  try {
+    const { available } = await ICloudKV.isAvailable();
+    if (!available) { setStatus({ state: "unavailable" }); return; }
+  } catch { setStatus({ state: "unavailable" }); return; }
+  await enableSync(nativeKVSBackend, { startup: true });
   try { ICloudKV.addListener("icloudChange", () => { reconcile({ startup: false }); }); } catch {}
+  hookNativeResume();
+}
 
-  // Re-pull whenever the app returns to the foreground.
+async function hookNativeResume() {
   try {
     const { App } = await import("@capacitor/app");
-    App.addListener("resume", async () => {
-      try { await ICloudKV.sync(); } catch {}
-      reconcile({ startup: false });
-    });
+    App.addListener("resume", () => { reconcile({ startup: false }); });
   } catch {}
+}
+
+async function initWebSync() {
+  if (!isWebCloudConfigured()) { setStatus({ state: "unconfigured" }); return; }
+  setStatus({ state: "loading" });
+
+  const start = async () => {
+    try {
+      const { signedIn } = await initWebCloud();
+      onAuthChange(async (nowSignedIn) => {
+        if (nowSignedIn) {
+          setStatus({ user: userLabel() });
+          await enableSync(webBackend, { startup: false });
+        } else {
+          disableSync();
+          setStatus({ state: "signed-out", user: null, backendKind: null });
+          scheduleReload(); // drop in-memory state from the signed-out account
+        }
+      });
+      if (signedIn) {
+        setStatus({ user: userLabel() });
+        await enableSync(webBackend, { startup: true });
+      } else {
+        setStatus({ state: "signed-out" });
+      }
+    } catch (e) {
+      setStatus({ state: "off", error: String(e?.message || e) });
+    }
+  };
+
+  // Don't let a slow CDN block first paint: give the restore-session path a
+  // short head start, then render regardless — sync finishes in the background
+  // and reloads once if it pulled newer data.
+  await Promise.race([start(), new Promise((r) => setTimeout(r, 2500))]);
+}
+
+/**
+ * Initialise Apple-account sync. Safe to await on every startup; on the web it
+ * yields within ~2.5s even if the network is slow, and continues in background.
+ */
+export async function initICloudSync() {
+  if (Capacitor.isNativePlatform()) await initNativeSync();
+  else await initWebSync();
 }
 
 /** Force an immediate two-way sync (e.g. from a "Sync now" button). */
 export async function syncNow() {
   if (!enabled) return false;
-  try { await ICloudKV.sync(); } catch {}
   await flushPush();
   return reconcile({ startup: false });
 }

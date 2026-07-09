@@ -7,6 +7,7 @@ import {
 import { weakSpots } from "../lib/progressData.js";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
 import CountUp from "../lib/CountUp.jsx";
+import { vtNavigate } from "../lib/vt.js";
 import { EXAM_DATE, daysUntilExam, localISODate, startOfLocalDay } from "../lib/config.js";
 import {
   IconDash, IconTarget, IconArrow, IconFlame, IconClock,
@@ -47,6 +48,7 @@ const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
 export default function HomePage({ testStats, faStats, streak = 0, questions = [], loading = false }) {
   const nav = useNavigate();
+  const go = (to, opts) => vtNavigate(nav, to, opts);
 
   const d = useMemo(() => {
     const progress = loadProgress();
@@ -129,7 +131,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
         <div className="hd-bento">
 
           {/* A · Hero — Step 1 command center */}
-          <button className="hd-card hd-hero c8" onClick={() => nav("/step1")}
+          <button className="hd-card hd-hero c8" onClick={() => go("/step1")}
             aria-label={`פתח לוח Step 1 — ${sched.dueNow} לביקורת היום, שליטה ${masteryPct}%`}>
             <div className="hd-hero-bg" aria-hidden="true" />
             <div className="hd-hero-main">
@@ -188,7 +190,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
                     {cohortDelta >= 0 ? "▲" : "▼"} <span className="num">{Math.abs(cohortDelta)}</span> מהממוצע
                   </span>
                 )}
-                <button className="hd-ch-link" onClick={() => nav("/tests")}>כל המבחנים <IconArrow size={13} className="mir" /></button>
+                <button className="hd-ch-link" onClick={() => go("/tests")}>כל המבחנים <IconArrow size={13} className="mir" /></button>
               </span>
             </div>
             <div className="hd-traj-body">
@@ -197,7 +199,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
                 : <div className="hd-empty">
                     <span className="hd-empty-ico"><IconPulse size={22} /></span>
                     <p>הוסף מבחן שני כדי לראות מגמה</p>
-                    <button className="btn-secondary" onClick={() => nav("/tests", { state: { openForm: true } })}>לרישום מבחן</button>
+                    <button className="btn-secondary" onClick={() => go("/tests", { state: { openForm: true } })}>לרישום מבחן</button>
                   </div>}
             </div>
             <div className="hd-traj-legend">
@@ -245,7 +247,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           </div>
 
           {/* F · First Aid coverage */}
-          <button className="hd-card hd-fa c3" onClick={() => nav("/fa")}>
+          <button className="hd-card hd-fa c3" onClick={() => go("/fa")}>
             <div className="hd-ch">
               <span className="hd-ch-t"><span className="hd-ch-ico gold"><IconBook size={15} /></span> כיסוי First Aid</span>
               <IconArrow size={15} className="hd-ch-arr mir" />
@@ -260,7 +262,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           </button>
 
           {/* G · Weak subjects */}
-          <button className="hd-card hd-weak c3" onClick={() => nav("/progress")}>
+          <button className="hd-card hd-weak c3" onClick={() => go("/progress")}>
             <div className="hd-ch">
               <span className="hd-ch-t"><span className="hd-ch-ico bad"><IconTarget size={15} /></span> נקודות תורפה</span>
               <IconArrow size={15} className="hd-ch-arr mir" />
@@ -296,7 +298,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           </button>
 
           {/* H · AIMS */}
-          <button className="hd-card hd-aims c3" onClick={() => nav("/aims")}>
+          <button className="hd-card hd-aims c3" onClick={() => go("/aims")}>
             <div className="hd-aims-spine" />
             <div className="hd-ch">
               <span className="hd-ch-t"><span className="hd-ch-ico purple"><IconTarget size={15} /></span> AIMS</span>
@@ -316,10 +318,10 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
 
           {/* I · Quick nav */}
           <nav className="hd-nav c12">
-            <NavChip Icon={IconClipboard} label="מבחנים" stat={`${log.length} מבחנים`} onClick={() => nav("/tests")} />
-            <NavChip Icon={IconBox} label="בנק שאלות" stat={loading ? "…" : `${testStats.total || 0} שאלות`} onClick={() => nav("/bank")} />
-            <NavChip Icon={IconPulse} label="התקדמות" stat={`${masteredWeek} השבוע`} onClick={() => nav("/progress")} />
-            <NavChip Icon={IconBook} label="First Aid" stat={loading ? "…" : `${faPct}% כוסו`} onClick={() => nav("/fa")} />
+            <NavChip Icon={IconClipboard} label="מבחנים" stat={`${log.length} מבחנים`} onClick={() => go("/tests")} />
+            <NavChip Icon={IconBox} label="בנק שאלות" stat={loading ? "…" : `${testStats.total || 0} שאלות`} onClick={() => go("/bank")} />
+            <NavChip Icon={IconPulse} label="התקדמות" stat={`${masteredWeek} השבוע`} onClick={() => go("/progress")} />
+            <NavChip Icon={IconBook} label="First Aid" stat={loading ? "…" : `${faPct}% כוסו`} onClick={() => go("/fa")} />
           </nav>
         </div>
       </div>
