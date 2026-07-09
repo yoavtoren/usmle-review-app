@@ -50,9 +50,9 @@ function toneFor(p) {
 export default function TestEntryForm({ draft, onCancel, onSave }) {
   const [d, setD] = useState(draft);
   const [tab, setTab] = useState("subjects");
-  const [showStats, setShowStats] = useState(
-    Object.keys(draft.subjects || {}).length > 0 || Object.keys(draft.systems || {}).length > 0
-  );
+  // Starts expanded: this grid is the only place per-subject/system scores get
+  // logged, and collapsed-by-default made it undiscoverable.
+  const [showStats, setShowStats] = useState(true);
   const [err, setErr] = useState("");
 
   function set(k, v) { setD((p) => ({ ...p, [k]: v })); setErr(""); }
@@ -166,7 +166,7 @@ export default function TestEntryForm({ draft, onCancel, onSave }) {
       {/* ── Stats breakdown (optional, collapsible) ── */}
       <div className="te-stats">
         <button type="button" className="te-stats-toggle" onClick={() => setShowStats((s) => !s)}>
-          <span>Stat breakdown by subject &amp; system {filled > 0 && <span className="te-stats-count">{filled} filled</span>}</span>
+          <span>Scores by subject &amp; system — powers Progress &amp; weak spots {filled > 0 && <span className="te-stats-count">{filled} filled</span>}</span>
           <span className={`te-stats-chev${showStats ? " open" : ""}`}>▾</span>
         </button>
         {showStats && (

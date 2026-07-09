@@ -198,7 +198,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
                 : <div className="hd-empty">
                     <span className="hd-empty-ico"><IconPulse size={22} /></span>
                     <p>הוסף מבחן שני כדי לראות מגמה</p>
-                    <button className="btn-secondary" onClick={() => nav("/tests")}>לרישום מבחן</button>
+                    <button className="btn-secondary" onClick={() => nav("/tests", { state: { openForm: true } })}>לרישום מבחן</button>
                   </div>}
             </div>
             <div className="hd-traj-legend">

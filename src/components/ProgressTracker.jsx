@@ -82,7 +82,7 @@ export default function ProgressTracker() {
             watch the trajectory, focus the worst.
           </p>
         </div>
-        <button className="td-submit-btn prog-add" onClick={() => nav("/tests")}>
+        <button className="td-submit-btn prog-add" onClick={() => nav("/tests", { state: { openForm: true } })}>
           + Log a test
         </button>
       </div>
@@ -91,10 +91,11 @@ export default function ProgressTracker() {
         <div className="prog-empty">
           <p className="prog-empty-h">No stats yet</p>
           <p className="muted">
-            Open your UWorld performance page, then log a test on the Tests page with your Total / Correct
-            per subject and system. The trend appears here automatically after your next test.
+            Press "+ Log a test" and fill in the Total / Correct per subject &amp; system
+            (copy them from your UWorld performance page). Your scores, trends and weak
+            spots per topic appear here automatically.
           </p>
-          <button className="td-submit-btn" onClick={() => nav("/tests")}>+ Log a test</button>
+          <button className="td-submit-btn" onClick={() => nav("/tests", { state: { openForm: true } })}>+ Log a test</button>
         </div>
       )}
 
@@ -178,7 +179,7 @@ export default function ProgressTracker() {
                   <span className="prog-hist-meta muted">
                     {o.pct != null ? `${o.pct}% ${kind}` : "—"}{s.note ? ` · ${s.note}` : ""}
                   </span>
-                  <button className="prog-hist-btn" onClick={() => nav("/tests")}>Edit in Tests</button>
+                  <button className="prog-hist-btn" onClick={() => nav("/tests", { state: { editId: s.id } })}>Edit in Tests</button>
                   <button className="prog-hist-btn prog-hist-del"
                     onClick={() => { if (confirm(`Delete the test from ${fmtDate(s.date)}? This removes its result and stats.`)) deleteTest(s.id); }}>
                     Delete

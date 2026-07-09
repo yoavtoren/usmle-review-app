@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { loadTestLog, saveTestLog, loadProgress, testScore } from "../lib/storage.js";
 import TestEntryForm, { emptyEntry, MOODS } from "./TestEntryForm.jsx";
 
@@ -142,11 +143,30 @@ function moodOf(t) {
 }
 
 export default function TestDashboard({ onBack, onStudy }) {
+  const loc = useLocation();
+  const nav = useNavigate();
   const [tests, setTests] = useState(loadTestLog);
   const [progress] = useState(loadProgress);
   // Map of deckFile → question IDs (only loaded for tests that have a deckFile)
   const [deckQuestions, setDeckQuestions] = useState({});
   const [editing, setEditing] = useState(null);   // entry draft being added/edited, or null
+
+  // Other pages (Progress, Home) navigate here with an intent in router state:
+  // { openForm: true } opens a fresh entry form, { editId } opens that test's
+  // editor. Consume the state (replace) so refresh/back doesn't re-trigger it.
+  useEffect(() => {
+    const st = loc.state;
+    if (!st?.openForm && st?.editId == null) return;
+    if (st.editId != null) {
+      const t = tests.find((x) => x.id === st.editId);
+      if (t) setEditing(draftFrom(t));
+    } else {
+      setEditing(emptyEntry());
+    }
+    window.scrollTo(0, 0);
+    nav(loc.pathname, { replace: true, state: null });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loc.state]);
 
   // Load the deck for every test that has a deckFile
   useEffect(() => {
