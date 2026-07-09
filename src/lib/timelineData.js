@@ -4,8 +4,8 @@
 
 // ── Palette + maps ────────────────────────────────────────────────────────
 export const FRONT_COLORS = {
-  "step1": "#4f46e5",
-  "aims":  "#7c3aed",
+  "step1": "#1E4D38",
+  "aims":  "#7C3A4D",
 };
 
 export const TYPE_ICONS = {
@@ -14,10 +14,10 @@ export const TYPE_ICONS = {
 };
 
 export const URGENCY_COLORS = {
-  Critical: "#ef4444",
-  High:     "#f97316",
-  Medium:   "#eab308",
-  Low:      "#22c55e",
+  Critical: "#B04A38",
+  High:     "#B5622A",
+  Medium:   "#A07C2C",
+  Low:      "#2F7D54",
 };
 
 // ── Reminder dismiss / snooze state ─────────────────────────────────────────

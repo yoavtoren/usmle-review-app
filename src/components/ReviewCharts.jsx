@@ -10,7 +10,7 @@ import { useMemo } from "react";
    The rank line is on a fixed 1–5 right axis. Renders nothing without data. */
 
 const DAY = 86400000;
-const RANK_COLOR = "#f59e0b";
+const RANK_COLOR = "#A26A12";
 
 function isoDay(ms) { return new Date(ms).toISOString().slice(0, 10); }
 function labelFor(iso) {
@@ -64,12 +64,12 @@ function Axis({ n, slotW, days }) {
       {/* rank guide ticks (right) */}
       {[1, 3, 5].map(r => (
         <g key={r}>
-          <line x1="0" x2={W} y1={rankY(r)} y2={rankY(r)} stroke="#eef2f7" strokeWidth="1" />
+          <line x1="0" x2={W} y1={rankY(r)} y2={rankY(r)} stroke="#F0ECE1" strokeWidth="1" />
           <text x={W - 1} y={rankY(r) - 2} textAnchor="end" fontSize="7" fill={RANK_COLOR}>{r}</text>
         </g>
       ))}
       {ticks.map(({ d, i }) => (
-        <text key={i} x={i * slotW + slotW / 2} y={H - 5} textAnchor="middle" fontSize="7.5" fill="#94a3b8">
+        <text key={i} x={i * slotW + slotW / 2} y={H - 5} textAnchor="middle" fontSize="7.5" fill="#A39B88">
           {labelFor(d.date)}
         </text>
       ))}
@@ -124,7 +124,7 @@ function CumulativeChart({ days, color }) {
   );
 }
 
-export default function ReviewCharts({ events, color = "#4f46e5" }) {
+export default function ReviewCharts({ events, color = "#1E4D38" }) {
   const days = useMemo(() => buildDays(events || []), [events]);
   if (!days) return null;
   const totalReviews = events.length;

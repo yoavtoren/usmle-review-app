@@ -3,11 +3,11 @@ import { rate, setDifficulty, getCard, recordActivity, toggleDone } from "../lib
 
 // 🔴 fatal/critical | 🟠 demographic/risk | 🔵 key context | 🟢 confirmatory | 🟣 trap
 const CLUE = {
-  red:    { bg: "#fee2e2", text: "#991b1b", border: "#fca5a5", emoji: "🔴", label: "Critical" },
-  orange: { bg: "#fff7ed", text: "#9a3412", border: "#fdba74", emoji: "🟠", label: "Risk factor" },
-  blue:   { bg: "#dbeafe", text: "#1e40af", border: "#93c5fd", emoji: "🔵", label: "Key context" },
-  green:  { bg: "#dcfce7", text: "#166534", border: "#86efac", emoji: "🟢", label: "Confirms" },
-  purple: { bg: "#f3e8ff", text: "#7e22ce", border: "#d8b4fe", emoji: "🟣", label: "Trap" },
+  red:    { bg: "#F3E3DE", text: "#7E2F23", border: "#D9AC9F", emoji: "🔴", label: "Critical" },
+  orange: { bg: "#FAF4E9", text: "#8F5322", border: "#DDB58C", emoji: "🟠", label: "Risk factor" },
+  blue:   { bg: "#DFEAF0", text: "#3A4C86", border: "#A9C4DC", emoji: "🔵", label: "Key context" },
+  green:  { bg: "#E2EEE3", text: "#1E4D38", border: "#A9D3B4", emoji: "🟢", label: "Confirms" },
+  purple: { bg: "#EBE5F2", text: "#71589E", border: "#C9B3E0", emoji: "🟣", label: "Trap" },
 };
 
 const DIFF_OPTIONS = [

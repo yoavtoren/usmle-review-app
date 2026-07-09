@@ -81,7 +81,7 @@ function LineChart({ tests }) {
           </text>
         </g>
       ))}
-      <text x={W - PAD.right + 4} y={toY(60)} dominantBaseline="middle" fontSize="8.5" fill="#f59e0b" fontWeight="700">
+      <text x={W - PAD.right + 4} y={toY(60)} dominantBaseline="middle" fontSize="8.5" fill="#A26A12" fontWeight="700">
         target
       </text>
 
@@ -94,8 +94,8 @@ function LineChart({ tests }) {
       )}
       {uwPts.length >= 2 && (
         <>
-          <path d={areaPath(uwPts)} fill="#f59e0b" opacity="0.07" />
-          <path d={linePath(uwPts)} fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
+          <path d={areaPath(uwPts)} fill="#A26A12" opacity="0.07" />
+          <path d={linePath(uwPts)} fill="none" stroke="#A26A12" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
         </>
       )}
       {scorePts.length >= 2 && (
@@ -106,7 +106,7 @@ function LineChart({ tests }) {
       )}
 
       {uwPts.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="4" fill="#f59e0b" stroke="var(--surface)" strokeWidth="2" />
+        <circle key={i} cx={x} cy={y} r="4" fill="#A26A12" stroke="var(--surface)" strokeWidth="2" />
       ))}
       {scorePts.map(([x, y, t], i) => (
         <g key={i}>

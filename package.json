@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "vite build && rm -f dist/firstaid/*.pdf && npx gh-pages -d dist",
-    "build:ios": "CAP_BUILD=1 vite build && rm -f dist/firstaid/*.pdf",
+    "build:ios": "CAP_BUILD=1 vite build",
     "sync:ios": "npm run build:ios && npx cap sync ios",
     "open:ios": "npx cap open ios"
   },
@@ -20,6 +20,7 @@
     "@capacitor/splash-screen": "^8.0.1",
     "@capacitor/status-bar": "^8.0.2",
     "@emailjs/browser": "^4.4.1",
+    "pdfjs-dist": "^4.10.38",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.17.0"

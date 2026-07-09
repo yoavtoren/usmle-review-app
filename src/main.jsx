@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import { cleanupRemovedAreas } from "./lib/storage.js";
 import { initNative } from "./lib/native.js";
 import { initICloudSync } from "./lib/icloudSync.js";
+import { initSound } from "./lib/sound.js";
 import "./styles.css";
 
 function render() {
@@ -23,6 +24,9 @@ async function boot() {
 
   // Native (iOS) bootstrap — no-op on the web build.
   initNative();
+
+  // Soft tactile audio on every interactive press (WebAudio, offline-safe).
+  initSound();
 
   // Pull iCloud progress into localStorage before first render (no-op on web or
   // when not signed into iCloud). Never let a sync hiccup block startup.

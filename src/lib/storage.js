@@ -531,7 +531,8 @@ export function cleanupRemovedAreas() {
 // ── JSON export / import ──────────────────────────────────────────────────
 export function exportAllData() {
   const keys = [KEY, TASKS_KEY, FA_TOPICS_KEY, TEST_LOG_KEY, STREAK_KEY,
-    Q_INTAKE_KEY, TOPIC_CTR_KEY, FA_INTAKE_KEY, LIGHT_MODE_KEY];
+    Q_INTAKE_KEY, TOPIC_CTR_KEY, FA_INTAKE_KEY, LIGHT_MODE_KEY,
+    "usmle-perf-snapshots-v1"];
   const out = {};
   for (const k of keys) {
     const raw = localStorage.getItem(k);

@@ -1,5 +1,13 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import * as pdfjsLib from "pdfjs-dist";
+import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import { FA_PDF_URL, FA_INDEX_URL, FA_CONTENTS, FA_TOTAL_PAGES } from "../lib/firstAidData.js";
+
+// pdf.js renders the PDF itself (to a canvas) instead of handing the file to the
+// browser's built-in PDF preview. That built-in viewer (esp. iOS WKWebView)
+// ignores `#page=N` URL fragments, so programmatic page jumps did nothing there.
+// Driving pdf.js directly gives us reliable, cross-platform page navigation.
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 const LAST_PAGE_KEY = "fa-book-last-page";
 
@@ -8,23 +16,38 @@ export default function FirstAidBook() {
     const saved = Number(localStorage.getItem(LAST_PAGE_KEY));
     return saved >= 1 && saved <= FA_TOTAL_PAGES ? saved : 1;
   });
-  const [available, setAvailable] = useState(null); // null = checking, true/false
+  const [status, setStatus]   = useState("loading"); // loading | ready | error
   const [index, setIndex]     = useState([]);
   const [query, setQuery]     = useState("");
   const [openSec, setOpenSec] = useState(() => new Set(["s2", "s3"]));
   const [pageInput, setPageInput] = useState("");
   const [mobilePanel, setMobilePanel] = useState(false);
 
-  // Check whether the local PDF is present (it's gitignored / local-only)
+  const pdfRef        = useRef(null);   // loaded PDFDocumentProxy
+  const canvasRef     = useRef(null);
+  const scrollRef     = useRef(null);   // scroll container (measured for fit-width)
+  const renderTaskRef = useRef(null);   // in-flight RenderTask, so we can cancel
+
+  // Load the document once with pdf.js
   useEffect(() => {
-    let alive = true;
-    fetch(FA_PDF_URL, { method: "HEAD" })
-      .then(r => { if (alive) setAvailable(r.ok); })
-      .catch(() => { if (alive) setAvailable(false); });
-    return () => { alive = false; };
+    let cancelled = false;
+    const task = pdfjsLib.getDocument({ url: FA_PDF_URL });
+    task.promise
+      .then(doc => {
+        if (cancelled) { doc.destroy(); return; }
+        pdfRef.current = doc;
+        setStatus("ready");
+      })
+      .catch(() => { if (!cancelled) setStatus("error"); });
+    return () => {
+      cancelled = true;
+      try { task.destroy(); } catch {}
+      try { pdfRef.current?.destroy(); } catch {}
+      pdfRef.current = null;
+    };
   }, []);
 
-  // Lazy-load the index
+  // Lazy-load the search index
   useEffect(() => {
     let alive = true;
     fetch(FA_INDEX_URL)
@@ -33,6 +56,55 @@ export default function FirstAidBook() {
       .catch(() => {});
     return () => { alive = false; };
   }, []);
+
+  // Render the current page to the canvas, fit to the container width.
+  const renderPage = useCallback(async () => {
+    const doc = pdfRef.current;
+    const canvas = canvasRef.current;
+    const scroll = scrollRef.current;
+    if (!doc || !canvas || !scroll) return;
+
+    renderTaskRef.current?.cancel();
+
+    let pg;
+    try { pg = await doc.getPage(page); } catch { return; }
+    if (canvasRef.current !== canvas) return; // unmounted mid-await
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const base = pg.getViewport({ scale: 1 });
+    const avail = Math.max(240, scroll.clientWidth - 32); // 16px padding each side
+    const scale = (avail / base.width) * dpr;
+    const viewport = pg.getViewport({ scale });
+
+    canvas.width = Math.floor(viewport.width);
+    canvas.height = Math.floor(viewport.height);
+    canvas.style.width = `${Math.floor(viewport.width / dpr)}px`;
+    canvas.style.height = `${Math.floor(viewport.height / dpr)}px`;
+
+    const ctx = canvas.getContext("2d");
+    const task = pg.render({ canvasContext: ctx, viewport });
+    renderTaskRef.current = task;
+    try {
+      await task.promise;
+      scroll.scrollTop = 0;
+    } catch { /* render cancelled — expected on rapid page changes */ }
+  }, [page]);
+
+  // Re-render on ready / page change
+  useEffect(() => {
+    if (status === "ready") renderPage();
+  }, [status, page, renderPage]);
+
+  // Re-render (fit width) when the stage resizes — orientation, sidebar toggle…
+  useEffect(() => {
+    if (status !== "ready") return;
+    const scroll = scrollRef.current;
+    if (!scroll || typeof ResizeObserver === "undefined") return;
+    let t;
+    const ro = new ResizeObserver(() => { clearTimeout(t); t = setTimeout(renderPage, 150); });
+    ro.observe(scroll);
+    return () => { ro.disconnect(); clearTimeout(t); };
+  }, [status, renderPage]);
 
   const go = useCallback((p) => {
     const n = Math.max(1, Math.min(FA_TOTAL_PAGES, Math.round(p)));
@@ -60,8 +132,6 @@ export default function FirstAidBook() {
   function toggleSec(id) {
     setOpenSec(prev => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n; });
   }
-
-  const src = `${FA_PDF_URL}#page=${page}&zoom=page-width`;
 
   return (
     <div className="fa-book">
@@ -146,17 +216,11 @@ export default function FirstAidBook() {
             </form>
             <button className="fa-pg-btn" onClick={() => go(page + 1)} disabled={page >= FA_TOTAL_PAGES}>›</button>
           </div>
-          {available && (
-            <a className="fa-open-ext" href={src} target="_blank" rel="noreferrer">פתח בכרטיסייה ↗</a>
-          )}
         </div>
 
         <div className="fa-stage">
-          {available === null && <div className="fa-state">בודק זמינות…</div>}
-          {available === true && (
-            <iframe key={page} className="fa-frame" src={src} title="First Aid 2025" />
-          )}
-          {available === false && (
+          {status === "loading" && <div className="fa-state">טוען ספר…</div>}
+          {status === "error" && (
             <div className="fa-unavail">
               <div className="fa-unavail-icon">📕</div>
               <h2>הספר זמין במחשב שלך בלבד</h2>
@@ -169,6 +233,9 @@ export default function FirstAidBook() {
               </p>
             </div>
           )}
+          <div className="fa-scroll" ref={scrollRef} style={{ display: status === "ready" ? "flex" : "none" }}>
+            <canvas ref={canvasRef} className="fa-canvas" />
+          </div>
         </div>
       </main>
     </div>

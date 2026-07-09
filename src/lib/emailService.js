@@ -137,7 +137,7 @@ export function buildDigest(extra = {}) {
     .map(
       (s) =>
         `<div style="margin:0 0 18px">
-           <div style="font:600 13px/1.4 -apple-system,Segoe UI,sans-serif;color:#4F46E5;letter-spacing:.3px;text-transform:uppercase;margin-bottom:6px">${s.title}</div>
+           <div style="font:600 13px/1.4 -apple-system,Segoe UI,sans-serif;color:#1E4D38;letter-spacing:.3px;text-transform:uppercase;margin-bottom:6px">${s.title}</div>
            ${s.lines
              .map(
                (l) =>

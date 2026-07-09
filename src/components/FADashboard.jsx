@@ -4,6 +4,7 @@ import { loadFATopics, saveFATopics, loadTasks, saveTasks, touchFASection } from
 import { chaptersFromText } from "../lib/faMap.js";
 import { markTaskInFA, lookupPage } from "../lib/faSync.js";
 import ReviewCharts from "./ReviewCharts.jsx";
+import { playPop } from "../lib/sound.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -22,20 +23,25 @@ const FA_REVIEW_INTERVALS = {
   5: [2, 7, 14],
 };
 
-const DIFF_COLORS = ["", "#22c55e", "#84cc16", "#eab308", "#f97316", "#ef4444"];
+/* Difficulty 1→5: calm green ramps warm-ward to oxblood (stars carry the value,
+   color reinforces). Validated against the ivory surface. */
+const DIFF_COLORS = ["", "#2F7D54", "#6B7F2E", "#A07C2C", "#B5622A", "#9C3B2C"];
 
+/* Heritage atlas palette — fixed order, validated (lightness band, chroma
+   floor, adjacent-pair CVD ≥ 12, ≥3:1 contrast on ivory). Chapter names always
+   accompany the color, so identity is never color-alone. */
 const CHAPTER_COLORS = [
-  "#ef4444", "#f97316", "#eab308", "#22c55e",
-  "#06b6d4", "#3b82f6", "#8b5cf6", "#ec4899",
-  "#14b8a6", "#f43f5e", "#84cc16", "#6366f1",
-  "#f59e0b", "#10b981", "#a855f7", "#0ea5e9",
+  "#9C3B2C", "#2F7D54", "#C77B3B", "#22729E",
+  "#A07C2C", "#71589E", "#4E8F3B", "#A83A4E",
+  "#0F9184", "#B5622A", "#4C5FA8", "#B04A38",
+  "#2E9CB8", "#99427A", "#6B7F2E", "#8E6AC0",
 ];
 
 const CHAPTER_SOFT = [
-  "#fee2e2", "#ffedd5", "#fef9c3", "#dcfce7",
-  "#cffafe", "#dbeafe", "#ede9fe", "#fce7f3",
-  "#ccfbf1", "#ffe4e6", "#ecfccb", "#e0e7ff",
-  "#fef3c7", "#d1fae5", "#f3e8ff", "#e0f2fe",
+  "#F3E3DE", "#DFEDE4", "#F5E9DA", "#DFEAF0",
+  "#F0E9D6", "#EBE5F2", "#E4EEDD", "#F2E1E6",
+  "#DBEEEB", "#F3E6D8", "#E1E4F0", "#F2E2DC",
+  "#DEEDF2", "#F0E2EB", "#E9EDD8", "#EDE7F5",
 ];
 
 function parseChapterMd(text) {
@@ -203,7 +209,7 @@ function ProgressChart({ lsTopics, chapterStats }) {
                 {Object.entries(d.counts).sort().map(([chFile, count]) => {
                   const barH = Math.max(2, Math.round((count / maxTotal) * H));
                   y -= barH;
-                  const color = chFileToColor[chFile] || "#94a3b8";
+                  const color = chFileToColor[chFile] || "#A39B88";
                   const yPos = y;
                   return <rect key={chFile} x={x} y={yPos} width={barW} height={barH} fill={color} rx="1" />;
                 })}
@@ -215,7 +221,7 @@ function ProgressChart({ lsTopics, chapterStats }) {
             .filter(({ i }) => i % 5 === 0 || i === n - 1)
             .map(({ d, i }) => (
               <text key={i} x={Math.floor(i * slotW + slotW / 2)} y={H + 13}
-                textAnchor="middle" fontSize="7.5" fill="#94a3b8">
+                textAnchor="middle" fontSize="7.5" fill="#A39B88">
                 {d.label}
               </text>
             ))}
@@ -239,7 +245,7 @@ function DueReviewsPanel({ dueTopics, chapterStats, onMarkReviewed, onSetDifficu
       <div className="fad-due-list">
         {dueTopics.map(({ key, topicTitle, chFile, reviews, totalReviewsTarget, difficulty }) => {
           const ch = chMap[chFile];
-          const color = ch?.color || "#94a3b8";
+          const color = ch?.color || "#A39B88";
           const chName = ch?.name || chFile;
           return (
             <div key={key} className="fad-due-item">
@@ -349,6 +355,7 @@ export default function FADashboard({ onBack, onTrack }) {
     setLsTopics(prev => {
       const cur = prev[key];
       const wasDone = cur !== undefined ? cur.done : markdownDone;
+      if (!wasDone) playPop(); // ticking a topic off deserves a warm pop
       let updated;
       if (wasDone) {
         updated = {
@@ -623,7 +630,7 @@ export default function FADashboard({ onBack, onTrack }) {
       <ProgressChart lsTopics={lsTopics} chapterStats={chapterStats} />
 
       {/* Review-progress charts (whole First Aid) */}
-      <ReviewCharts events={reviewEvents} color="#4f46e5" />
+      <ReviewCharts events={reviewEvents} color="#1E4D38" />
 
       {/* Due reviews panel */}
       <DueReviewsPanel

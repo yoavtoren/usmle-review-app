@@ -13,9 +13,9 @@ import { markTaskInFA } from "../lib/faSync.js";
 import ReviewSchedule from "./ReviewSchedule.jsx";
 
 const PRIOS = [
-  { key: "high",   label: "High",   color: "#ef4444", bg: "rgba(239,68,68,0.09)" },
-  { key: "medium", label: "Medium", color: "#d97706", bg: "rgba(217,119,6,0.09)" },
-  { key: "low",    label: "Low",    color: "#059669", bg: "rgba(5,150,105,0.09)" },
+  { key: "high",   label: "High",   color: "#B04A38", bg: "rgba(239,68,68,0.09)" },
+  { key: "medium", label: "Medium", color: "#A26A12", bg: "rgba(217,119,6,0.09)" },
+  { key: "low",    label: "Low",    color: "#2F7D54", bg: "rgba(5,150,105,0.09)" },
 ];
 
 const TYPE_META = {
@@ -245,13 +245,13 @@ function TaskManager({ tasks, setTasks }) {
 function CaduceusIcon() {
   return (
     <svg viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="30" y="4" width="4" height="72" rx="2" fill="rgba(255,255,255,0.90)" />
-      <path d="M32 18 C18 12 8 18 12 26 C16 34 28 30 32 26" stroke="rgba(255,255,255,0.85)" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-      <path d="M32 18 C46 12 56 18 52 26 C48 34 36 30 32 26" stroke="rgba(255,255,255,0.85)" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-      <path d="M32 28 C20 30 16 38 24 42 C32 46 36 52 28 56 C22 59 20 64 24 68" stroke="rgba(255,255,255,0.75)" strokeWidth="2.2" fill="none" strokeLinecap="round"/>
-      <path d="M32 28 C44 30 48 38 40 42 C32 46 28 52 36 56 C42 59 44 64 40 68" stroke="rgba(255,255,255,0.75)" strokeWidth="2.2" fill="none" strokeLinecap="round"/>
-      <circle cx="22" cy="70" r="3" fill="rgba(255,255,255,0.80)" />
-      <circle cx="42" cy="70" r="3" fill="rgba(255,255,255,0.80)" />
+      <rect x="30" y="4" width="4" height="72" rx="2" fill="currentColor" />
+      <path d="M32 18 C18 12 8 18 12 26 C16 34 28 30 32 26" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+      <path d="M32 18 C46 12 56 18 52 26 C48 34 36 30 32 26" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+      <path d="M32 28 C20 30 16 38 24 42 C32 46 36 52 28 56 C22 59 20 64 24 68" stroke="currentColor" strokeWidth="2.2" fill="none" strokeLinecap="round" opacity="0.8"/>
+      <path d="M32 28 C44 30 48 38 40 42 C32 46 28 52 36 56 C42 59 44 64 40 68" stroke="currentColor" strokeWidth="2.2" fill="none" strokeLinecap="round" opacity="0.8"/>
+      <circle cx="22" cy="70" r="3" fill="currentColor" />
+      <circle cx="42" cy="70" r="3" fill="currentColor" />
     </svg>
   );
 }

@@ -1,22 +1,22 @@
 {
   "appId": "com.yoavtoren.usmlereview",
   "appName": "Yoav's USMLE tracker",
-  "webDir": "dist",
+  "webDir": "dist-ios",
   "ios": {
     "contentInset": "always",
-    "backgroundColor": "#F6F5F1"
+    "backgroundColor": "#F5F2EA"
   },
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 700,
       "launchAutoHide": true,
-      "backgroundColor": "#F6F5F1",
+      "backgroundColor": "#F5F2EA",
       "showSpinner": false,
       "iosSpinnerStyle": "small"
     },
     "StatusBar": {
       "style": "DARK",
-      "backgroundColor": "#F6F5F1"
+      "backgroundColor": "#F5F2EA"
     }
   }
 }

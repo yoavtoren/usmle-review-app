@@ -148,7 +148,7 @@ function TaskForm({ initial, cat, onSave, onCancel }) {
 
 // ── Task card ──────────────────────────────────────────────────────────────
 function TaskCard({ task, cat, onEdit, onDelete, onToggleStatus }) {
-  const uColor   = URGENCY_COLORS[task.urgency] || "#94a3b8";
+  const uColor   = URGENCY_COLORS[task.urgency] || "#A39B88";
   const isDone   = task.status === "Done";
   const isOverdue = task.deadline && task.deadline < new Date().toISOString().slice(0,10) && !isDone;
   const gcalItem = task.deadline

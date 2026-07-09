@@ -6,6 +6,8 @@ import {
   loadTasks, saveTasks, bumpTopicMiss, loadTopicCounters, resetQuestions,
 } from "../lib/storage.js";
 import IntakeWizard from "./IntakeWizard.jsx";
+import { playSuccess, playAchieve } from "../lib/sound.js";
+import { burstFrom, medal } from "../lib/celebrate.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -13,6 +15,7 @@ export default function TestReview({ onBack }) {
   const location = useLocation();
   const deckFile     = location.state?.deckFile || "questions/deck.json";
   const initialBlock = location.state?.block    || "all";
+  const focusId      = location.state?.focusId  || null;
 
   const [deck, setDeck]             = useState(null);
   const [error, setError]           = useState(null);
@@ -66,7 +69,8 @@ export default function TestReview({ onBack }) {
       .then(r => r.json())
       .then(d => {
         setDeck(d);
-        const first = d.questions.find(q => q.missed) || d.questions[0];
+        const focus = focusId && d.questions.find(q => q.id === focusId);
+        const first = focus || d.questions.find(q => q.missed) || d.questions[0];
         if (first) setSelectedId(first.id);
       })
       .catch(e => setError(String(e)));
@@ -300,7 +304,19 @@ export default function TestReview({ onBack }) {
                 <button className="sr-btn sr-again" onClick={() => { const n = rate(selectedMeta.id, "again"); setProgress({ ...n }); }}>
                   🔁 Review again
                 </button>
-                <button className="sr-btn sr-got" onClick={() => { const n = rate(selectedMeta.id, "got"); setProgress({ ...n }); }}>
+                <button className="sr-btn sr-got" onClick={(e) => {
+                  const wasMastered = selectedCard?.status === "mastered";
+                  const n = rate(selectedMeta.id, "got");
+                  setProgress({ ...n });
+                  const after = getCard(n, selectedMeta.id);
+                  if (!wasMastered && after?.status === "mastered") {
+                    playAchieve();
+                    medal("Mastered! 🎓");
+                  } else {
+                    playSuccess();
+                    burstFrom(e.currentTarget, { count: 18, power: 100 });
+                  }
+                }}>
                   ✓ Got it
                 </button>
               </div>

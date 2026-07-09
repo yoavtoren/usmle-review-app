@@ -4,7 +4,7 @@ Your study progress (test scores, First Aid coverage, spaced-repetition schedule
 streak, tasks) now syncs to **iCloud Key-Value Store**, tied to your Apple ID, and
 mirrors automatically across every device signed into that Apple ID.
 
-The code is done. Three one-time steps remain — they need **your Apple ID** and a
+The code is done. One one-time step remains — it needs **your Apple ID** and a
 **paid Apple Developer account** ($99/yr), because Apple only grants the iCloud
 entitlement to paid accounts.
 
@@ -15,6 +15,7 @@ entitlement to paid accounts.
 | File | Purpose |
 |------|---------|
 | `ios/App/App/ICloudKVPlugin.swift` | Native bridge to `NSUbiquitousKeyValueStore` |
+| `ios/App/App/MainViewController.swift` | Registers the plugin with the Capacitor bridge |
 | `ios/App/App/App.entitlements` | Grants the iCloud key-value permission |
 | `src/lib/icloudSync.js` | Mirrors localStorage ↔ iCloud (per-key last-write-wins) |
 | `src/main.jsx` | Pulls iCloud data before first render |
@@ -24,34 +25,23 @@ the app works exactly as before.
 
 ---
 
-## Step 1 — Rebuild the web bundle into the app
+## Rebuilding the web bundle into the app
 
 From the project root:
 
 ```bash
-npm run build
-npx cap sync ios
+npm run sync:ios
 ```
 
-`cap sync` copies the new `dist/` (with the sync layer) into the iOS app and
-refreshes native plugins.
+⚠️ Always use `sync:ios` (never a plain `npm run build` before `cap sync`) — the
+iOS app needs the relative-base build. `sync:ios` builds it into `dist-ios/`,
+which Capacitor copies into the app; the web build in `dist/` keeps the GitHub
+Pages base and would blank-screen inside the app.
 
-## Step 2 — Add the native plugin file to the Xcode target
+The plugin file and its registration (`MainViewController.swift`) are already part
+of the Xcode project — no manual Xcode file steps needed.
 
-```bash
-npx cap open ios
-```
-
-In Xcode's left sidebar:
-
-1. Right-click the **App** group (the yellow folder under the blue `App` project) →
-   **Add Files to "App"…**
-2. Select **`ICloudKVPlugin.swift`** (it's already on disk at `ios/App/App/`).
-3. Make sure **"App" is checked** under *Add to targets*, then **Add**.
-
-(If `ICloudKVPlugin.swift` already appears in the group, skip this step.)
-
-## Step 3 — Turn on signing + the iCloud capability
+## Step — Turn on signing + the iCloud capability
 
 1. Select the blue **App** project → **App** target → **Signing & Capabilities**.
 2. Under **Signing**, set **Team** to your paid Apple Developer team and make sure

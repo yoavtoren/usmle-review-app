@@ -11,7 +11,7 @@ function fmtDue(daysUntil) {
 }
 
 function Toast({ rem, onDismiss, onSnooze }) {
-  const color   = FRONT_COLORS[rem.item.front] || "#475569";
+  const color   = FRONT_COLORS[rem.item.front] || "#55503F";
   const icon    = TYPE_ICONS[rem.item.type] || "⏰";
   const gcal    = buildGCalLink(rem.item);
   const dueStr  = fmtDue(rem.daysUntil);

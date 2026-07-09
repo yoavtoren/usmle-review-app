@@ -28,6 +28,7 @@ const SYNC_KEYS = [
   "usmle-topic-ctr-v1",         // topic counters
   "usmle-fa-intake-v1",         // First Aid intake
   "usmle-light-mode-v1",        // pause / light mode
+  "usmle-perf-snapshots-v1",    // manual progress snapshots (topic/system %)
   "usmle-app:aims-tasks-v2",    // AIMS tasks
   "usmle-app:rhythms-v1",       // workstream rhythms
   "usmle-app:reminder-state-v1",// reminder dismiss / snooze

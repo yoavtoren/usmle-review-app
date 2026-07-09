@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
-  IconHome, IconDash, IconClipboard, IconBook,
-  IconTarget, IconPulse, IconBell, IconMail, IconChevron,
+  IconHome, IconDash, IconClipboard, IconBook, IconBox,
+  IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar,
 } from "./icons.jsx";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
 
@@ -55,8 +55,11 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
     {
       label: "Step 1",
       items: [
+        { to: "/planner", label: "התוכנית היומית", Icon: IconCalendar },
         { to: "/step1", label: "לוח Step 1", Icon: IconDash },
         { to: "/tests", label: "Tests", Icon: IconClipboard },
+        { to: "/bank", label: "בנק שאלות", Icon: IconBox },
+        { to: "/progress", label: "התקדמות", Icon: IconPulse },
         { to: "/fa", label: "First Aid", Icon: IconBook },
         { to: "/fa/book", label: "ספר First Aid", Icon: IconBook },
       ],
@@ -71,7 +74,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
 
   function isActive(to, exact) {
     if (exact) return p === "/";
-    if (to === "/step1") return p === "/step1" || p.startsWith("/tests") || p.startsWith("/fa");
+    if (to === "/step1") return p === "/step1" || p.startsWith("/tests") || p.startsWith("/fa") || p.startsWith("/bank") || p.startsWith("/progress") || p.startsWith("/planner");
     return p === to || p.startsWith(to + "/");
   }
 

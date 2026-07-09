@@ -10,7 +10,7 @@ export const FA_TOTAL_PAGES = 865;
 // Browsable contents — sections → chapters, with real PDF page numbers.
 export const FA_CONTENTS = [
   {
-    id: "s1", title: "Section I · Guide to Efficient Exam Preparation", page: 22, color: "#6D4AC2",
+    id: "s1", title: "Section I · Guide to Efficient Exam Preparation", page: 22, color: "#7C3A4D",
     children: [
       { title: "Introduction", page: 23 },
       { title: "USMLE Step 1 — The Basics", page: 23 },
@@ -24,7 +24,7 @@ export const FA_CONTENTS = [
     ],
   },
   {
-    id: "s2", title: "Section II · High-Yield General Principles", page: 48, color: "#0E7C86",
+    id: "s2", title: "Section II · High-Yield General Principles", page: 48, color: "#0F9184",
     children: [
       { title: "How to Use the Database", page: 49 },
       { title: "Biochemistry", page: 52 },
@@ -36,7 +36,7 @@ export const FA_CONTENTS = [
     ],
   },
   {
-    id: "s3", title: "Section III · High-Yield Organ Systems", page: 300, color: "#4F46E5",
+    id: "s3", title: "Section III · High-Yield Organ Systems", page: 300, color: "#1E4D38",
     children: [
       { title: "Approaching the Organ Systems", page: 301 },
       { title: "Cardiovascular", page: 304 },
@@ -53,7 +53,7 @@ export const FA_CONTENTS = [
     ],
   },
   {
-    id: "s4", title: "Section IV · Top-Rated Review Resources", page: 760, color: "#9A6B1F",
+    id: "s4", title: "Section IV · Top-Rated Review Resources", page: 760, color: "#A07C2C",
     children: [
       { title: "How to Use the Database", page: 761 },
       { title: "Question Banks & Apps", page: 762 },
@@ -61,7 +61,7 @@ export const FA_CONTENTS = [
     ],
   },
   {
-    id: "back", title: "Reference", page: 776, color: "#565660",
+    id: "back", title: "Reference", page: 776, color: "#6E6858",
     children: [
       { title: "Abbreviations and Symbols", page: 776 },
       { title: "Image Acknowledgments", page: 776 },

@@ -3,7 +3,7 @@ export const CATEGORIES = {
   aims: {
     title:      "AIMS",
     subtitle:   "עמוד פיקוד — ארגון סטודנטים",
-    accent:     "#7c3aed",
+    accent:     "#7C3A4D",
     storageKey: "usmle-app:aims-tasks-v2",
     streams:    null,
     tone:       "blunt",

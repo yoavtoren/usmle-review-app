@@ -3,20 +3,20 @@ import { loadGeneralTasks, saveGeneralTasks } from "../lib/storage.js";
 import { IconCheck, IconCalendar, IconClose } from "./icons.jsx";
 
 const PRIOS = {
-  high:   { label: "גבוה",  color: "#C0392B", bg: "rgba(192,57,43,0.10)" },
-  medium: { label: "בינוני", color: "#B5710A", bg: "rgba(181,113,10,0.10)" },
-  low:    { label: "נמוך",  color: "#1F7A52", bg: "rgba(31,122,82,0.10)" },
+  high:   { label: "גבוה",  color: "#9C3B2C", bg: "rgba(192,57,43,0.10)" },
+  medium: { label: "בינוני", color: "#A26A12", bg: "rgba(181,113,10,0.10)" },
+  low:    { label: "נמוך",  color: "#2F7D54", bg: "rgba(31,122,82,0.10)" },
 };
 const PRIO_ORDER = { high: 0, medium: 1, low: 2 };
 
 // Topic categories with colors + subtopic suggestions (free text still allowed)
 const CATEGORIES = [
-  { id: "step1",    label: "Step 1",       color: "#4F46E5",
+  { id: "step1",    label: "Step 1",       color: "#1E4D38",
     subs: ["Biochemistry","Immunology","Microbiology","Pathology","Pharmacology","Public Health",
            "Cardiovascular","Endocrine","Gastrointestinal","Heme/Onc","MSK & Skin","Neurology",
            "Psychiatry","Renal","Reproductive","Respiratory"] },
-  { id: "aims",      label: "AIMS",        color: "#6D4AC2", subs: [] },
-  { id: "personal",  label: "אישי",        color: "#565660", subs: [] },
+  { id: "aims",      label: "AIMS",        color: "#7C3A4D", subs: [] },
+  { id: "personal",  label: "אישי",        color: "#6E6858", subs: [] },
 ];
 const catMeta = (id) => CATEGORIES.find(c => c.id === id) || null;
 export { CATEGORIES, catMeta };
