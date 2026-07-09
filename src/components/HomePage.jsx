@@ -15,6 +15,7 @@ import {
 const EXAM_DATE = new Date("2026-10-11T00:00:00Z");
 const JOURNEY_START = new Date("2026-06-10T00:00:00Z");
 const DAY = 86400000;
+const WEEK_GOAL = 25; // soft weekly target for questions mastered (gives the momentum meter a scale)
 
 function daysUntilExam() {
   return Math.ceil((EXAM_DATE - new Date()) / DAY);
@@ -72,12 +73,14 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
   const faPct = faStats.total > 0 ? Math.round((faStats.seen / faStats.total) * 100) : 0;
 
   const latest = log[log.length - 1] || null;
-  const prevT = log.length > 1 ? log[log.length - 2] : null;
-  const scoreDelta = latest && prevT ? latest.score - prevT.score : null;
-  const cohortDelta = latest && latest.uworldAvg != null ? latest.score - latest.uworldAvg : null;
+  const cohortDelta = latest && Number.isFinite(latest.uworldAvg) ? latest.score - latest.uworldAvg : null;
+  const hasAvg = log.some((t) => Number.isFinite(t.uworldAvg));
 
   const aims = taskStats("aims");
   const nextWhen = heWhen(sched.nextDueAt);
+  // Single source for the "load" captions — the sum of what the bars actually draw
+  // (already paused-aware via getReviewSchedule), so caption and chart never disagree.
+  const loadTotal = sched.days.reduce((s, x) => s + x.count, 0);
 
   const greeting = (() => {
     const h = new Date().getHours();
@@ -99,7 +102,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
             <h1 className="hd-h1">{greeting}, <span className="hd-name">יואב</span></h1>
             <p className="hd-lede">
               {days > 0
-                ? <>נותרו <em className="num">{days}</em> ימים ל‑Step 1 · <em className="num">{journeyPct}%</em> מהמסע.</>
+                ? <>נותרו <em className="num">{days}</em> ימים ל‑Step 1.</>
                 : "המסע נמשך — צעד אחד היום."}
             </p>
           </div>
@@ -147,7 +150,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
               <div className="hd-hero-load">
                 <div className="hd-hero-load-cap">
                   <span>עומס החזרות · 14 ימים</span>
-                  <span className="num">{sched.upcomingTotal + sched.dueNow} סה״כ</span>
+                  <span className="num">{loadTotal} סה״כ</span>
                 </div>
                 <LoadStrip days={sched.days} />
               </div>
@@ -200,7 +203,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
             </div>
             <div className="hd-traj-legend">
               <span className="lg lg-mine">הציון שלי</span>
-              <span className="lg lg-avg">ממוצע UWorld</span>
+              {hasAvg && <span className="lg lg-avg">ממוצע UWorld</span>}
               <span className="lg lg-band">אזור מעבר 60–70</span>
             </div>
           </div>
@@ -212,12 +215,19 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
             </div>
             <div className="hd-mom-hero">
               <span className="hd-mom-num num"><CountUp value={masteredWeek} /></span>
-              <span className="hd-mom-lbl">נשלטו השבוע</span>
+              <span className="hd-mom-lbl">נשלטו השבוע · יעד <span className="num">{WEEK_GOAL}</span></span>
             </div>
-            <StreakDots streak={streak} />
+            <div className="hd-mom-track">
+              <span style={{ width: `${Math.min(100, Math.round((masteredWeek / WEEK_GOAL) * 100))}%` }} />
+            </div>
+            <div className="hd-mom-streak">
+              <StreakDots streak={streak} />
+              <span className="hd-mom-streaklbl">7 הימים האחרונים</span>
+            </div>
             <div className="hd-mom-foot">
-              <span className="num">{streak}</span> ימי רצף
-              {sched.dueNow > 0 && <> · <span className="num">{sched.dueNow}</span> ממתינות</>}
+              {streak > 0
+                ? <><span className="num">{streak}</span> ימי רצף{sched.dueNow > 0 && <> · <span className="num">{sched.dueNow}</span> ממתינות</>}</>
+                : <span className="hd-mom-cta">התחל רצף חדש היום 🔥</span>}
             </div>
           </div>
 
@@ -225,7 +235,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           <div className="hd-card hd-review c5">
             <div className="hd-ch">
               <span className="hd-ch-t"><span className="hd-ch-ico green"><IconClipboard size={15} /></span> תחזית חזרות</span>
-              <span className="hd-ch-meta"><span className="hd-chip num">{sched.upcomingTotal + sched.dueNow} בהמתנה</span></span>
+              <span className="hd-ch-meta"><span className="hd-chip num">{loadTotal} בהמתנה</span></span>
             </div>
             <ReviewBars days={sched.days} overdue={sched.overdue} dueToday={sched.dueToday} />
           </div>
@@ -249,12 +259,13 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           <button className="hd-card hd-weak c3" onClick={() => nav("/progress")}>
             <div className="hd-ch">
               <span className="hd-ch-t"><span className="hd-ch-ico bad"><IconTarget size={15} /></span> נקודות תורפה</span>
+              <IconArrow size={15} className="hd-ch-arr mir" />
             </div>
             {weak.length ? (
               <ul className="hd-weak-list">
-                {weak.map((w, i) => {
-                  const max = Math.max(...weak.map((x) => x.kind === "pct" ? (100 - x.pct) : x.count), 1);
+                {(() => { const wMax = Math.max(...weak.map((x) => x.kind === "pct" ? (100 - x.pct) : x.count), 1); return weak.map((w, i) => {
                   const val = w.kind === "pct" ? (100 - w.pct) : w.count;
+                  const max = wMax;
                   return (
                     <li key={w.name} className="hd-weak-row">
                       <div className="hd-weak-top">
@@ -266,7 +277,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
                       </span>
                     </li>
                   );
-                })}
+                }); })()}
               </ul>
             ) : (
               <div className="hd-empty sm">
@@ -461,8 +472,12 @@ function Trajectory({ log }) {
           <text x={W - padR + 7} y={yAt(g) + 3.5} className="hd-axis" textAnchor="start">{g}</text>
         </g>
       ))}
-      {/* UWorld benchmark */}
-      {avg.length >= 2 && <path d={avgLine} fill="none" stroke="var(--gold)" strokeWidth="1.6" strokeDasharray="3 4" strokeLinecap="round" opacity="0.8" />}
+      {/* UWorld benchmark — one path per contiguous run; a lone point renders as a dot */}
+      {avgSegs.map((s, si) => (s.length >= 2
+        ? <path key={si} d={s.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`).join(" ")}
+            fill="none" stroke="var(--gold)" strokeWidth="1.6" strokeDasharray="3 4" strokeLinecap="round" opacity="0.8" />
+        : <circle key={si} cx={s[0][0]} cy={s[0][1]} r="2.6" fill="none" stroke="var(--gold)" strokeWidth="1.6" opacity="0.85" />
+      ))}
       {/* my score */}
       <path d={area} fill="url(#tgrad)" className="hd-traj-area" />
       <path d={mineLine} fill="none" stroke="var(--accent)" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round" className="hd-traj-line" />

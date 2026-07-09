@@ -108,12 +108,13 @@ export function getReviewSchedule(questions = [], progress = loadProgress()) {
   const dueNow = paused ? 0 : overdue + dueToday;
 
   // 14-day distribution (day 0 = today, counts overdue + due-today together).
+  // Paused (Light Mode) forces today's load to 0 so the chart/strip/captions match dueNow.
   const days = [];
   for (let i = 0; i < 14; i++) {
     const dStart = t0 + i * DAY;
     const dEnd = dStart + DAY;
     const count = i === 0
-      ? overdue + dueToday
+      ? (paused ? 0 : overdue + dueToday)
       : upcoming.filter(d => d >= dStart && d < dEnd).length;
     days.push({ ms: dStart, count, isToday: i === 0 });
   }
