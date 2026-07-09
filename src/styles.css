@@ -4195,6 +4195,11 @@ button.cr-dot:hover { transform: scale(1.18); color: #A39B88; }
 .fa-unavail h2 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--text); }
 .fa-unavail p { font-size: 13.5px; color: var(--text-2); line-height: 1.7; }
 .fa-unavail-hint { font-size: 12.5px; color: var(--muted); }
+.fa-unavail-detail {
+  font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--muted);
+  background: rgba(0, 0, 0, 0.05); border-radius: 6px; padding: 6px 10px;
+  max-width: 420px; overflow-wrap: anywhere;
+}
 
 /* Responsive */
 @media (max-width: 860px) {

@@ -26,25 +26,35 @@ EXAM_DATE = "2026-10-11"
 CONTENT_DEADLINE = "2026-09-14"
 MIN_PER_TOPIC = 3  # minutes; tuned later from real completion data
 
-# chapter number -> (yieldWeight 1..5, foundationRank 0..3, seedWeek)
-# foundationRank sequences fundamentals (0) before organ systems (2-3).
+# chapter number -> (yieldWeight 1..5, track, leadWeek, colorKey)
+#   track "anchor" = big/hard/important; LEADS the schedule (Cardio opens W0).
+#   track "basics" = interleaved daily in small just-in-time doses (leadWeek = None).
+# This is the "big and bold first, basics as seasoning" model — NO foundation
+# gating; anchors lead by leadWeek, basics ride a separate daily interleave budget.
 CHAPTER_META = {
-    "04": (5, 0, 0),   # Pathology — fundamentals first
-    "01": (4, 1, 1),   # Biochem
-    "02": (4, 1, 2),   # Immunology
-    "03": (4, 1, 2),   # Micro
-    "05": (4, 1, 3),   # Pharm
-    "06": (4, 1, 9),   # Public Health — high ROI, woven in each week
-    "07": (5, 2, 4),   # Cardio — biggest / highest-yield system
-    "14": (5, 2, 4),   # Renal
-    "16": (4, 2, 5),   # Respiratory
-    "10": (4, 2, 5),   # Heme / Onc
-    "08": (4, 2, 6),   # Endocrine
-    "09": (4, 2, 6),   # GI
-    "15": (3, 3, 7),   # Repro
-    "12": (4, 3, 8),   # Neuro & Special Senses
-    "13": (3, 3, 9),   # Psychiatry
-    "11": (3, 3, 9),   # MSK / Skin
+    # 🔥 anchors, lead order via leadWeek (Cardio opens):
+    "07": (5, "anchor", 0, "cardio"),   # biggest / highest-yield → opens
+    "12": (5, "anchor", 1, "neuro"),    # big + hard + important
+    "14": (5, "anchor", 2, "renal"),
+    "16": (4, "anchor", 2, "resp"),
+    "10": (5, "anchor", 3, "heme"),
+    "08": (4, "anchor", 3, "endo"),
+    "09": (4, "anchor", 4, "gi"),
+    "15": (4, "anchor", 4, "repro"),
+    "03": (4, "anchor", 5, "micro"),    # big; Sketchy-driven → anchor
+    "11": (3, "anchor", 6, "msk"),
+    "13": (3, "anchor", 6, "psych"),    # easy wins
+    # 🧊 basics, interleaved daily just-in-time (no leadWeek):
+    "04": (5, "basics", None, "patho"),  # fundamentals from day 1
+    "01": (4, "basics", None, "biochem"),
+    "02": (4, "basics", None, "immuno"),
+    "05": (4, "basics", None, "pharm"),
+    "06": (4, "basics", None, "publichealth"),
+}
+
+# Per-chapter difficulty hint (drives `hardness`; default 0.5).
+HARDNESS = {
+    "12": 0.85, "01": 0.8, "14": 0.75, "10": 0.7, "05": 0.65,
 }
 
 # chapter number -> normalized system (matches faMap.js chapter names / deck vocab)
@@ -94,36 +104,52 @@ def main():
     with open(os.path.join(FA_DIR, "fa-progress.json")) as f:
         prog = json.load(f)
 
-    units = []
+    # ── Pass 1: collect raw sections so sizeRank (topicCount percentile) can be
+    # computed across the whole universe before emitting units.
+    raw = []
     total_topics = 0
     for ch in prog["chapters"]:
         chapter_name = ch["chapter"]             # e.g. "07 Cardio"
         num = chapter_name.split(" ", 1)[0]      # "07"
-        meta = CHAPTER_META.get(num, (3, 3, 9))
-        y_weight, f_rank, seed_week = meta
         md_path = os.path.join(FA_DIR, ch["file"])
         with open(md_path) as mf:
             sections = parse_sections(mf.read())
-
         for si, sec in enumerate(sections, start=1):
-            count = sec["total"]
-            total_topics += count
-            key = f"{num}.{si:02d}"
-            units.append({
-                "key": key,
-                "chapterNum": num,
-                "chapter": chapter_name,
-                "subsection": sec["title"],
-                "system": CHAPTER_SYSTEM.get(num, chapter_name),
-                "faFile": ch["file"],
-                "faItemIds": [f'{ch["file"]}::{sec["title"]}::{t}' for t in sec["topics"]],
-                "topicCount": count,
-                "yieldWeight": y_weight,
-                "foundationRank": f_rank,
-                "estMinutes": max(count * MIN_PER_TOPIC, MIN_PER_TOPIC),
-                "resources": CHAPTER_RESOURCES.get(num, ["FA"]),
-                "seedWeek": seed_week,
-            })
+            total_topics += sec["total"]
+            raw.append((ch, chapter_name, num, si, sec))
+
+    counts = sorted(r[4]["total"] for r in raw)
+    n = len(counts)
+
+    def size_rank(count):
+        # Fraction of units with a topicCount <= this one → big topics ≈ 1.0.
+        below = sum(1 for c in counts if c <= count)
+        return round(below / n, 3) if n else 0.0
+
+    # ── Pass 2: emit one unit per subsection.
+    units = []
+    for ch, chapter_name, num, si, sec in raw:
+        count = sec["total"]
+        y_weight, track, lead_week, color_key = CHAPTER_META.get(num, (3, "anchor", 6, "patho"))
+        key = f"{num}.{si:02d}"
+        units.append({
+            "key": key,
+            "chapterNum": num,
+            "chapter": chapter_name,
+            "subsection": sec["title"],
+            "system": CHAPTER_SYSTEM.get(num, chapter_name),
+            "colorKey": color_key,
+            "faFile": ch["file"],
+            "faItemIds": [f'{ch["file"]}::{sec["title"]}::{t}' for t in sec["topics"]],
+            "topicCount": count,
+            "yieldWeight": y_weight,
+            "track": track,
+            "leadWeek": lead_week,
+            "sizeRank": size_rank(count),
+            "hardness": HARDNESS.get(num, 0.5),
+            "estMinutes": max(count * MIN_PER_TOPIC, MIN_PER_TOPIC),
+            "resources": CHAPTER_RESOURCES.get(num, ["FA"]),
+        })
 
     out = {
         "examDate": EXAM_DATE,

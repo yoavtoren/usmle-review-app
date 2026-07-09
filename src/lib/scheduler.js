@@ -79,10 +79,16 @@ const DEFAULT_SETTINGS = {
   capacityPresets: { low: 90, med: 240, high: 420 },   // minutes incl. Anki
   ankiReserveMin: { low: 45, med: 60, high: 75 },
   blockMinutes: 30,
+  // "Big and bold first" priority weights (§3.1). weak (1.3) is intentionally the
+  // largest so wrong-answer topics always resurface; size + hard push the big,
+  // hard, marquee systems to the front. No foundation gating anymore.
   weights: {
-    yield: 1.0, weak: 1.3, urgency: 0.9,
-    foundation: 0.7, spacing: 0.5, interleave: 0.4,
+    yield: 1.0, size: 0.9, hard: 0.8, weak: 1.3,
+    urgency: 0.9, spacing: 0.5, interleave: 0.4,
   },
+  // Fraction of the non-Anki budget carved out for the daily 🎯 UWorld block and
+  // the 🧊 basics interleave; the rest is the 🔥 anchor (marquee system) budget.
+  trackSplit: { uworldPct: 0.25, basicsPct: 0.20 },
 };
 
 const DEFAULT_ADAPT = {
@@ -154,6 +160,22 @@ export function migrate(raw) {
   const state = { ...raw, version: 2 };
   if (!state.settings) state.settings = { ...DEFAULT_SETTINGS };
   if (!state.settings.goal) { state.settings = { ...state.settings, goal: { ...DEFAULT_GOAL } }; changed = true; }
+  // Migrate the priority model from foundations-first to "big and bold first":
+  // ensure size/hard weights + trackSplit exist and drop the retired foundation
+  // weight. Idempotent — only fills what's missing.
+  const w = state.settings.weights || {};
+  if (w.size == null || w.hard == null || w.foundation != null) {
+    const { foundation, ...rest } = w;
+    state.settings = {
+      ...state.settings,
+      weights: { ...DEFAULT_SETTINGS.weights, ...rest },
+    };
+    changed = true;
+  }
+  if (!state.settings.trackSplit) {
+    state.settings = { ...state.settings, trackSplit: { ...DEFAULT_SETTINGS.trackSplit } };
+    changed = true;
+  }
   if (!Array.isArray(state.assessments)) { state.assessments = []; changed = true; }
   if (!Array.isArray(state.tasks)) { state.tasks = []; changed = true; }
   return changed ? save(state) : state;
@@ -547,39 +569,22 @@ function interleaveBonus(u, recentSystems) {
   return 0;
 }
 
-// Foundation gate: organ-system units (foundationRank >= 2) are held back until
-// the fundamentals (rank <= 1) are mostly cleared, THEN released. This makes
-// "foundations dominate early" real even when a system is high-yield/weak — while
-// still letting the student swapIn() a system on demand (swap bypasses priority).
-const GATE_THRESHOLD = 0.6; // fraction of fundamentals done before systems flow
-const GATE_STRENGTH = 2.2;
-
-function foundationGate(state, units, u) {
-  if (u.foundationRank < 2 || state.phase === "dedicated") return 0;
-  let total = 0, cleared = 0;
-  for (const x of units) {
-    if (x.foundationRank <= 1) {
-      total += 1;
-      const s = state.units[x.key];
-      if (s && (s.status === "done" || s.status === "skim" || s.status === "dropped")) cleared += 1;
-    }
-  }
-  if (!total) return 0;
-  const fraction = cleared / total;
-  return GATE_STRENGTH * clamp01((GATE_THRESHOLD - fraction) / GATE_THRESHOLD);
-}
-
+// Priority (§3.1) — "big, hard, high-yield, and weak units dominate." There is
+// NO foundation gating: foundations (basics track) aren't forced to the front,
+// they ride the separate basics-interleave budget in planDay. size + hard push
+// the biggest, hardest marquee systems up; weak (largest weight) keeps your
+// wrong-answer topics resurfacing so they win ties even against fresh content.
 export function priority(state, units, u, dateISO, recentSystems = []) {
   const W = state.settings.weights;
   const st = state.units[u.key] || {};
   return (
     W.yield * (u.yieldWeight / 5) +
+    W.size * (u.sizeRank || 0) +
+    W.hard * (u.hardness || 0) +
     W.weak * (st.weaknessScore || 0) +
-    W.urgency * urgency(state, units, u, dateISO) -
-    W.foundation * (u.foundationRank / 3) +
+    W.urgency * urgency(state, units, u, dateISO) +
     W.spacing * spacingReadiness(state, u) +
-    W.interleave * interleaveBonus(u, recentSystems) -
-    foundationGate(state, units, u)
+    W.interleave * interleaveBonus(u, recentSystems)
   );
 }
 
@@ -622,56 +627,134 @@ export function planDay(state, units, dateISO, capacity) {
   const byKey = Object.fromEntries(units.map((u) => [u.key, u]));
   const recentSystems = recentCompletedSystems(s, byKey, dateISO);
 
+  // Track budgets (§3.2): carve out the 🎯 UWorld block and the 🧊 basics
+  // interleave first; the 🔥 anchor (marquee system) budget gets the majority.
+  const split = s.settings.trackSplit || DEFAULT_SETTINGS.trackSplit;
+  const dedicated = s.phase === "dedicated";
+  const uworldBudget = Math.round(budget * split.uworldPct);
+  const content = budget - uworldBudget;
+  const basicsBudget = Math.round(content * split.basicsPct);
+  const anchorBudget = content - basicsBudget;
+
   // Pool = not-done units (todo / scheduled / in_progress), plus weak units
   // awaiting a retention review whose spaced interval is due (§retention target).
-  const pool = units.filter((u) => {
+  const inPool = (u) => {
     const st = s.units[u.key] || {};
     if (["todo", "scheduled", "in_progress"].includes(st.status)) return true;
     return st.status === "review" && reviewDue(s, u);
-  });
-  const scored = pool
-    .map((u) => ({ u, p: priority(s, units, u, dateISO, recentSystems) }))
-    .sort((a, b) => b.p - a.p);
+  };
+  const scoreDesc = (a, b) => b.p - a.p;
+  const score = (list) => list.map((u) => ({ u, p: priority(s, units, u, dateISO, recentSystems) })).sort(scoreDesc);
 
+  // Greedy fill of a scored pool up to `cap`, scheduling each picked unit.
+  // In dedicated phase, anchor/basics distinction dissolves — everything is
+  // targeted review, so both budgets draw from the whole pool.
   const planned = [];
   let used = 0;
-  const target = budget * FILL;
-  for (const { u } of scored) {
-    if (used >= target) break;
-    const est = u.estMinutes;
-    if (planned.length === 0 && est > budget && capacity === "low") {
-      // Partial: schedule the top unit, carry the remainder.
-      planned.push(u.key);
-      s.units[u.key] = { ...s.units[u.key], status: "in_progress", plannedDate: dateISO };
-      used += budget;
-      break;
+  const fill = (scored, cap, { allowPartial = false } = {}) => {
+    const target = cap * FILL;
+    let localUsed = 0;
+    for (const { u } of scored) {
+      if (localUsed >= target) break;
+      if (planned.includes(u.key)) continue;
+      const est = u.estMinutes;
+      if (planned.length === 0 && allowPartial && est > budget && capacity === "low") {
+        planned.push(u.key);
+        s.units[u.key] = { ...s.units[u.key], status: "in_progress", plannedDate: dateISO };
+        used += budget; localUsed += budget;
+        break;
+      }
+      if (localUsed + est <= cap || planned.length === 0) {
+        planned.push(u.key);
+        s.units[u.key] = { ...s.units[u.key], status: "scheduled", plannedDate: dateISO };
+        used += est; localUsed += est;
+      }
     }
-    if (used + est <= budget || planned.length === 0) {
-      planned.push(u.key);
-      s.units[u.key] = { ...s.units[u.key], status: "scheduled", plannedDate: dateISO };
-      used += est;
-    }
-  }
+  };
 
-  // Reserve ~25% of non-Anki budget for a UWorld block (display hint).
-  const uworldMin = Math.round(budget * 0.25);
+  const anchorPool = score(units.filter((u) => inPool(u) && (dedicated || u.track === "anchor")));
+  fill(anchorPool, anchorBudget, { allowPartial: true });
+
+  // 🧊 Basics interleave: guaranteed daily, but never the same basics subject two
+  // days running (spaced-rotation guard) so foundations arrive as seasoning.
+  const yesterdayBasics = new Set(
+    (s.days[addDaysISO(dateISO, -1)]?.basics || [])
+      .map((k) => byKey[k]?.colorKey).filter(Boolean));
+  const basicsPool = score(
+    units.filter((u) => inPool(u) && u.track === "basics" && !yesterdayBasics.has(u.colorKey)));
+  const basicsStart = planned.length;
+  fill(basicsPool, basicsBudget);
+  const basics = planned.slice(basicsStart);
+  const anchor = planned.slice(0, basicsStart);
+
+  // 🎯 Daily UWorld block — a synthetic item planDay always emits (§16). Sized to
+  // the UWorld budget; studies yesterday's incorrects; system = today's anchor.
+  const perQ = s.profile?.resourceMinutesPerTopic?.UWorld || 1.5;
+  const anchorSystem = byKey[anchor[0]]?.system || byKey[planned[0]]?.system || "mixed";
+  const prevUworld = s.days[addDaysISO(dateISO, -1)]?.uworld;
+  const uworld = {
+    mode: dedicated ? "random" : "tutor",
+    system: dedicated ? "mixed" : anchorSystem,
+    targetQ: Math.max(dedicated ? 40 : 10, Math.round(uworldBudget / perQ)),
+    minutes: uworldBudget,
+    studyTargets: prevUworld?.missedUnits || [],
+    done: false, correct: null, total: null, missedSystems: [],
+  };
 
   const prevDay = s.days[dateISO] || {};
   s.days[dateISO] = {
     capacity,
     planned,
+    anchor,
+    basics,
+    uworld,
     completed: prevDay.completed || [],
     missed: prevDay.missed || [],
     ankiDone: prevDay.ankiDone || false,
     misses: prevDay.misses || [],
     ankiReserveMin: anki,
-    uworldMin,
+    uworldMin: uworldBudget,
     plannedMinutes: used,
     assessmentToday: assessmentToday?.id || null,
   };
 
   s = maybeSwitchPhase(s, dateISO);
   s = maybeRetune(s, dateISO);
+  return save(s);
+}
+
+// ── Daily UWorld block logging (§16) ─────────────────────────────────────────
+// Log a completed UWorld block: record correct/total, raise weakness for the
+// systems you missed, and queue those units as tomorrow's "study this miss"
+// targets. missedSystems is a list of unit `system` strings (from chips).
+export function recordUworld(state, units, { correct, total, missedSystems = [] }, dateISO = todayISO()) {
+  const s = { ...state, units: { ...state.units }, days: { ...state.days } };
+  const day = (s.days[dateISO] ||= { capacity: "med", planned: [], completed: [], missed: [], misses: [], ankiDone: false });
+  const missedSet = new Set(missedSystems);
+
+  // Units in a missed system get a weakness bump and a re-test (not `done` until
+  // the retention target of correct passes). Collect them as tomorrow's targets.
+  const missedUnits = [];
+  for (const u of units) {
+    if (!missedSet.has(u.system)) continue;
+    const st = s.units[u.key] || {};
+    s.units[u.key] = {
+      ...st,
+      weaknessScore: clamp01((st.weaknessScore || 0) + 0.2),
+      status: st.status === "done" ? "review" : st.status,
+      reviewStreak: st.status === "done" ? 0 : (st.reviewStreak || 0),
+    };
+    missedUnits.push(u.key);
+  }
+
+  day.uworld = {
+    ...(day.uworld || {}),
+    done: true,
+    correct: correct == null ? null : Number(correct),
+    total: total == null ? null : Number(total),
+    missedSystems: [...missedSet],
+    missedUnits,
+  };
   return save(s);
 }
 
@@ -1005,8 +1088,12 @@ function maybeRetune(state, dateISO) {
   }
   const dominant = Object.entries(rh).sort((a, b) => b[1] - a[1])[0];
   if (dominant && dominant[1] >= 3) {
-    if (dominant[0] === "focus") s.settings.weights.interleave = Math.min(s.settings.weights.interleave + 0.1, 1);
-    if (dominant[0] === "hard") s.settings.weights.foundation = Math.min(s.settings.weights.foundation + 0.1, 1.2);
+    // focus/hard both point to "too much hard content at once" — lean harder on
+    // interleave so easier basics/easy-win systems get mixed between the marquee
+    // anchors (more scaffolding without a foundation wall).
+    if (dominant[0] === "focus" || dominant[0] === "hard") {
+      s.settings.weights.interleave = Math.min(s.settings.weights.interleave + 0.1, 1);
+    }
   }
   return s;
 }
