@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { loadFATopics, saveFATopics, loadTasks, saveTasks, touchFASection } from "../lib/storage.js";
 import { chaptersFromText } from "../lib/faMap.js";
 import { markTaskInFA, lookupPage } from "../lib/faSync.js";
+import { FA_EDITION } from "../lib/firstAidData.js";
 import ReviewCharts from "./ReviewCharts.jsx";
 import { playPop } from "../lib/sound.js";
 
@@ -134,10 +135,15 @@ function DifficultyStars({ value, onChange }) {
             className={`fa-diff-star${on ? " fa-diff-star-on" : ""}`}
             style={on ? { color } : {}}
             onClick={e => { e.stopPropagation(); onChange(i === value ? 0 : i); }}
-            title={`Difficulty ${i}`}
+            title={`Difficulty ${i} — schedules spaced reviews`}
           >{on ? "●" : "○"}</button>
         );
       })}
+      {!value && (
+        <span style={{ fontSize: 10.5, color: "var(--muted)", marginLeft: 6, whiteSpace: "nowrap" }}>
+          Rating schedules spaced reviews
+        </span>
+      )}
     </span>
   );
 }
@@ -560,13 +566,13 @@ export default function FADashboard({ onBack, onTrack }) {
 
   return (
     <div className="fad-page">
-      <button className="back-btn" onClick={onBack}>← Home</button>
+      <button className="back-btn" onClick={onBack}>← Step 1</button>
 
       {/* Header */}
       <div className="fad-header">
         <div>
           <h1 className="fad-title">First Aid Progress</h1>
-          <p className="muted fad-sub">First Aid for USMLE Step 1 · 2026 — auto-saved to this browser</p>
+          <p className="muted fad-sub">{FA_EDITION} · USMLE Step 1 — auto-saved to this browser</p>
         </div>
         {onTrack && (
           <button className="dash-cta-btn" onClick={onTrack} style={{ flexShrink: 0 }}>
@@ -595,8 +601,11 @@ export default function FADashboard({ onBack, onTrack }) {
           </div>
           <div className="fad-vdiv" />
           <div className="fad-hero-stat">
-            <span className="fad-hero-num">{dueReviews.length > 0 ? dueReviews.length : activityLog.length}</span>
-            <span className="fad-hero-label">{dueReviews.length > 0 ? "Due reviews" : "Active days"}</span>
+            <span className="fad-hero-num">{dueReviews.length}</span>
+            <span className="fad-hero-label">Due reviews</span>
+            <span className="fad-hero-label" style={{ fontSize: 10, opacity: 0.75 }}>
+              {activityLog.length} active day{activityLog.length !== 1 ? "s" : ""}
+            </span>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import * as pdfjsLib from "pdfjs-dist";
 import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
-import { FA_PDF_URL, FA_INDEX_URL, FA_CONTENTS, FA_TOTAL_PAGES, FA_CMAP_URL, FA_STD_FONTS_URL } from "../lib/firstAidData.js";
+import { FA_PDF_URL, FA_INDEX_URL, FA_CONTENTS, FA_TOTAL_PAGES, FA_CMAP_URL, FA_STD_FONTS_URL, FA_EDITION } from "../lib/firstAidData.js";
 
 // pdf.js renders the PDF itself (to a canvas) instead of handing the file to the
 // browser's built-in PDF preview. That built-in viewer (esp. iOS WKWebView)
@@ -10,6 +10,11 @@ import { FA_PDF_URL, FA_INDEX_URL, FA_CONTENTS, FA_TOTAL_PAGES, FA_CMAP_URL, FA_
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 const LAST_PAGE_KEY = "fa-book-last-page";
+
+// Zoom multiplier applied on top of the fit-to-width baseline (1 = 100%).
+const ZOOM_MIN = 0.75;
+const ZOOM_MAX = 3;
+const ZOOM_STEP = 0.25;
 
 export default function FirstAidBook() {
   const [page, setPage]       = useState(() => {
@@ -23,11 +28,13 @@ export default function FirstAidBook() {
   const [openSec, setOpenSec] = useState(() => new Set(["s2", "s3"]));
   const [pageInput, setPageInput] = useState("");
   const [mobilePanel, setMobilePanel] = useState(false);
+  const [zoom, setZoom] = useState(1); // 1 = fit-to-width (100%)
 
   const pdfRef        = useRef(null);   // loaded PDFDocumentProxy
   const canvasRef     = useRef(null);
   const scrollRef     = useRef(null);   // scroll container (measured for fit-width)
   const renderTaskRef = useRef(null);   // in-flight RenderTask, so we can cancel
+  const lastRenderedPageRef = useRef(0); // preserve scroll position on same-page re-renders (zoom/resize)
 
   // Load the document once with pdf.js
   useEffect(() => {
@@ -85,8 +92,12 @@ export default function FirstAidBook() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const base = pg.getViewport({ scale: 1 });
     const avail = Math.max(240, scroll.clientWidth - 32); // 16px padding each side
-    const scale = (avail / base.width) * dpr;
+    const scale = (avail / base.width) * zoom * dpr; // fit-to-width is the 100% baseline
     const viewport = pg.getViewport({ scale });
+
+    // Same-page re-render (zoom / resize): keep the reader's relative position.
+    const samePage = lastRenderedPageRef.current === page;
+    const prevFrac = scroll.scrollHeight > 0 ? scroll.scrollTop / scroll.scrollHeight : 0;
 
     canvas.width = Math.floor(viewport.width);
     canvas.height = Math.floor(viewport.height);
@@ -98,9 +109,10 @@ export default function FirstAidBook() {
     renderTaskRef.current = task;
     try {
       await task.promise;
-      scroll.scrollTop = 0;
+      lastRenderedPageRef.current = page;
+      scroll.scrollTop = samePage ? prevFrac * scroll.scrollHeight : 0;
     } catch { /* render cancelled — expected on rapid page changes */ }
-  }, [page]);
+  }, [page, zoom]);
 
   // Re-render on ready / page change
   useEffect(() => {
@@ -124,6 +136,40 @@ export default function FirstAidBook() {
     localStorage.setItem(LAST_PAGE_KEY, String(n));
     setMobilePanel(false);
   }, []);
+
+  const zoomBy = useCallback((delta) => {
+    setZoom(z => Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.round((z + delta) * 100) / 100)));
+  }, []);
+
+  // Pinch-zoom: trackpad pinch / ctrl+wheel (and cmd+wheel) over the page.
+  useEffect(() => {
+    const scroll = scrollRef.current;
+    if (!scroll) return;
+    const onWheel = (e) => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      zoomBy(e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP);
+    };
+    scroll.addEventListener("wheel", onWheel, { passive: false });
+    return () => scroll.removeEventListener("wheel", onWheel);
+  }, [zoomBy]);
+
+  // Keyboard page navigation (skipped while typing in the search / page inputs).
+  useEffect(() => {
+    const onKey = (e) => {
+      const t = e.target;
+      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable)) return;
+      if (e.key === "ArrowLeft" || e.key === "PageUp") {
+        e.preventDefault();
+        go(page - 1);
+      } else if (e.key === "ArrowRight" || e.key === "PageDown") {
+        e.preventDefault();
+        go(page + 1);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [go, page]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -151,8 +197,8 @@ export default function FirstAidBook() {
       <aside className={`fa-side${mobilePanel ? " open" : ""}`}>
         <div className="fa-side-hd">
           <div>
-            <h1 className="fa-side-title">First Aid 2025</h1>
-            <p className="fa-side-sub">Step 1 · {FA_TOTAL_PAGES} עמ'</p>
+            <h1 className="fa-side-title">{FA_EDITION}</h1>
+            <p className="fa-side-sub">Step 1 · {FA_TOTAL_PAGES} p.</p>
           </div>
         </div>
 
@@ -162,7 +208,7 @@ export default function FirstAidBook() {
             className="fa-search"
             value={query}
             onChange={e => setQuery(e.target.value)}
-            placeholder="🔍 חפש נושא (אנגלית)…"
+            placeholder="🔍 Search topics…"
           />
           {query && <button className="fa-search-clear" onClick={() => setQuery("")}>✕</button>}
         </div>
@@ -170,7 +216,7 @@ export default function FirstAidBook() {
         {/* Search results OR contents tree */}
         {query.trim().length >= 2 ? (
           <div className="fa-results">
-            <div className="fa-results-hd">{results.length ? `${results.length} תוצאות` : "אין תוצאות"}</div>
+            <div className="fa-results-hd">{results.length ? `${results.length} results` : "No results"}</div>
             {results.map((e, i) => (
               <button key={i} className="fa-result" onClick={() => go(e.p)}>
                 <span className="fa-result-t">{e.t}</span>
@@ -211,7 +257,7 @@ export default function FirstAidBook() {
       {/* ── Viewer ── */}
       <main className="fa-viewer">
         <div className="fa-toolbar">
-          <button className="fa-mobile-toggle" onClick={() => setMobilePanel(p => !p)}>☰ תוכן</button>
+          <button className="fa-mobile-toggle" onClick={() => setMobilePanel(p => !p)}>☰ Contents</button>
           <div className="fa-pager">
             <button className="fa-pg-btn" onClick={() => go(page - 1)} disabled={page <= 1}>‹</button>
             <form
@@ -228,26 +274,54 @@ export default function FirstAidBook() {
             </form>
             <button className="fa-pg-btn" onClick={() => go(page + 1)} disabled={page >= FA_TOTAL_PAGES}>›</button>
           </div>
+          <div className="fa-pager">
+            <button className="fa-pg-btn" onClick={() => zoomBy(-ZOOM_STEP)} disabled={zoom <= ZOOM_MIN} title="Zoom out">−</button>
+            <button
+              className="fa-pg-btn"
+              style={{ width: "auto", padding: "0 10px", fontSize: 12, fontVariantNumeric: "tabular-nums" }}
+              onClick={() => setZoom(1)}
+              title="Reset zoom (fit width)"
+            >
+              {Math.round(zoom * 100)}%
+            </button>
+            <button className="fa-pg-btn" onClick={() => zoomBy(ZOOM_STEP)} disabled={zoom >= ZOOM_MAX} title="Zoom in">+</button>
+          </div>
         </div>
 
         <div className="fa-stage">
-          {status === "loading" && <div className="fa-state">טוען ספר…</div>}
+          {status === "loading" && <div className="fa-state">Loading book…</div>}
           {status === "error" && (
-            <div className="fa-unavail">
+            <div className="fa-unavail" dir="ltr">
               <div className="fa-unavail-icon">📕</div>
-              <h2>הספר זמין במחשב שלך בלבד</h2>
+              <h2>The book is only available in the local app</h2>
               <p>
-                עותק ה‑First Aid נשמר מקומית ולא הועלה לאתר הציבורי (זכויות יוצרים + גודל הקובץ).
-                הרץ את האפליקציה מקומית כדי לקרוא — התוכן והניווט עובדים, וכל לחיצה תפתח את העמוד הנכון.
+                The First Aid copy is stored locally and is not uploaded to the public site
+                (copyright + file size). Run the app locally to read — the contents and
+                navigation still work, and every click opens the right page.
               </p>
               <p className="fa-unavail-hint">
-                העמוד הנבחר כעת: <strong>{page}</strong>. דפדוף בתוכן עדיין שומר את מיקומך.
+                Currently selected page: <strong>{page}</strong>. Browsing the contents still saves your place.
+                If you see this in the desktop or iPad app, quit and relaunch the app to retry.
               </p>
               {errDetail && <p className="fa-unavail-detail" dir="ltr">{errDetail}</p>}
             </div>
           )}
-          <div className="fa-scroll" ref={scrollRef} style={{ display: status === "ready" ? "flex" : "none" }}>
-            <canvas ref={canvasRef} className="fa-canvas" />
+          <div
+            className="fa-scroll"
+            ref={scrollRef}
+            style={{
+              display: status === "ready" ? "flex" : "none",
+              // LTR + start-aligned so a zoomed page stays fully reachable by scrolling;
+              // the canvas centers itself via auto margins when it fits.
+              direction: "ltr",
+              justifyContent: "flex-start",
+            }}
+          >
+            <canvas
+              ref={canvasRef}
+              className="fa-canvas"
+              style={{ margin: "0 auto", maxWidth: zoom > 1 ? "none" : "100%" }}
+            />
           </div>
         </div>
       </main>

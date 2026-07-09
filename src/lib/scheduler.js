@@ -6,6 +6,7 @@
 
 import { INTERVALS, loadProgress, loadTestLog } from "./storage.js";
 import { chaptersFromText } from "./faMap.js";
+import { EXAM_DATE_ISO, localISODate } from "./config.js";
 
 // Maps each plan-unit system (short vocab) to the substrings that identify its
 // rows in the UWorld/NBME stat breakdown (subjects + systems taxonomy). Lets the
@@ -73,7 +74,7 @@ export const REASONS = [
 export const CAPACITY_LABELS = { low: "🌱 Low", med: "🌿 Medium", high: "🌳 High" };
 
 const DEFAULT_SETTINGS = {
-  examDate: "2026-10-11",
+  examDate: EXAM_DATE_ISO,
   contentDeadline: "2026-09-14",
   ankiProtected: true,
   capacityPresets: { low: 90, med: 240, high: 420 },   // minutes incl. Anki
@@ -121,7 +122,7 @@ const STANDARD_ASSESSMENTS = [
 
 const clamp01 = (x) => Math.max(0, Math.min(1, x));
 const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
-export const todayISO = () => new Date().toISOString().slice(0, 10);
+export const todayISO = () => localISODate(); // local date — toISOString() is "yesterday" in +TZ evenings
 const isoToMs = (iso) => new Date(`${iso}T00:00:00`).getTime();
 // Local-consistent inverse of isoToMs (toISOString would drift a day in +TZ like Israel).
 const msToISO = (ms) => {
@@ -771,7 +772,7 @@ export function recordUworld(state, units, { correct, total, missedSystems = [] 
 
 // ── Completion / miss (§4) ───────────────────────────────────────────────────
 export function recordDone(state, unitKey, actualMinutes, dateISO = todayISO()) {
-  const s = { ...state, units: { ...state.units }, days: { ...state.days }, adaptation: { ...state.adaptation } };
+  const s = { ...state, units: { ...state.units }, days: { ...state.days }, adaptation: { ...state.adaptation, focusByHour: { ...state.adaptation.focusByHour } } };
   const st = s.units[unitKey] || {};
   // Retention: a weak unit isn't retired until it comes back correct `target`
   // times on spaced review (profile.retention.weakTopicReviewTarget, default 1).
@@ -779,6 +780,16 @@ export function recordDone(state, unitKey, actualMinutes, dateISO = todayISO()) 
   const weak = (st.weaknessScore || 0) >= 0.4;
   const nextStreak = (st.reviewStreak || 0) + 1;
   const retire = !weak || nextStreak >= target;
+  const hr = new Date().getHours();
+  // Snapshot everything this mutator changes so undoDone can restore it exactly.
+  s.lastDone = {
+    key: unitKey, date: dateISO,
+    prevUnit: { ...st },
+    prevWasCompleted: (s.days[dateISO]?.completed || []).includes(unitKey),
+    prevEMA: s.adaptation.completionRateEMA,
+    hr, prevFocus: s.adaptation.focusByHour[hr] ?? null,
+    prevBestWindow: s.adaptation.bestFocusWindow,
+  };
   s.units[unitKey] = {
     ...st, status: retire ? "done" : "review", completedDate: dateISO,
     lastTouched: Date.now(), actualMinutes: actualMinutes ?? st.actualMinutes,
@@ -789,10 +800,31 @@ export function recordDone(state, unitKey, actualMinutes, dateISO = todayISO()) 
   day.missed = (day.missed || []).filter((k) => k !== unitKey);
 
   // done-rate by start hour + completion EMA up
-  const hr = new Date().getHours();
   bumpFocusHour(s.adaptation, hr, 1);
   s.adaptation.completionRateEMA = ema(s.adaptation.completionRateEMA, 1, 0.2);
   deriveBestWindow(s.adaptation);
+  return save(s);
+}
+
+// Inverse of recordDone — restores the unit, the day's completed list, and the
+// adaptation stats from the snapshot recordDone captured. One level deep only.
+export function undoDone(state, unitKey) {
+  const u = state.lastDone;
+  if (!u || (unitKey && u.key !== unitKey)) return state;
+  const s = {
+    ...state, units: { ...state.units }, days: { ...state.days },
+    adaptation: { ...state.adaptation, focusByHour: { ...state.adaptation.focusByHour } },
+  };
+  s.units[u.key] = { ...u.prevUnit };
+  const day = s.days[u.date];
+  if (day && !u.prevWasCompleted) {
+    s.days[u.date] = { ...day, completed: (day.completed || []).filter((k) => k !== u.key) };
+  }
+  s.adaptation.completionRateEMA = u.prevEMA;
+  if (u.prevFocus == null) delete s.adaptation.focusByHour[u.hr];
+  else s.adaptation.focusByHour[u.hr] = u.prevFocus;
+  s.adaptation.bestFocusWindow = u.prevBestWindow;
+  delete s.lastDone;
   return save(s);
 }
 

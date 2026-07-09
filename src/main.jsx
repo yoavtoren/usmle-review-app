@@ -6,7 +6,17 @@ import { cleanupRemovedAreas, maybeAutoReset } from "./lib/storage.js";
 import { initNative } from "./lib/native.js";
 import { initICloudSync } from "./lib/icloudSync.js";
 import { initSound } from "./lib/sound.js";
+import { SUBJECTS } from "./lib/subjectColors.js";
 import "./styles.css";
+
+// Subject palette lives in subjectColors.js — project it onto the CSS custom
+// props at boot so the stylesheet's --subj-* vars can never drift from the JS.
+function injectSubjectColors() {
+  const root = document.documentElement;
+  for (const [key, { hex }] of Object.entries(SUBJECTS)) {
+    root.style.setProperty(`--subj-${key}`, hex);
+  }
+}
 
 function render() {
   createRoot(document.getElementById("root")).render(
@@ -19,6 +29,8 @@ function render() {
 }
 
 async function boot() {
+  injectSubjectColors();
+
   // One-time reset: wipe saved tasks/events from removed areas, keep USMLE progress.
   cleanupRemovedAreas();
 

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   loadEmailConfig, saveEmailConfig, isConfigured, buildDigest, sendDigest,
   getEmailLog, clearEmailLog,
@@ -19,6 +19,10 @@ export default function EmailCenter({ onClose, testStats, faStats }) {
   const [status, setStatus] = useState(null); // {kind, msg}
   const [sending, setSending] = useState(false);
   const [log, setLog] = useState(getEmailLog);
+  const [confirmClear, setConfirmClear] = useState(false); // inline "בטוח?" confirm for clear-history
+  const confirmTimer = useRef(null);
+
+  useEffect(() => () => clearTimeout(confirmTimer.current), []);
 
   const configured = isConfigured(cfg);
 
@@ -97,11 +101,13 @@ export default function EmailCenter({ onClose, testStats, faStats }) {
                 ))}
               </div>
 
-              {status && (
-                <div className={`mc-status ${status.kind}`}>
-                  {status.kind === "ok" ? <IconCheck size={15} /> : "⚠"} {status.msg}
-                </div>
-              )}
+              <div aria-live="polite">
+                {status && (
+                  <div className={`mc-status ${status.kind}`}>
+                    {status.kind === "ok" ? <IconCheck size={15} /> : "⚠"} {status.msg}
+                  </div>
+                )}
+              </div>
 
               <div className="mc-actions">
                 <button className="btn-secondary" onClick={onClose}>סגור</button>
@@ -190,7 +196,25 @@ export default function EmailCenter({ onClose, testStats, faStats }) {
                 </div>
               ))}
               {log.length > 0 && (
-                <button className="mc-clear" onClick={() => { clearEmailLog(); setLog([]); }}>נקה היסטוריה</button>
+                <button
+                  className="mc-clear"
+                  style={confirmClear ? { color: "var(--bad)", fontWeight: 700 } : undefined}
+                  onClick={() => {
+                    // Two-tap inline confirm: first tap arms "בטוח?", second clears; disarms after ~3s.
+                    if (!confirmClear) {
+                      setConfirmClear(true);
+                      clearTimeout(confirmTimer.current);
+                      confirmTimer.current = setTimeout(() => setConfirmClear(false), 3000);
+                      return;
+                    }
+                    clearTimeout(confirmTimer.current);
+                    setConfirmClear(false);
+                    clearEmailLog();
+                    setLog([]);
+                  }}
+                >
+                  {confirmClear ? "בטוח? לחץ שוב לניקוי" : "נקה היסטוריה"}
+                </button>
               )}
             </div>
           )}

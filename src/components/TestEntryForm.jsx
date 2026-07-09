@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { SUBJECTS, SYSTEMS, pct } from "../lib/progressData.js";
+import { localISODate } from "../lib/config.js";
 
 // Single entry form for one UWorld / NBME sitting. Captures the overall result,
 // its date, how you felt that day, and the full per-subject / per-system stat
@@ -21,7 +22,7 @@ export function emptyEntry() {
   return {
     id: Date.now(),
     testNum: "",
-    date: new Date().toISOString().slice(0, 10),
+    date: localISODate(),
     score: "",
     uworldAvg: "",
     questionCount: "",
@@ -47,7 +48,7 @@ function toneFor(p) {
   return "bad";
 }
 
-export default function TestEntryForm({ draft, onCancel, onSave }) {
+export default function TestEntryForm({ draft, onCancel, onSave, defaultName }) {
   const [d, setD] = useState(draft);
   const [tab, setTab] = useState("subjects");
   // Starts expanded: this grid is the only place per-subject/system scores get
@@ -91,7 +92,8 @@ export default function TestEntryForm({ draft, onCancel, onSave }) {
     out.score = d.score !== "" && d.score != null ? Math.round(Number(d.score)) : (computedScore ?? null);
     out.uworldAvg = d.uworldAvg !== "" && d.uworldAvg != null ? Math.round(Number(d.uworldAvg)) : null;
     out.questionCount = d.questionCount !== "" && d.questionCount != null ? Math.round(Number(d.questionCount)) : null;
-    out.testNum = (d.testNum || "").trim() || "UWorld test";
+    // Blank name → auto-number from the existing log ("UWorld test 3").
+    out.testNum = (d.testNum || "").trim() || defaultName || "UWorld test";
     if (!out.feeling?.mood && !out.feeling?.note) out.feeling = null;
     out.createdAt = d.createdAt || Date.now();
     return out;
@@ -122,7 +124,7 @@ export default function TestEntryForm({ draft, onCancel, onSave }) {
         </div>
         <div className="td-form-field">
           <label className="td-label">Date</label>
-          <input className="td-input" type="date" value={d.date} onChange={(e) => set("date", e.target.value)} />
+          <input className="td-input" type="date" value={d.date} max={localISODate()} onChange={(e) => set("date", e.target.value)} />
         </div>
         <div className="td-form-field">
           <label className="td-label">
@@ -204,7 +206,7 @@ export default function TestEntryForm({ draft, onCancel, onSave }) {
         )}
       </div>
 
-      {err && <p className="td-form-err">{err}</p>}
+      {err && <p className="td-form-err" role="alert">{err}</p>}
       <div className="te-form-foot">
         <span className="muted">{filled} topic{filled === 1 ? "" : "s"} filled</span>
         <div className="te-form-actions">

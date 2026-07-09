@@ -3,6 +3,8 @@
 // The PDF itself is local-only (public/firstaid/FA2025.pdf, gitignored).
 
 const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") || "";
+// Single source of truth for the bundled edition (the PDF is FA2025).
+export const FA_EDITION = "First Aid 2025";
 export const FA_PDF_URL   = `${BASE}/firstaid/FA2025.pdf`;
 export const FA_INDEX_URL = `${BASE}/firstaid/fa-index.json`;
 export const FA_TOTAL_PAGES = 865;

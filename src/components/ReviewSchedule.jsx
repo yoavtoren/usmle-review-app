@@ -17,7 +17,7 @@ export default function ReviewSchedule({ questions = [], onStart }) {
         <span className="rs-title">Review schedule</span>
         {s.paused
           ? <span className="rs-pause">⏸ Paused</span>
-          : <span className="rs-sub">spaced repetition · 1 → 3 → 7 → 16 → 35 days</span>}
+          : <span className="rs-sub">spaced repetition · {INTERVALS.join(" → ")} days</span>}
       </div>
 
       {/* Due-now hero */}

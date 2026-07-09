@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   SUBJECTS, SYSTEMS, loadSnapshots, trendFor, weakSpots, overall,
@@ -27,9 +27,23 @@ export default function ProgressTracker() {
   const [snaps, setSnaps] = useState(loadSnapshots);
   const [kind, setKind]   = useState("subjects");
   const [sort, setSort]   = useState("worst"); // worst | best | name
+  const [confirmDelId, setConfirmDelId] = useState(null); // armed delete (inline "Sure?" confirm)
+  const confirmTimer = useRef(null);
+
+  useEffect(() => () => clearTimeout(confirmTimer.current), []);
 
   function refresh() { setSnaps(loadSnapshots()); }
+  // Two-tap inline confirm (same pattern as the Tests page): first tap arms
+  // "Sure?", second tap deletes, disarms after ~3s.
   function deleteTest(id) {
+    if (confirmDelId !== id) {
+      setConfirmDelId(id);
+      clearTimeout(confirmTimer.current);
+      confirmTimer.current = setTimeout(() => setConfirmDelId(null), 3000);
+      return;
+    }
+    clearTimeout(confirmTimer.current);
+    setConfirmDelId(null);
     saveTestLog(loadTestLog().filter((t) => t.id !== id));
     refresh();
   }
@@ -181,8 +195,10 @@ export default function ProgressTracker() {
                   </span>
                   <button className="prog-hist-btn" onClick={() => nav("/tests", { state: { editId: s.id } })}>Edit in Tests</button>
                   <button className="prog-hist-btn prog-hist-del"
-                    onClick={() => { if (confirm(`Delete the test from ${fmtDate(s.date)}? This removes its result and stats.`)) deleteTest(s.id); }}>
-                    Delete
+                    onClick={() => deleteTest(s.id)}
+                    title={confirmDelId === s.id ? "Tap again to delete — removes this test's result and stats" : "Delete this test"}
+                    style={confirmDelId === s.id ? { borderColor: "var(--bad)", color: "var(--bad)", background: "var(--bad-soft)", fontWeight: 700 } : undefined}>
+                    {confirmDelId === s.id ? "Sure?" : "Delete"}
                   </button>
                 </div>
               );

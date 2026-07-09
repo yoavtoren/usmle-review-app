@@ -5,10 +5,10 @@ import {
   IconChevronDown, IconArrow, IconBox, IconPulse, IconCalendar, IconClipboard,
 } from "./icons.jsx";
 import { GanttView, CalendarView, PlannerViewTabs } from "./PlannerViews.jsx";
-import { getStreak, recordActivity } from "../lib/storage.js";
+import { getStreak, recordActivity, loadGeneralTasks } from "../lib/storage.js";
 import {
   loadSched, ensureUnits, ensurePlanExtras, applyProfile, recomputeWeakness, planDay, rollover,
-  recordDone, recordMiss, toggleAnki, swapIn, searchUnits, feasibility,
+  recordDone, undoDone, recordMiss, toggleAnki, swapIn, searchUnits, feasibility,
   applyTriage, ankiNewCardHint, updateSettings, exportSched, importSched,
   setGoal, seedAssessments, upsertAssessment, logAssessment, removeAssessment,
   addTask, toggleTask, deleteTask, projectReadiness, effectiveTarget,
@@ -41,6 +41,8 @@ export default function Planner() {
   const [sched, setSched] = useState(null);
   const [ready, setReady] = useState(false);
   const [view, setView] = useState("today");   // today | timeline | calendar
+  const [undoable, setUndoable] = useState(null); // { key } — shows "Done — Undo" for ~10s
+  const undoTimer = useRef();
   const date = todayISO();
 
   // One-time bootstrap: seed state, register units, backfill v2 extras
@@ -75,7 +77,19 @@ export default function Planner() {
   /* ── mutators (each returns fresh state) ── */
   const mutate = (fn) => setSched((prev) => fn(prev));
   const pickCapacity = (cap) => mutate((s) => planDay(s, units, date, cap));
-  const markDone = (key, mins) => { recordActivity(); mutate((s) => recordDone(s, key, mins, date)); };
+  const markDone = (key, mins) => {
+    recordActivity();
+    mutate((s) => recordDone(s, key, mins, date));
+    setUndoable({ key });
+    clearTimeout(undoTimer.current);
+    undoTimer.current = setTimeout(() => setUndoable(null), 10000);
+  };
+  const onUndoDone = () => {
+    if (!undoable) return;
+    clearTimeout(undoTimer.current);
+    mutate((s) => undoDone(s, undoable.key));
+    setUndoable(null);
+  };
   const markMiss = (key, reason, note) => mutate((s) => recordMiss(s, key, reason, note, date));
   const doSwap = (key) => mutate((s) => swapIn(s, units, key, date));
   const flipAnki = () => mutate((s) => toggleAnki(s, date));
@@ -95,7 +109,14 @@ export default function Planner() {
 
   const dedicated = sched.phase === "dedicated";
   const phaseBadge = dedicated ? { label: "Dedicated", cls: "ded" } : { label: "Content", cls: "con" };
+  const examPassed = date > sched.settings.examDate;
   const readiness = projectReadiness(sched);
+  // Day progress: planned content blocks + Anki + the daily UWorld block.
+  const dayTotal = plannedKeys.length + 1 + (today?.uworld ? 1 : 0);
+  const dayDone = plannedKeys.filter((k) => completed.has(k)).length
+    + (today?.ankiDone ? 1 : 0) + (today?.uworld?.done ? 1 : 0);
+  // Read-only peek at the general (non-study) task store for a cross-link.
+  const generalToday = loadGeneralTasks().filter((t) => !t.done && t.date && t.date <= date).length;
   const allDone = capacity && plannedKeys.length > 0 && plannedKeys.every((k) => completed.has(k)) && today?.ankiDone;
   const simToday = today?.assessmentToday
     ? (sched.assessments || []).find((a) => a.id === today.assessmentToday)
@@ -131,7 +152,21 @@ export default function Planner() {
       {view === "timeline" && <GanttView sched={sched} units={units} />}
       {view === "calendar" && <CalendarView sched={sched} units={units} nav={nav} />}
 
-      {view === "today" && (<>
+      {/* Terminal state: past the exam date, scheduling output is meaningless. */}
+      {view === "today" && examPassed && (
+        <div className="pl-card pl-alldone">
+          <span className="pl-alldone-ico"><IconCheck size={22} /></span>
+          <div>
+            <h3>Exam date has passed</h3>
+            <p className="muted">
+              This plan ended {fmtShort(sched.settings.examDate)}. Set a new exam date in
+              Settings &amp; backup below, or export your progress there to archive the plan.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {view === "today" && !examPassed && (<>
       {/* In dedicated phase, readiness + checkpoints lead. */}
       {dedicated && goalCard}
       {dedicated && assessCard}
@@ -144,6 +179,14 @@ export default function Planner() {
 
       {/* ═══ Capacity picker ═══ */}
       <CapacityPicker current={capacity} onPick={pickCapacity} presets={sched.settings.capacityPresets} bias={sched.adaptation.capacityBiasMin} />
+
+      {/* Mid-day progress meter */}
+      {capacity && dayTotal > 0 && (
+        <p className="muted" style={{ margin: "2px 4px 10px", fontSize: "0.85rem" }}>
+          <b className="num">{dayDone}</b> / <span className="num">{dayTotal}</span> done today
+          <span className="muted"> · blocks + Anki + UWorld</span>
+        </p>
+      )}
 
       {!capacity ? (
         <div className="pl-empty">
@@ -165,9 +208,18 @@ export default function Planner() {
             onToggle={flipAnki}
           />
 
-          {/* Active task */}
+          {/* Transient undo affordance after "Mark done" */}
+          {undoable && (
+            <div className="pl-done-banner">
+              <span className="pl-done-ico"><IconCheck size={16} /></span>
+              <span>Done · <button className="btn-ghost btn-xs" onClick={onUndoDone}>Undo</button></span>
+            </div>
+          )}
+
+          {/* Active task — keyed so Start/reason state never leaks to the next unit */}
           {activeUnit ? (
             <ActiveTask
+              key={activeUnit.key}
               unit={activeUnit}
               state={sched.units[activeUnit.key]}
               onDone={(mins) => markDone(activeUnit.key, mins)}
@@ -183,7 +235,7 @@ export default function Planner() {
           )}
 
           {/* Today's tasks */}
-          <TasksCard tasks={sched.tasks || []} date={date} onAdd={onAddTask} onToggle={onToggleTask} onDelete={onDeleteTask} />
+          <TasksCard tasks={sched.tasks || []} date={date} onAdd={onAddTask} onToggle={onToggleTask} onDelete={onDeleteTask} generalCount={generalToday} nav={nav} />
 
           {/* Up next */}
           <UpNext
@@ -219,23 +271,47 @@ export default function Planner() {
   );
 }
 
+/* ─────────────────────────── inline confirm ─────────────────────────── */
+// Two-tap destructive action: first tap arms ("Sure?"), second tap executes.
+// Disarms automatically after 3s. `label` may be JSX (e.g. an icon).
+function ConfirmButton({ className, label, armedLabel = "Sure?", onConfirm, ...rest }) {
+  const [armed, setArmed] = useState(false);
+  const timer = useRef();
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const click = () => {
+    if (armed) { clearTimeout(timer.current); setArmed(false); onConfirm(); return; }
+    setArmed(true);
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setArmed(false), 3000);
+  };
+  return (
+    <button {...rest} className={className} onClick={click}
+      style={armed ? { color: "var(--bad)", ...(rest.style || {}) } : rest.style}>
+      {armed ? armedLabel : label}
+    </button>
+  );
+}
+
 /* ─────────────────────────── feasibility ─────────────────────────── */
 function FeasibilityBar({ feas, onTriage, settings, readiness }) {
-  const pct = Math.min(100, Math.round((1 / Math.max(feas.ratio, 0.01)) * 100));
+  // Fill encodes load directly (workload as a share of remaining capacity):
+  // fuller = more loaded, >100% = over-committed. Clamped for display.
+  const loadPct = Math.round(feas.ratio * 100);
+  const fillPct = Math.max(4, Math.min(100, loadPct));
   const label = {
     green: "On track", amber: "Slightly behind", red: "Behind — triage needed", ahead: "Ahead of pace",
   }[feas.status];
-  const msg = feas.status === "green" || feas.status === "ahead"
-    ? `On track to finish content by ${feas.etaLabel} · ${settings.contentDeadline} deadline`
-    : `${feas.finishDays} study-days of work left · ${feas.daysLeft} days to the ${settings.contentDeadline} deadline`;
+  const msg = `Workload vs. capacity: ${feas.finishDays} day${feas.finishDays === 1 ? "" : "s"} of work · ${feas.daysLeft} days to the ${settings.contentDeadline} deadline`;
   const belowGoal = readiness && readiness.status !== "baseline" && readiness.gap < -5;
   return (
     <div className={`pl-feas ${feas.status}`}>
       <div className="pl-feas-top">
         <span className="pl-feas-status"><span className="pl-feas-dot" /> {label}</span>
-        <span className="pl-feas-eta num">{Math.round(feas.remainingMin / 60)}h left · ETA {feas.etaLabel}</span>
+        <span className="pl-feas-eta num">{Math.round(feas.remainingMin / 60)}h left · ETA {feas.etaLabel} · load {loadPct}%</span>
       </div>
-      <div className="pl-feas-track"><span className="pl-feas-fill" style={{ width: `${Math.max(6, pct)}%` }} /></div>
+      <div className="pl-feas-track" title={`Workload is ${loadPct}% of remaining capacity`}>
+        <span className="pl-feas-fill" style={{ width: `${fillPct}%` }} />
+      </div>
       <div className="pl-feas-foot">
         <span className="muted">{msg}</span>
         <span className="pl-feas-foot-actions">
@@ -322,6 +398,9 @@ function ActiveTask({ unit, state, onDone, onMiss, blockMinutes, dedicated }) {
         <div className="pl-active-meta">
           <span className="pl-meta-pill"><IconClock size={12} /> ~{unit.estMinutes}m · {blocks} block{blocks > 1 ? "s" : ""}</span>
           <span className="pl-meta-pill"><IconBox size={12} /> {unit.topicCount} topics</span>
+          {(state?.postponeCount || 0) >= 1 && (
+            <span className="pl-meta-pill" title="Rolled over from a previous day">↻ rolled over ×{state.postponeCount}</span>
+          )}
           {weak && <span className="pl-meta-pill danger"><IconTarget size={12} /> weak spot · {Math.round(state.weaknessScore * 100)}%</span>}
           {unit.resources.map((r) => <span key={r} className="pl-res">{r}</span>)}
         </div>
@@ -375,12 +454,14 @@ function UpNext({ keys, byKey, states }) {
           {keys.map((k) => {
             const u = byKey[k]; if (!u) return null;
             const weak = (states[k]?.weaknessScore || 0) >= 0.4;
+            const slips = states[k]?.postponeCount || 0;
             const c = colorFor(u.colorKey || u.system);
             return (
               <li key={k} className="pl-upnext-item">
                 <span className="pl-upnext-dot" style={{ background: c.hex }} />
                 <span className="pl-subj-emoji">{c.emoji}</span>
                 <span className="pl-upnext-name">{u.chapter.replace(/^\d+\s/, "")} <span className="pl-sep">›</span> {u.subsection.replace(/^\d+\s/, "")}</span>
+                {slips >= 1 && <span className="pl-upnext-flag" title="Rolled over from a previous day">↻×{slips}</span>}
                 {weak && <span className="pl-upnext-flag">weak</span>}
                 <span className="pl-upnext-min num">{u.estMinutes}m</span>
               </li>
@@ -408,11 +489,13 @@ function UworldBlock({ uworld, minutes, phase, byKey, onLog }) {
   const studyLabels = (uw.studyTargets || []).map((k) => byKey[k]).filter(Boolean);
 
   const toggleSys = (sys) => setMissed((m) => (m.includes(sys) ? m.filter((x) => x !== sys) : [...m, sys]));
-  const submit = () => onLog({
-    correct: correct === "" ? null : Number(correct),
-    total: total === "" ? null : Number(total),
-    missedSystems: missed,
-  });
+  const submit = () => {
+    // Clamp before saving: both >= 0, and correct can never exceed total.
+    const t = total === "" ? null : Math.max(0, Math.round(Number(total) || 0));
+    let c = correct === "" ? null : Math.max(0, Math.round(Number(correct) || 0));
+    if (c != null && t != null && c > t) c = t;
+    onLog({ correct: c, total: t, missedSystems: missed });
+  };
 
   return (
     <div className="pl-card pl-uworld-card track-uworld">
@@ -570,7 +653,7 @@ function ReadinessSpark({ pts, target, passLine }) {
 }
 
 /* ─────────────────────────── today's tasks ─────────────────────────── */
-function TasksCard({ tasks, date, onAdd, onToggle, onDelete }) {
+function TasksCard({ tasks, date, onAdd, onToggle, onDelete, generalCount = 0, nav }) {
   const [text, setText] = useState("");
   const [due, setDue] = useState("");
   const visible = tasks.filter((t) =>
@@ -602,11 +685,18 @@ function TasksCard({ tasks, date, onAdd, onToggle, onDelete }) {
                 <span className="pl-tasks-text">{t.text}</span>
                 {overdue && <span className="pl-tasks-flag">overdue</span>}
                 {t.dueISO && !overdue && !t.done && <span className="pl-tasks-due num">{fmtShort(t.dueISO)}</span>}
-                <button className="pl-tasks-del" onClick={() => onDelete(t.id)} aria-label="delete task"><IconClose size={12} /></button>
+                <ConfirmButton className="pl-tasks-del" aria-label="delete task"
+                  label={<IconClose size={12} />} onConfirm={() => onDelete(t.id)} />
               </li>
             );
           })}
         </ul>
+      )}
+      {generalCount > 0 && (
+        <button className="btn-ghost btn-xs" style={{ alignSelf: "flex-start", marginTop: 6 }}
+          onClick={() => nav && nav("/tasks")}>
+          +{generalCount} general task{generalCount > 1 ? "s" : ""} today →
+        </button>
       )}
     </div>
   );
@@ -646,7 +736,8 @@ function AssessmentsCard({ assessments, dedicated, date, examISO, onLog, onUpser
         </span>
         <span className="pl-assess-actions">
           <button className="btn-ghost btn-xs" onClick={() => setAdding((a) => !a)}>{adding ? "Cancel" : "+ Add"}</button>
-          <button className="btn-ghost btn-xs" onClick={onReset} title="Rebuild the standard schedule (keeps logged scores)">Reset schedule</button>
+          <ConfirmButton className="btn-ghost btn-xs" title="Rebuild the standard schedule (keeps logged scores)"
+            label="Reset schedule" armedLabel="Sure? Reset" onConfirm={onReset} />
         </span>
       </div>
 
@@ -710,7 +801,7 @@ function AssessmentRow({ a, date, isNext, onLog, onRemove, onUpsert }) {
             <>
               <span className="pl-assess-actual num">{a.actual}{isPct ? "%" : ""}{isPct && <span className="pl-assess-eq"> ≈ {predicted}</span>}</span>
               <span className={`pl-assess-delta ${delta >= 0 ? "ok" : "bad"}`}>{delta >= 0 ? "+" : ""}{delta} vs goal</span>
-              <button className="pl-assess-relog" onClick={() => onLog(a.id, null)}>clear</button>
+              <ConfirmButton className="pl-assess-relog" label="clear" armedLabel="sure?" onConfirm={() => onLog(a.id, null)} />
             </>
           ) : logging ? (
             <span className="pl-assess-loginline">
@@ -731,7 +822,8 @@ function AssessmentRow({ a, date, isNext, onLog, onRemove, onUpsert }) {
           {days === 0 ? <b className="today">today</b> : <><b className="num">{days}</b><span>days</span></>}
         </div>
       )}
-      <button className="pl-assess-del" onClick={() => onRemove(a.id)} aria-label="remove"><IconClose size={12} /></button>
+      <ConfirmButton className="pl-assess-del" aria-label="remove"
+        label={<IconClose size={12} />} onConfirm={() => onRemove(a.id)} />
     </li>
   );
 }
@@ -741,19 +833,34 @@ function AddCheckpoint({ date, onAdd }) {
   const [when, setWhen] = useState(date);
   const [kind, setKind] = useState("nbme");
   const [goalScore, setGoalScore] = useState("");
+  const [err, setErr] = useState("");
   const unit = kind === "free120" ? "percent" : "three_digit";
+
+  const submit = () => {
+    if (!label.trim()) { setErr("Give the checkpoint a label."); return; }
+    if (!when || when < date) { setErr("Pick today or a future date — checkpoints can't be scheduled in the past."); return; }
+    const g = goalScore === "" ? null : Number(goalScore);
+    if (g != null && (Number.isNaN(g) || (unit === "percent" ? g < 1 || g > 100 : g < 150 || g > 280))) {
+      setErr(unit === "percent" ? "Goal must be 1–100%." : "Goal must be a 3-digit score (150–280).");
+      return;
+    }
+    setErr("");
+    onAdd({
+      id: `a-${Date.now()}`, kind, label: label.trim(), form: "", role: "mid", unit,
+      plannedDate: when, goalScore: g ?? (unit === "percent" ? 70 : 220),
+    });
+  };
+
   return (
     <div className="pl-assess-add">
       <input className="pl-assess-input grow" placeholder="Label (e.g. NBME 29)" value={label} onChange={(e) => setLabel(e.target.value)} />
       <select className="pl-assess-input" value={kind} onChange={(e) => setKind(e.target.value)}>
         <option value="nbme">NBME</option><option value="uwsa">UWSA</option><option value="free120">Free 120</option>
       </select>
-      <input type="date" className="pl-assess-input" value={when} onChange={(e) => setWhen(e.target.value)} />
+      <input type="date" className="pl-assess-input" value={when} min={date} onChange={(e) => setWhen(e.target.value)} />
       <input type="number" className="pl-assess-input sm" placeholder={unit === "percent" ? "goal %" : "goal"} value={goalScore} onChange={(e) => setGoalScore(e.target.value)} />
-      <button className="btn-primary btn-xs" onClick={() => label.trim() && onAdd({
-        id: `a-${Date.now()}`, kind, label: label.trim(), form: "", role: "mid", unit,
-        plannedDate: when, goalScore: Number(goalScore) || (unit === "percent" ? 70 : 220),
-      })}>Add</button>
+      <button className="btn-primary btn-xs" onClick={submit}>Add</button>
+      {err && <p className="td-form-err" style={{ flexBasis: "100%", margin: "4px 0 0" }}>{err}</p>}
     </div>
   );
 }
@@ -909,7 +1016,7 @@ function PlannerFooter({ sched, onImport, onExam, onSettings, onReset }) {
             <div className="pl-set-glabel">Focus block</div>
             <div className="pl-set-row">
               <label className="pl-set-field sm"><span>minutes</span><input type="number" min="10" max="90" value={S.blockMinutes} onChange={(e) => setBlock(e.target.value)} /></label>
-              <button className="btn-ghost btn-xs" onClick={onReset}>Reset assessment schedule</button>
+              <ConfirmButton className="btn-ghost btn-xs" label="Reset assessment schedule" armedLabel="Sure? Reset" onConfirm={onReset} />
             </div>
           </div>
 

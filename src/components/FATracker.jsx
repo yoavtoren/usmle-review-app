@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { colorFor } from "../lib/subjectColors.js";
+import { FA_EDITION } from "../lib/firstAidData.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -112,10 +113,22 @@ export default function FATracker({ onBack }) {
   return (
     <div className="fa-tracker">
       <div className="fa-header">
-        <button className="back-btn" onClick={onBack}>← Dashboard</button>
+        <button className="back-btn" onClick={onBack}>← First Aid</button>
         <div className="fa-title-row">
           <h1>First Aid Tracker</h1>
-          <p className="muted">First Aid for USMLE Step 1 · 2026</p>
+          <p className="muted">{FA_EDITION} · USMLE Step 1</p>
+          <p className="muted" style={{ fontSize: 12, marginTop: 4 }}>
+            Read-only snapshot — tracking happens in the{" "}
+            <button
+              onClick={onBack}
+              style={{
+                background: "none", border: "none", padding: 0, font: "inherit",
+                color: "inherit", textDecoration: "underline", cursor: "pointer",
+              }}
+            >
+              First Aid dashboard
+            </button>.
+          </p>
         </div>
       </div>
 
@@ -137,7 +150,7 @@ export default function FATracker({ onBack }) {
       </div>
 
       <p className="footnote muted fa-footnote">
-        To update counts: edit checkboxes in the .md files then run <code>python3 update_progress.py</code>.
+        This view mirrors the markdown study files and updates with app releases.
       </p>
     </div>
   );

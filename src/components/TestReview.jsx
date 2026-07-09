@@ -30,6 +30,7 @@ export default function TestReview({ onBack }) {
   const [wizardFull, setWizardFull] = useState(null); // full question JSON (firstAid + keywords)
   const [noteShown, setNoteShown]   = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
+  const [retryKey, setRetryKey]     = useState(0); // bump to refetch the deck after a load error
 
   // Question ids belonging to a given test block.
   function blockIds(blk) {
@@ -64,7 +65,7 @@ export default function TestReview({ onBack }) {
   }, [wizardId, deck]);
 
   useEffect(() => {
-    setDeck(null); setSelectedId(null);
+    setDeck(null); setSelectedId(null); setError(null);
     fetch(`${BASE}${deckFile}`)
       .then(r => r.json())
       .then(d => {
@@ -74,7 +75,22 @@ export default function TestReview({ onBack }) {
         if (first) setSelectedId(first.id);
       })
       .catch(e => setError(String(e)));
-  }, [deckFile]);
+  }, [deckFile, retryKey]);
+
+  // Block filter chips derived from the blocks actually present in the deck
+  // (test 1 has no block field), naturally sorted — so chips match reality.
+  const blockChips = useMemo(() => {
+    if (!deck) return [];
+    const keys = new Set();
+    for (const q of deck.questions) {
+      if (q.block === undefined) keys.add("test1");
+      else {
+        const m = String(q.block).match(/(\d+)/);
+        if (m) keys.add(`test${m[1]}`);
+      }
+    }
+    return [...keys].sort((a, b) => Number(a.slice(4)) - Number(b.slice(4)));
+  }, [deck]);
 
   const filtered = useMemo(() => {
     if (!deck) return [];
@@ -196,8 +212,10 @@ export default function TestReview({ onBack }) {
 
   if (error) return (
     <div className="boot error">
-      Could not load questions: {error}
-      <p>Run <code>npm run dev</code> from the project folder.</p>
+      <p>Couldn't load the question deck. Check your connection and try again.</p>
+      <button className="td-submit-btn" style={{ marginTop: 12 }} onClick={() => setRetryKey(k => k + 1)}>
+        ↻ Retry
+      </button>
     </div>
   );
   if (!deck) return <div className="boot">Loading deck…</div>;
@@ -211,7 +229,7 @@ export default function TestReview({ onBack }) {
       <div className="layout">
         <aside className="sidebar">
           <div className="brand">
-            <button className="back-btn" onClick={onBack}>← Dashboard</button>
+            <button className="back-btn" onClick={onBack}>← Tests</button>
             <h1>Test Review</h1>
             <p className="muted">
               {stats.total} questions · {stats.missed} missed · {stats.mastered} mastered
@@ -219,7 +237,7 @@ export default function TestReview({ onBack }) {
           </div>
 
           <div className="filters">
-            {[["all","All tests"],["test1","Test 1"],["test2","Test 2"],["test3","Test 3"],["test4","Test 4"],["test5","Test 5"],["test6","Test 6"]].map(([key, label]) => (
+            {[["all", "All tests"], ...blockChips.map(k => [k, `Test ${k.slice(4)}`])].map(([key, label]) => (
               <button key={key} className={block === key ? "chip active" : "chip"} onClick={() => setBlock(key)}>{label}</button>
             ))}
           </div>

@@ -7,24 +7,20 @@ import {
 import { weakSpots } from "../lib/progressData.js";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
 import CountUp from "../lib/CountUp.jsx";
+import { EXAM_DATE, daysUntilExam, localISODate, startOfLocalDay } from "../lib/config.js";
 import {
   IconDash, IconTarget, IconArrow, IconFlame, IconClock,
   IconPulse, IconBook, IconClipboard, IconBox, IconCheck, IconSparkle,
 } from "./icons.jsx";
 
-const EXAM_DATE = new Date("2026-10-11T00:00:00Z");
-const JOURNEY_START = new Date("2026-06-10T00:00:00Z");
+const JOURNEY_START = new Date(2026, 5, 10); // local midnight — same day boundary as EXAM_DATE
 const DAY = 86400000;
 const WEEK_GOAL = 25; // soft weekly target for questions mastered (gives the momentum meter a scale)
-
-function daysUntilExam() {
-  return Math.ceil((EXAM_DATE - new Date()) / DAY);
-}
 
 function taskStats(categoryId) {
   try {
     const tasks = loadCategoryTasks(categoryId);
-    const today = new Date().toISOString().slice(0, 10);
+    const today = localISODate();
     return {
       active: tasks.filter((t) => t.status === "Active").length,
       overdue: tasks.filter((t) => t.status === "Active" && t.deadline && t.deadline < today).length,
@@ -41,13 +37,15 @@ function heWhen(ms) {
   if (days <= 0) return "היום";
   if (days === 1) return "מחר";
   if (days <= 6) return `בעוד ${days} ימים`;
-  if (days <= 13) return "בעוד שבוע";
+  if (days === 7) return "בעוד שבוע";
+  if (days <= 10) return `בעוד ${days} ימים`;
+  if (days <= 17) return "בעוד שבועיים";
   return `בעוד ${Math.round(days / 7)} שבועות`;
 }
 
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
-export default function HomePage({ testStats, faStats, streak = 0, questions = [] }) {
+export default function HomePage({ testStats, faStats, streak = 0, questions = [], loading = false }) {
   const nav = useNavigate();
 
   const d = useMemo(() => {
@@ -63,7 +61,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
 
   const days = daysUntilExam();
   const totalSpan = Math.max(1, Math.round((EXAM_DATE - JOURNEY_START) / DAY));
-  const elapsed = Math.max(0, Math.min(totalSpan, Math.round((new Date() - JOURNEY_START) / DAY)));
+  const elapsed = Math.max(0, Math.min(totalSpan, Math.round((startOfLocalDay() - JOURNEY_START) / DAY)));
   const journeyPct = Math.round((elapsed / totalSpan) * 100);
 
   // Same-domain pipeline (one denominator) for the hero ring — never mix with FA%.
@@ -73,7 +71,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
   const faPct = faStats.total > 0 ? Math.round((faStats.seen / faStats.total) * 100) : 0;
 
   const latest = log[log.length - 1] || null;
-  const cohortDelta = latest && Number.isFinite(latest.uworldAvg) ? latest.score - latest.uworldAvg : null;
+  const cohortDelta = latest && Number.isFinite(latest.uworldAvg) ? Math.round(latest.score - latest.uworldAvg) : null;
   const hasAvg = log.some((t) => Number.isFinite(t.uworldAvg));
 
   const aims = taskStats("aims");
@@ -112,11 +110,11 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
               <span className="hd-vital-l"><IconFlame size={11} /> רצף</span>
             </div>
             <div className="hd-vital">
-              <span className={`hd-vital-n num${sched.dueNow > 0 ? " hot" : ""}`}><CountUp value={sched.dueNow} /></span>
+              <span className={`hd-vital-n num${!loading && sched.dueNow > 0 ? " hot" : ""}`}>{loading ? "…" : <CountUp value={sched.dueNow} />}</span>
               <span className="hd-vital-l">לביקורת</span>
             </div>
             <div className="hd-vital">
-              <span className="hd-vital-when">{sched.dueNow > 0 ? "עכשיו" : (nextWhen || "—")}</span>
+              <span className="hd-vital-when">{loading ? "…" : sched.dueNow > 0 ? "עכשיו" : (nextWhen || "—")}</span>
               <span className="hd-vital-l">הבא</span>
             </div>
             <div className="hd-vital">
@@ -131,35 +129,36 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
         <div className="hd-bento">
 
           {/* A · Hero — Step 1 command center */}
-          <button className="hd-card hd-hero c8" onClick={() => nav("/step1")}>
-            <div className="hd-hero-bg" />
+          <button className="hd-card hd-hero c8" onClick={() => nav("/step1")}
+            aria-label={`פתח לוח Step 1 — ${sched.dueNow} לביקורת היום, שליטה ${masteryPct}%`}>
+            <div className="hd-hero-bg" aria-hidden="true" />
             <div className="hd-hero-main">
               <div className="hd-hero-head">
-                <span className="hd-hero-ico"><IconDash size={20} /></span>
+                <span className="hd-hero-ico" aria-hidden="true"><IconDash size={20} /></span>
                 <span className="hd-hero-kicker">המוקד · STEP 1</span>
               </div>
               <h2 className="hd-hero-title">USMLE Step 1</h2>
               <p className="hd-hero-sub">בקרת שאלות · חזרה מרווחת · כיסוי First Aid</p>
 
               <div className="hd-hero-stats">
-                <HeroStat n={sched.dueNow} label="לביקורת היום" hot={sched.dueNow > 0} />
-                <HeroStat n={sched.mastered} label="שלטתי" />
-                <HeroStat n={sched.reviewing} label="בתהליך" dim />
+                <HeroStat n={sched.dueNow} label="לביקורת היום" hot={!loading && sched.dueNow > 0} loading={loading} />
+                <HeroStat n={sched.mastered} label="שלטתי" loading={loading} />
+                <HeroStat n={sched.reviewing} label="בתהליך" dim loading={loading} />
               </div>
 
               <div className="hd-hero-load">
                 <div className="hd-hero-load-cap">
                   <span>עומס החזרות · 14 ימים</span>
-                  <span className="num">{loadTotal} סה״כ</span>
+                  <span className="num">{loading ? "…" : `${loadTotal} סה״כ`}</span>
                 </div>
                 <LoadStrip days={sched.days} />
               </div>
             </div>
 
             <div className="hd-hero-rail">
-              <MasteryHalo mastery={masteryPct} inflight={inflightPct} due={pipeTotal ? Math.round((sched.dueNow / pipeTotal) * 100) : 0} />
-              <div className="hd-hero-railmeta num">{sched.mastered}/{pipeTotal}</div>
-              <span className="hd-hero-cta">פתח לוח <IconArrow size={15} className="mir" /></span>
+              <MasteryHalo mastery={masteryPct} inflight={inflightPct} due={pipeTotal ? Math.round((sched.dueNow / pipeTotal) * 100) : 0} loading={loading} />
+              <div className="hd-hero-railmeta num">{loading ? "…" : pipeTotal > 0 ? `${sched.mastered}/${pipeTotal}` : "—"}</div>
+              <span className="hd-hero-cta">פתח לוח <IconArrow size={15} className="mir" aria-hidden="true" /></span>
             </div>
           </button>
 
@@ -170,7 +169,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
             <div className="hd-count-gauge">
               <JourneyGauge pct={journeyPct} />
               <div className="hd-count-center">
-                <span className="hd-count-num num"><CountUp value={days > 0 ? days : 0} /></span>
+                <span className="hd-count-num num">{days}</span>
                 <span className="hd-count-unit">ימים לבחינה</span>
               </div>
             </div>
@@ -235,7 +234,12 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           <div className="hd-card hd-review c3">
             <div className="hd-ch">
               <span className="hd-ch-t"><span className="hd-ch-ico green"><IconClipboard size={15} /></span> תחזית חזרות</span>
-              <span className="hd-ch-meta"><span className="hd-chip num">{loadTotal} בהמתנה</span></span>
+              <span className="hd-ch-meta">
+                {!loading && sched.overdue > 0 && (
+                  <span className="hd-chip num" style={{ color: "var(--bad)" }}>{sched.overdue} באיחור</span>
+                )}
+                <span className="hd-chip num">{loading ? "…" : `${loadTotal} בהמתנה`}</span>
+              </span>
             </div>
             <ReviewBars days={sched.days} overdue={sched.overdue} dueToday={sched.dueToday} />
           </div>
@@ -247,12 +251,12 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
               <IconArrow size={15} className="hd-ch-arr mir" />
             </div>
             <div className="hd-fa-top">
-              <span className="hd-fa-pct num"><CountUp value={faPct} />%</span>
-              <span className="hd-fa-of num">{faStats.seen} / {faStats.total} נושאים</span>
+              <span className="hd-fa-pct num">{loading ? "…" : <><CountUp value={faPct} />%</>}</span>
+              <span className="hd-fa-of num">{loading ? "…" : `${faStats.seen} / ${faStats.total} נושאים`}</span>
             </div>
             <Constellation pct={faPct} />
-            <div className="hd-fa-rail"><span style={{ width: `${faPct}%` }} /></div>
-            <span className="hd-fa-rest"><span className="num">{faStats.total - faStats.seen}</span> נושאים נותרו</span>
+            <div className="hd-fa-rail" aria-hidden="true"><span style={{ width: `${faPct}%` }} /></div>
+            <span className="hd-fa-rest"><span className="num">{loading ? "…" : faStats.total - faStats.seen}</span> נושאים נותרו</span>
           </button>
 
           {/* G · Weak subjects */}
@@ -263,9 +267,12 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
             </div>
             {weak.length ? (
               <ul className="hd-weak-list">
-                {(() => { const wMax = Math.max(...weak.map((x) => x.kind === "pct" ? (100 - x.pct) : x.count), 1); return weak.map((w, i) => {
-                  const val = w.kind === "pct" ? (100 - w.pct) : w.count;
-                  const max = wMax;
+                {(() => { const missMax = Math.max(...weak.map((x) => x.kind === "miss" ? x.count : 0), 1); return weak.map((w, i) => {
+                  // Bar encodes the printed number directly: pct rows draw the score
+                  // (short bar = weak, red/amber keeps weakness salient); miss rows
+                  // draw the miss count (long bar = weak, as before).
+                  const width = w.kind === "pct" ? clamp(w.pct, 0, 100) : Math.round((w.count / missMax) * 100);
+                  const bad = w.kind === "pct" ? w.pct < 60 : i === 0;
                   return (
                     <li key={w.name} className="hd-weak-row">
                       <div className="hd-weak-top">
@@ -273,7 +280,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
                         <span className="hd-weak-val num">{w.kind === "pct" ? `${w.pct}%` : `${w.count} החמצות`}</span>
                       </div>
                       <span className="hd-weak-bar">
-                        <span className={`hd-weak-fill${i === 0 ? " worst" : ""}`} style={{ width: `${Math.round(val / max * 100)}%` }} />
+                        <span className={`hd-weak-fill${bad ? " worst" : ""}`} style={{ width: `${width}%` }} />
                       </span>
                     </li>
                   );
@@ -310,9 +317,9 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           {/* I · Quick nav */}
           <nav className="hd-nav c12">
             <NavChip Icon={IconClipboard} label="מבחנים" stat={`${log.length} מבחנים`} onClick={() => nav("/tests")} />
-            <NavChip Icon={IconBox} label="בנק שאלות" stat={`${testStats.total || 0} שאלות`} onClick={() => nav("/bank")} />
+            <NavChip Icon={IconBox} label="בנק שאלות" stat={loading ? "…" : `${testStats.total || 0} שאלות`} onClick={() => nav("/bank")} />
             <NavChip Icon={IconPulse} label="התקדמות" stat={`${masteredWeek} השבוע`} onClick={() => nav("/progress")} />
-            <NavChip Icon={IconBook} label="First Aid" stat={`${faPct}% כוסו`} onClick={() => nav("/fa")} />
+            <NavChip Icon={IconBook} label="First Aid" stat={loading ? "…" : `${faPct}% כוסו`} onClick={() => nav("/fa")} />
           </nav>
         </div>
       </div>
@@ -322,10 +329,10 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
 
 /* ─────────────────────────── sub-components ─────────────────────────── */
 
-function HeroStat({ n, label, hot, warn, dim }) {
+function HeroStat({ n, label, hot, warn, dim, loading }) {
   return (
     <div className={`hd-hstat${hot ? " hot" : ""}${warn ? " warn" : ""}${dim ? " dim" : ""}`}>
-      <span className="hd-hstat-n num"><CountUp value={n || 0} /></span>
+      <span className="hd-hstat-n num">{loading ? "…" : <CountUp value={n || 0} />}</span>
       <span className="hd-hstat-l">{label}</span>
     </div>
   );
@@ -353,13 +360,13 @@ function StreakDots({ streak }) {
 }
 
 // Dual-metric halo (SAME domain): thick gold mastery arc + thin in-flight arc + a red due-now tick.
-function MasteryHalo({ mastery, inflight, due }) {
+function MasteryHalo({ mastery, inflight, due, loading }) {
   const R1 = 44, R2 = 33;
   const c1 = 2 * Math.PI * R1, c2 = 2 * Math.PI * R2;
   const m = clamp(mastery, 0, 100), inf = clamp(inflight, 0, 100), dueA = clamp(due, 0, 100);
   return (
-    <div className="hd-halo">
-      <svg viewBox="0 0 120 120">
+    <div className="hd-halo" role="img" aria-label={`שליטה ${m}%, בתהליך ${inf}%`}>
+      <svg viewBox="0 0 120 120" aria-hidden="true">
         {/* outer — mastery (gold, thick) */}
         <circle cx="60" cy="60" r={R1} fill="none" stroke="rgba(245,241,229,0.13)" strokeWidth="8" />
         <circle cx="60" cy="60" r={R1} fill="none" stroke="#D5B36A" strokeWidth="8"
@@ -377,7 +384,7 @@ function MasteryHalo({ mastery, inflight, due }) {
           strokeLinecap="round" transform="rotate(-90 60 60)"
           className="hd-arc" style={{ "--dash": c2, "--off": c2 * (1 - inf / 100) }} />
       </svg>
-      <span className="hd-halo-pct num">{m}%</span>
+      <span className="hd-halo-pct num">{loading ? "…" : `${m}%`}</span>
       <span className="hd-halo-lbl">שליטה</span>
     </div>
   );
@@ -388,7 +395,7 @@ function JourneyGauge({ pct }) {
   const len = Math.PI * 52; // half-circumference, r=52
   const off = len * (1 - clamp(pct, 0, 100) / 100);
   return (
-    <svg className="hd-gauge" viewBox="0 0 120 68">
+    <svg className="hd-gauge" viewBox="0 0 120 68" role="img" aria-label={`${clamp(pct, 0, 100)}% מהמסע לבחינה הושלמו`}>
       <defs>
         <linearGradient id="jgrad" x1="1" y1="0" x2="0" y2="0">
           <stop offset="0%" stopColor="var(--accent-2)" />
@@ -406,9 +413,11 @@ function JourneyGauge({ pct }) {
 // 14 slim bars embedded in the hero — gold-on-green. RTL: today = right-most.
 function LoadStrip({ days }) {
   const max = Math.max(1, ...days.map((x) => x.count));
+  const total = days.reduce((s, x) => s + x.count, 0);
   const W = 560, H = 24, slot = W / 14;
   return (
-    <svg className="hd-loadstrip" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none">
+    <svg className="hd-loadstrip" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none"
+      role="img" aria-label={`עומס חזרות: ${total} שאלות ב־14 הימים הקרובים`}>
       {days.map((day, i) => {
         const x = W - (i + 1) * slot + 2;
         const bw = slot - 4;
@@ -431,8 +440,8 @@ function Trajectory({ log }) {
   // Dynamic domain that never clips a real point (contains e.g. 28), padded for headroom.
   // Only finite values feed the scale — a NaN/undefined from bad synced data must not wipe the chart.
   const vals = log.flatMap((t) => [t.score, t.uworldAvg]).filter((v) => Number.isFinite(v));
-  const LO = Math.max(0, Math.floor((Math.min(...vals) - 8) / 10) * 10);
-  const HI = Math.min(100, Math.ceil((Math.max(...vals) + 8) / 10) * 10);
+  const LO = vals.length ? Math.max(0, Math.floor((Math.min(...vals) - 8) / 10) * 10) : 0;
+  const HI = vals.length ? Math.min(100, Math.ceil((Math.max(...vals) + 8) / 10) * 10) : 100;
   const xAt = (i) => (W - padR) - (n <= 1 ? plotW / 2 : (i / (n - 1)) * plotW);
   const yAt = (v) => padT + (1 - (clamp(v, LO, HI) - LO) / (HI - LO)) * plotH;
 
@@ -454,8 +463,18 @@ function Trajectory({ log }) {
   const bandLo = clamp(60, LO, HI), bandHi = clamp(70, LO, HI);
   const last = mine[mine.length - 1]; // newest = leftmost
 
+  // Concise summary for screen readers: latest score + direction vs the previous test.
+  const lastScore = log[n - 1].score;
+  const prevScore = n >= 2 ? log[n - 2].score : null;
+  const dir = !Number.isFinite(lastScore) || !Number.isFinite(prevScore) ? ""
+    : lastScore > prevScore ? ", במגמת עלייה"
+    : lastScore < prevScore ? ", במגמת ירידה"
+    : ", ללא שינוי";
+  const fmtDate = (t) => { const dt = new Date(t.date); return `${dt.getDate()}/${dt.getMonth() + 1}`; };
+
   return (
-    <svg className="hd-traj-svg" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet">
+    <svg className="hd-traj-svg" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet"
+      role="img" aria-label={`מגמת ציונים: הציון האחרון ${lastScore}%${dir}`}>
       <defs>
         <linearGradient id="tgrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="rgba(30,77,56,0.20)" />
@@ -469,7 +488,7 @@ function Trajectory({ log }) {
       {grid.map((g) => (
         <g key={g}>
           <line x1={padL} y1={yAt(g)} x2={W - padR} y2={yAt(g)} stroke="var(--line-soft)" strokeWidth="1" />
-          <text x={W - padR + 7} y={yAt(g) + 3.5} className="hd-axis" textAnchor="start">{g}</text>
+          <text x={W - padR + 7} y={yAt(g) + 3.5} className="hd-axis" textAnchor="start">{g}%</text>
         </g>
       ))}
       {/* UWorld benchmark — one path per contiguous run; a lone point renders as a dot */}
@@ -482,21 +501,22 @@ function Trajectory({ log }) {
       <path d={area} fill="url(#tgrad)" className="hd-traj-area" />
       <path d={mineLine} fill="none" stroke="var(--accent)" strokeWidth="3.2" strokeLinejoin="round" strokeLinecap="round" className="hd-traj-line" />
       {mine.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="4.2" fill="var(--surface)" stroke="var(--accent)" strokeWidth="2.4" />
+        <circle key={i} cx={x} cy={y} r="4.2" fill="var(--surface)" stroke="var(--accent)" strokeWidth="2.4">
+          <title>{`${log[i].score}% · ${fmtDate(log[i])}`}</title>
+        </circle>
       ))}
-      {/* x labels (date) */}
+      {/* x labels (date); the newest point is marked "עכשיו" as the RTL time-axis cue */}
       {log.map((t, i) => {
         if (n > 6 && i % 2 !== 0 && i !== n - 1) return null;
-        const dt = new Date(t.date);
-        const lbl = `${dt.getDate()}/${dt.getMonth() + 1}`;
+        const lbl = i === n - 1 ? "עכשיו" : fmtDate(t);
         return <text key={i} x={xAt(i)} y={H - padB + 16} className="hd-axis" textAnchor="middle">{lbl}</text>;
       })}
       {/* latest emphasis */}
       <circle cx={last[0]} cy={last[1]} r="10" fill="none" stroke="var(--gold-2)" strokeWidth="1.8" opacity="0.65" />
       <circle cx={last[0]} cy={last[1]} r="5.4" fill="var(--gold-2)" stroke="var(--surface)" strokeWidth="1.8" />
       <g transform={`translate(${last[0]}, ${last[1] - 17})`}>
-        <rect x="-21" y="-18" width="42" height="23" rx="6" fill="var(--surface)" stroke="var(--gold-mid)" />
-        <text x="0" y="-1.5" className="hd-traj-flag" textAnchor="middle">{log[n - 1].score}</text>
+        <rect x="-23" y="-18" width="46" height="23" rx="6" fill="var(--surface)" stroke="var(--gold-mid)" />
+        <text x="0" y="-1.5" className="hd-traj-flag" textAnchor="middle">{log[n - 1].score}%</text>
       </g>
     </svg>
   );
@@ -510,10 +530,13 @@ function ReviewBars({ days, overdue = 0, dueToday = 0 }) {
   const slot = plotW / 14;
   const max = Math.max(1, ...days.map((x) => x.count));
   const base = H - padB;
-  const peakIdx = days.reduce((best, x, i) => (i > 0 && x.count > days[best].count ? i : best), 1);
+  const peakIdx = days.reduce((best, x, i) => (x.count > days[best].count ? i : best), 0);
+  const total = days.reduce((s, x) => s + x.count, 0);
+  const dayLabel = (i) => (i === 0 ? "היום" : `בעוד ${i} ימים`);
 
   return (
-    <svg className="hd-reviewbars" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet">
+    <svg className="hd-reviewbars" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet"
+      role="img" aria-label={`תחזית חזרות: ${total} שאלות ב־14 הימים הקרובים${overdue > 0 ? `, מתוכן ${overdue} באיחור` : ""}`}>
       <line x1={padL} y1={base} x2={W - padR} y2={base} stroke="var(--line)" strokeWidth="1" />
       {days.map((day, i) => {
         const bw = Math.min(11, slot - 4);
@@ -521,14 +544,24 @@ function ReviewBars({ days, overdue = 0, dueToday = 0 }) {
         const x = cx - bw / 2;
         if (!day.count) return <rect key={day.ms} x={x} y={base - 2} width={bw} height="2" rx="1" fill="var(--surface-3)" />;
         const h = Math.max(4, (day.count / max) * plotH);
+        const peakText = i === peakIdx && (
+          <text x={cx} y={base - h - 5} className="hd-bar-peak" textAnchor="middle">{day.count}</text>
+        );
         if (day.isToday && overdue > 0) {
-          const total = overdue + dueToday || day.count;
-          const overH = h * (overdue / total);
+          const stackTotal = overdue + dueToday || day.count;
+          const overH = h * (overdue / stackTotal);
           const dueH = h - overH;
           return (
-            <g key={day.ms} className="hd-bar hd-bar-today" style={{ animationDelay: `${i * 32}ms` }}>
-              <rect x={x} y={base - overH} width={bw} height={overH} rx="0" fill="var(--bad)" opacity="0.85" />
-              <rect x={x} y={base - h} width={bw} height={dueH} rx="3" fill="url(#rgold)" />
+            <g key={day.ms}>
+              <g className="hd-bar hd-bar-today" style={{ animationDelay: `${i * 32}ms` }}>
+                <rect x={x} y={base - overH} width={bw} height={overH} rx="0" fill="var(--bad)" opacity="0.85">
+                  <title>{`${overdue} באיחור`}</title>
+                </rect>
+                <rect x={x} y={base - h} width={bw} height={dueH} rx="3" fill="url(#rgold)">
+                  <title>{`${dayLabel(i)} · ${day.count}`}</title>
+                </rect>
+              </g>
+              {peakText}
             </g>
           );
         }
@@ -536,10 +569,10 @@ function ReviewBars({ days, overdue = 0, dueToday = 0 }) {
         return (
           <g key={day.ms}>
             <rect className={`hd-bar${day.isToday ? " hd-bar-today" : ""}`} x={x} y={base - h} width={bw} height={h} rx="3" fill={fill}
-              style={{ animationDelay: `${i * 32}ms` }} />
-            {i === peakIdx && days[peakIdx].count > 0 && (
-              <text x={cx} y={base - h - 5} className="hd-bar-peak" textAnchor="middle">{day.count}</text>
-            )}
+              style={{ animationDelay: `${i * 32}ms` }}>
+              <title>{`${dayLabel(i)} · ${day.count}`}</title>
+            </rect>
+            {peakText}
           </g>
         );
       })}
@@ -563,7 +596,7 @@ function ReviewBars({ days, overdue = 0, dueToday = 0 }) {
 function Constellation({ pct }) {
   const on = Math.round((40 * clamp(pct, 0, 100)) / 100);
   return (
-    <div className="hd-constel">
+    <div className="hd-constel" aria-hidden="true">
       {Array.from({ length: 40 }, (_, i) => (
         <span key={i} className={`hd-cdot${i < on ? " on" : ""}`} style={{ animationDelay: `${i * 11}ms` }} />
       ))}

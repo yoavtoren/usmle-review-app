@@ -397,9 +397,19 @@ export default function QuestionCard({ q, onProgress, progress }) {
                   );
                 })}
                 {step < q.reasoning.length - 1 && (
-                  <button className="chain-next" onClick={() => setStep(step + 1)}>
-                    👆 Step {step + 2} / {q.reasoning.length}
-                  </button>
+                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                    <button className="chain-next" onClick={() => setStep(step + 1)}>
+                      👆 Step {step + 2} / {q.reasoning.length}
+                    </button>
+                    <button
+                      className="chain-next"
+                      style={{ opacity: 0.8 }}
+                      onClick={() => setStep(q.reasoning.length - 1)}
+                      title="Reveal the whole reasoning chain at once"
+                    >
+                      Show all steps
+                    </button>
+                  </div>
                 )}
               </div>
 

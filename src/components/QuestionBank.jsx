@@ -84,7 +84,14 @@ export default function QuestionBank({ questions = [] }) {
       addedOld: (a, b) => a.addedAt - b.addedAt || a.qidNum - b.qidNum,
       reviewed: (a, b) => b.reviewedAt - a.reviewedAt,
       system:   (a, b) => a.q.system.localeCompare(b.q.system) || b.addedAt - a.addedAt,
-      pct:      (a, b) => (a.q.percentCorrect || 0) - (b.q.percentCorrect || 0),
+      // Hardest first; questions with no known % are unknown, not 0 → sort last.
+      pct:      (a, b) => {
+        const ap = a.q.percentCorrect, bp = b.q.percentCorrect;
+        if (ap == null && bp == null) return 0;
+        if (ap == null) return 1;
+        if (bp == null) return -1;
+        return ap - bp;
+      },
     }[sort];
     return list.sort(cmp);
   }, [questions, progress, seen, system, result, status, query, sort]);
@@ -161,11 +168,17 @@ export default function QuestionBank({ questions = [] }) {
               const st = STATUS_META[card.status] || STATUS_META.new;
               const rev = agoLabel(card.lastReviewed);
               const due = card.status === "review" && isDue(card);
+              const open = () => nav("/tests/review", { state: { block: blockKey(q), filter: "all", focusId: q.id } });
               return (
                 <tr
                   key={q.id}
                   className="qb-row"
-                  onClick={() => nav("/tests/review", { state: { block: blockKey(q), filter: "all", focusId: q.id } })}
+                  tabIndex={0}
+                  role="link"
+                  onClick={open}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+                  }}
                   title="Open in Test Review"
                 >
                   <td className="qb-td-num">{q.qid}</td>
@@ -200,9 +213,9 @@ export default function QuestionBank({ questions = [] }) {
       </div>
 
       <p className="footnote muted qb-foot">
-        100% local · updated from your question files. When you finish a new UWorld test and add its
-        question files, tell me “add the latest questions to the bank” — new questions appear here at
-        the top, ordered by when they were added to the app.
+        {questions.length === 0
+          ? "No questions loaded yet. New question sets are added with app updates."
+          : "100% local · new question sets are added with app updates and appear here at the top, ordered by when they were added to the app."}
       </p>
     </div>
   );

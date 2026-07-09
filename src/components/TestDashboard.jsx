@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { loadTestLog, saveTestLog, loadProgress, testScore } from "../lib/storage.js";
 import TestEntryForm, { emptyEntry, MOODS } from "./TestEntryForm.jsx";
@@ -71,6 +71,26 @@ function LineChart({ tests }) {
 
   const gridYs = [0, 25, 50, 60, 75, 100];
 
+  // When tests cluster within days their labels overprint. Always label the
+  // first and last points; label intermediates only when they sit far enough
+  // (in px) from the previous labeled point AND from the last point's label.
+  const LABEL_GAP = 28;
+  const labeledIdx = (() => {
+    const xs = sorted.map(t => toX(t.date));
+    const keep = new Set();
+    if (!xs.length) return keep;
+    keep.add(0);
+    keep.add(xs.length - 1);
+    let lastX = xs[0];
+    for (let i = 1; i < xs.length - 1; i++) {
+      if (xs[i] - lastX > LABEL_GAP && xs[xs.length - 1] - xs[i] > LABEL_GAP) {
+        keep.add(i);
+        lastX = xs[i];
+      }
+    }
+    return keep;
+  })();
+
   return (
     <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%", height: "auto", display: "block" }}>
       {gridYs.map(y => (
@@ -113,12 +133,14 @@ function LineChart({ tests }) {
       {scorePts.map(([x, y, t], i) => (
         <g key={i}>
           <circle cx={x} cy={y} r="5.5" fill="var(--accent)" stroke="var(--surface)" strokeWidth="2.5" />
-          <text x={x} y={y - 11} textAnchor="middle" fontSize="9" fill="var(--accent)" fontWeight="700">
-            {t.score}%
-          </text>
+          {labeledIdx.has(i) && (
+            <text x={x} y={y - 11} textAnchor="middle" fontSize="9" fill="var(--accent)" fontWeight="700">
+              {t.score}%
+            </text>
+          )}
         </g>
       ))}
-      {sorted.map((t, i) => (
+      {sorted.map((t, i) => labeledIdx.has(i) && (
         <text key={i} x={toX(t.date)} y={H - 6} textAnchor="middle" fontSize="9.5" fill="var(--muted)">
           {new Date(t.date + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
         </text>
@@ -150,6 +172,15 @@ export default function TestDashboard({ onBack, onStudy }) {
   // Map of deckFile → question IDs (only loaded for tests that have a deckFile)
   const [deckQuestions, setDeckQuestions] = useState({});
   const [editing, setEditing] = useState(null);   // entry draft being added/edited, or null
+  const [confirmDelId, setConfirmDelId] = useState(null); // armed delete (inline "Sure?" confirm)
+  const confirmTimer = useRef(null);
+  const [savedId, setSavedId] = useState(null);   // just-saved entry → brief "Saved ✓" + card flash
+  const savedTimer = useRef(null);
+
+  useEffect(() => () => {
+    clearTimeout(confirmTimer.current);
+    clearTimeout(savedTimer.current);
+  }, []);
 
   // Other pages (Progress, Home) navigate here with an intent in router state:
   // { openForm: true } opens a fresh entry form, { editId } opens that test's
@@ -201,7 +232,24 @@ export default function TestDashboard({ onBack, onStudy }) {
     () => tests.reduce((s, t) => s + (t.questionCount ?? DEFAULT_BLOCK), 0),
     [tests]
   );
+  // Tests without an explicit question count contribute an assumed 40 — mark
+  // the completion figures as estimates when any such entry exists.
+  const estimatedCount = useMemo(
+    () => tests.filter(t => t.questionCount == null).length,
+    [tests]
+  );
+  const isEstimate = estimatedCount > 0;
   const qbankPct = Math.min(100, Math.round((totalQs / QBANK_TOTAL) * 100));
+
+  // Default name for a new entry: next number after the highest existing
+  // "UWorld test N" so a blank name auto-numbers instead of colliding.
+  const nextName = useMemo(() => {
+    const nums = tests.map(t => {
+      const m = String(t.testNum || "").match(/uworld\s*test\s*(\d+)/i);
+      return m ? Number(m[1]) : 0;
+    });
+    return `UWorld test ${Math.max(0, ...nums) + 1}`;
+  }, [tests]);
 
   const stats = useMemo(() => {
     if (!sorted.length) return null;
@@ -249,9 +297,23 @@ export default function TestDashboard({ onBack, onStudy }) {
     setTests(next);
     saveTestLog(next);
     setEditing(null);
+    // Brief acknowledgment: "Saved ✓" by the list header + flash the card.
+    setSavedId(entry.id);
+    clearTimeout(savedTimer.current);
+    savedTimer.current = setTimeout(() => setSavedId(null), 2500);
   }
 
+  // Two-tap inline confirm (same pattern as the reset-test confirm in
+  // TestReview): first tap arms "Sure?", second tap deletes, disarms after ~3s.
   function handleDelete(id) {
+    if (confirmDelId !== id) {
+      setConfirmDelId(id);
+      clearTimeout(confirmTimer.current);
+      confirmTimer.current = setTimeout(() => setConfirmDelId(null), 3000);
+      return;
+    }
+    clearTimeout(confirmTimer.current);
+    setConfirmDelId(null);
     const next = tests.filter(t => t.id !== id);
     setTests(next);
     saveTestLog(next);
@@ -263,7 +325,7 @@ export default function TestDashboard({ onBack, onStudy }) {
 
   return (
     <div className="td-page">
-      <button className="back-btn" onClick={onBack}>← Home</button>
+      <button className="back-btn" onClick={onBack}>← Step 1</button>
 
       {/* Header */}
       <div className="td-header">
@@ -284,6 +346,7 @@ export default function TestDashboard({ onBack, onStudy }) {
         <TestEntryForm
           key={editing.id}
           draft={editing}
+          defaultName={nextName}
           onCancel={() => setEditing(null)}
           onSave={handleSave}
         />
@@ -296,6 +359,11 @@ export default function TestDashboard({ onBack, onStudy }) {
         <div className="td-col-list">
           <div className="td-list-head">
             <span className="td-list-title">Your tests</span>
+            {savedId != null && (
+              <span className="small" role="status" style={{ color: "var(--ok, #2E7D32)", fontWeight: 700 }}>
+                Saved ✓
+              </span>
+            )}
             {tests.length > 0 && <span className="muted small">{tests.length} recorded</span>}
           </div>
 
@@ -312,12 +380,20 @@ export default function TestDashboard({ onBack, onStudy }) {
                 const statCount = Object.keys(t.subjects || {}).length + Object.keys(t.systems || {}).length;
 
                 return (
-                  <div key={t.id} className={`td-test-card${isLatest ? " td-test-latest" : ""}`}>
+                  <div key={t.id} className={`td-test-card${isLatest ? " td-test-latest" : ""}${savedId === t.id ? " fad-ch-flash" : ""}`}>
                     <div className="td-test-top-row">
                       <div className="td-test-name">{t.testNum}</div>
                       <div className="td-test-tools">
                         <button className="td-edit-btn" onClick={() => setEditing(draftFrom(t))} title="Edit">✎</button>
-                        <button className="td-del-btn" onClick={() => handleDelete(t.id)} title="Remove">✕</button>
+                        <button
+                          className="td-del-btn"
+                          onClick={() => handleDelete(t.id)}
+                          title={confirmDelId === t.id ? "Tap again to delete" : "Remove"}
+                          aria-label={confirmDelId === t.id ? "Tap again to delete this test" : "Remove test"}
+                          style={confirmDelId === t.id ? { color: "var(--bad)", background: "var(--bad-soft)", fontWeight: 700 } : undefined}
+                        >
+                          {confirmDelId === t.id ? "Sure?" : "✕"}
+                        </button>
                       </div>
                     </div>
                     <div className="td-test-date">
@@ -372,18 +448,21 @@ export default function TestDashboard({ onBack, onStudy }) {
           {stats ? (
             <>
               {/* UWorld Qbank completion */}
-              <div className="td-qbank">
+              <div
+                className="td-qbank"
+                title={isEstimate ? `Includes estimated counts (${DEFAULT_BLOCK} Qs assumed) for ${estimatedCount} test${estimatedCount === 1 ? "" : "s"} logged without a question count` : undefined}
+              >
                 <div className="td-qbank-head">
                   <span className="td-qbank-title">UWorld Qbank progress</span>
                   <span className="td-qbank-count">
-                    {totalQs.toLocaleString()} / {QBANK_TOTAL.toLocaleString()} Qs
+                    {isEstimate && "~"}{totalQs.toLocaleString()} / {QBANK_TOTAL.toLocaleString()} Qs
                   </span>
                 </div>
                 <div className="td-qbank-bar">
                   <div className="td-qbank-fill" style={{ width: `${Math.max(qbankPct, 1)}%` }} />
                 </div>
                 <span className="td-qbank-sub">
-                  {qbankPct}% of the Qbank · {(QBANK_TOTAL - totalQs).toLocaleString()} left
+                  {isEstimate && "~"}{qbankPct}% of the Qbank · {isEstimate && "~"}{(QBANK_TOTAL - totalQs).toLocaleString()} left
                 </span>
               </div>
 
