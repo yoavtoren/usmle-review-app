@@ -111,8 +111,9 @@ export default function App() {
 
         <div className={`route-fade${isEnglishArea ? " area-ltr" : " area-rtl"}`} key={loc.pathname} dir={areaDir} lang={areaLang}>
           <Routes>
-            {/* TEMP-DIAG: home route swapped to book for simulator debugging — revert before finishing */}
-            <Route path="/" element={<FirstAidBook />} />
+            <Route path="/" element={
+              <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} />
+            } />
             <Route path="/step1" element={
               <WelcomeScreen
                 onNav={nav}
