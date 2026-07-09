@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap');
+/* Hebrew UI face — Inter/Fraunces carry no Hebrew glyphs; Heebo covers them
+   online, "Arial Hebrew" is the guaranteed iOS/macOS system fallback offline. */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300..800&display=swap');
 
 /* ═══════════════════════════════════════════════════════════════════
    LIGHT EDITORIAL MINIMAL — elite study dashboard
@@ -76,7 +79,9 @@
   --rail-w-mini: 72px;
 
   /* ── Type ── */
-  --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --serif: 'Fraunces', 'Iowan Old Style', Georgia, "Times New Roman", serif;
+  /* Hebrew-safe sans stack — used app-wide so RTL UI text never falls to tofu */
+  --sans: 'Inter', 'Heebo', -apple-system, BlinkMacSystemFont, "Segoe UI", "Arial Hebrew", "Helvetica Neue", Arial, sans-serif;
 
   /* ── Motion — calm, precise ── */
   --t:      160ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -101,7 +106,7 @@
 html { -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--sans);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -1054,6 +1059,15 @@ kbd { background: var(--surface); border: 1px solid var(--line-hover); border-ra
 .fad-topic-date { font-size: 10.5px; font-weight: 700; flex-shrink: 0; }
 .fad-topic-meta { display: flex; align-items: center; gap: 8px; padding: 2px 10px 6px 36px; flex-wrap: wrap; }
 
+/* Sub-topics nested under a main topic (First Aid bold sub-headers) */
+.fad-sub-list { display: flex; flex-direction: column; gap: 1px; margin: 1px 0 4px 0; padding-left: 24px; border-left: 1px dashed var(--line); margin-left: 17px; }
+.fad-sub-item { display: flex; align-items: center; gap: 9px; padding: 4px 10px; cursor: pointer; background: none; border: 1px solid transparent; border-radius: var(--r-sm); text-align: left; width: 100%; font-family: inherit; transition: all var(--t); }
+.fad-sub-item:hover { background: var(--surface); border-color: var(--line); }
+.fad-sub-check { width: 13px; height: 13px; border-radius: 3px; border: 1px solid var(--line-hover); display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 800; flex-shrink: 0; }
+.fad-sub-name { font-size: 11.5px; color: var(--muted); flex: 1; line-height: 1.35; }
+.fad-sub-done .fad-sub-name { text-decoration: line-through; opacity: 0.7; }
+.fad-result-parent { color: var(--muted); }
+
 /* Difficulty stars */
 .fa-diff-stars { display: inline-flex; gap: 1px; }
 .fa-diff-star { background: none; border: none; cursor: pointer; font-size: 13px; color: #d1d5db; padding: 0 1px; line-height: 1; transition: color 0.12s; font-family: inherit; }
@@ -1143,6 +1157,11 @@ kbd { background: var(--surface); border: 1px solid var(--line-hover); border-ra
 .topic-check { color: var(--ok); font-size: 13px; width: 16px; text-align: center; }
 .topic-item:not(.done) .topic-check { color: var(--muted-light); }
 .topic-name  { font-size: 12.5px; line-height: 1.4; }
+.subtopic-list { display: flex; flex-direction: column; gap: 1px; margin: 0 0 3px 26px; padding-left: 12px; border-left: 1px dashed var(--line); }
+.subtopic-item { display: flex; align-items: center; gap: 9px; padding: 3px 8px; border-radius: var(--r-sm); font-size: 11.5px; color: var(--muted); }
+.subtopic-item .topic-name { font-size: 11.5px; }
+.subtopic-item.done { opacity: 0.65; }
+.subtopic-item.done .topic-name { text-decoration: line-through; }
 .fa-footnote { margin-top: 32px; font-size: 11.5px; color: var(--muted); }
 
 
@@ -2260,12 +2279,36 @@ input[type="file"] { direction: ltr; text-align: left; }
 ═══════════════════════════════════════════════════════════════════ */
 .home { min-height: 100vh; }
 
-/* ── Hero: text + countdown showcase ── */
+/* ── Greeting band ── */
 .home-hero3 {
-  display: grid; grid-template-columns: 1fr auto; align-items: stretch; gap: 28px;
-  padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 28px;
+  padding-bottom: 26px; margin-bottom: 26px; border-bottom: 1px solid var(--line);
 }
 .home-hero3-text { align-self: center; }
+
+/* ── iPad landscape stage: dominant Step 1 + companion column ── */
+.home-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+  align-items: stretch;
+  gap: 22px;
+}
+.home-aside { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.home-aside .home-count { width: 100%; flex: 1 1 auto; }
+.home-aside .home-card3 { flex: 0 0 auto; }
+@media (max-width: 1000px) {
+  .home-stage { grid-template-columns: 1fr; }
+  .home-aside { flex-direction: row; flex-wrap: wrap; }
+  .home-aside > * { flex: 1 1 240px; }
+}
+@media (max-width: 620px) {
+  .home-feature2 { flex-direction: column-reverse; align-items: stretch; }
+  .home-feature2-side {
+    flex-direction: row; justify-content: center; align-self: auto; gap: 24px;
+    padding-inline-end: 0; padding-top: 22px;
+    border-inline-end: none; border-top: 1px solid rgba(255,255,255,0.12);
+  }
+}
 .home-eyebrow { font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.2px; }
 .home-h1 { font-family: var(--serif); font-size: clamp(34px, 4.8vw, 54px); font-weight: 500; letter-spacing: -0.8px; line-height: 1.0; color: var(--text); }
 .home-lede { font-size: 15.5px; color: var(--text-2); margin-top: 14px; max-width: 48ch; line-height: 1.65; }
@@ -2283,7 +2326,7 @@ input[type="file"] { direction: ltr; text-align: left; }
 .home-count {
   position: relative; overflow: hidden;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  width: 248px; padding: 26px 24px; border-radius: var(--r-2xl);
+  width: 248px; padding: 28px 24px; border-radius: var(--r-2xl);
   background: linear-gradient(160deg, #1A1740 0%, #2B2370 52%, #4F46E5 130%);
   box-shadow: var(--sh-md), inset 0 1px 0 rgba(255,255,255,0.08);
   text-align: center;
@@ -2310,9 +2353,9 @@ input[type="file"] { direction: ltr; text-align: left; }
 .home-feature2 {
   position: relative; overflow: hidden;
   width: 100%; text-align: right; cursor: pointer; font-family: inherit;
-  display: flex; align-items: stretch; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
   border: none; border-radius: var(--r-2xl);
-  padding: 30px 34px; margin-bottom: 30px;
+  padding: 36px 40px;
   box-shadow: var(--sh-md);
   transition: transform var(--t-slow) var(--ease-out), box-shadow var(--t-slow);
 }
@@ -2347,12 +2390,26 @@ input[type="file"] { direction: ltr; text-align: left; }
 .home-fstat2-num { font-size: 34px; font-weight: 750; letter-spacing: -1.2px; color: #fff; line-height: 1; font-variant-numeric: tabular-nums; }
 .home-fstat2-lbl { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.55); }
 .home-fstat2-sep { width: 1px; height: 38px; background: rgba(255,255,255,0.14); }
-.home-feature2-side { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 18px; }
-.home-feature2-cta { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700; color: #fff; }
+.home-feature2-side {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+  align-self: stretch; padding-inline-end: 34px;
+  border-inline-end: 1px solid rgba(255,255,255,0.12);
+}
+.home-feature2-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 700; color: #fff;
+  padding: 9px 18px; border-radius: 999px;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px); transition: background var(--t), border-color var(--t);
+}
+.home-feature2:hover .home-feature2-cta { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.32); }
 .home-feature2:hover .home-feature2-cta svg { transform: translateX(-4px); transition: transform var(--t); }
 
-.home-ring2 { position: relative; width: 92px; height: 92px; display: flex; align-items: center; justify-content: center; }
-.home-ring2-pct { position: absolute; font-size: 19px; font-weight: 800; color: #fff; letter-spacing: -0.5px; font-variant-numeric: tabular-nums; }
+.home-ring2 { position: relative; width: 118px; height: 118px; display: flex; align-items: center; justify-content: center; }
+.home-ring2 svg { width: 118px; height: 118px; }
+.home-ring2-pct { position: absolute; font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.8px; font-variant-numeric: tabular-nums; }
+.home-ring2-lbl { position: absolute; bottom: 24px; font-size: 9px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,0.55); }
 
 /* ── Section label ── */
 .home-sec-label { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
@@ -2393,7 +2450,9 @@ input[type="file"] { direction: ltr; text-align: left; }
 }
 .home-card3-arr { color: var(--muted-light); transition: color var(--t), transform var(--t); }
 .home-card3:hover .home-card3-arr { color: var(--tint); transform: translateX(-4px); }
-.home-card3-title { font-size: 16px; font-weight: 700; letter-spacing: -0.2px; color: var(--text); position: relative; z-index: 1; }
+.home-card3-head { display: flex; flex-direction: column; gap: 4px; position: relative; z-index: 1; }
+.home-card3-title { font-size: 16px; font-weight: 700; letter-spacing: -0.2px; color: var(--text); }
+.home-card3-desc { font-size: 12px; font-weight: 500; color: var(--muted); }
 .home-card3-stats { display: flex; gap: 24px; flex-wrap: wrap; position: relative; z-index: 1; }
 .home-card3-stat { display: flex; flex-direction: column; gap: 3px; }
 .home-card3-val { font-size: 24px; font-weight: 750; letter-spacing: -0.6px; color: var(--text); line-height: 1; font-variant-numeric: tabular-nums; }
@@ -2402,7 +2461,7 @@ input[type="file"] { direction: ltr; text-align: left; }
 .home-card3-stat.alert .home-card3-lbl { color: var(--bad); }
 
 @media (max-width: 760px) {
-  .home-hero3 { grid-template-columns: 1fr; }
+  .home-hero3 { flex-direction: column; align-items: flex-start; }
   .home-count { width: 100%; }
   .home-count-num { font-size: 64px; }
 }
@@ -4306,4 +4365,88 @@ button.cr-dot:hover { transform: scale(1.18); color: #9ca3af; }
   flex-shrink: 0; font-size: 10.5px; font-weight: 700; color: var(--gold-deep);
   background: var(--gold-soft); border: 1px solid var(--gold-mid); border-radius: 6px;
   padding: 2px 7px; font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   iPad · iOS-GRADE POLISH
+   Safe-area insets · frosted vibrancy rail · squircle depth ·
+   spring interactions · landscape-optimized home
+═══════════════════════════════════════════════════════════════════ */
+
+/* ── Kill the grey tap flash; smooth momentum scroll (iOS) ── */
+* { -webkit-tap-highlight-color: transparent; }
+.app-main { -webkit-overflow-scrolling: touch; }
+
+/* ── Safe-area insets (notch / home-indicator on iPad standalone) ── */
+.rail { padding-top: env(safe-area-inset-top); }
+.rail-foot { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
+@supports (padding: max(0px)) {
+  .page { padding-left: max(40px, env(safe-area-inset-left)); }
+}
+
+/* ── Frosted-glass vibrancy rail (iOS sidebar feel) ── */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .rail {
+    background: rgba(255,255,255,0.72);
+    -webkit-backdrop-filter: saturate(180%) blur(22px);
+            backdrop-filter: saturate(180%) blur(22px);
+  }
+}
+
+/* ── iOS spring on the primary nav links ── */
+.rail-link { transition: background var(--t), color var(--t), transform 220ms var(--ease-out); }
+.rail-link:active { transform: scale(0.97); }
+.rail-link.active { box-shadow: inset 0 0 0 1px var(--accent-mid); }
+
+/* ── Squircle depth + spring on tappable cards ── */
+.home-feature2 { border-radius: 28px; }
+.home-count, .home-card3 { border-radius: 24px; }
+.home-feature2:active { transform: translateY(-1px) scale(0.992); }
+.home-card3 { transition: transform 260ms var(--ease-out), box-shadow var(--t-slow), border-color var(--t); }
+.home-card3:active { transform: scale(0.98); }
+
+/* Elevate the AIMS companion so the aside reads as one balanced column */
+.home-aside .home-card3 { padding: 22px 22px 24px; box-shadow: var(--sh-sm); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   iPad Pro 13" — LANDSCAPE
+   Wide canvas: keep the home above the fold, enlarge focal type,
+   promote generous 44px+ touch targets throughout the rail.
+═══════════════════════════════════════════════════════════════════ */
+@media (min-width: 1024px) and (orientation: landscape) and (pointer: coarse) {
+  .rail-link { padding: 12px 14px; font-size: 14.5px; border-radius: 12px; }
+  .rail-ico, .rail-ico svg { width: 21px; height: 21px; }
+  .rail-foot-btn { padding: 12px; }
+  .rail-collapse { padding: 11px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   iPhone — NOTCH / DYNAMIC ISLAND / HOME INDICATOR
+   The mobile top strip must clear the status bar; the drawer rail and
+   toasts must clear the home indicator. env(safe-area-inset-*) is 0 in
+   a normal browser, so these rules are inert off-device.
+═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .rail-mobile-bar {
+    height: calc(56px + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+  }
+  .app-main { padding-top: calc(56px + env(safe-area-inset-top)); }
+  .toast-stack { bottom: calc(20px + env(safe-area-inset-bottom)); }
+}
+
+/* Landscape composition tuning — applies to the wide tablet canvas */
+@media (min-width: 1180px) {
+  /* Center the whole home composition on the tall landscape canvas */
+  .home-page {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: 40px; padding-bottom: 40px;
+  }
+  .home-h1 { font-size: clamp(40px, 4.6vw, 58px); }
+  .home-feature2-title { font-size: 38px; }
+  .home-feature2-stats { gap: 34px; margin-top: 30px; }
+  .home-fstat2-num { font-size: 40px; }
+  .home-count-num { font-size: 84px; }
 }

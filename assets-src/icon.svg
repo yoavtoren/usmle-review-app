@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5B52EC"/>
+      <stop offset="0.55" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#3A31B0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.32" cy="0.26" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="0.6" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Full-bleed background (iOS applies its own corner mask) -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+
+  <!-- Stethoscope, centered, scaled up from the brand mark -->
+  <g transform="translate(512 512) scale(11.0) translate(-29 -31.5)"
+     fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <!-- tube -->
+    <path d="M30 44 Q20 44 20 32 Q20 20 28 20 Q36 20 36 28" stroke-width="3.5"/>
+    <!-- earpieces -->
+    <path d="M28 20 L22 13" stroke-width="3"/>
+    <path d="M28 20 L34 13" stroke-width="3"/>
+    <circle cx="22" cy="12" r="2.6" fill="#ffffff" stroke="none"/>
+    <circle cx="34" cy="12" r="2.6" fill="#ffffff" stroke="none"/>
+    <!-- chest piece -->
+    <circle cx="38" cy="44" r="8" stroke-width="3.5"/>
+    <circle cx="38" cy="44" r="3" fill="#ffffff" stroke="none"/>
+  </g>
+</svg>

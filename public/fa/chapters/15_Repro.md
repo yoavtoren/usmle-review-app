@@ -1,115 +1,293 @@
-# 15 Repro — 0/102 (0%)
+# 15 Repro — 0/280 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Embryology — 0/22
-- [ ] 01 Important genes of embryogenesis
-- [ ] 02 Early fetal development
-- [ ] 03 Embryologic derivatives
+## 01 Embryology — 0/92
+- [ ] 01 Early embryonic development
+  - [ ] Week 1
+  - [ ] Week 2
+  - [ ] Week 3
+  - [ ] Week 4
+  - [ ] Week 8
+- [ ] 02 Embryologic derivatives
+  - [ ] Ectoderm
+  - [ ] Craniopharyngioma
+  - [ ] Mesoderm
+  - [ ] Endoderm
+- [ ] 03 Teratogens
+  - [ ] ACE inhibitors
+  - [ ] Alkylating agents
+  - [ ] Aminoglycosides
+  - [ ] Antiepileptic drugs
+  - [ ] Diethylstilbestrol
+  - [ ] Fluoroquinolones
+  - [ ] Folate antagonists
+  - [ ] Isotretinoin
+  - [ ] Lithium
+  - [ ] Methimazole
+  - [ ] Tetracyclines
+  - [ ] Thalidomide
+  - [ ] Warfarin
+  - [ ] Alcohol
+  - [ ] Cocaine
+  - [ ] Tobacco smoking
+  - [ ] Iodine lack or excess
+  - [ ] Maternal diabetes
+  - [ ] Maternal PKU
+  - [ ] Methylmercury
+  - [ ] X-rays
 - [ ] 04 Types of errors in morphogenesis
-- [ ] 05 Teratogens
-- [ ] 06 Fetal alcohol syndrome
-- [ ] 07 Neonatal abstinence syndrome
-- [ ] 08 Twinning
-- [ ] 09 Placenta
-- [ ] 10 Umbilical cord
-- [ ] 11 Aortic arch derivatives
+  - [ ] Agenesis
+  - [ ] Aplasia
+  - [ ] Hypoplasia
+  - [ ] Disruption
+  - [ ] Deformation
+  - [ ] Malformation
+  - [ ] Sequence
+  - [ ] Field defect
+- [ ] 05 Fetal alcohol syndrome
+- [ ] 06 Neonatal abstinence syndrome
+- [ ] 07 Placenta
+  - [ ] Cytotrophoblast
+  - [ ] Syncytiotrophoblast
+  - [ ] Decidua basalis
+- [ ] 08 Amniotic fluid
+  - [ ] Polyhydramnios
+  - [ ] Oligohydramnios
+- [ ] 09 Twinning
+- [ ] 10 Twin-twin transfusion syndrome
+- [ ] 11 Umbilical cord
+  - [ ] Urachus
+  - [ ] Vitelline duct
 - [ ] 12 Pharyngeal apparatus
 - [ ] 13 Pharyngeal cleft derivatives
-- [ ] 14 Pharyngeal arch derivatives
-- [ ] 15 Pharyngeal pouch derivatives
-- [ ] 16 Cleft lip & cleft palate
-- [ ] 17 Genital embryology
-- [ ] 18 Sexual differentiation
-- [ ] 19 Uterine (Mullerian duct) anomalies
-- [ ] 20 Male/female genital homologs
-- [ ] 21 Congenital penile abnormalities
-- [ ] 22 Descent of testes & ovaries
+  - [ ] Pharyngeal cleft cyst
+- [ ] 14 Pharyngeal pouch derivatives
+  - [ ] 1st pharyngeal pouch
+  - [ ] 2nd pharyngeal pouch
+  - [ ] 3rd pharyngeal pouch
+  - [ ] 4th pharyngeal pouch
+- [ ] 15 Pharyngeal arch derivatives
+  - [ ] 1st pharyngeal arch
+  - [ ] 2nd pharyngeal arch
+  - [ ] 3rd pharyngeal arch
+  - [ ] 4th and 6th pharyngeal arches
+- [ ] 16 First and second pharyngeal arch syndromes
+  - [ ] Pierre Robin sequence
+  - [ ] Treacher Collins syndrome
+- [ ] 17 Orofacial clefts
+  - [ ] Cleft lip
+  - [ ] Cleft palate
+- [ ] 18 Genital embryology
+  - [ ] Female
+  - [ ] Male
+  - [ ] Paramesonephric (Müllerian) duct
+  - [ ] Mesonephric (Wolffian) duct
+- [ ] 19 Sexual differentiation
+- [ ] 20 Uterine (Müllerian duct) anomalies
+  - [ ] Septate uterus
+  - [ ] Bicornuate uterus
+  - [ ] Uterus didelphys
+- [ ] 21 Male/female genital homologs
+- [ ] 22 Congenital penile abnormalities
+  - [ ] Hypospadias
+  - [ ] Epispadias
+- [ ] 23 Descent of testes and ovaries
+  - [ ] Gubernaculum
+  - [ ] Processus vaginalis
 
-## 02 Anatomy — 0/7
-- [ ] 01 Gonadal drainage
+## 02 Anatomy — 0/23
+- [ ] 01 Drainage of reproductive organs
+  - [ ] Venous drainage
+  - [ ] Lymphatic drainage
 - [ ] 02 Female reproductive anatomy
-- [ ] 04 Female reproductive epithelial histology
-- [ ] 05 Male reproductive anatomy
-- [ ] 06 Urethral injury
-- [ ] 07 Autonomic innervation of male sexual response
-- [ ] 08 Seminiferous tubules
+  - [ ] Infundibulopelvic ligament
+  - [ ] Utero-ovarian ligament
+  - [ ] Round ligament
+  - [ ] Broad ligament
+  - [ ] Cardinal ligament
+  - [ ] Uterosacral ligament
+- [ ] 03 Adnexal torsion
+- [ ] 04 Pelvic organ prolapse
+- [ ] 05 Female reproductive epithelial histology
+- [ ] 06 Male reproductive anatomy
+- [ ] 07 Genitourinary trauma
+  - [ ] Renal injury
+  - [ ] Bladder injury
+  - [ ] Urethral injury
+- [ ] 08 Autonomic innervation of male sexual response
+- [ ] 09 Seminiferous tubules
+  - [ ] Spermatogonia
+  - [ ] Sertoli cells
+  - [ ] Leydig cells
 
-## 03 Physiology — 0/18
+## 03 Physiology — 0/21
 - [ ] 01 Spermatogenesis
 - [ ] 02 Estrogen
 - [ ] 03 Progesterone
 - [ ] 04 Oogenesis
 - [ ] 05 Ovulation
 - [ ] 06 Menstrual cycle
+  - [ ] Ovarian cycle
+  - [ ] Uterine cycle
 - [ ] 07 Abnormal uterine bleeding
 - [ ] 08 Pregnancy
-- [ ] 09 Human chorionic gonadotropin
-- [ ] 10 Human placental lactogen
-- [ ] 11 Apgar score
-- [ ] 12 Infant & child development
-- [ ] 13 Low birth weight
+- [ ] 09 Physiologic changes in pregnancy
+- [ ] 10 Human chorionic gonadotropin
+- [ ] 11 Human placental lactogen
+- [ ] 12 Apgar score
+- [ ] 13 Neonatal birth weight
 - [ ] 14 Lactation
 - [ ] 15 Menopause
 - [ ] 16 Androgens
-- [ ] 17 Tanner stages of sexual development
-- [ ] 18 Precocious Puberty
+- [ ] 17 Sexual maturity rating (Tanner stage) of pubertal development
+- [ ] 18 Precocious puberty
+- [ ] 19 Delayed puberty
 
-## 04 Pathology — 0/39
+## 04 Pathology — 0/118
 - [ ] 01 Sex chromosome disorders
-- [ ] 02 Diagnosing disorders of sex hormones
-- [ ] 03 Other disorders of sex development
-- [ ] 04 Placental aromatase deficiency
-- [ ] 05 Androgen insensitivity syndrome
-- [ ] 06 5a-reductase deficiency
-- [ ] 07 Kallmann syndrome
-- [ ] 08 Pregnancy complications
-- [ ] 09 Amniotic fluid abnormalities
-- [ ] 10 Hydatidiform mole
-- [ ] 11 Choriocarcinoma
-- [ ] 12 Hypertension in pregnancy
-- [ ] 13 Gynecologic tumor epidemiology
-- [ ] 14 Vulvar pathology
-- [ ] 15 Imperforate Hymen
-- [ ] 16 Vaginal tumors
-- [ ] 17 Cervical pathology
-- [ ] 18 Primary ovarian insufficiency
-- [ ] 19 Most common causes of anovulation
-- [ ] 20 Functional Hypothalamic Amenorrhea
-- [ ] 21 Polycystic ovarian syndrome
-- [ ] 23 Ovarian cysts
-- [ ] 24 Ovarian neoplasms
-- [ ] 25 Uterine conditions
-- [ ] 26 Breast pathology
-- [ ] 27 Benign breast diseases
-- [ ] 28 Breast cancer
-- [ ] 29 Penile pathology
-- [ ] 30 Cryptorchidism
-- [ ] 31 Testicular torsion
-- [ ] 32 Varicocele
-- [ ] 33 Extragonadal germ cell tumors
-- [ ] 34 Scrotal masses
-- [ ] 35 Testicular tumors
-- [ ] 36 Hormone Levels in Germ Cell Tumors
-- [ ] 37 Epididymitis & orchitis
-- [ ] 38 Benign prostatic hyperplasia
-- [ ] 39 Prostatitis
-- [ ] 40 Prostatic adenocarcinoma
+  - [ ] Klinefelter syndrome
+  - [ ] Turner syndrome
+  - [ ] Double Y males
+- [ ] 02 Other disorders of sex development
+  - [ ] 46,XX DSD
+  - [ ] 46,XY DSD
+  - [ ] Ovotesticular DSD
+- [ ] 03 Diagnosing disorders by sex hormones
+- [ ] 04 Diagnosing disorders by physical characteristics
+- [ ] 05 Aromatase deficiency
+- [ ] 06 Androgen insensitivity syndrome
+- [ ] 07 5α-reductase deficiency
+- [ ] 08 Kallmann syndrome
+- [ ] 09 Placental disorders
+  - [ ] Placenta accreta spectrum
+  - [ ] Placenta previa
+  - [ ] Vasa previa
+  - [ ] Placental abruption
+- [ ] 10 Uterine rupture
+- [ ] 11 Postpartum hemorrhage
+- [ ] 12 Ectopic pregnancy
+- [ ] 13 Hydatidiform mole
+- [ ] 14 Choriocarcinoma
+- [ ] 15 Hypertension in pregnancy
+  - [ ] Gestational hypertension
+  - [ ] Preeclampsia
+  - [ ] Eclampsia
+  - [ ] HELLP syndrome
+- [ ] 16 Supine hypotensive syndrome
+- [ ] 17 Gynecologic tumor epidemiology
+- [ ] 18 Vulvar pathology
+  - [ ] Bartholin cyst and abscess
+  - [ ] Lichen sclerosus
+  - [ ] Lichen simplex chronicus
+  - [ ] Vulvar carcinoma
+  - [ ] Extramammary Paget disease
+- [ ] 19 Imperforate hymen
+- [ ] 20 Vaginal tumors
+  - [ ] Squamous cell carcinoma
+  - [ ] Clear cell adenocarcinoma
+  - [ ] Sarcoma botryoides
+- [ ] 21 Anovulatory infertility
+- [ ] 22 Polycystic ovary syndrome
+- [ ] 23 Primary ovarian insufficiency
+- [ ] 24 Functional hypothalamic amenorrhea
+- [ ] 25 Cervical pathology
+  - [ ] Dysplasia and carcinoma in situ
+  - [ ] Invasive carcinoma
+- [ ] 26 Primary dysmenorrhea
+- [ ] 27 Ovarian cysts
+  - [ ] Follicular cyst
+  - [ ] Corpus luteal cyst
+  - [ ] Theca lutein cyst
+- [ ] 28 Ovarian tumors
+  - [ ] Serous cystadenoma
+  - [ ] Mucinous cystadenoma
+  - [ ] Brenner tumor
+  - [ ] Serous carcinoma
+  - [ ] Mucinous carcinoma
+  - [ ] Mature cystic teratoma
+  - [ ] Immature teratoma
+  - [ ] Dysgerminoma
+  - [ ] Yolk sac tumor
+  - [ ] Fibroma
+  - [ ] Thecoma
+  - [ ] Sertoli-Leydig cell tumor
+  - [ ] Granulosa cell tumor
+- [ ] 29 Uterine conditions
+  - [ ] Adenomyosis
+  - [ ] Endometriosis
+  - [ ] Endometrial hyperplasia
+  - [ ] Endometritis
+  - [ ] Intrauterine adhesions
+  - [ ] Leiomyoma
+  - [ ] Endometrial carcinoma
+- [ ] 30 Breast pathology
+- [ ] 31 Benign breast diseases
+  - [ ] Fibrocystic changes
+  - [ ] Inflammatory processes
+  - [ ] Benign tumors
+  - [ ] Gynecomastia
+- [ ] 32 Breast cancer
+  - [ ] Ductal carcinoma in situ
+  - [ ] Paget disease
+  - [ ] Lobular carcinoma in situ
+  - [ ] Invasive ductal
+  - [ ] Invasive lobular
+  - [ ] Inflammatory
+- [ ] 33 Penile pathology
+  - [ ] Peyronie disease
+  - [ ] Ischemic priapism
+  - [ ] Squamous cell carcinoma
+- [ ] 34 Cryptorchidism
+- [ ] 35 Testicular torsion
+- [ ] 36 Varicocele
+- [ ] 37 Extragonadal germ cell tumors
+- [ ] 38 Benign scrotal lesions
+  - [ ] Hydrocele
+  - [ ] Spermatocele
+- [ ] 39 Testicular tumors
+  - [ ] Seminoma
+  - [ ] Embryonal carcinoma
+  - [ ] Teratoma
+  - [ ] Yolk sac tumor
+  - [ ] Choriocarcinoma
+  - [ ] Leydig cell tumor
+  - [ ] Sertoli cell tumor
+  - [ ] Primary testicular lymphoma
+- [ ] 40 Hormone levels in germ cell tumors
+  - [ ] PLAP
+  - [ ] AFP hCG
+- [ ] 41 Epididymitis and orchitis
+  - [ ] Epididymitis
+  - [ ] Orchitis
+- [ ] 42 Benign prostatic hyperplasia
+- [ ] 43 Prostatitis
+- [ ] 44 Prostatic adenocarcinoma
 
-## 05 Pharm — 0/16
-- [ ] 02 Goserelin, Leuprolide
+## 05 Pharmacology — 0/26
+- [ ] 01 Control of reproductive hormones
+- [ ] 02 Gonadotropin- releasing hormone analogs
 - [ ] 03 Degarelix
-- [ ] 04 Estrogens
+- [ ] 04 Ethinyl estradiol
 - [ ] 05 Selective estrogen receptor modulators
+  - [ ] Clomiphene
+  - [ ] Tamoxifen
+  - [ ] Raloxifene
 - [ ] 06 Aromatase inhibitors
-- [ ] 07 Hormone replacement therapy
-- [ ] 08 Progestins
-- [ ] 09 Antiprogestins
-- [ ] 10 Combined contraception
-- [ ] 11 Copper intrauterine device
-- [ ] 12 Tocolytics
-- [ ] 13 Danazol
-- [ ] 14 Testosterone, methyltestosterone
-- [ ] 15 Antiandrogens
-- [ ] 16 Tamsulosin
-- [ ] 17 Minoxidil
+- [ ] 07 Progestins
+- [ ] 08 Antiprogestins
+- [ ] 09 Contraception
+  - [ ] Hormonal
+  - [ ] Intrauterine device
+  - [ ] Surgical
+- [ ] 10 Tocolytics
+- [ ] 11 Danazol
+- [ ] 12 Testosterone, methyltestosterone
+- [ ] 13 Antiandrogens
+  - [ ] Abiraterone
+  - [ ] Finasteride
+  - [ ] Flutamide, bicalutamide
+  - [ ] Ketoconazole
+  - [ ] Spironolactone
+- [ ] 14 Tamsulosin
+- [ ] 15 Minoxidil

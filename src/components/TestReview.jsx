@@ -17,7 +17,9 @@ export default function TestReview({ onBack }) {
   const [deck, setDeck]             = useState(null);
   const [error, setError]           = useState(null);
   const [selectedId, setSelectedId] = useState(null);
-  const [filter, setFilter]         = useState(location.state?.filter || "missed");
+  // Opening a specific test → show the whole block (all 40) by default, not just
+  // the missed subset. The "all tests" view still defaults to missed-only.
+  const [filter, setFilter]         = useState(location.state?.filter || (initialBlock !== "all" ? "all" : "missed"));
   const [block, setBlock]           = useState(initialBlock);
   const [query, setQuery]           = useState("");
   const [progress, setProgress]     = useState(loadProgress);
@@ -91,14 +93,19 @@ export default function TestReview({ onBack }) {
 
   const stats = useMemo(() => {
     if (!deck) return { total: 0, missed: 0, mastered: 0, due: 0 };
+    // Scope the filter-chip counts to the selected block so "All / Missed / …"
+    // reflect the test you're viewing, not the whole deck.
+    const scoped = block === "all"
+      ? deck.questions
+      : deck.questions.filter(q => q.block === (block === "test1" ? undefined : `UWORLD test ${block.slice(-1)}`));
     let mastered = 0, due = 0;
-    for (const q of deck.questions) {
+    for (const q of scoped) {
       const c = getCard(progress, q.id);
       if (c.status === "mastered") mastered++;
       if (c.status === "review" && isDue(c)) due++;
     }
-    return { total: deck.questions.length, missed: deck.questions.filter(q => q.missed).length, mastered, due };
-  }, [deck, progress]);
+    return { total: scoped.length, missed: scoped.filter(q => q.missed).length, mastered, due };
+  }, [deck, progress, block]);
 
   useEffect(() => {
     function onKey(e) {
@@ -208,7 +215,7 @@ export default function TestReview({ onBack }) {
           </div>
 
           <div className="filters">
-            {[["all","All tests"],["test1","Test 1"],["test2","Test 2"],["test3","Test 3"],["test4","Test 4"],["test5","Test 5"]].map(([key, label]) => (
+            {[["all","All tests"],["test1","Test 1"],["test2","Test 2"],["test3","Test 3"],["test4","Test 4"],["test5","Test 5"],["test6","Test 6"]].map(([key, label]) => (
               <button key={key} className={block === key ? "chip active" : "chip"} onClick={() => setBlock(key)}>{label}</button>
             ))}
           </div>

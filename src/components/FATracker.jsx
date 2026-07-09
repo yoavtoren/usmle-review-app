@@ -4,18 +4,23 @@ const BASE = import.meta.env.BASE_URL;
 
 function parseChapterMd(text) {
   const sections = [];
-  let current = null;
+  let current = null, lastTopic = null;
   for (const line of text.split("\n")) {
     if (line.startsWith("## ")) {
       const match = line.match(/^## (.+?) — (\d+)\/(\d+)/);
       if (match) {
         current = { title: match[1], seen: parseInt(match[2]), total: parseInt(match[3]), topics: [] };
         sections.push(current);
+        lastTopic = null;
       }
-    } else if (current && line.match(/^- \[[ x]\]/)) {
+    } else if (current && /^- \[[ x]\]/.test(line)) {
       const done = line.startsWith("- [x]");
       const title = line.replace(/^- \[[ x]\] /, "").trim();
-      current.topics.push({ title, done });
+      lastTopic = { title, done, subs: [] };
+      current.topics.push(lastTopic);
+    } else if (lastTopic && /^\s+- \[[ x]\]/.test(line)) {
+      const t = line.trim();
+      lastTopic.subs.push({ title: t.replace(/^- \[[ x]\] /, "").trim(), done: t.startsWith("- [x]") });
     }
   }
   return sections;
@@ -60,12 +65,21 @@ function ChapterRow({ ch, onToggle }) {
               </div>
               <div className="topic-list">
                 {sec.topics.map((t, ti) => (
-                  <div
-                    key={ti}
-                    className={`topic-item${t.done ? " done" : ""}`}
-                  >
-                    <span className="topic-check">{t.done ? "✓" : "○"}</span>
-                    <span className="topic-name">{t.title}</span>
+                  <div key={ti}>
+                    <div className={`topic-item${t.done ? " done" : ""}`}>
+                      <span className="topic-check">{t.done ? "✓" : "○"}</span>
+                      <span className="topic-name">{t.title}</span>
+                    </div>
+                    {t.subs && t.subs.length > 0 && (
+                      <div className="subtopic-list">
+                        {t.subs.map((s, sj) => (
+                          <div key={sj} className={`subtopic-item${s.done ? " done" : ""}`}>
+                            <span className="topic-check">{s.done ? "✓" : "○"}</span>
+                            <span className="topic-name">{s.title}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

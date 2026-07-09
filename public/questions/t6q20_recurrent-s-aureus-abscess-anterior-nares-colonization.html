@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recurrent S aureus abscess: anterior nares colonization</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 6 · all 30</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q209", "item": 209, "qid": "727", "title": "Recurrent S aureus abscess: anterior nares colonization", "system": "Microbiology", "topic": "Skin and soft tissue infections", "correct": "A", "yourAnswer": "A", "percentCorrect": 47, "vignette": "A 22-year-old man comes to the office due to a painful lesion on his upper back. The patient developed a small tender papule a few days ago that progressively enlarged and became red and painful. He has had 3 similar lesions on his upper back over the past 6 months, which were treated with incision and drainage and antibiotics. The patient has no other medical issues and takes no medications. He does not use tobacco, alcohol, or illicit drugs. On physical examination, there is a 3-cm tender pustule with surrounding erythema on his right upper back. Gram stain of purulent drainage from the lesion shows gram-positive cocci in clusters. Which of the following most likely predisposed this patient to his recurrent infections?", "clues": [{"text": "painful lesion on his upper back", "type": "blue", "note": "A tender, enlarging, red skin nodule that drains pus is a furuncle/abscess - the most common Staphylococcus aureus skin and soft-tissue infection."}, {"text": "3 similar lesions on his upper back over the past 6 months", "type": "red", "note": "RECURRENT abscesses despite incision/drainage and antibiotics point to an ongoing RESERVOIR that reseeds the skin. For S aureus, that reservoir is nasal/skin colonization - local treatment cures the abscess but does not eradicate the carrier state."}, {"text": "tender pustule with surrounding erythema", "type": "blue", "note": "Localized pustule with erythema = abscess/furuncle, the typical S aureus lesion. It confirms a pyogenic skin infection rather than a chronic granulomatous or burrowing process."}, {"text": "gram-positive cocci in clusters", "type": "green", "note": "Gram-positive cocci in grape-like CLUSTERS = Staphylococcus (S aureus here). This nails the organism, so the question becomes WHY it keeps recurring."}], "whatMatters": "S aureus colonizes the ANTERIOR NARES (and skin) in ~30% of people; the nose is the reservoir that reseeds the skin, causing recurrent furuncles/abscesses even after each one is drained and treated. Answer A. The other options are the reservoirs of entirely different organisms.", "strategy": "When abscesses RECUR after adequate local treatment, ask 'where is the organism hiding between episodes?' For S aureus (GPC in clusters), the answer is nasal/skin colonization. Each option is a buzzword reservoir - match it to its bug: nares (S aureus), granulomas (latent TB), elementary bodies (Chlamydia), epidermal burrows (scabies), spores (C. difficile/anthrax).", "options": [{"letter": "A", "text": "Colonization in anterior nares", "correct": true}, {"letter": "B", "text": "Dormant infection in granulomas", "correct": false}, {"letter": "C", "text": "Formation of elementary bodies", "correct": false}, {"letter": "D", "text": "Harborage in epidermal burrows", "correct": false}, {"letter": "E", "text": "Spores from contaminated surfaces", "correct": false}], "eliminations": [{"letter": "B", "label": "Dormant infection in granulomas - latent TB", "detail": "WHAT IT IS: Mycobacterium tuberculosis persists in caseating granulomas as latent infection. ❌ WHY IT FAILS: that explains TB reactivation, not recurrent staphylococcal skin abscesses with GPC in clusters. ✅ Correct if: reactivation pulmonary TB / a positive IGRA with cavitary disease."}, {"letter": "C", "label": "Formation of elementary bodies - Chlamydia", "detail": "WHAT IT IS: the elementary body is the infectious extracellular form of Chlamydia trachomatis. ❌ WHY IT FAILS: Chlamydia is an obligate intracellular organism causing urogenital/ocular disease - not gram-positive cluster cocci or skin abscesses. ✅ Correct if: urethritis/cervicitis or trachoma."}, {"letter": "D", "label": "Harborage in epidermal burrows - scabies", "detail": "WHAT IT IS: Sarcoptes scabiei mites tunnel epidermal burrows. ❌ WHY IT FAILS: scabies causes intensely itchy burrows in web spaces, not painful pus-filled bacterial abscesses with GPC in clusters. ✅ Correct if: intense nocturnal itch with burrows in finger webs/wrists."}, {"letter": "E", "label": "Spores from contaminated surfaces - C. difficile/Bacillus", "detail": "WHAT IT IS: spore-forming organisms (C. difficile, Bacillus, Clostridium) survive on surfaces. ❌ WHY IT FAILS: S aureus does not form spores; recurrence comes from nasal/skin colonization, not environmental spores. ✅ Correct if: hospital-acquired diarrhea (C. difficile) or spore-borne anthrax/gas gangrene."}], "reasoning": ["Painful, recurrent, draining skin nodules with GPC in clusters = recurrent S aureus furuncles/abscesses", "Recurrence despite drainage + antibiotics implies a persistent reservoir", "S aureus colonizes the anterior nares (and skin) in ~30% of people and reseeds the skin", "-> anterior nares colonization predisposes to recurrence; answer A"], "mechanism": "Staphylococcus aureus is a gram-positive coccus in clusters that asymptomatically colonizes the anterior nares and skin in roughly a third of healthy people. From this reservoir it spreads to the skin, and minor breaches of the epidermal barrier let it invade and form furuncles and abscesses - the most common S aureus skin and soft-tissue infection. Incision and drainage plus antibiotics clear the individual lesion but do NOT eradicate nasal/skin colonization, so carriers suffer recurrent abscesses; decolonization (e.g., intranasal mupirocin, chlorhexidine washes) targets this reservoir. The distractor reservoirs belong to unrelated pathogens (latent TB, Chlamydia, scabies, spore-formers).", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Micro > S aureus: GPC in clusters, catalase+/coagulase+; nasal colonization (~30%) -> recurrent skin abscesses/furuncles; decolonization with mupirocin/chlorhexidine."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The question asks WHY infections RECUR, not what the organism is. Recurrence = persistent reservoir = nasal/skin colonization."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on furuncle/abscess, colonization vs infection, anterior nares, elementary body, granuloma, or epidermal burrow? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "The other options are all real reservoirs - for the WRONG organisms. Lock the GPC-in-clusters = S aureus link, then only 'anterior nares' fits."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "The Gram stain (gram-positive cocci in clusters) just confirms S aureus. If unsure of clusters vs chains: clusters = Staphylococcus, chains/pairs = Streptococcus. That identification is what routes you to nasal colonization."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: recurrent S aureus abscesses = nasal carriage (decolonize); reservoir buzzwords - granuloma (TB), elementary body (Chlamydia), burrow (scabies), spore (C. difficile/anthrax)."}], "keywords": [{"front": "Gram-positive cocci in clusters", "back": "Staphylococcus aureus (catalase+, coagulase+)"}, {"front": "Recurrent furuncles/abscesses despite drainage", "back": "Anterior nares (and skin) S aureus colonization - the reservoir"}, {"front": "S aureus decolonization", "back": "Intranasal mupirocin + chlorhexidine washes"}, {"front": "Dormant infection in granulomas", "back": "Latent tuberculosis"}, {"front": "Elementary body", "back": "Infectious form of Chlamydia trachomatis"}, {"front": "Epidermal burrows", "back": "Scabies (Sarcoptes scabiei)"}, {"front": "Spores on surfaces", "back": "C. difficile, Bacillus/Clostridium (anthrax, gas gangrene)"}], "firstAid": [{"tag": "answer / stem", "topic": "Staphylococcus aureus", "detail": "Micro > GPC in clusters; nasal colonization -> recurrent skin/soft-tissue abscesses; decolonization for recurrence."}, {"tag": "options", "topic": "Pathogen reservoirs", "detail": "Micro > latent TB (granuloma), Chlamydia (elementary body), scabies (burrow), spore-formers (surfaces)."}, {"tag": "context", "topic": "Skin & soft tissue infections", "detail": "Micro/Derm > furuncle/carbuncle/abscess; I&D is primary; MRSA vs MSSA coverage."}], "memoryHook": "The nose knows: drain the boil all you want, but S aureus keeps a hideout in the nostrils and comes back until you decolonize.", "stem": [{"text": "A 22-year-old man comes to the office due to a "}, {"text": "painful lesion on his upper back", "clue": true, "type": "blue", "note": "A tender, enlarging, red skin nodule that drains pus is a furuncle/abscess - the most common Staphylococcus aureus skin and soft-tissue infection."}, {"text": ". The patient developed a small tender papule a few days ago that progressively enlarged and became red and painful. He has had "}, {"text": "3 similar lesions on his upper back over the past 6 months", "clue": true, "type": "red", "note": "RECURRENT abscesses despite incision/drainage and antibiotics point to an ongoing RESERVOIR that reseeds the skin. For S aureus, that reservoir is nasal/skin colonization - local treatment cures the abscess but does not eradicate the carrier state."}, {"text": ", which were treated with incision and drainage and antibiotics. The patient has no other medical issues and takes no medications. He does not use tobacco, alcohol, or illicit drugs. On physical examination, there is a 3-cm "}, {"text": "tender pustule with surrounding erythema", "clue": true, "type": "blue", "note": "Localized pustule with erythema = abscess/furuncle, the typical S aureus lesion. It confirms a pyogenic skin infection rather than a chronic granulomatous or burrowing process."}, {"text": " on his right upper back. Gram stain of purulent drainage from the lesion shows "}, {"text": "gram-positive cocci in clusters", "clue": true, "type": "green", "note": "Gram-positive cocci in grape-like CLUSTERS = Staphylococcus (S aureus here). This nails the organism, so the question becomes WHY it keeps recurring."}, {"text": ". Which of the following most likely predisposed this patient to his recurrent infections?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

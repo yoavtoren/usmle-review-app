@@ -1,81 +1,225 @@
-# 07 Cardio — 9/68 (13%)
+# 07 Cardio — 0/212 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Embryology — 4/4
-- [x] 01 Heart morphogenesis
-- [x] 02 Heart embryology
-- [x] 03 Fetal circulation
-- [x] 04 Fetal-postnatal derivatives
+## 01 Embryology — 0/14
+- [ ] 01 Heart morphogenesis
+  - [ ] Cardiac looping
+  - [ ] Septation of the chambers
+  - [ ] Outflow tract formation
+  - [ ] Valve development
+- [ ] 02 Heart embryology
+- [ ] 03 Fetal-postnatal derivatives
+  - [ ] Ductus arteriosus
+  - [ ] Ductus venosus
+  - [ ] Foramen ovale
+  - [ ] Allantois p urachus
+  - [ ] Umbilical arteries
+  - [ ] Umbilical vein
+- [ ] 04 Fetal circulation
 
-## 02 Anatomy — 1/1
-- [x] 01 Anatomy of the heart
+## 02 Anatomy — 0/3
+- [ ] 01 Heart anatomy
+  - [ ] Pericardium
+  - [ ] Coronary blood supply
 
-## 03 Physiology — 4/24
-- [x] 01 Cardiac output variables
-- [x] 02 Cardiac output equations
-- [x] 03 Starling curve
-- [x] 04 Resistance, pressure, flow
-- [ ] 05 Cardiac & vascular function curves
-- [ ] 06 Pressure-volume loops & cardiac cycle
-- [ ] 07 Pressure-Volume Loops & valvular disease
-- [ ] 08 Splitting of S2
-- [ ] 09 Auscultation of the heart
-- [ ] 10 Heart murmurs
-- [ ] 11 Myocardial action potential
-- [ ] 12 Pacemaker action potential
-- [ ] 13 Electrocardiogram
-- [ ] 14 Torsades de pointes
-- [ ] 15 Brugada syndrome
-- [ ] 16 Wolff-Parkinson-White syndrome
-- [ ] 17 ECG tracings
-- [ ] 18 Atrial natriuretic peptide
-- [ ] 19 B-type (brain) natriuretic peptide
-- [ ] 20 Baroreceptors & chemoreceptors
-- [ ] 21 Normal cardiac pressures
-- [ ] 22 Autoregulation
-- [ ] 23 Capillary fluid exchange
-- [ ] autonomic
+## 03 Physiology — 0/56
+- [ ] 01 Cardiac output variables
+  - [ ] Stroke volume
+  - [ ] Contractility
+  - [ ] Preload
+  - [ ] Cardiac oxygen demand
+  - [ ] Afterload
+- [ ] 02 Cardiac output equations
+  - [ ] Stroke volume
+  - [ ] Ejection fraction
+  - [ ] Cardiac output
+  - [ ] Pulse pressure
+  - [ ] Mean arterial pressure
+- [ ] 03 Starling curves
+- [ ] 04 Resistance, pressure, flow
+- [ ] 05 Cardiac and vascular function curves
+  - [ ] Inotropy
+  - [ ] Venous return
+  - [ ] Total peripheral resistance
+- [ ] 06 Pressure-volume loops and cardiac cycle
+- [ ] 07 Jugular venous pressure tracings
+- [ ] 08 Pressure-volume loops and valvular disease
+  - [ ] Aortic stenosis
+  - [ ] Aortic regurgitation
+  - [ ] Mitral stenosis
+  - [ ] Mitral regurgitation
+- [ ] 09 Splitting of S2
+  - [ ] Physiologic splitting
+  - [ ] Wide splitting
+  - [ ] Fixed splitting
+  - [ ] Paradoxical splitting
+- [ ] 10 Auscultation of the heart
+- [ ] 11 Heart murmurs
+  - [ ] Aortic stenosis
+  - [ ] Mitral/tricuspid regurgitation
+  - [ ] Mitral valve prolapse
+  - [ ] Ventricular septal defect
+  - [ ] Aortic regurgitation
+  - [ ] Mitral stenosis
+  - [ ] Patent ductus arteriosus
+  - [ ] Phase 0
+- [ ] 12 Myocardial action potential
+  - [ ] Phase 1
+  - [ ] Phase 2
+  - [ ] Phase 3
+  - [ ] Phase 4
+- [ ] 13 Pacemaker action potential
+  - [ ] Phase 4
+  - [ ] Phase 0
+  - [ ] Phase 3
+- [ ] 14 Electrocardiogram
+- [ ] 15 Atrial natriuretic peptide
+- [ ] 16 B-type (brain) natriuretic peptide
+- [ ] 17 Baroreceptors and chemoreceptors
+- [ ] 18 Normal resting cardiac pressures
+- [ ] 19 Autoregulation
+- [ ] 20 Capillary fluid exchange
 
-## 04 Pathology — 0/27
+## 04 Pathology — 0/102
 - [ ] 01 Congenital heart diseases
-- [ ] 02 Congenital cardiac defect associations
-- [ ] 03 Hypertension
-- [ ] 04 Hyperlipidemia signs
-- [ ] 05 Arteriosclerosis
-- [ ] 06 Atherosclerosis
-- [ ] 07 Aortic aneurysm
-- [ ] 08 Traumatic aortic rupture
-- [ ] 09 Aortic dissection
-- [ ] 10 Ischemic heart disease manifestations
-- [ ] 11 Evolution of myocardial infarction
-- [ ] 12 Diagnosis of myocardial infarction
-- [ ] 13 ECG localization of STEMI
-- [ ] 14 Myocardial infarction complications
-- [ ] 15 Acute coronary syndrome treatments
-- [ ] 16 Cardiomyopathies
-- [ ] 17 Heart failure
-- [ ] 18 Shock
-- [ ] 19 Cardiac tamponade
-- [ ] 20 Bacterial endocarditis
-- [ ] 21 Rheumatic fever
-- [ ] 23 Acute pericarditis
-- [ ] 24 Myocarditis
-- [ ] 25 Vasculitides
-- [ ] 26 Cardiac tumors
-- [ ] 27 Kussmaul sign
-- [ ] 28 Hereditary hemorrhagic telangiectasia
+  - [ ] Persistent truncus arteriosus
+  - [ ] D-transposition of great arteries
+  - [ ] Tricuspid atresia
+  - [ ] Tetralogy of Fallot
+  - [ ] Total anomalous pulmonary venous return
+  - [ ] Ebstein anomaly
+  - [ ] Ventricular septal defect
+  - [ ] Atrial septal defect
+  - [ ] Patent ductus arteriosus
+  - [ ] Eisenmenger syndrome
+- [ ] 02 Coarctation of the aorta
+- [ ] 03 Persistent pulmonary hypertension of the newborn
+- [ ] 04 Congenital cardiac defect associations
+- [ ] 05 Hypertension
+  - [ ] Hypertensive urgency
+- [ ] 06 Hyperlipidemia signs
+  - [ ] Xanthomas
+  - [ ] Tendinous xanthoma
+  - [ ] Corneal arcus
+- [ ] 07 Atherosclerosis
+- [ ] 08 Cholesterol emboli syndrome
+- [ ] 09 Arteriolosclerosis
+  - [ ] Hyaline
+  - [ ] Hyperplastic
+- [ ] 10 Aortic aneurysm
+  - [ ] Thoracic aortic aneurysm
+  - [ ] Abdominal aortic aneurysm
+- [ ] 11 Traumatic aortic rupture
+- [ ] 12 Aortic dissection
+- [ ] 13 Subclavian steal syndrome
+- [ ] 14 Coronary artery disease
+  - [ ] Angina
+  - [ ] Myocardial infarction
+- [ ] 15 Ischemic heart disease manifestations
+  - [ ] Coronary steal syndrome
+  - [ ] Sudden cardiac death
+  - [ ] Chronic ischemic heart disease
+- [ ] 16 Evolution of myocardial infarction
+- [ ] 17 Diagnosis of myocardial infarction
+- [ ] 18 ECG localization of STEMI
+- [ ] 19 Narrow complex tachycardias
+  - [ ] Atrial fibrillation
+  - [ ] Multifocal atrial tachycardia
+  - [ ] Atrial flutter
+  - [ ] Paroxysmal supraventricular tachycardia
+- [ ] 20 Wolff-Parkinson-White syndrome
+- [ ] 21 Wide complex tachycardias
+  - [ ] Ventricular tachycardia
+  - [ ] Torsades de pointes
+  - [ ] Ventricular fibrillation
+- [ ] 22 Hereditary channelopathies
+  - [ ] Brugada syndrome
+  - [ ] Congenital long QT syndrome
+- [ ] 23 Sick sinus syndrome
+- [ ] 24 Conduction blocks
+  - [ ] First-degree AV block
+  - [ ] Second-degree AV block
+  - [ ] Mobitz type I (Wenckeback)
+  - [ ] Second-degree AV block Mobitz type II
+  - [ ] Third-degree (complete) AV block
+  - [ ] Bundle branch block
+- [ ] 25 Premature beats
+  - [ ] Premature atrial contraction
+  - [ ] Premature ventricular contraction
+- [ ] 26 Myocardial infarction complications
+  - [ ] Cardiac arrhythmia
+  - [ ] Peri-infarction pericarditis
+  - [ ] Papillary muscle rupture
+  - [ ] Interventricular septal rupture
+  - [ ] Ventricular pseudoaneurysm
+  - [ ] Ventricular free wall rupture
+  - [ ] True ventricular aneurysm
+  - [ ] Postcardiac injury syndrome
+- [ ] 27 Acute coronary syndrome treatments
+- [ ] 28 Cardiomyopathies
+  - [ ] Dilated cardiomyopathy
+  - [ ] Hypertrophic cardiomyopathy
+  - [ ] Restrictive/infiltrative cardiomyopathy
+- [ ] 29 Heart failure
+- [ ] 30 High-output heart failure
+- [ ] 31 Shock
+  - [ ] Hypovolemic shock
+  - [ ] Cardiogenic shock
+  - [ ] Obstructive shock
+  - [ ] Distributive shock
+- [ ] 32 Cardiac tamponade
+- [ ] 33 Pulsus paradoxus
+- [ ] 34 Syncope
+- [ ] 35 Infective endocarditis
+- [ ] 36 Nonbacterial thrombotic endocarditis
+- [ ] 37 Rheumatic fever
+- [ ] 38 Syphilitic heart disease
+- [ ] 39 Acute pericarditis
+- [ ] 40 Constrictive pericarditis
+- [ ] 41 Kussmaul sign
+- [ ] 42 Myocarditis
+- [ ] 43 Hereditary hemorrhagic telangiectasia
+- [ ] 44 Cardiac tumors
+  - [ ] Myxomas
+  - [ ] Rhabdomyomas
+- [ ] 45 Deep venous thrombosis
 
-## 05 Pharm — 0/12
+## 05 Pharmacology — 0/37
 - [ ] 01 Hypertension treatment
-- [ ] 03 Calcium channel blockers
-- [ ] 04 Hydralazine
-- [ ] 05 Hypertensive emergency
-- [ ] 06 Nitrates
+  - [ ] Primary (essential) hypertension
+  - [ ] Hypertension with heart failure
+  - [ ] Hypertension with diabetes mellitus
+  - [ ] Hypertension with asthma
+  - [ ] Hypertension with pregnancy
+  - [ ] Hypertension with gout
+  - [ ] Hypertension with osteoporosis
+  - [ ] Hypertension with pheochromocytoma
+- [ ] 02 Cardiovascular agents and molecular targets
+- [ ] 03 Nitrates
+- [ ] 04 Calcium channel blockers
+- [ ] 05 Hydralazine
+- [ ] 06 Hypertensive emergency
+  - [ ] Nitroprusside
+  - [ ] Fenoldopam
 - [ ] 07 Antianginal therapy
 - [ ] 08 Ranolazine
 - [ ] 09 Sacubitril
 - [ ] 10 Lipid-lowering agents
-- [ ] 11 Cardiac glycosides
-- [ ] 12 16 Antiarrythmics
+  - [ ] Statins
+  - [ ] Bile acid resins
+  - [ ] Ezetimibe
+  - [ ] Fibrates Fenofibrate
+  - [ ] Niacin
+  - [ ] PCSK9 inhibitors
+  - [ ] Fish oil and marine omega-3 fatty acids
+- [ ] 11 Digoxin
+- [ ] 12 Antiarrhythmics— sodium channel blockers (class I)
+  - [ ] Class IC
+- [ ] 13 Antiarrhythmics— β-blockers (class II)
+- [ ] 14 Antiarrhythmics— potassium channel blockers (class III)
+- [ ] 15 Antiarrhythmics— calcium channel blockers (class IV)
+- [ ] 16 Other antiarrhythmics
+  - [ ] Adenosine
+  - [ ] Magnesium
 - [ ] 17 Ivabradine

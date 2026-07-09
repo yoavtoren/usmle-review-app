@@ -1,0 +1,227 @@
+{
+  "id": "q200",
+  "item": 200,
+  "qid": "849",
+  "title": "Glucagon rescue: hepatic glycogenolysis",
+  "system": "Physiology",
+  "topic": "Glucose homeostasis / glucagon",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 86,
+  "vignette": "A 24-year-old man diagnosed with diabetes mellitus 2 years ago is brought to the emergency department after a temporary loss of consciousness. He was getting ready to eat and administered a preprandial insulin injection, but he was distracted by a phone call from work and ended up skipping the meal. His girlfriend found him passed out in his bedroom and administered glucagon immediately. The patient recovered consciousness within 15 minutes. Metabolic changes in which of the following organs are most likely responsible for this patient's recovery?",
+  "clues": [
+    {
+      "text": "administered a preprandial insulin injection",
+      "type": "blue",
+      "note": "Preprandial (mealtime) insulin is dosed to cover carbohydrate about to be eaten. It drives glucose into cells and suppresses hepatic glucose output."
+    },
+    {
+      "text": "ended up skipping the meal",
+      "type": "red",
+      "note": "Insulin on board with NO carbohydrate intake is the classic setup for iatrogenic hypoglycemia, which here caused loss of consciousness from neuroglycopenia."
+    },
+    {
+      "text": "administered glucagon immediately",
+      "type": "green",
+      "note": "Glucagon is the rescue hormone for severe hypoglycemia. Its primary target is the LIVER, where it triggers glucose release."
+    },
+    {
+      "text": "recovered consciousness within 15 minutes",
+      "type": "blue",
+      "note": "Rapid recovery reflects glucagon-stimulated hepatic glycogenolysis quickly raising blood glucose - the fastest component of glucagon's action."
+    }
+  ],
+  "whatMatters": "Insulin given, meal skipped -> hypoglycemic loss of consciousness. Glucagon reverses it by acting on the LIVER: it activates glycogen phosphorylase (glycogenolysis) and gluconeogenesis to release glucose into blood. Glucagon has negligible glucose-mobilizing effect on muscle, fat, or kidney. Answer D (liver).",
+  "strategy": "Trace the rescue hormone to its target organ. Glucagon = liver only (glycogenolysis + gluconeogenesis). Skeletal muscle glycogen can't raise BLOOD glucose (no glucose-6-phosphatase) and lacks glucagon receptors. Epinephrine - not glucagon - is the hormone with broad effects on muscle/fat/kidney, a classic distractor.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Adipose tissue",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Adrenals",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Kidney",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Liver",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Pancreas",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Skeletal muscles",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Small intestine",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Adipose tissue - lipolysis, not glucose output",
+      "detail": "WHAT IT IS: fat releases free fatty acids/glycerol under catecholamine drive. ❌ WHY IT FAILS: glucagon's acute rescue is hepatic glucose release; adipose doesn't export glucose and isn't glucagon's main target. ✅ Correct if: asked about epinephrine-driven lipolysis / glycerol as a gluconeogenic substrate."
+    },
+    {
+      "letter": "B",
+      "label": "Adrenals - epinephrine, a different hormone",
+      "detail": "WHAT IT IS: the adrenal medulla secretes epinephrine, a counter-regulatory hormone that raises glucose. ❌ WHY IT FAILS: the patient was given GLUCAGON, whose target is the liver - not the adrenals. ✅ Correct if: asked which organ raises glucose via epinephrine in stress."
+    },
+    {
+      "letter": "C",
+      "label": "Kidney - minor, late gluconeogenesis",
+      "detail": "WHAT IT IS: the renal cortex performs gluconeogenesis during PROLONGED fasting. ❌ WHY IT FAILS: it contributes little acutely and responds more to epinephrine than glucagon; the rapid rescue is hepatic. ✅ Correct if: asked about gluconeogenesis in sustained starvation."
+    },
+    {
+      "letter": "E",
+      "label": "Pancreas - source of the signal, not the effector",
+      "detail": "WHAT IT IS: glucagon (alpha cells) and insulin (beta cells) are pancreatic hormones; glucagon even stimulates insulin secretion. ❌ WHY IT FAILS: the METABOLIC change that raised glucose happened in the liver - the pancreas just makes the hormone. ✅ Correct if: asked where glucagon is synthesized."
+    },
+    {
+      "letter": "F",
+      "label": "Skeletal muscles - glycogen stuck as local fuel",
+      "detail": "WHAT IT IS: muscle stores abundant glycogen. ❌ WHY IT FAILS: muscle lacks glucose-6-phosphatase, so it cannot release free glucose into blood, and it has few glucagon receptors. ✅ Correct if: asked why muscle glycogen can't correct hypoglycemia."
+    },
+    {
+      "letter": "G",
+      "label": "Small intestine - absorption, not the glucagon target",
+      "detail": "WHAT IT IS: the gut absorbs ingested glucose. ❌ WHY IT FAILS: this patient skipped the meal and was rescued by injected glucagon acting on the liver, not by intestinal absorption. ✅ Correct if: asked about oral glucose treatment in an awake hypoglycemic patient."
+    }
+  ],
+  "reasoning": [
+    "Preprandial insulin + skipped meal -> iatrogenic hypoglycemia with loss of consciousness",
+    "Glucagon was given as the rescue",
+    "Glucagon acts on the LIVER: activates glycogen phosphorylase (glycogenolysis) and gluconeogenesis to release glucose",
+    "Rapid hepatic glucose output restored consciousness -> answer D (liver)"
+  ],
+  "mechanism": "Glucagon raises serum glucose almost entirely through the liver. It binds Gs-coupled receptors on hepatocytes, raising cAMP and activating protein kinase A, which phosphorylates and activates glycogen phosphorylase to drive glycogenolysis - the predominant, rapid means of correcting acute hypoglycemia. PKA also promotes gluconeogenesis (activating pyruvate carboxylase and PEPCK) and lowers fructose-2,6-bisphosphate to inhibit glycolysis. Skeletal muscle cannot export free glucose (no glucose-6-phosphatase) and has few glucagon receptors, while adipose, adrenal, and renal contributions to acute glucose rescue are minor; epinephrine, not glucagon, is the hormone with broad effects across those tissues.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Physio/Biochem > glucagon: hepatic glycogenolysis + gluconeogenesis via cAMP/PKA -> glycogen phosphorylase; muscle lacks glucose-6-phosphatase; epinephrine has the broad multi-organ effects."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The ask is which ORGAN's metabolism reversed the hypoglycemia after GLUCAGON. Trace glucagon -> liver, not the pancreas that secretes it."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on preprandial insulin, glycogenolysis, gluconeogenesis, glucose-6-phosphatase, counter-regulatory hormones, or neuroglycopenia? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Pancreas (E) tempts because glucagon comes FROM the pancreas - but the glucose-raising metabolic change is in the LIVER. Skeletal muscle (F) tempts via its glycogen, but muscle can't release free glucose."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: glucagon = LIVER hormone (glycogenolysis fast, gluconeogenesis slower); epinephrine = the broad muscle/fat/kidney player."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Glucagon target organ for raising blood glucose",
+      "back": "Liver (glycogenolysis + gluconeogenesis)"
+    },
+    {
+      "front": "Fastest way glucagon raises glucose",
+      "back": "Hepatic glycogenolysis (glycogen phosphorylase via cAMP/PKA)"
+    },
+    {
+      "front": "Why muscle glycogen can't fix hypoglycemia",
+      "back": "No glucose-6-phosphatase (can't release free glucose)"
+    },
+    {
+      "front": "Hormone with broad effects on muscle, fat, kidney",
+      "back": "Epinephrine (not glucagon)"
+    },
+    {
+      "front": "Insulin given + meal skipped",
+      "back": "Iatrogenic hypoglycemia"
+    },
+    {
+      "front": "Awake hypoglycemic patient, treatment of choice",
+      "back": "Oral glucose (monosaccharide)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Glucagon",
+      "detail": "Physio/Biochem (Endocrine) > Gs/cAMP/PKA in hepatocytes -> glycogenolysis + gluconeogenesis; raises serum glucose; also stimulates insulin secretion.",
+      "location": "Physio/Biochem (Endocrine) > Gs/cAMP/PKA in hepatocytes -> glycogenolysis + gluconeogenesis; raises serum glucose; also stimulates insulin secretion."
+    },
+    {
+      "tag": "options",
+      "topic": "Counter-regulatory glucose handling",
+      "detail": "Physio > epinephrine (muscle, fat, kidney, liver); renal cortex gluconeogenesis in prolonged fasting; muscle lacks G6Pase.",
+      "location": "Physio > epinephrine (muscle, fat, kidney, liver); renal cortex gluconeogenesis in prolonged fasting; muscle lacks G6Pase."
+    },
+    {
+      "tag": "context",
+      "topic": "Hypoglycemia management",
+      "detail": "Endocrine > glucagon for the unconscious patient; oral glucose if awake; insulin-without-meal as a cause.",
+      "location": "Endocrine > glucagon for the unconscious patient; oral glucose if awake; insulin-without-meal as a cause."
+    }
+  ],
+  "memoryHook": "Glucagon knocks on ONE door - the liver's - and the liver coughs up glucose. The pancreas only mails the letter.",
+  "stem": [
+    {
+      "text": "A 24-year-old man diagnosed with diabetes mellitus 2 years ago is brought to the emergency department after a temporary loss of consciousness. He was getting ready to eat and "
+    },
+    {
+      "text": "administered a preprandial insulin injection",
+      "clue": true,
+      "type": "blue",
+      "note": "Preprandial (mealtime) insulin is dosed to cover carbohydrate about to be eaten. It drives glucose into cells and suppresses hepatic glucose output."
+    },
+    {
+      "text": ", but he was distracted by a phone call from work and "
+    },
+    {
+      "text": "ended up skipping the meal",
+      "clue": true,
+      "type": "red",
+      "note": "Insulin on board with NO carbohydrate intake is the classic setup for iatrogenic hypoglycemia, which here caused loss of consciousness from neuroglycopenia."
+    },
+    {
+      "text": ". His girlfriend found him passed out in his bedroom and "
+    },
+    {
+      "text": "administered glucagon immediately",
+      "clue": true,
+      "type": "green",
+      "note": "Glucagon is the rescue hormone for severe hypoglycemia. Its primary target is the LIVER, where it triggers glucose release."
+    },
+    {
+      "text": ". The patient "
+    },
+    {
+      "text": "recovered consciousness within 15 minutes",
+      "clue": true,
+      "type": "blue",
+      "note": "Rapid recovery reflects glucagon-stimulated hepatic glycogenolysis quickly raising blood glucose - the fastest component of glucagon's action."
+    },
+    {
+      "text": ". Metabolic changes in which of the following organs are most likely responsible for this patient's recovery?"
+    }
+  ]
+}

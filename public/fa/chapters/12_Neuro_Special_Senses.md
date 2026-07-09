@@ -1,151 +1,399 @@
-# 12 Neuro & Special Senses — 8/136 (6%)
+# 12 Neuro & Special Senses — 0/384 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Embryology — 0/9
+## 01 Embryology — 0/17
 - [ ] 01 Neural development
-- [ ] 02 Regional specification of developing brain
-- [ ] 03 Central & peripheral nervous systems origins
+- [ ] 02 Regionalization of neural tube
+- [ ] 03 Central and peripheral nervous systems origins
 - [ ] 04 Neural tube defects
-- [ ] 05 Holoprosencephaly
-- [ ] 06 Lissencephaly
-- [ ] 07 Posterior fossa malformations
-- [ ] 08 Syringomyelia
-- [ ] 09 Tongue development
+  - [ ] Spina bifida occulta
+  - [ ] Meningocele
+  - [ ] Myelomeningocele
+  - [ ] Myeloschisis
+  - [ ] Anencephaly
+- [ ] 05 Brain malformations
+  - [ ] Holoprosencephaly
+  - [ ] Lissencephaly
+- [ ] 06 Posterior fossa malformations
+  - [ ] Chiari I malformation
+  - [ ] Chiari II malformation
+  - [ ] Dandy-Walker malformation
+- [ ] 07 Syringomyelia
 
-## 02 Anatomy & Physiology — 8/43
-- [ ] 01 Neurons
-- [ ] 02 Astrocytes
-- [ ] 03 Microglia
-- [ ] 04 Ependymal cells
-- [ ] 05 Myelin
-- [ ] 06 Schwann cells
-- [ ] 07 Oligodendrocytes
-- [ ] 08 Sensory receptors
-- [ ] 09 Peripheral nerve
-- [ ] 10 Chromatolysis
-- [ ] 11 Neurotransmitter changes with disease
-- [ ] 12 Meninges
-- [ ] 13 Blood-brain barrier
-- [ ] 14 Vomiting center
-- [ ] 15 Sleep physiology
-- [ ] 16 Hypothalamus
-- [ ] 17 Thalamus
-- [ ] 18 Limbic system
-- [ ] 19 Dopaminergic pathways
-- [ ] 20 Cerebellum
-- [ ] 21 Basal ganglia
-- [ ] 22 Cerebral cortex regions
-- [ ] 23 Cerebral perfusion
-- [ ] 24 Homunculus
-- [ ] 25 Cerebral arteries - cortical distribution
-- [ ] 26 Circle of Willis
-- [ ] 27 Dural venous sinuses
-- [ ] 28 Ventricular system
-- [ ] 29 Brain stem - ventral view
-- [ ] 30 Brain stem - dorsal view (cerebellum removed)
-- [ ] 31 Cranial nerve nuclei
-- [ ] 32 Cranial nerve & vessel pathways
+## 02 Anatomy and physiology — 0/116
+- [ ] 01 Cells of the nervous system
+  - [ ] Astrocytes
+  - [ ] Oligodendrocytes
+  - [ ] Ependymal cells
+  - [ ] Microglia
+  - [ ] Satellite cells
+  - [ ] Schwann cells
+- [ ] 02 Neuron action potential
+- [ ] 03 Sensory receptors
+  - [ ] Free nerve endings
+  - [ ] Meissner corpuscles
+  - [ ] Pacinian corpuscles
+  - [ ] Merkel discs
+  - [ ] Ruffini corpuscles
+- [ ] 04 Peripheral nerve
+- [ ] 05 Neuronal response to axonal injury
+- [ ] 06 Neurotransmitter changes with disease
+  - [ ] Acetylcholine
+  - [ ] Dopamine
+  - [ ] GABA
+  - [ ] Norepinephrine
+  - [ ] Serotonin
+- [ ] 07 Meninges
+- [ ] 08 Blood-brain barrier
+- [ ] 09 Vomiting center
+- [ ] 10 Sleep physiology
+  - [ ] Awake
+  - [ ] NREM sleep
+  - [ ] REM sleep (25%)
+- [ ] 11 REM sleep behavior disorder
+- [ ] 12 Factors affecting sleep architecture
+- [ ] 13 Hypothalamus
+  - [ ] Lateral nucleus
+  - [ ] Ventromedial nucleus
+  - [ ] Anterior nucleus
+  - [ ] Posterior nucleus
+  - [ ] Suprachiasmatic nucleus
+  - [ ] Supraoptic and paraventricular nuclei
+  - [ ] Preoptic nucleus
+- [ ] 14 Thalamus
+  - [ ] Ventral posterolateral nucleus
+  - [ ] Ventral postero- medial nucleus
+  - [ ] Lateral geniculate nucleus
+  - [ ] Medial geniculate nucleus
+  - [ ] Ventral anterior and ventral lateral nuclei
+- [ ] 15 Limbic system
+- [ ] 16 Dopaminergic pathways
+  - [ ] Mesocortical
+  - [ ] Mesolimbic
+  - [ ] Nigrostriatal
+  - [ ] Tuberoinfundibular
+- [ ] 17 Cerebellum
+- [ ] 18 Basal ganglia
+- [ ] 19 Cerebral cortex regions
+- [ ] 20 Cerebral perfusion
+- [ ] 21 Homunculus
+- [ ] 22 Cerebral arteries—cortical distribution
+  - [ ] Watershed zones
+- [ ] 23 Circle of Willis
+- [ ] 24 Dural venous sinuses
+  - [ ] Venous sinus thrombosis
+- [ ] 25 Ventricular system
+- [ ] 26 Brainstem—ventral view
+- [ ] 27 Brainstem—dorsal view (cerebellum removed)
+- [ ] 28 Cranial nerve nuclei
+- [ ] 29 Vagal nuclei
+  - [ ] Nucleus tractus solitarius
+  - [ ] Nucleus ambiguus
+  - [ ] Dorsal motor nucleus
+- [ ] 30 Brainstem cross sections
+  - [ ] Midbrain
+  - [ ] Pons
+  - [ ] Medulla
+- [ ] 31 Cranial nerves and vessel pathways
+- [ ] 32 Cranial nerves and arteries
 - [ ] 33 Cranial nerves
-- [ ] 34 Vagal nuclei
-- [ ] 35 Cranial nerve reflexes
-- [x] 36 Mastication muscles
-- [x] 37 Spinal nerves
-- [x] 38 Spinal cord - lower extent
-- [x] 39 Spinal cord & associated tracts
-- [x] 40 Spinal tract anatomy & functions
-- [x] 41 Clinical reflexes
-- [x] 42 Primitive reflexes
-- [x] 43 Landmark dermatomes
+  - [ ] Olfactory
+  - [ ] Optic
+  - [ ] Oculomotor
+  - [ ] Trochlear
+  - [ ] Trigeminal
+  - [ ] Abducens
+  - [ ] Facial
+  - [ ] Vestibulocochlear
+  - [ ] Glossopharyngeal
+  - [ ] Vagus
+  - [ ] Accessory
+  - [ ] Hypoglossal
+- [ ] 34 Cranial nerve reflexes
+  - [ ] Accommodation
+  - [ ] Corneal
+  - [ ] Cough
+  - [ ] Gag
+  - [ ] Jaw jerk
+  - [ ] Lacrimation
+  - [ ] Pupillary
+- [ ] 35 Mastication muscles
+- [ ] 36 Spinal nerves
+- [ ] 37 Spinal cord—lower extent
+- [ ] 38 Conus medullaris and cauda equina syndrome
+- [ ] 39 Spinal cord levels and associated tracts
+- [ ] 40 Spinal tract anatomy and functions
+- [ ] 41 Clinical reflexes
+  - [ ] Cremasteric reflex
+  - [ ] Achilles reflex
+  - [ ] Anal wink reflex
+  - [ ] Patellar reflex
+  - [ ] Triceps reflex
+- [ ] 42 Primitive reflexes
+  - [ ] Moro reflex
+  - [ ] Rooting reflex
+  - [ ] Sucking reflex
+  - [ ] Palmar reflex
+  - [ ] Plantar reflex
+  - [ ] Galant reflex
+- [ ] 43 Landmark dermatomes
 
-## 03 Pathology — 0/32
+## 03 Pathology — 0/134
 - [ ] 01 Common brain lesions
-- [ ] 02 Ischemic brain disease/stroke
-- [ ] 03 Neonatal intraventricular hemorrhage
-- [ ] 04 Intracranial hemorrhage
+  - [ ] Prefrontal cortex
+  - [ ] Frontal eye fields
+  - [ ] Paramedian pontine reticular formation
+  - [ ] Dominant parietal cortex
+  - [ ] Nondominant parietal cortex
+  - [ ] Basal ganglia
+  - [ ] Subthalamic nucleus
+  - [ ] Mammillary bodies
+  - [ ] Amygdala
+  - [ ] Hippocampus
+  - [ ] Dorsal midbrain
+  - [ ] Reticular activating system
+  - [ ] Medial longitudinal fasciculus
+  - [ ] Cerebellar hemisphere
+  - [ ] Cerebellar vermis
+- [ ] 02 Abnormal motor posturing
+- [ ] 03 Ischemic brain disease/stroke
+  - [ ] Ischemic stroke
+  - [ ] Transient ischemic attack
+- [ ] 04 Cerebral edema
 - [ ] 05 Effects of strokes
-- [ ] 06 Central post-stroke pain syndrome
-- [ ] 07 Diffuse axonal injury
-- [ ] 08 Aphasia
-- [ ] 09 Aneurysms
-- [ ] 10 Seizures
-- [ ] 11 Fever vs Heat Stroke
-- [ ] 12 Headaches
-- [ ] 13 Movement disorders
-- [ ] 14 Neurodegenerative disorders
-- [ ] 15 Idiopathic intracranial hypertension
-- [ ] 16 Hydrocephalus
-- [ ] 17 Multiple sclerosis
-- [ ] 18 Other demyelinating & dysmyelinating disorders
-- [ ] 19 Neurocutaneous disorders
-- [ ] 20 Adult primary brain tumors
-- [ ] 21 Childhood primary brain tumors
-- [ ] 22 Herniation syndromes
-- [ ] 23 Motor neuron signs
-- [ ] 24 Spinal lesions
-- [ ] 25 Poliomyelitis
-- [ ] 26 Brown-Sequard syndrome
-- [ ] 27 Friedreich ataxia
-- [ ] 28 Common cranial nerve lesions
-- [ ] 29 Facial nerve lesions
-- [ ] 30 Basilar Skull Fracture
-- [ ] 31 Orbital Floor Fracture
-- [ ] 32 Cribiform Plate Fracture
+  - [ ] Anterior cerebral artery
+  - [ ] Middle cerebral artery
+  - [ ] Lenticulo- striate artery
+  - [ ] Posterior cerebral artery
+  - [ ] Basilar artery
+  - [ ] Anterior inferior cerebellar artery
+  - [ ] Posterior inferior cerebellar artery
+  - [ ] Anterior spinal artery
+- [ ] 06 Neonatal intraventricular hemorrhage
+- [ ] 07 Extracranial injuries
+  - [ ] Caput succedaneum
+  - [ ] Subgaleal hemorrhage
+  - [ ] Cephalohematoma
+- [ ] 08 Intracranial hemorrhage
+  - [ ] Epidural hematoma
+  - [ ] Subdural hematoma
+  - [ ] Subarachnoid hemorrhage
+  - [ ] Intraparenchymal hemorrhage
+- [ ] 09 Thalamic pain syndrome
+- [ ] 10 Phantom limb pain
+- [ ] 11 Diffuse axonal injury
+- [ ] 12 Aphasia
+  - [ ] Broca (expressive)
+  - [ ] Wernicke (receptive)
+  - [ ] Conduction
+  - [ ] Global
+- [ ] 13 Aneurysms
+  - [ ] Saccular aneurysm
+  - [ ] Charcot-Bouchard microaneurysm
+- [ ] 14 Fever vs heat stroke
+- [ ] 15 Seizures
+  - [ ] Focal seizures
+  - [ ] Generalized seizures
+- [ ] 16 Headaches
+  - [ ] Tension-type
+  - [ ] Migraine
+  - [ ] Cluster
+- [ ] 17 Trigeminal neuralgia
+- [ ] 18 Dyskinesias
+  - [ ] Akathisia
+  - [ ] Asterixis
+  - [ ] Athetosis
+  - [ ] Chorea
+  - [ ] Dystonia
+  - [ ] Essential tremor
+  - [ ] Intention tremor
+  - [ ] Resting tremor
+  - [ ] Hemiballismus
+  - [ ] Myoclonus
+- [ ] 19 Restless legs syndrome
+- [ ] 20 Neurodegenerative movement disorders
+  - [ ] Parkinson disease
+  - [ ] Huntington disease
+- [ ] 21 Dementia
+  - [ ] Alzheimer disease
+  - [ ] Frontotemporal dementia
+  - [ ] Lewy body dementia
+  - [ ] Vascular dementia
+  - [ ] Creutzfeldt-Jakob disease
+  - [ ] HIV-associated dementia
+- [ ] 22 Idiopathic intracranial hypertension
+- [ ] 23 Hydrocephalus
+  - [ ] Communicating hydrocephalus
+  - [ ] Normal pressure hydrocephalus
+  - [ ] Noncommunicating hydrocephalus
+  - [ ] Ex vacuo ventriculomegaly
+- [ ] 24 Multiple sclerosis
+- [ ] 25 Other demyelinating and dysmyelinating disorders
+  - [ ] Osmotic demyelination syndrome
+  - [ ] Acute inflammatory
+  - [ ] Most common subtype of Guillain-Barré syndrome demyelinating polyneuropathy
+  - [ ] Acute disseminated (postinfectious) encephalomyelitis
+  - [ ] Charcot-Marie-Tooth disease
+  - [ ] Progressive multifocal leukoencephalopathy
+  - [ ] Critical illness polyneuropathy
+  - [ ] Other disorders
+- [ ] 26 Neurocutaneous disorders
+  - [ ] Sturge-Weber syndrome
+  - [ ] Tuberous sclerosis complex
+  - [ ] Neurofibromatosis type I
+  - [ ] Neurofibromatosis type II von Hippel-Lindau disease
+- [ ] 27 Adult primary brain tumors
+  - [ ] Glioblastoma
+  - [ ] Oligodendroglioma
+  - [ ] Meningioma
+  - [ ] Hemangioblastoma
+  - [ ] Pituitary adenoma
+  - [ ] Schwannoma
+- [ ] 28 Childhood primary brain tumors
+  - [ ] Pilocytic astrocytoma
+  - [ ] Medulloblastoma
+  - [ ] Ependymoma
+  - [ ] Craniopharyngioma
+  - [ ] Pineal gland tumors
+- [ ] 29 Herniation syndromes
+- [ ] 30 Motor neuron signs
+- [ ] 31 Spinal cord lesions
+  - [ ] Poliomyelitis
+  - [ ] Spinal muscular atrophy
+  - [ ] Amyotrophic lateral sclerosis
+  - [ ] Tabes dorsalis
+  - [ ] Subacute combined degeneration
+  - [ ] Anterior spinal artery occlusion
+- [ ] 32 Brown-Séquard syndrome
+- [ ] 33 Friedreich ataxia
+- [ ] 34 Common cranial nerve lesions
+  - [ ] CN V motor lesion
+  - [ ] CN X lesion
+  - [ ] CN XI lesion
+  - [ ] CN XII lesion
+- [ ] 35 Facial nerve lesions
+  - [ ] Bell palsy is the most common cause of peripheral facial palsy A . Usually develops after HSV herpes zoster (Ramsay Hunt syndrome
 
-## 04 Otology — 0/5
-- [ ] 01 Auditory physiology
-- [ ] 02 Diagnosing hearing loss
-- [ ] 03 Types of hearing loss
-- [ ] 04 Cholesteatoma
-- [ ] 05 Vertigo
+## 04 Otology — 0/14
+- [ ] 01 Auditory anatomy and physiology
+  - [ ] Outer ear
+  - [ ] Middle ear
+  - [ ] Inner ear
+- [ ] 02 Otitis externa
+- [ ] 03 Otitis media
+- [ ] 04 Common causes of hearing loss
+  - [ ] Noise-induced hearing loss
+  - [ ] Presbycusis
+- [ ] 05 Diagnosing hearing loss
+- [ ] 06 Cholesteatoma
+- [ ] 07 Vertigo
+  - [ ] Peripheral vertigo
+  - [ ] Central vertigo
 
-## 05 Ophthalmology — 0/26
+## 05 Ophthalmology — 0/51
 - [ ] 01 Normal eye anatomy
 - [ ] 02 Conjunctivitis
 - [ ] 03 Refractive errors
-- [ ] 04 Presbyopia
-- [ ] 05 Cataract
-- [ ] 06 Aqueous humor pathway
-- [ ] 07 Glaucoma
-- [ ] 08 Uveitis
-- [ ] 09 Age-related macular degeneration
-- [ ] 10 Diabetic retinopathy
-- [ ] 11 Hypertensive retinopathy
-- [ ] 12 Retinal vein occlusion
-- [ ] 13 Retinal detachment
-- [ ] 14 Central retinal artery occlusion
-- [ ] 15 Retinitis pigmentosa
-- [ ] 16 Papilledema
-- [ ] 17 Leukocoria
-- [ ] 18 Pupillary control
-- [ ] 19 Marcus Gunn pupil
-- [ ] 20 Horner syndrome
-- [ ] 21 Ocular motility
-- [ ] 22 CN III, IV, VI palsies
-- [ ] 23 Visual field defects
-- [ ] 24 Cavernous sinus
-- [ ] 25 Internuclear ophthalmoplegia
-- [ ] retinitis
+  - [ ] Myopia
+  - [ ] Hyperopia
+  - [ ] Astigmatism
+- [ ] 04 Lens disorders
+  - [ ] Presbyopia
+  - [ ] Cataract
+  - [ ] Lens dislocation
+- [ ] 05 Aqueous humor pathway
+- [ ] 06 Glaucoma
+  - [ ] Open-angle glaucoma
+  - [ ] Angle-closure glaucoma
+- [ ] 07 Retinal disorders
+  - [ ] Age-related macular degeneration
+  - [ ] Diabetic retinopathy
+  - [ ] Hypertensive retinopathy
+  - [ ] Retinal artery occlusion
+  - [ ] Retinal vein occlusion
+  - [ ] Retinal detachment
+  - [ ] Retinitis pigmentosa
+  - [ ] Retinopathy of prematurity
+  - [ ] Retinoblastoma
+- [ ] 08 Papilledema
+- [ ] 09 Leukocoria
+- [ ] 10 Uveitis
+- [ ] 11 Pupillary control
+  - [ ] Miosis
+  - [ ] Pupillary light reflex
+  - [ ] Mydriasis
+- [ ] 12 Relative afferent pupillary defect
+- [ ] 13 Horner syndrome
+- [ ] 14 Ocular motility
+  - [ ] Blowout fracture
+- [ ] 15 Strabismus
+  - [ ] Amblyopia (“lazy eye”)
+- [ ] 16 Cranial nerve III, IV, VI palsies
+  - [ ] CN III damage
+  - [ ] CN IV damage
+  - [ ] CN VI damage
+- [ ] 17 Visual field defects
+- [ ] 18 Cavernous sinus
+- [ ] 19 Internuclear ophthalmoplegia
+- [ ] 20 Eyelid disorders
+  - [ ] Preseptal cellulitis
+  - [ ] Orbital cellulitis
+  - [ ] Blepharitis
+  - [ ] Hordeolum (stye)
+  - [ ] Chalazion
+  - [ ] Xanthelasma
 
-## 06 Pharm — 0/21
-- [ ] 01 Epilepsy therapy
+## 06 Pharmacology — 0/52
+- [ ] 01 Anticonvulsants
+  - [ ] Phenytoin
+  - [ ] Carbamazepine
+  - [ ] Gabapentinoids
+  - [ ] Ethosuximide
+  - [ ] Valproate
+  - [ ] Lamotrigine
+  - [ ] Levetiracetam
+  - [ ] Topiramate
 - [ ] 02 Barbiturates
 - [ ] 03 Benzodiazepines
-- [ ] 04 Nonbenzodiazepine hypnotics
-- [ ] 05 Suvorexant
-- [ ] 06 Ramelteon
-- [ ] 07 Triptans
-- [ ] 08 Parkinson disease therapy
-- [ ] 09 Carbidopa/levodopa
-- [ ] 10 Selegiline, rasagiline
-- [ ] 11 Neurodegenerative disease therapy
-- [ ] 12 Anesthetics - general principles
-- [ ] 13 Inhaled anesthetics
-- [ ] 14 Intravenous anesthetics
-- [ ] 15 Local anesthetics
-- [ ] 16 Neuromuscular blocking drugs
-- [ ] 17 Spasmolytics, antispasmodics
-- [ ] 18 Opioid analgesics
-- [ ] 19 Mixed agonist & antagonist opioid analgesics
-- [ ] 20 Tramadol
-- [ ] 21 Glaucoma drugs
+- [ ] 04 Insomnia therapy
+  - [ ] Nonbenzodiazepine hypnotics
+  - [ ] Suvorexant
+  - [ ] Ramelteon
+- [ ] 05 Triptans
+- [ ] 06 Parkinson disease therapy
+  - [ ] Dopamine agonists q dopamine availability q l-DOPA availability
+  - [ ] Prevent dopamine breakdown
+  - [ ] Curb excess cholinergic activity
+- [ ] 07 Carbidopa/levodopa
+- [ ] 08 Neurodegenerative disease therapy
+  - [ ] Alzheimer disease
+  - [ ] Amyotrophic lateral sclerosis
+  - [ ] Huntington disease
+- [ ] 09 Local anesthetics
+- [ ] 10 General anesthetics
+  - [ ] Sevoflurane
+  - [ ] Desflurane
+  - [ ] Isoflurane
+  - [ ] N2O
+  - [ ] Propofol
+  - [ ] Etomidate
+  - [ ] Ketamine
+- [ ] 11 Neuromuscular blocking drugs
+  - [ ] Depolarizing neuromuscular blocking drugs
+  - [ ] Nondepolarizing neuromuscular blocking drugs
+- [ ] 12 Malignant hyperthermia
+- [ ] 13 Skeletal muscle relaxants
+  - [ ] Baclofen
+  - [ ] Cyclobenzaprine
+  - [ ] Dantrolene
+  - [ ] Tizanidine
+- [ ] 14 Opioid analgesics
+- [ ] 15 Tramadol
+- [ ] 16 Butorphanol, nalbuphine
+- [ ] 17 Capsaicin
+- [ ] 18 Glaucoma therapy
+  - [ ] blockers agonists
+  - [ ] Diuretics
+  - [ ] Prostaglandins
+  - [ ] Cholinomimetics (M3)

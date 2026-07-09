@@ -1,144 +1,341 @@
-# 01 Biochem — 2/129 (2%)
+# 01 Biochem — 0/326 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Molecular — 2/20
-- [x] 01 Chromatin structure
+## 01 Molecular — 0/68
+- [ ] 01 Chromatin structure
+  - [ ] Heterochromatin
+  - [ ] Euchromatin
+  - [ ] DNA methylation
+  - [ ] Histone methylation
+  - [ ] Histone acetylation
+  - [ ] Histone deacetylation
 - [ ] 02 Nucleotides
-- [ ] 03 De novo pyrimidine & purine synthesis
+- [ ] 03 De novo pyrimidine and purine synthesis
 - [ ] 04 Purine salvage deficiencies
+  - [ ] Adenosine deaminase deficiency
+  - [ ] Lesch-Nyhan syndrome
 - [ ] 05 Genetic code features
-- [x] 06 DNA replication
-- [ ] 07 Mutations in DNA
-- [ ] 08 Lac operon
-- [ ] 09 DNA repair
+  - [ ] Unambiguous
+  - [ ] Degenerate/ redundant
+  - [ ] Commaless, nonoverlapping
+  - [ ] Universal
+- [ ] 06 DNA replication
+  - [ ] Origin of replication A
+  - [ ] Replication fork B
+  - [ ] Helicase C
+  - [ ] Single-stranded binding proteins D
+  - [ ] DNA topoisomerases E
+  - [ ] Primase F
+  - [ ] DNA polymerase III G
+  - [ ] DNA polymerase I H
+  - [ ] DNA ligase I
+  - [ ] Telomerase
+- [ ] 07 DNA repair
+  - [ ] Nonhomologous end joining
+  - [ ] Homologous recombination
+  - [ ] Nucleotide excision repair
+  - [ ] Base excision repair
+  - [ ] Mismatch repair
+- [ ] 08 Mutations in DNA
+  - [ ] Silent mutation
+  - [ ] Missense mutation
+  - [ ] Nonsense mutation
+  - [ ] Frameshift mutation
+  - [ ] Splice site mutation
+  - [ ] Slipped strand mispairing
+- [ ] 09 Lac operon
 - [ ] 10 Functional organization of a eukaryotic gene
 - [ ] 11 Regulation of gene expression
+  - [ ] Promoter
+  - [ ] Enhancer
+  - [ ] Silencer
+  - [ ] Epigenetics
 - [ ] 12 RNA processing (eukaryotes)
+  - [ ] Kozak sequence
 - [ ] 13 RNA polymerases
-- [ ] 14 Splicing of pre-mRNA
-- [ ] 15 Introns vs exons
+  - [ ] Eukaryotes
+  - [ ] Prokaryotes
+- [ ] 14 Introns vs exons
+- [ ] 15 Splicing of pre-mRNA
 - [ ] 16 tRNA
-- [ ] 17 Start & stop codons
+  - [ ] Structure
+  - [ ] Charging
+- [ ] 17 Start and stop codons
+  - [ ] mRNA start codon mRNA stop codons
 - [ ] 18 Protein synthesis
+  - [ ] Initiation
+  - [ ] Elongation
+  - [ ] Termination
 - [ ] 19 Posttranslational modifications
+  - [ ] Trimming
+  - [ ] Covalent alterations
 - [ ] 20 Chaperone protein
 
-## 02 Cellular — 0/16
+## 02 Cellular — 0/36
 - [ ] 01 Cell cycle phases
+  - [ ] Cyclin-dependent kinases
+  - [ ] Cyclin-CDK complexes
+  - [ ] Tumor suppressors
+  - [ ] Permanent
+  - [ ] Stable (quiescent)
+  - [ ] Labile
 - [ ] 02 Rough endoplasmic reticulum
 - [ ] 03 Smooth endoplasmic reticulum
 - [ ] 04 Cell trafficking
+  - [ ] I-cell disease (inclusion cell disease/mucolipidosis type II)
 - [ ] 05 Peroxisome
+  - [ ] Zellweger syndrome
+  - [ ] Refsum disease
+  - [ ] Adrenoleukodystrophy
 - [ ] 06 Proteasome
 - [ ] 07 Cytoskeletal elements
+  - [ ] Microfilaments
+  - [ ] Intermediate filaments
+  - [ ] Microtubules
 - [ ] 08 Microtubule
 - [ ] 09 Cilia structure
-- [ ] 10 Sodium-potassium pump
-- [ ] 11 Collagen
-- [ ] 12 Collagen synthesis & structure
-- [ ] 13 Osteogenesis imperfecta
-- [ ] 14 Ehlers-Danlos syndrome
-- [ ] 15 Menkes disease
-- [ ] 16 Elastin
+- [ ] 10 Primary ciliary dyskinesia
+- [ ] 11 Sodium-potassium pump
+- [ ] 12 Collagen
+  - [ ] Type I
+  - [ ] Type II
+  - [ ] Type III
+  - [ ] Type IV
+- [ ] 13 Collagen synthesis and structure
+- [ ] 14 Osteogenesis imperfecta
+- [ ] 15 Ehlers-Danlos syndrome
+- [ ] 16 Menkes disease
+- [ ] 17 Elastin
+  - [ ] Marfan syndrome
+  - [ ] Homocystinuria
 
-## 03 Lab Techniques — 0/10
+## 03 Laboratory techniques — 0/17
 - [ ] 01 Polymerase chain reaction
-- [ ] 03 CRISPR/Cas9
-- [ ] 04 Blotting procedures
-- [ ] 05 Flow cytometry
-- [ ] 06 Microarrays
-- [ ] 07 Enzyme-linked immunosorbent assay
-- [ ] 08 Karyotyping
-- [ ] 09 Fluorescence in situ hybridization
-- [ ] 10 Molecular cloning
-- [ ] 11 Gene expression modifications
+  - [ ] Denaturation
+  - [ ] Annealing
+  - [ ] Elongation
+- [ ] 02 CRISPR/Cas9
+- [ ] 03 Blotting procedures
+  - [ ] Southern blot
+  - [ ] Northern blot
+  - [ ] Western blot
+- [ ] 04 Flow cytometry
+- [ ] 05 Microarrays
+- [ ] 06 Enzyme-linked immunosorbent assay
+- [ ] 07 Karyotyping
+- [ ] 08 Fluorescence in situ hybridization
+- [ ] 09 Molecular cloning
+- [ ] 10 Gene expression modifications
+  - [ ] RNA interference
 
-## 04 Genetics — 0/17
+## 04 Genetics — 0/55
 - [ ] 01 Genetic terms
-- [ ] 02 Hardy-Weinberg population genetics
-- [ ] 03 Disorders of imprinting
-- [ ] 04 Modes of inheritance
-- [ ] 05 Autosomal dominant diseases
-- [ ] 06 Autosomal recessive diseases
-- [ ] 07 Cystic fibrosis
-- [ ] 08 X-linked recessive disorders
-- [ ] 09 Muscular dystrophies
-- [ ] 10 Rett syndrome
-- [ ] 11 Fragile X syndrome
-- [ ] 12 Trinucleotide repeat expansion diseases
-- [ ] 13 Autosomal trisomies
-- [ ] 14 Genetic disorders by chromosome
-- [ ] 15 Robertsonian translocation
-- [ ] 16 Cri-du-chat syndrome
-- [ ] 17 Williams syndrome
+  - [ ] Codominance
+  - [ ] Variable expressivity
+  - [ ] Incomplete penetrance
+  - [ ] Pleiotropy
+  - [ ] Anticipation
+  - [ ] Loss of heterozygosity
+  - [ ] Epistasis
+  - [ ] Aneuploidy
+  - [ ] Dominant negative mutation
+  - [ ] Linkage disequilibrium
+  - [ ] Mosaicism
+  - [ ] Locus heterogeneity
+  - [ ] Allelic heterogeneity
+  - [ ] Heteroplasmy
+  - [ ] Uniparental disomy
+- [ ] 02 Population genetics
+  - [ ] Bottleneck effect
+  - [ ] Natural selection
+  - [ ] Genetic drift
+- [ ] 03 Hardy-Weinberg principle
+- [ ] 04 Disorders of imprinting
+- [ ] 05 Modes of inheritance
+  - [ ] Autosomal dominant
+  - [ ] Autosomal recessive
+  - [ ] X-linked recessive
+  - [ ] X-linked dominant
+  - [ ] Mitochondrial inheritance
+- [ ] 06 Autosomal dominant diseases
+- [ ] 07 Autosomal recessive diseases
+- [ ] 08 Cystic fibrosis
+- [ ] 09 X-linked recessive diseases
+- [ ] 10 Muscular dystrophies
+  - [ ] Duchenne
+  - [ ] Gowers sign
+  - [ ] Becker
+  - [ ] Myotonic dystrophy
+- [ ] 11 Mitochondrial diseases
+  - [ ] Mitochondrial myopathies
+  - [ ] Leber hereditary optic neuropathy
+- [ ] 12 Rett syndrome
+- [ ] 13 Fragile X syndrome
+- [ ] 14 Trinucleotide repeat expansion diseases
+  - [ ] Huntington disease
+  - [ ] Myotonic dystrophy
+  - [ ] Fragile X syndrome
+  - [ ] Friedreich ataxia
+- [ ] 15 Autosomal trisomies
+  - [ ] Down syndrome (trisomy 21)
+  - [ ] Edwards syndrome (trisomy 18)
+  - [ ] Patau syndrome (trisomy 13)
+- [ ] 16 Genetic disorders by chromosome
+- [ ] 17 Robertsonian translocation
+- [ ] 18 Cri-du-chat syndrome
+- [ ] 19 Williams syndrome
 
-## 05 Nutrition — 0/18
-- [ ] 01 Vitamins: fat soluble
-- [ ] 02 Vitamins: water soluble
-- [ ] 03 Vitamin A
-- [ ] 04 Vitamin B1
-- [ ] 05 Vitamin B2
-- [ ] 06 Vitamin B3
-- [ ] 07 Vitamin B5
-- [ ] 08 Vitamin B6
-- [ ] 09 Vitamin B7
-- [ ] 10 Vitamin B9
-- [ ] 11 Vitamin B12
-- [ ] 12 Vitamin C
-- [ ] 13 Vitamin D
-- [ ] 14 Vitamin E
-- [ ] 15 Vitamin K
-- [ ] 16 Zinc
-- [ ] 17 Protein-energy malnutrition
-- [ ] 18 Ethanol metabolism
+## 05 Nutrition — 0/30
+- [ ] 01 Essential fatty acids
+- [ ] 02 Vitamins: fat soluble
+- [ ] 03 Vitamins: water soluble
+- [ ] 04 Dietary supplementation
+- [ ] 05 Vitamin A
+- [ ] 06 Vitamin B1
+  - [ ] Wernicke encephalopathy
+  - [ ] Korsakoff syndrome
+  - [ ] Wernicke-Korsakoff syndrome
+  - [ ] Dry beriberi
+  - [ ] Wet beriberi
+- [ ] 07 Vitamin B2
+- [ ] 08 Vitamin B3
+  - [ ] Hartnup disease
+- [ ] 09 Vitamin B5
+- [ ] 10 Vitamin B6
+- [ ] 11 Vitamin B7
+- [ ] 12 Vitamin B9
+- [ ] 13 Vitamin B12
+- [ ] 14 Vitamin C
+  - [ ] Scurvy
+- [ ] 15 Vitamin D
+- [ ] 16 Vitamin E
+- [ ] 17 Vitamin K
+- [ ] 18 Zinc
+  - [ ] pubic), dysgeusia, anosmia. Associated with acrodermatitis enteropathica A
+- [ ] 19 Protein-energy malnutrition
+  - [ ] Kwashiorkor
+  - [ ] Marasmus
+- [ ] 20 Ethanol metabolism
 
-## 06 Metabolism — 0/48
-- [ ] 01 Metabolism sites
-- [ ] 02 Enzyme terminology
-- [ ] 03 Rate-determining enzymes of metabolic processes
+## 06 Metabolism — 0/120
+- [ ] 01 Enzyme terminology
+  - [ ] Kinase
+  - [ ] Phosphorylase
+  - [ ] Phosphatase
+  - [ ] Dehydrogenase
+  - [ ] Hydroxylase
+  - [ ] Carboxylase
+  - [ ] Mutase
+  - [ ] Synthase
+- [ ] 02 Rate-determining enzymes of metabolic processes
+  - [ ] Glycolysis
+  - [ ] Gluconeogenesis
+  - [ ] TCA cycle
+  - [ ] Glycogenesis
+  - [ ] Glycogenolysis
+  - [ ] HMP shunt
+  - [ ] De novo pyrimidine synthesis
+  - [ ] De novo purine synthesis
+  - [ ] Urea cycle
+  - [ ] Fatty acid synthesis
+  - [ ] Fatty acid oxidation
+  - [ ] Ketogenesis
+  - [ ] Cholesterol synthesis
+- [ ] 03 Metabolic compartmentation
+  - [ ] Mitochondria
+  - [ ] Cytoplasm
+  - [ ] Both
 - [ ] 04 Summary of pathways
-- [ ] 05 ATP production
-- [ ] 06 Activated carriers
-- [ ] 07 Universal electron acceptors
-- [ ] 08 Hexokinase vs glucokinase
-- [ ] 09 Glycolysis regulation, key enzymes
-- [ ] 10 Regulation by fructose-2,6-bisphosphate
-- [ ] 11 Pyruvate dehydrogenase complex
-- [ ] 12 Pyruvate dehydrogenase complex deficiency
-- [ ] 13 Pyruvate metabolism
-- [ ] 14 TCA cycle (Krebs cycle)
-- [ ] 15 Electron transport chain & oxidative phosphorylation
-- [ ] 16 Gluconeogenesis, irreversible enzymes
-- [ ] 17 Pentose phosphate pathway
-- [ ] 18 Glucose-6-phosphate dehydrogenase deficiency
-- [ ] 19 Disorders of fructose metabolism
-- [ ] 20 Disorders of galactose metabolism
-- [ ] 21 Sorbitol
-- [ ] 22 Lactase deficiency
-- [ ] 23 Amino acids
-- [ ] 24 Urea cycle
-- [ ] 25 Transport of ammonia by alanine
-- [ ] 26 Hyperammonemia
-- [ ] 27 Ornithine transcarbamylase deficiency
-- [ ] 28 Amino acid derivatives
-- [ ] 29 Catecholamine synthesis/tyrosine catabolism
-- [ ] 30 Phenylketonuria
-- [ ] 31 Maple syrup urine disease
-- [ ] 32 Alkaptonuria
-- [ ] 33 Homocystinuria
-- [ ] 34 Cystinuria
-- [ ] 35 Organic Acidemias
-- [ ] 36 Glycogen regulation by insulin & glucagon/epinephrine
-- [ ] 37 Glycogen
-- [ ] 38 Glycogen storage diseases
-- [ ] 39 Lysosomal storage diseases
-- [ ] 40 Fatty acid metabolism
-- [ ] 41 Ketone bodies
+- [ ] 05 Activated carriers
+- [ ] 06 Universal electron acceptors
+- [ ] 07 Hexokinase vs glucokinase
+- [ ] 08 Glycolysis regulation, key enzymes
+- [ ] 09 Regulation by fructose-2,6- bisphosphate
+- [ ] 10 Pyruvate dehydrogenase complex
+- [ ] 11 Pyruvate dehydrogenase complex deficiency
+- [ ] 12 Pyruvate metabolism
+- [ ] 13 TCA cycle
+- [ ] 14 Electron transport chain and oxidative phosphorylation
+- [ ] 15 Gluconeogenesis, irreversible enzymes
+  - [ ] Pyruvate carboxylase
+  - [ ] Phosphoenolpyruvate carboxykinase
+  - [ ] Fructose-1,6- bisphosphatase 1
+  - [ ] Glucose-6- phosphatase
+- [ ] 16 Pentose phosphate pathway
+  - [ ] Oxidative (irreversible)
+  - [ ] Nonoxidative (reversible)
+- [ ] 17 Glucose-6-phosphate dehydrogenase deficiency
+- [ ] 18 Disorders of fructose metabolism
+- [ ] 19 Disorders of galactose metabolism
+- [ ] 20 Sorbitol
+- [ ] 21 Lactase deficiency
+- [ ] 22 Amino acids
+  - [ ] Essential
+  - [ ] Acidic
+  - [ ] Basic
+- [ ] 23 Urea cycle
+- [ ] 24 Transport of ammonia by alanine
+- [ ] 25 Hyperammonemia
+- [ ] 26 Ornithine transcarbamylase deficiency
+- [ ] 27 Amino acid derivatives
+- [ ] 28 Catecholamine synthesis/tyrosine catabolism
+- [ ] 29 Phenylketonuria
+- [ ] 30 Maple syrup urine disease
+- [ ] 31 Alkaptonuria
+- [ ] 32 Homocystinuria
+- [ ] 33 Cystinuria
+- [ ] 34 Organic acidemias
+  - [ ] Propionic acidemia
+  - [ ] Methylmalonic acidemia
+- [ ] 35 Glycogen regulation by insulin and glucagon/epinephrine
+- [ ] 36 Glycogen
+  - [ ] Skeletal muscle
+  - [ ] Hepatocytes
+- [ ] 37 Glycogen storage diseases
+  - [ ] Von Gierke disease (type I)
+  - [ ] Pompe disease (type II)
+  - [ ] Cori disease (type III)
+  - [ ] Andersen disease (type IV)
+  - [ ] McArdle disease (type V)
+- [ ] 38 Lysosomal storage diseases
+  - [ ] Tay-Sachs disease
+  - [ ] Fabry disease
+  - [ ] Metachromatic leukodystrophy
+  - [ ] Krabbe disease
+  - [ ] Gaucher disease
+  - [ ] Niemann-Pick disease
+  - [ ] Hurler syndrome
+  - [ ] Hunter syndrome
+- [ ] 39 Fatty acid metabolism
+  - [ ] Systemic 1° carnitine deficiency
+  - [ ] Medium-chain acyl-CoA dehydrogenase deficiency
+- [ ] 40 Ketone bodies
+- [ ] 41 Fasted vs fed state
 - [ ] 42 Metabolic fuel use
+  - [ ] Fasting and starvation
 - [ ] 43 Lipid transport
 - [ ] 44 Key enzymes in lipid transport
+  - [ ] Cholesteryl ester transfer protein
+  - [ ] Hepatic lipase
+  - [ ] Hormone-sensitive lipase
+  - [ ] Lecithin-cholesterol acyltransferase
+  - [ ] Lipoprotein lipase
+  - [ ] Pancreatic lipase
+  - [ ] PCSK9
 - [ ] 45 Major apolipoproteins
+  - [ ] AI
+  - [ ] CII
+  - [ ] B48
 - [ ] 46 Lipoprotein functions
+  - [ ] Chylomicron
+  - [ ] VLDL
+  - [ ] IDL
+  - [ ] LDL
+  - [ ] HDL
 - [ ] 47 Abetalipoproteinemia
 - [ ] 48 Familial dyslipidemias
+  - [ ] I
+  - [ ] II
+  - [ ] III
+  - [ ] IV

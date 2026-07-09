@@ -1,0 +1,216 @@
+{
+  "id": "q209",
+  "item": 209,
+  "qid": "727",
+  "title": "Recurrent S aureus abscess: anterior nares colonization",
+  "system": "Microbiology",
+  "topic": "Skin and soft tissue infections",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 47,
+  "vignette": "A 22-year-old man comes to the office due to a painful lesion on his upper back. The patient developed a small tender papule a few days ago that progressively enlarged and became red and painful. He has had 3 similar lesions on his upper back over the past 6 months, which were treated with incision and drainage and antibiotics. The patient has no other medical issues and takes no medications. He does not use tobacco, alcohol, or illicit drugs. On physical examination, there is a 3-cm tender pustule with surrounding erythema on his right upper back. Gram stain of purulent drainage from the lesion shows gram-positive cocci in clusters. Which of the following most likely predisposed this patient to his recurrent infections?",
+  "clues": [
+    {
+      "text": "painful lesion on his upper back",
+      "type": "blue",
+      "note": "A tender, enlarging, red skin nodule that drains pus is a furuncle/abscess - the most common Staphylococcus aureus skin and soft-tissue infection."
+    },
+    {
+      "text": "3 similar lesions on his upper back over the past 6 months",
+      "type": "red",
+      "note": "RECURRENT abscesses despite incision/drainage and antibiotics point to an ongoing RESERVOIR that reseeds the skin. For S aureus, that reservoir is nasal/skin colonization - local treatment cures the abscess but does not eradicate the carrier state."
+    },
+    {
+      "text": "tender pustule with surrounding erythema",
+      "type": "blue",
+      "note": "Localized pustule with erythema = abscess/furuncle, the typical S aureus lesion. It confirms a pyogenic skin infection rather than a chronic granulomatous or burrowing process."
+    },
+    {
+      "text": "gram-positive cocci in clusters",
+      "type": "green",
+      "note": "Gram-positive cocci in grape-like CLUSTERS = Staphylococcus (S aureus here). This nails the organism, so the question becomes WHY it keeps recurring."
+    }
+  ],
+  "whatMatters": "S aureus colonizes the ANTERIOR NARES (and skin) in ~30% of people; the nose is the reservoir that reseeds the skin, causing recurrent furuncles/abscesses even after each one is drained and treated. Answer A. The other options are the reservoirs of entirely different organisms.",
+  "strategy": "When abscesses RECUR after adequate local treatment, ask 'where is the organism hiding between episodes?' For S aureus (GPC in clusters), the answer is nasal/skin colonization. Each option is a buzzword reservoir - match it to its bug: nares (S aureus), granulomas (latent TB), elementary bodies (Chlamydia), epidermal burrows (scabies), spores (C. difficile/anthrax).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Colonization in anterior nares",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Dormant infection in granulomas",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Formation of elementary bodies",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Harborage in epidermal burrows",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Spores from contaminated surfaces",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Dormant infection in granulomas - latent TB",
+      "detail": "WHAT IT IS: Mycobacterium tuberculosis persists in caseating granulomas as latent infection. ❌ WHY IT FAILS: that explains TB reactivation, not recurrent staphylococcal skin abscesses with GPC in clusters. ✅ Correct if: reactivation pulmonary TB / a positive IGRA with cavitary disease."
+    },
+    {
+      "letter": "C",
+      "label": "Formation of elementary bodies - Chlamydia",
+      "detail": "WHAT IT IS: the elementary body is the infectious extracellular form of Chlamydia trachomatis. ❌ WHY IT FAILS: Chlamydia is an obligate intracellular organism causing urogenital/ocular disease - not gram-positive cluster cocci or skin abscesses. ✅ Correct if: urethritis/cervicitis or trachoma."
+    },
+    {
+      "letter": "D",
+      "label": "Harborage in epidermal burrows - scabies",
+      "detail": "WHAT IT IS: Sarcoptes scabiei mites tunnel epidermal burrows. ❌ WHY IT FAILS: scabies causes intensely itchy burrows in web spaces, not painful pus-filled bacterial abscesses with GPC in clusters. ✅ Correct if: intense nocturnal itch with burrows in finger webs/wrists."
+    },
+    {
+      "letter": "E",
+      "label": "Spores from contaminated surfaces - C. difficile/Bacillus",
+      "detail": "WHAT IT IS: spore-forming organisms (C. difficile, Bacillus, Clostridium) survive on surfaces. ❌ WHY IT FAILS: S aureus does not form spores; recurrence comes from nasal/skin colonization, not environmental spores. ✅ Correct if: hospital-acquired diarrhea (C. difficile) or spore-borne anthrax/gas gangrene."
+    }
+  ],
+  "reasoning": [
+    "Painful, recurrent, draining skin nodules with GPC in clusters = recurrent S aureus furuncles/abscesses",
+    "Recurrence despite drainage + antibiotics implies a persistent reservoir",
+    "S aureus colonizes the anterior nares (and skin) in ~30% of people and reseeds the skin",
+    "-> anterior nares colonization predisposes to recurrence; answer A"
+  ],
+  "mechanism": "Staphylococcus aureus is a gram-positive coccus in clusters that asymptomatically colonizes the anterior nares and skin in roughly a third of healthy people. From this reservoir it spreads to the skin, and minor breaches of the epidermal barrier let it invade and form furuncles and abscesses - the most common S aureus skin and soft-tissue infection. Incision and drainage plus antibiotics clear the individual lesion but do NOT eradicate nasal/skin colonization, so carriers suffer recurrent abscesses; decolonization (e.g., intranasal mupirocin, chlorhexidine washes) targets this reservoir. The distractor reservoirs belong to unrelated pathogens (latent TB, Chlamydia, scabies, spore-formers).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro > S aureus: GPC in clusters, catalase+/coagulase+; nasal colonization (~30%) -> recurrent skin abscesses/furuncles; decolonization with mupirocin/chlorhexidine."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question asks WHY infections RECUR, not what the organism is. Recurrence = persistent reservoir = nasal/skin colonization."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on furuncle/abscess, colonization vs infection, anterior nares, elementary body, granuloma, or epidermal burrow? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The other options are all real reservoirs - for the WRONG organisms. Lock the GPC-in-clusters = S aureus link, then only 'anterior nares' fits."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The Gram stain (gram-positive cocci in clusters) just confirms S aureus. If unsure of clusters vs chains: clusters = Staphylococcus, chains/pairs = Streptococcus. That identification is what routes you to nasal colonization."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: recurrent S aureus abscesses = nasal carriage (decolonize); reservoir buzzwords - granuloma (TB), elementary body (Chlamydia), burrow (scabies), spore (C. difficile/anthrax)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Gram-positive cocci in clusters",
+      "back": "Staphylococcus aureus (catalase+, coagulase+)"
+    },
+    {
+      "front": "Recurrent furuncles/abscesses despite drainage",
+      "back": "Anterior nares (and skin) S aureus colonization - the reservoir"
+    },
+    {
+      "front": "S aureus decolonization",
+      "back": "Intranasal mupirocin + chlorhexidine washes"
+    },
+    {
+      "front": "Dormant infection in granulomas",
+      "back": "Latent tuberculosis"
+    },
+    {
+      "front": "Elementary body",
+      "back": "Infectious form of Chlamydia trachomatis"
+    },
+    {
+      "front": "Epidermal burrows",
+      "back": "Scabies (Sarcoptes scabiei)"
+    },
+    {
+      "front": "Spores on surfaces",
+      "back": "C. difficile, Bacillus/Clostridium (anthrax, gas gangrene)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Staphylococcus aureus",
+      "detail": "Micro > GPC in clusters; nasal colonization -> recurrent skin/soft-tissue abscesses; decolonization for recurrence.",
+      "location": "Micro > GPC in clusters; nasal colonization -> recurrent skin/soft-tissue abscesses; decolonization for recurrence."
+    },
+    {
+      "tag": "options",
+      "topic": "Pathogen reservoirs",
+      "detail": "Micro > latent TB (granuloma), Chlamydia (elementary body), scabies (burrow), spore-formers (surfaces).",
+      "location": "Micro > latent TB (granuloma), Chlamydia (elementary body), scabies (burrow), spore-formers (surfaces)."
+    },
+    {
+      "tag": "context",
+      "topic": "Skin & soft tissue infections",
+      "detail": "Micro/Derm > furuncle/carbuncle/abscess; I&D is primary; MRSA vs MSSA coverage.",
+      "location": "Micro/Derm > furuncle/carbuncle/abscess; I&D is primary; MRSA vs MSSA coverage."
+    }
+  ],
+  "memoryHook": "The nose knows: drain the boil all you want, but S aureus keeps a hideout in the nostrils and comes back until you decolonize.",
+  "stem": [
+    {
+      "text": "A 22-year-old man comes to the office due to a "
+    },
+    {
+      "text": "painful lesion on his upper back",
+      "clue": true,
+      "type": "blue",
+      "note": "A tender, enlarging, red skin nodule that drains pus is a furuncle/abscess - the most common Staphylococcus aureus skin and soft-tissue infection."
+    },
+    {
+      "text": ". The patient developed a small tender papule a few days ago that progressively enlarged and became red and painful. He has had "
+    },
+    {
+      "text": "3 similar lesions on his upper back over the past 6 months",
+      "clue": true,
+      "type": "red",
+      "note": "RECURRENT abscesses despite incision/drainage and antibiotics point to an ongoing RESERVOIR that reseeds the skin. For S aureus, that reservoir is nasal/skin colonization - local treatment cures the abscess but does not eradicate the carrier state."
+    },
+    {
+      "text": ", which were treated with incision and drainage and antibiotics. The patient has no other medical issues and takes no medications. He does not use tobacco, alcohol, or illicit drugs. On physical examination, there is a 3-cm "
+    },
+    {
+      "text": "tender pustule with surrounding erythema",
+      "clue": true,
+      "type": "blue",
+      "note": "Localized pustule with erythema = abscess/furuncle, the typical S aureus lesion. It confirms a pyogenic skin infection rather than a chronic granulomatous or burrowing process."
+    },
+    {
+      "text": " on his right upper back. Gram stain of purulent drainage from the lesion shows "
+    },
+    {
+      "text": "gram-positive cocci in clusters",
+      "clue": true,
+      "type": "green",
+      "note": "Gram-positive cocci in grape-like CLUSTERS = Staphylococcus (S aureus here). This nails the organism, so the question becomes WHY it keeps recurring."
+    },
+    {
+      "text": ". Which of the following most likely predisposed this patient to his recurrent infections?"
+    }
+  ]
+}

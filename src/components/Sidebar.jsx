@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   IconHome, IconDash, IconClipboard, IconBook,
-  IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCheck,
+  IconTarget, IconPulse, IconBell, IconMail, IconChevron,
 } from "./icons.jsx";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
 
@@ -62,9 +62,8 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
       ],
     },
     {
-      label: "ניהול",
+      label: "עוד",
       items: [
-        { to: "/tasks", label: "משימות", Icon: IconCheck },
         { to: "/aims", label: "AIMS", Icon: IconTarget, count: stats.aimsOver, alert: stats.aimsOver > 0 },
       ],
     },

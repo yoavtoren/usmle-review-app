@@ -1,0 +1,207 @@
+{
+  "id": "q229",
+  "item": 229,
+  "qid": "19949",
+  "title": "Glucocorticoid osteoporosis: osteoblast precursors inhibited",
+  "system": "Pharmacology",
+  "topic": "Glucocorticoid-induced osteoporosis",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 54,
+  "vignette": "A 67-year-old woman comes to the office due to polymyalgia rheumatica. She was diagnosed a year ago and has required supraphysiologic doses of prednisone to control her symptoms. The patient has no other medical conditions. She has adequate intake of calcium and vitamin D from her diet and supplements. The patient does not use tobacco or alcohol. Physical examination is unremarkable. Laboratory evaluation shows normal serum creatinine, 25-hydroxyvitamin D, and calcium levels. Bone density measured by dual x-ray absorptiometry (DXA) reveals a significant decline when compared to her bone density measured at age 65. Which of the following is most likely contributing to this patient's bone loss?",
+  "clues": [
+    {
+      "text": "polymyalgia rheumatica",
+      "type": "orange",
+      "note": "Polymyalgia rheumatica is treated with chronic glucocorticoids, setting up the real culprit: long-term steroid exposure."
+    },
+    {
+      "text": "supraphysiologic doses of prednisone to control her symptoms",
+      "type": "red",
+      "note": "Chronic, supraphysiologic glucocorticoid (prednisone) use is the leading cause of drug-induced osteoporosis. This is the key exposure driving the bone loss."
+    },
+    {
+      "text": "adequate intake of calcium and vitamin D from her diet and supplements",
+      "type": "green",
+      "note": "Adequate calcium/vitamin D (with normal labs) rules out a nutritional or deficiency cause, isolating the glucocorticoid itself as the mechanism of bone loss."
+    },
+    {
+      "text": "significant decline",
+      "type": "blue",
+      "note": "A significant DXA decline over ~2 years confirms accelerated bone loss (osteoporosis) - here driven by steroids despite adequate calcium/vitamin D."
+    }
+  ],
+  "whatMatters": "Chronic supraphysiologic glucocorticoids cause osteoporosis. A central mechanism is DECREASED bone formation: glucocorticoids inhibit the replication and differentiation of osteoblast precursor cells (and increase mature osteoblast apoptosis). Answer C. They also raise RANK/RANK-L and lower osteoprotegerin (more resorption) and cause renal/intestinal calcium wasting.",
+  "strategy": "Attribute the bone loss to glucocorticoids and recall their net effects: DOWN bone formation (inhibit osteoblast precursors - the answer), UP bone resorption (increase RANK/RANK-L, decrease osteoprotegerin), and calcium wasting (decrease gut absorption and renal reabsorption). Then flip each distractor: glucocorticoids DECREASE osteoprotegerin and IGF-1, INCREASE (not inhibit) RANK, and barely change PTH.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Increased activity of osteoprotegerin",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Increased levels of insulin-like growth factor-1",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Inhibition of osteoblast precursor cell replication and differentiation",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Inhibition of receptor activator of nuclear factor kappa B",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Suppression of parathyroid hormone release",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Increased osteoprotegerin - wrong direction",
+      "detail": "WHAT IT IS: osteoprotegerin (OPG) is a decoy receptor that binds RANK-ligand and INHIBITS osteoclasts, protecting bone. ❌ WHY IT FAILS: glucocorticoids DECREASE osteoprotegerin (promoting resorption) - increased OPG would protect bone, the opposite of what occurs. ✅ Correct if: a mechanism that REDUCES bone resorption (e.g., the basis of denosumab, an anti-RANK-L antibody)."
+    },
+    {
+      "letter": "B",
+      "label": "Increased IGF-1 - wrong direction",
+      "detail": "WHAT IT IS: insulin-like growth factor-1 is anabolic for bone, supporting osteoblast activity and bone mass. ❌ WHY IT FAILS: glucocorticoids SUPPRESS IGF-1; increased IGF-1 would build bone, not cause loss. ✅ Correct if: an anabolic state increasing bone mass."
+    },
+    {
+      "letter": "D",
+      "label": "Inhibition of RANK - opposite effect",
+      "detail": "WHAT IT IS: RANK/RANK-ligand signaling drives osteoclast differentiation and activity (bone resorption). ❌ WHY IT FAILS: glucocorticoids INCREASE RANK/RANK-L expression, raising resorption; INHIBITING RANK would reduce resorption and protect bone. ✅ Correct if: describing a bone-protective therapy that blocks RANK-ligand (denosumab)."
+    },
+    {
+      "letter": "E",
+      "label": "Suppression of PTH release - not the mechanism",
+      "detail": "WHAT IT IS: parathyroid hormone raises serum calcium partly by mobilizing it from bone. ❌ WHY IT FAILS: glucocorticoids only minimally change overall PTH secretion, and bone loss is associated with EXCESS PTH (hyperparathyroidism), not suppression. ✅ Correct if: hyperparathyroidism-driven bone resorption (excess, not suppressed, PTH)."
+    }
+  ],
+  "reasoning": [
+    "Chronic supraphysiologic prednisone for polymyalgia rheumatica -> glucocorticoid-induced osteoporosis",
+    "Adequate calcium/vitamin D with normal labs excludes a nutritional cause",
+    "Glucocorticoids decrease bone formation by inhibiting osteoblast precursor replication/differentiation (and increasing osteoblast apoptosis)",
+    "-> inhibition of osteoblast precursor cells; answer C"
+  ],
+  "mechanism": "Chronic, supraphysiologic glucocorticoid therapy (as required in polymyalgia rheumatica) is the most common cause of drug-induced osteoporosis and acts through several mechanisms. It DECREASES bone formation by inhibiting the replication and differentiation of osteoblast precursor cells and by increasing apoptosis of mature osteoblasts. It simultaneously INCREASES bone resorption by upregulating RANK and RANK-ligand while downregulating osteoprotegerin (the decoy receptor), and it suppresses IGF-1. Glucocorticoids also promote calcium wasting - decreasing intestinal calcium absorption and renal calcium reabsorption - which, to maintain serum calcium, drives further resorption. The osteoblast-precursor inhibition (decreased formation) is the mechanism highlighted here; the distractors are reversed (glucocorticoids lower osteoprotegerin and IGF-1, raise RANK, and do not meaningfully suppress PTH).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm/Endo > glucocorticoid-induced osteoporosis: decrease bone formation (inhibit osteoblast precursors, increase osteoblast apoptosis); increase resorption (up RANK/RANK-L, down osteoprotegerin); decrease IGF-1; intestinal/renal calcium wasting; prophylaxis with bisphosphonates + calcium/vitamin D."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The stem asks which mechanism CONTRIBUTES to the bone loss. Attribute it to glucocorticoids and pick the one with the correct DIRECTION (inhibited osteoblast precursors), not a reversed effect."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on osteoblast vs osteoclast, RANK/RANK-L, osteoprotegerin (decoy receptor), IGF-1, or PTH's bone effect? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Options A, B, D state the RIGHT players but the WRONG direction: glucocorticoids DECREASE osteoprotegerin and IGF-1 and INCREASE RANK. Only 'inhibit osteoblast precursors' (C) matches reality."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: glucocorticoids -> down bone formation (inhibit osteoblast precursors), up resorption (up RANK/RANK-L, down OPG), down IGF-1, calcium wasting -> osteoporosis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Chronic prednisone -> low bone density (osteoporosis) mechanism",
+      "back": "Inhibits osteoblast precursor replication/differentiation (decreased bone formation)"
+    },
+    {
+      "front": "Glucocorticoid effect on RANK/RANK-L and osteoprotegerin",
+      "back": "Increase RANK/RANK-L, decrease osteoprotegerin -> increased resorption"
+    },
+    {
+      "front": "Glucocorticoid effect on IGF-1",
+      "back": "Suppressed (less anabolic bone signaling)"
+    },
+    {
+      "front": "Glucocorticoid effect on calcium handling",
+      "back": "Decreased intestinal absorption + decreased renal reabsorption (calcium wasting)"
+    },
+    {
+      "front": "Osteoprotegerin (OPG)",
+      "back": "Decoy receptor for RANK-ligand; inhibits osteoclasts (protects bone)"
+    },
+    {
+      "front": "Glucocorticoid-induced osteoporosis prophylaxis",
+      "back": "Bisphosphonates plus calcium and vitamin D"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Glucocorticoid-induced osteoporosis",
+      "detail": "Pharm > inhibit osteoblast precursors (down formation); up RANK/RANK-L, down OPG (up resorption); down IGF-1; calcium wasting.",
+      "location": "Pharm > inhibit osteoblast precursors (down formation); up RANK/RANK-L, down OPG (up resorption); down IGF-1; calcium wasting."
+    },
+    {
+      "tag": "options",
+      "topic": "Bone remodeling regulators",
+      "detail": "Endo > RANK/RANK-L (resorption), osteoprotegerin (decoy/protective), IGF-1 (anabolic), PTH (mobilizes calcium).",
+      "location": "Endo > RANK/RANK-L (resorption), osteoprotegerin (decoy/protective), IGF-1 (anabolic), PTH (mobilizes calcium)."
+    },
+    {
+      "tag": "context",
+      "topic": "Osteoporosis prophylaxis on steroids",
+      "detail": "Pharm > bisphosphonates + calcium/vitamin D; weight-bearing; lowest effective steroid dose.",
+      "location": "Pharm > bisphosphonates + calcium/vitamin D; weight-bearing; lowest effective steroid dose."
+    }
+  ],
+  "memoryHook": "Steroids starve the bone builders: they shut down osteoblast precursors (less formation) while cranking up RANK and dropping osteoprotegerin (more resorption).",
+  "stem": [
+    {
+      "text": "A 67-year-old woman comes to the office due to "
+    },
+    {
+      "text": "polymyalgia rheumatica",
+      "clue": true,
+      "type": "orange",
+      "note": "Polymyalgia rheumatica is treated with chronic glucocorticoids, setting up the real culprit: long-term steroid exposure."
+    },
+    {
+      "text": ". She was diagnosed a year ago and has required "
+    },
+    {
+      "text": "supraphysiologic doses of prednisone to control her symptoms",
+      "clue": true,
+      "type": "red",
+      "note": "Chronic, supraphysiologic glucocorticoid (prednisone) use is the leading cause of drug-induced osteoporosis. This is the key exposure driving the bone loss."
+    },
+    {
+      "text": ". The patient has no other medical conditions. She has "
+    },
+    {
+      "text": "adequate intake of calcium and vitamin D from her diet and supplements",
+      "clue": true,
+      "type": "green",
+      "note": "Adequate calcium/vitamin D (with normal labs) rules out a nutritional or deficiency cause, isolating the glucocorticoid itself as the mechanism of bone loss."
+    },
+    {
+      "text": ". The patient does not use tobacco or alcohol. Physical examination is unremarkable. Laboratory evaluation shows normal serum creatinine, 25-hydroxyvitamin D, and calcium levels. Bone density measured by dual x-ray absorptiometry (DXA) reveals a "
+    },
+    {
+      "text": "significant decline",
+      "clue": true,
+      "type": "blue",
+      "note": "A significant DXA decline over ~2 years confirms accelerated bone loss (osteoporosis) - here driven by steroids despite adequate calcium/vitamin D."
+    },
+    {
+      "text": " when compared to her bone density measured at age 65. Which of the following is most likely contributing to this patient's bone loss?"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "q197",
+  "item": 197,
+  "qid": "352",
+  "title": "Diazepam + first-gen antihistamine (CNS depression)",
+  "system": "Pharmacology",
+  "topic": "CNS depressant drug interactions",
+  "correct": "A",
+  "yourAnswer": "C",
+  "percentCorrect": 47,
+  "vignette": "A 65-year-old man is undergoing rehabilitation after a stroke. Ten days ago, he presented to the emergency department with abrupt onset of left upper and lower extremity weakness. He has a history of hypertension, hypercholesterolemia, gastroesophageal reflux disease, and hypothyroidism. He does not use tobacco, alcohol, or recreational drugs. His blood pressure is 140/90 mm Hg and pulse is 72/min. He has weakness and increased tone in the left upper and lower extremities. Diazepam is prescribed in order to decrease muscle spasticity of involved extremities. This patient should primarily be cautioned to avoid which of the following drugs?",
+  "clues": [
+    {
+      "text": "rehabilitation after a stroke",
+      "type": "blue",
+      "note": "Post-stroke context. An upper motor neuron lesion leaves the limbs spastic, which is why a muscle relaxant is being used."
+    },
+    {
+      "text": "increased tone in the left upper and lower extremities",
+      "type": "blue",
+      "note": "Increased tone = spasticity from the upper motor neuron stroke. This is the indication for diazepam here."
+    },
+    {
+      "text": "Diazepam is prescribed in order to decrease muscle spasticity",
+      "type": "red",
+      "note": "Diazepam is a long-acting BENZODIAZEPINE - a CNS depressant. The whole question hinges on additive CNS depression: which co-administered drug would dangerously add to its sedation?"
+    }
+  ],
+  "whatMatters": "Diazepam is a benzodiazepine (CNS depressant). The ask: which listed drug should he avoid because of ADDITIVE CNS depression? Among the options, only chlorpheniramine - a FIRST-generation, CNS-penetrant antihistamine - causes sedation; combined with diazepam it produces additive CNS depression. Answer A. Loratadine is 2nd-generation (non-sedating); the rest aren't CNS depressants.",
+  "strategy": "When a benzodiazepine (or any CNS depressant) is started, the drug to avoid is another sedating/CNS-depressant agent. Among antihistamines, FIRST-generation (diphenhydramine, chlorpheniramine, hydroxyzine, promethazine) cross the blood-brain barrier and sedate; SECOND-generation (loratadine, cetirizine, fexofenadine) do not. Pick the sedating add-on.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Chlorpheniramine",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Loratadine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Acetaminophen",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Famotidine",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Lansoprazole",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Folic acid",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "loratadine - second-generation, non-sedating",
+      "detail": "WHAT IT IS: a SECOND-generation antihistamine that blocks peripheral H1 receptors and does NOT cross into the CNS. ❌ WHY IT FAILS: it's non-sedating, so it won't add to diazepam's CNS depression. ✅ Correct if: the question wanted a SAFE antihistamine, or a first-generation agent were the option."
+    },
+    {
+      "letter": "C",
+      "label": "acetaminophen - not a CNS depressant (your pick)",
+      "detail": "WHAT IT IS: an analgesic/antipyretic with no sedative effect. ❌ WHY IT FAILS: it doesn't depress the CNS; any diazepam interaction is minor (diazepam may slightly speed acetaminophen metabolism). The trap is recalling 'both are hepatically metabolized,' but that is clinically insignificant. ✅ Correct if: significant liver disease made hepatic co-metabolism a concern."
+    },
+    {
+      "letter": "D",
+      "label": "famotidine - H2 blocker, minimal interaction",
+      "detail": "WHAT IT IS: an H2-receptor antagonist for GERD that reduces gastric acid. ❌ WHY IT FAILS: it isn't sedating and, unlike cimetidine, has minimal CYP450 effects, so no important diazepam interaction. ✅ Correct if: cimetidine (a CYP inhibitor) were the option."
+    },
+    {
+      "letter": "E",
+      "label": "lansoprazole - PPI, no significant interaction",
+      "detail": "WHAT IT IS: a proton pump inhibitor for GERD. ❌ WHY IT FAILS: although both use CYP450, studies show no clinically significant interaction with diazepam, and it isn't sedating. ✅ Correct if: a clinically significant CYP interaction were established."
+    },
+    {
+      "letter": "F",
+      "label": "folic acid - inert vitamin here",
+      "detail": "WHAT IT IS: a vitamin supplement. ❌ WHY IT FAILS: no CNS depression and no diazepam interaction. ✅ Correct if: never relevant in this scenario."
+    }
+  ],
+  "reasoning": [
+    "Diazepam is a benzodiazepine -> a CNS depressant whose main effect is sedation",
+    "Additive CNS depression occurs when it's combined with another sedating agent",
+    "Among the options, only chlorpheniramine (a first-generation antihistamine) crosses the blood-brain barrier and sedates",
+    "-> avoid chlorpheniramine, answer A"
+  ],
+  "mechanism": "Diazepam is a long-acting benzodiazepine that enhances GABA-A activity; its most common effect is sedation, which is amplified by co-administration of other CNS depressants. As a class, benzodiazepines should be avoided with alcohol, barbiturates, opioids, neuroleptics, and FIRST-generation antihistamines. First-generation H1 antagonists (chlorpheniramine, diphenhydramine, promethazine, hydroxyzine) readily cross the blood-brain barrier and block central H1 receptors, causing sedation; combined with diazepam this produces additive CNS depression. Second-generation antihistamines (loratadine, cetirizine, fexofenadine) do not enter the CNS and are non-sedating, and the other listed agents (acetaminophen, famotidine, lansoprazole, folic acid) are not CNS depressants.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm > benzodiazepines (GABA-A) and CNS depressant interactions; first-generation (sedating) vs second-generation (non-sedating) H1 antihistamines; cimetidine vs famotidine; PPIs."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reframe the stem: 'diazepam is a CNS depressant - which co-drug adds to that?' Then scan for the one sedating agent (a first-generation antihistamine)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on benzodiazepine, CNS depressant, first- vs second-generation antihistamine, blood-brain barrier, H2 blocker, PPI? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Acetaminophen (C) is the trap if you think 'shared hepatic metabolism' - but that interaction is trivial and non-sedating. The danger is additive sedation from the first-generation antihistamine chlorpheniramine."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: starting a benzodiazepine -> avoid other CNS depressants, including FIRST-generation (sedating) antihistamines."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Benzodiazepine + sedating add-on to avoid",
+      "back": "First-generation antihistamine (chlorpheniramine)"
+    },
+    {
+      "front": "First-generation (sedating) antihistamines",
+      "back": "Diphenhydramine, chlorpheniramine, hydroxyzine, promethazine"
+    },
+    {
+      "front": "Second-generation (non-sedating) antihistamines",
+      "back": "Loratadine, cetirizine, fexofenadine"
+    },
+    {
+      "front": "Diazepam class / mechanism",
+      "back": "Benzodiazepine (enhances GABA-A); CNS depressant"
+    },
+    {
+      "front": "Additive CNS depression with benzodiazepines",
+      "back": "Alcohol, barbiturates, opioids, 1st-gen antihistamines"
+    },
+    {
+      "front": "H2 blocker that DOES inhibit CYP450",
+      "back": "Cimetidine (not famotidine)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "CNS depressant interactions",
+      "detail": "Pharm > benzodiazepines + 1st-gen (sedating) antihistamines = additive CNS depression; avoid with alcohol/barbiturates/opioids.",
+      "location": "Pharm > benzodiazepines + 1st-gen (sedating) antihistamines = additive CNS depression; avoid with alcohol/barbiturates/opioids."
+    },
+    {
+      "tag": "options",
+      "topic": "Antihistamine generations & GI drugs",
+      "detail": "Pharm > 1st-gen (sedating) vs 2nd-gen (non-sedating) H1 blockers; H2 blockers (famotidine vs cimetidine), PPIs (lansoprazole), acetaminophen, folate.",
+      "location": "Pharm > 1st-gen (sedating) vs 2nd-gen (non-sedating) H1 blockers; H2 blockers (famotidine vs cimetidine), PPIs (lansoprazole), acetaminophen, folate."
+    },
+    {
+      "tag": "context",
+      "topic": "Post-stroke spasticity",
+      "detail": "Neuro > UMN lesion -> spasticity; muscle relaxants (diazepam, baclofen, tizanidine, dantrolene).",
+      "location": "Neuro > UMN lesion -> spasticity; muscle relaxants (diazepam, baclofen, tizanidine, dantrolene)."
+    }
+  ],
+  "memoryHook": "Diazepam already makes you sleepy - don't stack a FIRST-gen antihistamine (chlorpheniramine) on top. Loratadine (2nd-gen) stays out of the brain.",
+  "stem": [
+    {
+      "text": "A 65-year-old man is undergoing "
+    },
+    {
+      "text": "rehabilitation after a stroke",
+      "clue": true,
+      "type": "blue",
+      "note": "Post-stroke context. An upper motor neuron lesion leaves the limbs spastic, which is why a muscle relaxant is being used."
+    },
+    {
+      "text": ". Ten days ago, he presented to the emergency department with abrupt onset of left upper and lower extremity weakness. He has a history of hypertension, hypercholesterolemia, gastroesophageal reflux disease, and hypothyroidism. He does not use tobacco, alcohol, or recreational drugs. His blood pressure is 140/90 mm Hg and pulse is 72/min. He has weakness and "
+    },
+    {
+      "text": "increased tone in the left upper and lower extremities",
+      "clue": true,
+      "type": "blue",
+      "note": "Increased tone = spasticity from the upper motor neuron stroke. This is the indication for diazepam here."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Diazepam is prescribed in order to decrease muscle spasticity",
+      "clue": true,
+      "type": "red",
+      "note": "Diazepam is a long-acting BENZODIAZEPINE - a CNS depressant. The whole question hinges on additive CNS depression: which co-administered drug would dangerously add to its sedation?"
+    },
+    {
+      "text": " of involved extremities. This patient should primarily be cautioned to avoid which of the following drugs?"
+    }
+  ]
+}

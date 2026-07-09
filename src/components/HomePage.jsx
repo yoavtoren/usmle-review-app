@@ -37,18 +37,6 @@ export default function HomePage({ testStats, faStats, streak }) {
   const elapsed = Math.max(0, Math.min(totalSpan, Math.round((new Date() - JOURNEY_START) / 86400000)));
   const journeyPct = Math.round((elapsed / totalSpan) * 100);
 
-  // Secondary section cards (the featured Step 1 panel is rendered separately)
-  const sections = [
-    {
-      id: "aims", to: "/aims", Icon: IconTarget, title: "AIMS",
-      tint: "#6D4AC2", tint2: "#8A66E0",
-      stats: [
-        { val: aims.active, lbl: "מטלות" },
-        ...(aims.overdue > 0 ? [{ val: aims.overdue, lbl: "באיחור", alert: true }] : []),
-      ],
-    },
-  ];
-
   const greeting = (() => {
     const h = new Date().getHours();
     if (h < 5) return "לילה טוב";
@@ -61,8 +49,8 @@ export default function HomePage({ testStats, faStats, streak }) {
 
   return (
     <div className="home">
-      <div className="page">
-        {/* ── Hero: editorial text + countdown showcase ── */}
+      <div className="page home-page">
+        {/* ── Greeting band ── */}
         <header className="home-hero3">
           <div className="home-hero3-text">
             <p className="home-eyebrow">{dateStr}</p>
@@ -81,88 +69,82 @@ export default function HomePage({ testStats, faStats, streak }) {
               )}
             </div>
           </div>
-
-          {/* Countdown showcase card */}
-          <div className="home-count">
-            <div className="home-count-glow" />
-            <span className="home-count-kicker">USMLE STEP 1</span>
-            <div className="home-count-num">{days > 0 ? days : 0}</div>
-            <span className="home-count-unit">ימים לבחינה</span>
-            <span className="home-count-date">{examStr}</span>
-            <div className="home-count-track">
-              <div className="home-count-fill" style={{ width: `${journeyPct}%` }} />
-            </div>
-            <span className="home-count-prog">{journeyPct}% מהמסע הושלם</span>
-          </div>
         </header>
 
-        {/* ── Featured Step 1 panel ── */}
-        <button className="home-feature2" onClick={() => nav("/step1")}>
-          <div className="home-feature2-bg" />
-          <div className="home-feature2-main">
-            <div className="home-feature2-head">
-              <span className="home-feature2-ico"><IconDash size={22} /></span>
-              <span className="home-feature2-kicker">המוקד</span>
-            </div>
-            <h2 className="home-feature2-title">USMLE Step 1</h2>
-            <p className="home-feature2-sub">בקרת שאלות · חזרה מרווחת · כיסוי First Aid</p>
-            <div className="home-feature2-stats">
-              <div className="home-fstat2">
-                <span className="home-fstat2-num">{testStats.due}</span>
-                <span className="home-fstat2-lbl">לביקורת היום</span>
+        {/* ── iPad landscape stage: dominant Step 1 + companion column ── */}
+        <div className="home-stage">
+          {/* ── Featured Step 1 panel ── */}
+          <button className="home-feature2" onClick={() => nav("/step1")}>
+            <div className="home-feature2-bg" />
+            <div className="home-feature2-main">
+              <div className="home-feature2-head">
+                <span className="home-feature2-ico"><IconDash size={22} /></span>
+                <span className="home-feature2-kicker">המוקד</span>
               </div>
-              <div className="home-fstat2-sep" />
-              <div className="home-fstat2">
-                <span className="home-fstat2-num">{testStats.mastered}</span>
-                <span className="home-fstat2-lbl">שלטתי</span>
-              </div>
-              <div className="home-fstat2-sep" />
-              <div className="home-fstat2">
-                <span className="home-fstat2-num">{testPct}%</span>
-                <span className="home-fstat2-lbl">כיסוי</span>
+              <h2 className="home-feature2-title">USMLE Step 1</h2>
+              <p className="home-feature2-sub">בקרת שאלות · חזרה מרווחת · כיסוי First Aid</p>
+              <div className="home-feature2-stats">
+                <div className="home-fstat2">
+                  <span className="home-fstat2-num">{testStats.due}</span>
+                  <span className="home-fstat2-lbl">לביקורת היום</span>
+                </div>
+                <div className="home-fstat2-sep" />
+                <div className="home-fstat2">
+                  <span className="home-fstat2-num">{testStats.mastered}</span>
+                  <span className="home-fstat2-lbl">שלטתי</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="home-feature2-side">
-            <Ring pct={testPct} />
-            <span className="home-feature2-cta">פתח לוח <IconArrow size={15} /></span>
-          </div>
-        </button>
+            <div className="home-feature2-side">
+              <Ring pct={testPct} />
+              <span className="home-feature2-cta">פתח לוח <IconArrow size={15} /></span>
+            </div>
+          </button>
 
-        {/* ── Section header ── */}
-        <div className="home-sec-label">
-          <span>הזירות שלך</span>
-          <span className="home-sec-line" />
-        </div>
+          {/* ── Companion column: countdown + AIMS ── */}
+          <div className="home-aside">
+            {/* Countdown showcase card */}
+            <div className="home-count">
+              <div className="home-count-glow" />
+              <span className="home-count-kicker">USMLE STEP 1</span>
+              <div className="home-count-num">{days > 0 ? days : 0}</div>
+              <span className="home-count-unit">ימים לבחינה</span>
+              <span className="home-count-date">{examStr}</span>
+              <div className="home-count-track">
+                <div className="home-count-fill" style={{ width: `${journeyPct}%` }} />
+              </div>
+              <span className="home-count-prog">{journeyPct}% מהמסע הושלם</span>
+            </div>
 
-        {/* ── Section grid ── */}
-        <div className="home-grid3">
-          {sections.map((s) => {
-            const { Icon } = s;
-            return (
-              <button
-                key={s.id}
-                className="home-card3"
-                onClick={() => nav(s.to)}
-                style={{ "--tint": s.tint, "--tint2": s.tint2 }}
-              >
-                <div className="home-card3-accent" />
-                <div className="home-card3-top">
-                  <span className="home-card3-ico"><Icon size={19} /></span>
-                  <span className="home-card3-arr"><IconArrow size={16} /></span>
+            {/* AIMS companion */}
+            <button
+              className="home-card3"
+              onClick={() => nav("/aims")}
+              style={{ "--tint": "#6D4AC2", "--tint2": "#8A66E0" }}
+            >
+              <div className="home-card3-accent" />
+              <div className="home-card3-top">
+                <span className="home-card3-ico"><IconTarget size={19} /></span>
+                <span className="home-card3-arr"><IconArrow size={16} /></span>
+              </div>
+              <div className="home-card3-head">
+                <span className="home-card3-title">AIMS</span>
+                <span className="home-card3-desc">מטלות ותאריכי יעד</span>
+              </div>
+              <div className="home-card3-stats">
+                <div className="home-card3-stat">
+                  <span className="home-card3-val">{aims.active}</span>
+                  <span className="home-card3-lbl">מטלות</span>
                 </div>
-                <span className="home-card3-title">{s.title}</span>
-                <div className="home-card3-stats">
-                  {s.stats.map((st, i) => (
-                    <div key={i} className={`home-card3-stat${st.alert ? " alert" : ""}`}>
-                      <span className="home-card3-val">{st.val}</span>
-                      <span className="home-card3-lbl">{st.lbl}</span>
-                    </div>
-                  ))}
-                </div>
-              </button>
-            );
-          })}
+                {aims.overdue > 0 && (
+                  <div className="home-card3-stat alert">
+                    <span className="home-card3-val">{aims.overdue}</span>
+                    <span className="home-card3-lbl">באיחור</span>
+                  </div>
+                )}
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -171,20 +153,21 @@ export default function HomePage({ testStats, faStats, streak }) {
 
 // Progress ring (used in featured panel)
 function Ring({ pct }) {
-  const r = 34;
+  const r = 44;
   const c = 2 * Math.PI * r;
   const off = c - (Math.max(0, Math.min(100, pct)) / 100) * c;
   return (
     <div className="home-ring2">
-      <svg width="92" height="92" viewBox="0 0 92 92">
-        <circle cx="46" cy="46" r={r} fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="7" />
+      <svg viewBox="0 0 118 118">
+        <circle cx="59" cy="59" r={r} fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="8" />
         <circle
-          cx="46" cy="46" r={r} fill="none" stroke="#fff" strokeWidth="7"
+          cx="59" cy="59" r={r} fill="none" stroke="#fff" strokeWidth="8"
           strokeLinecap="round" strokeDasharray={c} strokeDashoffset={off}
-          transform="rotate(-90 46 46)" style={{ transition: "stroke-dashoffset 0.9s var(--ease-out)" }}
+          transform="rotate(-90 59 59)" style={{ transition: "stroke-dashoffset 0.9s var(--ease-out)" }}
         />
       </svg>
       <span className="home-ring2-pct">{pct}%</span>
+      <span className="home-ring2-lbl">כיסוי</span>
     </div>
   );
 }

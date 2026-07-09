@@ -1,0 +1,207 @@
+{
+  "id": "q203",
+  "item": 203,
+  "qid": "70",
+  "title": "Brown pigment stones: beta-glucuronidase (Clonorchis)",
+  "system": "Biochemistry",
+  "topic": "Bilirubin metabolism / gallstones",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 40,
+  "vignette": "A 62-year-old man comes to the emergency department due to severe colicky upper abdominal pain, nausea, and vomiting. He reports several episodes of similar abdominal discomfort in the past. The patient does not use tobacco, alcohol, or illicit drugs. He immigrated to the United States from East Asia several years ago. Physical examination shows right upper quadrant abdominal tenderness. An imaging study shows several gallstones in the common bile duct and gallbladder. The stones are removed from the duct endoscopically, and a cholecystectomy is also performed. The gallstones are dark brown, soft, and composed primarily of calcium bilirubinate with variable amounts of cholesterol. Which of the following enzymes most likely played an important role in the pathogenesis of this patient's condition?",
+  "clues": [
+    {
+      "text": "colicky upper abdominal pain",
+      "type": "blue",
+      "note": "Colicky RUQ pain with nausea/vomiting and prior similar episodes is biliary colic from gallstones."
+    },
+    {
+      "text": "He immigrated to the United States from East Asia",
+      "type": "orange",
+      "note": "East Asian origin raises suspicion for the liver fluke Clonorchis sinensis, a classic cause of BROWN pigment stones via biliary infection."
+    },
+    {
+      "text": "gallstones in the common bile duct and gallbladder",
+      "type": "blue",
+      "note": "Stones in the duct (choledocholithiasis) plus the gallbladder; brown pigment stones characteristically form within the bile DUCTS in the setting of infection."
+    },
+    {
+      "text": "dark brown, soft, and composed primarily of calcium bilirubinate",
+      "type": "green",
+      "note": "Soft, dark-brown stones made of calcium bilirubinate = pigment stones (calcium salts of UNCONJUGATED bilirubin). The enzyme that generates unconjugated bilirubin from conjugated bilirubin in bile is beta-glucuronidase."
+    }
+  ],
+  "whatMatters": "Stone composition is the key: dark-brown, soft, calcium bilirubinate = pigment stone of UNCONJUGATED bilirubin. Biliary infection (here Clonorchis sinensis, suggested by East Asian origin) releases beta-glucuronidase from bacteria and injured hepatocytes; it deconjugates bilirubin glucuronides -> insoluble unconjugated bilirubin -> precipitates with calcium. Answer C (beta-glucuronidase). HMG-CoA reductase / aromatase / 7-alpha-hydroxylase are the CHOLESTEROL-stone enzymes.",
+  "strategy": "Classify the stone first. Pigment (calcium bilirubinate, brown/black) -> think beta-glucuronidase + infection (brown, Clonorchis/E. coli) or hemolysis (black). Cholesterol stone -> think enzymes of cholesterol balance (HMG-CoA reductase up, 7-alpha-hydroxylase down, estrogen/aromatase). East Asia + brown calcium-bilirubinate stones nails the pigment / beta-glucuronidase pathway.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "7-alpha-hydroxylase",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Aromatase",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Beta-glucuronidase",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Desmolase",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "HMG-CoA reductase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "7-alpha-hydroxylase - cholesterol-stone enzyme",
+      "detail": "WHAT IT IS: the rate-limiting enzyme converting cholesterol to bile acids; inhibition (eg, fibrates) reduces bile acids and favors CHOLESTEROL stones. ❌ WHY IT FAILS: this patient has pigment (calcium bilirubinate) stones, not cholesterol stones. ✅ Correct if: cholesterol gallstones in a patient on fibrates."
+    },
+    {
+      "letter": "B",
+      "label": "Aromatase - estrogen, cholesterol stones",
+      "detail": "WHAT IT IS: aromatase converts androgens to estrogen; estrogen raises hepatic cholesterol uptake and HMG-CoA reductase, favoring cholesterol stones. ❌ WHY IT FAILS: again a CHOLESTEROL-stone mechanism, not the bilirubin pathway behind pigment stones. ✅ Correct if: cholesterol stones with high estrogen (pregnancy, OCPs, fertile female)."
+    },
+    {
+      "letter": "D",
+      "label": "Desmolase - steroidogenesis, unrelated",
+      "detail": "WHAT IT IS: cholesterol side-chain cleavage enzyme (desmolase) converts cholesterol to pregnenolone, the first step of steroid hormone synthesis. ❌ WHY IT FAILS: it has nothing to do with gallstone formation. ✅ Correct if: asked about the first/rate-limiting step of adrenal steroid synthesis (or ketoconazole inhibition)."
+    },
+    {
+      "letter": "E",
+      "label": "HMG-CoA reductase - cholesterol synthesis (your pick)",
+      "detail": "WHAT IT IS: the rate-limiting enzyme of cholesterol synthesis (statin target); higher activity raises biliary cholesterol and favors CHOLESTEROL stones. ❌ WHY IT FAILS: the stones here are calcium bilirubinate (pigment), formed via beta-glucuronidase-driven deconjugation of bilirubin - not cholesterol supersaturation. The trap is reflexively linking 'gallstone' to cholesterol. ✅ Correct if: cholesterol gallstones from cholesterol oversynthesis."
+    }
+  ],
+  "reasoning": [
+    "Dark-brown, soft, calcium-bilirubinate stones = pigment stones of UNCONJUGATED bilirubin",
+    "Brown pigment stones arise with biliary infection - here Clonorchis sinensis (East Asian immigrant)",
+    "Infection releases beta-glucuronidase (from bacteria and injured hepatocytes)",
+    "Beta-glucuronidase deconjugates bilirubin glucuronides -> unconjugated bilirubin precipitates with calcium -> pigment stones; answer C"
+  ],
+  "mechanism": "Gallstones are cholesterol, pigment, or mixed. Pigment stones are calcium salts of unconjugated bilirubin: soft and dark brown when they arise from biliary infection, and black when from chronic hemolysis. Normally bilirubin is conjugated (with glucuronic acid) for excretion in bile. Beta-glucuronidase - released by injured hepatocytes and by bacteria (E. coli) or helminths (the liver flukes Clonorchis sinensis, Ascaris) infecting the biliary tract - hydrolyzes bilirubin glucuronides back to unconjugated bilirubin, which is poorly soluble and precipitates with calcium to form brown pigment stones, often within the ducts. Clonorchis sinensis is endemic in East Asia and can stay quiescent for years, fitting this immigrant. The cholesterol-stone enzymes (HMG-CoA reductase, aromatase/estrogen, 7-alpha-hydroxylase) are not the driver here.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid > gallstones: cholesterol (yellow, hard; HMG-CoA reductase up, 7-alpha-hydroxylase down, estrogen) vs pigment (calcium bilirubinate; brown = biliary infection/beta-glucuronidase, eg, Clonorchis/E. coli; black = hemolysis); bilirubin conjugation."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Use the stone composition (calcium bilirubinate = unconjugated bilirubin) to pick the enzyme that GENERATES unconjugated bilirubin: beta-glucuronidase. Don't default to cholesterol enzymes."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on calcium bilirubinate, conjugated vs unconjugated bilirubin, beta-glucuronidase, Clonorchis sinensis, choledocholithiasis, or 7-alpha-hydroxylase? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "HMG-CoA reductase (E) is the trap - 'gallstone' pulls you to cholesterol. But brown calcium-bilirubinate stones are a BILIRUBIN problem driven by beta-glucuronidase and biliary infection."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: brown pigment stones = beta-glucuronidase + biliary infection (Clonorchis/E. coli, East Asia); black = hemolysis; cholesterol = HMG-CoA reductase/estrogen."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Brown calcium-bilirubinate gallstones",
+      "back": "Beta-glucuronidase (deconjugates bilirubin) + biliary infection"
+    },
+    {
+      "front": "Liver fluke causing pigment stones in East Asia",
+      "back": "Clonorchis sinensis"
+    },
+    {
+      "front": "Beta-glucuronidase action",
+      "back": "Hydrolyzes bilirubin glucuronides -> unconjugated bilirubin (precipitates with calcium)"
+    },
+    {
+      "front": "Black pigment stones",
+      "back": "Chronic hemolysis / increased enterohepatic bilirubin"
+    },
+    {
+      "front": "Cholesterol stone enzymes",
+      "back": "HMG-CoA reductase (up), 7-alpha-hydroxylase (down), estrogen/aromatase"
+    },
+    {
+      "front": "Desmolase",
+      "back": "Cholesterol -> pregnenolone (first step of steroidogenesis)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Pigment gallstones / bilirubin",
+      "detail": "Biochem-GI > brown stones = calcium bilirubinate from biliary infection; beta-glucuronidase deconjugates bilirubin; Clonorchis sinensis (East Asia), E. coli.",
+      "location": "Biochem-GI > brown stones = calcium bilirubinate from biliary infection; beta-glucuronidase deconjugates bilirubin; Clonorchis sinensis (East Asia), E. coli."
+    },
+    {
+      "tag": "options",
+      "topic": "Cholesterol-stone & steroid enzymes",
+      "detail": "Biochem > HMG-CoA reductase, 7-alpha-hydroxylase, aromatase/estrogen (cholesterol stones); desmolase (steroidogenesis).",
+      "location": "Biochem > HMG-CoA reductase, 7-alpha-hydroxylase, aromatase/estrogen (cholesterol stones); desmolase (steroidogenesis)."
+    },
+    {
+      "tag": "context",
+      "topic": "Gallstone types",
+      "detail": "GI > cholesterol (4 F's) vs pigment (brown = infection, black = hemolysis); choledocholithiasis.",
+      "location": "GI > cholesterol (4 F's) vs pigment (brown = infection, black = hemolysis); choledocholithiasis."
+    }
+  ],
+  "memoryHook": "BROWN stones from a fluke in the duct: beta-glucuronidase un-conjugates bilirubin so it clumps with calcium. (Cholesterol stones are the HMG-CoA/estrogen crowd.)",
+  "stem": [
+    {
+      "text": "A 62-year-old man comes to the emergency department due to severe "
+    },
+    {
+      "text": "colicky upper abdominal pain",
+      "clue": true,
+      "type": "blue",
+      "note": "Colicky RUQ pain with nausea/vomiting and prior similar episodes is biliary colic from gallstones."
+    },
+    {
+      "text": ", nausea, and vomiting. He reports several episodes of similar abdominal discomfort in the past. The patient does not use tobacco, alcohol, or illicit drugs. "
+    },
+    {
+      "text": "He immigrated to the United States from East Asia",
+      "clue": true,
+      "type": "orange",
+      "note": "East Asian origin raises suspicion for the liver fluke Clonorchis sinensis, a classic cause of BROWN pigment stones via biliary infection."
+    },
+    {
+      "text": " several years ago. Physical examination shows right upper quadrant abdominal tenderness. An imaging study shows several "
+    },
+    {
+      "text": "gallstones in the common bile duct and gallbladder",
+      "clue": true,
+      "type": "blue",
+      "note": "Stones in the duct (choledocholithiasis) plus the gallbladder; brown pigment stones characteristically form within the bile DUCTS in the setting of infection."
+    },
+    {
+      "text": ". The stones are removed from the duct endoscopically, and a cholecystectomy is also performed. The gallstones are "
+    },
+    {
+      "text": "dark brown, soft, and composed primarily of calcium bilirubinate",
+      "clue": true,
+      "type": "green",
+      "note": "Soft, dark-brown stones made of calcium bilirubinate = pigment stones (calcium salts of UNCONJUGATED bilirubin). The enzyme that generates unconjugated bilirubin from conjugated bilirubin in bile is beta-glucuronidase."
+    },
+    {
+      "text": " with variable amounts of cholesterol. Which of the following enzymes most likely played an important role in the pathogenesis of this patient's condition?"
+    }
+  ]
+}

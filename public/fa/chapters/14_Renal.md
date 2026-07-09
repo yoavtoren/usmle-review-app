@@ -1,55 +1,122 @@
-# 14 Renal — 0/66 (0%)
+# 14 Renal — 0/138 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Embryology — 0/6
-- [ ] 01 Kidney Embryology
-- [ ] 02 Potter Sequence (syndrome)
-- [ ] 03 Horseshoe Kidney
-- [ ] 04 Congenital Solitary Functioning Kidney
+## 01 Embryology — 0/9
+- [ ] 01 Kidney embryology
+- [ ] 02 Potter sequence
+- [ ] 03 Horseshoe kidney
+- [ ] 04 Congenital solitary functioning kidney
+  - [ ] Unilateral renal agenesis
+  - [ ] Multicystic dysplastic kidney
 - [ ] 05 Duplex collecting system
 - [ ] 06 Posterior urethral valves
+- [ ] 07 Vesicoureteral reflux
 
-## 02 Anatomy — 0/2
-- [ ] 01 Kidney anatomy & glomerular structure
-- [ ] 02 Course of ureters
+## 02 Anatomy — 0/3
+- [ ] 01 Renal blood flow
+- [ ] 02 Glomerular anatomy
+- [ ] 03 Course of ureters
 
-## 03 Physiology — 0/23
+## 03 Physiology — 0/54
 - [ ] 01 Fluid compartments
 - [ ] 02 Glomerular filtration barrier
 - [ ] 03 Renal clearance
 - [ ] 04 Glomerular filtration rate
-- [ ] 05 Effective renal plasma flow
-- [ ] 06 Filtration
-- [ ] 07 Changes in glomerular dynamics
-- [ ] 08 Calculation of reabsorption & secretion rate
-- [ ] 09 Glucose clearance
-- [ ] 10 Nephron transport physiology
-- [ ] 11 Renal tubular defects
-- [ ] 12 Relative concentrations along proximal convoluted tubules
-- [ ] 13 Renin-angiotensin-aldosterone system
-- [ ] 14 Juxtaglomerular apparatus
-- [ ] 15 Kidney endocrine functions
-- [ ] 16 Hormones acting on kidney
-- [ ] 17 Potassium shifts
-- [ ] 18 Electrolyte disturbances
-- [ ] 19 Features of renal disorders
-- [ ] 20 Acid-base physiology
-- [ ] 21 Acidosis & alkalosis
-- [ ] 22 Renal tubular acidosis
-- [ ] 23 Acute dialysis
+- [ ] 05 Renal blood flow autoregulation
+- [ ] 06 Effective renal plasma flow
+- [ ] 07 Filtration
+- [ ] 08 Changes in glomerular dynamics
+- [ ] 09 Calculation of reabsorption and secretion rate
+- [ ] 10 Glucose clearance
+- [ ] 11 Nephron transport physiology
+- [ ] 12 Renal tubular defects
+  - [ ] Fanconi syndrome
+  - [ ] Bartter syndrome
+  - [ ] Gitelman syndrome
+  - [ ] Liddle syndrome
+  - [ ] Syndrome of Apparent
+  - [ ] Mineralocorticoid Excess
+- [ ] 13 Features of renal disorders
+  - [ ] SIADH
+  - [ ] Bartter syndrome
+  - [ ] Gitelman syndrome
+  - [ ] Renin-secreting tumor
+  - [ ] Primary hyperaldosteronism
+  - [ ] Liddle syndrome, syndrome of apparent mineralocorticoid excess
+- [ ] 14 Relative concentrations along proximal tubule
+- [ ] 15 Renin-angiotensin-aldosterone system
+  - [ ] Renin
+  - [ ] ACE
+  - [ ] AT II
+  - [ ] ANP, BNP
+  - [ ] ADH (vasopressin)
+  - [ ] Aldosterone
+- [ ] 16 Juxtaglomerular apparatus
+- [ ] 17 Kidney endocrine/paracrine functions
+  - [ ] Erythropoietin
+  - [ ] Calciferol (vitamin D)
+  - [ ] Prostaglandins
+  - [ ] Dopamine
+- [ ] 18 Hormones acting on kidney
+- [ ] 19 Potassium shifts
+- [ ] 20 Electrolyte disturbances
+  - [ ] Sodium
+  - [ ] Potassium
+  - [ ] Calcium
+  - [ ] Magnesium
+  - [ ] Phosphate
+- [ ] 21 Acid-base physiology
+  - [ ] Metabolic acidosis
+  - [ ] Metabolic alkalosis
+  - [ ] Respiratory acidosis
+  - [ ] Respiratory alkalosis
+- [ ] 22 Acidosis and alkalosis
+- [ ] 23 Renal tubular acidosis
 
-## 04 Pathology — 0/25
+## 04 Pathology — 0/60
 - [ ] 01 Casts in urine
+  - [ ] RBC casts A
+  - [ ] WBC casts
+  - [ ] Granular casts B
+  - [ ] Fatty casts (“oval fat bodies”)
+  - [ ] Waxy casts
+  - [ ] Hyaline casts D
 - [ ] 02 Nomenclature of glomerular disorders
+  - [ ] Focal
+  - [ ] Diffuse
+  - [ ] Proliferative
+  - [ ] Membranous
+  - [ ] Primary glomerular disease
+  - [ ] Secondary glomerular disease
 - [ ] 03 Glomerular diseases
+  - [ ] Nephritic syndrome
+  - [ ] Nephrotic syndrome
+  - [ ] Nephritic-nephrotic syndrome
 - [ ] 04 Nephritic syndrome
+  - [ ] Infection-related glomerulonephritis
+  - [ ] IgA nephropathy (Berger disease)
+  - [ ] Rapidly progressive (crescentic) glomerulonephritis
+  - [ ] Diffuse proliferative glomerulonephritis
+  - [ ] Alport syndrome
+  - [ ] Membrano- proliferative glomerulonephritis
 - [ ] 05 Nephrotic syndrome
+  - [ ] Minimal change disease
+  - [ ] Focal segmental glomerulosclerosis
+  - [ ] Membranous nephropathy
+  - [ ] Amyloidosis
+  - [ ] Diabetic glomerulo- nephropathy
 - [ ] 06 Kidney stones
+  - [ ] Calcium
+  - [ ] Ammonium magnesium phosphate (struvite)
+  - [ ] Uric acid
+  - [ ] Cystine
 - [ ] 07 Hydronephrosis
 - [ ] 08 Urinary incontinence
 - [ ] 09 Acute cystitis
 - [ ] 10 Pyelonephritis
+  - [ ] Acute pyelonephritis
+  - [ ] Chronic pyelonephritis
 - [ ] 11 Acute kidney injury
 - [ ] 12 Acute interstitial nephritis
 - [ ] 13 Acute tubular necrosis
@@ -58,22 +125,27 @@
 - [ ] 16 Consequences of renal failure
 - [ ] 17 Renal osteodystrophy
 - [ ] 18 Renal cyst disorders
+  - [ ] Autosomal dominant polycystic kidney disease
+  - [ ] Autosomal recessive polycystic kidney disease
+  - [ ] Autosomal dominant tubulointerstitial kidney disease
+  - [ ] Simple vs complex renal cysts
 - [ ] 19 Renovascular disease
 - [ ] 20 Renal cell carcinoma
 - [ ] 21 Renal oncocytoma
 - [ ] 22 Nephroblastoma
 - [ ] 23 Urothelial carcinoma of the bladder
 - [ ] 24 Squamous cell carcinoma of the bladder
-- [ ] 25 Rhabdomyolysis
 
-## 05 Pharm — 0/10
-- [ ] 01 Diuretics site of action
-- [ ] 02 Mannitol
-- [ ] 03 Acetazolamide
-- [ ] 04 Loop diuretics
-- [ ] 05 Thiazide diuretics
-- [ ] 06 Potassium-sparing diuretics
-- [ ] 07 Diuretics: electrolyte changes
-- [ ] 08 Angiotensin-converting enzyme inhibitors
+## 05 Pharmacology — 0/12
+- [ ] 01 Diuretics: site of action
+- [ ] 02 Diuretics: effects on electrolyte excretion
+- [ ] 03 Mannitol
+- [ ] 04 Acetazolamide
+- [ ] 05 Loop diuretics
+  - [ ] Furosemide, bumetanide, torsemide
+  - [ ] Ethacrynic acid
+- [ ] 06 Thiazide diuretics
+- [ ] 07 Potassium-sparing diuretics
+- [ ] 08 Angiotensin- converting enzyme inhibitors
 - [ ] 09 Angiotensin II receptor blockers
 - [ ] 10 Aliskiren

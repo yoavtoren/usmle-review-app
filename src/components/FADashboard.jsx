@@ -40,19 +40,28 @@ const CHAPTER_SOFT = [
 
 function parseChapterMd(text) {
   const sections = [];
-  let current = null;
+  let current = null, lastTopic = null;
   for (const line of text.split("\n")) {
     if (line.startsWith("## ")) {
       const match = line.match(/^## (.+?) — \d+\/\d+/);
       if (match) {
         current = { title: match[1].replace(/^\d+ /, ""), rawTitle: match[1], topics: [] };
         sections.push(current);
+        lastTopic = null;
       }
-    } else if (current && line.match(/^- \[[ x]\]/)) {
+    } else if (current && /^- \[[ x]\]/.test(line)) {
+      // Main topic (no indent).
       const done = line.startsWith("- [x]");
       const rawTitle = line.replace(/^- \[[ x]\] /, "").trim();
       const title = rawTitle.replace(/^\d+ /, "");
-      current.topics.push({ title, rawTitle, markdownDone: done });
+      lastTopic = { title, rawTitle, markdownDone: done, subs: [] };
+      current.topics.push(lastTopic);
+    } else if (lastTopic && /^\s+- \[[ x]\]/.test(line)) {
+      // Sub-topic (indented under the previous main topic).
+      const t = line.trim();
+      const done = t.startsWith("- [x]");
+      const rawTitle = t.replace(/^- \[[ x]\] /, "").trim();
+      lastTopic.subs.push({ title: rawTitle, rawTitle, markdownDone: done });
     }
   }
   return sections;
@@ -60,6 +69,29 @@ function parseChapterMd(text) {
 
 function topicKey(chFile, sectionRawTitle, topicRawTitle) {
   return `${chFile}::${sectionRawTitle}::${topicRawTitle}`;
+}
+
+// Sub-topics hang off their parent topic's key with a 4th segment.
+function subKey(chFile, sectionRawTitle, topicRawTitle, subRawTitle) {
+  return `${chFile}::${sectionRawTitle}::${topicRawTitle}::${subRawTitle}`;
+}
+
+// done-state for an item: localStorage wins, else the markdown checkbox.
+function itemDone(ls, item) {
+  return ls !== undefined ? ls.done : item.markdownDone;
+}
+// Count every checkable item in a section (topics + their sub-topics).
+function sectionTotals(chFile, sec, lsTopics) {
+  let done = 0, total = 0;
+  for (const t of sec.topics) {
+    total++;
+    if (itemDone(lsTopics[topicKey(chFile, sec.rawTitle, t.rawTitle)], t)) done++;
+    for (const s of (t.subs || [])) {
+      total++;
+      if (itemDone(lsTopics[subKey(chFile, sec.rawTitle, t.rawTitle, s.rawTitle)], s)) done++;
+    }
+  }
+  return { done, total };
 }
 
 function ProgressRing({ pct, color = "var(--accent)", size = 110 }) {
@@ -401,11 +433,8 @@ export default function FADashboard({ onBack, onTrack }) {
       const sections = allTopics[ch.file] || [];
       let done = 0, total = 0;
       for (const sec of sections) {
-        for (const t of sec.topics) {
-          total++;
-          const ls = lsTopics[topicKey(ch.file, sec.rawTitle, t.rawTitle)];
-          if (ls !== undefined ? ls.done : t.markdownDone) done++;
-        }
+        const st = sectionTotals(ch.file, sec, lsTopics);
+        done += st.done; total += st.total;
       }
       if (total === 0) { total = ch.total; done = ch.seen; }
       return {
@@ -495,17 +524,23 @@ export default function FADashboard({ onBack, onTrack }) {
     for (let chIdx = 0; chIdx < data.chapters.length; chIdx++) {
       const ch = data.chapters[chIdx];
       const sections = allTopics[ch.file] || [];
+      const color = CHAPTER_COLORS[chIdx % CHAPTER_COLORS.length];
+      const soft = CHAPTER_SOFT[chIdx % CHAPTER_SOFT.length];
+      const chName = ch.chapter.replace(/^\d+ /, "");
       for (const sec of sections) {
         for (const t of sec.topics) {
           if (t.title.toLowerCase().includes(q) || sec.title.toLowerCase().includes(q)) {
             const key = topicKey(ch.file, sec.rawTitle, t.rawTitle);
             const ls = lsTopics[key];
-            const isDone = ls !== undefined ? ls.done : t.markdownDone;
+            results.push({ ch, chIdx, sec, topic: t, key, isDone: itemDone(ls, t), ls, color, soft, chName });
+          }
+          for (const s of (t.subs || [])) {
+            if (!s.title.toLowerCase().includes(q)) continue;
+            const key = subKey(ch.file, sec.rawTitle, t.rawTitle, s.rawTitle);
+            const ls = lsTopics[key];
             results.push({
-              ch, chIdx, sec, topic: t, key, isDone, ls,
-              color: CHAPTER_COLORS[chIdx % CHAPTER_COLORS.length],
-              soft: CHAPTER_SOFT[chIdx % CHAPTER_SOFT.length],
-              chName: ch.chapter.replace(/^\d+ /, ""),
+              ch, chIdx, sec, topic: s, key, isDone: itemDone(ls, s), ls, color, soft, chName,
+              parentTitle: t.title,
             });
           }
         }
@@ -650,6 +685,7 @@ export default function FADashboard({ onBack, onTrack }) {
                       <span className="fad-result-path">
                         <span style={{ color: r.color, fontWeight: 700 }}>{r.chName}</span>
                         {" · "}{r.sec.title}
+                        {r.parentTitle && <span className="fad-result-parent"> · {r.parentTitle}</span>}
                         {doneAt && <span className="fad-result-doneAt"> · done {doneAt}</span>}
                       </span>
                     </span>
@@ -754,11 +790,7 @@ export default function FADashboard({ onBack, onTrack }) {
                         <p className="muted small" style={{ padding: "12px 16px" }}>No topics found.</p>
                       )}
                       {sections.map((sec, si) => {
-                        const secDoneCount = sec.topics.filter(t => {
-                          const key = topicKey(ch.file, sec.rawTitle, t.rawTitle);
-                          const ls = lsTopics[key];
-                          return ls !== undefined ? ls.done : t.markdownDone;
-                        }).length;
+                        const secTot = sectionTotals(ch.file, sec, lsTopics);
                         return (
                           <div key={si} className="fad-sec-block">
                             <div className="fad-sec-head">
@@ -767,7 +799,7 @@ export default function FADashboard({ onBack, onTrack }) {
                                 className="fad-sec-count"
                                 style={{ background: ch.soft, color: ch.color, border: `1px solid ${ch.color}33` }}
                               >
-                                {secDoneCount}/{sec.topics.length}
+                                {secTot.done}/{secTot.total}
                               </span>
                             </div>
                             <div className="fad-topic-list">
@@ -815,6 +847,29 @@ export default function FADashboard({ onBack, onTrack }) {
                                             </button>
                                           </>
                                         )}
+                                      </div>
+                                    )}
+                                    {t.subs && t.subs.length > 0 && (
+                                      <div className="fad-sub-list">
+                                        {t.subs.map((s, sj) => {
+                                          const sKey = subKey(ch.file, sec.rawTitle, t.rawTitle, s.rawTitle);
+                                          const sDone = itemDone(lsTopics[sKey], s);
+                                          return (
+                                            <button
+                                              key={sj}
+                                              className={`fad-sub-item${sDone ? " fad-sub-done" : ""}`}
+                                              onClick={() => toggle(sKey, s.markdownDone)}
+                                            >
+                                              <span
+                                                className="fad-sub-check"
+                                                style={sDone ? { background: ch.color, borderColor: ch.color, color: "#fff" } : {}}
+                                              >
+                                                {sDone ? "✓" : ""}
+                                              </span>
+                                              <span className="fad-sub-name">{s.title}</span>
+                                            </button>
+                                          );
+                                        })}
                                       </div>
                                     )}
                                   </div>

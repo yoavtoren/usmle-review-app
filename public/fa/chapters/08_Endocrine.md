@@ -1,67 +1,141 @@
-# 08 Endocrine — 7/54 (13%)
+# 08 Endocrine — 0/128 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Embryology — 1/1
-- [x] 01 Thyroid development
+## 01 Embryology — 0/1
+- [ ] 01 Thyroid development
 
-## 02 Anatomy — 2/2
-- [x] 01 Pituitary gland
-- [x] 02 Adrenal cortex & medulla
+## 02 Anatomy — 0/5
+- [ ] 01 Pituitary gland
+  - [ ] Anterior pituitary (adenohypophysis)
+  - [ ] Posterior pituitary (neurohypophysis)
+- [ ] 02 Adrenal cortex and medulla
+- [ ] 03 Endocrine pancreas cell types
 
-## 03 Physiology — 4/15
-- [x] 01 Hypothalamic-pituitary hormones
-- [x] 02 Growth hormone
-- [x] 03 Antidiuretic hormone
-- [x] 04 Prolactin
+## 03 Physiology — 0/34
+- [ ] 01 Hypothalamic-pituitary hormones
+  - [ ] ADH
+  - [ ] CRH
+  - [ ] Prolactin-inhibiting factor
+  - [ ] GHRH
+  - [ ] GnRH
+  - [ ] MSH
+  - [ ] Oxytocin
+  - [ ] Prolactin
+  - [ ] Somatostatin
+  - [ ] TRH
+- [ ] 02 Growth hormone
+- [ ] 03 Antidiuretic hormone
+- [ ] 04 Prolactin
 - [ ] 05 Thyroid hormones
 - [ ] 06 Parathyroid hormone
 - [ ] 07 Calcium homeostasis
 - [ ] 08 Calcitonin
 - [ ] 09 Glucagon
 - [ ] 10 Insulin
-- [ ] 11 Adrenal steroids & congenital adrenal hyperplasias
+- [ ] 11 Adrenal steroids and congenital adrenal hyperplasias
+  - [ ] 17α-hydroxylasea
+  - [ ] 21-hydroxylasea
+  - [ ] 11β-hydroxylasea
 - [ ] 12 Cortisol
 - [ ] 13 Appetite regulation
+  - [ ] Endocannabinoids
 - [ ] 14 Signaling pathways of endocrine hormones
-- [ ] 15 Signaling pathway of steroid hormones
+  - [ ] cAMP cGMP
+  - [ ] IP3
+  - [ ] Intracellular receptor
+  - [ ] Receptor tyrosine kinase
+  - [ ] Nonreceptor tyrosine kinase
+- [ ] 15 Signaling pathways of steroid hormones
 
-## 04 Pathology — 0/29
+## 04 Pathology — 0/65
 - [ ] 01 Syndrome of inappropriate antidiuretic hormone secretion
-- [ ] 02 Diabetes insipidus
+- [ ] 02 Primary polydipsia and diabetes insipidus
 - [ ] 03 Hypopituitarism
 - [ ] 04 Acromegaly
 - [ ] 05 Hypothyroidism vs hyperthyroidism
 - [ ] 06 Hypothyroidism
+  - [ ] Hashimoto thyroiditis
+  - [ ] Subacute granulomatous thyroiditis
+  - [ ] Riedel thyroiditis
+  - [ ] Congenital hypothyroidism
+  - [ ] Other causes
 - [ ] 07 Hyperthyroidism
-- [ ] 08 Thyroid adenoma
-- [ ] 09 Thyroid cancer
-- [ ] 10 Diagnosing parathyroid disease
-- [ ] 11 Hypoparathyroidism
-- [ ] 12 Lab values in hypocalcemia
-- [ ] 13 Hyperparathyroidism
-- [ ] 14 Familial hypocalciuric hypercalcemia
-- [ ] 15 Diabetes mellitus
-- [ ] 16 Type 1 vs type 2 diabetes mellitus
-- [ ] 17 Diabetic ketoacidosis
-- [ ] 18 Hyperosmolar hyperglycemic state
-- [ ] 19 Cushing syndrome
-- [ ] 20 Nelson syndrome
+  - [ ] Graves disease
+  - [ ] Toxic multinodular goiter
+  - [ ] Thyroid storm
+  - [ ] Other causes
+- [ ] 08 Causes of goiter
+- [ ] 09 Thyroid adenoma
+- [ ] 10 Thyroid cancer
+  - [ ] Papillary carcinoma
+  - [ ] Follicular carcinoma
+  - [ ] Medullary carcinoma
+  - [ ] Undifferentiated/ anaplastic carcinoma
+- [ ] 11 Diagnosing parathyroid disease
+- [ ] 12 Hypoparathyroidism
+  - [ ] Pseudohypoparathyroidism type 1A
+  - [ ] Pseudopseudohypoparathyroidism
+- [ ] 13 Lab values in hypocalcemic disorders
+  - [ ] Vitamin D deficiency
+  - [ ] 2° hyperpara- thyroidism (CKD)
+  - [ ] Hypoparathyroidism
+  - [ ] Pseudohypo- parathyroidism
+- [ ] 14 Hyperparathyroidism
+  - [ ] Primary
+  - [ ] Osteitis fibrosa cystica hyperparathyroidism
+  - [ ] Secondary
+  - [ ] Renal osteodystrophy hyperparathyroidism
+  - [ ] Tertiary hyperparathyroidism
+- [ ] 15 Familial hypocalciuric hypercalcemia
+- [ ] 16 Diabetes mellitus
+- [ ] 17 Type 1 vs type 2 diabetes mellitus
+- [ ] 18 Hyperglycemic emergencies
+- [ ] 19 Hypoglycemia in diabetes mellitus
+- [ ] 20 Cushing syndrome
 - [ ] 21 Adrenal insufficiency
+  - [ ] Primary adrenal insufficiency
+  - [ ] Secondary and tertiary adrenal insufficiency
+  - [ ] Acute adrenal insufficiency
 - [ ] 22 Hyperaldosteronism
+  - [ ] Primary hyperaldosteronism
+  - [ ] Secondary hyperaldosteronism
 - [ ] 23 Neuroendocrine tumors
 - [ ] 24 Neuroblastoma
 - [ ] 25 Pheochromocytoma
 - [ ] 26 Multiple endocrine neoplasias
+  - [ ] MEN1
+  - [ ] MEN2A
+  - [ ] MEN2B
 - [ ] 27 Pancreatic islet cell tumors
-- [ ] 28 Carcinoid syndrome
+  - [ ] Insulinoma
+  - [ ] Glucagonoma
+  - [ ] Somatostatinoma
+- [ ] 28 Carcinoid tumors
+  - [ ] liver metastasis), carcinoid tumor may present with carcinoid syndrome
 - [ ] 29 Zollinger-Ellison syndrome
 
-## 05 Pharm — 0/7
+## 05 Pharmacology — 0/23
 - [ ] 01 Diabetes mellitus therapy
-- [ ] 02 Thioamides
+  - [ ] Metformin
+  - [ ] Pioglitazone
+  - [ ] Sulfonylureas (1st gen)
+  - [ ] Sulfonylureas (2nd gen)
+  - [ ] Meglitinides
+  - [ ] GLP-1 analogs
+  - [ ] DPP-4 inhibitors
+  - [ ] Sodium-glucose co-transporter 2 inhibitors glucosidase inhibitors
+  - [ ] Amylin analogs
+- [ ] 02 Thionamides
 - [ ] 03 Levothyroxine, liothyronine
 - [ ] 04 Hypothalamic/pituitary drugs
+  - [ ] Conivaptan, tolvaptan
+  - [ ] Demeclocycline
+  - [ ] Desmopressin
+  - [ ] GH
+  - [ ] Oxytocin
+  - [ ] Octreotide
 - [ ] 05 Fludrocortisone
 - [ ] 06 Cinacalcet
 - [ ] 07 Sevelamer
+- [ ] 08 Cation exchange resins

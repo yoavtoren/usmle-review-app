@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lichen planus: sawtooth rete ridges & colloid bodies</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 6 · all 37</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q223", "item": 223, "qid": "16395", "title": "Lichen planus: sawtooth rete ridges & colloid bodies", "system": "Dermatology", "topic": "Lichen planus / interface dermatitis", "correct": "D", "yourAnswer": "E", "percentCorrect": 60, "vignette": "A 25-year-old woman comes to the office due to a 4-week history of a pruritic skin rash. The patient has no chronic medical conditions and takes no medication. Vital signs are normal. On examination, there are pink papules distributed symmetrically over the anterior surfaces of the shins and ankles. Shave biopsy reveals prominent hyperkeratosis along with a thickened granular layer. In addition, there is a bandlike infiltrate of mononuclear cells (predominantly lymphocytes) in the subjacent superficial dermis that involves the overlying epidermis. The rete ridges have a sharpened, sawtooth appearance. The basal layer of the epidermis is degenerated, with scattered colloid bodies. Which of the following is the most likely diagnosis?", "clues": [{"text": "pruritic skin rash", "type": "blue", "note": "Lichen planus is intensely itchy - one of its '5 Ps' (pruritic, purple/pink, polygonal papules and plaques). Pruritus is a feature but not specific on its own."}, {"text": "pink papules distributed symmetrically over the anterior surfaces of the shins and ankles", "type": "blue", "note": "Symmetric papules favoring the wrists and ankles (flexural surfaces) is the classic distribution of lichen planus, and helps separate it from psoriasis (extensor knees/elbows)."}, {"text": "prominent hyperkeratosis along with a thickened granular layer", "type": "green", "note": "Hyperkeratosis + a THICKENED granular layer (hypergranulosis) is characteristic of lichen planus. This is the opposite of psoriasis, which shows a THINNED granular layer and parakeratosis - a key discriminator."}, {"text": "bandlike infiltrate of mononuclear cells (predominantly lymphocytes)", "type": "green", "note": "A bandlike (lichenoid) lymphocytic infiltrate hugging the dermoepidermal junction is interface dermatitis - the histologic signature of lichen planus (CD8+ T-cell attack on basal keratinocytes)."}, {"text": "rete ridges have a sharpened, sawtooth appearance", "type": "red", "note": "'Sawtooth' rete ridges are pathognomonic for lichen planus. Combined with the bandlike infiltrate, this clinches the diagnosis."}, {"text": "basal layer of the epidermis is degenerated, with scattered colloid bodies", "type": "green", "note": "Basal layer degeneration with colloid (Civatte) bodies - apoptotic keratinocytes - is classic lichen planus and reflects the immune attack at the basal layer."}], "whatMatters": "Pruritic violaceous/pink papules on the wrists/ankles with histology showing hyperkeratosis, HYPERgranulosis, a bandlike lymphocytic (interface) infiltrate, SAWTOOTH rete ridges, and colloid (Civatte) bodies = LICHEN PLANUS. Answer D. Psoriasis (the trap) has the opposite: thinned granular layer, parakeratosis, clubbed rete ridges, and silvery scale on extensors.", "strategy": "Anchor on the pathognomonic histology: sawtooth rete ridges + bandlike (lichenoid) lymphocytic infiltrate + colloid bodies + hypergranulosis = lichen planus. Then rule out psoriasis by the granular layer (thick in LP, thin in psoriasis) and rete shape (sawtooth in LP, clubbed in psoriasis). Eczematous dermatitides show spongiosis; erythema nodosum is septal panniculitis, not an epidermal rash.", "options": [{"letter": "A", "text": "Atopic dermatitis", "correct": false}, {"letter": "B", "text": "Contact dermatitis", "correct": false}, {"letter": "C", "text": "Erythema nodosum", "correct": false}, {"letter": "D", "text": "Lichen planus", "correct": true}, {"letter": "E", "text": "Psoriasis", "correct": false}], "eliminations": [{"letter": "A", "label": "Atopic dermatitis - spongiosis, not lichenoid", "detail": "WHAT IT IS: a pruritic eczematous rash, usually beginning in childhood with a personal/family history of atopy (asthma, allergic rhinitis). ❌ WHY IT FAILS: biopsy shows spongiosis (epidermal edema)/acanthosis, not a bandlike lymphocytic infiltrate with sawtooth rete ridges and colloid bodies. ✅ Correct if: chronic itchy flexural eczema in an atopic patient."}, {"letter": "B", "label": "Contact dermatitis - localized, spongiotic", "detail": "WHAT IT IS: a pruritic eruption localized to areas of allergen/irritant exposure (e.g., nickel under a belt buckle). ❌ WHY IT FAILS: it is spongiotic and distribution follows the exposure - not symmetric papules with lichenoid interface histology. ✅ Correct if: itchy rash matching a contact exposure pattern."}, {"letter": "C", "label": "Erythema nodosum - panniculitis, not an epidermal rash", "detail": "WHAT IT IS: a delayed-type hypersensitivity reaction with tender inflammatory nodules on the shins. ❌ WHY IT FAILS: its pathology is SEPTAL panniculitis in the subcutaneous fat, not an epidermal/dermoepidermal interface process with sawtooth rete ridges. ✅ Correct if: tender pretibial nodules with septal panniculitis (e.g., sarcoidosis, strep, IBD)."}, {"letter": "E", "label": "Psoriasis - thinned granular layer, clubbed rete (your pick)", "detail": "WHAT IT IS: an immune-mediated disease with cytokine-driven keratinocyte hyperproliferation: acanthosis with CLUBBED rete ridges, parakeratosis, THINNED granular layer, Munro microabscesses, and silvery scale on extensor surfaces. ❌ WHY IT FAILS: this biopsy shows a THICKENED granular layer, sawtooth rete ridges, a bandlike lymphocytic infiltrate, and colloid bodies - all lichen planus, the opposite of psoriasis. The shared Koebner phenomenon and pruritus is the trap. ✅ Correct if: well-demarcated plaques with silvery scale, parakeratosis, and clubbed rete ridges on knees/elbows."}], "reasoning": ["Pruritic pink papules symmetric on wrists/ankles in a young adult", "Histology: hyperkeratosis + hypergranulosis, bandlike (interface) lymphocytic infiltrate, sawtooth rete ridges, basal degeneration with colloid bodies", "This constellation is pathognomonic for lichen planus (CD8+ interface dermatitis)", "-> lichen planus; answer D"], "mechanism": "Lichen planus is an immunologically mediated, CD8+ T-cell-driven interface dermatitis directed at basal keratinocytes along the dermoepidermal junction. Clinically it produces the '5 Ps' - pruritic, purple/pink, polygonal papules and plaques - favoring flexor wrists and ankles, with possible nail, oral (Wickham striae), and genital involvement and a Koebner phenomenon. The characteristic histology includes hyperkeratosis, hypergranulosis (a thickened granular layer), a bandlike (lichenoid) lymphocytic infiltrate at the junction, sawtooth rete ridges, basal layer degeneration, and scattered colloid (Civatte) bodies representing apoptotic keratinocytes. Psoriasis is the key contrast - it shows parakeratosis, a thinned granular layer, clubbed rete ridges, and Munro microabscesses, essentially the inverse pattern.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Derm > lichen planus: 5 Ps; flexor wrists/ankles, oral Wickham striae; interface dermatitis - hyperkeratosis, hypergranulosis, bandlike lymphocytic infiltrate, sawtooth rete ridges, colloid (Civatte) bodies; vs psoriasis (parakeratosis, thinned granular layer, clubbed rete, Munro microabscesses)."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The stem is a histology-recognition question. Pin the pathognomonic features (sawtooth rete + bandlike infiltrate + colloid bodies + hypergranulosis) to lichen planus, not psoriasis."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on hypergranulosis, parakeratosis, interface/lichenoid dermatitis, sawtooth rete ridges, colloid/Civatte bodies, or panniculitis? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Psoriasis (your pick) shares pruritus and a Koebner phenomenon, but its histology is the OPPOSITE - thinned granular layer and clubbed rete ridges. The thickened granular layer + sawtooth rete here say lichen planus."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "The slide shows the giveaway features - sawtooth (pointed) rete ridges and a dense band of lymphocytes hugging the dermoepidermal junction with hypergranulosis above. If the photomicrograph tripped you, match those two findings to 'lichen planus' and the diagnosis follows."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: lichen planus = sawtooth rete + bandlike infiltrate + colloid bodies + HYPERgranulosis (5 Ps, wrists/ankles); psoriasis = clubbed rete + parakeratosis + THINNED granular layer + Munro microabscess (extensors)."}], "keywords": [{"front": "Sawtooth rete ridges + bandlike lymphocytic infiltrate + colloid bodies", "back": "Lichen planus (interface dermatitis)"}, {"front": "The 5 Ps of lichen planus", "back": "Pruritic, Purple/pink, Polygonal, Papules, Plaques"}, {"front": "Granular layer: lichen planus vs psoriasis", "back": "LP = thickened (hypergranulosis); psoriasis = thinned"}, {"front": "Colloid (Civatte) bodies", "back": "Apoptotic basal keratinocytes (lichen planus)"}, {"front": "Oral lichen planus finding", "back": "Wickham striae (white, lacy reticular lines)"}, {"front": "Psoriasis histology", "back": "Parakeratosis, clubbed rete ridges, Munro microabscesses, thinned granular layer"}], "firstAid": [{"tag": "answer / stem", "topic": "Lichen planus", "detail": "Derm > 5 Ps; interface dermatitis; sawtooth rete, hypergranulosis, colloid bodies; Wickham striae; HCV association."}, {"tag": "options", "topic": "Papulosquamous & eczematous mimics", "detail": "Derm > psoriasis (parakeratosis/clubbed rete), atopic/contact dermatitis (spongiosis), erythema nodosum (septal panniculitis)."}, {"tag": "context", "topic": "Interface dermatitis", "detail": "Derm/Path > basal layer attack -> colloid bodies; lichen planus, lupus, erythema multiforme."}], "memoryHook": "Lichen planus = the 'saw' rash: sawtooth rete ridges with a band of lymphocytes and Civatte bodies. Psoriasis is the opposite (thin granular layer, clubbed rete).", "stem": [{"text": "A 25-year-old woman comes to the office due to a 4-week history of a "}, {"text": "pruritic skin rash", "clue": true, "type": "blue", "note": "Lichen planus is intensely itchy - one of its '5 Ps' (pruritic, purple/pink, polygonal papules and plaques). Pruritus is a feature but not specific on its own."}, {"text": ". The patient has no chronic medical conditions and takes no medication. Vital signs are normal. On examination, there are "}, {"text": "pink papules distributed symmetrically over the anterior surfaces of the shins and ankles", "clue": true, "type": "blue", "note": "Symmetric papules favoring the wrists and ankles (flexural surfaces) is the classic distribution of lichen planus, and helps separate it from psoriasis (extensor knees/elbows)."}, {"text": ". Shave biopsy reveals "}, {"text": "prominent hyperkeratosis along with a thickened granular layer", "clue": true, "type": "green", "note": "Hyperkeratosis + a THICKENED granular layer (hypergranulosis) is characteristic of lichen planus. This is the opposite of psoriasis, which shows a THINNED granular layer and parakeratosis - a key discriminator."}, {"text": ". In addition, there is a "}, {"text": "bandlike infiltrate of mononuclear cells (predominantly lymphocytes)", "clue": true, "type": "green", "note": "A bandlike (lichenoid) lymphocytic infiltrate hugging the dermoepidermal junction is interface dermatitis - the histologic signature of lichen planus (CD8+ T-cell attack on basal keratinocytes)."}, {"text": " in the subjacent superficial dermis that involves the overlying epidermis. The "}, {"text": "rete ridges have a sharpened, sawtooth appearance", "clue": true, "type": "red", "note": "'Sawtooth' rete ridges are pathognomonic for lichen planus. Combined with the bandlike infiltrate, this clinches the diagnosis."}, {"text": ". The "}, {"text": "basal layer of the epidermis is degenerated, with scattered colloid bodies", "clue": true, "type": "green", "note": "Basal layer degeneration with colloid (Civatte) bodies - apoptotic keratinocytes - is classic lichen planus and reflects the immune attack at the basal layer."}, {"text": ". Which of the following is the most likely diagnosis?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

@@ -1,49 +1,160 @@
-# 06 Public Health — 0/36 (0%)
+# 06 Public Health — 0/149 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Epidemiology & Biostatistics — 0/15
+## 01 Epidemiology and biostatistics — 0/77
 - [ ] 01 Observational studies
-- [ ] 02 Clinical trial
-- [ ] 03 Evaluation of diagnostic tests
-- [ ] 04 Likelihood ratio
+  - [ ] Case series
+  - [ ] Cross-sectional study
+  - [ ] Case-control study
+  - [ ] Cohort study
+  - [ ] Twin concordance study
+  - [ ] Adoption study
+  - [ ] Ecological study
+- [ ] 02 Clinical therapeutic trial
+- [ ] 03 Off-label drug use
+- [ ] 04 Bradford Hill criteria
+  - [ ] Strength
+  - [ ] Consistency
+  - [ ] Specificity
+  - [ ] Temporality
+  - [ ] Biological gradient
+  - [ ] Plausibility
+  - [ ] Coherence
+  - [ ] Experiment
+  - [ ] Analogy
 - [ ] 05 Quantifying risk
-- [ ] 06 Incidence vs prevalence
-- [ ] 07 Precision vs accuracy
-- [ ] 09 Bias & study errors
-- [ ] 10 Statistical distribution
-- [ ] 11 Statistical hypotheses
-- [ ] 12 Outcomes of statistical hypothesis testing
-- [ ] 13 Confidence interval
-- [ ] 14 Meta-analysis
-- [ ] 15 Common statistical tests
-- [ ] 16 Pearson correlation coefficient
+  - [ ] Odds ratio
+  - [ ] Relative risk
+  - [ ] Relative risk reduction
+  - [ ] Attributable risk
+  - [ ] Absolute risk reduction
+  - [ ] Number needed to treat
+  - [ ] Number needed to harm
+  - [ ] Case fatality rate
+  - [ ] Mortality rate
+  - [ ] Attack rate
+- [ ] 06 Demographic transition
+  - [ ] Population pyramid
+  - [ ] Birth rate
+  - [ ] Mortality rate
+  - [ ] Life expectancy
+  - [ ] Population
+- [ ] 07 Likelihood ratio
+- [ ] 08 Kaplan-Meier curve
+- [ ] 09 Evaluation of diagnostic tests
+  - [ ] Sensitivity (true- positive rate)
+  - [ ] Specificity (true- negative rate)
+  - [ ] Positive predictive value
+  - [ ] Negative predictive value
+- [ ] 10 Receiver operating characteristic curve
+- [ ] 11 Precision vs accuracy
+  - [ ] Precision (reliability)
+  - [ ] Accuracy (validity)
+- [ ] 12 Incidence vs prevalence
+- [ ] 13 Bias and study errors
+  - [ ] Selection bias
+  - [ ] Recall bias
+  - [ ] Measurement bias
+  - [ ] Procedure bias
+  - [ ] Observer-expectancy bias
+  - [ ] Lead-time bias
+  - [ ] Length-time bias
+- [ ] 14 Confounding vs effect modification
+  - [ ] Confounding
+  - [ ] Effect modification
+- [ ] 15 Statistical distribution
+  - [ ] Measures of central tendency
+  - [ ] Measures of dispersion
+  - [ ] Normal distribution
+  - [ ] Nonnormal distributions
+- [ ] 16 Statistical hypothesis testing
+  - [ ] Null hypothesis
+  - [ ] Alternative hypothesis
+  - [ ] P value
+- [ ] 17 Outcomes of statistical hypothesis testing
+  - [ ] Correct result
+  - [ ] Testing errors
+- [ ] 18 Statistical vs clinical significance
+- [ ] 19 Confidence interval
+- [ ] 20 Meta-analysis
+- [ ] 21 Common statistical tests
+- [ ] 22 Pearson correlation coefficient
 
-## 02 Ethics — 0/8
+## 02 Ethics — 0/17
 - [ ] 01 Core ethical principles
-- [ ] 02 Informed consent
-- [ ] 03 Consent for minors
-- [ ] 04 Decision-making capacity
+  - [ ] Autonomy
+  - [ ] Beneficence
+  - [ ] Nonmaleficence
+  - [ ] Justice
+- [ ] 02 Decision-making capacity
+- [ ] 03 Informed consent
+- [ ] 04 Consent for minors
 - [ ] 05 Advance directives
-- [ ] 06 Surrogate decision-maker
-- [ ] 07 Confidentiality
-- [ ] 08 Ethical situations
+  - [ ] Oral advance directive
+  - [ ] Written advance directive
+  - [ ] Medical power of attorney
+  - [ ] Do not resuscitate order
+- [ ] 06 Ventilator-assisted life support
+- [ ] 07 Surrogate decision- maker
+- [ ] 08 Confidentiality
+- [ ] 09 Accepting gifts from patients
 
-## 03 The Well Patient — 0/1
-- [ ] 01 Changes in the elderly
+## 03 Communication skills — 0/28
+- [ ] 01 Patient-centered interviewing techniques
+  - [ ] Introduction
+  - [ ] Agenda setting
+  - [ ] Reflection
+  - [ ] Validation
+  - [ ] Recapitulation
+  - [ ] Facilitation
+- [ ] 02 Establishing rapport
+  - [ ] Partnership
+  - [ ] Empathy
+  - [ ] Apology
+  - [ ] Respect
+  - [ ] Legitimization
+  - [ ] Support
+- [ ] 03 Delivering bad news
+  - [ ] Setting
+  - [ ] Perception
+  - [ ] Invitation
+  - [ ] Knowledge
+  - [ ] Emotions
+  - [ ] Strategy
+- [ ] 04 Gender- and sexuality- inclusive history taking
+- [ ] 05 Cultural formulation interview
+- [ ] 06 Motivational interviewing
+- [ ] 07 Trauma-informed care
+- [ ] 08 Challenging patient and ethical scenarios
+- [ ] 09 Communicating with patients with disabilities
+- [ ] 10 Use of interpreters
 
-## 04 Healthcare Delivery — 0/7
+## 04 Healthcare delivery — 0/27
 - [ ] 01 Disease prevention
 - [ ] 02 Major medical insurance plans
+  - [ ] Exclusive provider organization (EPO)
+  - [ ] Health maintenance organization (HMO)
+  - [ ] Point of service (PoS)
+  - [ ] Preferred provider organization (PPO)
+  - [ ] Accountable care organization (ACO)
+  - [ ] High deductible health plan (HDHP)
 - [ ] 03 Healthcare payment models
-- [ ] 04 Medicare & Medicaid
-- [ ] 05 Hospice care
-- [ ] 06 Common causes of death (US) by age
-- [ ] 07 Conditions with frequent hospital readmissions
-
-## 05 Quality & Safety — 0/5
-- [ ] 01 Safety culture
-- [ ] 02 Human factors design
-- [ ] 05 Swiss cheese model
+  - [ ] Bundled payment
+  - [ ] Capitation
+  - [ ] Discounted fee-for- service
+  - [ ] Fee-for-service
+  - [ ] Global payment
+- [ ] 04 Medicare and Medicaid
+- [ ] 05 Palliative care
 - [ ] 06 Types of medical errors
-- [ ] 08 Medical error analysis
+  - [ ] Active error
+  - [ ] Latent error
+  - [ ] Never event
+  - [ ] Near miss
+- [ ] 07 Medical error analysis
+  - [ ] Root cause analysis
+  - [ ] Failure mode and effects analysis
+- [ ] 08 Causes of medical errors
+  - [ ] Burnout
+  - [ ] Fatigue

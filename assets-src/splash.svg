@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2732" height="2732" viewBox="0 0 2732 2732">
+  <defs>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6D5DF0"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Warm paper background, matches the app surface -->
+  <rect width="2732" height="2732" fill="#F6F5F1"/>
+
+  <!-- Centered brand mark: indigo squircle + white stethoscope -->
+  <g transform="translate(1366 1366)">
+    <rect x="-230" y="-230" width="460" height="460" rx="132" fill="url(#mark)"/>
+    <g transform="scale(5.4) translate(-29 -31.5)"
+       fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M30 44 Q20 44 20 32 Q20 20 28 20 Q36 20 36 28" stroke-width="3.5"/>
+      <path d="M28 20 L22 13" stroke-width="3"/>
+      <path d="M28 20 L34 13" stroke-width="3"/>
+      <circle cx="22" cy="12" r="2.6" fill="#ffffff" stroke="none"/>
+      <circle cx="34" cy="12" r="2.6" fill="#ffffff" stroke="none"/>
+      <circle cx="38" cy="44" r="8" stroke-width="3.5"/>
+      <circle cx="38" cy="44" r="3" fill="#ffffff" stroke="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,74 +1,208 @@
-# 13 Psychiatry — 0/65 (0%)
+# 13 Psychiatry — 0/199 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Psychology — 0/4
+## 01 Psychology — 0/35
 - [ ] 01 Classical conditioning
 - [ ] 02 Operant conditioning
-- [ ] 03 Transference & countertransference
+  - [ ] Reinforcement
+  - [ ] Punishment
+  - [ ] Extinction
+- [ ] 03 Transference and countertransference
+  - [ ] Transference
+  - [ ] Countertransference
 - [ ] 04 Ego defenses
+  - [ ] Acting out
+  - [ ] Denial
+  - [ ] Displacement
+  - [ ] Dissociation
+  - [ ] Fixation
+  - [ ] Idealization
+  - [ ] Identification
+  - [ ] Intellectualization
+  - [ ] Isolation (of affect)
+  - [ ] Passive aggression
+  - [ ] Projection
+  - [ ] Rationalization
+  - [ ] Reaction formation
+  - [ ] Regression
+  - [ ] Repression
+  - [ ] Splitting
+  - [ ] Sublimation
+  - [ ] Altruism
+  - [ ] Suppression
+  - [ ] Humor
+- [ ] 05 Grief
+  - [ ] Prolonged grief disorder
+- [ ] 06 Normal infant and child development
+  - [ ] Infant
+  - [ ] Toddler
+  - [ ] Preschool
 
-## 02 Pathology — 0/47
-- [ ] 01 Infant deprivation effects
-- [ ] 02 Child abuse
-- [ ] 03 Child neglect
-- [ ] 04 Vulnerable child syndrome
-- [ ] 05 Childhood & early-onset disorders
-- [ ] 06 Orientation
-- [ ] 07 Amnesias
-- [ ] 08 Dissociative disorders
-- [ ] 09 Delirium
-- [ ] 10 Psychosis
-- [ ] 11 Schizophrenia spectrum disorders
-- [ ] 12 Mood disorder
-- [ ] 13 Manic episode
-- [ ] 14 Hypomanic episode
-- [ ] 15 Bipolar disorder
-- [ ] 16 Major Depressive Disorder
-- [ ] 17 Depression With Atypical Features
-- [ ] 18 Peripartum mood disturbances
-- [ ] 19 Grief
-- [ ] 20 Electroconvulsive Therapy
-- [ ] 21 Risk Factors For Suicide Completion
-- [ ] 22 Anxiety Disorder
-- [ ] 23 Panic Disorder
-- [ ] 24 Phobias
-- [ ] 25 Generalized Anxiety Disorder
-- [ ] 26 Obsessive-compulsive disorders
-- [ ] 27 Trichotillomania
-- [ ] 28 Trauma & stress-related disorders
-- [ ] 29 Diagnostic Criteria By Symptom Duration
-- [ ] 30 Personality
-- [ ] 31 Cluster A Personality Disorders
-- [ ] 32 Cluster B Personality Disorders
-- [ ] 33 Cluster C Personality Disorders
-- [ ] 34 Malingering
-- [ ] 35 Factitious Disorders
-- [ ] 36 Somatic Symptom & Related Disorders
-- [ ] 37 Eating Disorders
-- [ ] 38 Gender Dysphoria
-- [ ] 39 Sexual Dysfunction
-- [ ] 40 Sleep Terror Disorder
-- [ ] 41 Enuresis
-- [ ] 42 Narcolepsy
-- [ ] 43 Substance Use Disorder
-- [ ] 44 Stages Of Change In Overcoming Addiction
-- [ ] 45 Psychiatric Emergencies
-- [ ] 46 Psychoactive Drug Intoxication & Withdrawal
-- [ ] 47 Alcohol use disorder
+## 02 Pathology — 0/138
+- [ ] 01 Child abuse
+  - [ ] Neglect
+  - [ ] Physical abuse
+  - [ ] Sexual abuse
+  - [ ] Emotional abuse
+- [ ] 02 Vulnerable child syndrome
+- [ ] 03 Childhood and early‑onset disorders
+  - [ ] Attention-deficit hyperactivity disorder
+  - [ ] Autism spectrum disorder
+  - [ ] Conduct disorder
+  - [ ] Disruptive mood dysregulation disorder
+  - [ ] Intellectual disability
+  - [ ] Intermittent explosive disorder
+  - [ ] Oppositional defiant disorder
+  - [ ] Selective mutism
+  - [ ] Separation anxiety disorder
+  - [ ] Specific learning disorder
+  - [ ] Tourette syndrome
+- [ ] 04 Orientation
+- [ ] 05 Amnesias
+  - [ ] Retrograde amnesia
+  - [ ] Anterograde amnesia
+  - [ ] Korsakoff syndrome
+- [ ] 06 Dissociative disorders
+  - [ ] Depersonalization/ derealization disorder
+  - [ ] Dissociative amnesia
+  - [ ] Dissociative identity disorder
+- [ ] 07 Delirium
+- [ ] 08 Psychosis
+  - [ ] Delusions
+  - [ ] Disorganized thought
+  - [ ] Hallucinations
+- [ ] 09 Mood disorder
+- [ ] 10 Schizophrenia spectrum disorders
+  - [ ] Schizophrenia
+  - [ ] Brief psychotic disorder
+  - [ ] Schizophreniform disorder
+  - [ ] Schizoaffective disorder
+  - [ ] Delusional disorder
+  - [ ] Schizotypal personality disorder
+- [ ] 11 Manic episode
+- [ ] 12 Hypomanic episode
+- [ ] 13 Bipolar disorder
+  - [ ] Cyclothymic disorder
+- [ ] 14 Major depressive disorder
+  - [ ] MDD with psychotic features
+  - [ ] Persistent depressive disorder
+  - [ ] MDD with seasonal pattern
+- [ ] 15 Depression with atypical features
+- [ ] 16 Peripartum mood disturbances
+  - [ ] Postpartum blues
+  - [ ] MDD with peripartum onset
+  - [ ] Postpartum psychosis
+- [ ] 17 Electroconvulsive therapy
+- [ ] 18 Risk factors for suicide death
+- [ ] 19 Anxiety disorders
+- [ ] 20 Panic disorder
+- [ ] 21 Phobias
+  - [ ] Social anxiety disorder
+  - [ ] Agoraphobia
+- [ ] 22 Generalized anxiety disorder
+- [ ] 23 Obsessive‑compulsive disorders
+  - [ ] Body dysmorphic disorder
+  - [ ] Trichotillomania
+- [ ] 24 Trauma and stress‑related disorders
+  - [ ] Adjustment disorder
+  - [ ] Post-traumatic stress disorder
+- [ ] 25 Diagnostic criteria by symptom duration
+- [ ] 26 Personality disorders
+  - [ ] by early adulthood. Contrast with personality traits
+  - [ ] Cluster A
+  - [ ] Paranoid
+  - [ ] Schizoid
+  - [ ] Schizotypal
+  - [ ] Cluster B
+  - [ ] Antisocial
+  - [ ] Borderline
+  - [ ] Histrionic
+  - [ ] Narcissistic
+  - [ ] Cluster C
+  - [ ] Avoidant
+  - [ ] Obsessive-compulsive
+  - [ ] Dependent
+- [ ] 27 Malingering
+- [ ] 28 Factitious disorders
+  - [ ] Factitious disorder imposed on self
+  - [ ] Factitious disorder imposed on another
+- [ ] 29 Somatic symptom and related disorders
+  - [ ] Somatic symptom disorder
+  - [ ] Conversion disorder
+  - [ ] Illness anxiety disorder
+- [ ] 30 Malingering vs factitious disorder vs somatic symptom disorders
+- [ ] 31 Eating disorders
+  - [ ] Anorexia nervosa
+  - [ ] Bulimia nervosa
+  - [ ] Binge-eating disorder
+  - [ ] Pica
+- [ ] 32 Gender dysphoria
+  - [ ] Transgender
+- [ ] 33 Sexual dysfunction
+- [ ] 34 Sleep terror disorder
+- [ ] 35 Elimination disorders
+  - [ ] Enuresis
+  - [ ] Encopresis
+- [ ] 36 Narcolepsy
+- [ ] 37 Substance use disorder
+- [ ] 38 Gambling disorder
+- [ ] 39 Transtheoretical model of change
+  - [ ] Precontemplation
+  - [ ] Contemplation
+  - [ ] Preparation/ determination
+  - [ ] Action/willpower
+  - [ ] Maintenance
+  - [ ] Relapse
+- [ ] 40 Psychiatric emergencies
+  - [ ] Serotonin syndrome
+  - [ ] Hypertensive crisis
+  - [ ] Neuroleptic malignant syndrome
+  - [ ] Delirium tremens
+  - [ ] Acute dystonia
+  - [ ] Lithium toxicity
+  - [ ] Tricyclic antidepressant toxicity
+- [ ] 41 Psychoactive drug intoxication and withdrawal
+  - [ ] Alcohol
+  - [ ] Barbiturates
+  - [ ] Benzodiazepines
+  - [ ] Opioids
+  - [ ] Inhalants
+  - [ ] Amphetamines
+  - [ ] Caffeine
+  - [ ] Cocaine
+  - [ ] Nicotine
+  - [ ] Lysergic acid diethylamide
+  - [ ] Cannabis/ cannabinoids
+  - [ ] MDMA (ecstasy)
+  - [ ] Phencyclidine
+- [ ] 42 Alcohol use disorder
+  - [ ] Wernicke-Korsakoff syndrome
 
-## 03 Pharm — 0/14
+## 03 Pharmacology — 0/26
 - [ ] 01 Psychotherapy
-- [ ] 02 Preferred Medications For Selected Psychiatric Conditions
-- [ ] 03 Central Nervous System Stimulants
-- [ ] 04 Typical Antipsychotics
-- [ ] 05 Atypical Antipsychotics
-- [ ] 06 Lithium
-- [ ] 07 Buspirone
-- [ ] 08 Antidepressants
-- [ ] 09 Selective Serotonin Reuptake Inhibitors
-- [ ] 10 Serotonin-norepinephrine Reuptake Inhibitors
-- [ ] 11 Tricyclic Antidepressants
-- [ ] 12 Monoamine Oxidase Inhibitors
-- [ ] 13 Atypical Antidepressants
-- [ ] 14 Opioid detoxification & relapse prevention
+  - [ ] Behavioral therapy
+  - [ ] Cognitive behavioral therapy
+  - [ ] Dialectical behavioral therapy
+  - [ ] Interpersonal therapy
+  - [ ] Motivational interviewing
+  - [ ] Supportive therapy
+- [ ] 02 Central nervous system stimulants
+- [ ] 03 Antipsychotics
+- [ ] 04 Lithium
+- [ ] 05 Buspirone
+- [ ] 06 Antidepressants
+- [ ] 07 Selective serotonin reuptake inhibitors
+- [ ] 08 Serotonin‑ norepinephrine reuptake inhibitors
+- [ ] 09 Tricyclic antidepressants
+- [ ] 10 Monoamine oxidase inhibitors
+- [ ] 11 Atypical antidepressants
+  - [ ] Bupropion
+  - [ ] Mirtazapine
+  - [ ] Trazodone
+  - [ ] Vilazodone
+  - [ ] Vortioxetine
+- [ ] 12 Pharmacotherapies for smoking cessation
+  - [ ] Nicotine replacement therapy
+  - [ ] Varenicline
+- [ ] 13 Medically supervised opioid withdrawal and relapse prevention

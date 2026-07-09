@@ -1,0 +1,221 @@
+{
+  "id": "q212",
+  "item": 212,
+  "qid": "1558",
+  "title": "Acute dystonia: calcium binds troponin",
+  "system": "Physiology",
+  "topic": "Excitation-contraction coupling",
+  "correct": "D",
+  "yourAnswer": "B",
+  "percentCorrect": 72,
+  "vignette": "An 18-year-old man, who was recently started on risperidone therapy for schizophrenia, comes to the office due to involuntary deviation of his head. On examination, the patient's head is tilted toward the right side and the chin is rotated to the left. There is palpable tightening of the right sternocleidomastoid muscle. It is determined that the patient is experiencing a medication-induced dystonic reaction due to motor neuron hyperactivity. The persistent myocyte stimulation causes a substance to be released from the sarcoplasmic reticulum. This substance most likely binds to which of the following proteins to cause this patient's symptoms?",
+  "clues": [
+    {
+      "text": "risperidone therapy for schizophrenia",
+      "type": "orange",
+      "note": "Risperidone is a dopamine D2 antagonist antipsychotic; D2 blockade can cause acute dystonic reactions (a hyperkinetic extrapyramidal side effect), especially in young men early in treatment."
+    },
+    {
+      "text": "involuntary deviation of his head",
+      "type": "blue",
+      "note": "Involuntary sustained muscle contraction = dystonia. Here it is drug-induced and explains the persistent muscle stimulation referenced later in the stem."
+    },
+    {
+      "text": "the chin is rotated to the left",
+      "type": "green",
+      "note": "Head tilt with chin rotation = torticollis (cervical dystonia), a classic acute dystonic reaction to antipsychotics. It confirms sustained, involuntary skeletal-muscle contraction."
+    },
+    {
+      "text": "palpable tightening of the right sternocleidomastoid",
+      "type": "green",
+      "note": "A continuously contracted SCM is the physical correlate of the dystonia - sustained excitation-contraction coupling in skeletal muscle, which is the physiology the question tests."
+    },
+    {
+      "text": "released from the sarcoplasmic reticulum",
+      "type": "red",
+      "note": "The substance released from the sarcoplasmic reticulum during excitation-contraction coupling is CALCIUM (via the ryanodine receptor). The question is asking which contractile protein this calcium binds - troponin C."
+    }
+  ],
+  "whatMatters": "The substance released from the sarcoplasmic reticulum is CALCIUM. In skeletal muscle, Ca2+ binds TROPONIN C, which shifts tropomyosin off the actin myosin-binding sites and allows cross-bridge cycling/contraction. Answer D - troponin. Calcium does not bind myosin, actin, or tropomyosin directly.",
+  "strategy": "Translate the wordy stem: 'substance released from the sarcoplasmic reticulum' = calcium; 'binds which protein to cause contraction' = the calcium receptor on the thin filament. In SKELETAL/cardiac muscle that is troponin C (not calmodulin - that's smooth muscle). Then tropomyosin moves, myosin-binding sites open, contraction occurs. Don't jump to myosin just because it generates force.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Actin",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Myosin",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Tropomyosin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Troponin",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Protein kinase A",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Actin - calcium does not bind it directly",
+      "detail": "WHAT IT IS: actin forms the thin filament and carries the myosin-binding sites. ❌ WHY IT FAILS: at rest those sites are covered by tropomyosin; calcium does not bind actin - it binds troponin C, which then moves tropomyosin to expose actin. ✅ Correct if: asked which protein bears the myosin-binding sites (not what calcium binds)."
+    },
+    {
+      "letter": "B",
+      "label": "Myosin - the motor, but not the calcium receptor (your pick)",
+      "detail": "WHAT IT IS: myosin is the thick-filament motor whose heads bind actin and hydrolyze ATP to generate force. ❌ WHY IT FAILS: in skeletal muscle, calcium binds TROPONIN C, not myosin; myosin only acts after troponin-tropomyosin uncovers the binding sites. (Direct Ca2+-on-myosin regulation is a smooth-muscle/myosin-light-chain story, not this.) ✅ Correct if: asked what cross-bridges with actin to produce the power stroke."
+    },
+    {
+      "letter": "C",
+      "label": "Tropomyosin - moved, but not the calcium binder",
+      "detail": "WHAT IT IS: tropomyosin is the regulatory protein that physically blocks the myosin-binding sites on actin at rest. ❌ WHY IT FAILS: calcium does not bind tropomyosin; it binds troponin C, and the troponin conformational change DISPLACES tropomyosin. ✅ Correct if: asked which protein covers/uncovers the actin binding sites."
+    },
+    {
+      "letter": "E",
+      "label": "Protein kinase A - cAMP signaling, not E-C coupling",
+      "detail": "WHAT IT IS: PKA is activated by cAMP and phosphorylates targets in second-messenger pathways (e.g., glucagon, beta-adrenergic). ❌ WHY IT FAILS: it is not the calcium receptor of the contractile apparatus; skeletal muscle contraction is initiated by Ca2+ binding troponin C. ✅ Correct if: asked about cAMP-dependent signaling (hormone action), not sarcomere activation."
+    }
+  ],
+  "reasoning": [
+    "Drug-induced dystonia = sustained involuntary skeletal-muscle contraction (excitation-contraction coupling)",
+    "The substance released from the sarcoplasmic reticulum is calcium (via the ryanodine receptor)",
+    "In skeletal muscle, calcium binds troponin C, displacing tropomyosin off the actin myosin-binding sites",
+    "-> exposed sites allow cross-bridge cycling/contraction; calcium binds troponin (answer D)"
+  ],
+  "mechanism": "In skeletal muscle excitation-contraction coupling, motor-neuron firing depolarizes the T-tubule, opening sarcoplasmic-reticulum ryanodine receptors so stored CALCIUM floods the cytosol. Calcium binds troponin C on the thin filament, producing a conformational change that pulls tropomyosin away from the myosin-binding sites on actin. Myosin heads then cross-bridge with actin and cycle (power stroke), shortening the sarcomere; the cycle repeats until calcium is resequestered by the SR Ca2+-ATPase and dissociates from troponin C, ending contraction. The persistent motor-neuron hyperactivity of an acute dystonic reaction keeps this calcium-troponin cycle running, producing the sustained sternocleidomastoid contraction (torticollis).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Physio (MSK) > skeletal muscle excitation-contraction coupling: depolarization -> SR ryanodine receptor -> Ca2+ release -> Ca2+ binds TROPONIN C -> tropomyosin shifts -> actin-myosin cross-bridging; SERCA resequesters Ca2+."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Decode the verbose stem: 'substance from the SR' = calcium; 'binds which protein to cause contraction' = troponin C. The dystonia/risperidone is just the setup for sustained contraction."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on sarcoplasmic reticulum, ryanodine receptor, troponin C vs tropomyosin, cross-bridge cycling, or dystonic reaction? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Myosin (your pick) is the obvious force-generator, so it feels right - but calcium binds TROPONIN C; myosin only engages after tropomyosin is moved. Tropomyosin tempts for the same reason (it moves, but doesn't bind Ca2+)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: SR releases Ca2+ (ryanodine receptor); skeletal/cardiac muscle = Ca2+ binds TROPONIN C; smooth muscle = Ca2+ binds CALMODULIN -> MLCK."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Substance released from the sarcoplasmic reticulum in E-C coupling",
+      "back": "Calcium (via the ryanodine receptor)"
+    },
+    {
+      "front": "Calcium receptor on the thin filament (skeletal/cardiac muscle)",
+      "back": "Troponin C"
+    },
+    {
+      "front": "Role of tropomyosin",
+      "back": "Covers actin myosin-binding sites at rest; moved aside when Ca2+ binds troponin C"
+    },
+    {
+      "front": "Smooth muscle calcium sensor",
+      "back": "Calmodulin (activates myosin light-chain kinase)"
+    },
+    {
+      "front": "Acute dystonic reaction cause",
+      "back": "Dopamine D2 blockade (antipsychotics, e.g., risperidone); treat with benztropine/diphenhydramine"
+    },
+    {
+      "front": "SR calcium reuptake pump",
+      "back": "SERCA (Ca2+-ATPase)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Excitation-contraction coupling",
+      "detail": "Physio (MSK) > SR Ca2+ release -> Ca2+ binds troponin C -> tropomyosin shifts -> actin-myosin cross-bridge.",
+      "location": "Physio (MSK) > SR Ca2+ release -> Ca2+ binds troponin C -> tropomyosin shifts -> actin-myosin cross-bridge."
+    },
+    {
+      "tag": "options",
+      "topic": "Sarcomere proteins",
+      "detail": "Physio > actin (thin/binding sites), myosin (thick/motor), tropomyosin (blocks sites), troponin (Ca2+ sensor).",
+      "location": "Physio > actin (thin/binding sites), myosin (thick/motor), tropomyosin (blocks sites), troponin (Ca2+ sensor)."
+    },
+    {
+      "tag": "context",
+      "topic": "Acute dystonic reaction",
+      "detail": "Psych/Neuro > D2 antagonist side effect; torticollis/oculogyric crisis; treat with anticholinergics/antihistamines.",
+      "location": "Psych/Neuro > D2 antagonist side effect; torticollis/oculogyric crisis; treat with anticholinergics/antihistamines."
+    }
+  ],
+  "memoryHook": "Calcium grabs the TROPONIN trigger; troponin yanks tropomyosin off the track, and only THEN does myosin grab actin. Ca2+ binds the trigger, not the motor.",
+  "stem": [
+    {
+      "text": "An 18-year-old man, who was recently started on "
+    },
+    {
+      "text": "risperidone therapy for schizophrenia",
+      "clue": true,
+      "type": "orange",
+      "note": "Risperidone is a dopamine D2 antagonist antipsychotic; D2 blockade can cause acute dystonic reactions (a hyperkinetic extrapyramidal side effect), especially in young men early in treatment."
+    },
+    {
+      "text": ", comes to the office due to "
+    },
+    {
+      "text": "involuntary deviation of his head",
+      "clue": true,
+      "type": "blue",
+      "note": "Involuntary sustained muscle contraction = dystonia. Here it is drug-induced and explains the persistent muscle stimulation referenced later in the stem."
+    },
+    {
+      "text": ". On examination, the patient's head is tilted toward the right side and "
+    },
+    {
+      "text": "the chin is rotated to the left",
+      "clue": true,
+      "type": "green",
+      "note": "Head tilt with chin rotation = torticollis (cervical dystonia), a classic acute dystonic reaction to antipsychotics. It confirms sustained, involuntary skeletal-muscle contraction."
+    },
+    {
+      "text": ". There is "
+    },
+    {
+      "text": "palpable tightening of the right sternocleidomastoid",
+      "clue": true,
+      "type": "green",
+      "note": "A continuously contracted SCM is the physical correlate of the dystonia - sustained excitation-contraction coupling in skeletal muscle, which is the physiology the question tests."
+    },
+    {
+      "text": " muscle. It is determined that the patient is experiencing a medication-induced dystonic reaction due to motor neuron hyperactivity. The persistent myocyte stimulation causes a substance to be "
+    },
+    {
+      "text": "released from the sarcoplasmic reticulum",
+      "clue": true,
+      "type": "red",
+      "note": "The substance released from the sarcoplasmic reticulum during excitation-contraction coupling is CALCIUM (via the ryanodine receptor). The question is asking which contractile protein this calcium binds - troponin C."
+    },
+    {
+      "text": ". This substance most likely binds to which of the following proteins to cause this patient's symptoms?"
+    }
+  ]
+}

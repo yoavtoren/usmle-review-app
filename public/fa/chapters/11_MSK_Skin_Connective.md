@@ -1,87 +1,280 @@
-# 11 MSK, Skin, & Connective — 0/76 (0%)
+# 11 MSK, Skin, & Connective — 0/269 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Anatomy & Physiology — 0/19
-- [ ] 01 Rotator cuff muscles
-- [ ] 02 Arm abduction
-- [ ] 03 Upper extremity nerves
+## 01 Anatomy and physiology — 0/59
+- [ ] 01 Upper extremity nerves
+  - [ ] Axillary (C5-C6)
+  - [ ] Musculocutaneous (C5-C7)
+  - [ ] Radial (C5-T1)
+  - [ ] Median (C5-T1)
+  - [ ] Ulnar (C8-T1)
+  - [ ] Recurrent branch of median nerve (C5-T1)
+- [ ] 02 Rotator cuff muscles
+- [ ] 03 Arm abduction
 - [ ] 04 Brachial plexus lesions
+  - [ ] Erb palsy (“waiter’s tip”)
+  - [ ] Klumpke palsy
+  - [ ] Thoracic outlet syndrome
+  - [ ] Winged scapula
 - [ ] 05 Wrist region
+  - [ ] ulnar nerve compression
 - [ ] 06 Hand muscles
 - [ ] 07 Distortions of the hand
-- [ ] 08 Actions of hip muscles
-- [ ] 09 Lower extremity nerves
-- [ ] 10 Knee exam
+- [ ] 08 Knee exam
+  - [ ] Anterior drawer sign
+  - [ ] Posterior drawer sign
+  - [ ] Valgus stress test
+  - [ ] Varus stress test
+  - [ ] McMurray test
+- [ ] 09 Actions of hip muscles
+  - [ ] Abductors
+  - [ ] Adductors
+  - [ ] Extensors
+  - [ ] Flexors
+  - [ ] Internal rotation
+  - [ ] External rotation
+- [ ] 10 Lower extremity nerves
+  - [ ] Iliohypogastric (T12-L1)
+  - [ ] Genitofemoral nerve (L1-L2)
+  - [ ] Lateral femoral cutaneous (L2-L3)
+  - [ ] Obturator (L2-L4)
+  - [ ] Femoral (L2-L4)
+  - [ ] Sciatic (L4-S3)
+  - [ ] Common (fibular) peroneal (L4-S2)
+  - [ ] Tibial (L4-S3)
+  - [ ] Superior gluteal (L4-S1)
+  - [ ] Inferior gluteal (L5-S2)
+  - [ ] Pudendal (S2-S4)
 - [ ] 11 Ankle sprains
 - [ ] 12 Signs of lumbosacral radiculopathy
 - [ ] 13 Neurovascular pairing
-- [ ] 14 Motoneuron action potential to muscle contraction
-- [ ] 15 Types of muscle fibers
-- [ ] 16 Vascular smooth muscle contraction & relaxation
-- [ ] 17 Muscle Proprioceptors
-- [ ] 18 Bone formation
-- [ ] 19 Cell biology of bone
+- [ ] 14 Motor neuron action potential to muscle contraction
+- [ ] 15 Types of skeletal muscle fibers
+- [ ] 16 Skeletal muscle adaptations
+- [ ] 17 Vascular smooth muscle contraction and relaxation
+- [ ] 18 Muscle proprioceptors
+- [ ] 19 Bone formation
+  - [ ] Endochondral ossification
+  - [ ] Membranous ossification
+- [ ] 20 Cell biology of bone
+  - [ ] Osteoblast
+  - [ ] Osteoclast
+  - [ ] Parathyroid hormone
+  - [ ] Estrogen
 
-## 02 Pathology — 0/32
+## 02 Pathology — 0/99
 - [ ] 01 Overuse injuries of the elbow
-- [ ] 02 Wrist & Hand Injuries
-- [ ] 03 Clavicle fractures
-- [ ] 04 Common hip & knee conditions
-- [ ] 05 Common MSK conditions
-- [ ] 06 Childhood MSK conditions
-- [ ] 07 Common pediatric fractures
-- [ ] 08 Achondroplasia
-- [ ] 09 Osteoporosis
-- [ ] 10 Osteopetrosis
-- [ ] 11 Osteomalacia/rickets
-- [ ] 12 Osteitis deformans
-- [ ] 13 Avascular necrosis of bone
-- [ ] 14 Lab values in bone disorders
-- [ ] 15 Primary bone tumors
-- [ ] 16 Osteoarthritis vs rheumatoid arthritis
-- [ ] 17 Gout
-- [ ] 18 Calcium pyrophosphate deposition disease
-- [ ] 19 Systemic juvenile idiopathic arthritis
-- [ ] 20 Sjogren syndrome
-- [ ] 21 Septic arthritis
-- [ ] 22 Seronegative spondyloarthropathies
-- [ ] 23 Systemic lupus erythematosus
-- [ ] 24 Antiphospholipid syndrome
-- [ ] 25 Polymyalgia rheumatica
-- [ ] 26 Fibromyalgia
-- [ ] 27 Polymyositis/dermatomyositis
-- [ ] 28 Neuromuscular junction diseases
-- [ ] 29 Raynaud phenomenon
-- [ ] 30 Scleroderma
-- [ ] 31 Rhabdomyolysis
-- [ ] Extra Untagged
+  - [ ] Medial (golfer’s) elbow tendinopathy
+  - [ ] Lateral (tennis) elbow tendinopathy
+- [ ] 02 Clavicle fractures
+- [ ] 03 Wrist and hand injuries
+  - [ ] Guyon canal syndrome
+  - [ ] Carpal tunnel syndrome
+  - [ ] Metacarpal neck fracture
+- [ ] 04 Psoas abscess
+- [ ] 05 Common knee conditions
+  - [ ] Unhappy triad”
+  - [ ] Prepatellar bursitis
+  - [ ] Popliteal cyst
+- [ ] 06 Common musculoskeletal conditions
+  - [ ] Costochondritis
+  - [ ] De Quervain tenosynovitis
+  - [ ] Dupuytren contracture
+  - [ ] Ganglion cyst
+  - [ ] Iliotibial band syndrome
+  - [ ] Limb compartment syndrome
+  - [ ] Medial tibial stress syndrome
+  - [ ] Plantar fasciitis
+  - [ ] Temporomandibular disorders
+- [ ] 07 Childhood musculoskeletal conditions
+  - [ ] Radial head subluxation
+  - [ ] Osgood-Schlatter disease
+  - [ ] Patellofemoral syndrome
+  - [ ] Developmental dysplasia of the hip
+  - [ ] Legg-Calvé-Perthes disease
+  - [ ] Slipped capital femoral epiphysis
+- [ ] 08 Common pediatric fractures
+  - [ ] Greenstick fracture
+  - [ ] Torus (buckle) fracture
+- [ ] 09 Achondroplasia
+- [ ] 10 Osteoporosis
+- [ ] 11 Osteopetrosis
+- [ ] 12 Osteomalacia/rickets
+- [ ] 13 Osteitis deformans
+- [ ] 14 Avascular necrosis of bone
+- [ ] 15 Lab values in bone disorders
+  - [ ] Osteoporosis
+  - [ ] Osteopetrosis
+  - [ ] Paget disease of bone
+  - [ ] Osteitis fibrosa cystica
+  - [ ] Osteomalacia/rickets
+  - [ ] Hypervitaminosis D
+- [ ] 16 Primary bone tumors
+  - [ ] Osteochondroma (exostosis)
+  - [ ] Osteoma
+  - [ ] Osteoid osteoma
+  - [ ] Osteoblastoma
+  - [ ] Giant cell tumor
+  - [ ] Chondroblastoma
+  - [ ] Osteosarcoma (osteogenic sarcoma)
+  - [ ] Chondrosarcoma
+  - [ ] Ewing sarcoma
+- [ ] 17 Osteoarthritis vs rheumatoid arthritis
+  - [ ] Rheumatoid arthritis B
+- [ ] 18 Gout
+- [ ] 19 Calcium pyrophosphate deposition disease
+- [ ] 20 Systemic juvenile idiopathic arthritis
+- [ ] 21 Sjögren syndrome
+- [ ] 22 Septic arthritis
+- [ ] 23 Osteomyelitis
+- [ ] 24 Seronegative spondyloarthritis
+  - [ ] Psoriatic arthritis
+  - [ ] Ankylosing spondylitis
+  - [ ] Inflammatory bowel disease
+  - [ ] Reactive arthritis
+- [ ] 25 Systemic lupus erythematosus
+  - [ ] Mixed connective tissue disease
+- [ ] 26 Antiphospholipid syndrome
+- [ ] 27 Polymyalgia rheumatica
+- [ ] 28 Fibromyalgia
+- [ ] 29 Polymyositis/ dermatomyositis
+  - [ ] Polymyositis
+  - [ ] Dermatomyositis
+- [ ] 30 Myositis ossificans
+- [ ] 31 IgG4-related disease
+- [ ] 32 Vasculitides
+  - [ ] Giant cell (temporal) arteritis
+  - [ ] Takayasu arteritis
+  - [ ] Buerger disease (thromboangiitis obliterans)
+  - [ ] Kawasaki disease
+  - [ ] Polyarteritis nodosa
+  - [ ] Microscopic polyangiitis
+  - [ ] Eosinophilic granulomatosis with polyangiitis
+  - [ ] Granulomatosis with polyangiitis
+  - [ ] Hypocomplementemic urticarial vasculitis
+  - [ ] (anti-C1q vasculitis)
+  - [ ] Mixed cryoglobulinemia
+  - [ ] Immunoglobulin A vasculitis
+  - [ ] Cutaneous small- vessel vasculitis
+  - [ ] Behçet syndrome
+- [ ] 33 Neuromuscular junction diseases
+- [ ] 34 Raynaud phenomenon
+- [ ] 35 Scleroderma
+  - [ ] Diffuse scleroderma
+  - [ ] Limited scleroderma
 
-## 03 Derm — 0/15
+## 03 Dermatology — 0/91
 - [ ] 01 Skin layers
 - [ ] 02 Epithelial cell junctions
-- [ ] 03 Dermatologic macroscopic terms
-- [ ] 04 Dermatologic microscopic terms
-- [ ] 05 Pigmented skin disorders
-- [ ] 06 Seborrheic dermatitis
-- [ ] 07 Common skin disorders
-- [ ] 08 Vascular tumors of skin
-- [ ] 09 Skin infections
-- [ ] 10 Autoimmune blistering skin disorders
-- [ ] 11 Other Blistering Skin Disorders
-- [ ] 12 Miscellaneous skin disorders
-- [ ] 13 Rule of 9s
-- [ ] 14 Burn classification
-- [ ] 15 Skin cancer
+- [ ] 03 Exocrine glands
+- [ ] 04 Dermatologic macroscopic terms
+  - [ ] Macule
+  - [ ] Patch
+  - [ ] Papule
+  - [ ] Plaque
+  - [ ] Vesicle
+  - [ ] Bulla
+  - [ ] Pustule
+  - [ ] Wheal
+  - [ ] Scale
+  - [ ] Crust
+  - [ ] Ulcer
+  - [ ] Erosion
+- [ ] 05 Dermatologic microscopic terms
+  - [ ] Dyskeratosis
+  - [ ] Hyperkeratosis
+  - [ ] Parakeratosis
+  - [ ] Hypergranulosis
+  - [ ] Spongiosis
+  - [ ] Acantholysis
+  - [ ] Acanthosis
+- [ ] 06 Pigmented skin disorders
+  - [ ] Albinism
+  - [ ] Melasma (chloasma)
+  - [ ] Vitiligo
+  - [ ] Waardenburg syndrome
+- [ ] 07 Seborrheic dermatitis
+- [ ] 08 Common skin disorders
+  - [ ] Acne
+  - [ ] Atopic dermatitis (eczema)
+  - [ ] Allergic contact dermatitis
+  - [ ] Keratosis pilaris
+  - [ ] Melanocytic nevus
+  - [ ] Pseudofolliculitis barbae
+  - [ ] Psoriasis
+  - [ ] Rosacea
+  - [ ] Seborrheic keratosis
+  - [ ] Verrucae
+  - [ ] Urticaria
+- [ ] 09 Vascular tumors of skin
+  - [ ] Angiosarcoma
+  - [ ] Bacillary angiomatosis
+  - [ ] Cherry angioma
+  - [ ] Glomus tumor
+  - [ ] Kaposi sarcoma
+  - [ ] Pyogenic granuloma
+  - [ ] Infantile hemangioma
+- [ ] 10 Skin infections
+  - [ ] Impetigo
+  - [ ] Erysipelas
+  - [ ] Cellulitis
+  - [ ] Abscess
+  - [ ] Necrotizing fasciitis
+  - [ ] Staphylococcal scalded skin syndrome
+  - [ ] Herpes
+  - [ ] Molluscum contagiosum
+  - [ ] Varicella zoster
+  - [ ] Hairy leukoplakia
+- [ ] 11 Cutaneous mycoses
+  - [ ] Tinea (dermatophytes)
+  - [ ] Tinea (pityriasis) versicolor
+- [ ] 12 Autoimmune blistering skin disorders
+- [ ] 13 Other blistering skin disorders
+  - [ ] Dermatitis herpetiformis
+  - [ ] Erythema multiforme
+  - [ ] Stevens-Johnson syndrome
+  - [ ] Inherited Epidermolysis
+  - [ ] Bullosa
+- [ ] 14 Cutaneous ulcers
+- [ ] 15 Miscellaneous skin disorders
+  - [ ] Acanthosis nigricans
+  - [ ] Erythema nodosum
+  - [ ] Ichthyosis vulgaris
+  - [ ] Lichen Planus
+  - [ ] Pityriasis rosea
+  - [ ] Sunburn
+  - [ ] Radiation dermatitis
+- [ ] 16 Estimation of body surface area
+- [ ] 17 Burn classification
+  - [ ] Superficial burn
+  - [ ] Superficial partial- thickness burn
+  - [ ] Deep partial- thickness burn
+  - [ ] Full-thickness burn
+  - [ ] Deeper injury burn
+- [ ] 18 Skin cancer
+  - [ ] Basal cell carcinoma
+  - [ ] Squamous cell carcinoma
+  - [ ] Melanoma
 
-## 04 Pharm — 0/10
-- [ ] 01 Arachidonic acid pathway
-- [ ] 02 Acetaminophen
-- [ ] 03 Aspirin
-- [ ] 04 Celecoxib
-- [ ] 05 Nonsteroidal anti-inflammatory drugs
-- [ ] 06 Leflunomide
-- [ ] 07 Bisphosphonates
-- [ ] 08 Teriparatide
-- [ ] 09 Gout drugs
-- [ ] 10 TNF-a inhibitors
+## 04 Pharmacology — 0/20
+- [ ] 01 Acetaminophen
+- [ ] 02 Aspirin
+- [ ] 03 Celecoxib
+- [ ] 04 Nonsteroidal anti-inflammatory drugs
+- [ ] 05 Leflunomide
+- [ ] 06 Bisphosphonates
+- [ ] 07 Recombinant parathyroid hormone
+- [ ] 08 Gout drugs
+  - [ ] Allopurinol
+  - [ ] Pegloticase
+  - [ ] Febuxostat
+  - [ ] Probenecid
+  - [ ] NSAIDs
+  - [ ] Glucocorticoids
+  - [ ] Colchicine
+- [ ] 09 TNF-α inhibitors
+  - [ ] Etanercept
+  - [ ] Adalimumab, infliximab
+- [ ] 10 Psoriasis biologics
+- [ ] 11 Imiquimod

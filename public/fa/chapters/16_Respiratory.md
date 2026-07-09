@@ -1,73 +1,169 @@
-# 16 Respiratory — 0/60 (0%)
+# 16 Respiratory — 0/156 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Embryology — 0/5
+## 01 Embryology — 0/16
 - [ ] 01 Lung development
-- [ ] 02 Congenital lung malformations
-- [ ] 03 Club cells
-- [ ] 04 Alveolar cell types
-- [ ] 05 Neonatal respiratory distress syndrome
+  - [ ] Embryonic (weeks 4–7)
+  - [ ] Pseudoglandular (weeks 5–17)
+  - [ ] Canalicular (weeks 16–25)
+  - [ ] Saccular (week 24–birth)
+  - [ ] Alveolar (week 36–8 years)
+- [ ] 02 Choanal atresia
+- [ ] 03 Lung malformations
+  - [ ] Pulmonary hypoplasia
+  - [ ] Bronchogenic cysts
+- [ ] 04 Club cells
+- [ ] 05 Alveolar cell types
+  - [ ] Type I pneumocytes
+  - [ ] Type II pneumocytes
+  - [ ] Alveolar macrophages (dust cells)
+- [ ] 06 Neonatal respiratory distress syndrome
 
-## 02 Anatomy — 0/3
+## 02 Anatomy — 0/6
 - [ ] 01 Respiratory tree
+  - [ ] Conducting zone
+  - [ ] Respiratory zone
 - [ ] 02 Lung anatomy
+  - [ ] Thoracentesis
 - [ ] 03 Diaphragm structures
 
-## 03 Physiology — 0/19
-- [ ] 01 Lung volumes
-- [ ] 02 Determination of physiologic dead space
-- [ ] 03 Ventilation
-- [ ] 04 Lung & chest wall
-- [ ] 05 Respiratory system changes in the elderly
-- [ ] 06 Hemoglobin
-- [ ] 07 Oxygen content of blood
-- [ ] 09 Oxygen-hemoglobin dissociation curve
-- [ ] 10 Cyanide vs carbon monoxide poisoning
-- [ ] 11 Pulmonary circulation
-- [ ] 12 Pulmonary vascular resistance
-- [ ] 13 Alveolar gas equation
-- [ ] 14 Oxygen deprivation
-- [ ] 15 Ventilation/perfusion mismatch
-- [ ] 16 Carbon dioxide transport
-- [ ] 17 Response to high altitude
-- [ ] 18 Response to exercise
-- [ ] FEV
-- [ ] controlofbreathing
+## 03 Physiology — 0/33
+- [ ] 01 Lung volumes and capacities
+  - [ ] Tidal volume
+  - [ ] Inspiratory reserve volume
+  - [ ] Expiratory reserve volume
+  - [ ] Residual volume
+  - [ ] Inspiratory capacity
+  - [ ] Functional residual capacity
+  - [ ] Vital capacity
+  - [ ] Total lung capacity
+- [ ] 02 Work of breathing
+- [ ] 03 Determination of physiologic dead space
+- [ ] 04 Ventilation
+  - [ ] Minute ventilation
+  - [ ] Alveolar ventilation
+- [ ] 05 Lung and chest wall properties
+  - [ ] Hysteresis
+  - [ ] Elastic recoil
+  - [ ] Compliance
+- [ ] 06 Pulmonary circulation
+- [ ] 07 Pulmonary vascular resistance
+- [ ] 08 Ventilation/perfusion mismatch
+- [ ] 09 Alveolar gas equation
+- [ ] 10 Carbon dioxide transport
+- [ ] 11 Hypoxia and hypoxemia
+  - [ ] Hypoxia
+  - [ ] Hypoxemia
+- [ ] 12 Hemoglobin
+- [ ] 13 Oxygen content of blood
+- [ ] 14 Oxyhemoglobin dissociation curve
+- [ ] 15 Response to high altitude
+- [ ] 16 Response to exercise
+- [ ] 17 Methemoglobin
+- [ ] 18 Cyanide vs carbon monoxide poisoning
 
-## 04 Pathology — 0/26
+## 04 Pathology — 0/71
 - [ ] 01 Rhinosinusitis
 - [ ] 02 Epistaxis
-- [ ] 03 Head & neck cancer
-- [ ] 04 Deep venous thrombosis
-- [ ] 05 Pulmonary emboli
-- [ ] 07 Flow-volume loops
-- [ ] 08 Obstructive lung diseases
-- [ ] 09 Restrictive lung diseases
-- [ ] 10 Sarcoidosis
-- [ ] 11 Inhalational injury & sequelae
-- [ ] 12 Pneumoconioses
-- [ ] 13 Mesothelioma
+- [ ] 03 Head and neck cancer
+- [ ] 04 Pulmonary emboli
+- [ ] 05 Mediastinal pathology
+  - [ ] Mediastinal masses
+  - [ ] Mediastinitis
+  - [ ] Pneumomediastinum
+- [ ] 06 Flow-volume loops
+- [ ] 07 Obstructive lung diseases
+  - [ ] Chronic obstructive pulmonary disease
+  - [ ] Chronic bronchitis
+  - [ ] Emphysema
+  - [ ] Asthma
+  - [ ] Bronchiectasis
+- [ ] 08 Restrictive lung diseases
+  - [ ] Radiation-induced lung injury
+- [ ] 09 Idiopathic pulmonary fibrosis
+- [ ] 10 Hypersensitivity pneumonitis
+- [ ] 11 Sarcoidosis
+- [ ] 12 Mesothelioma
+- [ ] 13 Pneumoconioses
+  - [ ] Asbestos-related disease
+  - [ ] Berylliosis
+  - [ ] Coal workers’ pneumoconiosis
+  - [ ] Silicosis
 - [ ] 14 Acute respiratory distress syndrome
 - [ ] 15 Sleep apnea
+  - [ ] Obstructive sleep apnea
+  - [ ] Central sleep apnea
+  - [ ] Obesity hypoventilation syndrome
 - [ ] 16 Pulmonary hypertension
+  - [ ] Pulmonary arterial hypertension
+  - [ ] (group 1)
+  - [ ] Left heart disease (group 2)
+  - [ ] Lung diseases or hypoxia (group 3)
+  - [ ] Chronic thromboembolic
+  - [ ] (group 4)
+  - [ ] Multifactorial (group 5)
 - [ ] 17 Physical findings in select lung diseases
-- [ ] 18 Atelectasis
-- [ ] 19 Pleural effusions
-- [ ] 20 Pneumothorax
-- [ ] 21 Pneumonia
-- [ ] 22 Natural history of lobar pneumonia
-- [ ] 23 Lung cancer
+  - [ ] Pleural effusion
+  - [ ] Atelectasis
+  - [ ] Simple pneumothorax
+  - [ ] Tension pneumothorax
+  - [ ] Consolidation (lobar pneumonia pulmonary edema)
+- [ ] 18 Digital clubbing
+- [ ] 19 Atelectasis
+- [ ] 20 Pleural effusions
+  - [ ] Exudate
+  - [ ] Transudate
+- [ ] 21 Pneumothorax
+  - [ ] Primary spontaneous pneumothorax
+  - [ ] Secondary spontaneous pneumothorax
+  - [ ] Traumatic pneumothorax
+  - [ ] Tension pneumothorax
+- [ ] 22 Pneumonia
+  - [ ] Lobar pneumonia
+  - [ ] Bronchopneumonia
+  - [ ] Interstitial (atypical) pneumonia
+  - [ ] Cryptogenic organizing pneumonia
+  - [ ] Aspiration pneumonia
+- [ ] 23 Natural history of lobar pneumonia
 - [ ] 24 Lung abscess
-- [ ] 25 Pancoast tumor
-- [ ] 26 Superior vena cava syndrome
-- [ ] larynx
+- [ ] 25 Lung cancer
+  - [ ] Small cell (oat cell) carcinoma
+  - [ ] Adenocarcinoma
+  - [ ] Squamous cell carcinoma
+  - [ ] Large cell carcinoma
+  - [ ] Bronchial carcinoid tumor
+- [ ] 26 Pancoast tumor
+- [ ] 27 Superior vena cava syndrome
 
-## 05 Pharm — 0/7
-- [ ] 01 Histamine-1 blockers
-- [ ] 02 Guaifenesin
-- [ ] 03 N-acetylcysteine
-- [ ] 04 Dextromethorphan
-- [ ] 05 Pseudoephedrine, phenylephrine
-- [ ] 06 Pulmonary hypertension drugs
-- [ ] 07 Asthma drugs
+## 05 Pharmacology — 0/30
+- [ ] 01 Asthma drugs
+  - [ ] Inhaled β2-agonists
+  - [ ] Albuterol (short-acting), salmeterol, formoterol
+  - [ ] Fluticasone, budesonide
+  - [ ] Inhaled or oral glucocorticoids
+  - [ ] Muscarinic
+  - [ ] Tiotropium, ipratropium antagonists
+  - [ ] Antileukotrienes
+  - [ ] Montelukast, zafirlukast
+  - [ ] Zileuton
+  - [ ] Omalizumab
+  - [ ] Anti-IgE monoclonal therapy
+  - [ ] Methylxanthines
+  - [ ] Theophylline
+  - [ ] PDE-4 Inhibitors
+  - [ ] Roflumilast
+  - [ ] Chromones
+  - [ ] Cromolyn
+  - [ ] Mepolizumab, reslizumab
+  - [ ] Biologics
+  - [ ] Dupilumab
+- [ ] 02 H1-blockers
+  - [ ] First generation
+  - [ ] Second generation
+- [ ] 03 Dextromethorphan
+- [ ] 04 Pseudoephedrine, phenylephrine
+- [ ] 05 Pulmonary hypertension drugs
+  - [ ] Endothelin receptor antagonists
+  - [ ] PDE-5 inhibitors
+  - [ ] Prostacyclin analogs

@@ -1,0 +1,212 @@
+{
+  "id": "q208",
+  "item": 208,
+  "qid": "19916",
+  "title": "Pneumothorax: hemithorax volume up, lung compliance down",
+  "system": "Pathophysiology",
+  "topic": "Pneumothorax / respiratory mechanics",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 57,
+  "vignette": "An 18-year-old, previously healthy man comes to the emergency department after being stabbed in the chest. The patient reports shortness of breath. Blood pressure is 136/84 mm Hg, pulse is 96/min, and respirations are 20/min. Oxygen saturation is 96%. Physical examination reveals a 2.5-cm stab wound on the right lateral chest wall. Breath sounds are decreased on the right side. Chest x-ray shows absent lung markings peripherally on the right with a partially collapsed right lung, consistent with a pneumothorax. Which of the following changes have most likely occurred in this patient's right hemithorax and right lung compared to his preinjury state?",
+  "clues": [
+    {
+      "text": "stabbed in the chest",
+      "type": "orange",
+      "note": "Penetrating chest trauma is the classic mechanism for a traumatic (open) pneumothorax - air enters the pleural space through the wound."
+    },
+    {
+      "text": "2.5-cm stab wound on the right lateral chest wall",
+      "type": "blue",
+      "note": "The wound breaches the chest wall and parietal pleura, creating an abnormal communication that lets the intrapleural negative pressure equalize with atmosphere."
+    },
+    {
+      "text": "Breath sounds are decreased on the right side",
+      "type": "green",
+      "note": "Decreased/absent breath sounds with hyperresonance on the injured side is the bedside signature of pneumothorax - air, not lung, fills the space."
+    },
+    {
+      "text": "absent lung markings peripherally on the right with a partially collapsed right lung, consistent with a pneumothorax",
+      "type": "red",
+      "note": "The chest x-ray confirms pneumothorax: peripheral lung markings are absent (air in the pleural space) and the lung edge is collapsed inward. This is the finding that drives the mechanics question."
+    }
+  ],
+  "whatMatters": "Normally the lung's inward recoil and the chest wall's outward recoil balance at FRC, held together by negative intrapleural pressure. A pneumothorax abolishes that negative pressure, so the chest wall springs OUTWARD (hemithorax volume INCREASES) and the lung recoils inward and collapses. A collapsed lung sits on the flat, low-volume part of its pressure-volume curve, so it is HARD to inflate - inspiratory compliance DECREASES. Answer C.",
+  "strategy": "Two opposing springs: lung recoils in, chest wall recoils out, negative pleural pressure couples them at FRC. Break the seal -> each goes to its own resting position: chest wall out (bigger hemithorax), lung in (collapse). Then use the PV curve: a collapsed lung is on the flat low-volume segment, so compliance (slope, dV/dP) is low. Up + down = choice C.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Hemithorax volume decreased; inspiratory lung compliance increased",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Hemithorax volume decreased; inspiratory lung compliance unchanged",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Hemithorax volume increased; inspiratory lung compliance decreased",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Hemithorax volume unchanged; inspiratory lung compliance decreased",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Hemithorax volume unchanged; inspiratory lung compliance increased",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Volume decreased, compliance increased - both wrong",
+      "detail": "WHAT IT IS: would describe a chest wall pulled inward over an easier-to-inflate lung. ❌ WHY IT FAILS: losing intrapleural negative pressure lets the chest wall spring OUT (volume up), and the collapsed lung is HARDER to inflate (compliance down) - both directions are reversed. ✅ Correct if: nothing physiologic here produces this combination."
+    },
+    {
+      "letter": "B",
+      "label": "Volume decreased, compliance unchanged - volume wrong",
+      "detail": "WHAT IT IS: assumes the hemithorax shrinks. ❌ WHY IT FAILS: the chest wall's natural recoil is OUTWARD; once uncoupled from the lung it enlarges the hemithorax, and the collapsed lung's compliance does change (falls). ✅ Correct if: never - the chest wall does not shrink with a pneumothorax."
+    },
+    {
+      "letter": "D",
+      "label": "Volume unchanged, compliance decreased - volume wrong",
+      "detail": "WHAT IT IS: correct that the collapsed lung is harder to inflate. ❌ WHY IT FAILS: the hemithorax does NOT stay the same - losing the negative pressure that tethered the chest wall inward lets it expand outward. ✅ Correct if: the question asked only about the lung and ignored the chest wall."
+    },
+    {
+      "letter": "E",
+      "label": "Volume unchanged, compliance increased - both wrong",
+      "detail": "WHAT IT IS: a stable chest wall with an easier-to-inflate lung. ❌ WHY IT FAILS: hemithorax enlarges and the collapsed lung's inspiratory compliance falls - both are wrong. ✅ Correct if: never in pneumothorax."
+    }
+  ],
+  "reasoning": [
+    "Stab wound breaches pleura -> air enters pleural space (pneumothorax), abolishing negative intrapleural pressure",
+    "Chest wall recoils OUTWARD to its own equilibrium -> right hemithorax volume INCREASES",
+    "Lung recoils inward and collapses to low volume",
+    "On the PV curve a collapsed lung sits on the flat low-volume segment -> inspiratory compliance DECREASES; answer C"
+  ],
+  "mechanism": "At functional residual capacity the lung's inward elastic recoil and the chest wall's outward recoil are balanced by a sustained negative intrapleural pressure that couples them. A penetrating wound creates an abnormal communication that equalizes intrapleural pressure with atmospheric (alveolar) pressure, abolishing the negative pressure. Freed from the lung, the chest wall springs outward toward its own resting volume, so the hemithorax ENLARGES; the lung, freed from the chest wall, recoils inward and collapses. Compliance is the slope (dV/dP) of the pressure-volume curve, and a collapsed lung lies on the flat, low-volume portion of that curve, making it difficult to inflate - inspiratory compliance therefore DECREASES relative to the preinjury state.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pulm > respiratory mechanics: lung recoils in, chest wall recoils out, balanced at FRC by negative intrapleural pressure; pneumothorax -> chest wall expands (hemithorax up), lung collapses; compliance = dV/dP (low at low lung volume)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two-part answer: track the HEMITHORAX (chest wall) and the LUNG separately. Losing negative pressure sends them to opposite resting positions; then read compliance off the PV curve."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on intrapleural pressure, functional residual capacity, elastic recoil, compliance (dV/dP), or pneumothorax? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Choice D (volume unchanged, compliance down) is the near-miss: people remember the lung collapses but forget the chest wall springs OUTWARD, enlarging the hemithorax."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "The x-ray finding (absent peripheral lung markings + collapsed lung edge) just confirms pneumothorax; the reasoning is mechanical, not radiologic. If the film tripped you, anchor on 'decreased breath sounds after a stab wound' = pneumothorax and reason from the two-spring model."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: pneumothorax -> hemithorax volume UP (chest wall springs out), inspiratory lung compliance DOWN (collapsed lung is hard to inflate)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Penetrating chest wound + decreased breath sounds + absent peripheral lung markings",
+      "back": "Pneumothorax"
+    },
+    {
+      "front": "Pneumothorax effect on hemithorax volume",
+      "back": "Increases (chest wall recoils outward once negative pressure is lost)"
+    },
+    {
+      "front": "Pneumothorax effect on inspiratory lung compliance",
+      "back": "Decreases (collapsed lung sits on flat low-volume PV segment)"
+    },
+    {
+      "front": "What couples lung and chest wall at FRC",
+      "back": "Negative intrapleural pressure"
+    },
+    {
+      "front": "Lung recoil vs chest wall recoil",
+      "back": "Lung recoils inward; chest wall recoils outward; balanced at FRC"
+    },
+    {
+      "front": "Compliance definition",
+      "back": "Change in volume per change in pressure (dV/dP); slope of PV curve"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Pneumothorax mechanics",
+      "detail": "Pulm > loss of negative intrapleural pressure; chest wall springs out (hemithorax up); lung collapses (compliance down).",
+      "location": "Pulm > loss of negative intrapleural pressure; chest wall springs out (hemithorax up); lung collapses (compliance down)."
+    },
+    {
+      "tag": "options",
+      "topic": "Lung-chest wall system",
+      "detail": "Pulm > FRC = balance of inward lung recoil and outward chest wall recoil; PV/compliance curves.",
+      "location": "Pulm > FRC = balance of inward lung recoil and outward chest wall recoil; PV/compliance curves."
+    },
+    {
+      "tag": "context",
+      "topic": "Pneumothorax types",
+      "detail": "Pulm > traumatic/open vs spontaneous vs tension; decreased breath sounds, hyperresonance; tension = tracheal deviation/hypotension.",
+      "location": "Pulm > traumatic/open vs spontaneous vs tension; decreased breath sounds, hyperresonance; tension = tracheal deviation/hypotension."
+    }
+  ],
+  "memoryHook": "Pop the seal and the springs let go: chest wall springs OUT (bigger hemithorax), lung snaps IN and collapses (stiff, low compliance).",
+  "stem": [
+    {
+      "text": "An 18-year-old, previously healthy man comes to the emergency department after being "
+    },
+    {
+      "text": "stabbed in the chest",
+      "clue": true,
+      "type": "orange",
+      "note": "Penetrating chest trauma is the classic mechanism for a traumatic (open) pneumothorax - air enters the pleural space through the wound."
+    },
+    {
+      "text": ". The patient reports shortness of breath. Blood pressure is 136/84 mm Hg, pulse is 96/min, and respirations are 20/min. Oxygen saturation is 96%. Physical examination reveals a "
+    },
+    {
+      "text": "2.5-cm stab wound on the right lateral chest wall",
+      "clue": true,
+      "type": "blue",
+      "note": "The wound breaches the chest wall and parietal pleura, creating an abnormal communication that lets the intrapleural negative pressure equalize with atmosphere."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Breath sounds are decreased on the right side",
+      "clue": true,
+      "type": "green",
+      "note": "Decreased/absent breath sounds with hyperresonance on the injured side is the bedside signature of pneumothorax - air, not lung, fills the space."
+    },
+    {
+      "text": ". Chest x-ray shows "
+    },
+    {
+      "text": "absent lung markings peripherally on the right with a partially collapsed right lung, consistent with a pneumothorax",
+      "clue": true,
+      "type": "red",
+      "note": "The chest x-ray confirms pneumothorax: peripheral lung markings are absent (air in the pleural space) and the lung edge is collapsed inward. This is the finding that drives the mechanics question."
+    },
+    {
+      "text": ". Which of the following changes have most likely occurred in this patient's right hemithorax and right lung compared to his preinjury state?"
+    }
+  ]
+}

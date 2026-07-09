@@ -1,11 +1,12 @@
-# 10 Heme Onc — 0/86 (0%)
+# 10 Heme Onc — 0/210 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Embryology — 0/3
+## 01 Embryology — 0/4
 - [ ] 01 Fetal erythropoiesis
+  - [ ] Hemoglobin development
 - [ ] 02 Blood groups
-- [ ] 03 Hemolytic disease of the newborn
+- [ ] 03 Hemolytic disease of the fetus and newborn
 
 ## 02 Anatomy — 0/15
 - [ ] 01 Hematopoiesis
@@ -14,86 +15,209 @@
 - [ ] 04 Thrombocytes (platelets)
 - [ ] 05 Monocytes
 - [ ] 06 Macrophages
-- [ ] 07 Eosinophils
-- [ ] 08 Basophils
-- [ ] 09 Mast cells
-- [ ] 10 Dendritic cells
+- [ ] 07 Dendritic cells
+- [ ] 08 Eosinophils
+- [ ] 09 Basophils
+- [ ] 10 Mast cells
 - [ ] 11 Lymphocytes
-- [ ] 12 Natural Killer Cells
+- [ ] 12 Natural killer cells
 - [ ] 13 B cells
 - [ ] 14 T cells
 - [ ] 15 Plasma cells
 
-## 03 Physiology — 0/5
+## 03 Physiology — 0/8
 - [ ] 01 Hemoglobin electrophoresis
-- [ ] 02 Platelet plug formation (primary hemostasis)
-- [ ] 03 Thrombogenesis
-- [ ] 04 Coagulation & kinin pathways
-- [ ] 05 Vitamin K-dependent coagulation components
+- [ ] 02 Antiglobulin test
+- [ ] 03 Platelet plug formation (primary hemostasis)
+- [ ] 04 Thrombogenesis
+- [ ] 05 Coagulation and kinin pathways
+- [ ] 06 Vitamin K–dependent coagulation
+  - [ ] Procoagulation
+  - [ ] Anticoagulation
 
-## 04 Pathology — 0/34
-- [ ] 01 RBC Morphology
+## 04 Pathology — 0/110
+- [ ] 01 RBC morphology
+  - [ ] Acanthocytes A (“spur cells”)
+  - [ ] Echinocytes B (“burr cells”)
+  - [ ] Dacrocytes C (“teardrop cells”)
+  - [ ] Schistocytes D (“helmet” cells)
+  - [ ] Degmacytes E (“bite cells”)
+  - [ ] Elliptocytes F
+  - [ ] Spherocytes G
+  - [ ] Macro-ovalocytes H
+  - [ ] Target cells I
+  - [ ] Sickle cells J
 - [ ] 02 RBC inclusions
+  - [ ] Iron granules A
+  - [ ] Howell-Jolly bodies B
+  - [ ] Basophilic stippling C
+  - [ ] Pappenheimer bodies
+  - [ ] Heinz bodies D
 - [ ] 03 Anemias
-- [ ] 04 Reticulocyte index
-- [ ] 05 Microcytic, hypochromic anemia
+  - [ ] Intravascular hemolysis
+  - [ ] Extravascular hemolysis
+- [ ] 04 Reticulocyte production index
+- [ ] 05 Mentzer index
 - [ ] 06 Interpretation of iron studies
-- [ ] 07 Macrocytic anemias
-- [ ] 08 Normocytic, normochromic anemia
-- [ ] 09 Nonhemolytic, normocytic anemia
-- [ ] 10 Intrinsic hemolytic anemia
-- [ ] 11 Extrinsic hemolytic anemia
-- [ ] 12 Leukopenias
-- [ ] 13 Neutrophil left shift
-- [ ] 14 Heme synthesis, porphyrias, & lead poisoning
+- [ ] 07 Microcytic, hypochromic anemias
+  - [ ] Iron deficiency thalassemia thalassemia
+  - [ ] Lead poisoning
+  - [ ] Sideroblastic anemia
+- [ ] 08 Macrocytic anemias
+  - [ ] Megaloblastic anemia
+  - [ ] Nonmegaloblastic anemia
+- [ ] 09 Normocytic, normochromic anemias
+- [ ] 10 Nonhemolytic, normocytic anemias
+  - [ ] Anemia of chronic disease
+  - [ ] Aplastic anemia
+- [ ] 11 Intrinsic hemolytic anemias
+  - [ ] Hereditary spherocytosis
+  - [ ] Paroxysmal nocturnal hemoglobinuria
+  - [ ] G6PD deficiency
+  - [ ] Pyruvate kinase deficiency
+  - [ ] Sickle cell anemia
+  - [ ] HbC disease
+- [ ] 12 Extrinsic hemolytic anemias
+  - [ ] Autoimmune hemolytic anemia
+  - [ ] Drug-induced hemolytic anemia
+  - [ ] Microangiopathic hemolytic anemia
+  - [ ] Macroangiopathic hemolytic anemia
+  - [ ] Hemolytic anemia due to infection
+- [ ] 13 Leukopenias
+  - [ ] Neutropenia
+  - [ ] Lymphopenia
+  - [ ] Eosinopenia
+- [ ] 14 Heme synthesis, porphyrias, and lead poisoning
 - [ ] 15 Iron poisoning
 - [ ] 16 Coagulation disorders
+  - [ ] Hemophilia A, B, or C
+  - [ ] Vitamin K deficiency
 - [ ] 17 Platelet disorders
+  - [ ] Bernard-Soulier syndrome
+  - [ ] Glanzmann thrombasthenia
+  - [ ] Immune thrombocytopenia
+  - [ ] Uremic platelet dysfunction
 - [ ] 18 Thrombotic microangiopathies
-- [ ] 19 Mixed platelet & coagulation disorders
-- [ ] 20 Hereditary thrombosis syndromes leading to hypercoagulability
+- [ ] 19 Mixed platelet and coagulation disorders
+  - [ ] von Willebrand disease
+  - [ ] Disseminated intravascular coagulation
+- [ ] 20 Hereditary thrombophilias
+  - [ ] Antithrombin deficiency
+  - [ ] Factor V Leiden
+  - [ ] Protein C or S deficiency
+  - [ ] Prothrombin G20210A mutation
 - [ ] 21 Blood transfusion therapy
+  - [ ] Packed RBCs
+  - [ ] Platelets
+  - [ ] Fresh frozen plasma/ prothrombin complex concentrate
+  - [ ] Cryoprecipitate
+  - [ ] Albumin
 - [ ] 22 Leukemia vs lymphoma
-- [ ] 23 Hodgkin vs non-Hodgkin lymphoma
+  - [ ] Leukemia
+  - [ ] Lymphoma
+- [ ] 23 Hodgkin vs non‑Hodgkin lymphoma
 - [ ] 24 Hodgkin lymphoma
-- [ ] 25 Non-Hodgkin Lymphoma
+- [ ] 25 Non‑Hodgkin lymphoma
+  - [ ] Burkitt lymphoma
+  - [ ] Diffuse large B-cell lymphoma
+  - [ ] Follicular lymphoma
+  - [ ] Mantle cell lymphoma
+  - [ ] Marginal zone lymphoma
+  - [ ] Primary central nervous system lymphoma
+  - [ ] Adult T-cell lymphoma
+  - [ ] Cutaneous T-cell lymphoma
 - [ ] 26 Plasma cell dyscrasias
+  - [ ] Multiple myeloma
+  - [ ] Waldenström macroglobulinemia
+  - [ ] Monoclonal gammopathy of undetermined significance
 - [ ] 27 Myelodysplastic syndromes
 - [ ] 28 Leukemias
-- [ ] 29 Chronic myeloproliferative disorders
-- [ ] 30 Polycythemia
-- [ ] 31 Chromosomal translocations
-- [ ] 32 Langerhans cell histiocytosis
-- [ ] 33 Tumor lysis syndrome
-- [ ] 34 Hemophagocytic lymphohistiocytosis
+  - [ ] Acute lymphoblastic leukemia/lymphoma
+  - [ ] Chronic lymphocytic leukemia/small lymphocytic lymphoma
+  - [ ] Hairy cell leukemia
+  - [ ] Acute myelogenous leukemia
+  - [ ] Chronic myelogenous leukemia
+- [ ] 29 Myeloproliferative neoplasms
+  - [ ] Polycythemia vera
+  - [ ] Essential thrombocythemia
+  - [ ] Myelofibrosis
+- [ ] 30 Leukemoid reaction vs chronic myelogenous leukemia
+- [ ] 31 Polycythemia
+- [ ] 32 Chromosomal translocations
+- [ ] 33 Langerhans cell histiocytosis
+- [ ] 34 Tumor lysis syndrome
 
-## 05 Pharm — 0/29
-- [ ] 01 Direct thrombin inhibitors
-- [ ] 02 Heparin
-- [ ] 03 Warfarin
-- [ ] 04 Heparin vs warfarin
-- [ ] 05 Direct factor Xa inhibitors
-- [ ] 06 Thrombolytics
-- [ ] 07 ADP receptor inhibitors
-- [ ] 08 Glycoprotein IIb/IIIa inhibitors
-- [ ] 09 Cancer therapy - cell cycle
-- [ ] 10 Cancer therapy - targets
+## 05 Pharmacology — 0/73
+- [ ] 01 Heparin
+- [ ] 02 Warfarin
+- [ ] 03 Heparin vs warfarin
+- [ ] 04 Direct coagulation factor inhibitors
+  - [ ] Bivalirudin, argatroban dabigatran
+  - [ ] Apixaban, edoxaban, rivaroxaban
+- [ ] 05 Anticoagulation reversal
+  - [ ] Heparin
+  - [ ] Warfarin
+  - [ ] Dabigatran
+  - [ ] Direct factor Xa inhibitors
+  - [ ] (eg, apixaban, rivaroxaban)
+- [ ] 06 Antiplatelets
+  - [ ] Aspirin
+  - [ ] Clopidogrel, prasugrel, ticagrelor
+  - [ ] Eptifibatide, tirofiban, abciximab
+  - [ ] Cilostazol, dipyridamole
+- [ ] 07 Thrombolytics
+- [ ] 08 Cancer therapy—cell cycle
+- [ ] 09 Cancer therapy—targets
+- [ ] 10 Antibody‑drug conjugates
 - [ ] 11 Antitumor antibiotics
+  - [ ] Bleomycin
+  - [ ] Dactinomycin (actinomycin D)
+  - [ ] Anthracyclines
 - [ ] 12 Antimetabolites
+  - [ ] Thiopurines
+  - [ ] Cladribine, pentostatin
+  - [ ] Cytarabine (arabinofuranosyl cytidine)
+  - [ ] 5-Fluorouracil
+  - [ ] Hydroxyurea
+  - [ ] Methotrexate
 - [ ] 13 Alkylating agents
-- [ ] 14 Microtubule inhibitors
-- [ ] 15 Cisplatin, carboplatin, oxaliplatin
-- [ ] 16 Etoposide, teniposide
-- [ ] 17 Irinotecan, topotecan
-- [ ] 18 Hydroxyurea
-- [ ] 19 Bevacizumab
-- [ ] 20 Erlotinib
-- [ ] 21 Cetuximab, panitumumab
-- [ ] 22 Imatinib, dasatinib, nilotinib
-- [ ] 23 Rituximab
-- [ ] 24 Bortezomib, carfilzomib
-- [ ] 25 Tamoxifen, raloxifene
-- [ ] 26 Trastuzumab
-- [ ] 27 Dabrafenib, vemurafenib
-- [ ] 28 Rasburicase
-- [ ] 29 Key chemotoxicities
+  - [ ] Busulfan
+  - [ ] Nitrogen mustards
+  - [ ] Nitrosoureas
+  - [ ] Procarbazine
+- [ ] 14 Platinum compounds
+- [ ] 15 Microtubule inhibitors
+- [ ] 16 Topoisomerase inhibitors
+  - [ ] Irinotecan, topotecan
+  - [ ] Etoposide, teniposide
+- [ ] 17 Tamoxifen
+- [ ] 18 Anticancer monoclonal antibodies
+  - [ ] Alemtuzumab
+  - [ ] Bevacizumab
+  - [ ] Cetuximab, panitumumab
+  - [ ] Rituximab
+  - [ ] Trastuzumab
+  - [ ] Pembrolizumab, nivolumab cemiplimab
+  - [ ] Atezolizumab, durvalumab avelumab
+  - [ ] Ipilimumab
+- [ ] 19 Anticancer small molecule inhibitors
+  - [ ] Alectinib, crizotinib
+  - [ ] Erlotinib, gefitinib, afatinib
+  - [ ] Imatinib, dasatinib, nilotinib
+  - [ ] Ruxolitinib
+  - [ ] Bortezomib, ixazomib, carﬁlzomib
+  - [ ] Vemurafenib, encorafenib dabrafenib
+  - [ ] Palbociclib
+  - [ ] Olaparib
+- [ ] 20 Chemotoxicity amelioration
+  - [ ] Amifostine
+  - [ ] Dexrazoxane
+  - [ ] Leucovorin (folinic acid)
+  - [ ] Mesna
+  - [ ] Rasburicase
+  - [ ] Ondansetron, granisetron
+  - [ ] Prochlorperazine, metoclopramide
+  - [ ] Aprepitant, fosaprepitant
+  - [ ] Filgrastim, sargramostim
+  - [ ] Epoetin alfa
+- [ ] 21 Key chemotoxicities

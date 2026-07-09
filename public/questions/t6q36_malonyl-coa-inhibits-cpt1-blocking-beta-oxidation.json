@@ -1,0 +1,193 @@
+{
+  "id": "q225",
+  "item": 225,
+  "qid": "11918",
+  "title": "Malonyl-CoA inhibits CPT1, blocking beta-oxidation",
+  "system": "Biochemistry",
+  "topic": "Fatty acid synthesis vs oxidation",
+  "correct": "D",
+  "yourAnswer": "C",
+  "percentCorrect": 39,
+  "vignette": "A research scientist studying the metabolic pathways that contribute to obesity feeds experimental animals a high-carbohydrate, high-protein diet for a prolonged period. A sample of liver tissue is then obtained from the animals, and the activity of various enzymes involved in fatty acid metabolism is measured and recorded. It is determined that beta-oxidation of fatty acids is inhibited within these cells as a result of the diet. An increase in which of the following substances is most likely responsible for the observed effect?",
+  "clues": [
+    {
+      "text": "metabolic pathways that contribute to obesity",
+      "type": "blue",
+      "note": "The framing is the well-fed/anabolic state, where the liver is synthesizing fat. In that state, fatty acid OXIDATION should be switched off - the question asks what molecule does the switching."
+    },
+    {
+      "text": "high-carbohydrate, high-protein diet for a prolonged period",
+      "type": "orange",
+      "note": "A carbohydrate-rich, well-fed state raises insulin and citrate, driving de novo fatty acid synthesis. The same signals must simultaneously shut down fatty acid breakdown to avoid a futile cycle."
+    },
+    {
+      "text": "beta-oxidation of fatty acids is inhibited",
+      "type": "red",
+      "note": "Beta-oxidation occurs in the mitochondrial matrix; fatty acids enter only via the carnitine shuttle (carnitine palmitoyltransferase I / carnitine acyltransferase). The molecule that inhibits this shuttle is malonyl-CoA - the answer."
+    }
+  ],
+  "whatMatters": "In the well-fed state, acetyl-CoA carboxylase makes MALONYL-CoA (the committed step of fatty acid synthesis). Malonyl-CoA also INHIBITS carnitine palmitoyltransferase I (carnitine acyltransferase), blocking fatty acid entry into mitochondria and thus inhibiting beta-oxidation. This prevents a futile cycle of simultaneous synthesis and breakdown. Answer D.",
+  "strategy": "Find the molecule that DIRECTLY blocks the carnitine shuttle (CPT1), the rate-limiting entry into beta-oxidation. That is malonyl-CoA. Beware upstream/associated molecules: citrate drives synthesis (activates ACC, source of cytosolic acetyl-CoA) but doesn't directly inhibit oxidation; carnitine is REQUIRED for oxidation (more would help, not hinder); NADPH and acetoacetate belong to synthesis and ketone pathways.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acetoacetate",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Carnitine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Citrate",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Malonyl-CoA",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "NADPH",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Acetoacetate - a ketone body (fasting), not a regulator here",
+      "detail": "WHAT IT IS: a ketone body produced from acetyl-CoA during starvation/fasting when oxaloacetate is scarce. ❌ WHY IT FAILS: ketogenesis is a FED-state opposite; acetoacetate does not inhibit the carnitine shuttle or beta-oxidation. ✅ Correct if: asked about fuel produced during prolonged fasting."
+    },
+    {
+      "letter": "B",
+      "label": "Carnitine - required FOR beta-oxidation",
+      "detail": "WHAT IT IS: the carrier that shuttles long-chain fatty acids across the mitochondrial membrane for oxidation. ❌ WHY IT FAILS: carnitine ENABLES beta-oxidation, so increasing it would promote (not inhibit) oxidation; its deficiency impairs oxidation. ✅ Correct if: asked what is needed to transport fatty acids into mitochondria (or what's deficient in a carnitine-deficiency myopathy)."
+    },
+    {
+      "letter": "C",
+      "label": "Citrate - drives synthesis but doesn't directly block oxidation (your pick)",
+      "detail": "WHAT IT IS: in the fed state, mitochondrial citrate is exported and cleaved (ATP citrate lyase) to cytosolic acetyl-CoA, and citrate allosterically ACTIVATES acetyl-CoA carboxylase. ❌ WHY IT FAILS: citrate promotes fatty acid SYNTHESIS upstream, but it does not directly inhibit carnitine palmitoyltransferase I / beta-oxidation - malonyl-CoA does. The trap is stopping one step too early in the pathway. ✅ Correct if: asked what activates ACC or supplies cytosolic acetyl-CoA for synthesis."
+    },
+    {
+      "letter": "E",
+      "label": "NADPH - reducing power for synthesis, not a regulator of oxidation",
+      "detail": "WHAT IT IS: the reducing equivalent used to build fatty acids (from the pentose phosphate pathway and malic enzyme). ❌ WHY IT FAILS: NADPH supplies electrons for synthesis but does not inhibit the carnitine shuttle or beta-oxidation. ✅ Correct if: asked what provides reducing power for fatty acid synthesis."
+    }
+  ],
+  "reasoning": [
+    "Well-fed, high-carbohydrate state -> active de novo fatty acid synthesis in the liver",
+    "Acetyl-CoA carboxylase converts acetyl-CoA to malonyl-CoA (committed step of synthesis)",
+    "Malonyl-CoA also inhibits carnitine palmitoyltransferase I, blocking fatty acid entry into mitochondria",
+    "-> beta-oxidation is inhibited by increased malonyl-CoA; answer D"
+  ],
+  "mechanism": "In the well-fed state, abundant ATP and a high-carbohydrate load raise mitochondrial citrate, which is exported to the cytosol and cleaved by ATP citrate lyase to acetyl-CoA; insulin and citrate then activate acetyl-CoA carboxylase, which converts acetyl-CoA to MALONYL-CoA in the committed, rate-limiting step of de novo fatty acid synthesis. Malonyl-CoA additionally inhibits carnitine palmitoyltransferase I (carnitine acyltransferase), the transporter that shuttles long-chain fatty acids into the mitochondrial matrix where beta-oxidation occurs. By blocking this entry step, rising malonyl-CoA prevents the breakdown of newly synthesized fatty acids, avoiding a futile cycle of simultaneous synthesis and oxidation. Citrate and NADPH support synthesis upstream, and carnitine is required for oxidation, so none of them directly produce the observed inhibition.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochem > fatty acid metabolism: acetyl-CoA carboxylase (rate-limiting, makes malonyl-CoA; activated by citrate/insulin); malonyl-CoA inhibits CPT1 (carnitine shuttle) -> blocks beta-oxidation; reciprocal regulation prevents a futile cycle."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The stem asks what DIRECTLY inhibits beta-oxidation in the fed state. Trace to the carnitine shuttle (CPT1) and its inhibitor, malonyl-CoA - not an upstream synthesis substrate."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on malonyl-CoA, acetyl-CoA carboxylase, carnitine palmitoyltransferase I (CPT1)/carnitine shuttle, citrate shuttle, or futile cycle? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Citrate (your pick) drives synthesis and is upstream, so it feels causal - but it doesn't directly inhibit beta-oxidation; malonyl-CoA blocks CPT1. Carnitine is needed FOR oxidation, so increasing it wouldn't inhibit it."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: malonyl-CoA inhibits CPT1 -> blocks beta-oxidation (fed state); citrate activates ACC -> synthesis; carnitine REQUIRED for oxidation; NADPH = reducing power for synthesis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Molecule that inhibits beta-oxidation in the fed state",
+      "back": "Malonyl-CoA (inhibits carnitine palmitoyltransferase I / CPT1)"
+    },
+    {
+      "front": "Committed/rate-limiting step of fatty acid synthesis",
+      "back": "Acetyl-CoA -> malonyl-CoA by acetyl-CoA carboxylase (activated by citrate/insulin)"
+    },
+    {
+      "front": "Carnitine shuttle role",
+      "back": "Transports long-chain fatty acids into mitochondria for beta-oxidation (CPT1/CPT2)"
+    },
+    {
+      "front": "Citrate in fatty acid synthesis",
+      "back": "Exported to cytosol -> acetyl-CoA (ATP citrate lyase); activates ACC"
+    },
+    {
+      "front": "NADPH source for synthesis",
+      "back": "Pentose phosphate pathway and malic enzyme"
+    },
+    {
+      "front": "Acetoacetate",
+      "back": "Ketone body of starvation/fasting (not fed-state regulation)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Malonyl-CoA & CPT1",
+      "detail": "Biochem > acetyl-CoA carboxylase makes malonyl-CoA; malonyl-CoA inhibits CPT1, blocking beta-oxidation (reciprocal regulation).",
+      "location": "Biochem > acetyl-CoA carboxylase makes malonyl-CoA; malonyl-CoA inhibits CPT1, blocking beta-oxidation (reciprocal regulation)."
+    },
+    {
+      "tag": "options",
+      "topic": "Synthesis vs oxidation players",
+      "detail": "Biochem > citrate (activates ACC), NADPH (reducing power), carnitine (shuttle for oxidation), acetoacetate (ketone).",
+      "location": "Biochem > citrate (activates ACC), NADPH (reducing power), carnitine (shuttle for oxidation), acetoacetate (ketone)."
+    },
+    {
+      "tag": "context",
+      "topic": "Fed vs fasting fat metabolism",
+      "detail": "Biochem > fed: synthesis on, oxidation off (malonyl-CoA); fasting: oxidation/ketogenesis on.",
+      "location": "Biochem > fed: synthesis on, oxidation off (malonyl-CoA); fasting: oxidation/ketogenesis on."
+    }
+  ],
+  "memoryHook": "Malonyl-CoA is the 'building' molecule that slams the mitochondrial door (CPT1) shut - you can't burn fat and build it at the same time.",
+  "stem": [
+    {
+      "text": "A research scientist studying the "
+    },
+    {
+      "text": "metabolic pathways that contribute to obesity",
+      "clue": true,
+      "type": "blue",
+      "note": "The framing is the well-fed/anabolic state, where the liver is synthesizing fat. In that state, fatty acid OXIDATION should be switched off - the question asks what molecule does the switching."
+    },
+    {
+      "text": " feeds experimental animals a "
+    },
+    {
+      "text": "high-carbohydrate, high-protein diet for a prolonged period",
+      "clue": true,
+      "type": "orange",
+      "note": "A carbohydrate-rich, well-fed state raises insulin and citrate, driving de novo fatty acid synthesis. The same signals must simultaneously shut down fatty acid breakdown to avoid a futile cycle."
+    },
+    {
+      "text": ". A sample of liver tissue is then obtained from the animals, and the activity of various enzymes involved in fatty acid metabolism is measured and recorded. It is determined that "
+    },
+    {
+      "text": "beta-oxidation of fatty acids is inhibited",
+      "clue": true,
+      "type": "red",
+      "note": "Beta-oxidation occurs in the mitochondrial matrix; fatty acids enter only via the carnitine shuttle (carnitine palmitoyltransferase I / carnitine acyltransferase). The molecule that inhibits this shuttle is malonyl-CoA - the answer."
+    },
+    {
+      "text": " within these cells as a result of the diet. An increase in which of the following substances is most likely responsible for the observed effect?"
+    }
+  ]
+}
