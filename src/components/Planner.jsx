@@ -62,6 +62,19 @@ export default function Planner() {
 
   useEffect(() => () => clearTimeout(undoTimer.current), []);
 
+  // Success chord exactly once, when the day first completes. Lives above the
+  // early return so the hook count stays stable across the loading flip.
+  const todayEntry = sched?.days?.[date];
+  const allDone = !!(todayEntry?.capacity
+    && (todayEntry.planned || []).length > 0
+    && (todayEntry.planned || []).every((k) => (todayEntry.completed || []).includes(k))
+    && todayEntry.ankiDone);
+  const prevAllDone = useRef(false);
+  useEffect(() => {
+    if (allDone && !prevAllDone.current) notification("success");
+    prevAllDone.current = allDone;
+  }, [allDone]);
+
   if (!ready || !sched) {
     return <div className="page page-narrow"><div className="boot">Building your plan…</div></div>;
   }
@@ -125,13 +138,6 @@ export default function Planner() {
     + (today?.ankiDone ? 1 : 0) + (today?.uworld?.done ? 1 : 0);
   // Read-only peek at the general (non-study) task store for a cross-link.
   const generalToday = loadGeneralTasks().filter((t) => !t.done && t.date && t.date <= date).length;
-  const allDone = capacity && plannedKeys.length > 0 && plannedKeys.every((k) => completed.has(k)) && today?.ankiDone;
-  // Success chord exactly once, when the day first completes.
-  const prevAllDone = useRef(false);
-  useEffect(() => {
-    if (allDone && !prevAllDone.current) notification("success");
-    prevAllDone.current = !!allDone;
-  }, [allDone]);
   const simToday = today?.assessmentToday
     ? (sched.assessments || []).find((a) => a.id === today.assessmentToday)
     : null;
