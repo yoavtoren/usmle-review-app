@@ -17,6 +17,7 @@ export default function FirstAidBook() {
     return saved >= 1 && saved <= FA_TOTAL_PAGES ? saved : 1;
   });
   const [status, setStatus]   = useState("loading"); // loading | ready | error
+  const [errDetail, setErrDetail] = useState("");
   const [index, setIndex]     = useState([]);
   const [query, setQuery]     = useState("");
   const [openSec, setOpenSec] = useState(() => new Set(["s2", "s3"]));
@@ -38,7 +39,11 @@ export default function FirstAidBook() {
         pdfRef.current = doc;
         setStatus("ready");
       })
-      .catch(() => { if (!cancelled) setStatus("error"); });
+      .catch(err => {
+        if (cancelled) return;
+        setErrDetail(`${err?.name || "Error"}: ${err?.message || String(err)}`);
+        setStatus("error");
+      });
     return () => {
       cancelled = true;
       try { task.destroy(); } catch {}
@@ -231,6 +236,7 @@ export default function FirstAidBook() {
               <p className="fa-unavail-hint">
                 העמוד הנבחר כעת: <strong>{page}</strong>. דפדוף בתוכן עדיין שומר את מיקומך.
               </p>
+              {errDetail && <p className="fa-unavail-detail" dir="ltr">{errDetail}</p>}
             </div>
           )}
           <div className="fa-scroll" ref={scrollRef} style={{ display: status === "ready" ? "flex" : "none" }}>
