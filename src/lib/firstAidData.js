@@ -7,6 +7,13 @@ export const FA_PDF_URL   = `${BASE}/firstaid/FA2025.pdf`;
 export const FA_INDEX_URL = `${BASE}/firstaid/fa-index.json`;
 export const FA_TOTAL_PAGES = 865;
 
+// pdf.js glyph-rendering assets. First Aid embeds NO fonts (MyriadPro, Electra,
+// Helvetica, Wingdings are referenced by name only), so pdf.js must load its
+// substitute fonts + CID cMaps to draw text with correct glyph widths. Without
+// these the page renders as garbled, mis-spaced characters.
+export const FA_CMAP_URL      = `${BASE}/pdfjs/cmaps/`;
+export const FA_STD_FONTS_URL = `${BASE}/pdfjs/standard_fonts/`;
+
 // Browsable contents — sections → chapters, with real PDF page numbers.
 export const FA_CONTENTS = [
   {

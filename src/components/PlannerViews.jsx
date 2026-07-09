@@ -179,7 +179,18 @@ export function CalendarView({ sched, units, nav }) {
     const m = model[iso];
     const evs = [];
     if (m) {
-      const ev = (tone, k, tag) => ({ tone, label: cleanName(byKey[k]?.subsection), sub: byKey[k]?.system, tag, color: unitColor(byKey[k]).hex, emoji: unitColor(byKey[k]).emoji });
+      const ev = (tone, k, tag) => {
+        const u = byKey[k];
+        const faItems = (u?.faItemIds || []).map((id) => id.split("::").pop());
+        return {
+          tone, tag, color: unitColor(u).hex, emoji: unitColor(u).emoji,
+          label: cleanName(u?.subsection),
+          sub: u?.system,
+          chapter: cleanName(u?.chapter),
+          faItems,
+          faSection: `${cleanName(u?.chapter)} › ${cleanName(u?.subsection)}`,
+        };
+      };
       for (const k of m.completed) evs.push(ev("ok", k, "done"));
       for (const k of m.missed) evs.push(ev("bad", k, "missed"));
       for (const k of (m.planned || [])) {
@@ -272,8 +283,9 @@ function MonthGrid({ cursor, today, eventsFor, onDay }) {
               <span className="plc-cell-events">
                 {evs.slice(0, 3).map((e, i) => (
                   <span key={i} className={`plc-chip ${e.tone}${e.track ? ` track-${e.track}` : ""}`}
-                    style={e.color && !e.track ? { borderLeft: `3px solid ${e.color}` } : undefined}>
-                    {e.emoji ? `${e.emoji} ` : ""}{e.label}
+                    style={e.color && !e.track ? { borderLeft: `3px solid ${e.color}` } : undefined}
+                    title={e.faItems && e.faItems.length ? `${e.faSection}\n${e.faItems.map((t) => "• " + t).join("\n")}` : undefined}>
+                    {e.emoji ? `${e.emoji} ` : ""}{e.label}{e.faItems && e.faItems.length > 0 ? <b className="plc-chip-n">{e.faItems.length}</b> : null}
                   </span>
                 ))}
                 {evs.length > 3 && <span className="plc-more">+{evs.length - 3} more</span>}
@@ -308,8 +320,15 @@ function WeekGrid({ cursor, today, eventsFor, onDay }) {
               {evs.length === 0 && <span className="plc-wcol-empty">·</span>}
               {evs.map((e, i) => (
                 <span key={i} className={`plc-event ${e.tone}${e.track ? ` track-${e.track}` : ""}`}
-                  style={e.color && !e.track ? { borderLeft: `3px solid ${e.color}` } : undefined}>
+                  style={e.color && !e.track ? { borderLeft: `3px solid ${e.color}` } : undefined}
+                  title={e.faItems && e.faItems.length ? `${e.faSection}\n${e.faItems.map((t) => "• " + t).join("\n")}` : undefined}>
                   <b>{e.emoji ? `${e.emoji} ` : ""}{e.label}</b>{e.sub && <em>{e.sub}</em>}
+                  {e.faItems && e.faItems.length > 0 && (
+                    <span className="plc-event-topics">
+                      {e.faItems.slice(0, 4).map((t, ti) => <span key={ti} className="plc-event-topic">{t}</span>)}
+                      {e.faItems.length > 4 && <span className="plc-event-topic more">+{e.faItems.length - 4} more →</span>}
+                    </span>
+                  )}
                 </span>
               ))}
             </div>
@@ -349,9 +368,20 @@ function DayView({ cursor, today, eventsFor, sched, nav }) {
             <div className="plc-day-group-h">{label} <span className="plc-day-group-n">{items.length}</span></div>
             {items.map((e, i) => (
               <div key={i} className={`plc-day-item ${e.tone}${e.track ? ` track-${e.track}` : ""}`}>
-                <span className="plc-day-dot" style={e.color && !e.track ? { background: e.color } : undefined} />
-                <span className="plc-day-item-lbl">{e.emoji ? `${e.emoji} ` : ""}{e.label}</span>
-                {e.sub && <span className="plc-day-item-sub muted">{e.sub}</span>}
+                <div className="plc-day-item-top">
+                  <span className="plc-day-dot" style={e.color && !e.track ? { background: e.color } : undefined} />
+                  <span className="plc-day-item-lbl">{e.emoji ? `${e.emoji} ` : ""}{e.faSection || e.label}</span>
+                  {e.faItems && e.faItems.length > 0
+                    ? <span className="plc-day-item-sub muted">{e.faItems.length} FA topics to mark ✓</span>
+                    : e.sub && <span className="plc-day-item-sub muted">{e.sub}</span>}
+                </div>
+                {e.faItems && e.faItems.length > 0 && (
+                  <ul className="plc-day-checklist">
+                    {e.faItems.map((t, ti) => (
+                      <li key={ti} className="plc-day-check"><span className="plc-day-check-box">○</span>{t}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>

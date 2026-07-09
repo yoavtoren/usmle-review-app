@@ -5463,11 +5463,26 @@ button, .rail-link, .chip { -webkit-user-select: none; user-select: none; -webki
 .plc-day-group { display: flex; flex-direction: column; gap: 6px; }
 .plc-day-group-h { font-size: 12px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
 .plc-day-group-n { color: var(--muted-light); font-weight: 700; }
-.plc-day-item { display: flex; align-items: center; gap: 9px; padding: 8px 11px; border-radius: var(--r-sm); background: var(--surface-2); }
+.plc-day-item { display: flex; flex-direction: column; gap: 8px; padding: 10px 12px; border-radius: var(--r-sm); background: var(--surface-2); }
+.plc-day-item-top { display: flex; align-items: center; gap: 9px; }
 .plc-day-dot { width: 8px; height: 8px; border-radius: 999px; flex-shrink: 0; background: var(--muted-light); }
-.plc-day-item-lbl { font-size: 13px; font-weight: 600; color: var(--text); }
-.plc-day-item-sub { font-size: 11.5px; margin-left: auto; }
+.plc-day-item-lbl { font-size: 13px; font-weight: 700; color: var(--text); }
+.plc-day-item-sub { font-size: 11.5px; margin-left: auto; white-space: nowrap; }
+.plc-day-checklist { list-style: none; margin: 0; padding: 0 0 0 17px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 3px 16px; }
+.plc-day-check { font-size: 12px; color: var(--text); display: flex; align-items: baseline; gap: 7px; line-height: 1.45; }
+.plc-day-check-box { color: var(--muted-light); font-size: 11px; flex-shrink: 0; }
 .plc-day-open { align-self: flex-start; margin-top: 2px; }
+
+/* specific FA topics under a week-view event */
+.plc-event-topics { display: flex; flex-direction: column; gap: 0; margin-top: 2px; }
+.plc-event-topic { font-size: 9px; color: var(--muted); line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.plc-event-topic::before { content: "○ "; color: var(--muted-light); }
+.plc-event-topic.more { color: var(--accent); font-weight: 700; }
+.plc-event-topic.more::before { content: ""; }
+/* topic count badge on month chip */
+.plc-chip-n { display: inline-block; margin-left: 4px; font-size: 9px; font-weight: 800;
+  background: rgba(0,0,0,0.10); border-radius: 999px; padding: 0 4px; vertical-align: middle; }
 
 @media (max-width: 760px) {
   .plc-week { grid-template-columns: repeat(7, minmax(96px, 1fr)); overflow-x: auto; }

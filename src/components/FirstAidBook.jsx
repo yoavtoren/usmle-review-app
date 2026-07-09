@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import * as pdfjsLib from "pdfjs-dist";
 import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
-import { FA_PDF_URL, FA_INDEX_URL, FA_CONTENTS, FA_TOTAL_PAGES } from "../lib/firstAidData.js";
+import { FA_PDF_URL, FA_INDEX_URL, FA_CONTENTS, FA_TOTAL_PAGES, FA_CMAP_URL, FA_STD_FONTS_URL } from "../lib/firstAidData.js";
 
 // pdf.js renders the PDF itself (to a canvas) instead of handing the file to the
 // browser's built-in PDF preview. That built-in viewer (esp. iOS WKWebView)
@@ -32,7 +32,14 @@ export default function FirstAidBook() {
   // Load the document once with pdf.js
   useEffect(() => {
     let cancelled = false;
-    const task = pdfjsLib.getDocument({ url: FA_PDF_URL });
+    const task = pdfjsLib.getDocument({
+      url: FA_PDF_URL,
+      // First Aid embeds no fonts — pdf.js needs its substitute fonts and CID
+      // cMaps to render glyphs at the correct widths (otherwise text is garbled).
+      cMapUrl: FA_CMAP_URL,
+      cMapPacked: true,
+      standardFontDataUrl: FA_STD_FONTS_URL,
+    });
     task.promise
       .then(doc => {
         if (cancelled) { doc.destroy(); return; }
