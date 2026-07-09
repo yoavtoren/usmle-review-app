@@ -77,6 +77,22 @@ is saved to the `usmle:icloud-prelink-backup` localStorage key, so nothing you h
 before linking can be lost. The existing JSON export/import in
 `src/lib/storage.js` (`exportAllData` / `importAllData`) remains as a manual backup.
 
+## Mac app
+
+The same app runs natively on the MacBook (Apple Silicon, "Designed for iPad"
+mode) as **/Applications/USMLE Tracker.app**. It shares the exact same iCloud
+key-value container (`QNP44Q5Q3X.com.yoavtoren.usmlereview`) as the iPad, so
+progress syncs both ways automatically — no extra setup beyond being signed
+into the same Apple ID.
+
+- `scripts/build-mac-app.sh` rebuilds it and reinstalls to /Applications.
+  iPad binaries can't launch as a plain `.app` on macOS — the script installs
+  the App Store-style *wrapped bundle* layout (`Wrapper/` + `WrappedBundle`
+  symlink), which is what makes it double-clickable.
+- `scripts/auto-sync.sh` (the Stop hook) calls it after every green build, so
+  the installed Mac app always has the latest update — it takes effect the
+  next time the app is launched (quit + reopen to pick it up).
+
 ## Notes & limits
 
 - iCloud KVS budget is **1 MB total / 1024 keys** — this app uses ~15 small JSON

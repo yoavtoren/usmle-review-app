@@ -77,4 +77,15 @@ else
   echo "· build failing — committed/pushed for safekeeping but SKIPPED deploy + iOS sync"
 fi
 
+# 5 · rebuild + reinstall the Mac app (Designed for iPad) so /Applications
+#     always has the latest version; takes effect on next app launch.
+if [ "$BUILD_OK" -eq 1 ]; then
+  echo "▶ updating Mac app…"
+  if bash "$REPO/scripts/build-mac-app.sh" >/dev/null 2>&1; then
+    echo "  ✓ Mac app updated (/Applications/USMLE Tracker.app)"
+  else
+    echo "  ✗ Mac app build failed (run scripts/build-mac-app.sh manually to see why)"
+  fi
+fi
+
 echo "──────── $(date '+%Y-%m-%d %H:%M:%S') · auto-sync done ────────"
