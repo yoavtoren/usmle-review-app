@@ -102,7 +102,7 @@ export default function Planner() {
   const goalCard = <ScoreGoalCard readiness={readiness} goal={sched.settings.goal} assessments={sched.assessments} onGoal={onGoal} />;
   const assessCard = (
     <AssessmentsCard
-      assessments={sched.assessments || []} dedicated={dedicated} date={date}
+      assessments={sched.assessments || []} dedicated={dedicated} date={date} examISO={sched.settings.examDate}
       onLog={onLogAssessment} onUpsert={onUpsertAssessment} onRemove={onRemoveAssessment} onReset={onResetSchedule}
     />
   );
@@ -568,15 +568,20 @@ function SimDayBanner({ sim, onLog }) {
   );
 }
 
-function AssessmentsCard({ assessments, dedicated, date, onLog, onUpsert, onRemove, onReset }) {
+function AssessmentsCard({ assessments, dedicated, date, examISO, onLog, onUpsert, onRemove, onReset }) {
   const [adding, setAdding] = useState(false);
   const sorted = [...assessments].sort((a, b) => (a.plannedDate < b.plannedDate ? -1 : 1));
   const nextUp = sorted.find((a) => !a.takenDate && a.plannedDate >= date);
+  const logged = sorted.filter((a) => a.takenDate && a.actual != null).length;
+  const examDays = examISO ? Math.round((new Date(`${examISO}T00:00:00`) - new Date(`${date}T00:00:00`)) / 86400000) : null;
 
   return (
     <div className={`pl-card pl-assess${dedicated ? " lead" : ""}`}>
       <div className="pl-assess-head">
-        <span className="pl-assess-t"><IconCalendar size={15} /> Assessment checkpoints</span>
+        <span className="pl-assess-t">
+          <IconCalendar size={15} /> Assessment checkpoints
+          <span className="pl-assess-meta num">{logged > 0 ? `${logged} of ${sorted.length} logged` : `${sorted.length} scheduled`}</span>
+        </span>
         <span className="pl-assess-actions">
           <button className="btn-ghost btn-xs" onClick={() => setAdding((a) => !a)}>{adding ? "Cancel" : "+ Add"}</button>
           <button className="btn-ghost btn-xs" onClick={onReset} title="Rebuild the standard schedule (keeps logged scores)">Reset schedule</button>
@@ -589,6 +594,20 @@ function AssessmentsCard({ assessments, dedicated, date, onLog, onUpsert, onRemo
         {sorted.map((a) => (
           <AssessmentRow key={a.id} a={a} date={date} isNext={nextUp?.id === a.id} onLog={onLog} onRemove={onRemove} onUpsert={onUpsert} />
         ))}
+        {examISO && (
+          <li className="pl-assess-row examday">
+            <span className="pl-assess-node exam"><IconSparkle size={9} /></span>
+            <div className="pl-assess-main">
+              <div className="pl-assess-row-top">
+                <span className="pl-assess-label exam">Exam day</span>
+                <span className="pl-assess-date num">
+                  {fmtShort(examISO)}
+                  {examDays != null && examDays >= 0 && <span className="muted"> · {examDays === 0 ? "today" : `in ${examDays}d`}</span>}
+                </span>
+              </div>
+            </div>
+          </li>
+        )}
       </ul>
     </div>
   );
@@ -605,17 +624,24 @@ function AssessmentRow({ a, date, isNext, onLog, onRemove, onUpsert }) {
 
   const predicted = taken ? toPredicted3(a) : null;
   const delta = taken ? Math.round(predicted - (isPct ? pctToPredicted3(a.goalScore) : a.goalScore)) : null;
+  const nodeCls = taken ? "done" : isNext ? "next" : overdue ? "over" : "";
 
   return (
     <li className={`pl-assess-row${isNext ? " next" : ""}${taken ? " taken" : ""}`}>
-      <span className={`pl-assess-badge ${kindCls}`}>{a.kind === "free120" ? "F120" : a.kind === "uwsa" ? "UWSA" : "NBME"}</span>
+      <span className={`pl-assess-node ${nodeCls}`}>{taken ? <IconCheck size={9} /> : null}</span>
       <div className="pl-assess-main">
+        {isNext && <span className="pl-assess-eyebrow">Next up · {fmtShort(a.plannedDate)}</span>}
         <div className="pl-assess-row-top">
-          <span className="pl-assess-label">{a.label}{isNext && <span className="pl-assess-nextlbl">next up</span>}</span>
-          <span className="pl-assess-date num">
-            {fmtShort(a.plannedDate)}
-            {!taken && (overdue ? <span className="pl-assess-over"> · overdue — did you take it?</span> : <span className="muted"> · {days === 0 ? "today" : `in ${days}d`}</span>)}
+          <span className="pl-assess-label">
+            {a.label}
+            <span className={`pl-assess-badge ${kindCls}`}>{a.kind === "free120" ? "F120" : a.kind === "uwsa" ? "UWSA" : "NBME"}</span>
           </span>
+          {!isNext && (
+            <span className="pl-assess-date num">
+              {fmtShort(a.plannedDate)}
+              {!taken && (overdue ? <span className="pl-assess-over"> · overdue — did you take it?</span> : <span className="muted"> · {days === 0 ? "today" : `in ${days}d`}</span>)}
+            </span>
+          )}
         </div>
         <div className="pl-assess-row-bot">
           {taken ? (
@@ -638,6 +664,11 @@ function AssessmentRow({ a, date, isNext, onLog, onRemove, onUpsert }) {
           )}
         </div>
       </div>
+      {isNext && !taken && (
+        <div className="pl-assess-count">
+          {days === 0 ? <b className="today">today</b> : <><b className="num">{days}</b><span>days</span></>}
+        </div>
+      )}
       <button className="pl-assess-del" onClick={() => onRemove(a.id)} aria-label="remove"><IconClose size={12} /></button>
     </li>
   );

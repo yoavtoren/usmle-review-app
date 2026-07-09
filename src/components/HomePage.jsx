@@ -241,7 +241,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           </div>
 
           {/* F · First Aid coverage */}
-          <button className="hd-card hd-fa c4" onClick={() => nav("/fa")}>
+          <button className="hd-card hd-fa c3" onClick={() => nav("/fa")}>
             <div className="hd-ch">
               <span className="hd-ch-t"><span className="hd-ch-ico gold"><IconBook size={15} /></span> כיסוי First Aid</span>
               <IconArrow size={15} className="hd-ch-arr mir" />
@@ -289,7 +289,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           </button>
 
           {/* H · AIMS */}
-          <button className="hd-card hd-aims c4" onClick={() => nav("/aims")}>
+          <button className="hd-card hd-aims c3" onClick={() => nav("/aims")}>
             <div className="hd-aims-spine" />
             <div className="hd-ch">
               <span className="hd-ch-t"><span className="hd-ch-ico purple"><IconTarget size={15} /></span> AIMS</span>
@@ -308,7 +308,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           </button>
 
           {/* I · Quick nav */}
-          <nav className="hd-nav c8">
+          <nav className="hd-nav c12">
             <NavChip Icon={IconClipboard} label="מבחנים" stat={`${log.length} מבחנים`} onClick={() => nav("/tests")} />
             <NavChip Icon={IconBox} label="בנק שאלות" stat={`${testStats.total || 0} שאלות`} onClick={() => nav("/bank")} />
             <NavChip Icon={IconPulse} label="התקדמות" stat={`${masteredWeek} השבוע`} onClick={() => nav("/progress")} />
@@ -406,7 +406,7 @@ function JourneyGauge({ pct }) {
 // 14 slim bars embedded in the hero — gold-on-green. RTL: today = right-most.
 function LoadStrip({ days }) {
   const max = Math.max(1, ...days.map((x) => x.count));
-  const W = 560, H = 34, slot = W / 14;
+  const W = 560, H = 24, slot = W / 14;
   return (
     <svg className="hd-loadstrip" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none">
       {days.map((day, i) => {
@@ -424,8 +424,8 @@ function LoadStrip({ days }) {
 
 // Dual-line trajectory: my score vs UWorld average. RTL — newest on the left, oldest on the right.
 function Trajectory({ log }) {
-  const W = 680, H = 226;
-  const padT = 20, padB = 34, padL = 20, padR = 46;
+  const W = 1000, H = 164;
+  const padT = 16, padB = 28, padL = 16, padR = 48;
   const plotW = W - padL - padR, plotH = H - padT - padB;
   const n = log.length;
   // Dynamic domain that never clips a real point (contains e.g. 28), padded for headroom.
@@ -480,9 +480,9 @@ function Trajectory({ log }) {
       ))}
       {/* my score */}
       <path d={area} fill="url(#tgrad)" className="hd-traj-area" />
-      <path d={mineLine} fill="none" stroke="var(--accent)" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round" className="hd-traj-line" />
+      <path d={mineLine} fill="none" stroke="var(--accent)" strokeWidth="3.2" strokeLinejoin="round" strokeLinecap="round" className="hd-traj-line" />
       {mine.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="3.4" fill="var(--surface)" stroke="var(--accent)" strokeWidth="2" />
+        <circle key={i} cx={x} cy={y} r="4.2" fill="var(--surface)" stroke="var(--accent)" strokeWidth="2.4" />
       ))}
       {/* x labels (date) */}
       {log.map((t, i) => {
@@ -492,10 +492,10 @@ function Trajectory({ log }) {
         return <text key={i} x={xAt(i)} y={H - padB + 16} className="hd-axis" textAnchor="middle">{lbl}</text>;
       })}
       {/* latest emphasis */}
-      <circle cx={last[0]} cy={last[1]} r="8.5" fill="none" stroke="var(--gold-2)" strokeWidth="1.5" opacity="0.65" />
-      <circle cx={last[0]} cy={last[1]} r="4.6" fill="var(--gold-2)" stroke="var(--surface)" strokeWidth="1.6" />
-      <g transform={`translate(${last[0]}, ${last[1] - 15})`}>
-        <rect x="-17" y="-15" width="34" height="19" rx="5" fill="var(--surface)" stroke="var(--gold-mid)" />
+      <circle cx={last[0]} cy={last[1]} r="10" fill="none" stroke="var(--gold-2)" strokeWidth="1.8" opacity="0.65" />
+      <circle cx={last[0]} cy={last[1]} r="5.4" fill="var(--gold-2)" stroke="var(--surface)" strokeWidth="1.8" />
+      <g transform={`translate(${last[0]}, ${last[1] - 17})`}>
+        <rect x="-21" y="-18" width="42" height="23" rx="6" fill="var(--surface)" stroke="var(--gold-mid)" />
         <text x="0" y="-1.5" className="hd-traj-flag" textAnchor="middle">{log[n - 1].score}</text>
       </g>
     </svg>
@@ -504,8 +504,8 @@ function Trajectory({ log }) {
 
 // 14-day review bars. RTL — today (day 0) on the right. Today stacks overdue (red) under due (gold).
 function ReviewBars({ days, overdue = 0, dueToday = 0 }) {
-  const W = 440, H = 168;
-  const padT = 14, padB = 28, padL = 12, padR = 12;
+  const W = 240, H = 118;
+  const padT = 14, padB = 22, padL = 6, padR = 6;
   const plotW = W - padL - padR, plotH = H - padT - padB;
   const slot = plotW / 14;
   const max = Math.max(1, ...days.map((x) => x.count));
@@ -516,7 +516,7 @@ function ReviewBars({ days, overdue = 0, dueToday = 0 }) {
     <svg className="hd-reviewbars" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet">
       <line x1={padL} y1={base} x2={W - padR} y2={base} stroke="var(--line)" strokeWidth="1" />
       {days.map((day, i) => {
-        const bw = Math.min(16, slot - 6);
+        const bw = Math.min(11, slot - 4);
         const cx = (W - padR) - (i + 0.5) * slot;
         const x = cx - bw / 2;
         if (!day.count) return <rect key={day.ms} x={x} y={base - 2} width={bw} height="2" rx="1" fill="var(--surface-3)" />;
@@ -547,7 +547,7 @@ function ReviewBars({ days, overdue = 0, dueToday = 0 }) {
         if (!(i === 0 || i === 6 || i === 13)) return null;
         const cx = (W - padR) - (i + 0.5) * slot;
         const lbl = i === 0 ? "היום" : `+${i}`;
-        return <text key={`l${i}`} x={cx} y={base + 16} className="hd-axis" textAnchor="middle">{lbl}</text>;
+        return <text key={`l${i}`} x={cx} y={base + 14} className="hd-axis" textAnchor="middle">{lbl}</text>;
       })}
       <defs>
         <linearGradient id="rgold" x1="0" y1="0" x2="0" y2="1">
