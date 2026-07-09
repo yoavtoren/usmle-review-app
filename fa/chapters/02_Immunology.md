@@ -1,47 +1,143 @@
-# 02 Immunology — 0/36 (0%)
+# 02 Immunology — 0/132 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Lymphoid Structures — 0/5
+## 01 Lymphoid structures — 0/12
 - [ ] 01 Immune system organs
 - [ ] 02 Lymph node
-- [ ] 03 Lymph drainage associations
+  - [ ] Follicle
+  - [ ] Medulla
+  - [ ] Paracortex
+- [ ] 03 Lymphatic drainage associations
 - [ ] 04 Spleen
+  - [ ] Periarteriolar lymphatic sheath
+  - [ ] Follicle
+  - [ ] Marginal zone
 - [ ] 05 Thymus
+  - [ ] Thymoma
 
-## 02 Cellular — 0/10
+## 02 Cellular components — 0/22
 - [ ] 01 Innate vs adaptive immunity
-- [ ] 02 Major histocompatibility complex I & II
-- [ ] 03 HLA subtypes associate with diseases
-- [ ] 04 Functions of natural killer cells
-- [ ] 05 Major functions of B & T cells
-- [ ] 06 Differentiation of T cells
-- [ ] 07 Macrophage-lymphocyte interaction
-- [ ] 08 Cytotoxic T cells
-- [ ] 09 Regulatory T cells
-- [ ] 10 T- & B-cell activation
+- [ ] 02 Immune privilege
+- [ ] 03 Major histocompatibility complex I and II
+- [ ] 04 HLA subtypes associated with diseases
+  - [ ] B27
+  - [ ] DR3
+  - [ ] DR4
+- [ ] 05 Major functions of natural killer cells
+- [ ] 06 Major functions of B and T cells
+  - [ ] B cells
+  - [ ] T cells
+- [ ] 07 Differentiation of T cells
+  - [ ] Positive selection
+  - [ ] Negative selection
+- [ ] 08 Macrophage- lymphocyte interaction
+- [ ] 09 Cytotoxic T cells
+- [ ] 10 Regulatory T cells
+  - [ ] IPEX (Immune dysregulation, Polyendocrinopathy, Enteropathy, X-linked) syndrome
+- [ ] 11 T- and B-cell activation
+  - [ ] T-cell activation
+  - [ ] B-cell activation and class switching
+- [ ] 12 Anergy
 
-## 03 Immune Responses — 0/18
-- [ ] 01 Antibody structure & function
+## 03 Immune responses — 0/84
+- [ ] 01 Antibody structure and function
 - [ ] 02 Immunoglobulin isotypes
-- [ ] 03 Antigen type & memory
+  - [ ] IgG
+  - [ ] IgA
+  - [ ] IgM
+  - [ ] IgD
+  - [ ] IgE
+- [ ] 03 Antigen type and memory
+  - [ ] Thymus-independent antigens
+  - [ ] Thymus-dependent antigens
 - [ ] 04 Complement
+  - [ ] Opsonins
+  - [ ] Inhibitors
 - [ ] 05 Complement disorders
+  - [ ] Early complement deficiencies (C1–C4)
+  - [ ] Terminal complement deficiencies (C5–C9)
+  - [ ] C1 inhibitor deficiency
+  - [ ] Paroxysmal nocturnal hemoglobinuria
 - [ ] 06 Important cytokines
+  - [ ] Interleukin-1
+  - [ ] Interleukin-6
+  - [ ] Tumor necrosis factor-α
+  - [ ] Interleukin-8
+  - [ ] Interleukin-12
+  - [ ] Interleukin-2
+  - [ ] Interleukin-3
+  - [ ] Interferon-gamma
+  - [ ] Interleukin-4
+  - [ ] Interleukin-5
+  - [ ] Interleukin-10
+  - [ ] Interleukin-13
 - [ ] 07 Respiratory burst
-- [ ] 08 Interferons
+- [ ] 08 Type I interferons
 - [ ] 09 Cell surface proteins
-- [ ] 10 Anergy
-- [ ] 11 Passive vs active immunity
-- [ ] 12 Vaccination
-- [ ] 13 Hypersensitivity types
-- [ ] 14 Blood transfusion reactions
-- [ ] 15 Autoantibodies
-- [ ] 16 Immunodeficiencies
-- [ ] 17 Infections in immunodeficiency
-- [ ] 18 Transplant rejection
+  - [ ] T cells
+  - [ ] B cells
+  - [ ] NK cells
+  - [ ] Macrophages
+  - [ ] Hematopoietic stem cells
+- [ ] 10 Passive vs active immunity
+- [ ] 11 Vaccination
+  - [ ] Live attenuated vaccine
+  - [ ] Killed or inactivated vaccine
+  - [ ] Subunit, recombinant, polysaccharide, and conjugate
+  - [ ] Toxoid mRNA
+- [ ] 12 Hypersensitivity types
+  - [ ] Type I hypersensitivity
+  - [ ] Type II hypersensitivity
+  - [ ] Type III hypersensitivity
+  - [ ] Serum sickness
+  - [ ] Arthus reaction
+  - [ ] Type IV hypersensitivity
+- [ ] 13 Immunologic blood transfusion reactions
+  - [ ] Allergic/ anaphylactic reaction
+  - [ ] Acute hemolytic transfusion reaction
+  - [ ] Febrile nonhemolytic transfusion reaction
+  - [ ] Transfusion- related acute lung injury
+  - [ ] Delayed hemolytic transfusion reaction
+- [ ] 14 Autoantibodies
+- [ ] 15 Immunodeficiencies
+  - [ ] X-linked (Bruton) agammaglobulinemia
+  - [ ] Selective IgA deficiency
+  - [ ] Common variable immunodeficiency
+  - [ ] Thymic aplasia
+  - [ ] IL-12 receptor deficiency
+  - [ ] Autosomal dominant hyper-IgE syndrome
+  - [ ] (Job syndrome)
+  - [ ] Chronic mucocutaneous candidiasis
+  - [ ] Severe combined immunodeficiency
+  - [ ] Ataxia-telangiectasia
+  - [ ] Hyper-IgM syndrome
+  - [ ] Wiskott-Aldrich syndrome
+  - [ ] Leukocyte adhesion deficiency (type 1)
+  - [ ] Chédiak-Higashi syndrome
+  - [ ] Chronic granulomatous disease
+- [ ] 16 Infections in immunodeficiency
+  - [ ] Bacteria
+  - [ ] Viruses
+  - [ ] Fungi/parasites
+- [ ] 17 Transplant rejection
+  - [ ] Hyperacute
+  - [ ] Acute
+  - [ ] Chronic
+  - [ ] Graft-versus-host disease
 
-## 04 Immunosuppressants — 0/3
+## 04 Immunosuppressants — 0/14
 - [ ] 01 Immunosuppressants
-- [ ] 03 Recombinant cytokines & clinical uses
-- [ ] 04 Therapeutic antibodies
+  - [ ] Cyclosporine
+  - [ ] Tacrolimus (FK506)
+  - [ ] Sirolimus (Rapamycin)
+  - [ ] Basiliximab
+  - [ ] Azathioprine
+  - [ ] Mycophenolate mofetil
+  - [ ] Glucocorticoids
+- [ ] 02 Recombinant cytokines and clinical uses
+  - [ ] Erythropoietin
+  - [ ] Colony stimulating factors
+  - [ ] Thrombopoietin
+  - [ ] Interleukin-2
+  - [ ] Interferons

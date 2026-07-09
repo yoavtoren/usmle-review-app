@@ -1,45 +1,177 @@
-# 04 Pathology — 0/36 (0%)
+# 04 Pathology — 0/166 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Cellular Injury — 0/10
+## 01 Cellular injury — 0/37
 - [ ] 01 Cellular adaptations
+  - [ ] Hypertrophy
+  - [ ] Hyperplasia
+  - [ ] Atrophy
+  - [ ] Metaplasia
+  - [ ] Dysplasia
 - [ ] 02 Cell injury
+  - [ ] Reversible cell injury
+  - [ ] Irreversible cell injury
 - [ ] 03 Apoptosis
+  - [ ] Intrinsic (mitochondrial) pathway
+  - [ ] Extrinsic (death receptor) pathway
+  - [ ] Perforin/granzyme B pathway
 - [ ] 04 Necrosis
+  - [ ] Coagulative
+  - [ ] Liquefactive
+  - [ ] Caseous
+  - [ ] Fat
+  - [ ] Fibrinoid
+  - [ ] Gangrenous
 - [ ] 05 Ischemia
 - [ ] 06 Types of infarcts
+  - [ ] Red infarct
+  - [ ] Pale infarct
 - [ ] 07 Free radical injury
-- [ ] 08 Types of calcification
-- [ ] 09 Lipofuscin
-- [ ] 10 Amyloidosis
+- [ ] 08 Ionizing radiation toxicity
+- [ ] 09 Types of calcification
+- [ ] 10 Psammoma bodies
+- [ ] 11 Amyloidosis
+  - [ ] Primary amyloidosis
+  - [ ] Secondary amyloidosis
+  - [ ] Transthyretin amyloidosis
+  - [ ] Dialysis-related amyloidosis
+  - [ ] Alzheimer disease
+  - [ ] Isolated atrial amyloidosis
+  - [ ] Type 2 diabetes mellitus
+  - [ ] Medullary thyroid cancer
 
-## 02 Inflammation — 0/9
+## 02 Inflammation — 0/29
 - [ ] 01 Inflammation
+  - [ ] Rubor and calor
+  - [ ] Tumor
+  - [ ] Dolor
+  - [ ] Functio laesa
+  - [ ] Fever
+  - [ ] Leukocytosis q plasma acute-phase reactants
 - [ ] 02 Acute phase reactants
+  - [ ] C-reactive protein
+  - [ ] Ferritin
+  - [ ] Fibrinogen
+  - [ ] Haptoglobin
+  - [ ] Hepcidin
+  - [ ] Procalcitonin
+  - [ ] Serum amyloid A
+  - [ ] Albumin
+  - [ ] Transferrin
+  - [ ] Transthyretin
 - [ ] 03 Erythrocyte sedimentation rate
 - [ ] 04 Acute inflammation
 - [ ] 05 Leukocyte extravasation
 - [ ] 06 Chronic inflammation
 - [ ] 07 Wound healing
+  - [ ] Tissue mediators
+  - [ ] Inflammatory (up to 3 days after wound)
+  - [ ] Proliferative (day 3–weeks after wound)
+  - [ ] Remodeling (1 week–6+ months after wound)
 - [ ] 08 Granulomatous inflammation
 - [ ] 09 Scar formation
 
-## 03 Neoplasia — 0/17
-- [ ] 01 Neoplasia & neoplastic progression
+## 03 Neoplasia — 0/87
+- [ ] 01 Neoplasia and neoplastic progression
+  - [ ] Normal cells
+  - [ ] Dysplasia
+  - [ ] Carcinoma in situ/ preinvasive
+  - [ ] Invasive carcinoma
+  - [ ] Metastasis
 - [ ] 02 Tumor nomenclature
+  - [ ] Epithelium
+  - [ ] Mesenchyme
 - [ ] 03 Tumor grade vs stage
-- [ ] 04 Hallmarks of Cancer
+  - [ ] Grade
+  - [ ] Stage
+- [ ] 04 Hallmarks of cancer
+  - [ ] Growth signal self-sufficiency
+  - [ ] Anti-growth signal insensitivity
+  - [ ] Evasion of apoptosis
+  - [ ] Limitless replicative potential
+  - [ ] Sustained angiogenesis
+  - [ ] Warburg effect
+  - [ ] Immune evasion in cancer
+  - [ ] Tissue invasion
+  - [ ] Metastasis
 - [ ] 05 Immune checkpoint interactions
 - [ ] 06 Cancer epidemiology
+  - [ ] Cancer incidence
+  - [ ] Cancer mortality
 - [ ] 07 Common metastases
+  - [ ] Bone
+  - [ ] Liver
+  - [ ] Lung
+  - [ ] Brain
 - [ ] 08 Oncogenes
+  - [ ] ALK
+  - [ ] EGFR (ERBB1)
+  - [ ] HER2 (ERBB2)
+  - [ ] BCR-ABL
+  - [ ] JAK2
+  - [ ] BRAF c-KIT
+  - [ ] MYCC (c-myc)
+  - [ ] MYCN (N-myc)
+  - [ ] KRAS
+  - [ ] BCL-2
 - [ ] 09 Tumor suppressor genes
+  - [ ] APC
+  - [ ] BRCA1/BRCA2
+  - [ ] CDKN2A
+  - [ ] DCC
+  - [ ] SMAD4 (DPC4)
+  - [ ] MEN1
+  - [ ] RB1
+  - [ ] TP53
+  - [ ] TSC1
+  - [ ] TSC2
+  - [ ] WT1
 - [ ] 10 Carcinogens
 - [ ] 11 Oncogenic microbes
 - [ ] 12 Serum tumor markers
-- [ ] 13 Important immunohistochemical stains
-- [ ] 14 P-glycoprotein
-- [ ] 15 Psammoma bodies
-- [ ] 16 Cachexia
-- [ ] 17 Paraneoplastic syndromes
+  - [ ] Alkaline phosphatase fetoprotein
+  - [ ] CA15-3/CA27-29
+  - [ ] CA 19-9
+  - [ ] CA 125
+  - [ ] Calcitonin
+  - [ ] Chromogranin
+  - [ ] LDH
+  - [ ] Neuron-specific enolase
+- [ ] 13 Liquid biopsy
+- [ ] 14 Important immunohistochemical stains
+- [ ] 15 P-glycoprotein
+- [ ] 16 Paraneoplastic syndromes
+  - [ ] Dermatomyositis
+  - [ ] Acanthosis nigricans
+  - [ ] Sign of Leser-Trélat
+  - [ ] Hypertrophic osteoarthropathy
+  - [ ] Hypercalcemia
+  - [ ] Cushing syndrome
+  - [ ] Hyponatremia (SIADH)
+  - [ ] Polycythemia
+  - [ ] Pure red cell aplasia
+  - [ ] Good syndrome
+  - [ ] Trousseau syndrome
+  - [ ] Nonbacterial thrombotic endocarditis
+  - [ ] Anti-NMDA receptor encephalitis
+  - [ ] Opsoclonus- myoclonus ataxia syndrome
+  - [ ] Paraneoplastic cerebellar degeneration
+  - [ ] Paraneoplastic encephalomyelitis
+  - [ ] Lambert-Eaton myasthenic syndrome
+  - [ ] Myasthenia gravis
+
+## 04 Aging — 0/13
+- [ ] 01 Normal aging
+  - [ ] Cardiovascular
+  - [ ] Gastrointestinal
+  - [ ] Hematopoietic
+  - [ ] Immune
+  - [ ] Musculoskeletal
+  - [ ] Nervous
+  - [ ] Special senses
+  - [ ] Skin
+  - [ ] Renal
+  - [ ] Reproductive
+  - [ ] Respiratory
+- [ ] 02 Lipofuscin

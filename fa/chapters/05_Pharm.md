@@ -1,52 +1,148 @@
-# 05 Pharm — 0/41 (0%)
+# 05 Pharm — 0/137 (0%)
 
 > Tick `[x]` as you finish each topic, then run `python3 ../update_progress.py` to refresh the counts here and in the index.
 
-## 01 Pharmacokinetics Pharmacodynamics — 0/10
+## 01 Pharmacokinetics and pharmacodynamics — 0/28
 - [ ] 01 Enzyme kinetics
+  - [ ] Michaelis-Menten kinetics
+  - [ ] Lineweaver-Burk plot
 - [ ] 02 Pharmacokinetics
+  - [ ] Bioavailability (F)
+  - [ ] Volume of distribution (Vd)
+  - [ ] Clearance (CL)
+  - [ ] Half-life (t1/2)
 - [ ] 03 Dosage calculations
 - [ ] 04 Drug metabolism
 - [ ] 05 Elimination of drugs
-- [ ] 06 Urine pH drug elimination
+  - [ ] Zero-order elimination
+  - [ ] First-order elimination
+- [ ] 06 Urine pH and drug elimination
+  - [ ] Weak acids
+  - [ ] Weak bases pKa
 - [ ] 07 Efficacy vs potency
+  - [ ] Efficacy
+  - [ ] Potency
 - [ ] 08 Receptor binding
 - [ ] 09 Therapeutic index
-- [ ] 10 Types of drug interactions
+- [ ] 10 Drug effect modifications
+  - [ ] Additive
+  - [ ] Permissive
+  - [ ] Synergistic
+  - [ ] Potentiation
+  - [ ] Antagonistic
+  - [ ] Tachyphylactic
 
-## 02 Autonomic Drugs — 0/16
+## 02 Autonomic drugs — 0/85
 - [ ] 01 Autonomic receptors
 - [ ] 02 Acetylcholine receptors
-- [ ] 03 Micturition control
-- [ ] 04 G-protein-linked second messengers
-- [ ] 06 Cholinomimetic agents
-- [ ] 07 Anticholinesterase poisoning
-- [ ] 08 Muscarinic antagonists
-- [ ] 09 Atropine
-- [ ] 10 Sympathomimetics
-- [ ] 11 Norepinephrine vs isoproterenol
-- [ ] 12 Sympatholytics (a2-agonists)
-- [ ] 13 a-blockers
-- [ ] 14 b-blockers
-- [ ] 15 Phosphodiesterase inhibitors
-- [ ] 16 Ingested seafood toxins
-- [ ] 17 Beers criteria
+- [ ] 03 Pain transmission
+  - [ ] Nociceptive pain
+  - [ ] Neuropathic pain
+- [ ] 04 Micturition control
+  - [ ] Muscarinic agonists
+  - [ ] Muscarinic antagonists
+  - [ ] Sympathomimetics
+  - [ ] 1-antagonists
+- [ ] 05 Tissue distribution of adrenergic receptors
+  - [ ] 1
+  - [ ] 2
+  - [ ] 1
+  - [ ] 2
+  - [ ] 3
+- [ ] 06 G-protein–linked second messengers
+  - [ ] 2
+  - [ ] 3
+  - [ ] M1
+  - [ ] M2
+  - [ ] M3
+  - [ ] D1
+  - [ ] D2
+  - [ ] H1
+  - [ ] H2
+  - [ ] V1
+  - [ ] V2
+- [ ] 07 Autonomic drugs
+- [ ] 08 Cholinomimetic agents
+  - [ ] Bethanechol
+  - [ ] Methacholine
+  - [ ] Pilocarpine
+  - [ ] Donepezil, rivastigmine galantamine
+  - [ ] Neostigmine
+  - [ ] Pyridostigmine
+  - [ ] Physostigmine
+- [ ] 09 Anticholinesterase poisoning
+  - [ ] Muscarinic effects
+  - [ ] Nicotinic effects
+  - [ ] CNS effects
+- [ ] 10 Muscarinic antagonists
+  - [ ] Atropine, homatropine tropicamide
+  - [ ] Benztropine, trihexyphenidyl
+  - [ ] Glycopyrrolate
+  - [ ] Hyoscyamine, dicyclomine
+  - [ ] Ipratropium, tiotropium
+  - [ ] Solifenacin, Oxybutynin
+  - [ ] Flavoxate, Tolterodine
+  - [ ] Scopolamine
+- [ ] 11 Atropine
+- [ ] 12 Sympathomimetics
+  - [ ] Albuterol, salmeterol, terbutaline
+  - [ ] Dobutamine
+  - [ ] Dopamine
+  - [ ] Epinephrine
+  - [ ] Fenoldopam
+  - [ ] Isoproterenol
+  - [ ] Midodrine
+  - [ ] Mirabegron
+  - [ ] Norepinephrine
+  - [ ] Phenylephrine
+  - [ ] Amphetamine
+  - [ ] Cocaine
+  - [ ] Ephedrine
+- [ ] 13 Physiologic effects of sympathomimetics
+- [ ] 14 Sympatholytics (α2-agonists)
+  - [ ] Clonidine, guanfacine methyldopa
+  - [ ] Tizanidine
+- [ ] 15 α-blockers
+  - [ ] Phenoxybenzamine
+  - [ ] Phentolamine
+  - [ ] Prazosin, terazosin, doxazosin tamsulosin
+  - [ ] Mirtazapine
+- [ ] 16 β-blockers
+  - [ ] Phenoxybenzamine
+  - [ ] Phentolamine
+  - [ ] Prazosin, terazosin, doxazosin tamsulosin
+  - [ ] Mirtazapine
+- [ ] 17 Phosphodiesterase inhibitors
+  - [ ] Nonspecific PDE inhibitor
+  - [ ] PDE-5 inhibitors
+  - [ ] PDE-4 inhibitor
+  - [ ] PDE-3 inhibitor
+  - [ ] Platelet inhibitors”
 
-## 03 Toxicities & Side Effects — 0/13
-- [ ] 01 Specific toxicity treatments
-- [ ] 02 Drug reactions - cardiovascular
-- [ ] 03 Drug reactions - endocrine/reproductive
-- [ ] 04 Drug reactions - gastrointestinal
-- [ ] 05 Drug reactions - hematologic
-- [ ] 06 Drug reactions - MSK/skin/connect tissue
-- [ ] 07 Drug reactions - neurologic
-- [ ] 08 Drug reactions - renal/genitourinary
-- [ ] 09 Drug reactions - respiratory
-- [ ] 10 Drug reactions - multiorgan
-- [ ] 11 Drugs affecting pupil size
-- [ ] 12 Cytochrome P-450 interactions (selected)
-- [ ] 13 Sulfa drugs
+## 03 Toxicities and adverse effects — 0/18
+- [ ] 01 Ingested seafood toxins
+  - [ ] Histamine (scombroid poisoning)
+  - [ ] Tetrodotoxin
+  - [ ] Ciguatoxin
+- [ ] 02 Age-related changes in pharmacokinetics
+- [ ] 03 Specific toxicity treatments
+- [ ] 04 Drug reactions—cardiovascular
+- [ ] 05 Drug reactions—endocrine/reproductive
+- [ ] 06 Drug reactions—gastrointestinal
+- [ ] 07 Drug reactions—hematologic
+- [ ] 08 Drug reactions—musculoskeletal/skin/connective tissue
+- [ ] 09 Drug reactions—neurologic
+- [ ] 10 Drug reactions—renal/genitourinary
+- [ ] 11 Drug reactions—respiratory
+- [ ] 12 Drug reactions—multiorgan
+- [ ] 13 Drugs affecting pupil size
+- [ ] 14 Cytochrome P-450 interactions (selected)
+- [ ] 15 Sulfa drugs
 
-## 04 Misc — 0/2
+## 04 Miscellaneous — 0/6
 - [ ] 01 Drug names
+  - [ ] asvir bendazole buvir cillin conazole cycline floxacin mivir navir ovir previr tegravir thromycin case mustine platin poside rubicin taxel tecan flurane apine, -idone azine barbital benazine caine capone curium, -curonium giline ipramine, -triptyline triptan zepam, -zolam chol olol stigmine terol zosin afil dipine parin plase pril sartan xaban gliflozin glinide gliptin glitazone glutide statin caftor dronate lukast lutamide pitant prazole prost sentan setron steride tadine tidine trozole vaptan
 - [ ] 02 Biologic agents
+  - [ ] Monoclonal antibodies (-mab)
+  - [ ] Small molecule inhibitors (-ib)
+  - [ ] Interleukin receptor modulators (-kin)
