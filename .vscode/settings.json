@@ -1,4 +1,11 @@
 {
   "cssvar.files": ["src/**/*.css"],
-  "cssvar.ignore": ["**/node_modules/**", "**/dist/**", "**/ios/**"]
+  "cssvar.ignore": ["**/node_modules/**", "**/dist/**", "**/ios/**"],
+  "cssVariables.lookupFiles": ["src/**/*.css"],
+  "cssVariables.blacklistFolders": [
+    "**/node_modules",
+    "**/dist",
+    "**/ios",
+    "**/.git"
+  ]
 }
