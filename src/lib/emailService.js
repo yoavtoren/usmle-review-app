@@ -12,7 +12,6 @@
 
 import { getActiveReminders } from "./reminderEngine.js";
 import { loadAllWorkstreamTasks } from "./workstreamData.js";
-import { loadTimelineEvents } from "./timelineData.js";
 
 const CONFIG_KEY = "usmle-app:email-config-v1";
 const LOG_KEY = "usmle-app:email-log-v1";
@@ -90,11 +89,6 @@ export function buildDigest(extra = {}) {
     return d >= 0 && d <= 3;
   });
 
-  const upcoming = loadTimelineEvents()
-    .filter((e) => e.date && e.date >= today)
-    .sort((a, b) => a.date.localeCompare(b.date))
-    .slice(0, 4);
-
   const sections = [];
 
   if (typeof extra.dueReviews === "number" && extra.dueReviews > 0) {
@@ -122,13 +116,6 @@ export function buildDigest(extra = {}) {
     sections.push({
       title: `Due within 3 days (${dueSoon.length})`,
       lines: dueSoon.slice(0, 6).map((t) => `• ${t.title} — ${t.deadline}`),
-    });
-  }
-
-  if (upcoming.length) {
-    sections.push({
-      title: "On the horizon",
-      lines: upcoming.map((e) => `• ${e.date} — ${e.title}`),
     });
   }
 

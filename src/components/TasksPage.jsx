@@ -15,13 +15,7 @@ const CATEGORIES = [
     subs: ["Biochemistry","Immunology","Microbiology","Pathology","Pharmacology","Public Health",
            "Cardiovascular","Endocrine","Gastrointestinal","Heme/Onc","MSK & Skin","Neurology",
            "Psychiatry","Renal","Reproductive","Respiratory"] },
-  { id: "medschool", label: "Med School",  color: "#0E7C86",
-    subs: ["3rd year","4th year","5th year","6th year","ENT","Internal Medicine","Surgery",
-           "Neurology","Dermatology","Ophthalmology","Pharmacology"] },
   { id: "aims",      label: "AIMS",        color: "#6D4AC2", subs: [] },
-  { id: "medcross",  label: "MedCross",    color: "#C2185B", subs: ["תוכן","שיווק","פיתוח","הכנסות"] },
-  { id: "selfcare",  label: "טיפול עצמי",  color: "#1F7A52", subs: ["כושר","תזונה","שינה","מנטלי"] },
-  { id: "move",      label: "מעבר",        color: "#D97706", subs: ["פראג","ישראל","אריזה","Freemovers"] },
   { id: "personal",  label: "אישי",        color: "#565660", subs: [] },
 ];
 const catMeta = (id) => CATEGORIES.find(c => c.id === id) || null;
@@ -30,7 +24,6 @@ export { CATEGORIES, catMeta };
 const EMPTY = {
   title: "", kind: "task", date: "", endDate: "", time: "", priority: "medium", notes: "",
   category: "", subtopic: "", detail: "", contactName: "", contactInfo: "",
-  addToTimeline: false,
 };
 
 function todayStr() { return new Date().toISOString().slice(0, 10); }
@@ -57,7 +50,7 @@ export function TaskForm({ initial, onSave, onCancel }) {
     if (!f.title.trim()) return;
     // endDate only applies to multi-day events and must not precede the start.
     const endDate = isEvent && f.endDate && f.endDate >= f.date ? f.endDate : "";
-    onSave({ ...f, title: f.title.trim(), time: isEvent ? f.time : "", endDate, addToTimeline: !!f.date && !!f.addToTimeline });
+    onSave({ ...f, title: f.title.trim(), time: isEvent ? f.time : "", endDate });
   }
 
   return (
@@ -156,13 +149,6 @@ export function TaskForm({ initial, onSave, onCancel }) {
         placeholder="הערות (אופציונלי)…"
       />
 
-      <label className={`tk-timeline-toggle${f.date ? "" : " disabled"}`}>
-        <input type="checkbox" checked={!!f.addToTimeline && !!f.date} disabled={!f.date}
-          onChange={e => upd("addToTimeline", e.target.checked)} />
-        <IconCalendar size={14} />
-        <span>הוסף לציר הזמן{!f.date && <span className="tk-timeline-hint"> — דורש תאריך</span>}</span>
-      </label>
-
       <div className="tk-form-btns">
         {onCancel && <button type="button" className="tk-btn-ghost" onClick={onCancel}>ביטול</button>}
         <button type="submit" className="tk-btn-primary" disabled={!f.title.trim()}>
@@ -221,9 +207,6 @@ export function TaskRow({ task, onToggle, onEdit, onDelete }) {
             </span>
           )}
           <Breadcrumb task={task} />
-          {task.addToTimeline && task.date && (
-            <span className="tk-timeline-badge"><IconCalendar size={10} /> ציר זמן</span>
-          )}
           {task.contactName && (
             <span className="tk-contact">
               👤 {href

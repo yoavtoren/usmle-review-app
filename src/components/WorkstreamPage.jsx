@@ -1,12 +1,12 @@
 import { useState, useMemo } from "react";
 import { CATEGORIES, loadCategoryTasks, saveCategoryTasks,
          loadRhythms, saveRhythms, isRhythmDone, markRhythm } from "../lib/workstreamData.js";
-import { URGENCY_COLORS, FRONT_COLORS } from "../lib/timelineData.js";
+import { URGENCY_COLORS } from "../lib/timelineData.js";
 import { buildGCalLink } from "../lib/calendarExport.js";
 
 const URGENCIES = ["Critical", "High", "Medium", "Low"];
 const URGENCY_HE = { Critical: "קריטי", High: "גבוה", Medium: "בינוני", Low: "נמוך" };
-const CAT_ICONS  = { aims: "🎯", medcross: "🏥", selfcare: "💚" };
+const CAT_ICONS  = { aims: "🎯" };
 
 function fmtDate(d) {
   if (!d) return "";
@@ -37,15 +37,13 @@ function PersonChip({ person }) {
 // ── Task form ──────────────────────────────────────────────────────────────
 const EMPTY_FORM = {
   title: "", urgency: "High", deadline: "", tz: "Asia/Jerusalem",
-  notes: "", status: "Active", addToTimeline: true, stream: "", recurring: "",
+  notes: "", status: "Active", stream: "", recurring: "",
   people: [],
 };
 
-const CAT_LABELS = { aims: "AIMS 🎯", medcross: "MedCross 🏥", selfcare: "טיפול עצמי 💚" };
-
-function TaskForm({ initial, cat, categoryId, onSave, onCancel }) {
+function TaskForm({ initial, cat, onSave, onCancel }) {
   const [form, setForm] = useState(() => ({
-    ...EMPTY_FORM, ...(initial || {}), targetCategory: categoryId,
+    ...EMPTY_FORM, ...(initial || {}),
   }));
   const [personInput, setPersonInput] = useState({ name: "", role: "", contact: "" });
 
@@ -69,17 +67,6 @@ function TaskForm({ initial, cat, categoryId, onSave, onCancel }) {
           <input className="intake-inp" value={form.title}
             onChange={e => set("title", e.target.value)} placeholder="מה צריך לקרות?" />
         </div>
-        {initial?.id && (
-          <div className="ws-form-field">
-            <label className="ws-lbl">נושא</label>
-            <select className="intake-sel" value={form.targetCategory}
-              onChange={e => set("targetCategory", e.target.value)}>
-              {Object.entries(CAT_LABELS).map(([id, label]) => (
-                <option key={id} value={id}>{label}</option>
-              ))}
-            </select>
-          </div>
-        )}
         <div className="ws-form-field">
           <label className="ws-lbl">דחיפות</label>
           <select className="intake-sel" value={form.urgency} onChange={e => set("urgency", e.target.value)}>
@@ -116,13 +103,6 @@ function TaskForm({ initial, cat, categoryId, onSave, onCancel }) {
             <option value="daily">יומי</option>
             <option value="weekly">שבועי</option>
           </select>
-        </div>
-        <div className="ws-form-field ws-form-full" style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-          <input type="checkbox" id="ws-tl-cb" checked={!!form.addToTimeline}
-            onChange={e => set("addToTimeline", e.target.checked)} />
-          <label htmlFor="ws-tl-cb" className="ws-lbl" style={{ cursor: "pointer", marginBottom: 0 }}>
-            הוסף לציר זמן (רק אם נקבע מועד)
-          </label>
         </div>
         <div className="ws-form-field ws-form-full">
           <label className="ws-lbl">הערות</label>
@@ -175,7 +155,6 @@ function TaskCard({ task, cat, onEdit, onDelete, onToggleStatus }) {
     ? { ...task, title: `[${cat.title}] ${task.title}`, date: task.deadline, note: task.notes }
     : null;
   const gcal = gcalItem ? buildGCalLink(gcalItem) : null;
-  const showGCalTip = cat.frontKey === "selfcare" && gcal;
 
   return (
     <div className={`ws-task-card${isDone ? " ws-task-done" : ""}${isOverdue ? " ws-task-overdue" : ""}`}
@@ -205,18 +184,10 @@ function TaskCard({ task, cat, onEdit, onDelete, onToggleStatus }) {
             {isOverdue ? "⚠ " : "📅 "}{fmtDate(task.deadline)}
           </span>
         )}
-        {task.addToTimeline && task.deadline && (
-          <span className="ws-tl-badge" style={{ background: cat.accent+"18", color: cat.accent, borderColor: cat.accent+"44" }}>
-            ציר זמן
-          </span>
-        )}
         {gcal && (
           <a className="ws-gcal-link" href={gcal} target="_blank" rel="noopener noreferrer">📅 GCal</a>
         )}
       </div>
-      {showGCalTip && (
-        <div className="ws-gcal-tip muted">טיפ: ביומן Google הגדר כירוק (Basil).</div>
-      )}
       {task.people?.length > 0 && (
         <div className="ws-task-people">
           {task.people.map((p, i) => <PersonChip key={i} person={p} />)}
@@ -310,21 +281,12 @@ export default function WorkstreamPage({ categoryId }) {
   function persist(next) { setAllTasks(next); saveCategoryTasks(categoryId, next); }
 
   function handleSave(form) {
-    const { targetCategory, ...taskFields } = form;
-    if (editingTask && targetCategory && targetCategory !== categoryId) {
-      // Move to a different category
-      persist(allTasks.filter(t => t.id !== editingTask.id));
-      const destTasks = loadCategoryTasks(targetCategory);
-      const moved = { ...editingTask, ...taskFields, category: targetCategory, stream: "" };
-      saveCategoryTasks(targetCategory, [...destTasks, moved]);
-    } else {
-      const task = editingTask
-        ? { ...editingTask, ...taskFields }
-        : { ...taskFields, id: `${categoryId}-${Date.now()}`, category: categoryId };
-      persist(editingTask
-        ? allTasks.map(t => t.id === editingTask.id ? task : t)
-        : [...allTasks, task]);
-    }
+    const task = editingTask
+      ? { ...editingTask, ...form }
+      : { ...form, id: `${categoryId}-${Date.now()}`, category: categoryId };
+    persist(editingTask
+      ? allTasks.map(t => t.id === editingTask.id ? task : t)
+      : [...allTasks, task]);
     setShowForm(false); setEditing(null);
   }
   function handleDelete(id) { persist(allTasks.filter(t => t.id !== id)); }
@@ -413,7 +375,6 @@ export default function WorkstreamPage({ categoryId }) {
         <TaskForm
           initial={editingTask}
           cat={cat}
-          categoryId={categoryId}
           onSave={handleSave}
           onCancel={() => { setShowForm(false); setEditing(null); }}
         />
@@ -520,9 +481,7 @@ export default function WorkstreamPage({ categoryId }) {
 
       {/* Footer */}
       <div className="ws-footer muted small">
-        משימות עם מועד + "הוסף לציר זמן" מופיעות אוטומטית בציר הזמן.
-        ייצא .ics מציר הזמן לתזכורות ביומן Google.
-        {categoryId === "selfcare" && " · פריטים ירוקים: הגדר ל-Basil ביומן Google לעקביות צבע."}
+        למשימות עם מועד לחץ "📅 GCal" כדי להוסיף ליומן Google.
       </div>
     </div>
   );

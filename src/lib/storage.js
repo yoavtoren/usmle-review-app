@@ -293,7 +293,41 @@ export function saveGeneralTasks(tasks) {
 // ── FA topic manual tracking ──────────────────────────────────────────────────
 const FA_TOPICS_KEY = "fa-topics-v2";
 
+// One-time remap of topic keys after the FA tracker was reconciled against the
+// real First Aid 2025 book (renumbered sections/topics, fixed names, merges).
+// Each entry maps an old `file::section::topic` key to its new key so existing
+// progress (done state, difficulty, reviews) survives the rename. See
+// faMigration.json (generated from the book) for the full mapping.
+import FA_KEY_MIGRATION from "./faMigration.json";
+const FA_MIGRATION_FLAG = "fa-topics-migrated-v3";
+let _faMigrated = false;
+function ensureFAMigration() {
+  if (_faMigrated) return;
+  _faMigrated = true;
+  try {
+    if (localStorage.getItem(FA_MIGRATION_FLAG)) return;
+    const raw = localStorage.getItem(FA_TOPICS_KEY);
+    if (raw) {
+      const t = JSON.parse(raw) || {};
+      // Collect every move first, delete all old keys, THEN write the new keys.
+      // Section renumbering permutes keys (e.g. a topic at 07→08 while another
+      // goes 09→07), so an in-place move would clobber; two passes avoid that.
+      const moves = [];
+      for (const [oldK, newK] of Object.entries(FA_KEY_MIGRATION)) {
+        if (t[oldK] !== undefined) moves.push([oldK, newK, t[oldK]]);
+      }
+      if (moves.length) {
+        for (const [oldK] of moves) delete t[oldK];
+        for (const [, newK, val] of moves) if (t[newK] === undefined) t[newK] = val;
+        localStorage.setItem(FA_TOPICS_KEY, JSON.stringify(t));
+      }
+    }
+    localStorage.setItem(FA_MIGRATION_FLAG, "1");
+  } catch { /* never block reads on a migration hiccup */ }
+}
+
 export function loadFATopics() {
+  ensureFAMigration();
   try { return JSON.parse(localStorage.getItem(FA_TOPICS_KEY)) || {}; }
   catch { return {}; }
 }
@@ -465,6 +499,33 @@ export function getMasteredThisWeek() {
   const progress = loadProgress();
   const weekAgo = Date.now() - 7 * DAY;
   return Object.values(progress).filter(c => c.status === "mastered" && c.lastReviewed >= weekAgo).length;
+}
+
+// ── One-time cleanup of removed areas ─────────────────────────────────────
+// The app was scoped down to USMLE Step 1 + AIMS + personal tasks. This wipes
+// any previously-saved tasks/events from the removed life-management areas
+// (and resets AIMS + personal tasks to empty), so the only thing left is your
+// USMLE study progress + test scores. Runs exactly once per browser.
+const CLEANUP_FLAG = "usmle-app:cleanup-scope-v1";
+const CLEARED_ON_CLEANUP = [
+  "usmle-app:aims-tasks-v2",      // AIMS tasks (reset to empty)
+  "usmle-app:medcross-tasks-v2",  // removed area
+  "usmle-app:selfcare-tasks-v2",  // removed area
+  "usmle-app:tl-events-v2",       // timeline events (removed)
+  "usmle-app:rhythms-v1",         // workstream rhythms
+  "usmle-app:goals-done-v1",      // timeline goals (removed)
+  "usmle-app:events-done-v1",     // timeline events (removed)
+  "usmle-app:reminder-state-v1",  // reminder dismiss/snooze state
+  "general-tasks-v1",             // personal tasks (reset to empty)
+  "medschool-v5",                 // Med School (removed)
+];
+
+export function cleanupRemovedAreas() {
+  try {
+    if (localStorage.getItem(CLEANUP_FLAG)) return;
+    for (const k of CLEARED_ON_CLEANUP) localStorage.removeItem(k);
+    localStorage.setItem(CLEANUP_FLAG, "1");
+  } catch { /* never block startup on a cleanup hiccup */ }
 }
 
 // ── JSON export / import ──────────────────────────────────────────────────

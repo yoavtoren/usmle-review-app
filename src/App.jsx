@@ -5,24 +5,16 @@ import TestDashboard from "./components/TestDashboard.jsx";
 import TestReview from "./components/TestReview.jsx";
 import FADashboard from "./components/FADashboard.jsx";
 import FATracker from "./components/FATracker.jsx";
-import Timeline from "./components/Timeline.jsx";
 import AIMSDashboard from "./components/AIMSDashboard.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import ReminderToasts, { PopCenter } from "./components/ReminderToasts.jsx";
 import EmailCenter from "./components/EmailCenter.jsx";
 import { loadProgress, getCard, isDueRespectingMode, getStreak } from "./lib/storage.js";
 import { getDueCount } from "./lib/reminderEngine.js";
-import { generateICS, downloadICS } from "./lib/calendarExport.js";
-import { loadTimelineEvents } from "./lib/timelineData.js";
-import { loadAllWorkstreamTasks } from "./lib/workstreamData.js";
 import { maybeSendDailyDigest } from "./lib/emailService.js";
-import WorkstreamPage from "./components/WorkstreamPage.jsx";
 import HomePage from "./components/HomePage.jsx";
-import MedSchoolHub from "./components/MedSchoolHub.jsx";
-import MedSchoolSubject from "./components/MedSchoolSubject.jsx";
 import FirstAidBook from "./components/FirstAidBook.jsx";
 import TasksPage from "./components/TasksPage.jsx";
-import MovePage from "./components/MovePage.jsx";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -90,13 +82,8 @@ export default function App() {
     maybeSendDailyDigest({ dueReviews: reviewDue }).catch(() => {});
   }, [reviewDue]);
 
-  function handleExportICS() {
-    const ics = generateICS(loadTimelineEvents(), loadAllWorkstreamTasks());
-    downloadICS(ics);
-  }
-
-  // Step 1 & Med School are English / left-to-right; everything else is Hebrew / right-to-left.
-  const isEnglishArea = /^\/(step1|tests|fa|medschool)(\/|$)/.test(loc.pathname);
+  // Step 1 is English / left-to-right; everything else is Hebrew / right-to-left.
+  const isEnglishArea = /^\/(step1|tests|fa)(\/|$)/.test(loc.pathname);
   const areaDir  = isEnglishArea ? "ltr" : "rtl";
   const areaLang = isEnglishArea ? "en" : "he";
 
@@ -146,16 +133,8 @@ export default function App() {
               <FATracker onBack={() => nav("/fa")} />
             } />
             <Route path="/fa/book" element={<FirstAidBook />} />
-            <Route path="/timeline" element={
-              <Timeline onExportICS={handleExportICS} />
-            } />
             <Route path="/tasks" element={<TasksPage />} />
-            <Route path="/move" element={<MovePage />} />
             <Route path="/aims"     element={<AIMSDashboard />} />
-            <Route path="/medcross"  element={<WorkstreamPage categoryId="medcross" />} />
-            <Route path="/selfcare"  element={<WorkstreamPage categoryId="selfcare" />} />
-            <Route path="/medschool" element={<MedSchoolHub />} />
-            <Route path="/medschool/subject/:subjectId" element={<MedSchoolSubject />} />
             <Route path="*" element={
               <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} />
             } />

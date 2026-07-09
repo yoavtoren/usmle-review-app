@@ -1,10 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { PHASES } from "../lib/timelineData.js";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
-import { loadMedSchool } from "../lib/medSchoolData.js";
 import {
-  IconDash, IconCalendar, IconTarget, IconPulse, IconHeart, IconCap,
-  IconArrow, IconFlame, IconClock, IconSparkle, IconCheck,
+  IconDash, IconTarget,
+  IconArrow, IconFlame, IconClock,
 } from "./icons.jsx";
 
 const EXAM_DATE = new Date("2026-10-11T00:00:00Z");
@@ -12,11 +10,6 @@ const JOURNEY_START = new Date("2026-06-10T00:00:00Z");
 
 function daysUntilExam() {
   return Math.ceil((EXAM_DATE - new Date()) / 86400000);
-}
-
-function currentPhase() {
-  const t = new Date().toISOString().slice(0, 10);
-  return PHASES.find((p) => t >= p.start && t <= p.end) || null;
 }
 
 function taskStats(categoryId) {
@@ -35,24 +28,9 @@ function taskStats(categoryId) {
 export default function HomePage({ testStats, faStats, streak }) {
   const nav = useNavigate();
   const days = daysUntilExam();
-  const phase = currentPhase();
   const testPct = testStats.total > 0 ? Math.round((testStats.mastered / testStats.total) * 100) : 0;
-  const faPct = faStats.total > 0 ? Math.round((faStats.seen / faStats.total) * 100) : 0;
 
   const aims = taskStats("aims");
-  const medcross = taskStats("medcross");
-  const selfcare = taskStats("selfcare");
-
-  const msSubjects = (() => {
-    try {
-      const all = loadMedSchool();
-      const y4 = all.filter((s) => s.year === 4);
-      const notesCount = y4.filter((s) => s.notes?.trim()).length;
-      return { total: y4.length, notesCount };
-    } catch {
-      return { total: 0, notesCount: 0 };
-    }
-  })();
 
   // Journey progress (days elapsed of the total run to exam)
   const totalSpan = Math.max(1, Math.round((EXAM_DATE - JOURNEY_START) / 86400000));
@@ -62,42 +40,11 @@ export default function HomePage({ testStats, faStats, streak }) {
   // Secondary section cards (the featured Step 1 panel is rendered separately)
   const sections = [
     {
-      id: "timeline", to: "/timeline", Icon: IconCalendar, title: "ציר זמן",
-      tint: "#0E7C86", tint2: "#14A0AD",
-      stats: phase
-        ? [{ val: phase.name, lbl: "שלב נוכחי" }, { val: days > 0 ? days : "—", lbl: "ימים" }]
-        : [{ val: days > 0 ? days : "—", lbl: "ימים לבחינה" }],
-    },
-    {
-      id: "medschool", to: "/medschool", Icon: IconCap, title: "Med School",
-      tint: "#4F46E5", tint2: "#6D5DF0",
-      stats: [
-        { val: msSubjects.total, lbl: "נושאים" },
-        { val: msSubjects.notesCount, lbl: "עם הערות" },
-      ],
-    },
-    {
       id: "aims", to: "/aims", Icon: IconTarget, title: "AIMS",
       tint: "#6D4AC2", tint2: "#8A66E0",
       stats: [
         { val: aims.active, lbl: "מטלות" },
         ...(aims.overdue > 0 ? [{ val: aims.overdue, lbl: "באיחור", alert: true }] : []),
-      ],
-    },
-    {
-      id: "medcross", to: "/medcross", Icon: IconPulse, title: "MedCross",
-      tint: "#C2185B", tint2: "#E84393",
-      stats: [
-        { val: medcross.active, lbl: "מטלות" },
-        ...(medcross.overdue > 0 ? [{ val: medcross.overdue, lbl: "באיחור", alert: true }] : []),
-      ],
-    },
-    {
-      id: "selfcare", to: "/selfcare", Icon: IconHeart, title: "טיפול עצמי",
-      tint: "#1F7A52", tint2: "#2EA372",
-      stats: [
-        { val: selfcare.active, lbl: "מטלות" },
-        { val: faPct + "%", lbl: "FA" },
       ],
     },
   ];
@@ -122,7 +69,7 @@ export default function HomePage({ testStats, faStats, streak }) {
             <h1 className="home-h1">{greeting}, יואב</h1>
             <p className="home-lede">
               {days > 0
-                ? <>נותרו <em>{days}</em> ימים ל‑Step 1. {phase ? `אתה ב${phase.name}.` : ""}</>
+                ? <>נותרו <em>{days}</em> ימים ל‑Step 1.</>
                 : "המסע נמשך — צעד אחד היום."}
             </p>
             <div className="home-hero3-pills">
@@ -131,9 +78,6 @@ export default function HomePage({ testStats, faStats, streak }) {
               )}
               {testStats.due > 0 && (
                 <div className="home-pill accent"><IconClock size={15} /> {testStats.due} לביקורת היום</div>
-              )}
-              {phase && (
-                <div className="home-pill"><IconSparkle size={15} /> {phase.name}</div>
               )}
             </div>
           </div>

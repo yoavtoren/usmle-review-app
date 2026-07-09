@@ -1,4 +1,4 @@
-import { loadTimelineEvents, loadReminderState, saveReminderState } from './timelineData.js';
+import { loadReminderState, saveReminderState } from './timelineData.js';
 import { loadAllWorkstreamTasks, CATEGORIES } from './workstreamData.js';
 
 // ── Timezone helper ───────────────────────────────────────────────────────
@@ -46,30 +46,8 @@ const DEFAULT_REMINDERS = {
   blocker:         [],
 };
 
-// Hardcoded nudges per event/task id
-const NUDGES = {
-  // Timeline events (blunt)
-  "ev-ent":          (w, s) => `ENT oral ${w}. Do one 10-min out-loud Q&A round with Angela now.`,
-  "ev-lease":        (w, s) => `Prague lease: ${w} left. ${s ? "You must be out." : "Book the donation pickup today."}`,
-  "ev-step1":        (w, s) => `Step 1 ${w}. ${s ? "Sit the exam." : "Open a fresh NBME and schedule it."}`,
-  "ev-block":        (w, s) => `Dedicated block starts ${w}. ${s ? "Reset schedule. 12h/day starts now." : "Finish all logistics before it begins."}`,
-  "ev-aims-bizplan": (w, s) => `AIMS event ${w}. ${s ? "Be there, AIMS mode all day." : "Book the prep meetings now."}`,
-  "ev-aims-panel":   (w, s) => `AIMS panel ${w}. ${s ? "Speech finalized?" : "Draft the speech outline today."}`,
-  "ev-movein":       (w, s) => `Israel flat move target ${w}. ${s ? "Last logistics today." : "Start coordinating the move."}`,
-  "ev-flight":       (w, s) => `Flight booking deadline ${w}. Book now — prices only go up.`,
-  "ev-contracts":    (w, s) => `Internet/phone contracts end ${w}. Check the notice period today.`,
-  "ev-sell":         (w, s) => `Start selling furniture ${w}. List one item online right now.`,
-  // MedCross (creative)
-  "mc-fake":    (w, s) => "Audit follower quality — real reach beats vanity numbers.",
-  "mc-batch":   (w, s) => "Batch 3 puzzle videos this morning while you're fresh.",
-  "mc-launch":  (w, s) => `MedCross launch ${w}. Is your content backlog ready?`,
-  "mc-revenue": (w, s) => "Map one path to first revenue this week.",
-  // Self-care (warm)
-  "sc-weekly":       (w, s) => "Carve out one phones-down moment with Angela this week — it's your anchor.",
-  "sc-move-support": (w, s) => `Angela's move support deadline ${w}. Take one concrete load off her plate today.`,
-  "sc-gesture":      (w, s) => "Plan a small, specific gesture for Angela this week. Attention > money.",
-  "sc-doctor":       (w, s) => "Book that GERD appointment. You deserve to feel better in the mornings.",
-};
+// Hardcoded nudges per task id (optional; falls back to the tone template).
+const NUDGES = {};
 
 const TONE_FALLBACK = {
   blunt:    (title, w) => `${title} — ${w}. Take one concrete step now.`,
@@ -114,12 +92,7 @@ export function getActiveReminders() {
     }
   }
 
-  // Timeline events
-  for (const ev of loadTimelineEvents().filter(e => e.date)) {
-    check(ev, ev.date, ev.tz, ev.reminders);
-  }
-
-  // All workstream tasks (aims + medcross + selfcare)
+  // Workstream tasks (AIMS)
   for (const t of loadAllWorkstreamTasks()) {
     if (!t.deadline || t.status !== 'Active' || t.recurring) continue;
     check(
