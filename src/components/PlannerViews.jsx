@@ -1,6 +1,10 @@
 import { useMemo, useState } from "react";
 import { projectSchedule, calendarModel, todayISO } from "../lib/scheduler.js";
 import { IconCheck, IconCalendar } from "./icons.jsx";
+import { colorFor, TRACKS } from "../lib/subjectColors.js";
+
+// Subject color/emoji for a plan unit (falls back to raw system string).
+const unitColor = (u) => colorFor(u?.colorKey || u?.system);
 
 /* ═══════════════════════════ shared date helpers ═══════════════════════════ */
 const DAY = 86400000;
@@ -175,15 +179,18 @@ export function CalendarView({ sched, units, nav }) {
     const m = model[iso];
     const evs = [];
     if (m) {
-      for (const k of m.completed) evs.push({ tone: "ok", label: cleanName(byKey[k]?.subsection), sub: byKey[k]?.system, tag: "done" });
-      for (const k of m.missed) evs.push({ tone: "bad", label: cleanName(byKey[k]?.subsection), sub: byKey[k]?.system, tag: "missed" });
+      const ev = (tone, k, tag) => ({ tone, label: cleanName(byKey[k]?.subsection), sub: byKey[k]?.system, tag, color: unitColor(byKey[k]).hex, emoji: unitColor(byKey[k]).emoji });
+      for (const k of m.completed) evs.push(ev("ok", k, "done"));
+      for (const k of m.missed) evs.push(ev("bad", k, "missed"));
       for (const k of (m.planned || [])) {
         if (m.completed.includes(k) || m.missed.includes(k)) continue;
-        evs.push({ tone: "gold", label: cleanName(byKey[k]?.subsection), sub: byKey[k]?.system, tag: "planned" });
+        evs.push(ev("gold", k, "planned"));
       }
-      for (const k of (m.projected || [])) evs.push({ tone: "muted", label: cleanName(byKey[k]?.subsection), sub: byKey[k]?.system, tag: "projected" });
-      for (const a of (m.assessments || [])) evs.push({ tone: "purple", label: a.label, sub: a.takenDate ? `logged ${a.actual}` : "checkpoint", tag: "assessment" });
-      if (m.ankiDone) evs.push({ tone: "ok", label: "Anki cleared", tag: "anki" });
+      for (const k of (m.projected || [])) evs.push(ev("muted", k, "projected"));
+      // 🎯 the reserved animated UWorld daily block, if planned that day
+      if (m.uworld) evs.push({ tone: "uworld", label: "UWorld block", sub: m.uworld.system, tag: "uworld", emoji: TRACKS.uworld.emoji, track: "uworld" });
+      for (const a of (m.assessments || [])) evs.push({ tone: "purple", label: a.label, sub: a.takenDate ? `logged ${a.actual}` : "checkpoint", tag: "assessment", emoji: TRACKS.assessment.emoji, track: "assessment" });
+      if (m.ankiDone) evs.push({ tone: "ok", label: "Anki cleared", tag: "anki", emoji: TRACKS.anki.emoji });
     }
     for (const t of (sched.tasks || [])) {
       if (t.dueISO === iso && !t.done) evs.push({ tone: "accent", label: t.text, tag: "task" });
@@ -264,7 +271,10 @@ function MonthGrid({ cursor, today, eventsFor, onDay }) {
               <span className="plc-cell-num">{d.getDate()}</span>
               <span className="plc-cell-events">
                 {evs.slice(0, 3).map((e, i) => (
-                  <span key={i} className={`plc-chip ${e.tone}`}>{e.label}</span>
+                  <span key={i} className={`plc-chip ${e.tone}${e.track ? ` track-${e.track}` : ""}`}
+                    style={e.color && !e.track ? { borderLeft: `3px solid ${e.color}` } : undefined}>
+                    {e.emoji ? `${e.emoji} ` : ""}{e.label}
+                  </span>
                 ))}
                 {evs.length > 3 && <span className="plc-more">+{evs.length - 3} more</span>}
               </span>
@@ -297,8 +307,9 @@ function WeekGrid({ cursor, today, eventsFor, onDay }) {
             <div className="plc-wcol-body">
               {evs.length === 0 && <span className="plc-wcol-empty">·</span>}
               {evs.map((e, i) => (
-                <span key={i} className={`plc-event ${e.tone}`}>
-                  <b>{e.label}</b>{e.sub && <em>{e.sub}</em>}
+                <span key={i} className={`plc-event ${e.tone}${e.track ? ` track-${e.track}` : ""}`}
+                  style={e.color && !e.track ? { borderLeft: `3px solid ${e.color}` } : undefined}>
+                  <b>{e.emoji ? `${e.emoji} ` : ""}{e.label}</b>{e.sub && <em>{e.sub}</em>}
                 </span>
               ))}
             </div>
@@ -313,6 +324,7 @@ function DayView({ cursor, today, eventsFor, sched, nav }) {
   const evs = eventsFor(cursor);
   const groups = [
     ["assessment", "Checkpoint"],
+    ["uworld", "UWorld block"],
     ["done", "Completed"],
     ["planned", "Planned"],
     ["projected", "Projected ahead"],
@@ -336,9 +348,9 @@ function DayView({ cursor, today, eventsFor, sched, nav }) {
           <div key={tag} className="plc-day-group">
             <div className="plc-day-group-h">{label} <span className="plc-day-group-n">{items.length}</span></div>
             {items.map((e, i) => (
-              <div key={i} className={`plc-day-item ${e.tone}`}>
-                <span className="plc-day-dot" />
-                <span className="plc-day-item-lbl">{e.label}</span>
+              <div key={i} className={`plc-day-item ${e.tone}${e.track ? ` track-${e.track}` : ""}`}>
+                <span className="plc-day-dot" style={e.color && !e.track ? { background: e.color } : undefined} />
+                <span className="plc-day-item-lbl">{e.emoji ? `${e.emoji} ` : ""}{e.label}</span>
                 {e.sub && <span className="plc-day-item-sub muted">{e.sub}</span>}
               </div>
             ))}

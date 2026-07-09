@@ -84,7 +84,7 @@ const DEFAULT_SETTINGS = {
   // hard, marquee systems to the front. No foundation gating anymore.
   weights: {
     yield: 1.0, size: 0.9, hard: 0.8, weak: 1.3,
-    urgency: 0.9, spacing: 0.5, interleave: 0.4,
+    lead: 2.0, urgency: 0.9, spacing: 0.5, interleave: 0.4,
   },
   // Fraction of the non-Anki budget carved out for the daily 🎯 UWorld block and
   // the 🧊 basics interleave; the rest is the 🔥 anchor (marquee system) budget.
@@ -164,7 +164,7 @@ export function migrate(raw) {
   // ensure size/hard weights + trackSplit exist and drop the retired foundation
   // weight. Idempotent — only fills what's missing.
   const w = state.settings.weights || {};
-  if (w.size == null || w.hard == null || w.foundation != null) {
+  if (w.size == null || w.hard == null || w.lead == null || w.foundation != null) {
     const { foundation, ...rest } = w;
     state.settings = {
       ...state.settings,
@@ -574,6 +574,16 @@ function interleaveBonus(u, recentSystems) {
 // they ride the separate basics-interleave budget in planDay. size + hard push
 // the biggest, hardest marquee systems up; weak (largest weight) keeps your
 // wrong-answer topics resurfacing so they win ties even against fresh content.
+// Anchor-rotation bonus: earlier-leadWeek marquee systems surface first (Cardio
+// opens), then unlock in order as each completes and leaves the pool. Basics have
+// no leadWeek — they ride the separate basics-interleave budget in planDay, so
+// they get no rotation bonus. Weak/urgency can still pull a later system forward.
+const MAX_LEAD_WEEK = 6;
+function anchorLead(W, u) {
+  if (u.track !== "anchor" || u.leadWeek == null) return 0;
+  return W.lead * (1 - Math.min(u.leadWeek, MAX_LEAD_WEEK) / MAX_LEAD_WEEK);
+}
+
 export function priority(state, units, u, dateISO, recentSystems = []) {
   const W = state.settings.weights;
   const st = state.units[u.key] || {};
@@ -582,6 +592,7 @@ export function priority(state, units, u, dateISO, recentSystems = []) {
     W.size * (u.sizeRank || 0) +
     W.hard * (u.hardness || 0) +
     W.weak * (st.weaknessScore || 0) +
+    anchorLead(W, u) +
     W.urgency * urgency(state, units, u, dateISO) +
     W.spacing * spacingReadiness(state, u) +
     W.interleave * interleaveBonus(u, recentSystems)
@@ -1007,7 +1018,7 @@ export function calendarModel(state, units, { pastDays = 120, futureFromISO = to
       completed: (d.completed || []).filter((k) => byKey[k]),
       missed: (d.missed || []).filter((k) => byKey[k]),
       planned: (d.planned || []).filter((k) => byKey[k]),
-      ankiDone: !!d.ankiDone, projected: [], real: true,
+      ankiDone: !!d.ankiDone, uworld: d.uworld || null, projected: [], real: true,
     };
   }
 

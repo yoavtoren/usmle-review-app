@@ -12,9 +12,10 @@ import {
   applyTriage, ankiNewCardHint, updateSettings, exportSched, importSched,
   setGoal, seedAssessments, upsertAssessment, logAssessment, removeAssessment,
   addTask, toggleTask, deleteTask, projectReadiness, effectiveTarget,
-  pctToPredicted3, predicted3ToPct, toPredicted3,
+  pctToPredicted3, predicted3ToPct, toPredicted3, recordUworld,
   todayISO, REASONS,
 } from "../lib/scheduler.js";
+import { colorFor, TRACKS } from "../lib/subjectColors.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -87,6 +88,7 @@ export default function Planner() {
   const onUpsertAssessment = (a) => mutate((s) => upsertAssessment(s, a));
   const onRemoveAssessment = (id) => mutate((s) => removeAssessment(s, id));
   const onResetSchedule = () => mutate((s) => seedAssessments(s, { force: true }));
+  const onLogUworld = (result) => { recordActivity(); mutate((s) => recordUworld(s, units, result, date)); };
   const onAddTask = (text, opts) => { recordActivity(); mutate((s) => addTask(s, text, opts)); };
   const onToggleTask = (id) => { recordActivity(); mutate((s) => toggleTask(s, id)); };
   const onDeleteTask = (id) => mutate((s) => deleteTask(s, id));
@@ -190,11 +192,14 @@ export default function Planner() {
             states={sched.units}
           />
 
-          {/* Question practice (folds the UWorld block + bank/tests links) */}
-          <PracticeCard
-            minutes={today?.uworldMin || 0} phase={sched.phase}
-            weakSystem={topWeakSystem(sched, units)} nav={nav}
+          {/* 🎯 Daily UWorld block — reserved animated track, can't be skipped */}
+          <UworldBlock
+            uworld={today?.uworld} minutes={today?.uworldMin || 0} phase={sched.phase}
+            byKey={byKey} onLog={onLogUworld}
           />
+
+          {/* Question practice (bank / tests links) */}
+          <PracticeCard nav={nav} />
         </>
       )}
 
@@ -302,12 +307,14 @@ function ActiveTask({ unit, state, onDone, onMiss, blockMinutes, dedicated }) {
   const slipped = (state?.postponeCount || 0) >= 3;
   const blocks = Math.max(1, Math.round(unit.estMinutes / blockMinutes));
 
+  const c = colorFor(unit.colorKey || unit.system);
+  const trackLabel = unit.track === "basics" ? "🧊 Basics" : "🔥 Anchor";
   return (
     <div className={`pl-card pl-active${weak ? " weak" : ""}`}>
-      <div className="pl-active-rail" style={{ background: yieldColor(unit.yieldWeight) }} />
+      <div className="pl-active-rail" style={{ background: c.hex }} />
       <div className="pl-active-body">
         <div className="pl-active-top">
-          <span className="pl-active-kicker">{dedicated ? "Targeted review" : "Now"} · {unit.system}</span>
+          <span className="pl-active-kicker">{dedicated ? "Targeted review" : trackLabel} · <span className="pl-subj-emoji">{c.emoji}</span>{unit.system}</span>
           <YieldStars n={unit.yieldWeight} />
         </div>
         <h2 className="pl-active-title">{unit.chapter.replace(/^\d+\s/, "")} <span className="pl-sep">›</span> {unit.subsection.replace(/^\d+\s/, "")}</h2>
@@ -368,9 +375,11 @@ function UpNext({ keys, byKey, states }) {
           {keys.map((k) => {
             const u = byKey[k]; if (!u) return null;
             const weak = (states[k]?.weaknessScore || 0) >= 0.4;
+            const c = colorFor(u.colorKey || u.system);
             return (
               <li key={k} className="pl-upnext-item">
-                <span className="pl-upnext-dot" style={{ background: yieldColor(u.yieldWeight) }} />
+                <span className="pl-upnext-dot" style={{ background: c.hex }} />
+                <span className="pl-subj-emoji">{c.emoji}</span>
                 <span className="pl-upnext-name">{u.chapter.replace(/^\d+\s/, "")} <span className="pl-sep">›</span> {u.subsection.replace(/^\d+\s/, "")}</span>
                 {weak && <span className="pl-upnext-flag">weak</span>}
                 <span className="pl-upnext-min num">{u.estMinutes}m</span>
@@ -383,25 +392,78 @@ function UpNext({ keys, byKey, states }) {
   );
 }
 
-/* ─────────────────────────── question practice ─────────────────────────── */
-function PracticeCard({ minutes, phase, weakSystem, nav }) {
+/* ─────────────────────────── 🎯 daily UWorld block ─────────────────────────── */
+// The reserved, animated (can't-miss) daily UWorld item. Do the block, then log
+// correct/total and tap the subject chips you missed — misses raise those units'
+// weakness and become tomorrow's "study this miss" targets (§16).
+function UworldBlock({ uworld, minutes, phase, byKey, onLog }) {
   const dedicated = phase === "dedicated";
-  const qCount = dedicated ? 40 : Math.max(10, Math.round(minutes / 1.5));
+  const uw = uworld || {};
+  const [correct, setCorrect] = useState("");
+  const [total, setTotal] = useState(String(uw.targetQ || (dedicated ? 40 : 20)));
+  const [missed, setMissed] = useState([]);
+
+  const qCount = uw.targetQ || (dedicated ? 40 : Math.max(10, Math.round(minutes / 1.5)));
+  const systems = Array.from(new Set(Object.values(byKey).map((u) => u.system))).sort();
+  const studyLabels = (uw.studyTargets || []).map((k) => byKey[k]).filter(Boolean);
+
+  const toggleSys = (sys) => setMissed((m) => (m.includes(sys) ? m.filter((x) => x !== sys) : [...m, sys]));
+  const submit = () => onLog({
+    correct: correct === "" ? null : Number(correct),
+    total: total === "" ? null : Number(total),
+    missedSystems: missed,
+  });
+
+  return (
+    <div className="pl-card pl-uworld-card track-uworld">
+      <div className="pl-uw-top">
+        <span className="pl-uw-emoji">{TRACKS.uworld.emoji}</span> Today's UWorld
+      </div>
+      <p>
+        {dedicated
+          ? <>Random / timed <b>{qCount}-Q</b> block · review every question.</>
+          : <><b>{qCount}</b> questions · {uw.system && uw.system !== "mixed" ? <>focused on <b>{shortSys(uw.system)}</b></> : "mixed"} · tutor mode · study every miss.</>}
+      </p>
+
+      {studyLabels.length > 0 && (
+        <div className="pl-uw-study">
+          📌 Study yesterday's misses first: {studyLabels.map((u) => cleanChap(u)).join(" · ")}
+        </div>
+      )}
+
+      {uw.done ? (
+        <div className="pl-uw-done">
+          ✓ Logged {uw.correct != null && uw.total != null ? `${uw.correct}/${uw.total}` : "block"}
+          {uw.missedSystems?.length ? ` · re-testing ${uw.missedSystems.map(shortSys).join(", ")}` : ""}
+        </div>
+      ) : (
+        <>
+          <div className="pl-uw-log">
+            <input type="number" min="0" placeholder="✓" value={correct} onChange={(e) => setCorrect(e.target.value)} aria-label="Correct" />
+            <span className="pl-uw-slash">/</span>
+            <input type="number" min="0" placeholder="#" value={total} onChange={(e) => setTotal(e.target.value)} aria-label="Total" />
+            <button className="pl-uw-btn" onClick={submit}>Log block</button>
+          </div>
+          <div className="pl-uw-miss-lbl">Tap the subjects you missed — they resurface tomorrow:</div>
+          <div className="pl-uw-chips">
+            {systems.map((sys) => (
+              <button key={sys} className={`pl-uw-chip${missed.includes(sys) ? " on" : ""}`} onClick={() => toggleSys(sys)}>
+                <span>{colorFor(sys).emoji}</span> {shortSys(sys)}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+/* ─────────────────────────── question practice ─────────────────────────── */
+function PracticeCard({ nav }) {
   return (
     <div className="pl-card pl-practice">
       <div className="pl-practice-head">
         <span className="pl-practice-t"><IconPulse size={15} /> Question practice</span>
-      </div>
-      <div className="pl-uworld">
-        <span className="pl-uworld-ico"><IconPulse size={18} /></span>
-        <div className="pl-uworld-body">
-          <h3>Today's UWorld</h3>
-          <p className="muted">
-            {dedicated
-              ? <>Random / timed <b className="num">40-Q</b> block · then review every one.</>
-              : <><b className="num">{qCount}</b> questions {weakSystem ? <>focused on <b>{shortSys(weakSystem)}</b></> : "mixed"} · ~{minutes}m.</>}
-          </p>
-        </div>
       </div>
       <div className="pl-practice-links">
         <button className="pl-practice-chip" onClick={() => nav("/bank")}><IconBox size={15} /> Question bank <IconArrow size={13} className="mir" /></button>
@@ -717,7 +779,8 @@ function SwapPanel({ units, states, onSwap, plannedKeys }) {
           <ul className="pl-swap-list">
             {results.map((u) => (
               <li key={u.key} className="pl-swap-item">
-                <span className="pl-upnext-dot" style={{ background: yieldColor(u.yieldWeight) }} />
+                <span className="pl-upnext-dot" style={{ background: colorFor(u.colorKey || u.system).hex }} />
+                <span className="pl-subj-emoji">{colorFor(u.colorKey || u.system).emoji}</span>
                 <span className="pl-swap-name">{u.chapter.replace(/^\d+\s/, "")} <span className="pl-sep">›</span> {u.subsection.replace(/^\d+\s/, "")}</span>
                 {plannedKeys.includes(u.key)
                   ? <span className="pl-swap-planned">planned</span>
@@ -749,8 +812,8 @@ function WeakSpots({ units, states, byKey, onFocus, plannedKeys }) {
         {top.map(({ u, w }) => (
           <li key={u.key} className="pl-weak-row">
             <div className="pl-weak-info">
-              <span className="pl-weak-name">{u.chapter.replace(/^\d+\s/, "")} <span className="pl-sep">›</span> {u.subsection.replace(/^\d+\s/, "")}</span>
-              <span className="pl-weak-bar"><span className="pl-weak-fill" style={{ width: `${Math.round(w * 100)}%` }} /></span>
+              <span className="pl-weak-name"><span className="pl-subj-emoji">{colorFor(u.colorKey || u.system).emoji}</span>{u.chapter.replace(/^\d+\s/, "")} <span className="pl-sep">›</span> {u.subsection.replace(/^\d+\s/, "")}</span>
+              <span className="pl-weak-bar"><span className="pl-weak-fill" style={{ width: `${Math.round(w * 100)}%`, background: colorFor(u.colorKey || u.system).hex }} /></span>
             </div>
             <span className="pl-weak-val num">{Math.round(w * 100)}%</span>
             {!plannedKeys.includes(u.key) && <button className="btn-ghost btn-xs" onClick={() => onFocus(u.key)}>Focus</button>}
@@ -873,22 +936,10 @@ function YieldStars({ n }) {
     </span>
   );
 }
-function yieldColor(y) {
-  if (y >= 5) return "var(--bad)";
-  if (y >= 4) return "var(--gold)";
-  return "var(--accent-2)";
-}
 function shortSys(s) { return (s || "").split(/[ ,/&]/)[0]; }
+function cleanChap(u) { return (u?.subsection || "").replace(/^\d+\s/, ""); }
 function fmtShort(iso) {
   if (!iso) return "";
   const d = new Date(`${iso}T00:00:00`);
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
-}
-function topWeakSystem(sched, units) {
-  let best = null, bw = 0;
-  for (const u of units) {
-    const w = sched.units[u.key]?.weaknessScore || 0;
-    if (w > bw) { bw = w; best = u.system; }
-  }
-  return bw >= 0.3 ? best : null;
 }

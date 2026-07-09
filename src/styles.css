@@ -54,6 +54,19 @@
   --purple:     #7C3A4D;
   --purple-soft:rgba(124,58,77,0.08);
 
+  /* ── Subject colors — mirror of src/lib/subjectColors.js (§15). Single source
+       of truth is the JS; keep these in sync. Anchors then basics. ── */
+  --subj-cardio: #E11D48;  --subj-neuro:   #7C3AED;  --subj-renal:  #F59E0B;
+  --subj-resp:   #0EA5E9;  --subj-heme:    #9D174D;  --subj-endo:   #0D9488;
+  --subj-gi:     #EA580C;  --subj-repro:   #DB2777;  --subj-micro:  #16A34A;
+  --subj-msk:    #A16207;  --subj-psych:   #4F46E5;  --subj-patho:  #334155;
+  --subj-pharm:  #0891B2;  --subj-immuno:  #65A30D;  --subj-biochem:#C026D3;
+  --subj-publichealth: #64748B;
+  /* Reserved animated track gradients — never a subject, so they always stand out. */
+  --track-uworld-a: #FF3D81; --track-uworld-b: #FF9F1C;
+  --track-assess-a: #7C3AED; --track-assess-b: #EC4899;
+  --track-anki:     #10B981;
+
   /* ── The rail — deep library green ── */
   --rail-bg:       #133327;
   --rail-bg-2:     #0E271E;
@@ -5461,3 +5474,92 @@ button, .rail-link, .chip { -webkit-user-select: none; user-select: none; -webki
   .plc-title { font-size: 15px; }
   .plg { --plg-lbl: 128px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Subject colors + reserved animated tracks (CLAUDE_CODE_BUILD_SPEC §15, §17)
+   Motion is GPU-friendly (transform / opacity / box-shadow only) and stays in
+   normal flow — no position:fixed, no overflow:hidden.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 🎯 Daily UWorld block — shimmer + glow so it's impossible to skip. */
+.track-uworld {
+  position: relative;
+  background: linear-gradient(90deg, var(--track-uworld-a), var(--track-uworld-b));
+  background-size: 200% 100%;
+  color: #fff;
+  border: none;
+  animation: uwShimmer 3s linear infinite, uwGlow 1.8s ease-in-out infinite;
+}
+@keyframes uwShimmer { to { background-position: 200% 0; } }
+@keyframes uwGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 61, 129, 0); }
+  50%      { box-shadow: 0 0 18px 3px rgba(255, 61, 129, 0.55); }
+}
+
+/* 🧪 Assessment (NBME / UWSA / Free 120) day — gentle bob + glow. */
+.track-assessment {
+  background: linear-gradient(90deg, var(--track-assess-a), var(--track-assess-b));
+  color: #fff;
+  border: none;
+  animation: asBob 2.2s ease-in-out infinite, asGlow 1.6s ease-in-out infinite;
+}
+@keyframes asBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes asGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+  50%      { box-shadow: 0 0 22px 4px rgba(236, 72, 153, 0.6); }
+}
+
+/* Reduced motion: kill the animation (handled globally) but keep a bold static
+   ring + saturation bump so the tracks are still unmissable. */
+@media (prefers-reduced-motion: reduce) {
+  .track-uworld, .track-assessment {
+    animation: none;
+    outline: 3px solid var(--track-uworld-b);
+    filter: saturate(1.3) brightness(1.05);
+  }
+  .track-assessment { outline-color: var(--track-assess-b); }
+}
+
+/* ── UWorld daily block card ── */
+.pl-uworld-card {
+  border-radius: var(--r);
+  padding: 14px 16px;
+  margin: 12px 0;
+  box-shadow: var(--sh-sm);
+}
+.pl-uworld-card .pl-uw-top {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
+  font-weight: 700; font-size: 15px;
+}
+.pl-uworld-card .pl-uw-emoji { font-size: 18px; }
+.pl-uworld-card p { margin: 2px 0 10px; color: rgba(255,255,255,0.92); font-size: 13.5px; }
+.pl-uworld-card .pl-uw-study {
+  background: rgba(255,255,255,0.16); border-radius: var(--r-xs);
+  padding: 6px 10px; font-size: 12.5px; margin-bottom: 10px;
+}
+.pl-uw-log { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.pl-uw-log input[type="number"] {
+  width: 56px; padding: 5px 7px; border-radius: var(--r-xs);
+  border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.92);
+  color: #222; font: inherit; text-align: center;
+}
+.pl-uw-log .pl-uw-slash { color: rgba(255,255,255,0.85); font-weight: 700; }
+.pl-uw-btn {
+  background: rgba(255,255,255,0.95); color: #B0246A; border: none;
+  border-radius: var(--r-xs); padding: 6px 12px; font-weight: 700; cursor: pointer;
+  font-size: 13px;
+}
+.pl-uw-btn:hover { background: #fff; }
+.pl-uw-miss-lbl { color: rgba(255,255,255,0.9); font-size: 12px; width: 100%; margin: 6px 0 2px; }
+.pl-uw-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.pl-uw-chip {
+  border: 1px solid rgba(255,255,255,0.45); background: rgba(255,255,255,0.12);
+  color: #fff; border-radius: 999px; padding: 3px 9px; font-size: 12px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.pl-uw-chip.on { background: #fff; color: #B0246A; border-color: #fff; }
+.pl-uw-done { color: rgba(255,255,255,0.95); font-size: 13px; font-weight: 600; }
+
+/* ── Subject color rail + tint on planner unit cards ── */
+.pl-subj-rail { width: 4px; border-radius: 4px; align-self: stretch; }
+.pl-subj-emoji { font-size: 14px; margin-right: 4px; }

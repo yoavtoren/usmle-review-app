@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { colorFor } from "../lib/subjectColors.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -41,10 +42,11 @@ function ChapterRow({ ch, onToggle }) {
     setOpen(!open);
   }
 
+  const c = colorFor(ch.chapter);
   return (
-    <div className={`ch-row${open ? " ch-open" : ""}`}>
+    <div className={`ch-row${open ? " ch-open" : ""}`} style={{ borderLeft: `3px solid ${c.hex}` }}>
       <button className="ch-header" onClick={handleExpand}>
-        <span className="ch-name">{ch.chapter.replace(/^\d+ /, "")}</span>
+        <span className="ch-name"><span className="pl-subj-emoji">{c.emoji}</span>{ch.chapter.replace(/^\d+ /, "")}</span>
         <span className="ch-counts">
           {ch.seen}/{ch.total}
         </span>

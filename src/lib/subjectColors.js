@@ -62,8 +62,20 @@ export const KEY_FOR = {
 
 const FALLBACK = { label: "—", emoji: "•", hex: "#94A3B8", tint: "#EEEEEE" };
 
-// Resolve a subject (color token, system string, or chapter name) → color record.
+// FA chapter numbers → color token (the FA chapter titles vary — "10 Heme Onc",
+// "11 MSK, Skin, & Connective" — so match on the stable leading number too).
+const NUM_FOR = {
+  "01": "biochem", "02": "immuno", "03": "micro", "04": "patho", "05": "pharm",
+  "06": "publichealth", "07": "cardio", "08": "endo", "09": "gi", "10": "heme",
+  "11": "msk", "12": "neuro", "13": "psych", "14": "renal", "15": "repro", "16": "resp",
+};
+
+// Resolve a subject (color token, system string, or FA chapter name) → color record.
 export function colorFor(s) {
   if (!s) return FALLBACK;
-  return SUBJECTS[s] || SUBJECTS[KEY_FOR[s]] || FALLBACK;
+  if (SUBJECTS[s]) return SUBJECTS[s];
+  if (KEY_FOR[s]) return SUBJECTS[KEY_FOR[s]];
+  const num = String(s).match(/^\s*(\d{2})\b/);
+  if (num && NUM_FOR[num[1]]) return SUBJECTS[NUM_FOR[num[1]]];
+  return FALLBACK;
 }

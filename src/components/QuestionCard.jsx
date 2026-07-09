@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { rate, setDifficulty, getCard, recordActivity, toggleDone } from "../lib/storage.js";
+import { colorFor } from "../lib/subjectColors.js";
 
 // 🔴 fatal/critical | 🟠 demographic/risk | 🔵 key context | 🟢 confirmatory | 🟣 trap
 const CLUE = {
@@ -87,6 +88,7 @@ export default function QuestionCard({ q, onProgress, progress }) {
   const card = getCard(progress, q.id);
 
   const clues      = q.clues || [];
+  const sysColor   = colorFor(q.system);
   const correctOpt = q.options.find(o => o.correct);
   const wrongOpts  = q.options.filter(o => !o.correct);
   const { segs, unmatched } = buildSegments(q.vignette, clues);
@@ -140,7 +142,9 @@ export default function QuestionCard({ q, onProgress, progress }) {
       {/* ── Header ── */}
       <div className="qcard-head">
         <div className="qcard-pills">
-          <span className="qpill accent">{q.system}</span>
+          <span className="qpill" style={{ background: sysColor.tint, color: sysColor.hex, borderColor: sysColor.hex }}>
+            {sysColor.emoji} {q.system}
+          </span>
           <span className="qpill ghost">{q.topic}</span>
           {q.percentCorrect != null && (
             <span className={`qpill ${q.percentCorrect < 50 ? "danger" : "ghost"}`}>
