@@ -232,7 +232,7 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
           </div>
 
           {/* E · 14-day review load */}
-          <div className="hd-card hd-review c5">
+          <div className="hd-card hd-review c3">
             <div className="hd-ch">
               <span className="hd-ch-t"><span className="hd-ch-ico green"><IconClipboard size={15} /></span> תחזית חזרות</span>
               <span className="hd-ch-meta"><span className="hd-chip num">{loadTotal} בהמתנה</span></span>
