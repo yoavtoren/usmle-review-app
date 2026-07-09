@@ -192,9 +192,15 @@ export default function IntakeWizard({ questionId, questionMeta, questionFull, e
     }
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  });
+    // Rebind only when the handler's inputs change (was re-bound every render).
+  }, [step, form, onDismiss]); // eslint-disable-line
 
-  const dotStep = Math.min(step, 3);
+  // Dots reflect the actual step path: correct answers never reach the Note
+  // step, so drop that dot for them. The Tag dot reads as done (not skipped)
+  // when auto-tagging jumped straight to Outcome.
+  const dotLabels = ["Tag", "Outcome", "Why", ...(form.outcome === "correct" ? [] : ["Note"])];
+  const dotStep = Math.min(step, dotLabels.length - 1);
+  const dotDone = (i) => i < dotStep || (i === 0 && autoTagged && step > 0);
   const topicLabel = [form.subject, form.system].filter(Boolean).join(" — ");
 
   return (
@@ -207,8 +213,8 @@ export default function IntakeWizard({ questionId, questionMeta, questionFull, e
             <span className="intake-title">Question Intake</span>
             {step < 4 && (
               <div className="intake-dots">
-                {["Tag","Outcome","Why","Note"].map((lbl, i) => (
-                  <span key={i} title={lbl} className={`intake-dot${i === dotStep ? " i-active" : i < dotStep ? " i-done" : ""}`} />
+                {dotLabels.map((lbl, i) => (
+                  <span key={lbl} title={lbl} className={`intake-dot${i === dotStep ? " i-active" : dotDone(i) ? " i-done" : ""}`} />
                 ))}
               </div>
             )}

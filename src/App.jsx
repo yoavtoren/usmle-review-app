@@ -25,17 +25,25 @@ function useAppData() {
   const [deck, setDeck] = useState(null);
   const [faData, setFaData] = useState(null);
   const [progress] = useState(loadProgress());
+  // Deck fetch lifecycle — loading shows "…" placeholders, error raises the retry banner.
+  const [deckStatus, setDeckStatus] = useState({ loading: true, error: false });
+  const [fetchKey, setFetchKey] = useState(0);
 
   useEffect(() => {
+    let cancelled = false;
+    setDeckStatus({ loading: true, error: false });
     fetch(`${BASE}questions/deck.json`)
-      .then((r) => r.json())
-      .then(setDeck)
-      .catch(() => {});
+      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then((d) => { if (!cancelled) { setDeck(d); setDeckStatus({ loading: false, error: false }); } })
+      .catch(() => { if (!cancelled) setDeckStatus({ loading: false, error: true }); });
     fetch(`${BASE}fa/fa-progress.json`)
       .then((r) => r.json())
-      .then(setFaData)
+      .then((d) => { if (!cancelled) setFaData(d); })
       .catch(() => {});
-  }, []);
+    return () => { cancelled = true; };
+  }, [fetchKey]);
+
+  const retry = () => setFetchKey((k) => k + 1);
 
   const testStats = useMemo(() => {
     if (!deck) return { total: 0, missed: 0, mastered: 0, due: 0 };
@@ -60,17 +68,38 @@ function useAppData() {
     return { seen: faData.seen, total: faData.totalTopics };
   }, [faData]);
 
-  return { testStats, faStats, questions: deck?.questions || [] };
+  return {
+    testStats, faStats, questions: deck?.questions || [],
+    dataLoading: deckStatus.loading, dataError: deckStatus.error, retry,
+  };
+}
+
+// Slim dismissible banner shown when the question deck failed to load.
+function DataErrorBanner({ onRetry, onDismiss }) {
+  return (
+    <div role="alert" dir="rtl" style={{
+      display: "flex", alignItems: "center", gap: 10, margin: "10px 16px 0",
+      padding: "8px 14px", borderRadius: 10, fontSize: 13, fontWeight: 600,
+      color: "var(--bad)", background: "var(--bad-soft)", border: "1px solid rgba(156,59,44,0.28)",
+    }}>
+      <span style={{ flex: 1 }}>לא ניתן לטעון את הנתונים — בדוק חיבור ונסה שוב</span>
+      <button className="btn-secondary" onClick={onRetry} style={{ fontSize: 12, padding: "4px 12px" }}>נסה שוב</button>
+      <button onClick={onDismiss} aria-label="סגור הודעה" style={{
+        background: "none", border: "none", cursor: "pointer", color: "inherit", fontSize: 14, padding: "2px 4px",
+      }}>✕</button>
+    </div>
+  );
 }
 
 export default function App() {
-  const { testStats, faStats, questions } = useAppData();
+  const { testStats, faStats, questions, dataLoading, dataError, retry } = useAppData();
   const nav = useNavigate();
   const loc = useLocation();
 
   const [dueCount, setDueCount]     = useState(getDueCount);
   const [showPopCenter, setShowPopCenter] = useState(false);
   const [showMail, setShowMail]     = useState(false);
+  const [errorDismissed, setErrorDismissed] = useState(false);
 
   // Refresh bell count every 60s
   useEffect(() => {
@@ -99,6 +128,12 @@ export default function App() {
       />
 
       <main className="app-main">
+        {dataError && !errorDismissed && (
+          <DataErrorBanner
+            onRetry={() => { setErrorDismissed(false); retry(); }}
+            onDismiss={() => setErrorDismissed(true)}
+          />
+        )}
         <ReminderToasts />
         {showPopCenter && (
           <PopCenter
@@ -112,7 +147,7 @@ export default function App() {
         <div className={`route-fade${isEnglishArea ? " area-ltr" : " area-rtl"}`} key={loc.pathname} dir={areaDir} lang={areaLang}>
           <Routes>
             <Route path="/" element={
-              <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} />
+              <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} loading={dataLoading} />
             } />
             <Route path="/step1" element={
               <WelcomeScreen
@@ -121,6 +156,7 @@ export default function App() {
                 faStats={faStats}
                 streak={getStreak()}
                 questions={questions}
+                loading={dataLoading}
               />
             } />
             <Route path="/tests" element={
@@ -142,7 +178,7 @@ export default function App() {
             <Route path="/tasks" element={<TasksPage />} />
             <Route path="/aims"     element={<AIMSDashboard />} />
             <Route path="*" element={
-              <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} />
+              <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} loading={dataLoading} />
             } />
           </Routes>
         </div>

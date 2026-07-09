@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { projectSchedule, calendarModel, todayISO } from "../lib/scheduler.js";
+import { buildPlanICS, downloadICS } from "../lib/calendarExport.js";
 import { IconCheck, IconCalendar } from "./icons.jsx";
 import { colorFor, TRACKS } from "../lib/subjectColors.js";
 
@@ -81,6 +82,23 @@ export function GanttView({ sched, units }) {
     return order.map((ch) => ({ chapter: ch, units: byChap[ch] }));
   }, [units]);
 
+  // Collapsible chapters: default-collapse those that are 100% done
+  // (done/skim/dropped — nothing left to show). Null = user hasn't toggled yet.
+  const defaultCollapsed = useMemo(() => {
+    const set = new Set();
+    for (const g of groups) {
+      if (g.units.every((u) => ["done", "skim", "dropped"].includes(sched.units[u.key]?.status))) set.add(g.chapter);
+    }
+    return set;
+  }, [groups, sched]);
+  const [collapsedOverride, setCollapsedOverride] = useState(null);
+  const collapsedSet = collapsedOverride ?? defaultCollapsed;
+  const toggleChapter = (ch) => setCollapsedOverride((prev) => {
+    const next = new Set(prev ?? defaultCollapsed);
+    next.has(ch) ? next.delete(ch) : next.add(ch);
+    return next;
+  });
+
   const milestones = [
     { iso: today, label: "Today", cls: "now" },
     { iso: sched.settings.contentDeadline, label: "Content deadline", cls: "deadline" },
@@ -122,13 +140,21 @@ export function GanttView({ sched, units }) {
               style={{ left: `calc(var(--plg-lbl) + (100% - var(--plg-lbl)) * ${frac(m.iso).toFixed(4)})` }} />
           ))}
 
-          {groups.map((g) => (
+          {groups.map((g) => {
+            const isCollapsed = collapsedSet.has(g.chapter);
+            const chapDone = g.units.filter((u) => ["done", "skim"].includes(sched.units[u.key]?.status)).length;
+            return (
             <div key={g.chapter} className="plg-group">
-              <div className="plg-group-head">
-                <span className="plg-group-name">{cleanName(g.chapter)}</span>
+              <div className="plg-group-head" role="button" tabIndex={0} style={{ cursor: "pointer" }}
+                onClick={() => toggleChapter(g.chapter)}
+                onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && toggleChapter(g.chapter)}>
+                <span className="plg-group-name">
+                  <span aria-hidden="true">{isCollapsed ? "▸" : "▾"}</span> {cleanName(g.chapter)}
+                  {isCollapsed && <span className="muted num"> · {chapDone}/{g.units.length}</span>}
+                </span>
                 <span className="plg-group-track" />
               </div>
-              {g.units.map((u) => {
+              {!isCollapsed && g.units.map((u) => {
                 const b = barFor(u);
                 if (!b) return null;
                 const left = frac(b.start) * 100;
@@ -151,7 +177,8 @@ export function GanttView({ sched, units }) {
                 );
               })}
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
@@ -217,6 +244,34 @@ export function CalendarView({ sched, units, nav }) {
     setCursor(isoOf(d));
   };
 
+  // Export every upcoming study day (planned + projected units, checkpoints,
+  // due tasks) as all-day VEVENTs in a downloadable plan.ics.
+  function exportICS() {
+    const unitTitle = (k) => {
+      const u = byKey[k];
+      return u ? `${cleanName(u.chapter)} › ${cleanName(u.subsection)}` : null;
+    };
+    const taskByDate = {};
+    for (const t of (sched.tasks || [])) {
+      if (t.dueISO && !t.done) (taskByDate[t.dueISO] ||= []).push(`Task: ${t.text}`);
+    }
+    const isos = new Set([...Object.keys(model), ...Object.keys(taskByDate)]);
+    const days = [...isos].sort().filter((iso) => iso >= today).map((iso) => {
+      const m = model[iso] || {};
+      const keys = [...new Set([...(m.planned || []), ...(m.projected || [])])]
+        .filter((k) => !(m.completed || []).includes(k));
+      return {
+        date: iso,
+        titles: [
+          ...(m.assessments || []).map((a) => `Checkpoint: ${a.label}`),
+          ...keys.map(unitTitle),
+          ...(taskByDate[iso] || []),
+        ].filter(Boolean),
+      };
+    }).filter((d) => d.titles.length);
+    downloadICS(buildPlanICS(days), "plan.ics");
+  }
+
   const title = (() => {
     const d = parseISO(cursor);
     if (mode === "month") return d.toLocaleDateString("en-US", { month: "long", year: "numeric" });
@@ -234,6 +289,7 @@ export function CalendarView({ sched, units, nav }) {
         <div className="plc-nav">
           <button className="plc-arrow" onClick={() => shift(-1)} aria-label="Previous">‹</button>
           <button className="plc-today" onClick={() => setCursor(today)}>Today</button>
+          <button className="plc-today" onClick={() => setCursor(sched.settings.examDate)} title={`Jump to exam · ${sched.settings.examDate}`}>Exam</button>
           <button className="plc-arrow" onClick={() => shift(1)} aria-label="Next">›</button>
           <span className="plc-title">{title}</span>
         </div>
@@ -243,6 +299,7 @@ export function CalendarView({ sched, units, nav }) {
               {mo[0].toUpperCase() + mo.slice(1)}
             </button>
           ))}
+          <button className="plc-mode" onClick={exportICS} title="Download the upcoming plan as an .ics calendar file">Export .ics</button>
         </div>
       </div>
 

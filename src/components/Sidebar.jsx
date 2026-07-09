@@ -5,16 +5,11 @@ import {
   IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar,
 } from "./icons.jsx";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
-
-const EXAM_DATE = new Date("2026-10-11T00:00:00Z");
-
-function daysUntilExam() {
-  return Math.max(0, Math.ceil((EXAM_DATE - new Date()) / 86400000));
-}
+import { EXAM_DATE, daysUntilExam, localISODate } from "../lib/config.js";
 
 function overdueCount(categoryId) {
   try {
-    const today = new Date().toISOString().slice(0, 10);
+    const today = localISODate();
     return loadCategoryTasks(categoryId).filter(
       (t) => t.status === "Active" && t.deadline && t.deadline < today
     ).length;
