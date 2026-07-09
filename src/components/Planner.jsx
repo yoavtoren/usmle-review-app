@@ -1,14 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   IconClock, IconCheck, IconClose, IconTarget, IconSparkle,
-  IconChevronDown, IconArrow, IconBox, IconPulse,
+  IconChevronDown, IconArrow, IconBox, IconPulse, IconCalendar, IconClipboard,
 } from "./icons.jsx";
+import { GanttView, CalendarView, PlannerViewTabs } from "./PlannerViews.jsx";
 import { getStreak, recordActivity } from "../lib/storage.js";
 import {
-  loadSched, ensureUnits, recomputeWeakness, planDay, rollover,
+  loadSched, ensureUnits, ensurePlanExtras, applyProfile, recomputeWeakness, planDay, rollover,
   recordDone, recordMiss, toggleAnki, swapIn, searchUnits, feasibility,
   applyTriage, ankiNewCardHint, updateSettings, exportSched, importSched,
-  todayISO, REASONS, CAPACITY_LABELS,
+  setGoal, seedAssessments, upsertAssessment, logAssessment, removeAssessment,
+  addTask, toggleTask, deleteTask, projectReadiness, effectiveTarget,
+  pctToPredicted3, predicted3ToPct, toPredicted3,
+  todayISO, REASONS,
 } from "../lib/scheduler.js";
 
 const BASE = import.meta.env.BASE_URL;
@@ -18,31 +23,38 @@ function usePlanData() {
   const [plan, setPlan] = useState(null);
   const [deck, setDeck] = useState(null);
   const [seed, setSeed] = useState(null);
+  const [profile, setProfile] = useState(undefined); // undefined = loading, null = none
   useEffect(() => {
     fetch(`${BASE}topic-plan.json`).then((r) => r.json()).then(setPlan).catch(() => setPlan({ units: [] }));
     fetch(`${BASE}questions/deck.json`).then((r) => r.json()).then(setDeck).catch(() => setDeck({ questions: [] }));
     fetch(`${BASE}weakness-seed.json`).then((r) => r.json()).then(setSeed).catch(() => setSeed({ weak: [] }));
+    fetch(`${BASE}profile.json`).then((r) => (r.ok ? r.json() : null)).then(setProfile).catch(() => setProfile(null));
   }, []);
-  return { plan, deck, seed };
+  return { plan, deck, seed, profile };
 }
 
 export default function Planner() {
-  const { plan, deck, seed } = usePlanData();
+  const { plan, deck, seed, profile } = usePlanData();
+  const nav = useNavigate();
   const units = plan?.units || [];
   const [sched, setSched] = useState(null);
   const [ready, setReady] = useState(false);
+  const [view, setView] = useState("today");   // today | timeline | calendar
   const date = todayISO();
 
-  // One-time bootstrap: seed state, register units, ingest weakness, roll forward.
+  // One-time bootstrap: seed state, register units, backfill v2 extras
+  // (goal + assessments + tasks), apply the student profile, ingest weakness, roll forward.
   useEffect(() => {
-    if (!plan || !deck || !seed) return;
+    if (!plan || !deck || !seed || profile === undefined) return;
     let s = loadSched({ examDate: plan.examDate, contentDeadline: plan.contentDeadline });
     s = ensureUnits(s, units);
+    s = ensurePlanExtras(s);
+    s = applyProfile(s, profile);
     s = recomputeWeakness(s, units, deck, seed);
     s = rollover(s, date);
     setSched(s);
     setReady(true);
-  }, [plan, deck, seed]); // eslint-disable-line
+  }, [plan, deck, seed, profile]); // eslint-disable-line
 
   if (!ready || !sched) {
     return <div className="page page-narrow"><div className="boot">Building your plan…</div></div>;
@@ -67,20 +79,43 @@ export default function Planner() {
   const doSwap = (key) => mutate((s) => swapIn(s, units, key, date));
   const flipAnki = () => mutate((s) => toggleAnki(s, date));
   const runTriage = () => mutate((s) => applyTriage(s, units, date).state);
+  const onGoal = (patch) => mutate((s) => setGoal(s, patch));
+  const onSettings = (patch) => mutate((s) => updateSettings(s, patch));
+  // Changing the exam date re-dates only seeded/untaken/unedited checkpoints.
+  const onExam = (d) => mutate((s) => seedAssessments(updateSettings(s, { examDate: d }), { force: true }));
+  const onLogAssessment = (id, val) => mutate((s) => logAssessment(s, id, val, date));
+  const onUpsertAssessment = (a) => mutate((s) => upsertAssessment(s, a));
+  const onRemoveAssessment = (id) => mutate((s) => removeAssessment(s, id));
+  const onResetSchedule = () => mutate((s) => seedAssessments(s, { force: true }));
+  const onAddTask = (text, opts) => { recordActivity(); mutate((s) => addTask(s, text, opts)); };
+  const onToggleTask = (id) => { recordActivity(); mutate((s) => toggleTask(s, id)); };
+  const onDeleteTask = (id) => mutate((s) => deleteTask(s, id));
 
-  const phaseBadge = sched.phase === "dedicated"
-    ? { label: "Dedicated", cls: "ded" }
-    : { label: "Content", cls: "con" };
-
+  const dedicated = sched.phase === "dedicated";
+  const phaseBadge = dedicated ? { label: "Dedicated", cls: "ded" } : { label: "Content", cls: "con" };
+  const readiness = projectReadiness(sched);
   const allDone = capacity && plannedKeys.length > 0 && plannedKeys.every((k) => completed.has(k)) && today?.ankiDone;
+  const simToday = today?.assessmentToday
+    ? (sched.assessments || []).find((a) => a.id === today.assessmentToday)
+    : null;
+
+  const goalCard = <ScoreGoalCard readiness={readiness} goal={sched.settings.goal} assessments={sched.assessments} onGoal={onGoal} />;
+  const assessCard = (
+    <AssessmentsCard
+      assessments={sched.assessments || []} dedicated={dedicated} date={date}
+      onLog={onLogAssessment} onUpsert={onUpsertAssessment} onRemove={onRemoveAssessment} onReset={onResetSchedule}
+    />
+  );
+
+  const viewTitle = view === "timeline" ? "Timeline" : view === "calendar" ? "Calendar" : "Today";
 
   return (
-    <div className="page page-narrow planner" dir="ltr">
+    <div className={`page planner ${view === "today" ? "page-narrow" : "pl-wide"}`} dir="ltr">
       {/* ═══ Header ═══ */}
       <header className="pl-head">
         <div className="pl-head-l">
           <p className="page-eyebrow">Step 1 · Adaptive planner</p>
-          <h1 className="page-title">Today<span className="pl-date">{new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</span></h1>
+          <h1 className="page-title">{viewTitle}<span className="pl-date">{new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</span></h1>
         </div>
         <div className="pl-head-r">
           <span className={`pl-phase ${phaseBadge.cls}`}>{phaseBadge.label} phase</span>
@@ -88,8 +123,22 @@ export default function Planner() {
         </div>
       </header>
 
+      {/* ═══ View switcher (Today · Timeline · Calendar) ═══ */}
+      <PlannerViewTabs view={view} onView={setView} />
+
+      {view === "timeline" && <GanttView sched={sched} units={units} />}
+      {view === "calendar" && <CalendarView sched={sched} units={units} nav={nav} />}
+
+      {view === "today" && (<>
+      {/* In dedicated phase, readiness + checkpoints lead. */}
+      {dedicated && goalCard}
+      {dedicated && assessCard}
+
       {/* ═══ Feasibility / ETA ═══ */}
-      <FeasibilityBar feas={feas} onTriage={runTriage} settings={sched.settings} />
+      <FeasibilityBar feas={feas} onTriage={runTriage} settings={sched.settings} readiness={readiness} />
+
+      {/* Score goal + readiness (content phase: under feasibility) */}
+      {!dedicated && goalCard}
 
       {/* ═══ Capacity picker ═══ */}
       <CapacityPicker current={capacity} onPick={pickCapacity} presets={sched.settings.capacityPresets} bias={sched.adaptation.capacityBiasMin} />
@@ -101,6 +150,7 @@ export default function Planner() {
         </div>
       ) : (
         <>
+          {simToday && <SimDayBanner sim={simToday} onLog={onLogAssessment} />}
           {allDone && <DayComplete streak={streak} />}
 
           {/* Anki — protected, always first */}
@@ -109,6 +159,7 @@ export default function Planner() {
             reserve={today?.ankiReserveMin}
             newCards={ankiNewCardHint(sched, capacity, date)}
             activeSystem={activeUnit?.system}
+            dedicated={dedicated}
             onToggle={flipAnki}
           />
 
@@ -120,6 +171,7 @@ export default function Planner() {
               onDone={(mins) => markDone(activeUnit.key, mins)}
               onMiss={(reason, note) => markMiss(activeUnit.key, reason, note)}
               blockMinutes={sched.settings.blockMinutes}
+              dedicated={dedicated}
             />
           ) : (
             <div className="pl-card pl-alldone">
@@ -128,6 +180,9 @@ export default function Planner() {
             </div>
           )}
 
+          {/* Today's tasks */}
+          <TasksCard tasks={sched.tasks || []} date={date} onAdd={onAddTask} onToggle={onToggleTask} onDelete={onDeleteTask} />
+
           {/* Up next */}
           <UpNext
             keys={plannedKeys.filter((k) => k !== activeKey && !completed.has(k))}
@@ -135,10 +190,11 @@ export default function Planner() {
             states={sched.units}
           />
 
-          {/* UWorld block */}
-          {today?.uworldMin > 0 && (
-            <UWorldBlock minutes={today.uworldMin} phase={sched.phase} weakSystem={topWeakSystem(sched, units)} />
-          )}
+          {/* Question practice (folds the UWorld block + bank/tests links) */}
+          <PracticeCard
+            minutes={today?.uworldMin || 0} phase={sched.phase}
+            weakSystem={topWeakSystem(sched, units)} nav={nav}
+          />
         </>
       )}
 
@@ -148,14 +204,18 @@ export default function Planner() {
       {/* Weak spots */}
       <WeakSpots units={units} states={sched.units} byKey={byKey} onFocus={doSwap} plannedKeys={plannedKeys} />
 
+      {/* Assessment checkpoints (content phase: lower down) */}
+      {!dedicated && assessCard}
+      </>)}
+
       {/* Settings / backup */}
-      <PlannerFooter sched={sched} onImport={(s) => setSched(s)} onExam={(d) => mutate((st) => updateSettings(st, { examDate: d }))} />
+      <PlannerFooter sched={sched} onImport={(s) => setSched(s)} onExam={onExam} onSettings={onSettings} onReset={onResetSchedule} />
     </div>
   );
 }
 
 /* ─────────────────────────── feasibility ─────────────────────────── */
-function FeasibilityBar({ feas, onTriage, settings }) {
+function FeasibilityBar({ feas, onTriage, settings, readiness }) {
   const pct = Math.min(100, Math.round((1 / Math.max(feas.ratio, 0.01)) * 100));
   const label = {
     green: "On track", amber: "Slightly behind", red: "Behind — triage needed", ahead: "Ahead of pace",
@@ -163,6 +223,7 @@ function FeasibilityBar({ feas, onTriage, settings }) {
   const msg = feas.status === "green" || feas.status === "ahead"
     ? `On track to finish content by ${feas.etaLabel} · ${settings.contentDeadline} deadline`
     : `${feas.finishDays} study-days of work left · ${feas.daysLeft} days to the ${settings.contentDeadline} deadline`;
+  const belowGoal = readiness && readiness.status !== "baseline" && readiness.gap < -5;
   return (
     <div className={`pl-feas ${feas.status}`}>
       <div className="pl-feas-top">
@@ -172,9 +233,12 @@ function FeasibilityBar({ feas, onTriage, settings }) {
       <div className="pl-feas-track"><span className="pl-feas-fill" style={{ width: `${Math.max(6, pct)}%` }} /></div>
       <div className="pl-feas-foot">
         <span className="muted">{msg}</span>
-        {(feas.status === "amber" || feas.status === "red") && (
-          <button className="btn-secondary btn-xs" onClick={onTriage}>Auto-triage low-yield</button>
-        )}
+        <span className="pl-feas-foot-actions">
+          {belowGoal && <span className="pl-feas-advisory">Trend below goal — weight weak systems</span>}
+          {(feas.status === "amber" || feas.status === "red") && (
+            <button className="btn-secondary btn-xs" onClick={onTriage}>Auto-triage low-yield</button>
+          )}
+        </span>
       </div>
     </div>
   );
@@ -208,7 +272,7 @@ function CapacityPicker({ current, onPick, presets, bias }) {
 }
 
 /* ─────────────────────────── Anki ─────────────────────────── */
-function AnkiCard({ done, reserve, newCards, activeSystem, onToggle }) {
+function AnkiCard({ done, reserve, newCards, activeSystem, dedicated, onToggle }) {
   return (
     <div className={`pl-card pl-anki${done ? " done" : ""}`}>
       <button className={`pl-check${done ? " on" : ""}`} onClick={onToggle} aria-label="Toggle Anki done">
@@ -221,6 +285,7 @@ function AnkiCard({ done, reserve, newCards, activeSystem, onToggle }) {
         </div>
         <p className="muted">
           {done ? "Reviews cleared for today. ✓" : "Clear your due cards first — it's block #1 and can't be crowded out."}
+          {dedicated && !done && <> Reviews + UWorld-miss unsuspends.</>}
           {newCards > 0 && !done && <> New cards: <b className="num">~{newCards}</b>{activeSystem && <> · unsuspend <code>#AK_Step1::…::{shortSys(activeSystem)}</code></>}</>}
           {newCards === 0 && !done && <> New cards paused (exam taper).</>}
         </p>
@@ -230,7 +295,7 @@ function AnkiCard({ done, reserve, newCards, activeSystem, onToggle }) {
 }
 
 /* ─────────────────────────── active task ─────────────────────────── */
-function ActiveTask({ unit, state, onDone, onMiss, blockMinutes }) {
+function ActiveTask({ unit, state, onDone, onMiss, blockMinutes, dedicated }) {
   const [asking, setAsking] = useState(false);
   const [started, setStarted] = useState(false);
   const weak = (state?.weaknessScore || 0) >= 0.4;
@@ -242,7 +307,7 @@ function ActiveTask({ unit, state, onDone, onMiss, blockMinutes }) {
       <div className="pl-active-rail" style={{ background: yieldColor(unit.yieldWeight) }} />
       <div className="pl-active-body">
         <div className="pl-active-top">
-          <span className="pl-active-kicker">Now · {unit.system}</span>
+          <span className="pl-active-kicker">{dedicated ? "Targeted review" : "Now"} · {unit.system}</span>
           <YieldStars n={unit.yieldWeight} />
         </div>
         <h2 className="pl-active-title">{unit.chapter.replace(/^\d+\s/, "")} <span className="pl-sep">›</span> {unit.subsection.replace(/^\d+\s/, "")}</h2>
@@ -318,20 +383,284 @@ function UpNext({ keys, byKey, states }) {
   );
 }
 
-/* ─────────────────────────── UWorld ─────────────────────────── */
-function UWorldBlock({ minutes, phase, weakSystem }) {
-  const qCount = phase === "dedicated" ? 40 : Math.max(10, Math.round(minutes / 1.5));
+/* ─────────────────────────── question practice ─────────────────────────── */
+function PracticeCard({ minutes, phase, weakSystem, nav }) {
+  const dedicated = phase === "dedicated";
+  const qCount = dedicated ? 40 : Math.max(10, Math.round(minutes / 1.5));
   return (
-    <div className="pl-card pl-uworld">
-      <span className="pl-uworld-ico"><IconPulse size={18} /></span>
-      <div className="pl-uworld-body">
-        <h3>Today's UWorld</h3>
-        <p className="muted">
-          {phase === "dedicated"
-            ? <>Random / timed <b className="num">40-Q</b> block · then review every one.</>
-            : <><b className="num">{qCount}</b> questions {weakSystem ? <>focused on <b>{shortSys(weakSystem)}</b></> : "mixed"} · ~{minutes}m.</>}
-        </p>
+    <div className="pl-card pl-practice">
+      <div className="pl-practice-head">
+        <span className="pl-practice-t"><IconPulse size={15} /> Question practice</span>
       </div>
+      <div className="pl-uworld">
+        <span className="pl-uworld-ico"><IconPulse size={18} /></span>
+        <div className="pl-uworld-body">
+          <h3>Today's UWorld</h3>
+          <p className="muted">
+            {dedicated
+              ? <>Random / timed <b className="num">40-Q</b> block · then review every one.</>
+              : <><b className="num">{qCount}</b> questions {weakSystem ? <>focused on <b>{shortSys(weakSystem)}</b></> : "mixed"} · ~{minutes}m.</>}
+          </p>
+        </div>
+      </div>
+      <div className="pl-practice-links">
+        <button className="pl-practice-chip" onClick={() => nav("/bank")}><IconBox size={15} /> Question bank <IconArrow size={13} className="mir" /></button>
+        <button className="pl-practice-chip" onClick={() => nav("/tests")}><IconClipboard size={15} /> Tests &amp; trajectory <IconArrow size={13} className="mir" /></button>
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────── score goal + readiness ─────────────────────────── */
+function ScoreGoalCard({ readiness, goal, assessments, onGoal }) {
+  const [editing, setEditing] = useState(false);
+  const r = readiness;
+  const takenPts = (assessments || []).filter((a) => a.takenDate && a.actual != null)
+    .map((a) => ({ t: a.takenDate, y: toPredicted3(a) }))
+    .sort((x, y) => (x.t < y.t ? -1 : 1));
+
+  const statusClass = { on_track: "ok", close: "warn", behind: "warn", at_risk: "bad", baseline: "mut" }[r.status] || "mut";
+  const verdict = (() => {
+    if (r.status === "baseline") return "Take NBME 26 to unlock a readiness projection.";
+    const wk = r.slopePerWeek ? `${r.slopePerWeek > 0 ? "+" : ""}${r.slopePerWeek}/wk` : "flat";
+    if (r.status === "on_track") return `Trending to ~${r.projected} by exam day — +${r.passMargin} above the 196 pass line. Hold the line.`;
+    if (r.status === "at_risk") return `Projecting ~${r.projected}. Focus weak systems and bank your next UWSA.`;
+    return `About ${Math.abs(r.gap)} pts from goal; last ${r.n} checkpoints trending ${wk} — +${r.passMargin} above pass.`;
+  })();
+
+  return (
+    <div className={`pl-card pl-goal ${statusClass}`}>
+      <div className="pl-goal-head">
+        <span className="page-eyebrow">Readiness · predicted</span>
+        <button className="btn-ghost btn-xs" onClick={() => setEditing((e) => !e)}>{editing ? "Done" : "Set goal"}</button>
+      </div>
+
+      {r.status === "baseline" ? (
+        <div className="pl-goal-empty">
+          <span className="pl-goal-big num">—</span>
+          <p className="muted">{verdict}</p>
+        </div>
+      ) : (
+        <div className="pl-goal-body">
+          <div className="pl-goal-num-wrap">
+            <span className={`pl-goal-big num ${statusClass}`}>{r.projected}</span>
+            <span className="pl-goal-band num">band {r.band[0]}–{r.band[1]}</span>
+            <div className="pl-goal-chips">
+              <span className={`pl-goal-chip ${r.gap >= 0 ? "ok" : "bad"}`}>{r.gap >= 0 ? "+" : ""}{r.gap} vs goal {r.target}</span>
+              <span className={`pl-goal-chip ${r.passMargin >= 0 ? "ok" : "bad"}`}>{r.passMargin >= 0 ? "+" : ""}{r.passMargin} vs pass 196</span>
+            </div>
+          </div>
+          <ReadinessSpark pts={takenPts} target={r.target} passLine={r.passLine} />
+        </div>
+      )}
+      <p className="pl-goal-verdict">{verdict}</p>
+
+      {editing && <GoalEditor goal={goal} onGoal={onGoal} />}
+      <p className="pl-goal-foot muted">Step 1 is pass/fail — these are <em>predicted</em> equivalents (±~10), not official scores.</p>
+    </div>
+  );
+}
+
+function GoalEditor({ goal, onGoal }) {
+  return (
+    <div className="pl-goal-editor">
+      <div className="pl-seg">
+        <button className={`pl-seg-btn${goal.mode === "pass" ? " on" : ""}`} onClick={() => onGoal({ mode: "pass" })}>Comfortably passing</button>
+        <button className={`pl-seg-btn${goal.mode === "predicted" ? " on" : ""}`} onClick={() => onGoal({ mode: "predicted" })}>Aim for a predicted score</button>
+      </div>
+      {goal.mode === "pass" ? (
+        <div className="pl-goal-steppers">
+          {[{ k: 8, l: "Slim" }, { k: 14, l: "Comfortable" }, { k: 30, l: "Strong" }].map((o) => (
+            <button key={o.k} className={`pl-chipbtn${goal.buffer === o.k ? " on" : ""}`} onClick={() => onGoal({ buffer: o.k })}>
+              {o.l} <span className="num">+{o.k}</span>
+            </button>
+          ))}
+          <span className="pl-goal-eff muted">= target <b className="num">{(goal.passLine || 196) + (goal.buffer || 0)}</b></span>
+        </div>
+      ) : (
+        <label className="pl-goal-target">
+          <span>Predicted target</span>
+          <input type="number" min="196" max="280" value={goal.target}
+            onChange={(e) => { const v = Math.max(196, Math.min(280, Number(e.target.value) || 196)); onGoal({ target: v }); }} />
+        </label>
+      )}
+    </div>
+  );
+}
+
+// Inline sparkline of predicted score over taken assessments, with target + 196 pass lines.
+function ReadinessSpark({ pts, target, passLine }) {
+  if (!pts.length) return null;
+  const W = 240, H = 68, padX = 8, padY = 10;
+  const ys = pts.map((p) => p.y).concat([target, passLine]);
+  const lo = Math.min(...ys) - 6, hi = Math.max(...ys) + 6;
+  const xAt = (i) => padX + (pts.length <= 1 ? (W - 2 * padX) / 2 : (i / (pts.length - 1)) * (W - 2 * padX));
+  const yAt = (v) => padY + (1 - (v - lo) / Math.max(1, hi - lo)) * (H - 2 * padY);
+  const line = pts.map((p, i) => `${i ? "L" : "M"}${xAt(i).toFixed(1)} ${yAt(p.y).toFixed(1)}`).join(" ");
+  return (
+    <svg className="pl-goal-spark" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none">
+      <line x1={padX} y1={yAt(passLine)} x2={W - padX} y2={yAt(passLine)} stroke="var(--bad)" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
+      <line x1={padX} y1={yAt(target)} x2={W - padX} y2={yAt(target)} stroke="var(--gold)" strokeWidth="1" strokeDasharray="4 3" opacity="0.75" />
+      {pts.length > 1 && <path d={line} fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />}
+      {pts.map((p, i) => <circle key={i} cx={xAt(i)} cy={yAt(p.y)} r="2.8" fill="var(--surface)" stroke="var(--accent)" strokeWidth="1.6" />)}
+    </svg>
+  );
+}
+
+/* ─────────────────────────── today's tasks ─────────────────────────── */
+function TasksCard({ tasks, date, onAdd, onToggle, onDelete }) {
+  const [text, setText] = useState("");
+  const [due, setDue] = useState("");
+  const visible = tasks.filter((t) =>
+    !t.dueISO || t.dueISO === date || (t.dueISO < date && !t.done) ||
+    (t.done && t.doneISO === date));
+  const openCount = visible.filter((t) => !t.done).length;
+  const submit = () => { if (text.trim()) { onAdd(text, { dueISO: due || null }); setText(""); setDue(""); } };
+
+  return (
+    <div className="pl-card pl-tasks">
+      <div className="pl-tasks-head">
+        <span className="pl-tasks-t">Today's tasks {openCount > 0 && <span className="pl-tasks-n num">{openCount}</span>}</span>
+      </div>
+      <div className="pl-tasks-add">
+        <input className="pl-tasks-input" placeholder="Add a study task… (Enter)" value={text}
+          onChange={(e) => setText(e.target.value)} onKeyDown={(e) => e.key === "Enter" && submit()} />
+        <input className="pl-tasks-date" type="date" value={due} onChange={(e) => setDue(e.target.value)} title="Optional due date" />
+        <button className="btn-secondary btn-xs" onClick={submit}>Add</button>
+      </div>
+      {visible.length > 0 && (
+        <ul className="pl-tasks-list">
+          {visible.map((t) => {
+            const overdue = t.dueISO && t.dueISO < date && !t.done;
+            return (
+              <li key={t.id} className={`pl-tasks-item${t.done ? " done" : ""}`}>
+                <button className={`pl-check sm${t.done ? " on" : ""}`} onClick={() => onToggle(t.id)} aria-label="toggle task">
+                  {t.done ? <IconCheck size={13} /> : null}
+                </button>
+                <span className="pl-tasks-text">{t.text}</span>
+                {overdue && <span className="pl-tasks-flag">overdue</span>}
+                {t.dueISO && !overdue && !t.done && <span className="pl-tasks-due num">{fmtShort(t.dueISO)}</span>}
+                <button className="pl-tasks-del" onClick={() => onDelete(t.id)} aria-label="delete task"><IconClose size={12} /></button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+/* ─────────────────────────── assessments / simulations ─────────────────────────── */
+function SimDayBanner({ sim, onLog }) {
+  const [val, setVal] = useState("");
+  const isPct = sim.unit === "percent";
+  return (
+    <div className="pl-done-banner pl-simday">
+      <span className="pl-done-ico"><IconCalendar size={16} /></span>
+      <div className="pl-simday-body">
+        <span>Sim day: <b>{sim.label}</b>. Take it timed, then log your score.</span>
+        <div className="pl-simday-log">
+          <input type="number" className="pl-assess-input" placeholder={isPct ? "% correct" : "predicted"} value={val} onChange={(e) => setVal(e.target.value)} />
+          <button className="btn-primary btn-xs" onClick={() => val !== "" && onLog(sim.id, Number(val))}>Log score</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AssessmentsCard({ assessments, dedicated, date, onLog, onUpsert, onRemove, onReset }) {
+  const [adding, setAdding] = useState(false);
+  const sorted = [...assessments].sort((a, b) => (a.plannedDate < b.plannedDate ? -1 : 1));
+  const nextUp = sorted.find((a) => !a.takenDate && a.plannedDate >= date);
+
+  return (
+    <div className={`pl-card pl-assess${dedicated ? " lead" : ""}`}>
+      <div className="pl-assess-head">
+        <span className="pl-assess-t"><IconCalendar size={15} /> Assessment checkpoints</span>
+        <span className="pl-assess-actions">
+          <button className="btn-ghost btn-xs" onClick={() => setAdding((a) => !a)}>{adding ? "Cancel" : "+ Add"}</button>
+          <button className="btn-ghost btn-xs" onClick={onReset} title="Rebuild the standard schedule (keeps logged scores)">Reset schedule</button>
+        </span>
+      </div>
+
+      {adding && <AddCheckpoint date={date} onAdd={(a) => { onUpsert(a); setAdding(false); }} />}
+
+      <ul className="pl-assess-list">
+        {sorted.map((a) => (
+          <AssessmentRow key={a.id} a={a} date={date} isNext={nextUp?.id === a.id} onLog={onLog} onRemove={onRemove} onUpsert={onUpsert} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function AssessmentRow({ a, date, isNext, onLog, onRemove, onUpsert }) {
+  const [logging, setLogging] = useState(false);
+  const [val, setVal] = useState("");
+  const isPct = a.unit === "percent";
+  const taken = a.takenDate && a.actual != null;
+  const overdue = !taken && a.plannedDate < date;
+  const days = Math.round((new Date(`${a.plannedDate}T00:00:00`) - new Date(`${date}T00:00:00`)) / 86400000);
+  const kindCls = { nbme: "nbme", uwsa: "uwsa", free120: "free120" }[a.kind] || "nbme";
+
+  const predicted = taken ? toPredicted3(a) : null;
+  const delta = taken ? Math.round(predicted - (isPct ? pctToPredicted3(a.goalScore) : a.goalScore)) : null;
+
+  return (
+    <li className={`pl-assess-row${isNext ? " next" : ""}${taken ? " taken" : ""}`}>
+      <span className={`pl-assess-badge ${kindCls}`}>{a.kind === "free120" ? "F120" : a.kind === "uwsa" ? "UWSA" : "NBME"}</span>
+      <div className="pl-assess-main">
+        <div className="pl-assess-row-top">
+          <span className="pl-assess-label">{a.label}{isNext && <span className="pl-assess-nextlbl">next up</span>}</span>
+          <span className="pl-assess-date num">
+            {fmtShort(a.plannedDate)}
+            {!taken && (overdue ? <span className="pl-assess-over"> · overdue — did you take it?</span> : <span className="muted"> · {days === 0 ? "today" : `in ${days}d`}</span>)}
+          </span>
+        </div>
+        <div className="pl-assess-row-bot">
+          {taken ? (
+            <>
+              <span className="pl-assess-actual num">{a.actual}{isPct ? "%" : ""}{isPct && <span className="pl-assess-eq"> ≈ {predicted}</span>}</span>
+              <span className={`pl-assess-delta ${delta >= 0 ? "ok" : "bad"}`}>{delta >= 0 ? "+" : ""}{delta} vs goal</span>
+              <button className="pl-assess-relog" onClick={() => onLog(a.id, null)}>clear</button>
+            </>
+          ) : logging ? (
+            <span className="pl-assess-loginline">
+              <input type="number" className="pl-assess-input" autoFocus placeholder={isPct ? "% correct" : "predicted 3-digit"} value={val} onChange={(e) => setVal(e.target.value)} />
+              <button className="btn-primary btn-xs" onClick={() => { if (val !== "") { onLog(a.id, Number(val)); setLogging(false); } }}>Save</button>
+              <button className="btn-ghost btn-xs" onClick={() => setLogging(false)}>×</button>
+            </span>
+          ) : (
+            <>
+              <span className="pl-assess-goal num">goal {a.goalScore}{isPct ? "%" : ""}</span>
+              <button className="btn-secondary btn-xs" onClick={() => setLogging(true)}>Log score</button>
+            </>
+          )}
+        </div>
+      </div>
+      <button className="pl-assess-del" onClick={() => onRemove(a.id)} aria-label="remove"><IconClose size={12} /></button>
+    </li>
+  );
+}
+
+function AddCheckpoint({ date, onAdd }) {
+  const [label, setLabel] = useState("");
+  const [when, setWhen] = useState(date);
+  const [kind, setKind] = useState("nbme");
+  const [goalScore, setGoalScore] = useState("");
+  const unit = kind === "free120" ? "percent" : "three_digit";
+  return (
+    <div className="pl-assess-add">
+      <input className="pl-assess-input grow" placeholder="Label (e.g. NBME 29)" value={label} onChange={(e) => setLabel(e.target.value)} />
+      <select className="pl-assess-input" value={kind} onChange={(e) => setKind(e.target.value)}>
+        <option value="nbme">NBME</option><option value="uwsa">UWSA</option><option value="free120">Free 120</option>
+      </select>
+      <input type="date" className="pl-assess-input" value={when} onChange={(e) => setWhen(e.target.value)} />
+      <input type="number" className="pl-assess-input sm" placeholder={unit === "percent" ? "goal %" : "goal"} value={goalScore} onChange={(e) => setGoalScore(e.target.value)} />
+      <button className="btn-primary btn-xs" onClick={() => label.trim() && onAdd({
+        id: `a-${Date.now()}`, kind, label: label.trim(), form: "", role: "mid", unit,
+        plannedDate: when, goalScore: Number(goalScore) || (unit === "percent" ? 70 : 220),
+      })}>Add</button>
     </div>
   );
 }
@@ -411,9 +740,12 @@ function DayComplete({ streak }) {
   );
 }
 
-function PlannerFooter({ sched, onImport, onExam }) {
+function PlannerFooter({ sched, onImport, onExam, onSettings, onReset }) {
   const fileRef = useRef();
   const [open, setOpen] = useState(false);
+  const [err, setErr] = useState("");
+  const S = sched.settings;
+
   function download() {
     const blob = new Blob([exportSched(sched)], { type: "application/json" });
     const a = document.createElement("a");
@@ -428,15 +760,68 @@ function PlannerFooter({ sched, onImport, onExam }) {
     r.onload = () => { const s = importSched(String(r.result)); if (s) onImport(s); };
     r.readAsText(f);
   }
+  function setDeadline(v) {
+    if (v > S.examDate) { setErr("Content deadline must be on or before the exam date."); return; }
+    setErr(""); onSettings({ contentDeadline: v });
+  }
+  function setBlock(v) {
+    const n = Math.max(10, Math.min(90, Math.round(Number(v) || 30)));
+    onSettings({ blockMinutes: n });
+  }
+  function setPreset(k, v) {
+    const floor = (S.ankiReserveMin[k] || 0) + S.blockMinutes;
+    const n = Math.max(floor, Math.min(720, Math.round(Number(v) || floor)));
+    onSettings({ capacityPresets: { ...S.capacityPresets, [k]: n } });
+  }
+  function setReserve(k, v) {
+    const n = Math.max(0, Math.min((S.capacityPresets[k] || 90) - 1, Math.round(Number(v) || 0)));
+    onSettings({ ankiReserveMin: { ...S.ankiReserveMin, [k]: n } });
+  }
+
   return (
     <div className="pl-footer">
-      <button className="pl-footer-toggle" onClick={() => setOpen((o) => !o)}>Settings & backup <IconChevronDown size={13} /></button>
+      <button className="pl-footer-toggle" onClick={() => setOpen((o) => !o)}>Settings &amp; backup <IconChevronDown size={13} className={open ? "flip" : ""} /></button>
       {open && (
         <div className="pl-footer-body">
-          <label className="pl-footer-field">
-            <span>Exam date</span>
-            <input type="date" value={sched.settings.examDate} onChange={(e) => onExam(e.target.value)} />
-          </label>
+          <div className="pl-set-group">
+            <div className="pl-set-glabel">Dates</div>
+            <div className="pl-set-row">
+              <label className="pl-set-field"><span>Exam date</span><input type="date" value={S.examDate} onChange={(e) => onExam(e.target.value)} /></label>
+              <label className="pl-set-field"><span>Content deadline</span><input type="date" value={S.contentDeadline} max={S.examDate} onChange={(e) => setDeadline(e.target.value)} /></label>
+            </div>
+          </div>
+
+          <div className="pl-set-group">
+            <div className="pl-set-glabel">Daily capacity <span className="muted">(min, incl. Anki)</span></div>
+            <div className="pl-set-row">
+              {["low", "med", "high"].map((k) => (
+                <label key={k} className="pl-set-field sm"><span>{k}</span>
+                  <input type="number" min="30" max="720" value={S.capacityPresets[k]} onChange={(e) => setPreset(k, e.target.value)} /></label>
+              ))}
+            </div>
+          </div>
+
+          <div className="pl-set-group">
+            <div className="pl-set-glabel">Anki reserve <span className="muted">(min, taken first)</span></div>
+            <div className="pl-set-row">
+              {["low", "med", "high"].map((k) => (
+                <label key={k} className="pl-set-field sm"><span>{k}</span>
+                  <input type="number" min="0" max="180" value={S.ankiReserveMin[k]} onChange={(e) => setReserve(k, e.target.value)} /></label>
+              ))}
+            </div>
+          </div>
+
+          <div className="pl-set-group">
+            <div className="pl-set-glabel">Focus block</div>
+            <div className="pl-set-row">
+              <label className="pl-set-field sm"><span>minutes</span><input type="number" min="10" max="90" value={S.blockMinutes} onChange={(e) => setBlock(e.target.value)} /></label>
+              <button className="btn-ghost btn-xs" onClick={onReset}>Reset assessment schedule</button>
+            </div>
+          </div>
+
+          {err && <p className="td-form-err">{err}</p>}
+          <p className="muted pl-set-hint">Capacity / Anki / block changes apply to tomorrow's plan — re-pick capacity to apply now.</p>
+
           <div className="pl-footer-actions">
             <button className="btn-secondary btn-xs" onClick={download}>Export progress</button>
             <button className="btn-secondary btn-xs" onClick={() => fileRef.current?.click()}>Import</button>
@@ -463,6 +848,11 @@ function yieldColor(y) {
   return "var(--accent-2)";
 }
 function shortSys(s) { return (s || "").split(/[ ,/&]/)[0]; }
+function fmtShort(iso) {
+  if (!iso) return "";
+  const d = new Date(`${iso}T00:00:00`);
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
 function topWeakSystem(sched, units) {
   let best = null, bw = 0;
   for (const u of units) {

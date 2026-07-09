@@ -1,8 +1,9 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
-  SUBJECTS, SYSTEMS, loadSnapshots, saveSnapshot, deleteSnapshot,
-  latestSnapshot, trendFor, weakSpots, overall, pct,
+  SUBJECTS, SYSTEMS, loadSnapshots, trendFor, weakSpots, overall,
 } from "../lib/progressData.js";
+import { loadTestLog, saveTestLog } from "../lib/storage.js";
 import { IconPulse } from "./icons.jsx";
 
 const KINDS = [
@@ -11,9 +12,6 @@ const KINDS = [
 ];
 const NAMES = { subjects: SUBJECTS, systems: SYSTEMS };
 
-function today() {
-  return new Date().toISOString().slice(0, 10);
-}
 function fmtDate(d) {
   return new Date(d + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
@@ -23,17 +21,18 @@ function toneFor(p) {
   if (p >= 55) return "warn";
   return "bad";
 }
-function newDraft() {
-  return { id: "snap-" + Date.now(), date: today(), note: "", subjects: {}, systems: {} };
-}
 
 export default function ProgressTracker() {
+  const nav = useNavigate();
   const [snaps, setSnaps] = useState(loadSnapshots);
   const [kind, setKind]   = useState("subjects");
   const [sort, setSort]   = useState("worst"); // worst | best | name
-  const [editing, setEditing] = useState(null); // draft object or null
 
   function refresh() { setSnaps(loadSnapshots()); }
+  function deleteTest(id) {
+    saveTestLog(loadTestLog().filter((t) => t.id !== id));
+    refresh();
+  }
 
   const latest = useMemo(() => (snaps.length ? snaps[snaps.length - 1] : null), [snaps]);
   const names = NAMES[kind];
@@ -79,31 +78,23 @@ export default function ProgressTracker() {
           <div className="page-eyebrow"><IconPulse size={13} /> Progress</div>
           <h1 className="td-title">Progress & Weak Spots</h1>
           <p className="td-sub">
-            Log your QBank stats over time. Track each subject &amp; system, watch the trend, focus the worst.
+            Trends from the stat breakdown you enter with each test. Track every subject &amp; system,
+            watch the trajectory, focus the worst.
           </p>
         </div>
-        <button className="td-submit-btn prog-add" onClick={() => setEditing(newDraft())}>
-          + Log snapshot
+        <button className="td-submit-btn prog-add" onClick={() => nav("/tests")}>
+          + Log a test
         </button>
       </div>
 
-      {editing && (
-        <SnapshotEditor
-          key={editing.id}
-          draft={editing}
-          onCancel={() => setEditing(null)}
-          onSave={(d) => { saveSnapshot(d); refresh(); setEditing(null); }}
-        />
-      )}
-
-      {snaps.length === 0 && !editing && (
+      {snaps.length === 0 && (
         <div className="prog-empty">
-          <p className="prog-empty-h">No snapshots yet</p>
+          <p className="prog-empty-h">No stats yet</p>
           <p className="muted">
-            Open your UWorld performance page, then log a snapshot with your Total / Correct per subject
-            and system. Log another after your next test and the trend appears here.
+            Open your UWorld performance page, then log a test on the Tests page with your Total / Correct
+            per subject and system. The trend appears here automatically after your next test.
           </p>
-          <button className="td-submit-btn" onClick={() => setEditing(newDraft())}>+ Log your first snapshot</button>
+          <button className="td-submit-btn" onClick={() => nav("/tests")}>+ Log a test</button>
         </div>
       )}
 
@@ -187,9 +178,9 @@ export default function ProgressTracker() {
                   <span className="prog-hist-meta muted">
                     {o.pct != null ? `${o.pct}% ${kind}` : "—"}{s.note ? ` · ${s.note}` : ""}
                   </span>
-                  <button className="prog-hist-btn" onClick={() => setEditing(JSON.parse(JSON.stringify(s)))}>Edit</button>
+                  <button className="prog-hist-btn" onClick={() => nav("/tests")}>Edit in Tests</button>
                   <button className="prog-hist-btn prog-hist-del"
-                    onClick={() => { if (confirm(`Delete snapshot from ${fmtDate(s.date)}?`)) { deleteSnapshot(s.id); refresh(); } }}>
+                    onClick={() => { if (confirm(`Delete the test from ${fmtDate(s.date)}? This removes its result and stats.`)) deleteTest(s.id); }}>
                     Delete
                   </button>
                 </div>
@@ -202,98 +193,6 @@ export default function ProgressTracker() {
   );
 }
 
-// ── Snapshot editor ─────────────────────────────────────────────────────────
-function SnapshotEditor({ draft, onCancel, onSave }) {
-  const [d, setD] = useState(draft);
-  const [tab, setTab] = useState("subjects");
-
-  function setField(k, v) { setD((p) => ({ ...p, [k]: v })); }
-  function setCell(kind, name, field, value) {
-    setD((p) => {
-      const rows = { ...(p[kind] || {}) };
-      const row = { ...(rows[name] || {}) };
-      const num = value === "" ? "" : Math.max(0, parseInt(value, 10) || 0);
-      row[field] = num;
-      rows[name] = row;
-      return { ...p, [kind]: rows };
-    });
-  }
-
-  function clean() {
-    const out = JSON.parse(JSON.stringify(d));
-    for (const kind of ["subjects", "systems"]) {
-      const rows = out[kind] || {};
-      for (const [name, row] of Object.entries(rows)) {
-        const total = Number(row.total) || 0;
-        const correct = Number(row.correct) || 0;
-        const omitted = Number(row.omitted) || 0;
-        if (!total && !correct && !omitted) { delete rows[name]; continue; }
-        rows[name] = { total, correct, omitted };
-      }
-      out[kind] = rows;
-    }
-    return out;
-  }
-
-  const names = NAMES[tab];
-  const filled = Object.keys(d.subjects || {}).filter((n) => d.subjects[n]?.total).length
-    + Object.keys(d.systems || {}).filter((n) => d.systems[n]?.total).length;
-
-  return (
-    <div className="td-form-card prog-editor">
-      <div className="prog-editor-head">
-        <span className="td-form-title">Log snapshot</span>
-        <div className="prog-editor-meta">
-          <label className="qb-select">
-            <span className="qb-select-lbl">Date</span>
-            <input className="td-input" type="date" value={d.date} onChange={(e) => setField("date", e.target.value)} />
-          </label>
-          <label className="qb-select prog-note">
-            <span className="qb-select-lbl">Note (optional)</span>
-            <input className="td-input" placeholder="e.g. after UWorld test 7" value={d.note} onChange={(e) => setField("note", e.target.value)} />
-          </label>
-        </div>
-      </div>
-
-      <div className="prog-tabs prog-editor-tabs">
-        {KINDS.map(([k, label]) => (
-          <button key={k} className={`chip${tab === k ? " active" : ""}`} onClick={() => setTab(k)}>{label}</button>
-        ))}
-        <span className="prog-editor-hint muted">Enter Total &amp; Correct — % is computed. Leave blank to skip.</span>
-      </div>
-
-      <div className="prog-entry-grid">
-        <div className="prog-entry-headrow">
-          <span>Topic</span><span>Total</span><span>Correct</span><span>Omitted</span><span>%</span>
-        </div>
-        {names.map((name) => {
-          const row = (d[tab] || {})[name] || {};
-          const p = pct({ total: Number(row.total) || 0, correct: Number(row.correct) || 0 });
-          return (
-            <div key={name} className="prog-entry-row">
-              <span className="prog-entry-name">{name}</span>
-              <input className="td-input prog-num" type="number" min="0" inputMode="numeric"
-                value={row.total ?? ""} onChange={(e) => setCell(tab, name, "total", e.target.value)} />
-              <input className="td-input prog-num" type="number" min="0" inputMode="numeric"
-                value={row.correct ?? ""} onChange={(e) => setCell(tab, name, "correct", e.target.value)} />
-              <input className="td-input prog-num" type="number" min="0" inputMode="numeric"
-                value={row.omitted ?? ""} onChange={(e) => setCell(tab, name, "omitted", e.target.value)} />
-              <span className={`prog-entry-pct prog-${toneFor(p)}`}>{p != null ? p + "%" : "—"}</span>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="prog-editor-foot">
-        <span className="muted">{filled} topic{filled === 1 ? "" : "s"} filled</span>
-        <div className="prog-editor-actions">
-          <button className="td-cancel-btn" onClick={onCancel}>Cancel</button>
-          <button className="td-submit-btn" onClick={() => onSave(clean())}>Save snapshot</button>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // ── Sparkline ───────────────────────────────────────────────────────────────
 function Sparkline({ points, w = 130, h = 30 }) {

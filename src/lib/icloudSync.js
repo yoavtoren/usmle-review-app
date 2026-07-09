@@ -22,13 +22,15 @@ const SYNC_KEYS = [
   "usmle-tasks-v1",             // USMLE tasks
   "general-tasks-v1",           // personal tasks
   "fa-topics-v2",               // First Aid topic coverage
-  "test-log-v8",                // NBME / UWorld test log
+  "test-log-v9",                // unified UWorld/NBME test log (result+stats+feeling)
+  "usmle-scheduler-v1",         // adaptive planner state
+  "usmle-q-seen-v1",            // question import timestamps
+  "usmle-app:reset-progress-v2",// one-time reset guard (synced → runs once)
   "usmle-streak-v1",            // daily streak
   "usmle-q-intake-v1",          // question intake
   "usmle-topic-ctr-v1",         // topic counters
   "usmle-fa-intake-v1",         // First Aid intake
   "usmle-light-mode-v1",        // pause / light mode
-  "usmle-perf-snapshots-v1",    // manual progress snapshots (topic/system %)
   "usmle-app:aims-tasks-v2",    // AIMS tasks
   "usmle-app:rhythms-v1",       // workstream rhythms
   "usmle-app:reminder-state-v1",// reminder dismiss / snooze

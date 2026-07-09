@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loadProgress, getCard, isDue } from "../lib/storage.js";
+import { loadProgress, getCard, isDue, stampQuestionsSeen } from "../lib/storage.js";
 import { IconBox } from "./icons.jsx";
 
 // Map a deck question to the TestReview block key ("test1".."test6").
@@ -14,7 +14,7 @@ function blockLabel(q) {
   return "T" + q.block.replace(/\D/g, "");
 }
 
-function reviewedLabel(ms) {
+function agoLabel(ms) {
   if (!ms) return null;
   const days = Math.floor((Date.now() - ms) / 86400000);
   const date = new Date(ms).toLocaleDateString("en-US", { month: "short", day: "numeric" });
@@ -22,6 +22,10 @@ function reviewedLabel(ms) {
   if (days === 1) return `1 day ago · ${date}`;
   if (days < 30) return `${days} days ago · ${date}`;
   return date;
+}
+function addedLabel(ms) {
+  if (!ms) return null;
+  return new Date(ms).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
 const STATUS_META = {
@@ -38,18 +42,17 @@ export default function QuestionBank({ questions = [] }) {
   const [status, setStatus] = useState("all");   // all | new | review | mastered | due
   const [system, setSystem] = useState("all");
   const [query, setQuery]   = useState("");
-  const [sort, setSort]     = useState("qid");    // qid | qidDesc | reviewed | system | pct
-  const [block, setBlock]   = useState("all");
+  const [sort, setSort]     = useState("added");  // added | addedOld | reviewed | system | pct
 
   const systems = useMemo(
     () => [...new Set(questions.map((q) => q.system))].sort(),
     [questions]
   );
 
-  const blocks = useMemo(() => {
-    const set = new Set(questions.map((q) => blockKey(q)));
-    return [...set].sort();
-  }, [questions]);
+  // Stamp every question with its first-seen ("imported to the app") time so the
+  // bank can order by when questions entered the app, not by which test they came
+  // from. New imports get later stamps → they sort to the top under "Newest".
+  const seen = useMemo(() => stampQuestionsSeen(questions.map((q) => q.id)), [questions]);
 
   const rows = useMemo(() => {
     let list = questions.map((q) => {
@@ -58,12 +61,12 @@ export default function QuestionBank({ questions = [] }) {
         q,
         card,
         reviewedAt: card.lastReviewed || 0,
+        addedAt: seen[q.id] || 0,
         qidNum: Number(q.qid) || 0,
       };
     });
 
     list = list.filter(({ q, card }) => {
-      if (block !== "all" && blockKey(q) !== block) return false;
       if (system !== "all" && q.system !== system) return false;
       if (result === "correct" && q.missed) return false;
       if (result === "incorrect" && !q.missed) return false;
@@ -77,14 +80,14 @@ export default function QuestionBank({ questions = [] }) {
     });
 
     const cmp = {
-      qid:      (a, b) => a.qidNum - b.qidNum,
-      qidDesc:  (a, b) => b.qidNum - a.qidNum,
+      added:    (a, b) => b.addedAt - a.addedAt || b.qidNum - a.qidNum,
+      addedOld: (a, b) => a.addedAt - b.addedAt || a.qidNum - b.qidNum,
       reviewed: (a, b) => b.reviewedAt - a.reviewedAt,
-      system:   (a, b) => a.q.system.localeCompare(b.q.system) || a.qidNum - b.qidNum,
+      system:   (a, b) => a.q.system.localeCompare(b.q.system) || b.addedAt - a.addedAt,
       pct:      (a, b) => (a.q.percentCorrect || 0) - (b.q.percentCorrect || 0),
     }[sort];
     return list.sort(cmp);
-  }, [questions, progress, block, system, result, status, query, sort]);
+  }, [questions, progress, seen, system, result, status, query, sort]);
 
   const tally = useMemo(() => {
     let correct = 0, incorrect = 0, reviewed = 0, mastered = 0;
@@ -104,7 +107,8 @@ export default function QuestionBank({ questions = [] }) {
           <div className="page-eyebrow"><IconBox size={13} /> Question Bank</div>
           <h1 className="td-title">Question Bank</h1>
           <p className="td-sub">
-            Every logged question, sorted by Q&nbsp;number. Filter by topic, result, and review recency.
+            Every question you've imported, newest first by when it was added to the app. Filter by
+            topic, result, and review recency.
           </p>
         </div>
       </div>
@@ -126,8 +130,6 @@ export default function QuestionBank({ questions = [] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <Select label="Test" value={block} onChange={setBlock}
-          options={[["all", "All tests"], ...blocks.map((b) => [b, "Test " + b.slice(-1)])]} />
         <Select label="Subject / system" value={system} onChange={setSystem}
           options={[["all", "All subjects"], ...systems.map((s) => [s, s])]} />
         <Select label="Result" value={result} onChange={setResult}
@@ -135,7 +137,7 @@ export default function QuestionBank({ questions = [] }) {
         <Select label="Review status" value={status} onChange={setStatus}
           options={[["all", "Any status"], ["new", "New"], ["review", "Reviewing"], ["due", "Due now"], ["mastered", "Mastered"]]} />
         <Select label="Sort by" value={sort} onChange={setSort}
-          options={[["qid", "Q number ↑"], ["qidDesc", "Q number ↓"], ["reviewed", "Last reviewed"], ["system", "Subject"], ["pct", "% correct (hardest)"]]} />
+          options={[["added", "Newest added"], ["addedOld", "Oldest added"], ["reviewed", "Last reviewed"], ["system", "Subject"], ["pct", "% correct (hardest)"]]} />
       </div>
 
       <p className="qb-count muted">{rows.length} of {tally.total} shown</p>
@@ -151,13 +153,13 @@ export default function QuestionBank({ questions = [] }) {
               <th>Topic</th>
               <th>Result</th>
               <th>Review status</th>
-              <th>Last reviewed</th>
+              <th>Added</th>
             </tr>
           </thead>
           <tbody>
-            {rows.map(({ q, card }) => {
+            {rows.map(({ q, card, addedAt }) => {
               const st = STATUS_META[card.status] || STATUS_META.new;
-              const rev = reviewedLabel(card.lastReviewed);
+              const rev = agoLabel(card.lastReviewed);
               const due = card.status === "review" && isDue(card);
               return (
                 <tr
@@ -183,7 +185,10 @@ export default function QuestionBank({ questions = [] }) {
                     {due && <span className="qb-badge qb-due">Due</span>}
                     {card.done && <span className="qb-done">✓</span>}
                   </td>
-                  <td className="qb-td-rev">{rev || <span className="muted">—</span>}</td>
+                  <td className="qb-td-rev">
+                    {addedLabel(addedAt) || <span className="muted">—</span>}
+                    {rev && <span className="qb-rev-sub muted"> · reviewed {rev}</span>}
+                  </td>
                 </tr>
               );
             })}
@@ -196,7 +201,8 @@ export default function QuestionBank({ questions = [] }) {
 
       <p className="footnote muted qb-foot">
         100% local · updated from your question files. When you finish a new UWorld test and add its
-        question files, tell me “add the latest questions to the bank” and it rebuilds here, sorted by Q number.
+        question files, tell me “add the latest questions to the bank” — new questions appear here at
+        the top, ordered by when they were added to the app.
       </p>
     </div>
   );

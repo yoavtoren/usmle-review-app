@@ -337,27 +337,43 @@ export function saveFATopics(topics) {
   localStorage.setItem(FA_TOPICS_KEY, JSON.stringify(topics));
 }
 
-// ── Test score log ────────────────────────────────────────────────────────────
-const TEST_LOG_KEY = "test-log-v8";
-
-const SEED_TESTS = [
-  { id: 1748563200000, testNum: "UWORLD test 1", score: 28, date: "2026-05-18", uworldAvg: 54, hasQuestions: true, block: "test1", deckFile: "questions/deck.json" },
-  { id: 1749686400000, testNum: "UWORLD test 2", score: 55, date: "2026-06-11", uworldAvg: 59, hasQuestions: true, block: "test2", deckFile: "questions/deck.json" },
-  { id: 1749772800000, testNum: "UWORLD test 3", score: 49, date: "2026-06-12", uworldAvg: 62, hasQuestions: true, block: "test3", deckFile: "questions/deck.json" },
-  { id: 1749859200000, testNum: "UWORLD test 4", score: 45, date: "2026-06-05", uworldAvg: 60, hasQuestions: true, block: "test4", deckFile: "questions/deck.json" },
-];
+// ── UWorld test log (single source of truth) ──────────────────────────────────
+// One entry per logged test carries EVERYTHING about that sitting: overall
+// result, date, the per-subject / per-system stat breakdown, and how you felt
+// that day. The Tests page, the Progress page (via progressData), the Home
+// dashboard, and the planner's weakness engine all read from this one list, so
+// filling the form once flows to every screen. Entry shape:
+//   { id, testNum, date, score, uworldAvg?, questionCount?,
+//     feeling?: { mood: 1..5, note },
+//     subjects?: { name: { total, correct, omitted } },
+//     systems?:  { name: { total, correct, omitted } },
+//     createdAt, block?, deckFile?, hasQuestions? }
+const TEST_LOG_KEY = "test-log-v9";
 
 export function loadTestLog() {
   try {
     const raw = localStorage.getItem(TEST_LOG_KEY);
-    if (raw !== null) return JSON.parse(raw) || [];
-    localStorage.setItem(TEST_LOG_KEY, JSON.stringify(SEED_TESTS));
-    return SEED_TESTS;
+    return raw !== null ? (JSON.parse(raw) || []) : [];
   } catch { return []; }
 }
 
 export function saveTestLog(log) {
   localStorage.setItem(TEST_LOG_KEY, JSON.stringify(log));
+}
+
+// Overall % for one test — prefer an explicit score, else derive it from the
+// subject stat breakdown (correct / graded), else from systems.
+export function testScore(test) {
+  if (test == null) return null;
+  if (Number.isFinite(test.score)) return test.score;
+  for (const kind of ["subjects", "systems"]) {
+    let total = 0, correct = 0;
+    for (const r of Object.values(test[kind] || {})) {
+      if (r?.total) { total += Number(r.total) || 0; correct += Number(r.correct) || 0; }
+    }
+    if (total) return Math.round((correct / total) * 100);
+  }
+  return null;
 }
 
 // ── Question intake metadata ───────────────────────────────────────────────
@@ -529,11 +545,77 @@ export function cleanupRemovedAreas() {
   } catch { /* never block startup on a cleanup hiccup */ }
 }
 
+// ── Question "imported to the app" timestamps ─────────────────────────────
+// The deck itself has no creation date, so we stamp each question id the first
+// time the app sees it. New questions added in a later import get a later stamp,
+// which is what the Question Bank sorts by ("newest first"). Existing ids keep
+// their original stamp; a batch of brand-new ids is stamped in deck order (tiny
+// increments) so their relative import order is preserved.
+const Q_SEEN_KEY = "usmle-q-seen-v1";
+
+export function loadQuestionSeen() {
+  try { return JSON.parse(localStorage.getItem(Q_SEEN_KEY)) || {}; }
+  catch { return {}; }
+}
+
+// Stamp any ids we haven't seen before. `orderedIds` should be in deck order.
+// Returns the full id → firstSeenMs map (including pre-existing stamps).
+export function stampQuestionsSeen(orderedIds = []) {
+  const seen = loadQuestionSeen();
+  const fresh = orderedIds.filter((id) => seen[id] == null);
+  if (fresh.length) {
+    // Monotonic: a fresh batch always stamps after every id seen so far, so a
+    // later import sorts above earlier ones even if the clock hasn't advanced.
+    const maxSeen = Object.values(seen).reduce((m, v) => Math.max(m, v || 0), 0);
+    const base = Math.max(Date.now(), maxSeen + 1);
+    fresh.forEach((id, i) => { seen[id] = base + i; }); // preserve deck order
+    localStorage.setItem(Q_SEEN_KEY, JSON.stringify(seen));
+  }
+  return seen;
+}
+
+// ── Full progress reset ───────────────────────────────────────────────────
+// Wipes every study-progress store back to a clean slate so the user can
+// re-import their real tests from scratch. Structural / preference data
+// (personal + AIMS tasks, email config, last FA page read) is left untouched.
+const RESET_FLAG = "usmle-app:reset-progress-v2";
+const RESET_KEYS = [
+  KEY,                          // spaced-repetition cards
+  TEST_LOG_KEY, "test-log-v8",  // unified test log (+ legacy)
+  "usmle-perf-snapshots-v1",    // legacy standalone snapshots (now derived)
+  TASKS_KEY,                    // auto-generated study tasks
+  FA_TOPICS_KEY,                // First Aid topic coverage
+  Q_INTAKE_KEY,                 // question intake tags
+  TOPIC_CTR_KEY,                // topic miss counters
+  FA_INTAKE_KEY,                // First Aid section coverage
+  STREAK_KEY,                   // daily streak
+  LIGHT_MODE_KEY,               // pause / light mode
+  Q_SEEN_KEY,                   // question import timestamps
+  "usmle-scheduler-v1",         // adaptive planner state
+];
+
+export function resetAllProgress() {
+  try {
+    for (const k of RESET_KEYS) localStorage.removeItem(k);
+    // Mark it done. Synced (see icloudSync SYNC_KEYS) so the wipe happens once
+    // across all devices instead of re-clobbering freshly re-imported data.
+    localStorage.setItem(RESET_FLAG, JSON.stringify({ at: Date.now() }));
+  } catch { /* best-effort */ }
+}
+
+// One-time automatic reset on first launch after this change ships.
+export function maybeAutoReset() {
+  try {
+    if (localStorage.getItem(RESET_FLAG)) return;
+    resetAllProgress();
+  } catch { /* never block startup */ }
+}
+
 // ── JSON export / import ──────────────────────────────────────────────────
 export function exportAllData() {
   const keys = [KEY, TASKS_KEY, FA_TOPICS_KEY, TEST_LOG_KEY, STREAK_KEY,
-    Q_INTAKE_KEY, TOPIC_CTR_KEY, FA_INTAKE_KEY, LIGHT_MODE_KEY,
-    "usmle-perf-snapshots-v1"];
+    Q_INTAKE_KEY, TOPIC_CTR_KEY, FA_INTAKE_KEY, LIGHT_MODE_KEY, Q_SEEN_KEY,
+    "usmle-scheduler-v1"];
   const out = {};
   for (const k of keys) {
     const raw = localStorage.getItem(k);

@@ -4,8 +4,58 @@
 // See CLAUDE_CODE_BUILD_SPEC.md. Weak-spot joins reuse faMap.js keyword mapping
 // so the messy deck `system` vocabulary lands on the 16 FA chapters cleanly.
 
-import { INTERVALS, loadProgress } from "./storage.js";
+import { INTERVALS, loadProgress, loadTestLog } from "./storage.js";
 import { chaptersFromText } from "./faMap.js";
+
+// Maps each plan-unit system (short vocab) to the substrings that identify its
+// rows in the UWorld/NBME stat breakdown (subjects + systems taxonomy). Lets the
+// weakness engine read the stats you enter per test and pull weak systems forward.
+const SYS_STAT_MATCH = {
+  "Biochemistry": ["biochem"],
+  "Cardiovascular": ["cardiovascular"],
+  "Endocrine": ["endocrine"],
+  "Gastrointestinal": ["gastrointestinal", "nutrition"],
+  "Heme / Onc": ["hematology", "oncology"],
+  "Immunology": ["immunolog", "allergy"],
+  "MSK, Skin & Connective": ["rheumatolog", "orthopedic", "dermatolog"],
+  "Microbiology": ["microbiolog", "infectious"],
+  "Neuro & Special Senses": ["nervous", "ophthalmolog", "ear, nose"],
+  "Pathology": ["pathology", "pathophysiolog"],
+  "Pharmacology": ["pharmacolog"],
+  "Psychiatry": ["psychiatric", "behavioral", "substance"],
+  "Public Health": ["biostat", "epidemiolog", "social scien", "ethics", "poisoning", "environmental"],
+  "Renal": ["renal", "urinary", "electrolyte"],
+  "Repro": ["reproductive", "pregnancy", "childbirth", "breast"],
+  "Respiratory": ["pulmonary", "critical care"],
+};
+
+// Aggregate every logged test's per-subject + per-system stats into a single
+// miss-rate per plan-unit system. Laplace-smoothed so a system you've barely
+// touched doesn't read as maximally weak. Returns { system: weakness 0..1 }.
+export function systemWeaknessFromTests(log = loadTestLog()) {
+  const acc = {}; // system -> { total, correct }
+  for (const [sys, keys] of Object.entries(SYS_STAT_MATCH)) acc[sys] = { total: 0, correct: 0 };
+  for (const t of log) {
+    for (const kind of ["subjects", "systems"]) {
+      for (const [name, row] of Object.entries(t[kind] || {})) {
+        if (!row?.total) continue;
+        const low = name.toLowerCase();
+        for (const [sys, keys] of Object.entries(SYS_STAT_MATCH)) {
+          if (keys.some((k) => low.includes(k))) {
+            acc[sys].total += Number(row.total) || 0;
+            acc[sys].correct += Number(row.correct) || 0;
+          }
+        }
+      }
+    }
+  }
+  const K = 6;
+  const out = {};
+  for (const [sys, { total, correct }] of Object.entries(acc)) {
+    if (total > 0) out[sys] = clamp01((total - correct) / (total + K));
+  }
+  return out;
+}
 
 const KEY = "usmle-scheduler-v1";
 const DAY = 24 * 60 * 60 * 1000;
@@ -45,15 +95,49 @@ const DEFAULT_ADAPT = {
   lastRetuneWeek: null,
 };
 
+// Score goal. Step 1 is PASS/FAIL since Jan 2022 — there is no official 3-digit
+// score. NBME CBSSA + UWSA still report a legacy 3-digit "predicted" equivalent;
+// 196 is the equated pass line. Default framing = pass margin, not an official score.
+const DEFAULT_GOAL = { mode: "pass", target: 240, passLine: 196, buffer: 14, updatedAt: null };
+
+// Standard 2026 Step-1 self-assessment arc, back-scheduled from the exam date.
+// NBME CBSSA (25-31) + UWorld Self-Assessments (UWSA 1/2) report a 3-digit
+// predicted score; the official Free 120 reports % correct only.
+const STANDARD_ASSESSMENTS = [
+  { id: "nbme-26", kind: "nbme", label: "NBME 26", form: "26", role: "baseline", unit: "three_digit", offset: 35 },
+  { id: "nbme-28", kind: "nbme", label: "NBME 28", form: "28", role: "mid",      unit: "three_digit", offset: 24 },
+  { id: "uwsa-1",  kind: "uwsa", label: "UWSA 1",  form: "1",  role: "mid",      unit: "three_digit", offset: 17 },
+  { id: "nbme-30", kind: "nbme", label: "NBME 30", form: "30", role: "mid",      unit: "three_digit", offset: 11 },
+  { id: "uwsa-2",  kind: "uwsa", label: "UWSA 2",  form: "2",  role: "final",    unit: "three_digit", offset: 7 },
+  { id: "nbme-31", kind: "nbme", label: "NBME 31", form: "31", role: "final",    unit: "three_digit", offset: 4 },
+  { id: "free120", kind: "free120", label: "Free 120", form: "", role: "final",  unit: "percent",     offset: 2 },
+];
+
 const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
 export const todayISO = () => new Date().toISOString().slice(0, 10);
 const isoToMs = (iso) => new Date(`${iso}T00:00:00`).getTime();
+// Local-consistent inverse of isoToMs (toISOString would drift a day in +TZ like Israel).
+const msToISO = (ms) => {
+  const d = new Date(ms);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+};
+
+// ── Predicted-score conversions (Free 120 % ⇆ legacy 3-digit) ────────────────
+// Linear, slope 2.0, pass anchored exactly at 60% = 196. NBME/UWSA already give
+// a 3-digit and are stored as-is; ONLY percent-unit results are converted.
+export const pctToPredicted3 = (pct) => clamp(Math.round(2 * pct + 76), 150, 280);
+export const predicted3ToPct = (s) => clamp(Math.round((s - 76) / 2), 30, 100);
+export const toPredicted3 = (a) => (a.unit === "three_digit" ? a.actual : pctToPredicted3(a.actual));
+export function effectiveTarget(goal = DEFAULT_GOAL) {
+  return goal.mode === "predicted" ? goal.target : (goal.passLine || 196) + (goal.buffer || 0);
+}
 
 // ── State load / save ────────────────────────────────────────────────────────
 export function loadSched(planMeta) {
   let raw;
   try { raw = JSON.parse(localStorage.getItem(KEY)); } catch { raw = null; }
-  if (raw && raw.version === 1) return raw;
+  if (raw && (raw.version === 1 || raw.version === 2)) return migrate(raw);
   return seedDefault(planMeta);
 }
 
@@ -62,15 +146,30 @@ function save(state) {
   return state;
 }
 
+// Idempotent, additive backfill of v2 fields onto any v1/v2 state. Safe to run
+// repeatedly and on partially-migrated or re-imported state — each field is
+// checked independently and existing data is never touched.
+export function migrate(raw) {
+  let changed = raw.version !== 2;
+  const state = { ...raw, version: 2 };
+  if (!state.settings) state.settings = { ...DEFAULT_SETTINGS };
+  if (!state.settings.goal) { state.settings = { ...state.settings, goal: { ...DEFAULT_GOAL } }; changed = true; }
+  if (!Array.isArray(state.assessments)) { state.assessments = []; changed = true; }
+  if (!Array.isArray(state.tasks)) { state.tasks = []; changed = true; }
+  return changed ? save(state) : state;
+}
+
 export function seedDefault(planMeta = {}) {
-  const settings = { ...DEFAULT_SETTINGS };
+  const settings = { ...DEFAULT_SETTINGS, goal: { ...DEFAULT_GOAL } };
   if (planMeta.examDate) settings.examDate = planMeta.examDate;
   if (planMeta.contentDeadline) settings.contentDeadline = planMeta.contentDeadline;
   return save({
-    version: 1,
+    version: 2,
     settings,
     units: {},
     days: {},
+    assessments: [],
+    tasks: [],
     reasonLog: [],
     adaptation: { ...DEFAULT_ADAPT },
     phase: "content",
@@ -91,6 +190,254 @@ export function ensureUnits(state, units) {
     }
   }
   return changed ? save(next) : state;
+}
+
+// ── Plan extras bootstrap: goal + assessments + tasks ────────────────────────
+// Runs once in the Planner init (after ensureUnits). Backfills defaults and
+// seeds the standard assessment arc only when none exist yet.
+export function ensurePlanExtras(state) {
+  let s = migrate(state);
+  if (!s.assessments.length) s = seedAssessments(s);
+  return s;
+}
+
+// Build (or, with {force}, rebuild) the standard assessment arc back-scheduled
+// from examDate. Re-seeding preserves any taken/edited rows (matched by id).
+export function seedAssessments(state, { force = false } = {}) {
+  if (state.assessments?.length && !force) return state;
+  const E = isoToMs(state.settings.examDate);
+  const today = isoToMs(todayISO());
+  const goal = state.settings.goal || DEFAULT_GOAL;
+  const eff = effectiveTarget(goal);
+  const spanDays = Math.max(1, STANDARD_ASSESSMENTS[0].offset - STANDARD_ASSESSMENTS.at(-1).offset);
+
+  const prevById = Object.fromEntries((state.assessments || []).map((a) => [a.id, a]));
+  const usedDates = new Set();
+  const rows = [];
+  for (const t of STANDARD_ASSESSMENTS) {
+    const prev = prevById[t.id];
+    // Never move a taken or user-edited row; carry it through unchanged.
+    if (prev && (prev.takenDate || prev.touched)) { rows.push(prev); if (prev.plannedDate) usedDates.add(prev.plannedDate); continue; }
+
+    let ms = Math.max(today, E - t.offset * DAY);
+    let iso = msToISO(ms);
+    while (usedDates.has(iso)) { ms += DAY; iso = msToISO(ms); } // never stack two on one day
+    usedDates.add(iso);
+
+    const daysToExam = Math.max(0, Math.round((E - ms) / DAY));
+    const g3 = clamp(Math.round(eff - 15 * (daysToExam / spanDays)), 150, 280);
+    const goalScore = t.unit === "percent" ? predicted3ToPct(g3) : g3;
+    rows.push({
+      id: t.id, kind: t.kind, label: t.label, form: t.form, role: t.role, unit: t.unit,
+      plannedDate: iso, goalScore,
+      actual: prev?.actual ?? null, takenDate: prev?.takenDate ?? null,
+      note: prev?.note ?? "", seeded: true, touched: false,
+    });
+  }
+  // Keep any custom (non-standard) rows the user added.
+  const customRows = (state.assessments || []).filter((a) => !STANDARD_ASSESSMENTS.some((t) => t.id === a.id));
+  return save({ ...state, assessments: [...rows, ...customRows] });
+}
+
+export function setGoal(state, patch) {
+  const goal = { ...(state.settings.goal || DEFAULT_GOAL), ...patch, updatedAt: Date.now() };
+  return save({ ...state, settings: { ...state.settings, goal } });
+}
+
+export function upsertAssessment(state, a) {
+  const list = [...(state.assessments || [])];
+  const idx = list.findIndex((x) => x.id === a.id);
+  const row = { unit: "three_digit", seeded: false, touched: true, actual: null, takenDate: null, note: "", ...a };
+  if (idx >= 0) list[idx] = { ...list[idx], ...a, touched: true };
+  else list.push({ id: a.id || `a-${Date.now()}`, ...row });
+  return save({ ...state, assessments: list });
+}
+
+export function logAssessment(state, id, actual, takenISO = todayISO()) {
+  const list = (state.assessments || []).map((a) =>
+    a.id === id ? { ...a, actual: actual === "" || actual == null ? null : Number(actual), takenDate: actual == null || actual === "" ? null : takenISO } : a);
+  return save({ ...state, assessments: list });
+}
+
+export function removeAssessment(state, id) {
+  return save({ ...state, assessments: (state.assessments || []).filter((a) => a.id !== id) });
+}
+
+// ── Ad-hoc tasks ─────────────────────────────────────────────────────────────
+export function addTask(state, text, { dueISO = null, link = null } = {}) {
+  const t = (text || "").trim();
+  if (!t) return state;
+  const task = { id: `t-${Date.now()}`, text: t, done: false, createdISO: todayISO(), dueISO, doneISO: null, link };
+  return save({ ...state, tasks: [...(state.tasks || []), task] });
+}
+export function toggleTask(state, id) {
+  const tasks = (state.tasks || []).map((t) =>
+    t.id === id ? { ...t, done: !t.done, doneISO: !t.done ? todayISO() : null } : t);
+  return save({ ...state, tasks });
+}
+export function deleteTask(state, id) {
+  return save({ ...state, tasks: (state.tasks || []).filter((t) => t.id !== id) });
+}
+
+// ── Readiness projection (advisory only — never mutates the plan) ─────────────
+export function projectReadiness(state) {
+  const goal = state.settings.goal || DEFAULT_GOAL;
+  const target = effectiveTarget(goal);
+  const passLine = goal.passLine || 196;
+  const pts = (state.assessments || [])
+    .filter((a) => a.takenDate && a.actual != null)
+    .map((a) => ({ t: isoToMs(a.takenDate), y: toPredicted3(a) }))
+    .sort((p, q) => p.t - q.t);
+
+  if (!pts.length) return { status: "baseline", target, passLine, confidence: "none" };
+
+  const examMs = isoToMs(state.settings.examDate);
+  const latestY = pts[pts.length - 1].y;
+  let projected, slope = 0;
+  if (pts.length === 1) {
+    projected = latestY;
+  } else {
+    const n = pts.length;
+    const mt = pts.reduce((s, p) => s + p.t, 0) / n;
+    const my = pts.reduce((s, p) => s + p.y, 0) / n;
+    const denom = pts.reduce((s, p) => s + (p.t - mt) ** 2, 0);
+    if (denom === 0) { projected = latestY; }       // identical dates → flat
+    else {
+      slope = pts.reduce((s, p) => s + (p.t - mt) * (p.y - my), 0) / denom;
+      const intercept = my - slope * mt;
+      projected = Math.round(slope * examMs + intercept);
+    }
+  }
+  projected = clamp(projected, 150, 280);
+  // Damping: two noisy early forms can't promise a huge jump.
+  projected = clamp(projected, latestY - 20, latestY + 30);
+
+  const gap = projected - target;
+  const passMargin = projected - passLine;
+  let status;
+  if (projected < passLine || gap < -15) status = "at_risk";
+  else if (gap < -5) status = "behind";
+  else if (gap < 0) status = "close";
+  else status = "on_track";
+
+  return {
+    status, projected, band: [clamp(projected - 10, 150, 280), clamp(projected + 10, 150, 280)],
+    latest: latestY, target, passLine, gap, passMargin,
+    slopePerWeek: Math.round(slope * 7 * DAY), n: pts.length,
+    confidence: pts.length >= 2 ? "firm" : "low",
+  };
+}
+
+// Count untaken assessment days that fall inside the content phase (they cost a
+// study day). Most checkpoints land after the deadline, so this rarely fires.
+function assessmentContentDays(state, dateISO) {
+  const deadline = state.settings.contentDeadline;
+  return (state.assessments || []).filter((a) =>
+    !a.takenDate && a.plannedDate && a.plannedDate > dateISO && a.plannedDate <= deadline).length;
+}
+
+// ── Student profile (public/profile.json) — closes the 7 scheduler gaps ──────
+// Maps profile system names to the plan-unit system vocabulary so per-system
+// performance lands on the right units.
+const PROFILE_SYS_ALIAS = {
+  "cardiovascular": "Cardiovascular", "renal": "Renal", "respiratory": "Respiratory",
+  "hematology/oncology": "Heme / Onc", "heme / onc": "Heme / Onc", "endocrine": "Endocrine",
+  "gastrointestinal": "Gastrointestinal", "reproductive": "Repro", "repro": "Repro",
+  "neurology": "Neuro & Special Senses", "neuro & special senses": "Neuro & Special Senses",
+  "psychiatry": "Psychiatry", "msk/skin": "MSK, Skin & Connective",
+  "msk, skin & connective": "MSK, Skin & Connective", "biochemistry": "Biochemistry",
+  "immunology": "Immunology", "microbiology": "Microbiology", "pharmacology": "Pharmacology",
+  "pathology": "Pathology", "public health": "Public Health",
+};
+const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const dayKey = (iso) => DOW[new Date(`${iso}T00:00:00`).getDay()];
+
+function isRestDay(profile, iso) {
+  const sc = profile?.schedule;
+  if (!sc) return false;
+  return (sc.restDays || []).includes(dayKey(iso)) || (sc.offDates || []).includes(iso);
+}
+function reducedCapacity(profile, iso) {
+  const sc = profile?.schedule;
+  return sc?.reducedDays?.[dayKey(iso)] || null; // e.g. "low"
+}
+export function weakReviewTarget(state) {
+  return state.settings?.weakReviewTarget || state.profile?.retention?.weakTopicReviewTarget || 1;
+}
+
+// Store the profile on state, wire the retention target, and (once per profile
+// version) seed the real assessment calendar. Idempotent across reloads.
+export function applyProfile(state, profile) {
+  if (!profile) return state;
+  const already = state.profileAppliedAt === profile.updatedAt && state.profile;
+  let s = { ...state, profile };
+  const target = profile.retention?.weakTopicReviewTarget;
+  if (target) s = { ...s, settings: { ...s.settings, weakReviewTarget: target } };
+  if (!already) {
+    s = seedAssessmentsFromProfile(s, profile);
+    s.profileAppliedAt = profile.updatedAt;
+  }
+  return save(s);
+}
+
+function profileTargetToGoal(targetStr, unit) {
+  const str = String(targetStr || "").toLowerCase();
+  const pctMatch = str.match(/(\d{2})\s*%/);
+  if (unit === "percent") return pctMatch ? Number(pctMatch[1]) : 65;
+  if (pctMatch) return pctToPredicted3(Number(pctMatch[1]));
+  if (str.includes("comfortable")) return 216;
+  if (str.includes("margin")) return 206;
+  return 200; // "pass"
+}
+
+// Replace the auto-seeded arc with the profile's real dated calendar, preserving
+// any row the user already took or edited in-app (matched by label).
+function seedAssessmentsFromProfile(state, profile) {
+  const list = profile.assessments || [];
+  if (!list.length) return state;
+  const prevByLabel = Object.fromEntries((state.assessments || []).map((a) => [a.label, a]));
+  const rows = list.map((p, i) => {
+    const name = p.name || `Checkpoint ${i + 1}`;
+    const low = name.toLowerCase();
+    const kind = low.includes("free 120") || low.includes("free120") ? "free120"
+      : low.includes("uwsa") ? "uwsa" : "nbme";
+    const unit = kind === "free120" ? "percent" : "three_digit";
+    const label = name.replace(/[()]/g, "").replace(/\s+/g, " ").trim();
+    const role = low.includes("baseline") ? "baseline" : low.includes("final") || low.includes("free") ? "final" : "mid";
+    const prev = prevByLabel[label];
+    const form = (name.match(/\b(\d{1,2})\b/) || [])[1] || "";
+    return {
+      id: `p-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+      kind, label, form, role, unit,
+      plannedDate: p.date, goalScore: profileTargetToGoal(p.target, unit),
+      actual: prev?.actual ?? (p.result != null ? Number(p.result) : null),
+      takenDate: prev?.takenDate ?? null,
+      note: "", seeded: true, touched: prev?.touched || false,
+    };
+  });
+  // Keep any user-added custom rows that aren't part of the profile calendar.
+  const labels = new Set(rows.map((r) => r.label));
+  const custom = (state.assessments || []).filter((a) => !labels.has(a.label) && (a.id?.startsWith("a-") || a.takenDate));
+  return { ...state, assessments: [...rows, ...custom].sort((a, b) => (a.plannedDate < b.plannedDate ? -1 : 1)) };
+}
+
+// Effective study-day capacity between two dates, honoring rest/reduced days.
+// Rest day = 0, reduced day = low/med ratio, full day = 1. Falls back to a plain
+// day count when there's no profile (backward compatible).
+function scheduleCapacityDays(state, fromISO, toISO) {
+  const profile = state.profile;
+  const from = isoToMs(fromISO), to = isoToMs(toISO);
+  if (to <= from) return 0;
+  if (!profile?.schedule) return Math.round((to - from) / DAY);
+  const cp = state.settings.capacityPresets;
+  const redRatio = clamp01((cp.low || 90) / Math.max(1, cp.med || 240));
+  let days = 0;
+  for (let ms = from + DAY; ms <= to; ms += DAY) {
+    const iso = msToISO(ms);
+    if (isRestDay(profile, iso)) continue;
+    days += reducedCapacity(profile, iso) ? redRatio : 1;
+  }
+  return days;
 }
 
 // ── Weak-spot ingestion (Channel A: questions, Channel B: seed file) ─────────
@@ -135,12 +482,26 @@ export function recomputeWeakness(state, units, deck, seed) {
     seedBySystem[sys] = Math.max(seedBySystem[sys] || 0, lvl);
   }
 
+  // Channel C — miss rate from the stats you enter per UWorld/NBME test.
+  const testWeakBySystem = systemWeaknessFromTests();
+
+  // Channel D — per-system performance from the student profile (the highest-
+  // value signal): pct correct → miss rate, keyed to the plan-unit vocabulary.
+  const profileWeakBySystem = {};
+  for (const row of state.profile?.perSystemPerformance || []) {
+    if (row.pct == null) continue;
+    const sys = PROFILE_SYS_ALIAS[(row.system || "").toLowerCase()] || row.system;
+    profileWeakBySystem[sys] = Math.max(profileWeakBySystem[sys] || 0, clamp01(1 - row.pct / 100));
+  }
+
   const next = { ...state, units: { ...state.units } };
   for (const u of units) {
     const prev = next.units[u.key] || {};
     const chA = chapterMiss[u.chapterNum] || 0;
     const chB = seedBySystem[(u.system || "").toLowerCase()] || 0;
-    next.units[u.key] = { ...prev, weaknessScore: clamp01(Math.max(chA, chB)) };
+    const chC = testWeakBySystem[u.system] || 0;
+    const chD = profileWeakBySystem[u.system] || 0;
+    next.units[u.key] = { ...prev, weaknessScore: clamp01(Math.max(chA, chB, chC, chD)) };
   }
   return save(next);
 }
@@ -160,13 +521,19 @@ function urgency(state, units, u, dateISO) {
   return base + 0.15 * Math.min(st.postponeCount || 0, 4);
 }
 
+// Has a done/skim/review unit's spaced interval elapsed? (reuses storage.js INTERVALS)
+function reviewDue(state, u) {
+  const st = state.units[u.key] || {};
+  if (!st.completedDate) return true;
+  const streak = Math.min(st.reviewStreak || 0, INTERVALS.length - 1);
+  const due = isoToMs(st.completedDate) + INTERVALS[streak] * DAY;
+  return Date.now() >= due;
+}
+
 function spacingReadiness(state, u) {
   const st = state.units[u.key] || {};
-  if (st.status === "done" || st.status === "skim") {
-    if (!st.completedDate) return 0;
-    const streak = Math.min(st.reviewStreak || 0, INTERVALS.length - 1);
-    const due = isoToMs(st.completedDate) + INTERVALS[streak] * DAY;
-    return Date.now() >= due ? 1 : 0;
+  if (st.status === "done" || st.status === "skim" || st.status === "review") {
+    return reviewDue(state, u) ? 1 : 0;
   }
   return 0.15; // small constant so fresh content still flows
 }
@@ -247,13 +614,20 @@ export function planDay(state, units, dateISO, capacity) {
   let budget = preset - (s.adaptation.capacityBiasMin || 0) - anki;
   budget = Math.max(budget, s.settings.blockMinutes);
 
+  // Simulation day: an untaken assessment scheduled for today owns the day.
+  // Cut content to a single light block so only Anki + light review get planned.
+  const assessmentToday = (s.assessments || []).find((a) => !a.takenDate && a.plannedDate === dateISO) || null;
+  if (assessmentToday) budget = s.settings.blockMinutes;
+
   const byKey = Object.fromEntries(units.map((u) => [u.key, u]));
   const recentSystems = recentCompletedSystems(s, byKey, dateISO);
 
-  // Pool = not-done units (todo / scheduled / in_progress); score & sort desc.
+  // Pool = not-done units (todo / scheduled / in_progress), plus weak units
+  // awaiting a retention review whose spaced interval is due (§retention target).
   const pool = units.filter((u) => {
     const st = s.units[u.key] || {};
-    return ["todo", "scheduled", "in_progress"].includes(st.status);
+    if (["todo", "scheduled", "in_progress"].includes(st.status)) return true;
+    return st.status === "review" && reviewDue(s, u);
   });
   const scored = pool
     .map((u) => ({ u, p: priority(s, units, u, dateISO, recentSystems) }))
@@ -293,6 +667,7 @@ export function planDay(state, units, dateISO, capacity) {
     ankiReserveMin: anki,
     uworldMin,
     plannedMinutes: used,
+    assessmentToday: assessmentToday?.id || null,
   };
 
   s = maybeSwitchPhase(s, dateISO);
@@ -304,10 +679,16 @@ export function planDay(state, units, dateISO, capacity) {
 export function recordDone(state, unitKey, actualMinutes, dateISO = todayISO()) {
   const s = { ...state, units: { ...state.units }, days: { ...state.days }, adaptation: { ...state.adaptation } };
   const st = s.units[unitKey] || {};
+  // Retention: a weak unit isn't retired until it comes back correct `target`
+  // times on spaced review (profile.retention.weakTopicReviewTarget, default 1).
+  const target = weakReviewTarget(s);
+  const weak = (st.weaknessScore || 0) >= 0.4;
+  const nextStreak = (st.reviewStreak || 0) + 1;
+  const retire = !weak || nextStreak >= target;
   s.units[unitKey] = {
-    ...st, status: "done", completedDate: dateISO,
+    ...st, status: retire ? "done" : "review", completedDate: dateISO,
     lastTouched: Date.now(), actualMinutes: actualMinutes ?? st.actualMinutes,
-    reviewStreak: (st.reviewStreak || 0),
+    reviewStreak: nextStreak,
   };
   const day = (s.days[dateISO] ||= { capacity: "med", planned: [], completed: [], missed: [], misses: [], ankiDone: false });
   day.completed = [...new Set([...(day.completed || []), unitKey])];
@@ -442,7 +823,12 @@ export function feasibility(state, units, dateISO = todayISO()) {
   const daysLeft = Math.max(0, studyDaysBetween(dateISO, state.settings.contentDeadline));
   const avgDaily = recentAvgDailyMin(state) || 180;
   const ankiPerDay = state.settings.ankiReserveMin.med;
-  const capacityLeft = daysLeft * Math.max(30, avgDaily - ankiPerDay);
+  const perDay = Math.max(30, avgDaily - ankiPerDay);
+  // Effective days honor profile rest/reduced days (Friday = reduced, etc.);
+  // assessment days inside the content phase are also lost to content work.
+  const effectiveDays = scheduleCapacityDays(state, dateISO, state.settings.contentDeadline);
+  const lostToAssessments = assessmentContentDays(state, dateISO);
+  const capacityLeft = Math.max(0, effectiveDays - lostToAssessments) * perDay;
   const ratio = remainingMin / Math.max(1, capacityLeft);
 
   let status = "green";
@@ -450,11 +836,115 @@ export function feasibility(state, units, dateISO = todayISO()) {
   else if (ratio > 1.0) status = "amber";
   else if (ratio < 0.5) status = "ahead";
 
-  const finishDays = Math.ceil(remainingMin / Math.max(30, avgDaily - ankiPerDay));
+  const finishDays = Math.ceil(remainingMin / perDay);
   const etaMs = Date.now() + finishDays * DAY;
   const etaLabel = new Date(etaMs).toLocaleDateString("en-US", { month: "short", day: "numeric" });
 
   return { remainingMin, daysLeft, capacityLeft, ratio, status, etaLabel, finishDays };
+}
+
+// ── Forward projection (powers the Gantt + calendar views) ───────────────────
+// Deterministically lays out every remaining unit across the study days ahead,
+// filling each day up to its content budget in priority order. A unit longer
+// than one day spans consecutive days, giving each a contiguous [start,end]
+// window for the Gantt. Purely advisory — never mutates state.
+export function addDaysISO(iso, n) { return msToISO(isoToMs(iso) + n * DAY); }
+
+export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 400 } = {}) {
+  const byKey = Object.fromEntries(units.map((u) => [u.key, u]));
+  const recentSystems = recentCompletedSystems(state, byKey, fromISO);
+
+  // Remaining work, highest priority first. skim units cost half.
+  const remaining = units
+    .filter((u) => ["todo", "scheduled", "in_progress", "skim"].includes(state.units[u.key]?.status || "todo"))
+    .map((u) => ({ u, p: priority(state, units, u, fromISO, recentSystems) }))
+    .sort((a, b) => b.p - a.p)
+    .map(({ u }) => ({
+      key: u.key,
+      remain: (state.units[u.key]?.status === "skim" ? u.estMinutes / 2 : u.estMinutes),
+    }));
+
+  const anki = state.settings.ankiReserveMin.med;
+  const perDay = Math.max(state.settings.blockMinutes,
+    (recentAvgDailyMin(state) || state.settings.capacityPresets.med) - anki);
+
+  // Untaken assessments block their day (light — Anki only, no content).
+  const assessByDate = {};
+  for (const a of state.assessments || []) {
+    if (a.plannedDate && !a.takenDate) assessByDate[a.plannedDate] = a;
+  }
+
+  const examISO = state.settings.examDate;
+  const days = [];
+  const spans = {};
+  let ptr = 0, date = fromISO, guard = 0;
+
+  while (ptr < remaining.length && guard++ < maxDays) {
+    const assessment = assessByDate[date] || null;
+    const items = [];
+    if (!assessment) {
+      let cap = perDay;
+      while (cap > 0 && ptr < remaining.length) {
+        const cur = remaining[ptr];
+        const take = Math.min(cap, cur.remain);
+        items.push({ key: cur.key, minutes: Math.round(take) });
+        const sp = (spans[cur.key] ||= { start: date, end: date, minutes: 0 });
+        sp.end = date; sp.minutes += Math.round(take);
+        cur.remain -= take; cap -= take;
+        if (cur.remain <= 0.5) ptr++;
+      }
+    }
+    days.push({
+      date,
+      items,
+      minutes: items.reduce((s, x) => s + x.minutes, 0),
+      assessment,
+      afterDeadline: date > state.settings.contentDeadline,
+    });
+    if (date >= examISO && ptr < remaining.length) {
+      // Past the exam with work still queued — stop; the Gantt flags the overflow.
+      break;
+    }
+    date = addDaysISO(date, 1);
+  }
+
+  return { fromISO, days, spans, exhaustedISO: date, overflow: ptr < remaining.length };
+}
+
+// Merge the real logged past (state.days) with the forward projection into one
+// date-keyed map for the calendar: { iso: { planned, completed, missed, ankiDone,
+// projected, assessment } }.
+export function calendarModel(state, units, { pastDays = 120, futureFromISO = todayISO() } = {}) {
+  const byKey = Object.fromEntries(units.map((u) => [u.key, u]));
+  const model = {};
+
+  for (const [iso, d] of Object.entries(state.days || {})) {
+    model[iso] = {
+      iso, capacity: d.capacity,
+      completed: (d.completed || []).filter((k) => byKey[k]),
+      missed: (d.missed || []).filter((k) => byKey[k]),
+      planned: (d.planned || []).filter((k) => byKey[k]),
+      ankiDone: !!d.ankiDone, projected: [], real: true,
+    };
+  }
+
+  const proj = projectSchedule(state, units, futureFromISO);
+  for (const d of proj.days) {
+    if (d.date < futureFromISO) continue;
+    const entry = (model[d.date] ||= { iso: d.date, completed: [], missed: [], planned: [], ankiDone: false, projected: [], real: false });
+    // Don't double-show a unit already completed/planned that real day.
+    const taken = new Set([...entry.completed, ...entry.planned]);
+    entry.projected = d.items.map((x) => x.key).filter((k) => !taken.has(k));
+  }
+
+  // Fold in assessment checkpoints on their planned dates.
+  for (const a of state.assessments || []) {
+    if (!a.plannedDate) continue;
+    const entry = (model[a.plannedDate] ||= { iso: a.plannedDate, completed: [], missed: [], planned: [], ankiDone: false, projected: [], real: false });
+    (entry.assessments ||= []).push(a);
+  }
+
+  return { model, proj };
 }
 
 // Auto-triage: convert lowest-yield todo units to skim (amber) or drop (red).
@@ -533,7 +1023,7 @@ export function exportSched(state) {
 export function importSched(jsonStr) {
   try {
     const data = JSON.parse(jsonStr);
-    if (data && data.version === 1) return save(data);
+    if (data && (data.version === 1 || data.version === 2)) return migrate(data);
   } catch { /* ignore */ }
   return null;
 }

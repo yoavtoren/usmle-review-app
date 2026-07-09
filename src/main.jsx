@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { HashRouter } from "react-router-dom";
 import App from "./App.jsx";
-import { cleanupRemovedAreas } from "./lib/storage.js";
+import { cleanupRemovedAreas, maybeAutoReset } from "./lib/storage.js";
 import { initNative } from "./lib/native.js";
 import { initICloudSync } from "./lib/icloudSync.js";
 import { initSound } from "./lib/sound.js";
@@ -31,6 +31,11 @@ async function boot() {
   // Pull iCloud progress into localStorage before first render (no-op on web or
   // when not signed into iCloud). Never let a sync hiccup block startup.
   try { await initICloudSync(); } catch {}
+
+  // One-time full progress reset. Runs AFTER the iCloud pull + storage patch so
+  // the wipe (and its guard flag) propagate to iCloud instead of being undone by
+  // the next reconcile. Guard flag is a synced key → runs once across devices.
+  maybeAutoReset();
 
   render();
 }

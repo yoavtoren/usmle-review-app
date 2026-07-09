@@ -1,0 +1,60 @@
+{
+  "profileVersion": 1,
+  "updatedAt": "2026-07-09",
+  "fulltime": true,
+  "schedule": {
+    "restDays": [],
+    "reducedDays": { "Fri": "low" },
+    "commitments": [],
+    "offDates": []
+  },
+  "retention": { "weakTopicReviewTarget": 2, "mode": "successCount" },
+  "resourceMinutesPerTopic": {
+    "FA": 3, "Pathoma": 4, "BB": 5, "Sketchy": 4, "UWorld": 2, "Anki": 0.5,
+    "learnFromActuals": true
+  },
+  "uworld": {
+    "status": "first-pass",
+    "readinessMap": [
+      { "minPct": 0,  "band": "early",    "note": "building base" },
+      { "minPct": 55, "band": "on-track", "note": "passing trajectory" },
+      { "minPct": 65, "band": "strong",   "note": "comfortable pass margin" }
+    ]
+  },
+  "nbme": {
+    "outputType": "passProbability",
+    "note": "PLACEHOLDER — replace thresholds with your NBME software's own predicted output / pass line.",
+    "band": [
+      { "minStd": 0,   "label": "not yet passing" },
+      { "minStd": 196, "label": "borderline" },
+      { "minStd": 200, "label": "likely pass" },
+      { "minStd": 210, "label": "comfortable pass" }
+    ]
+  },
+  "assessments": [
+    { "name": "NBME (baseline)", "date": "2026-09-14", "target": "pass", "result": null, "perSystem": [] },
+    { "name": "UWSA 1",          "date": "2026-09-20", "target": "pass", "result": null, "perSystem": [] },
+    { "name": "NBME (mid)",      "date": "2026-09-25", "target": "pass w/ margin", "result": null, "perSystem": [] },
+    { "name": "UWSA 2",          "date": "2026-09-30", "target": "comfortable pass", "result": null, "perSystem": [] },
+    { "name": "Free 120",        "date": "2026-10-02", "target": ">=65%", "result": null, "perSystem": [] },
+    { "name": "NBME (final)",    "date": "2026-10-03", "target": "comfortable pass", "result": null, "perSystem": [] }
+  ],
+  "perSystemPerformance": [
+    { "system": "Cardiovascular",     "pct": null, "source": null },
+    { "system": "Renal",              "pct": null, "source": null },
+    { "system": "Respiratory",        "pct": null, "source": null },
+    { "system": "Hematology/Oncology","pct": null, "source": null },
+    { "system": "Endocrine",          "pct": null, "source": null },
+    { "system": "Gastrointestinal",   "pct": null, "source": null },
+    { "system": "Reproductive",       "pct": null, "source": null },
+    { "system": "Neurology",          "pct": null, "source": null },
+    { "system": "Psychiatry",         "pct": null, "source": null },
+    { "system": "MSK/Skin",           "pct": null, "source": null },
+    { "system": "Biochemistry",       "pct": null, "source": null },
+    { "system": "Immunology",         "pct": null, "source": null },
+    { "system": "Microbiology",       "pct": null, "source": null },
+    { "system": "Pharmacology",       "pct": null, "source": null },
+    { "system": "Pathology",          "pct": null, "source": null },
+    { "system": "Public Health",      "pct": null, "source": null }
+  ]
+}

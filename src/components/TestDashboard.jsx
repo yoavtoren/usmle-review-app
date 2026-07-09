@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
-import { loadTestLog, saveTestLog, loadProgress } from "../lib/storage.js";
+import { loadTestLog, saveTestLog, loadProgress, testScore } from "../lib/storage.js";
+import TestEntryForm, { emptyEntry, MOODS } from "./TestEntryForm.jsx";
 
 const BASE = import.meta.env.BASE_URL;
 const QBANK_TOTAL = 3400;   // UWorld Step 1 Qbank (~3,400 questions)
@@ -136,20 +137,16 @@ function ScoreBadge({ score }) {
   return <span className={`td-score-badge ${cls}`}>{score}%</span>;
 }
 
+function moodOf(t) {
+  return t?.feeling?.mood ? MOODS.find((m) => m.v === t.feeling.mood) : null;
+}
+
 export default function TestDashboard({ onBack, onStudy }) {
   const [tests, setTests] = useState(loadTestLog);
   const [progress] = useState(loadProgress);
   // Map of deckFile → question IDs (only loaded for tests that have a deckFile)
   const [deckQuestions, setDeckQuestions] = useState({});
-  const [showForm, setShowForm] = useState(false);
-  const [form, setForm] = useState({
-    testNum: "",
-    score: "",
-    date: new Date().toISOString().split("T")[0],
-    uworldAvg: "",
-    questionCount: "",
-  });
-  const [formErr, setFormErr] = useState("");
+  const [editing, setEditing] = useState(null);   // entry draft being added/edited, or null
 
   // Load the deck for every test that has a deckFile
   useEffect(() => {
@@ -164,13 +161,20 @@ export default function TestDashboard({ onBack, onStudy }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tests]);
 
-  // Ascending by date — used by the chart and "latest/trend" stats.
+  // Ascending by date, each with a resolved overall score (explicit or derived
+  // from its stat breakdown) — used by the chart and "latest/trend" stats.
   const sorted = useMemo(
-    () => [...tests].sort((a, b) => new Date(a.date) - new Date(b.date)),
+    () => [...tests]
+      .map((t) => ({ ...t, score: testScore(t) }))
+      .filter((t) => t.score != null)
+      .sort((a, b) => new Date(a.date) - new Date(b.date)),
     [tests]
   );
-  // Descending — newest test at the head of the list.
-  const listSorted = useMemo(() => [...sorted].reverse(), [sorted]);
+  // Descending — newest test at the head of the list (raw entries, unfiltered).
+  const listSorted = useMemo(
+    () => [...tests].sort((a, b) => new Date(b.date) - new Date(a.date)),
+    [tests]
+  );
 
   // Total UWorld questions completed (counts entered per test; standard block as fallback).
   const totalQs = useMemo(
@@ -180,10 +184,9 @@ export default function TestDashboard({ onBack, onStudy }) {
   const qbankPct = Math.min(100, Math.round((totalQs / QBANK_TOTAL) * 100));
 
   const stats = useMemo(() => {
-    if (!tests.length) return null;
-    const scores = tests.map(t => t.score);
-    const withUW = tests.filter(t => t.uworldAvg != null);
-    const gaps = withUW.map(t => t.score - t.uworldAvg);
+    if (!sorted.length) return null;
+    const scores = sorted.map(t => t.score);
+    const gaps = sorted.filter(t => t.uworldAvg != null).map(t => t.score - t.uworldAvg);
     return {
       avg: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length),
       best: Math.max(...scores),
@@ -193,7 +196,7 @@ export default function TestDashboard({ onBack, onStudy }) {
       net: sorted.length >= 2 ? sorted.at(-1).score - sorted[0].score : null,
       avgGap: gaps.length ? Math.round(gaps.reduce((a, b) => a + b, 0) / gaps.length) : null,
     };
-  }, [tests, sorted]);
+  }, [sorted]);
 
   // Questions belonging to a test's block (from its resolved deck).
   function blockQuestions(test) {
@@ -208,29 +211,24 @@ export default function TestDashboard({ onBack, onStudy }) {
     return qs ? qs.filter(q => progress[q.id]?.done).length : 0;
   }
 
-  function setField(k, v) { setForm(f => ({ ...f, [k]: v })); setFormErr(""); }
-
-  function handleAdd() {
-    const score = Number(form.score);
-    if (!form.score || isNaN(score) || score < 0 || score > 100) {
-      setFormErr("Enter a valid score between 0 and 100.");
-      return;
-    }
-    const qCount = form.questionCount !== "" ? Math.round(Number(form.questionCount)) : null;
-    const newTest = {
-      id: Date.now(),
-      testNum: form.testNum.trim() || `Test ${tests.length + 1}`,
-      score: Math.round(score),
-      date: form.date || new Date().toISOString().split("T")[0],
-      uworldAvg: form.uworldAvg !== "" ? Math.round(Number(form.uworldAvg)) : null,
-      hasQuestions: false,
-      questionCount: qCount,
+  // Prefill the editor from an existing entry (numbers → strings for inputs).
+  function draftFrom(t) {
+    return {
+      ...emptyEntry(), ...t,
+      score: t.score ?? "", uworldAvg: t.uworldAvg ?? "", questionCount: t.questionCount ?? "",
+      feeling: t.feeling || { mood: 0, note: "" },
+      subjects: t.subjects || {}, systems: t.systems || {},
     };
-    const next = [...tests, newTest];
+  }
+
+  function handleSave(entry) {
+    const idx = tests.findIndex(t => t.id === entry.id);
+    const next = idx >= 0
+      ? tests.map(t => (t.id === entry.id ? entry : t))
+      : [...tests, entry];
     setTests(next);
     saveTestLog(next);
-    setShowForm(false);
-    setForm({ testNum: "", score: "", date: new Date().toISOString().split("T")[0], uworldAvg: "", questionCount: "" });
+    setEditing(null);
   }
 
   function handleDelete(id) {
@@ -251,50 +249,24 @@ export default function TestDashboard({ onBack, onStudy }) {
       <div className="td-header">
         <div>
           <h1 className="td-title">Tests</h1>
-          <p className="muted td-sub">Track NBME · UWorld · practice blocks over time</p>
+          <p className="muted td-sub">Log each UWorld / NBME sitting — result, stats &amp; how you felt</p>
         </div>
         <button
-          className={`dash-cta-btn${showForm ? " td-cancel-btn" : ""}`}
-          onClick={() => { setShowForm(s => !s); setFormErr(""); }}
+          className={`dash-cta-btn${editing ? " td-cancel-btn" : ""}`}
+          onClick={() => setEditing(editing ? null : emptyEntry())}
         >
-          {showForm ? "✕ Cancel" : "+ Add test"}
+          {editing ? "✕ Cancel" : "+ Log test"}
         </button>
       </div>
 
-      {/* Add form */}
-      {showForm && (
-        <div className="td-form-card">
-          <div className="td-form-title">Record a new test</div>
-          <div className="td-form-grid">
-            <div className="td-form-field">
-              <label className="td-label">Test name</label>
-              <input className="td-input" placeholder="e.g. NBME 30"
-                value={form.testNum} onChange={e => setField("testNum", e.target.value)} />
-            </div>
-            <div className="td-form-field">
-              <label className="td-label">Your score (%)</label>
-              <input className="td-input" type="number" min="0" max="100" placeholder="e.g. 65"
-                value={form.score} onChange={e => setField("score", e.target.value)} />
-            </div>
-            <div className="td-form-field">
-              <label className="td-label">Date</label>
-              <input className="td-input" type="date"
-                value={form.date} onChange={e => setField("date", e.target.value)} />
-            </div>
-            <div className="td-form-field">
-              <label className="td-label">UWorld avg <span className="td-optional">(optional)</span></label>
-              <input className="td-input" type="number" min="0" max="100" placeholder="e.g. 72"
-                value={form.uworldAvg} onChange={e => setField("uworldAvg", e.target.value)} />
-            </div>
-            <div className="td-form-field">
-              <label className="td-label"># Questions <span className="td-optional">(optional)</span></label>
-              <input className="td-input" type="number" min="1" placeholder="e.g. 40"
-                value={form.questionCount} onChange={e => setField("questionCount", e.target.value)} />
-            </div>
-          </div>
-          {formErr && <p className="td-form-err">{formErr}</p>}
-          <button className="td-submit-btn" onClick={handleAdd}>Save test →</button>
-        </div>
+      {/* Unified entry form (add / edit) */}
+      {editing && (
+        <TestEntryForm
+          key={editing.id}
+          draft={editing}
+          onCancel={() => setEditing(null)}
+          onSave={handleSave}
+        />
       )}
 
       {/* ── Two-column layout ── */}
@@ -310,26 +282,37 @@ export default function TestDashboard({ onBack, onStudy }) {
           {tests.length > 0 ? (
             <div className="td-test-list">
               {listSorted.map((t, i) => {
-                const gap      = t.uworldAvg != null ? t.score - t.uworldAvg : null;
+                const sc       = testScore(t);
+                const gap      = t.uworldAvg != null && sc != null ? sc - t.uworldAvg : null;
                 const isLatest = i === 0;
                 const bq       = blockQuestions(t);
                 const qTotal   = t.questionCount ?? (bq ? bq.length : null);
                 const doneCount = getDoneCount(t);
+                const mood     = moodOf(t);
+                const statCount = Object.keys(t.subjects || {}).length + Object.keys(t.systems || {}).length;
 
                 return (
                   <div key={t.id} className={`td-test-card${isLatest ? " td-test-latest" : ""}`}>
                     <div className="td-test-top-row">
                       <div className="td-test-name">{t.testNum}</div>
-                      <button className="td-del-btn" onClick={() => handleDelete(t.id)} title="Remove">✕</button>
+                      <div className="td-test-tools">
+                        <button className="td-edit-btn" onClick={() => setEditing(draftFrom(t))} title="Edit">✎</button>
+                        <button className="td-del-btn" onClick={() => handleDelete(t.id)} title="Remove">✕</button>
+                      </div>
                     </div>
-                    <div className="td-test-date">{fmt(t.date)}</div>
+                    <div className="td-test-date">
+                      {fmt(t.date)}
+                      {mood && <span className="td-test-mood" title={`Felt: ${mood.label}`}>{mood.emoji}</span>}
+                      {statCount > 0 && <span className="td-test-statflag" title={`${statCount} topics scored`}>▦ stats</span>}
+                    </div>
                     <div className="td-test-badges">
-                      <ScoreBadge score={t.score} />
+                      {sc != null ? <ScoreBadge score={sc} /> : <span className="muted small">no score</span>}
                       {t.uworldAvg != null && (
                         <span className="td-uw-badge">{t.uworldAvg}% UWorld</span>
                       )}
                       <GapBadge gap={gap} />
                     </div>
+                    {t.feeling?.note && <div className="td-test-note">“{t.feeling.note}”</div>}
 
                     {qTotal != null && (
                       <div className="td-done-progress">
@@ -357,8 +340,9 @@ export default function TestDashboard({ onBack, onStudy }) {
           ) : (
             <div className="td-empty">
               <div className="td-empty-icon">📊</div>
-              <p className="td-empty-msg">No tests recorded yet</p>
-              <p className="muted small">Click "+ Add test" above to log your first score.</p>
+              <p className="td-empty-msg">No tests logged yet</p>
+              <p className="muted small">Click "+ Log test" above to record your first sitting — result, stats &amp; how you felt.</p>
+              <button className="td-submit-btn" style={{ marginTop: 12 }} onClick={() => setEditing(emptyEntry())}>+ Log your first test</button>
             </div>
           )}
         </div>

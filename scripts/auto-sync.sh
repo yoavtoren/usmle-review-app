@@ -44,8 +44,15 @@ echo "▶ building web…"
 if npm run build >/dev/null 2>&1; then echo "  ✓ build passed"; else BUILD_OK=0; echo "  ✗ build FAILED"; fi
 BUILD_STATUS="passing"; [ "$BUILD_OK" -eq 1 ] || BUILD_STATUS="FAILING"
 
-# 2 · commit + push ──────────────────────────────────────────────────────────
-if [ -n "$DIRTY" ]; then
+# 2 · sync iOS BEFORE committing, so cap's edits to the Xcode project are captured
+#     in the same commit (otherwise they'd be left dirty and churn the next run).
+if [ "$BUILD_OK" -eq 1 ]; then
+  echo "▶ syncing iOS/Xcode project (cap sync)…"
+  if npm run sync:ios >/dev/null 2>&1; then echo "  ✓ iOS synced"; else echo "  ✗ iOS sync failed"; fi
+fi
+
+# 3 · commit + push (source + any iOS-sync output) ───────────────────────────
+if [ -n "$(git status --porcelain)" ]; then
   git add -A
   FILES="$(git diff --cached --name-only | sed 's#^#  #' | head -8)"
   git commit -q -F - <<EOF
@@ -62,12 +69,10 @@ fi
 
 if git push origin HEAD >/dev/null 2>&1; then echo "  ✓ pushed to origin/main"; else echo "  ✗ push failed (check auth/network)"; fi
 
-# 3 + 4 · deploy web + sync iOS (only when the build is green) ────────────────
+# 4 · deploy web (only when the build is green) ──────────────────────────────
 if [ "$BUILD_OK" -eq 1 ]; then
   echo "▶ deploying web (gh-pages)…"
   if npm run deploy >/dev/null 2>&1; then echo "  ✓ web deployed"; else echo "  ✗ web deploy failed"; fi
-  echo "▶ syncing iOS/Xcode project (cap sync)…"
-  if npm run sync:ios >/dev/null 2>&1; then echo "  ✓ iOS synced"; else echo "  ✗ iOS sync failed"; fi
 else
   echo "· build failing — committed/pushed for safekeeping but SKIPPED deploy + iOS sync"
 fi

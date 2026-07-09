@@ -1,9 +1,10 @@
-// Manual performance tracking — decoupled from the app's own question deck.
-// You log dated snapshots of your UWorld (or any QBank) stats per Subject and
-// per System; the app draws trend lines and surfaces weak spots. 100% local,
-// mirrored to iCloud like the rest of your progress.
+// Performance analytics — derived from the unified test log (storage.js).
+// Every logged UWorld/NBME test carries its per-Subject and per-System stat
+// breakdown, so a "snapshot" here is simply the stats slice of one test entry.
+// This module draws the trend lines and surfaces weak spots from those entries;
+// nothing is stored separately, so logging a test once feeds every screen.
 
-const KEY = "usmle-perf-snapshots-v1";
+import { loadTestLog } from "./storage.js";
 
 // Canonical UWorld Step 1 taxonomy (matches the Create-Test / Performance pages).
 export const SUBJECTS = [
@@ -51,18 +52,20 @@ export const SYSTEMS = [
   "Rheumatology/Orthopedics & Sports",
 ];
 
+// Snapshots are the stat slices of test-log entries that actually carry a
+// subject or system breakdown, chronological (oldest → newest) for trend math.
 export function loadSnapshots() {
-  try {
-    const arr = JSON.parse(localStorage.getItem(KEY)) || [];
-    // Always chronological (oldest → newest) so trend math is order-safe.
-    return arr.slice().sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
-  } catch {
-    return [];
-  }
-}
-
-function save(list) {
-  localStorage.setItem(KEY, JSON.stringify(list));
+  return loadTestLog()
+    .filter((t) => {
+      const s = Object.keys(t.subjects || {}).some((k) => t.subjects[k]?.total);
+      const y = Object.keys(t.systems || {}).some((k) => t.systems[k]?.total);
+      return s || y;
+    })
+    .map((t) => ({
+      id: t.id, date: t.date, note: t.testNum || t.note || "",
+      subjects: t.subjects || {}, systems: t.systems || {},
+    }))
+    .sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
 }
 
 // A row is { total, correct, omitted }. Only rows with total > 0 count.
@@ -71,26 +74,22 @@ export function pct(row) {
   return Math.round((row.correct / row.total) * 100);
 }
 
-export function saveSnapshot(snap) {
-  const list = loadSnapshots();
-  const idx = list.findIndex((s) => s.id === snap.id);
-  if (idx >= 0) list[idx] = snap;
-  else list.push(snap);
-  save(list);
-  return list;
-}
-
-export function deleteSnapshot(id) {
-  save(loadSnapshots().filter((s) => s.id !== id));
-}
-
 export function latestSnapshot() {
   const list = loadSnapshots();
   return list.length ? list[list.length - 1] : null;
 }
 
+// Callers use both "subject"/"system" (Home) and "subjects"/"systems"
+// (Progress page). Normalise to the plural keys stored on each snapshot.
+function normKind(kind) {
+  if (kind === "subject") return "subjects";
+  if (kind === "system") return "systems";
+  return kind;
+}
+
 // Trend for one topic: [{ date, pct }] across every snapshot that scored it.
 export function trendFor(kind, name) {
+  kind = normKind(kind);
   return loadSnapshots()
     .map((s) => {
       const row = (s[kind] || {})[name];
@@ -102,6 +101,7 @@ export function trendFor(kind, name) {
 
 // Weak spots from the latest snapshot: lowest % first. Ties broken by volume.
 export function weakSpots(kind, n = 6) {
+  kind = normKind(kind);
   const snap = latestSnapshot();
   if (!snap) return [];
   const rows = snap[kind] || {};
@@ -114,7 +114,7 @@ export function weakSpots(kind, n = 6) {
 
 // Overall correct/total across a snapshot for a given kind.
 export function overall(snap, kind) {
-  const rows = (snap && snap[kind]) || {};
+  const rows = (snap && snap[normKind(kind)]) || {};
   let total = 0, correct = 0;
   for (const r of Object.values(rows)) {
     if (r?.total) { total += r.total; correct += r.correct || 0; }
