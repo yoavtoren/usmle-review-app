@@ -5361,3 +5361,93 @@ button, .rail-link, .chip { -webkit-user-select: none; user-select: none; -webki
   .hd-traj, .hd-mom   { min-height: 160px; }
   .hd-review, .hd-fa, .hd-weak, .hd-aims { min-height: 140px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   iOS-27 MOTION LAYER — view transitions, scroll edges, reactivity
+═══════════════════════════════════════════════════════════════════ */
+
+/* ── Route zoom (View Transitions API; Safari 18+, Chrome 111+) ── */
+@keyframes vt-zoom-in  { from { opacity: 0; transform: scale(0.965); } }
+@keyframes vt-fade-out { to   { opacity: 0; } }
+::view-transition-old(root) { animation: 180ms ease both vt-fade-out; }
+::view-transition-new(root) { animation: 340ms var(--ease-out) both vt-zoom-in; }
+/* while a view transition drives the change, the old CSS route entrance must not double-fire */
+html.vt-active .route-fade,
+html.vt-active .page > * { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
+
+/* ── Scroll-edge effect — header region gains material as content passes ── */
+.scroll-edge-top {
+  position: fixed; top: 0; left: 0; right: calc(var(--rail-w) + 12px);
+  height: 58px; z-index: 50; pointer-events: none;
+  opacity: 0; transition: opacity 0.3s ease;
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+          backdrop-filter: blur(14px) saturate(140%);
+  background: linear-gradient(180deg, rgba(245,242,234,0.72), rgba(245,242,234,0.10));
+  -webkit-mask-image: linear-gradient(180deg, #000 40%, transparent);
+          mask-image: linear-gradient(180deg, #000 40%, transparent);
+}
+html[data-scrolled="true"] .scroll-edge-top { opacity: 1; }
+.app-shell.rail-mini .scroll-edge-top { right: calc(var(--rail-w-mini) + 12px); }
+@media (max-width: 900px) { .scroll-edge-top { display: none; } }
+
+/* ── Symbol reactivity ── */
+@keyframes bell-wiggle {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(13deg); } 40% { transform: rotate(-9deg); }
+  60% { transform: rotate(5deg); }  80% { transform: rotate(-2deg); }
+}
+.bell-wiggle svg, .bell-wiggle { animation: bell-wiggle 650ms var(--ease-out); transform-origin: top center; }
+
+/* checks settle with a small overshoot — state changes are acknowledged, not swapped */
+@keyframes check-settle { 0% { transform: scale(0.72); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
+.pl-check.on, .task-check.task-check-on, .fad-topic-check:checked { animation: check-settle 360ms var(--spring); }
+
+/* ── Segmented control with a sliding physical thumb ──
+   container sets --seg-i (active index) and --seg-n (count) */
+.plc-modes.has-thumb { position: relative; }
+.plc-modes.has-thumb .plc-mode { flex: 1 1 0; position: relative; z-index: 1; text-align: center; }
+.plc-modes.has-thumb .plc-mode.on { background: none; box-shadow: none; }
+.plc-thumb {
+  position: absolute; top: 3px; bottom: 3px;
+  width: calc((100% - 6px - (var(--seg-n) - 1) * 2px) / var(--seg-n));
+  inset-inline-start: calc(3px + var(--seg-i) * ((100% - 6px - (var(--seg-n) - 1) * 2px) / var(--seg-n) + 2px));
+  background: var(--surface); border-radius: 6px; /* concentric: 9px outer − 3px pad */
+  box-shadow: var(--sh-sm); z-index: 0;
+  transition: inset-inline-start 320ms var(--spring);
+}
+
+/* ── Long-press context menu ── */
+.ctx-menu {
+  position: fixed; z-index: 9500; min-width: 180px;
+  background: rgba(255,255,255,0.86);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+          backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid var(--line); border-radius: var(--r);
+  box-shadow: var(--sh-lg); padding: 5px;
+  animation: ctx-pop 240ms var(--spring) backwards;
+  transform-origin: top center;
+}
+@keyframes ctx-pop { from { opacity: 0; transform: scale(0.86); } }
+.ctx-item {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  padding: 10px 12px; border: none; background: none; cursor: pointer;
+  font-family: inherit; font-size: 13.5px; font-weight: 600; color: var(--text);
+  border-radius: 8px; /* concentric: 13px outer − 5px pad */
+  text-align: start; transition: background var(--t);
+}
+.ctx-item:hover { background: var(--accent-soft); }
+.ctx-item.danger { color: var(--bad); }
+.ctx-item.danger:hover { background: var(--bad-soft); }
+.ctx-sep { height: 1px; background: var(--line-soft); margin: 4px 8px; }
+
+/* ── Pointer personality — trackpad/mouse only; calm under touch ── */
+@media (hover: hover) and (pointer: fine) {
+  .chip, .hd-navchip, .plc-mode, .toast-btn, .btn-ghost, .qb-tile {
+    transition-property: transform, background, color, border-color, box-shadow;
+  }
+  .chip:hover, .plc-mode:hover, .toast-btn:hover { transform: translateY(-1px); }
+  .hd-navchip:hover { transform: translateY(-2px) scale(1.02); }
+}
