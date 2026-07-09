@@ -49,14 +49,15 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
     },
     {
       label: "Step 1",
+      // Route-language rule: these all open English/LTR study areas → English labels.
       items: [
-        { to: "/planner", label: "התוכנית היומית", Icon: IconCalendar },
-        { to: "/step1", label: "לוח Step 1", Icon: IconDash },
+        { to: "/planner", label: "Planner", Icon: IconCalendar },
+        { to: "/step1", label: "Step 1 Board", Icon: IconDash },
         { to: "/tests", label: "Tests", Icon: IconClipboard },
-        { to: "/bank", label: "בנק שאלות", Icon: IconBox },
-        { to: "/progress", label: "התקדמות", Icon: IconPulse },
+        { to: "/bank", label: "Question Bank", Icon: IconBox },
+        { to: "/progress", label: "Progress", Icon: IconPulse },
         { to: "/fa", label: "First Aid", Icon: IconBook },
-        { to: "/fa/book", label: "ספר First Aid", Icon: IconBook },
+        { to: "/fa/book", label: "FA Book", Icon: IconBook },
       ],
     },
     {

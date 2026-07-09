@@ -1,6 +1,26 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { loadGeneralTasks, saveGeneralTasks } from "../lib/storage.js";
+import { localISODate } from "../lib/config.js";
 import { IconCheck, IconCalendar, IconClose } from "./icons.jsx";
+
+// Two-tap destructive action: first tap arms ("בטוח?"), second executes; disarms after 3s.
+function ConfirmButton({ className, label, armedLabel = "בטוח?", onConfirm, ...rest }) {
+  const [armed, setArmed] = useState(false);
+  const timer = useRef();
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const click = () => {
+    if (armed) { clearTimeout(timer.current); setArmed(false); onConfirm(); return; }
+    setArmed(true);
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setArmed(false), 3000);
+  };
+  return (
+    <button {...rest} className={className} onClick={click}
+      style={armed ? { color: "#9C3B2C", ...(rest.style || {}) } : rest.style}>
+      {armed ? armedLabel : label}
+    </button>
+  );
+}
 
 const PRIOS = {
   high:   { label: "גבוה",  color: "#9C3B2C", bg: "rgba(192,57,43,0.10)" },
@@ -26,7 +46,7 @@ const EMPTY = {
   category: "", subtopic: "", detail: "", contactName: "", contactInfo: "",
 };
 
-function todayStr() { return new Date().toISOString().slice(0, 10); }
+function todayStr() { return localISODate(); } // local date — toISOString() lags a day in +TZ evenings
 function fmtDate(d) {
   if (!d) return "";
   return new Date(d + "T12:00:00").toLocaleDateString("he-IL", { weekday: "short", day: "numeric", month: "long" });
@@ -220,7 +240,8 @@ export function TaskRow({ task, onToggle, onEdit, onDelete }) {
 
       <div className="tk-row-actions">
         <button className="tk-act" onClick={() => onEdit(task)} title="ערוך">✎</button>
-        <button className="tk-act tk-act-del" onClick={() => onDelete(task.id)} title="מחק"><IconClose size={13} /></button>
+        <ConfirmButton className="tk-act tk-act-del" title="מחק"
+          label={<IconClose size={13} />} onConfirm={() => onDelete(task.id)} />
       </div>
     </div>
   );

@@ -66,7 +66,7 @@ export function PopCenter({ onClose, dueReviews = 0, onReview }) {
 
   return (
     <div className="popcenter-overlay" onClick={onClose}>
-      <div className="popcenter-modal" onClick={e => e.stopPropagation()}>
+      <div className="popcenter-modal" role="dialog" aria-modal="true" aria-label="התראות" onClick={e => e.stopPropagation()}>
         <div className="popcenter-hd">
           <span className="popcenter-title">התראות{total > 0 ? ` (${total})` : ""}</span>
           <button className="intake-close" onClick={onClose}>✕</button>
@@ -109,7 +109,7 @@ export default function ReminderToasts({ limit = 2 }) {
   if (reminders.length === 0) return null;
 
   return (
-    <div className="toast-stack">
+    <div className="toast-stack" role="status" aria-live="polite">
       {reminders.map(rem => (
         <Toast key={rem.remId} rem={rem} onDismiss={handleDismiss} onSnooze={handleSnooze} />
       ))}

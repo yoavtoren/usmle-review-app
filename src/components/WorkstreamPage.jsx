@@ -1,8 +1,28 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { CATEGORIES, loadCategoryTasks, saveCategoryTasks,
          loadRhythms, saveRhythms, isRhythmDone, markRhythm } from "../lib/workstreamData.js";
 import { URGENCY_COLORS } from "../lib/timelineData.js";
 import { buildGCalLink } from "../lib/calendarExport.js";
+import { localISODate } from "../lib/config.js";
+
+// Two-tap destructive action: first tap arms ("בטוח?"), second executes; disarms after 3s.
+function ConfirmButton({ className, label, armedLabel = "בטוח?", onConfirm, ...rest }) {
+  const [armed, setArmed] = useState(false);
+  const timer = useRef();
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const click = () => {
+    if (armed) { clearTimeout(timer.current); setArmed(false); onConfirm(); return; }
+    setArmed(true);
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setArmed(false), 3000);
+  };
+  return (
+    <button {...rest} className={className} onClick={click}
+      style={armed ? { color: "#9C3B2C", ...(rest.style || {}) } : rest.style}>
+      {armed ? armedLabel : label}
+    </button>
+  );
+}
 
 const URGENCIES = ["Critical", "High", "Medium", "Low"];
 const URGENCY_HE = { Critical: "קריטי", High: "גבוה", Medium: "בינוני", Low: "נמוך" };
@@ -150,7 +170,7 @@ function TaskForm({ initial, cat, onSave, onCancel }) {
 function TaskCard({ task, cat, onEdit, onDelete, onToggleStatus }) {
   const uColor   = URGENCY_COLORS[task.urgency] || "#A39B88";
   const isDone   = task.status === "Done";
-  const isOverdue = task.deadline && task.deadline < new Date().toISOString().slice(0,10) && !isDone;
+  const isOverdue = task.deadline && task.deadline < localISODate() && !isDone;
   const gcalItem = task.deadline
     ? { ...task, title: `[${cat.title}] ${task.title}`, date: task.deadline, note: task.notes }
     : null;
@@ -172,7 +192,8 @@ function TaskCard({ task, cat, onEdit, onDelete, onToggleStatus }) {
         </div>
         <div className="ws-task-actions">
           <button className="ws-action-btn" onClick={() => onEdit(task)} title="ערוך">✎</button>
-          <button className="ws-action-btn ws-del-btn" onClick={() => onDelete(task.id)} title="מחק">✕</button>
+          <ConfirmButton className="ws-action-btn ws-del-btn" title="מחק"
+            label="✕" onConfirm={() => onDelete(task.id)} />
         </div>
       </div>
       <div className="ws-task-meta">

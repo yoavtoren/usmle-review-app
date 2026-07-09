@@ -10,7 +10,11 @@ import {
 import { SUBJECT_SORT_WEIGHT, FRONT_LOAD_SUBJECTS } from "../lib/intakeData.js";
 import { chaptersFromText } from "../lib/faMap.js";
 import { markTaskInFA } from "../lib/faSync.js";
+import { EXAM_DATE, EXAM_DATE_ISO, localISODate } from "../lib/config.js";
 import ReviewSchedule from "./ReviewSchedule.jsx";
+
+// English display form of the exam date, e.g. "Oct 11, 2026" (this screen is LTR/English).
+const EXAM_LABEL = EXAM_DATE.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
 const PRIOS = [
   { key: "high",   label: "High",   color: "#B04A38", bg: "rgba(239,68,68,0.09)" },
@@ -25,8 +29,6 @@ const TYPE_META = {
   "learn-concept": { icon: "🧠", label: "Concept", cls: "tbadge-concept" },
   "consolidation": { icon: "🔗", label: "Consolidate", cls: "tbadge-consol" },
 };
-
-const TEST_DATE = "2026-10-11";
 
 function taskSortScore(t) {
   if (t.type === "consolidation") return -9999;
@@ -137,7 +139,7 @@ function TaskManager({ tasks, setTasks }) {
     const blob = new Blob([data], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
-    a.href = url; a.download = `usmle-backup-${new Date().toISOString().split("T")[0]}.json`;
+    a.href = url; a.download = `usmle-backup-${localISODate()}.json`;
     a.click(); URL.revokeObjectURL(url);
   }
 
@@ -256,7 +258,9 @@ function CaduceusIcon() {
   );
 }
 
-export default function WelcomeScreen({ onNav, testStats, faStats, streak, questions }) {
+export default function WelcomeScreen({ onNav, testStats, faStats, streak, questions, loading = false }) {
+  // While the deck is loading, numeric slots show a placeholder instead of fake zeros.
+  const ph = (v) => (loading ? "…" : v);
   const faPct     = faStats.total  > 0 ? Math.round((faStats.seen    / faStats.total)  * 100) : 0;
   const testPct   = testStats.total > 0 ? Math.round((testStats.mastered / testStats.total) * 100) : 0;
   const remaining = Math.max(0, testStats.missed - testStats.mastered);
@@ -288,14 +292,14 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
   }
 
   function handleResetSchedule() {
-    resetScheduleToDate(TEST_DATE);
+    resetScheduleToDate(EXAM_DATE_ISO);
     setShowReset(false);
     window.location.reload();
   }
 
   const dueDisplay = lightMode
     ? <span style={{ fontSize: 14, color: "var(--muted)", fontWeight: 700 }}>⏸</span>
-    : <span className={`qs-num${testStats.due > 0 ? " qs-due" : ""}`}>{testStats.due}</span>;
+    : <span className={`qs-num${!loading && testStats.due > 0 ? " qs-due" : ""}`}>{ph(testStats.due)}</span>;
 
   return (
     <div className="welcome">
@@ -322,7 +326,7 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
       {showReset && (
         <div className="reset-confirm-overlay" onClick={() => setShowReset(false)}>
           <div className="reset-confirm" onClick={e => e.stopPropagation()}>
-            <div className="reset-confirm-title">Reset schedule to Oct 11 2026?</div>
+            <div className="reset-confirm-title">Reset schedule to {EXAM_LABEL}?</div>
             <div className="reset-confirm-body">All review cards will be redistributed evenly between now and your test date. Mastered cards are untouched.</div>
             <div className="reset-confirm-btns">
               <button className="intake-back" onClick={() => setShowReset(false)}>Cancel</button>
@@ -340,13 +344,13 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
           <div className="qs-item">{dueDisplay}<span className="qs-label">Due today</span></div>
           <div className="qs-divider" />
           <div className="qs-item">
-            <span className="qs-num">{testStats.mastered}</span>
+            <span className="qs-num">{ph(testStats.mastered)}</span>
             <span className="qs-label">Mastered{masteredThisWeek > 0 && <span className="qs-week-badge"> +{masteredThisWeek} this week</span>}</span>
           </div>
           <div className="qs-divider" />
-          <div className="qs-item"><span className="qs-num">{remaining}</span><span className="qs-label">Remaining</span></div>
+          <div className="qs-item"><span className="qs-num">{ph(remaining)}</span><span className="qs-label">Remaining</span></div>
           <div className="qs-divider" />
-          <div className="qs-item"><span className="qs-num">{faPct}%</span><span className="qs-label">FA coverage</span></div>
+          <div className="qs-item"><span className="qs-num">{ph(`${faPct}%`)}</span><span className="qs-label">FA coverage</span></div>
           {faSectionsRead > 0 && <>
             <div className="qs-divider" />
             <div className="qs-item"><span className="qs-num">{faSectionsRead}</span><span className="qs-label">FA sections read</span></div>
@@ -377,11 +381,11 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
                 </p>
                 <div className="wcard-stats">
                   <div className="wstat-block">
-                    <span className="wstat-big">{testStats.missed}</span>
+                    <span className="wstat-big">{ph(testStats.missed)}</span>
                     <span className="wstat-lbl">Missed</span>
                   </div>
                   <div className="wstat-block wstat-ok">
-                    <span className="wstat-big">{testStats.mastered}</span>
+                    <span className="wstat-big">{ph(testStats.mastered)}</span>
                     <span className="wstat-lbl">Mastered</span>
                   </div>
                   {testStats.due > 0 && !lightMode && (
@@ -437,7 +441,7 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
           </div>
         </div>
 
-        <p className="welcome-footer">100% offline · Progress saved in your browser · Oct 11 2026</p>
+        <p className="welcome-footer">100% offline · Progress saved in your browser · {EXAM_LABEL}</p>
       </div>
     </div>
   );

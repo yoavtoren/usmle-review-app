@@ -474,7 +474,7 @@ function Trajectory({ log }) {
 
   return (
     <svg className="hd-traj-svg" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet"
-      role="img" aria-label={`מגמת ציונים: הציון האחרון ${lastScore}%${dir}`}>
+      role="img" aria-label={`מגמת ציונים: הציון האחרון ${Number.isFinite(lastScore) ? `${lastScore}%` : "לא זמין"}${dir}`}>
       <defs>
         <linearGradient id="tgrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="rgba(30,77,56,0.20)" />

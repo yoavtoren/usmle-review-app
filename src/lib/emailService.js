@@ -12,10 +12,13 @@
 
 import { getActiveReminders } from "./reminderEngine.js";
 import { loadAllWorkstreamTasks } from "./workstreamData.js";
+import { EXAM_DATE, daysUntilExam, localISODate } from "./config.js";
 
 const CONFIG_KEY = "usmle-app:email-config-v1";
 const LOG_KEY = "usmle-app:email-log-v1";
-const EXAM_DATE = "2026-10-11";
+
+// English display form of the exam date for the digest intro, e.g. "Oct 11, 2026".
+const EXAM_LABEL = EXAM_DATE.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
 const DEFAULT_CONFIG = {
   serviceId: "",
@@ -65,19 +68,15 @@ export function clearEmailLog() {
 }
 
 // ── Digest content ──────────────────────────────────────────────────────────
-function daysToExam() {
-  return Math.max(0, Math.ceil((new Date(EXAM_DATE) - new Date()) / 86400000));
-}
-
 function todayStr() {
-  return new Date().toISOString().slice(0, 10);
+  return localISODate();
 }
 
 // Build a structured digest from live app state. `extra` may carry React stats
 // (due reviews, FA coverage) that the libs can't compute on their own.
 export function buildDigest(extra = {}) {
   const today = todayStr();
-  const days = daysToExam();
+  const days = daysUntilExam();
 
   const reminders = getActiveReminders();
 
@@ -125,7 +124,7 @@ export function buildDigest(extra = {}) {
 
   const dateLabel = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
   const subject = `Study digest · ${days} days to Step 1 · ${overdue.length ? `${overdue.length} overdue` : "on track"}`;
-  const intro = `${dateLabel} — ${days} days until Step 1 (Oct 11, 2026).`;
+  const intro = `${dateLabel} — ${days} days until Step 1 (${EXAM_LABEL}).`;
 
   const text =
     intro +

@@ -59,6 +59,8 @@ export default function Planner() {
     setReady(true);
   }, [plan, deck, seed, profile]); // eslint-disable-line
 
+  useEffect(() => () => clearTimeout(undoTimer.current), []);
+
   if (!ready || !sched) {
     return <div className="page page-narrow"><div className="boot">Building your plan…</div></div>;
   }
