@@ -4,7 +4,9 @@
 # After processing (~10-15 min), install it from the TestFlight app on the
 # iPad AND on the Mac (Apple-silicon Macs can run iPad builds via TestFlight).
 #
-# Usage: bash scripts/build-testflight.sh
+# Usage: bash scripts/build-testflight.sh [--upload-only]
+#   --upload-only  skip the rebuild/archive and re-upload the existing archive
+#                  (e.g. after fixing an App Store Connect issue like missingApp)
 #
 # Auth for the upload, in order of preference:
 #   1. App Store Connect API key — put AuthKey_<KEYID>.p8 in
@@ -22,20 +24,26 @@ ARCHIVE="$HOME/Library/Developer/Xcode/DerivedData/usmle-archive/USMLE.xcarchive
 EXPORT_PLIST="$REPO/scripts/exportOptions-testflight.plist"
 BUILD_NUM="$(date +%Y%m%d%H%M)"   # ascending build number, e.g. 202607092130
 
-echo "── Building web bundle + syncing Capacitor…"
-cd "$REPO"
-npm run sync:ios
+if [ "${1:-}" = "--upload-only" ]; then
+  [ -d "$ARCHIVE" ] || { echo "No archive at $ARCHIVE — run without --upload-only first."; exit 1; }
+  BUILD_NUM="$(/usr/libexec/PlistBuddy -c 'Print :ApplicationProperties:CFBundleVersion' "$ARCHIVE/Info.plist")"
+  echo "── Skipping build; re-uploading existing archive (build $BUILD_NUM)…"
+else
+  echo "── Building web bundle + syncing Capacitor…"
+  cd "$REPO"
+  npm run sync:ios
 
-echo "── Archiving (build $BUILD_NUM)…"
-cd "$REPO/ios/App"
-xcodebuild archive \
-  -project App.xcodeproj \
-  -scheme "USMLE Tracker" \
-  -configuration Release \
-  -destination 'generic/platform=iOS' \
-  -archivePath "$ARCHIVE" \
-  CURRENT_PROJECT_VERSION="$BUILD_NUM" \
-  -allowProvisioningUpdates -allowProvisioningDeviceRegistration
+  echo "── Archiving (build $BUILD_NUM)…"
+  cd "$REPO/ios/App"
+  xcodebuild archive \
+    -project App.xcodeproj \
+    -scheme "USMLE Tracker" \
+    -configuration Release \
+    -destination 'generic/platform=iOS' \
+    -archivePath "$ARCHIVE" \
+    CURRENT_PROJECT_VERSION="$BUILD_NUM" \
+    -allowProvisioningUpdates -allowProvisioningDeviceRegistration
+fi
 
 # Optional App Store Connect API key (more reliable than the Xcode session).
 AUTH_ARGS=()
