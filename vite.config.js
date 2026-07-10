@@ -10,5 +10,20 @@ const isNative = process.env.CAP_BUILD === "1";
 export default defineConfig({
   plugins: [react()],
   base: isNative ? "./" : "/usmle-review-app/",
-  build: { outDir: isNative ? "dist-ios" : "dist" },
+  build: {
+    outDir: isNative ? "dist-ios" : "dist",
+    rollupOptions: {
+      output: {
+        // WKWebView can serve unknown extensions like .mjs as
+        // application/octet-stream, which WebKit rejects for module scripts
+        // ("Importing a module script failed" — seen in TestFlight installs).
+        // Emit module assets (pdf.js worker) with a .js extension so they
+        // always get a JavaScript MIME type.
+        assetFileNames: (info) =>
+          (info.names?.[0] || info.name || "").endsWith(".mjs")
+            ? "assets/[name]-[hash].js"
+            : "assets/[name]-[hash][extname]",
+      },
+    },
+  },
 });

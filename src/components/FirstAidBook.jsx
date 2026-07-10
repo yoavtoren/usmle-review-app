@@ -7,7 +7,8 @@ import { FA_PDF_URL, FA_INDEX_URL, FA_CONTENTS, FA_TOTAL_PAGES, FA_CMAP_URL, FA_
 // browser's built-in PDF preview. That built-in viewer (esp. iOS WKWebView)
 // ignores `#page=N` URL fragments, so programmatic page jumps did nothing there.
 // Driving pdf.js directly gives us reliable, cross-platform page navigation.
-pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
+const WORKER_URL = pdfWorkerUrl;
+pdfjsLib.GlobalWorkerOptions.workerSrc = WORKER_URL;
 
 const LAST_PAGE_KEY = "fa-book-last-page";
 
@@ -39,15 +40,32 @@ export default function FirstAidBook() {
   // Load the document once with pdf.js
   useEffect(() => {
     let cancelled = false;
-    const task = pdfjsLib.getDocument({
-      url: FA_PDF_URL,
-      // First Aid embeds no fonts — pdf.js needs its substitute fonts and CID
-      // cMaps to render glyphs at the correct widths (otherwise text is garbled).
-      cMapUrl: FA_CMAP_URL,
-      cMapPacked: true,
-      standardFontDataUrl: FA_STD_FONTS_URL,
-    });
-    task.promise
+    let task;
+    const open = () => {
+      task = pdfjsLib.getDocument({
+        url: FA_PDF_URL,
+        // First Aid embeds no fonts — pdf.js needs its substitute fonts and CID
+        // cMaps to render glyphs at the correct widths (otherwise text is garbled).
+        cMapUrl: FA_CMAP_URL,
+        cMapPacked: true,
+        standardFontDataUrl: FA_STD_FONTS_URL,
+      });
+      return task.promise;
+    };
+    (async () => {
+      // Some WKWebView environments (e.g. TestFlight installs) refuse to load
+      // the pdf.js worker as a module script, and pdf.js caches that failure,
+      // so probe BEFORE the first getDocument and pick the mode up front.
+      try {
+        await import(/* @vite-ignore */ WORKER_URL);
+        delete globalThis.pdfjsWorker; // importable → let pdf.js use a real Worker
+      } catch {
+        // Render on the main thread instead: load the worker code as a regular
+        // bundled chunk, which loads the same way as the rest of the app.
+        globalThis.pdfjsWorker = await import("pdfjs-dist/build/pdf.worker.min.mjs");
+      }
+      return open();
+    })()
       .then(doc => {
         if (cancelled) { doc.destroy(); return; }
         pdfRef.current = doc;
