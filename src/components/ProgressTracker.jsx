@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  SUBJECTS, SYSTEMS, loadSnapshots, trendFor, weakSpots, overall,
+  SUBJECTS, SYSTEMS, loadSnapshots, topicStats, weakSpots, overall,
 } from "../lib/progressData.js";
 import { loadTestLog, saveTestLog } from "../lib/storage.js";
 import { IconPulse } from "./icons.jsx";
@@ -26,7 +26,7 @@ export default function ProgressTracker() {
   const nav = useNavigate();
   const [snaps, setSnaps] = useState(loadSnapshots);
   const [kind, setKind]   = useState("subjects");
-  const [sort, setSort]   = useState("worst"); // worst | best | name
+  const [sort, setSort]   = useState("focus"); // focus | worst | best | name
   const [confirmDelId, setConfirmDelId] = useState(null); // armed delete (inline "Sure?" confirm)
   const confirmTimer = useRef(null);
 
@@ -60,30 +60,21 @@ export default function ProgressTracker() {
 
   const weak = useMemo(() => weakSpots(kind, 6), [snaps, kind]);
 
-  // Per-topic rows for the list.
+  // Per-topic rows for the list. Ranking keys are the *average* across every
+  // snapshot (not just the latest), plus a combined "focus" priority.
   const topicRows = useMemo(() => {
-    const rows = names.map((name) => {
-      const trend = trendFor(kind, name);
-      const cur = trend.length ? trend[trend.length - 1] : null;
-      const prev = trend.length > 1 ? trend[trend.length - 2] : null;
-      return {
-        name,
-        trend,
-        pct: cur ? cur.pct : null,
-        total: cur ? cur.total : 0,
-        delta: cur && prev ? cur.pct - prev.pct : null,
-      };
-    });
-    const withData = rows.filter((r) => r.pct != null);
-    const noData = rows.filter((r) => r.pct == null);
+    const rows = topicStats(kind);
+    const withData = rows.filter((r) => r.avg != null);
+    const noData = rows.filter((r) => r.avg == null);
     const cmp = {
-      worst: (a, b) => a.pct - b.pct,
-      best:  (a, b) => b.pct - a.pct,
+      focus: (a, b) => b.focus - a.focus,
+      worst: (a, b) => a.avg - b.avg,
+      best:  (a, b) => b.avg - a.avg,
       name:  (a, b) => a.name.localeCompare(b.name),
     }[sort];
     if (sort === "name") return [...withData, ...noData].sort((a, b) => a.name.localeCompare(b.name));
     return [...withData.sort(cmp), ...noData];
-  }, [names, kind, snaps, sort]);
+  }, [kind, snaps, sort]);
 
   return (
     <div className="page prog-page">
@@ -140,7 +131,7 @@ export default function ProgressTracker() {
             </div>
 
             <div className="prog-weak">
-              <span className="prog-weak-lbl">⚠ Weak spots — focus here</span>
+              <span className="prog-weak-lbl">⚠ Most important focus now</span>
               <div className="prog-weak-list">
                 {weak.length === 0 && <span className="muted">Log a snapshot to see weak spots.</span>}
                 {weak.map((w) => (
@@ -148,7 +139,7 @@ export default function ProgressTracker() {
                     <div className="prog-weak-bar-wrap">
                       <div className={`prog-weak-bar prog-bg-${toneFor(w.pct)}`} style={{ width: w.pct + "%" }} />
                     </div>
-                    <span className="prog-weak-name">{w.name}</span>
+                    <span className="prog-weak-name">{w.name}<span className="muted"> · {w.total} Q</span></span>
                     <span className={`prog-weak-pct prog-${toneFor(w.pct)}`}>{w.pct}%</span>
                   </div>
                 ))}
@@ -158,25 +149,35 @@ export default function ProgressTracker() {
 
           {/* Topic trend list */}
           <div className="prog-list-head">
-            <span className="prog-list-title">{kind === "subjects" ? "Subjects" : "Systems"} — trend</span>
+            <span className="prog-list-title">{kind === "subjects" ? "Subjects" : "Systems"} — average, trend &amp; volume</span>
             <div className="prog-sort">
-              {[["worst", "Worst first"], ["best", "Best first"], ["name", "A–Z"]].map(([v, l]) => (
+              {[["focus", "Top focus"], ["worst", "Worst avg"], ["best", "Best avg"], ["name", "A–Z"]].map(([v, l]) => (
                 <button key={v} className={`chip chip-sm${sort === v ? " active" : ""}`} onClick={() => setSort(v)}>{l}</button>
               ))}
             </div>
           </div>
 
           <div className="prog-rows">
+            <div className="prog-row prog-row-head">
+              <span className="prog-row-name">{kind === "subjects" ? "Subject" : "System"}</span>
+              <span className="prog-row-spark">Trend</span>
+              <span className="prog-row-total">Volume</span>
+              <span className="prog-row-delta">Slope</span>
+              <span className="prog-row-pct">Avg</span>
+            </div>
             {topicRows.map((r) => (
-              <div key={r.name} className={`prog-row${r.pct == null ? " prog-row-empty" : ""}`}>
+              <div key={r.name} className={`prog-row${r.avg == null ? " prog-row-empty" : ""}`}>
                 <span className="prog-row-name">{r.name}</span>
                 <span className="prog-row-spark"><Sparkline points={r.trend} w={130} h={30} /></span>
-                <span className="prog-row-total muted">{r.total ? `${r.total} Q` : ""}</span>
-                <span className={`prog-row-delta ${r.delta > 0 ? "prog-up" : r.delta < 0 ? "prog-down" : ""}`}>
-                  {r.delta != null && r.delta !== 0 ? `${r.delta > 0 ? "▲" : "▼"} ${Math.abs(r.delta)}` : ""}
+                <span className="prog-row-total muted">{r.volume ? `${r.volume} Q` : ""}</span>
+                <span className={`prog-row-delta ${r.slope > 0.05 ? "prog-up" : r.slope < -0.05 ? "prog-down" : ""}`}
+                  title="Average trend — points gained per test">
+                  {r.slope != null
+                    ? `${r.slope > 0.05 ? "▲" : r.slope < -0.05 ? "▼" : "•"} ${r.slope >= 0 ? "+" : "−"}${Math.abs(r.slope).toFixed(1)}`
+                    : ""}
                 </span>
-                <span className={`prog-row-pct prog-${toneFor(r.pct)}`}>
-                  {r.pct != null ? r.pct + "%" : "—"}
+                <span className={`prog-row-pct prog-${toneFor(r.avg)}`}>
+                  {r.avg != null ? r.avg + "%" : "—"}
                 </span>
               </div>
             ))}

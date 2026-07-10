@@ -99,16 +99,54 @@ export function trendFor(kind, name) {
     .filter(Boolean);
 }
 
-// Weak spots from the latest snapshot: lowest % first. Ties broken by volume.
-export function weakSpots(kind, n = 6) {
+// Least-squares slope of a topic's pct across its snapshots, in points gained
+// per test. null when there are fewer than two scored snapshots.
+export function trendSlope(points) {
+  const n = points.length;
+  if (n < 2) return null;
+  const mx = (n - 1) / 2; // mean of indices 0..n-1
+  const my = points.reduce((a, p) => a + p.pct, 0) / n;
+  let num = 0, den = 0;
+  for (let i = 0; i < n; i++) {
+    num += (i - mx) * (points[i].pct - my);
+    den += (i - mx) ** 2;
+  }
+  return den ? num / den : null;
+}
+
+// Per-topic aggregate stats across every scored snapshot:
+//   avg    — mean % across snapshots (the ranking key for best/worst)
+//   slope  — trend of that %, in points per test
+//   volume — cumulative questions answered in the topic (across all tests)
+//   last   — most recent %
+//   focus  — "most important focus for now": expected wrong answers if nothing
+//            changes = volume × (100 − avg). A big, low-scoring topic outranks a
+//            tiny one you happen to bomb, so ENT@0% over 5 Q sits below
+//            GI@30% over 50 Q.
+export function topicStats(kind) {
   kind = normKind(kind);
-  const snap = latestSnapshot();
-  if (!snap) return [];
-  const rows = snap[kind] || {};
-  return Object.entries(rows)
-    .map(([name, row]) => ({ name, pct: pct(row), total: row.total }))
-    .filter((r) => r.pct != null)
-    .sort((a, b) => a.pct - b.pct || b.total - a.total)
+  const names = kind === "systems" ? SYSTEMS : SUBJECTS;
+  return names.map((name) => {
+    const trend = trendFor(kind, name);
+    const n = trend.length;
+    const avg = n ? Math.round(trend.reduce((a, p) => a + p.pct, 0) / n) : null;
+    const volume = trend.reduce((a, p) => a + (p.total || 0), 0);
+    const last = n ? trend[n - 1].pct : null;
+    return {
+      name, trend, avg, volume, last,
+      slope: trendSlope(trend),
+      focus: avg == null ? -1 : volume * (100 - avg),
+    };
+  });
+}
+
+// Weak spots = the highest-focus topics (biggest gap × volume), so the panel
+// surfaces where fixing questions buys the most, not just the lowest single %.
+export function weakSpots(kind, n = 6) {
+  return topicStats(kind)
+    .filter((r) => r.avg != null && r.volume > 0)
+    .sort((a, b) => b.focus - a.focus)
+    .map((r) => ({ name: r.name, pct: r.avg, total: r.volume, focus: r.focus }))
     .slice(0, n);
 }
 
