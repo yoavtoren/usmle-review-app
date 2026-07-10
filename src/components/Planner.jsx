@@ -13,7 +13,7 @@ import {
   setGoal, seedAssessments, upsertAssessment, logAssessment, removeAssessment,
   addTask, toggleTask, deleteTask, projectReadiness, effectiveTarget,
   pctToPredicted3, predicted3ToPct, toPredicted3, recordUworld,
-  todayISO, REASONS,
+  uworldPacing, todayISO, REASONS,
 } from "../lib/scheduler.js";
 import { colorFor, TRACKS } from "../lib/subjectColors.js";
 import { impact, notification } from "../lib/haptics.js";
@@ -44,6 +44,9 @@ export default function Planner() {
   const [view, setView] = useState("today");   // today | timeline | calendar
   const [undoable, setUndoable] = useState(null); // { key } — shows "Done — Undo" for ~10s
   const undoTimer = useRef();
+  const [refreshMsg, setRefreshMsg] = useState(null); // transient "re-ranked" summary
+  const [refreshedAt, setRefreshedAt] = useState(null);
+  const refreshTimer = useRef();
   const date = todayISO();
 
   // One-time bootstrap: seed state, register units, backfill v2 extras
@@ -60,7 +63,7 @@ export default function Planner() {
     setReady(true);
   }, [plan, deck, seed, profile]); // eslint-disable-line
 
-  useEffect(() => () => clearTimeout(undoTimer.current), []);
+  useEffect(() => () => { clearTimeout(undoTimer.current); clearTimeout(refreshTimer.current); }, []);
 
   // Success chord exactly once, when the day first completes. Lives above the
   // early return so the hook count stays stable across the loading flip.
@@ -113,6 +116,13 @@ export default function Planner() {
   const runTriage = () => mutate((s) => applyTriage(s, units, date).state);
   const onGoal = (patch) => mutate((s) => setGoal(s, patch));
   const onSettings = (patch) => mutate((s) => updateSettings(s, patch));
+  // Changing the UWorld goal/offset re-plans today so the block's quota updates now.
+  const onUworldGoal = (patch) => mutate((s) => {
+    let ns = updateSettings(s, patch);
+    const cap = ns.days?.[date]?.capacity;
+    if (cap) ns = planDay(ns, units, date, cap);
+    return ns;
+  });
   // Changing the exam date re-dates only seeded/untaken/unedited checkpoints.
   const onExam = (d) => mutate((s) => seedAssessments(updateSettings(s, { examDate: d }), { force: true }));
   const onLogAssessment = (id, val) => mutate((s) => logAssessment(s, id, val, date));
@@ -128,10 +138,29 @@ export default function Planner() {
   };
   const onDeleteTask = (id) => mutate((s) => deleteTask(s, id));
 
+  // 🔄 Re-read the latest exam results + First Aid/deck progress, recompute every
+  // unit's weakness, and (if today is already planned) rebuild today's plan around
+  // the new priorities. Surfaces what moved so the re-ranking is visible.
+  const onRefresh = () => {
+    const before = weakRankBySystem(sched.units, units);
+    let ns = recomputeWeakness(sched, units, deck, seed);
+    const cap = ns.days?.[date]?.capacity;
+    if (cap) ns = planDay(ns, units, date, cap);
+    setSched(ns);
+    const after = weakRankBySystem(ns.units, units);
+    setRefreshMsg(diffRanking(before, after));
+    setRefreshedAt(Date.now());
+    notification("success");
+    impact("light");
+    clearTimeout(refreshTimer.current);
+    refreshTimer.current = setTimeout(() => setRefreshMsg(null), 9000);
+  };
+
   const dedicated = sched.phase === "dedicated";
   const phaseBadge = dedicated ? { label: "Dedicated", cls: "ded" } : { label: "Content", cls: "con" };
   const examPassed = date > sched.settings.examDate;
   const readiness = projectReadiness(sched);
+  const pacing = uworldPacing(sched, date);
   // Day progress: planned content blocks + Anki + the daily UWorld block.
   const dayTotal = plannedKeys.length + 1 + (today?.uworld ? 1 : 0);
   const dayDone = plannedKeys.filter((k) => completed.has(k)).length
@@ -169,6 +198,9 @@ export default function Planner() {
       {/* ═══ View switcher (Today · Timeline · Calendar) ═══ */}
       <PlannerViewTabs view={view} onView={setView} />
 
+      {/* 🔄 Re-rank the whole plan from the latest exams + FA progress */}
+      <RefreshBar onRefresh={onRefresh} msg={refreshMsg} refreshedAt={refreshedAt} />
+
       {view === "timeline" && <GanttView sched={sched} units={units} />}
       {view === "calendar" && <CalendarView sched={sched} units={units} nav={nav} />}
 
@@ -196,6 +228,9 @@ export default function Planner() {
 
       {/* Score goal + readiness (content phase: under feasibility) */}
       {!dedicated && goalCard}
+
+      {/* 🎯 UWorld Qbank pace to the mid-Sept goal */}
+      <UworldPaceCard pacing={pacing} onGoal={onUworldGoal} />
 
       {/* ═══ Capacity picker ═══ */}
       <CapacityPicker current={capacity} onPick={pickCapacity} presets={sched.settings.capacityPresets} bias={sched.adaptation.capacityBiasMin} />
@@ -267,7 +302,7 @@ export default function Planner() {
           {/* 🎯 Daily UWorld block — reserved animated track, can't be skipped */}
           <UworldBlock
             uworld={today?.uworld} minutes={today?.uworldMin || 0} phase={sched.phase}
-            byKey={byKey} onLog={onLogUworld}
+            byKey={byKey} onLog={onLogUworld} pacing={pacing}
           />
 
           {/* Question practice (bank / tests links) */}
@@ -498,7 +533,7 @@ function UpNext({ keys, byKey, states }) {
 // The reserved, animated (can't-miss) daily UWorld item. Do the block, then log
 // correct/total and tap the subject chips you missed — misses raise those units'
 // weakness and become tomorrow's "study this miss" targets (§16).
-function UworldBlock({ uworld, minutes, phase, byKey, onLog }) {
+function UworldBlock({ uworld, minutes, phase, byKey, onLog, pacing }) {
   const dedicated = phase === "dedicated";
   const uw = uworld || {};
   const [correct, setCorrect] = useState("");
@@ -506,6 +541,7 @@ function UworldBlock({ uworld, minutes, phase, byKey, onLog }) {
   const [missed, setMissed] = useState([]);
 
   const qCount = uw.targetQ || (dedicated ? 40 : Math.max(10, Math.round(minutes / 1.5)));
+  const quota = uw.quotaQ ?? pacing?.perDay;
   const systems = Array.from(new Set(Object.values(byKey).map((u) => u.system))).sort();
   const studyLabels = (uw.studyTargets || []).map((k) => byKey[k]).filter(Boolean);
 
@@ -528,6 +564,10 @@ function UworldBlock({ uworld, minutes, phase, byKey, onLog }) {
           ? <>Random / timed <b>{qCount}-Q</b> block · review every question.</>
           : <><b>{qCount}</b> questions · {uw.system && uw.system !== "mixed" ? <>focused on <b>{shortSys(uw.system)}</b></> : "mixed"} · tutor mode · study every miss.</>}
       </p>
+      {quota > 0 && !pacing?.complete && (
+        <div className="pl-uw-pace">📈 Pace to your goal: <b className="num">{quota}</b> Qs/day{pacing?.deadline ? <> to finish the Qbank by {fmtShort(pacing.deadline)}</> : null}.</div>
+      )}
+      {pacing?.complete && <div className="pl-uw-pace done">✓ Qbank goal reached — keep any extra reps for weak systems.</div>}
 
       {studyLabels.length > 0 && (
         <div className="pl-uw-study">
@@ -573,6 +613,79 @@ function PracticeCard({ nav }) {
         <button className="pl-practice-chip" onClick={() => nav("/bank")}><IconBox size={15} /> Question bank <IconArrow size={13} className="mir" /></button>
         <button className="pl-practice-chip" onClick={() => nav("/tests")}><IconClipboard size={15} /> Tests &amp; trajectory <IconArrow size={13} className="mir" /></button>
       </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────── 🔄 refresh & re-rank ─────────────────────────── */
+// Global control: recompute every unit's weakness from the newest exams + FA
+// progress and rebuild today around it. `msg` is the transient "what moved"
+// summary shown right after a refresh.
+function RefreshBar({ onRefresh, msg, refreshedAt }) {
+  return (
+    <div className={`pl-refresh${msg ? " active" : ""}`}>
+      <button className="pl-refresh-btn" onClick={onRefresh}>
+        <span className="pl-refresh-ico" aria-hidden="true">🔄</span> Refresh &amp; re-prioritize
+      </button>
+      <span className="pl-refresh-note">
+        {msg
+          || (refreshedAt
+            ? "Plan re-ranked from your latest results."
+            : "Pull in your newest exam scores + First Aid progress and re-order every day.")}
+      </span>
+    </div>
+  );
+}
+
+/* ─────────────────────────── 🎯 UWorld Qbank pace ─────────────────────────── */
+// Turns a total Qbank goal + your logged progress into a per-day question quota
+// that keeps you on pace for the mid-Sept content deadline.
+function UworldPaceCard({ pacing, onGoal }) {
+  const [editing, setEditing] = useState(false);
+  const [goal, setGoalVal] = useState(String(pacing.goal || ""));
+  const [done, setDoneVal] = useState("");
+  const p = pacing;
+  const save = () => {
+    const patch = { uworldGoalTotal: Math.max(0, Math.round(Number(goal) || 0)) };
+    if (done !== "") patch.uworldDoneOffset = Math.max(0, Math.round(Number(done) || 0));
+    onGoal(patch);
+    setEditing(false);
+    setDoneVal("");
+  };
+  return (
+    <div className="pl-card pl-uwpace track-uworld">
+      <div className="pl-uwpace-head">
+        <span className="pl-uwpace-t">{TRACKS.uworld.emoji} UWorld Qbank pace</span>
+        <button className="btn-ghost btn-xs" onClick={() => setEditing((e) => !e)}>{editing ? "Close" : "Set goal"}</button>
+      </div>
+
+      {p.goal > 0 ? (
+        <>
+          <div className="pl-uwpace-big">
+            <b className="num">{p.complete ? "✓" : p.perDay}</b>
+            <span className="pl-uwpace-unit">
+              {p.complete ? "Qbank goal reached" : <>questions / day to finish by {fmtShort(p.deadline)}</>}
+            </span>
+          </div>
+          <div className="pl-uwpace-bar"><span style={{ width: `${p.pct}%` }} /></div>
+          <div className="pl-uwpace-sub muted">
+            <b className="num">{p.done.toLocaleString()}</b> / <span className="num">{p.goal.toLocaleString()}</span> done
+            · {p.pct}% · <b className="num">{p.remaining.toLocaleString()}</b> left over <b className="num">{p.daysLeft}</b> day{p.daysLeft === 1 ? "" : "s"}
+          </div>
+        </>
+      ) : (
+        <p className="muted pl-uwpace-empty">Set a total Qbank goal to get a daily question quota that keeps you on pace.</p>
+      )}
+
+      {editing && (
+        <div className="pl-uwpace-edit">
+          <label className="pl-set-field sm"><span>Total Qbank Qs</span>
+            <input type="number" min="0" value={goal} onChange={(e) => setGoalVal(e.target.value)} /></label>
+          <label className="pl-set-field sm"><span>Already done</span>
+            <input type="number" min="0" placeholder={String(p.done)} value={done} onChange={(e) => setDoneVal(e.target.value)} /></label>
+          <button className="btn-primary btn-xs" onClick={save}>Save</button>
+        </div>
+      )}
     </div>
   );
 }
@@ -1065,6 +1178,39 @@ function YieldStars({ n }) {
   );
 }
 function shortSys(s) { return (s || "").split(/[ ,/&]/)[0]; }
+
+// Weak-system ranking (worst first), aggregating each system's units by peak
+// weakness and skipping finished ones. Used to describe what a refresh moved.
+function weakRankBySystem(states, units) {
+  const bySys = {};
+  for (const u of units) {
+    const st = states[u.key];
+    if (["done", "dropped"].includes(st?.status)) continue;
+    const w = st?.weaknessScore || 0;
+    if (w > (bySys[u.system] || 0)) bySys[u.system] = w;
+  }
+  return Object.entries(bySys)
+    .filter(([, w]) => w > 0.05)
+    .sort((a, b) => b[1] - a[1])
+    .map(([s]) => s);
+}
+
+// Human summary of how the weak-list re-ordered after a refresh.
+function diffRanking(before, after) {
+  if (!after.length) return "Re-ranked — nothing flagged as weak right now. 🎉";
+  const top = after[0], prevTop = before[0];
+  if (top && top !== prevTop) {
+    return `🎯 New top focus: ${shortSys(top)}${prevTop ? ` — overtook ${shortSys(prevTop)}` : ""}. Plan re-ordered.`;
+  }
+  const beforeIdx = Object.fromEntries(before.map((s, i) => [s, i]));
+  let climber = null, jump = 0;
+  after.forEach((s, i) => {
+    const prev = beforeIdx[s];
+    if (prev != null && prev - i > jump) { jump = prev - i; climber = s; }
+  });
+  if (climber && jump > 0) return `${shortSys(climber)} climbed ${jump} spot${jump > 1 ? "s" : ""} in your weak list. Plan re-ordered.`;
+  return `Plan re-ranked from your latest results — top focus still ${shortSys(top)}.`;
+}
 function cleanChap(u) { return (u?.subsection || "").replace(/^\d+\s/, ""); }
 function fmtShort(iso) {
   if (!iso) return "";

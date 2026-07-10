@@ -5351,6 +5351,52 @@ button, .rail-link, .chip { -webkit-user-select: none; user-select: none; -webki
 }
 .pl-uw-chip.on { background: #fff; color: #B0246A; border-color: #fff; }
 .pl-uw-done { color: rgba(255,255,255,0.95); font-size: var(--fs-footnote); font-weight: 600; }
+.pl-uw-pace {
+  background: rgba(255,255,255,0.16); border-radius: var(--r-xs);
+  padding: 6px 10px; font-size: 12.5px; margin: 0 0 10px; color: rgba(255,255,255,0.95);
+}
+.pl-uw-pace.done { background: rgba(255,255,255,0.22); font-weight: 600; }
+
+/* ── 🔄 Refresh & re-prioritize bar ── */
+.pl-refresh {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 10px 14px; margin: 0 0 14px;
+  border: 1px solid var(--line); border-radius: var(--r);
+  background: var(--surface); box-shadow: var(--sh-xs);
+}
+.pl-refresh.active { border-color: var(--accent); background: var(--accent-soft, var(--surface-2)); }
+.pl-refresh-btn {
+  display: inline-flex; align-items: center; gap: 7px; flex-shrink: 0;
+  border: none; cursor: pointer; font: inherit; font-weight: 700; font-size: var(--fs-footnote);
+  color: #fff; background: var(--accent); border-radius: 999px; padding: 8px 15px;
+  transition: filter var(--t);
+}
+.pl-refresh-btn:hover { filter: brightness(1.06); }
+.pl-refresh-btn:active { transform: translateY(1px); }
+.pl-refresh-ico { font-size: 14px; }
+.pl-refresh-note { font-size: var(--fs-caption); color: var(--text-2); flex: 1; min-width: 160px; }
+.pl-refresh.active .pl-refresh-note { color: var(--text); font-weight: 600; }
+
+/* ── 🎯 UWorld Qbank pace card ── */
+.pl-uwpace { padding: 14px 16px; margin: 12px 0; border-radius: var(--r); box-shadow: var(--sh-sm); }
+.pl-uwpace-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.pl-uwpace-t { font-weight: 700; font-size: var(--fs-subhead); display: inline-flex; align-items: center; gap: 7px; }
+.pl-uwpace .btn-ghost { color: rgba(255,255,255,0.92); }
+.pl-uwpace-big { display: flex; align-items: baseline; gap: 9px; margin: 8px 0 8px; color: #fff; }
+.pl-uwpace-big b { font-family: "Fraunces", serif; font-size: 30px; line-height: 1; font-weight: 600; }
+.pl-uwpace-unit { font-size: 12.5px; color: rgba(255,255,255,0.92); }
+.pl-uwpace-bar { height: 8px; border-radius: 999px; background: rgba(255,255,255,0.25); overflow: hidden; }
+.pl-uwpace-bar > span { display: block; height: 100%; border-radius: 999px; background: #fff; transition: width var(--t); }
+.pl-uwpace-sub { margin-top: 7px; font-size: 12px; color: rgba(255,255,255,0.9) !important; }
+.pl-uwpace-sub b { color: #fff; }
+.pl-uwpace-empty { color: rgba(255,255,255,0.92); margin: 6px 0 2px; font-size: 13px; }
+.pl-uwpace-edit { display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+.pl-uwpace-edit .pl-set-field span { color: rgba(255,255,255,0.9); }
+.pl-uwpace-edit input[type="number"] {
+  width: 96px; padding: 5px 7px; border-radius: var(--r-xs);
+  border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.92);
+  color: #222; font: inherit;
+}
 
 /* ── Subject color rail + tint on planner unit cards ── */
 .pl-subj-rail { width: 4px; border-radius: 4px; align-self: stretch; }

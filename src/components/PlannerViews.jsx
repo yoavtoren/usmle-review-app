@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { projectSchedule, calendarModel, todayISO } from "../lib/scheduler.js";
+import { projectSchedule, calendarModel, uworldPacing, todayISO } from "../lib/scheduler.js";
 import { buildPlanICS, downloadICS } from "../lib/calendarExport.js";
 import { IconCheck, IconCalendar } from "./icons.jsx";
 import { selection as hSelection } from "../lib/haptics.js";
@@ -27,6 +27,7 @@ export function GanttView({ sched, units }) {
   const today = todayISO();
   const proj = useMemo(() => projectSchedule(sched, units), [sched, units]);
   const spans = proj.spans;
+  const pace = useMemo(() => uworldPacing(sched, today), [sched, today]);
 
   // Bar window per unit: done → its completion day; still-open → its projected span.
   function barFor(u) {
@@ -117,7 +118,7 @@ export function GanttView({ sched, units }) {
           <span className="plg-lg"><i className="plg-sw weak" /> Weak — pulled forward</span>
           <span className="plg-lg"><i className="plg-sw todo" /> Planned</span>
         </div>
-        <span className="plg-meta muted">{doneCount}/{units.length} units done · projected finish {fmtShort(proj.exhaustedISO)}{proj.overflow ? " ⚠ past exam" : ""}</span>
+        <span className="plg-meta muted">{doneCount}/{units.length} units done · projected finish {fmtShort(proj.exhaustedISO)}{proj.overflow ? " ⚠ past exam" : ""}{pace.goal > 0 && !pace.complete ? ` · 🎯 ${pace.perDay} UWorld Qs/day` : ""}</span>
       </div>
 
       <div className="plg-scroll">
@@ -201,6 +202,9 @@ export function CalendarView({ sched, units, nav }) {
 
   const byKey = useMemo(() => Object.fromEntries(units.map((u) => [u.key, u])), [units]);
   const { model } = useMemo(() => calendarModel(sched, units, { futureFromISO: today }), [sched, units]);
+  // Goal-driven per-day UWorld quota (same for every remaining day until you log
+  // more), so each future study date can show its "N Qs to stay on pace" block.
+  const pace = useMemo(() => uworldPacing(sched, today), [sched, today]);
 
   // Build the ordered event list for one day.
   function eventsFor(iso) {
@@ -226,8 +230,15 @@ export function CalendarView({ sched, units, nav }) {
         evs.push(ev("gold", k, "planned"));
       }
       for (const k of (m.projected || [])) evs.push(ev("muted", k, "projected"));
-      // 🎯 the reserved animated UWorld daily block, if planned that day
-      if (m.uworld) evs.push({ tone: "uworld", label: "UWorld block", sub: m.uworld.system, tag: "uworld", emoji: TRACKS.uworld.emoji, track: "uworld" });
+      // 🎯 The reserved UWorld block. Real planned day → its own quota; a future
+      // study day → the goal-driven pace quota so every date carries its Q target.
+      const hasContent = (m.planned?.length || m.projected?.length || m.completed?.length);
+      if (m.uworld) {
+        const cnt = m.uworld.quotaQ || m.uworld.targetQ || null;
+        evs.push({ tone: "uworld", label: cnt ? `UWorld · ${cnt} Qs` : "UWorld block", sub: m.uworld.system, tag: "uworld", emoji: TRACKS.uworld.emoji, track: "uworld", count: cnt });
+      } else if (iso > today && hasContent && pace.perDay > 0 && !pace.complete) {
+        evs.push({ tone: "uworld", label: `UWorld · ${pace.perDay} Qs`, sub: "to stay on pace", tag: "uworld", emoji: TRACKS.uworld.emoji, track: "uworld", count: pace.perDay });
+      }
       for (const a of (m.assessments || [])) evs.push({ tone: "purple", label: a.label, sub: a.takenDate ? `logged ${a.actual}` : "checkpoint", tag: "assessment", emoji: TRACKS.assessment.emoji, track: "assessment" });
       if (m.ankiDone) evs.push({ tone: "ok", label: "Anki cleared", tag: "anki", emoji: TRACKS.anki.emoji });
     }

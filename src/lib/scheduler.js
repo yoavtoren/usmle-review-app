@@ -30,12 +30,12 @@ const SYS_STAT_MATCH = {
   "Respiratory": ["pulmonary", "critical care"],
 };
 
-// Aggregate every logged test's per-subject + per-system stats into a single
-// miss-rate per plan-unit system. Laplace-smoothed so a system you've barely
-// touched doesn't read as maximally weak. Returns { system: weakness 0..1 }.
-export function systemWeaknessFromTests(log = loadTestLog()) {
+// Aggregate every logged test's per-subject + per-system stats into a raw
+// { total, correct } per plan-unit system. This is the live exam signal that
+// lets the planner re-rank as your results come in.
+export function systemStatsFromTests(log = loadTestLog()) {
   const acc = {}; // system -> { total, correct }
-  for (const [sys, keys] of Object.entries(SYS_STAT_MATCH)) acc[sys] = { total: 0, correct: 0 };
+  for (const sys of Object.keys(SYS_STAT_MATCH)) acc[sys] = { total: 0, correct: 0 };
   for (const t of log) {
     for (const kind of ["subjects", "systems"]) {
       for (const [name, row] of Object.entries(t[kind] || {})) {
@@ -50,9 +50,15 @@ export function systemWeaknessFromTests(log = loadTestLog()) {
       }
     }
   }
+  return acc;
+}
+
+// Miss-rate per plan-unit system, Laplace-smoothed so a system you've barely
+// touched doesn't read as maximally weak. Returns { system: weakness 0..1 }.
+export function systemWeaknessFromTests(log = loadTestLog()) {
   const K = 6;
   const out = {};
-  for (const [sys, { total, correct }] of Object.entries(acc)) {
+  for (const [sys, { total, correct }] of Object.entries(systemStatsFromTests(log))) {
     if (total > 0) out[sys] = clamp01((total - correct) / (total + K));
   }
   return out;
@@ -90,6 +96,12 @@ const DEFAULT_SETTINGS = {
   // Fraction of the non-Anki budget carved out for the daily 🎯 UWorld block and
   // the 🧊 basics interleave; the rest is the 🔥 anchor (marquee system) budget.
   trackSplit: { uworldPct: 0.25, basicsPct: 0.20 },
+  // UWorld Qbank pacing: the total number of Qbank questions you're aiming to
+  // finish by the content deadline, plus any you completed before using the app
+  // (so the daily quota starts from your real position). ~3200 ≈ the full Step-1
+  // Qbank; adjust in Settings.
+  uworldGoalTotal: 3200,
+  uworldDoneOffset: 0,
 };
 
 const DEFAULT_ADAPT = {
@@ -175,6 +187,14 @@ export function migrate(raw) {
   }
   if (!state.settings.trackSplit) {
     state.settings = { ...state.settings, trackSplit: { ...DEFAULT_SETTINGS.trackSplit } };
+    changed = true;
+  }
+  if (state.settings.uworldGoalTotal == null) {
+    state.settings = {
+      ...state.settings,
+      uworldGoalTotal: DEFAULT_SETTINGS.uworldGoalTotal,
+      uworldDoneOffset: state.settings.uworldDoneOffset ?? DEFAULT_SETTINGS.uworldDoneOffset,
+    };
     changed = true;
   }
   if (!Array.isArray(state.assessments)) { state.assessments = []; changed = true; }
@@ -505,11 +525,12 @@ export function recomputeWeakness(state, units, deck, seed) {
     seedBySystem[sys] = Math.max(seedBySystem[sys] || 0, lvl);
   }
 
-  // Channel C — miss rate from the stats you enter per UWorld/NBME test.
-  const testWeakBySystem = systemWeaknessFromTests();
+  // Channel C — LIVE miss rate from the stats you enter per UWorld/NBME test,
+  // carried with its per-system question count so we know how much to trust it.
+  const testStats = systemStatsFromTests();
 
-  // Channel D — per-system performance from the student profile (the highest-
-  // value signal): pct correct → miss rate, keyed to the plan-unit vocabulary.
+  // Channel D — per-system performance from the student profile: pct correct →
+  // miss rate, keyed to the plan-unit vocabulary. A static baseline/prior.
   const profileWeakBySystem = {};
   for (const row of state.profile?.perSystemPerformance || []) {
     if (row.pct == null) continue;
@@ -517,14 +538,35 @@ export function recomputeWeakness(state, units, deck, seed) {
     profileWeakBySystem[sys] = Math.max(profileWeakBySystem[sys] || 0, clamp01(1 - row.pct / 100));
   }
 
+  // How fast the live exam channel overrides the static prior. With CONF_K = 30,
+  // 30 logged questions in a system = half-trust, 90 = three-quarters. Below that
+  // we lean on the seed/profile baseline; above it, your real scores rule.
+  const CONF_K = 30;
+  const TEST_K = 6; // Laplace smoothing on the live miss-rate itself
+
   const next = { ...state, units: { ...state.units } };
   for (const u of units) {
     const prev = next.units[u.key] || {};
-    const chA = chapterMiss[u.chapterNum] || 0;
-    const chB = seedBySystem[(u.system || "").toLowerCase()] || 0;
-    const chC = testWeakBySystem[u.system] || 0;
-    const chD = profileWeakBySystem[u.system] || 0;
-    next.units[u.key] = { ...prev, weaknessScore: clamp01(Math.max(chA, chB, chC, chD)) };
+    const chA = chapterMiss[u.chapterNum] || 0;                      // FA/deck progress (live)
+    const chB = seedBySystem[(u.system || "").toLowerCase()] || 0;   // manual seed prior
+    const chD = profileWeakBySystem[u.system] || 0;                  // profile prior
+    const prior = Math.max(chB, chD);                                // static baseline
+
+    // Blend the live exam signal toward the prior by confidence. As you log more
+    // questions in a system AND score better, its weakness falls — so a system
+    // you keep acing sheds weight and a still-weak one (e.g. Genetics) rises past
+    // it. With no exam data yet, this is exactly the old prior.
+    const ts = testStats[u.system] || { total: 0, correct: 0 };
+    let examWeak = prior;
+    if (ts.total > 0) {
+      const raw = clamp01((ts.total - ts.correct) / (ts.total + TEST_K));
+      const conf = ts.total / (ts.total + CONF_K);
+      examWeak = conf * raw + (1 - conf) * prior;
+    }
+
+    // First Aid / deck progress (chA) is the other live channel: mastering a
+    // chapter's questions drops it. Weakness is the worse of the two live views.
+    next.units[u.key] = { ...prev, weaknessScore: clamp01(Math.max(chA, examWeak)) };
   }
   return save(next);
 }
@@ -704,10 +746,18 @@ export function planDay(state, units, dateISO, capacity) {
   const perQ = s.profile?.resourceMinutesPerTopic?.UWorld || 1.5;
   const anchorSystem = byKey[anchor[0]]?.system || byKey[planned[0]]?.system || "mixed";
   const prevUworld = s.days[addDaysISO(dateISO, -1)]?.uworld;
+  // Question target = the goal-driven quota that keeps you on pace to finish the
+  // Qbank by the deadline; floored so there's always a real block, and it never
+  // needs to exceed what the reserved time can hold (perQ minutes each).
+  const pace = uworldPacing(s, dateISO);
+  const timeCap = Math.max(dedicated ? 40 : 10, Math.round(uworldBudget / perQ));
+  const quotaQ = pace.perDay;
   const uworld = {
     mode: dedicated ? "random" : "tutor",
     system: dedicated ? "mixed" : anchorSystem,
-    targetQ: Math.max(dedicated ? 40 : 10, Math.round(uworldBudget / perQ)),
+    targetQ: Math.max(dedicated ? 20 : 10, quotaQ || timeCap),
+    quotaQ,                 // goal-driven pace target (what "must" be done today)
+    timeCap,               // what the reserved block time comfortably holds
     minutes: uworldBudget,
     studyTargets: prevUworld?.missedUnits || [],
     done: false, correct: null, total: null, missedSystems: [],
@@ -768,6 +818,32 @@ export function recordUworld(state, units, { correct, total, missedSystems = [] 
     missedUnits,
   };
   return save(s);
+}
+
+// ── UWorld Qbank pacing (§ daily quota to the mid-Sept goal) ─────────────────
+// Sum the questions you've logged in the daily UWorld blocks, plus any you
+// completed before adopting the app (the offset). This is the "done" count that
+// drives the per-day quota.
+export function uworldDone(state) {
+  let done = Math.max(0, Number(state.settings?.uworldDoneOffset) || 0);
+  for (const d of Object.values(state.days || {})) {
+    if (d?.uworld?.done && d.uworld.total) done += Number(d.uworld.total) || 0;
+  }
+  return done;
+}
+
+// The pacing model: how many Qbank questions per day keep you on track to finish
+// `uworldGoalTotal` by the content deadline. `perDay` is what each date shows.
+export function uworldPacing(state, dateISO = todayISO()) {
+  const goal = Math.max(0, Number(state.settings?.uworldGoalTotal) || 0);
+  const done = uworldDone(state);
+  const remaining = Math.max(0, goal - done);
+  const deadline = state.settings.contentDeadline;
+  // Days you can still practice, counting today (so the deadline day = 1 day).
+  const daysLeft = Math.max(1, studyDaysBetween(dateISO, deadline) + 1);
+  const perDay = Math.ceil(remaining / daysLeft);
+  const pct = goal ? clamp(Math.round((done / goal) * 100), 0, 100) : 0;
+  return { goal, done, remaining, daysLeft, perDay, pct, deadline, complete: goal > 0 && remaining === 0 };
 }
 
 // ── Completion / miss (§4) ───────────────────────────────────────────────────
