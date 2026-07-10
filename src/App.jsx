@@ -188,7 +188,9 @@ export default function App() {
 
         <div className={`route-fade${isEnglishArea ? " area-ltr" : " area-rtl"}`} key={loc.pathname} dir={areaDir} lang={areaLang}>
           <Routes>
-            <Route path="/" element={<FirstAidBook />} />
+            <Route path="/" element={
+              <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} loading={dataLoading} />
+            } />
             <Route path="/step1" element={
               <WelcomeScreen
                 onNav={(to, opts) => vtNavigate(nav, to, opts)}
