@@ -15,7 +15,7 @@ export const CLOUD_CONFIG = {
 
   // CloudKit JS API token (web sign-in). Empty = web sync stays off and the
   // login page explains what's missing.
-  apiToken: "",
+  apiToken: "8b11a54621e87b00b143d2e5982bacaf99e57ac2fccdb4ea19bb8ac11f3e8e80",
 
   // "production" so the web, TestFlight and Mac builds all share one database.
   // (The entitlement pins native debug builds to Production too.)
