@@ -12,6 +12,7 @@ import EmailCenter from "./components/EmailCenter.jsx";
 import { loadProgress, getCard, isDueRespectingMode, getStreak } from "./lib/storage.js";
 import { getDueCount } from "./lib/reminderEngine.js";
 import { maybeSendDailyDigest } from "./lib/emailService.js";
+import { syncSystemNotifications, attachNotificationTapHandler } from "./lib/notify.js";
 import HomePage from "./components/HomePage.jsx";
 import FirstAidBook from "./components/FirstAidBook.jsx";
 import TasksPage from "./components/TasksPage.jsx";
@@ -135,6 +136,23 @@ export default function App() {
     maybeSendDailyDigest({ dueReviews: reviewDue }).catch(() => {});
   }, [reviewDue]);
 
+  // Keep OS-level notifications in sync with the current deadlines + reviews,
+  // and re-sync when the app returns to the foreground.
+  useEffect(() => {
+    if (!questions.length) return;
+    syncSystemNotifications({ questions });
+    const onVisible = () => {
+      if (document.visibilityState === "visible") syncSystemNotifications({ questions });
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => document.removeEventListener("visibilitychange", onVisible);
+  }, [questions, reviewDue]);
+
+  // Tapping a system notification deep-links to the relevant page.
+  useEffect(() => {
+    attachNotificationTapHandler((route) => nav(route, route === "/tests/review" ? { state: { filter: "due" } } : undefined));
+  }, [nav]);
+
   // Step 1 is English / left-to-right; everything else is Hebrew / right-to-left.
   const isEnglishArea = /^\/(step1|tests|fa|bank|progress|planner)(\/|$)/.test(loc.pathname);
   const areaDir  = isEnglishArea ? "ltr" : "rtl";
@@ -170,9 +188,7 @@ export default function App() {
 
         <div className={`route-fade${isEnglishArea ? " area-ltr" : " area-rtl"}`} key={loc.pathname} dir={areaDir} lang={areaLang}>
           <Routes>
-            <Route path="/" element={
-              <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} loading={dataLoading} />
-            } />
+            <Route path="/" element={<FirstAidBook />} />
             <Route path="/step1" element={
               <WelcomeScreen
                 onNav={(to, opts) => vtNavigate(nav, to, opts)}

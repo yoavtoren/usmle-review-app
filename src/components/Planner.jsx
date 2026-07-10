@@ -171,7 +171,13 @@ export default function Planner() {
     ? (sched.assessments || []).find((a) => a.id === today.assessmentToday)
     : null;
 
-  const goalCard = <ScoreGoalCard readiness={readiness} goal={sched.settings.goal} assessments={sched.assessments} onGoal={onGoal} />;
+  const statusStrip = (
+    <StatusStrip
+      feas={feas} settings={sched.settings} onTriage={runTriage}
+      readiness={readiness} goal={sched.settings.goal} assessments={sched.assessments || []} onGoal={onGoal}
+      pacing={pacing} onUworldGoal={onUworldGoal}
+    />
+  );
   const assessCard = (
     <AssessmentsCard
       assessments={sched.assessments || []} dedicated={dedicated} date={date} examISO={sched.settings.examDate}
@@ -180,6 +186,16 @@ export default function Planner() {
   );
 
   const viewTitle = view === "timeline" ? "Timeline" : view === "calendar" ? "Calendar" : "Today";
+  const standSection = (
+    <section className="pl-section">
+      <SectionHead
+        title="Where you stand"
+        sub="Schedule health, predicted score, and Qbank pace — tap a stat for the full story."
+      />
+      {statusStrip}
+      {assessCard}
+    </section>
+  );
 
   return (
     <div className={`page planner ${view === "today" ? "page-narrow" : "pl-wide"}`} dir="ltr">
@@ -192,14 +208,18 @@ export default function Planner() {
         <div className="pl-head-r">
           <span className={`pl-phase ${phaseBadge.cls}`}>{phaseBadge.label} phase</span>
           <span className="pl-streak"><IconSparkle size={13} /> <b className="num">{streak}</b> day streak</span>
+          <button className="pl-refresh-btn" onClick={onRefresh}
+            title="Pull in your newest exam scores + First Aid progress and re-order the plan">
+            <span className="pl-refresh-ico" aria-hidden="true">🔄</span> Re-prioritize
+          </button>
         </div>
       </header>
 
       {/* ═══ View switcher (Today · Timeline · Calendar) ═══ */}
       <PlannerViewTabs view={view} onView={setView} />
 
-      {/* 🔄 Re-rank the whole plan from the latest exams + FA progress */}
-      <RefreshBar onRefresh={onRefresh} msg={refreshMsg} refreshedAt={refreshedAt} />
+      {/* Transient "what moved" note after a re-prioritize */}
+      {refreshMsg && <div className="pl-refresh-toast">{refreshMsg}</div>}
 
       {view === "timeline" && <GanttView sched={sched} units={units} />}
       {view === "calendar" && <CalendarView sched={sched} units={units} nav={nav} />}
@@ -219,37 +239,24 @@ export default function Planner() {
       )}
 
       {view === "today" && !examPassed && (<>
-      {/* In dedicated phase, readiness + checkpoints lead. */}
-      {dedicated && goalCard}
-      {dedicated && assessCard}
+      {/* In dedicated phase, the scoreboard + checkpoints lead. */}
+      {dedicated && standSection}
 
-      {/* ═══ Feasibility / ETA ═══ */}
-      <FeasibilityBar feas={feas} onTriage={runTriage} settings={sched.settings} readiness={readiness} />
-
-      {/* Score goal + readiness (content phase: under feasibility) */}
-      {!dedicated && goalCard}
-
-      {/* 🎯 UWorld Qbank pace to the mid-Sept goal */}
-      <UworldPaceCard pacing={pacing} onGoal={onUworldGoal} />
-
-      {/* ═══ Capacity picker ═══ */}
-      <CapacityPicker current={capacity} onPick={pickCapacity} presets={sched.settings.capacityPresets} bias={sched.adaptation.capacityBiasMin} />
-
-      {/* Mid-day progress meter */}
-      {capacity && dayTotal > 0 && (
-        <p className="muted" style={{ margin: "2px 4px 10px", fontSize: "0.85rem" }}>
-          <b className="num">{dayDone}</b> / <span className="num">{dayTotal}</span> done today
-          <span className="muted"> · blocks + Anki + UWorld</span>
-        </p>
-      )}
-
+      {/* ═══ ① Today's plan — the one required action, then the checklist ═══ */}
       {!capacity ? (
-        <div className="pl-empty">
-          <span className="pl-empty-ico"><IconClock size={26} /></span>
-          <p>Pick how much energy you have today and I'll size the plan to fit.</p>
-        </div>
+        <section className="pl-section">
+          <CapacityHero presets={sched.settings.capacityPresets} bias={sched.adaptation.capacityBiasMin} onPick={pickCapacity} />
+        </section>
       ) : (
-        <>
+        <section className="pl-section">
+          <SectionHead
+            title="Today's plan"
+            sub={dayTotal > 0
+              ? <><b className="num">{dayDone}</b> of <span className="num">{dayTotal}</span> done — Anki first, then content blocks, then UWorld.</>
+              : "Anki first, then content blocks, then UWorld."}
+            right={<CapacityChips current={capacity} presets={sched.settings.capacityPresets} bias={sched.adaptation.capacityBiasMin} onPick={pickCapacity} />}
+          />
+
           {simToday && <SimDayBanner sim={simToday} onLog={onLogAssessment} />}
           {allDone && <DayComplete streak={streak} />}
 
@@ -289,6 +296,12 @@ export default function Planner() {
             </div>
           )}
 
+          {/* 🎯 Daily UWorld block */}
+          <UworldBlock
+            uworld={today?.uworld} minutes={today?.uworldMin || 0} phase={sched.phase}
+            byKey={byKey} onLog={onLogUworld} pacing={pacing}
+          />
+
           {/* Today's tasks */}
           <TasksCard tasks={sched.tasks || []} date={date} onAdd={onAddTask} onToggle={onToggleTask} onDelete={onDeleteTask} generalCount={generalToday} nav={nav} />
 
@@ -299,25 +312,23 @@ export default function Planner() {
             states={sched.units}
           />
 
-          {/* 🎯 Daily UWorld block — reserved animated track, can't be skipped */}
-          <UworldBlock
-            uworld={today?.uworld} minutes={today?.uworldMin || 0} phase={sched.phase}
-            byKey={byKey} onLog={onLogUworld} pacing={pacing}
-          />
-
           {/* Question practice (bank / tests links) */}
           <PracticeCard nav={nav} />
-        </>
+        </section>
       )}
 
-      {/* Swap */}
-      <SwapPanel units={units} states={sched.units} onSwap={doSwap} plannedKeys={plannedKeys} />
+      {/* ═══ ② Where you stand (content phase: after the plan) ═══ */}
+      {!dedicated && standSection}
 
-      {/* Weak spots */}
-      <WeakSpots units={units} states={sched.units} byKey={byKey} onFocus={doSwap} plannedKeys={plannedKeys} />
-
-      {/* Assessment checkpoints (content phase: lower down) */}
-      {!dedicated && assessCard}
+      {/* ═══ ③ Tune the plan ═══ */}
+      <section className="pl-section">
+        <SectionHead
+          title="Tune the plan"
+          sub="Not feeling today's lineup? Swap a topic in, or pull a weak spot forward."
+        />
+        <SwapPanel units={units} states={sched.units} onSwap={doSwap} plannedKeys={plannedKeys} />
+        <WeakSpots units={units} states={sched.units} onFocus={doSwap} plannedKeys={plannedKeys} />
+      </section>
       </>)}
 
       {/* Settings / backup */}
@@ -348,30 +359,92 @@ function ConfirmButton({ className, label, armedLabel = "Sure?", onConfirm, ...r
   );
 }
 
-/* ─────────────────────────── feasibility ─────────────────────────── */
-function FeasibilityBar({ feas, onTriage, settings, readiness }) {
-  // Fill encodes load directly (workload as a share of remaining capacity):
-  // fuller = more loaded, >100% = over-committed. Clamped for display.
+/* ─────────────────────────── section header ─────────────────────────── */
+function SectionHead({ title, sub, right }) {
+  return (
+    <div className="pl-sec-head">
+      <div className="pl-sec-head-l">
+        <h2 className="pl-sec-title">{title}</h2>
+        {sub && <p className="pl-sec-sub">{sub}</p>}
+      </div>
+      {right && <div className="pl-sec-head-r">{right}</div>}
+    </div>
+  );
+}
+
+/* ─────────────────────────── where you stand ───────────────────────────
+   One strip, three stats — schedule health, predicted score, UWorld pace.
+   Each cell expands into a plain-language detail panel with its controls. */
+function StatusStrip({ feas, settings, onTriage, readiness, goal, assessments, onGoal, pacing, onUworldGoal }) {
+  const [open, setOpen] = useState(null); // 'sched' | 'score' | 'pace' | null
+  const toggle = (k) => setOpen((o) => (o === k ? null : k));
+  const r = readiness;
+  const p = pacing;
+  const loadPct = Math.round(feas.ratio * 100);
+  const schedLabel = { green: "On track", amber: "Slightly behind", red: "Behind", ahead: "Ahead of pace" }[feas.status];
+
+  return (
+    <div className="pl-card pl-status">
+      <div className="pl-status-row">
+        <StatCell k="sched" open={open} onToggle={toggle} label="Schedule">
+          <span className={`pl-stat-val pl-stat-sched ${feas.status}`}><span className="pl-stat-dot" />{schedLabel}</span>
+          <span className="pl-stat-sub">finish ~{feas.etaLabel} · <span className="num">{loadPct}%</span> loaded</span>
+        </StatCell>
+        <StatCell k="score" open={open} onToggle={toggle} label="Predicted score">
+          <span className="pl-stat-val num">{r.status === "baseline" ? "—" : r.projected}</span>
+          <span className="pl-stat-sub">
+            {r.status === "baseline" ? "log your first NBME" : <>goal <span className="num">{r.target}</span> · {r.gap >= 0 ? "+" : ""}<span className="num">{r.gap}</span></>}
+          </span>
+        </StatCell>
+        <StatCell k="pace" open={open} onToggle={toggle} label="UWorld pace">
+          <span className="pl-stat-val num">{p.goal > 0 ? (p.complete ? "✓" : <>{p.perDay}<small>/day</small></>) : "—"}</span>
+          <span className="pl-stat-sub">
+            {p.goal > 0
+              ? (p.complete ? "Qbank goal reached" : <><span className="num">{p.pct}%</span> of <span className="num">{p.goal.toLocaleString()}</span> Qs</>)
+              : "set a Qbank goal"}
+          </span>
+        </StatCell>
+      </div>
+      {open === "sched" && <SchedDetail feas={feas} settings={settings} onTriage={onTriage} readiness={readiness} />}
+      {open === "score" && <ScoreDetail readiness={readiness} goal={goal} assessments={assessments} onGoal={onGoal} />}
+      {open === "pace" && <PaceDetail pacing={pacing} onGoal={onUworldGoal} />}
+    </div>
+  );
+}
+
+function StatCell({ k, open, onToggle, label, children }) {
+  const isOpen = open === k;
+  return (
+    <button className={`pl-stat${isOpen ? " open" : ""}`} onClick={() => onToggle(k)} aria-expanded={isOpen}>
+      <span className="pl-stat-lbl">{label}</span>
+      {children}
+      <span className={`pl-stat-chev${isOpen ? " flip" : ""}`}><IconChevronDown size={13} /></span>
+    </button>
+  );
+}
+
+// Schedule health: workload vs. the time left before the content deadline.
+function SchedDetail({ feas, settings, onTriage, readiness }) {
   const loadPct = Math.round(feas.ratio * 100);
   const fillPct = Math.max(4, Math.min(100, loadPct));
-  const label = {
-    green: "On track", amber: "Slightly behind", red: "Behind — triage needed", ahead: "Ahead of pace",
-  }[feas.status];
-  const msg = `Workload vs. capacity: ${feas.finishDays} day${feas.finishDays === 1 ? "" : "s"} of work · ${feas.daysLeft} days to the ${settings.contentDeadline} deadline`;
+  const over = feas.ratio > 1;
   const belowGoal = readiness && readiness.status !== "baseline" && readiness.gap < -5;
   return (
-    <div className={`pl-feas ${feas.status}`}>
-      <div className="pl-feas-top">
-        <span className="pl-feas-status"><span className="pl-feas-dot" /> {label}</span>
-        <span className="pl-feas-eta num">{Math.round(feas.remainingMin / 60)}h left · ETA {feas.etaLabel} · load {loadPct}%</span>
+    <div className={`pl-stat-detail pl-sd ${feas.status}`}>
+      <p className="pl-stat-explain">
+        You have about <b className="num">{Math.round(feas.remainingMin / 60)}h</b> of study left
+        (<b className="num">{feas.finishDays}</b> day{feas.finishDays === 1 ? "" : "s"} of work) and{" "}
+        <b className="num">{feas.daysLeft}</b> days until the {fmtShort(settings.contentDeadline)} content deadline.
+        At your current pace you'd finish around <b>{feas.etaLabel}</b>
+        {over ? " — that's more work than time, so trim low-yield topics or add capacity." : "."}
+      </p>
+      <div className="pl-sd-track" title={`Workload is ${loadPct}% of remaining capacity`}>
+        <span className="pl-sd-fill" style={{ width: `${fillPct}%` }} />
       </div>
-      <div className="pl-feas-track" title={`Workload is ${loadPct}% of remaining capacity`}>
-        <span className="pl-feas-fill" style={{ width: `${fillPct}%` }} />
-      </div>
-      <div className="pl-feas-foot">
-        <span className="muted">{msg}</span>
-        <span className="pl-feas-foot-actions">
-          {belowGoal && <span className="pl-feas-advisory">Trend below goal — weight weak systems</span>}
+      <div className="pl-sd-foot">
+        <span className="muted">Bar shows workload as a share of the time you have — a full bar means over-committed.</span>
+        <span className="pl-sd-foot-actions">
+          {belowGoal && <span className="pl-sd-advisory">Trend below goal — weight weak systems</span>}
           {(feas.status === "amber" || feas.status === "red") && (
             <button className="btn-secondary btn-xs" onClick={onTriage}>Auto-triage low-yield</button>
           )}
@@ -381,21 +454,29 @@ function FeasibilityBar({ feas, onTriage, settings, readiness }) {
   );
 }
 
-/* ─────────────────────────── capacity picker ─────────────────────────── */
-function CapacityPicker({ current, onPick, presets, bias }) {
-  const opts = [
-    { key: "low", emoji: "🌱", name: "Low", desc: "Anki + one unit" },
-    { key: "med", emoji: "🌿", name: "Medium", desc: "a focused set" },
-    { key: "high", emoji: "🌳", name: "High", desc: "a full day" },
-  ];
+/* ─────────────────────────── capacity ─────────────────────────── */
+const CAP_OPTS = [
+  { key: "low", emoji: "🌱", name: "Low", desc: "Anki + one unit" },
+  { key: "med", emoji: "🌿", name: "Medium", desc: "a focused set" },
+  { key: "high", emoji: "🌳", name: "High", desc: "a full day" },
+];
+
+// The hero card shown until the day is sized — the page's one required action.
+function CapacityHero({ presets, bias, onPick }) {
   return (
-    <div className="pl-cap">
-      <div className="pl-cap-lbl">How much do you have today?{bias ? <span className="pl-cap-bias">adjusted −{bias}m from your history</span> : null}</div>
+    <div className="pl-card pl-caphero">
+      <p className="pl-caphero-eyebrow">Start here</p>
+      <h2 className="pl-caphero-t">How much energy do you have today?</h2>
+      <p className="pl-caphero-sub">
+        Pick a size and I'll build today's checklist — Anki first, then your highest-priority
+        topics, then a UWorld block.
+        {bias ? <span className="pl-cap-bias">sized −{bias}m from your recent days</span> : null}
+      </p>
       <div className="pl-cap-row">
-        {opts.map((o) => {
+        {CAP_OPTS.map((o) => {
           const mins = presets[o.key] - (bias || 0);
           return (
-            <button key={o.key} className={`pl-cap-btn${current === o.key ? " on" : ""}`} onClick={() => onPick(o.key)}>
+            <button key={o.key} className="pl-cap-btn" onClick={() => onPick(o.key)}>
               <span className="pl-cap-emoji">{o.emoji}</span>
               <span className="pl-cap-name">{o.name}</span>
               <span className="pl-cap-mins num">~{Math.round(mins / 60 * 10) / 10}h</span>
@@ -404,6 +485,22 @@ function CapacityPicker({ current, onPick, presets, bias }) {
           );
         })}
       </div>
+    </div>
+  );
+}
+
+// Once sized, the picker collapses to these chips so the day can be resized.
+function CapacityChips({ current, presets, bias, onPick }) {
+  return (
+    <div className="pl-capchips" title="Resize today's plan">
+      {CAP_OPTS.map((o) => {
+        const mins = presets[o.key] - (bias || 0);
+        return (
+          <button key={o.key} className={`pl-capchip${current === o.key ? " on" : ""}`} onClick={() => onPick(o.key)}>
+            {o.emoji} {o.name} <span className="num">~{Math.round(mins / 60 * 10) / 10}h</span>
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -555,7 +652,7 @@ function UworldBlock({ uworld, minutes, phase, byKey, onLog, pacing }) {
   };
 
   return (
-    <div className="pl-card pl-uworld-card track-uworld">
+    <div className="pl-card pl-uworld-card">
       <div className="pl-uw-top">
         <span className="pl-uw-emoji">{TRACKS.uworld.emoji}</span> Today's UWorld
       </div>
@@ -617,31 +714,10 @@ function PracticeCard({ nav }) {
   );
 }
 
-/* ─────────────────────────── 🔄 refresh & re-rank ─────────────────────────── */
-// Global control: recompute every unit's weakness from the newest exams + FA
-// progress and rebuild today around it. `msg` is the transient "what moved"
-// summary shown right after a refresh.
-function RefreshBar({ onRefresh, msg, refreshedAt }) {
-  return (
-    <div className={`pl-refresh${msg ? " active" : ""}`}>
-      <button className="pl-refresh-btn" onClick={onRefresh}>
-        <span className="pl-refresh-ico" aria-hidden="true">🔄</span> Refresh &amp; re-prioritize
-      </button>
-      <span className="pl-refresh-note">
-        {msg
-          || (refreshedAt
-            ? "Plan re-ranked from your latest results."
-            : "Pull in your newest exam scores + First Aid progress and re-order every day.")}
-      </span>
-    </div>
-  );
-}
-
-/* ─────────────────────────── 🎯 UWorld Qbank pace ─────────────────────────── */
+/* ─────────────────────────── UWorld pace detail ─────────────────────────── */
 // Turns a total Qbank goal + your logged progress into a per-day question quota
-// that keeps you on pace for the mid-Sept content deadline.
-function UworldPaceCard({ pacing, onGoal }) {
-  const [editing, setEditing] = useState(false);
+// that keeps you on pace for the content deadline.
+function PaceDetail({ pacing, onGoal }) {
   const [goal, setGoalVal] = useState(String(pacing.goal || ""));
   const [done, setDoneVal] = useState("");
   const p = pacing;
@@ -649,49 +725,40 @@ function UworldPaceCard({ pacing, onGoal }) {
     const patch = { uworldGoalTotal: Math.max(0, Math.round(Number(goal) || 0)) };
     if (done !== "") patch.uworldDoneOffset = Math.max(0, Math.round(Number(done) || 0));
     onGoal(patch);
-    setEditing(false);
     setDoneVal("");
   };
   return (
-    <div className="pl-card pl-uwpace track-uworld">
-      <div className="pl-uwpace-head">
-        <span className="pl-uwpace-t">{TRACKS.uworld.emoji} UWorld Qbank pace</span>
-        <button className="btn-ghost btn-xs" onClick={() => setEditing((e) => !e)}>{editing ? "Close" : "Set goal"}</button>
-      </div>
-
+    <div className="pl-stat-detail">
       {p.goal > 0 ? (
         <>
-          <div className="pl-uwpace-big">
-            <b className="num">{p.complete ? "✓" : p.perDay}</b>
-            <span className="pl-uwpace-unit">
-              {p.complete ? "Qbank goal reached" : <>questions / day to finish by {fmtShort(p.deadline)}</>}
-            </span>
-          </div>
-          <div className="pl-uwpace-bar"><span style={{ width: `${p.pct}%` }} /></div>
-          <div className="pl-uwpace-sub muted">
-            <b className="num">{p.done.toLocaleString()}</b> / <span className="num">{p.goal.toLocaleString()}</span> done
-            · {p.pct}% · <b className="num">{p.remaining.toLocaleString()}</b> left over <b className="num">{p.daysLeft}</b> day{p.daysLeft === 1 ? "" : "s"}
+          <p className="pl-stat-explain">
+            {p.complete
+              ? <>Qbank goal reached — put any extra blocks into your weakest systems.</>
+              : <><b className="num">{p.remaining.toLocaleString()}</b> questions left over{" "}
+                <b className="num">{p.daysLeft}</b> day{p.daysLeft === 1 ? "" : "s"} — that's{" "}
+                <b className="num">{p.perDay}</b> a day to finish the Qbank by {fmtShort(p.deadline)}.</>}
+          </p>
+          <div className="pl-pace-bar"><span style={{ width: `${p.pct}%` }} /></div>
+          <div className="pl-pace-sub muted">
+            <b className="num">{p.done.toLocaleString()}</b> / <span className="num">{p.goal.toLocaleString()}</span> done · {p.pct}%
           </div>
         </>
       ) : (
-        <p className="muted pl-uwpace-empty">Set a total Qbank goal to get a daily question quota that keeps you on pace.</p>
+        <p className="pl-stat-explain">Set a total Qbank goal to get a daily question quota that keeps you on pace.</p>
       )}
-
-      {editing && (
-        <div className="pl-uwpace-edit">
-          <label className="pl-set-field sm"><span>Total Qbank Qs</span>
-            <input type="number" min="0" value={goal} onChange={(e) => setGoalVal(e.target.value)} /></label>
-          <label className="pl-set-field sm"><span>Already done</span>
-            <input type="number" min="0" placeholder={String(p.done)} value={done} onChange={(e) => setDoneVal(e.target.value)} /></label>
-          <button className="btn-primary btn-xs" onClick={save}>Save</button>
-        </div>
-      )}
+      <div className="pl-pace-edit">
+        <label className="pl-set-field sm"><span>Total Qbank Qs</span>
+          <input type="number" min="0" value={goal} onChange={(e) => setGoalVal(e.target.value)} /></label>
+        <label className="pl-set-field sm"><span>Already done</span>
+          <input type="number" min="0" placeholder={String(p.done)} value={done} onChange={(e) => setDoneVal(e.target.value)} /></label>
+        <button className="btn-primary btn-xs" onClick={save}>Save</button>
+      </div>
     </div>
   );
 }
 
-/* ─────────────────────────── score goal + readiness ─────────────────────────── */
-function ScoreGoalCard({ readiness, goal, assessments, onGoal }) {
+/* ─────────────────────────── score goal + readiness detail ─────────────────────────── */
+function ScoreDetail({ readiness, goal, assessments, onGoal }) {
   const [editing, setEditing] = useState(false);
   const r = readiness;
   const takenPts = (assessments || []).filter((a) => a.takenDate && a.actual != null)
@@ -700,7 +767,7 @@ function ScoreGoalCard({ readiness, goal, assessments, onGoal }) {
 
   const statusClass = { on_track: "ok", close: "warn", behind: "warn", at_risk: "bad", baseline: "mut" }[r.status] || "mut";
   const verdict = (() => {
-    if (r.status === "baseline") return "Take NBME 26 to unlock a readiness projection.";
+    if (r.status === "baseline") return "Take NBME 26 to unlock a readiness projection — log it under Checkpoints below.";
     const wk = r.slopePerWeek ? `${r.slopePerWeek > 0 ? "+" : ""}${r.slopePerWeek}/wk` : "flat";
     if (r.status === "on_track") return `Trending to ~${r.projected} by exam day — +${r.passMargin} above the 196 pass line. Hold the line.`;
     if (r.status === "at_risk") return `Projecting ~${r.projected}. Focus weak systems and bank your next UWSA.`;
@@ -708,18 +775,8 @@ function ScoreGoalCard({ readiness, goal, assessments, onGoal }) {
   })();
 
   return (
-    <div className={`pl-card pl-goal ${statusClass}`}>
-      <div className="pl-goal-head">
-        <span className="page-eyebrow">Readiness · predicted</span>
-        <button className="btn-ghost btn-xs" onClick={() => setEditing((e) => !e)}>{editing ? "Done" : "Set goal"}</button>
-      </div>
-
-      {r.status === "baseline" ? (
-        <div className="pl-goal-empty">
-          <span className="pl-goal-big num">—</span>
-          <p className="muted">{verdict}</p>
-        </div>
-      ) : (
+    <div className="pl-stat-detail">
+      {r.status !== "baseline" && (
         <div className="pl-goal-body">
           <div className="pl-goal-num-wrap">
             <span className={`pl-goal-big num ${statusClass}`}>{r.projected}</span>
@@ -732,10 +789,12 @@ function ScoreGoalCard({ readiness, goal, assessments, onGoal }) {
           <ReadinessSpark pts={takenPts} target={r.target} passLine={r.passLine} />
         </div>
       )}
-      <p className="pl-goal-verdict">{verdict}</p>
-
+      <p className="pl-stat-explain">{verdict}</p>
+      <div className="pl-goal-detail-foot">
+        <button className="btn-secondary btn-xs" onClick={() => setEditing((e) => !e)}>{editing ? "Done" : "Set goal"}</button>
+        <span className="pl-goal-foot muted">Step 1 is pass/fail — these are <em>predicted</em> equivalents (±~10), not official scores.</span>
+      </div>
       {editing && <GoalEditor goal={goal} onGoal={onGoal} />}
-      <p className="pl-goal-foot muted">Step 1 is pass/fail — these are <em>predicted</em> equivalents (±~10), not official scores.</p>
     </div>
   );
 }
@@ -856,16 +915,37 @@ function SimDayBanner({ sim, onLog }) {
 
 function AssessmentsCard({ assessments, dedicated, date, examISO, onLog, onUpsert, onRemove, onReset }) {
   const [adding, setAdding] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   const sorted = [...assessments].sort((a, b) => (a.plannedDate < b.plannedDate ? -1 : 1));
   const nextUp = sorted.find((a) => !a.takenDate && a.plannedDate >= date);
   const logged = sorted.filter((a) => a.takenDate && a.actual != null).length;
   const examDays = examISO ? Math.round((new Date(`${examISO}T00:00:00`) - new Date(`${date}T00:00:00`)) / 86400000) : null;
 
+  // Collapsed by default: anything overdue plus the next 3 upcoming. The full
+  // history (taken + far-future) lives behind "Show all".
+  const overdue = sorted.filter((a) => !a.takenDate && a.plannedDate < date);
+  const upcoming = sorted.filter((a) => !a.takenDate && a.plannedDate >= date).slice(0, 3);
+  const collapsed = sorted.filter((a) => overdue.includes(a) || upcoming.includes(a));
+  const visible = showAll ? sorted : collapsed;
+  const hidden = sorted.length - collapsed.length;
+
+  // Untaken checkpoints sharing a kind+label usually mean an accidental double-seed.
+  const hasDupes = (() => {
+    const seen = new Set();
+    for (const a of sorted) {
+      if (a.takenDate) continue;
+      const k = `${a.kind}:${a.label}`;
+      if (seen.has(k)) return true;
+      seen.add(k);
+    }
+    return false;
+  })();
+
   return (
     <div className={`pl-card pl-assess${dedicated ? " lead" : ""}`}>
       <div className="pl-assess-head">
         <span className="pl-assess-t">
-          <IconCalendar size={15} /> Assessment checkpoints
+          <IconCalendar size={15} /> Checkpoints
           <span className="pl-assess-meta num">{logged > 0 ? `${logged} of ${sorted.length} logged` : `${sorted.length} scheduled`}</span>
         </span>
         <span className="pl-assess-actions">
@@ -878,7 +958,7 @@ function AssessmentsCard({ assessments, dedicated, date, examISO, onLog, onUpser
       {adding && <AddCheckpoint date={date} onAdd={(a) => { onUpsert(a); setAdding(false); }} />}
 
       <ul className="pl-assess-list">
-        {sorted.map((a) => (
+        {visible.map((a) => (
           <AssessmentRow key={a.id} a={a} date={date} isNext={nextUp?.id === a.id} onLog={onLog} onRemove={onRemove} onUpsert={onUpsert} />
         ))}
         {examISO && (
@@ -896,6 +976,17 @@ function AssessmentsCard({ assessments, dedicated, date, examISO, onLog, onUpser
           </li>
         )}
       </ul>
+
+      {(hidden > 0 || showAll) && (
+        <button className="btn-ghost btn-xs pl-assess-more" onClick={() => setShowAll((s) => !s)}>
+          {showAll ? "Show fewer" : `Show all ${sorted.length} checkpoints`}
+        </button>
+      )}
+      {hasDupes && (
+        <p className="pl-assess-dupes muted">
+          Some checkpoints look duplicated — "Reset schedule" rebuilds the standard set (logged scores are kept).
+        </p>
+      )}
     </div>
   );
 }
@@ -1037,29 +1128,51 @@ function SwapPanel({ units, states, onSwap, plannedKeys }) {
 }
 
 /* ─────────────────────────── weak spots ─────────────────────────── */
-function WeakSpots({ units, states, byKey, onFocus, plannedKeys }) {
-  const top = useMemo(() => {
-    return units
-      .map((u) => ({ u, w: states[u.key]?.weaknessScore || 0 }))
-      .filter((x) => x.w > 0.05 && !["done", "dropped"].includes(states[x.u.key]?.status))
-      .sort((a, b) => b.w - a.w)
-      .slice(0, 5);
+// Grouped by system so five flagged Biochem subsections read as one Biochem
+// problem, not five identical rows. Tapping a topic chip swaps it into today.
+function WeakSpots({ units, states, onFocus, plannedKeys }) {
+  const groups = useMemo(() => {
+    const bySys = new Map();
+    for (const u of units) {
+      const st = states[u.key];
+      const w = st?.weaknessScore || 0;
+      if (w <= 0.05 || ["done", "dropped"].includes(st?.status)) continue;
+      const g = bySys.get(u.system) || { system: u.system, colorKey: u.colorKey || u.system, max: 0, items: [] };
+      g.max = Math.max(g.max, w);
+      g.items.push({ u, w });
+      bySys.set(u.system, g);
+    }
+    return [...bySys.values()]
+      .sort((a, b) => b.max - a.max)
+      .slice(0, 4)
+      .map((g) => ({ ...g, items: g.items.sort((a, b) => b.w - a.w).slice(0, 6) }));
   }, [units, states]);
-  if (!top.length) return null;
+  if (!groups.length) return null;
+
   return (
     <div className="pl-card pl-weak">
-      <div className="pl-weak-head"><span className="pl-weak-t"><IconTarget size={15} /> Weak spots pulling forward</span></div>
+      <div className="pl-weak-head">
+        <span className="pl-weak-t"><IconTarget size={15} /> Weak spots</span>
+        <p className="pl-weak-sub muted">Your lowest-scoring areas — the planner schedules these sooner. Tap a topic to study it today.</p>
+      </div>
       <ul className="pl-weak-list">
-        {top.map(({ u, w }) => (
-          <li key={u.key} className="pl-weak-row">
-            <div className="pl-weak-info">
-              <span className="pl-weak-name"><span className="pl-subj-emoji">{colorFor(u.colorKey || u.system).emoji}</span>{u.chapter.replace(/^\d+\s/, "")} <span className="pl-sep">›</span> {u.subsection.replace(/^\d+\s/, "")}</span>
-              <span className="pl-weak-bar"><span className="pl-weak-fill" style={{ width: `${Math.round(w * 100)}%`, background: colorFor(u.colorKey || u.system).hex }} /></span>
-            </div>
-            <span className="pl-weak-val num">{Math.round(w * 100)}%</span>
-            {!plannedKeys.includes(u.key) && <button className="btn-ghost btn-xs" onClick={() => onFocus(u.key)}>Focus</button>}
-          </li>
-        ))}
+        {groups.map((g) => {
+          const c = colorFor(g.colorKey);
+          return (
+            <li key={g.system} className="pl-weak-grp">
+              <div className="pl-weak-grp-top">
+                <span className="pl-weak-name"><span className="pl-subj-emoji">{c.emoji}</span><b>{g.system}</b></span>
+                <span className="pl-weak-val num">{Math.round(g.max * 100)}% weak</span>
+              </div>
+              <span className="pl-weak-bar"><span className="pl-weak-fill" style={{ width: `${Math.round(g.max * 100)}%`, background: c.hex }} /></span>
+              <div className="pl-weak-chips">
+                {g.items.map(({ u }) => plannedKeys.includes(u.key)
+                  ? <span key={u.key} className="pl-weak-chip planned">{cleanChap(u)} · planned</span>
+                  : <button key={u.key} className="pl-weak-chip" onClick={() => onFocus(u.key)} title="Swap into today's plan">{cleanChap(u)} +</button>)}
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

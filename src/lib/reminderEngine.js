@@ -36,59 +36,86 @@ export function resolveToken(token, dateStr, tz = 'Europe/Prague') {
   return null;
 }
 
-// ── Nudge copy ─────────────────────────────────────────────────────────────
-const DEFAULT_REMINDERS = {
-  deadline:        ["T-14d","T-7d","T-3d","T-1d","T-0@08:00"],
-  event:           ["T-7d","T-1d","T-0@08:00"],
-  landmark:        ["T-7d","T-1d"],
-  "task-deadline": ["T-3d","T-1d","T-0@09:00"],
-  aims:            ["T-7d","T-1d","T-0@08:00"],
-  blocker:         [],
-};
+// ── Precise copy ───────────────────────────────────────────────────────────
+const HE_WEEKDAYS = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
 
-// Hardcoded nudges per task id (optional; falls back to the tone template).
-const NUDGES = {};
-
-const TONE_FALLBACK = {
-  blunt:    (title, w) => `${title} — ${w}. Take one concrete step now.`,
-  creative: (title, w) => `Morning window: work on "${title}" while you're fresh.`,
-  warm:     (title, w) => `Protect this: ${title}. A small action today matters.`,
-};
-
-function generateNudge(item, token) {
-  const dayMatch = token.match(/^T-(\d+)d$/);
-  const sameDay  = token.startsWith('T-0@');
-  const nDays    = dayMatch ? parseInt(dayMatch[1]) : 0;
-  const when     = sameDay ? 'today' : nDays === 1 ? 'tomorrow' : `in ${nDays} days`;
-  if (NUDGES[item.id]) return NUDGES[item.id](when, sameDay);
-  const catId = item.category;
-  const tone  = catId ? (CATEGORIES[catId]?.tone || 'blunt') : 'blunt';
-  return TONE_FALLBACK[tone](item.title, when);
+// "יום שלישי, 14.07" — exact weekday + date, no ambiguity.
+export function fmtExactDate(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  const dd = String(d.getDate()).padStart(2, '0');
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  return `יום ${HE_WEEKDAYS[d.getDay()]}, ${dd}.${mm}`;
 }
 
-// ── Core: active reminders ────────────────────────────────────────────────
-export function getActiveReminders() {
-  const now = Date.now();
+// Whole days between a reference timestamp and the deadline date.
+function daysLeftAt(dateStr, atMs) {
+  const deadline = new Date(dateStr + 'T12:00:00').getTime();
+  const ref = new Date(atMs); ref.setHours(12, 0, 0, 0);
+  return Math.round((deadline - ref.getTime()) / 86400000);
+}
+
+function daysLeftPhrase(n) {
+  if (n < -1)  return `עבר לפני ${Math.abs(n)} ימים`;
+  if (n === -1) return 'עבר אתמול';
+  if (n === 0) return 'היום';
+  if (n === 1) return 'מחר';
+  return `בעוד ${n} ימים`;
+}
+
+// Hardcoded nudges per task id (optional; falls back to the precise template).
+const NUDGES = {};
+
+// Precise in-app nudge: exact date, exact days remaining, category.
+function generateNudge(item, token, dateStr) {
+  if (NUDGES[item.id]) {
+    const sameDay = token.startsWith('T-0@');
+    return NUDGES[item.id](daysLeftPhrase(daysLeftAt(dateStr, Date.now())), sameDay);
+  }
+  const n = daysLeftAt(dateStr, Date.now());
+  const cat = item.category ? CATEGORIES[item.category]?.title : null;
+  const parts = [`דדליין: ${fmtExactDate(dateStr)} (${daysLeftPhrase(n)})`];
+  if (cat) parts.push(cat);
+  if (item.note) parts.push(String(item.note).split('\n')[0].slice(0, 80));
+  return parts.join(' · ');
+}
+
+// Precise system-notification content, computed relative to the FIRE time so a
+// notification scheduled days ahead still states the correct days-remaining.
+export function buildNotificationContent(rem) {
+  const { item, dateStr, fireTime } = rem;
+  const n = daysLeftAt(dateStr, fireTime);
+  let prefix;
+  if (n < 0)       prefix = '⚠️ באיחור';
+  else if (n === 0) prefix = '⏰ היום';
+  else if (n === 1) prefix = '⏰ מחר';
+  else              prefix = `⏰ בעוד ${n} ימים`;
+  const cat = item.category ? CATEGORIES[item.category]?.title : null;
+  const parts = [`דדליין: ${fmtExactDate(dateStr)}`];
+  if (cat) parts.push(cat);
+  if (item.note) parts.push(String(item.note).split('\n')[0].slice(0, 80));
+  return { title: `${prefix}: ${item.title}`, body: parts.join(' · ') };
+}
+
+// ── Core: reminder collection ─────────────────────────────────────────────
+// Every non-dismissed reminder with its snooze-adjusted fire time.
+function collectReminders() {
   const state = loadReminderState();
-  const dismissed   = new Set(state.dismissed || []);
+  const dismissed = new Set(state.dismissed || []);
   const snoozedUntil = state.snoozedUntil || {};
 
-  const active = [];
+  const DEFAULT_TOKENS = ["T-7d", "T-1d", "T-0@08:00"];
+  const all = [];
 
   function check(item, dateStr, tz, remTokens) {
-    const toks = remTokens?.length ? remTokens : (DEFAULT_REMINDERS[item.type] || []);
+    const toks = remTokens?.length ? remTokens : DEFAULT_TOKENS;
     for (const tok of toks) {
       const remId = `${item.id}::${tok}`;
       if (dismissed.has(remId)) continue;
-      if (snoozedUntil[remId] && snoozedUntil[remId] > now) continue;
-      const fireTime = resolveToken(tok, dateStr, tz || 'Europe/Prague');
-      if (fireTime && fireTime <= now) {
-        active.push({
-          remId, item, token: tok, fireTime,
-          daysUntil: Math.round((new Date(dateStr) - new Date()) / 86400000),
-          nudge: generateNudge(item, tok),
-        });
-      }
+      let fireTime = resolveToken(tok, dateStr, tz || 'Europe/Prague');
+      if (!fireTime) continue;
+      // A snooze pushes the fire time forward.
+      if (snoozedUntil[remId] && snoozedUntil[remId] > fireTime) fireTime = snoozedUntil[remId];
+      all.push({ remId, item, token: tok, fireTime, dateStr });
     }
   }
 
@@ -98,11 +125,30 @@ export function getActiveReminders() {
     check(
       { ...t, type: 'aims', front: t.category || 'aims', note: t.notes },
       t.deadline, t.tz,
-      t.reminders || ["T-7d","T-1d","T-0@08:00"]
+      t.reminders || ["T-7d", "T-1d", "T-0@08:00"]
     );
   }
 
-  return active.sort((a, b) => a.fireTime - b.fireTime);
+  return all.sort((a, b) => a.fireTime - b.fireTime);
+}
+
+// Reminders whose fire time has passed — shown in-app (toasts / pop center).
+export function getActiveReminders() {
+  const now = Date.now();
+  return collectReminders()
+    .filter(r => r.fireTime <= now)
+    .map(r => ({
+      ...r,
+      daysUntil: daysLeftAt(r.dateStr, now),
+      nudge: generateNudge(r.item, r.token, r.dateStr),
+    }));
+}
+
+// Reminders that fire in the future — used to schedule OS notifications.
+export function getUpcomingReminders(horizonDays = 30) {
+  const now = Date.now();
+  const horizon = now + horizonDays * 86400000;
+  return collectReminders().filter(r => r.fireTime > now && r.fireTime <= horizon);
 }
 
 export function getDueCount()   { return getActiveReminders().length; }
