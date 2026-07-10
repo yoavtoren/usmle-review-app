@@ -11,9 +11,12 @@ schedule, streak, tasks) syncs through your **Apple account** on all platforms:
 Everything lands in the same **CloudKit private database** (container
 `iCloud.com.yoavtoren.usmlereview`), so a test logged in Safari shows up on the
 iPad and vice versa. Merging is per-key last-write-wins, exactly like the old
-KVS sync. If CloudKit isn't set up yet, native builds silently fall back to the
-legacy iCloud Key-Value Store bridge (Mac ↔ iPad keep syncing as before), and
-the web shows "setup needed" on the login/Account page.
+KVS sync. If CloudKit isn't set up yet, native builds fall back to the legacy
+iCloud Key-Value Store bridge (Mac ↔ iPad keep syncing as before) — the app
+proves CloudKit with a real probe write on launch, since iCloud sign-in alone
+doesn't mean the `KV` schema was deployed. While CloudKit is active, writes are
+also mirrored to KVS so devices still on an older build stay in sync. The web
+shows "setup needed" on the login/Profile page until the token is pasted in.
 
 ---
 
@@ -88,8 +91,8 @@ automatically via the auto-sync hook.
   any change, and polls every 2 minutes while open.
 - **Web:** first visit shows the **Sign in with Apple** gate (skippable with
   "לא עכשיו"). The session persists in the browser. The sidebar's
-  **חשבון וסנכרון** (`/account`) page shows status, last sync time, "Sync now"
-  and sign-out.
+  **פרופיל** (`/account`) page shows status, last sync time, "Sync now"
+  and sign-out; its icon carries a live dot (green = synced, amber = attention).
 
 ### Verify it works
 

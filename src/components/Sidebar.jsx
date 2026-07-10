@@ -3,8 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { vtNavigate } from "../lib/vt.js";
 import {
   IconHome, IconDash, IconClipboard, IconBook, IconBox,
-  IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar, IconCloud,
+  IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar, IconUser,
 } from "./icons.jsx";
+import { getSyncStatus, subscribeSyncStatus } from "../lib/icloudSync.js";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
 import { EXAM_DATE, daysUntilExam, localISODate } from "../lib/config.js";
 
@@ -20,6 +21,14 @@ function overdueCount(categoryId) {
 }
 
 const RAIL_KEY = "usmle-app:rail-collapsed";
+
+// Sync-state → profile-item dot color. Green = syncing, amber = needs
+// attention (signed out / setup missing / iCloud off), none while settling.
+function syncDotClass(state) {
+  if (state === "on") return "ok";
+  if (state === "signed-out" || state === "unconfigured" || state === "unavailable") return "warn";
+  return "";
+}
 
 export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
   const nav = useNavigate();
@@ -60,6 +69,9 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
     aimsOver: overdueCount("aims"),
   }), [p]);
 
+  const [sync, setSync] = useState(getSyncStatus);
+  useEffect(() => subscribeSyncStatus(setSync), []);
+
   const groups = [
     {
       items: [{ to: "/", label: "בית", Icon: IconHome, exact: true }],
@@ -81,7 +93,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
       label: "עוד",
       items: [
         { to: "/aims", label: "AIMS", Icon: IconTarget, count: stats.aimsOver, alert: stats.aimsOver > 0 },
-        { to: "/account", label: "חשבון וסנכרון", Icon: IconCloud },
+        { to: "/account", label: "פרופיל", Icon: IconUser, dot: syncDotClass(sync.state) },
       ],
     },
   ];
@@ -138,7 +150,10 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
                     onClick={() => go(it.to)}
                     title={it.label}
                   >
-                    <span className="rail-ico"><Icon size={19} /></span>
+                    <span className="rail-ico">
+                      <Icon size={19} />
+                      {it.dot && <span className={`rail-sync-dot ${it.dot}`} aria-hidden="true" />}
+                    </span>
                     <span className="rail-label">{it.label}</span>
                     {it.count > 0 && (
                       <span className={`rail-count${it.alert ? " alert" : ""}`}>{it.count}</span>

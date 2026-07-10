@@ -113,6 +113,28 @@ const nativeCloudKitBackend = {
   },
 };
 
+// CloudKit primary + KVS mirror: reads take the newest copy per key, writes go
+// to both. Keeps devices still running a pre-CloudKit build (KVS-only) in sync
+// during the transition instead of splitting the data between two channels.
+const nativeMergedBackend = {
+  kind: "cloudkit-native",
+  async getAll(keys) {
+    const [ck, kvs] = await Promise.all([
+      nativeCloudKitBackend.getAll(keys),
+      nativeKVSBackend.getAll().catch(() => ({})),
+    ]);
+    const out = { ...kvs };
+    for (const [k, entry] of Object.entries(ck)) {
+      if (!out[k] || entry.t >= out[k].t) out[k] = entry;
+    }
+    return out;
+  },
+  async setItems(entries) {
+    await nativeCloudKitBackend.setItems(entries);
+    nativeKVSBackend.setItems(entries).catch(() => {});
+  },
+};
+
 const nativeKVSBackend = {
   kind: "kvs-native",
   async getAll() {
@@ -274,23 +296,40 @@ function disableSync() {
 }
 
 // ── init ────────────────────────────────────────────────────────────────────
-async function initNativeSync() {
-  // Prefer CloudKit (shared with the web); fall back to the legacy KVS bridge
-  // so sync keeps working on builds/devices where CloudKit isn't enabled yet.
+// accountStatus == .available only proves the device is signed into iCloud —
+// NOT that the KV record type was deployed to the Production schema. Until that
+// one-time console step is done every save fails, so prove CloudKit with a real
+// round-trip write before trusting it; otherwise stay on the KVS bridge that
+// has always worked.
+async function cloudKitUsable() {
   try {
     const { available } = await CloudKitKV.isAvailable();
-    if (available) {
-      await enableSync(nativeCloudKitBackend, { startup: true });
-      hookNativeResume();
-      return;
-    }
-  } catch {}
-  try {
-    const { available } = await ICloudKV.isAvailable();
-    if (!available) { setStatus({ state: "unavailable" }); return; }
-  } catch { setStatus({ state: "unavailable" }); return; }
-  await enableSync(nativeKVSBackend, { startup: true });
-  try { ICloudKV.addListener("icloudChange", () => { reconcile({ startup: false }); }); } catch {}
+    if (!available) return false;
+    await Promise.race([
+      CloudKitKV.setItems({
+        items: [{ key: "usmle:ck-probe", value: JSON.stringify({ t: Date.now(), v: "1" }) }],
+      }),
+      new Promise((_, rej) => setTimeout(() => rej(new Error("probe timeout")), 4000)),
+    ]);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function initNativeSync() {
+  // Prefer CloudKit (shared with the web); fall back to the legacy KVS bridge
+  // so sync keeps working until the CloudKit schema/token setup is completed.
+  const ckOk = await cloudKitUsable();
+  let kvsOk = false;
+  try { kvsOk = (await ICloudKV.isAvailable()).available; } catch {}
+
+  if (!ckOk && !kvsOk) { setStatus({ state: "unavailable" }); return; }
+  const b = ckOk ? (kvsOk ? nativeMergedBackend : nativeCloudKitBackend) : nativeKVSBackend;
+  await enableSync(b, { startup: true });
+  if (kvsOk) {
+    try { ICloudKV.addListener("icloudChange", () => { reconcile({ startup: false }); }); } catch {}
+  }
   hookNativeResume();
 }
 

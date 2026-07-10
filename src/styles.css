@@ -349,8 +349,15 @@ code {
   background: linear-gradient(180deg, var(--gold-2), var(--gold));
   box-shadow: 0 0 8px rgba(213,179,106,0.5);
 }
-.rail-ico { width: 19px; height: 19px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.rail-ico { width: 19px; height: 19px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; position: relative; }
 .rail-ico svg { width: 19px; height: 19px; stroke-width: 1.7; }
+/* Live sync-state dot on the profile item: green = synced, amber = attention */
+.rail-sync-dot {
+  position: absolute; bottom: -1px; left: -1px; width: 7px; height: 7px;
+  border-radius: 50%; border: 1.5px solid var(--rail-bg, #1F241F);
+}
+.rail-sync-dot.ok { background: #5FA97E; }
+.rail-sync-dot.warn { background: #D5A24A; }
 .rail-label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .app-shell.rail-mini .rail-label { opacity: 0; width: 0; }
 .rail-count {

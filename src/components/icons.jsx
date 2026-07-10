@@ -19,6 +19,9 @@ function Svg({ children, size = 24, ...rest }) {
 export const IconCloud = (p) => (
   <Svg {...p}><path d="M7 18a4.5 4.5 0 0 1-.9-8.91A5.5 5.5 0 0 1 16.9 8.2 4.25 4.25 0 0 1 16.75 18Z" /><path d="M12 12.5v5M9.8 15.2 12 17.5l2.2-2.3" /></Svg>
 );
+export const IconUser = (p) => (
+  <Svg {...p}><circle cx="12" cy="8" r="3.6" /><path d="M4.8 20.2a7.2 7.2 0 0 1 14.4 0" /></Svg>
+);
 export const IconHome = (p) => (
   <Svg {...p}><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5" /><path d="M9.5 21v-6h5v6" /></Svg>
 );

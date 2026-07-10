@@ -49,7 +49,7 @@ function SyncBody({ s, inGate = false, onSkip }) {
         <>
           <p className="acct-line"><IconCheck size={15} /> ההתקדמות מסונכרנת דרך חשבון Apple של המכשיר — אין צורך בהתחברות.</p>
           <p className="acct-meta">
-            ערוץ: {s.backendKind === "cloudkit-native" ? "CloudKit (משותף עם הדפדפן)" : "iCloud Key-Value (ישן — הפעל את יכולת CloudKit ב-Xcode)"}
+            ערוץ: {s.backendKind === "cloudkit-native" ? "CloudKit (משותף עם הדפדפן)" : "iCloud Key-Value (CloudKit יופעל אוטומטית אחרי ההגדרה החד-פעמית בקונסולת iCloud — ראה ICLOUD_SETUP.md)"}
             {" · "}סנכרון אחרון: {fmtTime(s.lastSyncAt)}
           </p>
           <button className="btn-secondary" onClick={doSync} disabled={busy}>{busy ? "מסנכרן…" : "סנכרן עכשיו"}</button>
@@ -104,7 +104,7 @@ export default function AccountPage() {
       <div className="page-head">
         <div>
           <div className="page-eyebrow">Apple ID</div>
-          <h1 className="page-title">חשבון <em>וסנכרון</em></h1>
+          <h1 className="page-title">פרופיל <em>וסנכרון</em></h1>
           <p className="page-sub">
             כל ההתקדמות נשמרת בבסיס הנתונים הפרטי שלך ב-iCloud ומסתנכרנת בין הדפדפן,
             האייפד והמק — לפי מי שמחובר לאותו חשבון Apple.
