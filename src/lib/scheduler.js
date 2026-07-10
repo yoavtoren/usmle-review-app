@@ -4,7 +4,7 @@
 // See CLAUDE_CODE_BUILD_SPEC.md. Weak-spot joins reuse faMap.js keyword mapping
 // so the messy deck `system` vocabulary lands on the 16 FA chapters cleanly.
 
-import { INTERVALS, loadProgress, loadTestLog } from "./storage.js";
+import { INTERVALS, loadProgress, loadTestLog, loadFATopics } from "./storage.js";
 import { chaptersFromText } from "./faMap.js";
 import { EXAM_DATE_ISO, localISODate } from "./config.js";
 
@@ -86,11 +86,12 @@ const DEFAULT_SETTINGS = {
   capacityPresets: { low: 90, med: 240, high: 420 },   // minutes incl. Anki
   ankiReserveMin: { low: 45, med: 60, high: 75 },
   blockMinutes: 30,
-  // "Big and bold first" priority weights (§3.1). weak (1.3) is intentionally the
-  // largest so wrong-answer topics always resurface; size + hard push the big,
-  // hard, marquee systems to the front. No foundation gating anymore.
+  // "Big and bold first" priority weights (§3.1). weak (1.8) sits just under lead
+  // (2.0) so a system you're scoring badly on — or an untouched First Aid chapter —
+  // pulls forward past the fixed anchor rotation; size + hard push the big, hard,
+  // marquee systems to the front. No foundation gating anymore.
   weights: {
-    yield: 1.0, size: 0.9, hard: 0.8, weak: 1.3,
+    yield: 1.0, size: 0.9, hard: 0.8, weak: 1.8,
     lead: 2.0, urgency: 0.9, spacing: 0.5, interleave: 0.4,
   },
   // Fraction of the non-Anki budget carved out for the daily 🎯 UWorld block and
@@ -199,6 +200,18 @@ export function migrate(raw) {
   }
   if (!Array.isArray(state.assessments)) { state.assessments = []; changed = true; }
   if (!Array.isArray(state.tasks)) { state.tasks = []; changed = true; }
+  // One-time re-tune: lift `weak` toward the `lead` anchor-rotation weight so a
+  // bad test result visibly pulls its weak systems earlier in the plan/calendar
+  // instead of the fixed rotation drowning it out. Math.max never lowers a value
+  // the user (or auto-triage) already raised. Guarded by a flag so it runs once.
+  if (!state.settings.weightsTunedFA) {
+    state.settings = {
+      ...state.settings,
+      weights: { ...state.settings.weights, weak: Math.max(state.settings.weights.weak || 0, DEFAULT_SETTINGS.weights.weak) },
+      weightsTunedFA: true,
+    };
+    changed = true;
+  }
   return changed ? save(state) : state;
 }
 
@@ -486,8 +499,16 @@ function scheduleCapacityDays(state, fromISO, toISO) {
 // ── Weak-spot ingestion (Channel A: questions, Channel B: seed file) ─────────
 // Maps every deck question onto its FA chapter via faMap keywords, tallies
 // attempted/missed per chapter, and pushes chapterMissRate onto each unit.
+// First Aid coverage tuning: at/above FA_DONE fraction of a unit's FA topics
+// checked off, the unit is auto-completed and leaves the projection; below that,
+// partial coverage relieves weakness proportionally (relief 1 = fully covered
+// would zero the live weakness even before it's marked done).
+const FA_DONE = 0.9;
+const FA_COV_RELIEF = 1;
+
 export function recomputeWeakness(state, units, deck, seed) {
   const progress = loadProgress();
+  const faTopics = loadFATopics();
   const perChapter = {}; // num -> {attempted, missed}
   const bump = (num, missed) => {
     if (!num) return;
@@ -566,7 +587,34 @@ export function recomputeWeakness(state, units, deck, seed) {
 
     // First Aid / deck progress (chA) is the other live channel: mastering a
     // chapter's questions drops it. Weakness is the worse of the two live views.
-    next.units[u.key] = { ...prev, weaknessScore: clamp01(Math.max(chA, examWeak)) };
+    const liveWeak = clamp01(Math.max(chA, examWeak));
+
+    // Channel E — First Aid TRACKER coverage (live). Fraction of this unit's FA
+    // topics you've ticked off in the tracker (fa-topics-v2). Covered material
+    // sheds weakness so it sinks in priority; a fully-covered chapter is auto-
+    // completed and drops out of the calendar entirely. Untouched units (cov 0)
+    // are unchanged.
+    const ids = u.faItemIds || [];
+    const cov = ids.length ? ids.filter((id) => faTopics[id]?.done).length / ids.length : 0;
+    const weaknessScore = clamp01(liveWeak * (1 - FA_COV_RELIEF * cov));
+
+    // Auto-complete / auto-revert from FA coverage. Never touch a unit you marked
+    // done by hand (no faAuto flag); faAuto tags the transition so unchecking the
+    // chapter later brings it back into the plan.
+    let status = prev.status;
+    let completedDate = prev.completedDate || null;
+    let faAuto = !!prev.faAuto;
+    const manualDone = prev.status === "done" && !prev.faAuto;
+    if (!manualDone) {
+      if (ids.length && cov >= FA_DONE) {
+        status = "done"; faAuto = true;
+        completedDate = completedDate || localISODate();
+      } else if (faAuto) {
+        status = "scheduled"; faAuto = false; completedDate = null;
+      }
+    }
+
+    next.units[u.key] = { ...prev, weaknessScore, status, faAuto, completedDate };
   }
   return save(next);
 }

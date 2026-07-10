@@ -58,8 +58,8 @@ function CtxMenu({ x, y, onEdit, onDelete, onClose }) {
 function LineChart({ tests }) {
   if (!tests || tests.length === 0) return null;
 
-  const W = 580, H = 220;
-  const PAD = { top: 20, right: 24, bottom: 44, left: 42 };
+  const W = 660, H = 232;
+  const PAD = { top: 20, right: 30, bottom: 44, left: 42 };
   const CW = W - PAD.left - PAD.right;
   const CH = H - PAD.top - PAD.bottom;
 
@@ -534,38 +534,39 @@ export default function TestDashboard({ onBack, onStudy }) {
 
               <div className="td-stats-row">
                 <div className="td-stat-card">
-                  <span className="td-stat-num">{stats.avg}%</span>
                   <span className="td-stat-label">Avg score</span>
+                  <span className="td-stat-num">{stats.avg}%</span>
                 </div>
                 <div className="td-stat-card">
-                  <span className="td-stat-num td-best">{stats.best}%</span>
                   <span className="td-stat-label">Personal best</span>
+                  <span className="td-stat-num td-best">{stats.best}%</span>
                 </div>
                 <div className="td-stat-card">
+                  <span className="td-stat-label">Latest</span>
                   <span className="td-stat-num">
-                    {stats.latest}%{" "}
+                    {stats.latest}%
                     {hasTrend && (
                       <span className={`td-trend ${trendFlat ? "" : trendUp ? "td-trend-up" : "td-trend-dn"}`}>
-                        {trendFlat ? "→" : trendUp ? `▲${stats.trend}` : `▼${Math.abs(stats.trend)}`}
+                        {trendFlat ? "→" : trendUp ? `▲ ${stats.trend}` : `▼ ${Math.abs(stats.trend)}`}
                       </span>
                     )}
                   </span>
-                  <span className="td-stat-label">Latest</span>
                 </div>
                 {stats.net != null && (
                   <div className="td-stat-card">
-                    <span className={`td-stat-num ${stats.net > 0 ? "td-gap-pos-num" : stats.net < 0 ? "td-gap-neg-num" : ""}`}>
-                      {stats.net > 0 ? "▲ +" : stats.net < 0 ? "▼ −" : ""}{stats.net === 0 ? "0" : Math.abs(stats.net)}%
-                    </span>
                     <span className="td-stat-label">Trend since first</span>
+                    <span className={`td-stat-num ${stats.net > 0 ? "td-gap-pos-num" : stats.net < 0 ? "td-gap-neg-num" : ""}`}>
+                      {stats.net !== 0 && <span className="td-stat-arrow">{stats.net > 0 ? "▲" : "▼"}</span>}
+                      {stats.net > 0 ? "+" : stats.net < 0 ? "−" : ""}{stats.net === 0 ? "0" : Math.abs(stats.net)}%
+                    </span>
                   </div>
                 )}
                 {stats.avgGap != null && (
                   <div className="td-stat-card">
+                    <span className="td-stat-label">Avg gap vs UWorld</span>
                     <span className={`td-stat-num ${stats.avgGap >= 0 ? "td-gap-pos-num" : "td-gap-neg-num"}`}>
                       {stats.avgGap >= 0 ? "+" : ""}{stats.avgGap}%
                     </span>
-                    <span className="td-stat-label">Avg gap vs UWorld</span>
                   </div>
                 )}
               </div>
