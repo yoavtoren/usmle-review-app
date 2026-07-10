@@ -85,7 +85,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
         { to: "/tests", label: "Tests", Icon: IconClipboard },
         { to: "/bank", label: "Question Bank", Icon: IconBox },
         { to: "/progress", label: "Progress", Icon: IconPulse },
-        { to: "/fa", label: "First Aid", Icon: IconBook },
+        { to: "/fa", label: "First Aid Checklist", Icon: IconBook },
         { to: "/fa/book", label: "FA Book", Icon: IconBook },
       ],
     },
