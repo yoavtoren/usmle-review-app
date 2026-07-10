@@ -2324,7 +2324,7 @@ button.hd-card:active { transform: translateY(-1px) scale(.994); }
 .hd-hero-kicker { font: 700 9.5px var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--rail-gold); }
 .hd-hero-title { font: 500 22px var(--serif); letter-spacing: -.3px; color: var(--on-dark); }
 .hd-hero-sub { font: 500 11.5px var(--sans); color: rgba(245,241,229,.6); margin-top: 3px; }
-.hd-hero-stats { display: flex; gap: 0; margin-top: 12px; }
+.hd-hero-stats { display: flex; gap: 0; margin-top: auto; padding-top: 12px; }
 .hd-hstat { display: flex; flex-direction: column; gap: 4px; }
 .hd-hstat + .hd-hstat { padding-inline-start: 16px; margin-inline-start: 16px; border-inline-start: 1px solid rgba(213,179,106,.20); }
 .hd-hstat-n { font: 500 22px var(--serif); color: var(--on-dark); line-height: 1; text-shadow: 0 1px 0 rgba(0,0,0,.18); }

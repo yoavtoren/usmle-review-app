@@ -58,7 +58,7 @@ function CtxMenu({ x, y, onEdit, onDelete, onClose }) {
 function LineChart({ tests }) {
   if (!tests || tests.length === 0) return null;
 
-  const W = 660, H = 232;
+  const W = 660, H = 280;
   const PAD = { top: 20, right: 30, bottom: 44, left: 42 };
   const CW = W - PAD.left - PAD.right;
   const CH = H - PAD.top - PAD.bottom;
@@ -102,7 +102,7 @@ function LineChart({ tests }) {
   // When tests cluster within days their labels overprint. Always label the
   // first and last points; label intermediates only when they sit far enough
   // (in px) from the previous labeled point AND from the last point's label.
-  const LABEL_GAP = 28;
+  const LABEL_GAP = 44;
   const labeledIdx = (() => {
     const xs = sorted.map(t => toX(t.date));
     const keep = new Set();
@@ -131,8 +131,8 @@ function LineChart({ tests }) {
           </text>
         </g>
       ))}
-      <text x={W - PAD.right + 4} y={toY(60)} dominantBaseline="middle" fontSize="8.5" fill="#A26A12" fontWeight="700">
-        target
+      <text x={PAD.left + 6} y={toY(60) - 6} fontSize="8.5" fill="#A26A12" fontWeight="700">
+        60% target
       </text>
 
       {trendLine && (
