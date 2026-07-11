@@ -712,6 +712,16 @@ export function rollover(state, dateISO) {
 // ── Plan a day (§3.2) ────────────────────────────────────────────────────────
 const FILL = 0.9;
 
+// System-diversity (§ interleave). A day should read as a MIX of a few subjects,
+// never one system three blocks deep. These penalties are subtracted from a
+// unit's priority at pick time; they are deliberately small next to the `weak`
+// (1.8) and `lead` (2.0) weights, so a genuinely weak or urgent system still
+// leads the day — it just can't monopolize it. Units are now ~45-min blocks, so
+// a normal day holds 3-4 of them; the cap keeps them from being the same subject.
+const DIVERSITY_PENALTY = 0.7;   // per extra block of a system ALREADY used today
+const CARRYOVER_PENALTY = 0.35;  // lighter nudge away from yesterday's systems
+const SYS_DAY_FRACTION = 0.55;   // one system may fill at most this share of a day
+
 export function planDay(state, units, dateISO, capacity) {
   let s = rollover(state, dateISO);
   s = { ...s, units: { ...s.units }, days: { ...s.days } };
@@ -748,17 +758,42 @@ export function planDay(state, units, dateISO, capacity) {
   const scoreDesc = (a, b) => b.p - a.p;
   const score = (list) => list.map((u) => ({ u, p: priority(s, units, u, dateISO, recentSystems) })).sort(scoreDesc);
 
-  // Greedy fill of a scored pool up to `cap`, scheduling each picked unit.
-  // In dedicated phase, anchor/basics distinction dissolves — everything is
-  // targeted review, so both budgets draw from the whole pool.
+  // Diversity-aware fill of a scored pool up to `cap`, scheduling each picked
+  // unit. Instead of taking units in raw priority order (which stacks same-system
+  // blocks), each pick re-ranks by priority MINUS a diversity penalty for systems
+  // already on today's plate, and refuses to give any one system more than
+  // SYS_DAY_FRACTION of the whole day. In dedicated phase the anchor/basics
+  // distinction dissolves — both budgets draw from the whole pool.
   const planned = [];
   let used = 0;
+  const dayMinutesBySystem = () => {
+    const m = {};
+    for (const k of planned) { const u = byKey[k]; if (u) m[u.system] = (m[u.system] || 0) + u.estMinutes; }
+    return m;
+  };
   const fill = (scored, cap, { allowPartial = false } = {}) => {
     const target = cap * FILL;
+    const sysCap = budget * SYS_DAY_FRACTION;
     let localUsed = 0;
-    for (const { u } of scored) {
-      if (localUsed >= target) break;
-      if (planned.includes(u.key)) continue;
+    while (localUsed < target) {
+      const daySys = dayMinutesBySystem();
+      let bestIdx = -1, bestVal = -Infinity;
+      for (let i = 0; i < scored.length; i++) {
+        const { u, p } = scored[i];
+        if (planned.includes(u.key)) continue;
+        const sysUsed = daySys[u.system] || 0;
+        const isFirst = planned.length === 0;
+        if (!isFirst) {
+          if (localUsed + u.estMinutes > cap) continue;       // must fit the track budget
+          if (sysUsed + u.estMinutes > sysCap) continue;      // hard cap on one system/day
+        }
+        let val = p;
+        if (sysUsed > 0) val -= DIVERSITY_PENALTY * (1 + sysUsed / Math.max(1, budget));
+        else if (recentSystems.includes(u.system)) val -= CARRYOVER_PENALTY;
+        if (val > bestVal) { bestVal = val; bestIdx = i; }
+      }
+      if (bestIdx < 0) break;
+      const { u } = scored[bestIdx];
       const est = u.estMinutes;
       if (planned.length === 0 && allowPartial && est > budget && capacity === "low") {
         planned.push(u.key);
@@ -766,11 +801,9 @@ export function planDay(state, units, dateISO, capacity) {
         used += budget; localUsed += budget;
         break;
       }
-      if (localUsed + est <= cap || planned.length === 0) {
-        planned.push(u.key);
-        s.units[u.key] = { ...s.units[u.key], status: "scheduled", plannedDate: dateISO };
-        used += est; localUsed += est;
-      }
+      planned.push(u.key);
+      s.units[u.key] = { ...s.units[u.key], status: "scheduled", plannedDate: dateISO };
+      used += est; localUsed += est;
     }
   };
 
@@ -1102,21 +1135,23 @@ export function addDaysISO(iso, n) { return msToISO(isoToMs(iso) + n * DAY); }
 
 export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 400 } = {}) {
   const byKey = Object.fromEntries(units.map((u) => [u.key, u]));
-  const recentSystems = recentCompletedSystems(state, byKey, fromISO);
+  const recentSeed = recentCompletedSystems(state, byKey, fromISO);
 
-  // Remaining work, highest priority first. skim units cost half.
-  const remaining = units
+  // Score the remaining pool ONCE — priority() is O(n) and would be too slow to
+  // call per pick. Diversity is layered on per-day at pick time using this base.
+  const scored = units
     .filter((u) => ["todo", "scheduled", "in_progress", "skim"].includes(state.units[u.key]?.status || "todo"))
-    .map((u) => ({ u, p: priority(state, units, u, fromISO, recentSystems) }))
-    .sort((a, b) => b.p - a.p)
-    .map(({ u }) => ({
-      key: u.key,
+    .map((u) => ({
+      key: u.key, u,
       remain: (state.units[u.key]?.status === "skim" ? u.estMinutes / 2 : u.estMinutes),
-    }));
+      base: priority(state, units, u, fromISO, recentSeed),
+    }))
+    .sort((a, b) => b.base - a.base);
 
   const anki = state.settings.ankiReserveMin.med;
   const perDay = Math.max(state.settings.blockMinutes,
     (recentAvgDailyMin(state) || state.settings.capacityPresets.med) - anki);
+  const sysCap = perDay * SYS_DAY_FRACTION;
 
   // Untaken assessments block their day (light — Anki only, no content).
   const assessByDate = {};
@@ -1124,25 +1159,59 @@ export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 
     if (a.plannedDate && !a.takenDate) assessByDate[a.plannedDate] = a;
   }
 
+  // Lay out ONE day's worth of whole units, mixing systems: highest base score
+  // first, then each subsequent pick is penalized for systems already on the day
+  // (and, lighter, for systems used the day before) and capped per system. Units
+  // are whole ~45-min blocks so start === end — clean single-day Gantt bars.
+  const placed = new Set();
+  const fillDay = (date, prevSystems) => {
+    const items = [];
+    const daySys = {};
+    const recent = new Set(prevSystems);
+    let used = 0;
+    while (true) {
+      let bestIdx = -1, bestVal = -Infinity;
+      for (let i = 0; i < scored.length; i++) {
+        const s = scored[i];
+        if (placed.has(s.key)) continue;
+        const sysUsed = daySys[s.u.system] || 0;
+        const isFirst = items.length === 0;
+        if (!isFirst) {
+          if (used + s.remain > perDay) continue;        // whole unit must fit
+          if (sysUsed + s.remain > sysCap) continue;     // hard cap on one system/day
+        }
+        let val = s.base;
+        if (sysUsed > 0) val -= DIVERSITY_PENALTY * (1 + sysUsed / Math.max(1, perDay));
+        else if (recent.has(s.u.system)) val -= CARRYOVER_PENALTY;
+        if (val > bestVal) { bestVal = val; bestIdx = i; }
+      }
+      if (bestIdx < 0) break;
+      const s = scored[bestIdx];
+      items.push({ key: s.key, minutes: Math.round(s.remain) });
+      placed.add(s.key);
+      used += s.remain;
+      daySys[s.u.system] = (daySys[s.u.system] || 0) + s.remain;
+      if (used >= perDay) break;
+    }
+    return { items, systems: Object.keys(daySys) };
+  };
+
   const examISO = state.settings.examDate;
   const days = [];
   const spans = {};
-  let ptr = 0, date = fromISO, guard = 0;
+  let remaining = scored.length;
+  let date = fromISO, guard = 0;
+  let prevSystems = recentSeed;
 
-  while (ptr < remaining.length && guard++ < maxDays) {
+  while (remaining > 0 && guard++ < maxDays) {
     const assessment = assessByDate[date] || null;
-    const items = [];
+    let items = [];
     if (!assessment) {
-      let cap = perDay;
-      while (cap > 0 && ptr < remaining.length) {
-        const cur = remaining[ptr];
-        const take = Math.min(cap, cur.remain);
-        items.push({ key: cur.key, minutes: Math.round(take) });
-        const sp = (spans[cur.key] ||= { start: date, end: date, minutes: 0 });
-        sp.end = date; sp.minutes += Math.round(take);
-        cur.remain -= take; cap -= take;
-        if (cur.remain <= 0.5) ptr++;
-      }
+      const r = fillDay(date, prevSystems);
+      items = r.items;
+      for (const it of items) { spans[it.key] = { start: date, end: date, minutes: it.minutes }; }
+      remaining -= items.length;
+      if (r.systems.length) prevSystems = r.systems;
     }
     days.push({
       date,
@@ -1151,14 +1220,14 @@ export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 
       assessment,
       afterDeadline: date > state.settings.contentDeadline,
     });
-    if (date >= examISO && ptr < remaining.length) {
+    if (date >= examISO && remaining > 0) {
       // Past the exam with work still queued — stop; the Gantt flags the overflow.
       break;
     }
     date = addDaysISO(date, 1);
   }
 
-  return { fromISO, days, spans, exhaustedISO: date, overflow: ptr < remaining.length };
+  return { fromISO, days, spans, exhaustedISO: date, overflow: remaining > 0 };
 }
 
 // Merge the real logged past (state.days) with the forward projection into one

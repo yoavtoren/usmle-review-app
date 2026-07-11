@@ -1,18 +1,26 @@
 #!/usr/bin/env python3
 """
 Build public/topic-plan.json — the schedulable "universe" for the adaptive
-Step-1 scheduler (see CLAUDE_CODE_BUILD_SPEC.md).
+Step-1 scheduler (see PLANNER_ALGORITHM.md).
 
-One UNIT = one First-Aid subsection (a `## NN Title — seen/total` block inside a
-chapter markdown file). Subsection granularity is coarse enough to schedule a day
-around, fine enough to swap in/out and map onto UWorld/Anki.
+One UNIT = a right-sized STUDY BLOCK: ~35–55 minutes of work *including making
+its Anki cards*. A First-Aid subsection (`## NN Title — seen/total`) is split into
+as many blocks as its length needs, always along whole top-level-topic boundaries
+so a topic and its sub-bullets never land in different blocks. Small subsections
+stay as one block; a 138-topic monster like "Psychiatry › Pathology" becomes
+~8 interleavable blocks instead of one 7-hour slab.
+
+Why blocks, not subsections: the calendar can only look good if a *day* holds a
+few short pieces from different systems. Coarse subsection units (up to 400 min)
+forced one subject to blanket several days — the exact "subject distribution is
+very bad" the plan is meant to avoid.
 
 Source of truth is the real FA data this app already ships:
   public/fa/fa-progress.json     -> chapter list (name, total, md file)
-  public/fa/chapters/NN_*.md      -> the `## subsection — s/t` headings + topics
+  public/fa/chapters/NN_*.md      -> `## subsection — s/t` + `- [ ] topic` + subs
 
 Usage:  python3 scripts/generate_topic_plan.py
-Verify: sum(topicCount) == fa-progress.json totalTopics
+Verify: sum(topicCount) == fa-progress.json totalTopics   (printed at the end)
 """
 import json, os, re, datetime
 
@@ -24,28 +32,40 @@ OUT = os.path.join(ROOT, "public", "topic-plan.json")
 # Plan anchors (kept in sync with the sidebar's exam countdown).
 EXAM_DATE = "2026-10-11"
 CONTENT_DEADLINE = "2026-09-14"
-MIN_PER_TOPIC = 3  # minutes; tuned later from real completion data
+
+# ── Time model (minutes) ─────────────────────────────────────────────────────
+# A top-level FA topic reads slower than one of its terse sub-bullets, and each
+# top-level concept costs ~1 min to turn into an Anki card. estMinutes therefore
+# already INCLUDES carding the new material — a unit is a piece "including anki".
+# (The scheduler additionally reserves a separate daily block for reviewing the
+# mature deck; that is deck maintenance, not making today's cards.)
+TOP_MIN = 3.0          # minutes to study one top-level topic
+SUB_MIN = 1.2          # minutes to study one indented sub-bullet
+ANKI_MIN = 1.0         # minutes to make/first-pass Anki per top-level concept
+MIN_PER_TOPIC = 3      # legacy field kept for the UWorld/pace math in the app
+
+# ── Chunking targets (minutes of estMinutes per block) ───────────────────────
+TARGET_MIN = 48        # aim each study block near this
+SOLO_MAX = 66          # a subsection at/under this stays a single block
+MERGE_MIN = 24         # a trailing sliver under this folds back into the prior block
 
 # chapter number -> (yieldWeight 1..5, track, leadWeek, colorKey)
 #   track "anchor" = big/hard/important; LEADS the schedule (Cardio opens W0).
 #   track "basics" = interleaved daily in small just-in-time doses (leadWeek = None).
-# This is the "big and bold first, basics as seasoning" model — NO foundation
-# gating; anchors lead by leadWeek, basics ride a separate daily interleave budget.
 CHAPTER_META = {
-    # 🔥 anchors, lead order via leadWeek (Cardio opens):
-    "07": (5, "anchor", 0, "cardio"),   # biggest / highest-yield → opens
-    "12": (5, "anchor", 1, "neuro"),    # big + hard + important
+    "07": (5, "anchor", 0, "cardio"),   # biggest / highest-yield -> opens
+    "12": (5, "anchor", 1, "neuro"),
     "14": (5, "anchor", 2, "renal"),
     "16": (4, "anchor", 2, "resp"),
     "10": (5, "anchor", 3, "heme"),
     "08": (4, "anchor", 3, "endo"),
     "09": (4, "anchor", 4, "gi"),
     "15": (4, "anchor", 4, "repro"),
-    "03": (4, "anchor", 5, "micro"),    # big; Sketchy-driven → anchor
+    "03": (4, "anchor", 5, "micro"),
     "11": (3, "anchor", 6, "msk"),
-    "13": (3, "anchor", 6, "psych"),    # easy wins
-    # 🧊 basics, interleaved daily just-in-time (no leadWeek):
-    "04": (5, "basics", None, "patho"),  # fundamentals from day 1
+    "13": (3, "anchor", 6, "psych"),
+    # basics, interleaved daily just-in-time (no leadWeek):
+    "04": (5, "basics", None, "patho"),
     "01": (4, "basics", None, "biochem"),
     "02": (4, "basics", None, "immuno"),
     "05": (4, "basics", None, "pharm"),
@@ -57,7 +77,6 @@ HARDNESS = {
     "12": 0.85, "01": 0.8, "14": 0.75, "10": 0.7, "05": 0.65,
 }
 
-# chapter number -> normalized system (matches faMap.js chapter names / deck vocab)
 CHAPTER_SYSTEM = {
     "01": "Biochemistry", "02": "Immunology", "03": "Microbiology",
     "04": "Pathology", "05": "Pharmacology", "06": "Public Health",
@@ -67,7 +86,6 @@ CHAPTER_SYSTEM = {
     "15": "Repro", "16": "Respiratory",
 }
 
-# resource hint chips per chapter (display only)
 CHAPTER_RESOURCES = {
     "01": ["FA", "B&B", "Sketchy Biochem"], "02": ["FA", "B&B", "Sketchy Immuno"],
     "03": ["FA", "Sketchy Micro"], "04": ["FA", "Pathoma"], "05": ["FA", "Sketchy Pharm"],
@@ -79,75 +97,153 @@ CHAPTER_RESOURCES = {
 }
 
 HEADING_RE = re.compile(r"^## (.+?) — (\d+)/(\d+)")
-TOPIC_RE = re.compile(r"^- \[[ x]\] (.+)$")
+TOP_RE = re.compile(r"^- \[[ x]\] (.+)$")            # top-level topic (no indent)
+SUB_RE = re.compile(r"^\s+- \[[ x]\]")                # indented sub-bullet
 
 
 def parse_sections(md_text):
-    """Return [{title, total, topics:[str]}] for each `## ... — s/t` block."""
+    """Return [{title, total, groups}] per `## ... — s/t` block.
+
+    A *group* is one top-level topic plus the sub-bullets nested under it:
+      {name, subs}  where weight = 1 + subs (matches the s/t accounting) and
+      minutes = TOP_MIN + SUB_MIN*subs + ANKI_MIN.
+    Splitting only ever happens between whole groups, so a topic is never torn
+    from its sub-bullets.
+    """
     sections = []
     current = None
+    group = None
     for line in md_text.split("\n"):
         m = HEADING_RE.match(line)
         if m:
-            current = {"title": m.group(1).strip(),
-                       "total": int(m.group(3)), "topics": []}
+            current = {"title": m.group(1).strip(), "total": int(m.group(3)), "groups": []}
             sections.append(current)
+            group = None
             continue
-        if current is not None:
-            tm = TOPIC_RE.match(line)  # top-level topics only (no leading indent)
-            if tm:
-                current["topics"].append(tm.group(1).strip())
+        if current is None:
+            continue
+        tm = TOP_RE.match(line)
+        if tm:
+            group = {"name": tm.group(1).strip(), "subs": 0}
+            current["groups"].append(group)
+        elif SUB_RE.match(line) and group is not None:
+            group["subs"] += 1
     return sections
+
+
+def group_minutes(g):
+    return TOP_MIN + SUB_MIN * g["subs"] + ANKI_MIN
+
+
+def group_weight(g):
+    return 1 + g["subs"]
+
+
+def chunk_groups(groups):
+    """Split an ordered list of groups into blocks of ~TARGET_MIN estMinutes.
+
+    Greedy: accumulate whole groups until the running estimate reaches TARGET_MIN,
+    then start a new block. A final sliver under MERGE_MIN is folded back into the
+    previous block so we never emit a 5-minute orphan. Returns list[list[group]].
+    """
+    total_min = sum(group_minutes(g) for g in groups)
+    if total_min <= SOLO_MAX or len(groups) <= 1:
+        return [groups]
+
+    blocks, cur, cur_min = [], [], 0.0
+    for g in groups:
+        gm = group_minutes(g)
+        # Close the current block once it is full enough AND something remains to
+        # justify a new one. A single oversized group still gets its own block.
+        if cur and cur_min + gm > TARGET_MIN and cur_min >= MERGE_MIN:
+            blocks.append(cur)
+            cur, cur_min = [], 0.0
+        cur.append(g)
+        cur_min += gm
+    if cur:
+        # Fold a too-small tail into the previous block instead of orphaning it.
+        if blocks and cur_min < MERGE_MIN:
+            blocks[-1].extend(cur)
+        else:
+            blocks.append(cur)
+    return blocks
 
 
 def main():
     with open(os.path.join(FA_DIR, "fa-progress.json")) as f:
         prog = json.load(f)
 
-    # ── Pass 1: collect raw sections so sizeRank (topicCount percentile) can be
-    # computed across the whole universe before emitting units.
-    raw = []
+    # ── Pass 1: parse + chunk every subsection so sizeRank (a block's topicCount
+    # percentile) can be computed across the whole universe before emitting.
+    raw = []  # (ch, chapter_name, num, si, section_title, block_groups)
     total_topics = 0
     for ch in prog["chapters"]:
-        chapter_name = ch["chapter"]             # e.g. "07 Cardio"
-        num = chapter_name.split(" ", 1)[0]      # "07"
-        md_path = os.path.join(FA_DIR, ch["file"])
-        with open(md_path) as mf:
+        chapter_name = ch["chapter"]                 # e.g. "07 Cardio"
+        num = chapter_name.split(" ", 1)[0]          # "07"
+        with open(os.path.join(FA_DIR, ch["file"])) as mf:
             sections = parse_sections(mf.read())
         for si, sec in enumerate(sections, start=1):
             total_topics += sec["total"]
-            raw.append((ch, chapter_name, num, si, sec))
+            for block in chunk_groups(sec["groups"]):
+                raw.append((ch, chapter_name, num, si, sec["title"], block))
 
-    counts = sorted(r[4]["total"] for r in raw)
+    def block_topics(block):
+        return sum(group_weight(g) for g in block)
+
+    counts = sorted(block_topics(b[5]) for b in raw)
     n = len(counts)
 
     def size_rank(count):
-        # Fraction of units with a topicCount <= this one → big topics ≈ 1.0.
         below = sum(1 for c in counts if c <= count)
         return round(below / n, 3) if n else 0.0
 
-    # ── Pass 2: emit one unit per subsection.
+    # ── Pass 2: how many blocks each subsection produced, so part i/N labels are
+    # right (a subsection kept whole shows no "· i/N" suffix).
+    parts_total = {}
+    for ch, chapter_name, num, si, title, block in raw:
+        parts_total[(num, si)] = parts_total.get((num, si), 0) + 1
+
+    # ── Pass 3: emit one unit per block.
     units = []
-    for ch, chapter_name, num, si, sec in raw:
-        count = sec["total"]
+    part_idx = {}
+    for ch, chapter_name, num, si, title, block in raw:
+        pnum = parts_total[(num, si)]
+        pi = part_idx.get((num, si), 0) + 1
+        part_idx[(num, si)] = pi
+
         y_weight, track, lead_week, color_key = CHAPTER_META.get(num, (3, "anchor", 6, "patho"))
-        key = f"{num}.{si:02d}"
+        topic_count = block_topics(block)                       # weighted (sums to total)
+        fa_min = round(sum(TOP_MIN + SUB_MIN * g["subs"] for g in block))
+        anki_min = round(sum(ANKI_MIN for _ in block))
+        est_min = fa_min + anki_min
+
+        # Display title: keep the leading "NN " (the UI strips it) and append the
+        # part index only when the subsection was actually split.
+        label = title if pnum == 1 else f"{title} · {pi}/{pnum}"
+        key = f"{num}.{si:02d}.{pi:02d}"
+        fa_ids = [f'{ch["file"]}::{title}::{g["name"]}' for g in block]
+
         units.append({
             "key": key,
             "chapterNum": num,
             "chapter": chapter_name,
-            "subsection": sec["title"],
+            "subsection": label,
+            "subsectionBase": title,
+            "part": pi,
+            "partsTotal": pnum,
             "system": CHAPTER_SYSTEM.get(num, chapter_name),
             "colorKey": color_key,
             "faFile": ch["file"],
-            "faItemIds": [f'{ch["file"]}::{sec["title"]}::{t}' for t in sec["topics"]],
-            "topicCount": count,
+            "faItemIds": fa_ids,
+            "topicCount": topic_count,
             "yieldWeight": y_weight,
             "track": track,
             "leadWeek": lead_week,
-            "sizeRank": size_rank(count),
+            "sizeRank": size_rank(topic_count),
             "hardness": HARDNESS.get(num, 0.5),
-            "estMinutes": max(count * MIN_PER_TOPIC, MIN_PER_TOPIC),
+            "faMinutes": fa_min,
+            "ankiMinutes": anki_min,
+            "estMinutes": est_min,
             "resources": CHAPTER_RESOURCES.get(num, ["FA"]),
         })
 
@@ -156,6 +252,8 @@ def main():
         "contentDeadline": CONTENT_DEADLINE,
         "generatedAt": datetime.date.today().isoformat(),
         "minPerTopic": MIN_PER_TOPIC,
+        "timeModel": {"topMin": TOP_MIN, "subMin": SUB_MIN, "ankiMin": ANKI_MIN,
+                      "targetBlockMin": TARGET_MIN},
         "totalTopics": total_topics,
         "unitCount": len(units),
         "units": units,
@@ -164,13 +262,14 @@ def main():
         json.dump(out, f, ensure_ascii=False, indent=2)
 
     expected = prog["totalTopics"]
+    ests = sorted(u["estMinutes"] for u in units)
     print(f"Wrote {OUT}")
-    print(f"  units: {len(units)}")
+    print(f"  units: {len(units)}  (was 77 coarse subsections)")
+    print(f"  estMinutes  min/median/max: {ests[0]} / {ests[len(ests)//2]} / {ests[-1]}")
+    print(f"  total study minutes: {sum(ests)}  (~{sum(ests)//60} h incl. Anki carding)")
     print(f"  sum(topicCount): {total_topics}  (fa-progress totalTopics: {expected})")
-    if total_topics != expected:
-        print("  ⚠ topic totals differ — check for sections the parser missed.")
-    else:
-        print("  ✓ topic totals match.")
+    print("  ✓ topic totals match." if total_topics == expected
+          else "  ⚠ topic totals differ — check for sections the parser missed.")
 
 
 if __name__ == "__main__":
