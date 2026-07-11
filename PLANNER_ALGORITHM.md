@@ -53,16 +53,19 @@ holds **3–4 blocks** instead of one giant slab.
 **A diversity rule at pick time.** When filling a day, the engine takes the
 highest-priority block first, then for every subsequent pick subtracts a penalty
 from any subject already on the day, and enforces a **hard cap: no single system
-may take more than 55 % of the day**. So the weakest/most-urgent subject still
-*leads* the day, but it can't *own* it — the rest of the day pulls in different
-systems. A lighter penalty also nudges the plan away from repeating *yesterday's*
-subjects, so variety holds across days too.
+may take more than 55 % of the day's study blocks**. So the weakest/most-urgent
+subject still *leads* the day, but it can't *own* it — the rest of the day pulls
+in different systems. A lighter penalty also nudges the plan away from repeating
+*yesterday's* subjects, so variety holds across days too. And a **foundation
+(basics) block is guaranteed onto every full day** even though a ~45-min block is
+bigger than its slice of the budget, so Pathology/Biochem/Pharm/etc. show up daily
+rather than getting squeezed out.
 
 ```
 priority(block, day) = base_priority(block)
                      − 0.7 · (blocks of this system already today)      // in-day spread
                      − 0.35 · (system was used yesterday ? 1 : 0)       // across-day spread
-   … subject to: system_minutes_today + block ≤ 0.55 · day_budget
+   … subject to: system_minutes_today + block ≤ 0.55 · day_content
 ```
 
 Because `0.7 / 0.35` are small next to the weakness weight (`1.8`) and the

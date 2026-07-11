@@ -746,7 +746,6 @@ export function planDay(state, units, dateISO, capacity) {
   const uworldBudget = Math.round(budget * split.uworldPct);
   const content = budget - uworldBudget;
   const basicsBudget = Math.round(content * split.basicsPct);
-  const anchorBudget = content - basicsBudget;
 
   // Pool = not-done units (todo / scheduled / in_progress), plus weak units
   // awaiting a retention review whose spaced interval is due (§retention target).
@@ -761,34 +760,43 @@ export function planDay(state, units, dateISO, capacity) {
   // Diversity-aware fill of a scored pool up to `cap`, scheduling each picked
   // unit. Instead of taking units in raw priority order (which stacks same-system
   // blocks), each pick re-ranks by priority MINUS a diversity penalty for systems
-  // already on today's plate, and refuses to give any one system more than
-  // SYS_DAY_FRACTION of the whole day. In dedicated phase the anchor/basics
-  // distinction dissolves — both budgets draw from the whole pool.
+  // already on today's plate, and caps any one system at SYS_DAY_FRACTION of the
+  // day's CONTENT (not the full budget — the anchor track is only part of the day,
+  // so capping against the whole budget barely bound and let a weak/lead system
+  // monopolize the anchor blocks). `minOne` guarantees at least one block from a
+  // track even when a single ~45-min block is bigger than that track's slice of
+  // the budget (how the 🧊 basics dose survives). `ceiling` stops the day's total
+  // content from overrunning — but never blocks the very first block, so a day
+  // always makes progress.
   const planned = [];
   let used = 0;
+  const sysCap = content * SYS_DAY_FRACTION;
   const dayMinutesBySystem = () => {
     const m = {};
     for (const k of planned) { const u = byKey[k]; if (u) m[u.system] = (m[u.system] || 0) + u.estMinutes; }
     return m;
   };
-  const fill = (scored, cap, { allowPartial = false } = {}) => {
+  const fill = (scored, cap, { allowPartial = false, minOne = false, ceiling = Infinity } = {}) => {
     const target = cap * FILL;
-    const sysCap = budget * SYS_DAY_FRACTION;
     let localUsed = 0;
-    while (localUsed < target) {
+    let placedHere = 0;
+    while (localUsed < target || (minOne && placedHere === 0)) {
       const daySys = dayMinutesBySystem();
       let bestIdx = -1, bestVal = -Infinity;
       for (let i = 0; i < scored.length; i++) {
         const { u, p } = scored[i];
         if (planned.includes(u.key)) continue;
+        const est = u.estMinutes;
         const sysUsed = daySys[u.system] || 0;
-        const isFirst = planned.length === 0;
-        if (!isFirst) {
-          if (localUsed + u.estMinutes > cap) continue;       // must fit the track budget
-          if (sysUsed + u.estMinutes > sysCap) continue;      // hard cap on one system/day
+        const isFirstOverall = planned.length === 0;
+        const forced = minOne && placedHere === 0;              // guarantee one from this track
+        if (!isFirstOverall && !forced) {
+          if (localUsed + est > cap) continue;                  // track budget
+          if (sysUsed + est > sysCap) continue;                 // per-system day cap
         }
+        if (!isFirstOverall && used + est > ceiling) continue;  // don't overrun the day's content
         let val = p;
-        if (sysUsed > 0) val -= DIVERSITY_PENALTY * (1 + sysUsed / Math.max(1, budget));
+        if (sysUsed > 0) val -= DIVERSITY_PENALTY * (1 + sysUsed / Math.max(1, content));
         else if (recentSystems.includes(u.system)) val -= CARRYOVER_PENALTY;
         if (val > bestVal) { bestVal = val; bestIdx = i; }
       }
@@ -798,34 +806,46 @@ export function planDay(state, units, dateISO, capacity) {
       if (planned.length === 0 && allowPartial && est > budget && capacity === "low") {
         planned.push(u.key);
         s.units[u.key] = { ...s.units[u.key], status: "in_progress", plannedDate: dateISO };
-        used += budget; localUsed += budget;
+        used += budget; localUsed += budget; placedHere++;
         break;
       }
       planned.push(u.key);
       s.units[u.key] = { ...s.units[u.key], status: "scheduled", plannedDate: dateISO };
-      used += est; localUsed += est;
+      used += est; localUsed += est; placedHere++;
     }
   };
 
-  const anchorPool = score(units.filter((u) => inPool(u) && (dedicated || u.track === "anchor")));
-  fill(anchorPool, anchorBudget, { allowPartial: true });
-
-  // 🧊 Basics interleave: guaranteed daily, but never the same basics subject two
-  // days running (spaced-rotation guard) so foundations arrive as seasoning.
-  const yesterdayBasics = new Set(
-    (s.days[addDaysISO(dateISO, -1)]?.basics || [])
-      .map((k) => byKey[k]?.colorKey).filter(Boolean));
-  const basicsPool = score(
-    units.filter((u) => inPool(u) && u.track === "basics" && !yesterdayBasics.has(u.colorKey)));
-  const basicsStart = planned.length;
-  fill(basicsPool, basicsBudget);
-  const basics = planned.slice(basicsStart);
-  const anchor = planned.slice(0, basicsStart);
+  let anchor, basics;
+  if (dedicated) {
+    // Dedicated phase: anchor/basics distinction dissolves — everything is
+    // targeted review drawn from one pool.
+    fill(score(units.filter(inPool)), content, { allowPartial: true, ceiling: content });
+    anchor = [...planned];
+    basics = [];
+  } else {
+    // 🧊 Basics dose FIRST so the daily foundation subject is guaranteed even
+    // though a ~45-min block dwarfs its budget slice — but never on a light (low)
+    // day, and never the same basics subject two days running.
+    const yesterdayBasics = new Set(
+      (s.days[addDaysISO(dateISO, -1)]?.basics || [])
+        .map((k) => byKey[k]?.colorKey).filter(Boolean));
+    const basicsPool = score(
+      units.filter((u) => inPool(u) && u.track === "basics" && !yesterdayBasics.has(u.colorKey)));
+    if (capacity !== "low") fill(basicsPool, basicsBudget, { minOne: true, ceiling: content });
+    basics = [...planned];
+    // 🔥 Anchor (marquee) blocks fill the rest of the content budget, mixed by
+    // system via the diversity penalty + per-system cap.
+    const anchorPool = score(units.filter((u) => inPool(u) && u.track === "anchor"));
+    fill(anchorPool, content, { allowPartial: true, ceiling: content });
+    anchor = planned.filter((k) => !basics.includes(k));
+  }
+  // Display order: anchors (the hero blocks) first, then the basics dose.
+  const orderedPlanned = [...anchor, ...basics];
 
   // 🎯 Daily UWorld block — a synthetic item planDay always emits (§16). Sized to
   // the UWorld budget; studies yesterday's incorrects; system = today's anchor.
   const perQ = s.profile?.resourceMinutesPerTopic?.UWorld || 1.5;
-  const anchorSystem = byKey[anchor[0]]?.system || byKey[planned[0]]?.system || "mixed";
+  const anchorSystem = byKey[anchor[0]]?.system || byKey[orderedPlanned[0]]?.system || "mixed";
   const prevUworld = s.days[addDaysISO(dateISO, -1)]?.uworld;
   // Question target = the goal-driven quota that keeps you on pace to finish the
   // Qbank by the deadline; floored so there's always a real block, and it never
@@ -847,7 +867,7 @@ export function planDay(state, units, dateISO, capacity) {
   const prevDay = s.days[dateISO] || {};
   s.days[dateISO] = {
     capacity,
-    planned,
+    planned: orderedPlanned,
     anchor,
     basics,
     uworld,

@@ -550,7 +550,7 @@ function ActiveTask({ unit, state, onDone, onMiss, blockMinutes, dedicated }) {
 
         <div className="pl-active-meta">
           <span className="pl-meta-pill"><IconClock size={12} /> ~{unit.estMinutes}m · {blocks} block{blocks > 1 ? "s" : ""}</span>
-          <span className="pl-meta-pill"><IconBox size={12} /> {unit.topicCount} topics</span>
+          <span className="pl-meta-pill"><IconBox size={12} /> {unit.topicCount} topic{unit.topicCount !== 1 ? "s" : ""}</span>
           {(state?.postponeCount || 0) >= 1 && (
             <span className="pl-meta-pill" title="Rolled over from a previous day">↻ rolled over ×{state.postponeCount}</span>
           )}

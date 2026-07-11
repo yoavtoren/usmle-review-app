@@ -354,7 +354,14 @@ function MonthGrid({ cursor, today, eventsFor, onDay }) {
       <div className="plc-wd-row">{WD.map((w) => <span key={w} className="plc-wd">{w}</span>)}</div>
       <div className="plc-grid">
         {cells.map((c) => {
-          const evs = eventsFor(c.iso);
+          // Order chips so fixed commitments (a checkpoint, the daily UWorld Q
+          // target) survive the 3-chip truncation instead of being buried under a
+          // full day of projected content blocks. Logged/real work still ranks first.
+          const chipRank = { assessment: 0, done: 1, missed: 1, planned: 1, uworld: 2, task: 2, anki: 2, projected: 3 };
+          const evs = eventsFor(c.iso)
+            .map((e, i) => [e, i])
+            .sort((a, b) => (chipRank[a[0].tag] ?? 3) - (chipRank[b[0].tag] ?? 3) || a[1] - b[1])
+            .map(([e]) => e);
           const d = parseISO(c.iso);
           return (
             <button key={c.iso} className={`plc-cell${c.inMonth ? "" : " out"}${c.iso === today ? " today" : ""}`} onClick={() => onDay(c.iso)}>
@@ -451,7 +458,7 @@ function DayView({ cursor, today, eventsFor, sched, nav }) {
                   <span className="plc-day-dot" style={e.color && !e.track ? { background: e.color } : undefined} />
                   <span className="plc-day-item-lbl">{e.emoji ? `${e.emoji} ` : ""}{e.faSection || e.label}</span>
                   {e.faItems && e.faItems.length > 0
-                    ? <span className="plc-day-item-sub muted">{e.faItems.length} FA topics to mark ✓</span>
+                    ? <span className="plc-day-item-sub muted">{e.faItems.length} FA topic{e.faItems.length !== 1 ? "s" : ""} to mark ✓</span>
                     : e.sub && <span className="plc-day-item-sub muted">{e.sub}</span>}
                 </div>
                 {e.faItems && e.faItems.length > 0 && (
