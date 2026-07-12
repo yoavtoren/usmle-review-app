@@ -195,10 +195,11 @@ function fmtShort(iso) {
 /* ═══════════════════════════════ Calendar view ═══════════════════════════════ */
 const WD = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-export function CalendarView({ sched, units, nav }) {
+export function CalendarView({ sched, units, nav, faDone }) {
   const today = todayISO();
   const [mode, setMode] = useState("month");      // month | week | day
   const [cursor, setCursor] = useState(today);    // anchor ISO date
+  const isFADone = (id) => !!faDone?.has?.(id);
 
   const byKey = useMemo(() => Object.fromEntries(units.map((u) => [u.key, u])), [units]);
   const { model } = useMemo(() => calendarModel(sched, units, { futureFromISO: today }), [sched, units]);
@@ -213,13 +214,16 @@ export function CalendarView({ sched, units, nav }) {
     if (m) {
       const ev = (tone, k, tag) => {
         const u = byKey[k];
-        const faItems = (u?.faItemIds || []).map((id) => id.split("::").pop());
+        // Each FA topic carries its live done-state so the calendar mirrors the FA
+        // Tracker: a ticked topic shows ✓ (and drops from the "left to do" count).
+        const faItems = (u?.faItemIds || []).map((id) => ({ name: id.split("::").pop(), done: isFADone(id) }));
+        const faLeft = faItems.filter((t) => !t.done).length;
         return {
           tone, tag, color: unitColor(u).hex, emoji: unitColor(u).emoji,
           label: cleanName(u?.subsection),
           sub: u?.system,
           chapter: cleanName(u?.chapter),
-          faItems,
+          faItems, faLeft,
           faSection: `${cleanName(u?.chapter)} › ${cleanName(u?.subsection)}`,
         };
       };
@@ -370,8 +374,8 @@ function MonthGrid({ cursor, today, eventsFor, onDay }) {
                 {evs.slice(0, 3).map((e, i) => (
                   <span key={i} className={`plc-chip ${e.tone}${e.track ? ` track-${e.track}` : ""}`}
                     style={e.color && !e.track ? { borderLeft: `3px solid ${e.color}` } : undefined}
-                    title={e.faItems && e.faItems.length ? `${e.faSection}\n${e.faItems.map((t) => "• " + t).join("\n")}` : undefined}>
-                    {e.emoji ? `${e.emoji} ` : ""}{e.label}{e.faItems && e.faItems.length > 0 ? <b className="plc-chip-n">{e.faItems.length}</b> : null}
+                    title={e.faItems && e.faItems.length ? `${e.faSection}\n${e.faItems.map((t) => `${t.done ? "✓" : "○"} ${t.name}`).join("\n")}` : undefined}>
+                    {e.emoji ? `${e.emoji} ` : ""}{e.label}{e.faLeft > 0 ? <b className="plc-chip-n">{e.faLeft}</b> : null}
                   </span>
                 ))}
                 {evs.length > 3 && <span className="plc-more">+{evs.length - 3} more</span>}
@@ -407,11 +411,11 @@ function WeekGrid({ cursor, today, eventsFor, onDay }) {
               {evs.map((e, i) => (
                 <span key={i} className={`plc-event ${e.tone}${e.track ? ` track-${e.track}` : ""}`}
                   style={e.color && !e.track ? { borderLeft: `3px solid ${e.color}` } : undefined}
-                  title={e.faItems && e.faItems.length ? `${e.faSection}\n${e.faItems.map((t) => "• " + t).join("\n")}` : undefined}>
+                  title={e.faItems && e.faItems.length ? `${e.faSection}\n${e.faItems.map((t) => `${t.done ? "✓" : "○"} ${t.name}`).join("\n")}` : undefined}>
                   <b>{e.emoji ? `${e.emoji} ` : ""}{e.label}</b>{e.sub && <em>{e.sub}</em>}
                   {e.faItems && e.faItems.length > 0 && (
                     <span className="plc-event-topics">
-                      {e.faItems.slice(0, 4).map((t, ti) => <span key={ti} className="plc-event-topic">{t}</span>)}
+                      {e.faItems.slice(0, 4).map((t, ti) => <span key={ti} className={`plc-event-topic${t.done ? " done" : ""}`}>{t.name}</span>)}
                       {e.faItems.length > 4 && <span className="plc-event-topic more">+{e.faItems.length - 4} more →</span>}
                     </span>
                   )}
@@ -458,13 +462,17 @@ function DayView({ cursor, today, eventsFor, sched, nav }) {
                   <span className="plc-day-dot" style={e.color && !e.track ? { background: e.color } : undefined} />
                   <span className="plc-day-item-lbl">{e.emoji ? `${e.emoji} ` : ""}{e.faSection || e.label}</span>
                   {e.faItems && e.faItems.length > 0
-                    ? <span className="plc-day-item-sub muted">{e.faItems.length} FA topic{e.faItems.length !== 1 ? "s" : ""} to mark ✓</span>
+                    ? <span className="plc-day-item-sub muted">{e.faLeft > 0
+                        ? `${e.faLeft} of ${e.faItems.length} FA topic${e.faItems.length !== 1 ? "s" : ""} left to mark ✓`
+                        : `All ${e.faItems.length} FA topic${e.faItems.length !== 1 ? "s" : ""} covered ✓`}</span>
                     : e.sub && <span className="plc-day-item-sub muted">{e.sub}</span>}
                 </div>
                 {e.faItems && e.faItems.length > 0 && (
                   <ul className="plc-day-checklist">
                     {e.faItems.map((t, ti) => (
-                      <li key={ti} className="plc-day-check"><span className="plc-day-check-box">○</span>{t}</li>
+                      <li key={ti} className={`plc-day-check${t.done ? " done" : ""}`}>
+                        <span className="plc-day-check-box">{t.done ? "✓" : "○"}</span>{t.name}
+                      </li>
                     ))}
                   </ul>
                 )}

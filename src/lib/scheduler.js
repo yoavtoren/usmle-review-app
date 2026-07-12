@@ -506,9 +506,15 @@ function scheduleCapacityDays(state, fromISO, toISO) {
 const FA_DONE = 0.9;
 const FA_COV_RELIEF = 1;
 
-export function recomputeWeakness(state, units, deck, seed) {
+// `faDone` (optional): a Set of "file::section::topic" ids the user has covered,
+// merging the FA-tracker localStorage toggles with the chapter markdown [x]
+// baseline (see faCoverage.mergeFADone). When omitted we fall back to the raw
+// localStorage toggles so older call sites still work — but the Planner always
+// passes the merged set so ticking a topic in the markdown syncs to the plan.
+export function recomputeWeakness(state, units, deck, seed, { faDone = null } = {}) {
   const progress = loadProgress();
-  const faTopics = loadFATopics();
+  const lsFA = faDone ? null : loadFATopics();
+  const isFADone = (id) => (faDone ? faDone.has(id) : !!lsFA[id]?.done);
   const perChapter = {}; // num -> {attempted, missed}
   const bump = (num, missed) => {
     if (!num) return;
@@ -595,7 +601,7 @@ export function recomputeWeakness(state, units, deck, seed) {
     // completed and drops out of the calendar entirely. Untouched units (cov 0)
     // are unchanged.
     const ids = u.faItemIds || [];
-    const cov = ids.length ? ids.filter((id) => faTopics[id]?.done).length / ids.length : 0;
+    const cov = ids.length ? ids.filter((id) => isFADone(id)).length / ids.length : 0;
     const weaknessScore = clamp01(liveWeak * (1 - FA_COV_RELIEF * cov));
 
     // Auto-complete / auto-revert from FA coverage. Never touch a unit you marked
@@ -617,6 +623,50 @@ export function recomputeWeakness(state, units, deck, seed) {
     next.units[u.key] = { ...prev, weaknessScore, status, faAuto, completedDate };
   }
   return save(next);
+}
+
+// ── Full re-plan (the 🔄 "Re-prioritize" button) ─────────────────────────────
+// One call that rebuilds the whole calendaric plan from the current reality:
+//   1. Reincorporate every MISSED topic. Any unit that was planned for a past day
+//      and never completed is stamped "missed" on that day (so the calendar shows
+//      it in red / "rolled over") AND rolled back into the pool so the forward
+//      projection re-slots it ahead — the "yesterday's heart physiology I skipped
+//      must not vanish" guarantee.
+//   2. Roll over anything else stale (scheduled/in-progress in the past).
+//   3. Recompute weakness from the freshest signals: FA-tracker + markdown
+//      coverage (faDone), the deck, the weakness seed, exam stats, and profile.
+//   4. Re-plan today so today's block list — and, because the calendar projects
+//      the live unit pool, every future day — reflects the new priorities.
+// Returns { state, missedCount } so the UI can tell the user what was pulled back.
+export function refreshPlan(state, units, deck, seed, { faDone = null, dateISO = todayISO() } = {}) {
+  let s = { ...state, units: { ...state.units }, days: { ...state.days } };
+  const missedKeys = new Set();
+
+  for (const [iso, d] of Object.entries(s.days)) {
+    if (iso >= dateISO) continue; // only the past can hold a missed day
+    const completed = new Set(d.completed || []);
+    const already = new Set(d.missed || []);
+    // Planned-but-not-completed units on a past day that aren't already flagged.
+    const carried = (d.planned || []).filter((k) => {
+      const st = s.units[k];
+      return st && st.status !== "done" && st.status !== "dropped"
+        && !completed.has(k) && !already.has(k);
+    });
+    if (!carried.length) continue;
+    s.days[iso] = { ...d, missed: [...new Set([...(d.missed || []), ...carried])] };
+    for (const k of carried) {
+      const st = s.units[k];
+      s.units[k] = { ...st, status: "scheduled", plannedDate: null, postponeCount: (st.postponeCount || 0) + 1 };
+      missedKeys.add(k);
+    }
+  }
+  s = save(s);
+
+  s = rollover(s, dateISO);
+  s = recomputeWeakness(s, units, deck, seed, { faDone });
+  const cap = s.days?.[dateISO]?.capacity;
+  if (cap) s = planDay(s, units, dateISO, cap);
+  return { state: s, missedCount: missedKeys.size };
 }
 
 // ── Priority score (§3.1) ────────────────────────────────────────────────────

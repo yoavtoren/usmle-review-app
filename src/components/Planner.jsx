@@ -7,7 +7,7 @@ import {
 import { GanttView, CalendarView, PlannerViewTabs } from "./PlannerViews.jsx";
 import { getStreak, recordActivity, loadGeneralTasks } from "../lib/storage.js";
 import {
-  loadSched, ensureUnits, ensurePlanExtras, applyProfile, recomputeWeakness, planDay, rollover,
+  loadSched, ensureUnits, ensurePlanExtras, applyProfile, recomputeWeakness, refreshPlan, planDay, rollover,
   recordDone, undoDone, recordMiss, toggleAnki, swapIn, searchUnits, feasibility,
   applyTriage, ankiNewCardHint, updateSettings, exportSched, importSched,
   setGoal, seedAssessments, upsertAssessment, logAssessment, removeAssessment,
@@ -17,6 +17,7 @@ import {
 } from "../lib/scheduler.js";
 import { colorFor, TRACKS } from "../lib/subjectColors.js";
 import { impact, notification } from "../lib/haptics.js";
+import { loadFABaseline, mergeFADone } from "../lib/faCoverage.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -26,17 +27,21 @@ function usePlanData() {
   const [deck, setDeck] = useState(null);
   const [seed, setSeed] = useState(null);
   const [profile, setProfile] = useState(undefined); // undefined = loading, null = none
+  const [faBaseline, setFaBaseline] = useState(undefined); // undefined = loading, {} = loaded
   useEffect(() => {
     fetch(`${BASE}topic-plan.json`).then((r) => r.json()).then(setPlan).catch(() => setPlan({ units: [] }));
     fetch(`${BASE}questions/deck.json`).then((r) => r.json()).then(setDeck).catch(() => setDeck({ questions: [] }));
     fetch(`${BASE}weakness-seed.json`).then((r) => r.json()).then(setSeed).catch(() => setSeed({ weak: [] }));
     fetch(`${BASE}profile.json`).then((r) => (r.ok ? r.json() : null)).then(setProfile).catch(() => setProfile(null));
+    // Markdown [x] baseline for FA topics — merged with the tracker's live toggles
+    // so the calendar + weakness engine see exactly what the FA Tracker shows.
+    loadFABaseline().then(setFaBaseline).catch(() => setFaBaseline({}));
   }, []);
-  return { plan, deck, seed, profile };
+  return { plan, deck, seed, profile, faBaseline };
 }
 
 export default function Planner() {
-  const { plan, deck, seed, profile } = usePlanData();
+  const { plan, deck, seed, profile, faBaseline } = usePlanData();
   const nav = useNavigate();
   const units = plan?.units || [];
   const [sched, setSched] = useState(null);
@@ -52,16 +57,17 @@ export default function Planner() {
   // One-time bootstrap: seed state, register units, backfill v2 extras
   // (goal + assessments + tasks), apply the student profile, ingest weakness, roll forward.
   useEffect(() => {
-    if (!plan || !deck || !seed || profile === undefined) return;
+    if (!plan || !deck || !seed || profile === undefined || faBaseline === undefined) return;
+    const faDone = mergeFADone(faBaseline);
     let s = loadSched({ examDate: plan.examDate, contentDeadline: plan.contentDeadline });
     s = ensureUnits(s, units);
     s = ensurePlanExtras(s);
     s = applyProfile(s, profile);
-    s = recomputeWeakness(s, units, deck, seed);
+    s = recomputeWeakness(s, units, deck, seed, { faDone });
     s = rollover(s, date);
     setSched(s);
     setReady(true);
-  }, [plan, deck, seed, profile]); // eslint-disable-line
+  }, [plan, deck, seed, profile, faBaseline]); // eslint-disable-line
 
   useEffect(() => () => { clearTimeout(undoTimer.current); clearTimeout(refreshTimer.current); }, []);
 
@@ -77,6 +83,14 @@ export default function Planner() {
     if (allDone && !prevAllDone.current) notification("success");
     prevAllDone.current = allDone;
   }, [allDone]);
+
+  // Effective FA-done set: markdown [x] baseline merged with the tracker's live
+  // localStorage toggles. Recomputed after each re-prioritize so ticking a topic
+  // in the FA Tracker is reflected on the calendar and in the weakness engine.
+  const faDone = useMemo(
+    () => mergeFADone(faBaseline || {}),
+    [faBaseline, refreshedAt] // eslint-disable-line react-hooks/exhaustive-deps
+  );
 
   if (!ready || !sched) {
     return <div className="page page-narrow"><div className="boot">Building your plan…</div></div>;
@@ -142,13 +156,14 @@ export default function Planner() {
   // unit's weakness, and (if today is already planned) rebuild today's plan around
   // the new priorities. Surfaces what moved so the re-ranking is visible.
   const onRefresh = () => {
+    // Re-read the live FA tracker toggles (the user may have ticked topics since
+    // load) and merge them with the markdown baseline before the full re-plan.
+    const freshFaDone = mergeFADone(faBaseline || {});
     const before = weakRankBySystem(sched.units, units);
-    let ns = recomputeWeakness(sched, units, deck, seed);
-    const cap = ns.days?.[date]?.capacity;
-    if (cap) ns = planDay(ns, units, date, cap);
+    const { state: ns, missedCount } = refreshPlan(sched, units, deck, seed, { faDone: freshFaDone, dateISO: date });
     setSched(ns);
     const after = weakRankBySystem(ns.units, units);
-    setRefreshMsg(diffRanking(before, after));
+    setRefreshMsg(diffRanking(before, after, missedCount));
     setRefreshedAt(Date.now());
     notification("success");
     impact("light");
@@ -222,7 +237,7 @@ export default function Planner() {
       {refreshMsg && <div className="pl-refresh-toast">{refreshMsg}</div>}
 
       {view === "timeline" && <GanttView sched={sched} units={units} />}
-      {view === "calendar" && <CalendarView sched={sched} units={units} nav={nav} />}
+      {view === "calendar" && <CalendarView sched={sched} units={units} nav={nav} faDone={faDone} />}
 
       {/* Terminal state: past the exam date, scheduling output is meaningless. */}
       {view === "today" && examPassed && (
@@ -1308,12 +1323,16 @@ function weakRankBySystem(states, units) {
     .map(([s]) => s);
 }
 
-// Human summary of how the weak-list re-ordered after a refresh.
-function diffRanking(before, after) {
-  if (!after.length) return "Re-ranked — nothing flagged as weak right now. 🎉";
+// Human summary of how the weak-list re-ordered after a refresh, prefixed with a
+// note when missed topics were pulled back into the calendar.
+function diffRanking(before, after, missedCount = 0) {
+  const missNote = missedCount > 0
+    ? `↩︎ ${missedCount} missed topic${missedCount > 1 ? "s" : ""} pulled back into the plan. `
+    : "";
+  if (!after.length) return `${missNote}Re-ranked from your First Aid progress — nothing flagged as weak right now. 🎉`;
   const top = after[0], prevTop = before[0];
   if (top && top !== prevTop) {
-    return `🎯 New top focus: ${shortSys(top)}${prevTop ? ` — overtook ${shortSys(prevTop)}` : ""}. Plan re-ordered.`;
+    return `${missNote}🎯 New top focus: ${shortSys(top)}${prevTop ? ` — overtook ${shortSys(prevTop)}` : ""}. Plan re-ordered.`;
   }
   const beforeIdx = Object.fromEntries(before.map((s, i) => [s, i]));
   let climber = null, jump = 0;
@@ -1321,8 +1340,8 @@ function diffRanking(before, after) {
     const prev = beforeIdx[s];
     if (prev != null && prev - i > jump) { jump = prev - i; climber = s; }
   });
-  if (climber && jump > 0) return `${shortSys(climber)} climbed ${jump} spot${jump > 1 ? "s" : ""} in your weak list. Plan re-ordered.`;
-  return `Plan re-ranked from your latest results — top focus still ${shortSys(top)}.`;
+  if (climber && jump > 0) return `${missNote}${shortSys(climber)} climbed ${jump} spot${jump > 1 ? "s" : ""} in your weak list. Plan re-ordered.`;
+  return `${missNote}Plan re-ranked from your First Aid progress + latest results — top focus still ${shortSys(top)}.`;
 }
 function cleanChap(u) { return (u?.subsection || "").replace(/^\d+\s/, ""); }
 function fmtShort(iso) {

@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   loadProgress, getReviewSchedule, getMasteredThisWeek,
@@ -6,13 +6,17 @@ import {
 } from "../lib/storage.js";
 import { weakSpots } from "../lib/progressData.js";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
+import { readTodayPlan, nextFAChapters } from "../lib/todayPlan.js";
+import { colorFor } from "../lib/subjectColors.js";
 import CountUp from "../lib/CountUp.jsx";
 import { vtNavigate } from "../lib/vt.js";
 import { EXAM_DATE, daysUntilExam, localISODate, startOfLocalDay } from "../lib/config.js";
 import {
-  IconDash, IconTarget, IconArrow, IconFlame, IconClock,
-  IconPulse, IconBook, IconClipboard, IconBox, IconCheck, IconSparkle,
+  IconTarget, IconArrow, IconFlame, IconClock,
+  IconPulse, IconBook, IconClipboard, IconBox, IconCheck, IconSparkle, IconCalendar,
 } from "./icons.jsx";
+
+const BASE = import.meta.env.BASE_URL;
 
 const JOURNEY_START = new Date(2026, 5, 10); // local midnight — same day boundary as EXAM_DATE
 const DAY = 86400000;
@@ -50,6 +54,25 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
   const nav = useNavigate();
   const go = (to, opts) => vtNavigate(nav, to, opts);
 
+  // Pull the planner's own data (topic units + FA checklist) so the home page can
+  // show today's *actual* tasks and the next FA chapters — not just status numbers.
+  const [planUnits, setPlanUnits] = useState(null);
+  const [faData, setFaData] = useState(null);
+  useEffect(() => {
+    let live = true;
+    fetch(`${BASE}topic-plan.json`).then((r) => r.json())
+      .then((p) => { if (live) setPlanUnits(p?.units || []); }).catch(() => live && setPlanUnits([]));
+    fetch(`${BASE}fa/fa-progress.json`).then((r) => r.json())
+      .then((f) => { if (live) setFaData(f); }).catch(() => {});
+    return () => { live = false; };
+  }, []);
+
+  const today = useMemo(
+    () => (planUnits ? readTodayPlan(planUnits) : null),
+    [planUnits, testStats],
+  );
+  const faNext = useMemo(() => nextFAChapters(faData, 3), [faData]);
+
   const d = useMemo(() => {
     const progress = loadProgress();
     const sched = getReviewSchedule(questions, progress);
@@ -66,10 +89,6 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
   const elapsed = Math.max(0, Math.min(totalSpan, Math.round((startOfLocalDay() - JOURNEY_START) / DAY)));
   const journeyPct = Math.round((elapsed / totalSpan) * 100);
 
-  // Same-domain pipeline (one denominator) for the hero ring — never mix with FA%.
-  const pipeTotal = sched.mastered + sched.reviewing + sched.fresh || testStats.total || 0;
-  const masteryPct = pipeTotal ? Math.round((sched.mastered / pipeTotal) * 100) : 0;
-  const inflightPct = pipeTotal ? Math.round(((sched.mastered + sched.reviewing) / pipeTotal) * 100) : 0;
   const faPct = faStats.total > 0 ? Math.round((faStats.seen / faStats.total) * 100) : 0;
 
   const latest = log[log.length - 1] || null;
@@ -130,39 +149,82 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
         {/* ═══ Bento ═══ */}
         <div className="hd-bento">
 
-          {/* A · Hero — Step 1 command center */}
-          <button className="hd-card hd-hero c8" onClick={() => go("/step1")}
-            aria-label={`פתח לוח Step 1 — ${sched.dueNow} לביקורת היום, שליטה ${masteryPct}%`}>
+          {/* A · Hero — Today's plan (the one card that says what to do) */}
+          <section className="hd-card hd-hero hd-today c8"
+            aria-label="המשימות שלי להיום">
             <div className="hd-hero-bg" aria-hidden="true" />
             <div className="hd-hero-main">
               <div className="hd-hero-head">
-                <span className="hd-hero-ico" aria-hidden="true"><IconDash size={20} /></span>
-                <span className="hd-hero-kicker">המוקד · STEP 1</span>
-              </div>
-              <h2 className="hd-hero-title">USMLE Step 1</h2>
-              <p className="hd-hero-sub">בקרת שאלות · חזרה מרווחת · כיסוי First Aid</p>
-
-              <div className="hd-hero-stats">
-                <HeroStat n={sched.dueNow} label="לביקורת היום" hot={!loading && sched.dueNow > 0} loading={loading} />
-                <HeroStat n={sched.mastered} label="שלטתי" loading={loading} />
-                <HeroStat n={sched.reviewing} label="בתהליך" dim loading={loading} />
+                <span className="hd-hero-ico" aria-hidden="true"><IconClipboard size={18} /></span>
+                <span className="hd-hero-kicker">המשימות שלי · היום</span>
+                {today?.hasPlan && (
+                  <span className="hd-today-count num">{today.doneCount}/{today.totalCount} הושלמו</span>
+                )}
               </div>
 
-              <div className="hd-hero-load">
-                <div className="hd-hero-load-cap">
-                  <span>עומס החזרות · 14 ימים</span>
-                  <span className="num">{loading ? "…" : `${loadTotal} סה״כ`}</span>
+              {!today ? (
+                <div className="hd-today-list"><span className="hd-today-skel" /><span className="hd-today-skel" /><span className="hd-today-skel" /></div>
+              ) : today.hasPlan ? (<>
+                <ul className="hd-today-list">
+                  <TaskRow done={today.anki.done} emoji="🎴" title="Anki" note="חזרות מרווחות" />
+                  {today.planned.slice(0, 4).map((p) => (
+                    <TaskRow key={p.key} done={p.done}
+                      dot={colorFor(p.colorKey).hex}
+                      title={p.system} note={p.detail}
+                      right={p.minutes ? `${p.minutes}′` : null} />
+                  ))}
+                  {today.planned.length > 4 && (
+                    <li className="hd-today-more">+{today.planned.length - 4} בלוקים נוספים</li>
+                  )}
+                  {today.uworld && (
+                    <TaskRow done={today.uworld.done} emoji="🎯"
+                      title="UWorld" note={`${today.uworld.targetQ} שאלות`} />
+                  )}
+                </ul>
+                <button className="hd-today-review" onClick={() => go("/step1")}>
+                  <span className={`hd-today-review-n num${!loading && sched.dueNow > 0 ? " hot" : ""}`}>
+                    {loading ? "…" : sched.dueNow}
+                  </span>
+                  <span className="hd-today-review-l">שאלות לביקורת מרווחת</span>
+                  <IconArrow size={13} className="mir" aria-hidden="true" />
+                </button>
+              </>) : (
+                <div className="hd-today-empty">
+                  <span className="hd-today-empty-ico"><IconCalendar size={22} /></span>
+                  <p className="hd-today-empty-h">עוד לא תכננת את היום</p>
+                  <p className="hd-today-empty-s">בחר עומס יומי במתכנן וקבל רשימת משימות מותאמת — נושאים, UWorld ו‑Anki.</p>
+                  {!loading && sched.dueNow > 0 && (
+                    <button className="hd-today-review solo" onClick={() => go("/step1")}>
+                      <span className="hd-today-review-n num hot">{sched.dueNow}</span>
+                      <span className="hd-today-review-l">שאלות ממתינות לביקורת</span>
+                      <IconArrow size={13} className="mir" aria-hidden="true" />
+                    </button>
+                  )}
                 </div>
-                <LoadStrip days={sched.days} />
-              </div>
+              )}
             </div>
 
-            <div className="hd-hero-rail">
-              <MasteryHalo mastery={masteryPct} inflight={inflightPct} due={pipeTotal ? Math.round((sched.dueNow / pipeTotal) * 100) : 0} loading={loading} />
-              <div className="hd-hero-railmeta num">{loading ? "…" : pipeTotal > 0 ? `${sched.mastered}/${pipeTotal}` : "—"}</div>
-              <span className="hd-hero-cta">פתח לוח <IconArrow size={15} className="mir" aria-hidden="true" /></span>
+            <div className="hd-hero-rail hd-today-rail">
+              <div className="hd-ahead">
+                <span className="hd-ahead-t"><IconTarget size={12} /> אבני דרך קרובות</span>
+                {today?.milestones?.length ? (
+                  <ul className="hd-ahead-list">
+                    {today.milestones.slice(0, 4).map((m) => (
+                      <li key={m.id}>
+                        <span className="hd-ahead-lbl">{m.label}</span>
+                        <span className="hd-ahead-when num">{m.days === 0 ? "היום" : m.days === 1 ? "מחר" : `${m.days} ימים`}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="hd-ahead-none">אין מבחני הערכה מתוזמנים</p>
+                )}
+              </div>
+              <button className="hd-hero-cta" onClick={() => go("/planner")}>
+                {today?.hasPlan ? "פתח מתכנן" : "תכנן את היום"} <IconArrow size={15} className="mir" aria-hidden="true" />
+              </button>
             </div>
-          </button>
+          </section>
 
           {/* B · Countdown certificate */}
           <div className="hd-card hd-count c4">
@@ -256,8 +318,21 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
               <span className="hd-fa-pct num">{loading ? "…" : <><CountUp value={faPct} />%</>}</span>
               <span className="hd-fa-of num">{loading ? "…" : `${faStats.seen} / ${faStats.total} נושאים`}</span>
             </div>
-            <Constellation pct={faPct} />
             <div className="hd-fa-rail" aria-hidden="true"><span style={{ width: `${faPct}%` }} /></div>
+            {faNext.length ? (
+              <ul className="hd-fa-next">
+                <li className="hd-fa-next-h">הבא בתור</li>
+                {faNext.map((c) => (
+                  <li key={c.name} className="hd-fa-next-row">
+                    <span className="hd-fa-next-dot" style={{ background: colorFor(c.name).hex }} />
+                    <span className="hd-fa-next-name" dir="ltr">{c.name}</span>
+                    <span className="hd-fa-next-frac num">{c.seen}/{c.total}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <Constellation pct={faPct} />
+            )}
             <span className="hd-fa-rest"><span className="num">{loading ? "…" : faStats.total - faStats.seen}</span> נושאים נותרו</span>
           </button>
 
@@ -331,12 +406,19 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
 
 /* ─────────────────────────── sub-components ─────────────────────────── */
 
-function HeroStat({ n, label, hot, warn, dim, loading }) {
+// One row in the Today checklist: a check (filled when done), an emoji or colored
+// subject dot, the task title, an optional note, and an optional right-side stat.
+function TaskRow({ done, emoji, dot, title, note, right }) {
   return (
-    <div className={`hd-hstat${hot ? " hot" : ""}${warn ? " warn" : ""}${dim ? " dim" : ""}`}>
-      <span className="hd-hstat-n num">{loading ? "…" : <CountUp value={n || 0} />}</span>
-      <span className="hd-hstat-l">{label}</span>
-    </div>
+    <li className={`hd-trow${done ? " done" : ""}`}>
+      <span className="hd-trow-box" aria-hidden="true">{done && <IconCheck size={11} />}</span>
+      {emoji
+        ? <span className="hd-trow-emoji" aria-hidden="true">{emoji}</span>
+        : <span className="hd-trow-dot" style={{ background: dot || "var(--rail-gold)" }} aria-hidden="true" />}
+      <span className="hd-trow-title">{title}</span>
+      {note && <span className="hd-trow-note">{note}</span>}
+      {right && <span className="hd-trow-right num">{right}</span>}
+    </li>
   );
 }
 
@@ -361,37 +443,6 @@ function StreakDots({ streak }) {
   );
 }
 
-// Dual-metric halo (SAME domain): thick gold mastery arc + thin in-flight arc + a red due-now tick.
-function MasteryHalo({ mastery, inflight, due, loading }) {
-  const R1 = 44, R2 = 33;
-  const c1 = 2 * Math.PI * R1, c2 = 2 * Math.PI * R2;
-  const m = clamp(mastery, 0, 100), inf = clamp(inflight, 0, 100), dueA = clamp(due, 0, 100);
-  return (
-    <div className="hd-halo" role="img" aria-label={`שליטה ${m}%, בתהליך ${inf}%`}>
-      <svg viewBox="0 0 120 120" aria-hidden="true">
-        {/* outer — mastery (gold, thick) */}
-        <circle cx="60" cy="60" r={R1} fill="none" stroke="rgba(245,241,229,0.13)" strokeWidth="8" />
-        <circle cx="60" cy="60" r={R1} fill="none" stroke="#D5B36A" strokeWidth="8"
-          strokeLinecap="round" transform="rotate(-90 60 60)"
-          className="hd-arc" style={{ "--dash": c1, "--off": c1 * (1 - m / 100) }} />
-        {/* red due-now tick at the head of the reviewing band (just past mastered) */}
-        {dueA > 0 && (
-          <circle cx="60" cy="60" r={R1} fill="none" stroke="var(--bad)" strokeWidth="8"
-            strokeLinecap="butt" transform="rotate(-90 60 60)"
-            strokeDasharray={`${(dueA / 100) * c1} ${c1}`} strokeDashoffset={-(m / 100) * c1} opacity="0.9" />
-        )}
-        {/* inner — in-flight (mastered + reviewing), dim */}
-        <circle cx="60" cy="60" r={R2} fill="none" stroke="rgba(245,241,229,0.10)" strokeWidth="4" />
-        <circle cx="60" cy="60" r={R2} fill="none" stroke="rgba(213,179,106,0.5)" strokeWidth="4"
-          strokeLinecap="round" transform="rotate(-90 60 60)"
-          className="hd-arc" style={{ "--dash": c2, "--off": c2 * (1 - inf / 100) }} />
-      </svg>
-      <span className="hd-halo-pct num">{loading ? "…" : `${m}%`}</span>
-      <span className="hd-halo-lbl">שליטה</span>
-    </div>
-  );
-}
-
 // Semicircle journey gauge (green ripening into gold toward the exam). RTL: fills from the right.
 function JourneyGauge({ pct }) {
   const len = Math.PI * 52; // half-circumference, r=52
@@ -408,27 +459,6 @@ function JourneyGauge({ pct }) {
       <path d="M 112 60 A 52 52 0 0 0 8 60" fill="none" stroke="var(--surface-4)" strokeWidth="9" strokeLinecap="round" />
       <path d="M 112 60 A 52 52 0 0 0 8 60" fill="none" stroke="url(#jgrad)" strokeWidth="9" strokeLinecap="round"
         className="hd-arc" style={{ "--dash": len, "--off": off }} />
-    </svg>
-  );
-}
-
-// 14 slim bars embedded in the hero — gold-on-green. RTL: today = right-most.
-function LoadStrip({ days }) {
-  const max = Math.max(1, ...days.map((x) => x.count));
-  const total = days.reduce((s, x) => s + x.count, 0);
-  const W = 560, H = 24, slot = W / 14;
-  return (
-    <svg className="hd-loadstrip" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none"
-      role="img" aria-label={`עומס חזרות: ${total} שאלות ב־14 הימים הקרובים`}>
-      {days.map((day, i) => {
-        const x = W - (i + 1) * slot + 2;
-        const bw = slot - 4;
-        const h = day.count ? Math.max(3, (day.count / max) * (H - 4)) : 2;
-        return (
-          <rect key={day.ms} x={x} y={H - h} width={bw} height={h} rx="1.5"
-            fill={day.isToday ? "var(--rail-gold)" : day.count ? "rgba(213,179,106,0.30)" : "rgba(245,241,229,0.12)"} />
-        );
-      })}
     </svg>
   );
 }
