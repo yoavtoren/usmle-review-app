@@ -1,0 +1,193 @@
+{
+  "id": "q273",
+  "item": 273,
+  "qid": "2037",
+  "title": "tRNA 3' end is always CCA (site of amino acid attachment)",
+  "system": "Genetics",
+  "topic": "tRNA structure - aminoacylation",
+  "correct": "B",
+  "yourAnswer": "D",
+  "percentCorrect": 40,
+  "vignette": "A researcher is studying the structure and function of transfer RNA (tRNA). The molecule folds into a characteristic cloverleaf secondary structure and contains several modified nucleotides, including dihydrouridine, pseudouridine, and ribothymidine. During protein synthesis, an amino acid is covalently attached to the 3' end of the tRNA by aminoacyl-tRNA synthetase. Which of the following nucleotide sequences is found at the 3' end of all mature tRNA molecules?",
+  "clues": [
+    {
+      "text": "cloverleaf secondary structure",
+      "type": "blue",
+      "note": "The cloverleaf is the classic 2-dimensional depiction of tRNA (folding into an L-shape in 3D), identifying the molecule as tRNA."
+    },
+    {
+      "text": "dihydrouridine, pseudouridine, and ribothymidine",
+      "type": "green",
+      "note": "These modified bases are signatures of tRNA: dihydrouridine (D loop), pseudouridine and ribothymidine (TψC loop). They confirm the molecule is tRNA."
+    },
+    {
+      "text": "amino acid is covalently attached to the 3' end",
+      "type": "red",
+      "note": "The amino acid is charged onto the 3' terminal adenosine of the CCA tail by aminoacyl-tRNA synthetase - this is the site the question is asking about."
+    }
+  ],
+  "whatMatters": "tRNA (cloverleaf, dihydrouridine/pseudouridine/ribothymidine) always ends in a 3' CCA sequence. The amino acid is esterified to the terminal adenosine (the 'A' of CCA) by aminoacyl-tRNA synthetase. Answer B (CCA). The poly-A tail (choice D) belongs to eukaryotic mRNA, not tRNA.",
+  "strategy": "Recall the tRNA mnemonic 'CCA = Can Carry Amino acids.' The 3' CCA tail is where the amino acid attaches. Reject the poly-A tail (mRNA feature), the 5' cap (mRNA), the anticodon (middle of the molecule, base-pairs with mRNA codon), and any coding triplet - none is the tRNA 3' terminus.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "AUG",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "CCA",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Anticodon triplet",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Poly-adenine (poly-A) tail",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "7-methylguanosine cap",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "AUG - the start codon (mRNA), not a tRNA terminus",
+      "detail": "WHAT IT IS: AUG is the mRNA start codon (methionine). ❌ WHY IT FAILS: it is a codon on mRNA, not the 3' end of tRNA. ✅ Correct if: asking about the translation initiation codon."
+    },
+    {
+      "letter": "C",
+      "label": "Anticodon triplet - middle of tRNA, not the 3' end",
+      "detail": "WHAT IT IS: the 3-base anticodon that base-pairs with the mRNA codon. ❌ WHY IT FAILS: the anticodon sits in the anticodon loop (middle of the cloverleaf), not at the 3' amino-acid-accepting end. ✅ Correct if: asking what reads the mRNA codon."
+    },
+    {
+      "letter": "D",
+      "label": "Poly-A tail - an mRNA feature (your pick)",
+      "detail": "WHAT IT IS: a string of adenines added to the 3' end of eukaryotic mRNA for stability/export. ❌ WHY IT FAILS: poly-adenylation is an mRNA modification; tRNA ends in the specific CCA sequence, not a poly-A tail. ✅ Correct if: asking about the 3' end of mature eukaryotic mRNA."
+    },
+    {
+      "letter": "E",
+      "label": "7-methylguanosine cap - the 5' mRNA cap",
+      "detail": "WHAT IT IS: the 5' 7-methylguanosine cap of eukaryotic mRNA. ❌ WHY IT FAILS: it is added to the 5' (not 3') end and belongs to mRNA, not tRNA. ✅ Correct if: asking about the 5' end of mature mRNA."
+    }
+  ],
+  "reasoning": [
+    "Cloverleaf + dihydrouridine/pseudouridine/ribothymidine identifies the molecule as tRNA",
+    "The amino acid attaches to the 3' terminal adenosine",
+    "All tRNAs end in a 3' CCA sequence (CCA 'Can Carry Amino acids')",
+    "-> CCA; answer B"
+  ],
+  "mechanism": "Transfer RNA folds into a cloverleaf secondary (L-shaped tertiary) structure and carries characteristic modified bases: dihydrouridine in the D loop, and pseudouridine and ribothymidine in the TψC loop. Every mature tRNA terminates in a 3' -CCA sequence; the amino acid is esterified onto the 2'/3'-OH of the terminal adenosine by its specific aminoacyl-tRNA synthetase (which uses ATP and proofreads to ensure fidelity). Mnemonic: CCA = 'Can Carry Amino acids.' The CCA tail is added/maintained post-transcriptionally by the enzyme CCA nucleotidyltransferase (it is not template-encoded). The distractors are mRNA features: the 5' 7-methylguanosine cap and the 3' poly-A tail modify eukaryotic mRNA, while AUG is the start codon and the anticodon lies in the middle of the tRNA to base-pair with the mRNA codon.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochem > tRNA structure: cloverleaf/L-shape; modified bases (dihydrouridine, pseudouridine, ribothymidine); 3' CCA tail ('Can Carry Amino acids'); aminoacyl-tRNA synthetase charges the terminal A."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The stem describes tRNA and asks for its 3' terminus - the CCA tail where the amino acid attaches."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on cloverleaf structure, pseudouridine, aminoacyl-tRNA synthetase, anticodon, or CCA tail? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Poly-A tail and 7-methylguanosine cap are mRNA modifications; AUG is a codon; the anticodon is internal - none is the tRNA 3' end."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: tRNA 3' end = CCA (Can Carry Amino acids); charged by aminoacyl-tRNA synthetase on the terminal adenosine."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "3' end of all tRNAs",
+      "back": "CCA ('Can Carry Amino acids')"
+    },
+    {
+      "front": "Enzyme that charges tRNA with an amino acid",
+      "back": "Aminoacyl-tRNA synthetase (uses ATP, proofreads)"
+    },
+    {
+      "front": "tRNA modified bases",
+      "back": "Dihydrouridine (D loop), pseudouridine + ribothymidine (TψC loop)"
+    },
+    {
+      "front": "tRNA secondary vs tertiary shape",
+      "back": "Cloverleaf (2D) / L-shaped (3D)"
+    },
+    {
+      "front": "Poly-A tail and 5' 7-methylguanosine cap",
+      "back": "Eukaryotic mRNA modifications (not tRNA)"
+    },
+    {
+      "front": "tRNA region that reads the mRNA codon",
+      "back": "Anticodon loop"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "tRNA structure",
+      "detail": "Biochem: 3' CCA tail = amino acid attachment site; 'CCA Can Carry Amino acids.'",
+      "location": "Biochem: 3' CCA tail = amino acid attachment site; 'CCA Can Carry Amino acids.'"
+    },
+    {
+      "tag": "options",
+      "topic": "mRNA processing",
+      "detail": "Biochem > 5' 7-methylguanosine cap + 3' poly-A tail = mRNA; AUG start codon.",
+      "location": "Biochem > 5' 7-methylguanosine cap + 3' poly-A tail = mRNA; AUG start codon."
+    },
+    {
+      "tag": "concept",
+      "topic": "Aminoacyl-tRNA synthetase",
+      "detail": "Biochem > charges tRNA (ATP), proofreads for translational fidelity.",
+      "location": "Biochem > charges tRNA (ATP), proofreads for translational fidelity."
+    }
+  ],
+  "memoryHook": "CCA = 'Can Carry Amino acids' - the tRNA's 3' handle that grips the amino acid; poly-A tails are for mRNA, not tRNA.",
+  "stem": [
+    {
+      "text": "A researcher is studying the structure and function of transfer RNA (tRNA). The molecule folds into a characteristic "
+    },
+    {
+      "text": "cloverleaf secondary structure",
+      "clue": true,
+      "type": "blue",
+      "note": "The cloverleaf is the classic 2-dimensional depiction of tRNA (folding into an L-shape in 3D), identifying the molecule as tRNA."
+    },
+    {
+      "text": " and contains several modified nucleotides, including "
+    },
+    {
+      "text": "dihydrouridine, pseudouridine, and ribothymidine",
+      "clue": true,
+      "type": "green",
+      "note": "These modified bases are signatures of tRNA: dihydrouridine (D loop), pseudouridine and ribothymidine (TψC loop). They confirm the molecule is tRNA."
+    },
+    {
+      "text": ". During protein synthesis, an "
+    },
+    {
+      "text": "amino acid is covalently attached to the 3' end",
+      "clue": true,
+      "type": "red",
+      "note": "The amino acid is charged onto the 3' terminal adenosine of the CCA tail by aminoacyl-tRNA synthetase - this is the site the question is asking about."
+    },
+    {
+      "text": " of the tRNA by aminoacyl-tRNA synthetase. Which of the following nucleotide sequences is found at the 3' end of all mature tRNA molecules?"
+    }
+  ]
+}

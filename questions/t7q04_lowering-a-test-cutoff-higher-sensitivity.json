@@ -1,0 +1,198 @@
+{
+  "id": "q234",
+  "item": 234,
+  "qid": "1191",
+  "title": "Lowering a test cutoff: higher sensitivity",
+  "system": "Biostatistics",
+  "topic": "Diagnostic test cutoff / sensitivity-specificity",
+  "correct": "C",
+  "yourAnswer": "A",
+  "percentCorrect": 64,
+  "vignette": "A novel serum biomarker, UWRLD99, is being evaluated for early detection of pancreatic cancer. The concentration of UWRLD99 (measured in international units [IU] per dL) has been found to be elevated in patients with pancreatic adenocarcinoma. Test results in 200 volunteers (\"healthy\") and 190 patients with biopsy-proven pancreatic cancer (\"diseased\") are shown as two overlapping bell-shaped distributions: the healthy curve is centered at a lower UWRLD99 level and the diseased curve at a higher level, with values above the cutoff called positive. The investigators first determined sensitivity and specificity using a cutoff of 200 IU/dL. If they had instead used a lower cutoff (shifting the threshold to the left, toward the healthy curve), which of the following would most likely be seen?",
+  "clues": [
+    {
+      "text": "elevated in patients with pancreatic adenocarcinoma",
+      "type": "blue",
+      "note": "This orients the curves: higher marker = disease. So the diseased distribution sits to the RIGHT, and moving the cutoff left/right changes who is called positive."
+    },
+    {
+      "text": "two overlapping bell-shaped distributions",
+      "type": "blue",
+      "note": "The overlap between healthy and diseased is exactly why moving the cutoff trades sensitivity against specificity - no single threshold cleanly separates the groups."
+    },
+    {
+      "text": "lower cutoff (shifting the threshold to the left, toward the healthy curve)",
+      "type": "red",
+      "note": "Lowering the cutoff calls MORE people positive. More truly diseased test positive (true positives up, false negatives down) -> higher sensitivity; but more healthy also test positive (false positives up) -> lower specificity."
+    }
+  ],
+  "whatMatters": "Lowering the cutoff (threshold to the left) labels MORE people positive. That captures more truly diseased patients (more true positives, fewer false negatives) = HIGHER SENSITIVITY, at the cost of more false positives (lower specificity). Answer C. (A is backwards - false negatives fall; D is backwards - false positives rise; E is backwards - true positives rise.)",
+  "strategy": "Anchor the rule: LOW cutoff -> high sensitivity (SnNout, good for screening); HIGH cutoff -> high specificity (SpPin, good for confirmation). With 'diseased = higher values,' moving the line LEFT reclassifies borderline patients as positive: true positives rise, false negatives fall (sensitivity up), and false positives rise (specificity down). Then reject each reversed distractor.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Higher number of false negatives",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Higher positive predictive value",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Higher sensitivity",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Lower number of false positives",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Lower number of true positives",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Higher false negatives - reversed, your pick",
+      "detail": "WHAT IT IS: false negatives are diseased people who test negative. ❌ WHY IT FAILS: a LOWER cutoff calls more diseased people positive, so false negatives DECREASE (that's why sensitivity rises). This is the exact reversal of what happens. ✅ Correct if: the cutoff were RAISED."
+    },
+    {
+      "letter": "B",
+      "label": "Higher positive predictive value - prevalence-dependent",
+      "detail": "WHAT IT IS: PPV = TP/(TP+FP), the chance a positive is truly diseased. ❌ WHY IT FAILS: a lower cutoff raises BOTH TP and FP; with more false positives, PPV generally FALLS (and PPV depends on prevalence, not given). ✅ Correct if: prevalence rose or a more specific cutoff were used."
+    },
+    {
+      "letter": "D",
+      "label": "Lower false positives - reversed",
+      "detail": "WHAT IT IS: false positives are healthy people who test positive. ❌ WHY IT FAILS: shifting the cutoff left into the healthy curve calls MORE healthy people positive, so false positives INCREASE (specificity falls). ✅ Correct if: the cutoff were RAISED."
+    },
+    {
+      "letter": "E",
+      "label": "Lower true positives - reversed",
+      "detail": "WHAT IT IS: true positives are diseased people who test positive. ❌ WHY IT FAILS: a lower cutoff makes MORE diseased people test positive, so true positives INCREASE. ✅ Correct if: the cutoff were RAISED (fewer positives overall)."
+    }
+  ],
+  "reasoning": [
+    "Diseased patients have higher marker values (diseased curve on the right)",
+    "Lowering the cutoff labels more people positive",
+    "More truly diseased become positive -> true positives up, false negatives down -> sensitivity up",
+    "(False positives also rise -> specificity down); answer C (higher sensitivity)"
+  ],
+  "mechanism": "For a quantitative test with overlapping healthy and diseased distributions, the cutoff sets the positive/negative boundary. Because diseased individuals have higher UWRLD99 values, moving the cutoff to a LOWER value reclassifies more people (both diseased and healthy) as positive. Among the diseased, more now test positive - true positives increase and false negatives decrease - so SENSITIVITY (TP/[TP+FN]) rises. Among the healthy, more also test positive - false positives increase and true negatives decrease - so SPECIFICITY (TN/[TN+FP]) falls. Positive predictive value depends on disease prevalence and generally declines as false positives rise. This is the classic sensitivity-specificity trade-off: a low cutoff maximizes sensitivity (good for screening; SnNout), whereas a high cutoff maximizes specificity (good for confirmation; SpPin).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biostat > sensitivity/specificity, PPV/NPV, and the cutoff trade-off (SnNout vs SpPin); 2x2 table definitions of TP/FP/FN/TN."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Translate 'lower cutoff' into direction of TP/FP/FN. Lower threshold = more positives = more TP and FP, fewer FN."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on sensitivity, specificity, PPV, false negative vs false positive, or 'cutoff/threshold'? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "A, D, and E are exact reversals (they describe RAISING the cutoff). B (PPV) depends on prevalence and usually falls as false positives rise."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "On the two-curve figure, the diseased curve is on the right; a line moved LEFT crosses into more of both curves -> more positives (more TP and FP). Anchor: 'lower line = more positives = higher sensitivity.'"
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: lower cutoff -> up sensitivity, up false positives, down false negatives, down specificity (SnNout); raise cutoff for the opposite (SpPin)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Lower the cutoff (toward the healthy curve)",
+      "back": "↑Sensitivity, ↑false positives, ↓false negatives, ↓specificity"
+    },
+    {
+      "front": "Raise the cutoff",
+      "back": "↑Specificity, ↑false negatives, ↓false positives, ↓sensitivity"
+    },
+    {
+      "front": "SnNout",
+      "back": "Sensitive test, Negative rules OUT (good for screening)"
+    },
+    {
+      "front": "SpPin",
+      "back": "Specific test, Positive rules IN (good for confirmation)"
+    },
+    {
+      "front": "PPV depends on...",
+      "back": "Disease prevalence (↑prevalence -> ↑PPV)"
+    },
+    {
+      "front": "Sensitivity formula",
+      "back": "TP / (TP + FN)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Cutoff trade-off",
+      "detail": "Biostat: lower cutoff -> ↑sensitivity/↓specificity; SnNout vs SpPin.",
+      "location": "Biostat: lower cutoff -> ↑sensitivity/↓specificity; SnNout vs SpPin."
+    },
+    {
+      "tag": "options",
+      "topic": "2x2 table",
+      "detail": "Biostat > TP, FP, FN, TN; sensitivity, specificity, PPV, NPV definitions.",
+      "location": "Biostat > TP, FP, FN, TN; sensitivity, specificity, PPV, NPV definitions."
+    },
+    {
+      "tag": "context",
+      "topic": "ROC / prevalence",
+      "detail": "Biostat > ROC curve; prevalence effect on PPV/NPV.",
+      "location": "Biostat > ROC curve; prevalence effect on PPV/NPV."
+    }
+  ],
+  "memoryHook": "Drop the bar, catch more cases: a lower cutoff nets more positives - sensitivity up, false negatives down (SnNout).",
+  "stem": [
+    {
+      "text": "A novel serum biomarker, UWRLD99, is being evaluated for early detection of pancreatic cancer. The concentration of UWRLD99 (measured in international units [IU] per dL) has been found to be "
+    },
+    {
+      "text": "elevated in patients with pancreatic adenocarcinoma",
+      "clue": true,
+      "type": "blue",
+      "note": "This orients the curves: higher marker = disease. So the diseased distribution sits to the RIGHT, and moving the cutoff left/right changes who is called positive."
+    },
+    {
+      "text": ". Test results in 200 volunteers (\"healthy\") and 190 patients with biopsy-proven pancreatic cancer (\"diseased\") are shown as "
+    },
+    {
+      "text": "two overlapping bell-shaped distributions",
+      "clue": true,
+      "type": "blue",
+      "note": "The overlap between healthy and diseased is exactly why moving the cutoff trades sensitivity against specificity - no single threshold cleanly separates the groups."
+    },
+    {
+      "text": ": the healthy curve is centered at a lower UWRLD99 level and the diseased curve at a higher level, with values above the cutoff called positive. The investigators first determined sensitivity and specificity using a cutoff of 200 IU/dL. If they had instead used a "
+    },
+    {
+      "text": "lower cutoff (shifting the threshold to the left, toward the healthy curve)",
+      "clue": true,
+      "type": "red",
+      "note": "Lowering the cutoff calls MORE people positive. More truly diseased test positive (true positives up, false negatives down) -> higher sensitivity; but more healthy also test positive (false positives up) -> lower specificity."
+    },
+    {
+      "text": ", which of the following would most likely be seen?"
+    }
+  ]
+}

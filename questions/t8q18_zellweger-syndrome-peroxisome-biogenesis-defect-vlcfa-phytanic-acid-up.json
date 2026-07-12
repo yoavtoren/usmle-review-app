@@ -1,0 +1,203 @@
+{
+  "id": "q287",
+  "item": 287,
+  "qid": "1120",
+  "title": "Zellweger syndrome: peroxisome biogenesis defect (VLCFA + phytanic acid up)",
+  "system": "Biochemistry",
+  "topic": "Peroxisomal disorders",
+  "correct": "D",
+  "yourAnswer": "B",
+  "percentCorrect": 56,
+  "vignette": "A 4-month-old infant is evaluated for hypotonia, poor feeding, and seizures. The infant has dysmorphic craniofacial features, including a high forehead and a broad nasal bridge, and hepatomegaly is present. There is profound developmental delay. Laboratory studies show markedly elevated very-long-chain fatty acids and elevated phytanic acid in the blood. A defect in which of the following organelles is most likely responsible for this patient's condition?",
+  "clues": [
+    {
+      "text": "hypotonia, poor feeding, and seizures",
+      "type": "blue",
+      "note": "Severe hypotonia, feeding difficulty, and seizures in early infancy with dysmorphism suggest a metabolic/genetic disorder affecting the brain."
+    },
+    {
+      "text": "markedly elevated very-long-chain fatty acids",
+      "type": "green",
+      "note": "Elevated VLCFAs indicate failed peroxisomal beta-oxidation - the peroxisome is where VLCFAs are normally shortened."
+    },
+    {
+      "text": "elevated phytanic acid",
+      "type": "green",
+      "note": "Elevated phytanic acid reflects impaired peroxisomal ALPHA-oxidation; together with high VLCFAs it points to a global peroxisomal defect (Zellweger)."
+    }
+  ],
+  "whatMatters": "An infant with hypotonia, seizures, craniofacial dysmorphism, hepatomegaly, and BOTH elevated very-long-chain fatty acids AND phytanic acid = Zellweger syndrome, a peroxisome biogenesis disorder (PEX gene mutations). The defective organelle is the PEROXISOME, which normally performs VLCFA beta-oxidation and phytanic acid alpha-oxidation. Answer D.",
+  "strategy": "Let the two lab abnormalities localize the organelle: VLCFA beta-oxidation and phytanic acid alpha-oxidation both occur in peroxisomes, so elevations of both = peroxisomal failure (Zellweger). Reject lysosomes (accumulate substrates like sphingolipids/mucopolysaccharides, normal VLCFA), mitochondria (medium/long-chain FA oxidation), and other organelles.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Golgi apparatus",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Lysosomes",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Mitochondria",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Peroxisomes",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Proteasomes",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Smooth endoplasmic reticulum",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Golgi apparatus - trafficking, not fatty-acid oxidation",
+      "detail": "WHAT IT IS: the Golgi modifies and sorts proteins/lipids (e.g., glycosylation). ❌ WHY IT FAILS: it does not oxidize VLCFAs or phytanic acid; a Golgi defect would not raise these. ✅ Correct if: protein glycosylation/trafficking disorders (e.g., I-cell disease affects mannose-6-phosphate tagging)."
+    },
+    {
+      "letter": "B",
+      "label": "Lysosomes - storage disorders, normal VLCFA (your pick)",
+      "detail": "WHAT IT IS: lysosomes degrade macromolecules; defects cause storage diseases (sphingolipidoses, mucopolysaccharidoses). ❌ WHY IT FAILS: lysosomal disorders accumulate their specific substrates, not VLCFAs/phytanic acid, which are peroxisomal. ✅ Correct if: e.g., Tay-Sachs, Gaucher, Hurler with accumulated lysosomal substrate."
+    },
+    {
+      "letter": "C",
+      "label": "Mitochondria - short/medium/long-chain FA oxidation",
+      "detail": "WHAT IT IS: mitochondria beta-oxidize short-, medium-, and long-chain fatty acids. ❌ WHY IT FAILS: VERY-long-chain fatty acids require peroxisomal beta-oxidation first; a mitochondrial defect (e.g., MCAD) elevates medium-chain acyl products, not VLCFA/phytanic acid. ✅ Correct if: MCAD deficiency (hypoketotic hypoglycemia)."
+    },
+    {
+      "letter": "E",
+      "label": "Proteasomes - protein degradation",
+      "detail": "WHAT IT IS: proteasomes degrade ubiquitin-tagged proteins. ❌ WHY IT FAILS: unrelated to fatty-acid metabolism; would not raise VLCFA/phytanic acid. ✅ Correct if: ubiquitin-proteasome degradation questions."
+    },
+    {
+      "letter": "F",
+      "label": "Smooth ER - lipid/steroid synthesis and detox",
+      "detail": "WHAT IT IS: the smooth ER synthesizes lipids/steroids and detoxifies drugs. ❌ WHY IT FAILS: it does not perform VLCFA beta-oxidation or phytanic acid alpha-oxidation. ✅ Correct if: steroid synthesis or cytochrome P450 detox questions."
+    }
+  ],
+  "reasoning": [
+    "Infant with hypotonia, seizures, dysmorphism, hepatomegaly + elevated VLCFA AND phytanic acid",
+    "Peroxisomes perform VLCFA beta-oxidation and phytanic acid alpha-oxidation",
+    "Both elevated = global peroxisomal failure = Zellweger syndrome (peroxisome biogenesis disorder)",
+    "-> peroxisomes; answer D"
+  ],
+  "mechanism": "Peroxisomes are membrane-bound organelles that carry out the beta-oxidation of very-long-chain fatty acids (shortening them for further mitochondrial oxidation), the alpha-oxidation of branched-chain phytanic acid, and the synthesis of plasmalogens (important myelin lipids). Zellweger syndrome (cerebrohepatorenal syndrome) is a peroxisome BIOGENESIS disorder caused by mutations in PEX genes, which encode peroxins needed to assemble functional peroxisomes; without them, peroxisomal enzymes are not properly imported and multiple peroxisomal functions fail simultaneously. The result is accumulation of very-long-chain fatty acids and phytanic acid, deficient plasmalogens, and severe early disease: profound hypotonia, seizures, craniofacial dysmorphism, hepatomegaly, and developmental delay, usually fatal in infancy. Because BOTH VLCFA and phytanic acid are elevated (pointing to a global peroxisomal defect rather than a single-enzyme deficiency like X-linked adrenoleukodystrophy, which raises VLCFA alone), the culprit organelle is the peroxisome.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochem (cell) > peroxisome: beta-oxidation of VLCFA, alpha-oxidation of phytanic acid, plasmalogen synthesis; Zellweger (PEX genes) = biogenesis defect; contrast Refsum (phytanic acid) and X-ALD (VLCFA)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two elevated peroxisomal substrates (VLCFA + phytanic acid) localize the defect to the peroxisome (Zellweger)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on VLCFA, phytanic acid, alpha- vs beta-oxidation, peroxisome, PEX genes, or plasmalogen? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Lysosomes (storage disorders), mitochondria (medium/long-chain FA), Golgi/proteasome/smooth ER don't handle VLCFA + phytanic acid."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: Zellweger = peroxisome biogenesis defect (PEX), ↑VLCFA + ↑phytanic acid; Refsum = phytanic acid; X-ALD = VLCFA."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "↑VLCFA + ↑phytanic acid in a dysmorphic hypotonic infant",
+      "back": "Zellweger syndrome (peroxisomal biogenesis disorder)"
+    },
+    {
+      "front": "Organelle for VLCFA beta-oxidation + phytanic acid alpha-oxidation",
+      "back": "Peroxisome"
+    },
+    {
+      "front": "Genes mutated in Zellweger syndrome",
+      "back": "PEX genes (peroxins for peroxisome assembly)"
+    },
+    {
+      "front": "Peroxisome also synthesizes...",
+      "back": "Plasmalogens (myelin phospholipids)"
+    },
+    {
+      "front": "Refsum disease vs X-linked adrenoleukodystrophy",
+      "back": "Refsum = ↑phytanic acid; X-ALD = ↑VLCFA"
+    },
+    {
+      "front": "Mitochondrial fatty-acid oxidation handles",
+      "back": "Short/medium/long-chain FA (e.g., MCAD deficiency)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Peroxisomal disorders",
+      "detail": "Biochem: Zellweger = PEX defect; ↑VLCFA + ↑phytanic acid; hypotonia, seizures, dysmorphism.",
+      "location": "Biochem: Zellweger = PEX defect; ↑VLCFA + ↑phytanic acid; hypotonia, seizures, dysmorphism."
+    },
+    {
+      "tag": "options",
+      "topic": "Organelle functions",
+      "detail": "Cell > lysosome (degradation/storage disease), mitochondria (FA oxidation), Golgi (trafficking).",
+      "location": "Cell > lysosome (degradation/storage disease), mitochondria (FA oxidation), Golgi (trafficking)."
+    },
+    {
+      "tag": "related",
+      "topic": "Other peroxisomal diseases",
+      "detail": "Biochem > Refsum (phytanic acid), X-linked adrenoleukodystrophy (VLCFA).",
+      "location": "Biochem > Refsum (phytanic acid), X-linked adrenoleukodystrophy (VLCFA)."
+    }
+  ],
+  "memoryHook": "Peroxisomes trim the longest fatty acids and branched phytanic acid; wreck their assembly (Zellweger) and both pile up in a floppy, seizing newborn.",
+  "stem": [
+    {
+      "text": "A 4-month-old infant is evaluated for "
+    },
+    {
+      "text": "hypotonia, poor feeding, and seizures",
+      "clue": true,
+      "type": "blue",
+      "note": "Severe hypotonia, feeding difficulty, and seizures in early infancy with dysmorphism suggest a metabolic/genetic disorder affecting the brain."
+    },
+    {
+      "text": ". The infant has dysmorphic craniofacial features, including a high forehead and a broad nasal bridge, and hepatomegaly is present. There is profound developmental delay. Laboratory studies show "
+    },
+    {
+      "text": "markedly elevated very-long-chain fatty acids",
+      "clue": true,
+      "type": "green",
+      "note": "Elevated VLCFAs indicate failed peroxisomal beta-oxidation - the peroxisome is where VLCFAs are normally shortened."
+    },
+    {
+      "text": " and "
+    },
+    {
+      "text": "elevated phytanic acid",
+      "clue": true,
+      "type": "green",
+      "note": "Elevated phytanic acid reflects impaired peroxisomal ALPHA-oxidation; together with high VLCFAs it points to a global peroxisomal defect (Zellweger)."
+    },
+    {
+      "text": " in the blood. A defect in which of the following organelles is most likely responsible for this patient's condition?"
+    }
+  ]
+}

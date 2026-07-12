@@ -1,0 +1,179 @@
+{
+  "id": "q262",
+  "item": 262,
+  "qid": "433",
+  "title": "Trypsin that resists inactivating cleavage: hereditary pancreatitis",
+  "system": "Pathophysiology",
+  "topic": "Hereditary pancreatitis (trypsin regulation)",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 77,
+  "vignette": "Biochemists identify a mutation affecting the trypsinogen molecule that disrupts a critical site on the protein involved in inhibiting the active trypsin moiety. This mutation prevents trypsin from being permanently inactivated by enzymatic cleavage. Patients with this mutation would most likely suffer from which of the following conditions?",
+  "clues": [
+    {
+      "text": "disrupts a critical site on the protein involved in inhibiting the active trypsin moiety",
+      "type": "blue",
+      "note": "Trypsin normally has a built-in off-switch: a cleavage site where trypsin can inactivate itself (and be inhibited). Disrupting that site removes a key protective brake on trypsin activity."
+    },
+    {
+      "text": "prevents trypsin from being permanently inactivated by enzymatic cleavage",
+      "type": "red",
+      "note": "If prematurely activated trypsin can't be cleaved/inactivated, it persists and triggers an activation cascade of pancreatic zymogens - autodigestion of the pancreas (pancreatitis)."
+    }
+  ],
+  "whatMatters": "Trypsin normally activates - and, importantly, can INACTIVATE - pancreatic zymogens; a self-cleavage site lets it be shut off. A mutation that prevents trypsin from being inactivated by cleavage leaves abnormally persistent trypsin, causing recurrent premature zymogen activation and pancreatic autodigestion = hereditary PANCREATITIS. Answer D.",
+  "strategy": "Follow the protective logic: multiple safeguards prevent premature trypsin activity (SPINK1 inhibitor; trypsin self-cleavage/inactivation). Knock out the inactivation site -> unchecked trypsin -> pancreatic autodigestion -> pancreatitis (D). Reject H. pylori diseases (gastric cancer, peptic ulcer), alpha-1-antitrypsin/cirrhosis, and megaloblastic anemia - none involve trypsin regulation.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Gastric cancer",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Liver cirrhosis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Megaloblastic anemia",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pancreatitis",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Peptic ulcer",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Gastric cancer - H. pylori",
+      "detail": "WHAT IT IS: gastric adenocarcinoma is strongly associated with Helicobacter pylori (chronic gastritis). ❌ WHY IT FAILS: it has nothing to do with trypsinogen regulation. ✅ Correct if: H. pylori-associated gastric malignancy."
+    },
+    {
+      "letter": "B",
+      "label": "Liver cirrhosis - alpha-1-antitrypsin (a different protease inhibitor)",
+      "detail": "WHAT IT IS: alpha-1-antitrypsin deficiency causes emphysema and liver cirrhosis. ❌ WHY IT FAILS: that's a separate protease inhibitor; there's no link between cirrhosis and trypsinogen gene mutations. ✅ Correct if: alpha-1-antitrypsin deficiency."
+    },
+    {
+      "letter": "C",
+      "label": "Megaloblastic anemia - B12/folate",
+      "detail": "WHAT IT IS: megaloblastic anemia is due to B12/folate deficiency (or drugs like methotrexate). ❌ WHY IT FAILS: unrelated to trypsin. ✅ Correct if: B12/folate deficiency or antifolate drugs."
+    },
+    {
+      "letter": "E",
+      "label": "Peptic ulcer - H. pylori/NSAIDs",
+      "detail": "WHAT IT IS: peptic ulcer disease is caused by H. pylori or NSAIDs. ❌ WHY IT FAILS: it doesn't involve trypsinogen inactivation. ✅ Correct if: H. pylori/NSAID-related ulcer."
+    }
+  ],
+  "reasoning": [
+    "Trypsin normally can inactivate itself and other zymogens via a self-cleavage site",
+    "A mutation disrupting that site prevents trypsin from being inactivated by cleavage",
+    "Persistently active trypsin triggers premature activation of pancreatic proenzymes -> autodigestion",
+    "-> recurrent pancreatitis (hereditary pancreatitis); answer D"
+  ],
+  "mechanism": "Pancreatic digestive enzymes are secreted as inactive zymogens (proenzymes) to protect the pancreas from autodigestion; they are normally activated in the duodenum, where enterokinase converts trypsinogen to trypsin, which then activates the others. Because trypsin sits at the center of this activation cascade, several safeguards limit inappropriate trypsin activity: serine protease inhibitor Kazal-type 1 (SPINK1) inhibits prematurely activated trypsin, and trypsin can cleave active trypsin at a second site to INACTIVATE it. A mutation of trypsinogen that disrupts this inactivating cleavage site produces trypsin that resists inactivation, so small amounts of prematurely activated trypsin within the pancreatic acini/ducts persist and set off recurrent autodigestion - hereditary pancreatitis (an autosomal dominant PRSS1/SPINK1-related disorder with recurrent acute attacks and risk of chronic pancreatitis). The distractors relate to H. pylori (gastric cancer, peptic ulcer), alpha-1-antitrypsin (cirrhosis), and B12/folate (megaloblastic anemia), none of which involve trypsin regulation.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI > hereditary pancreatitis: trypsinogen (PRSS1)/SPINK1 mutations; trypsin self-inactivation and inhibition; premature activation -> pancreatic autodigestion."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Reason from function: disabling trypsin's OFF switch (inactivating cleavage) -> unchecked trypsin -> pancreatitis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on trypsinogen/zymogen, SPINK1, enterokinase, or 'moiety'? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Gastric cancer/peptic ulcer (H. pylori), cirrhosis (alpha-1-antitrypsin), and megaloblastic anemia (B12/folate) are unrelated to trypsin regulation."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: lose trypsin's inactivation/inhibition (SPINK1 or self-cleavage) -> premature pancreatic autodigestion -> hereditary pancreatitis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Trypsin that resists inactivating cleavage",
+      "back": "Hereditary pancreatitis (premature autodigestion)"
+    },
+    {
+      "front": "Endogenous trypsin inhibitor in the pancreas",
+      "back": "SPINK1 (serine protease inhibitor Kazal-type 1)"
+    },
+    {
+      "front": "How trypsinogen is normally activated",
+      "back": "Duodenal enterokinase -> trypsin (then activates other zymogens)"
+    },
+    {
+      "front": "Genes in hereditary pancreatitis",
+      "back": "PRSS1 (trypsinogen), SPINK1"
+    },
+    {
+      "front": "Alpha-1-antitrypsin deficiency",
+      "back": "Emphysema + liver cirrhosis (different protease inhibitor)"
+    },
+    {
+      "front": "Why enzymes are secreted as zymogens",
+      "back": "To prevent pancreatic autodigestion until activated in the duodenum"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Hereditary pancreatitis",
+      "detail": "GI: trypsinogen/SPINK1 mutation; trypsin resists inactivation -> autodigestion -> recurrent pancreatitis.",
+      "location": "GI: trypsinogen/SPINK1 mutation; trypsin resists inactivation -> autodigestion -> recurrent pancreatitis."
+    },
+    {
+      "tag": "options",
+      "topic": "Unrelated distractors",
+      "detail": "GI > H. pylori (gastric cancer, peptic ulcer), alpha-1-antitrypsin (cirrhosis), B12/folate (megaloblastic anemia).",
+      "location": "GI > H. pylori (gastric cancer, peptic ulcer), alpha-1-antitrypsin (cirrhosis), B12/folate (megaloblastic anemia)."
+    },
+    {
+      "tag": "context",
+      "topic": "Pancreatic enzyme regulation",
+      "detail": "GI > zymogens, enterokinase, SPINK1, trypsin self-inactivation.",
+      "location": "GI > zymogens, enterokinase, SPINK1, trypsin self-inactivation."
+    }
+  ],
+  "memoryHook": "Trypsin without an off-switch keeps digesting - so the pancreas eats itself. Break the brake, get pancreatitis.",
+  "stem": [
+    {
+      "text": "Biochemists identify a mutation affecting the trypsinogen molecule that "
+    },
+    {
+      "text": "disrupts a critical site on the protein involved in inhibiting the active trypsin moiety",
+      "clue": true,
+      "type": "blue",
+      "note": "Trypsin normally has a built-in off-switch: a cleavage site where trypsin can inactivate itself (and be inhibited). Disrupting that site removes a key protective brake on trypsin activity."
+    },
+    {
+      "text": ". This mutation "
+    },
+    {
+      "text": "prevents trypsin from being permanently inactivated by enzymatic cleavage",
+      "clue": true,
+      "type": "red",
+      "note": "If prematurely activated trypsin can't be cleaved/inactivated, it persists and triggers an activation cascade of pancreatic zymogens - autodigestion of the pancreas (pancreatitis)."
+    },
+    {
+      "text": ". Patients with this mutation would most likely suffer from which of the following conditions?"
+    }
+  ]
+}

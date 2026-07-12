@@ -1,0 +1,207 @@
+{
+  "id": "q304",
+  "item": 304,
+  "qid": "20173",
+  "title": "Decompensated heart failure pleural effusion: increased hydrostatic pressure",
+  "system": "Physiology",
+  "topic": "Pleural effusion - Starling forces",
+  "correct": "D",
+  "yourAnswer": "A",
+  "percentCorrect": 52,
+  "vignette": "A 64-year-old man comes to the office due to worsening dyspnea on exertion for the past 3 months. The patient has had a nonproductive cough but no chest pain, fever, or chills. He was diagnosed with hypertension several years ago but takes no medications. Blood pressure is 160/96 mm Hg, pulse is 92/min, and respirations are 18/min. Physical examination shows bilateral inspiratory crackles as well as dullness to percussion and decreased breath sounds at the right lung base. Chest x-ray reveals a right-sided pleural effusion. Which of the following sets of pleuropulmonary changes in vascular permeability, vascular hydrostatic pressure, vascular oncotic pressure, and lymphatic flow is most likely present in this patient?",
+  "clues": [
+    {
+      "text": "worsening dyspnea on exertion for the past 3 months",
+      "type": "blue",
+      "note": "Progressive exertional dyspnea with a nonproductive cough suggests chronic heart failure rather than an acute infection."
+    },
+    {
+      "text": "diagnosed with hypertension several years ago but takes no medications",
+      "type": "orange",
+      "note": "Long-standing untreated hypertension is a leading cause of heart failure - the driver of this transudative effusion."
+    },
+    {
+      "text": "bilateral inspiratory crackles",
+      "type": "blue",
+      "note": "Bibasilar crackles indicate pulmonary congestion from elevated left-heart filling pressures (backward failure)."
+    },
+    {
+      "text": "right-sided pleural effusion",
+      "type": "green",
+      "note": "A pleural effusion in decompensated heart failure is transudative, driven by increased pulmonary capillary hydrostatic pressure (permeability and oncotic pressure remain normal)."
+    }
+  ],
+  "whatMatters": "Progressive exertional dyspnea + bibasilar crackles + effusion in an untreated hypertensive = decompensated heart failure. The effusion is a TRANSUDATE from INCREASED (pulmonary capillary) hydrostatic pressure, with NORMAL vascular permeability, NORMAL oncotic pressure, and INCREASED lymphatic flow (trying to keep up). Answer D.",
+  "strategy": "Apply Starling forces to pleural fluid: inflow rises with higher hydrostatic pressure, lower oncotic pressure, or increased permeability; outflow depends on lymphatics. Heart failure = backward pressure -> ↑hydrostatic pressure (transudate) with permeability and oncotic pressure NORMAL, and lymphatic flow INCREASED (but overwhelmed). Reject options with increased permeability (exudate/malignancy/infection) or decreased oncotic pressure (hypoalbuminemia).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Permeability increased | Hydrostatic normal | Oncotic normal | Lymphatic flow decreased",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Permeability increased | Hydrostatic increased | Oncotic decreased | Lymphatic flow decreased",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Permeability normal | Hydrostatic normal | Oncotic decreased | Lymphatic flow increased",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Permeability normal | Hydrostatic increased | Oncotic normal | Lymphatic flow increased",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Permeability decreased | Hydrostatic decreased | Oncotic increased | Lymphatic flow increased",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Increased permeability + decreased lymphatics - malignancy-type, not HF",
+      "detail": "WHAT IT IS: increased vascular permeability with reduced lymphatic drainage. ❌ WHY IT FAILS: that pattern (exudate) fits malignancy/inflammation; heart failure has NORMAL permeability and INCREASED (compensatory) lymphatic flow, with high hydrostatic pressure. ✅ Correct if: an exudative effusion from lung malignancy obstructing lymphatics."
+    },
+    {
+      "letter": "B",
+      "label": "Increased permeability + decreased oncotic + decreased lymphatics - multiple defects",
+      "detail": "WHAT IT IS: several simultaneous derangements (leaky vessels, low oncotic pressure, poor drainage). ❌ WHY IT FAILS: heart failure is driven by a SINGLE dominant change - increased hydrostatic pressure - not combined permeability/oncotic/lymphatic failure. ✅ Correct if: combined malignancy + hypoalbuminemia scenario."
+    },
+    {
+      "letter": "C",
+      "label": "Decreased oncotic pressure - hypoalbuminemia, not HF",
+      "detail": "WHAT IT IS: reduced vascular oncotic pressure (low albumin) causing transudate. ❌ WHY IT FAILS: this patient's effusion is driven by high hydrostatic pressure from heart failure, with NORMAL oncotic pressure. ✅ Correct if: nephrotic syndrome/cirrhosis with hypoalbuminemia."
+    },
+    {
+      "letter": "E",
+      "label": "Decreased hydrostatic + increased oncotic - would discourage effusion",
+      "detail": "WHAT IT IS: lower hydrostatic and higher oncotic pressure. ❌ WHY IT FAILS: these changes OPPOSE fluid accumulation (they would resolve, not cause, an effusion). ✅ Correct if: describing forces that prevent effusion formation."
+    }
+  ],
+  "reasoning": [
+    "Exertional dyspnea + bibasilar crackles + effusion in an untreated hypertensive = decompensated heart failure",
+    "HF transmits backward pressure to the pulmonary circulation -> increased capillary hydrostatic pressure",
+    "Increased inflow overwhelms lymphatic drainage (which increases) -> transudative pleural effusion; permeability and oncotic pressure stay normal",
+    "-> normal permeability, increased hydrostatic, normal oncotic, increased lymphatic; answer D"
+  ],
+  "mechanism": "Pleural fluid turnover follows Starling forces: the rate of INFLOW into the pleural space depends on vascular hydrostatic pressure, vascular oncotic pressure, and membrane permeability, while OUTFLOW depends on drainage by the parietal pleural lymphatics. A pleural effusion forms when inflow rises or outflow falls. In decompensated heart failure (here from chronic, poorly controlled hypertension), the failing left ventricle transmits pressure backward to the pulmonary circulation, RAISING pulmonary capillary hydrostatic pressure and driving fluid into the pleural space - a TRANSUDATE. Vascular permeability remains NORMAL (so it is not an exudate) and vascular oncotic pressure remains NORMAL (albumin is unchanged). Lymphatic outflow actually INCREASES in response to the extra fluid but cannot keep pace, so the effusion accumulates. Thus the correct set is normal permeability, increased hydrostatic pressure, normal oncotic pressure, and increased lymphatic flow. Increased permeability would indicate an exudate (malignancy/infection), and decreased oncotic pressure would indicate hypoalbuminemia (nephrotic syndrome, cirrhosis).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pulm > pleural effusion: transudate (↑hydrostatic [HF] or ↓oncotic [hypoalbuminemia]) vs exudate (↑permeability [malignancy/infection]); Starling forces; lymphatic drainage."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Heart-failure effusion = increased hydrostatic pressure with normal permeability/oncotic and increased (overwhelmed) lymphatics."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on transudate vs exudate, hydrostatic vs oncotic pressure, Starling forces, or Light criteria? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Increased permeability = exudate (malignancy/infection); decreased oncotic = hypoalbuminemia; decreased hydrostatic/increased oncotic OPPOSE effusion."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: HF pleural effusion = transudate from ↑pulmonary capillary hydrostatic pressure; permeability/oncotic normal, lymphatics ↑ but overwhelmed."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Heart failure pleural effusion Starling profile",
+      "back": "Normal permeability, ↑hydrostatic, normal oncotic, ↑lymphatic flow"
+    },
+    {
+      "front": "Transudate causes",
+      "back": "↑hydrostatic (heart failure) or ↓oncotic (hypoalbuminemia)"
+    },
+    {
+      "front": "Exudate cause (permeability)",
+      "back": "↑vascular permeability (malignancy, infection, inflammation)"
+    },
+    {
+      "front": "Pleural fluid outflow route",
+      "back": "Parietal pleural lymphatics"
+    },
+    {
+      "front": "Decreased oncotic pressure effusion",
+      "back": "Hypoalbuminemia (nephrotic syndrome, cirrhosis)"
+    },
+    {
+      "front": "Light criteria distinguish",
+      "back": "Transudate vs exudate (protein/LDH ratios)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Pleural effusion physiology",
+      "detail": "Pulm: HF -> ↑capillary hydrostatic pressure -> transudate; permeability/oncotic normal.",
+      "location": "Pulm: HF -> ↑capillary hydrostatic pressure -> transudate; permeability/oncotic normal."
+    },
+    {
+      "tag": "options",
+      "topic": "Transudate vs exudate",
+      "detail": "Pulm > exudate = ↑permeability; low oncotic = hypoalbuminemia; Light criteria.",
+      "location": "Pulm > exudate = ↑permeability; low oncotic = hypoalbuminemia; Light criteria."
+    },
+    {
+      "tag": "concept",
+      "topic": "Starling forces",
+      "detail": "Physio > inflow (hydrostatic/oncotic/permeability) vs lymphatic outflow.",
+      "location": "Physio > inflow (hydrostatic/oncotic/permeability) vs lymphatic outflow."
+    }
+  ],
+  "memoryHook": "A failing heart backs pressure into the lungs - high hydrostatic pressure pushes clear transudate into the pleura faster than the lymphatics can bail it out.",
+  "stem": [
+    {
+      "text": "A 64-year-old man comes to the office due to "
+    },
+    {
+      "text": "worsening dyspnea on exertion for the past 3 months",
+      "clue": true,
+      "type": "blue",
+      "note": "Progressive exertional dyspnea with a nonproductive cough suggests chronic heart failure rather than an acute infection."
+    },
+    {
+      "text": ". The patient has had a nonproductive cough but no chest pain, fever, or chills. He was "
+    },
+    {
+      "text": "diagnosed with hypertension several years ago but takes no medications",
+      "clue": true,
+      "type": "orange",
+      "note": "Long-standing untreated hypertension is a leading cause of heart failure - the driver of this transudative effusion."
+    },
+    {
+      "text": ". Blood pressure is 160/96 mm Hg, pulse is 92/min, and respirations are 18/min. Physical examination shows "
+    },
+    {
+      "text": "bilateral inspiratory crackles",
+      "clue": true,
+      "type": "blue",
+      "note": "Bibasilar crackles indicate pulmonary congestion from elevated left-heart filling pressures (backward failure)."
+    },
+    {
+      "text": " as well as dullness to percussion and decreased breath sounds at the right lung base. Chest x-ray reveals a "
+    },
+    {
+      "text": "right-sided pleural effusion",
+      "clue": true,
+      "type": "green",
+      "note": "A pleural effusion in decompensated heart failure is transudative, driven by increased pulmonary capillary hydrostatic pressure (permeability and oncotic pressure remain normal)."
+    },
+    {
+      "text": ". Which of the following sets of pleuropulmonary changes in vascular permeability, vascular hydrostatic pressure, vascular oncotic pressure, and lymphatic flow is most likely present in this patient?"
+    }
+  ]
+}

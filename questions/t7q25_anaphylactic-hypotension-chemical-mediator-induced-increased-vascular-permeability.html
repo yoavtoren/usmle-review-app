@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anaphylactic hypotension: chemical mediator-induced increased vascular permeability</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 7 · all 39</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q255", "item": 255, "qid": "20767", "title": "Anaphylactic hypotension: chemical mediator-induced increased vascular permeability", "system": "Immunology", "topic": "Anaphylaxis (type I hypersensitivity)", "correct": "B", "yourAnswer": "B", "percentCorrect": 80, "vignette": "A 25-year-old woman is brought to the emergency department 40 minutes after being stung by several wasps. She reports throat tightness and dizziness. She has no chronic medical conditions and takes no medication. Blood pressure is 80/40 mm Hg, pulse is 120/min, and respirations are 32/min. Examination shows diffuse erythematous plaques over the trunk and 1+ pitting edema of the ankles. Which of the following is the most likely cause of this patient's hypotension?", "clues": [{"text": "40 minutes after being stung by several wasps", "type": "orange", "note": "A rapid reaction (minutes) after an insect sting is the hallmark timing of type I (immediate, IgE-mediated) hypersensitivity - anaphylaxis to wasp venom."}, {"text": "throat tightness", "type": "red", "note": "Throat tightness signals airway/laryngeal involvement in anaphylaxis - a life-threatening feature requiring immediate epinephrine."}, {"text": "Blood pressure is 80/40 mm Hg", "type": "red", "note": "Hypotension (80/40 / normal ~120/80 mm Hg) with tachycardia is anaphylactic (distributive) shock from vasodilation and capillary fluid leak."}, {"text": "diffuse erythematous plaques over the trunk", "type": "green", "note": "Diffuse urticaria (erythematous plaques) confirms a systemic IgE-mediated mast-cell reaction - anaphylaxis."}], "whatMatters": "A wasp sting minutes earlier + urticaria + throat tightness + hypotension = anaphylaxis (type I, IgE-mediated). The hypotension comes from mast-cell CHEMICAL MEDIATORS (histamine, leukotrienes, prostaglandins) that cause vasodilation and INCREASED VASCULAR PERMEABILITY, shifting fluid out of vessels (note the ankle edema). Answer B. Treat with intramuscular epinephrine.", "strategy": "Two forks: (1) mechanism = CHEMICAL MEDIATORS (allergy/IgE-mast cell), not TOXIN-mediated (that's toxic shock syndrome); (2) the driver of hypotension = increased vascular permeability + vasodilation (fluid shifts out; edema), not decreased myocardial contractility. Combine: 'chemical mediator-induced increased vascular permeability' = B. The toxin options (D/E) fit TSS, not a wasp sting.", "options": [{"letter": "A", "text": "Chemical mediator-induced decreased myocardial contractility", "correct": false}, {"letter": "B", "text": "Chemical mediator-induced increased vascular permeability", "correct": true}, {"letter": "C", "text": "Impaired endogenous sympathetic nerve activity", "correct": false}, {"letter": "D", "text": "Toxin-mediated decreased myocardial contractility", "correct": false}, {"letter": "E", "text": "Toxin-mediated increased capillary permeability", "correct": false}], "eliminations": [{"letter": "A", "label": "Chemical mediator-induced DECREASED myocardial contractility", "detail": "WHAT IT IS: mediators like histamine can have some negative inotropic effect on the heart. ❌ WHY IT FAILS: the dominant cause of anaphylactic hypotension is peripheral vasodilation + increased permeability, and the compensatory sympathetic response actually raises heart rate/contractility. ✅ Correct if: a scenario centered on direct cardiac depression."}, {"letter": "C", "label": "Impaired endogenous sympathetic nerve activity - reversed", "detail": "WHAT IT IS: loss of sympathetic tone (as in neurogenic shock) causes vasodilation. ❌ WHY IT FAILS: in anaphylaxis the sympathetic system is INTACT and compensating (tachycardia); the problem is mediator-driven vasodilation/leak, not sympathetic failure. ✅ Correct if: neurogenic shock from spinal cord injury."}, {"letter": "D", "label": "Toxin-mediated decreased myocardial contractility - TSS", "detail": "WHAT IT IS: superantigen toxins (toxic shock syndrome) can depress the myocardium. ❌ WHY IT FAILS: this is a wasp-sting allergic reaction, not a toxin-mediated illness. ✅ Correct if: toxic shock syndrome (tampon/packing, high fever, diffuse rash)."}, {"letter": "E", "label": "Toxin-mediated increased capillary permeability - TSS", "detail": "WHAT IT IS: TSS toxin (superantigen) triggers cytokine release that increases capillary permeability. ❌ WHY IT FAILS: right physiology (leaky capillaries) but wrong trigger - anaphylaxis is CHEMICAL MEDIATOR/IgE-driven, not toxin-driven. ✅ Correct if: toxic shock syndrome."}], "reasoning": ["Wasp sting minutes earlier + urticaria + throat tightness + hypotension = anaphylaxis (type I, IgE-mediated)", "Allergen cross-links IgE on mast cells -> release of histamine, leukotrienes, prostaglandins", "These chemical mediators cause vasodilation and INCREASED VASCULAR PERMEABILITY (fluid leaks out; ankle edema)", "-> chemical mediator-induced increased vascular permeability; answer B"], "mechanism": "Anaphylaxis is a type I (immediate) hypersensitivity reaction. On first exposure, an allergen (wasp venom) induces IgE that binds mast cells and basophils; on re-exposure, allergen cross-links surface IgE, triggering degranulation and release of chemical mediators (histamine, leukotrienes, prostaglandins). These mediators produce profound peripheral VASODILATION (lowering systemic vascular resistance and central venous pressure) and INCREASE VASCULAR PERMEABILITY, causing large fluid shifts from the intravascular to the extravascular space (reflected by the ankle edema). The result is distributive (anaphylactic) shock - hypotension with compensatory tachycardia - plus urticaria and airway involvement. The mechanism is chemical-mediator/IgE-driven, not toxin-mediated (which is the basis of toxic shock syndrome); and the sympathetic response is intact and compensatory rather than impaired. First-line treatment is intramuscular epinephrine.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Immuno > anaphylaxis (type I): IgE/mast cell mediators (histamine, leukotrienes) -> vasodilation + increased vascular permeability -> distributive shock; epinephrine treatment."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Two attributes to nail: CHEMICAL mediator (not toxin) and increased vascular permeability/vasodilation (not decreased contractility)."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on type I hypersensitivity, vascular permeability, distributive shock, superantigen, or urticaria? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "The 'toxin-mediated' options (D/E) fit toxic shock syndrome, not a wasp sting; 'decreased contractility' (A) and 'impaired sympathetic activity' (C) mis-locate the mechanism."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: anaphylaxis = IgE/mast cell chemical mediators -> vasodilation + leaky capillaries -> hypotension; treat with IM epinephrine."}], "keywords": [{"front": "Hypotension minutes after a sting + urticaria + throat tightness", "back": "Anaphylaxis (type I, IgE-mediated)"}, {"front": "Cause of anaphylactic hypotension", "back": "Chemical mediators -> vasodilation + increased vascular permeability"}, {"front": "Anaphylaxis mediators", "back": "Histamine, leukotrienes, prostaglandins (mast cell/basophil)"}, {"front": "First-line anaphylaxis treatment", "back": "Intramuscular epinephrine"}, {"front": "Toxin-mediated shock with rash/fever", "back": "Toxic shock syndrome (superantigen)"}, {"front": "Type of shock in anaphylaxis", "back": "Distributive (low systemic vascular resistance)"}], "firstAid": [{"tag": "answer / stem", "topic": "Anaphylaxis", "detail": "Immuno: IgE/mast cell mediators -> vasodilation + increased vascular permeability -> distributive shock."}, {"tag": "options", "topic": "Toxic shock syndrome", "detail": "Micro > superantigen toxin -> cytokines; distinguish toxin-mediated from IgE-mediated shock."}, {"tag": "context", "topic": "Type I hypersensitivity", "detail": "Immuno > sensitization (IgE) then re-exposure -> mast cell degranulation; epinephrine."}], "memoryHook": "Wasp sting, hives, and a crashing BP: mast cells dump histamine, vessels dilate and leak - fluid leaves, pressure drops. Epi now.", "stem": [{"text": "A 25-year-old woman is brought to the emergency department "}, {"text": "40 minutes after being stung by several wasps", "clue": true, "type": "orange", "note": "A rapid reaction (minutes) after an insect sting is the hallmark timing of type I (immediate, IgE-mediated) hypersensitivity - anaphylaxis to wasp venom."}, {"text": ". She reports "}, {"text": "throat tightness", "clue": true, "type": "red", "note": "Throat tightness signals airway/laryngeal involvement in anaphylaxis - a life-threatening feature requiring immediate epinephrine."}, {"text": " and dizziness. She has no chronic medical conditions and takes no medication. "}, {"text": "Blood pressure is 80/40 mm Hg", "clue": true, "type": "red", "note": "Hypotension (80/40 / normal ~120/80 mm Hg) with tachycardia is anaphylactic (distributive) shock from vasodilation and capillary fluid leak."}, {"text": ", pulse is 120/min, and respirations are 32/min. Examination shows "}, {"text": "diffuse erythematous plaques over the trunk", "clue": true, "type": "green", "note": "Diffuse urticaria (erythematous plaques) confirms a systemic IgE-mediated mast-cell reaction - anaphylaxis."}, {"text": " and 1+ pitting edema of the ankles. Which of the following is the most likely cause of this patient's hypotension?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

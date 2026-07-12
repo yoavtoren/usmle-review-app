@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocky Mountain spotted fever: doxycycline inhibits protein synthesis</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 7 · all 39</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q233", "item": 233, "qid": "15075", "title": "Rocky Mountain spotted fever: doxycycline inhibits protein synthesis", "system": "Microbiology", "topic": "RMSF / Rickettsia / doxycycline", "correct": "C", "yourAnswer": "C", "percentCorrect": 65, "vignette": "A previously healthy 24-year-old man is hospitalized due to 3 days of fever, chills, myalgia, and severe headache. The symptoms started on the last day of his camping trip in the Appalachian Mountains and have rapidly progressed. Temperature is 38.9 C (102 F), blood pressure is 100/56 mm Hg, and pulse is 120/min. On examination, the patient is lethargic and confused. There is no neck rigidity. The lungs are clear on auscultation and heart sounds are normal. The abdomen is soft and nontender. There is a prominent erythematous maculopapular rash on the distal forearms. No lymphadenopathy is present. The patient should be immediately initiated on a medication that targets which of the following?", "clues": [{"text": "fever, chills, myalgia, and severe headache", "type": "blue", "note": "A nonspecific prodrome of fever, headache, and myalgia precedes the rash in Rocky Mountain spotted fever (RMSF). Recognizing this early triad (before the rash fully develops) is what allows lifesaving empiric therapy."}, {"text": "camping trip in the Appalachian Mountains", "type": "orange", "note": "Outdoor/tick exposure is the key risk factor. Despite the name, RMSF is concentrated in the eastern and south-central United States (e.g., the Appalachian and mid-Atlantic regions), transmitted by Dermacentor (dog/wood) ticks."}, {"text": "erythematous maculopapular rash on the distal forearms", "type": "green", "note": "A macular rash beginning peripherally (wrists/forearms and ankles) and spreading centripetally - and that can involve the palms and soles - is the classic RMSF pattern and the confirmatory clue here."}], "whatMatters": "Tick/camping exposure + fever, headache, and myalgia + a maculopapular rash that starts on the wrists/forearms (peripheral, centripetal, can reach palms/soles) = Rocky Mountain spotted fever (Rickettsia rickettsii). Start empiric doxycycline immediately; it inhibits bacterial PROTEIN SYNTHESIS at the 30S ribosome. Answer C. Treat on suspicion - don't wait for serology.", "strategy": "Diagnose RMSF clinically (tick exposure + centripetal maculopapular rash), then map its drug (doxycycline) to its target = 30S ribosome -> protein synthesis. Match the distractors to their drug classes: DNA unwinding = fluoroquinolones (gyrase); folate = TMP-SMX; ergosterol = azoles (fungal); cell wall = penicillins (spirochetes); reverse transcription = antiretrovirals.", "options": [{"letter": "A", "text": "Bacterial DNA unwinding", "correct": false}, {"letter": "B", "text": "Bacterial folate metabolism", "correct": false}, {"letter": "C", "text": "Bacterial protein synthesis", "correct": true}, {"letter": "D", "text": "Fungal ergosterol synthesis", "correct": false}, {"letter": "E", "text": "Spirochetal cell wall formation", "correct": false}, {"letter": "F", "text": "Viral reverse transcription", "correct": false}], "eliminations": [{"letter": "A", "label": "Bacterial DNA unwinding - fluoroquinolones", "detail": "WHAT IT IS: fluoroquinolones inhibit DNA gyrase/topoisomerase II (DNA unwinding). ❌ WHY IT FAILS: they are not first-line for RMSF, which requires doxycycline. ✅ Correct if: enteric fever/Salmonella or a gram-negative needing a quinolone."}, {"letter": "B", "label": "Bacterial folate metabolism - TMP-SMX", "detail": "WHAT IT IS: sulfonamides/trimethoprim block folate synthesis. ❌ WHY IT FAILS: sulfa drugs can actually WORSEN RMSF; the answer is doxycycline (protein synthesis), not folate. ✅ Correct if: PCP prophylaxis/treatment, UTI, or Nocardia."}, {"letter": "D", "label": "Fungal ergosterol synthesis - azoles", "detail": "WHAT IT IS: azoles inhibit fungal ergosterol synthesis (cell membrane). ❌ WHY IT FAILS: RMSF is bacterial, not fungal. ✅ Correct if: a fungal infection (e.g., histoplasmosis, candidiasis)."}, {"letter": "E", "label": "Spirochetal cell wall formation - penicillin", "detail": "WHAT IT IS: penicillins block cell-wall (peptidoglycan) synthesis, used for spirochetes like Treponema. ❌ WHY IT FAILS: RMSF is a Rickettsia, not a spirochete; secondary syphilis also gives a palm/sole rash but with milder fever and lymphadenopathy. ✅ Correct if: secondary syphilis."}, {"letter": "F", "label": "Viral reverse transcription - antiretrovirals", "detail": "WHAT IT IS: NRTIs/NNRTIs block HIV reverse transcriptase. ❌ WHY IT FAILS: acute retroviral syndrome has a diffuse rash WITH lymphadenopathy, sore throat, and oral ulcers - and this patient has a tick exposure. ✅ Correct if: acute HIV (retroviral) syndrome."}], "reasoning": ["Tick habitat + fever/headache/myalgia + maculopapular rash on the wrists/forearms = Rocky Mountain spotted fever (Rickettsia rickettsii)", "RMSF requires urgent empiric doxycycline (delay increases mortality)", "Doxycycline binds the 30S ribosomal subunit and blocks aminoacyl-tRNA binding", "-> inhibits bacterial protein synthesis; answer C"], "mechanism": "RMSF is caused by Rickettsia rickettsii, an obligate intracellular, weakly gram-negative bacterium transmitted by Dermacentor (dog/wood) ticks in the eastern and south-central United States. It invades and lyses vascular endothelial cells, producing a small-vessel vasculitis manifesting as fever, headache, myalgia, and a maculopapular rash that classically begins on the wrists/ankles and spreads centripetally (often to the palms and soles), frequently with thrombocytopenia. First-line therapy is doxycycline, which binds the 30S bacterial ribosomal subunit and blocks binding of aminoacyl-tRNA, inhibiting protein synthesis; it must be started empirically on clinical suspicion because delayed treatment sharply increases mortality (even in children, doxycycline is preferred). The distractor targets correspond to fluoroquinolones (DNA gyrase), sulfonamides/trimethoprim (folate), azoles (ergosterol), penicillins (cell wall), and antiretrovirals (reverse transcriptase).", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Micro > RMSF: R. rickettsii, Dermacentor tick, endothelial vasculitis, centripetal rash to palms/soles, thrombocytopenia; doxycycline (30S) started empirically; antimicrobial target map."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Two-step: identify RMSF, then map its drug (doxycycline) to its molecular target (protein synthesis, 30S)."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on maculopapular, centripetal, obligate intracellular, 30S vs 50S, or vasculitis? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Each option is a different drug class's target. Doxycycline = protein synthesis (30S); quinolones = DNA gyrase; sulfa/TMP = folate; azoles = ergosterol; penicillin = cell wall; NRTIs = reverse transcriptase."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: tick + centripetal rash (palms/soles) = RMSF -> doxycycline (30S protein synthesis); treat first, test later."}], "keywords": [{"front": "Tick exposure + rash on wrists/ankles spreading inward (+/- palms/soles)", "back": "Rocky Mountain spotted fever (Rickettsia rickettsii)"}, {"front": "RMSF treatment (empiric, even in children)", "back": "Doxycycline (30S protein-synthesis inhibitor)"}, {"front": "Doxycycline / tetracyclines mechanism", "back": "Bind 30S ribosome, block aminoacyl-tRNA (protein synthesis)"}, {"front": "Fluoroquinolone mechanism", "back": "Inhibit DNA gyrase/topoisomerase II (DNA unwinding)"}, {"front": "TMP-SMX mechanism", "back": "Blocks folate synthesis (dihydropteroate synthase + dihydrofolate reductase)"}, {"front": "Rash involving palms/soles differential", "back": "RMSF, secondary syphilis, coxsackievirus (hand-foot-mouth)"}], "firstAid": [{"tag": "answer / stem", "topic": "Rocky Mountain spotted fever", "detail": "Micro: R. rickettsii, tick-borne; doxycycline (30S protein-synthesis inhibitor), start empirically."}, {"tag": "options", "topic": "Antimicrobial targets", "detail": "Pharm > quinolones (gyrase), sulfa/TMP (folate), azoles (ergosterol), penicillins (cell wall), NRTIs (RT)."}, {"tag": "context", "topic": "Rickettsia", "detail": "Micro > obligate intracellular; endothelial vasculitis; Weil-Felix; thrombocytopenia."}], "memoryHook": "'Rocky Mountain' but really the East Coast: tick + wrist-to-trunk rash = doxy, which jams the 30S protein line. Treat first, test later.", "stem": [{"text": "A previously healthy 24-year-old man is hospitalized due to 3 days of "}, {"text": "fever, chills, myalgia, and severe headache", "clue": true, "type": "blue", "note": "A nonspecific prodrome of fever, headache, and myalgia precedes the rash in Rocky Mountain spotted fever (RMSF). Recognizing this early triad (before the rash fully develops) is what allows lifesaving empiric therapy."}, {"text": ". The symptoms started on the last day of his "}, {"text": "camping trip in the Appalachian Mountains", "clue": true, "type": "orange", "note": "Outdoor/tick exposure is the key risk factor. Despite the name, RMSF is concentrated in the eastern and south-central United States (e.g., the Appalachian and mid-Atlantic regions), transmitted by Dermacentor (dog/wood) ticks."}, {"text": " and have rapidly progressed. Temperature is 38.9 C (102 F), blood pressure is 100/56 mm Hg, and pulse is 120/min. On examination, the patient is lethargic and confused. There is no neck rigidity. The lungs are clear on auscultation and heart sounds are normal. The abdomen is soft and nontender. There is a prominent "}, {"text": "erythematous maculopapular rash on the distal forearms", "clue": true, "type": "green", "note": "A macular rash beginning peripherally (wrists/forearms and ankles) and spreading centripetally - and that can involve the palms and soles - is the classic RMSF pattern and the confirmatory clue here."}, {"text": ". No lymphadenopathy is present. The patient should be immediately initiated on a medication that targets which of the following?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

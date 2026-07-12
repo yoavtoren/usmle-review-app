@@ -1,0 +1,193 @@
+{
+  "id": "q274",
+  "item": 274,
+  "qid": "19199",
+  "title": "Two continuous variables: use correlation analysis",
+  "system": "Biostatistics",
+  "topic": "Choosing a statistical test - correlation",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 51,
+  "vignette": "An investigator wants to examine the relationship between waist circumference and average diastolic blood pressure in a sample of adults. For each participant, waist circumference is recorded in centimeters and average diastolic blood pressure is recorded in mm Hg; both are measured as continuous quantitative variables. The investigator wants to quantify the strength and direction of the association between these two variables. Which of the following statistical methods is most appropriate?",
+  "clues": [
+    {
+      "text": "waist circumference is recorded in centimeters",
+      "type": "blue",
+      "note": "Waist circumference in centimeters is a continuous quantitative variable (variable 1)."
+    },
+    {
+      "text": "average diastolic blood pressure is recorded in mm Hg",
+      "type": "blue",
+      "note": "Diastolic blood pressure in mm Hg is a second continuous quantitative variable (variable 2)."
+    },
+    {
+      "text": "quantify the strength and direction of the association",
+      "type": "green",
+      "note": "Assessing strength AND direction of a linear relationship between two continuous variables is exactly what a correlation coefficient (r) does."
+    }
+  ],
+  "whatMatters": "Two continuous quantitative variables (waist circumference, diastolic blood pressure) with the goal of measuring the strength and direction of their association = CORRELATION ANALYSIS (Pearson r). Answer C. The chi-square test is for categorical data, ANOVA/t-test compare means across groups, and relative risk needs a binary outcome.",
+  "strategy": "Match the data type to the test. Two continuous variables + measuring association -> correlation (or linear regression). Reject chi-square (two categorical variables), t-test (compare a mean between 2 groups), ANOVA (compare means across ≥3 groups), and relative risk (needs categorical exposure + categorical outcome).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Analysis of variance (ANOVA)",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Chi-square test",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Correlation analysis",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Relative risk calculation",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Two-sample t-test",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "ANOVA - compares means across ≥3 groups",
+      "detail": "WHAT IT IS: analysis of variance compares the means of a continuous outcome across 3 or more groups. ❌ WHY IT FAILS: there are no discrete groups here - both variables are continuous. ✅ Correct if: comparing a mean value among ≥3 categories."
+    },
+    {
+      "letter": "B",
+      "label": "Chi-square test - two categorical variables",
+      "detail": "WHAT IT IS: the chi-square test assesses association between two categorical variables. ❌ WHY IT FAILS: waist circumference and blood pressure are continuous, not categorical. ✅ Correct if: both variables were categorical (e.g., a 2x2 table)."
+    },
+    {
+      "letter": "D",
+      "label": "Relative risk - needs binary exposure and outcome",
+      "detail": "WHAT IT IS: relative risk compares the probability of an outcome between exposed and unexposed groups. ❌ WHY IT FAILS: it requires categorical exposure and outcome, not two continuous measures. ✅ Correct if: comparing disease risk between two exposure categories."
+    },
+    {
+      "letter": "E",
+      "label": "Two-sample t-test - compares 2 group means",
+      "detail": "WHAT IT IS: compares the mean of a continuous variable between two groups. ❌ WHY IT FAILS: there is one continuous variable per subject related to another continuous variable, not a mean compared between 2 groups. ✅ Correct if: comparing a continuous mean between exactly 2 groups."
+    }
+  ],
+  "reasoning": [
+    "Both variables (waist circumference, diastolic BP) are continuous and quantitative",
+    "Goal is to measure the strength and direction of their association",
+    "Two continuous variables + association -> correlation analysis (Pearson r)",
+    "-> correlation analysis; answer C"
+  ],
+  "mechanism": "Correlation analysis quantifies the linear association between two continuous variables using a correlation coefficient (Pearson r), which ranges from -1 to +1: the sign indicates direction (positive = both rise together; negative = one rises as the other falls) and the magnitude indicates strength (near 0 = weak/no linear association; near 1 = strong). It answers 'how strongly and in what direction do these two continuous measures move together?' Linear regression is a related method that additionally models the numeric relationship (slope) and can predict one variable from the other. The distractors require different data structures: chi-square needs two categorical variables; the two-sample t-test and ANOVA compare a continuous mean across 2 or ≥3 groups, respectively; and relative risk requires a categorical exposure and a categorical outcome.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biostat > choosing a test by variable type: 2 continuous variables + association -> correlation/regression; chi-square (2 categorical); t-test (mean, 2 groups); ANOVA (mean, ≥3 groups)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Recognize that BOTH variables are continuous and the goal is association strength/direction -> correlation."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on continuous vs categorical variable, correlation coefficient (r), ANOVA, or relative risk? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Chi-square (categorical), t-test/ANOVA (group means), relative risk (binary exposure/outcome) all mismatch the data type."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: 2 continuous variables -> correlation (r) / linear regression; sign = direction, magnitude = strength."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Test for association between 2 continuous variables",
+      "back": "Correlation analysis (Pearson r) / linear regression"
+    },
+    {
+      "front": "Correlation coefficient r range and meaning",
+      "back": "-1 to +1; sign = direction, magnitude = strength"
+    },
+    {
+      "front": "Two categorical variables -> which test",
+      "back": "Chi-square test"
+    },
+    {
+      "front": "Compare a mean between exactly 2 groups",
+      "back": "Two-sample t-test"
+    },
+    {
+      "front": "Compare means across ≥3 groups",
+      "back": "ANOVA"
+    },
+    {
+      "front": "Measure needing binary exposure + outcome",
+      "back": "Relative risk (cohort) / odds ratio (case-control)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Correlation",
+      "detail": "Biostat: 2 continuous variables -> Pearson correlation (r), sign=direction, magnitude=strength.",
+      "location": "Biostat: 2 continuous variables -> Pearson correlation (r), sign=direction, magnitude=strength."
+    },
+    {
+      "tag": "options",
+      "topic": "Statistical test selection",
+      "detail": "Biostat > chi-square (categorical), t-test/ANOVA (means), relative risk (binary).",
+      "location": "Biostat > chi-square (categorical), t-test/ANOVA (means), relative risk (binary)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Correlation vs regression",
+      "detail": "Biostat > correlation = strength/direction; regression = slope/prediction.",
+      "location": "Biostat > correlation = strength/direction; regression = slope/prediction."
+    }
+  ],
+  "memoryHook": "Two rulers, not two buckets: continuous vs continuous -> correlation. Buckets (categories) -> chi-square.",
+  "stem": [
+    {
+      "text": "An investigator wants to examine the relationship between waist circumference and average diastolic blood pressure in a sample of adults. For each participant, "
+    },
+    {
+      "text": "waist circumference is recorded in centimeters",
+      "clue": true,
+      "type": "blue",
+      "note": "Waist circumference in centimeters is a continuous quantitative variable (variable 1)."
+    },
+    {
+      "text": " and "
+    },
+    {
+      "text": "average diastolic blood pressure is recorded in mm Hg",
+      "clue": true,
+      "type": "blue",
+      "note": "Diastolic blood pressure in mm Hg is a second continuous quantitative variable (variable 2)."
+    },
+    {
+      "text": "; both are measured as continuous quantitative variables. The investigator wants to "
+    },
+    {
+      "text": "quantify the strength and direction of the association",
+      "clue": true,
+      "type": "green",
+      "note": "Assessing strength AND direction of a linear relationship between two continuous variables is exactly what a correlation coefficient (r) does."
+    },
+    {
+      "text": " between these two variables. Which of the following statistical methods is most appropriate?"
+    }
+  ]
+}

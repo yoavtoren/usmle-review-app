@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oligohydramnios and Potter: a sequence</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 7 · all 39</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q257", "item": 257, "qid": "107624", "title": "Oligohydramnios and Potter: a sequence", "system": "Embryology", "topic": "Potter sequence / congenital anomaly patterns", "correct": "E", "yourAnswer": "A", "percentCorrect": 79, "vignette": "A newborn boy is being evaluated in the delivery room due to respiratory distress. He was born at 37 weeks gestation to a 28-year-old primigravida via cesarean delivery due to breech presentation. The mother had limited prenatal care but was noted to have oligohydramnios during pregnancy. Examination of the infant is significant for a flattened nose and ears, recessed chin, and bilateral clubfoot deformity. Breath sounds are decreased bilaterally. This pattern of findings is best classified as which of the following?", "clues": [{"text": "oligohydramnios during pregnancy", "type": "red", "note": "Low amniotic fluid (oligohydramnios) is the PRIMARY inciting event. It causes fetal compression, and the downstream anomalies all follow from that single mechanical cause - the definition of a sequence."}, {"text": "flattened nose and ears, recessed chin", "type": "green", "note": "Flattened facies (flat nose, low-set ears, recessed chin) results from extrinsic compression by the low fluid - part of the Potter sequence cascade."}, {"text": "bilateral clubfoot deformity", "type": "blue", "note": "Limb deformities (clubfoot, contractures) arise from restricted fetal movement in a compressed uterus - another downstream effect of oligohydramnios."}, {"text": "Breath sounds are decreased bilaterally", "type": "blue", "note": "Pulmonary hypoplasia (from restricted thoracic expansion) causes respiratory distress and decreased breath sounds - the most severe, often fatal, component of Potter sequence."}], "whatMatters": "Oligohydramnios -> fetal compression -> flattened facies + limb deformities (clubfoot) + pulmonary hypoplasia = Potter SEQUENCE. A sequence is a cascade of anatomically related anomalies all arising from ONE primary anomaly/inciting event (here, low amniotic fluid). Answer E.", "strategy": "Match the pattern to the definition. Because ONE primary event (oligohydramnios) causes a predictable chain of related anomalies (cause-and-effect), it's a SEQUENCE. Contrast: association = anomalies co-occurring more than by chance with NO known cause (VACTERL); syndrome = anomalies from one underlying (usually genetic) cause developing INDEPENDENTLY; dysplasia = abnormal tissue organization; mosaicism = two genetically distinct cell lines.", "options": [{"letter": "A", "text": "Association", "correct": false}, {"letter": "B", "text": "Dysplasia", "correct": false}, {"letter": "C", "text": "Mosaicism", "correct": false}, {"letter": "D", "text": "Polymorphism", "correct": false}, {"letter": "E", "text": "Sequence", "correct": true}], "eliminations": [{"letter": "A", "label": "Association - co-occurrence, no known cause, your pick", "detail": "WHAT IT IS: an association is >=2 anomalies that occur together more often than by chance but WITHOUT a known unifying cause (e.g., VACTERL). ❌ WHY IT FAILS: here there IS a known primary cause (oligohydramnios) driving a cascade - that's a sequence, not an association. ✅ Correct if: VACTERL or another non-random co-occurrence without an identified cause."}, {"letter": "B", "label": "Dysplasia - abnormal tissue organization", "detail": "WHAT IT IS: dysplasia is abnormal cellular/tissue organization or growth (e.g., skeletal dysplasia). ❌ WHY IT FAILS: Potter findings are mechanical deformations from compression, not a tissue-organization defect. ✅ Correct if: a primary abnormal-tissue-growth disorder."}, {"letter": "C", "label": "Mosaicism - two cell lines", "detail": "WHAT IT IS: mosaicism is the presence of two or more genetically distinct cell populations in one individual. ❌ WHY IT FAILS: this is a mechanical cascade, not a genetic-mosaic phenomenon. ✅ Correct if: mosaic Turner/Down syndrome."}, {"letter": "D", "label": "Polymorphism - normal genetic variation", "detail": "WHAT IT IS: a polymorphism is a common normal genetic variant in a population (e.g., eye color). ❌ WHY IT FAILS: it doesn't describe a pattern of birth defects. ✅ Correct if: describing benign genetic variation."}], "reasoning": ["Oligohydramnios is a single primary inciting event", "It mechanically compresses the fetus, producing a predictable, related cascade of anomalies", "Flattened facies + clubfoot + pulmonary hypoplasia all follow from that one cause (cause-and-effect)", "-> this is a sequence (Potter sequence); answer E"], "mechanism": "A sequence is a predictable pattern of multiple anatomically related anomalies that develop as a consequence of a single primary anomaly or mechanical event (a cause-and-effect cascade). In Potter sequence, oligohydramnios - often from a genitourinary anomaly (e.g., bilateral renal agenesis) impairing fetal urine production, or from preterm rupture of membranes - reduces amniotic fluid so the fetus is compressed. This mechanical constraint produces the characteristic downstream findings: pulmonary hypoplasia (restricted thoracic expansion -> respiratory distress, often fatal), flattened facies (flat nasal bridge, low-set ears, recessed chin), and limb deformities such as clubfoot and contractures. Because all findings stem from one inciting event, this is a sequence - distinct from an association (co-occurring anomalies without a known cause, e.g., VACTERL), a syndrome (anomalies from a single underlying, often genetic, cause developing independently), dysplasia (abnormal tissue organization), or mosaicism (two genetically distinct cell lines).", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Embryo > patterns of anomalies: sequence (one primary event -> cascade; Potter, Pierre Robin), association (VACTERL), syndrome (single cause, independent anomalies), dysplasia, mosaicism."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Because ONE primary cause (oligohydramnios) drives a predictable chain, classify it as a sequence, not an association."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on sequence vs association vs syndrome, oligohydramnios, pulmonary hypoplasia, or Potter? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Association (your pick) implies NO known cause; here the cause (oligohydramnios) is known and drives the cascade -> sequence."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: sequence = one primary anomaly -> cascade of related defects (Potter from oligohydramnios); association = co-occurrence, no known cause (VACTERL)."}], "keywords": [{"front": "One primary anomaly -> predictable cascade of related defects", "back": "Sequence (e.g., Potter, Pierre Robin)"}, {"front": "Oligohydramnios cascade (flat facies, clubfoot, pulmonary hypoplasia)", "back": "Potter sequence"}, {"front": "Anomalies co-occurring more than chance, NO known cause", "back": "Association (VACTERL)"}, {"front": "Anomalies from one underlying cause, developing independently", "back": "Syndrome (e.g., Down, Marfan)"}, {"front": "Most severe (often fatal) Potter feature", "back": "Pulmonary hypoplasia (respiratory distress)"}, {"front": "Common causes of oligohydramnios", "back": "Bilateral renal agenesis/GU anomaly; preterm rupture of membranes"}], "firstAid": [{"tag": "answer / stem", "topic": "Potter sequence", "detail": "Embryo: oligohydramnios -> compression -> pulmonary hypoplasia, flat facies, limb deformities (a sequence)."}, {"tag": "options", "topic": "Anomaly patterns", "detail": "Embryo > sequence vs association (VACTERL) vs syndrome vs dysplasia vs mosaicism."}, {"tag": "context", "topic": "Amniotic fluid", "detail": "Embryo/Renal > fetal urine maintains amniotic fluid; oligohydramnios -> Potter."}], "memoryHook": "One kink (low fluid) sets off a chain: squished face, clubfeet, tiny lungs. One cause, many defects in a row = a SEQUENCE (Potter).", "stem": [{"text": "A newborn boy is being evaluated in the delivery room due to respiratory distress. He was born at 37 weeks gestation to a 28-year-old primigravida via cesarean delivery due to breech presentation. The mother had limited prenatal care but was noted to have "}, {"text": "oligohydramnios during pregnancy", "clue": true, "type": "red", "note": "Low amniotic fluid (oligohydramnios) is the PRIMARY inciting event. It causes fetal compression, and the downstream anomalies all follow from that single mechanical cause - the definition of a sequence."}, {"text": ". Examination of the infant is significant for a "}, {"text": "flattened nose and ears, recessed chin", "clue": true, "type": "green", "note": "Flattened facies (flat nose, low-set ears, recessed chin) results from extrinsic compression by the low fluid - part of the Potter sequence cascade."}, {"text": ", and "}, {"text": "bilateral clubfoot deformity", "clue": true, "type": "blue", "note": "Limb deformities (clubfoot, contractures) arise from restricted fetal movement in a compressed uterus - another downstream effect of oligohydramnios."}, {"text": ". "}, {"text": "Breath sounds are decreased bilaterally", "clue": true, "type": "blue", "note": "Pulmonary hypoplasia (from restricted thoracic expansion) causes respiratory distress and decreased breath sounds - the most severe, often fatal, component of Potter sequence."}, {"text": ". This pattern of findings is best classified as which of the following?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

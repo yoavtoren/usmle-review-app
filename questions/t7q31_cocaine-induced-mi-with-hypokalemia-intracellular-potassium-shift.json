@@ -1,0 +1,193 @@
+{
+  "id": "q261",
+  "item": 261,
+  "qid": "16978",
+  "title": "Cocaine-induced MI with hypokalemia: intracellular potassium shift",
+  "system": "Physiology",
+  "topic": "Hypokalemia (beta-adrenergic intracellular shift)",
+  "correct": "C",
+  "yourAnswer": "D",
+  "percentCorrect": 72,
+  "vignette": "A 44-year-old man comes to the hospital due to acute onset of central chest pain radiating to the left arm. He used cocaine a few hours ago. Blood pressure is 160/100 mm Hg, pulse is 98/min, and respirations are 18/min. On examination, the patient appears anxious and diaphoretic. Electrocardiogram shows ST-segment elevation in the anterior leads. Laboratory studies reveal an elevated cardiac troponin level and a serum potassium concentration of 3.1 mEq/L. Which of the following is the most likely cause of this patient's hypokalemia?",
+  "clues": [
+    {
+      "text": "used cocaine a few hours ago",
+      "type": "orange",
+      "note": "Cocaine causes a surge in catecholamines (blocks reuptake). Excess catecholamines drive potassium INTO cells via beta-2-adrenergic stimulation of the Na/K-ATPase - producing acute hypokalemia."
+    },
+    {
+      "text": "ST-segment elevation in the anterior leads",
+      "type": "blue",
+      "note": "ST elevation with elevated troponin indicates an acute myocardial infarction (cocaine-induced coronary vasospasm/thrombosis) - a major physiologic stress amplifying catecholamine release."
+    },
+    {
+      "text": "serum potassium concentration of 3.1 mEq/L",
+      "type": "green",
+      "note": "Hypokalemia (K+ 3.1 / normal 3.5-5.0 mEq/L). With total body potassium unchanged acutely, the low serum level reflects an intracellular SHIFT driven by catecholamines - not renal or GI loss."
+    }
+  ],
+  "whatMatters": "Cocaine + acute MI = massive catecholamine (beta-adrenergic) surge, which activates the Na/K-ATPase and shifts potassium INTO cells. That intracellular shift lowers serum K+ (3.1 / normal 3.5-5.0) acutely without a change in total body potassium. Answer C. (Not renal or GI loss.)",
+  "strategy": "Ask WHERE the potassium went. Acute hypokalemia with a catecholamine surge (cocaine/stress/MI, or beta-agonists, insulin, alkalosis) = intracellular SHIFT (answer C), not a true loss. Reject loss mechanisms (renal/GI) and 'new cell uptake' (which needs rapid hematopoiesis, e.g., leukemia/GM-CSF, not present here).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased dietary potassium intake",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Exchange of potassium with sodium in the intestine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased intracellular shift of potassium",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Increased urinary loss of potassium",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Increased use of potassium by new cells",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Decreased dietary intake - too slow/severe",
+      "detail": "WHAT IT IS: hypokalemia from very poor oral intake (anorexia, starvation). ❌ WHY IT FAILS: dietary lack develops slowly and doesn't explain acute hypokalemia during a catecholamine surge. ✅ Correct if: chronic malnutrition/anorexia."
+    },
+    {
+      "letter": "B",
+      "label": "Intestinal K/Na exchange - GI cation exchangers",
+      "detail": "WHAT IT IS: GI potassium loss (e.g., cation-exchange resins, diarrhea). ❌ WHY IT FAILS: no GI losses are described; the cause here is a transcellular shift. ✅ Correct if: prolonged diarrhea or a potassium-binding resin."
+    },
+    {
+      "letter": "D",
+      "label": "Increased urinary loss - hyperaldosteronism/diuretics, your pick",
+      "detail": "WHAT IT IS: renal potassium wasting from diuretics or elevated aldosterone. ❌ WHY IT FAILS: nothing indicates diuretics or hyperaldosteronism; this patient's hypertension is from cocaine, and the acute drop reflects an intracellular shift. ✅ Correct if: diuretic use or primary hyperaldosteronism."
+    },
+    {
+      "letter": "E",
+      "label": "Increased use by new cells - rapid hematopoiesis",
+      "detail": "WHAT IT IS: potassium uptake during accelerated cell production (acute leukemia, GM-CSF, B12 treatment of megaloblastic anemia). ❌ WHY IT FAILS: those risk factors aren't present. ✅ Correct if: hypokalemia during rapid cell proliferation."
+    }
+  ],
+  "reasoning": [
+    "Cocaine + acute MI -> large catecholamine (beta-adrenergic) surge",
+    "Beta-2 stimulation activates Na/K-ATPase, driving potassium INTO cells",
+    "Serum potassium falls acutely (3.1 mEq/L) without a change in total body potassium",
+    "-> increased intracellular shift of potassium; answer C"
+  ],
+  "mechanism": "Serum potassium can fall from decreased intake, renal or GI losses, or a transcellular SHIFT of potassium into cells. Severe physiologic stress (myocardial infarction) and cocaine both markedly increase circulating catecholamines (cocaine blocks catecholamine reuptake). Epinephrine/norepinephrine stimulate beta-2 adrenergic receptors, activating the Na/K-ATPase (and the Na-K-2Cl cotransporter) to move potassium INTRACELLULARLY; adrenergic activity also releases insulin, which further shifts potassium into cells. The result is acute hypokalemia (here 3.1 mEq/L) with total body potassium unchanged - a redistribution rather than a true loss. The same intracellular shift is seen with beta-agonist drugs (albuterol), insulin, and alkalosis. Renal/GI losses and uptake by rapidly dividing cells are the other categories, but none fit this acute catecholamine-driven scenario.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Renal/Physio > causes of hypokalemia: decreased intake, transcellular shift (beta-agonists, insulin, alkalosis, stress/catecholamines), renal loss (diuretics, hyperaldosteronism), GI loss."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Classify the MECHANISM: acute catecholamine surge -> intracellular shift, not a true loss."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on transcellular shift, Na/K-ATPase, beta-2 adrenergic, or hypokalemia? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Increased urinary loss (your pick) needs diuretics/hyperaldosteronism (not present); GI loss and new-cell uptake also lack supporting clues."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: cocaine/stress/beta-agonists/insulin/alkalosis -> potassium shifts INTO cells -> acute hypokalemia (redistribution, not loss)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Acute hypokalemia after cocaine/MI (catecholamine surge)",
+      "back": "Intracellular (transcellular) potassium shift"
+    },
+    {
+      "front": "Beta-2 adrenergic effect on potassium",
+      "back": "Activates Na/K-ATPase -> K+ into cells (lowers serum K)"
+    },
+    {
+      "front": "Causes of transcellular K+ shift",
+      "back": "Beta-agonists, insulin, alkalosis, catecholamines/stress"
+    },
+    {
+      "front": "Renal potassium wasting causes",
+      "back": "Diuretics, hyperaldosteronism, RTA types 1 & 2"
+    },
+    {
+      "front": "Hypokalemia from 'new cells'",
+      "back": "Rapid hematopoiesis (acute leukemia, GM-CSF, B12 for megaloblastic anemia)"
+    },
+    {
+      "front": "Normal serum potassium range",
+      "back": "3.5-5.0 mEq/L"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Hypokalemia - transcellular shift",
+      "detail": "Renal/Physio: catecholamines/beta-2 -> Na/K-ATPase -> K+ into cells (cocaine/MI stress).",
+      "location": "Renal/Physio: catecholamines/beta-2 -> Na/K-ATPase -> K+ into cells (cocaine/MI stress)."
+    },
+    {
+      "tag": "options",
+      "topic": "Causes of hypokalemia",
+      "detail": "Renal > intake, shift, renal loss (diuretics/aldosterone), GI loss, cell uptake.",
+      "location": "Renal > intake, shift, renal loss (diuretics/aldosterone), GI loss, cell uptake."
+    },
+    {
+      "tag": "context",
+      "topic": "Cocaine cardiotoxicity",
+      "detail": "CV > coronary vasospasm/MI; catecholamine excess; avoid beta-blocker monotherapy.",
+      "location": "CV > coronary vasospasm/MI; catecholamine excess; avoid beta-blocker monotherapy."
+    }
+  ],
+  "memoryHook": "Cocaine floods catecholamines; beta-2 pumps potassium INTO cells. Serum K drops fast - not lost, just hiding inside.",
+  "stem": [
+    {
+      "text": "A 44-year-old man comes to the hospital due to acute onset of central chest pain radiating to the left arm. He "
+    },
+    {
+      "text": "used cocaine a few hours ago",
+      "clue": true,
+      "type": "orange",
+      "note": "Cocaine causes a surge in catecholamines (blocks reuptake). Excess catecholamines drive potassium INTO cells via beta-2-adrenergic stimulation of the Na/K-ATPase - producing acute hypokalemia."
+    },
+    {
+      "text": ". Blood pressure is 160/100 mm Hg, pulse is 98/min, and respirations are 18/min. On examination, the patient appears anxious and diaphoretic. Electrocardiogram shows "
+    },
+    {
+      "text": "ST-segment elevation in the anterior leads",
+      "clue": true,
+      "type": "blue",
+      "note": "ST elevation with elevated troponin indicates an acute myocardial infarction (cocaine-induced coronary vasospasm/thrombosis) - a major physiologic stress amplifying catecholamine release."
+    },
+    {
+      "text": ". Laboratory studies reveal an elevated cardiac troponin level and a "
+    },
+    {
+      "text": "serum potassium concentration of 3.1 mEq/L",
+      "clue": true,
+      "type": "green",
+      "note": "Hypokalemia (K+ 3.1 / normal 3.5-5.0 mEq/L). With total body potassium unchanged acutely, the low serum level reflects an intracellular SHIFT driven by catecholamines - not renal or GI loss."
+    },
+    {
+      "text": ". Which of the following is the most likely cause of this patient's hypokalemia?"
+    }
+  ]
+}

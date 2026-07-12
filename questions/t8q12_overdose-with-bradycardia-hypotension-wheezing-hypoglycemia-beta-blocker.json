@@ -1,0 +1,207 @@
+{
+  "id": "q281",
+  "item": 281,
+  "qid": "19182",
+  "title": "Overdose with bradycardia + hypotension + wheezing + hypoglycemia = beta blocker",
+  "system": "Pharmacology",
+  "topic": "Toxicology - beta blocker overdose",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 69,
+  "vignette": "A 30-year-old man is brought to the emergency department after an intentional overdose of one of his own medications. He is lethargic and minimally responsive. Blood pressure is 76/46 mm Hg and pulse is 38/min. Auscultation reveals diffuse wheezing. Fingerstick glucose is 48 mg/dL (normal 70-100). An ECG shows sinus bradycardia without QRS widening. Which of the following medications did this patient most likely ingest?",
+  "clues": [
+    {
+      "text": "intentional overdose of one of his own medications",
+      "type": "blue",
+      "note": "An intentional medication overdose frames this as a toxicology identification: match the vital-sign and metabolic pattern to a drug class. (Sensitive presentation - handled as clinical toxicology.)"
+    },
+    {
+      "text": "Blood pressure is 76/46 mm Hg and pulse is 38/min",
+      "type": "red",
+      "note": "Simultaneous severe hypotension (76/46) and bradycardia (38 / normal 60-100) indicate a cardiovascular depressant - classically a beta blocker or a non-dihydropyridine calcium channel blocker."
+    },
+    {
+      "text": "diffuse wheezing",
+      "type": "green",
+      "note": "Bronchospasm/wheezing points specifically to a (non-selective) BETA BLOCKER - beta-2 blockade in the airways - and away from calcium channel blockers, which do not cause bronchospasm."
+    },
+    {
+      "text": "glucose is 48 mg/dL",
+      "type": "green",
+      "note": "Hypoglycemia (48 / normal 70-100) favors beta blocker toxicity (blunted glycogenolysis/gluconeogenesis), whereas calcium channel blocker overdose classically causes HYPERglycemia."
+    }
+  ],
+  "whatMatters": "Bradycardia + hypotension + bronchospasm (wheezing) + HYPOglycemia is the fingerprint of BETA BLOCKER overdose. Beta-1 blockade slows the heart and drops blood pressure, beta-2 blockade causes bronchospasm, and loss of beta-adrenergic glycogenolysis lowers glucose. Answer A. (A non-DHP calcium channel blocker gives bradycardia/hypotension too, but with HYPERglycemia and no wheeze.)",
+  "strategy": "Use the discriminators. Both beta blockers and non-DHP calcium channel blockers cause bradycardia + hypotension, so look at the extras: wheezing + hypoglycemia = beta blocker; hyperglycemia (impaired insulin release) = calcium channel blocker. Digoxin causes GI/visual symptoms and arrhythmias with hyperkalemia; opioids cause respiratory depression/miosis; benzodiazepines cause sedation without this hemodynamic collapse.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Beta blocker",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Non-dihydropyridine calcium channel blocker",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Digoxin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Opioid",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Benzodiazepine",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Non-DHP calcium channel blocker - hyperglycemia, no wheeze",
+      "detail": "WHAT IT IS: verapamil/diltiazem overdose, which also causes bradycardia and hypotension. ❌ WHY IT FAILS: calcium channel blocker toxicity classically produces HYPERglycemia (blocked pancreatic insulin release) and does NOT cause bronchospasm - opposite of this patient's hypoglycemia and wheezing. ✅ Correct if: bradycardia/hypotension WITH hyperglycemia."
+    },
+    {
+      "letter": "C",
+      "label": "Digoxin - GI/visual + hyperkalemia pattern",
+      "detail": "WHAT IT IS: digoxin toxicity causes nausea/vomiting, visual changes (yellow halos), and various arrhythmias. ❌ WHY IT FAILS: it presents with hyperkalemia and characteristic ECG/arrhythmias, not bronchospasm and hypoglycemia. ✅ Correct if: nausea + yellow vision + hyperkalemia + arrhythmia."
+    },
+    {
+      "letter": "D",
+      "label": "Opioid - respiratory depression + miosis",
+      "detail": "WHAT IT IS: opioid overdose causes CNS/respiratory depression with pinpoint pupils. ❌ WHY IT FAILS: the hallmark is hypoventilation and miosis, not bradycardia with bronchospasm and hypoglycemia. ✅ Correct if: depressed respirations + pinpoint pupils (reverse with naloxone)."
+    },
+    {
+      "letter": "E",
+      "label": "Benzodiazepine - sedation without hemodynamic collapse",
+      "detail": "WHAT IT IS: benzodiazepine overdose causes sedation and mild respiratory depression. ❌ WHY IT FAILS: it does not typically produce profound bradycardia/hypotension, wheezing, or hypoglycemia. ✅ Correct if: isolated sedation with stable vitals (reverse cautiously with flumazenil)."
+    }
+  ],
+  "reasoning": [
+    "Overdose with severe bradycardia + hypotension = cardiovascular depressant (beta blocker vs non-DHP CCB)",
+    "Wheezing (bronchospasm) + hypoglycemia are specific to beta blockade",
+    "Non-DHP CCB would instead cause hyperglycemia and no bronchospasm",
+    "-> beta blocker; answer A"
+  ],
+  "mechanism": "Beta blockers antagonize catecholamines at beta-adrenergic receptors. Beta-1 blockade in the heart reduces heart rate (bradycardia) and contractility, lowering cardiac output and blood pressure; in overdose this produces profound bradycardia and hypotension. Beta-2 blockade (with non-selective agents such as propranolol) causes bronchoconstriction, hence the wheezing. Beta-adrenergic signaling also normally promotes hepatic glycogenolysis and gluconeogenesis and masks adrenergic warning signs of low glucose; blocking it can cause hypoglycemia. Together, bradycardia + hypotension + bronchospasm + hypoglycemia is a classic beta blocker overdose pattern. The key mimic, a non-dihydropyridine calcium channel blocker (verapamil/diltiazem), shares the bradycardia/hypotension but causes HYPERglycemia (calcium channel blockade impairs pancreatic insulin secretion) and no bronchospasm. Beta blocker toxicity is treated with IV fluids, atropine, glucagon (which raises cardiac cAMP bypassing the beta receptor), and high-dose insulin-euglycemia therapy.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm/Tox > beta blocker overdose: bradycardia, hypotension, bronchospasm, hypoglycemia; antidote glucagon; contrast CCB overdose (hyperglycemia)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two toxins cause bradycardia + hypotension; the wheeze + low glucose select the beta blocker."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on beta-1 vs beta-2 effects, glycogenolysis, non-DHP CCB, or glucagon antidote? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Non-DHP CCB (hyperglycemia, no wheeze), digoxin (GI/visual/hyperkalemia), opioid (miosis/respiratory depression), benzodiazepine (sedation) don't fit the full tetrad."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: beta blocker OD -> bradycardia + hypotension + bronchospasm + hypoglycemia; glucagon antidote. CCB OD -> hyperglycemia."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Bradycardia + hypotension + wheeze + hypoglycemia (overdose)",
+      "back": "Beta blocker toxicity"
+    },
+    {
+      "front": "Antidote for beta blocker overdose",
+      "back": "Glucagon (raises cardiac cAMP, bypassing beta receptor)"
+    },
+    {
+      "front": "Bradycardia + hypotension + HYPERglycemia (overdose)",
+      "back": "Non-DHP calcium channel blocker (verapamil/diltiazem)"
+    },
+    {
+      "front": "Why beta blockers cause hypoglycemia",
+      "back": "Blocked glycogenolysis/gluconeogenesis + masked adrenergic warning signs"
+    },
+    {
+      "front": "Beta-2 blockade airway effect",
+      "back": "Bronchospasm (avoid nonselective beta blockers in asthma)"
+    },
+    {
+      "front": "Opioid overdose triad",
+      "back": "CNS/respiratory depression + miosis (naloxone)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Beta blocker toxicity",
+      "detail": "Pharm: bradycardia, hypotension, bronchospasm, hypoglycemia; treat with glucagon.",
+      "location": "Pharm: bradycardia, hypotension, bronchospasm, hypoglycemia; treat with glucagon."
+    },
+    {
+      "tag": "options",
+      "topic": "Cardiovascular drug overdoses",
+      "detail": "Tox > CCB (hyperglycemia), digoxin (hyperkalemia/visual), opioid (miosis).",
+      "location": "Tox > CCB (hyperglycemia), digoxin (hyperkalemia/visual), opioid (miosis)."
+    },
+    {
+      "tag": "antidotes",
+      "topic": "Toxidrome antidotes",
+      "detail": "Pharm > glucagon (beta blocker), calcium/insulin (CCB), naloxone (opioid), flumazenil (benzodiazepine).",
+      "location": "Pharm > glucagon (beta blocker), calcium/insulin (CCB), naloxone (opioid), flumazenil (benzodiazepine)."
+    }
+  ],
+  "memoryHook": "Beta blocker overdose hits all four betas at once: slow heart, low pressure, tight airways, low sugar - and glucagon is the escape hatch.",
+  "stem": [
+    {
+      "text": "A 30-year-old man is brought to the emergency department after an "
+    },
+    {
+      "text": "intentional overdose of one of his own medications",
+      "clue": true,
+      "type": "blue",
+      "note": "An intentional medication overdose frames this as a toxicology identification: match the vital-sign and metabolic pattern to a drug class. (Sensitive presentation - handled as clinical toxicology.)"
+    },
+    {
+      "text": ". He is lethargic and minimally responsive. "
+    },
+    {
+      "text": "Blood pressure is 76/46 mm Hg and pulse is 38/min",
+      "clue": true,
+      "type": "red",
+      "note": "Simultaneous severe hypotension (76/46) and bradycardia (38 / normal 60-100) indicate a cardiovascular depressant - classically a beta blocker or a non-dihydropyridine calcium channel blocker."
+    },
+    {
+      "text": ". Auscultation reveals "
+    },
+    {
+      "text": "diffuse wheezing",
+      "clue": true,
+      "type": "green",
+      "note": "Bronchospasm/wheezing points specifically to a (non-selective) BETA BLOCKER - beta-2 blockade in the airways - and away from calcium channel blockers, which do not cause bronchospasm."
+    },
+    {
+      "text": ". Fingerstick "
+    },
+    {
+      "text": "glucose is 48 mg/dL",
+      "clue": true,
+      "type": "green",
+      "note": "Hypoglycemia (48 / normal 70-100) favors beta blocker toxicity (blunted glycogenolysis/gluconeogenesis), whereas calcium channel blocker overdose classically causes HYPERglycemia."
+    },
+    {
+      "text": " (normal 70-100). An ECG shows sinus bradycardia without QRS widening. Which of the following medications did this patient most likely ingest?"
+    }
+  ]
+}

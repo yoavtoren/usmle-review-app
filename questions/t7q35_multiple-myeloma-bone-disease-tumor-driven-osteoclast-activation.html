@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiple myeloma bone disease: tumor-driven osteoclast activation</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 7 · all 39</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q265", "item": 265, "qid": "15134", "title": "Multiple myeloma bone disease: tumor-driven osteoclast activation", "system": "Pathology", "topic": "Multiple myeloma (osteolytic lesions)", "correct": "E", "yourAnswer": "C", "percentCorrect": 62, "vignette": "A 66-year-old man comes to the office due to several weeks of back and lower extremity pain. The pain feels dull and achy and is worsened by movement, causing him to have difficulty bearing weight and ambulating. He has had no bladder or bowel dysfunction, extremity weakness, or numbness. The patient takes metformin for type 2 diabetes mellitus. He drinks 2 alcoholic beverages daily. Physical examination shows no gross abnormality or deformity of the back or extremities. There is no swelling or redness of the legs, and neurological examination is normal. A radiograph of the right lower extremity shows a well-defined, purely radiolucent (osteolytic) lesion without surrounding sclerosis. Laboratory results show hemoglobin 9.6 g/dL (normal 13.5-17.5), creatinine 1.6 mg/dL, calcium 11.0 mg/dL (normal 8.4-10.2), total protein 8.8 g/dL (normal 6.0-7.8), and albumin 3.8 g/dL. Which of the following is the most likely explanation for this patient's bone changes?", "clues": [{"text": "purely radiolucent (osteolytic) lesion without surrounding sclerosis", "type": "green", "note": "A purely lytic (radiolucent) bone lesion with NO sclerotic rim is characteristic of multiple myeloma - myeloma uniquely activates osteoclasts AND inhibits osteoblasts, so there's no bone-forming (blastic) response."}, {"text": "hemoglobin 9.6 g/dL", "type": "blue", "note": "Normocytic anemia (Hb 9.6 / normal 13.5-17.5) from marrow infiltration by plasma cells - part of the myeloma 'CRAB' picture."}, {"text": "calcium 11.0 mg/dL", "type": "red", "note": "Hypercalcemia (Ca 11.0 / normal 8.4-10.2) from osteolysis - the 'C' of CRAB (hyperCalcemia, Renal failure, Anemia, Bone lesions)."}, {"text": "total protein 8.8 g/dL", "type": "green", "note": "An elevated total protein (8.8 / normal 6.0-7.8) with a relatively normal albumin implies excess GLOBULIN - a monoclonal paraprotein (M-spike) from the plasma cell clone. Anemia + hypercalcemia + high protein + renal insufficiency = multiple myeloma."}], "whatMatters": "Older man with bone pain, a purely lytic lesion, normocytic anemia, hypercalcemia, renal insufficiency, and an elevated total protein (paraprotein gap) = multiple myeloma (CRAB). Myeloma cells secrete factors (RANK-L, and osteoblast inhibitors) that cause LOCAL TUMOR-MEDIATED ACTIVATION OF OSTEOCLASTS (with osteoblast inhibition), producing purely osteolytic lesions. Answer E.", "strategy": "Assemble CRAB (hyperCalcemia, Renal, Anemia, Bone lesions) + high total protein -> multiple myeloma. Then explain the bone changes: myeloma stimulates osteoCLASTS (via RANK-L) and inhibits osteoBLASTS -> purely lytic lesions. Answer E. Reject: PTH/vitamin D excess (would raise those hormones and not give an M-spike/anemia), decreased urinary calcium (thiazide - increases density), and osteoBLAST activation (would make sclerotic, not lytic, lesions).", "options": [{"letter": "A", "text": "Decreased urinary calcium excretion", "correct": false}, {"letter": "B", "text": "Increased 1,25-dihydroxyvitamin D production", "correct": false}, {"letter": "C", "text": "Increased secretion of parathyroid hormone", "correct": false}, {"letter": "D", "text": "Local tumor cell-mediated activation of osteoblasts", "correct": false}, {"letter": "E", "text": "Local tumor cell-mediated activation of osteoclasts", "correct": true}], "eliminations": [{"letter": "A", "label": "Decreased urinary calcium excretion - thiazide-like", "detail": "WHAT IT IS: reduced renal calcium excretion (e.g., thiazide diuretics) can raise serum calcium. ❌ WHY IT FAILS: it INCREASES bone density and wouldn't produce lytic lesions, anemia, or a paraprotein. ✅ Correct if: thiazide-associated mild hypercalcemia."}, {"letter": "B", "label": "Increased 1,25-vitamin D - granulomatous", "detail": "WHAT IT IS: excess active vitamin D (e.g., sarcoidosis) raises calcium by boosting gut absorption. ❌ WHY IT FAILS: it doesn't cause purely lytic lesions with anemia and an M-spike. ✅ Correct if: granulomatous disease with hypercalcemia."}, {"letter": "C", "label": "Increased PTH - hyperparathyroidism, your pick", "detail": "WHAT IT IS: primary hyperparathyroidism raises calcium via PTH-driven bone resorption. ❌ WHY IT FAILS: PTH excess causes different bone changes (osteitis fibrosa cystica/subperiosteal resorption) and does NOT explain the anemia, elevated total protein, or renal failure of myeloma. ✅ Correct if: primary hyperparathyroidism (high PTH, high calcium, low phosphate)."}, {"letter": "D", "label": "OsteoBLAST activation - would be sclerotic", "detail": "WHAT IT IS: tumor activation of osteoblasts causes bone FORMATION (osteoblastic/sclerotic lesions, e.g., prostate cancer mets). ❌ WHY IT FAILS: myeloma INHIBITS osteoblasts, giving purely lytic (radiolucent) lesions - the opposite of blastic. ✅ Correct if: osteoblastic metastases (prostate cancer)."}], "reasoning": ["Purely lytic bone lesion + normocytic anemia + hypercalcemia + renal insufficiency + high total protein = multiple myeloma (CRAB)", "Myeloma plasma cells secrete RANK-L and osteoblast inhibitors", "-> local activation of osteoCLASTS and inhibition of osteoBLASTS", "-> purely osteolytic lesions; answer E"], "mechanism": "Multiple myeloma is a plasma cell malignancy that produces monoclonal immunoglobulin (paraprotein) and classically causes the CRAB features: hyperCalcemia, Renal insufficiency, Anemia (normocytic), and Bone lesions. Malignant plasma cells proliferate in the marrow and secrete cytokines that stimulate osteoCLAST maturation and activity (via RANK-ligand) while simultaneously secreting factors that INHIBIT osteoblasts (e.g., IL-3, IL-7, Wnt pathway inhibitors). This uncoupling tips bone remodeling strongly toward resorption, producing LOCAL TUMOR-MEDIATED OSTEOCLAST ACTIVATION with purely radiolucent (osteolytic) lesions and no reactive sclerosis, along with hypercalcemia (from osteolysis) and bone pain. Because osteoblasts are suppressed, myeloma is one of the few tumors to cause purely lytic lesions (most others show some osteoblastic/sclerotic reaction). The distractors (decreased urinary calcium, excess 1,25-vitamin D, excess PTH, osteoblast activation) either raise bone density or fail to explain the anemia, paraprotein, and lytic lesions.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Heme/Onc > multiple myeloma: monoclonal plasma cells, CRAB, purely lytic lesions from osteoclast activation (RANK-L) + osteoblast inhibition; Rouleaux, M-spike, Bence Jones protein."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Assemble CRAB + elevated total protein into myeloma, then explain the LYTIC lesions by osteoclast activation (not osteoblast)."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on osteolytic/radiolucent, osteoclast vs osteoblast, RANK-L, paraprotein/M-spike, or CRAB? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Increased PTH (your pick) doesn't explain the anemia/paraprotein/renal failure; osteoBLAST activation would make sclerotic (not lytic) lesions."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "message": "The radiograph shows a purely radiolucent 'punched-out' lytic lesion without a sclerotic rim - the myeloma signature (osteoclast-driven, osteoblast-suppressed). Anchor: 'punched-out lytic = myeloma.'"}, {"key": "other", "label": "✍️ Something else", "message": "Bank: CRAB + high total protein + purely lytic lesions = multiple myeloma; osteoclast activation (RANK-L) + osteoblast inhibition."}], "keywords": [{"front": "Purely lytic ('punched-out') bone lesions + CRAB", "back": "Multiple myeloma"}, {"front": "Why myeloma lesions are purely lytic", "back": "Osteoclast activation (RANK-L) + osteoblast inhibition"}, {"front": "CRAB features", "back": "HyperCalcemia, Renal failure, Anemia, Bone lesions"}, {"front": "Elevated total protein with normal albumin", "back": "Monoclonal paraprotein (globulin/M-spike)"}, {"front": "Osteoblastic (sclerotic) metastases", "back": "Prostate cancer (bone formation)"}, {"front": "Myeloma marrow/urine findings", "back": "Rouleaux, M-spike, Bence Jones (light chains) in urine"}], "firstAid": [{"tag": "answer / stem", "topic": "Multiple myeloma bone disease", "detail": "Heme/Onc: RANK-L -> osteoclast activation + osteoblast inhibition -> purely lytic lesions; CRAB."}, {"tag": "options", "topic": "Hypercalcemia/bone mechanisms", "detail": "Endo > PTH, 1,25-vitamin D, osteoblastic vs osteolytic lesions."}, {"tag": "context", "topic": "Bone remodeling", "detail": "Endo > RANK/RANK-L/osteoprotegerin balance controls osteoclasts."}], "memoryHook": "Myeloma cranks up the bone-eaters (osteoCLASTs) and silences the bone-builders - punched-out lytic holes, high calcium, CRAB.", "stem": [{"text": "A 66-year-old man comes to the office due to several weeks of back and lower extremity pain. The pain feels dull and achy and is worsened by movement, causing him to have difficulty bearing weight and ambulating. He has had no bladder or bowel dysfunction, extremity weakness, or numbness. The patient takes metformin for type 2 diabetes mellitus. He drinks 2 alcoholic beverages daily. Physical examination shows no gross abnormality or deformity of the back or extremities. There is no swelling or redness of the legs, and neurological examination is normal. A radiograph of the right lower extremity shows a well-defined, "}, {"text": "purely radiolucent (osteolytic) lesion without surrounding sclerosis", "clue": true, "type": "green", "note": "A purely lytic (radiolucent) bone lesion with NO sclerotic rim is characteristic of multiple myeloma - myeloma uniquely activates osteoclasts AND inhibits osteoblasts, so there's no bone-forming (blastic) response."}, {"text": ". Laboratory results show "}, {"text": "hemoglobin 9.6 g/dL", "clue": true, "type": "blue", "note": "Normocytic anemia (Hb 9.6 / normal 13.5-17.5) from marrow infiltration by plasma cells - part of the myeloma 'CRAB' picture."}, {"text": " (normal 13.5-17.5), creatinine 1.6 mg/dL, "}, {"text": "calcium 11.0 mg/dL", "clue": true, "type": "red", "note": "Hypercalcemia (Ca 11.0 / normal 8.4-10.2) from osteolysis - the 'C' of CRAB (hyperCalcemia, Renal failure, Anemia, Bone lesions)."}, {"text": " (normal 8.4-10.2), "}, {"text": "total protein 8.8 g/dL", "clue": true, "type": "green", "note": "An elevated total protein (8.8 / normal 6.0-7.8) with a relatively normal albumin implies excess GLOBULIN - a monoclonal paraprotein (M-spike) from the plasma cell clone. Anemia + hypercalcemia + high protein + renal insufficiency = multiple myeloma."}, {"text": " (normal 6.0-7.8), and albumin 3.8 g/dL. Which of the following is the most likely explanation for this patient's bone changes?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

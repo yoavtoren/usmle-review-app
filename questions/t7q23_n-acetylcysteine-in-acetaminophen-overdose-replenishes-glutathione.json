@@ -1,0 +1,193 @@
+{
+  "id": "q253",
+  "item": 253,
+  "qid": "18748",
+  "title": "N-acetylcysteine in acetaminophen overdose: replenishes glutathione",
+  "system": "Pharmacology",
+  "topic": "Acetaminophen toxicity / N-acetylcysteine",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 73,
+  "vignette": "A 24-year-old man is brought to the emergency department due to weakness, lethargy, nausea, and dizziness. He took fifty 325-mg acetaminophen tablets approximately 6 hours ago. Vital signs are normal. Pupils are equal, round, and reactive to light; there is mild epigastric tenderness. Laboratory results include an elevated serum acetaminophen level. Intravenous infusion of N-acetylcysteine is started. This treatment is most likely to improve the patient's condition by which of the following mechanisms?",
+  "clues": [
+    {
+      "text": "fifty 325-mg acetaminophen tablets approximately 6 hours ago",
+      "type": "red",
+      "note": "About 16 g of acetaminophen (fifty 325-mg tablets) is a massive overdose that overwhelms conjugation pathways and depletes hepatic glutathione, risking fulminant hepatotoxicity."
+    },
+    {
+      "text": "mild epigastric tenderness",
+      "type": "blue",
+      "note": "Early acetaminophen toxicity is often mild/nonspecific (nausea, malaise, epigastric discomfort) before hepatic injury peaks at 24-72 hours - so early antidote is key."
+    },
+    {
+      "text": "N-acetylcysteine is started",
+      "type": "green",
+      "note": "N-acetylcysteine is the antidote: it provides cysteine to regenerate glutathione, which detoxifies the reactive metabolite NAPQI and prevents liver injury."
+    }
+  ],
+  "whatMatters": "A massive acetaminophen overdose depletes hepatic glutathione, so the toxic metabolite NAPQI accumulates and injures the liver. N-acetylcysteine works by supplying cysteine to REGENERATE INTRAHEPATIC GLUTATHIONE, which conjugates and detoxifies NAPQI. Answer C. Give it early (most effective within ~8-10 hours).",
+  "strategy": "Trace the pathway: overdose -> saturated sulfation/glucuronidation -> excess NAPQI -> glutathione depleted -> hepatocyte injury. NAC = glutathione precursor -> increases glutathione -> detoxifies NAPQI. That's C. Reject reversed/false options: NAC doesn't induce glucuronidation, doesn't block a receptor (NAPQI has none), doesn't rely on renal excretion, and doesn't work by suppressing P450.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Activating hepatic glucuronidation enzymes",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Competitively blocking drug receptor sites",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increasing the amount of intrahepatic glutathione",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Increasing renal excretion of drug molecules",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Suppressing hepatic cytochrome P450 enzymes",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Activating glucuronidation enzymes - not NAC's action",
+      "detail": "WHAT IT IS: glucuronidation is a normal acetaminophen-clearing pathway. ❌ WHY IT FAILS: NAC does not induce glucuronidation; it replenishes glutathione to detoxify NAPQI. ✅ Correct if: a drug that induces UGT/glucuronidation."
+    },
+    {
+      "letter": "B",
+      "label": "Competitively blocking drug receptor sites - naloxone-type",
+      "detail": "WHAT IT IS: receptor antagonists (e.g., naloxone for opioids) reverse toxicity by blocking a receptor. ❌ WHY IT FAILS: NAPQI causes injury via oxidative protein adducts, not a specific receptor, so there's nothing to block. ✅ Correct if: an opioid overdose reversed by naloxone."
+    },
+    {
+      "letter": "D",
+      "label": "Increasing renal excretion - alkalinization/salicylates",
+      "detail": "WHAT IT IS: urinary alkalinization enhances excretion of some toxins (e.g., salicylates). ❌ WHY IT FAILS: unconjugated NAPQI isn't cleared by increasing renal excretion; NAC acts in the liver via glutathione. ✅ Correct if: salicylate overdose treated with sodium bicarbonate."
+    },
+    {
+      "letter": "E",
+      "label": "Suppressing cytochrome P450 - cimetidine idea",
+      "detail": "WHAT IT IS: inhibiting CYP450 could theoretically reduce NAPQI formation (e.g., cimetidine). ❌ WHY IT FAILS: this is not NAC's mechanism and hasn't proven effective in overdose; NAC works by restoring glutathione. ✅ Correct if: describing a CYP450 inhibitor's effect (not the standard antidote)."
+    }
+  ],
+  "reasoning": [
+    "Massive acetaminophen overdose overwhelms sulfation/glucuronidation, generating excess NAPQI",
+    "Depleted hepatic glutathione allows NAPQI to injure hepatocytes",
+    "N-acetylcysteine supplies cysteine to regenerate glutathione",
+    "-> glutathione detoxifies NAPQI; answer C (give early)"
+  ],
+  "mechanism": "Acetaminophen is mostly cleared by hepatic sulfation and glucuronidation to nontoxic metabolites, with a small fraction oxidized by cytochrome P450 to the reactive metabolite N-acetyl-p-benzoquinone imine (NAPQI); at therapeutic doses NAPQI is conjugated by hepatic glutathione and excreted. In overdose, the conjugation pathways are saturated, NAPQI production rises, and hepatic GLUTATHIONE is depleted, so unconjugated NAPQI forms protein adducts and generates oxidative damage, causing centrilobular hepatocellular necrosis (injury peaks at 24-72 hours). N-acetylcysteine is a glutathione precursor (provides cysteine), so it REGENERATES INTRAHEPATIC GLUTATHIONE, restoring NAPQI detoxification and preventing further hepatotoxicity; it is most effective when given early. The distractors are not NAC's mechanism: it does not induce glucuronidation, block a receptor (NAPQI has none), rely on renal excretion (salicylate strategy), or work by suppressing P450.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm/Tox > acetaminophen: NAPQI toxic metabolite, glutathione depletion, centrilobular necrosis; N-acetylcysteine = glutathione precursor antidote (give early)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Trace the toxic pathway (NAPQI + depleted glutathione) so NAC's action (regenerate glutathione) is obvious."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on NAPQI, glutathione, sulfation/glucuronidation, cytochrome P450, or hepatic adduct? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "D (renal excretion) fits salicylate/aspirin overdose, not acetaminophen; A/E describe metabolic tweaks that aren't NAC's mechanism; B is a receptor antagonist idea."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: acetaminophen overdose -> NAPQI + low glutathione -> liver injury; NAC restores glutathione (give early, ideally <8-10 h)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Toxic acetaminophen metabolite",
+      "back": "NAPQI (N-acetyl-p-benzoquinone imine)"
+    },
+    {
+      "front": "N-acetylcysteine mechanism",
+      "back": "Glutathione precursor -> regenerates glutathione -> detoxifies NAPQI"
+    },
+    {
+      "front": "Why overdose is toxic",
+      "back": "Saturated conjugation + depleted glutathione -> NAPQI injures hepatocytes"
+    },
+    {
+      "front": "Acetaminophen liver injury pattern",
+      "back": "Centrilobular (zone III) hepatocellular necrosis"
+    },
+    {
+      "front": "Urine alkalinization (bicarbonate) treats",
+      "back": "Salicylate (aspirin) overdose - not acetaminophen"
+    },
+    {
+      "front": "When is NAC most effective?",
+      "back": "Given early (best within ~8-10 hours of ingestion)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "N-acetylcysteine",
+      "detail": "Tox: glutathione precursor; regenerates glutathione to detoxify NAPQI; give early.",
+      "location": "Tox: glutathione precursor; regenerates glutathione to detoxify NAPQI; give early."
+    },
+    {
+      "tag": "options",
+      "topic": "Acetaminophen metabolism",
+      "detail": "Pharm > sulfation/glucuronidation (nontoxic), CYP450 -> NAPQI (toxic), glutathione conjugation.",
+      "location": "Pharm > sulfation/glucuronidation (nontoxic), CYP450 -> NAPQI (toxic), glutathione conjugation."
+    },
+    {
+      "tag": "context",
+      "topic": "Overdose antidotes",
+      "detail": "Tox > salicylates (bicarbonate/renal excretion), opioids (naloxone), acetaminophen (NAC).",
+      "location": "Tox > salicylates (bicarbonate/renal excretion), opioids (naloxone), acetaminophen (NAC)."
+    }
+  ],
+  "memoryHook": "NAPQI is the poison; glutathione is the mop. N-acetylcysteine refills the mop bucket - so mop early.",
+  "stem": [
+    {
+      "text": "A 24-year-old man is brought to the emergency department due to weakness, lethargy, nausea, and dizziness. He took "
+    },
+    {
+      "text": "fifty 325-mg acetaminophen tablets approximately 6 hours ago",
+      "clue": true,
+      "type": "red",
+      "note": "About 16 g of acetaminophen (fifty 325-mg tablets) is a massive overdose that overwhelms conjugation pathways and depletes hepatic glutathione, risking fulminant hepatotoxicity."
+    },
+    {
+      "text": ". Vital signs are normal. Pupils are equal, round, and reactive to light; there is "
+    },
+    {
+      "text": "mild epigastric tenderness",
+      "clue": true,
+      "type": "blue",
+      "note": "Early acetaminophen toxicity is often mild/nonspecific (nausea, malaise, epigastric discomfort) before hepatic injury peaks at 24-72 hours - so early antidote is key."
+    },
+    {
+      "text": ". Laboratory results include an elevated serum acetaminophen level. Intravenous infusion of "
+    },
+    {
+      "text": "N-acetylcysteine is started",
+      "clue": true,
+      "type": "green",
+      "note": "N-acetylcysteine is the antidote: it provides cysteine to regenerate glutathione, which detoxifies the reactive metabolite NAPQI and prevents liver injury."
+    },
+    {
+      "text": ". This treatment is most likely to improve the patient's condition by which of the following mechanisms?"
+    }
+  ]
+}

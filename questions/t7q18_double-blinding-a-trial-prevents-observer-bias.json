@@ -1,0 +1,179 @@
+{
+  "id": "q248",
+  "item": 248,
+  "qid": "1301",
+  "title": "Double-blinding a trial: prevents observer bias",
+  "system": "Biostatistics",
+  "topic": "Blinding / bias",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 76,
+  "vignette": "A study to assess spironolactone's efficacy in patients with heart failure is performed. 450 patients receive either spironolactone or placebo for two years. Neither the patients nor physicians are aware of who takes the drug or placebo. The study setup described above is most effective in preventing:",
+  "clues": [
+    {
+      "text": "450 patients receive either spironolactone or placebo",
+      "type": "blue",
+      "note": "A placebo-controlled comparison sets up the design; a placebo helps keep participants unaware of their assignment (supporting blinding)."
+    },
+    {
+      "text": "Neither the patients nor physicians are aware of who takes the drug or placebo",
+      "type": "green",
+      "note": "'Neither patients nor physicians know the assignment' is DOUBLE-BLINDING. Its purpose is to keep expectancy from influencing how outcomes are reported/assessed - i.e., to prevent observer (expectancy) bias."
+    }
+  ],
+  "whatMatters": "'Neither patients nor physicians know who gets drug vs placebo' = DOUBLE-BLINDING. Its purpose is to prevent patient/researcher expectancy from influencing how outcomes are reported or assessed = OBSERVER (expectancy) BIAS. Answer C. Blinding does NOT fix selection bias - that's what randomization/sampling addresses.",
+  "strategy": "Match the design feature to the bias it fixes. Blinding -> observer/expectancy bias (C). Randomization/allocation -> selection bias. Then reject the mismatches: selection bias is prevented by enrollment/allocation, not blinding; recall bias is a case-control (retrospective) issue; beta error is a power problem; effect modification is a real interaction to analyze, not 'prevent.'",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Beta error",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Recall bias",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Observer bias",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Effect modification",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Selection bias",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Beta error - a power problem",
+      "detail": "WHAT IT IS: a type II error (failing to detect a true difference), driven by inadequate statistical power/sample size. ❌ WHY IT FAILS: it isn't a bias that blinding prevents. ✅ Correct if: asking what increasing sample size/power reduces."
+    },
+    {
+      "letter": "B",
+      "label": "Recall bias - a case-control issue",
+      "detail": "WHAT IT IS: differential recall of past exposures, a problem of retrospective (case-control) studies. ❌ WHY IT FAILS: this is a prospective trial; blinding targets observer bias, not recall. ✅ Correct if: a case-control study relying on memory of exposure."
+    },
+    {
+      "letter": "D",
+      "label": "Effect modification - not a bias",
+      "detail": "WHAT IT IS: a third variable that genuinely alters the exposure-outcome effect across strata. ❌ WHY IT FAILS: it's a real phenomenon to detect/stratify, not a bias to 'prevent.' ✅ Correct if: asking about stratified analysis showing different effects by subgroup."
+    },
+    {
+      "letter": "E",
+      "label": "Selection bias - fixed by randomization, your pick",
+      "detail": "WHAT IT IS: bias from how participants are selected/allocated or from differential loss to follow-up. ❌ WHY IT FAILS: it is prevented by randomization and sampling, NOT by blinding; picking a familiar bias is the trap, but blinding specifically targets observer/expectancy bias. ✅ Correct if: the question described randomized allocation or a sampling method."
+    }
+  ],
+  "reasoning": [
+    "'Neither patients nor physicians know the assignment' = double-blinding",
+    "Blinding prevents expectancy from influencing outcome assessment/reporting",
+    "That is observer (expectancy) bias",
+    "-> observer bias; answer C (selection bias is addressed by randomization, not blinding)"
+  ],
+  "mechanism": "Blinding (masking) conceals treatment assignment from participants and/or investigators. Its purpose is to prevent EXPECTANCY from influencing the trial - patients' reported responses and, importantly, researchers' assessment/reporting of outcomes - which is observer (or ascertainment/detection) bias. A double-blind design (neither patient nor physician knows who receives drug vs placebo) is the most effective way to minimize this expectancy-driven bias. Blinding does not address selection bias (controlled by randomization and how subjects are sampled/allocated), recall bias (a retrospective case-control issue), beta/type II error (a power/sample-size issue), or effect modification (a real biologic interaction analyzed via stratification rather than 'prevented').",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biostat > blinding vs randomization; bias types (selection, recall, observer, effect modification); type I/II error."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Map 'neither knows the assignment' to observer/expectancy bias - and note that randomization (not blinding) fixes selection bias."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on blinding, observer/expectancy bias, selection bias, beta error, or effect modification? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Selection bias (your pick) is the popular trap, but it's prevented by randomization/sampling. Recall bias is case-control; beta error is power; effect modification isn't a bias."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: blinding -> prevents OBSERVER (expectancy) bias; randomization -> prevents SELECTION bias; recall bias = case-control."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Neither patients nor physicians know assignment (double-blind)",
+      "back": "Prevents observer/expectancy bias"
+    },
+    {
+      "front": "What prevents selection bias",
+      "back": "Randomization + sampling method (not blinding)"
+    },
+    {
+      "front": "Recall bias setting",
+      "back": "Retrospective case-control studies (memory of exposure)"
+    },
+    {
+      "front": "Beta (type II) error fix",
+      "back": "Increase power/sample size"
+    },
+    {
+      "front": "Effect modification",
+      "back": "A real interaction to stratify/analyze - not a bias to prevent"
+    },
+    {
+      "front": "Purpose of blinding",
+      "back": "Remove expectancy from outcome assessment/reporting"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Blinding",
+      "detail": "Biostat: blinding prevents observer (expectancy) bias; double-blind = patient + physician masked.",
+      "location": "Biostat: blinding prevents observer (expectancy) bias; double-blind = patient + physician masked."
+    },
+    {
+      "tag": "options",
+      "topic": "Bias types",
+      "detail": "Biostat > selection (randomize), recall (case-control), observer (blind); type II error; effect modification.",
+      "location": "Biostat > selection (randomize), recall (case-control), observer (blind); type II error; effect modification."
+    },
+    {
+      "tag": "context",
+      "topic": "Study design",
+      "detail": "Biostat > randomization vs blinding vs placebo control.",
+      "location": "Biostat > randomization vs blinding vs placebo control."
+    }
+  ],
+  "memoryHook": "Blind everyone -> nobody's expectations color the result: that's OBSERVER bias blocked. Randomization (not blinding) fixes SELECTION bias.",
+  "stem": [
+    {
+      "text": "A study to assess spironolactone's efficacy in patients with heart failure is performed. "
+    },
+    {
+      "text": "450 patients receive either spironolactone or placebo",
+      "clue": true,
+      "type": "blue",
+      "note": "A placebo-controlled comparison sets up the design; a placebo helps keep participants unaware of their assignment (supporting blinding)."
+    },
+    {
+      "text": " for two years. "
+    },
+    {
+      "text": "Neither the patients nor physicians are aware of who takes the drug or placebo",
+      "clue": true,
+      "type": "green",
+      "note": "'Neither patients nor physicians know the assignment' is DOUBLE-BLINDING. Its purpose is to keep expectancy from influencing how outcomes are reported/assessed - i.e., to prevent observer (expectancy) bias."
+    },
+    {
+      "text": ". The study setup described above is most effective in preventing:"
+    }
+  ]
+}

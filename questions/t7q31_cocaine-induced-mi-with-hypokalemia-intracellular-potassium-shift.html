@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cocaine-induced MI with hypokalemia: intracellular potassium shift</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 7 · all 39</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q261", "item": 261, "qid": "16978", "title": "Cocaine-induced MI with hypokalemia: intracellular potassium shift", "system": "Physiology", "topic": "Hypokalemia (beta-adrenergic intracellular shift)", "correct": "C", "yourAnswer": "D", "percentCorrect": 72, "vignette": "A 44-year-old man comes to the hospital due to acute onset of central chest pain radiating to the left arm. He used cocaine a few hours ago. Blood pressure is 160/100 mm Hg, pulse is 98/min, and respirations are 18/min. On examination, the patient appears anxious and diaphoretic. Electrocardiogram shows ST-segment elevation in the anterior leads. Laboratory studies reveal an elevated cardiac troponin level and a serum potassium concentration of 3.1 mEq/L. Which of the following is the most likely cause of this patient's hypokalemia?", "clues": [{"text": "used cocaine a few hours ago", "type": "orange", "note": "Cocaine causes a surge in catecholamines (blocks reuptake). Excess catecholamines drive potassium INTO cells via beta-2-adrenergic stimulation of the Na/K-ATPase - producing acute hypokalemia."}, {"text": "ST-segment elevation in the anterior leads", "type": "blue", "note": "ST elevation with elevated troponin indicates an acute myocardial infarction (cocaine-induced coronary vasospasm/thrombosis) - a major physiologic stress amplifying catecholamine release."}, {"text": "serum potassium concentration of 3.1 mEq/L", "type": "green", "note": "Hypokalemia (K+ 3.1 / normal 3.5-5.0 mEq/L). With total body potassium unchanged acutely, the low serum level reflects an intracellular SHIFT driven by catecholamines - not renal or GI loss."}], "whatMatters": "Cocaine + acute MI = massive catecholamine (beta-adrenergic) surge, which activates the Na/K-ATPase and shifts potassium INTO cells. That intracellular shift lowers serum K+ (3.1 / normal 3.5-5.0) acutely without a change in total body potassium. Answer C. (Not renal or GI loss.)", "strategy": "Ask WHERE the potassium went. Acute hypokalemia with a catecholamine surge (cocaine/stress/MI, or beta-agonists, insulin, alkalosis) = intracellular SHIFT (answer C), not a true loss. Reject loss mechanisms (renal/GI) and 'new cell uptake' (which needs rapid hematopoiesis, e.g., leukemia/GM-CSF, not present here).", "options": [{"letter": "A", "text": "Decreased dietary potassium intake", "correct": false}, {"letter": "B", "text": "Exchange of potassium with sodium in the intestine", "correct": false}, {"letter": "C", "text": "Increased intracellular shift of potassium", "correct": true}, {"letter": "D", "text": "Increased urinary loss of potassium", "correct": false}, {"letter": "E", "text": "Increased use of potassium by new cells", "correct": false}], "eliminations": [{"letter": "A", "label": "Decreased dietary intake - too slow/severe", "detail": "WHAT IT IS: hypokalemia from very poor oral intake (anorexia, starvation). ❌ WHY IT FAILS: dietary lack develops slowly and doesn't explain acute hypokalemia during a catecholamine surge. ✅ Correct if: chronic malnutrition/anorexia."}, {"letter": "B", "label": "Intestinal K/Na exchange - GI cation exchangers", "detail": "WHAT IT IS: GI potassium loss (e.g., cation-exchange resins, diarrhea). ❌ WHY IT FAILS: no GI losses are described; the cause here is a transcellular shift. ✅ Correct if: prolonged diarrhea or a potassium-binding resin."}, {"letter": "D", "label": "Increased urinary loss - hyperaldosteronism/diuretics, your pick", "detail": "WHAT IT IS: renal potassium wasting from diuretics or elevated aldosterone. ❌ WHY IT FAILS: nothing indicates diuretics or hyperaldosteronism; this patient's hypertension is from cocaine, and the acute drop reflects an intracellular shift. ✅ Correct if: diuretic use or primary hyperaldosteronism."}, {"letter": "E", "label": "Increased use by new cells - rapid hematopoiesis", "detail": "WHAT IT IS: potassium uptake during accelerated cell production (acute leukemia, GM-CSF, B12 treatment of megaloblastic anemia). ❌ WHY IT FAILS: those risk factors aren't present. ✅ Correct if: hypokalemia during rapid cell proliferation."}], "reasoning": ["Cocaine + acute MI -> large catecholamine (beta-adrenergic) surge", "Beta-2 stimulation activates Na/K-ATPase, driving potassium INTO cells", "Serum potassium falls acutely (3.1 mEq/L) without a change in total body potassium", "-> increased intracellular shift of potassium; answer C"], "mechanism": "Serum potassium can fall from decreased intake, renal or GI losses, or a transcellular SHIFT of potassium into cells. Severe physiologic stress (myocardial infarction) and cocaine both markedly increase circulating catecholamines (cocaine blocks catecholamine reuptake). Epinephrine/norepinephrine stimulate beta-2 adrenergic receptors, activating the Na/K-ATPase (and the Na-K-2Cl cotransporter) to move potassium INTRACELLULARLY; adrenergic activity also releases insulin, which further shifts potassium into cells. The result is acute hypokalemia (here 3.1 mEq/L) with total body potassium unchanged - a redistribution rather than a true loss. The same intracellular shift is seen with beta-agonist drugs (albuterol), insulin, and alkalosis. Renal/GI losses and uptake by rapidly dividing cells are the other categories, but none fit this acute catecholamine-driven scenario.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Renal/Physio > causes of hypokalemia: decreased intake, transcellular shift (beta-agonists, insulin, alkalosis, stress/catecholamines), renal loss (diuretics, hyperaldosteronism), GI loss."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Classify the MECHANISM: acute catecholamine surge -> intracellular shift, not a true loss."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on transcellular shift, Na/K-ATPase, beta-2 adrenergic, or hypokalemia? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Increased urinary loss (your pick) needs diuretics/hyperaldosteronism (not present); GI loss and new-cell uptake also lack supporting clues."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: cocaine/stress/beta-agonists/insulin/alkalosis -> potassium shifts INTO cells -> acute hypokalemia (redistribution, not loss)."}], "keywords": [{"front": "Acute hypokalemia after cocaine/MI (catecholamine surge)", "back": "Intracellular (transcellular) potassium shift"}, {"front": "Beta-2 adrenergic effect on potassium", "back": "Activates Na/K-ATPase -> K+ into cells (lowers serum K)"}, {"front": "Causes of transcellular K+ shift", "back": "Beta-agonists, insulin, alkalosis, catecholamines/stress"}, {"front": "Renal potassium wasting causes", "back": "Diuretics, hyperaldosteronism, RTA types 1 & 2"}, {"front": "Hypokalemia from 'new cells'", "back": "Rapid hematopoiesis (acute leukemia, GM-CSF, B12 for megaloblastic anemia)"}, {"front": "Normal serum potassium range", "back": "3.5-5.0 mEq/L"}], "firstAid": [{"tag": "answer / stem", "topic": "Hypokalemia - transcellular shift", "detail": "Renal/Physio: catecholamines/beta-2 -> Na/K-ATPase -> K+ into cells (cocaine/MI stress)."}, {"tag": "options", "topic": "Causes of hypokalemia", "detail": "Renal > intake, shift, renal loss (diuretics/aldosterone), GI loss, cell uptake."}, {"tag": "context", "topic": "Cocaine cardiotoxicity", "detail": "CV > coronary vasospasm/MI; catecholamine excess; avoid beta-blocker monotherapy."}], "memoryHook": "Cocaine floods catecholamines; beta-2 pumps potassium INTO cells. Serum K drops fast - not lost, just hiding inside.", "stem": [{"text": "A 44-year-old man comes to the hospital due to acute onset of central chest pain radiating to the left arm. He "}, {"text": "used cocaine a few hours ago", "clue": true, "type": "orange", "note": "Cocaine causes a surge in catecholamines (blocks reuptake). Excess catecholamines drive potassium INTO cells via beta-2-adrenergic stimulation of the Na/K-ATPase - producing acute hypokalemia."}, {"text": ". Blood pressure is 160/100 mm Hg, pulse is 98/min, and respirations are 18/min. On examination, the patient appears anxious and diaphoretic. Electrocardiogram shows "}, {"text": "ST-segment elevation in the anterior leads", "clue": true, "type": "blue", "note": "ST elevation with elevated troponin indicates an acute myocardial infarction (cocaine-induced coronary vasospasm/thrombosis) - a major physiologic stress amplifying catecholamine release."}, {"text": ". Laboratory studies reveal an elevated cardiac troponin level and a "}, {"text": "serum potassium concentration of 3.1 mEq/L", "clue": true, "type": "green", "note": "Hypokalemia (K+ 3.1 / normal 3.5-5.0 mEq/L). With total body potassium unchanged acutely, the low serum level reflects an intracellular SHIFT driven by catecholamines - not renal or GI loss."}, {"text": ". Which of the following is the most likely cause of this patient's hypokalemia?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

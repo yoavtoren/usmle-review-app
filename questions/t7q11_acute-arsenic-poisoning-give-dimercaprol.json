@@ -1,0 +1,207 @@
+{
+  "id": "q241",
+  "item": 241,
+  "qid": "841",
+  "title": "Acute arsenic poisoning: give dimercaprol",
+  "system": "Pharmacology",
+  "topic": "Arsenic poisoning / chelation",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 41,
+  "vignette": "A 17-year-old girl with a history of depression is brought to the emergency department after a suicide attempt. Her parents report that she ingested 2 bottles of insecticide following an argument with her sister approximately 2 hours prior to presentation. The patient's symptoms include nausea, vomiting, abdominal pain, and copious watery diarrhea. She has a known history of self-cutting and suicidal ideation but no prior suicide attempts. Blood pressure is 86/42 mm Hg and pulse is 120/min. Her breath has a faint garlic odor, and she has numerous healing linear scars on her forearms. Which of the following medications should be administered immediately?",
+  "clues": [
+    {
+      "text": "ingested 2 bottles of insecticide",
+      "type": "orange",
+      "note": "Insecticides/pesticides are a classic source of arsenic. An intentional ingestion of a large volume points to acute heavy-metal poisoning."
+    },
+    {
+      "text": "copious watery diarrhea",
+      "type": "blue",
+      "note": "Acute arsenic poisoning causes profuse vomiting and watery ('rice-water') diarrhea from GI mucosal injury, leading to large fluid losses."
+    },
+    {
+      "text": "Blood pressure is 86/42 mm Hg",
+      "type": "red",
+      "note": "Hypotension (86/42 / normal ~120/80 mm Hg) with tachycardia reflects hypovolemic shock from massive GI fluid loss - and arsenic can also cause cardiovascular collapse and QT prolongation."
+    },
+    {
+      "text": "faint garlic odor",
+      "type": "green",
+      "note": "A garlic odor on the breath is the classic tell of acute arsenic poisoning, distinguishing it from the other listed toxins."
+    }
+  ],
+  "whatMatters": "Insecticide ingestion + severe GI symptoms (vomiting, watery diarrhea) + hypotension + GARLIC breath odor = acute arsenic poisoning. The first-line chelator is DIMERCAPROL (British anti-Lewisite), which supplies sulfhydryl groups that bind arsenic and displace it from enzymes. Answer C. Also give IV fluids; oral succimer (DMSA) is used for milder/less-acute cases.",
+  "strategy": "Pattern-match the toxidrome to the metal, then the metal to its chelator. Garlic breath + watery diarrhea + insecticide = arsenic -> dimercaprol (or DMSA). Then map the other chelators to their toxins: CaNa2EDTA/succimer = lead; deferoxamine/deferasirox = iron; hydroxocobalamin/nitrites/thiosulfate = cyanide; methylene blue = methemoglobinemia.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "CaNa2EDTA",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Deferoxamine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Dimercaprol",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Hydroxycobalamin",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Methylene blue",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "CaNa2EDTA - lead chelator",
+      "detail": "WHAT IT IS: calcium disodium EDTA chelates LEAD (poisoning causes constipation, anemia with basophilic stippling, neuropathy). ❌ WHY IT FAILS: wrong metal - the garlic breath and watery diarrhea point to arsenic. ✅ Correct if: lead poisoning."
+    },
+    {
+      "letter": "B",
+      "label": "Deferoxamine - iron chelator",
+      "detail": "WHAT IT IS: deferoxamine binds IRON in acute iron overdose/overload (vomiting, GI bleeding, metabolic acidosis). ❌ WHY IT FAILS: this is arsenic, not iron. ✅ Correct if: acute iron ingestion (e.g., prenatal vitamins) or transfusional overload."
+    },
+    {
+      "letter": "D",
+      "label": "Hydroxycobalamin - cyanide antidote",
+      "detail": "WHAT IT IS: hydroxocobalamin (a B12 precursor) binds cyanide to form cyanocobalamin (excreted in urine). ❌ WHY IT FAILS: cyanide causes flushing/'cherry-red' skin and lactic acidosis - not garlic breath from insecticide. ✅ Correct if: cyanide poisoning."
+    },
+    {
+      "letter": "E",
+      "label": "Methylene blue - methemoglobinemia, your pick",
+      "detail": "WHAT IT IS: methylene blue reduces methemoglobin (via NADPH) in methemoglobinemia (cyanosis unresponsive to O2, 'chocolate-colored' blood). ❌ WHY IT FAILS: this patient has arsenic poisoning, not methemoglobinemia. The trap is picking an ED antidote, but methylene blue treats a different toxin. ✅ Correct if: methemoglobinemia (e.g., from dapsone, nitrites, benzocaine)."
+    }
+  ],
+  "reasoning": [
+    "Insecticide ingestion + vomiting/watery diarrhea + hypotension + garlic breath = acute arsenic poisoning",
+    "Arsenic binds sulfhydryl groups and disrupts cellular respiration",
+    "Dimercaprol donates thiol groups that chelate arsenic and displace it from enzymes",
+    "-> administer dimercaprol immediately; answer C"
+  ],
+  "mechanism": "Arsenic (found in pesticides/insecticides, contaminated water, and pressure-treated wood) binds sulfhydryl (thiol) groups, inhibiting sulfhydryl-containing enzymes - notably pyruvate dehydrogenase - and disrupting cellular respiration and gluconeogenesis. Acute poisoning causes profuse vomiting and watery ('rice-water') diarrhea with hypovolemic hypotension, a garlic odor on the breath, and QT prolongation that can progress to torsades de pointes. First-line chelation is dimercaprol (British anti-Lewisite), whose vicinal thiol groups bind arsenic and displace it from enzyme sulfhydryls, increasing urinary excretion; oral succimer (DMSA) is used for milder cases, along with supportive IV fluids. The distractor antidotes target different toxins (EDTA/succimer for lead, deferoxamine for iron, hydroxocobalamin for cyanide, methylene blue for methemoglobinemia).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Tox > arsenic (garlic breath, watery diarrhea, QT prolongation; Tx dimercaprol/succimer); the antidote-toxin table for heavy metals."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Assemble the toxidrome (insecticide + GI losses + hypotension + garlic breath) -> arsenic -> dimercaprol."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on chelator, sulfhydryl/thiol, dimercaprol/BAL, succimer/DMSA, or methemoglobinemia? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Each option is the antidote for a DIFFERENT toxin: EDTA (lead), deferoxamine (iron), hydroxocobalamin (cyanide), methylene blue (methemoglobinemia - your pick)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: garlic breath + rice-water diarrhea after insecticide = arsenic -> dimercaprol (BAL); oral succimer for milder cases."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Garlic breath + watery diarrhea + hypotension after insecticide",
+      "back": "Acute arsenic poisoning"
+    },
+    {
+      "front": "Arsenic chelator (first-line)",
+      "back": "Dimercaprol (BAL); oral = succimer (DMSA)"
+    },
+    {
+      "front": "Arsenic mechanism",
+      "back": "Binds sulfhydryl groups -> inhibits cellular respiration (e.g., PDH)"
+    },
+    {
+      "front": "Lead poisoning chelators",
+      "back": "CaNa2EDTA, dimercaprol, succimer"
+    },
+    {
+      "front": "Iron overdose chelator",
+      "back": "Deferoxamine (acute), deferasirox"
+    },
+    {
+      "front": "Methylene blue treats",
+      "back": "Methemoglobinemia (chocolate-colored blood, cyanosis)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Arsenic poisoning",
+      "detail": "Tox: garlic breath, watery diarrhea, QT prolongation; Tx dimercaprol/succimer + fluids.",
+      "location": "Tox: garlic breath, watery diarrhea, QT prolongation; Tx dimercaprol/succimer + fluids."
+    },
+    {
+      "tag": "options",
+      "topic": "Antidotes",
+      "detail": "Pharm > lead (EDTA/succimer), iron (deferoxamine), cyanide (hydroxocobalamin), metHb (methylene blue).",
+      "location": "Pharm > lead (EDTA/succimer), iron (deferoxamine), cyanide (hydroxocobalamin), metHb (methylene blue)."
+    },
+    {
+      "tag": "context",
+      "topic": "Heavy metals",
+      "detail": "Tox > arsenic, lead, mercury, iron - sources, findings, and chelators.",
+      "location": "Tox > arsenic, lead, mercury, iron - sources, findings, and chelators."
+    }
+  ],
+  "memoryHook": "Garlic breath + rice-water diarrhea from bug spray = arsenic. Dimercaprol's twin thiols grab it (BAL to the rescue).",
+  "stem": [
+    {
+      "text": "A 17-year-old girl with a history of depression is brought to the emergency department after a suicide attempt. Her parents report that she "
+    },
+    {
+      "text": "ingested 2 bottles of insecticide",
+      "clue": true,
+      "type": "orange",
+      "note": "Insecticides/pesticides are a classic source of arsenic. An intentional ingestion of a large volume points to acute heavy-metal poisoning."
+    },
+    {
+      "text": " following an argument with her sister approximately 2 hours prior to presentation. The patient's symptoms include nausea, vomiting, abdominal pain, and "
+    },
+    {
+      "text": "copious watery diarrhea",
+      "clue": true,
+      "type": "blue",
+      "note": "Acute arsenic poisoning causes profuse vomiting and watery ('rice-water') diarrhea from GI mucosal injury, leading to large fluid losses."
+    },
+    {
+      "text": ". She has a known history of self-cutting and suicidal ideation but no prior suicide attempts. "
+    },
+    {
+      "text": "Blood pressure is 86/42 mm Hg",
+      "clue": true,
+      "type": "red",
+      "note": "Hypotension (86/42 / normal ~120/80 mm Hg) with tachycardia reflects hypovolemic shock from massive GI fluid loss - and arsenic can also cause cardiovascular collapse and QT prolongation."
+    },
+    {
+      "text": " and pulse is 120/min. Her breath has a "
+    },
+    {
+      "text": "faint garlic odor",
+      "clue": true,
+      "type": "green",
+      "note": "A garlic odor on the breath is the classic tell of acute arsenic poisoning, distinguishing it from the other listed toxins."
+    },
+    {
+      "text": ", and she has numerous healing linear scars on her forearms. Which of the following medications should be administered immediately?"
+    }
+  ]
+}

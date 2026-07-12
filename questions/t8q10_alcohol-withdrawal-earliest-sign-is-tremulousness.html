@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alcohol withdrawal: earliest sign is tremulousness</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 8 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q279", "item": 279, "qid": "870", "title": "Alcohol withdrawal: earliest sign is tremulousness", "system": "Behavioral science", "topic": "Alcohol withdrawal timeline", "correct": "E", "yourAnswer": "D", "percentCorrect": 73, "vignette": "A 48-year-old man is admitted to the hospital for management of pancreatitis. He reports drinking a large amount of alcohol every day for many years, with his last drink on the morning of admission. He has no other medical conditions. The team anticipates alcohol withdrawal and monitors him closely. Approximately 6-12 hours after his last drink, which of the following is the earliest expected manifestation of alcohol withdrawal in this patient?", "clues": [{"text": "drinking a large amount of alcohol every day for many years", "type": "orange", "note": "Chronic heavy daily use produces physiologic dependence; abrupt cessation triggers a predictable withdrawal syndrome."}, {"text": "last drink on the morning of admission", "type": "blue", "note": "A defined 'last drink' lets you time the withdrawal syndrome, which follows a characteristic hour-by-hour sequence."}, {"text": "Approximately 6-12 hours after his last drink", "type": "red", "note": "The 6-12 hour window is the EARLIEST stage of alcohol withdrawal - mild autonomic/CNS hyperactivity (tremor, anxiety, insomnia), before hallucinosis, seizures, or delirium tremens."}], "whatMatters": "In a chronic daily drinker, alcohol withdrawal follows a timeline. The EARLIEST manifestation (6-12 hours) is TREMULOUSNESS (with anxiety, insomnia, mild autonomic arousal). Alcoholic hallucinosis (~12-24 h), withdrawal seizures (~24-48 h), and delirium tremens (~48-96 h) come later. Answer E.", "strategy": "Order the withdrawal syndrome by time: 6-12 h mild tremulousness/anxiety/insomnia -> 12-24 h alcoholic hallucinosis (usually visual, sensorium intact) -> 24-48 h generalized tonic-clonic withdrawal seizures -> 48-96 h delirium tremens (confusion, autonomic instability). 'Earliest' = tremulousness. Seizures and delirium tremens are later and more dangerous, not first.", "options": [{"letter": "A", "text": "Alcoholic hallucinosis", "correct": false}, {"letter": "B", "text": "Delirium tremens", "correct": false}, {"letter": "C", "text": "Wernicke encephalopathy", "correct": false}, {"letter": "D", "text": "Generalized tonic-clonic seizures", "correct": false}, {"letter": "E", "text": "Tremulousness", "correct": true}], "eliminations": [{"letter": "A", "label": "Alcoholic hallucinosis - later (~12-24 h)", "detail": "WHAT IT IS: usually visual (sometimes tactile/auditory) hallucinations with an OTHERWISE intact sensorium, ~12-24 hours after the last drink. ❌ WHY IT FAILS: it follows the initial tremulous phase, so it is not the earliest sign. ✅ Correct if: hallucinations with a clear sensorium 12-24 h out."}, {"letter": "B", "label": "Delirium tremens - latest, ~48-96 h", "detail": "WHAT IT IS: the most severe stage - confusion, agitation, fever, and autonomic instability (tachycardia, hypertension), typically 48-96 hours out; potentially fatal. ❌ WHY IT FAILS: it is the LAST stage, not the earliest. ✅ Correct if: delirium with autonomic storm 2-4 days after cessation."}, {"letter": "C", "label": "Wernicke encephalopathy - thiamine deficiency, not withdrawal timing", "detail": "WHAT IT IS: acute thiamine (B1) deficiency causing confusion, ophthalmoplegia, and ataxia. ❌ WHY IT FAILS: it is a nutritional deficiency (often precipitated by glucose without thiamine), not a timed manifestation of the withdrawal cascade. ✅ Correct if: the triad of confusion + ophthalmoplegia + ataxia."}, {"letter": "D", "label": "Generalized tonic-clonic seizures - later (~24-48 h), your pick", "detail": "WHAT IT IS: 'rum fits' - generalized tonic-clonic withdrawal seizures peaking ~24-48 hours after the last drink. ❌ WHY IT FAILS: they occur AFTER the initial tremulous phase, so they are not the earliest sign. ✅ Correct if: asking about the 24-48 h withdrawal-seizure window."}], "reasoning": ["Chronic daily drinker with abrupt cessation -> physiologic alcohol withdrawal", "Withdrawal follows a timeline: tremor (6-12 h) -> hallucinosis (12-24 h) -> seizures (24-48 h) -> delirium tremens (48-96 h)", "At 6-12 hours, the earliest manifestation is mild tremulousness/anxiety/insomnia", "-> tremulousness; answer E"], "mechanism": "Chronic alcohol enhances inhibitory GABA-A tone and suppresses excitatory glutamate (NMDA) signaling; the brain adapts by DOWN-regulating GABA-A receptors and UP-regulating NMDA receptors. When alcohol is abruptly withdrawn, this adaptation is unmasked, leaving a hyperexcitable, glutamate-dominant CNS with autonomic hyperactivity. The syndrome unfolds on a predictable schedule: at 6-12 hours, mild signs appear first - tremulousness ('the shakes'), anxiety, insomnia, headache, and mild autonomic arousal (this is the earliest manifestation). Around 12-24 hours, alcoholic hallucinosis (typically visual, with an intact sensorium) can occur; at 24-48 hours, generalized tonic-clonic withdrawal seizures ('rum fits') peak; and at 48-96 hours, delirium tremens (confusion, agitation, fever, and dangerous autonomic instability) may develop and can be fatal. Benzodiazepines (which restore GABA-A tone) are the treatment and prevent progression. Wernicke encephalopathy is a separate thiamine-deficiency emergency, not a stage of the withdrawal clock.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Psych > alcohol withdrawal timeline: tremulousness 6-12 h, hallucinosis 12-24 h, seizures 24-48 h, delirium tremens 48-96 h; treat with benzodiazepines; GABA down / NMDA up adaptation."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "The question anchors on the 6-12 hour window and asks for the EARLIEST sign - tremulousness."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on tremulousness, alcoholic hallucinosis, delirium tremens, 'rum fits,' or GABA/NMDA adaptation? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Hallucinosis, seizures, and delirium tremens are all LATER stages; Wernicke is a thiamine-deficiency syndrome, not a withdrawal stage."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: earliest alcohol withdrawal = tremor/anxiety (6-12 h); most severe/late = delirium tremens (48-96 h); benzodiazepines treat/prevent."}], "keywords": [{"front": "Earliest alcohol withdrawal sign (6-12 h)", "back": "Tremulousness (with anxiety, insomnia)"}, {"front": "Alcoholic hallucinosis timing", "back": "~12-24 h, visual hallucinations, intact sensorium"}, {"front": "Alcohol withdrawal seizure timing", "back": "~24-48 h ('rum fits'), generalized tonic-clonic"}, {"front": "Delirium tremens timing and features", "back": "~48-96 h; confusion + autonomic instability; can be fatal"}, {"front": "Treatment/prevention of alcohol withdrawal", "back": "Benzodiazepines (restore GABA-A tone)"}, {"front": "Neuroadaptation underlying withdrawal", "back": "↓GABA-A receptors, ↑NMDA receptors (CNS hyperexcitability)"}], "firstAid": [{"tag": "answer / stem", "topic": "Alcohol withdrawal timeline", "detail": "Psych: tremor 6-12 h, hallucinosis 12-24 h, seizures 24-48 h, DTs 48-96 h."}, {"tag": "options", "topic": "Withdrawal stages", "detail": "Psych > distinguish hallucinosis vs DTs vs seizures; Wernicke = thiamine deficiency."}, {"tag": "treatment", "topic": "Withdrawal management", "detail": "Psych > benzodiazepines; give thiamine before glucose."}], "memoryHook": "The withdrawal clock ticks tremor -> hallucinations -> seizures -> DTs; the shakes come first, the DTs come last (and can kill).", "stem": [{"text": "A 48-year-old man is admitted to the hospital for management of pancreatitis. He reports "}, {"text": "drinking a large amount of alcohol every day for many years", "clue": true, "type": "orange", "note": "Chronic heavy daily use produces physiologic dependence; abrupt cessation triggers a predictable withdrawal syndrome."}, {"text": ", with his "}, {"text": "last drink on the morning of admission", "clue": true, "type": "blue", "note": "A defined 'last drink' lets you time the withdrawal syndrome, which follows a characteristic hour-by-hour sequence."}, {"text": ". He has no other medical conditions. The team anticipates alcohol withdrawal and monitors him closely. "}, {"text": "Approximately 6-12 hours after his last drink", "clue": true, "type": "red", "note": "The 6-12 hour window is the EARLIEST stage of alcohol withdrawal - mild autonomic/CNS hyperactivity (tremor, anxiety, insomnia), before hallucinosis, seizures, or delirium tremens."}, {"text": ", which of the following is the earliest expected manifestation of alcohol withdrawal in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

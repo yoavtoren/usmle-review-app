@@ -1,0 +1,207 @@
+{
+  "id": "q251",
+  "item": 251,
+  "qid": "18707",
+  "title": "Topical tacrolimus for atopic dermatitis: inhibits T-lymphocyte signaling",
+  "system": "Pharmacology",
+  "topic": "Calcineurin inhibitors / atopic dermatitis",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 72,
+  "vignette": "A 6-year-old girl is brought to the clinic due to an itchy rash on her face. The patient's mother says the rash began approximately 3 weeks ago as dry skin on both of her cheeks. Over the past few days, it has progressed with areas of weeping and increased redness, and the patient has had to wear mittens to limit irritation from constant scratching. The patient has a history of similar rashes involving the flexural areas of her elbows and knees that resolved following treatment with topical corticosteroids. Vital signs are normal. Physical examination shows erythema of the bilateral cheeks and chin with crusting and oozing. The patient is prescribed a course of topical tacrolimus. Which of the following is the most likely mechanism of action of this drug?",
+  "clues": [
+    {
+      "text": "itchy rash on her face",
+      "type": "blue",
+      "note": "A pruritic facial rash in a child, with a relapsing course, fits atopic dermatitis (eczema)."
+    },
+    {
+      "text": "flexural areas of her elbows and knees that resolved following treatment with topical corticosteroids",
+      "type": "orange",
+      "note": "Recurrent flexural eczema responsive to topical steroids is classic atopic dermatitis. Prior steroid response sets up why a steroid-sparing agent (calcineurin inhibitor) is now used on the face."
+    },
+    {
+      "text": "erythema of the bilateral cheeks and chin with crusting and oozing",
+      "type": "blue",
+      "note": "Facial involvement with weeping/crusting is typical of childhood atopic dermatitis; the face is a thin-skin site where chronic steroids risk atrophy - hence tacrolimus."
+    },
+    {
+      "text": "topical tacrolimus",
+      "type": "green",
+      "note": "Tacrolimus is a calcineurin inhibitor used as second-line, steroid-sparing therapy for atopic dermatitis (especially face/skin folds). It blocks calcineurin, preventing T-cell activation."
+    }
+  ],
+  "whatMatters": "This is atopic dermatitis, and tacrolimus is a topical CALCINEURIN INHIBITOR used as steroid-sparing therapy (good for face/skin folds where steroids cause atrophy). Tacrolimus binds FKBP and inhibits calcineurin, blocking NFAT-driven transcription of IL-2 and thereby INHIBITING T-LYMPHOCYTE SIGNALING/activation. Answer B.",
+  "strategy": "Identify the drug class from the name: tacrolimus/pimecrolimus/cyclosporine = calcineurin inhibitors -> block IL-2 transcription -> inhibit T-cell activation. That's answer B. Reject mechanisms of other allergy drugs: mast-cell stabilizers (cromolyn - histamine release), anti-IgE (omalizumab - IgE binding to mast cells), anti-IL-4R (dupilumab), and anti-CD20 (rituximab - B-cell depletion).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Inhibition of histamine granule release",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Inhibition of T-lymphocyte signaling",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Prevention of IgE binding to mast cells",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Selective blockade of the IL-4 receptor",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Stimulation of B-lymphocyte apoptosis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Inhibition of histamine granule release - cromolyn",
+      "detail": "WHAT IT IS: mast-cell stabilizers (cromolyn) prevent mast-cell degranulation/histamine release. ❌ WHY IT FAILS: that's not how tacrolimus works; tacrolimus inhibits T-cell activation via calcineurin. ✅ Correct if: cromolyn for allergic rhinitis/mastocytosis."
+    },
+    {
+      "letter": "C",
+      "label": "Prevention of IgE binding to mast cells - omalizumab",
+      "detail": "WHAT IT IS: omalizumab is an anti-IgE antibody that prevents IgE from binding mast cells/basophils. ❌ WHY IT FAILS: tacrolimus is a calcineurin inhibitor, not an anti-IgE agent. ✅ Correct if: omalizumab for severe persistent asthma/urticaria."
+    },
+    {
+      "letter": "D",
+      "label": "Selective blockade of the IL-4 receptor - dupilumab",
+      "detail": "WHAT IT IS: dupilumab blocks IL-4 receptor signaling (Th2/IgE pathway) in refractory atopic dermatitis. ❌ WHY IT FAILS: it's a different biologic mechanism than calcineurin inhibition. ✅ Correct if: dupilumab for moderate-severe atopic dermatitis/asthma."
+    },
+    {
+      "letter": "E",
+      "label": "Stimulation of B-lymphocyte apoptosis - rituximab",
+      "detail": "WHAT IT IS: rituximab is an anti-CD20 antibody that depletes B cells (complement/cell-mediated cytotoxicity). ❌ WHY IT FAILS: tacrolimus targets T cells via calcineurin, not B cells. ✅ Correct if: rituximab for CLL or rheumatoid arthritis."
+    }
+  ],
+  "reasoning": [
+    "Relapsing pruritic flexural/facial eczema in a child = atopic dermatitis",
+    "Tacrolimus is a topical calcineurin inhibitor (steroid-sparing; good for thin-skin sites)",
+    "It binds FKBP and inhibits calcineurin, blocking NFAT-driven IL-2 transcription",
+    "-> inhibits T-lymphocyte signaling/activation; answer B"
+  ],
+  "mechanism": "Atopic dermatitis is an inflammatory skin disorder of infancy/childhood driven by epidermal barrier dysfunction (e.g., filaggrin mutations) and a dysregulated, Th2-skewed immune response with increased IgE and mast cell/eosinophil activity. First-line therapy is topical corticosteroids, but on thin-skin areas (face, neck, skin folds) chronic steroids cause atrophy, so calcineurin inhibitors (tacrolimus, pimecrolimus) are used as second-line, steroid-sparing agents. Tacrolimus binds the intracellular immunophilin FKBP; the complex inhibits calcineurin, a phosphatase that normally dephosphorylates NFAT to allow transcription of interleukin-2 (IL-2). By inhibiting calcineurin, tacrolimus blocks IL-2 transcription and thereby T-lymphocyte activation and proliferation, reducing the inflammatory response. The distractors are the mechanisms of cromolyn (mast-cell stabilizer), omalizumab (anti-IgE), dupilumab (anti-IL-4R), and rituximab (anti-CD20 B-cell depletion).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm > calcineurin inhibitors (tacrolimus/cyclosporine/pimecrolimus): bind FKBP/cyclophilin -> inhibit calcineurin -> block NFAT/IL-2 -> inhibit T cells; topical use in atopic dermatitis."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Name the drug class from 'tacrolimus,' then recall its target (T-cell activation via calcineurin/IL-2)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on calcineurin, FKBP, NFAT, IL-2, or 'steroid-sparing'? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Each distractor is another allergy/immunology drug: cromolyn (histamine release), omalizumab (IgE-mast cell), dupilumab (IL-4R), rituximab (B-cell/CD20)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: tacrolimus/cyclosporine/pimecrolimus = calcineurin inhibitors -> block IL-2 transcription -> inhibit T-cell activation (steroid-sparing in atopic dermatitis)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Tacrolimus / cyclosporine / pimecrolimus mechanism",
+      "back": "Inhibit calcineurin -> block NFAT/IL-2 -> inhibit T-cell activation"
+    },
+    {
+      "front": "Steroid-sparing topical for atopic dermatitis (face/folds)",
+      "back": "Calcineurin inhibitors (tacrolimus, pimecrolimus)"
+    },
+    {
+      "front": "Tacrolimus intracellular binding protein",
+      "back": "FKBP (FK506-binding protein)"
+    },
+    {
+      "front": "Cromolyn mechanism",
+      "back": "Mast-cell stabilizer (inhibits histamine release)"
+    },
+    {
+      "front": "Omalizumab / dupilumab",
+      "back": "Anti-IgE / anti-IL-4 receptor (allergic disease)"
+    },
+    {
+      "front": "Atopic dermatitis distribution (child)",
+      "back": "Face and flexural areas (elbows/knees); pruritic, relapsing"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Calcineurin inhibitors",
+      "detail": "Pharm: tacrolimus binds FKBP -> inhibits calcineurin -> blocks IL-2 -> inhibits T cells; topical for atopic dermatitis.",
+      "location": "Pharm: tacrolimus binds FKBP -> inhibits calcineurin -> blocks IL-2 -> inhibits T cells; topical for atopic dermatitis."
+    },
+    {
+      "tag": "options",
+      "topic": "Allergy/immune drugs",
+      "detail": "Pharm > cromolyn (mast cell), omalizumab (anti-IgE), dupilumab (IL-4R), rituximab (anti-CD20).",
+      "location": "Pharm > cromolyn (mast cell), omalizumab (anti-IgE), dupilumab (IL-4R), rituximab (anti-CD20)."
+    },
+    {
+      "tag": "context",
+      "topic": "Atopic dermatitis",
+      "detail": "Derm > barrier dysfunction (filaggrin), Th2/IgE; topical steroids first-line, calcineurin inhibitors second-line.",
+      "location": "Derm > barrier dysfunction (filaggrin), Th2/IgE; topical steroids first-line, calcineurin inhibitors second-line."
+    }
+  ],
+  "memoryHook": "Tacrolimus handcuffs calcineurin, so NFAT never turns on IL-2 - T cells stay quiet. Steroid-free calm for the cheeks.",
+  "stem": [
+    {
+      "text": "A 6-year-old girl is brought to the clinic due to an "
+    },
+    {
+      "text": "itchy rash on her face",
+      "clue": true,
+      "type": "blue",
+      "note": "A pruritic facial rash in a child, with a relapsing course, fits atopic dermatitis (eczema)."
+    },
+    {
+      "text": ". The patient's mother says the rash began approximately 3 weeks ago as dry skin on both of her cheeks. Over the past few days, it has progressed with areas of weeping and increased redness, and the patient has had to wear mittens to limit irritation from constant scratching. The patient has a history of similar rashes involving the "
+    },
+    {
+      "text": "flexural areas of her elbows and knees that resolved following treatment with topical corticosteroids",
+      "clue": true,
+      "type": "orange",
+      "note": "Recurrent flexural eczema responsive to topical steroids is classic atopic dermatitis. Prior steroid response sets up why a steroid-sparing agent (calcineurin inhibitor) is now used on the face."
+    },
+    {
+      "text": ". Vital signs are normal. Physical examination shows "
+    },
+    {
+      "text": "erythema of the bilateral cheeks and chin with crusting and oozing",
+      "clue": true,
+      "type": "blue",
+      "note": "Facial involvement with weeping/crusting is typical of childhood atopic dermatitis; the face is a thin-skin site where chronic steroids risk atrophy - hence tacrolimus."
+    },
+    {
+      "text": ". The patient is prescribed a course of "
+    },
+    {
+      "text": "topical tacrolimus",
+      "clue": true,
+      "type": "green",
+      "note": "Tacrolimus is a calcineurin inhibitor used as second-line, steroid-sparing therapy for atopic dermatitis (especially face/skin folds). It blocks calcineurin, preventing T-cell activation."
+    },
+    {
+      "text": ". Which of the following is the most likely mechanism of action of this drug?"
+    }
+  ]
+}

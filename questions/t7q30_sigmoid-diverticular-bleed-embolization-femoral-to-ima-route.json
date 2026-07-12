@@ -1,0 +1,198 @@
+{
+  "id": "q260",
+  "item": 260,
+  "qid": "1744",
+  "title": "Sigmoid diverticular bleed embolization: femoral to IMA route",
+  "system": "Anatomy",
+  "topic": "Inferior mesenteric artery / hindgut blood supply",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 85,
+  "vignette": "A 71-year-old man comes to the emergency department due to several episodes of bright red blood per rectum. His recent colonoscopy revealed numerous colonic diverticula. Laboratory studies on admission are notable for a hemoglobin of 8.2 g/dL with an unremarkable coagulation profile. An abdominal angiogram shows active bleeding from the sigmoid colon. Catheter embolization is planned via the femoral artery. During the procedure, the arterial catheter is most likely to proceed in which of the following orders?",
+  "clues": [
+    {
+      "text": "numerous colonic diverticula",
+      "type": "orange",
+      "note": "Diverticulosis is a common cause of painless lower GI bleeding (bright red blood per rectum), especially in older adults."
+    },
+    {
+      "text": "active bleeding from the sigmoid colon",
+      "type": "green",
+      "note": "The sigmoid colon is a HINDGUT structure supplied by the inferior mesenteric artery (IMA). To embolize the bleeder, the catheter must ultimately reach the IMA."
+    },
+    {
+      "text": "via the femoral artery",
+      "type": "blue",
+      "note": "Access via the femoral artery means the catheter travels retrograde: femoral -> external iliac -> common iliac -> abdominal aorta, then selects the IMA."
+    }
+  ],
+  "whatMatters": "Sigmoid colon (a HINDGUT structure) is supplied by the inferior mesenteric artery (IMA). A catheter entered at the femoral artery travels retrograde up to the aorta and then into the IMA: femoral -> external iliac -> common iliac -> abdominal aorta -> inferior mesenteric. Answer B.",
+  "strategy": "Two anatomy facts: (1) the sigmoid colon is hindgut -> IMA (not SMA or celiac); (2) retrograde arterial route from the groin: femoral -> external iliac -> common iliac -> abdominal aorta -> target vessel. Combine -> femoral -> external iliac -> common iliac -> aorta -> IMA (B). Reject celiac (foregut) and SMA (midgut) endpoints, and the internal iliac routes (those supply pelvis/genitalia, not the sigmoid).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "External iliac, common iliac, abdominal aorta, celiac",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "External iliac, common iliac, abdominal aorta, inferior mesenteric",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "External iliac, common iliac, abdominal aorta, superior mesenteric",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "External iliac, internal iliac, internal pudendal",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "External iliac, internal iliac, middle rectal",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "...to the celiac trunk - foregut",
+      "detail": "WHAT IT IS: the celiac trunk supplies FOREGUT structures (lower esophagus to proximal duodenum, plus liver, spleen, stomach). ❌ WHY IT FAILS: the sigmoid colon is hindgut (IMA), not celiac territory. ✅ Correct if: bleeding from a foregut organ (e.g., stomach/duodenum)."
+    },
+    {
+      "letter": "C",
+      "label": "...to the superior mesenteric artery - midgut",
+      "detail": "WHAT IT IS: the SMA supplies the MIDGUT (distal duodenum to the proximal two-thirds of the transverse colon). ❌ WHY IT FAILS: the sigmoid colon is beyond the SMA's territory - it's hindgut (IMA). ✅ Correct if: bleeding from small bowel/right or mid colon."
+    },
+    {
+      "letter": "D",
+      "label": "External iliac -> internal iliac -> internal pudendal - pelvis/genitalia",
+      "detail": "WHAT IT IS: the internal iliac -> internal pudendal artery supplies the perineum/external genitalia. ❌ WHY IT FAILS: this route doesn't reach the sigmoid colon, which is supplied by the IMA off the aorta. ✅ Correct if: perineal/genital bleeding."
+    },
+    {
+      "letter": "E",
+      "label": "External iliac -> internal iliac -> middle rectal - lower rectum",
+      "detail": "WHAT IT IS: the middle rectal artery (from the internal iliac) supplies the lower rectum. ❌ WHY IT FAILS: the SIGMOID colon is supplied by the IMA (via sigmoid arteries and the superior rectal artery), not the middle rectal. ✅ Correct if: lower rectal bleeding fed by the middle rectal artery."
+    }
+  ],
+  "reasoning": [
+    "Sigmoid colon is a hindgut structure supplied by the inferior mesenteric artery (IMA)",
+    "Femoral access means a retrograde path up the arterial tree",
+    "Femoral -> external iliac -> common iliac -> abdominal aorta",
+    "-> then into the inferior mesenteric artery; answer B"
+  ],
+  "mechanism": "The gut's arterial supply follows embryologic derivation: the celiac trunk supplies the foregut (lower esophagus to the second part of the duodenum, plus liver/spleen/stomach), the superior mesenteric artery supplies the midgut (third part of the duodenum to the proximal two-thirds of the transverse colon), and the inferior mesenteric artery (IMA) supplies the HINDGUT (distal third of the transverse colon, descending colon, sigmoid colon, and rectum). Because this patient is bleeding from the SIGMOID colon (hindgut), embolization must reach the IMA. Entering at the femoral artery, the catheter passes retrograde from the external iliac artery to the common iliac artery to the abdominal aorta, then selects the IMA - the sequence in choice B. Routes through the internal iliac artery (to the internal pudendal or middle rectal arteries) supply the pelvis/genitalia and lower rectum, not the sigmoid; the celiac and SMA endpoints correspond to foregut and midgut territory, respectively.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Anatomy > gut blood supply by embryologic segment: celiac (foregut), SMA (midgut), IMA (hindgut = descending/sigmoid colon, rectum); iliac artery branching."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Combine two facts: sigmoid = IMA, and femoral access ascends external iliac -> common iliac -> aorta -> target."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on foregut/midgut/hindgut, inferior mesenteric artery, external vs internal iliac, or superior rectal artery? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Celiac (foregut) and SMA (midgut) are the wrong-segment traps; internal iliac routes (pudendal/middle rectal) supply pelvis/lower rectum, not the sigmoid."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "message": "On the colonic-artery diagram, trace the IMA giving off left colic and sigmoid arteries to the descending/sigmoid colon. Anchor: 'sigmoid = IMA (hindgut).'"
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: sigmoid colon bleed -> IMA; femoral catheter route = external iliac -> common iliac -> aorta -> IMA."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Sigmoid colon arterial supply",
+      "back": "Inferior mesenteric artery (hindgut)"
+    },
+    {
+      "front": "Foregut / midgut / hindgut arteries",
+      "back": "Celiac / SMA / IMA"
+    },
+    {
+      "front": "Femoral access route to the aorta",
+      "back": "Femoral -> external iliac -> common iliac -> abdominal aorta"
+    },
+    {
+      "front": "IMA branches",
+      "back": "Left colic, sigmoid arteries, superior rectal artery"
+    },
+    {
+      "front": "Painless bright red blood per rectum in an older adult",
+      "back": "Diverticular (or angiodysplasia) lower GI bleed"
+    },
+    {
+      "front": "Internal iliac -> internal pudendal supplies",
+      "back": "Perineum / external genitalia (not the sigmoid)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "IMA / hindgut supply",
+      "detail": "Anatomy: sigmoid colon = IMA; femoral -> external iliac -> common iliac -> aorta -> IMA.",
+      "location": "Anatomy: sigmoid colon = IMA; femoral -> external iliac -> common iliac -> aorta -> IMA."
+    },
+    {
+      "tag": "options",
+      "topic": "Gut arterial segments",
+      "detail": "Anatomy > celiac (foregut), SMA (midgut), IMA (hindgut); iliac branches.",
+      "location": "Anatomy > celiac (foregut), SMA (midgut), IMA (hindgut); iliac branches."
+    },
+    {
+      "tag": "context",
+      "topic": "Lower GI bleed",
+      "detail": "GI > diverticulosis and angiodysplasia; angiographic embolization.",
+      "location": "GI > diverticulosis and angiodysplasia; angiographic embolization."
+    }
+  ],
+  "memoryHook": "Sigmoid = hindgut = IMA. From the groin, climb the plumbing: femoral -> external iliac -> common iliac -> aorta -> IMA.",
+  "stem": [
+    {
+      "text": "A 71-year-old man comes to the emergency department due to several episodes of bright red blood per rectum. His recent colonoscopy revealed "
+    },
+    {
+      "text": "numerous colonic diverticula",
+      "clue": true,
+      "type": "orange",
+      "note": "Diverticulosis is a common cause of painless lower GI bleeding (bright red blood per rectum), especially in older adults."
+    },
+    {
+      "text": ". Laboratory studies on admission are notable for a hemoglobin of 8.2 g/dL with an unremarkable coagulation profile. An abdominal angiogram shows "
+    },
+    {
+      "text": "active bleeding from the sigmoid colon",
+      "clue": true,
+      "type": "green",
+      "note": "The sigmoid colon is a HINDGUT structure supplied by the inferior mesenteric artery (IMA). To embolize the bleeder, the catheter must ultimately reach the IMA."
+    },
+    {
+      "text": ". Catheter embolization is planned "
+    },
+    {
+      "text": "via the femoral artery",
+      "clue": true,
+      "type": "blue",
+      "note": "Access via the femoral artery means the catheter travels retrograde: femoral -> external iliac -> common iliac -> abdominal aorta, then selects the IMA."
+    },
+    {
+      "text": ". During the procedure, the arterial catheter is most likely to proceed in which of the following orders?"
+    }
+  ]
+}
