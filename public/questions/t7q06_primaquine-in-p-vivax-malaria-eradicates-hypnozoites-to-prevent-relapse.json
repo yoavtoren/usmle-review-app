@@ -1,0 +1,221 @@
+{
+  "id": "q236",
+  "item": 236,
+  "qid": "1965",
+  "title": "Primaquine in P. vivax malaria: eradicates hypnozoites to prevent relapse",
+  "system": "Pharmacology",
+  "topic": "Malaria (P. vivax/ovale) / primaquine",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 38,
+  "vignette": "A 34-year-old man comes to the emergency department due to recurrent fever, chills, and excessive sweating. The symptoms began a few days ago and seem to recur every 48 hours. The patient recently returned from a trip to Latin America. Temperature is 38.6 C (101.5 F). Physical examination is otherwise normal. Laboratory studies are notable for anemia and thrombocytopenia. A blood smear with Giemsa staining demonstrates red blood cell inclusions. Chloroquine and primaquine are prescribed. The addition of primaquine to the treatment regimen is most likely to have which of the following effects?",
+  "clues": [
+    {
+      "text": "recur every 48 hours",
+      "type": "blue",
+      "note": "A tertian (every ~48 hour) fever pattern reflects synchronized erythrocytic schizont rupture - typical of Plasmodium vivax/ovale (and P. falciparum). In a Latin America traveler, P. vivax is the leading species."
+    },
+    {
+      "text": "returned from a trip to Latin America",
+      "type": "orange",
+      "note": "Geography narrows the species: P. vivax predominates in Central and South America, whereas P. falciparum dominates sub-Saharan Africa. P. vivax forms dormant liver hypnozoites - the key to this question."
+    },
+    {
+      "text": "anemia and thrombocytopenia",
+      "type": "blue",
+      "note": "Hemolysis (anemia) and thrombocytopenia are common laboratory findings in malaria as parasites destroy red cells and consume platelets."
+    },
+    {
+      "text": "red blood cell inclusions",
+      "type": "green",
+      "note": "Intraerythrocytic parasites (ring forms/trophozoites) on a Giemsa smear confirm malaria."
+    },
+    {
+      "text": "addition of primaquine",
+      "type": "blue",
+      "note": "Chloroquine clears the blood-stage parasites (the acute attack). Primaquine is added specifically to kill the dormant hepatic HYPNOZOITES of P. vivax/ovale, achieving radical cure and preventing relapse."
+    }
+  ],
+  "whatMatters": "Tertian (48-hour) fevers + Latin America + Giemsa RBC inclusions = malaria, most likely P. vivax. Chloroquine clears the blood-stage parasites; PRIMAQUINE eradicates the dormant liver HYPNOZOITES unique to P. vivax and P. ovale, PREVENTING RELAPSE. Answer C. (Check G6PD first - primaquine causes hemolysis in G6PD deficiency.)",
+  "strategy": "Split the two-drug regimen by target: chloroquine = erythrocytic (blood-stage) schizonticide that stops the acute attack; primaquine = hypnozoiticide that clears the dormant hepatic forms of vivax/ovale to prevent relapse. That directly yields C. Reject the false claims: primaquine doesn't reduce chloroquine toxicity, doesn't cover chloroquine-resistant strains (that's ACT/artemisinin), and CAUSES (not prevents) hemolysis in G6PD deficiency.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decrease chloroquine adverse effects",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Kill erythrocyte trophozoites",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Prevent disease relapse",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Prevent hemolysis",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Treat chloroquine-resistant strains",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Decrease chloroquine adverse effects",
+      "detail": "WHAT IT IS: chloroquine has its own toxicities (e.g., retinopathy with prolonged use). ❌ WHY IT FAILS: primaquine does not modify chloroquine's adverse-effect profile; they act on different parasite stages. ✅ Correct if: asking how to limit chloroquine's ocular toxicity (dose/duration)."
+    },
+    {
+      "letter": "B",
+      "label": "Kill erythrocyte trophozoites",
+      "detail": "WHAT IT IS: killing blood-stage (erythrocytic) trophozoites terminates the acute attack. ❌ WHY IT FAILS: that is CHLOROQUINE's role; primaquine has weak erythrocytic activity and mainly targets the LIVER stage. ✅ Correct if: describing chloroquine (blood schizonticide)."
+    },
+    {
+      "letter": "D",
+      "label": "Prevent hemolysis - reversed",
+      "detail": "WHAT IT IS: hemolysis is red-cell destruction. ❌ WHY IT FAILS: primaquine PRECIPITATES oxidative hemolysis in G6PD-deficient patients - it does not prevent hemolysis. ✅ Correct if: you were asked for primaquine's key contraindication, not a benefit."
+    },
+    {
+      "letter": "E",
+      "label": "Treat chloroquine-resistant strains - your pick",
+      "detail": "WHAT IT IS: chloroquine-resistant P. falciparum needs alternative therapy. ❌ WHY IT FAILS: resistance is covered by artemisinin-based combination therapy (or atovaquone-proguanil/mefloquine), NOT primaquine. The trap is assuming a second drug is for resistance, when here it's for the liver hypnozoites. ✅ Correct if: asking how to treat chloroquine-resistant falciparum malaria."
+    }
+  ],
+  "reasoning": [
+    "48-hour tertian fevers + Latin America + Giemsa RBC inclusions = malaria (P. vivax likely)",
+    "Chloroquine kills the blood-stage (erythrocytic) parasites causing the acute attack",
+    "P. vivax and P. ovale form dormant hepatic hypnozoites that reactivate -> relapse",
+    "Primaquine kills hypnozoites -> prevents relapse; answer C (check G6PD first)"
+  ],
+  "mechanism": "Malaria is transmitted by female Anopheles mosquitoes; sporozoites infect hepatocytes and then release merozoites that invade erythrocytes, producing cyclical (tertian, ~48-hour) fevers. Unlike other species, Plasmodium vivax and P. ovale form dormant hepatic HYPNOZOITES that can reactivate weeks to months later, causing relapse. Chloroquine is an erythrocytic (blood-stage) schizonticide that terminates the acute attack but does NOT clear hypnozoites. Primaquine, an 8-aminoquinoline, is active against the dormant hepatic stage, so its addition achieves 'radical cure' and PREVENTS RELAPSE. Because primaquine generates oxidative metabolites, it causes hemolysis in G6PD-deficient patients, so G6PD status must be checked first. Chloroquine-resistant P. falciparum is treated with artemisinin-based combination therapy, not primaquine.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Micro/Pharm > Plasmodium life cycle; P. vivax/ovale hypnozoites cause relapse; primaquine radical cure (check G6PD); chloroquine = blood schizonticide; ACT for resistance."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Ask WHY a second drug is added: to clear the dormant LIVER stage and prevent relapse - not to treat resistance."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on hypnozoite, schizonticide, tertian, radical cure, trophozoite, or 8-aminoquinoline? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Your pick (resistance) is covered by artemisinin combinations, not primaquine. And primaquine CAUSES hemolysis in G6PD deficiency (it doesn't prevent it)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: P. vivax/ovale -> hypnozoites -> relapse; primaquine kills hypnozoites (radical cure), screen G6PD; chloroquine handles the blood stage."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Dormant liver forms of P. vivax / P. ovale",
+      "back": "Hypnozoites (cause relapse)"
+    },
+    {
+      "front": "Drug that eradicates hypnozoites (radical cure)",
+      "back": "Primaquine (check G6PD first)"
+    },
+    {
+      "front": "Chloroquine target",
+      "back": "Erythrocytic (blood-stage) schizonticide - stops the acute attack"
+    },
+    {
+      "front": "Chloroquine-resistant P. falciparum treatment",
+      "back": "Artemisinin-based combination therapy (ACT)"
+    },
+    {
+      "front": "Primaquine + G6PD deficiency",
+      "back": "Oxidative hemolysis (screen G6PD; contraindicated if deficient)"
+    },
+    {
+      "front": "Tertian fever (every ~48 h) from Latin America",
+      "back": "P. vivax malaria"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Primaquine / relapse",
+      "detail": "Pharm: P. vivax/ovale hypnozoites -> relapse; primaquine for radical cure (screen G6PD).",
+      "location": "Pharm: P. vivax/ovale hypnozoites -> relapse; primaquine for radical cure (screen G6PD)."
+    },
+    {
+      "tag": "options",
+      "topic": "Antimalarials",
+      "detail": "Pharm > chloroquine (blood stage), primaquine (liver hypnozoites), ACT (resistant falciparum).",
+      "location": "Pharm > chloroquine (blood stage), primaquine (liver hypnozoites), ACT (resistant falciparum)."
+    },
+    {
+      "tag": "context",
+      "topic": "Plasmodium life cycle",
+      "detail": "Micro > sporozoite -> liver -> merozoite -> RBC; tertian vs quartan; Anopheles vector.",
+      "location": "Micro > sporozoite -> liver -> merozoite -> RBC; tertian vs quartan; Anopheles vector."
+    }
+  ],
+  "memoryHook": "priMAQUINE cleans the liver's sleeper cells (hypnozoites) so vivax can't relapse - but check G6PD or you'll hemolyze.",
+  "stem": [
+    {
+      "text": "A 34-year-old man comes to the emergency department due to recurrent fever, chills, and excessive sweating. The symptoms began a few days ago and seem to "
+    },
+    {
+      "text": "recur every 48 hours",
+      "clue": true,
+      "type": "blue",
+      "note": "A tertian (every ~48 hour) fever pattern reflects synchronized erythrocytic schizont rupture - typical of Plasmodium vivax/ovale (and P. falciparum). In a Latin America traveler, P. vivax is the leading species."
+    },
+    {
+      "text": ". The patient recently "
+    },
+    {
+      "text": "returned from a trip to Latin America",
+      "clue": true,
+      "type": "orange",
+      "note": "Geography narrows the species: P. vivax predominates in Central and South America, whereas P. falciparum dominates sub-Saharan Africa. P. vivax forms dormant liver hypnozoites - the key to this question."
+    },
+    {
+      "text": ". Temperature is 38.6 C (101.5 F). Physical examination is otherwise normal. Laboratory studies are notable for "
+    },
+    {
+      "text": "anemia and thrombocytopenia",
+      "clue": true,
+      "type": "blue",
+      "note": "Hemolysis (anemia) and thrombocytopenia are common laboratory findings in malaria as parasites destroy red cells and consume platelets."
+    },
+    {
+      "text": ". A blood smear with Giemsa staining demonstrates "
+    },
+    {
+      "text": "red blood cell inclusions",
+      "clue": true,
+      "type": "green",
+      "note": "Intraerythrocytic parasites (ring forms/trophozoites) on a Giemsa smear confirm malaria."
+    },
+    {
+      "text": ". Chloroquine and primaquine are prescribed. The "
+    },
+    {
+      "text": "addition of primaquine",
+      "clue": true,
+      "type": "blue",
+      "note": "Chloroquine clears the blood-stage parasites (the acute attack). Primaquine is added specifically to kill the dormant hepatic HYPNOZOITES of P. vivax/ovale, achieving radical cure and preventing relapse."
+    },
+    {
+      "text": " to the treatment regimen is most likely to have which of the following effects?"
+    }
+  ]
+}

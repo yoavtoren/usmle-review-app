@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N-acetylcysteine in acetaminophen overdose: replenishes glutathione</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 7 · all 39</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q253", "item": 253, "qid": "18748", "title": "N-acetylcysteine in acetaminophen overdose: replenishes glutathione", "system": "Pharmacology", "topic": "Acetaminophen toxicity / N-acetylcysteine", "correct": "C", "yourAnswer": "C", "percentCorrect": 73, "vignette": "A 24-year-old man is brought to the emergency department due to weakness, lethargy, nausea, and dizziness. He took fifty 325-mg acetaminophen tablets approximately 6 hours ago. Vital signs are normal. Pupils are equal, round, and reactive to light; there is mild epigastric tenderness. Laboratory results include an elevated serum acetaminophen level. Intravenous infusion of N-acetylcysteine is started. This treatment is most likely to improve the patient's condition by which of the following mechanisms?", "clues": [{"text": "fifty 325-mg acetaminophen tablets approximately 6 hours ago", "type": "red", "note": "About 16 g of acetaminophen (fifty 325-mg tablets) is a massive overdose that overwhelms conjugation pathways and depletes hepatic glutathione, risking fulminant hepatotoxicity."}, {"text": "mild epigastric tenderness", "type": "blue", "note": "Early acetaminophen toxicity is often mild/nonspecific (nausea, malaise, epigastric discomfort) before hepatic injury peaks at 24-72 hours - so early antidote is key."}, {"text": "N-acetylcysteine is started", "type": "green", "note": "N-acetylcysteine is the antidote: it provides cysteine to regenerate glutathione, which detoxifies the reactive metabolite NAPQI and prevents liver injury."}], "whatMatters": "A massive acetaminophen overdose depletes hepatic glutathione, so the toxic metabolite NAPQI accumulates and injures the liver. N-acetylcysteine works by supplying cysteine to REGENERATE INTRAHEPATIC GLUTATHIONE, which conjugates and detoxifies NAPQI. Answer C. Give it early (most effective within ~8-10 hours).", "strategy": "Trace the pathway: overdose -> saturated sulfation/glucuronidation -> excess NAPQI -> glutathione depleted -> hepatocyte injury. NAC = glutathione precursor -> increases glutathione -> detoxifies NAPQI. That's C. Reject reversed/false options: NAC doesn't induce glucuronidation, doesn't block a receptor (NAPQI has none), doesn't rely on renal excretion, and doesn't work by suppressing P450.", "options": [{"letter": "A", "text": "Activating hepatic glucuronidation enzymes", "correct": false}, {"letter": "B", "text": "Competitively blocking drug receptor sites", "correct": false}, {"letter": "C", "text": "Increasing the amount of intrahepatic glutathione", "correct": true}, {"letter": "D", "text": "Increasing renal excretion of drug molecules", "correct": false}, {"letter": "E", "text": "Suppressing hepatic cytochrome P450 enzymes", "correct": false}], "eliminations": [{"letter": "A", "label": "Activating glucuronidation enzymes - not NAC's action", "detail": "WHAT IT IS: glucuronidation is a normal acetaminophen-clearing pathway. ❌ WHY IT FAILS: NAC does not induce glucuronidation; it replenishes glutathione to detoxify NAPQI. ✅ Correct if: a drug that induces UGT/glucuronidation."}, {"letter": "B", "label": "Competitively blocking drug receptor sites - naloxone-type", "detail": "WHAT IT IS: receptor antagonists (e.g., naloxone for opioids) reverse toxicity by blocking a receptor. ❌ WHY IT FAILS: NAPQI causes injury via oxidative protein adducts, not a specific receptor, so there's nothing to block. ✅ Correct if: an opioid overdose reversed by naloxone."}, {"letter": "D", "label": "Increasing renal excretion - alkalinization/salicylates", "detail": "WHAT IT IS: urinary alkalinization enhances excretion of some toxins (e.g., salicylates). ❌ WHY IT FAILS: unconjugated NAPQI isn't cleared by increasing renal excretion; NAC acts in the liver via glutathione. ✅ Correct if: salicylate overdose treated with sodium bicarbonate."}, {"letter": "E", "label": "Suppressing cytochrome P450 - cimetidine idea", "detail": "WHAT IT IS: inhibiting CYP450 could theoretically reduce NAPQI formation (e.g., cimetidine). ❌ WHY IT FAILS: this is not NAC's mechanism and hasn't proven effective in overdose; NAC works by restoring glutathione. ✅ Correct if: describing a CYP450 inhibitor's effect (not the standard antidote)."}], "reasoning": ["Massive acetaminophen overdose overwhelms sulfation/glucuronidation, generating excess NAPQI", "Depleted hepatic glutathione allows NAPQI to injure hepatocytes", "N-acetylcysteine supplies cysteine to regenerate glutathione", "-> glutathione detoxifies NAPQI; answer C (give early)"], "mechanism": "Acetaminophen is mostly cleared by hepatic sulfation and glucuronidation to nontoxic metabolites, with a small fraction oxidized by cytochrome P450 to the reactive metabolite N-acetyl-p-benzoquinone imine (NAPQI); at therapeutic doses NAPQI is conjugated by hepatic glutathione and excreted. In overdose, the conjugation pathways are saturated, NAPQI production rises, and hepatic GLUTATHIONE is depleted, so unconjugated NAPQI forms protein adducts and generates oxidative damage, causing centrilobular hepatocellular necrosis (injury peaks at 24-72 hours). N-acetylcysteine is a glutathione precursor (provides cysteine), so it REGENERATES INTRAHEPATIC GLUTATHIONE, restoring NAPQI detoxification and preventing further hepatotoxicity; it is most effective when given early. The distractors are not NAC's mechanism: it does not induce glucuronidation, block a receptor (NAPQI has none), rely on renal excretion (salicylate strategy), or work by suppressing P450.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Pharm/Tox > acetaminophen: NAPQI toxic metabolite, glutathione depletion, centrilobular necrosis; N-acetylcysteine = glutathione precursor antidote (give early)."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Trace the toxic pathway (NAPQI + depleted glutathione) so NAC's action (regenerate glutathione) is obvious."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on NAPQI, glutathione, sulfation/glucuronidation, cytochrome P450, or hepatic adduct? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "D (renal excretion) fits salicylate/aspirin overdose, not acetaminophen; A/E describe metabolic tweaks that aren't NAC's mechanism; B is a receptor antagonist idea."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: acetaminophen overdose -> NAPQI + low glutathione -> liver injury; NAC restores glutathione (give early, ideally <8-10 h)."}], "keywords": [{"front": "Toxic acetaminophen metabolite", "back": "NAPQI (N-acetyl-p-benzoquinone imine)"}, {"front": "N-acetylcysteine mechanism", "back": "Glutathione precursor -> regenerates glutathione -> detoxifies NAPQI"}, {"front": "Why overdose is toxic", "back": "Saturated conjugation + depleted glutathione -> NAPQI injures hepatocytes"}, {"front": "Acetaminophen liver injury pattern", "back": "Centrilobular (zone III) hepatocellular necrosis"}, {"front": "Urine alkalinization (bicarbonate) treats", "back": "Salicylate (aspirin) overdose - not acetaminophen"}, {"front": "When is NAC most effective?", "back": "Given early (best within ~8-10 hours of ingestion)"}], "firstAid": [{"tag": "answer / stem", "topic": "N-acetylcysteine", "detail": "Tox: glutathione precursor; regenerates glutathione to detoxify NAPQI; give early."}, {"tag": "options", "topic": "Acetaminophen metabolism", "detail": "Pharm > sulfation/glucuronidation (nontoxic), CYP450 -> NAPQI (toxic), glutathione conjugation."}, {"tag": "context", "topic": "Overdose antidotes", "detail": "Tox > salicylates (bicarbonate/renal excretion), opioids (naloxone), acetaminophen (NAC)."}], "memoryHook": "NAPQI is the poison; glutathione is the mop. N-acetylcysteine refills the mop bucket - so mop early.", "stem": [{"text": "A 24-year-old man is brought to the emergency department due to weakness, lethargy, nausea, and dizziness. He took "}, {"text": "fifty 325-mg acetaminophen tablets approximately 6 hours ago", "clue": true, "type": "red", "note": "About 16 g of acetaminophen (fifty 325-mg tablets) is a massive overdose that overwhelms conjugation pathways and depletes hepatic glutathione, risking fulminant hepatotoxicity."}, {"text": ". Vital signs are normal. Pupils are equal, round, and reactive to light; there is "}, {"text": "mild epigastric tenderness", "clue": true, "type": "blue", "note": "Early acetaminophen toxicity is often mild/nonspecific (nausea, malaise, epigastric discomfort) before hepatic injury peaks at 24-72 hours - so early antidote is key."}, {"text": ". Laboratory results include an elevated serum acetaminophen level. Intravenous infusion of "}, {"text": "N-acetylcysteine is started", "clue": true, "type": "green", "note": "N-acetylcysteine is the antidote: it provides cysteine to regenerate glutathione, which detoxifies the reactive metabolite NAPQI and prevents liver injury."}, {"text": ". This treatment is most likely to improve the patient's condition by which of the following mechanisms?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

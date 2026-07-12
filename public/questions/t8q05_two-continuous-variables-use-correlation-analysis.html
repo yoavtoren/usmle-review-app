@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two continuous variables: use correlation analysis</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 8 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q274", "item": 274, "qid": "19199", "title": "Two continuous variables: use correlation analysis", "system": "Biostatistics", "topic": "Choosing a statistical test - correlation", "correct": "C", "yourAnswer": "C", "percentCorrect": 51, "vignette": "An investigator wants to examine the relationship between waist circumference and average diastolic blood pressure in a sample of adults. For each participant, waist circumference is recorded in centimeters and average diastolic blood pressure is recorded in mm Hg; both are measured as continuous quantitative variables. The investigator wants to quantify the strength and direction of the association between these two variables. Which of the following statistical methods is most appropriate?", "clues": [{"text": "waist circumference is recorded in centimeters", "type": "blue", "note": "Waist circumference in centimeters is a continuous quantitative variable (variable 1)."}, {"text": "average diastolic blood pressure is recorded in mm Hg", "type": "blue", "note": "Diastolic blood pressure in mm Hg is a second continuous quantitative variable (variable 2)."}, {"text": "quantify the strength and direction of the association", "type": "green", "note": "Assessing strength AND direction of a linear relationship between two continuous variables is exactly what a correlation coefficient (r) does."}], "whatMatters": "Two continuous quantitative variables (waist circumference, diastolic blood pressure) with the goal of measuring the strength and direction of their association = CORRELATION ANALYSIS (Pearson r). Answer C. The chi-square test is for categorical data, ANOVA/t-test compare means across groups, and relative risk needs a binary outcome.", "strategy": "Match the data type to the test. Two continuous variables + measuring association -> correlation (or linear regression). Reject chi-square (two categorical variables), t-test (compare a mean between 2 groups), ANOVA (compare means across ≥3 groups), and relative risk (needs categorical exposure + categorical outcome).", "options": [{"letter": "A", "text": "Analysis of variance (ANOVA)", "correct": false}, {"letter": "B", "text": "Chi-square test", "correct": false}, {"letter": "C", "text": "Correlation analysis", "correct": true}, {"letter": "D", "text": "Relative risk calculation", "correct": false}, {"letter": "E", "text": "Two-sample t-test", "correct": false}], "eliminations": [{"letter": "A", "label": "ANOVA - compares means across ≥3 groups", "detail": "WHAT IT IS: analysis of variance compares the means of a continuous outcome across 3 or more groups. ❌ WHY IT FAILS: there are no discrete groups here - both variables are continuous. ✅ Correct if: comparing a mean value among ≥3 categories."}, {"letter": "B", "label": "Chi-square test - two categorical variables", "detail": "WHAT IT IS: the chi-square test assesses association between two categorical variables. ❌ WHY IT FAILS: waist circumference and blood pressure are continuous, not categorical. ✅ Correct if: both variables were categorical (e.g., a 2x2 table)."}, {"letter": "D", "label": "Relative risk - needs binary exposure and outcome", "detail": "WHAT IT IS: relative risk compares the probability of an outcome between exposed and unexposed groups. ❌ WHY IT FAILS: it requires categorical exposure and outcome, not two continuous measures. ✅ Correct if: comparing disease risk between two exposure categories."}, {"letter": "E", "label": "Two-sample t-test - compares 2 group means", "detail": "WHAT IT IS: compares the mean of a continuous variable between two groups. ❌ WHY IT FAILS: there is one continuous variable per subject related to another continuous variable, not a mean compared between 2 groups. ✅ Correct if: comparing a continuous mean between exactly 2 groups."}], "reasoning": ["Both variables (waist circumference, diastolic BP) are continuous and quantitative", "Goal is to measure the strength and direction of their association", "Two continuous variables + association -> correlation analysis (Pearson r)", "-> correlation analysis; answer C"], "mechanism": "Correlation analysis quantifies the linear association between two continuous variables using a correlation coefficient (Pearson r), which ranges from -1 to +1: the sign indicates direction (positive = both rise together; negative = one rises as the other falls) and the magnitude indicates strength (near 0 = weak/no linear association; near 1 = strong). It answers 'how strongly and in what direction do these two continuous measures move together?' Linear regression is a related method that additionally models the numeric relationship (slope) and can predict one variable from the other. The distractors require different data structures: chi-square needs two categorical variables; the two-sample t-test and ANOVA compare a continuous mean across 2 or ≥3 groups, respectively; and relative risk requires a categorical exposure and a categorical outcome.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Biostat > choosing a test by variable type: 2 continuous variables + association -> correlation/regression; chi-square (2 categorical); t-test (mean, 2 groups); ANOVA (mean, ≥3 groups)."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Recognize that BOTH variables are continuous and the goal is association strength/direction -> correlation."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on continuous vs categorical variable, correlation coefficient (r), ANOVA, or relative risk? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Chi-square (categorical), t-test/ANOVA (group means), relative risk (binary exposure/outcome) all mismatch the data type."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: 2 continuous variables -> correlation (r) / linear regression; sign = direction, magnitude = strength."}], "keywords": [{"front": "Test for association between 2 continuous variables", "back": "Correlation analysis (Pearson r) / linear regression"}, {"front": "Correlation coefficient r range and meaning", "back": "-1 to +1; sign = direction, magnitude = strength"}, {"front": "Two categorical variables -> which test", "back": "Chi-square test"}, {"front": "Compare a mean between exactly 2 groups", "back": "Two-sample t-test"}, {"front": "Compare means across ≥3 groups", "back": "ANOVA"}, {"front": "Measure needing binary exposure + outcome", "back": "Relative risk (cohort) / odds ratio (case-control)"}], "firstAid": [{"tag": "answer / stem", "topic": "Correlation", "detail": "Biostat: 2 continuous variables -> Pearson correlation (r), sign=direction, magnitude=strength."}, {"tag": "options", "topic": "Statistical test selection", "detail": "Biostat > chi-square (categorical), t-test/ANOVA (means), relative risk (binary)."}, {"tag": "concept", "topic": "Correlation vs regression", "detail": "Biostat > correlation = strength/direction; regression = slope/prediction."}], "memoryHook": "Two rulers, not two buckets: continuous vs continuous -> correlation. Buckets (categories) -> chi-square.", "stem": [{"text": "An investigator wants to examine the relationship between waist circumference and average diastolic blood pressure in a sample of adults. For each participant, "}, {"text": "waist circumference is recorded in centimeters", "clue": true, "type": "blue", "note": "Waist circumference in centimeters is a continuous quantitative variable (variable 1)."}, {"text": " and "}, {"text": "average diastolic blood pressure is recorded in mm Hg", "clue": true, "type": "blue", "note": "Diastolic blood pressure in mm Hg is a second continuous quantitative variable (variable 2)."}, {"text": "; both are measured as continuous quantitative variables. The investigator wants to "}, {"text": "quantify the strength and direction of the association", "clue": true, "type": "green", "note": "Assessing strength AND direction of a linear relationship between two continuous variables is exactly what a correlation coefficient (r) does."}, {"text": " between these two variables. Which of the following statistical methods is most appropriate?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

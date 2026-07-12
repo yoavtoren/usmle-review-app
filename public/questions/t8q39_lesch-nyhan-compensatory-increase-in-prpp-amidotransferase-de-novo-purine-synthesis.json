@@ -1,0 +1,203 @@
+{
+  "id": "q308",
+  "item": 308,
+  "qid": "2067",
+  "title": "Lesch-Nyhan: compensatory increase in PRPP amidotransferase (de novo purine synthesis)",
+  "system": "Biochemistry",
+  "topic": "Purine metabolism - Lesch-Nyhan / HGPRT",
+  "correct": "D",
+  "yourAnswer": "C",
+  "percentCorrect": 35,
+  "vignette": "A 6-month-old boy is brought to the office by his mother due to concern that he is not developing normally. He has been feeding regularly and has had no medical issues other than a mild upper respiratory infection a month earlier. However, the mother says, \"He doesn't seem to be as interactive as my other children were at this age.\" Physical examination reveals delayed developmental milestones and hypotonia. Two years later, the child demonstrates involuntary movements and a tendency to aggressively bite his own lips and fingers. Laboratory analysis shows an elevated blood uric acid level. Which of the following enzymes is most likely to exhibit increased activity in order to compensate for this patient's genetic defect?",
+  "clues": [
+    {
+      "text": "delayed developmental milestones and hypotonia",
+      "type": "blue",
+      "note": "Early developmental delay and hypotonia in a male infant begin the picture of an X-linked neurodevelopmental disorder."
+    },
+    {
+      "text": "aggressively bite his own lips and fingers",
+      "type": "red",
+      "note": "Compulsive self-mutilation (biting lips/fingers) is the hallmark behavioral sign of Lesch-Nyhan syndrome (HGPRT deficiency)."
+    },
+    {
+      "text": "elevated blood uric acid level",
+      "type": "green",
+      "note": "Hyperuricemia results from HGPRT deficiency: unsalvaged purines are degraded to uric acid, and increased de novo synthesis adds more."
+    }
+  ],
+  "whatMatters": "Male infant with developmental delay, dystonia/self-mutilation, and hyperuricemia = Lesch-Nyhan syndrome (X-linked HGPRT deficiency). Loss of purine SALVAGE forces reliance on DE NOVO synthesis, whose first committed enzyme, PRPP AMIDOTRANSFERASE (glutamine-PRPP amidotransferase), shows INCREASED activity to compensate. Answer D. (The trap: HGPRT itself is DEFICIENT, not increased.)",
+  "strategy": "Read the question carefully: it asks which enzyme is UP to COMPENSATE - not which is defective. In Lesch-Nyhan, HGPRT (salvage) is deficient, so the cell shunts to DE NOVO purine synthesis; PRPP amidotransferase (the committed, rate-limiting step) is upregulated. Reject HGPRT (the DEFICIENT enzyme - the tempting trap), and the PYRIMIDINE enzymes (aspartate carbamoyltransferase, dihydroorotase, thymidylate synthase) and ribonucleotide reductase (activity set by proliferation).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Aspartate carbamoyltransferase",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Dihydroorotase",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Hypoxanthine-guanine phosphoribosyltransferase",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Phosphoribosyl pyrophosphate amidotransferase",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Ribonucleotide reductase",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Thymidylate synthase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Aspartate carbamoyltransferase - pyrimidine synthesis",
+      "detail": "WHAT IT IS: an enzyme of de novo PYRIMIDINE synthesis. ❌ WHY IT FAILS: Lesch-Nyhan is a PURINE-salvage defect; pyrimidine enzyme activity is not the compensating change. ✅ Correct if: a pyrimidine-synthesis question."
+    },
+    {
+      "letter": "B",
+      "label": "Dihydroorotase - pyrimidine synthesis",
+      "detail": "WHAT IT IS: another de novo PYRIMIDINE synthesis enzyme. ❌ WHY IT FAILS: it is unrelated to purine salvage/synthesis compensation. ✅ Correct if: a pyrimidine-pathway question."
+    },
+    {
+      "letter": "C",
+      "label": "HGPRT - the DEFICIENT enzyme, not increased (your pick)",
+      "detail": "WHAT IT IS: hypoxanthine-guanine phosphoribosyltransferase, the salvage enzyme. ❌ WHY IT FAILS: in Lesch-Nyhan HGPRT is DEFICIENT (decreased), not increased - it is the defect itself, so it cannot be the compensating (upregulated) enzyme. ✅ Correct if: asking which enzyme is DEFICIENT."
+    },
+    {
+      "letter": "E",
+      "label": "Ribonucleotide reductase - proliferation-driven",
+      "detail": "WHAT IT IS: converts ribonucleotides to deoxyribonucleotides for DNA synthesis. ❌ WHY IT FAILS: its activity tracks cell proliferation, not the compensatory shunt to de novo purine synthesis in HGPRT deficiency. ✅ Correct if: DNA precursor supply during cell division."
+    },
+    {
+      "letter": "F",
+      "label": "Thymidylate synthase - pyrimidine (dTMP) synthesis",
+      "detail": "WHAT IT IS: makes dTMP from dUMP (pyrimidine). ❌ WHY IT FAILS: it is a pyrimidine enzyme, unrelated to purine salvage compensation. ✅ Correct if: a folate/pyrimidine (5-FU target) question."
+    }
+  ],
+  "reasoning": [
+    "Male infant with delay, self-mutilation, and hyperuricemia = Lesch-Nyhan (X-linked HGPRT deficiency)",
+    "Loss of purine salvage forces reliance on DE NOVO purine synthesis",
+    "The committed, rate-limiting step (PRPP amidotransferase) is upregulated to compensate",
+    "-> PRPP amidotransferase; answer D (HGPRT is the DEFICIENT enzyme, the trap)"
+  ],
+  "mechanism": "Lesch-Nyhan syndrome is an X-linked recessive deficiency of HYPOXANTHINE-GUANINE PHOSPHORIBOSYLTRANSFERASE (HGPRT), the purine SALVAGE enzyme that recycles hypoxanthine and guanine back into IMP and GMP. Without salvage, hypoxanthine and guanine are instead degraded to URIC ACID (causing hyperuricemia/gout and its neurodevelopmental features - dystonia, self-mutilation, intellectual disability). Two factors drive the cell toward DE NOVO purine synthesis: substrate PRPP accumulates (it is no longer consumed by salvage), and salvage-derived nucleotides that normally feedback-inhibit synthesis are reduced. As a result, PHOSPHORIBOSYL PYROPHOSPHATE (PRPP) AMIDOTRANSFERASE - the first committed, rate-limiting enzyme of de novo purine synthesis (converts PRPP to phosphoribosylamine) - shows INCREASED activity to supply purines for DNA/RNA and cellular metabolism. This increased de novo flux also feeds more purine degradation, compounding the hyperuricemia. The question's trap is HGPRT itself, which is DECREASED (the defect), not increased. The pyrimidine-pathway enzymes and ribonucleotide reductase are not the compensating step.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem > Lesch-Nyhan: X-linked HGPRT deficiency, ↓purine salvage -> hyperuricemia + self-mutilation/dystonia; compensatory ↑ de novo synthesis via PRPP amidotransferase (rate-limiting)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "The question asks for the COMPENSATORY (increased) enzyme, not the deficient one - de novo synthesis (PRPP amidotransferase) rises."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on purine salvage vs de novo synthesis, HGPRT, PRPP amidotransferase, or rate-limiting step? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "HGPRT is DECREASED (the defect/trap); aspartate carbamoyltransferase, dihydroorotase, thymidylate synthase are PYRIMIDINE enzymes; ribonucleotide reductase tracks proliferation."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: Lesch-Nyhan = HGPRT deficiency (X-linked); salvage down -> de novo up (PRPP amidotransferase); hyperuricemia, self-mutilation. Treat allopurinol."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Male infant, self-mutilation, dystonia, hyperuricemia",
+      "back": "Lesch-Nyhan syndrome (X-linked HGPRT deficiency)"
+    },
+    {
+      "front": "Deficient enzyme in Lesch-Nyhan",
+      "back": "HGPRT (hypoxanthine-guanine phosphoribosyltransferase) - purine salvage"
+    },
+    {
+      "front": "Compensating (increased) enzyme in Lesch-Nyhan",
+      "back": "PRPP amidotransferase (rate-limiting de novo purine synthesis)"
+    },
+    {
+      "front": "Why hyperuricemia in HGPRT deficiency",
+      "back": "Unsalvaged purines -> uric acid + increased de novo flux"
+    },
+    {
+      "front": "Lesch-Nyhan inheritance",
+      "back": "X-linked recessive"
+    },
+    {
+      "front": "Lesch-Nyhan hyperuricemia treatment",
+      "back": "Allopurinol (xanthine oxidase inhibitor)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Lesch-Nyhan / purine synthesis",
+      "detail": "Biochem: HGPRT deficient -> de novo up; PRPP amidotransferase (rate-limiting) increased.",
+      "location": "Biochem: HGPRT deficient -> de novo up; PRPP amidotransferase (rate-limiting) increased."
+    },
+    {
+      "tag": "options",
+      "topic": "Nucleotide pathways",
+      "detail": "Biochem > pyrimidine enzymes (ATCase, dihydroorotase, thymidylate synthase) vs purine.",
+      "location": "Biochem > pyrimidine enzymes (ATCase, dihydroorotase, thymidylate synthase) vs purine."
+    },
+    {
+      "tag": "trap",
+      "topic": "Deficient vs compensatory",
+      "detail": "Biochem > HGPRT is DECREASED (defect); question asks the INCREASED enzyme.",
+      "location": "Biochem > HGPRT is DECREASED (defect); question asks the INCREASED enzyme."
+    }
+  ],
+  "memoryHook": "Salvage is broken (HGPRT down), so the cell floors the de novo accelerator - PRPP amidotransferase revs up - while uric acid piles up and the child bites himself.",
+  "stem": [
+    {
+      "text": "A 6-month-old boy is brought to the office by his mother due to concern that he is not developing normally. He has been feeding regularly and has had no medical issues other than a mild upper respiratory infection a month earlier. However, the mother says, \"He doesn't seem to be as interactive as my other children were at this age.\" Physical examination reveals "
+    },
+    {
+      "text": "delayed developmental milestones and hypotonia",
+      "clue": true,
+      "type": "blue",
+      "note": "Early developmental delay and hypotonia in a male infant begin the picture of an X-linked neurodevelopmental disorder."
+    },
+    {
+      "text": ". Two years later, the child demonstrates involuntary movements and a tendency to "
+    },
+    {
+      "text": "aggressively bite his own lips and fingers",
+      "clue": true,
+      "type": "red",
+      "note": "Compulsive self-mutilation (biting lips/fingers) is the hallmark behavioral sign of Lesch-Nyhan syndrome (HGPRT deficiency)."
+    },
+    {
+      "text": ". Laboratory analysis shows an "
+    },
+    {
+      "text": "elevated blood uric acid level",
+      "clue": true,
+      "type": "green",
+      "note": "Hyperuricemia results from HGPRT deficiency: unsalvaged purines are degraded to uric acid, and increased de novo synthesis adds more."
+    },
+    {
+      "text": ". Which of the following enzymes is most likely to exhibit increased activity in order to compensate for this patient's genetic defect?"
+    }
+  ]
+}

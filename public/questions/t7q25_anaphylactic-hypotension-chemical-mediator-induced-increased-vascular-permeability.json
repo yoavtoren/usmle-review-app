@@ -1,0 +1,207 @@
+{
+  "id": "q255",
+  "item": 255,
+  "qid": "20767",
+  "title": "Anaphylactic hypotension: chemical mediator-induced increased vascular permeability",
+  "system": "Immunology",
+  "topic": "Anaphylaxis (type I hypersensitivity)",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 80,
+  "vignette": "A 25-year-old woman is brought to the emergency department 40 minutes after being stung by several wasps. She reports throat tightness and dizziness. She has no chronic medical conditions and takes no medication. Blood pressure is 80/40 mm Hg, pulse is 120/min, and respirations are 32/min. Examination shows diffuse erythematous plaques over the trunk and 1+ pitting edema of the ankles. Which of the following is the most likely cause of this patient's hypotension?",
+  "clues": [
+    {
+      "text": "40 minutes after being stung by several wasps",
+      "type": "orange",
+      "note": "A rapid reaction (minutes) after an insect sting is the hallmark timing of type I (immediate, IgE-mediated) hypersensitivity - anaphylaxis to wasp venom."
+    },
+    {
+      "text": "throat tightness",
+      "type": "red",
+      "note": "Throat tightness signals airway/laryngeal involvement in anaphylaxis - a life-threatening feature requiring immediate epinephrine."
+    },
+    {
+      "text": "Blood pressure is 80/40 mm Hg",
+      "type": "red",
+      "note": "Hypotension (80/40 / normal ~120/80 mm Hg) with tachycardia is anaphylactic (distributive) shock from vasodilation and capillary fluid leak."
+    },
+    {
+      "text": "diffuse erythematous plaques over the trunk",
+      "type": "green",
+      "note": "Diffuse urticaria (erythematous plaques) confirms a systemic IgE-mediated mast-cell reaction - anaphylaxis."
+    }
+  ],
+  "whatMatters": "A wasp sting minutes earlier + urticaria + throat tightness + hypotension = anaphylaxis (type I, IgE-mediated). The hypotension comes from mast-cell CHEMICAL MEDIATORS (histamine, leukotrienes, prostaglandins) that cause vasodilation and INCREASED VASCULAR PERMEABILITY, shifting fluid out of vessels (note the ankle edema). Answer B. Treat with intramuscular epinephrine.",
+  "strategy": "Two forks: (1) mechanism = CHEMICAL MEDIATORS (allergy/IgE-mast cell), not TOXIN-mediated (that's toxic shock syndrome); (2) the driver of hypotension = increased vascular permeability + vasodilation (fluid shifts out; edema), not decreased myocardial contractility. Combine: 'chemical mediator-induced increased vascular permeability' = B. The toxin options (D/E) fit TSS, not a wasp sting.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Chemical mediator-induced decreased myocardial contractility",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Chemical mediator-induced increased vascular permeability",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Impaired endogenous sympathetic nerve activity",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Toxin-mediated decreased myocardial contractility",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Toxin-mediated increased capillary permeability",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Chemical mediator-induced DECREASED myocardial contractility",
+      "detail": "WHAT IT IS: mediators like histamine can have some negative inotropic effect on the heart. ❌ WHY IT FAILS: the dominant cause of anaphylactic hypotension is peripheral vasodilation + increased permeability, and the compensatory sympathetic response actually raises heart rate/contractility. ✅ Correct if: a scenario centered on direct cardiac depression."
+    },
+    {
+      "letter": "C",
+      "label": "Impaired endogenous sympathetic nerve activity - reversed",
+      "detail": "WHAT IT IS: loss of sympathetic tone (as in neurogenic shock) causes vasodilation. ❌ WHY IT FAILS: in anaphylaxis the sympathetic system is INTACT and compensating (tachycardia); the problem is mediator-driven vasodilation/leak, not sympathetic failure. ✅ Correct if: neurogenic shock from spinal cord injury."
+    },
+    {
+      "letter": "D",
+      "label": "Toxin-mediated decreased myocardial contractility - TSS",
+      "detail": "WHAT IT IS: superantigen toxins (toxic shock syndrome) can depress the myocardium. ❌ WHY IT FAILS: this is a wasp-sting allergic reaction, not a toxin-mediated illness. ✅ Correct if: toxic shock syndrome (tampon/packing, high fever, diffuse rash)."
+    },
+    {
+      "letter": "E",
+      "label": "Toxin-mediated increased capillary permeability - TSS",
+      "detail": "WHAT IT IS: TSS toxin (superantigen) triggers cytokine release that increases capillary permeability. ❌ WHY IT FAILS: right physiology (leaky capillaries) but wrong trigger - anaphylaxis is CHEMICAL MEDIATOR/IgE-driven, not toxin-driven. ✅ Correct if: toxic shock syndrome."
+    }
+  ],
+  "reasoning": [
+    "Wasp sting minutes earlier + urticaria + throat tightness + hypotension = anaphylaxis (type I, IgE-mediated)",
+    "Allergen cross-links IgE on mast cells -> release of histamine, leukotrienes, prostaglandins",
+    "These chemical mediators cause vasodilation and INCREASED VASCULAR PERMEABILITY (fluid leaks out; ankle edema)",
+    "-> chemical mediator-induced increased vascular permeability; answer B"
+  ],
+  "mechanism": "Anaphylaxis is a type I (immediate) hypersensitivity reaction. On first exposure, an allergen (wasp venom) induces IgE that binds mast cells and basophils; on re-exposure, allergen cross-links surface IgE, triggering degranulation and release of chemical mediators (histamine, leukotrienes, prostaglandins). These mediators produce profound peripheral VASODILATION (lowering systemic vascular resistance and central venous pressure) and INCREASE VASCULAR PERMEABILITY, causing large fluid shifts from the intravascular to the extravascular space (reflected by the ankle edema). The result is distributive (anaphylactic) shock - hypotension with compensatory tachycardia - plus urticaria and airway involvement. The mechanism is chemical-mediator/IgE-driven, not toxin-mediated (which is the basis of toxic shock syndrome); and the sympathetic response is intact and compensatory rather than impaired. First-line treatment is intramuscular epinephrine.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Immuno > anaphylaxis (type I): IgE/mast cell mediators (histamine, leukotrienes) -> vasodilation + increased vascular permeability -> distributive shock; epinephrine treatment."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Two attributes to nail: CHEMICAL mediator (not toxin) and increased vascular permeability/vasodilation (not decreased contractility)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on type I hypersensitivity, vascular permeability, distributive shock, superantigen, or urticaria? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The 'toxin-mediated' options (D/E) fit toxic shock syndrome, not a wasp sting; 'decreased contractility' (A) and 'impaired sympathetic activity' (C) mis-locate the mechanism."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: anaphylaxis = IgE/mast cell chemical mediators -> vasodilation + leaky capillaries -> hypotension; treat with IM epinephrine."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Hypotension minutes after a sting + urticaria + throat tightness",
+      "back": "Anaphylaxis (type I, IgE-mediated)"
+    },
+    {
+      "front": "Cause of anaphylactic hypotension",
+      "back": "Chemical mediators -> vasodilation + increased vascular permeability"
+    },
+    {
+      "front": "Anaphylaxis mediators",
+      "back": "Histamine, leukotrienes, prostaglandins (mast cell/basophil)"
+    },
+    {
+      "front": "First-line anaphylaxis treatment",
+      "back": "Intramuscular epinephrine"
+    },
+    {
+      "front": "Toxin-mediated shock with rash/fever",
+      "back": "Toxic shock syndrome (superantigen)"
+    },
+    {
+      "front": "Type of shock in anaphylaxis",
+      "back": "Distributive (low systemic vascular resistance)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Anaphylaxis",
+      "detail": "Immuno: IgE/mast cell mediators -> vasodilation + increased vascular permeability -> distributive shock.",
+      "location": "Immuno: IgE/mast cell mediators -> vasodilation + increased vascular permeability -> distributive shock."
+    },
+    {
+      "tag": "options",
+      "topic": "Toxic shock syndrome",
+      "detail": "Micro > superantigen toxin -> cytokines; distinguish toxin-mediated from IgE-mediated shock.",
+      "location": "Micro > superantigen toxin -> cytokines; distinguish toxin-mediated from IgE-mediated shock."
+    },
+    {
+      "tag": "context",
+      "topic": "Type I hypersensitivity",
+      "detail": "Immuno > sensitization (IgE) then re-exposure -> mast cell degranulation; epinephrine.",
+      "location": "Immuno > sensitization (IgE) then re-exposure -> mast cell degranulation; epinephrine."
+    }
+  ],
+  "memoryHook": "Wasp sting, hives, and a crashing BP: mast cells dump histamine, vessels dilate and leak - fluid leaves, pressure drops. Epi now.",
+  "stem": [
+    {
+      "text": "A 25-year-old woman is brought to the emergency department "
+    },
+    {
+      "text": "40 minutes after being stung by several wasps",
+      "clue": true,
+      "type": "orange",
+      "note": "A rapid reaction (minutes) after an insect sting is the hallmark timing of type I (immediate, IgE-mediated) hypersensitivity - anaphylaxis to wasp venom."
+    },
+    {
+      "text": ". She reports "
+    },
+    {
+      "text": "throat tightness",
+      "clue": true,
+      "type": "red",
+      "note": "Throat tightness signals airway/laryngeal involvement in anaphylaxis - a life-threatening feature requiring immediate epinephrine."
+    },
+    {
+      "text": " and dizziness. She has no chronic medical conditions and takes no medication. "
+    },
+    {
+      "text": "Blood pressure is 80/40 mm Hg",
+      "clue": true,
+      "type": "red",
+      "note": "Hypotension (80/40 / normal ~120/80 mm Hg) with tachycardia is anaphylactic (distributive) shock from vasodilation and capillary fluid leak."
+    },
+    {
+      "text": ", pulse is 120/min, and respirations are 32/min. Examination shows "
+    },
+    {
+      "text": "diffuse erythematous plaques over the trunk",
+      "clue": true,
+      "type": "green",
+      "note": "Diffuse urticaria (erythematous plaques) confirms a systemic IgE-mediated mast-cell reaction - anaphylaxis."
+    },
+    {
+      "text": " and 1+ pitting edema of the ankles. Which of the following is the most likely cause of this patient's hypotension?"
+    }
+  ]
+}

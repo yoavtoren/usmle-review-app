@@ -1,0 +1,217 @@
+{
+  "id": "q235",
+  "item": 235,
+  "qid": "4",
+  "title": "Subarachnoid hemorrhage: ruptured berry aneurysm in ADPKD",
+  "system": "Pathology",
+  "topic": "Subarachnoid hemorrhage / berry aneurysm",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 84,
+  "vignette": "A 56-year-old male with a history of polycystic kidney disease presented to the emergency room because of sudden onset severe headache. He has never had this type of headache in the past. Examination shows some nuchal rigidity. Neurologic examination is within normal limits. Which of the following is the most likely diagnosis?",
+  "clues": [
+    {
+      "text": "polycystic kidney disease",
+      "type": "orange",
+      "note": "ADPKD is associated with saccular ('berry') aneurysms of the circle of Willis. This detail is placed deliberately to point toward aneurysmal subarachnoid hemorrhage."
+    },
+    {
+      "text": "sudden onset severe headache",
+      "type": "red",
+      "note": "An abrupt, severe 'thunderclap' headache (classically 'the worst headache of my life') is subarachnoid hemorrhage until proven otherwise. Onset is instantaneous, unlike the crescendo of migraine or the build of meningitis."
+    },
+    {
+      "text": "never had this type of headache in the past",
+      "type": "blue",
+      "note": "A first/worst-ever headache raises the concern for a serious secondary cause (SAH), rather than a recurrent primary headache like migraine or cluster."
+    },
+    {
+      "text": "nuchal rigidity",
+      "type": "green",
+      "note": "Meningeal irritation (neck stiffness) develops as blood in the subarachnoid space irritates the meninges over hours. With a normal focal neuro exam, this supports SAH rather than a parenchymal (intracerebral) bleed."
+    }
+  ],
+  "whatMatters": "ADPKD + sudden 'worst headache of my life' (thunderclap) + nuchal rigidity + a normal focal neuro exam = subarachnoid hemorrhage from a ruptured berry aneurysm of the circle of Willis. Answer D. Work-up: non-contrast head CT first; if negative but suspicion is high, LP for xanthochromia.",
+  "strategy": "Two triggers: (1) thunderclap 'first/worst' headache + meningismus = SAH; (2) ADPKD is a deliberate berry-aneurysm risk factor. A nonfocal neuro exam argues against a large intracerebral bleed. Then knock out meningitis (fever, subacute), migraine (recurrent, pulsatile), temporal arteritis (older, jaw claudication, high ESR), and cluster (periorbital, autonomic).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bacterial meningitis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Migraine headaches",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Intracerebral hemorrhage",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Subarachnoid hemorrhage",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Temporal arteritis",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Cluster headache",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Bacterial meningitis - infectious meningismus",
+      "detail": "WHAT IT IS: meningeal infection causing fever, headache, neck stiffness, and photophobia. ❌ WHY IT FAILS: the headache builds over hours (not instantaneous/thunderclap) and there's no fever here; ADPKD points to an aneurysm. ✅ Correct if: fever + progressive meningismus + photophobia."
+    },
+    {
+      "letter": "B",
+      "label": "Migraine headaches - recurrent primary headache",
+      "detail": "WHAT IT IS: a recurrent, pulsatile, often unilateral headache, sometimes with aura. ❌ WHY IT FAILS: this is a FIRST/worst sudden headache, not a recurrent pattern the patient recognizes. ✅ Correct if: recurrent unilateral throbbing headaches with aura/photophobia."
+    },
+    {
+      "letter": "C",
+      "label": "Intracerebral hemorrhage - parenchymal bleed",
+      "detail": "WHAT IT IS: bleeding into brain parenchyma, usually producing FOCAL deficits (hemiparesis, aphasia). ❌ WHY IT FAILS: the neuro exam is nonfocal; a sudden headache with meningismus but no focal signs fits SAH. ✅ Correct if: sudden headache WITH focal deficits (e.g., hypertensive basal ganglia bleed)."
+    },
+    {
+      "letter": "E",
+      "label": "Temporal arteritis - large-vessel vasculitis",
+      "detail": "WHAT IT IS: giant cell arteritis in older adults - scalp tenderness, jaw claudication, vision loss, very high ESR. ❌ WHY IT FAILS: it is not a thunderclap headache and lacks those features here. ✅ Correct if: age >50 with jaw claudication and markedly elevated ESR."
+    },
+    {
+      "letter": "F",
+      "label": "Cluster headache - trigeminal-autonomic",
+      "detail": "WHAT IT IS: recurrent brief attacks of severe unilateral periorbital pain with ipsilateral lacrimation/rhinorrhea. ❌ WHY IT FAILS: it's a repetitive primary headache, not a single thunderclap with meningismus. ✅ Correct if: nightly orbital pain with autonomic signs."
+    }
+  ],
+  "reasoning": [
+    "ADPKD -> increased risk of berry (saccular) aneurysm of the circle of Willis",
+    "Sudden 'worst-ever' headache + nuchal rigidity = subarachnoid hemorrhage",
+    "A nonfocal neuro exam argues against intracerebral (parenchymal) hemorrhage",
+    "-> subarachnoid hemorrhage; answer D"
+  ],
+  "mechanism": "Autosomal dominant polycystic kidney disease is associated with saccular ('berry') aneurysms of the circle of Willis. Rupture releases arterial blood into the subarachnoid space, producing an abrupt, severe 'thunderclap' headache (classically the worst of the patient's life) and meningeal irritation (nuchal rigidity) as blood irritates the meninges over the next hours; focal deficits are typically absent unless there is mass effect or vasospasm. Diagnosis begins with a non-contrast head CT (most sensitive within the first 6-24 hours); if CT is negative but suspicion remains, lumbar puncture reveals xanthochromia (breakdown of red cells in the CSF). Major complications include rebleeding, delayed vasospasm (days 3-10), and hydrocephalus.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Neuro > SAH: ruptured berry aneurysm, ADPKD/Ehlers-Danlos/Marfan associations, thunderclap headache, CT then LP (xanthochromia), vasospasm."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Map 'sudden worst headache + meningismus + ADPKD' to aneurysmal SAH; use the nonfocal exam to exclude a parenchymal bleed."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on nuchal rigidity, thunderclap, xanthochromia, circle of Willis, or saccular/berry aneurysm? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Meningitis (needs fever/subacute), migraine/cluster (recurrent primary), temporal arteritis (older + jaw claudication), and ICH (focal deficits) each miss a required feature."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: ADPKD + thunderclap headache + stiff neck = SAH from a ruptured circle-of-Willis berry aneurysm; CT first, then LP for xanthochromia."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Sudden 'worst headache of my life' (thunderclap) + nuchal rigidity",
+      "back": "Subarachnoid hemorrhage"
+    },
+    {
+      "front": "ADPKD neurologic association",
+      "back": "Berry (saccular) aneurysm of the circle of Willis -> SAH"
+    },
+    {
+      "front": "First test for suspected SAH",
+      "back": "Non-contrast head CT"
+    },
+    {
+      "front": "CT-negative but still suspicious SAH",
+      "back": "LP looking for xanthochromia"
+    },
+    {
+      "front": "Berry aneurysm risk conditions",
+      "back": "ADPKD, Ehlers-Danlos, Marfan; smoking, hypertension"
+    },
+    {
+      "front": "Post-SAH deterioration causes",
+      "back": "Rebleeding, vasospasm (days 3-10), hydrocephalus"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Subarachnoid hemorrhage",
+      "detail": "Neuro: ruptured berry aneurysm; thunderclap headache; CT then LP (xanthochromia).",
+      "location": "Neuro: ruptured berry aneurysm; thunderclap headache; CT then LP (xanthochromia)."
+    },
+    {
+      "tag": "options",
+      "topic": "Headache differentials",
+      "detail": "Neuro > migraine, cluster, temporal arteritis; meningitis; intracerebral hemorrhage (focal).",
+      "location": "Neuro > migraine, cluster, temporal arteritis; meningitis; intracerebral hemorrhage (focal)."
+    },
+    {
+      "tag": "context",
+      "topic": "ADPKD",
+      "detail": "Renal/Neuro > berry aneurysms, hepatic cysts, mitral valve prolapse, HTN; PKD1/PKD2.",
+      "location": "Renal/Neuro > berry aneurysms, hepatic cysts, mitral valve prolapse, HTN; PKD1/PKD2."
+    }
+  ],
+  "memoryHook": "Polycystic kidneys, thunderclap head, stiff neck: a berry popped in the circle of Willis - SAH. CT first, then tap for xanthochromia.",
+  "stem": [
+    {
+      "text": "A 56-year-old male with a history of "
+    },
+    {
+      "text": "polycystic kidney disease",
+      "clue": true,
+      "type": "orange",
+      "note": "ADPKD is associated with saccular ('berry') aneurysms of the circle of Willis. This detail is placed deliberately to point toward aneurysmal subarachnoid hemorrhage."
+    },
+    {
+      "text": " presented to the emergency room because of "
+    },
+    {
+      "text": "sudden onset severe headache",
+      "clue": true,
+      "type": "red",
+      "note": "An abrupt, severe 'thunderclap' headache (classically 'the worst headache of my life') is subarachnoid hemorrhage until proven otherwise. Onset is instantaneous, unlike the crescendo of migraine or the build of meningitis."
+    },
+    {
+      "text": ". He has "
+    },
+    {
+      "text": "never had this type of headache in the past",
+      "clue": true,
+      "type": "blue",
+      "note": "A first/worst-ever headache raises the concern for a serious secondary cause (SAH), rather than a recurrent primary headache like migraine or cluster."
+    },
+    {
+      "text": ". Examination shows some "
+    },
+    {
+      "text": "nuchal rigidity",
+      "clue": true,
+      "type": "green",
+      "note": "Meningeal irritation (neck stiffness) develops as blood in the subarachnoid space irritates the meninges over hours. With a normal focal neuro exam, this supports SAH rather than a parenchymal (intracerebral) bleed."
+    },
+    {
+      "text": ". Neurologic examination is within normal limits. Which of the following is the most likely diagnosis?"
+    }
+  ]
+}

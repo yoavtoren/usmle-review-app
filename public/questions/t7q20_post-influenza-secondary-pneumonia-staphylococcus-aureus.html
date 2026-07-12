@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-influenza secondary pneumonia: Staphylococcus aureus</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 7 · all 39</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q250", "item": 250, "qid": "1666", "title": "Post-influenza secondary pneumonia: Staphylococcus aureus", "system": "Microbiology", "topic": "Post-influenza bacterial pneumonia", "correct": "E", "yourAnswer": "E", "percentCorrect": 72, "vignette": "A 54-year-old man comes to the emergency department due to worsening fever, cough, and shortness of breath. The patient initially presented a week ago with a fever, headache, myalgia, nasal discharge, and a sore throat. He tested positive for influenza A and was discharged home with symptomatic treatment. The patient's symptoms gradually improved, but over the past 2 days he has had high fevers, cough productive of yellowish sputum, sharp right-sided chest pain, and shortness of breath. The patient has no other medical problems and does not use tobacco, alcohol, or illicit drugs. Temperature is 38.9 C (102 F), blood pressure is 118/66 mm Hg, and pulse is 110/min. Physical examination reveals right-sided lung crackles. Chest x-ray reveals infiltrates in the right lung. Which of the following pathogens is most likely to be isolated from this patient's sputum?", "clues": [{"text": "tested positive for influenza A", "type": "orange", "note": "Influenza damages the respiratory epithelium (loss of cilia) and predisposes to SECONDARY bacterial pneumonia in the following days."}, {"text": "symptoms gradually improved, but over the past 2 days he has had high fevers", "type": "green", "note": "A biphasic course - influenza improving, then WORSENING with high fever and productive cough - is the classic signal of post-influenza secondary bacterial pneumonia."}, {"text": "cough productive of yellowish sputum", "type": "blue", "note": "Purulent sputum plus focal infiltrate indicates a bacterial pneumonia (consolidation), not ongoing viral illness."}, {"text": "right-sided lung crackles", "type": "blue", "note": "Focal crackles with a lobar infiltrate confirm bacterial consolidation."}], "whatMatters": "An improving influenza illness that then WORSENS with high fever, purulent sputum, and a focal infiltrate = post-influenza secondary bacterial pneumonia. The leading pathogens are Streptococcus pneumoniae, Staphylococcus aureus, and Haemophilus influenzae; of the listed choices, Staphylococcus aureus is the classic post-influenza organism (especially in young, previously healthy patients). Answer E.", "strategy": "Recognize the biphasic 'flu then worse' pattern -> secondary bacterial pneumonia, then pick the best-fitting listed organism: S. aureus (E) is the classic post-influenza pathogen. Eliminate CMV (immunocompromised, interstitial), Klebsiella (alcoholic/aspiration, currant-jelly sputum), Listeria (neonates/immunocompromised, not pneumonia), and nontuberculous mycobacteria (AIDS/chronic, not acute post-flu).", "options": [{"letter": "A", "text": "Cytomegalovirus", "correct": false}, {"letter": "B", "text": "Klebsiella pneumoniae", "correct": false}, {"letter": "C", "text": "Listeria monocytogenes", "correct": false}, {"letter": "D", "text": "Nontuberculous mycobacteria", "correct": false}, {"letter": "E", "text": "Staphylococcus aureus", "correct": true}], "eliminations": [{"letter": "A", "label": "Cytomegalovirus - immunocompromised, interstitial", "detail": "WHAT IT IS: CMV pneumonia occurs in immunocompromised hosts (AIDS, transplant) with bilateral interstitial infiltrates. ❌ WHY IT FAILS: it is not associated with post-influenza pneumonia in an immunocompetent patient with a focal infiltrate. ✅ Correct if: interstitial pneumonia in an immunocompromised patient."}, {"letter": "B", "label": "Klebsiella pneumoniae - alcoholic/aspiration", "detail": "WHAT IT IS: Klebsiella causes nosocomial/aspiration pneumonia with thick, blood-tinged 'currant-jelly' sputum in alcoholics or debilitated patients. ❌ WHY IT FAILS: it is not the typical post-influenza organism. ✅ Correct if: an alcoholic with currant-jelly sputum and cavitary/necrotizing pneumonia."}, {"letter": "C", "label": "Listeria monocytogenes - not a pneumonia bug", "detail": "WHAT IT IS: Listeria causes meningitis/sepsis in neonates, the elderly, pregnant women, and the immunocompromised. ❌ WHY IT FAILS: it doesn't cause typical community pneumonia. ✅ Correct if: neonatal or immunocompromised meningitis/sepsis."}, {"letter": "D", "label": "Nontuberculous mycobacteria - chronic/AIDS", "detail": "WHAT IT IS: NTM (e.g., MAC) causes chronic pulmonary disease or disseminated infection in AIDS. ❌ WHY IT FAILS: it's a chronic, not acute post-influenza, process. ✅ Correct if: chronic cough in AIDS or structural lung disease."}], "reasoning": ["Influenza injures the respiratory epithelium (loss of cilia), predisposing to secondary bacterial pneumonia", "The course is biphasic: flu improves, then worsens with high fever, purulent sputum, and a focal infiltrate", "Leading post-influenza pathogens: S. pneumoniae, S. aureus, H. influenzae", "-> of the choices, Staphylococcus aureus; answer E"], "mechanism": "Influenza virus attacks the tracheobronchial epithelium and causes loss of cilia, impairing mucociliary clearance and promoting bacterial colonization; viral neuraminidase also exposes host cell-surface sugars that foster bacterial adherence. This predisposes recovering patients to SECONDARY bacterial pneumonia, classically heralded by a biphasic course - initial improvement followed by worsening fever, productive cough, pleuritic chest pain, and a focal infiltrate. The leading organisms are Streptococcus pneumoniae, Staphylococcus aureus, and Haemophilus influenzae; although the elderly are most often affected overall, post-influenza S. aureus pneumonia characteristically develops in young, previously healthy patients and can be severe/necrotizing. The distractors fit other settings (CMV - immunocompromised/interstitial; Klebsiella - alcoholic/aspiration currant-jelly sputum; Listeria - neonatal/immunocompromised; NTM - chronic/AIDS).", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Micro > post-influenza secondary bacterial pneumonia: S. pneumoniae, S. aureus, H. influenzae; influenza causes loss of cilia; biphasic course."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Read the biphasic 'flu then worse' history as secondary bacterial pneumonia, then pick the classic organism from the list."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on secondary bacterial pneumonia, biphasic course, currant-jelly sputum, or nontuberculous mycobacteria? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Klebsiella (alcoholic/currant-jelly) is the tempting bacterial distractor, but the post-influenza classic among the options is S. aureus."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: influenza -> secondary bacterial pneumonia (S. pneumoniae/S. aureus/H. influenzae); biphasic worsening; S. aureus in young healthy hosts."}], "keywords": [{"front": "Influenza that improves then worsens with focal pneumonia", "back": "Post-influenza secondary bacterial pneumonia"}, {"front": "Leading post-influenza pneumonia pathogens", "back": "S. pneumoniae, Staphylococcus aureus, H. influenzae"}, {"front": "How influenza predisposes to bacterial pneumonia", "back": "Loss of cilia / damaged respiratory epithelium"}, {"front": "Currant-jelly sputum in an alcoholic", "back": "Klebsiella pneumoniae"}, {"front": "CMV pneumonia setting", "back": "Immunocompromised (AIDS/transplant), interstitial infiltrates"}, {"front": "Post-influenza S. aureus pneumonia risk", "back": "Young, previously healthy patients; can be necrotizing"}], "firstAid": [{"tag": "answer / stem", "topic": "Post-influenza pneumonia", "detail": "Micro: influenza -> loss of cilia -> secondary bacterial pneumonia (S. pneumoniae, S. aureus, H. influenzae)."}, {"tag": "options", "topic": "Pneumonia organisms", "detail": "Micro > Klebsiella (alcoholic/currant-jelly), CMV (immunocompromised), Listeria, NTM (chronic/AIDS)."}, {"tag": "context", "topic": "Influenza complications", "detail": "Micro > primary viral vs secondary bacterial pneumonia; neuraminidase/hemagglutinin."}], "memoryHook": "Flu got better, then suddenly worse with pus and fever - that's a bacterial encore. After the flu, think Staph aureus.", "stem": [{"text": "A 54-year-old man comes to the emergency department due to worsening fever, cough, and shortness of breath. The patient initially presented a week ago with a fever, headache, myalgia, nasal discharge, and a sore throat. He "}, {"text": "tested positive for influenza A", "clue": true, "type": "orange", "note": "Influenza damages the respiratory epithelium (loss of cilia) and predisposes to SECONDARY bacterial pneumonia in the following days."}, {"text": " and was discharged home with symptomatic treatment. The patient's "}, {"text": "symptoms gradually improved, but over the past 2 days he has had high fevers", "clue": true, "type": "green", "note": "A biphasic course - influenza improving, then WORSENING with high fever and productive cough - is the classic signal of post-influenza secondary bacterial pneumonia."}, {"text": ", "}, {"text": "cough productive of yellowish sputum", "clue": true, "type": "blue", "note": "Purulent sputum plus focal infiltrate indicates a bacterial pneumonia (consolidation), not ongoing viral illness."}, {"text": ", sharp right-sided chest pain, and shortness of breath. The patient has no other medical problems and does not use tobacco, alcohol, or illicit drugs. Temperature is 38.9 C (102 F), blood pressure is 118/66 mm Hg, and pulse is 110/min. Physical examination reveals "}, {"text": "right-sided lung crackles", "clue": true, "type": "blue", "note": "Focal crackles with a lobar infiltrate confirm bacterial consolidation."}, {"text": ". Chest x-ray reveals infiltrates in the right lung. Which of the following pathogens is most likely to be isolated from this patient's sputum?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

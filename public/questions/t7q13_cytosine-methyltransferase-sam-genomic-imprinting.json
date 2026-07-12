@@ -1,0 +1,193 @@
+{
+  "id": "q243",
+  "item": 243,
+  "qid": "7791",
+  "title": "Cytosine methyltransferase (SAM): genomic imprinting",
+  "system": "Biochemistry",
+  "topic": "DNA methylation / genomic imprinting",
+  "correct": "C",
+  "yourAnswer": "D",
+  "percentCorrect": 68,
+  "vignette": "A pharmaceutical researcher is evaluating a nuclear enzyme inhibitor to treat an inherited disorder. During an experiment, he extracts and purifies nuclear enzymes from skin cells of an affected patient. One of these enzymes is found to catalyze the methylation of cytosine residues in DNA using S-adenosyl-methionine (SAM) as the methyl donor. This enzyme most likely plays a crucial role in which of the following genetic processes?",
+  "clues": [
+    {
+      "text": "catalyze the methylation of cytosine residues in DNA",
+      "type": "green",
+      "note": "An enzyme that methylates cytosine in DNA is a DNA methyltransferase. Cytosine (CpG) methylation is the central epigenetic mark that silences gene transcription."
+    },
+    {
+      "text": "S-adenosyl-methionine (SAM) as the methyl donor",
+      "type": "blue",
+      "note": "SAM is the universal methyl donor. Using SAM to add a methyl group to cytosine confirms this enzyme is a methyltransferase performing epigenetic DNA methylation."
+    },
+    {
+      "text": "which of the following genetic processes",
+      "type": "blue",
+      "note": "The question asks which process this methylating enzyme enables. DNA methylation silences genes, and the parent-of-origin methylation that silences one allele is genomic imprinting."
+    }
+  ],
+  "whatMatters": "An enzyme methylating cytosine using SAM is a DNA methyltransferase. Cytosine (CpG) methylation is an EPIGENETIC gene-silencing mark, and the process that depends on parent-of-origin methylation to silence one allele is genomic IMPRINTING. Answer C. (Prader-Willi and Angelman are the classic imprinting disorders.)",
+  "strategy": "Recognize DNA methylation (cytosine + SAM) as an epigenetic SILENCING mechanism, then pick the process that USES methylation: imprinting (parent-specific allele silencing). Reject the chromosome-number and gene-interaction distractors: aneuploidy/nondisjunction are segregation errors unrelated to methylation; epistasis and pleiotropy describe gene-gene interaction and multi-trait effects, not methylation.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Aneuploidy",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Epistasis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Imprinting",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Meiotic nondisjunction",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Pleiotropy",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Aneuploidy - abnormal chromosome number",
+      "detail": "WHAT IT IS: an abnormal number of chromosomes (e.g., trisomy 21) resulting from missegregation. ❌ WHY IT FAILS: it's a mechanical chromosome-count error, not a function of a cytosine methyltransferase. ✅ Correct if: a numerical chromosome abnormality."
+    },
+    {
+      "letter": "B",
+      "label": "Epistasis - one gene masks another",
+      "detail": "WHAT IT IS: alleles of one gene mask the phenotypic expression of a different gene (e.g., albinism masking hair-color genes). ❌ WHY IT FAILS: it's a gene-gene interaction, unrelated to DNA methylation. ✅ Correct if: inter-gene masking of phenotype."
+    },
+    {
+      "letter": "D",
+      "label": "Meiotic nondisjunction - segregation failure, your pick",
+      "detail": "WHAT IT IS: failure of chromosomes to separate in meiosis, producing aneuploid gametes. ❌ WHY IT FAILS: it's a segregation error, not an epigenetic methylation process; nondisjunction/aneuploidy are the 'chromosome' traps, but this enzyme's job is gene silencing. ✅ Correct if: asking the CAUSE of aneuploidy."
+    },
+    {
+      "letter": "E",
+      "label": "Pleiotropy - one gene, many effects",
+      "detail": "WHAT IT IS: a single gene producing multiple phenotypic effects (e.g., Marfan). ❌ WHY IT FAILS: unrelated to DNA methylation. ✅ Correct if: a single gene with widespread, multi-organ effects."
+    }
+  ],
+  "reasoning": [
+    "An enzyme methylating cytosine using SAM = DNA methyltransferase",
+    "Cytosine (CpG) methylation is epigenetic gene silencing",
+    "The process governed by parent-of-origin methylation silencing is genomic imprinting",
+    "-> imprinting; answer C (Prader-Willi/Angelman)"
+  ],
+  "mechanism": "DNA methyltransferases transfer a methyl group from S-adenosyl-methionine (SAM) onto the 5-carbon of cytosine residues, chiefly at CpG dinucleotides. Methylation of CpG islands in promoter regions represses transcription - an EPIGENETIC modification that alters gene expression without changing the DNA sequence. Genomic imprinting is the parent-of-origin-specific silencing of a gene by methylation, so that only the maternal or only the paternal allele is expressed; abnormal methylation underlies disorders such as Prader-Willi and Angelman syndromes (and methylation is also central to fragile X hypermethylation). Aneuploidy and meiotic nondisjunction are chromosome-segregation errors, and epistasis and pleiotropy describe gene-gene interaction and multi-trait effects - none are functions of a cytosine methyltransferase.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biochem/Genetics > DNA methylation (cytosine, SAM) silences genes; genomic imprinting; Prader-Willi/Angelman; fragile X hypermethylation."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Link 'methylate cytosine with SAM' to the epigenetic process among the genetics vocabulary - imprinting uses methylation."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on methyltransferase, SAM, CpG island, imprinting, aneuploidy, epistasis, or pleiotropy? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Aneuploidy/meiotic nondisjunction are the 'chromosome' traps (your pick); epistasis/pleiotropy are gene-interaction traps. Only imprinting is driven by methylation."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: DNA methyltransferase (cytosine + SAM) silences genes; parent-of-origin silencing = imprinting (Prader-Willi/Angelman)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Enzyme methylating cytosine using SAM",
+      "back": "DNA methyltransferase (epigenetic gene silencing)"
+    },
+    {
+      "front": "Parent-of-origin allele silencing by methylation",
+      "back": "Genomic imprinting"
+    },
+    {
+      "front": "Classic imprinting disorders",
+      "back": "Prader-Willi (paternal loss) & Angelman (maternal loss)"
+    },
+    {
+      "front": "Universal methyl donor",
+      "back": "S-adenosyl-methionine (SAM)"
+    },
+    {
+      "front": "CpG island promoter methylation effect",
+      "back": "Transcriptional silencing"
+    },
+    {
+      "front": "Aneuploidy vs nondisjunction",
+      "back": "Abnormal chromosome number vs the missegregation that causes it"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "DNA methylation / imprinting",
+      "detail": "Biochem/Genetics: cytosine + SAM -> gene silencing; imprinting is methylation-based.",
+      "location": "Biochem/Genetics: cytosine + SAM -> gene silencing; imprinting is methylation-based."
+    },
+    {
+      "tag": "options",
+      "topic": "Genetics vocabulary",
+      "detail": "Genetics > aneuploidy, nondisjunction, epistasis, pleiotropy, imprinting.",
+      "location": "Genetics > aneuploidy, nondisjunction, epistasis, pleiotropy, imprinting."
+    },
+    {
+      "tag": "context",
+      "topic": "Imprinting disorders",
+      "detail": "Genetics > Prader-Willi/Angelman; fragile X (CGG hypermethylation).",
+      "location": "Genetics > Prader-Willi/Angelman; fragile X (CGG hypermethylation)."
+    }
+  ],
+  "memoryHook": "Methyl a cytosine, mute the gene. Parent-stamped silencing = imPRINTing (think Prader-Willi/Angelman).",
+  "stem": [
+    {
+      "text": "A pharmaceutical researcher is evaluating a nuclear enzyme inhibitor to treat an inherited disorder. During an experiment, he extracts and purifies nuclear enzymes from skin cells of an affected patient. One of these enzymes is found to "
+    },
+    {
+      "text": "catalyze the methylation of cytosine residues in DNA",
+      "clue": true,
+      "type": "green",
+      "note": "An enzyme that methylates cytosine in DNA is a DNA methyltransferase. Cytosine (CpG) methylation is the central epigenetic mark that silences gene transcription."
+    },
+    {
+      "text": " using "
+    },
+    {
+      "text": "S-adenosyl-methionine (SAM) as the methyl donor",
+      "clue": true,
+      "type": "blue",
+      "note": "SAM is the universal methyl donor. Using SAM to add a methyl group to cytosine confirms this enzyme is a methyltransferase performing epigenetic DNA methylation."
+    },
+    {
+      "text": ". This enzyme most likely plays a crucial role in "
+    },
+    {
+      "text": "which of the following genetic processes",
+      "clue": true,
+      "type": "blue",
+      "note": "The question asks which process this methylating enzyme enables. DNA methylation silences genes, and the parent-of-origin methylation that silences one allele is genomic imprinting."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

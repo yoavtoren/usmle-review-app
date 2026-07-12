@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zellweger syndrome: peroxisome biogenesis defect (VLCFA + phytanic acid up)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 8 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q287", "item": 287, "qid": "1120", "title": "Zellweger syndrome: peroxisome biogenesis defect (VLCFA + phytanic acid up)", "system": "Biochemistry", "topic": "Peroxisomal disorders", "correct": "D", "yourAnswer": "B", "percentCorrect": 56, "vignette": "A 4-month-old infant is evaluated for hypotonia, poor feeding, and seizures. The infant has dysmorphic craniofacial features, including a high forehead and a broad nasal bridge, and hepatomegaly is present. There is profound developmental delay. Laboratory studies show markedly elevated very-long-chain fatty acids and elevated phytanic acid in the blood. A defect in which of the following organelles is most likely responsible for this patient's condition?", "clues": [{"text": "hypotonia, poor feeding, and seizures", "type": "blue", "note": "Severe hypotonia, feeding difficulty, and seizures in early infancy with dysmorphism suggest a metabolic/genetic disorder affecting the brain."}, {"text": "markedly elevated very-long-chain fatty acids", "type": "green", "note": "Elevated VLCFAs indicate failed peroxisomal beta-oxidation - the peroxisome is where VLCFAs are normally shortened."}, {"text": "elevated phytanic acid", "type": "green", "note": "Elevated phytanic acid reflects impaired peroxisomal ALPHA-oxidation; together with high VLCFAs it points to a global peroxisomal defect (Zellweger)."}], "whatMatters": "An infant with hypotonia, seizures, craniofacial dysmorphism, hepatomegaly, and BOTH elevated very-long-chain fatty acids AND phytanic acid = Zellweger syndrome, a peroxisome biogenesis disorder (PEX gene mutations). The defective organelle is the PEROXISOME, which normally performs VLCFA beta-oxidation and phytanic acid alpha-oxidation. Answer D.", "strategy": "Let the two lab abnormalities localize the organelle: VLCFA beta-oxidation and phytanic acid alpha-oxidation both occur in peroxisomes, so elevations of both = peroxisomal failure (Zellweger). Reject lysosomes (accumulate substrates like sphingolipids/mucopolysaccharides, normal VLCFA), mitochondria (medium/long-chain FA oxidation), and other organelles.", "options": [{"letter": "A", "text": "Golgi apparatus", "correct": false}, {"letter": "B", "text": "Lysosomes", "correct": false}, {"letter": "C", "text": "Mitochondria", "correct": false}, {"letter": "D", "text": "Peroxisomes", "correct": true}, {"letter": "E", "text": "Proteasomes", "correct": false}, {"letter": "F", "text": "Smooth endoplasmic reticulum", "correct": false}], "eliminations": [{"letter": "A", "label": "Golgi apparatus - trafficking, not fatty-acid oxidation", "detail": "WHAT IT IS: the Golgi modifies and sorts proteins/lipids (e.g., glycosylation). ❌ WHY IT FAILS: it does not oxidize VLCFAs or phytanic acid; a Golgi defect would not raise these. ✅ Correct if: protein glycosylation/trafficking disorders (e.g., I-cell disease affects mannose-6-phosphate tagging)."}, {"letter": "B", "label": "Lysosomes - storage disorders, normal VLCFA (your pick)", "detail": "WHAT IT IS: lysosomes degrade macromolecules; defects cause storage diseases (sphingolipidoses, mucopolysaccharidoses). ❌ WHY IT FAILS: lysosomal disorders accumulate their specific substrates, not VLCFAs/phytanic acid, which are peroxisomal. ✅ Correct if: e.g., Tay-Sachs, Gaucher, Hurler with accumulated lysosomal substrate."}, {"letter": "C", "label": "Mitochondria - short/medium/long-chain FA oxidation", "detail": "WHAT IT IS: mitochondria beta-oxidize short-, medium-, and long-chain fatty acids. ❌ WHY IT FAILS: VERY-long-chain fatty acids require peroxisomal beta-oxidation first; a mitochondrial defect (e.g., MCAD) elevates medium-chain acyl products, not VLCFA/phytanic acid. ✅ Correct if: MCAD deficiency (hypoketotic hypoglycemia)."}, {"letter": "E", "label": "Proteasomes - protein degradation", "detail": "WHAT IT IS: proteasomes degrade ubiquitin-tagged proteins. ❌ WHY IT FAILS: unrelated to fatty-acid metabolism; would not raise VLCFA/phytanic acid. ✅ Correct if: ubiquitin-proteasome degradation questions."}, {"letter": "F", "label": "Smooth ER - lipid/steroid synthesis and detox", "detail": "WHAT IT IS: the smooth ER synthesizes lipids/steroids and detoxifies drugs. ❌ WHY IT FAILS: it does not perform VLCFA beta-oxidation or phytanic acid alpha-oxidation. ✅ Correct if: steroid synthesis or cytochrome P450 detox questions."}], "reasoning": ["Infant with hypotonia, seizures, dysmorphism, hepatomegaly + elevated VLCFA AND phytanic acid", "Peroxisomes perform VLCFA beta-oxidation and phytanic acid alpha-oxidation", "Both elevated = global peroxisomal failure = Zellweger syndrome (peroxisome biogenesis disorder)", "-> peroxisomes; answer D"], "mechanism": "Peroxisomes are membrane-bound organelles that carry out the beta-oxidation of very-long-chain fatty acids (shortening them for further mitochondrial oxidation), the alpha-oxidation of branched-chain phytanic acid, and the synthesis of plasmalogens (important myelin lipids). Zellweger syndrome (cerebrohepatorenal syndrome) is a peroxisome BIOGENESIS disorder caused by mutations in PEX genes, which encode peroxins needed to assemble functional peroxisomes; without them, peroxisomal enzymes are not properly imported and multiple peroxisomal functions fail simultaneously. The result is accumulation of very-long-chain fatty acids and phytanic acid, deficient plasmalogens, and severe early disease: profound hypotonia, seizures, craniofacial dysmorphism, hepatomegaly, and developmental delay, usually fatal in infancy. Because BOTH VLCFA and phytanic acid are elevated (pointing to a global peroxisomal defect rather than a single-enzyme deficiency like X-linked adrenoleukodystrophy, which raises VLCFA alone), the culprit organelle is the peroxisome.", "difficulty": [{"key": "knowledge", "label": "📚 Pure knowledge gap", "message": "First Aid Biochem (cell) > peroxisome: beta-oxidation of VLCFA, alpha-oxidation of phytanic acid, plasmalogen synthesis; Zellweger (PEX genes) = biogenesis defect; contrast Refsum (phytanic acid) and X-ALD (VLCFA)."}, {"key": "comprehension", "label": "🧭 Understanding the question", "message": "Two elevated peroxisomal substrates (VLCFA + phytanic acid) localize the defect to the peroxisome (Zellweger)."}, {"key": "vocab", "label": "🔤 Vocabulary", "message": "Unsure on VLCFA, phytanic acid, alpha- vs beta-oxidation, peroxisome, PEX genes, or plasmalogen? Tell me which."}, {"key": "distractor", "label": "🧲 Pulled by a distractor", "message": "Lysosomes (storage disorders), mitochondria (medium/long-chain FA), Golgi/proteasome/smooth ER don't handle VLCFA + phytanic acid."}, {"key": "other", "label": "✍️ Something else", "message": "Bank: Zellweger = peroxisome biogenesis defect (PEX), ↑VLCFA + ↑phytanic acid; Refsum = phytanic acid; X-ALD = VLCFA."}], "keywords": [{"front": "↑VLCFA + ↑phytanic acid in a dysmorphic hypotonic infant", "back": "Zellweger syndrome (peroxisomal biogenesis disorder)"}, {"front": "Organelle for VLCFA beta-oxidation + phytanic acid alpha-oxidation", "back": "Peroxisome"}, {"front": "Genes mutated in Zellweger syndrome", "back": "PEX genes (peroxins for peroxisome assembly)"}, {"front": "Peroxisome also synthesizes...", "back": "Plasmalogens (myelin phospholipids)"}, {"front": "Refsum disease vs X-linked adrenoleukodystrophy", "back": "Refsum = ↑phytanic acid; X-ALD = ↑VLCFA"}, {"front": "Mitochondrial fatty-acid oxidation handles", "back": "Short/medium/long-chain FA (e.g., MCAD deficiency)"}], "firstAid": [{"tag": "answer / stem", "topic": "Peroxisomal disorders", "detail": "Biochem: Zellweger = PEX defect; ↑VLCFA + ↑phytanic acid; hypotonia, seizures, dysmorphism."}, {"tag": "options", "topic": "Organelle functions", "detail": "Cell > lysosome (degradation/storage disease), mitochondria (FA oxidation), Golgi (trafficking)."}, {"tag": "related", "topic": "Other peroxisomal diseases", "detail": "Biochem > Refsum (phytanic acid), X-linked adrenoleukodystrophy (VLCFA)."}], "memoryHook": "Peroxisomes trim the longest fatty acids and branched phytanic acid; wreck their assembly (Zellweger) and both pile up in a floppy, seizing newborn.", "stem": [{"text": "A 4-month-old infant is evaluated for "}, {"text": "hypotonia, poor feeding, and seizures", "clue": true, "type": "blue", "note": "Severe hypotonia, feeding difficulty, and seizures in early infancy with dysmorphism suggest a metabolic/genetic disorder affecting the brain."}, {"text": ". The infant has dysmorphic craniofacial features, including a high forehead and a broad nasal bridge, and hepatomegaly is present. There is profound developmental delay. Laboratory studies show "}, {"text": "markedly elevated very-long-chain fatty acids", "clue": true, "type": "green", "note": "Elevated VLCFAs indicate failed peroxisomal beta-oxidation - the peroxisome is where VLCFAs are normally shortened."}, {"text": " and "}, {"text": "elevated phytanic acid", "clue": true, "type": "green", "note": "Elevated phytanic acid reflects impaired peroxisomal ALPHA-oxidation; together with high VLCFAs it points to a global peroxisomal defect (Zellweger)."}, {"text": " in the blood. A defect in which of the following organelles is most likely responsible for this patient's condition?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

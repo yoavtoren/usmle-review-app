@@ -1,0 +1,189 @@
+{
+  "id": "q284",
+  "item": 284,
+  "qid": "1272",
+  "title": "Statistical power = 1 - beta (probability of detecting a true difference)",
+  "system": "Biostatistics",
+  "topic": "Power / type II error",
+  "correct": "E",
+  "yourAnswer": "D",
+  "percentCorrect": 71,
+  "vignette": "Investigators design a randomized controlled trial comparing a new drug (drug B) with standard therapy for reducing mortality in patients with ST-elevation myocardial infarction. Before enrolling patients, the researchers want to ensure that, if a true difference in mortality actually exists between the two treatments, the study has a high probability of detecting that difference. Which of the following statistical concepts best represents this probability?",
+  "clues": [
+    {
+      "text": "if a true difference in mortality actually exists",
+      "type": "blue",
+      "note": "The premise is that the alternative hypothesis is TRUE (a real difference exists) - the setting in which power and type II error are defined."
+    },
+    {
+      "text": "high probability of detecting that difference",
+      "type": "green",
+      "note": "The probability of correctly detecting a true difference (rejecting a false null hypothesis) is the definition of statistical power = 1 - beta."
+    }
+  ],
+  "whatMatters": "The probability of correctly detecting a true difference when one exists is statistical POWER = 1 - beta. Answer E. Beta is the probability of MISSING a true difference (type II error); power is its complement.",
+  "strategy": "Anchor on the definition: power (1 - beta) = probability of rejecting the null when the alternative is true = detecting a real effect. Distinguish from beta / type II error (failing to detect a true effect) and from alpha / type I error / p-value (false-positive concepts about rejecting a TRUE null).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alpha (significance level)",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Beta",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "p-value",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Type II error",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "1 - beta",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "Type I error",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Alpha - the false-positive threshold",
+      "detail": "WHAT IT IS: alpha is the pre-set significance level (commonly 0.05), the acceptable probability of a type I error. ❌ WHY IT FAILS: it concerns wrongly rejecting a TRUE null (false positive), not detecting a true difference. ✅ Correct if: asking about the significance threshold / false-positive rate."
+    },
+    {
+      "letter": "B",
+      "label": "Beta - probability of MISSING a true difference",
+      "detail": "WHAT IT IS: beta is the probability of a type II error - failing to detect a difference that truly exists. ❌ WHY IT FAILS: it is the complement of power; the question asks for detecting the difference, which is 1 - beta. ✅ Correct if: asking about the chance of a false-negative result."
+    },
+    {
+      "letter": "C",
+      "label": "p-value - probability under the null, not power",
+      "detail": "WHAT IT IS: the probability of observing data as/more extreme than seen IF the null were true. ❌ WHY IT FAILS: it is a result computed from one study, not the pre-study probability of detecting a real effect. ✅ Correct if: interpreting statistical significance of an observed result."
+    },
+    {
+      "letter": "D",
+      "label": "Type II error - the error, not the detection probability (your pick)",
+      "detail": "WHAT IT IS: a type II (beta) error is concluding there is NO difference when one truly exists (false negative). ❌ WHY IT FAILS: detecting the true difference is the OPPOSITE - power (1 - beta). ✅ Correct if: naming the error of missing a real effect."
+    },
+    {
+      "letter": "F",
+      "label": "Type I error - false positive",
+      "detail": "WHAT IT IS: a type I (alpha) error is concluding there IS a difference when none truly exists. ❌ WHY IT FAILS: it is a false-positive error, unrelated to correctly detecting a real difference. ✅ Correct if: naming the error of a false-positive finding."
+    }
+  ],
+  "reasoning": [
+    "Premise: a true difference actually exists (alternative hypothesis true)",
+    "Probability of correctly detecting it = rejecting a false null = statistical power",
+    "Power = 1 - beta (beta = probability of missing the true difference)",
+    "-> 1 - beta; answer E"
+  ],
+  "mechanism": "Hypothesis testing has two error types. A type I error (alpha) is a false positive - rejecting a true null hypothesis (concluding a difference exists when it does not); alpha is the pre-set significance level. A type II error (beta) is a false negative - failing to reject a false null (missing a difference that truly exists). Statistical POWER is the probability of correctly rejecting a false null - i.e., detecting a true effect when it is present - and equals 1 - beta. Power increases with larger sample size, larger true effect size, lower variability, and a higher (less stringent) alpha. This trial's stated goal ('high probability of detecting a true difference if one exists') is precisely power = 1 - beta. The p-value is a separate concept: the probability of the observed (or more extreme) data assuming the null is true, used to judge significance of a completed study.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Biostat > power = 1 - beta = P(detect true effect); type I error = alpha (false positive), type II error = beta (false negative); power increases with n, effect size, and alpha."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "'Detect a true difference if it exists' is the verbal definition of power (1 - beta)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on power, beta, alpha, type I vs type II error, or p-value? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Beta and type II error are the OPPOSITE (missing the effect); alpha/type I/p-value are false-positive/null-based concepts."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: power = 1 - beta; increase power with bigger sample, bigger effect size, less variability, higher alpha."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Probability of detecting a true difference",
+      "back": "Statistical power = 1 - beta"
+    },
+    {
+      "front": "Type II error (beta)",
+      "back": "False negative: miss a true difference"
+    },
+    {
+      "front": "Type I error (alpha)",
+      "back": "False positive: 'find' a difference that isn't real"
+    },
+    {
+      "front": "Ways to increase power",
+      "back": "↑ sample size, ↑ effect size, ↓ variability, ↑ alpha"
+    },
+    {
+      "front": "p-value definition",
+      "back": "P(data this extreme | null true)"
+    },
+    {
+      "front": "Alpha",
+      "back": "Pre-set significance level / max acceptable type I error"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Statistical power",
+      "detail": "Biostat: power = 1 - beta = probability of detecting a true effect.",
+      "location": "Biostat: power = 1 - beta = probability of detecting a true effect."
+    },
+    {
+      "tag": "options",
+      "topic": "Hypothesis-testing errors",
+      "detail": "Biostat > type I (alpha, false positive), type II (beta, false negative).",
+      "location": "Biostat > type I (alpha, false positive), type II (beta, false negative)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Increasing power",
+      "detail": "Biostat > larger n, larger effect, lower variance, higher alpha.",
+      "location": "Biostat > larger n, larger effect, lower variance, higher alpha."
+    }
+  ],
+  "memoryHook": "Power is the study's eyesight: 1 - beta = the chance it SEES a real difference. Beta is the blind spot that misses it.",
+  "stem": [
+    {
+      "text": "Investigators design a randomized controlled trial comparing a new drug (drug B) with standard therapy for reducing mortality in patients with ST-elevation myocardial infarction. Before enrolling patients, the researchers want to ensure that, "
+    },
+    {
+      "text": "if a true difference in mortality actually exists",
+      "clue": true,
+      "type": "blue",
+      "note": "The premise is that the alternative hypothesis is TRUE (a real difference exists) - the setting in which power and type II error are defined."
+    },
+    {
+      "text": " between the two treatments, the study has a "
+    },
+    {
+      "text": "high probability of detecting that difference",
+      "clue": true,
+      "type": "green",
+      "note": "The probability of correctly detecting a true difference (rejecting a false null hypothesis) is the definition of statistical power = 1 - beta."
+    },
+    {
+      "text": ". Which of the following statistical concepts best represents this probability?"
+    }
+  ]
+}

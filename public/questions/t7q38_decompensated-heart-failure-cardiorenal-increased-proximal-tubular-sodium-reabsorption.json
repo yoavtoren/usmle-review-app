@@ -1,0 +1,207 @@
+{
+  "id": "q268",
+  "item": 268,
+  "qid": "15221",
+  "title": "Decompensated heart failure (cardiorenal): increased proximal tubular sodium reabsorption",
+  "system": "Physiology",
+  "topic": "RAAS / cardiorenal syndrome",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 50,
+  "vignette": "A 44-year-old man is brought to the emergency department with fatigue, shortness of breath, and lethargy. The patient had a brief upper respiratory illness about a month ago but began experiencing progressive dyspnea on exertion 2 weeks ago. He has no significant medical history and takes no medications. Blood pressure is 100/70 mm Hg and pulse is 95/min and regular. The apical impulse is palpated in the sixth intercostal space along the left anterior axillary line. An S3 is heard on cardiac auscultation. Bibasilar crackles are present. Distal extremities are cold, and there is 1+ peripheral edema. Laboratory results show blood urea nitrogen 45 mg/dL (normal 7-20) and serum creatinine 1.8 mg/dL (normal 0.6-1.2), with a bland urine sediment (0 RBC/hpf, 0-1 WBC/hpf, no casts). Which of the following is most likely to be present in this patient compared to the normal state?",
+  "clues": [
+    {
+      "text": "brief upper respiratory illness about a month ago but began experiencing progressive dyspnea",
+      "type": "orange",
+      "note": "A recent viral illness followed by new heart failure suggests viral myocarditis -> dilated cardiomyopathy, the cause of this decompensated heart failure."
+    },
+    {
+      "text": "apical impulse is palpated in the sixth intercostal space along the left anterior axillary line",
+      "type": "blue",
+      "note": "A laterally/inferiorly displaced apical impulse indicates cardiomegaly (dilated left ventricle)."
+    },
+    {
+      "text": "An S3 is heard",
+      "type": "green",
+      "note": "An S3 gallop signals volume overload / a failing, dilated ventricle - decompensated heart failure."
+    },
+    {
+      "text": "blood urea nitrogen 45 mg/dL",
+      "type": "green",
+      "note": "A disproportionately elevated BUN (45 / normal 7-20) relative to creatinine (1.8) with a bland sediment indicates a PRERENAL state - low renal perfusion activating RAAS, which enhances proximal sodium (and passive urea) reabsorption -> high BUN:creatinine ratio (>20:1)."
+    }
+  ],
+  "whatMatters": "Decompensated heart failure (dilated cardiomyopathy, S3, congestion) lowers cardiac output and renal perfusion. The kidneys misread this as volume depletion and activate RAAS; angiotensin II directly INCREASES PROXIMAL TUBULAR SODIUM REABSORPTION (with passive urea reabsorption -> elevated BUN:creatinine, bland sediment = prerenal). Answer E.",
+  "strategy": "Recognize prerenal physiology (low output HF: high BUN:Cr >20:1, bland sediment) and recall the RAAS response: angiotensin II directly stimulates PROXIMAL tubular Na+ reabsorption; aldosterone acts distally; ADH retains water. So 'increased proximal tubular sodium reabsorption' (E) is present. Reject the 'decreased/increased excretion' options that are the OPPOSITE of the sodium- and water-retaining prerenal response.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased distal tubule sodium reabsorption",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased proximal tubule urea reabsorption",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Decreased renal venous pressure",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Increased collecting duct free water excretion",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Increased proximal tubular sodium reabsorption",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Decreased distal tubule sodium reabsorption - reversed",
+      "detail": "WHAT IT IS: less distal Na+ reabsorption would promote natriuresis. ❌ WHY IT FAILS: in HF, aldosterone INCREASES distal Na+ reabsorption (fluid retention), the opposite. ✅ Correct if: an aldosterone-antagonized/natriuretic state."
+    },
+    {
+      "letter": "B",
+      "label": "Decreased proximal urea reabsorption - reversed",
+      "detail": "WHAT IT IS: less proximal urea reabsorption would lower BUN. ❌ WHY IT FAILS: in prerenal states, INCREASED proximal Na+/water reabsorption drags urea back too (elevated BUN:creatinine). ✅ Correct if: a state with reduced proximal reabsorption."
+    },
+    {
+      "letter": "C",
+      "label": "Decreased renal venous pressure - reversed",
+      "detail": "WHAT IT IS: lower renal venous pressure would improve renal perfusion gradient. ❌ WHY IT FAILS: right-sided congestion in HF (cardiorenal syndrome) INCREASES renal venous pressure, lowering GFR. ✅ Correct if: relief of venous congestion."
+    },
+    {
+      "letter": "D",
+      "label": "Increased collecting duct free water excretion - reversed",
+      "detail": "WHAT IT IS: more free water excretion (dilute urine) would offload volume. ❌ WHY IT FAILS: ADH is elevated in HF, so free water is RETAINED (contributing to hyponatremia), not excreted. ✅ Correct if: ADH suppression/water diuresis."
+    }
+  ],
+  "reasoning": [
+    "Recent viral illness -> dilated cardiomyopathy -> decompensated heart failure (S3, congestion, displaced apex)",
+    "Low cardiac output reduces renal perfusion; kidneys sense 'volume depletion' and activate RAAS",
+    "Angiotensin II directly increases PROXIMAL tubular Na+ reabsorption (urea follows -> high BUN:Cr, bland sediment = prerenal)",
+    "-> increased proximal tubular sodium reabsorption; answer E"
+  ],
+  "mechanism": "Decompensated heart failure (here from viral myocarditis causing dilated cardiomyopathy) reduces cardiac output and renal perfusion. The kidney interprets the low effective circulating volume as volume depletion and activates the renin-angiotensin-aldosterone system: angiotensin II directly stimulates PROXIMAL tubular sodium (and water) reabsorption, and aldosterone enhances distal sodium reabsorption, while ADH promotes water retention. Because proximal sodium/water reabsorption pulls urea along passively, BUN rises out of proportion to creatinine (BUN:creatinine >20:1) with a bland urine sediment - the hallmark of a prerenal, RAAS-activated state. In addition, back-pressure from the failing right heart raises central venous and renal venous pressure (cardiorenal syndrome), further lowering GFR. Thus, compared with normal, this patient has INCREASED proximal tubular sodium reabsorption; the other options (decreased distal Na+ reabsorption, decreased proximal urea reabsorption, decreased renal venous pressure, increased free water excretion) are the opposite of the sodium- and water-retaining response in heart failure.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Renal/CV > RAAS in heart failure: angiotensin II -> proximal Na+ reabsorption; aldosterone -> distal Na+; ADH -> water retention; prerenal azotemia (BUN:Cr >20:1); cardiorenal syndrome."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Read the prerenal clues (high BUN:Cr, bland sediment, low-output HF) and pick the Na-RETAINING response (increased proximal reabsorption)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on RAAS, angiotensin II, proximal vs distal tubule, BUN:creatinine ratio, or cardiorenal syndrome? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "A/B/C/D are all the REVERSE of the retaining, congested prerenal state; only increased proximal Na+ reabsorption fits."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: low-output HF -> RAAS on -> angiotensin II increases PROXIMAL Na+ reabsorption (urea follows -> high BUN:Cr); ADH retains water; renal venous pressure up (cardiorenal)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Prerenal azotemia lab signature",
+      "back": "BUN:creatinine >20:1 with bland urine sediment"
+    },
+    {
+      "front": "Angiotensin II tubular action",
+      "back": "Increases PROXIMAL tubular sodium (and water) reabsorption"
+    },
+    {
+      "front": "Why BUN rises out of proportion in prerenal states",
+      "back": "Increased proximal Na/water reabsorption drags urea back"
+    },
+    {
+      "front": "Aldosterone vs ADH in HF",
+      "back": "Aldosterone -> distal Na+ reabsorption; ADH -> water retention"
+    },
+    {
+      "front": "Cardiorenal syndrome mechanism",
+      "back": "↑Renal venous/central venous pressure -> ↓GFR"
+    },
+    {
+      "front": "Recent viral illness -> new heart failure",
+      "back": "Viral myocarditis -> dilated cardiomyopathy"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "RAAS in heart failure",
+      "detail": "Renal: angiotensin II -> proximal Na+ reabsorption; prerenal azotemia (BUN:Cr >20:1).",
+      "location": "Renal: angiotensin II -> proximal Na+ reabsorption; prerenal azotemia (BUN:Cr >20:1)."
+    },
+    {
+      "tag": "options",
+      "topic": "Nephron sodium/water handling",
+      "detail": "Renal > proximal (AngII), distal (aldosterone), collecting duct (ADH).",
+      "location": "Renal > proximal (AngII), distal (aldosterone), collecting duct (ADH)."
+    },
+    {
+      "tag": "context",
+      "topic": "Cardiorenal syndrome",
+      "detail": "CV/Renal > low output + venous congestion -> ↓GFR; dilated cardiomyopathy from myocarditis.",
+      "location": "CV/Renal > low output + venous congestion -> ↓GFR; dilated cardiomyopathy from myocarditis."
+    }
+  ],
+  "memoryHook": "A weak heart fools the kidney into 'drought mode': RAAS switches on, the proximal tubule hoards sodium (and urea) - BUN shoots up, sediment stays clean.",
+  "stem": [
+    {
+      "text": "A 44-year-old man is brought to the emergency department with fatigue, shortness of breath, and lethargy. The patient had a "
+    },
+    {
+      "text": "brief upper respiratory illness about a month ago but began experiencing progressive dyspnea",
+      "clue": true,
+      "type": "orange",
+      "note": "A recent viral illness followed by new heart failure suggests viral myocarditis -> dilated cardiomyopathy, the cause of this decompensated heart failure."
+    },
+    {
+      "text": " on exertion 2 weeks ago. He has no significant medical history and takes no medications. Blood pressure is 100/70 mm Hg and pulse is 95/min and regular. The "
+    },
+    {
+      "text": "apical impulse is palpated in the sixth intercostal space along the left anterior axillary line",
+      "clue": true,
+      "type": "blue",
+      "note": "A laterally/inferiorly displaced apical impulse indicates cardiomegaly (dilated left ventricle)."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "An S3 is heard",
+      "clue": true,
+      "type": "green",
+      "note": "An S3 gallop signals volume overload / a failing, dilated ventricle - decompensated heart failure."
+    },
+    {
+      "text": " on cardiac auscultation. Bibasilar crackles are present. Distal extremities are cold, and there is 1+ peripheral edema. Laboratory results show "
+    },
+    {
+      "text": "blood urea nitrogen 45 mg/dL",
+      "clue": true,
+      "type": "green",
+      "note": "A disproportionately elevated BUN (45 / normal 7-20) relative to creatinine (1.8) with a bland sediment indicates a PRERENAL state - low renal perfusion activating RAAS, which enhances proximal sodium (and passive urea) reabsorption -> high BUN:creatinine ratio (>20:1)."
+    },
+    {
+      "text": " (normal 7-20) and serum creatinine 1.8 mg/dL (normal 0.6-1.2), with a bland urine sediment (0 RBC/hpf, 0-1 WBC/hpf, no casts). Which of the following is most likely to be present in this patient compared to the normal state?"
+    }
+  ]
+}

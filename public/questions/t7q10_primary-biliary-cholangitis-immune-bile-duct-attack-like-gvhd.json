@@ -1,0 +1,217 @@
+{
+  "id": "q240",
+  "item": 240,
+  "qid": "402",
+  "title": "Primary biliary cholangitis: immune bile-duct attack like GVHD",
+  "system": "Pathophysiology",
+  "topic": "Primary biliary cholangitis",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 51,
+  "vignette": "A 52-year-old woman is evaluated for a 6-month history of progressive fatigue and generalized pruritus. She has had no significant prior medical conditions or surgery and takes no medications. The patient does not use tobacco, alcohol, or illicit drugs. Her sister has Sjögren syndrome. Physical examination shows skin excoriations and mild hepatomegaly. Laboratory results show an alkaline phosphatase of 480 U/L (normal 30-120), aspartate aminotransferase (SGOT) 37 U/L, alanine aminotransferase (SGPT) 49 U/L, and a positive antimitochondrial antibody. The pathogenesis of this patient's disease process most closely resembles that of which of the following conditions?",
+  "clues": [
+    {
+      "text": "progressive fatigue and generalized pruritus",
+      "type": "blue",
+      "note": "Fatigue and pruritus are the classic early symptoms of cholestasis in primary biliary cholangitis (PBC), driven by impaired bile flow and retained bile constituents."
+    },
+    {
+      "text": "Her sister has Sjögren syndrome",
+      "type": "orange",
+      "note": "PBC clusters with other autoimmune diseases (Sjögren, rheumatoid arthritis, thyroiditis). A family/personal autoimmune history supports an autoimmune, immune-mediated liver disease."
+    },
+    {
+      "text": "alkaline phosphatase of 480 U/L",
+      "type": "green",
+      "note": "A markedly elevated alkaline phosphatase (480 / normal 30-120 U/L) with near-normal AST (37) and ALT (49) is a CHOLESTATIC pattern - injury centered on bile ducts, not hepatocytes."
+    },
+    {
+      "text": "positive antimitochondrial antibody",
+      "type": "green",
+      "note": "Antimitochondrial antibody is the serologic hallmark of PBC (positive in most cases), confirming autoimmune destruction of small intrahepatic bile ducts."
+    }
+  ],
+  "whatMatters": "Middle-aged woman + pruritus/fatigue + cholestatic labs (very high ALP, near-normal AST/ALT) + positive antimitochondrial antibody + autoimmune family history = primary biliary cholangitis. PBC is autoimmune, lymphocyte-mediated destruction of small intrahepatic bile ducts. That immune mechanism most resembles GRAFT-VERSUS-HOST DISEASE, where donor T cells attack host bile-duct epithelium. Answer D.",
+  "strategy": "Diagnose PBC (AMA+, cholestatic pattern, autoimmune woman), then abstract the MECHANISM: T-cell/lymphocytic immune destruction of small intrahepatic bile ducts. Ask which listed disease shares that immune bile-duct attack -> GVHD (donor T cells target host bile ducts). Reject the toxic/metabolic/vascular causes (acetaminophen, alcohol, Budd-Chiari, hemochromatosis, Reye), which share labs superficially but not mechanism.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acetaminophen toxicity",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Alcohol-induced hepatitis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Budd-Chiari syndrome",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Graft versus host disease",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Hemochromatosis",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Reye syndrome",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Acetaminophen toxicity - direct hepatocellular necrosis",
+      "detail": "WHAT IT IS: dose-dependent centrilobular hepatocyte necrosis from NAPQI. ❌ WHY IT FAILS: it's a toxic hepatocellular injury with massive transaminase elevation - not immune bile-duct destruction. ✅ Correct if: acute hepatocellular injury with sky-high AST/ALT."
+    },
+    {
+      "letter": "B",
+      "label": "Alcohol-induced hepatitis - toxic hepatocyte injury",
+      "detail": "WHAT IT IS: hepatocellular swelling/necrosis with steatosis, Mallory bodies, neutrophils; AST:ALT >2:1. ❌ WHY IT FAILS: it's toxic, not autoimmune cholangitis. ✅ Correct if: alcoholic liver disease."
+    },
+    {
+      "letter": "C",
+      "label": "Budd-Chiari syndrome - venous outflow obstruction",
+      "detail": "WHAT IT IS: hepatic vein/IVC occlusion causing congestion and centrilobular necrosis. ❌ WHY IT FAILS: it's a VASCULAR process, not immune bile-duct injury. ✅ Correct if: hepatomegaly + ascites from venous thrombosis (e.g., hypercoagulable state)."
+    },
+    {
+      "letter": "E",
+      "label": "Hemochromatosis - iron overload",
+      "detail": "WHAT IT IS: excess iron deposition (hemosiderin) in hepatocytes (genetic/metabolic). ❌ WHY IT FAILS: it's a metabolic deposition disease, not autoimmune cholangitis. ✅ Correct if: iron-overload cirrhosis with high ferritin/transferrin saturation."
+    },
+    {
+      "letter": "F",
+      "label": "Reye syndrome - mitochondrial hepatotoxicity",
+      "detail": "WHAT IT IS: microvesicular steatosis + encephalopathy in children after aspirin during a viral illness. ❌ WHY IT FAILS: unrelated mechanism and population. ✅ Correct if: pediatric aspirin-associated hepatic failure."
+    }
+  ],
+  "reasoning": [
+    "Positive antimitochondrial antibody + cholestatic labs + autoimmune woman = primary biliary cholangitis",
+    "PBC = immune (T-cell) destruction of small intrahepatic bile ducts",
+    "Graft-versus-host disease similarly features donor T-cell attack on host bile-duct epithelium",
+    "-> shared immune bile-duct injury; answer D"
+  ],
+  "mechanism": "Primary biliary cholangitis is a chronic autoimmune liver disease in which T-lymphocyte-mediated (and antimitochondrial antibody-associated) injury destroys small and medium intrahepatic bile ducts, producing cholestasis (elevated alkaline phosphatase, pruritus, fatigue) with relatively preserved transaminases; it predominates in middle-aged women and clusters with other autoimmune conditions such as Sjögren syndrome. Histology shows patchy lymphocytic (granulomatous) destruction of bile ducts (florid duct lesion). Among the options, only graft-versus-host disease shares this immunologic mechanism: after allogeneic hematopoietic transplant, donor T cells recognize host tissues - including biliary epithelium - as foreign and destroy small intrahepatic bile ducts, raising alkaline phosphatase. The other options are toxic (acetaminophen, alcohol, Reye), vascular (Budd-Chiari), or metabolic (hemochromatosis), and do not share the autoimmune bile-duct mechanism.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid GI > PBC: antimitochondrial antibody, cholestatic pattern (↑ALP), autoimmune destruction of intrahepatic bile ducts, middle-aged women; GVHD immunology."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question asks for a shared MECHANISM, not the diagnosis - abstract PBC to 'immune bile-duct destruction' and match it to GVHD."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on antimitochondrial antibody, cholestatic, alkaline phosphatase, or graft-versus-host disease? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "The other liver diseases share elevated liver labs superficially but are toxic/metabolic/vascular - none is an immune attack on bile ducts like PBC and GVHD."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: AMA+ + high ALP + pruritus in a middle-aged woman = PBC; immune (T-cell) bile-duct destruction, mechanistically like GVHD."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "AMA-positive + high ALP + pruritus in a middle-aged woman",
+      "back": "Primary biliary cholangitis"
+    },
+    {
+      "front": "PBC mechanism",
+      "back": "T-cell-mediated destruction of small intrahepatic bile ducts (autoimmune)"
+    },
+    {
+      "front": "Disease with analogous immune bile-duct attack",
+      "back": "Graft-versus-host disease (donor T cells vs host bile ducts)"
+    },
+    {
+      "front": "Cholestatic lab pattern",
+      "back": "↑↑Alkaline phosphatase (+ GGT) with near-normal AST/ALT"
+    },
+    {
+      "front": "PBC antibody / associations",
+      "back": "Antimitochondrial antibody; other autoimmune disease (Sjögren, RA)"
+    },
+    {
+      "front": "PBC treatment",
+      "back": "Ursodeoxycholic acid (+/- obeticholic acid)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Primary biliary cholangitis",
+      "detail": "GI: autoimmune destruction of intrahepatic bile ducts; AMA+, ↑ALP, pruritus; middle-aged women.",
+      "location": "GI: autoimmune destruction of intrahepatic bile ducts; AMA+, ↑ALP, pruritus; middle-aged women."
+    },
+    {
+      "tag": "options",
+      "topic": "Liver injury patterns",
+      "detail": "GI > toxic (APAP, alcohol, Reye), vascular (Budd-Chiari), metabolic (hemochromatosis), immune (GVHD).",
+      "location": "GI > toxic (APAP, alcohol, Reye), vascular (Budd-Chiari), metabolic (hemochromatosis), immune (GVHD)."
+    },
+    {
+      "tag": "context",
+      "topic": "Graft-versus-host disease",
+      "detail": "Immuno > donor T cells attack skin, gut, and liver (bile ducts).",
+      "location": "Immuno > donor T cells attack skin, gut, and liver (bile ducts)."
+    }
+  ],
+  "memoryHook": "AMA + itchy woman + sky-high ALP = PBC. Immune cells trash the bile ducts - just like GVHD's donor T cells attacking the host's.",
+  "stem": [
+    {
+      "text": "A 52-year-old woman is evaluated for a 6-month history of "
+    },
+    {
+      "text": "progressive fatigue and generalized pruritus",
+      "clue": true,
+      "type": "blue",
+      "note": "Fatigue and pruritus are the classic early symptoms of cholestasis in primary biliary cholangitis (PBC), driven by impaired bile flow and retained bile constituents."
+    },
+    {
+      "text": ". She has had no significant prior medical conditions or surgery and takes no medications. The patient does not use tobacco, alcohol, or illicit drugs. "
+    },
+    {
+      "text": "Her sister has Sjögren syndrome",
+      "clue": true,
+      "type": "orange",
+      "note": "PBC clusters with other autoimmune diseases (Sjögren, rheumatoid arthritis, thyroiditis). A family/personal autoimmune history supports an autoimmune, immune-mediated liver disease."
+    },
+    {
+      "text": ". Physical examination shows skin excoriations and mild hepatomegaly. Laboratory results show an "
+    },
+    {
+      "text": "alkaline phosphatase of 480 U/L",
+      "clue": true,
+      "type": "green",
+      "note": "A markedly elevated alkaline phosphatase (480 / normal 30-120 U/L) with near-normal AST (37) and ALT (49) is a CHOLESTATIC pattern - injury centered on bile ducts, not hepatocytes."
+    },
+    {
+      "text": " (normal 30-120), aspartate aminotransferase (SGOT) 37 U/L, alanine aminotransferase (SGPT) 49 U/L, and a "
+    },
+    {
+      "text": "positive antimitochondrial antibody",
+      "clue": true,
+      "type": "green",
+      "note": "Antimitochondrial antibody is the serologic hallmark of PBC (positive in most cases), confirming autoimmune destruction of small intrahepatic bile ducts."
+    },
+    {
+      "text": ". The pathogenesis of this patient's disease process most closely resembles that of which of the following conditions?"
+    }
+  ]
+}

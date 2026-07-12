@@ -1,0 +1,193 @@
+{
+  "id": "q286",
+  "item": 286,
+  "qid": "8573",
+  "title": "Jet lag: circadian misalignment of the suprachiasmatic nucleus",
+  "system": "Physiology",
+  "topic": "Circadian rhythm / SCN",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 74,
+  "vignette": "A 39-year-old management consultant comes to the office due to difficulty sleeping at night and excessive daytime sleepiness over the past few months. His work requires frequent travel between the United States and France, crossing multiple time zones on each trip. He notices he feels wide awake at inappropriate times and cannot fall asleep when it is nighttime at his destination. His symptoms tend to improve after he remains in one location for about a week. Misalignment involving which of the following brain structures best explains this patient's symptoms?",
+  "clues": [
+    {
+      "text": "frequent travel between the United States and France, crossing multiple time zones",
+      "type": "orange",
+      "note": "Repeated rapid transmeridian travel across time zones is the setup for jet lag - a circadian rhythm sleep disorder."
+    },
+    {
+      "text": "cannot fall asleep when it is nighttime at his destination",
+      "type": "blue",
+      "note": "A mismatch between the internal clock and local day/night indicates the endogenous circadian pacemaker is out of phase with the environment."
+    },
+    {
+      "text": "symptoms tend to improve after he remains in one location for about a week",
+      "type": "green",
+      "note": "Gradual resolution once he stays put reflects the circadian clock slowly re-entraining to local light cues - characteristic of jet lag."
+    }
+  ],
+  "whatMatters": "Frequent time-zone travel with an internal clock out of sync with local night = jet lag, a circadian rhythm disorder. The master circadian pacemaker is the SUPRACHIASMATIC NUCLEUS (SCN) of the hypothalamus; jet lag reflects transient misalignment of the SCN with external time until it re-entrains to light. Answer D.",
+  "strategy": "Identify jet lag as a circadian misalignment, then name the master clock: the suprachiasmatic nucleus (SCN), entrained by retinal light input and driving melatonin release from the pineal. Reject the pineal itself (an effector that makes melatonin), the locus ceruleus (arousal/norepinephrine), and sensory relay nuclei - none is the central pacemaker.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Locus ceruleus",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Nucleus accumbens",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Pineal gland",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Suprachiasmatic nucleus",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Ventral posterolateral nucleus of the thalamus",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Locus ceruleus - arousal/norepinephrine, not the clock",
+      "detail": "WHAT IT IS: the pontine locus ceruleus is the main source of CNS norepinephrine, involved in arousal and the stress response. ❌ WHY IT FAILS: it modulates wakefulness but is not the circadian pacemaker that jet lag disrupts. ✅ Correct if: arousal/attention or norepinephrine-related questions."
+    },
+    {
+      "letter": "B",
+      "label": "Nucleus accumbens - reward, not circadian timing",
+      "detail": "WHAT IT IS: a ventral striatal reward/motivation center. ❌ WHY IT FAILS: it has no role in circadian entrainment or the sleep-wake clock. ✅ Correct if: reward, addiction, or motivation circuitry."
+    },
+    {
+      "letter": "C",
+      "label": "Pineal gland - effector (melatonin), not the pacemaker",
+      "detail": "WHAT IT IS: the pineal secretes melatonin in response to SCN signaling (via the sympathetic nervous system) at night. ❌ WHY IT FAILS: it is downstream of the clock - an output that promotes sleep - not the master pacemaker that becomes misaligned in jet lag (though melatonin is used to treat jet lag). ✅ Correct if: asking what hormone/gland outputs the sleep signal."
+    },
+    {
+      "letter": "E",
+      "label": "Ventral posterolateral nucleus - somatosensory relay",
+      "detail": "WHAT IT IS: the VPL thalamic nucleus relays body sensation (pain/temperature/touch) to cortex. ❌ WHY IT FAILS: it has nothing to do with circadian rhythm. ✅ Correct if: a somatosensory pathway question."
+    }
+  ],
+  "reasoning": [
+    "Frequent transmeridian travel + internal clock out of phase with local night = jet lag",
+    "Jet lag is a circadian rhythm disorder (endogenous clock misaligned with the environment)",
+    "The master circadian pacemaker is the suprachiasmatic nucleus of the hypothalamus",
+    "-> suprachiasmatic nucleus; answer D"
+  ],
+  "mechanism": "The suprachiasmatic nucleus (SCN) of the anterior hypothalamus is the master circadian pacemaker. It receives direct light input from intrinsically photosensitive retinal ganglion cells via the retinohypothalamic tract, which entrains its ~24-hour rhythm to the external light-dark cycle. The SCN then coordinates downstream rhythms, including driving the pineal gland (via a sympathetic relay) to secrete melatonin at night. With rapid travel across several time zones, the environmental light-dark cycle shifts abruptly, but the SCN re-entrains only gradually (roughly a day per time zone), so the internal clock is transiently MISALIGNED with local time - producing jet lag (nighttime insomnia, daytime sleepiness, impaired alertness). Symptoms resolve as the SCN resynchronizes to local light cues; timed light exposure and melatonin can speed re-entrainment. The pineal, locus ceruleus, and thalamic relay nuclei are not the central pacemaker.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Neuro/Physio > circadian rhythm: SCN = master clock, entrained by retinohypothalamic light input, drives pineal melatonin; jet lag = SCN misalignment; treat with light + melatonin."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Recognize jet lag as circadian misalignment and localize the pacemaker (SCN), not its downstream effector (pineal)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on suprachiasmatic nucleus, circadian entrainment, retinohypothalamic tract, or melatonin/pineal? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Pineal is the melatonin effector (downstream); locus ceruleus = arousal/NE; nucleus accumbens = reward; VPL = somatosensory relay."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: SCN = master circadian clock (light-entrained) -> pineal melatonin; jet lag = transient SCN misalignment."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Master circadian pacemaker",
+      "back": "Suprachiasmatic nucleus (SCN) of hypothalamus"
+    },
+    {
+      "front": "How the SCN is entrained to day/night",
+      "back": "Retinohypothalamic tract (light from retinal ganglion cells)"
+    },
+    {
+      "front": "SCN output hormone/gland",
+      "back": "Melatonin from the pineal gland (at night)"
+    },
+    {
+      "front": "Jet lag definition",
+      "back": "Transient SCN misalignment with local time after transmeridian travel"
+    },
+    {
+      "front": "Locus ceruleus function",
+      "back": "Main CNS norepinephrine source (arousal/stress)"
+    },
+    {
+      "front": "Treatments to re-entrain the clock",
+      "back": "Timed bright light + melatonin"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Circadian rhythm",
+      "detail": "Neuro: SCN = master clock; light-entrained; drives pineal melatonin; jet lag = misalignment.",
+      "location": "Neuro: SCN = master clock; light-entrained; drives pineal melatonin; jet lag = misalignment."
+    },
+    {
+      "tag": "options",
+      "topic": "Brainstem/limbic nuclei",
+      "detail": "Neuro > locus ceruleus (NE/arousal), nucleus accumbens (reward), VPL (somatosensory).",
+      "location": "Neuro > locus ceruleus (NE/arousal), nucleus accumbens (reward), VPL (somatosensory)."
+    },
+    {
+      "tag": "management",
+      "topic": "Jet lag",
+      "detail": "Physio > timed light exposure + melatonin to re-entrain SCN.",
+      "location": "Physio > timed light exposure + melatonin to re-entrain SCN."
+    }
+  ],
+  "memoryHook": "The SCN is the body's wall clock; fly across an ocean and the clock still reads home time - jet lag until it resets to the new light.",
+  "stem": [
+    {
+      "text": "A 39-year-old management consultant comes to the office due to difficulty sleeping at night and excessive daytime sleepiness over the past few months. His work requires "
+    },
+    {
+      "text": "frequent travel between the United States and France, crossing multiple time zones",
+      "clue": true,
+      "type": "orange",
+      "note": "Repeated rapid transmeridian travel across time zones is the setup for jet lag - a circadian rhythm sleep disorder."
+    },
+    {
+      "text": " on each trip. He notices he feels wide awake at inappropriate times and "
+    },
+    {
+      "text": "cannot fall asleep when it is nighttime at his destination",
+      "clue": true,
+      "type": "blue",
+      "note": "A mismatch between the internal clock and local day/night indicates the endogenous circadian pacemaker is out of phase with the environment."
+    },
+    {
+      "text": ". His "
+    },
+    {
+      "text": "symptoms tend to improve after he remains in one location for about a week",
+      "clue": true,
+      "type": "green",
+      "note": "Gradual resolution once he stays put reflects the circadian clock slowly re-entraining to local light cues - characteristic of jet lag."
+    },
+    {
+      "text": ". Misalignment involving which of the following brain structures best explains this patient's symptoms?"
+    }
+  ]
+}

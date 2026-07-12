@@ -1,0 +1,203 @@
+{
+  "id": "q303",
+  "item": 303,
+  "qid": "143",
+  "title": "Nitrate + PDE5 inhibitor: profound hypotension from cGMP accumulation",
+  "system": "Pharmacology",
+  "topic": "Nitrates and phosphodiesterase-5 inhibitors",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 87,
+  "vignette": "A 50-year-old man is brought to the emergency department with severe dizziness and confusion. He states that he had an episode of chest pain and took several tablets of nitroglycerin. His current medications include a daily aspirin for heart attack prevention, an occasional acetaminophen for headaches, and occasionally tadalafil for erectile dysfunction. His blood pressure is 50/20 mm Hg and his heart rate is 120 beats/min. Which of the following cellular changes is most likely responsible for this patient's symptoms?",
+  "clues": [
+    {
+      "text": "took several tablets of nitroglycerin",
+      "type": "red",
+      "note": "Nitroglycerin (a nitrate) is converted to nitric oxide, which raises cGMP to relax vascular smooth muscle - a vasodilator."
+    },
+    {
+      "text": "occasionally tadalafil for erectile dysfunction",
+      "type": "red",
+      "note": "Tadalafil is a phosphodiesterase-5 (PDE5) inhibitor; PDE5 normally breaks down cGMP. Blocking it prevents cGMP degradation - dangerous when combined with a nitrate."
+    },
+    {
+      "text": "blood pressure is 50/20 mm Hg and his heart rate is 120 beats/min",
+      "type": "red",
+      "note": "Profound hypotension (50/20) with reflex tachycardia (120) reflects extreme vasodilation from the nitrate + PDE5 inhibitor interaction."
+    }
+  ],
+  "whatMatters": "Nitrate (nitroglycerin) + PDE5 inhibitor (tadalafil) is a contraindicated combination. Nitrates increase cGMP synthesis (via nitric oxide), and PDE5 inhibitors block cGMP breakdown - together they cause massive cGMP ACCUMULATION in vascular smooth muscle, profound vasodilation, and life-threatening hypotension. Answer C.",
+  "strategy": "Trace the shared pathway: both drugs raise cyclic GMP - nitrates by making more (nitric oxide -> guanylate cyclase), PDE5 inhibitors by blocking its breakdown. The result is cGMP accumulation -> smooth muscle relaxation -> severe hypotension. Reject receptor downregulation/tolerance (nitrate tolerance, but not the acute crisis), Gs phosphorylation (cAMP pathway), tyrosine kinase, and phospholipid/IP3 metabolism.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Receptor downregulation",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Gs protein phosphorylation",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Cyclic GMP accumulation",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Tyrosine kinase overactivity",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Enhanced phospholipid metabolism",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Tolerance development",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Receptor downregulation - tachyphylaxis, not this crisis",
+      "detail": "WHAT IT IS: reduced receptor number/response with repeated drug exposure. ❌ WHY IT FAILS: it explains tolerance over time, not the acute profound hypotension from combining a nitrate and a PDE5 inhibitor. ✅ Correct if: asking about mechanisms of drug tolerance."
+    },
+    {
+      "letter": "B",
+      "label": "Gs protein phosphorylation - cAMP pathway",
+      "detail": "WHAT IT IS: Gs activates adenylate cyclase to raise cAMP. ❌ WHY IT FAILS: nitrates and PDE5 inhibitors act on the cGMP (not cAMP/Gs) pathway. ✅ Correct if: a beta-agonist/Gs-cAMP signaling question."
+    },
+    {
+      "letter": "D",
+      "label": "Tyrosine kinase overactivity - insulin/growth factor signaling",
+      "detail": "WHAT IT IS: receptor tyrosine kinase signaling (insulin, growth factors). ❌ WHY IT FAILS: it plays no role in nitrate/PDE5 vasodilation. ✅ Correct if: insulin or growth-factor receptor signaling."
+    },
+    {
+      "letter": "E",
+      "label": "Enhanced phospholipid metabolism - IP3/DAG pathway",
+      "detail": "WHAT IT IS: the phospholipase C -> IP3/DAG second-messenger system (alpha-1, angiotensin II, oxytocin). ❌ WHY IT FAILS: it mediates vasoCONSTRICTION and is unrelated to nitrate/PDE5 action. ✅ Correct if: an alpha-1/Gq-IP3 signaling question."
+    },
+    {
+      "letter": "F",
+      "label": "Tolerance development - explains reduced effect, not hypotension",
+      "detail": "WHAT IT IS: needing more drug for the same effect (e.g., nitrate tolerance with continuous dosing). ❌ WHY IT FAILS: tolerance would BLUNT the response, not cause the exaggerated hypotension seen here. ✅ Correct if: asking why continuous nitrate therapy loses efficacy."
+    }
+  ],
+  "reasoning": [
+    "Nitroglycerin (nitrate) -> nitric oxide -> guanylate cyclase -> increased cGMP synthesis",
+    "Tadalafil (PDE5 inhibitor) blocks cGMP breakdown",
+    "Together, cGMP ACCUMULATES in vascular smooth muscle -> profound vasodilation -> severe hypotension (50/20) with reflex tachycardia",
+    "-> cyclic GMP accumulation; answer C"
+  ],
+  "mechanism": "Both drug classes converge on the cyclic GMP second-messenger pathway in vascular smooth muscle. Nitrates (nitroglycerin) are converted to nitric oxide, which activates guanylate cyclase to INCREASE cGMP; elevated cGMP lowers intracellular calcium and relaxes vascular smooth muscle (vasodilation). Phosphodiesterase-5 (PDE5) is the enzyme that DEGRADES cGMP; PDE5 inhibitors (tadalafil, sildenafil, vardenafil), used for erectile dysfunction and pulmonary hypertension, prevent that breakdown. When taken together, enhanced cGMP synthesis (nitrate) plus inhibited cGMP degradation (PDE5 inhibitor) causes marked cGMP ACCUMULATION, profound systemic vasodilation, and dangerous hypotension - here 50/20 mm Hg with compensatory reflex tachycardia (120/min). This is why nitrates and PDE5 inhibitors are absolutely contraindicated together. Receptor downregulation/tolerance, Gs-cAMP, tyrosine kinase, and phospholipase C/IP3 pathways are not involved.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > nitrates (NO -> ↑cGMP) and PDE5 inhibitors (block cGMP breakdown); combination -> cGMP accumulation -> severe hypotension; absolutely contraindicated together."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Both drugs raise cGMP (make more / block breakdown); together they cause cGMP accumulation and hypotension."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on cGMP, guanylate cyclase, phosphodiesterase-5, nitric oxide, or second messengers? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Receptor downregulation/tolerance blunt effects; Gs = cAMP; tyrosine kinase = insulin/GF; phospholipid/IP3 = vasoconstriction - none is the nitrate/PDE5 mechanism."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: nitrate + PDE5 inhibitor = cGMP accumulation -> profound hypotension; contraindicated. Nitrates -> NO -> ↑cGMP; PDE5 blocks cGMP breakdown."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Nitrate + PDE5 inhibitor combined effect",
+      "back": "cGMP accumulation -> profound vasodilation/hypotension (contraindicated)"
+    },
+    {
+      "front": "How nitrates raise cGMP",
+      "back": "Converted to nitric oxide -> activate guanylate cyclase"
+    },
+    {
+      "front": "PDE5 inhibitor action",
+      "back": "Block phosphodiesterase-5 -> prevent cGMP breakdown"
+    },
+    {
+      "front": "PDE5 inhibitors (examples/uses)",
+      "back": "Sildenafil, tadalafil, vardenafil; erectile dysfunction, pulmonary hypertension"
+    },
+    {
+      "front": "cGMP effect on vascular smooth muscle",
+      "back": "↓ intracellular Ca -> relaxation (vasodilation)"
+    },
+    {
+      "front": "Second-messenger pathways",
+      "back": "cGMP (NO/nitrates), cAMP (Gs), IP3/DAG (Gq/alpha-1)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Nitrate-PDE5 interaction",
+      "detail": "Pharm: both raise cGMP -> accumulation -> severe hypotension; contraindicated.",
+      "location": "Pharm: both raise cGMP -> accumulation -> severe hypotension; contraindicated."
+    },
+    {
+      "tag": "options",
+      "topic": "Second messengers",
+      "detail": "Pharm > cGMP (nitrates/PDE5), cAMP (Gs), IP3/DAG (Gq).",
+      "location": "Pharm > cGMP (nitrates/PDE5), cAMP (Gs), IP3/DAG (Gq)."
+    },
+    {
+      "tag": "safety",
+      "topic": "Drug contraindication",
+      "detail": "Pharm > never combine nitrates with PDE5 inhibitors.",
+      "location": "Pharm > never combine nitrates with PDE5 inhibitors."
+    }
+  ],
+  "memoryHook": "Nitrates open the cGMP tap; PDE5 inhibitors plug the drain - together the vessels flood with cGMP and blood pressure crashes to 50/20.",
+  "stem": [
+    {
+      "text": "A 50-year-old man is brought to the emergency department with severe dizziness and confusion. He states that he had an episode of chest pain and "
+    },
+    {
+      "text": "took several tablets of nitroglycerin",
+      "clue": true,
+      "type": "red",
+      "note": "Nitroglycerin (a nitrate) is converted to nitric oxide, which raises cGMP to relax vascular smooth muscle - a vasodilator."
+    },
+    {
+      "text": ". His current medications include a daily aspirin for heart attack prevention, an occasional acetaminophen for headaches, and "
+    },
+    {
+      "text": "occasionally tadalafil for erectile dysfunction",
+      "clue": true,
+      "type": "red",
+      "note": "Tadalafil is a phosphodiesterase-5 (PDE5) inhibitor; PDE5 normally breaks down cGMP. Blocking it prevents cGMP degradation - dangerous when combined with a nitrate."
+    },
+    {
+      "text": ". His "
+    },
+    {
+      "text": "blood pressure is 50/20 mm Hg and his heart rate is 120 beats/min",
+      "clue": true,
+      "type": "red",
+      "note": "Profound hypotension (50/20) with reflex tachycardia (120) reflects extreme vasodilation from the nitrate + PDE5 inhibitor interaction."
+    },
+    {
+      "text": ". Which of the following cellular changes is most likely responsible for this patient's symptoms?"
+    }
+  ]
+}

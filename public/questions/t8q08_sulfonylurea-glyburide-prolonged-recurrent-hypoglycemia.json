@@ -1,0 +1,207 @@
+{
+  "id": "q277",
+  "item": 277,
+  "qid": "11565",
+  "title": "Sulfonylurea (glyburide) -> prolonged, recurrent hypoglycemia",
+  "system": "Pharmacology",
+  "topic": "Oral antidiabetics - sulfonylurea hypoglycemia",
+  "correct": "B",
+  "yourAnswer": "D",
+  "percentCorrect": 64,
+  "vignette": "A 76-year-old woman with type 2 diabetes mellitus is brought to the emergency department after being found confused at home. Her family reports she skipped dinner the previous evening. Her only medication for diabetes is a single oral agent. On arrival she is diaphoretic and confused; fingerstick glucose is 34 mg/dL (normal fasting 70-100). She is treated with intravenous dextrose with improvement, but over the next several hours she develops recurrent episodes of hypoglycemia requiring repeated dextrose administration and admission for observation. Which of the following medications is most likely responsible for this patient's recurrent hypoglycemia?",
+  "clues": [
+    {
+      "text": "76-year-old woman",
+      "type": "orange",
+      "note": "Advanced age (and any renal impairment) prolongs sulfonylurea clearance, markedly increasing the risk and duration of hypoglycemia."
+    },
+    {
+      "text": "skipped dinner the previous evening",
+      "type": "blue",
+      "note": "Missing a meal while on an insulin-secretagogue removes the carbohydrate load but not the drug-driven insulin release -> hypoglycemia."
+    },
+    {
+      "text": "fingerstick glucose is 34 mg/dL",
+      "type": "red",
+      "note": "Glucose 34 / normal 70-100 is severe hypoglycemia causing neuroglycopenia (confusion) - a medical emergency."
+    },
+    {
+      "text": "recurrent episodes of hypoglycemia requiring repeated dextrose",
+      "type": "green",
+      "note": "PROLONGED, recurrent hypoglycemia despite dextrose is characteristic of long-acting sulfonylureas (e.g., glyburide), which keep stimulating insulin release for many hours."
+    }
+  ],
+  "whatMatters": "An elderly patient on a single oral agent who skips a meal and then has SEVERE, RECURRENT hypoglycemia points to a sulfonylurea. GLYBURIDE (a long-acting insulin secretagogue) closes pancreatic beta-cell K-ATP channels to release insulin regardless of glucose level, causing prolonged hypoglycemia - worsened by age. Answer B. Metformin, pioglitazone, acarbose, and DPP-4 inhibitors rarely cause hypoglycemia as monotherapy.",
+  "strategy": "Split the oral agents into those that CAUSE hypoglycemia (insulin secretagogues: sulfonylureas, meglitinides) versus those that generally do NOT (metformin, TZDs like pioglitazone, acarbose, DPP-4 inhibitors, SGLT2 inhibitors). Recurrent severe hypoglycemia after a skipped meal in an elder = a sulfonylurea (glyburide).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acarbose",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Glyburide",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Metformin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pioglitazone",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Sitagliptin",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Acarbose - alpha-glucosidase inhibitor, no hypoglycemia alone",
+      "detail": "WHAT IT IS: an alpha-glucosidase inhibitor that slows intestinal carbohydrate absorption. ❌ WHY IT FAILS: it does not stimulate insulin and does not cause hypoglycemia as monotherapy (main effect: GI bloating/flatulence). ✅ Correct if: postprandial glucose spikes / GI side effects."
+    },
+    {
+      "letter": "C",
+      "label": "Metformin - biguanide, does not cause hypoglycemia",
+      "detail": "WHAT IT IS: a biguanide that decreases hepatic gluconeogenesis and improves insulin sensitivity. ❌ WHY IT FAILS: it is not an insulin secretagogue and rarely causes hypoglycemia alone (its feared toxicity is lactic acidosis). ✅ Correct if: asking about lactic acidosis or first-line therapy."
+    },
+    {
+      "letter": "D",
+      "label": "Pioglitazone - TZD, no monotherapy hypoglycemia (your pick)",
+      "detail": "WHAT IT IS: a thiazolidinedione (PPAR-gamma agonist) that improves insulin sensitivity. ❌ WHY IT FAILS: it does not trigger insulin release and rarely causes hypoglycemia alone; its issues are fluid retention/edema, weight gain, heart failure, and fracture risk. ✅ Correct if: edema/heart-failure exacerbation or fractures."
+    },
+    {
+      "letter": "E",
+      "label": "Sitagliptin - DPP-4 inhibitor, low hypoglycemia risk",
+      "detail": "WHAT IT IS: a DPP-4 inhibitor that raises incretin (GLP-1) levels, enhancing glucose-DEPENDENT insulin release. ❌ WHY IT FAILS: because its insulin effect is glucose-dependent, it carries low hypoglycemia risk as monotherapy. ✅ Correct if: an incretin-based agent with minimal hypoglycemia."
+    }
+  ],
+  "reasoning": [
+    "Elderly patient on a single oral agent, skipped a meal, then severe recurrent hypoglycemia",
+    "Sort oral agents: secretagogues (sulfonylureas/meglitinides) cause hypoglycemia; metformin/TZD/acarbose/DPP-4 usually do not",
+    "Prolonged, recurrent hypoglycemia = long-acting sulfonylurea, worsened by age",
+    "-> glyburide; answer B"
+  ],
+  "mechanism": "Sulfonylureas (e.g., glyburide, glipizide, glimepiride) bind the SUR1 subunit of the ATP-sensitive potassium (K-ATP) channel on pancreatic beta cells, closing it. The resulting membrane depolarization opens voltage-gated calcium channels, and calcium influx triggers insulin exocytosis - crucially, this occurs INDEPENDENT of the blood glucose level, so insulin keeps being released even when the patient is hypoglycemic or has skipped a meal. Glyburide is long-acting and (with active metabolites) is renally cleared, so in elderly patients or those with renal impairment its effect is prolonged, producing severe, recurrent hypoglycemia that outlasts a single dextrose bolus (often requiring a continuous dextrose infusion, and sometimes octreotide to suppress insulin). The other listed agents are not insulin secretagogues: metformin (biguanide), pioglitazone (TZD), acarbose (alpha-glucosidase inhibitor), and sitagliptin (glucose-dependent DPP-4 inhibitor) rarely cause hypoglycemia as monotherapy.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Pharm/Endo > diabetes drugs: sulfonylureas (glyburide) close beta-cell K-ATP channel -> glucose-independent insulin release -> hypoglycemia (esp. elderly/renal); metformin/TZD/acarbose/DPP-4 low hypoglycemia risk."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Prolonged, recurrent hypoglycemia after a missed meal in an elder pinpoints a long-acting insulin secretagogue."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on K-ATP channel/SUR1, insulin secretagogue, neuroglycopenia, or DPP-4/incretin? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Metformin (lactic acidosis), pioglitazone (edema/HF), acarbose (GI), sitagliptin (glucose-dependent) don't cause monotherapy hypoglycemia."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: sulfonylurea hypoglycemia -> IV dextrose ± octreotide; long-acting glyburide dangerous in the elderly/CKD."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Oral diabetes drug causing severe recurrent hypoglycemia",
+      "back": "Sulfonylurea (e.g., glyburide)"
+    },
+    {
+      "front": "Sulfonylurea mechanism",
+      "back": "Close beta-cell K-ATP (SUR1) channel -> depolarize -> Ca influx -> insulin release (glucose-independent)"
+    },
+    {
+      "front": "Diabetes drugs with LOW hypoglycemia risk",
+      "back": "Metformin, TZDs, acarbose, DPP-4 inhibitors, SGLT2 inhibitors"
+    },
+    {
+      "front": "Metformin's dangerous toxicity",
+      "back": "Lactic acidosis (not hypoglycemia)"
+    },
+    {
+      "front": "Pioglitazone (TZD) key adverse effects",
+      "back": "Fluid retention/edema, heart failure, weight gain, fractures"
+    },
+    {
+      "front": "Refractory sulfonylurea hypoglycemia treatment",
+      "back": "Continuous dextrose ± octreotide"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Sulfonylureas",
+      "detail": "Pharm: close beta-cell K-ATP channel -> insulin release; glyburide long-acting -> hypoglycemia in elderly/CKD.",
+      "location": "Pharm: close beta-cell K-ATP channel -> insulin release; glyburide long-acting -> hypoglycemia in elderly/CKD."
+    },
+    {
+      "tag": "options",
+      "topic": "Oral antidiabetic hypoglycemia risk",
+      "detail": "Endo > secretagogues cause it; metformin/TZD/acarbose/DPP-4 usually don't.",
+      "location": "Endo > secretagogues cause it; metformin/TZD/acarbose/DPP-4 usually don't."
+    },
+    {
+      "tag": "management",
+      "topic": "Severe hypoglycemia",
+      "detail": "Pharm > IV dextrose; octreotide for refractory sulfonylurea overdose.",
+      "location": "Pharm > IV dextrose; octreotide for refractory sulfonylurea overdose."
+    }
+  ],
+  "memoryHook": "Glyburide jams the beta cell's OFF switch (K-ATP) shut - insulin pours out no matter the sugar - so a skipped dinner in a 76-year-old spells hours of crashing glucose.",
+  "stem": [
+    {
+      "text": "A "
+    },
+    {
+      "text": "76-year-old woman",
+      "clue": true,
+      "type": "orange",
+      "note": "Advanced age (and any renal impairment) prolongs sulfonylurea clearance, markedly increasing the risk and duration of hypoglycemia."
+    },
+    {
+      "text": " with type 2 diabetes mellitus is brought to the emergency department after being found confused at home. Her family reports she "
+    },
+    {
+      "text": "skipped dinner the previous evening",
+      "clue": true,
+      "type": "blue",
+      "note": "Missing a meal while on an insulin-secretagogue removes the carbohydrate load but not the drug-driven insulin release -> hypoglycemia."
+    },
+    {
+      "text": ". Her only medication for diabetes is a single oral agent. On arrival she is diaphoretic and confused; "
+    },
+    {
+      "text": "fingerstick glucose is 34 mg/dL",
+      "clue": true,
+      "type": "red",
+      "note": "Glucose 34 / normal 70-100 is severe hypoglycemia causing neuroglycopenia (confusion) - a medical emergency."
+    },
+    {
+      "text": " (normal fasting 70-100). She is treated with intravenous dextrose with improvement, but over the next several hours she develops "
+    },
+    {
+      "text": "recurrent episodes of hypoglycemia requiring repeated dextrose",
+      "clue": true,
+      "type": "green",
+      "note": "PROLONGED, recurrent hypoglycemia despite dextrose is characteristic of long-acting sulfonylureas (e.g., glyburide), which keep stimulating insulin release for many hours."
+    },
+    {
+      "text": " administration and admission for observation. Which of the following medications is most likely responsible for this patient's recurrent hypoglycemia?"
+    }
+  ]
+}

@@ -389,3 +389,55 @@ export async function syncNow() {
   await flushPush();
   return reconcile({ startup: false });
 }
+
+// ── Manual one-way transfer (explicit "Upload" / "Download" buttons) ─────────
+// The automatic per-key last-write-wins merge can silently do nothing when a
+// device's timestamps look "newer" than reality (e.g. after a clock skew or a
+// re-imported backup). These two give the user a deterministic override: push
+// THIS device's state up, or pull the cloud's state down — no timestamp compare.
+
+/** Push every synced key's current local value to the cloud (this device wins). */
+export async function uploadAll() {
+  if (!enabled || !backend) return { ok: false, reason: "sync-off", count: 0 };
+  await flushPush(); // drain anything already queued so it can't clobber us later
+  const now = Date.now();
+  const entries = [];
+  for (const K of SYNC_KEYS) {
+    const v = localStorage.getItem(K);
+    if (v == null) continue; // a manual upload seeds the cloud, never deletes from it
+    meta[K] = now;
+    entries.push({ key: K, t: now, v });
+  }
+  saveMeta();
+  if (!entries.length) return { ok: true, count: 0 };
+  try {
+    await backend.setItems(entries);
+    setStatus({ lastSyncAt: Date.now(), error: null });
+    return { ok: true, count: entries.length };
+  } catch (e) {
+    setStatus({ error: String(e?.message || e) });
+    return { ok: false, reason: String(e?.message || e), count: 0 };
+  }
+}
+
+/** Pull every synced key from the cloud, overwriting local (cloud wins), then reload. */
+export async function downloadAll() {
+  if (!enabled || !backend) return { ok: false, reason: "sync-off", count: 0 };
+  let cloud;
+  try { cloud = await backend.getAll(SYNC_KEYS); }
+  catch (e) { setStatus({ error: String(e?.message || e) }); return { ok: false, reason: String(e?.message || e), count: 0 }; }
+
+  let changed = 0;
+  for (const K of SYNC_KEYS) {
+    const entry = cloud[K]; // { t, v } or undefined
+    if (!entry) continue;   // nothing in the cloud for this key → keep whatever's local
+    if (entry.v == null) rawRemove(K);
+    else rawSet(K, entry.v);
+    meta[K] = entry.t;
+    changed++;
+  }
+  saveMeta();
+  setStatus({ lastSyncAt: Date.now(), error: null });
+  if (changed) scheduleReload(); // screens re-read localStorage only on mount
+  return { ok: true, count: changed };
+}

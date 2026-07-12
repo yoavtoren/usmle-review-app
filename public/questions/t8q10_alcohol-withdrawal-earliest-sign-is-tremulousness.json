@@ -1,0 +1,193 @@
+{
+  "id": "q279",
+  "item": 279,
+  "qid": "870",
+  "title": "Alcohol withdrawal: earliest sign is tremulousness",
+  "system": "Behavioral science",
+  "topic": "Alcohol withdrawal timeline",
+  "correct": "E",
+  "yourAnswer": "D",
+  "percentCorrect": 73,
+  "vignette": "A 48-year-old man is admitted to the hospital for management of pancreatitis. He reports drinking a large amount of alcohol every day for many years, with his last drink on the morning of admission. He has no other medical conditions. The team anticipates alcohol withdrawal and monitors him closely. Approximately 6-12 hours after his last drink, which of the following is the earliest expected manifestation of alcohol withdrawal in this patient?",
+  "clues": [
+    {
+      "text": "drinking a large amount of alcohol every day for many years",
+      "type": "orange",
+      "note": "Chronic heavy daily use produces physiologic dependence; abrupt cessation triggers a predictable withdrawal syndrome."
+    },
+    {
+      "text": "last drink on the morning of admission",
+      "type": "blue",
+      "note": "A defined 'last drink' lets you time the withdrawal syndrome, which follows a characteristic hour-by-hour sequence."
+    },
+    {
+      "text": "Approximately 6-12 hours after his last drink",
+      "type": "red",
+      "note": "The 6-12 hour window is the EARLIEST stage of alcohol withdrawal - mild autonomic/CNS hyperactivity (tremor, anxiety, insomnia), before hallucinosis, seizures, or delirium tremens."
+    }
+  ],
+  "whatMatters": "In a chronic daily drinker, alcohol withdrawal follows a timeline. The EARLIEST manifestation (6-12 hours) is TREMULOUSNESS (with anxiety, insomnia, mild autonomic arousal). Alcoholic hallucinosis (~12-24 h), withdrawal seizures (~24-48 h), and delirium tremens (~48-96 h) come later. Answer E.",
+  "strategy": "Order the withdrawal syndrome by time: 6-12 h mild tremulousness/anxiety/insomnia -> 12-24 h alcoholic hallucinosis (usually visual, sensorium intact) -> 24-48 h generalized tonic-clonic withdrawal seizures -> 48-96 h delirium tremens (confusion, autonomic instability). 'Earliest' = tremulousness. Seizures and delirium tremens are later and more dangerous, not first.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Alcoholic hallucinosis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Delirium tremens",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Wernicke encephalopathy",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Generalized tonic-clonic seizures",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Tremulousness",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Alcoholic hallucinosis - later (~12-24 h)",
+      "detail": "WHAT IT IS: usually visual (sometimes tactile/auditory) hallucinations with an OTHERWISE intact sensorium, ~12-24 hours after the last drink. ❌ WHY IT FAILS: it follows the initial tremulous phase, so it is not the earliest sign. ✅ Correct if: hallucinations with a clear sensorium 12-24 h out."
+    },
+    {
+      "letter": "B",
+      "label": "Delirium tremens - latest, ~48-96 h",
+      "detail": "WHAT IT IS: the most severe stage - confusion, agitation, fever, and autonomic instability (tachycardia, hypertension), typically 48-96 hours out; potentially fatal. ❌ WHY IT FAILS: it is the LAST stage, not the earliest. ✅ Correct if: delirium with autonomic storm 2-4 days after cessation."
+    },
+    {
+      "letter": "C",
+      "label": "Wernicke encephalopathy - thiamine deficiency, not withdrawal timing",
+      "detail": "WHAT IT IS: acute thiamine (B1) deficiency causing confusion, ophthalmoplegia, and ataxia. ❌ WHY IT FAILS: it is a nutritional deficiency (often precipitated by glucose without thiamine), not a timed manifestation of the withdrawal cascade. ✅ Correct if: the triad of confusion + ophthalmoplegia + ataxia."
+    },
+    {
+      "letter": "D",
+      "label": "Generalized tonic-clonic seizures - later (~24-48 h), your pick",
+      "detail": "WHAT IT IS: 'rum fits' - generalized tonic-clonic withdrawal seizures peaking ~24-48 hours after the last drink. ❌ WHY IT FAILS: they occur AFTER the initial tremulous phase, so they are not the earliest sign. ✅ Correct if: asking about the 24-48 h withdrawal-seizure window."
+    }
+  ],
+  "reasoning": [
+    "Chronic daily drinker with abrupt cessation -> physiologic alcohol withdrawal",
+    "Withdrawal follows a timeline: tremor (6-12 h) -> hallucinosis (12-24 h) -> seizures (24-48 h) -> delirium tremens (48-96 h)",
+    "At 6-12 hours, the earliest manifestation is mild tremulousness/anxiety/insomnia",
+    "-> tremulousness; answer E"
+  ],
+  "mechanism": "Chronic alcohol enhances inhibitory GABA-A tone and suppresses excitatory glutamate (NMDA) signaling; the brain adapts by DOWN-regulating GABA-A receptors and UP-regulating NMDA receptors. When alcohol is abruptly withdrawn, this adaptation is unmasked, leaving a hyperexcitable, glutamate-dominant CNS with autonomic hyperactivity. The syndrome unfolds on a predictable schedule: at 6-12 hours, mild signs appear first - tremulousness ('the shakes'), anxiety, insomnia, headache, and mild autonomic arousal (this is the earliest manifestation). Around 12-24 hours, alcoholic hallucinosis (typically visual, with an intact sensorium) can occur; at 24-48 hours, generalized tonic-clonic withdrawal seizures ('rum fits') peak; and at 48-96 hours, delirium tremens (confusion, agitation, fever, and dangerous autonomic instability) may develop and can be fatal. Benzodiazepines (which restore GABA-A tone) are the treatment and prevent progression. Wernicke encephalopathy is a separate thiamine-deficiency emergency, not a stage of the withdrawal clock.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Psych > alcohol withdrawal timeline: tremulousness 6-12 h, hallucinosis 12-24 h, seizures 24-48 h, delirium tremens 48-96 h; treat with benzodiazepines; GABA down / NMDA up adaptation."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The question anchors on the 6-12 hour window and asks for the EARLIEST sign - tremulousness."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on tremulousness, alcoholic hallucinosis, delirium tremens, 'rum fits,' or GABA/NMDA adaptation? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Hallucinosis, seizures, and delirium tremens are all LATER stages; Wernicke is a thiamine-deficiency syndrome, not a withdrawal stage."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: earliest alcohol withdrawal = tremor/anxiety (6-12 h); most severe/late = delirium tremens (48-96 h); benzodiazepines treat/prevent."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Earliest alcohol withdrawal sign (6-12 h)",
+      "back": "Tremulousness (with anxiety, insomnia)"
+    },
+    {
+      "front": "Alcoholic hallucinosis timing",
+      "back": "~12-24 h, visual hallucinations, intact sensorium"
+    },
+    {
+      "front": "Alcohol withdrawal seizure timing",
+      "back": "~24-48 h ('rum fits'), generalized tonic-clonic"
+    },
+    {
+      "front": "Delirium tremens timing and features",
+      "back": "~48-96 h; confusion + autonomic instability; can be fatal"
+    },
+    {
+      "front": "Treatment/prevention of alcohol withdrawal",
+      "back": "Benzodiazepines (restore GABA-A tone)"
+    },
+    {
+      "front": "Neuroadaptation underlying withdrawal",
+      "back": "↓GABA-A receptors, ↑NMDA receptors (CNS hyperexcitability)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Alcohol withdrawal timeline",
+      "detail": "Psych: tremor 6-12 h, hallucinosis 12-24 h, seizures 24-48 h, DTs 48-96 h.",
+      "location": "Psych: tremor 6-12 h, hallucinosis 12-24 h, seizures 24-48 h, DTs 48-96 h."
+    },
+    {
+      "tag": "options",
+      "topic": "Withdrawal stages",
+      "detail": "Psych > distinguish hallucinosis vs DTs vs seizures; Wernicke = thiamine deficiency.",
+      "location": "Psych > distinguish hallucinosis vs DTs vs seizures; Wernicke = thiamine deficiency."
+    },
+    {
+      "tag": "treatment",
+      "topic": "Withdrawal management",
+      "detail": "Psych > benzodiazepines; give thiamine before glucose.",
+      "location": "Psych > benzodiazepines; give thiamine before glucose."
+    }
+  ],
+  "memoryHook": "The withdrawal clock ticks tremor -> hallucinations -> seizures -> DTs; the shakes come first, the DTs come last (and can kill).",
+  "stem": [
+    {
+      "text": "A 48-year-old man is admitted to the hospital for management of pancreatitis. He reports "
+    },
+    {
+      "text": "drinking a large amount of alcohol every day for many years",
+      "clue": true,
+      "type": "orange",
+      "note": "Chronic heavy daily use produces physiologic dependence; abrupt cessation triggers a predictable withdrawal syndrome."
+    },
+    {
+      "text": ", with his "
+    },
+    {
+      "text": "last drink on the morning of admission",
+      "clue": true,
+      "type": "blue",
+      "note": "A defined 'last drink' lets you time the withdrawal syndrome, which follows a characteristic hour-by-hour sequence."
+    },
+    {
+      "text": ". He has no other medical conditions. The team anticipates alcohol withdrawal and monitors him closely. "
+    },
+    {
+      "text": "Approximately 6-12 hours after his last drink",
+      "clue": true,
+      "type": "red",
+      "note": "The 6-12 hour window is the EARLIEST stage of alcohol withdrawal - mild autonomic/CNS hyperactivity (tremor, anxiety, insomnia), before hallucinosis, seizures, or delirium tremens."
+    },
+    {
+      "text": ", which of the following is the earliest expected manifestation of alcohol withdrawal in this patient?"
+    }
+  ]
+}

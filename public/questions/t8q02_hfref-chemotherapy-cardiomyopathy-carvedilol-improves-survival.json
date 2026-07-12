@@ -1,0 +1,227 @@
+{
+  "id": "q271",
+  "item": 271,
+  "qid": "1944",
+  "title": "HFrEF (chemotherapy cardiomyopathy): carvedilol improves survival",
+  "system": "Pharmacology",
+  "topic": "Heart failure with reduced EF - survival benefit",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 50,
+  "vignette": "A 68-year-old man comes to the office due to several weeks of progressive exertional dyspnea and lower extremity edema. Medical history is significant for non-Hodgkin lymphoma, which is in remission after chemotherapy 8 years ago. Blood pressure is 126/76 mm Hg and pulse is 88/min. Physical examination reveals bibasilar lung crackles and 1+ bilateral lower extremity edema. Echocardiography shows biventricular dilation and a left ventricular ejection fraction of 35%. Stress myocardial perfusion scan is negative for inducible ischemia. After initial stabilization, long-term use of which of the following medications will most likely improve survival in this patient?",
+  "clues": [
+    {
+      "text": "progressive exertional dyspnea and lower extremity edema",
+      "type": "blue",
+      "note": "Exertional dyspnea plus edema are classic congestive heart failure symptoms."
+    },
+    {
+      "text": "chemotherapy 8 years ago",
+      "type": "orange",
+      "note": "Prior chemotherapy (e.g., anthracyclines) can cause a dilated cardiomyopathy years later - the likely etiology of this patient's systolic heart failure."
+    },
+    {
+      "text": "left ventricular ejection fraction of 35%",
+      "type": "green",
+      "note": "An ejection fraction of 35% (< 40%) defines heart failure with reduced ejection fraction (HFrEF), for which specific drugs improve survival."
+    },
+    {
+      "text": "negative for inducible ischemia",
+      "type": "blue",
+      "note": "No inducible ischemia argues against a coronary/ischemic cause, supporting a nonischemic (chemotherapy-related) dilated cardiomyopathy."
+    }
+  ],
+  "whatMatters": "Reduced EF (35%) with dilation and no ischemia = HFrEF (here nonischemic, chemotherapy-related). Among the options, the beta blocker CARVEDILOL is proven to improve long-term SURVIVAL in HFrEF (via neurohormonal blockade of sympathetic drive). Answer C. Other survival drugs: ACE inhibitors/ARBs, ARNI (sacubitril-valsartan), aldosterone antagonists, and SGLT2 inhibitors.",
+  "strategy": "Distinguish MORTALITY-reducing drugs from symptom-only drugs in HFrEF. Survival benefit: beta blockers (carvedilol, metoprolol succinate, bisoprolol), ACE inhibitors/ARBs, ARNI, aldosterone antagonists, SGLT2 inhibitors. Symptom/hospitalization only: loop diuretics (furosemide), digoxin. Not for HFrEF: amiodarone/flecainide (arrhythmia), and avoid non-dihydropyridine CCBs (diltiazem) and amlodipine for survival.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Amiodarone",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Amlodipine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Carvedilol",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Digoxin",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Diltiazem",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Flecainide",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Furosemide",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Amiodarone - antiarrhythmic, no survival benefit in HF",
+      "detail": "WHAT IT IS: a class III antiarrhythmic for atrial fibrillation/ventricular tachycardia. ❌ WHY IT FAILS: it doesn't improve survival in heart failure. ✅ Correct if: rhythm control of AF/VT."
+    },
+    {
+      "letter": "B",
+      "label": "Amlodipine - dihydropyridine CCB",
+      "detail": "WHAT IT IS: a dihydropyridine calcium channel blocker (antihypertensive). ❌ WHY IT FAILS: it does not improve survival in HFrEF (neutral). ✅ Correct if: hypertension/angina requiring a DHP-CCB."
+    },
+    {
+      "letter": "D",
+      "label": "Digoxin - symptom/hospitalization only",
+      "detail": "WHAT IT IS: an inotrope used as adjunct therapy in HFrEF. ❌ WHY IT FAILS: it reduces symptoms and hospitalizations but does NOT improve survival. ✅ Correct if: refractory symptoms/rate control - not for mortality benefit."
+    },
+    {
+      "letter": "E",
+      "label": "Diltiazem - non-DHP CCB (contraindicated)",
+      "detail": "WHAT IT IS: a non-dihydropyridine CCB with negative inotropy. ❌ WHY IT FAILS: it can worsen systolic function and is contraindicated in HFrEF. ✅ Correct if: rate control in preserved-EF/AF, not HFrEF."
+    },
+    {
+      "letter": "F",
+      "label": "Flecainide - class IC antiarrhythmic",
+      "detail": "WHAT IT IS: a class IC antiarrhythmic for AF in structurally normal hearts. ❌ WHY IT FAILS: it is proarrhythmic and contraindicated in structural heart disease/HFrEF. ✅ Correct if: AF with a structurally normal heart."
+    },
+    {
+      "letter": "G",
+      "label": "Furosemide - symptom relief only",
+      "detail": "WHAT IT IS: a loop diuretic, first-line for volume/congestion. ❌ WHY IT FAILS: it relieves symptoms and reduces hospitalizations but does not improve long-term survival. ✅ Correct if: acute volume overload/congestion."
+    }
+  ],
+  "reasoning": [
+    "EF 35% with biventricular dilation and no ischemia = HFrEF (nonischemic, chemotherapy-related)",
+    "Survival-improving HFrEF drugs include beta blockers, ACE inhibitors/ARBs, ARNI, aldosterone antagonists, SGLT2 inhibitors",
+    "Of the choices, carvedilol (a beta blocker) improves survival",
+    "-> carvedilol; answer C (start after stabilization, not during acute decompensation)"
+  ],
+  "mechanism": "Heart failure with reduced ejection fraction (EF < 40%) here is most likely a dilated cardiomyopathy from prior chemotherapy (e.g., anthracycline), given the biventricular dilation and absence of inducible ischemia. Certain neurohormonal-modulating drugs improve long-term SURVIVAL in HFrEF: beta blockers (carvedilol, metoprolol succinate, bisoprolol), ACE inhibitors/ARBs, angiotensin receptor-neprilysin inhibitors, aldosterone antagonists, and SGLT2 inhibitors. Beta blockers work by blunting chronic sympathetic (catecholamine) drive - reducing heart rate and myocardial oxygen demand, lowering circulating vasoconstrictors, decreasing afterload and myocardial work, and limiting deleterious remodeling and cardiomyocyte death. They must be started AFTER stabilization (not during acute decompensation, when they can further reduce output). By contrast, loop diuretics (furosemide) and digoxin relieve symptoms/hospitalizations without a survival benefit; amiodarone and flecainide are antiarrhythmics; and calcium channel blockers (amlodipine, diltiazem) do not improve survival (non-DHP agents can worsen systolic function).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid CV/Pharm > HFrEF survival drugs: beta blockers (carvedilol, metoprolol succinate, bisoprolol), ACE inhibitors/ARBs, ARNI, aldosterone antagonists, SGLT2 inhibitors; digoxin/diuretics = symptoms only."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The stem asks specifically what improves SURVIVAL - separate mortality-benefit drugs from symptom-only agents."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on ejection fraction, HFrEF, dilated cardiomyopathy, neurohormonal blockade, or non-DHP CCB? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Digoxin and furosemide (symptom/hospitalization only), amlodipine/diltiazem (no survival benefit; diltiazem contraindicated), amiodarone/flecainide (antiarrhythmics) are all traps."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: HFrEF survival = beta blockers + ACE inhibitor/ARB + ARNI + aldosterone antagonist + SGLT2 inhibitor; diuretics/digoxin = symptoms only."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "HFrEF drugs that improve SURVIVAL",
+      "back": "Beta blockers, ACE inhibitors/ARBs, ARNI, aldosterone antagonists, SGLT2 inhibitors"
+    },
+    {
+      "front": "Beta blockers proven in HFrEF",
+      "back": "Carvedilol, metoprolol succinate, bisoprolol"
+    },
+    {
+      "front": "HFrEF drugs that only reduce symptoms/hospitalizations",
+      "back": "Loop diuretics (furosemide), digoxin"
+    },
+    {
+      "front": "Chemotherapy causing dilated cardiomyopathy",
+      "back": "Anthracyclines (e.g., doxorubicin)"
+    },
+    {
+      "front": "CCBs in HFrEF",
+      "back": "Amlodipine neutral; non-DHP (diltiazem/verapamil) contraindicated"
+    },
+    {
+      "front": "When to start beta blockers in HF",
+      "back": "After stabilization (not during acute decompensation)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "HFrEF pharmacotherapy",
+      "detail": "CV: beta blockers (carvedilol) improve survival via neurohormonal blockade; start when stable.",
+      "location": "CV: beta blockers (carvedilol) improve survival via neurohormonal blockade; start when stable."
+    },
+    {
+      "tag": "options",
+      "topic": "Symptom-only vs survival drugs",
+      "detail": "CV > digoxin/diuretics (symptoms), amiodarone/flecainide (arrhythmia), CCBs (no benefit).",
+      "location": "CV > digoxin/diuretics (symptoms), amiodarone/flecainide (arrhythmia), CCBs (no benefit)."
+    },
+    {
+      "tag": "context",
+      "topic": "Dilated cardiomyopathy",
+      "detail": "CV > causes: chemo (anthracycline), alcohol, viral, peripartum; EF < 40%.",
+      "location": "CV > causes: chemo (anthracycline), alcohol, viral, peripartum; EF < 40%."
+    }
+  ],
+  "memoryHook": "Beta blockers, ACE/ARB, ARNI, aldo-antagonist, SGLT2 keep HFrEF patients ALIVE; diuretics and digoxin just make them feel better.",
+  "stem": [
+    {
+      "text": "A 68-year-old man comes to the office due to several weeks of "
+    },
+    {
+      "text": "progressive exertional dyspnea and lower extremity edema",
+      "clue": true,
+      "type": "blue",
+      "note": "Exertional dyspnea plus edema are classic congestive heart failure symptoms."
+    },
+    {
+      "text": ". Medical history is significant for non-Hodgkin lymphoma, which is in remission after "
+    },
+    {
+      "text": "chemotherapy 8 years ago",
+      "clue": true,
+      "type": "orange",
+      "note": "Prior chemotherapy (e.g., anthracyclines) can cause a dilated cardiomyopathy years later - the likely etiology of this patient's systolic heart failure."
+    },
+    {
+      "text": ". Blood pressure is 126/76 mm Hg and pulse is 88/min. Physical examination reveals bibasilar lung crackles and 1+ bilateral lower extremity edema. Echocardiography shows biventricular dilation and a "
+    },
+    {
+      "text": "left ventricular ejection fraction of 35%",
+      "clue": true,
+      "type": "green",
+      "note": "An ejection fraction of 35% (< 40%) defines heart failure with reduced ejection fraction (HFrEF), for which specific drugs improve survival."
+    },
+    {
+      "text": ". Stress myocardial perfusion scan is "
+    },
+    {
+      "text": "negative for inducible ischemia",
+      "clue": true,
+      "type": "blue",
+      "note": "No inducible ischemia argues against a coronary/ischemic cause, supporting a nonischemic (chemotherapy-related) dilated cardiomyopathy."
+    },
+    {
+      "text": ". After initial stabilization, long-term use of which of the following medications will most likely improve survival in this patient?"
+    }
+  ]
+}

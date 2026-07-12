@@ -1,0 +1,193 @@
+{
+  "id": "q246",
+  "item": 246,
+  "qid": "20586",
+  "title": "Allergic contact dermatitis: Langerhans cells carry hapten to lymph nodes",
+  "system": "Immunology",
+  "topic": "Type IV hypersensitivity / allergic contact dermatitis",
+  "correct": "D",
+  "yourAnswer": "A",
+  "percentCorrect": 33,
+  "vignette": "A 32-year-old woman comes to the allergy clinic due to a recurrent skin rash. The patient has had several episodes of itchy, erythematous, vesicular eruptions on her hands over the past several months. She works at a hair salon and is often exposed to hair dye and other beauty products. The patient has no other medical conditions and takes no medications. She undergoes patch testing, during which several allergens found in common cosmetic products are mounted on nonocclusive tape strips applied to her upper back. Skin findings developed after 2 days of application, showing localized erythema and vesicles at the sites of the offending allergens. Which of the following processes most likely occurred in this patient to enable the development of the observed skin reaction?",
+  "clues": [
+    {
+      "text": "itchy, erythematous, vesicular eruptions on her hands",
+      "type": "blue",
+      "note": "A pruritic, vesicular (eczematous) rash at contact sites is the phenotype of allergic contact dermatitis."
+    },
+    {
+      "text": "exposed to hair dye and other beauty products",
+      "type": "orange",
+      "note": "Occupational contact with cosmetic haptens (dyes, fragrances, nickel) is the classic sensitizing exposure for allergic contact dermatitis in a hairdresser."
+    },
+    {
+      "text": "Skin findings developed after 2 days",
+      "type": "green",
+      "note": "A DELAYED reaction (48-72 hours) is the signature of type IV (T-cell-mediated) hypersensitivity - not the minutes-fast IgE/mast cell reaction of type I. This timing is confirmed by the positive patch test."
+    }
+  ],
+  "whatMatters": "A delayed (48-72 hour), itchy, vesicular rash at sites of contact with cosmetic haptens, confirmed by positive patch testing, is ALLERGIC CONTACT DERMATITIS - a type IV (delayed, T-cell-mediated) hypersensitivity. Sensitization requires cutaneous Langerhans cells to take up the hapten and MIGRATE to regional lymph nodes to prime T cells. Answer D. It is not antibody- or mast-cell-mediated.",
+  "strategy": "Timing is the discriminator: a 48-72 hour reaction = type IV (T-cell), not immediate IgE. Contact-dermatitis sensitization = Langerhans cells carry hapten to lymph nodes -> prime T cells (answer D). Reject the antibody/immediate options: CD40-CD40L B-cell help and IgE-mast cell release are type I machinery; anti-keratinocyte antibodies = pemphigus (type II); immune-complex deposition = type III vasculitis.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "B-cell binding with helper T cells via CD40 and CD40 ligand",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Formation of autoantibodies against keratinocyte cell surface antigens",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Immune complex formation and deposition in the small cutaneous vessels",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Migration of hapten-activated Langerhans cells to regional lymph nodes",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Release of vasoactive peptides from IgE-bound mast cells",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "CD40-CD40L B-cell help - type I machinery, your pick",
+      "detail": "WHAT IT IS: CD40-CD40 ligand interaction drives B-cell isotype switching to IgE in type I (immediate) hypersensitivity. ❌ WHY IT FAILS: contact dermatitis is a delayed T-cell reaction, not antibody-mediated; CD40-CD40L 'sounds immune,' but it belongs to the IgE/type I pathway. ✅ Correct if: describing IgE class switching in immediate hypersensitivity."
+    },
+    {
+      "letter": "B",
+      "label": "Anti-keratinocyte autoantibodies - pemphigus (type II)",
+      "detail": "WHAT IT IS: antibodies against keratinocyte surface antigens (desmoglein) cause pemphigus vulgaris (acantholysis/bullae). ❌ WHY IT FAILS: that's type II autoimmunity, not an allergen-triggered contact reaction. ✅ Correct if: intraepidermal bullae from anti-desmoglein antibodies."
+    },
+    {
+      "letter": "C",
+      "label": "Immune-complex deposition - type III vasculitis",
+      "detail": "WHAT IT IS: antigen-antibody complexes deposit in small vessels (type III), causing cutaneous small-vessel vasculitis (palpable purpura). ❌ WHY IT FAILS: it's not the vesicular contact-dermatitis mechanism. ✅ Correct if: drug-induced vasculitis with purpura/petechiae."
+    },
+    {
+      "letter": "E",
+      "label": "IgE-mast cell vasoactive peptide release - type I immediate",
+      "detail": "WHAT IT IS: allergen cross-links IgE on mast cells -> histamine/mediator release (urticaria/anaphylaxis) within minutes. ❌ WHY IT FAILS: this is a 48-hour DELAYED reaction, not an immediate one. ✅ Correct if: immediate wheal-and-flare or anaphylaxis."
+    }
+  ],
+  "reasoning": [
+    "Delayed (48-72 hour) vesicular rash at contact sites + positive patch test = allergic contact dermatitis (type IV)",
+    "Type IV is T-cell-mediated, not antibody-mediated",
+    "Sensitization requires Langerhans cells to take up hapten and migrate to regional lymph nodes to prime T cells",
+    "-> migration of hapten-activated Langerhans cells to lymph nodes; answer D"
+  ],
+  "mechanism": "Allergic contact dermatitis is a type IV (delayed-type, T-cell-mediated) hypersensitivity with two phases. In the SENSITIZATION phase, cutaneous antigen-presenting Langerhans cells take up the small-molecule hapten and MIGRATE to regional lymph nodes, where they present it to naive CD4+ and CD8+ T cells, generating a clonal population of hapten-specific memory T cells over roughly 10-14 days (no rash yet). In the ELICITATION phase, re-exposure recruits these sensitized T cells to the skin, whose activation produces the pruritic erythema and vesicles seen 48-72 hours after contact - the basis of the delayed positive patch test. Because it is cell-mediated, it does not involve IgE/mast-cell degranulation (type I), anti-keratinocyte antibodies (type II, pemphigus), or immune-complex deposition (type III, vasculitis).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Immuno > type IV hypersensitivity; allergic contact dermatitis; Langerhans cell sensitization; the hypersensitivity type map (I-IV)."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "The 2-day timing points to type IV; the question asks for the SENSITIZING step (Langerhans cells to lymph nodes)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on hapten, Langerhans cell, patch test, type I-IV hypersensitivity, or CD40-CD40L? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "A (your pick) and E are type I (immediate) machinery; B is type II (pemphigus); C is type III (immune-complex vasculitis)."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: 2 days to itch = type IV; Langerhans cells shuttle hapten to the lymph node to prime T cells (no antibodies needed)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Delayed (48-72 h) vesicular rash at contact sites + positive patch test",
+      "back": "Allergic contact dermatitis (type IV)"
+    },
+    {
+      "front": "Contact dermatitis sensitization step",
+      "back": "Langerhans cells carry hapten to regional lymph nodes -> prime T cells"
+    },
+    {
+      "front": "CD40-CD40L B-cell help / IgE-mast cell release",
+      "back": "Type I (immediate) hypersensitivity"
+    },
+    {
+      "front": "Anti-keratinocyte (desmoglein) antibodies",
+      "back": "Pemphigus vulgaris (type II)"
+    },
+    {
+      "front": "Immune-complex deposition in cutaneous vessels",
+      "back": "Type III small-vessel vasculitis (palpable purpura)"
+    },
+    {
+      "front": "Type IV hypersensitivity examples",
+      "back": "Contact dermatitis, PPD/TB test, GVHD, MS"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Allergic contact dermatitis",
+      "detail": "Immuno: type IV; Langerhans cells present hapten in lymph nodes -> sensitized T cells.",
+      "location": "Immuno: type IV; Langerhans cells present hapten in lymph nodes -> sensitized T cells."
+    },
+    {
+      "tag": "options",
+      "topic": "Hypersensitivity I-IV",
+      "detail": "Immuno > IgE/mast (I), cytotoxic Ab (II), immune complex (III), T-cell (IV).",
+      "location": "Immuno > IgE/mast (I), cytotoxic Ab (II), immune complex (III), T-cell (IV)."
+    },
+    {
+      "tag": "context",
+      "topic": "Contact dermatitis",
+      "detail": "Derm > haptens (nickel, urushiol, dyes); patch testing.",
+      "location": "Derm > haptens (nickel, urushiol, dyes); patch testing."
+    }
+  ],
+  "memoryHook": "Two days to itch = type IV. Langerhans cells shuttle the hapten to the lymph node to train T cells - no antibodies needed.",
+  "stem": [
+    {
+      "text": "A 32-year-old woman comes to the allergy clinic due to a recurrent skin rash. The patient has had several episodes of "
+    },
+    {
+      "text": "itchy, erythematous, vesicular eruptions on her hands",
+      "clue": true,
+      "type": "blue",
+      "note": "A pruritic, vesicular (eczematous) rash at contact sites is the phenotype of allergic contact dermatitis."
+    },
+    {
+      "text": " over the past several months. She works at a hair salon and is often "
+    },
+    {
+      "text": "exposed to hair dye and other beauty products",
+      "clue": true,
+      "type": "orange",
+      "note": "Occupational contact with cosmetic haptens (dyes, fragrances, nickel) is the classic sensitizing exposure for allergic contact dermatitis in a hairdresser."
+    },
+    {
+      "text": ". The patient has no other medical conditions and takes no medications. She undergoes patch testing, during which several allergens found in common cosmetic products are mounted on nonocclusive tape strips applied to her upper back. "
+    },
+    {
+      "text": "Skin findings developed after 2 days",
+      "clue": true,
+      "type": "green",
+      "note": "A DELAYED reaction (48-72 hours) is the signature of type IV (T-cell-mediated) hypersensitivity - not the minutes-fast IgE/mast cell reaction of type I. This timing is confirmed by the positive patch test."
+    },
+    {
+      "text": " of application, showing localized erythema and vesicles at the sites of the offending allergens. Which of the following processes most likely occurred in this patient to enable the development of the observed skin reaction?"
+    }
+  ]
+}

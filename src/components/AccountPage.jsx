@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  getSyncStatus, subscribeSyncStatus, syncNow, isLoginSkipped, setLoginSkipped,
+  getSyncStatus, subscribeSyncStatus, syncNow, uploadAll, downloadAll,
+  isLoginSkipped, setLoginSkipped,
 } from "../lib/icloudSync.js";
 import { adoptAuthButton, releaseAuthButtons } from "../lib/cloudkitWeb.js";
 import { IconCheck, IconPulse } from "./icons.jsx";
@@ -36,6 +37,46 @@ const STATE_LABEL = {
   off:          { txt: "כבוי", cls: "" },
 };
 
+// Explicit, deterministic one-way transfer — overrides the automatic
+// last-write-wins merge when it isn't behaving (see uploadAll/downloadAll).
+function TransferButtons() {
+  const [busy, setBusy] = useState(null); // "up" | "down" | null
+  const [msg, setMsg] = useState(null);
+  const doUpload = async () => {
+    if (!window.confirm("להעלות את כל הנתונים מהמכשיר הזה ולדרוס את מה שיש בענן? (השתמש במכשיר שבו המידע העדכני ביותר)")) return;
+    setBusy("up"); setMsg(null);
+    try {
+      const r = await uploadAll();
+      setMsg(r.ok ? `הועלו ${r.count} תחומים לענן ✓` : `ההעלאה נכשלה — ${r.reason}`);
+    } finally { setBusy(null); }
+  };
+  const doDownload = async () => {
+    if (!window.confirm("להוריד את הנתונים מהענן ולדרוס את מה שיש במכשיר הזה? האפליקציה תיטען מחדש.")) return;
+    setBusy("down"); setMsg(null);
+    try {
+      const r = await downloadAll();
+      if (!r.ok) setBusy(null);
+      setMsg(r.ok ? `יורדים ${r.count} תחומים… האפליקציה נטענת מחדש` : `ההורדה נכשלה — ${r.reason}`);
+    } catch { setBusy(null); }
+  };
+  return (
+    <div className="acct-transfer">
+      <div className="acct-transfer-btns">
+        <button className="btn-secondary" onClick={doUpload} disabled={!!busy}>
+          {busy === "up" ? "מעלה…" : "⬆︎ העלה מהמכשיר הזה"}
+        </button>
+        <button className="btn-secondary" onClick={doDownload} disabled={!!busy}>
+          {busy === "down" ? "מוריד…" : "⬇︎ הורד למכשיר הזה"}
+        </button>
+      </div>
+      <p className="acct-meta acct-transfer-hint">
+        העלאה = המכשיר הזה מנצח ודורס את הענן · הורדה = הענן דורס את המכשיר הזה.
+      </p>
+      {msg && <p className="acct-meta">{msg}</p>}
+    </div>
+  );
+}
+
 function SyncBody({ s, inGate = false, onSkip }) {
   const [busy, setBusy] = useState(false);
   const doSync = async () => {
@@ -53,6 +94,7 @@ function SyncBody({ s, inGate = false, onSkip }) {
             {" · "}סנכרון אחרון: {fmtTime(s.lastSyncAt)}
           </p>
           <button className="btn-secondary" onClick={doSync} disabled={busy}>{busy ? "מסנכרן…" : "סנכרן עכשיו"}</button>
+          <TransferButtons />
         </>
       );
     }
@@ -70,6 +112,7 @@ function SyncBody({ s, inGate = false, onSkip }) {
             <button className="btn-secondary" onClick={doSync} disabled={busy}>{busy ? "מסנכרן…" : "סנכרן עכשיו"}</button>
             <AppleButton kind="out" />
           </div>
+          <TransferButtons />
         </>
       );
     case "signed-out":

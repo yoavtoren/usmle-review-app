@@ -1,0 +1,179 @@
+{
+  "id": "q267",
+  "item": 267,
+  "qid": "8283",
+  "title": "Alleles inherited together more than expected: linkage disequilibrium",
+  "system": "Genetics",
+  "topic": "Linkage disequilibrium",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 59,
+  "vignette": "A study is undertaken to map the HLA-DQ loci in a population with a high incidence of celiac sprue. High-resolution HLA typing of the DQA1 and DQB1 loci is performed using polymerase chain reaction sequencing. The frequency of the DQA1*0501-DQB1*0201 haplotype, strongly implicated in autoimmunity, is found to be 0.2. However, in the same population, the frequency of the DQA1*0501 allele is 0.3 and the frequency of the DQB1*0201 allele is 0.2. Which of the following best explains the observed DQA1*0501-DQB1*0201 haplotype frequency in this population?",
+  "clues": [
+    {
+      "text": "frequency of the DQA1*0501-DQB1*0201 haplotype, strongly implicated in autoimmunity, is found to be 0.2",
+      "type": "green",
+      "note": "The observed haplotype (two specific alleles inherited together) frequency is 0.2 - much higher than random pairing would predict, the signature of linkage disequilibrium."
+    },
+    {
+      "text": "frequency of the DQA1*0501 allele is 0.3 and the frequency of the DQB1*0201 allele is 0.2",
+      "type": "blue",
+      "note": "If the two alleles were inherited independently, the expected haplotype frequency = 0.3 x 0.2 = 0.06. The observed 0.2 far exceeds 0.06, so the alleles are NOT independent."
+    }
+  ],
+  "whatMatters": "The two alleles are inherited together far more often than chance predicts: observed haplotype frequency 0.2 vs expected 0.3 x 0.2 = 0.06. Alleles at different loci co-occurring more (or less) often than expected from their individual frequencies = LINKAGE DISEQUILIBRIUM (here from the close proximity of HLA-DQA1 and HLA-DQB1). Answer C.",
+  "strategy": "Do the math: expected haplotype frequency under independence = product of allele frequencies (0.3 x 0.2 = 0.06). Observed (0.2) >> expected (0.06) means the alleles are non-randomly associated = linkage disequilibrium. Reject the mitochondrial (heteroplasmy), single-gene (penetrance, pleiotropy), and normal-segregation options - none explains a nonrandom two-locus haplotype excess.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Heteroplasmy",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Increased penetrance",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Linkage disequilibrium",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Pleiotropy",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Segregation",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Heteroplasmy - mitochondrial",
+      "detail": "WHAT IT IS: heteroplasmy is the presence of different mitochondrial genomes (mutant and wild-type) within a cell. ❌ WHY IT FAILS: it concerns mitochondrial DNA, not the co-inheritance of two nuclear HLA alleles. ✅ Correct if: mitochondrial disease variability."
+    },
+    {
+      "letter": "B",
+      "label": "Increased penetrance - genotype-to-phenotype",
+      "detail": "WHAT IT IS: penetrance is the proportion of people with a genotype who express its phenotype. ❌ WHY IT FAILS: it's about phenotypic expression, not the frequency of a two-allele haplotype. ✅ Correct if: describing how often a genotype manifests."
+    },
+    {
+      "letter": "D",
+      "label": "Pleiotropy - one gene, many effects",
+      "detail": "WHAT IT IS: a single gene causing multiple phenotypic manifestations. ❌ WHY IT FAILS: unrelated to haplotype frequency/co-inheritance. ✅ Correct if: one mutation with multi-organ effects (e.g., Marfan)."
+    },
+    {
+      "letter": "E",
+      "label": "Segregation - normal allele separation, your pick",
+      "detail": "WHAT IT IS: the law of segregation describes paired alleles separating so each gamete gets one. ❌ WHY IT FAILS: normal segregation would predict independent (product-rule) haplotype frequencies - it does NOT explain the EXCESS co-inheritance observed. ✅ Correct if: describing basic Mendelian gamete formation."
+    }
+  ],
+  "reasoning": [
+    "Expected haplotype frequency if independent = 0.3 x 0.2 = 0.06",
+    "Observed haplotype frequency = 0.2, much greater than 0.06",
+    "The two alleles are inherited together more often than chance predicts",
+    "-> linkage disequilibrium (HLA-DQA1 and DQB1 are physically close); answer C"
+  ],
+  "mechanism": "Two alleles at different loci are said to be in LINKAGE DISEQUILIBRIUM when they are inherited together in the same gamete (as a haplotype) more - or less - often than expected by chance given their individual allele frequencies. The expected haplotype frequency under independence is the product of the two allele frequencies (here 0.3 x 0.2 = 0.06); the observed frequency (0.2) greatly exceeds this, so the alleles are non-randomly associated. Linkage disequilibrium most often reflects physical proximity of the loci on the same chromosome (as with the closely situated HLA-DQA1 and HLA-DQB1 genes encoding the alpha and beta chains of the class II MHC molecule), so recombination rarely separates them. The distractors describe mitochondrial variability (heteroplasmy), genotype-to-phenotype expression (penetrance), one gene with many effects (pleiotropy), and normal Mendelian allele separation (segregation) - none explains an excess two-locus haplotype frequency.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Genetics > linkage disequilibrium: alleles co-inherited more/less than expected from allele frequencies; often due to physical proximity; HLA haplotypes; Hardy-Weinberg (2pq) doesn't apply across loci."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Compute the expected (product-rule) haplotype frequency and compare to the observed excess to name the phenomenon."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on haplotype, allele frequency, linkage disequilibrium, penetrance, pleiotropy, or segregation? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "Segregation (your pick) predicts INDEPENDENT (product-rule) frequencies; the observed EXCESS is linkage disequilibrium. Heteroplasmy/penetrance/pleiotropy are unrelated concepts."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: observed haplotype frequency > product of allele frequencies (0.2 > 0.06) = linkage disequilibrium (loci in close proximity)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Alleles co-inherited more/less than expected from their frequencies",
+      "back": "Linkage disequilibrium"
+    },
+    {
+      "front": "Expected haplotype frequency if independent",
+      "back": "Product of allele frequencies (e.g., 0.3 x 0.2 = 0.06)"
+    },
+    {
+      "front": "Usual cause of linkage disequilibrium",
+      "back": "Physical proximity of loci on the same chromosome (little recombination)"
+    },
+    {
+      "front": "Heteroplasmy",
+      "back": "Different mitochondrial genomes within a cell"
+    },
+    {
+      "front": "Penetrance",
+      "back": "Proportion with a genotype who express the phenotype"
+    },
+    {
+      "front": "HLA-DQ celiac association",
+      "back": "HLA-DQ2 (DQA1*0501-DQB1*0201) / DQ8"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Linkage disequilibrium",
+      "detail": "Genetics: haplotype frequency deviates from product of allele frequencies; loci in proximity.",
+      "location": "Genetics: haplotype frequency deviates from product of allele frequencies; loci in proximity."
+    },
+    {
+      "tag": "options",
+      "topic": "Genetics terms",
+      "detail": "Genetics > heteroplasmy, penetrance, pleiotropy, segregation.",
+      "location": "Genetics > heteroplasmy, penetrance, pleiotropy, segregation."
+    },
+    {
+      "tag": "context",
+      "topic": "HLA & disease",
+      "detail": "Immuno/Genetics > HLA-DQ2/DQ8 and celiac disease; MHC class II haplotypes.",
+      "location": "Immuno/Genetics > HLA-DQ2/DQ8 and celiac disease; MHC class II haplotypes."
+    }
+  ],
+  "memoryHook": "Multiply the alleles for the 'by-chance' number (0.06). Seeing 0.2 instead? They travel together - linkage disequilibrium.",
+  "stem": [
+    {
+      "text": "A study is undertaken to map the HLA-DQ loci in a population with a high incidence of celiac sprue. High-resolution HLA typing of the DQA1 and DQB1 loci is performed using polymerase chain reaction sequencing. The "
+    },
+    {
+      "text": "frequency of the DQA1*0501-DQB1*0201 haplotype, strongly implicated in autoimmunity, is found to be 0.2",
+      "clue": true,
+      "type": "green",
+      "note": "The observed haplotype (two specific alleles inherited together) frequency is 0.2 - much higher than random pairing would predict, the signature of linkage disequilibrium."
+    },
+    {
+      "text": ". However, in the same population, the "
+    },
+    {
+      "text": "frequency of the DQA1*0501 allele is 0.3 and the frequency of the DQB1*0201 allele is 0.2",
+      "clue": true,
+      "type": "blue",
+      "note": "If the two alleles were inherited independently, the expected haplotype frequency = 0.3 x 0.2 = 0.06. The observed 0.2 far exceeds 0.06, so the alleles are NOT independent."
+    },
+    {
+      "text": ". Which of the following best explains the observed DQA1*0501-DQB1*0201 haplotype frequency in this population?"
+    }
+  ]
+}

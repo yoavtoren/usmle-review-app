@@ -1,0 +1,193 @@
+{
+  "id": "q285",
+  "item": 285,
+  "qid": "15193",
+  "title": "Ureteral obstruction -> increased tubular (Bowman space) hydrostatic pressure",
+  "system": "Physiology",
+  "topic": "Obstructive uropathy / GFR determinants",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 74,
+  "vignette": "A 55-year-old man comes to the emergency department with acute, severe right flank pain radiating to the groin, along with nausea. Noncontrast CT of the abdomen shows a 1-cm calculus lodged in the proximal right ureter, with dilation of the ureter and renal pelvis (hydronephrosis) proximal to the stone. Vital signs are stable. If the obstruction persists, which of the following renal parameters is most likely acutely INCREASED in the affected (right) kidney?",
+  "clues": [
+    {
+      "text": "severe right flank pain radiating to the groin",
+      "type": "blue",
+      "note": "Flank pain radiating to the groin (renal colic) is the classic presentation of an obstructing ureteral stone."
+    },
+    {
+      "text": "1-cm calculus lodged in the proximal right ureter",
+      "type": "red",
+      "note": "A 1-cm stone obstructs the ureter; urine cannot drain, so pressure backs up into the collecting system and nephrons."
+    },
+    {
+      "text": "dilation of the ureter and renal pelvis (hydronephrosis)",
+      "type": "green",
+      "note": "Hydronephrosis proximal to the stone confirms obstruction and rising back-pressure transmitted upstream toward Bowman space."
+    }
+  ],
+  "whatMatters": "An obstructing ureteral stone causes urine to back up, raising pressure throughout the collecting system and nephron. This INCREASES the hydrostatic pressure in Bowman space / the renal tubule (tubular hydrostatic pressure). Because that pressure opposes glomerular filtration, it reduces net filtration pressure and GFR. Answer D (tubular hydrostatic pressure increased).",
+  "strategy": "Follow the back-pressure: obstruction -> urine can't drain -> pressure rises upstream into the tubule and Bowman space (↑ tubular/Bowman hydrostatic pressure). Recall the GFR equation: net filtration pressure = glomerular capillary hydrostatic pressure − (Bowman hydrostatic pressure + glomerular oncotic pressure). Rising Bowman pressure opposes filtration, so GFR falls. The parameter that goes UP is tubular hydrostatic pressure.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Glomerular filtration rate",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Net filtration pressure",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Filtration fraction",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Tubular (Bowman space) hydrostatic pressure",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Urine output from the affected kidney",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "GFR - decreases, not increases",
+      "detail": "WHAT IT IS: the glomerular filtration rate of the affected kidney. ❌ WHY IT FAILS: rising Bowman-space pressure opposes filtration, so GFR FALLS with obstruction. ✅ Correct if: asking what DECREASES."
+    },
+    {
+      "letter": "B",
+      "label": "Net filtration pressure - decreases",
+      "detail": "WHAT IT IS: the net pressure driving glomerular filtration. ❌ WHY IT FAILS: increased Bowman hydrostatic pressure is a force OPPOSING filtration, lowering net filtration pressure. ✅ Correct if: asking what decreases with obstruction."
+    },
+    {
+      "letter": "C",
+      "label": "Filtration fraction - falls as GFR drops",
+      "detail": "WHAT IT IS: filtration fraction = GFR/renal plasma flow. ❌ WHY IT FAILS: with obstruction GFR drops (and renal blood flow may fall later), so filtration fraction does not rise. ✅ Correct if: analyzing efferent arteriolar constriction (which raises FF), not obstruction."
+    },
+    {
+      "letter": "E",
+      "label": "Urine output from the affected kidney - decreases/absent",
+      "detail": "WHAT IT IS: urine drainage from the obstructed kidney. ❌ WHY IT FAILS: the stone blocks outflow, so urine cannot pass - output from that kidney falls (though total output may be maintained by the other kidney). ✅ Correct if: asking what decreases downstream of the block."
+    }
+  ],
+  "reasoning": [
+    "Obstructing ureteral stone -> urine cannot drain -> back-pressure rises in the collecting system",
+    "Elevated pressure is transmitted upstream into the tubule and Bowman space (↑ tubular hydrostatic pressure)",
+    "Higher Bowman pressure opposes filtration -> net filtration pressure and GFR fall",
+    "-> increased tubular (Bowman space) hydrostatic pressure; answer D"
+  ],
+  "mechanism": "Glomerular filtration is governed by Starling forces: net filtration pressure = glomerular capillary hydrostatic pressure − (hydrostatic pressure in Bowman space + glomerular capillary oncotic pressure). Normally Bowman-space (tubular) hydrostatic pressure is low because filtrate flows freely down the nephron and out the ureter. When a ureteral stone obstructs outflow, urine accumulates and pressure backs up through the collecting system into the renal tubules and Bowman space, acutely RAISING tubular hydrostatic pressure (and dilating the pelvis = hydronephrosis). This elevated back-pressure opposes filtration, lowering net filtration pressure and thus GFR in the affected kidney. Prolonged obstruction can cause post-obstructive interstitial damage and, if bilateral/solitary kidney, post-renal acute kidney injury. Relief of the obstruction reverses the pressure changes.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid Renal > GFR Starling forces: NFP = P(GC) − [P(BS) + pi(GC)]; obstruction raises Bowman-space (tubular) hydrostatic pressure -> ↓NFP -> ↓GFR; hydronephrosis; post-renal AKI."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "Trace back-pressure from the stone to Bowman space; the parameter that INCREASES is tubular hydrostatic pressure."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on Bowman-space hydrostatic pressure, net filtration pressure, GFR Starling forces, filtration fraction, or hydronephrosis? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "GFR, net filtration pressure, filtration fraction, and affected-kidney urine output all DECREASE with obstruction - only tubular hydrostatic pressure rises."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: ureteral obstruction -> ↑Bowman/tubular hydrostatic pressure -> ↓NFP -> ↓GFR (post-renal AKI, hydronephrosis)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Parameter increased by ureteral obstruction",
+      "back": "Tubular / Bowman-space hydrostatic pressure"
+    },
+    {
+      "front": "GFR net filtration pressure equation",
+      "back": "NFP = P(GC) − [P(Bowman) + pi(GC)]"
+    },
+    {
+      "front": "Effect of ↑ Bowman hydrostatic pressure on GFR",
+      "back": "Opposes filtration -> ↓ net filtration pressure -> ↓ GFR"
+    },
+    {
+      "front": "Dilated renal pelvis from obstruction",
+      "back": "Hydronephrosis"
+    },
+    {
+      "front": "Renal colic (flank -> groin pain)",
+      "back": "Obstructing ureteral stone"
+    },
+    {
+      "front": "AKI category from obstruction",
+      "back": "Post-renal acute kidney injury"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "GFR determinants",
+      "detail": "Renal: ↑ Bowman-space (tubular) hydrostatic pressure opposes filtration -> ↓GFR.",
+      "location": "Renal: ↑ Bowman-space (tubular) hydrostatic pressure opposes filtration -> ↓GFR."
+    },
+    {
+      "tag": "options",
+      "topic": "Starling forces of filtration",
+      "detail": "Renal > NFP = P(GC) − [P(BS) + pi(GC)]; obstruction raises P(BS).",
+      "location": "Renal > NFP = P(GC) − [P(BS) + pi(GC)]; obstruction raises P(BS)."
+    },
+    {
+      "tag": "context",
+      "topic": "Obstructive uropathy",
+      "detail": "Renal > hydronephrosis, post-renal AKI from ureteral stone.",
+      "location": "Renal > hydronephrosis, post-renal AKI from ureteral stone."
+    }
+  ],
+  "memoryHook": "Block the drain and the pressure backs up the pipes - Bowman space fills, pushes against filtration, and GFR drops.",
+  "stem": [
+    {
+      "text": "A 55-year-old man comes to the emergency department with acute, "
+    },
+    {
+      "text": "severe right flank pain radiating to the groin",
+      "clue": true,
+      "type": "blue",
+      "note": "Flank pain radiating to the groin (renal colic) is the classic presentation of an obstructing ureteral stone."
+    },
+    {
+      "text": ", along with nausea. Noncontrast CT of the abdomen shows a "
+    },
+    {
+      "text": "1-cm calculus lodged in the proximal right ureter",
+      "clue": true,
+      "type": "red",
+      "note": "A 1-cm stone obstructs the ureter; urine cannot drain, so pressure backs up into the collecting system and nephrons."
+    },
+    {
+      "text": ", with "
+    },
+    {
+      "text": "dilation of the ureter and renal pelvis (hydronephrosis)",
+      "clue": true,
+      "type": "green",
+      "note": "Hydronephrosis proximal to the stone confirms obstruction and rising back-pressure transmitted upstream toward Bowman space."
+    },
+    {
+      "text": " proximal to the stone. Vital signs are stable. If the obstruction persists, which of the following renal parameters is most likely acutely INCREASED in the affected (right) kidney?"
+    }
+  ]
+}

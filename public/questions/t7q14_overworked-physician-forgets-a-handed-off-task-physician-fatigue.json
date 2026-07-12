@@ -1,0 +1,203 @@
+{
+  "id": "q244",
+  "item": 244,
+  "qid": "11532",
+  "title": "Overworked physician forgets a handed-off task: physician fatigue",
+  "system": "Behavioral science",
+  "topic": "Physician fatigue / patient safety",
+  "correct": "F",
+  "yourAnswer": "F",
+  "percentCorrect": 57,
+  "vignette": "A 46-year-old man is hospitalized with diabetic ketoacidosis. He is administered intravenous fluids and an insulin drip, and laboratory testing is ordered. In the morning, the on-call physician hands off the patient to the day shift physician, who arrives an hour late due to an emergency at his nighttime moonlighting job. The handoff information includes the status of the patient and instructions to check electrolytes and calculate his anion gap. The physician performs inpatient rounds and then sees his usual clinic outpatients in the afternoon, but he neglects to check the patient's anion gap. The patient subsequently develops worsening acidosis requiring intubation for respiratory distress. Which of the following is the most likely cause of this adverse outcome?",
+  "clues": [
+    {
+      "text": "arrives an hour late due to an emergency at his nighttime moonlighting job",
+      "type": "red",
+      "note": "The physician worked a nighttime moonlighting shift and then a full clinical day - more than 24 hours awake. Sleep deprivation impairs cognition and is the root setup for a lapse."
+    },
+    {
+      "text": "instructions to check electrolytes and calculate his anion gap",
+      "type": "purple",
+      "note": "The handoff explicitly included the patient's status AND the specific task. Because the information was complete, this eliminates 'inadequate handoff' as the cause - a common trap."
+    },
+    {
+      "text": "he neglects to check the patient's anion gap",
+      "type": "blue",
+      "note": "He FORGOT a clearly communicated task (a lapse), rather than choosing wrongly (a judgment error) or not knowing what to do (a knowledge gap). Forgetting a known task after prolonged wakefulness is the hallmark of fatigue."
+    }
+  ],
+  "whatMatters": "The physician worked a night moonlighting job then a full day (>24 hours awake) and simply FORGOT a clearly handed-off task. Sleep deprivation impairs cognition much like alcohol intoxication, and forgetfulness/lapses point to PHYSICIAN FATIGUE. Answer F. The handoff was complete (not the cause), and no knowledge gap or burnout is described.",
+  "strategy": "Identify the root cause of the lapse. The handoff explicitly included the task, so it wasn't inadequate (C). The physician knew what to do (not knowledge, A) and simply forgot after >24 hours awake -> fatigue (F). Burnout (E) = emotional exhaustion/cynicism (not described); judgment error (D) = a wrong decision, but he made no decision - he forgot; caseload (B) isn't the described driver.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Deficiency of knowledge",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Excessive patient caseload",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Inadequate patient handoff",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Judgment error",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Physician burnout",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Physician fatigue",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Deficiency of knowledge - not the gap",
+      "detail": "WHAT IT IS: an error from not knowing the correct management. ❌ WHY IT FAILS: he was explicitly told to check the anion gap and knew how - there's no knowledge gap. ✅ Correct if: the error came from not knowing what to do."
+    },
+    {
+      "letter": "B",
+      "label": "Excessive patient caseload - not quantified",
+      "detail": "WHAT IT IS: an unmanageable patient volume causing errors. ❌ WHY IT FAILS: rounds plus his usual clinic aren't described as an abnormal overload; the distinguishing factor is his sleeplessness. ✅ Correct if: a clearly excessive patient number drove the miss."
+    },
+    {
+      "letter": "C",
+      "label": "Inadequate patient handoff - the main trap",
+      "detail": "WHAT IT IS: a communication failure where key information is omitted at transfer. ❌ WHY IT FAILS: the handoff DID include the patient's status and the specific instruction to check electrolytes/anion gap - so it was adequate. ✅ Correct if: the handoff had omitted the task or critical information."
+    },
+    {
+      "letter": "D",
+      "label": "Judgment error - no decision was made",
+      "detail": "WHAT IT IS: weighing options and choosing wrongly. ❌ WHY IT FAILS: he didn't make a flawed decision - he failed to perform a known task (a lapse), which is fatigue-related forgetting. ✅ Correct if: he deliberated and chose incorrectly."
+    },
+    {
+      "letter": "E",
+      "label": "Physician burnout - chronic syndrome, not described",
+      "detail": "WHAT IT IS: emotional exhaustion, depersonalization, and reduced sense of accomplishment. ❌ WHY IT FAILS: none of that is described; this is acute sleep loss, not chronic burnout. ✅ Correct if: chronic cynicism/detachment drove the error."
+    }
+  ],
+  "reasoning": [
+    "The physician worked a night moonlighting shift then a full day (>24 hours awake)",
+    "Sleep deprivation impairs cognition (comparable to alcohol intoxication)",
+    "He FORGOT a clearly handed-off task (a lapse, not a decision or knowledge gap)",
+    "-> physician fatigue; answer F (the handoff was complete)"
+  ],
+  "mechanism": "Sleep deprivation produces dose-dependent cognitive impairment; after roughly 17-24 hours of wakefulness, performance and error rates approach those seen with alcohol intoxication. This physician worked a nighttime moonlighting job and then a full clinical day (well over 24 hours awake) and FORGOT a task that had been clearly communicated - a lapse characteristic of fatigue rather than a decision error, a knowledge gap, or a communication failure. The handoff was complete (it specified checking electrolytes and the anion gap), so it was not inadequate; burnout (emotional exhaustion, depersonalization, reduced accomplishment) is a chronic syndrome not described here. Because attending physicians' work hours are not externally regulated, physicians must self-monitor cumulative sleep debt to protect patient safety.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "📚 Pure knowledge gap",
+      "message": "First Aid/patient safety > error taxonomy: fatigue vs burnout vs inadequate handoff vs judgment error; sleep deprivation ~ intoxication; self-regulation of workload."
+    },
+    {
+      "key": "comprehension",
+      "label": "🧭 Understanding the question",
+      "message": "A FORGOTTEN, clearly handed-off task by a physician awake >24 hours is a fatigue lapse - not a communication failure or misjudgment."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocabulary",
+      "message": "Unsure on handoff, burnout vs fatigue, lapse vs judgment error, or moonlighting? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🧲 Pulled by a distractor",
+      "message": "'Inadequate handoff' (C) is the main trap, but the handoff DID include the task. Burnout (E) requires a chronic emotional syndrome that isn't described."
+    },
+    {
+      "key": "other",
+      "label": "✍️ Something else",
+      "message": "Bank: >24 hours awake + forgot a known, handed-off task = physician fatigue; being awake ~24 h ≈ alcohol intoxication."
+    }
+  ],
+  "keywords": [
+    {
+      "front": ">24 h awake (moonlighting + full day) then forgets a task",
+      "back": "Physician fatigue (sleep deprivation)"
+    },
+    {
+      "front": "Sleep deprivation performance equivalence",
+      "back": "~17-24 h awake ≈ alcohol intoxication"
+    },
+    {
+      "front": "Burnout triad",
+      "back": "Emotional exhaustion, depersonalization, reduced accomplishment"
+    },
+    {
+      "front": "Handoff that included the task",
+      "back": "Adequate handoff (not the cause)"
+    },
+    {
+      "front": "Lapse vs judgment error",
+      "back": "Fatigue causes lapses (forgot a known task); misjudgment is choosing wrongly"
+    },
+    {
+      "front": "Who regulates attending work hours?",
+      "back": "Largely self-regulated - physicians must self-monitor sleep debt"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Physician fatigue",
+      "detail": "Patient safety: sleep deprivation -> lapses/errors; self-regulate workload.",
+      "location": "Patient safety: sleep deprivation -> lapses/errors; self-regulate workload."
+    },
+    {
+      "tag": "options",
+      "topic": "Error types",
+      "detail": "Patient safety > knowledge, handoff (I-PASS), judgment, burnout, fatigue, caseload.",
+      "location": "Patient safety > knowledge, handoff (I-PASS), judgment, burnout, fatigue, caseload."
+    },
+    {
+      "tag": "context",
+      "topic": "Burnout",
+      "detail": "Behavioral > Maslach: exhaustion, depersonalization, low accomplishment.",
+      "location": "Behavioral > Maslach: exhaustion, depersonalization, low accomplishment."
+    }
+  ],
+  "memoryHook": "Up all night moonlighting, then a full day - he didn't misjudge, he just forgot. Sleep debt = physician fatigue (awake ≈ drunk).",
+  "stem": [
+    {
+      "text": "A 46-year-old man is hospitalized with diabetic ketoacidosis. He is administered intravenous fluids and an insulin drip, and laboratory testing is ordered. In the morning, the on-call physician hands off the patient to the day shift physician, who "
+    },
+    {
+      "text": "arrives an hour late due to an emergency at his nighttime moonlighting job",
+      "clue": true,
+      "type": "red",
+      "note": "The physician worked a nighttime moonlighting shift and then a full clinical day - more than 24 hours awake. Sleep deprivation impairs cognition and is the root setup for a lapse."
+    },
+    {
+      "text": ". The handoff information includes the status of the patient and "
+    },
+    {
+      "text": "instructions to check electrolytes and calculate his anion gap",
+      "clue": true,
+      "type": "purple",
+      "note": "The handoff explicitly included the patient's status AND the specific task. Because the information was complete, this eliminates 'inadequate handoff' as the cause - a common trap."
+    },
+    {
+      "text": ". The physician performs inpatient rounds and then sees his usual clinic outpatients in the afternoon, but "
+    },
+    {
+      "text": "he neglects to check the patient's anion gap",
+      "clue": true,
+      "type": "blue",
+      "note": "He FORGOT a clearly communicated task (a lapse), rather than choosing wrongly (a judgment error) or not knowing what to do (a knowledge gap). Forgetting a known task after prolonged wakefulness is the hallmark of fatigue."
+    },
+    {
+      "text": ". The patient subsequently develops worsening acidosis requiring intubation for respiratory distress. Which of the following is the most likely cause of this adverse outcome?"
+    }
+  ]
+}

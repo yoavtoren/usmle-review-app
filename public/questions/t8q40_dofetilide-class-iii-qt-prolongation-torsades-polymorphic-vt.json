@@ -1,0 +1,203 @@
+{
+  "id": "q309",
+  "item": 309,
+  "qid": "14744",
+  "title": "Dofetilide (class III): QT prolongation -> torsades (polymorphic VT)",
+  "system": "Pharmacology",
+  "topic": "Class III antiarrhythmics - torsades de pointes",
+  "correct": "C",
+  "yourAnswer": "D",
+  "percentCorrect": 57,
+  "vignette": "A 54-year-old man is evaluated for paroxysmal atrial fibrillation. During the episodes, the patient experiences palpitations, chest tightness, light-headedness, and shortness of breath. Medical history is significant for asthma, hypertension, and diet-controlled diabetes mellitus. Prior testing showed normal left ventricular ejection fraction, no evidence of valvular disease, and no obstructive coronary artery disease. It is decided to proceed with dofetilide therapy. Initiation of this therapy increases this patient's risk for which of the following?",
+  "clues": [
+    {
+      "text": "paroxysmal atrial fibrillation",
+      "type": "blue",
+      "note": "Symptomatic paroxysmal atrial fibrillation is often managed with a rhythm-control agent; a class III antiarrhythmic (dofetilide) is one option."
+    },
+    {
+      "text": "asthma",
+      "type": "orange",
+      "note": "Asthma steers therapy away from beta blockers (bronchospasm); dofetilide, a class III agent, avoids that but carries its own risk."
+    },
+    {
+      "text": "proceed with dofetilide therapy",
+      "type": "red",
+      "note": "Dofetilide is a class III antiarrhythmic that blocks the rapid delayed-rectifier potassium current, prolonging repolarization and the QT interval - raising torsades risk."
+    }
+  ],
+  "whatMatters": "Dofetilide is a class III antiarrhythmic that blocks the rapid delayed-rectifier K+ current (IKr), prolonging repolarization and the QT interval. QT prolongation predisposes to TORSADES DE POINTES - a POLYMORPHIC ventricular tachycardia. Answer C. (Dofetilide is started in-hospital with ECG monitoring for this reason.)",
+  "strategy": "Map the drug class to its signature toxicity: class III agents (dofetilide, ibutilide, sotalol) block K+ efflux -> prolong QT -> torsades (polymorphic VT). Reject bronchospasm (adenosine/nonselective beta blockers, not class III), complete AV block (AV-nodal drugs: beta blockers, non-DHP CCBs, digoxin, adenosine), thyroid dysfunction (amiodarone), and visual disturbance (digoxin).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bronchospasm",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Complete atrioventricular block",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Polymorphic ventricular tachycardia",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Thyroid dysfunction",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Venous thromboembolism",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Visual disturbance",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Bronchospasm - adenosine / nonselective beta blockers",
+      "detail": "WHAT IT IS: airway constriction, a concern with adenosine and nonselective beta blockers. ❌ WHY IT FAILS: dofetilide (class III) is not associated with bronchospasm; its hallmark risk is QT prolongation/torsades. ✅ Correct if: adenosine or a nonselective beta blocker in an asthmatic."
+    },
+    {
+      "letter": "B",
+      "label": "Complete AV block - AV-nodal blocking drugs",
+      "detail": "WHAT IT IS: high-grade AV block from drugs that slow AV nodal conduction (beta blockers, non-DHP CCBs, digoxin, adenosine). ❌ WHY IT FAILS: dofetilide has no significant AV-nodal blocking effect; it acts on ventricular repolarization (QT). ✅ Correct if: overdose of an AV-nodal agent."
+    },
+    {
+      "letter": "D",
+      "label": "Thyroid dysfunction - amiodarone",
+      "detail": "WHAT IT IS: hypo-/hyperthyroidism, a classic amiodarone toxicity (iodine-rich). ❌ WHY IT FAILS: dofetilide does not affect the thyroid; that adverse effect belongs to amiodarone. ✅ Correct if: amiodarone therapy (also pulmonary/hepatic toxicity)."
+    },
+    {
+      "letter": "E",
+      "label": "Venous thromboembolism - not an antiarrhythmic effect",
+      "detail": "WHAT IT IS: venous clot formation. ❌ WHY IT FAILS: class III antiarrhythmics are not associated with venous thromboembolism (atrial fibrillation itself raises stroke/embolic risk, addressed with anticoagulation). ✅ Correct if: a hypercoagulable/immobility scenario, not drug toxicity."
+    },
+    {
+      "letter": "F",
+      "label": "Visual disturbance - digoxin toxicity",
+      "detail": "WHAT IT IS: blurry/yellow vision (xanthopsia), a sign of digoxin toxicity. ❌ WHY IT FAILS: that is digoxin, not dofetilide. ✅ Correct if: digoxin toxicity with GI symptoms and visual changes."
+    }
+  ],
+  "reasoning": [
+    "Dofetilide is a class III antiarrhythmic used for rhythm control in atrial fibrillation",
+    "It blocks the rapid delayed-rectifier K+ current (IKr), prolonging repolarization and the QT interval",
+    "A prolonged QT predisposes to torsades de pointes = polymorphic ventricular tachycardia",
+    "-> polymorphic ventricular tachycardia; answer C"
+  ],
+  "mechanism": "Dofetilide (like ibutilide and sotalol) is a class III antiarrhythmic that selectively blocks the RAPID component of the delayed-rectifier potassium current (IKr). Potassium efflux normally repolarizes the cardiac action potential; blocking it PROLONGS repolarization, lengthening the effective refractory period and the QT interval - which suppresses the reentrant atrial foci of atrial fibrillation. However, excessive QT prolongation can trigger early afterdepolarizations that initiate TORSADES DE POINTES, a POLYMORPHIC ventricular tachycardia that can cause syncope or sudden cardiac death. Because of this, dofetilide is initiated in the hospital with continuous ECG monitoring, careful renal dosing, and correction of electrolytes (hypokalemia/hypomagnesemia worsen the risk). Class III agents were chosen here in part because the patient's asthma makes beta blockers less desirable. The distractors are toxicities of other agents: bronchospasm (adenosine/nonselective beta blockers), complete AV block (AV-nodal drugs), thyroid dysfunction (amiodarone), and visual disturbance (digoxin).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > class III antiarrhythmics (dofetilide, ibutilide, sotalol): block IKr, prolong QT -> torsades de pointes (polymorphic VT); started with ECG monitoring; correct K+/Mg2+."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Class III drug -> QT prolongation -> torsades (polymorphic VT) is the risk being tested."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on class III antiarrhythmic, delayed-rectifier K+ current (IKr), QT interval, torsades de pointes, or early afterdepolarization? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Bronchospasm (adenosine/beta blockers), AV block (nodal drugs), thyroid dysfunction (amiodarone), visual changes (digoxin) belong to OTHER drugs."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: class III (dofetilide/ibutilide/sotalol) -> QT prolongation -> torsades; monitor ECG, keep K+/Mg2+ normal."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Dofetilide/ibutilide/sotalol risk",
+      "back": "QT prolongation -> torsades de pointes (polymorphic VT)"
+    },
+    {
+      "front": "Class III antiarrhythmic mechanism",
+      "back": "Block rapid delayed-rectifier K+ current (IKr) -> prolong repolarization/QT"
+    },
+    {
+      "front": "Torsades-provoking electrolytes",
+      "back": "Hypokalemia and hypomagnesemia"
+    },
+    {
+      "front": "Amiodarone-specific toxicities",
+      "back": "Thyroid, pulmonary fibrosis, hepatic, skin (blue-gray)"
+    },
+    {
+      "front": "Digoxin toxicity clue",
+      "back": "Visual disturbance (yellow vision), GI symptoms, hyperkalemia"
+    },
+    {
+      "front": "Why dofetilide is started in-hospital",
+      "back": "ECG monitoring for QT prolongation/torsades"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Class III antiarrhythmics",
+      "detail": "Pharm: block IKr -> ↑QT -> torsades de pointes (polymorphic VT).",
+      "location": "Pharm: block IKr -> ↑QT -> torsades de pointes (polymorphic VT)."
+    },
+    {
+      "tag": "options",
+      "topic": "Antiarrhythmic toxicities",
+      "detail": "Pharm > amiodarone (thyroid), digoxin (visual), beta blockers/adenosine (bronchospasm/AV block).",
+      "location": "Pharm > amiodarone (thyroid), digoxin (visual), beta blockers/adenosine (bronchospasm/AV block)."
+    },
+    {
+      "tag": "safety",
+      "topic": "QT drugs",
+      "detail": "Cardio > correct K+/Mg2+; monitor ECG; avoid other QT-prolonging drugs.",
+      "location": "Cardio > correct K+/Mg2+; monitor ECG; avoid other QT-prolonging drugs."
+    }
+  ],
+  "memoryHook": "Dofetilide jams the K+ exit, stretching the QT like a rubber band - snap it and you get torsades, a twisting polymorphic VT.",
+  "stem": [
+    {
+      "text": "A 54-year-old man is evaluated for "
+    },
+    {
+      "text": "paroxysmal atrial fibrillation",
+      "clue": true,
+      "type": "blue",
+      "note": "Symptomatic paroxysmal atrial fibrillation is often managed with a rhythm-control agent; a class III antiarrhythmic (dofetilide) is one option."
+    },
+    {
+      "text": ". During the episodes, the patient experiences palpitations, chest tightness, light-headedness, and shortness of breath. Medical history is significant for "
+    },
+    {
+      "text": "asthma",
+      "clue": true,
+      "type": "orange",
+      "note": "Asthma steers therapy away from beta blockers (bronchospasm); dofetilide, a class III agent, avoids that but carries its own risk."
+    },
+    {
+      "text": ", hypertension, and diet-controlled diabetes mellitus. Prior testing showed normal left ventricular ejection fraction, no evidence of valvular disease, and no obstructive coronary artery disease. It is decided to "
+    },
+    {
+      "text": "proceed with dofetilide therapy",
+      "clue": true,
+      "type": "red",
+      "note": "Dofetilide is a class III antiarrhythmic that blocks the rapid delayed-rectifier potassium current, prolonging repolarization and the QT interval - raising torsades risk."
+    },
+    {
+      "text": ". Initiation of this therapy increases this patient's risk for which of the following?"
+    }
+  ]
+}
