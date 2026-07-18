@@ -1,0 +1,176 @@
+{
+  "id": "q329",
+  "item": 329,
+  "qid": "15301",
+  "title": "Detecting a chromosomal trisomy: fluorescence in situ hybridization (FISH)",
+  "system": "Genetics",
+  "topic": "Molecular diagnostics - FISH",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 43,
+  "vignette": "Researchers studying chronic lymphocytic leukemia (CLL) observe that in some patients the disease is indolent, with limited growth over more than a decade, whereas in other patients the disease is more aggressive and becomes symptomatic early on. They find that genetic abnormalities can be detected in most patients with CLL and may play a role in determining the difference between the 2 courses of the disease. A clinical study is conducted with the hypothesis that individuals with CLL whose leukemic cells contain trisomy of chromosome 12 have a more favorable course than those whose leukemic cells contain other genetic changes. Which of the following laboratory techniques would be most useful for identifying patients with this genetic abnormality?",
+  "clues": [
+    {
+      "text": "trisomy of chromosome 12",
+      "type": "green",
+      "note": "Trisomy 12 is a whole-CHROMOSOME copy-number abnormality; the ideal test detects a targeted chromosomal gain using a labeled probe - FISH."
+    },
+    {
+      "text": "identifying patients with this genetic abnormality",
+      "type": "blue",
+      "note": "The goal is to detect a specific known chromosomal change (a trisomy), which fluorescence in situ hybridization does by counting probe signals."
+    }
+  ],
+  "whatMatters": "To detect a known CHROMOSOMAL abnormality like TRISOMY 12, use FLUORESCENCE IN SITU HYBRIDIZATION (FISH): a fluorescently labeled DNA probe (e.g., for the chromosome 12 centromere) hybridizes to its target, and the number of signals per cell reveals the extra copy. Answer B. Gene sequencing/targeted mutation analysis detect point mutations, flow cytometry detects surface markers, and Northern blot detects RNA.",
+  "strategy": "Match the test to the abnormality TYPE. Chromosomal copy-number changes (trisomy, deletion, duplication, translocation) -> FISH (labeled probe counts signals). Reject sequencing/targeted mutation analysis (single-gene point mutations, not whole-chromosome counts), flow cytometry (cell-surface proteins), and Northern blot (RNA size/expression).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Flow cytometry",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Fluorescence in situ hybridization",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Gene sequencing",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Northern blotting",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Targeted mutation analysis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Flow cytometry - detects surface markers, not chromosome number",
+      "detail": "WHAT IT IS: flow cytometry identifies cells by surface/intracellular protein markers (e.g., CD5/CD23 in CLL). ❌ WHY IT FAILS: it characterizes immunophenotype, not chromosomal copy number like a trisomy. ✅ Correct if: diagnosing/immunophenotyping the leukemia (marker expression)."
+    },
+    {
+      "letter": "C",
+      "label": "Gene sequencing - point mutations, not chromosome counts",
+      "detail": "WHAT IT IS: sequencing reads the nucleotide sequence to find mutations within a gene. ❌ WHY IT FAILS: it detects point mutations/small indels, not a whole extra chromosome (and can miss large whole-gene deletions/gains). ✅ Correct if: identifying a specific point mutation."
+    },
+    {
+      "letter": "D",
+      "label": "Northern blotting - detects RNA, not DNA copy number",
+      "detail": "WHAT IT IS: Northern blot size-fractionates and detects a specific mRNA (expression level/size). ❌ WHY IT FAILS: it evaluates RNA, not chromosomal DNA copy number. ✅ Correct if: measuring mRNA expression/size."
+    },
+    {
+      "letter": "E",
+      "label": "Targeted mutation analysis - known point mutation via probe",
+      "detail": "WHAT IT IS: a probe-based assay for a specific known point mutation. ❌ WHY IT FAILS: it detects a defined sequence variant, not a chromosomal duplication/trisomy. ✅ Correct if: screening for a specific recurrent point mutation."
+    }
+  ],
+  "reasoning": [
+    "Trisomy 12 is a whole-chromosome copy-number (cytogenetic) abnormality",
+    "FISH uses fluorescently labeled DNA probes to identify targeted chromosomal changes",
+    "Counting probe signals per nucleus reveals the extra chromosome 12",
+    "-> fluorescence in situ hybridization; answer B"
+  ],
+  "mechanism": "Fluorescence in situ hybridization (FISH) is a cytogenetic technique that uses fluorescently labeled DNA PROBES complementary to a specific chromosomal region (e.g., the centromere of chromosome 12). After denaturation, the probe hybridizes to its complementary target, and the number and location of fluorescent signals are visualized by microscopy - so an extra chromosome 12 appears as THREE signals per nucleus (trisomy). FISH is sensitive and specific for TARGETED chromosomal abnormalities (duplications, deletions, translocations, aneuploidies) and can be performed on both dividing (metaphase) and non-dividing (interphase) cells, giving it higher resolution than standard karyotyping for defined targets (though it only detects the regions the probes interrogate). This makes it the ideal tool to screen CLL cells for trisomy 12. The alternatives address different questions: flow cytometry (surface-marker immunophenotype), gene sequencing and targeted mutation analysis (point mutations within genes), and Northern blot (RNA expression) - none directly counts chromosome copies.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Genetics > lab techniques: FISH (fluorescent probe -> targeted chromosomal abnormalities: trisomy, deletion, translocation); karyotype (large abnormalities); sequencing (point mutations); flow cytometry (surface markers); Northern (RNA)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Trisomy 12 is a CHROMOSOMAL copy-number change -> FISH (probe signal counting)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on FISH, probe hybridization, trisomy/aneuploidy, karyotype, or flow cytometry? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Sequencing/targeted mutation = point mutations; flow cytometry = surface markers; Northern = RNA - none counts chromosomes."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: FISH = fluorescent probe for targeted chromosomal abnormalities (trisomy 12, BCR-ABL, deletions)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Best test to detect a known chromosomal trisomy/translocation",
+      "back": "Fluorescence in situ hybridization (FISH)"
+    },
+    {
+      "front": "How FISH works",
+      "back": "Fluorescent DNA probe hybridizes to target; count signals per nucleus"
+    },
+    {
+      "front": "Flow cytometry detects",
+      "back": "Cell-surface/intracellular protein markers (immunophenotype)"
+    },
+    {
+      "front": "Gene sequencing detects",
+      "back": "Point mutations/sequence within a gene"
+    },
+    {
+      "front": "Northern blot detects",
+      "back": "RNA (mRNA size/expression)"
+    },
+    {
+      "front": "Karyotype vs FISH",
+      "back": "Karyotype = large/global abnormalities; FISH = targeted, higher resolution, interphase-capable"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "FISH",
+      "detail": "Genetics: fluorescent probe detects targeted chromosomal abnormalities (trisomy 12, deletions, translocations)."
+    },
+    {
+      "tag": "options",
+      "topic": "Molecular techniques",
+      "detail": "Genetics > sequencing (point mutations), flow cytometry (markers), Northern (RNA)."
+    },
+    {
+      "tag": "context",
+      "topic": "CLL cytogenetics",
+      "detail": "Heme > FISH panels (del13q, trisomy 12, del11q, del17p) guide prognosis."
+    }
+  ],
+  "memoryHook": "FISH goes fishing for a chromosome with a glowing probe - three green dots on chromosome 12 = trisomy; sequencing reads letters, flow reads surface tags.",
+  "stem": [
+    {
+      "text": "Researchers studying chronic lymphocytic leukemia (CLL) observe that in some patients the disease is indolent, with limited growth over more than a decade, whereas in other patients the disease is more aggressive and becomes symptomatic early on. They find that genetic abnormalities can be detected in most patients with CLL and may play a role in determining the difference between the 2 courses of the disease. A clinical study is conducted with the hypothesis that individuals with CLL whose leukemic cells contain "
+    },
+    {
+      "text": "trisomy of chromosome 12",
+      "clue": true,
+      "type": "green",
+      "note": "Trisomy 12 is a whole-CHROMOSOME copy-number abnormality; the ideal test detects a targeted chromosomal gain using a labeled probe - FISH."
+    },
+    {
+      "text": " have a more favorable course than those whose leukemic cells contain other genetic changes. Which of the following laboratory techniques would be most useful for "
+    },
+    {
+      "text": "identifying patients with this genetic abnormality",
+      "clue": true,
+      "type": "blue",
+      "note": "The goal is to detect a specific known chromosomal change (a trisomy), which fluorescence in situ hybridization does by counting probe signals."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

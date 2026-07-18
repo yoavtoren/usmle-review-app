@@ -1,0 +1,190 @@
+{
+  "id": "q322",
+  "item": 322,
+  "qid": "11774",
+  "title": "Pulmonary embolism without infarction: dual (collateral) blood supply",
+  "system": "Pathophysiology",
+  "topic": "Pulmonary embolism / lung blood supply",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 72,
+  "vignette": "A 42-year-old man comes to the emergency department due to several hours of dyspnea. He is a long-haul truck driver who became acutely short of breath during a 36-hour trip but previously had been healthy. The patient smokes a pack of cigarettes daily and drinks a 6-pack of beer on weekends. Pulmonary examination reveals vesicular breath sounds bilaterally with the overlying areas resonant to percussion. CT pulmonary angiogram shows a right lower lobe pulmonary artery occlusion consistent with pulmonary embolism but no evidence of pulmonary infarction. Which of the following is the most likely reason for the lack of lung tissue necrosis in this patient?",
+  "clues": [
+    {
+      "text": "long-haul truck driver who became acutely short of breath during a 36-hour trip",
+      "type": "orange",
+      "note": "Prolonged immobility (a 36-hour drive) is a classic risk factor for deep venous thrombosis and pulmonary embolism (Virchow's stasis)."
+    },
+    {
+      "text": "pulmonary artery occlusion consistent with pulmonary embolism",
+      "type": "green",
+      "note": "A CT-confirmed pulmonary artery occlusion is a pulmonary embolism; the question asks why the downstream lung did NOT infarct."
+    },
+    {
+      "text": "no evidence of pulmonary infarction",
+      "type": "blue",
+      "note": "Lack of necrosis despite pulmonary artery occlusion points to an alternate blood supply keeping the tissue viable."
+    }
+  ],
+  "whatMatters": "The lung has a DUAL blood supply - the pulmonary arteries AND the bronchial arteries (from the systemic/aorta). When a pulmonary artery is occluded by an embolus, the bronchial (collateral) circulation can still perfuse the lung parenchyma, so infarction/necrosis often does NOT occur. Answer A (collateral circulation).",
+  "strategy": "Recall that the lung is protected from infarction by its dual blood supply; the bronchial arteries provide collateral flow when a pulmonary artery is blocked. Reject surfactant/shunting (these relate to gas exchange/hypoxemia, not tissue viability), endothelial tPA (spontaneous lysis is slow and limited), and increased pulmonary venous pressure (that would WORSEN, not prevent, infarction, e.g., in heart failure).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Collateral circulation",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Decreased surfactant",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Endothelial tissue plasminogen activator",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Increased pulmonary venous pressure",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Intrapulmonary shunting",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Decreased surfactant - atelectasis, not tissue rescue",
+      "detail": "WHAT IT IS: reduced surfactant (can follow PE-related alveolar injury) promotes atelectasis. ❌ WHY IT FAILS: it worsens gas exchange and does not preserve tissue viability/prevent necrosis. ✅ Correct if: asking about atelectasis/hypoxemia mechanisms."
+    },
+    {
+      "letter": "C",
+      "label": "Endothelial tPA - slow, limited spontaneous lysis",
+      "detail": "WHAT IT IS: endothelial-derived tissue plasminogen activator can slowly recanalize a clot. ❌ WHY IT FAILS: spontaneous lysis is slow and limited (tPA is mostly in the bronchial circulation); it isn't the main reason infarction is avoided acutely. ✅ Correct if: asking about therapeutic thrombolysis in unstable PE."
+    },
+    {
+      "letter": "D",
+      "label": "Increased pulmonary venous pressure - worsens infarction",
+      "detail": "WHAT IT IS: elevated pulmonary venous pressure (e.g., decompensated heart failure). ❌ WHY IT FAILS: high venous pressure impairs collateral (bronchial) flow and INCREASES infarction risk with PE - the opposite of protective. ✅ Correct if: explaining WHY heart-failure patients infarct more with PE."
+    },
+    {
+      "letter": "E",
+      "label": "Intrapulmonary shunting - gas exchange, not tissue viability",
+      "detail": "WHAT IT IS: perfusion of poorly ventilated lung (shunt) contributing to hypoxemia in PE. ❌ WHY IT FAILS: it explains hypoxemia, not why the parenchyma avoids necrosis. ✅ Correct if: asking about the cause of hypoxemia in PE."
+    }
+  ],
+  "reasoning": [
+    "Prolonged immobility -> DVT -> pulmonary embolism occluding a pulmonary artery",
+    "The lung has a dual blood supply: pulmonary arteries + bronchial (systemic) arteries",
+    "Bronchial collateral flow perfuses the parenchyma when a pulmonary artery is blocked -> no infarction",
+    "-> collateral circulation; answer A"
+  ],
+  "mechanism": "The lung receives a DUAL blood supply: the pulmonary arteries carry deoxygenated blood for gas exchange, and the BRONCHIAL arteries (branches of the aorta/systemic circulation) supply oxygenated blood to the airways and lung parenchyma. Because of this collateral supply, occlusion of a pulmonary artery by an embolus often does NOT cause infarction - the bronchial circulation continues to nourish the tissue and can even backfill the pulmonary capillaries. Pulmonary infarction is therefore relatively uncommon and, when it does occur, tends to happen with small distal emboli (beyond bronchial-pulmonary anastomoses) or in patients with compromised collateral flow, such as those with underlying heart failure (elevated pulmonary venous pressure) - and such infarcts are characteristically hemorrhagic (red) because of the dual supply. The distractors relate to gas exchange or clot lysis: decreased surfactant (atelectasis), intrapulmonary shunting (hypoxemia), and endothelial tPA (slow spontaneous lysis); increased pulmonary venous pressure would promote, not prevent, infarction.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pulm > lung has dual blood supply (pulmonary + bronchial arteries); collateral bronchial flow protects against infarction in PE; infarcts (when they occur) are hemorrhagic/red, more likely with small distal emboli or heart failure."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "No necrosis despite PA occlusion -> collateral (bronchial) circulation keeps tissue alive."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on bronchial vs pulmonary arteries, dual blood supply, pulmonary infarction, or bronchopulmonary anastomosis? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Surfactant/shunting explain hypoxemia not tissue survival; tPA lysis is slow; increased pulmonary venous pressure WORSENS infarction."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: PE rarely infarcts because of dual (bronchial + pulmonary) blood supply; infarcts are red/hemorrhagic, worse with heart failure."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Why PE often causes no lung infarction",
+      "back": "Dual blood supply (bronchial collateral circulation)"
+    },
+    {
+      "front": "Lung's two arterial supplies",
+      "back": "Pulmonary arteries + bronchial arteries (systemic/aorta)"
+    },
+    {
+      "front": "When does pulmonary infarction occur",
+      "back": "Small distal emboli or compromised collateral (e.g., heart failure)"
+    },
+    {
+      "front": "Character of a pulmonary infarct",
+      "back": "Hemorrhagic (red), wedge-shaped, pleura-based"
+    },
+    {
+      "front": "Major PE risk factor here",
+      "back": "Prolonged immobility (Virchow's stasis)"
+    },
+    {
+      "front": "Increased pulmonary venous pressure effect on PE",
+      "back": "Promotes infarction (impairs collateral flow)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Lung blood supply",
+      "detail": "Pulm: dual supply (pulmonary + bronchial); collateral flow prevents infarction in PE."
+    },
+    {
+      "tag": "options",
+      "topic": "PE pathophysiology",
+      "detail": "Pulm > shunting/surfactant (hypoxemia), tPA (lysis), venous pressure (infarct risk)."
+    },
+    {
+      "tag": "pathology",
+      "topic": "Pulmonary infarct",
+      "detail": "Pulm > red/hemorrhagic wedge; more likely with small distal emboli/heart failure."
+    }
+  ],
+  "memoryHook": "The lung has a backup power line - the bronchial arteries - so blocking one pulmonary artery usually starves nothing; infarcts hit only when the backup is weak.",
+  "stem": [
+    {
+      "text": "A 42-year-old man comes to the emergency department due to several hours of dyspnea. He is a "
+    },
+    {
+      "text": "long-haul truck driver who became acutely short of breath during a 36-hour trip",
+      "clue": true,
+      "type": "orange",
+      "note": "Prolonged immobility (a 36-hour drive) is a classic risk factor for deep venous thrombosis and pulmonary embolism (Virchow's stasis)."
+    },
+    {
+      "text": " but previously had been healthy. The patient smokes a pack of cigarettes daily and drinks a 6-pack of beer on weekends. Pulmonary examination reveals vesicular breath sounds bilaterally with the overlying areas resonant to percussion. CT pulmonary angiogram shows a right lower lobe "
+    },
+    {
+      "text": "pulmonary artery occlusion consistent with pulmonary embolism",
+      "clue": true,
+      "type": "green",
+      "note": "A CT-confirmed pulmonary artery occlusion is a pulmonary embolism; the question asks why the downstream lung did NOT infarct."
+    },
+    {
+      "text": " but "
+    },
+    {
+      "text": "no evidence of pulmonary infarction",
+      "clue": true,
+      "type": "blue",
+      "note": "Lack of necrosis despite pulmonary artery occlusion points to an alternate blood supply keeping the tissue viable."
+    },
+    {
+      "text": ". Which of the following is the most likely reason for the lack of lung tissue necrosis in this patient?"
+    }
+  ]
+}

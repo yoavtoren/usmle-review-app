@@ -1,0 +1,186 @@
+{
+  "id": "q330",
+  "item": 330,
+  "qid": "1434",
+  "title": "DNA polymerase I: 5'->3' exonuclease removes RNA primers",
+  "system": "Genetics",
+  "topic": "Prokaryotic DNA replication enzymes",
+  "correct": "A",
+  "yourAnswer": "B",
+  "percentCorrect": 46,
+  "vignette": "A pharmaceutical researcher develops a novel antibacterial drug that works by inhibiting exonuclease activity during DNA replication. When actively dividing Escherichia coli is exposed to the drug, enzyme-mediated nucleotide removal in the 5' to 3' direction is impaired, leading to inhibition of bacterial growth. Which of the following enzymes is the most likely target of this drug?",
+  "clues": [
+    {
+      "text": "actively dividing Escherichia coli",
+      "type": "blue",
+      "note": "A PROKARYOTIC replication scenario - so think prokaryotic DNA polymerases I, II, and III (not eukaryotic enzymes)."
+    },
+    {
+      "text": "nucleotide removal in the 5' to 3' direction",
+      "type": "red",
+      "note": "5' to 3' EXONUCLEASE activity is unique to DNA polymerase I in prokaryotes - it removes RNA primers (and repairs damaged DNA). This directionality pinpoints the enzyme."
+    }
+  ],
+  "whatMatters": "Among prokaryotic DNA polymerases, only DNA POLYMERASE I has 5' to 3' EXONUCLEASE activity, which it uses to remove RNA primers and replace them with DNA (and to repair damaged DNA). A drug blocking 5'->3' nucleotide removal targets DNA polymerase I. Answer A.",
+  "strategy": "Match the exonuclease DIRECTION to the enzyme. 5'->3' exonuclease = DNA pol I only (RNA primer removal). 3'->5' exonuclease = proofreading, present in all three polymerases (I, II, III). Since the drug impairs 5'->3' removal, it's DNA pol I. Reject DNA pol III (has 3'->5' proofreading, no 5'->3' exonuclease), gyrase (supercoiling), helicase (unwinding), ligase (seals nicks), and primase (makes RNA primer).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "DNA polymerase I",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "DNA polymerase III",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Gyrase",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Helicase",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Ligase",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Primase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "DNA polymerase III - has 3'->5' proofreading, not 5'->3' (your pick)",
+      "detail": "WHAT IT IS: the main prokaryotic replication enzyme; it elongates DNA and has 3'->5' proofreading exonuclease activity. ❌ WHY IT FAILS: it lacks 5'->3' exonuclease activity, which is what this drug impairs. ✅ Correct if: asking about the primary elongating polymerase or 3'->5' proofreading."
+    },
+    {
+      "letter": "C",
+      "label": "Gyrase - relieves supercoiling, no exonuclease",
+      "detail": "WHAT IT IS: topoisomerase II (DNA gyrase) introduces negative supercoils to relieve unwinding tension. ❌ WHY IT FAILS: it has no exonuclease activity (fluoroquinolones inhibit it). ✅ Correct if: a fluoroquinolone/supercoiling question."
+    },
+    {
+      "letter": "D",
+      "label": "Helicase - unwinds the helix, not an exonuclease",
+      "detail": "WHAT IT IS: unwinds the double helix at the replication fork. ❌ WHY IT FAILS: it separates strands but does not remove nucleotides. ✅ Correct if: strand separation/unwinding."
+    },
+    {
+      "letter": "E",
+      "label": "Ligase - seals nicks, not an exonuclease",
+      "detail": "WHAT IT IS: DNA ligase joins Okazaki fragments by forming phosphodiester bonds. ❌ WHY IT FAILS: it creates bonds rather than removing nucleotides. ✅ Correct if: sealing nicks on the lagging strand."
+    },
+    {
+      "letter": "F",
+      "label": "Primase - makes the RNA primer",
+      "detail": "WHAT IT IS: an RNA polymerase that synthesizes the short RNA primer to start replication. ❌ WHY IT FAILS: it builds the primer; DNA pol I later REMOVES it (5'->3' exonuclease). ✅ Correct if: asking what lays down the RNA primer."
+    }
+  ],
+  "reasoning": [
+    "Prokaryotic replication (E. coli) with impaired 5' to 3' nucleotide removal",
+    "5'->3' exonuclease activity in prokaryotes is unique to DNA polymerase I (removes RNA primers)",
+    "A drug blocking this activity therefore targets DNA polymerase I",
+    "-> DNA polymerase I; answer A"
+  ],
+  "mechanism": "Prokaryotes have three major DNA polymerases (I, II, III). DNA polymerase III is the primary replicative enzyme, synthesizing the bulk of new DNA in the 5'->3' direction; all three polymerases possess 3'->5' PROOFREADING exonuclease activity, which reverses one base to excise a misincorporated nucleotide (maintaining fidelity). DNA POLYMERASE I is UNIQUE in also having 5'->3' EXONUCLEASE activity: it removes the RNA primers laid down by primase and fills the resulting gaps with DNA (and repairs damaged DNA), after which ligase seals the nicks. A drug that impairs '5' to 3' nucleotide removal' during replication is therefore blocking the 5'->3' exonuclease function unique to DNA polymerase I. The other listed enzymes have distinct, non-exonuclease roles: gyrase (relieves supercoiling; fluoroquinolone target), helicase (unwinds the helix), ligase (seals Okazaki fragment nicks), and primase (synthesizes the RNA primer).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem > prokaryotic replication: DNA pol III = main elongation + 3'->5' proofreading; DNA pol I = 5'->3' exonuclease (removes RNA primers) + 3'->5' proofreading + gap fill; gyrase/helicase/ligase/primase roles."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "'5' to 3' exonuclease' is the fingerprint of DNA pol I (RNA primer removal)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on 5'->3' vs 3'->5' exonuclease, RNA primer, proofreading, Okazaki fragments, or the replication enzymes? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "DNA pol III has only 3'->5' proofreading (not 5'->3'); gyrase/helicase/ligase/primase aren't exonucleases."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: DNA pol I = only prokaryotic polymerase with 5'->3' exonuclease (removes RNA primers); all 3 have 3'->5' proofreading."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Enzyme with 5'->3' exonuclease activity (prokaryote)",
+      "back": "DNA polymerase I (removes RNA primers)"
+    },
+    {
+      "front": "Main prokaryotic replicative polymerase",
+      "back": "DNA polymerase III (+ 3'->5' proofreading)"
+    },
+    {
+      "front": "3'->5' exonuclease function",
+      "back": "Proofreading (all 3 prokaryotic polymerases)"
+    },
+    {
+      "front": "Enzyme that makes the RNA primer",
+      "back": "Primase"
+    },
+    {
+      "front": "Enzyme that seals Okazaki fragment nicks",
+      "back": "DNA ligase"
+    },
+    {
+      "front": "DNA gyrase (topoisomerase II) function / inhibitor",
+      "back": "Relieves supercoiling; inhibited by fluoroquinolones"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "DNA polymerase I",
+      "detail": "Biochem: 5'->3' exonuclease removes RNA primers + fills gaps; also 3'->5' proofreading."
+    },
+    {
+      "tag": "options",
+      "topic": "Replication enzymes",
+      "detail": "Biochem > pol III (elongation), gyrase (supercoil), helicase (unwind), ligase (seal), primase (RNA primer)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Exonuclease directions",
+      "detail": "Biochem > 3'->5' = proofreading (all); 5'->3' = primer removal (pol I only)."
+    }
+  ],
+  "memoryHook": "DNA pol I is the cleanup crew: its 5'->3' exonuclease chews out the RNA primers pol III left behind - the only prokaryotic polymerase that mops up in that direction.",
+  "stem": [
+    {
+      "text": "A pharmaceutical researcher develops a novel antibacterial drug that works by inhibiting exonuclease activity during DNA replication. When "
+    },
+    {
+      "text": "actively dividing Escherichia coli",
+      "clue": true,
+      "type": "blue",
+      "note": "A PROKARYOTIC replication scenario - so think prokaryotic DNA polymerases I, II, and III (not eukaryotic enzymes)."
+    },
+    {
+      "text": " is exposed to the drug, enzyme-mediated "
+    },
+    {
+      "text": "nucleotide removal in the 5' to 3' direction",
+      "clue": true,
+      "type": "red",
+      "note": "5' to 3' EXONUCLEASE activity is unique to DNA polymerase I in prokaryotes - it removes RNA primers (and repairs damaged DNA). This directionality pinpoints the enzyme."
+    },
+    {
+      "text": " is impaired, leading to inhibition of bacterial growth. Which of the following enzymes is the most likely target of this drug?"
+    }
+  ]
+}
