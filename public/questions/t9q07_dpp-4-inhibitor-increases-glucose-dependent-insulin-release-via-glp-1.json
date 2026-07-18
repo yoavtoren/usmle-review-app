@@ -1,0 +1,176 @@
+{
+  "id": "q316",
+  "item": 316,
+  "qid": "16324",
+  "title": "DPP-4 inhibitor: increases glucose-dependent insulin release (via GLP-1)",
+  "system": "Pharmacology",
+  "topic": "DPP-4 inhibitors / incretins",
+  "correct": "D",
+  "yourAnswer": "E",
+  "percentCorrect": 65,
+  "vignette": "A 56-year-old man comes to the office for follow-up of type 2 diabetes mellitus. The patient has had inadequate glycemic control with metformin monotherapy; an additional medication that inhibits dipeptidyl peptidase-4 was prescribed 3 months ago. The patient also has hypertension for which he takes ramipril. He does not use tobacco, alcohol, or recreational drugs. Blood pressure is 126/74 mm Hg and pulse is 76/min. BMI is 31.4 kg/m2. Physical examination shows no abnormalities. Laboratory results show a hemoglobin A1c of 6.8%. The newly prescribed medication most likely improved this patient's glycemic control through which of the following mechanisms?",
+  "clues": [
+    {
+      "text": "inadequate glycemic control with metformin monotherapy",
+      "type": "blue",
+      "note": "Add-on therapy after metformin is a common scenario; the specific drug class named determines the mechanism."
+    },
+    {
+      "text": "inhibits dipeptidyl peptidase-4",
+      "type": "green",
+      "note": "A DPP-4 inhibitor (e.g., sitagliptin) blocks the enzyme that degrades incretins (GLP-1), raising GLP-1 levels and enhancing glucose-dependent insulin secretion."
+    }
+  ],
+  "whatMatters": "A DPP-4 inhibitor (a 'gliptin') blocks breakdown of the incretin GLP-1, raising its level. GLP-1 INCREASES GLUCOSE-DEPENDENT INSULIN RELEASE (and suppresses glucagon, slows gastric emptying). Answer D. Because the insulin effect is glucose-dependent, hypoglycemia risk is low.",
+  "strategy": "Trace the incretin axis: DPP-4 normally degrades GLP-1; inhibiting DPP-4 -> more GLP-1 -> glucose-dependent insulin secretion up + glucagon down. Match to 'increased glucose-dependent insulin release.' Reject other drug-class mechanisms: acarbose (decreased carb digestion), SGLT2 inhibitor (decreased renal glucose reabsorption), and metformin/TZD (increased peripheral glucose uptake). GLP-1 SUPPRESSES glucagon (so 'increased glucagon' is wrong).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased dietary carbohydrate digestion",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased renal glucose reabsorption",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased glucagon secretion",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Increased glucose-dependent insulin release",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Increased peripheral tissue glucose uptake",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Decreased carbohydrate digestion - alpha-glucosidase inhibitor",
+      "detail": "WHAT IT IS: slowing intestinal carbohydrate breakdown (acarbose/miglitol). ❌ WHY IT FAILS: DPP-4 inhibitors don't affect carbohydrate digestion; they act via incretins. ✅ Correct if: acarbose (postprandial glucose control, GI side effects)."
+    },
+    {
+      "letter": "B",
+      "label": "Decreased renal glucose reabsorption - SGLT2 inhibitor",
+      "detail": "WHAT IT IS: blocking proximal-tubule glucose reabsorption to cause glucosuria (canagliflozin/dapagliflozin). ❌ WHY IT FAILS: that is the SGLT2-inhibitor mechanism, not a DPP-4 inhibitor. ✅ Correct if: an SGLT2 inhibitor (glucosuria, weight/BP benefit)."
+    },
+    {
+      "letter": "C",
+      "label": "Increased glucagon secretion - opposite of GLP-1 effect",
+      "detail": "WHAT IT IS: raising glucagon (which would RAISE glucose). ❌ WHY IT FAILS: GLP-1 SUPPRESSES glucagon; DPP-4 inhibitors (by raising GLP-1) decrease glucagon, not increase it. ✅ Correct if: never for this class - it's the opposite effect."
+    },
+    {
+      "letter": "E",
+      "label": "Increased peripheral glucose uptake - metformin/TZD (your pick)",
+      "detail": "WHAT IT IS: improving insulin sensitivity/peripheral glucose uptake (metformin, thiazolidinediones). ❌ WHY IT FAILS: DPP-4 inhibitors work by enhancing incretin-driven, glucose-dependent INSULIN SECRETION, not by increasing peripheral uptake. ✅ Correct if: metformin (AMPK) or a TZD (PPAR-gamma)."
+    }
+  ],
+  "reasoning": [
+    "DPP-4 normally degrades the incretin GLP-1",
+    "Inhibiting DPP-4 raises GLP-1 levels",
+    "GLP-1 increases glucose-dependent insulin release (and suppresses glucagon, slows gastric emptying)",
+    "-> increased glucose-dependent insulin release; answer D"
+  ],
+  "mechanism": "Glucagon-like peptide-1 (GLP-1) is an incretin released by intestinal L cells after a meal; it lowers glucose by increasing glucose-DEPENDENT insulin secretion, suppressing glucagon, slowing gastric emptying, and reducing appetite. GLP-1 is rapidly degraded by the enzyme dipeptidyl peptidase-4 (DPP-4). DPP-4 INHIBITORS ('gliptins,' e.g., sitagliptin, saxagliptin, linagliptin) block this degradation, raising endogenous GLP-1 levels and thereby enhancing glucose-dependent insulin release and lowering hemoglobin A1c. Because the insulinotropic effect is glucose-dependent (insulin is secreted only when glucose is elevated), DPP-4 inhibitors carry a LOW risk of hypoglycemia as monotherapy - a key advantage. GLP-1 receptor agonists (exenatide, liraglutide) act on the same pathway more potently and are resistant to DPP-4. The distractor mechanisms belong to other classes: alpha-glucosidase inhibitors (decreased carb digestion), SGLT2 inhibitors (decreased renal glucose reabsorption), and metformin/thiazolidinediones (increased peripheral glucose uptake); raising glucagon is the opposite of GLP-1's action.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm/Endo > DPP-4 inhibitors ('-gliptins'): block GLP-1 breakdown -> ↑glucose-dependent insulin, ↓glucagon; low hypoglycemia risk; GLP-1 agonists similar but more potent."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "DPP-4 inhibition raises GLP-1 -> glucose-dependent insulin release (not peripheral uptake)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on incretin, GLP-1, DPP-4, glucose-dependent insulin secretion, or gliptin? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Acarbose (carb digestion), SGLT2 (renal glucose), metformin/TZD (peripheral uptake); GLP-1 lowers glucagon, so 'increased glucagon' is opposite."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: DPP-4 inhibitor -> ↑GLP-1 -> ↑glucose-dependent insulin + ↓glucagon; minimal hypoglycemia."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "DPP-4 inhibitor mechanism",
+      "back": "Block GLP-1 degradation -> ↑glucose-dependent insulin release"
+    },
+    {
+      "front": "Incretin degraded by DPP-4",
+      "back": "GLP-1 (glucagon-like peptide-1)"
+    },
+    {
+      "front": "GLP-1 effects",
+      "back": "↑glucose-dependent insulin, ↓glucagon, slow gastric emptying, ↓appetite"
+    },
+    {
+      "front": "Hypoglycemia risk of DPP-4 inhibitors",
+      "back": "Low (insulin effect is glucose-dependent)"
+    },
+    {
+      "front": "SGLT2 inhibitor mechanism",
+      "back": "↓renal (proximal tubule) glucose reabsorption -> glucosuria"
+    },
+    {
+      "front": "Alpha-glucosidase inhibitor mechanism",
+      "back": "↓intestinal carbohydrate digestion/absorption"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "DPP-4 inhibitors",
+      "detail": "Pharm: ↑GLP-1 -> glucose-dependent insulin release; low hypoglycemia risk."
+    },
+    {
+      "tag": "options",
+      "topic": "Antidiabetic mechanisms",
+      "detail": "Endo > acarbose (carb digestion), SGLT2 (renal glucose), metformin/TZD (peripheral uptake)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Incretin axis",
+      "detail": "Endo > GLP-1 from L cells; degraded by DPP-4; agonists resist DPP-4."
+    }
+  ],
+  "memoryHook": "Gliptins guard GLP-1 from the DPP-4 shredder - more GLP-1 means insulin only when sugar's high, so glucose drops without hypoglycemia.",
+  "stem": [
+    {
+      "text": "A 56-year-old man comes to the office for follow-up of type 2 diabetes mellitus. The patient has had "
+    },
+    {
+      "text": "inadequate glycemic control with metformin monotherapy",
+      "clue": true,
+      "type": "blue",
+      "note": "Add-on therapy after metformin is a common scenario; the specific drug class named determines the mechanism."
+    },
+    {
+      "text": "; an additional medication that "
+    },
+    {
+      "text": "inhibits dipeptidyl peptidase-4",
+      "clue": true,
+      "type": "green",
+      "note": "A DPP-4 inhibitor (e.g., sitagliptin) blocks the enzyme that degrades incretins (GLP-1), raising GLP-1 levels and enhancing glucose-dependent insulin secretion."
+    },
+    {
+      "text": " was prescribed 3 months ago. The patient also has hypertension for which he takes ramipril. He does not use tobacco, alcohol, or recreational drugs. Blood pressure is 126/74 mm Hg and pulse is 76/min. BMI is 31.4 kg/m2. Physical examination shows no abnormalities. Laboratory results show a hemoglobin A1c of 6.8%. The newly prescribed medication most likely improved this patient's glycemic control through which of the following mechanisms?"
+    }
+  ]
+}

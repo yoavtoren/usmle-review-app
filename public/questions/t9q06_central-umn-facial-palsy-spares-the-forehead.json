@@ -1,0 +1,176 @@
+{
+  "id": "q315",
+  "item": 315,
+  "qid": "21725",
+  "title": "Central (UMN) facial palsy spares the forehead",
+  "system": "Neurology",
+  "topic": "Facial nerve - central vs peripheral lesion",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 70,
+  "vignette": "A 68-year-old woman comes to the emergency department for evaluation of stroke-like symptoms. The patient says her face appeared \"twisted\" this morning but was normal when she went to bed last night. Her brother recently had a stroke, and she was worried that she may also be having a stroke. The patient has a history of hypertension, hyperlipidemia, and type 2 diabetes mellitus. Vital signs are within normal limits. Physical examination shows facial asymmetry with drooping of the left corner of the mouth and loss of the left nasolabial fold. Which of the following additional examination findings on the affected side would be most suggestive of central nervous system involvement?",
+  "clues": [
+    {
+      "text": "drooping of the left corner of the mouth and loss of the left nasolabial fold",
+      "type": "blue",
+      "note": "Lower-face weakness (mouth droop, flattened nasolabial fold) is common to both central and peripheral facial palsy - the forehead is what distinguishes them."
+    },
+    {
+      "text": "most suggestive of central nervous system involvement",
+      "type": "red",
+      "note": "The question hinges on the forehead: a CENTRAL (upper motor neuron) lesion SPARES the forehead because the forehead receives bilateral cortical input."
+    }
+  ],
+  "whatMatters": "Facial droop can be central (UMN, e.g., stroke) or peripheral (LMN, e.g., Bell palsy). The forehead is the discriminator: the upper face gets BILATERAL cortical input, so a CENTRAL lesion SPARES the forehead (can still wrinkle it), whereas a peripheral CN VII lesion weakens the ENTIRE half of the face. Forehead SPARING = central. Answer E.",
+  "strategy": "Use the forehead rule. Central (UMN) lesion -> contralateral LOWER-face weakness with forehead SPARED (bilateral input to the upper-face nuclei). Peripheral (LMN, CN VII) lesion -> entire ipsilateral half of face weak, forehead INVOLVED, plus CN VII-specific signs (decreased lacrimation, hyperacusis, loss of anterior-2/3 taste). Those CN VII-specific findings point to PERIPHERAL disease, so they are the wrong answers here.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased eye lacrimation",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Inability to tense soft tissues of the neck",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased loudness of sounds",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Loss of taste sensation on the anterior tongue",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Sparing of the forehead muscles",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Decreased lacrimation - peripheral CN VII sign",
+      "detail": "WHAT IT IS: reduced tear production from loss of parasympathetic fibers traveling with CN VII (greater petrosal nerve). ❌ WHY IT FAILS: this indicates a PERIPHERAL facial nerve lesion, not central involvement. ✅ Correct if: Bell palsy / peripheral CN VII lesion."
+    },
+    {
+      "letter": "B",
+      "label": "Inability to tense neck (platysma) - affected in both",
+      "detail": "WHAT IT IS: platysma weakness (CN VII-innervated). ❌ WHY IT FAILS: the platysma is a lower-face/neck muscle affected in BOTH central and peripheral lesions, so it doesn't distinguish them. ✅ Correct if: confirming CN VII involvement generally, not localizing central vs peripheral."
+    },
+    {
+      "letter": "C",
+      "label": "Increased loudness of sounds (hyperacusis) - peripheral CN VII",
+      "detail": "WHAT IT IS: hyperacusis from stapedius muscle weakness (CN VII). ❌ WHY IT FAILS: it signals a PERIPHERAL facial nerve lesion, not central. ✅ Correct if: Bell palsy / peripheral CN VII lesion."
+    },
+    {
+      "letter": "D",
+      "label": "Loss of anterior-tongue taste - peripheral CN VII (chorda tympani)",
+      "detail": "WHAT IT IS: loss of taste over the anterior two-thirds of the tongue (chorda tympani, CN VII). ❌ WHY IT FAILS: it indicates a PERIPHERAL facial nerve lesion, not central. ✅ Correct if: peripheral CN VII lesion proximal to the chorda tympani."
+    }
+  ],
+  "reasoning": [
+    "Facial droop may be central (UMN/stroke) or peripheral (LMN/Bell palsy)",
+    "The upper face (forehead) receives BILATERAL cortical input; the lower face receives only contralateral input",
+    "A central lesion therefore weakens the contralateral LOWER face but SPARES the forehead",
+    "-> forehead sparing = central involvement; answer E"
+  ],
+  "mechanism": "Voluntary facial movement starts in the motor cortex, which projects to the facial motor nuclei (CN VII) in the pons. The portion of the nucleus controlling the UPPER face (forehead, orbicularis oculi) receives input from BOTH cerebral hemispheres, whereas the portion controlling the LOWER face receives input mainly from the CONTRALATERAL hemisphere. As a result, a CENTRAL (upper motor neuron) lesion - such as a stroke - causes weakness of the contralateral LOWER face but SPARES the forehead (the patient can still raise the eyebrow/wrinkle the forehead), because the intact hemisphere still drives the upper-face nucleus. In contrast, a PERIPHERAL (lower motor neuron) lesion of CN VII itself (e.g., Bell palsy) paralyzes the ENTIRE ipsilateral half of the face, INCLUDING the forehead, and may add CN VII-specific deficits: decreased lacrimation (greater petrosal), hyperacusis (stapedius), and loss of taste on the anterior two-thirds of the tongue (chorda tympani). Thus, of the options, forehead SPARING is the finding that indicates central involvement; the lacrimation/hyperacusis/taste findings all indicate peripheral disease.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Neuro > facial nerve: UMN (central) lesion spares the forehead (bilateral cortical input to upper face); LMN (peripheral, Bell palsy) affects the whole half + lacrimation/hyperacusis/taste."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "The forehead is the discriminator: sparing = central; full-face (with CN VII signs) = peripheral."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on UMN vs LMN facial palsy, bilateral cortical input, chorda tympani, hyperacusis, or nasolabial fold? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Decreased lacrimation, hyperacusis, and anterior-tongue taste loss are all PERIPHERAL CN VII signs; platysma weakness occurs in both."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: central facial palsy spares forehead (bilateral input); peripheral (Bell) = whole half of face ± lacrimation/hyperacusis/taste."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Finding indicating CENTRAL facial palsy",
+      "back": "Forehead sparing (can still wrinkle forehead)"
+    },
+    {
+      "front": "Why the forehead is spared centrally",
+      "back": "Upper-face nucleus gets bilateral cortical input"
+    },
+    {
+      "front": "Peripheral (Bell) facial palsy pattern",
+      "back": "Entire ipsilateral half of face weak, forehead involved"
+    },
+    {
+      "front": "CN VII-specific peripheral signs",
+      "back": "↓lacrimation, hyperacusis, loss of anterior-2/3 taste"
+    },
+    {
+      "front": "Chorda tympani function",
+      "back": "Taste to anterior two-thirds of the tongue"
+    },
+    {
+      "front": "Stapedius nerve dysfunction",
+      "back": "Hyperacusis (sounds abnormally loud)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Facial nerve lesions",
+      "detail": "Neuro: central (UMN) spares forehead; peripheral (LMN) affects whole half of face."
+    },
+    {
+      "tag": "options",
+      "topic": "CN VII branches",
+      "detail": "Neuro > lacrimation (greater petrosal), hyperacusis (stapedius), taste (chorda tympani) = peripheral."
+    },
+    {
+      "tag": "clinical",
+      "topic": "Stroke vs Bell palsy",
+      "detail": "Neuro > forehead sparing localizes the lesion above the facial nucleus."
+    }
+  ],
+  "memoryHook": "The forehead has two bosses (both hemispheres): a stroke can't fire it, so a spared forehead points central; Bell palsy (one nerve) drops the whole half of the face.",
+  "stem": [
+    {
+      "text": "A 68-year-old woman comes to the emergency department for evaluation of stroke-like symptoms. The patient says her face appeared \"twisted\" this morning but was normal when she went to bed last night. Her brother recently had a stroke, and she was worried that she may also be having a stroke. The patient has a history of hypertension, hyperlipidemia, and type 2 diabetes mellitus. Vital signs are within normal limits. Physical examination shows facial asymmetry with "
+    },
+    {
+      "text": "drooping of the left corner of the mouth and loss of the left nasolabial fold",
+      "clue": true,
+      "type": "blue",
+      "note": "Lower-face weakness (mouth droop, flattened nasolabial fold) is common to both central and peripheral facial palsy - the forehead is what distinguishes them."
+    },
+    {
+      "text": ". Which of the following additional examination findings on the affected side would be "
+    },
+    {
+      "text": "most suggestive of central nervous system involvement",
+      "clue": true,
+      "type": "red",
+      "note": "The question hinges on the forehead: a CENTRAL (upper motor neuron) lesion SPARES the forehead because the forehead receives bilateral cortical input."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

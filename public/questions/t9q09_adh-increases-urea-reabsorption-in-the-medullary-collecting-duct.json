@@ -1,0 +1,190 @@
+{
+  "id": "q318",
+  "item": 318,
+  "qid": "1161",
+  "title": "ADH increases urea reabsorption in the medullary collecting duct",
+  "system": "Physiology",
+  "topic": "Urine concentration / urea recycling",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 60,
+  "vignette": "A 34-year-old missionary in southern Asia is traveling to a remote village and becomes stranded when his bus breaks down. He has no access to water for 36 hours, during which his urine osmolality reaches 1100 mOsm/L. Urine concentration depends primarily on the serum level of vasopressin, which is regulated by the neurohypophysis in response to plasma osmolality and blood volume. Which of the following nephron segments responds to vasopressin by increasing absorption of a specific solute that is important for generating a high medullary concentration gradient?",
+  "clues": [
+    {
+      "text": "no access to water for 36 hours, during which his urine osmolality reaches 1100 mOsm/L",
+      "type": "blue",
+      "note": "Water deprivation raises plasma osmolality, stimulating vasopressin (ADH) to maximally concentrate the urine (1100 mOsm/L)."
+    },
+    {
+      "text": "regulated by the neurohypophysis in response to plasma osmolality",
+      "type": "blue",
+      "note": "Vasopressin (ADH) is released from the posterior pituitary (neurohypophysis) when plasma osmolality rises, driving water reabsorption."
+    },
+    {
+      "text": "increasing absorption of a specific solute that is important for generating a high medullary concentration gradient",
+      "type": "green",
+      "note": "The 'specific solute' is UREA: ADH upregulates urea transporters in the INNER MEDULLARY collecting duct, and urea reabsorption builds the medullary osmotic gradient."
+    }
+  ],
+  "whatMatters": "Maximal urine concentration needs a hypertonic medullary interstitium. Under high ADH, the MEDULLARY (inner medullary) segment of the COLLECTING DUCT increases UREA reabsorption (via ADH-induced urea transporters), and this urea recycling is a major contributor to the medullary osmotic gradient. Answer C.",
+  "strategy": "Separate ADH's two actions: it inserts aquaporins (water) throughout the collecting duct AND increases UREA transporters specifically in the INNER MEDULLARY collecting duct. The question asks about the SOLUTE (urea) that builds the medullary gradient -> medullary collecting duct. Reject the cortical collecting duct (water via aquaporins, not urea recycling), proximal tubule (bulk reabsorption, not ADH-responsive), early distal tubule (impermeable), and thin ascending limb (passive NaCl, not ADH-driven urea).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cortical segment of the collecting duct",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Early distal tubule",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Medullary segment of the collecting duct",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Proximal tubule",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Thin ascending limb of the loop of Henle",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Cortical collecting duct - ADH acts on water, not urea here",
+      "detail": "WHAT IT IS: the cortical collecting duct reabsorbs water via ADH-induced aquaporins. ❌ WHY IT FAILS: it is relatively urea-IMPERMEABLE (which keeps luminal urea concentrated for downstream reabsorption); the urea recycling that builds the medullary gradient happens in the INNER MEDULLARY collecting duct. ✅ Correct if: asking about ADH-driven WATER reabsorption in the cortex."
+    },
+    {
+      "letter": "B",
+      "label": "Early distal tubule - impermeable to water and urea",
+      "detail": "WHAT IT IS: the early distal convoluted tubule. ❌ WHY IT FAILS: it is impermeable to both water and urea and is not the site of ADH-driven urea reabsorption. ✅ Correct if: NaCl reabsorption via the Na-Cl cotransporter (thiazide target)."
+    },
+    {
+      "letter": "D",
+      "label": "Proximal tubule - bulk reabsorption, not ADH/urea gradient",
+      "detail": "WHAT IT IS: the proximal tubule reabsorbs ~two-thirds of filtered load, including some urea. ❌ WHY IT FAILS: it is not ADH-responsive and its urea handling isn't what builds the medullary gradient. ✅ Correct if: isotonic bulk reabsorption (glucose, amino acids, HCO3)."
+    },
+    {
+      "letter": "E",
+      "label": "Thin ascending limb - passive NaCl, not ADH urea",
+      "detail": "WHAT IT IS: the thin ascending limb passively reabsorbs NaCl (and is permeable to urea, allowing urea to enter for recycling). ❌ WHY IT FAILS: it does not respond to ADH by increasing urea reabsorption; the ADH-driven urea transporters are in the inner medullary collecting duct. ✅ Correct if: passive NaCl movement in the countercurrent system."
+    }
+  ],
+  "reasoning": [
+    "Water deprivation -> high ADH -> maximally concentrated urine (needs a hypertonic medulla)",
+    "ADH increases urea transporters specifically in the inner MEDULLARY collecting duct",
+    "Urea reabsorption there (urea recycling) is a major contributor to the medullary osmotic gradient",
+    "-> medullary segment of the collecting duct; answer C"
+  ],
+  "mechanism": "Antidiuretic hormone (vasopressin, ADH), released from the neurohypophysis when plasma osmolality rises, produces concentrated urine by two actions on the collecting duct. First, it inserts aquaporin-2 water channels along the collecting duct so water is reabsorbed into the hypertonic medullary interstitium. Second - and key here - ADH upregulates UREA TRANSPORTERS (UT-A1/A3) in the INNER MEDULLARY collecting duct, greatly increasing urea reabsorption into the medullary interstitium. Because the more proximal cortical/outer-medullary collecting duct is urea-impermeable, luminal urea becomes highly concentrated by the time filtrate reaches the inner medulla, so when ADH opens urea transporters there, a large amount of urea diffuses into the interstitium. This 'urea recycling' contributes up to ~50% of the medullary interstitial osmolarity, sustaining the high medullary concentration gradient that enables water to be reabsorbed and urine to be maximally concentrated (up to ~1200 mOsm/L). The other segments either respond to ADH only for water (cortical collecting duct), are impermeable (early distal tubule), or are not ADH-responsive for this urea effect (proximal tubule, thin ascending limb).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Renal > ADH: aquaporin-2 (water) throughout collecting duct + urea transporters in INNER MEDULLARY collecting duct (urea recycling builds medullary gradient); maximal urine concentration."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "The 'solute for the medullary gradient' is urea; ADH increases its reabsorption in the medullary collecting duct."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on vasopressin/ADH, aquaporin-2, urea recycling, medullary osmotic gradient, or countercurrent multiplier? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Cortical collecting duct handles ADH-driven WATER (urea-impermeable); early distal tubule impermeable; proximal tubule/thin ascending limb not the ADH urea site."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: ADH -> aquaporin-2 (water) + inner medullary collecting duct urea transporters (urea recycling -> medullary gradient)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "ADH increases urea reabsorption where",
+      "back": "Inner medullary collecting duct (urea recycling)"
+    },
+    {
+      "front": "ADH's two collecting-duct actions",
+      "back": "Aquaporin-2 (water) + urea transporters (inner medulla)"
+    },
+    {
+      "front": "Solute that builds the medullary gradient",
+      "back": "Urea (with NaCl from the loop of Henle)"
+    },
+    {
+      "front": "Why cortical collecting duct is urea-impermeable",
+      "back": "Keeps luminal urea concentrated for inner-medullary reabsorption"
+    },
+    {
+      "front": "Posterior pituitary (neurohypophysis) hormone",
+      "back": "ADH (vasopressin) - also oxytocin"
+    },
+    {
+      "front": "Maximal urine osmolality",
+      "back": "~1200 mOsm/L (with high ADH + intact medullary gradient)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Urine concentration",
+      "detail": "Renal: ADH -> urea transporters in inner medullary collecting duct (urea recycling)."
+    },
+    {
+      "tag": "options",
+      "topic": "Nephron segments",
+      "detail": "Renal > cortical CD (water), distal tubule (impermeable), proximal (bulk), thin ascending limb (NaCl)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Countercurrent system",
+      "detail": "Renal > medullary gradient from NaCl (loop) + urea recycling."
+    }
+  ],
+  "memoryHook": "ADH opens two taps in the collecting duct - water everywhere, and urea in the deep medulla - and the recycled urea is the salt-free half of the gradient that concentrates the urine.",
+  "stem": [
+    {
+      "text": "A 34-year-old missionary in southern Asia is traveling to a remote village and becomes stranded when his bus breaks down. He has "
+    },
+    {
+      "text": "no access to water for 36 hours, during which his urine osmolality reaches 1100 mOsm/L",
+      "clue": true,
+      "type": "blue",
+      "note": "Water deprivation raises plasma osmolality, stimulating vasopressin (ADH) to maximally concentrate the urine (1100 mOsm/L)."
+    },
+    {
+      "text": ". Urine concentration depends primarily on the serum level of vasopressin, which is "
+    },
+    {
+      "text": "regulated by the neurohypophysis in response to plasma osmolality",
+      "clue": true,
+      "type": "blue",
+      "note": "Vasopressin (ADH) is released from the posterior pituitary (neurohypophysis) when plasma osmolality rises, driving water reabsorption."
+    },
+    {
+      "text": " and blood volume. Which of the following nephron segments responds to vasopressin by "
+    },
+    {
+      "text": "increasing absorption of a specific solute that is important for generating a high medullary concentration gradient",
+      "clue": true,
+      "type": "green",
+      "note": "The 'specific solute' is UREA: ADH upregulates urea transporters in the INNER MEDULLARY collecting duct, and urea reabsorption builds the medullary osmotic gradient."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

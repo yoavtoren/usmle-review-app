@@ -1,0 +1,176 @@
+{
+  "id": "q323",
+  "item": 323,
+  "qid": "19798",
+  "title": "Calculating false negatives from sensitivity",
+  "system": "Biostatistics",
+  "topic": "Sensitivity / 2x2 table",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 73,
+  "vignette": "A study is conducted to evaluate the properties of a new test for diagnosing ovarian cancer. The study enrolled 200 patients who truly have ovarian cancer and 300 patients who truly do not. Study results showed that the test is 80% sensitive and 70% specific. Based on this information, which of the following is the approximate number of false negative test results found in this study?",
+  "clues": [
+    {
+      "text": "200 patients who truly have ovarian cancer",
+      "type": "green",
+      "note": "The diseased group (true positives + false negatives) totals 200 - the denominator for sensitivity."
+    },
+    {
+      "text": "test is 80% sensitive",
+      "type": "green",
+      "note": "Sensitivity = TP/(TP+FN) = 0.80, so 80% of the 200 diseased are true positives and the remaining 20% are false negatives."
+    }
+  ],
+  "whatMatters": "False negatives come from the DISEASED group. FN = (1 - sensitivity) x (number with disease) = (1 - 0.80) x 200 = 40. Answer A. (Specificity and the 300 non-diseased are irrelevant to false NEGATIVES.)",
+  "strategy": "Anchor on the definitions: sensitivity = TP/(TP+FN) applies only to those WITH disease (200). True positives = 0.80 x 200 = 160; false negatives = 200 - 160 = 40. Ignore specificity/the 300 healthy (those give false POSITIVES/true negatives). Shortcut: FN = (1 - sensitivity) x diseased.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "40",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "90",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "160",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "200",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "210",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "90 - false positives (uses specificity)",
+      "detail": "WHAT IT IS: 90 = (1 - specificity) x non-diseased = 0.30 x 300 = false POSITIVES. ❌ WHY IT FAILS: that's the wrong cell - false positives come from the healthy group, not false negatives. ✅ Correct if: asked for false positives."
+    },
+    {
+      "letter": "C",
+      "label": "160 - true positives",
+      "detail": "WHAT IT IS: 160 = sensitivity x diseased = 0.80 x 200 = true POSITIVES. ❌ WHY IT FAILS: those are correctly identified cases, not false negatives. ✅ Correct if: asked for true positives."
+    },
+    {
+      "letter": "D",
+      "label": "200 - total diseased (TP + FN)",
+      "detail": "WHAT IT IS: 200 = all patients who truly have the disease. ❌ WHY IT FAILS: that is the whole diseased column, not just the false negatives. ✅ Correct if: asked for the number with disease (TP + FN)."
+    },
+    {
+      "letter": "E",
+      "label": "210 - true negatives",
+      "detail": "WHAT IT IS: 210 = specificity x non-diseased = 0.70 x 300 = true NEGATIVES. ❌ WHY IT FAILS: those are correctly identified healthy people, unrelated to false negatives. ✅ Correct if: asked for true negatives."
+    }
+  ],
+  "reasoning": [
+    "False negatives are diseased people the test misses (test negative but have disease)",
+    "Sensitivity = TP/(TP+FN) = 0.80 over the 200 diseased",
+    "True positives = 0.80 x 200 = 160; false negatives = 200 - 160 = 40",
+    "-> 40; answer A"
+  ],
+  "mechanism": "In a 2x2 table, the DISEASED column contains true positives (TP, test-positive) and false negatives (FN, test-negative despite disease); the NON-diseased column contains false positives (FP) and true negatives (TN). SENSITIVITY = TP/(TP+FN) measures how well the test detects disease, so it applies only to the 200 patients who truly have ovarian cancer. With 80% sensitivity, TP = 0.80 x 200 = 160, and the remaining diseased are missed: FN = 200 - 160 = 40 (equivalently, FN = (1 - sensitivity) x diseased = 0.20 x 200 = 40). Specificity (70%) and the 300 disease-free patients pertain to the other column: false positives = (1 - 0.70) x 300 = 90 and true negatives = 0.70 x 300 = 210 - both irrelevant to false NEGATIVES. Keeping the columns separate (sensitivity for the diseased, specificity for the healthy) prevents mixing up the four cells.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > 2x2 table: sensitivity = TP/(TP+FN) (diseased column); specificity = TN/(TN+FP) (healthy column); FN = (1 - sensitivity) x diseased."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "False negatives come from the DISEASED group only: (1 - sensitivity) x 200 = 40."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on sensitivity/specificity, true/false positive/negative, or the 2x2 layout? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "90 = false positives (specificity); 160 = true positives; 200 = total diseased; 210 = true negatives."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: FN = (1 - sensitivity) x diseased; use sensitivity for the diseased column, specificity for the healthy column."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "False negatives formula",
+      "back": "(1 - sensitivity) x number with disease"
+    },
+    {
+      "front": "Sensitivity definition",
+      "back": "TP/(TP+FN) - over the diseased group"
+    },
+    {
+      "front": "False positives formula",
+      "back": "(1 - specificity) x number without disease"
+    },
+    {
+      "front": "Which column does sensitivity use",
+      "back": "The diseased column (TP + FN)"
+    },
+    {
+      "front": "True positives here",
+      "back": "0.80 x 200 = 160"
+    },
+    {
+      "front": "True negatives here",
+      "back": "0.70 x 300 = 210"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "2x2 table calculations",
+      "detail": "Biostat: FN = (1 - sensitivity) x diseased = 0.20 x 200 = 40."
+    },
+    {
+      "tag": "options",
+      "topic": "Test-performance cells",
+      "detail": "Biostat > TP, FN (diseased); FP, TN (healthy); keep columns separate."
+    },
+    {
+      "tag": "concept",
+      "topic": "Sensitivity vs specificity",
+      "detail": "Biostat > sensitivity = detect disease; specificity = detect health."
+    }
+  ],
+  "memoryHook": "False negatives live only among the sick: 20% of the 200 diseased slip through the 80%-sensitive net = 40.",
+  "stem": [
+    {
+      "text": "A study is conducted to evaluate the properties of a new test for diagnosing ovarian cancer. The study enrolled "
+    },
+    {
+      "text": "200 patients who truly have ovarian cancer",
+      "clue": true,
+      "type": "green",
+      "note": "The diseased group (true positives + false negatives) totals 200 - the denominator for sensitivity."
+    },
+    {
+      "text": " and 300 patients who truly do not. Study results showed that the "
+    },
+    {
+      "text": "test is 80% sensitive",
+      "clue": true,
+      "type": "green",
+      "note": "Sensitivity = TP/(TP+FN) = 0.80, so 80% of the 200 diseased are true positives and the remaining 20% are false negatives."
+    },
+    {
+      "text": " and 70% specific. Based on this information, which of the following is the approximate number of false negative test results found in this study?"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "q319",
+  "item": 319,
+  "qid": "1045",
+  "title": "Measles: vitamin A deficiency worsens complications",
+  "system": "Microbiology",
+  "topic": "Measles / vitamin A",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 62,
+  "vignette": "An unvaccinated 20-month-old girl is brought to the emergency department with a rash. Three days ago, she developed a fever along with cough, congestion, and red eyes. The rash appeared on her face yesterday and has since spread to her trunk, arms, and legs. The patient's temperature is 39.4 C (103 F). She appears ill and lethargic. Physical examination shows conjunctival injection and a diffuse, maculopapular, erythematous rash. She is admitted to the hospital for further management. Deficiency of which of the following vitamins is associated with a high rate of complications from this patient's condition?",
+  "clues": [
+    {
+      "text": "unvaccinated 20-month-old girl",
+      "type": "orange",
+      "note": "Lack of MMR vaccination is the key risk factor for measles, a highly contagious vaccine-preventable illness."
+    },
+    {
+      "text": "fever along with cough, congestion, and red eyes",
+      "type": "green",
+      "note": "The measles prodrome is the 'three C's' - cough, coryza (congestion), and conjunctivitis (red eyes) - preceding the rash."
+    },
+    {
+      "text": "rash appeared on her face yesterday and has since spread to her trunk, arms, and legs",
+      "type": "green",
+      "note": "A maculopapular rash starting on the face and spreading cephalocaudally (downward) is characteristic of measles."
+    }
+  ],
+  "whatMatters": "An unvaccinated toddler with the 'three C's' (cough, coryza, conjunctivitis) and a cephalocaudal maculopapular rash has MEASLES. VITAMIN A deficiency markedly increases measles morbidity/complications (pneumonia, keratomalacia/blindness), and vitamin A supplementation reduces them. Answer A.",
+  "strategy": "Diagnose measles from the three C's + cephalocaudal rash (± Koplik spots) in an unvaccinated child, then recall the classic association: vitamin A deficiency worsens measles, and WHO/AAP recommend vitamin A for acute measles. Reject the other vitamins - their deficiencies (B6, B12, D, E, K) are not linked to measles severity.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Vitamin A",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Vitamin B6",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Vitamin B12",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Vitamin D",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Vitamin E",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Vitamin K",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Vitamin B6 - isoniazid/neuropathy, not measles",
+      "detail": "WHAT IT IS: pyridoxine; deficiency (e.g., from isoniazid) causes peripheral neuropathy, sideroblastic anemia, and stomatitis. ❌ WHY IT FAILS: it is unrelated to measles severity. ✅ Correct if: isoniazid-related neuropathy prophylaxis."
+    },
+    {
+      "letter": "C",
+      "label": "Vitamin B12 - megaloblastic anemia, not measles",
+      "detail": "WHAT IT IS: cobalamin; deficiency causes megaloblastic anemia and neurologic signs. ❌ WHY IT FAILS: no link to measles complications. ✅ Correct if: macrocytic anemia with neuro symptoms."
+    },
+    {
+      "letter": "D",
+      "label": "Vitamin D - rickets, not measles",
+      "detail": "WHAT IT IS: fat-soluble vitamin; deficiency causes rickets/osteomalacia. ❌ WHY IT FAILS: not associated with measles morbidity. ✅ Correct if: bone mineralization disorders."
+    },
+    {
+      "letter": "E",
+      "label": "Vitamin E - neurologic (ataxia), not measles",
+      "detail": "WHAT IT IS: antioxidant fat-soluble vitamin; deficiency causes hemolysis and neurologic problems (ataxia). ❌ WHY IT FAILS: unrelated to measles. ✅ Correct if: fat-malabsorption neurologic deficits."
+    },
+    {
+      "letter": "F",
+      "label": "Vitamin K - bleeding, not measles",
+      "detail": "WHAT IT IS: needed for clotting factors II, VII, IX, X; deficiency causes bleeding. ❌ WHY IT FAILS: not linked to measles severity. ✅ Correct if: coagulopathy with prolonged PT (e.g., newborn hemorrhagic disease)."
+    }
+  ],
+  "reasoning": [
+    "Unvaccinated toddler + three C's (cough, coryza, conjunctivitis) + cephalocaudal maculopapular rash = measles",
+    "Vitamin A supports mucosal/epithelial integrity and immune function",
+    "Vitamin A deficiency increases measles complications (pneumonia, keratomalacia/blindness)",
+    "-> vitamin A; answer A"
+  ],
+  "mechanism": "Measles (rubeola) is a highly contagious paramyxovirus causing fever with the 'three C's' - cough, coryza, and conjunctivitis - followed by Koplik spots and a maculopapular rash that spreads cephalocaudally from the face. Although usually self-limited, complications (pneumonia, otitis media, encephalitis) are markedly increased with VITAMIN A DEFICIENCY. Vitamin A maintains the integrity of respiratory, gastrointestinal, and ocular/corneal epithelium and supports T- and B-cell immune responses; deficiency yields fragile, poorly regenerating epithelium and impaired immunity, worsening airway damage (severe pneumonia, secondary bacterial infection) and corneal injury (xerophthalmia -> keratomalacia and blindness). Measles itself lowers vitamin A stores by decreasing intake and increasing metabolic demand, which can unmask or worsen underlying deficiency. Accordingly, vitamin A supplementation reduces measles morbidity and mortality and is recommended for children with acute measles. The other vitamins listed (B6, B12, D, E, K) are not associated with increased measles complications.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro > measles (rubeola): three C's + Koplik spots + cephalocaudal rash; complications worsened by vitamin A deficiency; give vitamin A; MMR prevents."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Diagnose measles, then recall the specific vitamin A association (worsens complications; supplement)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on the 'three C's', Koplik spots, cephalocaudal spread, xerophthalmia/keratomalacia, or paramyxovirus? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "B6 (neuropathy), B12 (megaloblastic), D (rickets), E (ataxia/hemolysis), K (bleeding) are not linked to measles severity."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: measles + vitamin A deficiency -> more complications (pneumonia, blindness); give vitamin A in acute measles."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Unvaccinated child, three C's + cephalocaudal rash",
+      "back": "Measles (rubeola)"
+    },
+    {
+      "front": "Vitamin whose deficiency worsens measles",
+      "back": "Vitamin A"
+    },
+    {
+      "front": "Measles prodrome 'three C's'",
+      "back": "Cough, coryza, conjunctivitis (+ Koplik spots)"
+    },
+    {
+      "front": "Vitamin A deficiency eye complication",
+      "back": "Xerophthalmia -> keratomalacia (blindness)"
+    },
+    {
+      "front": "Management of acute measles",
+      "back": "Supportive + vitamin A supplementation"
+    },
+    {
+      "front": "Measles prevention",
+      "back": "MMR (live attenuated) vaccine"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Measles + vitamin A",
+      "detail": "Micro: vitamin A deficiency worsens measles complications; give vitamin A."
+    },
+    {
+      "tag": "options",
+      "topic": "Vitamin deficiencies",
+      "detail": "Nutrition > B6 (neuropathy), B12 (megaloblastic), D (rickets), E (ataxia), K (bleeding)."
+    },
+    {
+      "tag": "context",
+      "topic": "Measles clinical",
+      "detail": "Micro > three C's, Koplik spots, cephalocaudal rash; MMR prevents."
+    }
+  ],
+  "memoryHook": "Measles burns through vitamin A - the vitamin that keeps eyes and airways intact - so deficiency turns a rash into pneumonia and blindness; give vitamin A.",
+  "stem": [
+    {
+      "text": "An "
+    },
+    {
+      "text": "unvaccinated 20-month-old girl",
+      "clue": true,
+      "type": "orange",
+      "note": "Lack of MMR vaccination is the key risk factor for measles, a highly contagious vaccine-preventable illness."
+    },
+    {
+      "text": " is brought to the emergency department with a rash. Three days ago, she developed a "
+    },
+    {
+      "text": "fever along with cough, congestion, and red eyes",
+      "clue": true,
+      "type": "green",
+      "note": "The measles prodrome is the 'three C's' - cough, coryza (congestion), and conjunctivitis (red eyes) - preceding the rash."
+    },
+    {
+      "text": ". The "
+    },
+    {
+      "text": "rash appeared on her face yesterday and has since spread to her trunk, arms, and legs",
+      "clue": true,
+      "type": "green",
+      "note": "A maculopapular rash starting on the face and spreading cephalocaudally (downward) is characteristic of measles."
+    },
+    {
+      "text": ". The patient's temperature is 39.4 C (103 F). She appears ill and lethargic. Physical examination shows conjunctival injection and a diffuse, maculopapular, erythematous rash. She is admitted to the hospital for further management. Deficiency of which of the following vitamins is associated with a high rate of complications from this patient's condition?"
+    }
+  ]
+}

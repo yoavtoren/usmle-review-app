@@ -1,0 +1,176 @@
+{
+  "id": "q313",
+  "item": 313,
+  "qid": "539",
+  "title": "Immunoglobulin Fc = constant heavy-chain region binds phagocyte Fc receptor",
+  "system": "Immunology",
+  "topic": "Antibody structure / opsonization",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 68,
+  "vignette": "The immune response in a healthy 12-year-old boy is observed after a recurrent bacterial infection. It is characterized by a rapid increase in pathogen-specific immunoglobulin levels. The immunoglobulins bound to the bacteria also attach to phagocytic cells (eg, macrophages, neutrophils) to enhance phagocytosis. Which of the following immunoglobulin regions is most likely involved in interacting with these phagocytic cells?",
+  "clues": [
+    {
+      "text": "rapid increase in pathogen-specific immunoglobulin levels",
+      "type": "blue",
+      "note": "A rapid, specific antibody rise on RE-exposure is a secondary (memory) response, dominated by IgG - the main opsonizing/phagocyte-engaging antibody."
+    },
+    {
+      "text": "attach to phagocytic cells (eg, macrophages, neutrophils) to enhance phagocytosis",
+      "type": "green",
+      "note": "Antibody binding phagocytes to promote engulfment is opsonization, mediated by the Fc portion (constant heavy-chain regions) engaging Fc receptors."
+    }
+  ],
+  "whatMatters": "Antibodies opsonize bacteria: their variable regions bind antigen, and their FC portion - the CONSTANT REGION OF THE HEAVY CHAIN - binds Fc receptors on phagocytes (macrophages/neutrophils) to trigger phagocytosis (and activate complement). Answer A. The variable regions (heavy and light) bind antigen, not phagocytes.",
+  "strategy": "Split the antibody into Fab (antigen binding) and Fc (effector). Antigen binding = variable regions of heavy + light chains (Fab). Effector functions (phagocyte Fc-receptor binding, complement activation) = constant heavy-chain regions (Fc). The phagocyte interaction is the Fc/constant-heavy-chain job. Reject variable regions (antigen binding), the light-chain constant region (structural), and the hinge (flexibility, not receptor binding).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Constant region of the heavy chain",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Constant region of the light chain",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Hinge region",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Variable region of the heavy chain",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Variable region of the light chain",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Constant region of the light chain - structural, not Fc",
+      "detail": "WHAT IT IS: the light-chain constant region pairs with the first heavy-chain constant region within the Fab. ❌ WHY IT FAILS: it provides structure but does not form the Fc that engages phagocyte Fc receptors. ✅ Correct if: asking about light-chain structure (kappa/lambda)."
+    },
+    {
+      "letter": "C",
+      "label": "Hinge region - flexibility, not receptor binding",
+      "detail": "WHAT IT IS: the flexible hinge between Fab arms and Fc allows the arms to reach antigens at varying distances (affects avidity). ❌ WHY IT FAILS: it provides flexibility, not the Fc-receptor/complement binding that engages phagocytes. ✅ Correct if: asking about antibody flexibility/avidity."
+    },
+    {
+      "letter": "D",
+      "label": "Variable region of the heavy chain - antigen binding (Fab)",
+      "detail": "WHAT IT IS: part of the antigen-binding Fab; its hypervariable loops bind the epitope. ❌ WHY IT FAILS: it binds ANTIGEN, not phagocyte receptors. ✅ Correct if: asking what confers antigen specificity."
+    },
+    {
+      "letter": "E",
+      "label": "Variable region of the light chain - antigen binding (Fab)",
+      "detail": "WHAT IT IS: the light-chain variable region contributes to the antigen-binding site. ❌ WHY IT FAILS: like the heavy-chain variable region, it binds antigen, not phagocytes. ✅ Correct if: asking about the antigen-binding site."
+    }
+  ],
+  "reasoning": [
+    "Antibody opsonizes bacteria: Fab binds antigen, Fc engages effector cells",
+    "Binding phagocyte Fc receptors to enhance phagocytosis is an Fc (effector) function",
+    "The Fc fragment is composed of the constant regions of the heavy chain",
+    "-> constant region of the heavy chain; answer A"
+  ],
+  "mechanism": "An immunoglobulin has two functional ends. The Fab fragments (variable + first constant regions of heavy and light chains) form the antigen-binding sites - the VARIABLE regions confer specificity for the epitope. The Fc fragment consists of the remaining CONSTANT REGIONS OF THE HEAVY CHAIN and is the effector portion: it engages the immune system. For IgG (the dominant antibody of the secondary response and the principal opsonin), the Fc region binds Fc-gamma receptors on phagocytes (macrophages, neutrophils), triggering phagocytosis of the antibody-coated bacterium (opsonization), and it activates the classical complement cascade (via C1q), generating additional opsonins (C3b). Thus the region that 'attaches to phagocytic cells to enhance phagocytosis' is the constant heavy-chain (Fc) region. The variable regions (heavy and light) bind antigen; the light-chain constant region and the hinge provide structure/flexibility but do not bind phagocyte receptors.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Immuno > antibody structure: Fab (variable regions) = antigen binding; Fc (constant heavy-chain regions) = effector - Fc receptor binding (opsonization) + complement activation; IgG main opsonin."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "'Attaches to phagocytes to enhance phagocytosis' = Fc effector function = constant heavy-chain region."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on Fab vs Fc, variable vs constant region, opsonization, or Fc receptor? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Variable regions (heavy/light) bind ANTIGEN; light-chain constant region + hinge are structural - none engages phagocytes."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: Fc (constant heavy chain) = binds phagocyte Fc receptor (opsonization) + activates complement; Fab (variable) = antigen binding."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Antibody region binding phagocyte Fc receptors",
+      "back": "Fc = constant region of the heavy chain"
+    },
+    {
+      "front": "Antibody antigen-binding region",
+      "back": "Fab = variable regions of heavy + light chains"
+    },
+    {
+      "front": "Main opsonizing antibody",
+      "back": "IgG (secondary response)"
+    },
+    {
+      "front": "Two Fc effector functions",
+      "back": "Opsonization (Fc receptor) + classical complement activation (C1q)"
+    },
+    {
+      "front": "Hinge region function",
+      "back": "Flexibility of Fab arms (affects avidity)"
+    },
+    {
+      "front": "What determines antibody specificity",
+      "back": "Variable (hypervariable) regions of heavy + light chains"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Antibody Fc region",
+      "detail": "Immuno: constant heavy-chain (Fc) binds phagocyte Fc receptor (opsonization) + complement."
+    },
+    {
+      "tag": "options",
+      "topic": "Ig structure",
+      "detail": "Immuno > Fab (variable) = antigen binding; light-chain constant + hinge = structure/flexibility."
+    },
+    {
+      "tag": "concept",
+      "topic": "Opsonization",
+      "detail": "Immuno > IgG + C3b coat bacteria -> phagocytosis via Fc/C3b receptors."
+    }
+  ],
+  "memoryHook": "Fab grabs the bug, Fc flags the phagocyte: the constant heavy-chain tail (Fc) is the 'eat-me' handle macrophages grab.",
+  "stem": [
+    {
+      "text": "The immune response in a healthy 12-year-old boy is observed after a recurrent bacterial infection. It is characterized by a "
+    },
+    {
+      "text": "rapid increase in pathogen-specific immunoglobulin levels",
+      "clue": true,
+      "type": "blue",
+      "note": "A rapid, specific antibody rise on RE-exposure is a secondary (memory) response, dominated by IgG - the main opsonizing/phagocyte-engaging antibody."
+    },
+    {
+      "text": ". The immunoglobulins bound to the bacteria also "
+    },
+    {
+      "text": "attach to phagocytic cells (eg, macrophages, neutrophils) to enhance phagocytosis",
+      "clue": true,
+      "type": "green",
+      "note": "Antibody binding phagocytes to promote engulfment is opsonization, mediated by the Fc portion (constant heavy-chain regions) engaging Fc receptors."
+    },
+    {
+      "text": ". Which of the following immunoglobulin regions is most likely involved in interacting with these phagocytic cells?"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varicella (chickenpox): lesions in different stages</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 9 · all 25</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q312", "item": 312, "qid": "15375", "title": "Varicella (chickenpox): lesions in different stages", "system": "Microbiology", "topic": "Varicella-zoster virus", "correct": "E", "yourAnswer": "D", "percentCorrect": 68, "vignette": "A previously healthy 27-year-old man comes to the clinic due to fever and rash. The patient is a missionary who recently emigrated from South Africa with his wife and 3 young children. Four days ago, he developed a high fever and malaise followed by the appearance of multiple discrete macules on his face, trunk, and extremities. The lesions are pruritic and evolved into vesicles then pustules. The patient has continued to develop new vesicles as other lesions crust over and heal. The remainder of the examination is unremarkable. This patient's symptoms are most likely due to an infection with which of the following pathogens?", "clues": [{"text": "high fever and malaise followed by the appearance of multiple discrete macules", "type": "blue", "note": "A prodrome of fever/malaise before a rash is typical of a systemic viral exanthem such as varicella (chickenpox)."}, {"text": "lesions are pruritic and evolved into vesicles then pustules", "type": "green", "note": "An intensely pruritic rash progressing macule -> vesicle -> pustule -> crust is characteristic of varicella."}, {"text": "continued to develop new vesicles as other lesions crust over and heal", "type": "green", "note": "Lesions in DIFFERENT stages simultaneously ('crops') is the classic hallmark of varicella - and distinguishes it from smallpox (all same stage)."}], "whatMatters": "Fever/malaise prodrome then a pruritic rash with lesions in DIFFERENT stages at once (macules, vesicles, pustules, crusts) = varicella (chickenpox), caused by VARICELLA-ZOSTER VIRUS. Answer E. The 'different stages/successive crops' feature is the key discriminator (smallpox lesions are all in the SAME stage).", "strategy": "Anchor on 'lesions in different stages/crops' = varicella. Reject smallpox/variola (synchronous, same-stage lesions; eradicated), coxsackievirus (hand-foot-mouth: oral ulcers + hand/foot rash), HSV (grouped painful vesicles in one stage), and HHV-6 (roseola: high fever THEN rose-colored macular rash in infants).", "options": [{"letter": "A", "text": "Coxsackievirus", "correct": false}, {"letter": "B", "text": "Herpes simplex virus", "correct": false}, {"letter": "C", "text": "Human herpesvirus 6", "correct": false}, {"letter": "D", "text": "Parvovirus", "correct": false}, {"letter": "E", "text": "Varicella-zoster virus", "correct": true}, {"letter": "F", "text": "Variola virus", "correct": false}], "eliminations": [{"letter": "A", "label": "Coxsackievirus - hand-foot-mouth disease", "detail": "WHAT IT IS: coxsackievirus causes hand-foot-mouth disease (oral ulcers + vesicular rash on hands/feet). ❌ WHY IT FAILS: it favors the hands/feet/mouth and is usually non-pruritic, not a diffuse cropping vesicular rash. ✅ Correct if: oral ulcers + hand/foot vesicles in a child."}, {"letter": "B", "label": "Herpes simplex virus - grouped vesicles, same stage", "detail": "WHAT IT IS: HSV causes localized grouped painful vesicles (or, if disseminated, in immunocompromised hosts). ❌ WHY IT FAILS: it is localized and its vesicles are in the SAME stage, not a diffuse rash in successive crops. ✅ Correct if: painful grouped perioral/genital vesicles."}, {"letter": "C", "label": "Human herpesvirus 6 - roseola (no vesicles)", "detail": "WHAT IT IS: HHV-6 causes roseola infantum (high fever, then a rose-colored MACULAR rash) in young children. ❌ WHY IT FAILS: roseola has no vesicles/pustules and occurs in infants, not this adult vesicular rash. ✅ Correct if: high fever then a maculopapular rash as fever breaks in a toddler."}, {"letter": "D", "label": "Parvovirus B19 - slapped cheek (your pick)", "detail": "WHAT IT IS: parvovirus B19 causes erythema infectiosum ('slapped-cheek' malar rash in kids; arthralgias in adults). ❌ WHY IT FAILS: it produces a lacy/macular erythema, NOT a vesicular cropping rash. ✅ Correct if: malar 'slapped cheek' rash or symmetric adult arthralgias/aplastic crisis."}, {"letter": "F", "label": "Variola (smallpox) - synchronous same-stage lesions", "detail": "WHAT IT IS: variola causes a vesiculopustular rash. ❌ WHY IT FAILS: smallpox lesions are all in the SAME stage of development (synchronous) and it has been eradicated; varicella lesions are in DIFFERENT stages. ✅ Correct if: a synchronous, centrifugal rash in an eradication/bioterror scenario."}], "reasoning": ["Fever/malaise prodrome then a pruritic rash progressing macule -> vesicle -> pustule -> crust", "Key hallmark: lesions in DIFFERENT stages simultaneously (successive crops)", "This is varicella (chickenpox), caused by varicella-zoster virus", "-> varicella-zoster virus; answer E"], "mechanism": "Primary varicella-zoster virus (VZV) infection causes chickenpox, a highly contagious illness spread by respiratory droplets/direct contact. After a 10-21 day incubation, a prodrome of fever and malaise precedes a pruritic rash that begins as macules and rapidly evolves to papules, vesicles ('dew drop on a rose petal'), and pustules that crust over. The pathognomonic feature is that new crops keep appearing, so lesions are present in DIFFERENT stages of development at the same time - this distinguishes varicella from smallpox (variola), whose lesions are all synchronous (same stage). After primary infection resolves, VZV becomes latent in the dorsal root/sensory ganglia and can reactivate as herpes zoster (shingles) in a dermatomal distribution. Management is supportive (antihistamines) with acyclovir for high-risk/complicated cases; a live attenuated vaccine prevents it. The distractors are other exanthems: coxsackievirus (hand-foot-mouth), HSV (grouped same-stage vesicles), HHV-6 (roseola), and parvovirus B19 (slapped-cheek/erythema infectiosum).", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Micro > VZV: chickenpox (prodrome + pruritic rash, lesions in different stages/crops), latency in dorsal root ganglia -> zoster; vaccine-preventable; contrast smallpox (synchronous)."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "'New vesicles while others crust' = lesions in different stages = varicella (not smallpox)."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on exanthem, macule/vesicle/pustule, successive crops, or synchronous vs asynchronous lesions? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Smallpox = same-stage (synchronous); coxsackievirus = hand-foot-mouth; HSV = grouped same-stage vesicles; HHV-6 = roseola; parvovirus = slapped cheek."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: varicella = lesions in DIFFERENT stages (crops); smallpox = SAME stage; VZV latency -> shingles."}], "keywords": [{"front": "Pruritic rash with lesions in DIFFERENT stages (crops)", "back": "Varicella (chickenpox) - varicella-zoster virus"}, {"front": "Varicella vs smallpox lesion staging", "back": "Varicella = different stages; smallpox = all same stage (synchronous)"}, {"front": "VZV latency site / reactivation", "back": "Dorsal root (sensory) ganglia -> herpes zoster (shingles)"}, {"front": "Slapped-cheek rash", "back": "Parvovirus B19 (erythema infectiosum)"}, {"front": "High fever then rose macular rash in infant", "back": "HHV-6 (roseola)"}, {"front": "Oral ulcers + hand/foot vesicles", "back": "Coxsackievirus (hand-foot-mouth disease)"}], "firstAid": [{"tag": "answer / stem", "topic": "Varicella-zoster virus", "detail": "Micro: chickenpox, lesions in different stages; latency in DRG -> zoster; vaccine-preventable."}, {"tag": "options", "topic": "Viral exanthems", "detail": "Micro > smallpox (synchronous), coxsackie (HFM), HHV-6 (roseola), parvovirus (slapped cheek)."}, {"tag": "management", "topic": "Varicella", "detail": "Micro > supportive; acyclovir if high-risk; live attenuated vaccine."}], "memoryHook": "Chickenpox is a rash caught mid-argument - macules, vesicles, and crusts all bickering at once (different stages); smallpox marches in lockstep (same stage).", "stem": [{"text": "A previously healthy 27-year-old man comes to the clinic due to fever and rash. The patient is a missionary who recently emigrated from South Africa with his wife and 3 young children. Four days ago, he developed a "}, {"text": "high fever and malaise followed by the appearance of multiple discrete macules", "clue": true, "type": "blue", "note": "A prodrome of fever/malaise before a rash is typical of a systemic viral exanthem such as varicella (chickenpox)."}, {"text": " on his face, trunk, and extremities. The "}, {"text": "lesions are pruritic and evolved into vesicles then pustules", "clue": true, "type": "green", "note": "An intensely pruritic rash progressing macule -> vesicle -> pustule -> crust is characteristic of varicella."}, {"text": ". The patient has "}, {"text": "continued to develop new vesicles as other lesions crust over and heal", "clue": true, "type": "green", "note": "Lesions in DIFFERENT stages simultaneously ('crops') is the classic hallmark of varicella - and distinguishes it from smallpox (all same stage)."}, {"text": ". The remainder of the examination is unremarkable. This patient's symptoms are most likely due to an infection with which of the following pathogens?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

@@ -1,0 +1,219 @@
+{
+  "id": "q310",
+  "item": 310,
+  "qid": "1922",
+  "title": "HSV reactivation: anterograde axonal transport by kinesin",
+  "system": "Histology",
+  "topic": "Axonal transport / herpes simplex",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 59,
+  "vignette": "A 20-year-old woman comes to the office due to blisters around her mouth associated with a mild burning sensation. She reports frequent recurrence of these lesions, which resolve spontaneously within a few days. She has no medical problems and does not take any medications. Physical examination shows grouped vesicles and crusted lesions on the perioral skin and vermilion border of the lips. It is determined that the causative organism of this patient's condition remains in a latent state in the neuronal cell bodies of sensory ganglia. Upon reactivation, the virus is transported through the nerve axon to the skin, and which of the following proteins is most likely involved in the transport process leading to disease recurrence?",
+  "clues": [
+    {
+      "text": "blisters around her mouth associated with a mild burning sensation",
+      "type": "green",
+      "note": "Recurrent painful/burning perioral vesicles ('cold sores') are classic for herpes labialis, most often herpes simplex virus type 1."
+    },
+    {
+      "text": "frequent recurrence of these lesions",
+      "type": "blue",
+      "note": "Recurrence after latency is the hallmark of HSV: the virus reactivates from the sensory ganglion and travels back to the skin."
+    },
+    {
+      "text": "latent state in the neuronal cell bodies of sensory ganglia",
+      "type": "blue",
+      "note": "HSV establishes latency in sensory ganglion neurons (e.g., trigeminal); reactivation requires transport of virus back down the axon to the periphery."
+    },
+    {
+      "text": "transported through the nerve axon to the skin",
+      "type": "red",
+      "note": "Movement from the cell body (ganglion) OUT to the axon terminal/skin is ANTEROGRADE axonal transport - powered by kinesin along microtubules."
+    }
+  ],
+  "whatMatters": "Recurrent perioral vesicles = herpes labialis (HSV-1), latent in sensory ganglia. Reactivation requires ANTEROGRADE axonal transport (cell body -> axon terminal -> skin), which is mediated by KINESIN moving cargo toward the microtubule plus-end. Answer B. (Dynein does the opposite - retrograde transport toward the cell body.)",
+  "strategy": "Pin the direction: to the skin = away from the cell body = anterograde = KINESIN (plus-end directed). Retrograde (toward the nucleus, as in initial HSV travel to the ganglion) = dynein. Reject structural proteins that don't do axonal transport: lamin (nuclear envelope), selectin (leukocyte adhesion), spectrin (RBC membrane), vimentin (mesenchymal intermediate filament).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Dynein",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Kinesin",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Lamin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Selectin",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Spectrin",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Vimentin",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Dynein - retrograde transport (wrong direction)",
+      "detail": "WHAT IT IS: a microtubule motor that moves cargo RETROGRADE (toward the cell body/nucleus, minus-end). ❌ WHY IT FAILS: reactivated HSV travels FROM the ganglion TO the skin (anterograde); dynein carries it the other way (it helps establish latency initially). ✅ Correct if: transport of virus/cargo toward the neuronal cell body."
+    },
+    {
+      "letter": "C",
+      "label": "Lamin - nuclear envelope structural protein",
+      "detail": "WHAT IT IS: intermediate filaments lining the inner nuclear membrane (nuclear lamina). ❌ WHY IT FAILS: lamins provide nuclear structure/organization, not axonal transport. ✅ Correct if: nuclear envelope integrity/mitotic breakdown."
+    },
+    {
+      "letter": "D",
+      "label": "Selectin - leukocyte adhesion molecule",
+      "detail": "WHAT IT IS: cell-adhesion molecules on endothelium that mediate leukocyte rolling. ❌ WHY IT FAILS: they function in inflammation/immune-cell trafficking, not neuronal cargo transport. ✅ Correct if: leukocyte rolling/adhesion in inflammation."
+    },
+    {
+      "letter": "E",
+      "label": "Spectrin - RBC membrane cytoskeleton",
+      "detail": "WHAT IT IS: a cytoskeletal protein anchoring the red-cell membrane (defective in hereditary spherocytosis/elliptocytosis). ❌ WHY IT FAILS: it maintains erythrocyte shape, not axonal transport. ✅ Correct if: RBC membrane defects (spherocytosis)."
+    },
+    {
+      "letter": "F",
+      "label": "Vimentin - mesenchymal intermediate filament",
+      "detail": "WHAT IT IS: an intermediate filament of mesenchymal cells (marker for sarcomas). ❌ WHY IT FAILS: it provides structural support in mesenchymal cells, not motor-driven transport in neurons. ✅ Correct if: identifying a mesenchymal tumor (vimentin-positive)."
+    }
+  ],
+  "reasoning": [
+    "Recurrent perioral vesicles latent in sensory ganglia = HSV-1 herpes labialis",
+    "Reactivation moves virus FROM the ganglion cell body TO the skin (anterograde)",
+    "Anterograde axonal transport (toward the plus-end/terminal) is powered by kinesin",
+    "-> kinesin; answer B"
+  ],
+  "mechanism": "Herpes simplex virus type 1 causes herpes labialis and establishes LATENCY in sensory ganglion neurons (commonly the trigeminal ganglion). Neurons transport cargo along microtubules using two motor proteins with opposite directionality: KINESIN drives ANTEROGRADE transport (away from the cell body, toward the microtubule plus-end at the axon terminal), while DYNEIN drives RETROGRADE transport (toward the cell body/minus-end). During initial infection, the virus travels retrograde (dynein) from the skin to the ganglion to establish latency. Upon REACTIVATION (triggered by stress, illness, UV light), viral particles must travel ANTEROGRADE - from the neuronal cell body back down the axon to the skin and mucosa - which requires KINESIN. This produces the recurrent perioral vesicular lesions. The other options are structural proteins unrelated to axonal transport: lamin (nuclear lamina), selectin (leukocyte adhesion), spectrin (RBC membrane cytoskeleton), and vimentin (mesenchymal intermediate filament).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Cell/Neuro > axonal transport: kinesin = anterograde (plus-end, toward terminal), dynein = retrograde (minus-end, toward cell body); HSV latency in sensory ganglia, reactivation via anterograde transport."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "'Transported through the axon to the skin' = anterograde = kinesin (away from the cell body)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on anterograde vs retrograde, kinesin vs dynein, microtubule plus/minus ends, or herpes labialis latency? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Dynein is retrograde (opposite); lamin/selectin/spectrin/vimentin are structural/adhesion proteins, not motors."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "On the clinical photo: grouped vesicles and honey-crusted lesions on the lip/perioral skin - herpes labialis (cold sores). Anchor: 'grouped perioral vesicles = HSV-1.'"
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: kinesin anterograde ('Kinesin = Kdvances/exits'), dynein retrograde; HSV reactivation uses anterograde (kinesin)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Anterograde axonal transport motor",
+      "back": "Kinesin (toward plus-end / axon terminal)"
+    },
+    {
+      "front": "Retrograde axonal transport motor",
+      "back": "Dynein (toward minus-end / cell body)"
+    },
+    {
+      "front": "HSV reactivation transport direction",
+      "back": "Anterograde (ganglion -> skin) = kinesin"
+    },
+    {
+      "front": "Recurrent perioral vesicles",
+      "back": "Herpes labialis (HSV-1), latent in trigeminal ganglion"
+    },
+    {
+      "front": "Spectrin defect disease",
+      "back": "Hereditary spherocytosis/elliptocytosis"
+    },
+    {
+      "front": "Vimentin marks",
+      "back": "Mesenchymal cells / sarcomas"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Axonal transport",
+      "detail": "Cell: kinesin = anterograde (toward terminal), dynein = retrograde (toward soma)."
+    },
+    {
+      "tag": "options",
+      "topic": "Cytoskeletal/adhesion proteins",
+      "detail": "Cell > lamin (nuclear), selectin (adhesion), spectrin (RBC), vimentin (mesenchyme)."
+    },
+    {
+      "tag": "context",
+      "topic": "Herpes simplex virus",
+      "detail": "Micro > latency in sensory ganglia; reactivation with stress/UV."
+    }
+  ],
+  "memoryHook": "Kinesin carries the virus OUT to the skin (anterograde); dynein drags it back IN to the ganglion (retrograde) - cold sores erupt when kinesin ships it out.",
+  "stem": [
+    {
+      "text": "A 20-year-old woman comes to the office due to "
+    },
+    {
+      "text": "blisters around her mouth associated with a mild burning sensation",
+      "clue": true,
+      "type": "green",
+      "note": "Recurrent painful/burning perioral vesicles ('cold sores') are classic for herpes labialis, most often herpes simplex virus type 1."
+    },
+    {
+      "text": ". She reports "
+    },
+    {
+      "text": "frequent recurrence of these lesions",
+      "clue": true,
+      "type": "blue",
+      "note": "Recurrence after latency is the hallmark of HSV: the virus reactivates from the sensory ganglion and travels back to the skin."
+    },
+    {
+      "text": ", which resolve spontaneously within a few days. She has no medical problems and does not take any medications. Physical examination shows grouped vesicles and crusted lesions on the perioral skin and vermilion border of the lips. It is determined that the causative organism of this patient's condition remains in a "
+    },
+    {
+      "text": "latent state in the neuronal cell bodies of sensory ganglia",
+      "clue": true,
+      "type": "blue",
+      "note": "HSV establishes latency in sensory ganglion neurons (e.g., trigeminal); reactivation requires transport of virus back down the axon to the periphery."
+    },
+    {
+      "text": ". Upon reactivation, the virus is "
+    },
+    {
+      "text": "transported through the nerve axon to the skin",
+      "clue": true,
+      "type": "red",
+      "note": "Movement from the cell body (ganglion) OUT to the axon terminal/skin is ANTEROGRADE axonal transport - powered by kinesin along microtubules."
+    },
+    {
+      "text": ", and which of the following proteins is most likely involved in the transport process leading to disease recurrence?"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "id": "q317",
+  "item": 317,
+  "qid": "1511",
+  "title": "LV pressure-volume loop: increased preload from normal saline infusion",
+  "system": "Physiology",
+  "topic": "Cardiac pressure-volume loop / preload",
+  "correct": "E",
+  "yourAnswer": "A",
+  "percentCorrect": 72,
+  "vignette": "A 55-year-old man undergoes an elective surgery under general anesthesia. Two hours into the surgery, his left ventricular pressure-volume loop has changed from the solid line to the dashed line, as shown in the image (the loop is unchanged in areas where there is no dashed line). Compared with the solid loop, the dashed loop shows a rightward shift of the end-diastolic volume (the bottom-right corner), an increased stroke volume (wider loop), and a slight increase in peak systolic pressure. Which of the following is most likely responsible for this patient's hemodynamic change?",
+  "clues": [
+    {
+      "text": "rightward shift of the end-diastolic volume",
+      "type": "green",
+      "note": "A rightward shift of the bottom-right corner (end-diastolic volume) means the ventricle fills to a larger volume = increased PRELOAD."
+    },
+    {
+      "text": "increased stroke volume",
+      "type": "blue",
+      "note": "By the Frank-Starling mechanism, increased preload stretches the ventricle and increases stroke volume (wider loop)."
+    },
+    {
+      "text": "slight increase in peak systolic pressure",
+      "type": "blue",
+      "note": "Increased preload produces a slightly higher peak pressure and stroke volume; contractility itself is unchanged - consistent with volume loading, not an inotrope."
+    }
+  ],
+  "whatMatters": "The pressure-volume loop shifted RIGHT at end-diastole (increased end-diastolic volume = increased PRELOAD) with a larger stroke volume - the signature of VOLUME LOADING. Among the choices, NORMAL SALINE INFUSION raises intravascular volume and preload. Answer E. Contractility is unchanged (arguing against an inotrope like dobutamine).",
+  "strategy": "Read the loop corners: bottom-right = end-diastolic volume (preload); a rightward shift = increased preload from more blood volume. Match to normal saline infusion (or transfusion). Reject aortic clamping (increases AFTERLOAD - higher pressure, lower stroke volume), blood loss (decreased preload, leftward shift), dobutamine (increased CONTRACTILITY, not just preload), and MI (decreased contractility).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Abdominal aorta clamping",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Blood volume loss",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Dobutamine administration",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Myocardial infarction",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Normal saline infusion",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Abdominal aorta clamping - increased afterload (your pick)",
+      "detail": "WHAT IT IS: clamping the aorta raises aortic pressure = increased AFTERLOAD. ❌ WHY IT FAILS: increased afterload raises the pressure the ventricle must overcome and DECREASES stroke volume (taller, narrower loop) - not the rightward preload shift with increased stroke volume seen here. ✅ Correct if: the loop showed higher pressure with reduced stroke volume."
+    },
+    {
+      "letter": "B",
+      "label": "Blood volume loss - decreased preload",
+      "detail": "WHAT IT IS: hemorrhage lowers intravascular volume. ❌ WHY IT FAILS: it DECREASES preload (leftward shift, smaller end-diastolic volume, reduced stroke volume) - the opposite of this rightward shift. ✅ Correct if: a leftward shift with decreased stroke volume."
+    },
+    {
+      "letter": "C",
+      "label": "Dobutamine - increased contractility, not preload",
+      "detail": "WHAT IT IS: a beta-1 agonist that increases CONTRACTILITY. ❌ WHY IT FAILS: increased contractility increases stroke volume by ejecting to a SMALLER end-systolic volume (steeper end-systolic pressure-volume relationship) - it does not shift the END-DIASTOLIC volume rightward. ✅ Correct if: the loop showed increased contractility (lower end-systolic volume)."
+    },
+    {
+      "letter": "D",
+      "label": "Myocardial infarction - decreased contractility",
+      "detail": "WHAT IT IS: acute MI impairs myocardial function, DECREASING contractility. ❌ WHY IT FAILS: it reduces stroke volume (narrower loop, higher end-systolic volume), not the preload-driven widening seen here. ✅ Correct if: decreased contractility with a smaller stroke volume."
+    }
+  ],
+  "reasoning": [
+    "The loop's bottom-right corner (end-diastolic volume) shifted rightward = increased preload",
+    "Increased preload widens the loop -> increased stroke volume (Frank-Starling), with slightly higher peak pressure; contractility unchanged",
+    "Increased blood volume/preload during surgery = normal saline (fluid) infusion",
+    "-> normal saline infusion; answer E"
+  ],
+  "mechanism": "On a left ventricular pressure-volume loop, the bottom-right corner marks END-DIASTOLIC VOLUME (a measure of PRELOAD), and the width of the loop is the STROKE VOLUME. A rightward shift of the end-diastolic volume indicates INCREASED PRELOAD - the ventricle fills to a larger volume, as occurs with volume expansion (normal saline infusion, transfusion, or renal failure). By the FRANK-STARLING mechanism, greater end-diastolic stretch increases the force of contraction and thus stroke volume (a wider loop), with a slight rise in peak systolic pressure; intrinsic CONTRACTILITY is unchanged. This matches normal saline infusion during surgery. The distractors alter different variables: aortic clamping raises AFTERLOAD (higher pressure, smaller stroke volume); blood loss lowers preload (leftward shift); dobutamine raises CONTRACTILITY (ejecting to a smaller end-systolic volume); and myocardial infarction lowers contractility - none produces a pure rightward preload shift with increased stroke volume.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid CV > pressure-volume loop: end-diastolic volume = preload (bottom-right); loop width = stroke volume; Frank-Starling (↑preload -> ↑stroke volume); afterload vs contractility changes."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Rightward shift of end-diastolic volume = increased preload = fluid (saline) loading; contractility unchanged."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on preload/afterload/contractility, end-diastolic vs end-systolic volume, Frank-Starling, or the PV loop corners? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Aortic clamping = afterload; blood loss = ↓preload (leftward); dobutamine = ↑contractility; MI = ↓contractility - none is a pure preload increase."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "On the PV loop: the dashed loop's bottom-right corner moves RIGHT (larger end-diastolic volume) and the loop is wider (larger stroke volume). Anchor: 'rightward end-diastolic shift = increased preload = fluid infusion.'"
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: ↑preload -> rightward end-diastolic shift + ↑stroke volume (Frank-Starling); saline/transfusion raise preload."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Rightward shift of end-diastolic volume on PV loop",
+      "back": "Increased preload (e.g., normal saline infusion)"
+    },
+    {
+      "front": "PV loop corner = preload",
+      "back": "End-diastolic volume (bottom-right corner)"
+    },
+    {
+      "front": "Frank-Starling relationship",
+      "back": "↑preload (stretch) -> ↑stroke volume"
+    },
+    {
+      "front": "Increased afterload on PV loop",
+      "back": "↑peak pressure, ↓stroke volume (aortic clamping)"
+    },
+    {
+      "front": "Increased contractility on PV loop",
+      "back": "↓end-systolic volume, ↑stroke volume (dobutamine)"
+    },
+    {
+      "front": "Decreased preload",
+      "back": "Leftward shift, smaller stroke volume (hemorrhage)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Pressure-volume loop",
+      "detail": "CV: ↑preload = rightward end-diastolic shift + ↑stroke volume (Frank-Starling)."
+    },
+    {
+      "tag": "options",
+      "topic": "Preload/afterload/contractility",
+      "detail": "CV > afterload (clamp), contractility (dobutamine/MI), preload (fluids/hemorrhage)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Frank-Starling",
+      "detail": "CV > greater end-diastolic stretch -> greater stroke volume."
+    }
+  ],
+  "memoryHook": "Pour in saline, fill the tank: the loop's bottom-right (end-diastolic volume) slides right and the loop fattens - more preload, more stroke volume.",
+  "stem": [
+    {
+      "text": "A 55-year-old man undergoes an elective surgery under general anesthesia. Two hours into the surgery, his left ventricular pressure-volume loop has changed from the solid line to the dashed line, as shown in the image (the loop is unchanged in areas where there is no dashed line). Compared with the solid loop, the dashed loop shows a "
+    },
+    {
+      "text": "rightward shift of the end-diastolic volume",
+      "clue": true,
+      "type": "green",
+      "note": "A rightward shift of the bottom-right corner (end-diastolic volume) means the ventricle fills to a larger volume = increased PRELOAD."
+    },
+    {
+      "text": " (the bottom-right corner), an "
+    },
+    {
+      "text": "increased stroke volume",
+      "clue": true,
+      "type": "blue",
+      "note": "By the Frank-Starling mechanism, increased preload stretches the ventricle and increases stroke volume (wider loop)."
+    },
+    {
+      "text": " (wider loop), and a "
+    },
+    {
+      "text": "slight increase in peak systolic pressure",
+      "clue": true,
+      "type": "blue",
+      "note": "Increased preload produces a slightly higher peak pressure and stroke volume; contractility itself is unchanged - consistent with volume loading, not an inotrope."
+    },
+    {
+      "text": ". Which of the following is most likely responsible for this patient's hemodynamic change?"
+    }
+  ]
+}
