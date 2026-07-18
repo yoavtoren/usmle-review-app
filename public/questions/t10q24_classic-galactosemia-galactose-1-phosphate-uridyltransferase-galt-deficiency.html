@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic galactosemia: galactose-1-phosphate uridyltransferase (GALT) deficiency</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 10 · all 25</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q358", "item": 358, "qid": "1071", "title": "Classic galactosemia: galactose-1-phosphate uridyltransferase (GALT) deficiency", "system": "Biochemistry", "topic": "Galactose metabolism / galactosemia", "correct": "D", "yourAnswer": "D", "percentCorrect": 51, "vignette": "A 5-day-old term newborn is brought to the emergency department for multiple episodes of emesis. The breastfed infant has been having fewer wet diapers over the last 2 days. Vital signs show tachycardia, tachypnea, and hypotension. Physical examination shows an icteric, lethargic baby with a sunken fontanelle, dry mucous membranes, and hepatomegaly. A blood culture is drawn and empiric antibiotics are initiated. Hematologic studies show leukocytosis with bandemia. Serum studies show hypoglycemia and elevated transaminases. The ammonia level is normal. Newborn screen is pending. Preliminary results from arterial blood culture show gram-negative rods. The infant is placed on a special formula and gradually improves over the next few days. On the galactose metabolism pathway shown, step A is lactase (lactose -> galactose + glucose), step B is aldose reductase (galactose -> galactitol), step C is galactokinase (galactose -> galactose-1-phosphate), step D is galactose-1-phosphate uridyltransferase (galactose-1-phosphate -> glucose-1-phosphate via UDP-glucose/UDP-galactose), and step E is phosphoglucomutase (glucose-1-phosphate -> glucose-6-phosphate). Which of the following steps in metabolism is most likely impaired in this patient?", "clues": [{"text": "multiple episodes of emesis", "type": "blue", "note": "Vomiting and lethargy soon after starting BREAST milk (lactose/galactose) are early signs of classic galactosemia."}, {"text": "hepatomegaly", "type": "green", "note": "Accumulated galactose-1-phosphate is toxic to the liver, causing hepatomegaly, jaundice, and elevated transaminases."}, {"text": "hypoglycemia and elevated transaminases", "type": "green", "note": "Hypoglycemia + liver injury (transaminitis) reflect galactose-1-phosphate toxicity in classic galactosemia (GALT deficiency)."}, {"text": "gram-negative rods", "type": "red", "note": "E. coli (gram-negative rod) sepsis is a classic, life-threatening complication of galactosemia (impaired neutrophil function)."}, {"text": "placed on a special formula and gradually improves", "type": "green", "note": "Improvement after switching from breast milk to a galactose-free (soy) formula confirms galactose intolerance = galactosemia."}], "whatMatters": "A neonate with vomiting, jaundice, hepatomegaly, hypoglycemia, transaminitis, and E. coli sepsis that improves off breast milk = CLASSIC GALACTOSEMIA, from deficiency of GALACTOSE-1-PHOSPHATE URIDYLTRANSFERASE (GALT). On the pathway, GALT is step D. Answer D.", "strategy": "Recognize classic galactosemia (symptoms begin with breast/lactose feeding; jaundice, hepatomegaly, hypoglycemia, E. coli sepsis, cataracts) and map it to the DEFICIENT enzyme GALT (converts galactose-1-phosphate to glucose-1-phosphate) = step D. Reject step A (lactase - lactose intolerance), step B (aldose reductase - makes galactitol, not deficient), step C (galactokinase deficiency - milder, cataracts only, no liver/renal toxicity), and step E (phosphoglucomutase - rare).", "options": [{"letter": "A", "text": "Step A (lactase)", "correct": false}, {"letter": "B", "text": "Step B (aldose reductase)", "correct": false}, {"letter": "C", "text": "Step C (galactokinase)", "correct": false}, {"letter": "D", "text": "Step D (galactose-1-phosphate uridyltransferase)", "correct": true}, {"letter": "E", "text": "Step E (phosphoglucomutase)", "correct": false}], "eliminations": [{"letter": "A", "label": "Step A: lactase - lactose intolerance, not galactosemia", "detail": "WHAT IT IS: lactase hydrolyzes lactose to glucose + galactose in the gut. ❌ WHY IT FAILS: lactase deficiency causes lactose intolerance (bloating/diarrhea), not neonatal liver failure/sepsis, and is rare in neonates. ✅ Correct if: lactose intolerance."}, {"letter": "B", "label": "Step B: aldose reductase - makes galactitol (not deficient here)", "detail": "WHAT IT IS: aldose reductase converts excess galactose to GALACTITOL (which causes cataracts when galactose accumulates). ❌ WHY IT FAILS: aldose reductase deficiency does not cause galactosemia; in galactosemia this enzyme is actually OVERactive, worsening cataracts. ✅ Correct if: asking about the source of cataract-causing galactitol."}, {"letter": "C", "label": "Step C: galactokinase deficiency - milder (cataracts only)", "detail": "WHAT IT IS: galactokinase (GALK) phosphorylates galactose to galactose-1-phosphate. ❌ WHY IT FAILS: GALK deficiency is MILDER - galactose-1-phosphate does NOT accumulate, so there is no hepatic/renal toxicity; the main finding is cataracts (from galactitol). This infant has severe liver injury and sepsis (GALT). ✅ Correct if: isolated infantile cataracts without liver disease."}, {"letter": "E", "label": "Step E: phosphoglucomutase - rare, not this picture", "detail": "WHAT IT IS: phosphoglucomutase isomerizes glucose-1-phosphate to glucose-6-phosphate (entering glycolysis). ❌ WHY IT FAILS: its deficiency is rare and doesn't produce classic galactosemia; in GALT deficiency, accumulated galactose-1-phosphate actually inhibits this enzyme. ✅ Correct if: a rare glycogen/glucose isomerization disorder."}], "reasoning": ["Neonate with vomiting, jaundice, hepatomegaly, hypoglycemia, transaminitis, and E. coli sepsis after breast milk", "Improvement on galactose-free formula confirms galactosemia", "Classic galactosemia is deficiency of galactose-1-phosphate uridyltransferase (GALT)", "GALT is step D on the pathway; answer D"], "mechanism": "Lactose (milk sugar) is split by lactase into galactose and glucose. Galactose is then phosphorylated by galactokinase to galactose-1-phosphate (step C), which GALACTOSE-1-PHOSPHATE URIDYLTRANSFERASE (GALT) converts to glucose-1-phosphate by exchanging UDP with UDP-glucose (step D). CLASSIC GALACTOSEMIA is an autosomal recessive deficiency of GALT: galactose-1-phosphate ACCUMULATES and is toxic, causing - soon after breast/lactose feeding begins - vomiting, lethargy, jaundice, hepatomegaly, hypoglycemia, transaminitis, and renal dysfunction (aminoaciduria), plus a characteristic predisposition to ESCHERICHIA COLI (gram-negative) SEPSIS and cataracts (from galactitol produced by aldose reductase). Treatment is dietary: remove galactose/lactose (stop breast milk; use soy-based formula, whose sucrose is metabolized without GALT/GALK), which reverses acute toxicity. In contrast, GALACTOKINASE deficiency (step C) is milder - galactose-1-phosphate does not accumulate, so there is no hepatic/renal toxicity, only cataracts. The other labeled steps (lactase, aldose reductase, phosphoglucomutase) do not produce this classic galactosemia picture.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Biochem > classic galactosemia: GALT deficiency; galactose-1-phosphate accumulation -> vomiting, jaundice, hepatomegaly, hypoglycemia, E. coli sepsis, cataracts; treat galactose-free diet. Galactokinase deficiency = milder (cataracts only)."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Severe neonatal galactose toxicity + E. coli sepsis = GALT deficiency (step D), not the milder galactokinase (step C)."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on GALT vs galactokinase, galactose-1-phosphate, galactitol, aldose reductase, or classic vs mild galactosemia? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Galactokinase deficiency (C) = cataracts only; lactase (A) = lactose intolerance; aldose reductase (B) makes galactitol; phosphoglucomutase (E) rare."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "text": "On the pathway diagram: step D converts galactose-1-phosphate to glucose-1-phosphate using the UDP-glucose/UDP-galactose cycle = GALT. Anchor: 'severe galactosemia = GALT = the UDP-exchange step (D).'"}, {"key": "other", "label": "🗒️ Other", "text": "Bank: classic galactosemia = GALT deficiency (galactose-1-phosphate toxicity, E. coli sepsis, cataracts); galactokinase deficiency milder (cataracts)."}], "keywords": [{"front": "Neonatal vomiting/jaundice/hepatomegaly/E. coli sepsis after breast milk", "back": "Classic galactosemia (GALT deficiency)"}, {"front": "Enzyme deficient in classic galactosemia", "back": "Galactose-1-phosphate uridyltransferase (GALT) - step D"}, {"front": "Toxic metabolite in classic galactosemia", "back": "Galactose-1-phosphate (hepatic/renal toxicity)"}, {"front": "Galactokinase deficiency features", "back": "Milder; cataracts only (galactitol), no liver/renal toxicity"}, {"front": "Cataract-causing metabolite", "back": "Galactitol (from aldose reductase)"}, {"front": "Galactosemia treatment", "back": "Galactose/lactose-free diet (soy formula; stop breast milk)"}], "firstAid": [{"tag": "answer / stem", "topic": "Classic galactosemia", "detail": "Biochem: GALT deficiency; galactose-1-phosphate toxicity; E. coli sepsis, cataracts; galactose-free diet."}, {"tag": "options", "topic": "Galactose pathway", "detail": "Biochem > lactase (A), aldose reductase/galactitol (B), galactokinase (C), phosphoglucomutase (E)."}, {"tag": "contrast", "topic": "Galactokinase deficiency", "detail": "Biochem > milder, cataracts only (no galactose-1-phosphate buildup)."}], "memoryHook": "Classic galactosemia = GALT down: galactose-1-phosphate piles up and poisons the liver (and invites E. coli sepsis) - stop the milk, and step D is the culprit.", "stem": [{"text": "A 5-day-old term newborn is brought to the emergency department for "}, {"text": "multiple episodes of emesis", "clue": true, "type": "blue", "note": "Vomiting and lethargy soon after starting BREAST milk (lactose/galactose) are early signs of classic galactosemia."}, {"text": ". The breastfed infant has been having fewer wet diapers over the last 2 days. Vital signs show tachycardia, tachypnea, and hypotension. Physical examination shows an icteric, lethargic baby with a sunken fontanelle, dry mucous membranes, and "}, {"text": "hepatomegaly", "clue": true, "type": "green", "note": "Accumulated galactose-1-phosphate is toxic to the liver, causing hepatomegaly, jaundice, and elevated transaminases."}, {"text": ". A blood culture is drawn and empiric antibiotics are initiated. Hematologic studies show leukocytosis with bandemia. Serum studies show "}, {"text": "hypoglycemia and elevated transaminases", "clue": true, "type": "green", "note": "Hypoglycemia + liver injury (transaminitis) reflect galactose-1-phosphate toxicity in classic galactosemia (GALT deficiency)."}, {"text": ". The ammonia level is normal. Newborn screen is pending. Preliminary results from arterial blood culture show "}, {"text": "gram-negative rods", "clue": true, "type": "red", "note": "E. coli (gram-negative rod) sepsis is a classic, life-threatening complication of galactosemia (impaired neutrophil function)."}, {"text": ". The infant is "}, {"text": "placed on a special formula and gradually improves", "clue": true, "type": "green", "note": "Improvement after switching from breast milk to a galactose-free (soy) formula confirms galactose intolerance = galactosemia."}, {"text": " over the next few days. On the galactose metabolism pathway shown, step A is lactase (lactose -> galactose + glucose), step B is aldose reductase (galactose -> galactitol), step C is galactokinase (galactose -> galactose-1-phosphate), step D is galactose-1-phosphate uridyltransferase (galactose-1-phosphate -> glucose-1-phosphate via UDP-glucose/UDP-galactose), and step E is phosphoglucomutase (glucose-1-phosphate -> glucose-6-phosphate). Which of the following steps in metabolism is most likely impaired in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

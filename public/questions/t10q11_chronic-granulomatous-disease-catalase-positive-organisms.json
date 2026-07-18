@@ -1,0 +1,190 @@
+{
+  "id": "q345",
+  "item": 345,
+  "qid": "557",
+  "title": "Chronic granulomatous disease: catalase-positive organisms",
+  "system": "Immunology",
+  "topic": "CGD / NADPH oxidase / catalase-positive",
+  "correct": "A",
+  "yourAnswer": "E",
+  "percentCorrect": 52,
+  "vignette": "An 18-month-old boy is evaluated for recurrent infections. He has been hospitalized 3 times with pneumonia since age 3 months. He has also had multiple skin infections requiring treatment with antibacterial and antifungal agents. During his last episode of pneumonia, he developed a large pleural effusion, which was drained. The pleural fluid revealed numerous neutrophils containing a large number of intact gram-positive cocci. The microorganisms responsible for this patient's recurrent infections most likely produce which of the following virulence factors?",
+  "clues": [
+    {
+      "text": "recurrent infections",
+      "type": "orange",
+      "note": "Recurrent infections beginning in infancy suggest a primary immunodeficiency."
+    },
+    {
+      "text": "multiple skin infections requiring treatment with antibacterial and antifungal agents",
+      "type": "blue",
+      "note": "Recurrent BACTERIAL and FUNGAL infections of skin/lungs point to a phagocyte killing defect - chronic granulomatous disease."
+    },
+    {
+      "text": "numerous neutrophils containing a large number of intact gram-positive cocci",
+      "type": "green",
+      "note": "Neutrophils that engulf but CANNOT KILL bacteria (intact organisms inside them) indicate impaired oxidative (respiratory) burst = chronic granulomatous disease."
+    }
+  ],
+  "whatMatters": "Recurrent bacterial + fungal infections with neutrophils full of INTACT (unkilled) organisms = CHRONIC GRANULOMATOUS DISEASE (defective NADPH oxidase -> no respiratory burst). CGD patients are especially susceptible to CATALASE-POSITIVE organisms (e.g., S. aureus), which destroy their own hydrogen peroxide. The relevant virulence factor is CATALASE. Answer A.",
+  "strategy": "Recognize CGD (phagocytes can engulf but not kill; recurrent catalase-positive bacterial + fungal infections; diagnosed by DHR/nitroblue tetrazolium). Then reason: CGD neutrophils lack their own H2O2 (no NADPH oxidase); CATALASE-positive organisms degrade the H2O2 they might otherwise borrow, so they survive. The virulence factor is catalase. Reject coagulase (S. aureus immune evasion, not the CGD-relevant factor), lecithinase (C. perfringens), lipopolysaccharide (gram-negatives), and polysaccharide capsule (encapsulated bacteria/asplenia).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Catalase",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Coagulase",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Lecithinase",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Lipopolysaccharide",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Polysaccharide capsule",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Coagulase - S. aureus, not the CGD-defining factor",
+      "detail": "WHAT IT IS: coagulase (S. aureus) converts fibrinogen to fibrin, coating the organism to evade phagocytosis. ❌ WHY IT FAILS: while S. aureus is a common CGD pathogen, the factor that makes it dangerous SPECIFICALLY in CGD is CATALASE (degrading H2O2), not coagulase. ✅ Correct if: asking about S. aureus fibrin-mediated immune evasion generally."
+    },
+    {
+      "letter": "C",
+      "label": "Lecithinase - Clostridium perfringens",
+      "detail": "WHAT IT IS: lecithinase (alpha toxin) of C. perfringens hydrolyzes membrane phospholipids (gas gangrene). ❌ WHY IT FAILS: unrelated to CGD susceptibility or this gram-positive coccus. ✅ Correct if: C. perfringens myonecrosis."
+    },
+    {
+      "letter": "D",
+      "label": "Lipopolysaccharide - gram-negative outer membrane",
+      "detail": "WHAT IT IS: LPS (endotoxin) of gram-negative bacteria. ❌ WHY IT FAILS: the organism here is a gram-POSITIVE coccus (no LPS), and LPS isn't the CGD-relevant factor. ✅ Correct if: gram-negative sepsis/endotoxin."
+    },
+    {
+      "letter": "E",
+      "label": "Polysaccharide capsule - encapsulated bacteria/asplenia (your pick)",
+      "detail": "WHAT IT IS: an antiphagocytic capsule (S. pneumoniae, H. influenzae, N. meningitidis) important in ASPLENIA/complement problems. ❌ WHY IT FAILS: CGD is a KILLING defect (phagocytes engulf but can't destroy), and susceptibility is defined by CATALASE positivity, not encapsulation. ✅ Correct if: overwhelming infection in an asplenic patient."
+    }
+  ],
+  "reasoning": [
+    "Recurrent bacterial + fungal infections with neutrophils containing intact (unkilled) organisms = chronic granulomatous disease",
+    "CGD phagocytes lack NADPH oxidase, so they can't generate the respiratory burst to kill engulfed microbes",
+    "Catalase-POSITIVE organisms degrade their own H2O2, denying CGD neutrophils a borrowed oxidant -> they survive",
+    "-> catalase; answer A"
+  ],
+  "mechanism": "Chronic granulomatous disease (CGD) is a primary immunodeficiency (usually X-linked recessive) caused by defective NADPH OXIDASE. Normally, phagocytosis triggers a RESPIRATORY (oxidative) BURST in which NADPH oxidase generates superoxide and, downstream, hydrogen peroxide (H2O2) and other reactive oxygen species that kill ingested microbes. In CGD, this burst fails, so phagocytes can engulf but NOT kill organisms - hence neutrophils containing INTACT bacteria. Patients get recurrent infections of the lungs, skin, lymph nodes, and liver, and form granulomas. Crucially, they are especially susceptible to CATALASE-POSITIVE organisms (Staphylococcus aureus, Serratia, Burkholderia, Nocardia, and the fungus Aspergillus): CATALASE-negative organisms produce H2O2 that CGD phagocytes can scavenge to help kill them, but CATALASE-POSITIVE organisms DESTROY their own H2O2, leaving the oxidase-deficient neutrophil with no oxidant - so they survive. Thus the virulence factor that matters here is CATALASE. Diagnosis: dihydrorhodamine (DHR) flow cytometry (preferred) or nitroblue tetrazolium test. (Coagulase, lecithinase, LPS, and capsule are virulence factors of other organisms and are not what defines CGD susceptibility.)",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Immuno > chronic granulomatous disease: NADPH oxidase defect, no respiratory burst; recurrent catalase-positive infections (S. aureus, Serratia, Burkholderia, Nocardia, Aspergillus); DHR/NBT test."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Phagocytes engulf but can't kill -> CGD; the organisms that exploit this are CATALASE-positive."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on NADPH oxidase, respiratory/oxidative burst, catalase-positive vs -negative, or DHR/NBT test? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Coagulase (S. aureus evasion, but catalase is the CGD-relevant factor); lecithinase (C. perfringens); LPS (gram-negative); capsule (asplenia)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: CGD (NADPH oxidase defect) -> catalase-positive infections; catalase destroys H2O2 the deficient neutrophil would borrow."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Neutrophils engulf but can't kill; recurrent bacterial + fungal infections",
+      "back": "Chronic granulomatous disease (NADPH oxidase defect)"
+    },
+    {
+      "front": "Organisms dangerous in CGD",
+      "back": "Catalase-positive (S. aureus, Serratia, Burkholderia, Nocardia, Aspergillus)"
+    },
+    {
+      "front": "Why catalase matters in CGD",
+      "back": "Catalase degrades H2O2 the oxidase-deficient neutrophil would otherwise use"
+    },
+    {
+      "front": "CGD enzyme defect",
+      "back": "NADPH oxidase (no respiratory burst)"
+    },
+    {
+      "front": "CGD diagnostic test",
+      "back": "Dihydrorhodamine (DHR) flow cytometry; nitroblue tetrazolium (NBT)"
+    },
+    {
+      "front": "Coagulase organism/function",
+      "back": "S. aureus; fibrin coat to evade phagocytosis"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Chronic granulomatous disease",
+      "detail": "Immuno: NADPH oxidase defect -> catalase-positive infections; DHR/NBT test."
+    },
+    {
+      "tag": "options",
+      "topic": "Virulence factors",
+      "detail": "Micro > coagulase (S. aureus), lecithinase (C. perfringens), LPS (gram-neg), capsule (asplenia)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Respiratory burst",
+      "detail": "Immuno > NADPH oxidase -> superoxide/H2O2 kills microbes."
+    }
+  ],
+  "memoryHook": "CGD neutrophils can't make their own bleach (H2O2); catalase-positive bugs mop up any borrowed H2O2 - so they sit alive inside the cell.",
+  "stem": [
+    {
+      "text": "An 18-month-old boy is evaluated for "
+    },
+    {
+      "text": "recurrent infections",
+      "clue": true,
+      "type": "orange",
+      "note": "Recurrent infections beginning in infancy suggest a primary immunodeficiency."
+    },
+    {
+      "text": ". He has been hospitalized 3 times with pneumonia since age 3 months. He has also had "
+    },
+    {
+      "text": "multiple skin infections requiring treatment with antibacterial and antifungal agents",
+      "clue": true,
+      "type": "blue",
+      "note": "Recurrent BACTERIAL and FUNGAL infections of skin/lungs point to a phagocyte killing defect - chronic granulomatous disease."
+    },
+    {
+      "text": ". During his last episode of pneumonia, he developed a large pleural effusion, which was drained. The pleural fluid revealed "
+    },
+    {
+      "text": "numerous neutrophils containing a large number of intact gram-positive cocci",
+      "clue": true,
+      "type": "green",
+      "note": "Neutrophils that engulf but CANNOT KILL bacteria (intact organisms inside them) indicate impaired oxidative (respiratory) burst = chronic granulomatous disease."
+    },
+    {
+      "text": ". The microorganisms responsible for this patient's recurrent infections most likely produce which of the following virulence factors?"
+    }
+  ]
+}

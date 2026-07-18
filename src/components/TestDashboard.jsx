@@ -22,7 +22,7 @@ function deckFileOf(test) {
 }
 // Does a deck question belong to the given block? Test 1 = no block field.
 function qInBlock(q, block) {
-  return block === "test1" ? q.block === undefined : q.block === `UWORLD test ${block.slice(-1)}`;
+  return block === "test1" ? q.block === undefined : q.block === `UWORLD test ${block.slice(4)}`;
 }
 
 function fmt(d) {

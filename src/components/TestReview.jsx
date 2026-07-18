@@ -37,7 +37,7 @@ export default function TestReview({ onBack }) {
     if (!deck) return [];
     return deck.questions
       .filter(q =>
-        blk === "test1" ? q.block === undefined : q.block === `UWORLD test ${blk.slice(-1)}`)
+        blk === "test1" ? q.block === undefined : q.block === `UWORLD test ${blk.slice(4)}`)
       .map(q => q.id);
   }
 
@@ -97,7 +97,7 @@ export default function TestReview({ onBack }) {
     return deck.questions.filter(q => {
       const card = getCard(progress, q.id);
       if (block !== "all") {
-        const want = block === "test1" ? undefined : `UWORLD test ${block.slice(-1)}`;
+        const want = block === "test1" ? undefined : `UWORLD test ${block.slice(4)}`;
         if (q.block !== want) return false;
       }
       if (filter === "missed"   && !q.missed)                                return false;
@@ -117,7 +117,7 @@ export default function TestReview({ onBack }) {
     // reflect the test you're viewing, not the whole deck.
     const scoped = block === "all"
       ? deck.questions
-      : deck.questions.filter(q => q.block === (block === "test1" ? undefined : `UWORLD test ${block.slice(-1)}`));
+      : deck.questions.filter(q => q.block === (block === "test1" ? undefined : `UWORLD test ${block.slice(4)}`));
     let mastered = 0, due = 0;
     for (const q of scoped) {
       const c = getCard(progress, q.id);
@@ -245,11 +245,11 @@ export default function TestReview({ onBack }) {
           <div className="reset-test-row">
             {!confirmReset ? (
               <button className="reset-test-btn" onClick={() => setConfirmReset(true)}>
-                ↺ Reset {block === "all" ? "all tests" : `Test ${block.slice(-1)}`} for re-review
+                ↺ Reset {block === "all" ? "all tests" : `Test ${block.slice(4)}`} for re-review
               </button>
             ) : (
               <div className="reset-test-confirm">
-                <span>Clear progress, tags & linked tasks for {block === "all" ? "all tests" : `Test ${block.slice(-1)}`}?</span>
+                <span>Clear progress, tags & linked tasks for {block === "all" ? "all tests" : `Test ${block.slice(4)}`}?</span>
                 <div className="reset-test-actions">
                   <button className="reset-test-cancel" onClick={() => setConfirmReset(false)}>Cancel</button>
                   <button className="reset-test-go" onClick={doResetBlock}>Reset</button>

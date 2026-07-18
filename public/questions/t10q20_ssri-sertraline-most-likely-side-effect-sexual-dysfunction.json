@@ -1,0 +1,206 @@
+{
+  "id": "q354",
+  "item": 354,
+  "qid": "576",
+  "title": "SSRI (sertraline) most likely side effect: sexual dysfunction",
+  "system": "Pharmacology",
+  "topic": "SSRIs - adverse effects",
+  "correct": "F",
+  "yourAnswer": "C",
+  "percentCorrect": 68,
+  "vignette": "A 55-year-old man comes to the office for a checkup. His medical history is significant for major depression treated with sertraline for the past 4 months, hypertension controlled with lisinopril, and diabetes mellitus controlled with diet. He does not use tobacco and drinks a glass of wine with dinner a few times a week. Vital signs are all within normal limits, and no abnormalities are noted on physical examination. Hemoglobin A1c is within normal limits. Which of the following is the most likely side effect of the treatment prescribed for this patient's depression?",
+  "clues": [
+    {
+      "text": "major depression",
+      "type": "blue",
+      "note": "For major depression, SSRIs are first-line; among their adverse effects, sexual dysfunction is the most common and a frequent cause of nonadherence."
+    },
+    {
+      "text": "treated with sertraline for the past 4 months",
+      "type": "green",
+      "note": "Sertraline is a selective serotonin reuptake inhibitor (SSRI), a first-line antidepressant - its most common bothersome side effect is being asked about."
+    }
+  ],
+  "whatMatters": "Sertraline is an SSRI. Among its side effects, SEXUAL DYSFUNCTION (decreased libido, delayed ejaculation, anorgasmia) is the MOST COMMON - occurring in more than half of patients and a frequent cause of nonadherence. Answer F. (SSRIs are generally well tolerated and safe in overdose, unlike TCAs.)",
+  "strategy": "Recall the SSRI side-effect profile: sexual dysfunction (most common/persistent), GI upset, insomnia, and a small risk of serotonin syndrome (only when combined with other serotonergic drugs). Pick the most likely -> sexual dysfunction. Reject TCA effects (arrhythmias, orthostatic hypotension, urinary hesitancy - anticholinergic/alpha blockade), MAOI hypertensive crisis (tyramine), TCA/bupropion seizures, serotonin syndrome (needs a second serotonergic agent), and weight gain (less common than sexual dysfunction).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cardiac arrhythmias",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Hypertensive crisis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Orthostatic hypotension",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Seizures",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Serotonin syndrome",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Sexual dysfunction",
+      "correct": true
+    },
+    {
+      "letter": "G",
+      "text": "Urinary hesitancy",
+      "correct": false
+    },
+    {
+      "letter": "H",
+      "text": "Weight gain",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Cardiac arrhythmias - TCA overdose",
+      "detail": "WHAT IT IS: arrhythmias are a serious effect of TRICYCLIC antidepressant (TCA) overdose (sodium-channel blockade, wide QRS). ❌ WHY IT FAILS: SSRIs are much safer and, at recommended doses, unlikely to cause arrhythmias. ✅ Correct if: TCA overdose."
+    },
+    {
+      "letter": "B",
+      "label": "Hypertensive crisis - MAOI + tyramine",
+      "detail": "WHAT IT IS: a hypertensive crisis occurs when an MAO inhibitor patient ingests tyramine-containing foods. ❌ WHY IT FAILS: sertraline is an SSRI, not an MAOI, and his hypertension is controlled. ✅ Correct if: MAOI therapy with dietary tyramine."
+    },
+    {
+      "letter": "C",
+      "label": "Orthostatic hypotension - TCA (alpha blockade) (your pick)",
+      "detail": "WHAT IT IS: postural hypotension from alpha-1 antagonism, typical of TCAs. ❌ WHY IT FAILS: SSRIs have minimal alpha-adrenergic activity and rarely cause orthostasis; sexual dysfunction is far more common. ✅ Correct if: a TCA (or antihypertensive) causing orthostasis."
+    },
+    {
+      "letter": "D",
+      "label": "Seizures - TCAs / bupropion",
+      "detail": "WHAT IT IS: lowered seizure threshold, more concerning with TCAs and bupropion. ❌ WHY IT FAILS: SSRIs carry a much lower seizure risk than sexual dysfunction as a side effect. ✅ Correct if: TCA/bupropion in a seizure-prone patient."
+    },
+    {
+      "letter": "E",
+      "label": "Serotonin syndrome - needs another serotonergic drug",
+      "detail": "WHAT IT IS: excess serotonergic activity (agitation, hyperreflexia, clonus, hyperthermia). ❌ WHY IT FAILS: it typically requires COMBINING an SSRI with another serotonergic agent (MAOI, triptan, MDMA), not a single SSRI at normal dose. ✅ Correct if: SSRI + another serotonergic drug."
+    },
+    {
+      "letter": "G",
+      "label": "Urinary hesitancy - anticholinergic (TCA)",
+      "detail": "WHAT IT IS: urinary retention/hesitancy from anticholinergic effects (TCAs). ❌ WHY IT FAILS: SSRIs lack significant anticholinergic activity. ✅ Correct if: a strongly anticholinergic drug (TCA, antihistamine)."
+    },
+    {
+      "letter": "H",
+      "label": "Weight gain - possible but less common than sexual dysfunction",
+      "detail": "WHAT IT IS: modest weight gain can occur with SSRIs. ❌ WHY IT FAILS: it is less common/prominent than sexual dysfunction, which is the MOST likely side effect. ✅ Correct if: comparing long-term metabolic effects, not the single most common."
+    }
+  ],
+  "reasoning": [
+    "Sertraline is an SSRI (first-line antidepressant)",
+    "SSRIs are generally well tolerated but commonly cause sexual dysfunction",
+    "Sexual dysfunction occurs in >50% of patients and frequently causes nonadherence",
+    "-> sexual dysfunction; answer F"
+  ],
+  "mechanism": "Selective serotonin reuptake inhibitors (SSRIs; e.g., sertraline, fluoxetine, escitalopram) are first-line antidepressants that block the serotonin transporter to increase synaptic serotonin. Compared with older agents (TCAs, MAOIs), they have minimal activity at alpha-adrenergic, cholinergic, and histaminic receptors, so they are better tolerated and much safer in overdose. Their MOST COMMON and often persistent adverse effect is SEXUAL DYSFUNCTION - decreased libido, delayed orgasm/ejaculation, and anorgasmia - occurring in MORE THAN 50% of patients and a frequent reason for nonadherence; clinicians should ask about it routinely. Other SSRI effects include GI upset, insomnia/agitation, hyponatremia (SIADH, especially in the elderly), and a small risk of serotonin syndrome (mainly when combined with other serotonergic drugs). The distractors are effects of other drug classes: arrhythmias, orthostatic hypotension, urinary hesitancy (TCAs - sodium-channel/alpha/anticholinergic), hypertensive crisis (MAOI + tyramine), and prominent seizures (TCAs/bupropion). Weight gain can occur but is less common than sexual dysfunction.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm/Psych > SSRIs: first-line, well tolerated; MOST common side effect = sexual dysfunction (>50%); also GI upset, insomnia, SIADH; serotonin syndrome if combined with serotonergic drugs."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "SSRI's single most likely bothersome side effect is sexual dysfunction (not TCA-type effects)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on SSRI, sexual dysfunction, serotonin syndrome, or TCA vs SSRI adverse effects? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Arrhythmias/orthostasis/urinary hesitancy = TCAs; hypertensive crisis = MAOI + tyramine; serotonin syndrome needs a second serotonergic drug; weight gain less common."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: SSRI most common side effect = sexual dysfunction; ask routinely, it drives nonadherence."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Most common SSRI side effect",
+      "back": "Sexual dysfunction (>50% of patients)"
+    },
+    {
+      "front": "SSRI examples",
+      "back": "Sertraline, fluoxetine, escitalopram, citalopram, paroxetine"
+    },
+    {
+      "front": "When does serotonin syndrome occur",
+      "back": "SSRI + another serotonergic drug (MAOI, triptan, MDMA)"
+    },
+    {
+      "front": "TCA overdose danger",
+      "back": "Cardiac arrhythmias (wide QRS), plus anticholinergic effects"
+    },
+    {
+      "front": "MAOI + tyramine",
+      "back": "Hypertensive crisis"
+    },
+    {
+      "front": "SSRI electrolyte effect",
+      "back": "Hyponatremia (SIADH), esp. elderly"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "SSRI adverse effects",
+      "detail": "Pharm: sexual dysfunction (most common); GI upset, insomnia, SIADH."
+    },
+    {
+      "tag": "options",
+      "topic": "Antidepressant class effects",
+      "detail": "Psych > TCAs (arrhythmia/orthostasis/anticholinergic), MAOI (tyramine crisis), serotonin syndrome (combos)."
+    },
+    {
+      "tag": "clinical",
+      "topic": "Adherence",
+      "detail": "Psych > ask about sexual side effects; a key cause of nonadherence."
+    }
+  ],
+  "memoryHook": "SSRIs are gentle everywhere except the bedroom: their #1 complaint is sexual dysfunction - ask, because it's why people quit the pills.",
+  "stem": [
+    {
+      "text": "A 55-year-old man comes to the office for a checkup. His medical history is significant for "
+    },
+    {
+      "text": "major depression",
+      "clue": true,
+      "type": "blue",
+      "note": "For major depression, SSRIs are first-line; among their adverse effects, sexual dysfunction is the most common and a frequent cause of nonadherence."
+    },
+    {
+      "text": " "
+    },
+    {
+      "text": "treated with sertraline for the past 4 months",
+      "clue": true,
+      "type": "green",
+      "note": "Sertraline is a selective serotonin reuptake inhibitor (SSRI), a first-line antidepressant - its most common bothersome side effect is being asked about."
+    },
+    {
+      "text": ", hypertension controlled with lisinopril, and diabetes mellitus controlled with diet. He does not use tobacco and drinks a glass of wine with dinner a few times a week. Vital signs are all within normal limits, and no abnormalities are noted on physical examination. Hemoglobin A1c is within normal limits. Which of the following is the most likely side effect of the treatment prescribed for this patient's depression?"
+    }
+  ]
+}

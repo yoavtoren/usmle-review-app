@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercise-induced hypoglycemia: GLUT4 translocation (insulin-independent)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 10 · all 25</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q342", "item": 342, "qid": "19237", "title": "Exercise-induced hypoglycemia: GLUT4 translocation (insulin-independent)", "system": "Physiology", "topic": "Muscle glucose uptake / GLUT4", "correct": "E", "yourAnswer": "E", "percentCorrect": 53, "vignette": "A 46-year-old man develops episodes of \"dizzy spells\" accompanied by palpitations and sweating during exercise. His symptoms improve after drinking orange juice or eating a protein bar. The patient was diagnosed with type 2 diabetes 6 months ago and advised to lose weight with dietary modification and exercise. Since then, he has been working out intensively and has lost 10 kg (22 lb). Which of the following mechanisms is responsible for this patient's symptoms when exercising?", "clues": [{"text": "palpitations and sweating during exercise", "type": "green", "note": "Adrenergic symptoms (palpitations, sweating) during exercise that resolve with sugar are classic for hypoglycemia."}, {"text": "symptoms improve after drinking orange juice or eating a protein bar", "type": "green", "note": "Rapid relief with carbohydrate intake confirms the episodes are hypoglycemic."}, {"text": "diagnosed with type 2 diabetes 6 months ago", "type": "orange", "note": "In a diabetic on therapy/exercise, exercise-induced hypoglycemia can occur from increased muscle glucose uptake without matched carbohydrate intake."}], "whatMatters": "Adrenergic symptoms during exercise that resolve with sugar = exercise-induced HYPOGLYCEMIA. Muscle contraction stimulates INSULIN-INDEPENDENT glucose uptake by TRANSLOCATING GLUCOSE TRANSPORTER 4 (GLUT4) to the membrane, rapidly lowering blood glucose. Answer E.", "strategy": "Recall that skeletal muscle takes up glucose via GLUT4, and GLUT4 is translocated to the membrane by BOTH insulin (fed state) AND muscle contraction (exercise, insulin-independent). Exercise-driven GLUT4 translocation explains the falling glucose. Reject GLUT2 (liver/pancreas sensor, not muscle contraction), and metabolic enzymes that would RAISE glucose (glucose-6-phosphatase, decreased hepatic glucose production is opposite) or are unrelated (glucokinase).", "options": [{"letter": "A", "text": "Decreased hepatic glucose production", "correct": false}, {"letter": "B", "text": "Increased glucokinase activity", "correct": false}, {"letter": "C", "text": "Increased glucose-6-phosphatase activity", "correct": false}, {"letter": "D", "text": "Translocation of glucose transporter 2 to the cell membrane", "correct": false}, {"letter": "E", "text": "Translocation of glucose transporter 4 to the cell membrane", "correct": true}], "eliminations": [{"letter": "A", "label": "Decreased hepatic glucose production - would follow, not cause", "detail": "WHAT IT IS: reduced hepatic gluconeogenesis/glycogenolysis. ❌ WHY IT FAILS: during exercise/hypoglycemia the liver INCREASES glucose output (glucagon/epinephrine) to defend glucose; decreased production isn't the mechanism lowering his sugar. ✅ Correct if: asking what worsens fasting hypoglycemia (e.g., impaired gluconeogenesis)."}, {"letter": "B", "label": "Increased glucokinase activity - liver, rising-glucose enzyme", "detail": "WHAT IT IS: glucokinase phosphorylates glucose in the liver, induced by HIGH glucose (fed state). ❌ WHY IT FAILS: it's a hepatic enzyme active when glucose is high, not the muscle mechanism of exercise glucose uptake. ✅ Correct if: hepatic glucose trapping in the fed state."}, {"letter": "C", "label": "Increased glucose-6-phosphatase - raises glucose", "detail": "WHAT IT IS: glucose-6-phosphatase releases free glucose during gluconeogenesis, RAISING blood glucose. ❌ WHY IT FAILS: increased activity would improve (not cause) hypoglycemia. ✅ Correct if: maintaining glucose in the fasting state."}, {"letter": "D", "label": "GLUT2 translocation - liver/pancreas sensor, not muscle", "detail": "WHAT IT IS: GLUT2 is a high-capacity, insulin-INDEPENDENT transporter in liver and pancreatic beta cells (glucose sensing). ❌ WHY IT FAILS: GLUT2 is constitutively at the membrane and isn't the muscle-contraction transporter; skeletal muscle uses GLUT4. ✅ Correct if: hepatic/beta-cell glucose sensing."}], "reasoning": ["Adrenergic symptoms during exercise relieved by sugar = exercise-induced hypoglycemia", "Skeletal muscle takes up glucose via GLUT4", "Muscle contraction (like insulin) translocates GLUT4 to the membrane - insulin-independent", "-> GLUT4 translocation to the cell membrane; answer E"], "mechanism": "Skeletal muscle imports glucose by facilitated diffusion through GLUCOSE TRANSPORTER 4 (GLUT4). GLUT4 is normally stored in intracellular vesicles and is translocated to the plasma membrane by TWO stimuli: INSULIN (fed state, via the PI3K pathway) and MUSCLE CONTRACTION (exercise, via calcium/AMPK - an INSULIN-INDEPENDENT pathway). During intense exercise, contraction-induced GLUT4 translocation markedly increases muscle glucose uptake; if carbohydrate intake or counterregulation doesn't keep pace (common in patients with diabetes on therapy), blood glucose falls, triggering adrenergic symptoms (palpitations, sweating, dizziness) that resolve with sugar - exercise-induced hypoglycemia. Regular exercise also upregulates GLUT4 expression and insulin sensitivity over time. The distractors are hepatic/metabolic processes that either raise glucose (glucose-6-phosphatase; hepatic output actually increases during exercise) or involve other transporters/enzymes (GLUT2 sensing, glucokinase) not responsible for muscle glucose uptake during exercise.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Physio/Biochem > GLUT4 (muscle/adipose) is insulin-responsive AND translocated by muscle contraction (insulin-independent); exercise increases glucose uptake -> exercise-induced hypoglycemia in diabetics."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Exercise lowers glucose via contraction-driven GLUT4 translocation (independent of insulin)."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on GLUT4 vs GLUT2, insulin-independent glucose uptake, AMPK, or adrenergic hypoglycemia symptoms? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "GLUT2 = liver/pancreas sensor; glucokinase/glucose-6-phosphatase are hepatic; decreased hepatic output is opposite of what defends glucose."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: muscle GLUT4 translocated by insulin AND exercise (contraction, insulin-independent); intense exercise -> hypoglycemia."}], "keywords": [{"front": "Muscle glucose transporter", "back": "GLUT4 (insulin- and exercise-responsive)"}, {"front": "Two triggers of GLUT4 translocation", "back": "Insulin (PI3K) and muscle contraction (Ca2+/AMPK, insulin-independent)"}, {"front": "Exercise-induced hypoglycemia mechanism", "back": "Contraction-driven GLUT4 translocation increases glucose uptake"}, {"front": "GLUT2 location/role", "back": "Liver + pancreatic beta cells (glucose sensor, insulin-independent)"}, {"front": "Adrenergic hypoglycemia symptoms", "back": "Palpitations, sweating, tremor, dizziness (relieved by sugar)"}, {"front": "Long-term exercise effect on GLUT4", "back": "↑GLUT4 expression -> increased insulin sensitivity"}], "firstAid": [{"tag": "answer / stem", "topic": "GLUT4 / exercise", "detail": "Physio: muscle contraction translocates GLUT4 (insulin-independent) -> glucose uptake."}, {"tag": "options", "topic": "Glucose transporters/enzymes", "detail": "Biochem > GLUT2 (liver/pancreas sensor), glucokinase (fed liver), glucose-6-phosphatase (raises glucose)."}, {"tag": "clinical", "topic": "Diabetes + exercise", "detail": "Endo > exercise-induced hypoglycemia; adjust carbs/medication."}], "memoryHook": "Muscles have two keys to open the GLUT4 glucose door - insulin AND contraction; a hard workout unlocks it without insulin, so sugar plummets mid-exercise.", "stem": [{"text": "A 46-year-old man develops episodes of \"dizzy spells\" accompanied by "}, {"text": "palpitations and sweating during exercise", "clue": true, "type": "green", "note": "Adrenergic symptoms (palpitations, sweating) during exercise that resolve with sugar are classic for hypoglycemia."}, {"text": ". His "}, {"text": "symptoms improve after drinking orange juice or eating a protein bar", "clue": true, "type": "green", "note": "Rapid relief with carbohydrate intake confirms the episodes are hypoglycemic."}, {"text": ". The patient was "}, {"text": "diagnosed with type 2 diabetes 6 months ago", "clue": true, "type": "orange", "note": "In a diabetic on therapy/exercise, exercise-induced hypoglycemia can occur from increased muscle glucose uptake without matched carbohydrate intake."}, {"text": " and advised to lose weight with dietary modification and exercise. Since then, he has been working out intensively and has lost 10 kg (22 lb). Which of the following mechanisms is responsible for this patient's symptoms when exercising?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

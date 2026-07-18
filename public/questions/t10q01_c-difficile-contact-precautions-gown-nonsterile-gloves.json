@@ -1,0 +1,190 @@
+{
+  "id": "q335",
+  "item": 335,
+  "qid": "11459",
+  "title": "C. difficile: contact precautions (gown + nonsterile gloves)",
+  "system": "Microbiology",
+  "topic": "Clostridioides difficile / infection control",
+  "correct": "A",
+  "yourAnswer": "B",
+  "percentCorrect": 34,
+  "vignette": "An 86-year-old woman is hospitalized for a urinary tract infection due to Escherichia coli and is being treated with ceftriaxone. She has a history of advanced dementia, coronary artery disease, and congestive heart failure. On the fifth day of hospitalization, she seems agitated. The nurse reports that the patient had 3 episodes of watery diarrhea the previous night. Temperature is 38.3 C (100.9 F). In addition to appropriate hand hygiene, which of the following pieces of equipment are necessary before examining this patient?",
+  "clues": [
+    {
+      "text": "treated with ceftriaxone",
+      "type": "red",
+      "note": "Recent broad-spectrum antibiotics disrupt colonic flora and are the key risk factor for Clostridioides difficile infection."
+    },
+    {
+      "text": "3 episodes of watery diarrhea",
+      "type": "green",
+      "note": "New-onset watery diarrhea a few days into antibiotics (with fever) strongly suggests C. difficile colitis."
+    },
+    {
+      "text": "Temperature is 38.3 C",
+      "type": "blue",
+      "note": "Fever accompanying antibiotic-associated diarrhea supports C. difficile infection, which mandates CONTACT precautions."
+    }
+  ],
+  "whatMatters": "New watery diarrhea + fever a few days into antibiotics = Clostridioides difficile infection. C. difficile requires CONTACT precautions: a GOWN plus NONSTERILE GLOVES for patient contact, and hand hygiene with SOAP AND WATER (alcohol sanitizers don't kill the spores). Answer A.",
+  "strategy": "Recognize C. difficile (antibiotics -> watery diarrhea + fever), then recall its infection-control bundle: contact precautions = gown + nonsterile gloves; wash hands with soap and water (spores resist alcohol); private room preferred. Reject gloves-only (insufficient), sterile gloves/gown (needed for sterile procedures, not exams), and respirator (airborne precautions - TB/varicella, not C. difficile).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Nonsterile gloves and gown",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Nonsterile gloves only",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Respirator, sterile gloves, and gown",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Sterile gloves and gown",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Sterile gloves only",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Nonsterile gloves only - gown also required (your pick)",
+      "detail": "WHAT IT IS: gloves without a gown. ❌ WHY IT FAILS: contact precautions for C. difficile require BOTH nonsterile gloves AND a gown for any patient contact; gloves alone are insufficient. ✅ Correct if: standard precautions with no significant contamination risk."
+    },
+    {
+      "letter": "C",
+      "label": "Respirator + sterile gloves + gown - airborne, not contact",
+      "detail": "WHAT IT IS: an N95 respirator (airborne precautions) plus sterile attire. ❌ WHY IT FAILS: C. difficile spreads by CONTACT (fecal-oral), not airborne; a respirator is for TB/measles/varicella. ✅ Correct if: airborne pathogens (tuberculosis, measles, varicella)."
+    },
+    {
+      "letter": "D",
+      "label": "Sterile gloves and gown - for procedures, not exams",
+      "detail": "WHAT IT IS: sterile attire used to avoid contaminating a sterile field. ❌ WHY IT FAILS: sterile gear protects the PATIENT during procedures/surgery; contact precautions to protect the examiner use NONSTERILE gloves/gown. ✅ Correct if: a sterile procedure (e.g., central line placement)."
+    },
+    {
+      "letter": "E",
+      "label": "Sterile gloves only - wrong on both counts",
+      "detail": "WHAT IT IS: sterile gloves without a gown. ❌ WHY IT FAILS: neither sterile gloves nor gloves-alone meets contact precautions (need nonsterile gloves + gown). ✅ Correct if: a minor sterile procedure, not this exam."
+    }
+  ],
+  "reasoning": [
+    "Antibiotic exposure + new watery diarrhea + fever = Clostridioides difficile infection",
+    "C. difficile requires CONTACT precautions",
+    "Contact precautions = gown + nonsterile gloves; hand hygiene with soap and water (spores resist alcohol)",
+    "-> nonsterile gloves and gown; answer A"
+  ],
+  "mechanism": "Clostridioides difficile is a spore-forming, toxin-producing organism that overgrows the colon after antibiotics disrupt the normal flora, causing watery diarrhea, fever, and (in severe cases) pseudomembranous colitis. Because it spreads by the fecal-oral route via environmentally hardy SPORES, suspected or proven C. difficile requires CONTACT precautions on top of standard precautions: don a GOWN and NONSTERILE GLOVES for any patient contact, use dedicated equipment, and - critically - perform hand hygiene with SOAP AND WATER, because alcohol-based hand sanitizers do NOT kill C. difficile spores. A private room is preferred. Sterile gloves/gowns are meant to protect a sterile field during procedures (protecting the patient), not to protect the examiner from a contact pathogen, and airborne precautions with an N95 respirator are reserved for aerosol-transmitted organisms (tuberculosis, measles, varicella) - not C. difficile.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro > C. difficile: antibiotic-associated diarrhea/pseudomembranous colitis, spores; CONTACT precautions (gown + nonsterile gloves), soap-and-water hand hygiene (alcohol ineffective on spores)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Antibiotic + watery diarrhea + fever = C. difficile -> contact precautions (gown + nonsterile gloves)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on contact vs airborne precautions, C. difficile spores, or sterile vs nonsterile gloves? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Gloves-only is insufficient; sterile gear is for procedures; respirator is airborne (TB/measles/varicella), not C. difficile."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: C. difficile -> contact precautions (gown + nonsterile gloves) + soap-and-water handwash (spores resist alcohol)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Antibiotic-associated watery diarrhea + fever",
+      "back": "Clostridioides difficile infection"
+    },
+    {
+      "front": "C. difficile isolation precautions",
+      "back": "Contact: gown + nonsterile gloves"
+    },
+    {
+      "front": "Hand hygiene for C. difficile",
+      "back": "Soap and water (alcohol doesn't kill spores)"
+    },
+    {
+      "front": "Airborne precautions (N95) organisms",
+      "back": "Tuberculosis, measles, varicella"
+    },
+    {
+      "front": "Why sterile gloves aren't used here",
+      "back": "Sterile gear protects a sterile field, not the examiner"
+    },
+    {
+      "front": "Common C. difficile antibiotic triggers",
+      "back": "Clindamycin, cephalosporins, fluoroquinolones"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "C. difficile infection control",
+      "detail": "Micro: contact precautions (gown + nonsterile gloves), soap-and-water hand hygiene."
+    },
+    {
+      "tag": "options",
+      "topic": "Isolation precautions",
+      "detail": "Micro > contact (C. diff/MRSA/VRE), airborne (TB/measles/varicella), droplet."
+    },
+    {
+      "tag": "context",
+      "topic": "C. difficile",
+      "detail": "Micro > antibiotic-associated; spores; pseudomembranous colitis; treat oral vancomycin/fidaxomicin."
+    }
+  ],
+  "memoryHook": "C. diff spores laugh at hand gel - glove up, gown up, and scrub with soap and water; the respirator stays in the closet (that's for airborne bugs).",
+  "stem": [
+    {
+      "text": "An 86-year-old woman is hospitalized for a urinary tract infection due to Escherichia coli and is being "
+    },
+    {
+      "text": "treated with ceftriaxone",
+      "clue": true,
+      "type": "red",
+      "note": "Recent broad-spectrum antibiotics disrupt colonic flora and are the key risk factor for Clostridioides difficile infection."
+    },
+    {
+      "text": ". She has a history of advanced dementia, coronary artery disease, and congestive heart failure. On the fifth day of hospitalization, she seems agitated. The nurse reports that the patient had "
+    },
+    {
+      "text": "3 episodes of watery diarrhea",
+      "clue": true,
+      "type": "green",
+      "note": "New-onset watery diarrhea a few days into antibiotics (with fever) strongly suggests C. difficile colitis."
+    },
+    {
+      "text": " the previous night. "
+    },
+    {
+      "text": "Temperature is 38.3 C",
+      "clue": true,
+      "type": "blue",
+      "note": "Fever accompanying antibiotic-associated diarrhea supports C. difficile infection, which mandates CONTACT precautions."
+    },
+    {
+      "text": " (100.9 F). In addition to appropriate hand hygiene, which of the following pieces of equipment are necessary before examining this patient?"
+    }
+  ]
+}

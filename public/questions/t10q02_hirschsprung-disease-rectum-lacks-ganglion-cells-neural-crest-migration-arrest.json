@@ -1,0 +1,196 @@
+{
+  "id": "q336",
+  "item": 336,
+  "qid": "330",
+  "title": "Hirschsprung disease: rectum lacks ganglion cells (neural crest migration arrest)",
+  "system": "Embryology",
+  "topic": "Neural crest migration / Hirschsprung disease",
+  "correct": "G",
+  "yourAnswer": "G",
+  "percentCorrect": 55,
+  "vignette": "Researchers are studying disease processes related to migration of vagal neural crest cells in the human embryo, which typically occurs during weeks 4-7 of gestation. They initially observe normal neural crest cell activity that is subsequently interrupted during the 7th week before migration is complete. Which of the following structures is most likely to lack innervation as a result of this disruption?",
+  "clues": [
+    {
+      "text": "migration of vagal neural crest cells",
+      "type": "blue",
+      "note": "Vagal neural crest cells migrate into the gut to become the enteric ganglion cells (Meissner and Auerbach plexuses) that drive peristalsis."
+    },
+    {
+      "text": "interrupted during the 7th week before migration is complete",
+      "type": "red",
+      "note": "Neural crest cells migrate cranial-to-caudal; a LATE interruption (week 7) leaves the most DISTAL bowel - the rectum - without ganglia (Hirschsprung disease)."
+    }
+  ],
+  "whatMatters": "Enteric ganglion cells derive from neural crest cells that migrate CRANIAL to CAUDAL down the gut. If migration is arrested before completion, the most DISTAL segment - the RECTUM - is reached last and is left aganglionic (Hirschsprung disease). Answer G. The rectum is ALWAYS involved because it is at the end of the migration path.",
+  "strategy": "Track the direction: neural crest cells enter the foregut and migrate caudally, reaching the rectum last. An incomplete migration therefore spares proximal bowel and leaves the DISTAL-most segment aganglionic. Of the options, the rectum is the most distal -> always affected in Hirschsprung. Reject more proximal segments (esophagus, duodenum, jejunum, ileum, cecum, transverse colon), which are innervated earlier.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Esophagus",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Duodenum",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Jejunum",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Ileum",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Cecum",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Transverse colon",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Rectum",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Esophagus - innervated early (proximal)",
+      "detail": "WHAT IT IS: the foregut-derived esophagus, reached FIRST by migrating neural crest cells. ❌ WHY IT FAILS: proximal structures are innervated early; a late migration arrest spares them. ✅ Correct if: achalasia (but that's usually autoimmune loss of mature neurons, not failed migration)."
+    },
+    {
+      "letter": "B",
+      "label": "Duodenum - proximal, innervated early",
+      "detail": "WHAT IT IS: proximal small bowel. ❌ WHY IT FAILS: it is reached well before the rectum, so it retains ganglia after a late arrest. ✅ Correct if: a very early/total migration failure (rare total aganglionosis)."
+    },
+    {
+      "letter": "C",
+      "label": "Jejunum - proximal small bowel",
+      "detail": "WHAT IT IS: mid small bowel. ❌ WHY IT FAILS: reached before the distal colon/rectum; spared by a late arrest. ✅ Correct if: extensive/total intestinal aganglionosis (extremely rare)."
+    },
+    {
+      "letter": "D",
+      "label": "Ileum - more proximal than rectum",
+      "detail": "WHAT IT IS: distal small bowel. ❌ WHY IT FAILS: still proximal to the rectum in the migration path. ✅ Correct if: total colonic + ileal aganglionosis (uncommon)."
+    },
+    {
+      "letter": "E",
+      "label": "Cecum - not the last segment",
+      "detail": "WHAT IT IS: the proximal large bowel. ❌ WHY IT FAILS: reached before the rectosigmoid; the rectum is affected last/always. ✅ Correct if: total colonic aganglionosis (less common)."
+    },
+    {
+      "letter": "F",
+      "label": "Transverse colon - proximal to the rectosigmoid",
+      "detail": "WHAT IT IS: mid-colon. ❌ WHY IT FAILS: innervated before the distal rectosigmoid; not the last segment. ✅ Correct if: long-segment Hirschsprung (still includes the rectum)."
+    }
+  ],
+  "reasoning": [
+    "Vagal neural crest cells become enteric ganglion cells and migrate cranial-to-caudal",
+    "A migration arrest before completion leaves the DISTAL-most bowel aganglionic",
+    "The rectum is reached last, so it is always affected in Hirschsprung disease",
+    "-> rectum; answer G"
+  ],
+  "mechanism": "Enteric ganglion cells - the neurons of the submucosal (Meissner) and myenteric (Auerbach) plexuses that coordinate peristalsis - are derived from VAGAL NEURAL CREST cells that enter the foregut around week 4 and migrate CRANIALLY-to-CAUDALLY down the entire gut, reaching the terminal hindgut (rectum) by about week 7. If this migration is ARRESTED before completion, the most DISTAL segment fails to receive ganglion cells, producing HIRSCHSPRUNG DISEASE: an aganglionic distal colon that cannot relax, so it stays tonically contracted/narrowed with compensatory dilation of the normal proximal bowel. Because the rectum is at the END of the migration path, it is ALWAYS involved (the affected segment extends proximally from the rectum by a variable length). Clinically, neonates fail to pass meconium within 48 hours, with constipation and abdominal distension; rectal suction biopsy showing absent submucosal ganglia is diagnostic. More proximal segments (esophagus through transverse colon) are innervated earlier and are spared by a late arrest.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Embryo/GI > Hirschsprung disease: failure of neural crest cell migration -> aganglionic distal colon; rectum ALWAYS involved; failure to pass meconium; rectal suction biopsy diagnostic; associated with Down syndrome/RET."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Cranial-to-caudal migration means a late arrest leaves the DISTAL-most bowel (rectum) aganglionic."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on neural crest cells, enteric ganglia (Meissner/Auerbach), aganglionosis, or Hirschsprung disease? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Esophagus through transverse colon are innervated earlier; only the rectum (last in the path) is always affected."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: Hirschsprung = failed neural crest migration; rectum always aganglionic; RET gene, Down syndrome; no meconium in 48 h."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Segment always affected in Hirschsprung disease",
+      "back": "Rectum (reached last by migrating neural crest cells)"
+    },
+    {
+      "front": "Origin of enteric ganglion cells",
+      "back": "Vagal neural crest cells"
+    },
+    {
+      "front": "Direction of neural crest gut migration",
+      "back": "Cranial to caudal (foregut -> rectum)"
+    },
+    {
+      "front": "Hirschsprung neonatal presentation",
+      "back": "Failure to pass meconium in 48 h, constipation, distension"
+    },
+    {
+      "front": "Diagnostic test for Hirschsprung",
+      "back": "Rectal suction biopsy (absent submucosal ganglia)"
+    },
+    {
+      "front": "Hirschsprung gene / association",
+      "back": "RET; Down syndrome"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Hirschsprung disease",
+      "detail": "Embryo: neural crest migration arrest -> aganglionic rectum (always involved)."
+    },
+    {
+      "tag": "options",
+      "topic": "Gut innervation",
+      "detail": "GI > cranial-to-caudal migration; distal-most segment affected first by arrest."
+    },
+    {
+      "tag": "clinical",
+      "topic": "Hirschsprung",
+      "detail": "Peds > no meconium in 48 h; rectal suction biopsy; RET/Down association."
+    }
+  ],
+  "memoryHook": "Neural crest cells march from mouth to bottom - stop them short and the finish line (rectum) never gets wired: Hirschsprung always spares nothing distal.",
+  "stem": [
+    {
+      "text": "Researchers are studying disease processes related to "
+    },
+    {
+      "text": "migration of vagal neural crest cells",
+      "clue": true,
+      "type": "blue",
+      "note": "Vagal neural crest cells migrate into the gut to become the enteric ganglion cells (Meissner and Auerbach plexuses) that drive peristalsis."
+    },
+    {
+      "text": " in the human embryo, which typically occurs during weeks 4-7 of gestation. They initially observe normal neural crest cell activity that is subsequently "
+    },
+    {
+      "text": "interrupted during the 7th week before migration is complete",
+      "clue": true,
+      "type": "red",
+      "note": "Neural crest cells migrate cranial-to-caudal; a LATE interruption (week 7) leaves the most DISTAL bowel - the rectum - without ganglia (Hirschsprung disease)."
+    },
+    {
+      "text": ". Which of the following structures is most likely to lack innervation as a result of this disruption?"
+    }
+  ]
+}

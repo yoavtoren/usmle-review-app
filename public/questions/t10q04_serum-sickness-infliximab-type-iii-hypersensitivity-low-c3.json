@@ -1,0 +1,200 @@
+{
+  "id": "q338",
+  "item": 338,
+  "qid": "741",
+  "title": "Serum sickness (infliximab): type III hypersensitivity -> low C3",
+  "system": "Immunology",
+  "topic": "Serum sickness / type III hypersensitivity",
+  "correct": "B",
+  "yourAnswer": "E",
+  "percentCorrect": 41,
+  "vignette": "A 32-year-old man is started on infliximab for treatment of refractory Crohn disease. Ten days later, he develops joint pain and a pruritic skin rash. Skin biopsy shows scattered areas of fibrinoid necrosis and neutrophil infiltration involving his small blood vessels. Which of the following findings is most likely to accompany this patient's condition?",
+  "clues": [
+    {
+      "text": "started on infliximab",
+      "type": "orange",
+      "note": "Infliximab is a chimeric (partly mouse) monoclonal antibody - a foreign protein that can trigger a serum sickness reaction."
+    },
+    {
+      "text": "Ten days later, he develops joint pain and a pruritic skin rash",
+      "type": "green",
+      "note": "Fever, arthralgia, and a pruritic rash appearing ~1-2 weeks after exposure to a foreign protein are the classic timing/features of serum sickness."
+    },
+    {
+      "text": "fibrinoid necrosis and neutrophil infiltration involving his small blood vessels",
+      "type": "green",
+      "note": "Small-vessel vasculitis with fibrinoid necrosis and neutrophils reflects immune-complex deposition - a type III hypersensitivity reaction."
+    }
+  ],
+  "whatMatters": "Arthralgia + pruritic rash + small-vessel vasculitis (fibrinoid necrosis) ~1-2 weeks after a foreign protein (infliximab) = SERUM SICKNESS, a TYPE III (immune-complex) hypersensitivity. Immune complexes deposit in tissues and FIX COMPLEMENT, consuming it - so serum C3 is DECREASED. Answer B.",
+  "strategy": "Identify type III hypersensitivity (immune complexes) from the timing + vasculitis, then recall the lab hallmark: complement consumption -> LOW C3 (and C4). Reject type I markers (increased IgE - anaphylaxis/atopy), neutrophilia (serum sickness actually causes NEUTROPENIA from margination + TNF-alpha inhibition), IgA deficiency (unrelated), Candida anergy (type IV / cell-mediated), and severe thrombocytopenia (not typical).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Candida antigen anergy",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreased serum C3 level",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Increased serum IgE level",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Low serum IgA level",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Neutrophilia",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Severe thrombocytopenia",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Candida antigen anergy - type IV / cell-mediated",
+      "detail": "WHAT IT IS: absent delayed-type skin response to Candida indicates impaired CELL-MEDIATED (type IV) immunity. ❌ WHY IT FAILS: serum sickness is a type III (immune-complex) reaction, not a T-cell defect. ✅ Correct if: assessing cell-mediated immunity (e.g., HIV/anergy)."
+    },
+    {
+      "letter": "C",
+      "label": "Increased serum IgE - type I (atopy/anaphylaxis)",
+      "detail": "WHAT IT IS: elevated IgE mediates type I hypersensitivity (allergy, anaphylaxis). ❌ WHY IT FAILS: the immune-complex vasculitis here is type III, driven by IgG/IgM and complement, not IgE. ✅ Correct if: atopic disease/anaphylaxis."
+    },
+    {
+      "letter": "D",
+      "label": "Low serum IgA - unrelated deficiency",
+      "detail": "WHAT IT IS: selective IgA deficiency (mucosal infections, anaphylaxis to blood products). ❌ WHY IT FAILS: it is not a feature of serum sickness. ✅ Correct if: recurrent sinopulmonary/GI infections with anti-IgA reactions."
+    },
+    {
+      "letter": "E",
+      "label": "Neutrophilia - serum sickness causes NEUTROPENIA (your pick)",
+      "detail": "WHAT IT IS: an elevated neutrophil count. ❌ WHY IT FAILS: serum sickness releases C5a (a neutrophil chemoattractant) causing neutrophil margination/tissue infiltration - so the blood count trends toward NEUTROPENIA, not neutrophilia (and TNF-alpha inhibitors can also cause neutropenia). ✅ Correct if: an acute bacterial infection/stress response."
+    },
+    {
+      "letter": "F",
+      "label": "Severe thrombocytopenia - not typical",
+      "detail": "WHAT IT IS: a markedly low platelet count. ❌ WHY IT FAILS: mild platelet consumption can occur at sites of vascular inflammation, but SEVERE thrombocytopenia is not a feature of serum sickness. ✅ Correct if: immune thrombocytopenia/consumptive coagulopathy."
+    }
+  ],
+  "reasoning": [
+    "Foreign protein (chimeric antibody infliximab) + arthralgia/rash + small-vessel vasculitis ~10 days later = serum sickness",
+    "Serum sickness is a type III (immune-complex) hypersensitivity",
+    "Deposited immune complexes fix and consume complement -> decreased serum C3 (and C4)",
+    "-> decreased serum C3 level; answer B"
+  ],
+  "mechanism": "Serum sickness is a TYPE III (immune-complex) hypersensitivity reaction to a foreign protein - classically nonhuman/heterologous antibodies (e.g., chimeric monoclonals such as infliximab or rituximab, antivenoms) or certain drugs. About 1-2 weeks after exposure (time to generate antibody), circulating IgG/IgM-antigen IMMUNE COMPLEXES deposit in small vessels, joints, and skin, activating the classical COMPLEMENT cascade. Complement activation releases C3a/C5a (neutrophil chemoattractants) that recruit neutrophils, producing a small-vessel vasculitis with FIBRINOID NECROSIS - matching the biopsy. Because complement is consumed at deposition sites, serum C3 (and C4) levels FALL (hypocomplementemia) - the expected lab finding. Clinically: fever, arthralgias, a pruritic (often urticarial) rash, and sometimes lymphadenopathy/proteinuria. Note the peripheral neutrophil count tends toward NEUTROPENIA (margination/tissue infiltration; TNF-alpha inhibitors compound this), so 'neutrophilia' is wrong. The other options reflect different mechanisms: increased IgE (type I), Candida anergy (type IV), and IgA deficiency (unrelated).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Immuno > serum sickness (type III): immune complexes -> complement activation/consumption (LOW C3/C4), small-vessel vasculitis with fibrinoid necrosis; 1-2 weeks after foreign protein (chimeric mAb, antivenom)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Immune-complex vasculitis consumes complement -> decreased C3 (not neutrophilia)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on type III hypersensitivity, immune complexes, complement consumption/hypocomplementemia, fibrinoid necrosis, or chimeric antibody? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "↑IgE = type I; Candida anergy = type IV; low IgA unrelated; neutrophilia wrong (serum sickness -> neutropenia)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: serum sickness = type III, immune complexes -> ↓C3/C4, small-vessel vasculitis; 1-2 weeks after foreign protein."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Arthralgia + rash + vasculitis ~1-2 wk after a foreign protein",
+      "back": "Serum sickness (type III hypersensitivity)"
+    },
+    {
+      "front": "Serum sickness lab hallmark",
+      "back": "Decreased C3/C4 (complement consumption)"
+    },
+    {
+      "front": "Type III hypersensitivity mechanism",
+      "back": "Immune-complex deposition -> complement activation -> neutrophilic small-vessel vasculitis"
+    },
+    {
+      "front": "Type I hypersensitivity marker",
+      "back": "Increased IgE (anaphylaxis/atopy)"
+    },
+    {
+      "front": "Candida antigen anergy tests",
+      "back": "Cell-mediated (type IV) immunity"
+    },
+    {
+      "front": "Blood neutrophil trend in serum sickness",
+      "back": "Neutropenia (margination; TNF-alpha inhibitor effect)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Serum sickness",
+      "detail": "Immuno: type III; immune complexes -> ↓C3/C4; small-vessel vasculitis; ~1-2 wk post-exposure."
+    },
+    {
+      "tag": "options",
+      "topic": "Hypersensitivity markers",
+      "detail": "Immuno > type I (IgE), type III (immune complexes/complement), type IV (T-cell/anergy)."
+    },
+    {
+      "tag": "context",
+      "topic": "Chimeric antibodies",
+      "detail": "Pharm > infliximab/rituximab (foreign protein) can trigger serum sickness."
+    }
+  ],
+  "memoryHook": "Foreign antibody in, immune complexes bloom a week later - they gobble up complement (C3 drops) and light up small vessels: serum sickness.",
+  "stem": [
+    {
+      "text": "A 32-year-old man is "
+    },
+    {
+      "text": "started on infliximab",
+      "clue": true,
+      "type": "orange",
+      "note": "Infliximab is a chimeric (partly mouse) monoclonal antibody - a foreign protein that can trigger a serum sickness reaction."
+    },
+    {
+      "text": " for treatment of refractory Crohn disease. "
+    },
+    {
+      "text": "Ten days later, he develops joint pain and a pruritic skin rash",
+      "clue": true,
+      "type": "green",
+      "note": "Fever, arthralgia, and a pruritic rash appearing ~1-2 weeks after exposure to a foreign protein are the classic timing/features of serum sickness."
+    },
+    {
+      "text": ". Skin biopsy shows scattered areas of "
+    },
+    {
+      "text": "fibrinoid necrosis and neutrophil infiltration involving his small blood vessels",
+      "clue": true,
+      "type": "green",
+      "note": "Small-vessel vasculitis with fibrinoid necrosis and neutrophils reflects immune-complex deposition - a type III hypersensitivity reaction."
+    },
+    {
+      "text": ". Which of the following findings is most likely to accompany this patient's condition?"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preeclampsia: intrarenal vasospasm causing oliguria</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 10 · all 25</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q350", "item": 350, "qid": "19389", "title": "Preeclampsia: intrarenal vasospasm causing oliguria", "system": "Pathophysiology", "topic": "Preeclampsia / renal vasospasm", "correct": "E", "yourAnswer": "E", "percentCorrect": 49, "vignette": "A 31-year-old woman, gravida 2 para 1, at 30 weeks gestation comes to the emergency department due to increased swelling in her face and lower extremities. She has noticed a sudden onset of swelling and a 2.72-kg (6-lb) weight gain in the last day. The patient has not urinated in the last 12 hours despite an increase in fluid intake. She has a twin pregnancy and no chronic medical conditions. Blood pressure is 154/98 mm Hg, and pulse is 98/min. Bladder catheterization yields a total of 10 mL of dark urine. Urinalysis shows no red blood cells. Which of the following pathologic factors is the most likely cause of this patient's decreased urine output?", "clues": [{"text": "increased swelling in her face and lower extremities", "type": "blue", "note": "New facial and extremity edema with rapid weight gain in the third trimester suggests preeclampsia (capillary leak from endothelial injury)."}, {"text": "twin pregnancy", "type": "orange", "note": "Twin (multifetal) gestation increases placental mass and is a major risk factor for preeclampsia."}, {"text": "Blood pressure is 154/98 mm Hg", "type": "red", "note": "New-onset hypertension (>=140/90) at >=20 weeks gestation with end-organ signs defines preeclampsia."}, {"text": "Urinalysis shows no red blood cells", "type": "green", "note": "Oliguria WITHOUT red cells/casts argues against glomerulonephritis and points to a PRE-glomerular (vascular) cause - intrarenal vasospasm."}], "whatMatters": "Third-trimester new hypertension + edema + oliguria in a twin pregnancy = PREECLAMPSIA. The ischemic placenta releases antiangiogenic factors that damage maternal endothelium, causing widespread VASOSPASM. Intrarenal arterial vasospasm reduces renal blood flow and GFR -> oliguria (concentrated urine, no RBCs). Answer E.", "strategy": "Diagnose preeclampsia (>=20 weeks: new hypertension + end-organ dysfunction), then trace the oliguria: diffuse endothelial injury -> VASOSPASM -> decreased renal perfusion/GFR. The absence of RBCs/casts excludes glomerular inflammation. Reject glomerular inflammation/immune-complex deposition (would show hematuria/casts), interstitial nephritis (drug-related, rash/fever), and an obstructing stone (unilateral, hematuria - and one kidney compensates).", "options": [{"letter": "A", "text": "Inflammation of the glomeruli", "correct": false}, {"letter": "B", "text": "Immune complex deposition within glomeruli", "correct": false}, {"letter": "C", "text": "Inflammation of the renal interstitium", "correct": false}, {"letter": "D", "text": "Obstructing stone within the renal calyx", "correct": false}, {"letter": "E", "text": "Vasospasm of the intrarenal arteries", "correct": true}], "eliminations": [{"letter": "A", "label": "Inflammation of the glomeruli - would show hematuria/casts", "detail": "WHAT IT IS: glomerulonephritis. ❌ WHY IT FAILS: it typically causes hematuria with RBC casts; this patient's urinalysis shows NO red cells, and the clinical picture is preeclampsia-driven vasospasm. ✅ Correct if: nephritic urine with dysmorphic RBCs/casts."}, {"letter": "B", "label": "Immune complex deposition - glomerulonephritis (lupus/IgA)", "detail": "WHAT IT IS: immune-complex glomerulonephritis (e.g., lupus, IgA). ❌ WHY IT FAILS: it produces proteinuria WITH hematuria/casts, not the RBC-negative oliguria of preeclamptic vasospasm. ✅ Correct if: immune-complex glomerular disease with active urine sediment."}, {"letter": "C", "label": "Inflammation of the renal interstitium - drug-related AIN", "detail": "WHAT IT IS: acute interstitial nephritis (often from NSAIDs/antibiotics) with fever, rash, eosinophils. ❌ WHY IT FAILS: no offending drug or hypersensitivity features here; the cause is preeclamptic vasospasm. ✅ Correct if: drug exposure + rash/fever + WBC casts/eosinophiluria."}, {"letter": "D", "label": "Obstructing stone - unilateral, other kidney compensates", "detail": "WHAT IT IS: a calculus obstructing one kidney. ❌ WHY IT FAILS: it usually causes hematuria and unilateral obstruction, with the contralateral kidney maintaining output; it doesn't explain systemic hypertension/edema. ✅ Correct if: renal colic with hematuria and hydronephrosis."}], "reasoning": ["New hypertension + edema + oliguria at 30 weeks in a twin pregnancy = preeclampsia", "The ischemic placenta releases antiangiogenic factors that injure maternal endothelium", "Diffuse vasospasm reduces renal blood flow and GFR -> oliguria (RBC-negative, concentrated urine)", "-> vasospasm of the intrarenal arteries; answer E"], "mechanism": "Preeclampsia is new-onset HYPERTENSION (>=140/90) at >=20 weeks gestation plus proteinuria and/or signs of end-organ dysfunction. It arises from abnormal placentation with poorly remodeled spiral arteries and placental ISCHEMIA (risk is higher with increased placental mass, e.g., TWIN gestation). The ischemic placenta releases ANTIANGIOGENIC factors (e.g., soluble fms-like tyrosine kinase-1) that cause widespread maternal ENDOTHELIAL cell damage. Two consequences follow: (1) capillary leak -> third-spacing of fluid (facial/extremity edema, rapid weight gain) and proteinuria, and (2) loss of endothelial control of vascular tone -> systemic VASOSPASM with end-organ hypoperfusion. In the KIDNEYS, intrarenal arterial vasospasm reduces renal blood flow and glomerular filtration rate, producing OLIGURIA with minimal, concentrated urine and rising creatinine - without hematuria (no glomerular inflammation). Definitive treatment is delivery of the placenta. The distractors (glomerular inflammation, immune-complex deposition, interstitial nephritis, obstructing stone) would show active urine sediment or a different clinical context.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Repro > preeclampsia: new hypertension >=20 wk + proteinuria/end-organ damage; placental ischemia -> antiangiogenic factors -> endothelial injury -> vasospasm + capillary leak; delivery is curative."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Oliguria with NO RBCs in preeclampsia = renal (pre-glomerular) vasospasm, not glomerulonephritis."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on preeclampsia, vasospasm, antiangiogenic factors (sFlt-1), oliguria, or nephritic sediment? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Glomerular inflammation/immune complexes = hematuria/casts; interstitial nephritis = drug/rash; stone = unilateral/hematuria."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: preeclampsia -> endothelial damage -> vasospasm (hypertension, renal hypoperfusion/oliguria) + capillary leak (edema/proteinuria); treat by delivery."}], "keywords": [{"front": "New hypertension + edema + oliguria at >=20 weeks", "back": "Preeclampsia"}, {"front": "Cause of oliguria in preeclampsia", "back": "Intrarenal arterial vasospasm (reduced renal blood flow/GFR)"}, {"front": "Root cause of preeclampsia", "back": "Placental ischemia -> antiangiogenic factors -> endothelial injury"}, {"front": "Preeclampsia risk factor in this case", "back": "Twin (multifetal) gestation (increased placental mass)"}, {"front": "Definitive treatment of preeclampsia", "back": "Delivery of the placenta"}, {"front": "Urinalysis in preeclamptic oliguria", "back": "Concentrated urine, no RBCs/casts (pre-glomerular vasospasm)"}], "firstAid": [{"tag": "answer / stem", "topic": "Preeclampsia", "detail": "Repro: endothelial injury -> vasospasm; renal hypoperfusion -> oliguria; capillary leak -> edema/proteinuria."}, {"tag": "options", "topic": "Oliguria differential", "detail": "Renal > glomerulonephritis (casts), AIN (drug/rash), obstruction (stone)."}, {"tag": "management", "topic": "Preeclampsia", "detail": "OB > BP control, magnesium for seizure prophylaxis; delivery is curative."}], "memoryHook": "The sick placenta poisons mom's blood vessels - they clamp down (vasospasm), the kidneys get squeezed dry (oliguria), and fluid leaks into her face and legs.", "stem": [{"text": "A 31-year-old woman, gravida 2 para 1, at 30 weeks gestation comes to the emergency department due to "}, {"text": "increased swelling in her face and lower extremities", "clue": true, "type": "blue", "note": "New facial and extremity edema with rapid weight gain in the third trimester suggests preeclampsia (capillary leak from endothelial injury)."}, {"text": ". She has noticed a sudden onset of swelling and a 2.72-kg (6-lb) weight gain in the last day. The patient has not urinated in the last 12 hours despite an increase in fluid intake. She has a "}, {"text": "twin pregnancy", "clue": true, "type": "orange", "note": "Twin (multifetal) gestation increases placental mass and is a major risk factor for preeclampsia."}, {"text": " and no chronic medical conditions. "}, {"text": "Blood pressure is 154/98 mm Hg", "clue": true, "type": "red", "note": "New-onset hypertension (>=140/90) at >=20 weeks gestation with end-organ signs defines preeclampsia."}, {"text": ", and pulse is 98/min. Bladder catheterization yields a total of 10 mL of dark urine. "}, {"text": "Urinalysis shows no red blood cells", "clue": true, "type": "green", "note": "Oliguria WITHOUT red cells/casts argues against glomerulonephritis and points to a PRE-glomerular (vascular) cause - intrarenal vasospasm."}, {"text": ". Which of the following pathologic factors is the most likely cause of this patient's decreased urine output?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

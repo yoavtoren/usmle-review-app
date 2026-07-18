@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shunt infection (S. epidermidis): biofilm (extracellular polysaccharide matrix)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 10 · all 25</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q344", "item": 344, "qid": "8533", "title": "Shunt infection (S. epidermidis): biofilm (extracellular polysaccharide matrix)", "system": "Microbiology", "topic": "Staphylococcus epidermidis / biofilm", "correct": "E", "yourAnswer": "E", "percentCorrect": 42, "vignette": "A 1-year-old boy is brought to the emergency department by his mother because of high fever, irritability, and photophobia. He recently underwent ventriculoperitoneal shunt placement for congenital hydrocephalus. On physical examination, his temperature is 38.3 C (101 F), and passive flexion of the neck results in spontaneous flexion of the hips and knees. Blood cultures grow coagulase-negative Staphylococcus. Which of the following is the most important virulence mechanism by which this bacterium causes disease?", "clues": [{"text": "recently underwent ventriculoperitoneal shunt placement", "type": "orange", "note": "A prosthetic device (VP shunt) is a foreign body that Staphylococcus epidermidis colonizes - the setup for a device-associated infection."}, {"text": "passive flexion of the neck results in spontaneous flexion of the hips and knees", "type": "blue", "note": "This is a positive Brudzinski sign, indicating meningitis (here, shunt-associated)."}, {"text": "coagulase-negative Staphylococcus", "type": "green", "note": "Coagulase-NEGATIVE Staphylococcus = Staphylococcus epidermidis, the leading cause of prosthetic-device infections via biofilm formation."}], "whatMatters": "A device (VP shunt) infection with COAGULASE-NEGATIVE Staphylococcus = Staphylococcus epidermidis. Its key virulence mechanism is forming a BIOFILM - synthesizing an EXTRACELLULAR POLYSACCHARIDE MATRIX that adheres to foreign material and shields it from antibiotics and host defenses. Answer E.", "strategy": "Link foreign-body infection + coagulase-negative Staph to S. epidermidis and its signature: biofilm (extracellular polysaccharide/glycocalyx matrix). Reject intracellular existence (Listeria/Salmonella/mycobacteria), polysaccharide CAPSULE (S. pneumoniae, H. influenzae, N. meningitidis), protein A (S. aureus - binds Fc, not S. epidermidis's main mechanism), and exotoxins (S. aureus toxins), none of which is the S. epidermidis device mechanism.", "options": [{"letter": "A", "text": "Intracellular existence", "correct": false}, {"letter": "B", "text": "Outer polysaccharide capsule", "correct": false}, {"letter": "C", "text": "Presence of protein A on the cell wall", "correct": false}, {"letter": "D", "text": "Release of exotoxins", "correct": false}, {"letter": "E", "text": "Synthesis of an extracellular polysaccharide matrix", "correct": true}], "eliminations": [{"letter": "A", "label": "Intracellular existence - facultative/obligate intracellular organisms", "detail": "WHAT IT IS: surviving inside host cells (e.g., Listeria, Salmonella, Mycobacterium, Rickettsia). ❌ WHY IT FAILS: S. epidermidis is an extracellular biofilm-former, not an intracellular pathogen. ✅ Correct if: an intracellular organism."}, {"letter": "B", "label": "Outer polysaccharide capsule - encapsulated bacteria", "detail": "WHAT IT IS: an antiphagocytic capsule (S. pneumoniae, H. influenzae type b, N. meningitidis). ❌ WHY IT FAILS: S. epidermidis's device virulence is the BIOFILM matrix, not a classic antiphagocytic capsule. ✅ Correct if: an encapsulated organism dangerous in asplenia."}, {"letter": "C", "label": "Protein A - Staphylococcus aureus", "detail": "WHAT IT IS: protein A on S. AUREUS binds the Fc region of IgG to inhibit opsonization/phagocytosis. ❌ WHY IT FAILS: that's an S. aureus (coagulase-POSITIVE) virulence factor; this is coagulase-negative S. epidermidis. ✅ Correct if: S. aureus immune evasion."}, {"letter": "D", "label": "Release of exotoxins - S. aureus toxins", "detail": "WHAT IT IS: exotoxins (e.g., staphylococcal enterotoxins, TSST-1, exfoliative toxin) are S. aureus products. ❌ WHY IT FAILS: exotoxin production is not the mechanism of S. epidermidis device infection. ✅ Correct if: toxin-mediated S. aureus disease (food poisoning, TSS)."}], "reasoning": ["VP shunt (foreign body) infection with coagulase-negative Staphylococcus = Staphylococcus epidermidis", "S. epidermidis adheres to prosthetic material and multiplies within a self-made matrix", "This biofilm is an extracellular polysaccharide matrix that resists antibiotics and immune clearance", "-> synthesis of an extracellular polysaccharide matrix; answer E"], "mechanism": "Staphylococcus epidermidis is a coagulase-NEGATIVE, catalase-positive component of normal skin flora and the most common cause of infections associated with FOREIGN BODIES (prosthetic valves, catheters, and ventriculoperitoneal shunts). Its defining virulence mechanism is BIOFILM formation: after adhering to device surfaces (coated with host proteins like fibrinogen/fibronectin), the bacteria proliferate and secrete an EXTRACELLULAR POLYSACCHARIDE MATRIX (glycocalyx/slime) that encases the colony. This biofilm acts as a barrier to antibiotic penetration and impairs host defenses (opsonization, neutrophil migration), so device-associated infections are persistent and often require REMOVAL of the hardware. In this child, the shunt seeded a biofilm-associated meningitis (positive Brudzinski sign). The distractors are virulence mechanisms of other organisms: intracellular survival (Listeria/Salmonella/mycobacteria), antiphagocytic capsule (S. pneumoniae, H. influenzae, N. meningitidis), and protein A/exotoxins (S. aureus, coagulase-positive).", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Micro > S. epidermidis: coagulase-negative, biofilm on prosthetic devices (extracellular polysaccharide matrix); infects shunts/catheters/valves; often requires device removal."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Foreign-body infection + coagulase-negative Staph = S. epidermidis biofilm (extracellular polysaccharide matrix)."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on biofilm, coagulase-negative Staphylococcus, glycocalyx, capsule vs biofilm, or Brudzinski sign? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Capsule = encapsulated bacteria; protein A + exotoxins = S. aureus; intracellular existence = other pathogens - not S. epidermidis's device mechanism."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: S. epidermidis (coagulase-negative) -> biofilm (extracellular polysaccharide matrix) on foreign bodies; treat often needs hardware removal."}], "keywords": [{"front": "Coagulase-negative Staph on a prosthetic device", "back": "Staphylococcus epidermidis (biofilm former)"}, {"front": "S. epidermidis key virulence factor", "back": "Biofilm = extracellular polysaccharide matrix (glycocalyx)"}, {"front": "S. aureus vs S. epidermidis coagulase", "back": "S. aureus coagulase-positive; S. epidermidis coagulase-negative"}, {"front": "Protein A (which organism, function)", "back": "S. aureus; binds IgG Fc to block opsonization"}, {"front": "Why device biofilm infections resist treatment", "back": "Matrix blocks antibiotics + host defenses (often need device removal)"}, {"front": "Brudzinski sign", "back": "Neck flexion -> involuntary hip/knee flexion (meningitis)"}], "firstAid": [{"tag": "answer / stem", "topic": "S. epidermidis", "detail": "Micro: biofilm (extracellular polysaccharide matrix) on foreign bodies; coagulase-negative."}, {"tag": "options", "topic": "Virulence factors", "detail": "Micro > capsule (encapsulated bugs), protein A/exotoxins (S. aureus), intracellular (Listeria/etc)."}, {"tag": "clinical", "topic": "Device infection", "detail": "Micro > shunt/catheter/valve infections; often require hardware removal."}], "memoryHook": "S. epidermidis slimes the shunt: it builds an extracellular polysaccharide fortress (biofilm) that antibiotics can't storm - so the hardware often has to go.", "stem": [{"text": "A 1-year-old boy is brought to the emergency department by his mother because of high fever, irritability, and photophobia. He "}, {"text": "recently underwent ventriculoperitoneal shunt placement", "clue": true, "type": "orange", "note": "A prosthetic device (VP shunt) is a foreign body that Staphylococcus epidermidis colonizes - the setup for a device-associated infection."}, {"text": " for congenital hydrocephalus. On physical examination, his temperature is 38.3 C (101 F), and "}, {"text": "passive flexion of the neck results in spontaneous flexion of the hips and knees", "clue": true, "type": "blue", "note": "This is a positive Brudzinski sign, indicating meningitis (here, shunt-associated)."}, {"text": ". Blood cultures grow "}, {"text": "coagulase-negative Staphylococcus", "clue": true, "type": "green", "note": "Coagulase-NEGATIVE Staphylococcus = Staphylococcus epidermidis, the leading cause of prosthetic-device infections via biofilm formation."}, {"text": ". Which of the following is the most important virulence mechanism by which this bacterium causes disease?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>
