@@ -1,0 +1,190 @@
+{
+  "id": "q344",
+  "item": 344,
+  "qid": "8533",
+  "title": "Shunt infection (S. epidermidis): biofilm (extracellular polysaccharide matrix)",
+  "system": "Microbiology",
+  "topic": "Staphylococcus epidermidis / biofilm",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 42,
+  "vignette": "A 1-year-old boy is brought to the emergency department by his mother because of high fever, irritability, and photophobia. He recently underwent ventriculoperitoneal shunt placement for congenital hydrocephalus. On physical examination, his temperature is 38.3 C (101 F), and passive flexion of the neck results in spontaneous flexion of the hips and knees. Blood cultures grow coagulase-negative Staphylococcus. Which of the following is the most important virulence mechanism by which this bacterium causes disease?",
+  "clues": [
+    {
+      "text": "recently underwent ventriculoperitoneal shunt placement",
+      "type": "orange",
+      "note": "A prosthetic device (VP shunt) is a foreign body that Staphylococcus epidermidis colonizes - the setup for a device-associated infection."
+    },
+    {
+      "text": "passive flexion of the neck results in spontaneous flexion of the hips and knees",
+      "type": "blue",
+      "note": "This is a positive Brudzinski sign, indicating meningitis (here, shunt-associated)."
+    },
+    {
+      "text": "coagulase-negative Staphylococcus",
+      "type": "green",
+      "note": "Coagulase-NEGATIVE Staphylococcus = Staphylococcus epidermidis, the leading cause of prosthetic-device infections via biofilm formation."
+    }
+  ],
+  "whatMatters": "A device (VP shunt) infection with COAGULASE-NEGATIVE Staphylococcus = Staphylococcus epidermidis. Its key virulence mechanism is forming a BIOFILM - synthesizing an EXTRACELLULAR POLYSACCHARIDE MATRIX that adheres to foreign material and shields it from antibiotics and host defenses. Answer E.",
+  "strategy": "Link foreign-body infection + coagulase-negative Staph to S. epidermidis and its signature: biofilm (extracellular polysaccharide/glycocalyx matrix). Reject intracellular existence (Listeria/Salmonella/mycobacteria), polysaccharide CAPSULE (S. pneumoniae, H. influenzae, N. meningitidis), protein A (S. aureus - binds Fc, not S. epidermidis's main mechanism), and exotoxins (S. aureus toxins), none of which is the S. epidermidis device mechanism.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Intracellular existence",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Outer polysaccharide capsule",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Presence of protein A on the cell wall",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Release of exotoxins",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Synthesis of an extracellular polysaccharide matrix",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Intracellular existence - facultative/obligate intracellular organisms",
+      "detail": "WHAT IT IS: surviving inside host cells (e.g., Listeria, Salmonella, Mycobacterium, Rickettsia). ❌ WHY IT FAILS: S. epidermidis is an extracellular biofilm-former, not an intracellular pathogen. ✅ Correct if: an intracellular organism."
+    },
+    {
+      "letter": "B",
+      "label": "Outer polysaccharide capsule - encapsulated bacteria",
+      "detail": "WHAT IT IS: an antiphagocytic capsule (S. pneumoniae, H. influenzae type b, N. meningitidis). ❌ WHY IT FAILS: S. epidermidis's device virulence is the BIOFILM matrix, not a classic antiphagocytic capsule. ✅ Correct if: an encapsulated organism dangerous in asplenia."
+    },
+    {
+      "letter": "C",
+      "label": "Protein A - Staphylococcus aureus",
+      "detail": "WHAT IT IS: protein A on S. AUREUS binds the Fc region of IgG to inhibit opsonization/phagocytosis. ❌ WHY IT FAILS: that's an S. aureus (coagulase-POSITIVE) virulence factor; this is coagulase-negative S. epidermidis. ✅ Correct if: S. aureus immune evasion."
+    },
+    {
+      "letter": "D",
+      "label": "Release of exotoxins - S. aureus toxins",
+      "detail": "WHAT IT IS: exotoxins (e.g., staphylococcal enterotoxins, TSST-1, exfoliative toxin) are S. aureus products. ❌ WHY IT FAILS: exotoxin production is not the mechanism of S. epidermidis device infection. ✅ Correct if: toxin-mediated S. aureus disease (food poisoning, TSS)."
+    }
+  ],
+  "reasoning": [
+    "VP shunt (foreign body) infection with coagulase-negative Staphylococcus = Staphylococcus epidermidis",
+    "S. epidermidis adheres to prosthetic material and multiplies within a self-made matrix",
+    "This biofilm is an extracellular polysaccharide matrix that resists antibiotics and immune clearance",
+    "-> synthesis of an extracellular polysaccharide matrix; answer E"
+  ],
+  "mechanism": "Staphylococcus epidermidis is a coagulase-NEGATIVE, catalase-positive component of normal skin flora and the most common cause of infections associated with FOREIGN BODIES (prosthetic valves, catheters, and ventriculoperitoneal shunts). Its defining virulence mechanism is BIOFILM formation: after adhering to device surfaces (coated with host proteins like fibrinogen/fibronectin), the bacteria proliferate and secrete an EXTRACELLULAR POLYSACCHARIDE MATRIX (glycocalyx/slime) that encases the colony. This biofilm acts as a barrier to antibiotic penetration and impairs host defenses (opsonization, neutrophil migration), so device-associated infections are persistent and often require REMOVAL of the hardware. In this child, the shunt seeded a biofilm-associated meningitis (positive Brudzinski sign). The distractors are virulence mechanisms of other organisms: intracellular survival (Listeria/Salmonella/mycobacteria), antiphagocytic capsule (S. pneumoniae, H. influenzae, N. meningitidis), and protein A/exotoxins (S. aureus, coagulase-positive).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro > S. epidermidis: coagulase-negative, biofilm on prosthetic devices (extracellular polysaccharide matrix); infects shunts/catheters/valves; often requires device removal."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Foreign-body infection + coagulase-negative Staph = S. epidermidis biofilm (extracellular polysaccharide matrix)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on biofilm, coagulase-negative Staphylococcus, glycocalyx, capsule vs biofilm, or Brudzinski sign? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Capsule = encapsulated bacteria; protein A + exotoxins = S. aureus; intracellular existence = other pathogens - not S. epidermidis's device mechanism."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: S. epidermidis (coagulase-negative) -> biofilm (extracellular polysaccharide matrix) on foreign bodies; treat often needs hardware removal."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Coagulase-negative Staph on a prosthetic device",
+      "back": "Staphylococcus epidermidis (biofilm former)"
+    },
+    {
+      "front": "S. epidermidis key virulence factor",
+      "back": "Biofilm = extracellular polysaccharide matrix (glycocalyx)"
+    },
+    {
+      "front": "S. aureus vs S. epidermidis coagulase",
+      "back": "S. aureus coagulase-positive; S. epidermidis coagulase-negative"
+    },
+    {
+      "front": "Protein A (which organism, function)",
+      "back": "S. aureus; binds IgG Fc to block opsonization"
+    },
+    {
+      "front": "Why device biofilm infections resist treatment",
+      "back": "Matrix blocks antibiotics + host defenses (often need device removal)"
+    },
+    {
+      "front": "Brudzinski sign",
+      "back": "Neck flexion -> involuntary hip/knee flexion (meningitis)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "S. epidermidis",
+      "detail": "Micro: biofilm (extracellular polysaccharide matrix) on foreign bodies; coagulase-negative."
+    },
+    {
+      "tag": "options",
+      "topic": "Virulence factors",
+      "detail": "Micro > capsule (encapsulated bugs), protein A/exotoxins (S. aureus), intracellular (Listeria/etc)."
+    },
+    {
+      "tag": "clinical",
+      "topic": "Device infection",
+      "detail": "Micro > shunt/catheter/valve infections; often require hardware removal."
+    }
+  ],
+  "memoryHook": "S. epidermidis slimes the shunt: it builds an extracellular polysaccharide fortress (biofilm) that antibiotics can't storm - so the hardware often has to go.",
+  "stem": [
+    {
+      "text": "A 1-year-old boy is brought to the emergency department by his mother because of high fever, irritability, and photophobia. He "
+    },
+    {
+      "text": "recently underwent ventriculoperitoneal shunt placement",
+      "clue": true,
+      "type": "orange",
+      "note": "A prosthetic device (VP shunt) is a foreign body that Staphylococcus epidermidis colonizes - the setup for a device-associated infection."
+    },
+    {
+      "text": " for congenital hydrocephalus. On physical examination, his temperature is 38.3 C (101 F), and "
+    },
+    {
+      "text": "passive flexion of the neck results in spontaneous flexion of the hips and knees",
+      "clue": true,
+      "type": "blue",
+      "note": "This is a positive Brudzinski sign, indicating meningitis (here, shunt-associated)."
+    },
+    {
+      "text": ". Blood cultures grow "
+    },
+    {
+      "text": "coagulase-negative Staphylococcus",
+      "clue": true,
+      "type": "green",
+      "note": "Coagulase-NEGATIVE Staphylococcus = Staphylococcus epidermidis, the leading cause of prosthetic-device infections via biofilm formation."
+    },
+    {
+      "text": ". Which of the following is the most important virulence mechanism by which this bacterium causes disease?"
+    }
+  ]
+}

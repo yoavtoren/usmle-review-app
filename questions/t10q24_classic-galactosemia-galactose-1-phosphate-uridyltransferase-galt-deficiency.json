@@ -1,0 +1,223 @@
+{
+  "id": "q358",
+  "item": 358,
+  "qid": "1071",
+  "title": "Classic galactosemia: galactose-1-phosphate uridyltransferase (GALT) deficiency",
+  "system": "Biochemistry",
+  "topic": "Galactose metabolism / galactosemia",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 51,
+  "vignette": "A 5-day-old term newborn is brought to the emergency department for multiple episodes of emesis. The breastfed infant has been having fewer wet diapers over the last 2 days. Vital signs show tachycardia, tachypnea, and hypotension. Physical examination shows an icteric, lethargic baby with a sunken fontanelle, dry mucous membranes, and hepatomegaly. A blood culture is drawn and empiric antibiotics are initiated. Hematologic studies show leukocytosis with bandemia. Serum studies show hypoglycemia and elevated transaminases. The ammonia level is normal. Newborn screen is pending. Preliminary results from arterial blood culture show gram-negative rods. The infant is placed on a special formula and gradually improves over the next few days. On the galactose metabolism pathway shown, step A is lactase (lactose -> galactose + glucose), step B is aldose reductase (galactose -> galactitol), step C is galactokinase (galactose -> galactose-1-phosphate), step D is galactose-1-phosphate uridyltransferase (galactose-1-phosphate -> glucose-1-phosphate via UDP-glucose/UDP-galactose), and step E is phosphoglucomutase (glucose-1-phosphate -> glucose-6-phosphate). Which of the following steps in metabolism is most likely impaired in this patient?",
+  "clues": [
+    {
+      "text": "multiple episodes of emesis",
+      "type": "blue",
+      "note": "Vomiting and lethargy soon after starting BREAST milk (lactose/galactose) are early signs of classic galactosemia."
+    },
+    {
+      "text": "hepatomegaly",
+      "type": "green",
+      "note": "Accumulated galactose-1-phosphate is toxic to the liver, causing hepatomegaly, jaundice, and elevated transaminases."
+    },
+    {
+      "text": "hypoglycemia and elevated transaminases",
+      "type": "green",
+      "note": "Hypoglycemia + liver injury (transaminitis) reflect galactose-1-phosphate toxicity in classic galactosemia (GALT deficiency)."
+    },
+    {
+      "text": "gram-negative rods",
+      "type": "red",
+      "note": "E. coli (gram-negative rod) sepsis is a classic, life-threatening complication of galactosemia (impaired neutrophil function)."
+    },
+    {
+      "text": "placed on a special formula and gradually improves",
+      "type": "green",
+      "note": "Improvement after switching from breast milk to a galactose-free (soy) formula confirms galactose intolerance = galactosemia."
+    }
+  ],
+  "whatMatters": "A neonate with vomiting, jaundice, hepatomegaly, hypoglycemia, transaminitis, and E. coli sepsis that improves off breast milk = CLASSIC GALACTOSEMIA, from deficiency of GALACTOSE-1-PHOSPHATE URIDYLTRANSFERASE (GALT). On the pathway, GALT is step D. Answer D.",
+  "strategy": "Recognize classic galactosemia (symptoms begin with breast/lactose feeding; jaundice, hepatomegaly, hypoglycemia, E. coli sepsis, cataracts) and map it to the DEFICIENT enzyme GALT (converts galactose-1-phosphate to glucose-1-phosphate) = step D. Reject step A (lactase - lactose intolerance), step B (aldose reductase - makes galactitol, not deficient), step C (galactokinase deficiency - milder, cataracts only, no liver/renal toxicity), and step E (phosphoglucomutase - rare).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Step A (lactase)",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Step B (aldose reductase)",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Step C (galactokinase)",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Step D (galactose-1-phosphate uridyltransferase)",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Step E (phosphoglucomutase)",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Step A: lactase - lactose intolerance, not galactosemia",
+      "detail": "WHAT IT IS: lactase hydrolyzes lactose to glucose + galactose in the gut. ❌ WHY IT FAILS: lactase deficiency causes lactose intolerance (bloating/diarrhea), not neonatal liver failure/sepsis, and is rare in neonates. ✅ Correct if: lactose intolerance."
+    },
+    {
+      "letter": "B",
+      "label": "Step B: aldose reductase - makes galactitol (not deficient here)",
+      "detail": "WHAT IT IS: aldose reductase converts excess galactose to GALACTITOL (which causes cataracts when galactose accumulates). ❌ WHY IT FAILS: aldose reductase deficiency does not cause galactosemia; in galactosemia this enzyme is actually OVERactive, worsening cataracts. ✅ Correct if: asking about the source of cataract-causing galactitol."
+    },
+    {
+      "letter": "C",
+      "label": "Step C: galactokinase deficiency - milder (cataracts only)",
+      "detail": "WHAT IT IS: galactokinase (GALK) phosphorylates galactose to galactose-1-phosphate. ❌ WHY IT FAILS: GALK deficiency is MILDER - galactose-1-phosphate does NOT accumulate, so there is no hepatic/renal toxicity; the main finding is cataracts (from galactitol). This infant has severe liver injury and sepsis (GALT). ✅ Correct if: isolated infantile cataracts without liver disease."
+    },
+    {
+      "letter": "E",
+      "label": "Step E: phosphoglucomutase - rare, not this picture",
+      "detail": "WHAT IT IS: phosphoglucomutase isomerizes glucose-1-phosphate to glucose-6-phosphate (entering glycolysis). ❌ WHY IT FAILS: its deficiency is rare and doesn't produce classic galactosemia; in GALT deficiency, accumulated galactose-1-phosphate actually inhibits this enzyme. ✅ Correct if: a rare glycogen/glucose isomerization disorder."
+    }
+  ],
+  "reasoning": [
+    "Neonate with vomiting, jaundice, hepatomegaly, hypoglycemia, transaminitis, and E. coli sepsis after breast milk",
+    "Improvement on galactose-free formula confirms galactosemia",
+    "Classic galactosemia is deficiency of galactose-1-phosphate uridyltransferase (GALT)",
+    "GALT is step D on the pathway; answer D"
+  ],
+  "mechanism": "Lactose (milk sugar) is split by lactase into galactose and glucose. Galactose is then phosphorylated by galactokinase to galactose-1-phosphate (step C), which GALACTOSE-1-PHOSPHATE URIDYLTRANSFERASE (GALT) converts to glucose-1-phosphate by exchanging UDP with UDP-glucose (step D). CLASSIC GALACTOSEMIA is an autosomal recessive deficiency of GALT: galactose-1-phosphate ACCUMULATES and is toxic, causing - soon after breast/lactose feeding begins - vomiting, lethargy, jaundice, hepatomegaly, hypoglycemia, transaminitis, and renal dysfunction (aminoaciduria), plus a characteristic predisposition to ESCHERICHIA COLI (gram-negative) SEPSIS and cataracts (from galactitol produced by aldose reductase). Treatment is dietary: remove galactose/lactose (stop breast milk; use soy-based formula, whose sucrose is metabolized without GALT/GALK), which reverses acute toxicity. In contrast, GALACTOKINASE deficiency (step C) is milder - galactose-1-phosphate does not accumulate, so there is no hepatic/renal toxicity, only cataracts. The other labeled steps (lactase, aldose reductase, phosphoglucomutase) do not produce this classic galactosemia picture.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem > classic galactosemia: GALT deficiency; galactose-1-phosphate accumulation -> vomiting, jaundice, hepatomegaly, hypoglycemia, E. coli sepsis, cataracts; treat galactose-free diet. Galactokinase deficiency = milder (cataracts only)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Severe neonatal galactose toxicity + E. coli sepsis = GALT deficiency (step D), not the milder galactokinase (step C)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on GALT vs galactokinase, galactose-1-phosphate, galactitol, aldose reductase, or classic vs mild galactosemia? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Galactokinase deficiency (C) = cataracts only; lactase (A) = lactose intolerance; aldose reductase (B) makes galactitol; phosphoglucomutase (E) rare."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "On the pathway diagram: step D converts galactose-1-phosphate to glucose-1-phosphate using the UDP-glucose/UDP-galactose cycle = GALT. Anchor: 'severe galactosemia = GALT = the UDP-exchange step (D).'"
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: classic galactosemia = GALT deficiency (galactose-1-phosphate toxicity, E. coli sepsis, cataracts); galactokinase deficiency milder (cataracts)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Neonatal vomiting/jaundice/hepatomegaly/E. coli sepsis after breast milk",
+      "back": "Classic galactosemia (GALT deficiency)"
+    },
+    {
+      "front": "Enzyme deficient in classic galactosemia",
+      "back": "Galactose-1-phosphate uridyltransferase (GALT) - step D"
+    },
+    {
+      "front": "Toxic metabolite in classic galactosemia",
+      "back": "Galactose-1-phosphate (hepatic/renal toxicity)"
+    },
+    {
+      "front": "Galactokinase deficiency features",
+      "back": "Milder; cataracts only (galactitol), no liver/renal toxicity"
+    },
+    {
+      "front": "Cataract-causing metabolite",
+      "back": "Galactitol (from aldose reductase)"
+    },
+    {
+      "front": "Galactosemia treatment",
+      "back": "Galactose/lactose-free diet (soy formula; stop breast milk)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Classic galactosemia",
+      "detail": "Biochem: GALT deficiency; galactose-1-phosphate toxicity; E. coli sepsis, cataracts; galactose-free diet."
+    },
+    {
+      "tag": "options",
+      "topic": "Galactose pathway",
+      "detail": "Biochem > lactase (A), aldose reductase/galactitol (B), galactokinase (C), phosphoglucomutase (E)."
+    },
+    {
+      "tag": "contrast",
+      "topic": "Galactokinase deficiency",
+      "detail": "Biochem > milder, cataracts only (no galactose-1-phosphate buildup)."
+    }
+  ],
+  "memoryHook": "Classic galactosemia = GALT down: galactose-1-phosphate piles up and poisons the liver (and invites E. coli sepsis) - stop the milk, and step D is the culprit.",
+  "stem": [
+    {
+      "text": "A 5-day-old term newborn is brought to the emergency department for "
+    },
+    {
+      "text": "multiple episodes of emesis",
+      "clue": true,
+      "type": "blue",
+      "note": "Vomiting and lethargy soon after starting BREAST milk (lactose/galactose) are early signs of classic galactosemia."
+    },
+    {
+      "text": ". The breastfed infant has been having fewer wet diapers over the last 2 days. Vital signs show tachycardia, tachypnea, and hypotension. Physical examination shows an icteric, lethargic baby with a sunken fontanelle, dry mucous membranes, and "
+    },
+    {
+      "text": "hepatomegaly",
+      "clue": true,
+      "type": "green",
+      "note": "Accumulated galactose-1-phosphate is toxic to the liver, causing hepatomegaly, jaundice, and elevated transaminases."
+    },
+    {
+      "text": ". A blood culture is drawn and empiric antibiotics are initiated. Hematologic studies show leukocytosis with bandemia. Serum studies show "
+    },
+    {
+      "text": "hypoglycemia and elevated transaminases",
+      "clue": true,
+      "type": "green",
+      "note": "Hypoglycemia + liver injury (transaminitis) reflect galactose-1-phosphate toxicity in classic galactosemia (GALT deficiency)."
+    },
+    {
+      "text": ". The ammonia level is normal. Newborn screen is pending. Preliminary results from arterial blood culture show "
+    },
+    {
+      "text": "gram-negative rods",
+      "clue": true,
+      "type": "red",
+      "note": "E. coli (gram-negative rod) sepsis is a classic, life-threatening complication of galactosemia (impaired neutrophil function)."
+    },
+    {
+      "text": ". The infant is "
+    },
+    {
+      "text": "placed on a special formula and gradually improves",
+      "clue": true,
+      "type": "green",
+      "note": "Improvement after switching from breast milk to a galactose-free (soy) formula confirms galactose intolerance = galactosemia."
+    },
+    {
+      "text": " over the next few days. On the galactose metabolism pathway shown, step A is lactase (lactose -> galactose + glucose), step B is aldose reductase (galactose -> galactitol), step C is galactokinase (galactose -> galactose-1-phosphate), step D is galactose-1-phosphate uridyltransferase (galactose-1-phosphate -> glucose-1-phosphate via UDP-glucose/UDP-galactose), and step E is phosphoglucomutase (glucose-1-phosphate -> glucose-6-phosphate). Which of the following steps in metabolism is most likely impaired in this patient?"
+    }
+  ]
+}

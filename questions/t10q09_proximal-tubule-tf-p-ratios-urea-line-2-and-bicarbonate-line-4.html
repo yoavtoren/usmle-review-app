@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proximal tubule TF/P ratios: urea (line 2) and bicarbonate (line 4)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 10 · all 25</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q343", "item": 343, "qid": "1617", "title": "Proximal tubule TF/P ratios: urea (line 2) and bicarbonate (line 4)", "system": "Physiology", "topic": "Proximal tubule handling / TF/P ratio", "correct": "E", "yourAnswer": "A", "percentCorrect": 29, "vignette": "Scientists investigating the specifics of kidney function in humans develop a new technique allowing them to measure the concentration of various compounds along the length of the proximal tubule. During an experiment, they record the concentrations of several endogenous substances in the fluid traversing the proximal tubule. Tubular fluid/plasma ultrafiltrate concentration ratios for the measured substances are shown in the image, with line 1 rising steeply above 1.0, line 2 rising modestly above 1.0, line 3 remaining at 1.0, line 4 falling below 1.0, and line 5 falling steeply toward 0.01. Which of the following substances are most likely to produce lines 2 and 4, respectively?", "clues": [{"text": "Tubular fluid/plasma ultrafiltrate concentration ratios", "type": "blue", "note": "The TF/P ratio compares a substance's tubular concentration to its initial (Bowman-space) concentration: >1 means it's being concentrated (secreted or poorly reabsorbed relative to water), <1 means it's actively reabsorbed."}, {"text": "line 2 rising modestly above 1.0", "type": "green", "note": "A modest RISE in TF/P (less than creatinine) fits UREA - freely filtered and only partially reabsorbed, so it concentrates as water is reabsorbed."}, {"text": "line 4 falling below 1.0", "type": "green", "note": "A FALL in TF/P below 1 indicates active reabsorption faster than water; bicarbonate is avidly reabsorbed in the proximal tubule (carbonic anhydrase), so its ratio drops."}], "whatMatters": "TF/P ratio: rising = secreted/poorly reabsorbed (concentrates), falling = actively reabsorbed. Line 2 (modest rise) = UREA (partially reabsorbed, concentrates as water leaves). Line 4 (falls below 1) = BICARBONATE (avidly reabsorbed via carbonic anhydrase). Answer E (urea, bicarbonate).", "strategy": "Rank the curves. Line 1 (steepest rise) = creatinine (freely filtered, secreted, not reabsorbed). Line 2 (modest rise) = urea. Line 3 (flat at 1) = sodium/potassium (reabsorbed WITH water, ratio unchanged). Line 4 (falls) = bicarbonate. Line 5 (falls fastest) = glucose/amino acids (avidly reabsorbed). So lines 2 and 4 = urea and bicarbonate. Reject options mixing up creatinine (line 1) or glucose (line 5).", "options": [{"letter": "A", "text": "Bicarbonate, sodium", "correct": false}, {"letter": "B", "text": "Creatinine, amino acids", "correct": false}, {"letter": "C", "text": "Creatinine, glucose", "correct": false}, {"letter": "D", "text": "Potassium, chloride", "correct": false}, {"letter": "E", "text": "Urea, bicarbonate", "correct": true}], "eliminations": [{"letter": "A", "label": "Bicarbonate, sodium - wrong for a RISING line 2 (your pick)", "detail": "WHAT IT IS: bicarbonate FALLS (reabsorbed) and sodium stays ~1.0. ❌ WHY IT FAILS: line 2 RISES above 1, but bicarbonate's ratio falls and sodium's stays flat - neither rises. ✅ Correct if: labeling the falling line (bicarbonate) or the flat line (sodium), not the rising line 2."}, {"letter": "B", "label": "Creatinine, amino acids - creatinine is line 1, not 2", "detail": "WHAT IT IS: creatinine rises MOST steeply (line 1); amino acids fall steeply (line 5). ❌ WHY IT FAILS: line 2 rises only modestly (urea), and line 4 falls modestly (bicarbonate), not the steep curves of creatinine/amino acids. ✅ Correct if: labeling lines 1 and 5."}, {"letter": "C", "label": "Creatinine, glucose - lines 1 and 5", "detail": "WHAT IT IS: creatinine = line 1 (steep rise); glucose = line 5 (steep fall, avidly reabsorbed). ❌ WHY IT FAILS: these are the extreme curves, not the modest line 2 (urea) and line 4 (bicarbonate). ✅ Correct if: labeling lines 1 and 5."}, {"letter": "D", "label": "Potassium, chloride - not the rising/falling pattern here", "detail": "WHAT IT IS: potassium is reabsorbed roughly with water (ratio ~1, line 3); chloride ratio actually RISES slightly in the late proximal tubule. ❌ WHY IT FAILS: neither matches a modestly rising line 2 (urea) paired with a falling line 4 (bicarbonate). ✅ Correct if: labeling the flat line (potassium/sodium)."}], "reasoning": ["TF/P >1 = substance concentrated (secreted/poorly reabsorbed); <1 = actively reabsorbed", "Line 2 rises modestly = urea (partially reabsorbed, concentrates as water is reabsorbed)", "Line 4 falls below 1 = bicarbonate (avidly reabsorbed via carbonic anhydrase)", "-> urea (line 2) and bicarbonate (line 4); answer E"], "mechanism": "The tubular fluid/plasma (TF/P) ratio divides a substance's concentration in the tubular fluid by its concentration in the initial glomerular ultrafiltrate. An UPWARD (rising) ratio means the substance is being concentrated relative to plasma - because it is SECRETED or reabsorbed LESS than water (so as water is reabsorbed, the solute concentrates). A DOWNWARD (falling) ratio means the substance is REABSORBED faster than water. Along the proximal tubule: creatinine rises the most (freely filtered, secreted, not reabsorbed - line 1); UREA rises modestly (freely filtered, only partially reabsorbed, so it concentrates as water leaves - line 2); sodium and potassium stay ~1.0 because they are reabsorbed in near-proportion to water (line 3); BICARBONATE falls because it is avidly reabsorbed via carbonic anhydrase at the brush border (line 4); and glucose and amino acids fall the fastest because they are almost completely reabsorbed early (line 5). Therefore lines 2 and 4 correspond to urea and bicarbonate.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Renal > proximal tubule TF/P curves: creatinine (rises most), urea (rises less), Na/K (flat ~1), bicarbonate/glucose/amino acids (fall, reabsorbed); rising = secreted/poorly reabsorbed, falling = reabsorbed."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Rising = concentrated (poorly reabsorbed) -> urea; falling = reabsorbed -> bicarbonate."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on TF/P ratio, proximal tubule reabsorption, carbonic anhydrase, or secretion vs reabsorption? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Creatinine is line 1 (steepest rise); glucose/amino acids are line 5 (steepest fall); Na/K are the flat line 3 - don't confuse with lines 2/4."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "text": "On the TF/P graph: line 1 steep rise (creatinine), line 2 modest rise (urea), line 3 flat at 1 (Na/K), line 4 falls (bicarbonate), line 5 falls steeply (glucose/amino acids). Anchor: 'rising modestly = urea; falling = bicarbonate.'"}, {"key": "other", "label": "🗒️ Other", "text": "Bank: TF/P up = secreted/poorly reabsorbed (creatinine>urea); flat = Na/K; down = reabsorbed (bicarbonate, then glucose/amino acids fastest)."}], "keywords": [{"front": "TF/P ratio rising above 1 means", "back": "Secreted or reabsorbed less than water (concentrated)"}, {"front": "TF/P ratio falling below 1 means", "back": "Reabsorbed faster than water"}, {"front": "Proximal tubule TF/P: steepest RISE", "back": "Creatinine (filtered, secreted, not reabsorbed)"}, {"front": "Proximal tubule TF/P: modest rise", "back": "Urea (partially reabsorbed)"}, {"front": "Proximal tubule TF/P: flat at 1.0", "back": "Sodium / potassium (reabsorbed with water)"}, {"front": "Proximal tubule TF/P: steepest FALL", "back": "Glucose / amino acids (avidly reabsorbed)"}], "firstAid": [{"tag": "answer / stem", "topic": "TF/P ratios", "detail": "Renal: urea rises modestly; bicarbonate falls (reabsorbed via carbonic anhydrase)."}, {"tag": "options", "topic": "Proximal tubule handling", "detail": "Renal > creatinine (rises most), Na/K (flat), glucose/amino acids (fall fastest)."}, {"tag": "concept", "topic": "Secretion vs reabsorption", "detail": "Renal > rising TF/P = concentrated; falling = reabsorbed."}], "memoryHook": "On the TF/P chart, things going UP are left behind (creatinine, then urea); things going DOWN get reabsorbed (bicarbonate, then glucose) - so line 2 = urea, line 4 = bicarbonate.", "stem": [{"text": "Scientists investigating the specifics of kidney function in humans develop a new technique allowing them to measure the concentration of various compounds along the length of the proximal tubule. During an experiment, they record the concentrations of several endogenous substances in the fluid traversing the proximal tubule. "}, {"text": "Tubular fluid/plasma ultrafiltrate concentration ratios", "clue": true, "type": "blue", "note": "The TF/P ratio compares a substance's tubular concentration to its initial (Bowman-space) concentration: >1 means it's being concentrated (secreted or poorly reabsorbed relative to water), <1 means it's actively reabsorbed."}, {"text": " for the measured substances are shown in the image, with line 1 rising steeply above 1.0, "}, {"text": "line 2 rising modestly above 1.0", "clue": true, "type": "green", "note": "A modest RISE in TF/P (less than creatinine) fits UREA - freely filtered and only partially reabsorbed, so it concentrates as water is reabsorbed."}, {"text": ", line 3 remaining at 1.0, "}, {"text": "line 4 falling below 1.0", "clue": true, "type": "green", "note": "A FALL in TF/P below 1 indicates active reabsorption faster than water; bicarbonate is avidly reabsorbed in the proximal tubule (carbonic anhydrase), so its ratio drops."}, {"text": ", and line 5 falling steeply toward 0.01. Which of the following substances are most likely to produce lines 2 and 4, respectively?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

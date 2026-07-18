@@ -1,0 +1,190 @@
+{
+  "id": "q342",
+  "item": 342,
+  "qid": "19237",
+  "title": "Exercise-induced hypoglycemia: GLUT4 translocation (insulin-independent)",
+  "system": "Physiology",
+  "topic": "Muscle glucose uptake / GLUT4",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 53,
+  "vignette": "A 46-year-old man develops episodes of \"dizzy spells\" accompanied by palpitations and sweating during exercise. His symptoms improve after drinking orange juice or eating a protein bar. The patient was diagnosed with type 2 diabetes 6 months ago and advised to lose weight with dietary modification and exercise. Since then, he has been working out intensively and has lost 10 kg (22 lb). Which of the following mechanisms is responsible for this patient's symptoms when exercising?",
+  "clues": [
+    {
+      "text": "palpitations and sweating during exercise",
+      "type": "green",
+      "note": "Adrenergic symptoms (palpitations, sweating) during exercise that resolve with sugar are classic for hypoglycemia."
+    },
+    {
+      "text": "symptoms improve after drinking orange juice or eating a protein bar",
+      "type": "green",
+      "note": "Rapid relief with carbohydrate intake confirms the episodes are hypoglycemic."
+    },
+    {
+      "text": "diagnosed with type 2 diabetes 6 months ago",
+      "type": "orange",
+      "note": "In a diabetic on therapy/exercise, exercise-induced hypoglycemia can occur from increased muscle glucose uptake without matched carbohydrate intake."
+    }
+  ],
+  "whatMatters": "Adrenergic symptoms during exercise that resolve with sugar = exercise-induced HYPOGLYCEMIA. Muscle contraction stimulates INSULIN-INDEPENDENT glucose uptake by TRANSLOCATING GLUCOSE TRANSPORTER 4 (GLUT4) to the membrane, rapidly lowering blood glucose. Answer E.",
+  "strategy": "Recall that skeletal muscle takes up glucose via GLUT4, and GLUT4 is translocated to the membrane by BOTH insulin (fed state) AND muscle contraction (exercise, insulin-independent). Exercise-driven GLUT4 translocation explains the falling glucose. Reject GLUT2 (liver/pancreas sensor, not muscle contraction), and metabolic enzymes that would RAISE glucose (glucose-6-phosphatase, decreased hepatic glucose production is opposite) or are unrelated (glucokinase).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased hepatic glucose production",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Increased glucokinase activity",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased glucose-6-phosphatase activity",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Translocation of glucose transporter 2 to the cell membrane",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Translocation of glucose transporter 4 to the cell membrane",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Decreased hepatic glucose production - would follow, not cause",
+      "detail": "WHAT IT IS: reduced hepatic gluconeogenesis/glycogenolysis. ❌ WHY IT FAILS: during exercise/hypoglycemia the liver INCREASES glucose output (glucagon/epinephrine) to defend glucose; decreased production isn't the mechanism lowering his sugar. ✅ Correct if: asking what worsens fasting hypoglycemia (e.g., impaired gluconeogenesis)."
+    },
+    {
+      "letter": "B",
+      "label": "Increased glucokinase activity - liver, rising-glucose enzyme",
+      "detail": "WHAT IT IS: glucokinase phosphorylates glucose in the liver, induced by HIGH glucose (fed state). ❌ WHY IT FAILS: it's a hepatic enzyme active when glucose is high, not the muscle mechanism of exercise glucose uptake. ✅ Correct if: hepatic glucose trapping in the fed state."
+    },
+    {
+      "letter": "C",
+      "label": "Increased glucose-6-phosphatase - raises glucose",
+      "detail": "WHAT IT IS: glucose-6-phosphatase releases free glucose during gluconeogenesis, RAISING blood glucose. ❌ WHY IT FAILS: increased activity would improve (not cause) hypoglycemia. ✅ Correct if: maintaining glucose in the fasting state."
+    },
+    {
+      "letter": "D",
+      "label": "GLUT2 translocation - liver/pancreas sensor, not muscle",
+      "detail": "WHAT IT IS: GLUT2 is a high-capacity, insulin-INDEPENDENT transporter in liver and pancreatic beta cells (glucose sensing). ❌ WHY IT FAILS: GLUT2 is constitutively at the membrane and isn't the muscle-contraction transporter; skeletal muscle uses GLUT4. ✅ Correct if: hepatic/beta-cell glucose sensing."
+    }
+  ],
+  "reasoning": [
+    "Adrenergic symptoms during exercise relieved by sugar = exercise-induced hypoglycemia",
+    "Skeletal muscle takes up glucose via GLUT4",
+    "Muscle contraction (like insulin) translocates GLUT4 to the membrane - insulin-independent",
+    "-> GLUT4 translocation to the cell membrane; answer E"
+  ],
+  "mechanism": "Skeletal muscle imports glucose by facilitated diffusion through GLUCOSE TRANSPORTER 4 (GLUT4). GLUT4 is normally stored in intracellular vesicles and is translocated to the plasma membrane by TWO stimuli: INSULIN (fed state, via the PI3K pathway) and MUSCLE CONTRACTION (exercise, via calcium/AMPK - an INSULIN-INDEPENDENT pathway). During intense exercise, contraction-induced GLUT4 translocation markedly increases muscle glucose uptake; if carbohydrate intake or counterregulation doesn't keep pace (common in patients with diabetes on therapy), blood glucose falls, triggering adrenergic symptoms (palpitations, sweating, dizziness) that resolve with sugar - exercise-induced hypoglycemia. Regular exercise also upregulates GLUT4 expression and insulin sensitivity over time. The distractors are hepatic/metabolic processes that either raise glucose (glucose-6-phosphatase; hepatic output actually increases during exercise) or involve other transporters/enzymes (GLUT2 sensing, glucokinase) not responsible for muscle glucose uptake during exercise.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Physio/Biochem > GLUT4 (muscle/adipose) is insulin-responsive AND translocated by muscle contraction (insulin-independent); exercise increases glucose uptake -> exercise-induced hypoglycemia in diabetics."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Exercise lowers glucose via contraction-driven GLUT4 translocation (independent of insulin)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on GLUT4 vs GLUT2, insulin-independent glucose uptake, AMPK, or adrenergic hypoglycemia symptoms? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "GLUT2 = liver/pancreas sensor; glucokinase/glucose-6-phosphatase are hepatic; decreased hepatic output is opposite of what defends glucose."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: muscle GLUT4 translocated by insulin AND exercise (contraction, insulin-independent); intense exercise -> hypoglycemia."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Muscle glucose transporter",
+      "back": "GLUT4 (insulin- and exercise-responsive)"
+    },
+    {
+      "front": "Two triggers of GLUT4 translocation",
+      "back": "Insulin (PI3K) and muscle contraction (Ca2+/AMPK, insulin-independent)"
+    },
+    {
+      "front": "Exercise-induced hypoglycemia mechanism",
+      "back": "Contraction-driven GLUT4 translocation increases glucose uptake"
+    },
+    {
+      "front": "GLUT2 location/role",
+      "back": "Liver + pancreatic beta cells (glucose sensor, insulin-independent)"
+    },
+    {
+      "front": "Adrenergic hypoglycemia symptoms",
+      "back": "Palpitations, sweating, tremor, dizziness (relieved by sugar)"
+    },
+    {
+      "front": "Long-term exercise effect on GLUT4",
+      "back": "↑GLUT4 expression -> increased insulin sensitivity"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "GLUT4 / exercise",
+      "detail": "Physio: muscle contraction translocates GLUT4 (insulin-independent) -> glucose uptake."
+    },
+    {
+      "tag": "options",
+      "topic": "Glucose transporters/enzymes",
+      "detail": "Biochem > GLUT2 (liver/pancreas sensor), glucokinase (fed liver), glucose-6-phosphatase (raises glucose)."
+    },
+    {
+      "tag": "clinical",
+      "topic": "Diabetes + exercise",
+      "detail": "Endo > exercise-induced hypoglycemia; adjust carbs/medication."
+    }
+  ],
+  "memoryHook": "Muscles have two keys to open the GLUT4 glucose door - insulin AND contraction; a hard workout unlocks it without insulin, so sugar plummets mid-exercise.",
+  "stem": [
+    {
+      "text": "A 46-year-old man develops episodes of \"dizzy spells\" accompanied by "
+    },
+    {
+      "text": "palpitations and sweating during exercise",
+      "clue": true,
+      "type": "green",
+      "note": "Adrenergic symptoms (palpitations, sweating) during exercise that resolve with sugar are classic for hypoglycemia."
+    },
+    {
+      "text": ". His "
+    },
+    {
+      "text": "symptoms improve after drinking orange juice or eating a protein bar",
+      "clue": true,
+      "type": "green",
+      "note": "Rapid relief with carbohydrate intake confirms the episodes are hypoglycemic."
+    },
+    {
+      "text": ". The patient was "
+    },
+    {
+      "text": "diagnosed with type 2 diabetes 6 months ago",
+      "clue": true,
+      "type": "orange",
+      "note": "In a diabetic on therapy/exercise, exercise-induced hypoglycemia can occur from increased muscle glucose uptake without matched carbohydrate intake."
+    },
+    {
+      "text": " and advised to lose weight with dietary modification and exercise. Since then, he has been working out intensively and has lost 10 kg (22 lb). Which of the following mechanisms is responsible for this patient's symptoms when exercising?"
+    }
+  ]
+}

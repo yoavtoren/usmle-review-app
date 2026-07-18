@@ -1,0 +1,190 @@
+{
+  "id": "q339",
+  "item": 339,
+  "qid": "19398",
+  "title": "Postmarketing surveillance = phase IV clinical trial",
+  "system": "Biostatistics",
+  "topic": "Clinical trial phases",
+  "correct": "D",
+  "yourAnswer": "C",
+  "percentCorrect": 45,
+  "vignette": "A surveillance study is conducted to assess the long-term efficacy and safety of a drug currently being used to treat patients with heart failure. Researchers enroll 8,300 patients with heart failure. The patients receive the drug once daily for 6 months. The results show significant clinical improvement, but severe hypernatremia is observed in 23 patients. The study publication recommends a lower dose of the drug in patients with baseline normonatremia and hypokalemia to prevent hypernatremia. Which of the following best characterizes this type of study?",
+  "clues": [
+    {
+      "text": "long-term efficacy and safety of a drug currently being used",
+      "type": "green",
+      "note": "A study of a drug ALREADY IN USE (already approved) to assess long-term safety/effectiveness is postmarketing surveillance = phase IV."
+    },
+    {
+      "text": "enroll 8,300 patients",
+      "type": "blue",
+      "note": "A very large number of already-treated patients is typical of phase IV (needed to detect uncommon/delayed adverse effects)."
+    },
+    {
+      "text": "severe hypernatremia is observed in 23 patients",
+      "type": "green",
+      "note": "Detecting a RARE adverse effect (23 of 8,300) is a hallmark purpose of phase IV postmarketing surveillance."
+    }
+  ],
+  "whatMatters": "A surveillance study of a drug ALREADY IN USE (post-approval), enrolling a very large cohort to detect long-term/rare adverse effects (severe hypernatremia in 23 of 8,300) = PHASE IV (postmarketing) trial. Answer D.",
+  "strategy": "Map the description to the trial phase. Phase IV = AFTER approval, large real-world population, detects uncommon/delayed adverse effects and refines use. The key tells: 'currently being used' + huge N + rare adverse-effect detection. Reject phase I (small healthy volunteers, safety/pharmacokinetics), phase II (small patient group, efficacy/dosing), phase III (large RANDOMIZED CONTROLLED pre-approval trial vs standard of care), and preclinical (lab/animal, no humans).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Phase I clinical trial",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Phase II clinical trial",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Phase III clinical trial",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Phase IV clinical trial",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Preclinical study",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Phase I - small healthy volunteers, safety/PK",
+      "detail": "WHAT IT IS: phase I tests safety, toxicity, and pharmacokinetics in a small number (~20-80) of healthy volunteers. ❌ WHY IT FAILS: this study uses thousands of PATIENTS with an already-marketed drug, not a first-in-human safety study. ✅ Correct if: first-in-human dose-finding/PK in healthy subjects."
+    },
+    {
+      "letter": "B",
+      "label": "Phase II - small patient group, efficacy/dosing",
+      "detail": "WHAT IT IS: phase II assesses preliminary efficacy and optimal dosing in a small group of patients with the disease. ❌ WHY IT FAILS: it is small and pre-approval; this is a large post-approval surveillance study. ✅ Correct if: a small pilot efficacy/dose study before approval."
+    },
+    {
+      "letter": "C",
+      "label": "Phase III - large RANDOMIZED pre-approval trial (your pick)",
+      "detail": "WHAT IT IS: phase III is a large randomized controlled trial comparing the drug to standard of care to gain approval. ❌ WHY IT FAILS: this is a SURVEILLANCE study of a drug ALREADY in use with NO control group - the postmarketing (phase IV) setting. ✅ Correct if: a pre-approval randomized controlled efficacy/safety trial."
+    },
+    {
+      "letter": "E",
+      "label": "Preclinical - lab/animal, no humans",
+      "detail": "WHAT IT IS: preclinical (bench/animal) studies of mechanism and preliminary safety/efficacy before any human testing. ❌ WHY IT FAILS: this study enrolls thousands of human patients. ✅ Correct if: in vitro/animal research prior to human trials."
+    }
+  ],
+  "reasoning": [
+    "The drug is ALREADY being used (post-approval), and the study is a large surveillance cohort",
+    "Purpose: long-term safety/effectiveness and detection of rare adverse effects (23 of 8,300)",
+    "This is postmarketing surveillance = phase IV (no control group, real-world use)",
+    "-> phase IV clinical trial; answer D"
+  ],
+  "mechanism": "New drugs progress through defined clinical-trial phases before and after approval. PRECLINICAL: laboratory/animal studies of mechanism and preliminary safety. PHASE I: small number (~20-80) of healthy volunteers to assess safety, toxicity, and pharmacokinetics. PHASE II: a small group of patients with the condition to assess preliminary efficacy and optimal dosing. PHASE III: a large, RANDOMIZED, CONTROLLED trial comparing the drug to standard of care - the basis for regulatory (FDA) approval. PHASE IV (POSTMARKETING surveillance): conducted AFTER approval, when the drug is already in clinical use, to monitor long-term effectiveness and detect UNCOMMON or DELAYED adverse effects across large, diverse populations. This study fits phase IV precisely: it examines a drug 'currently being used,' enrolls thousands of treated patients, and identifies a rare serious adverse effect (severe hypernatremia in 23 of 8,300), then refines dosing recommendations - all defining features of postmarketing surveillance.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > clinical trial phases: preclinical (animal), I (healthy, safety/PK), II (patients, efficacy/dosing), III (large RCT for approval), IV (postmarketing surveillance for rare/long-term effects)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "'Drug already in use' + huge N + rare adverse-effect detection = phase IV."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on postmarketing surveillance, clinical trial phases, or randomized controlled trial? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Phase III is a pre-approval RANDOMIZED CONTROLLED trial; this surveillance study of an in-use drug has no control group (phase IV)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: phase IV = postmarketing surveillance, large real-world cohort, detect rare/delayed adverse effects."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Surveillance of an approved drug for rare/long-term effects",
+      "back": "Phase IV (postmarketing) trial"
+    },
+    {
+      "front": "Phase I trial",
+      "back": "Small healthy volunteers; safety, toxicity, pharmacokinetics"
+    },
+    {
+      "front": "Phase II trial",
+      "back": "Small patient group; preliminary efficacy + dosing"
+    },
+    {
+      "front": "Phase III trial",
+      "back": "Large randomized controlled trial vs standard of care (for approval)"
+    },
+    {
+      "front": "Preclinical study",
+      "back": "Lab/animal; mechanism + preliminary safety (no humans)"
+    },
+    {
+      "front": "Key phase IV purpose",
+      "back": "Detect uncommon/delayed adverse effects in real-world use"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Clinical trial phases",
+      "detail": "Biostat: phase IV = postmarketing surveillance (approved drug, rare/long-term effects)."
+    },
+    {
+      "tag": "options",
+      "topic": "Phases I-III + preclinical",
+      "detail": "Biostat > I (healthy/safety), II (efficacy/dose), III (RCT for approval), preclinical (animal)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Drug approval",
+      "detail": "Biostat > FDA approval after phase III; phase IV monitors post-approval."
+    }
+  ],
+  "memoryHook": "Phase IV is the 'after-market watch': the drug's already on shelves, thousands take it, and surveillance catches the rare side effect a small trial would miss.",
+  "stem": [
+    {
+      "text": "A surveillance study is conducted to assess the "
+    },
+    {
+      "text": "long-term efficacy and safety of a drug currently being used",
+      "clue": true,
+      "type": "green",
+      "note": "A study of a drug ALREADY IN USE (already approved) to assess long-term safety/effectiveness is postmarketing surveillance = phase IV."
+    },
+    {
+      "text": " to treat patients with heart failure. Researchers "
+    },
+    {
+      "text": "enroll 8,300 patients",
+      "clue": true,
+      "type": "blue",
+      "note": "A very large number of already-treated patients is typical of phase IV (needed to detect uncommon/delayed adverse effects)."
+    },
+    {
+      "text": " with heart failure. The patients receive the drug once daily for 6 months. The results show significant clinical improvement, but "
+    },
+    {
+      "text": "severe hypernatremia is observed in 23 patients",
+      "clue": true,
+      "type": "green",
+      "note": "Detecting a RARE adverse effect (23 of 8,300) is a hallmark purpose of phase IV postmarketing surveillance."
+    },
+    {
+      "text": ". The study publication recommends a lower dose of the drug in patients with baseline normonatremia and hypokalemia to prevent hypernatremia. Which of the following best characterizes this type of study?"
+    }
+  ]
+}

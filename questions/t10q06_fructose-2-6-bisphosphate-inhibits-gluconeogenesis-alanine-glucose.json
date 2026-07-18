@@ -1,0 +1,176 @@
+{
+  "id": "q340",
+  "item": 340,
+  "qid": "1031",
+  "title": "Fructose-2,6-bisphosphate inhibits gluconeogenesis (alanine -> glucose)",
+  "system": "Biochemistry",
+  "topic": "Glycolysis/gluconeogenesis regulation - F2,6BP",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 35,
+  "vignette": "A 45-year-old man is referred to an endocrinologist for newly diagnosed diabetes mellitus. A week ago, his primary care physician noted an elevated fasting serum glucose level. The endocrinologist discusses the different treatment options available, including oral and injectable medications. He recommends treatment with a medication that alters glucose metabolism within the liver by increasing the concentration of fructose 2,6-bisphosphate within hepatocytes. Which of the following conversions will be inhibited by high intracellular concentrations of this metabolite?",
+  "clues": [
+    {
+      "text": "increasing the concentration of fructose 2,6-bisphosphate within hepatocytes",
+      "type": "green",
+      "note": "Fructose-2,6-bisphosphate (F2,6BP) is the key regulator that tips the liver toward glycolysis and AWAY from gluconeogenesis."
+    },
+    {
+      "text": "inhibited by high intracellular concentrations of this metabolite",
+      "type": "blue",
+      "note": "High F2,6BP ACTIVATES phosphofructokinase-1 (glycolysis) and INHIBITS fructose-1,6-bisphosphatase (gluconeogenesis) - so it blocks glucose production."
+    }
+  ],
+  "whatMatters": "Fructose-2,6-bisphosphate (F2,6BP) is the master switch between glycolysis and gluconeogenesis: it ACTIVATES PFK-1 (glycolysis) and INHIBITS fructose-1,6-bisphosphatase (gluconeogenesis). High F2,6BP therefore INHIBITS GLUCONEOGENESIS - the conversion of ALANINE (a gluconeogenic amino acid) to GLUCOSE. Answer B.",
+  "strategy": "Recall F2,6BP's dual, opposite actions: PFK-1 UP (glycolysis) and fructose-1,6-bisphosphatase DOWN (gluconeogenesis). The question asks what is INHIBITED -> gluconeogenesis. Alanine -> glucose IS gluconeogenesis. Reject fructose-6-phosphate -> fructose-1,6-bisphosphate (that's PFK-1, which F2,6BP ACTIVATES), glucose -> glycogen (glycogenesis, insulin-driven, concurrent), acetyl-CoA -> fatty acids (lipogenesis, upregulated with glycolysis), and NAD+ -> NADH (redox, not directly F2,6BP-regulated).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acetyl CoA -> fatty acids",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Alanine -> glucose",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Fructose-6-phosphate -> fructose-1,6-bisphosphate",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Glucose -> glycogen",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "NAD+ -> NADH",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Acetyl-CoA -> fatty acids - lipogenesis, upregulated not inhibited",
+      "detail": "WHAT IT IS: fatty acid synthesis, stimulated by insulin and high citrate/acetyl-CoA (a fed-state, high-glycolysis process). ❌ WHY IT FAILS: high F2,6BP marks the fed state, which UP-regulates lipogenesis - it isn't inhibited. ✅ Correct if: asking what's promoted alongside glycolysis."
+    },
+    {
+      "letter": "C",
+      "label": "F6P -> F1,6BP - this is PFK-1, ACTIVATED by F2,6BP",
+      "detail": "WHAT IT IS: the phosphofructokinase-1 (PFK-1) step of glycolysis. ❌ WHY IT FAILS: F2,6BP ACTIVATES PFK-1, so this conversion INCREASES (the opposite of inhibited). ✅ Correct if: asking what F2,6BP stimulates."
+    },
+    {
+      "letter": "D",
+      "label": "Glucose -> glycogen - glycogenesis, concurrent with insulin",
+      "detail": "WHAT IT IS: glycogen synthesis, stimulated by insulin/glucose-6-phosphate. ❌ WHY IT FAILS: elevated F2,6BP (fed/insulin state) typically accompanies INCREASED glycogen synthesis, not inhibition. ✅ Correct if: asking about a process promoted in the fed state."
+    },
+    {
+      "letter": "E",
+      "label": "NAD+ -> NADH - redox, not F2,6BP-regulated",
+      "detail": "WHAT IT IS: reduction of NAD+ to NADH (e.g., during glycolysis). ❌ WHY IT FAILS: high F2,6BP accelerates glycolysis, which would generate MORE NADH, not inhibit it; it isn't the regulated conversion here. ✅ Correct if: asking about glycolytic NADH production."
+    }
+  ],
+  "reasoning": [
+    "F2,6BP activates PFK-1 (glycolysis) and inhibits fructose-1,6-bisphosphatase (gluconeogenesis)",
+    "High F2,6BP therefore INHIBITS gluconeogenesis",
+    "Alanine -> glucose is a gluconeogenic conversion",
+    "-> alanine -> glucose is inhibited; answer B"
+  ],
+  "mechanism": "Fructose-2,6-bisphosphate (F2,6BP) is the key allosteric regulator balancing hepatic GLYCOLYSIS versus GLUCONEOGENESIS. It ACTIVATES phosphofructokinase-1 (PFK-1), the committed step of glycolysis (fructose-6-phosphate -> fructose-1,6-bisphosphate), and simultaneously INHIBITS fructose-1,6-bisphosphatase, the opposing gluconeogenic enzyme. F2,6BP levels are set by the bifunctional enzyme PFK-2/fructose-2,6-bisphosphatase: INSULIN (fed state) activates PFK-2, RAISING F2,6BP and driving glycolysis while suppressing gluconeogenesis; GLUCAGON (fasting) does the reverse. Therefore, a drug that raises hepatic F2,6BP shifts the liver toward glucose utilization and AWAY from glucose production - INHIBITING gluconeogenesis, including the conversion of gluconeogenic substrates such as ALANINE (from muscle protein) into glucose. This lowers hepatic glucose output, useful in diabetes. The distractors are either activated by F2,6BP (PFK-1 step), promoted in the fed state (lipogenesis, glycogenesis), or redox reactions not directly governed by F2,6BP.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem > F2,6BP: activates PFK-1 (glycolysis), inhibits fructose-1,6-bisphosphatase (gluconeogenesis); regulated by PFK-2/FBPase-2 (insulin up, glucagon down)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "High F2,6BP inhibits gluconeogenesis -> blocks alanine -> glucose."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on fructose-2,6-bisphosphate, PFK-1 vs fructose-1,6-bisphosphatase, gluconeogenesis, or PFK-2? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "F6P->F1,6BP is PFK-1 (ACTIVATED, not inhibited); lipogenesis/glycogenesis are promoted in the fed state; NADH is a redox step."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: F2,6BP = glycolysis ON (PFK-1), gluconeogenesis OFF (F1,6-bisphosphatase); insulin raises it, glucagon lowers it."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Fructose-2,6-bisphosphate effect on glycolysis",
+      "back": "Activates PFK-1 (promotes glycolysis)"
+    },
+    {
+      "front": "Fructose-2,6-bisphosphate effect on gluconeogenesis",
+      "back": "Inhibits fructose-1,6-bisphosphatase (blocks gluconeogenesis)"
+    },
+    {
+      "front": "Gluconeogenic conversion inhibited by high F2,6BP",
+      "back": "Alanine -> glucose"
+    },
+    {
+      "front": "Enzyme regulating F2,6BP levels",
+      "back": "PFK-2 / fructose-2,6-bisphosphatase (bifunctional)"
+    },
+    {
+      "front": "Insulin vs glucagon on F2,6BP",
+      "back": "Insulin raises (glycolysis); glucagon lowers (gluconeogenesis)"
+    },
+    {
+      "front": "Committed step of glycolysis",
+      "back": "PFK-1 (fructose-6-P -> fructose-1,6-bisphosphate)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "F2,6BP regulation",
+      "detail": "Biochem: activates PFK-1 (glycolysis), inhibits F1,6-bisphosphatase (gluconeogenesis)."
+    },
+    {
+      "tag": "options",
+      "topic": "Metabolic conversions",
+      "detail": "Biochem > PFK-1 (activated), lipogenesis/glycogenesis (fed state), NADH (redox)."
+    },
+    {
+      "tag": "regulation",
+      "topic": "PFK-2 / hormones",
+      "detail": "Biochem > insulin ↑F2,6BP (glycolysis); glucagon ↓F2,6BP (gluconeogenesis)."
+    }
+  ],
+  "memoryHook": "F2,6BP is the fed-state referee: whistle up glycolysis (PFK-1) and whistle down glucose-making (gluconeogenesis) - so alanine can't become glucose.",
+  "stem": [
+    {
+      "text": "A 45-year-old man is referred to an endocrinologist for newly diagnosed diabetes mellitus. A week ago, his primary care physician noted an elevated fasting serum glucose level. The endocrinologist discusses the different treatment options available, including oral and injectable medications. He recommends treatment with a medication that alters glucose metabolism within the liver by "
+    },
+    {
+      "text": "increasing the concentration of fructose 2,6-bisphosphate within hepatocytes",
+      "clue": true,
+      "type": "green",
+      "note": "Fructose-2,6-bisphosphate (F2,6BP) is the key regulator that tips the liver toward glycolysis and AWAY from gluconeogenesis."
+    },
+    {
+      "text": ". Which of the following conversions will be "
+    },
+    {
+      "text": "inhibited by high intracellular concentrations of this metabolite",
+      "clue": true,
+      "type": "blue",
+      "note": "High F2,6BP ACTIVATES phosphofructokinase-1 (glycolysis) and INHIBITS fructose-1,6-bisphosphatase (gluconeogenesis) - so it blocks glucose production."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

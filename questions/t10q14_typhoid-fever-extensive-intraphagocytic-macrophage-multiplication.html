@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typhoid fever: extensive intraphagocytic (macrophage) multiplication</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 10 · all 25</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q348", "item": 348, "qid": "1137", "title": "Typhoid fever: extensive intraphagocytic (macrophage) multiplication", "system": "Microbiology", "topic": "Typhoidal Salmonella (S. Typhi)", "correct": "C", "yourAnswer": "C", "percentCorrect": 39, "vignette": "A 42-year-old man comes to the office due to 2 weeks of progressive fever, chills, abdominal discomfort, and loose stools, which began during a trip to Southeast Asia. He received no pretravel vaccinations and did not strictly follow food and water safety precautions during the trip. The patient had an episode of Salmonella Enteritidis gastroenteritis last year, and it resolved with symptomatic care. Temperature is 39.4 C (102.9 F), blood pressure is 110/64 mm Hg, pulse is 62/min, and respirations are 18/min. Physical examination shows a faint macular rash on the trunk. There is mild tenderness to palpation in the lower abdominal quadrants with no guarding or rebound tenderness. Hepatosplenomegaly is present. Blood culture grows gram-negative, non-lactose-fermenting rods. Which of the following pathogenic mechanisms best explains this patient's prolonged and severe disease course compared to his prior episode of bacterial gastroenteritis?", "clues": [{"text": "progressive fever", "type": "green", "note": "An escalating fever over days-to-weeks (rather than an acute self-limited illness) is characteristic of typhoid fever."}, {"text": "pulse is 62/min", "type": "green", "note": "Relative bradycardia despite a high fever (pulse-temperature dissociation) is a classic clue to typhoid fever."}, {"text": "faint macular rash on the trunk", "type": "green", "note": "Faint salmon-colored macules on the trunk are 'rose spots,' typical of typhoid fever."}, {"text": "Hepatosplenomegaly is present", "type": "blue", "note": "Hepatosplenomegaly reflects systemic spread of the organism through the reticuloendothelial system."}, {"text": "gram-negative, non-lactose-fermenting rods", "type": "green", "note": "Gram-negative, non-lactose-fermenting rods on blood culture fit Salmonella - here the TYPHOIDAL strain (S. Typhi)."}], "whatMatters": "Escalating fever + relative bradycardia + rose spots + hepatosplenomegaly + gram-negative non-lactose-fermenting rods after travel = TYPHOID FEVER (Salmonella Typhi). Typhoidal strains (Vi capsule) evade neutrophils and undergo EXTENSIVE INTRACELLULAR (intraphagocytic) MULTIPLICATION in macrophages, disseminating systemically - explaining the prolonged, severe course. Answer C.", "strategy": "Contrast NONtyphoidal (his prior self-limited gastroenteritis: neutrophilic inflammation, stays local) with TYPHOIDAL Salmonella (Vi capsule inhibits neutrophil killing -> survives and MULTIPLIES inside macrophages -> spreads via lymphatics/reticuloendothelial system -> systemic typhoid). The severity comes from intracellular replication in phagocytes. Reject contact-dependent cytotoxicity (Entamoeba), cross-reacting antibodies (Campylobacter/Guillain-Barre), and villus destruction (rotavirus/Giardia).", "options": [{"letter": "A", "text": "Contact-dependent host cytotoxicity", "correct": false}, {"letter": "B", "text": "Cross-reacting antibody formation", "correct": false}, {"letter": "C", "text": "Extensive intraphagocytic multiplication", "correct": true}, {"letter": "D", "text": "Villus epithelial cell destruction", "correct": false}], "eliminations": [{"letter": "A", "label": "Contact-dependent host cytotoxicity - Entamoeba histolytica", "detail": "WHAT IT IS: direct contact killing of host cells (e.g., Entamoeba histolytica inserting a pore-forming protein), causing bloody diarrhea/liver abscess. ❌ WHY IT FAILS: this patient has typhoid features and gram-negative rods on culture, not amebic contact cytotoxicity. ✅ Correct if: amebic dysentery/liver abscess."}, {"letter": "B", "label": "Cross-reacting antibody formation - Campylobacter/rheumatic", "detail": "WHAT IT IS: antibodies against a pathogen cross-reacting with host tissue (e.g., Campylobacter -> Guillain-Barre via anti-ganglioside antibodies). ❌ WHY IT FAILS: typhoid severity is from intracellular replication, not molecular mimicry; rose spots/relative bradycardia point to S. Typhi. ✅ Correct if: post-Campylobacter Guillain-Barre or rheumatic fever."}, {"letter": "D", "label": "Villus epithelial cell destruction - rotavirus/Giardia", "detail": "WHAT IT IS: damage to intestinal villi causing malabsorptive diarrhea (rotavirus, Giardia). ❌ WHY IT FAILS: it explains watery diarrhea, not the systemic, prolonged typhoid picture with hepatosplenomegaly and bacteremia. ✅ Correct if: villous-blunting malabsorptive diarrhea."}], "reasoning": ["Travel + escalating fever + relative bradycardia + rose spots + hepatosplenomegaly + gram-negative non-lactose-fermenting rods = typhoid fever (S. Typhi)", "Typhoidal strains carry the Vi capsule, which inhibits neutrophil recruitment/phagocytosis", "They survive and MULTIPLY inside macrophages, spreading via lymphatics and the reticuloendothelial system", "-> extensive intraphagocytic multiplication; answer C"], "mechanism": "Salmonella species are gram-negative, non-lactose-fermenting, motile enteric rods split into NONtyphoidal and TYPHOIDAL strains. Both invade intestinal epithelium, but the course then diverges. NONtyphoidal strains (e.g., S. Enteritidis, his prior illness) are phagocytosed by neutrophils/macrophages in the lamina propria and provoke a robust NEUTROPHILIC inflammatory response, producing a usually self-limited gastroenteritis. TYPHOIDAL strains (S. Typhi/Paratyphi) possess the Vi CAPSULAR ANTIGEN and other virulence factors that INHIBIT neutrophil recruitment and phagocytosis and blunt the macrophage oxidative burst - so instead of being killed, the bacteria undergo EXTENSIVE INTRACELLULAR (INTRAPHAGOCYTIC) MULTIPLICATION within macrophages and disseminate through the lymphatics and RETICULOENDOTHELIAL SYSTEM. This produces typhoid fever: escalating fever with relative bradycardia (pulse-temperature dissociation), rose spots, hepatosplenomegaly, abdominal pain, and (later) GI bleeding/perforation. Blood culture is diagnostic. The prolonged, severe, systemic course - versus his prior self-limited gastroenteritis - is explained by this intracellular replication in phagocytes.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Micro > typhoidal Salmonella (S. Typhi): Vi capsule inhibits phagocytosis/neutrophils, extensive intracellular replication in macrophages -> systemic typhoid (rose spots, relative bradycardia, hepatosplenomegaly); nontyphoidal = neutrophilic gastroenteritis."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Typhoid severity = survival + multiplication inside macrophages (intraphagocytic), spreading via reticuloendothelial system."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on typhoidal vs nontyphoidal Salmonella, Vi capsule, reticuloendothelial system, rose spots, or pulse-temperature dissociation? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Contact cytotoxicity = Entamoeba; cross-reacting antibodies = Campylobacter/rheumatic; villus destruction = rotavirus/Giardia."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: S. Typhi = Vi capsule + intracellular replication in macrophages -> typhoid fever (rose spots, relative bradycardia, HSM)."}], "keywords": [{"front": "Escalating fever + relative bradycardia + rose spots + hepatosplenomegaly (travel)", "back": "Typhoid fever (Salmonella Typhi)"}, {"front": "Typhoidal Salmonella virulence mechanism", "back": "Vi capsule -> intracellular (intraphagocytic) multiplication in macrophages"}, {"front": "Nontyphoidal vs typhoidal Salmonella", "back": "Nontyphoidal = neutrophilic gastroenteritis; typhoidal = systemic typhoid"}, {"front": "Pulse-temperature dissociation", "back": "Relative bradycardia with high fever (typhoid, also others)"}, {"front": "Diagnostic test for typhoid", "back": "Blood culture (gram-negative non-lactose-fermenting rods)"}, {"front": "Vi capsular antigen role", "back": "Inhibits neutrophil recruitment/phagocytosis and oxidative burst"}], "firstAid": [{"tag": "answer / stem", "topic": "Typhoid fever", "detail": "Micro: S. Typhi Vi capsule -> intracellular replication in macrophages -> systemic disease."}, {"tag": "options", "topic": "Diarrhea mechanisms", "detail": "Micro > Entamoeba (contact cytotoxicity), Campylobacter (cross-reacting Ab), rotavirus/Giardia (villus)."}, {"tag": "clinical", "topic": "Typhoid features", "detail": "Micro > rose spots, relative bradycardia, hepatosplenomegaly; GI bleed/perforation late."}], "memoryHook": "Typhoid Salmonella hides inside macrophages and multiplies there (Vi capsule cloaks it from neutrophils), riding the reticuloendothelial system to a slow, systemic fever with rose spots.", "stem": [{"text": "A 42-year-old man comes to the office due to 2 weeks of "}, {"text": "progressive fever", "clue": true, "type": "green", "note": "An escalating fever over days-to-weeks (rather than an acute self-limited illness) is characteristic of typhoid fever."}, {"text": ", chills, abdominal discomfort, and loose stools, which began during a trip to Southeast Asia. He received no pretravel vaccinations and did not strictly follow food and water safety precautions during the trip. The patient had an episode of Salmonella Enteritidis gastroenteritis last year, and it resolved with symptomatic care. Temperature is 39.4 C (102.9 F), blood pressure is 110/64 mm Hg, "}, {"text": "pulse is 62/min", "clue": true, "type": "green", "note": "Relative bradycardia despite a high fever (pulse-temperature dissociation) is a classic clue to typhoid fever."}, {"text": ", and respirations are 18/min. Physical examination shows a "}, {"text": "faint macular rash on the trunk", "clue": true, "type": "green", "note": "Faint salmon-colored macules on the trunk are 'rose spots,' typical of typhoid fever."}, {"text": ". There is mild tenderness to palpation in the lower abdominal quadrants with no guarding or rebound tenderness. "}, {"text": "Hepatosplenomegaly is present", "clue": true, "type": "blue", "note": "Hepatosplenomegaly reflects systemic spread of the organism through the reticuloendothelial system."}, {"text": ". Blood culture grows "}, {"text": "gram-negative, non-lactose-fermenting rods", "clue": true, "type": "green", "note": "Gram-negative, non-lactose-fermenting rods on blood culture fit Salmonella - here the TYPHOIDAL strain (S. Typhi)."}, {"text": ". Which of the following pathogenic mechanisms best explains this patient's prolonged and severe disease course compared to his prior episode of bacterial gastroenteritis?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

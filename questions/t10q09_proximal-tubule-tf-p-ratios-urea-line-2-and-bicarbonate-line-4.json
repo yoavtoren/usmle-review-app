@@ -1,0 +1,195 @@
+{
+  "id": "q343",
+  "item": 343,
+  "qid": "1617",
+  "title": "Proximal tubule TF/P ratios: urea (line 2) and bicarbonate (line 4)",
+  "system": "Physiology",
+  "topic": "Proximal tubule handling / TF/P ratio",
+  "correct": "E",
+  "yourAnswer": "A",
+  "percentCorrect": 29,
+  "vignette": "Scientists investigating the specifics of kidney function in humans develop a new technique allowing them to measure the concentration of various compounds along the length of the proximal tubule. During an experiment, they record the concentrations of several endogenous substances in the fluid traversing the proximal tubule. Tubular fluid/plasma ultrafiltrate concentration ratios for the measured substances are shown in the image, with line 1 rising steeply above 1.0, line 2 rising modestly above 1.0, line 3 remaining at 1.0, line 4 falling below 1.0, and line 5 falling steeply toward 0.01. Which of the following substances are most likely to produce lines 2 and 4, respectively?",
+  "clues": [
+    {
+      "text": "Tubular fluid/plasma ultrafiltrate concentration ratios",
+      "type": "blue",
+      "note": "The TF/P ratio compares a substance's tubular concentration to its initial (Bowman-space) concentration: >1 means it's being concentrated (secreted or poorly reabsorbed relative to water), <1 means it's actively reabsorbed."
+    },
+    {
+      "text": "line 2 rising modestly above 1.0",
+      "type": "green",
+      "note": "A modest RISE in TF/P (less than creatinine) fits UREA - freely filtered and only partially reabsorbed, so it concentrates as water is reabsorbed."
+    },
+    {
+      "text": "line 4 falling below 1.0",
+      "type": "green",
+      "note": "A FALL in TF/P below 1 indicates active reabsorption faster than water; bicarbonate is avidly reabsorbed in the proximal tubule (carbonic anhydrase), so its ratio drops."
+    }
+  ],
+  "whatMatters": "TF/P ratio: rising = secreted/poorly reabsorbed (concentrates), falling = actively reabsorbed. Line 2 (modest rise) = UREA (partially reabsorbed, concentrates as water leaves). Line 4 (falls below 1) = BICARBONATE (avidly reabsorbed via carbonic anhydrase). Answer E (urea, bicarbonate).",
+  "strategy": "Rank the curves. Line 1 (steepest rise) = creatinine (freely filtered, secreted, not reabsorbed). Line 2 (modest rise) = urea. Line 3 (flat at 1) = sodium/potassium (reabsorbed WITH water, ratio unchanged). Line 4 (falls) = bicarbonate. Line 5 (falls fastest) = glucose/amino acids (avidly reabsorbed). So lines 2 and 4 = urea and bicarbonate. Reject options mixing up creatinine (line 1) or glucose (line 5).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bicarbonate, sodium",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Creatinine, amino acids",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Creatinine, glucose",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Potassium, chloride",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Urea, bicarbonate",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Bicarbonate, sodium - wrong for a RISING line 2 (your pick)",
+      "detail": "WHAT IT IS: bicarbonate FALLS (reabsorbed) and sodium stays ~1.0. ❌ WHY IT FAILS: line 2 RISES above 1, but bicarbonate's ratio falls and sodium's stays flat - neither rises. ✅ Correct if: labeling the falling line (bicarbonate) or the flat line (sodium), not the rising line 2."
+    },
+    {
+      "letter": "B",
+      "label": "Creatinine, amino acids - creatinine is line 1, not 2",
+      "detail": "WHAT IT IS: creatinine rises MOST steeply (line 1); amino acids fall steeply (line 5). ❌ WHY IT FAILS: line 2 rises only modestly (urea), and line 4 falls modestly (bicarbonate), not the steep curves of creatinine/amino acids. ✅ Correct if: labeling lines 1 and 5."
+    },
+    {
+      "letter": "C",
+      "label": "Creatinine, glucose - lines 1 and 5",
+      "detail": "WHAT IT IS: creatinine = line 1 (steep rise); glucose = line 5 (steep fall, avidly reabsorbed). ❌ WHY IT FAILS: these are the extreme curves, not the modest line 2 (urea) and line 4 (bicarbonate). ✅ Correct if: labeling lines 1 and 5."
+    },
+    {
+      "letter": "D",
+      "label": "Potassium, chloride - not the rising/falling pattern here",
+      "detail": "WHAT IT IS: potassium is reabsorbed roughly with water (ratio ~1, line 3); chloride ratio actually RISES slightly in the late proximal tubule. ❌ WHY IT FAILS: neither matches a modestly rising line 2 (urea) paired with a falling line 4 (bicarbonate). ✅ Correct if: labeling the flat line (potassium/sodium)."
+    }
+  ],
+  "reasoning": [
+    "TF/P >1 = substance concentrated (secreted/poorly reabsorbed); <1 = actively reabsorbed",
+    "Line 2 rises modestly = urea (partially reabsorbed, concentrates as water is reabsorbed)",
+    "Line 4 falls below 1 = bicarbonate (avidly reabsorbed via carbonic anhydrase)",
+    "-> urea (line 2) and bicarbonate (line 4); answer E"
+  ],
+  "mechanism": "The tubular fluid/plasma (TF/P) ratio divides a substance's concentration in the tubular fluid by its concentration in the initial glomerular ultrafiltrate. An UPWARD (rising) ratio means the substance is being concentrated relative to plasma - because it is SECRETED or reabsorbed LESS than water (so as water is reabsorbed, the solute concentrates). A DOWNWARD (falling) ratio means the substance is REABSORBED faster than water. Along the proximal tubule: creatinine rises the most (freely filtered, secreted, not reabsorbed - line 1); UREA rises modestly (freely filtered, only partially reabsorbed, so it concentrates as water leaves - line 2); sodium and potassium stay ~1.0 because they are reabsorbed in near-proportion to water (line 3); BICARBONATE falls because it is avidly reabsorbed via carbonic anhydrase at the brush border (line 4); and glucose and amino acids fall the fastest because they are almost completely reabsorbed early (line 5). Therefore lines 2 and 4 correspond to urea and bicarbonate.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Renal > proximal tubule TF/P curves: creatinine (rises most), urea (rises less), Na/K (flat ~1), bicarbonate/glucose/amino acids (fall, reabsorbed); rising = secreted/poorly reabsorbed, falling = reabsorbed."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Rising = concentrated (poorly reabsorbed) -> urea; falling = reabsorbed -> bicarbonate."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on TF/P ratio, proximal tubule reabsorption, carbonic anhydrase, or secretion vs reabsorption? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Creatinine is line 1 (steepest rise); glucose/amino acids are line 5 (steepest fall); Na/K are the flat line 3 - don't confuse with lines 2/4."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "On the TF/P graph: line 1 steep rise (creatinine), line 2 modest rise (urea), line 3 flat at 1 (Na/K), line 4 falls (bicarbonate), line 5 falls steeply (glucose/amino acids). Anchor: 'rising modestly = urea; falling = bicarbonate.'"
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: TF/P up = secreted/poorly reabsorbed (creatinine>urea); flat = Na/K; down = reabsorbed (bicarbonate, then glucose/amino acids fastest)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "TF/P ratio rising above 1 means",
+      "back": "Secreted or reabsorbed less than water (concentrated)"
+    },
+    {
+      "front": "TF/P ratio falling below 1 means",
+      "back": "Reabsorbed faster than water"
+    },
+    {
+      "front": "Proximal tubule TF/P: steepest RISE",
+      "back": "Creatinine (filtered, secreted, not reabsorbed)"
+    },
+    {
+      "front": "Proximal tubule TF/P: modest rise",
+      "back": "Urea (partially reabsorbed)"
+    },
+    {
+      "front": "Proximal tubule TF/P: flat at 1.0",
+      "back": "Sodium / potassium (reabsorbed with water)"
+    },
+    {
+      "front": "Proximal tubule TF/P: steepest FALL",
+      "back": "Glucose / amino acids (avidly reabsorbed)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "TF/P ratios",
+      "detail": "Renal: urea rises modestly; bicarbonate falls (reabsorbed via carbonic anhydrase)."
+    },
+    {
+      "tag": "options",
+      "topic": "Proximal tubule handling",
+      "detail": "Renal > creatinine (rises most), Na/K (flat), glucose/amino acids (fall fastest)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Secretion vs reabsorption",
+      "detail": "Renal > rising TF/P = concentrated; falling = reabsorbed."
+    }
+  ],
+  "memoryHook": "On the TF/P chart, things going UP are left behind (creatinine, then urea); things going DOWN get reabsorbed (bicarbonate, then glucose) - so line 2 = urea, line 4 = bicarbonate.",
+  "stem": [
+    {
+      "text": "Scientists investigating the specifics of kidney function in humans develop a new technique allowing them to measure the concentration of various compounds along the length of the proximal tubule. During an experiment, they record the concentrations of several endogenous substances in the fluid traversing the proximal tubule. "
+    },
+    {
+      "text": "Tubular fluid/plasma ultrafiltrate concentration ratios",
+      "clue": true,
+      "type": "blue",
+      "note": "The TF/P ratio compares a substance's tubular concentration to its initial (Bowman-space) concentration: >1 means it's being concentrated (secreted or poorly reabsorbed relative to water), <1 means it's actively reabsorbed."
+    },
+    {
+      "text": " for the measured substances are shown in the image, with line 1 rising steeply above 1.0, "
+    },
+    {
+      "text": "line 2 rising modestly above 1.0",
+      "clue": true,
+      "type": "green",
+      "note": "A modest RISE in TF/P (less than creatinine) fits UREA - freely filtered and only partially reabsorbed, so it concentrates as water is reabsorbed."
+    },
+    {
+      "text": ", line 3 remaining at 1.0, "
+    },
+    {
+      "text": "line 4 falling below 1.0",
+      "clue": true,
+      "type": "green",
+      "note": "A FALL in TF/P below 1 indicates active reabsorption faster than water; bicarbonate is avidly reabsorbed in the proximal tubule (carbonic anhydrase), so its ratio drops."
+    },
+    {
+      "text": ", and line 5 falling steeply toward 0.01. Which of the following substances are most likely to produce lines 2 and 4, respectively?"
+    }
+  ]
+}
