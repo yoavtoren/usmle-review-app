@@ -1,0 +1,176 @@
+{
+  "id": "q369",
+  "item": 369,
+  "qid": "20527",
+  "title": "Understanding a disparity: cross-sectional analysis first (hypothesis generation)",
+  "system": "Biostatistics",
+  "topic": "Study design - cross-sectional / hypothesis generation",
+  "correct": "A",
+  "yourAnswer": "C",
+  "percentCorrect": 65,
+  "vignette": "A community health task force is preparing to launch a campaign promoting obesity awareness and education in the area. The task force studies epidemiologic data from the county health department, which show that the prevalence of obesity is 3 times higher in a cluster of 5 specific ZIP codes compared to the county average. The task force leader approaches a reputed physician working at a local university to ask for assistance in understanding this pattern. Which of the following should be performed first to understand the etiology of the disparity in obesity prevalence?",
+  "clues": [
+    {
+      "text": "prevalence of obesity is 3 times higher in a cluster of 5 specific ZIP codes",
+      "type": "blue",
+      "note": "A geographic prevalence disparity is the starting observation; the FIRST research step is to generate hypotheses about its causes."
+    },
+    {
+      "text": "understand the etiology of the disparity",
+      "type": "green",
+      "note": "To begin explaining a multifactorial disparity, a broad, quick 'snapshot' study that captures many potential factors at once is ideal - a cross-sectional analysis."
+    }
+  ],
+  "whatMatters": "To FIRST understand (generate hypotheses about) a multifactorial obesity disparity across ZIP codes, the best initial study is a CROSS-SECTIONAL ANALYSIS - a one-time 'snapshot' correlating many demographic and behavioral factors with obesity across the community. It's fast, inexpensive, and can screen multiple variables to generate hypotheses. Answer A.",
+  "strategy": "Match the research goal (initial, broad hypothesis GENERATION about many possible factors) to the study design. Cross-sectional analysis measures many exposures and the outcome at one point in time -> ideal first step. Reject narrow single-hypothesis studies (a cohort tracking only leptin; a qualitative survey of only knowledge/attitudes), a quality-improvement study (assesses care processes, not community etiology), and an RCT (tests, not generates, hypotheses - premature and impractical here).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cross-sectional analysis of demographic attributes and health behaviors across community ZIP codes",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Observational study tracking leptin levels and weight outcomes in a representative cohort of community residents",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Quality improvement study assessing medical provider adherence to national obesity screening, monitoring, and treatment guidelines across ZIP codes",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Qualitative survey assessing obesity-related beliefs, attitudes, and knowledge in a representative community sample",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Randomized controlled trial examining the relationship between primary care weight counseling and obesity incidence",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Cohort tracking only leptin - single-factor, slow",
+      "detail": "WHAT IT IS: a longitudinal cohort focused on one biological variable (leptin). ❌ WHY IT FAILS: it tests a single narrow hypothesis and is time-consuming; the first step should broadly survey MANY potential factors to generate hypotheses. ✅ Correct if: testing a specific, already-formed hypothesis about leptin over time."
+    },
+    {
+      "letter": "C",
+      "label": "Quality improvement study - care processes, not community etiology (your pick)",
+      "detail": "WHAT IT IS: a study of provider adherence to obesity guidelines. ❌ WHY IT FAILS: quality-improvement analyzes clinical PROCESSES, not the broad community/epidemiologic ETIOLOGY of a prevalence disparity. ✅ Correct if: improving a specific clinical care process (e.g., screening rates)."
+    },
+    {
+      "letter": "D",
+      "label": "Qualitative survey of beliefs/attitudes - single narrow domain",
+      "detail": "WHAT IT IS: a qualitative survey of knowledge/attitudes. ❌ WHY IT FAILS: it captures only one patient-related domain; a cross-sectional analysis of demographics AND behaviors is a broader, better first step for a multifactorial disparity. ✅ Correct if: exploring one specific psychosocial hypothesis after initial data."
+    },
+    {
+      "letter": "E",
+      "label": "Randomized controlled trial - tests, not generates, hypotheses",
+      "detail": "WHAT IT IS: an experimental trial of a counseling intervention. ❌ WHY IT FAILS: RCTs TEST a specific hypothesis and are premature/impractical before any hypotheses about the disparity exist. ✅ Correct if: testing efficacy of a defined intervention after hypotheses are established."
+    }
+  ],
+  "reasoning": [
+    "A geographic obesity disparity is multifactorial; the first step is to GENERATE hypotheses",
+    "A cross-sectional analysis takes a one-time snapshot correlating many demographic/behavioral factors with obesity",
+    "It is fast, inexpensive, and can screen multiple potential causes at once",
+    "-> cross-sectional analysis; answer A"
+  ],
+  "mechanism": "Understanding the etiology of a health disparity begins with HYPOTHESIS GENERATION - identifying which of many possible factors (poverty, ethnicity, insurance status, food access, physical-activity environment, health behaviors) correlate with the outcome. A CROSS-SECTIONAL study collects data on exposures and the outcome at a single point in time (a 'snapshot'), so it can measure MULTIPLE variables at once, determine the prevalence of the outcome, and reveal associations - making it relatively quick, inexpensive, and ideal as the FIRST step to generate hypotheses for a multifactorial problem. Other designs are better suited to LATER stages or narrower questions: cohort studies (longitudinal, test a specific exposure-outcome hypothesis over time), qualitative surveys (one psychosocial domain), quality-improvement studies (clinical processes/care quality, not community etiology), and randomized controlled trials (TEST a defined intervention, not generate hypotheses - premature and impractical here). Hence a cross-sectional analysis across ZIP codes is the appropriate first study.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > study designs: cross-sectional (snapshot, prevalence, correlations, hypothesis generation); cohort (longitudinal, risk); case-control (odds ratio); RCT (test intervention, causation)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "First step to explain a multifactorial disparity = broad cross-sectional snapshot to generate hypotheses."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on cross-sectional vs cohort vs RCT, hypothesis generation vs testing, prevalence, or quality-improvement study? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Leptin cohort (single factor), qualitative survey (one domain), quality improvement (care processes), and RCT (tests, not generates) are wrong first steps."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: cross-sectional = quick snapshot correlating many factors -> ideal for initial hypothesis generation; RCT tests a specific hypothesis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Best first study to explain a multifactorial disparity",
+      "back": "Cross-sectional analysis (snapshot, hypothesis generation)"
+    },
+    {
+      "front": "Cross-sectional study measures",
+      "back": "Exposures + outcome at one point in time (prevalence, correlations)"
+    },
+    {
+      "front": "Cohort study role",
+      "back": "Longitudinal; assess risk factors/outcomes over time"
+    },
+    {
+      "front": "RCT role",
+      "back": "Test a defined intervention (causation), not generate hypotheses"
+    },
+    {
+      "front": "Quality-improvement study assesses",
+      "back": "Clinical care processes/guideline adherence (not community etiology)"
+    },
+    {
+      "front": "Hypothesis generation vs testing",
+      "back": "Cross-sectional/descriptive generate; RCT/analytic test"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Study design selection",
+      "detail": "Biostat: cross-sectional = snapshot for prevalence/associations -> hypothesis generation."
+    },
+    {
+      "tag": "options",
+      "topic": "Design trade-offs",
+      "detail": "Biostat > cohort (longitudinal), RCT (test intervention), QI (care process)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Research sequence",
+      "detail": "Biostat > generate hypotheses (cross-sectional) before testing (RCT)."
+    }
+  ],
+  "memoryHook": "Start with a snapshot: a cross-sectional study photographs the whole community at once, revealing which factors travel with obesity - hypotheses first, trials later.",
+  "stem": [
+    {
+      "text": "A community health task force is preparing to launch a campaign promoting obesity awareness and education in the area. The task force studies epidemiologic data from the county health department, which show that the "
+    },
+    {
+      "text": "prevalence of obesity is 3 times higher in a cluster of 5 specific ZIP codes",
+      "clue": true,
+      "type": "blue",
+      "note": "A geographic prevalence disparity is the starting observation; the FIRST research step is to generate hypotheses about its causes."
+    },
+    {
+      "text": " compared to the county average. The task force leader approaches a reputed physician working at a local university to ask for assistance in understanding this pattern. Which of the following should be performed first to "
+    },
+    {
+      "text": "understand the etiology of the disparity",
+      "clue": true,
+      "type": "green",
+      "note": "To begin explaining a multifactorial disparity, a broad, quick 'snapshot' study that captures many potential factors at once is ideal - a cross-sectional analysis."
+    },
+    {
+      "text": " in obesity prevalence?"
+    }
+  ]
+}

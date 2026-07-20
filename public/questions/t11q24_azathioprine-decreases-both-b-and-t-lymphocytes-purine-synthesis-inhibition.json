@@ -1,0 +1,176 @@
+{
+  "id": "q383",
+  "item": 383,
+  "qid": "18704",
+  "title": "Azathioprine: decreases both B and T lymphocytes (purine synthesis inhibition)",
+  "system": "Pharmacology",
+  "topic": "Azathioprine - immunosuppression",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 62,
+  "vignette": "A 32-year-old man comes to the clinic for follow-up due to Crohn disease. The patient was initially diagnosed 3 years ago and achieved disease remission following a course of high-dose glucocorticoids. He remained in remission until 2 months ago, when he experienced an acute flare of diarrhea and abdominal pain that required a brief hospitalization and another course of high-dose glucocorticoids. The patient completed a prescribed glucocorticoid taper earlier this week and says that his symptoms have returned to \"about normal.\" Azathioprine maintenance therapy is started to help prevent future flares. Which of the following (B-lymphocyte count, T-lymphocyte count, immunoglobulin level, IL-2 activity) most accurately describes the expected effects of this new medication on immune function?",
+  "clues": [
+    {
+      "text": "Azathioprine maintenance therapy is started",
+      "type": "green",
+      "note": "Azathioprine is a nonselective purine-synthesis inhibitor used as a steroid-sparing maintenance immunosuppressant in Crohn disease."
+    },
+    {
+      "text": "prevent future flares",
+      "type": "blue",
+      "note": "Maintenance immunosuppression broadly reduces lymphocyte proliferation - both B and T cells - and their downstream products."
+    }
+  ],
+  "whatMatters": "Azathioprine (metabolized to 6-thioguanine) inhibits DE NOVO PURINE SYNTHESIS and incorporates false nucleotides, nonselectively impairing proliferation of all rapidly dividing cells - including BOTH B and T lymphocytes. Fewer T cells -> less IL-2 activity; fewer B cells -> lower immunoglobulin levels. So B-count DOWN, T-count DOWN, immunoglobulin DOWN, IL-2 DOWN. Answer B.",
+  "strategy": "Recall azathioprine's NONSELECTIVE antiproliferative action (purine synthesis) -> decreases both lymphocyte lineages. Then link: T-cell activation drives IL-2 (down), B cells make immunoglobulin (down). Pick the row with everything decreased. Reject rows showing selective B-only effects (rituximab: ↓B/↓Ig, T spared) or selective T-only effects (muromonab: ↓T/↓IL-2, B spared), or increases.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "B-lymphocyte ↓ | T-lymphocyte no effect | Immunoglobulin ↓ | IL-2 no effect",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "B-lymphocyte ↓ | T-lymphocyte ↓ | Immunoglobulin ↓ | IL-2 ↓",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "B-lymphocyte no effect | T-lymphocyte ↓ | Immunoglobulin no effect | IL-2 ↓",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "B-lymphocyte ↑ | T-lymphocyte ↑ | Immunoglobulin ↑ | IL-2 ↑",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "B-lymphocyte ↑ | T-lymphocyte ↑ | Immunoglobulin ↑ | IL-2 ↑",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "↓B/↓Ig only, T unaffected - rituximab pattern",
+      "detail": "WHAT IT IS: reduced B cells and immunoglobulin with T cells spared - the pattern of rituximab (anti-CD20). ❌ WHY IT FAILS: azathioprine is NONselective and reduces T cells (and IL-2) too. ✅ Correct if: rituximab (B-cell depletion)."
+    },
+    {
+      "letter": "C",
+      "label": "↓T/↓IL-2 only, B unaffected - muromonab pattern",
+      "detail": "WHAT IT IS: reduced T cells and IL-2 with B cells/immunoglobulin spared - like muromonab (anti-CD3). ❌ WHY IT FAILS: azathioprine also decreases B cells and immunoglobulin. ✅ Correct if: a selective anti-T-cell agent (anti-CD3)."
+    },
+    {
+      "letter": "D",
+      "label": "All increased - opposite of immunosuppression",
+      "detail": "WHAT IT IS: increases in all parameters. ❌ WHY IT FAILS: azathioprine SUPPRESSES the immune system; nothing increases. ✅ Correct if: an immune-stimulating scenario."
+    },
+    {
+      "letter": "E",
+      "label": "All increased - opposite of immunosuppression",
+      "detail": "WHAT IT IS: a duplicate 'everything up' pattern. ❌ WHY IT FAILS: same as D - azathioprine decreases lymphocytes/products, not increases them. ✅ Correct if: never for an immunosuppressant."
+    }
+  ],
+  "reasoning": [
+    "Azathioprine -> 6-thioguanine inhibits de novo purine synthesis (false nucleotides disrupt DNA/RNA)",
+    "This nonselectively impairs proliferation of rapidly dividing cells, including both B and T lymphocytes",
+    "Fewer T cells -> reduced IL-2 activity; fewer B cells -> reduced immunoglobulin levels",
+    "-> B, T, immunoglobulin, and IL-2 all decreased; answer B"
+  ],
+  "mechanism": "Azathioprine is a purine analog prodrug converted to 6-mercaptopurine and then 6-THIOGUANINE nucleotides, which INHIBIT an early step of DE NOVO PURINE SYNTHESIS and are incorporated as FALSE nucleotides that disrupt DNA and RNA replication. Because purine synthesis is required by all dividing cells, the effect is NONSELECTIVE and antiproliferative, reducing the proliferation of both B AND T LYMPHOCYTES (and other rapidly dividing cells - hence dose-limiting bone marrow suppression/pancytopenia). Reduced numbers of activated T cells lower IL-2 production/activity, and reduced B-cell numbers lower IMMUNOGLOBULIN levels. Therefore azathioprine decreases B-lymphocyte count, T-lymphocyte count, immunoglobulin level, and IL-2 activity together. This contrasts with SELECTIVE agents: rituximab (anti-CD20) depletes B cells and immunoglobulin while sparing T cells/IL-2, and muromonab (anti-CD3) depletes T cells and IL-2 while sparing B cells. Azathioprine is used as a steroid-sparing maintenance agent (e.g., in inflammatory bowel disease and transplantation); its metabolism/toxicity increases when combined with allopurinol (xanthine oxidase inhibition) and with thiopurine methyltransferase deficiency.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > azathioprine: prodrug -> 6-thioguanine; inhibits de novo purine synthesis (nonselective) -> ↓B and T lymphocytes, ↓Ig, ↓IL-2; bone marrow suppression; toxicity ↑ with allopurinol / low TPMT."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Nonselective antiproliferation -> both lymphocyte lineages down, so Ig and IL-2 fall too."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on de novo purine synthesis, 6-thioguanine, nonselective antiproliferative, IL-2, or immunoglobulin? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "B-only (rituximab) and T-only (muromonab) patterns are selective; 'everything up' contradicts immunosuppression."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: azathioprine = nonselective purine-synthesis inhibitor -> ↓B, ↓T, ↓Ig, ↓IL-2; watch allopurinol interaction/TPMT."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Azathioprine mechanism",
+      "back": "6-thioguanine inhibits de novo purine synthesis (false nucleotides)"
+    },
+    {
+      "front": "Azathioprine effect on lymphocytes",
+      "back": "Decreases BOTH B and T cells (nonselective)"
+    },
+    {
+      "front": "Downstream effects of ↓B and ↓T cells",
+      "back": "↓immunoglobulin (B) and ↓IL-2 activity (T)"
+    },
+    {
+      "front": "Rituximab pattern",
+      "back": "↓B cells + ↓Ig, T cells spared (anti-CD20)"
+    },
+    {
+      "front": "Muromonab pattern",
+      "back": "↓T cells + ↓IL-2, B cells spared (anti-CD3)"
+    },
+    {
+      "front": "Azathioprine toxicity/interaction",
+      "back": "Bone marrow suppression; ↑toxicity with allopurinol / low TPMT"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Azathioprine",
+      "detail": "Pharm: purine synthesis inhibitor -> ↓B and T cells, ↓Ig, ↓IL-2."
+    },
+    {
+      "tag": "options",
+      "topic": "Immunosuppressant selectivity",
+      "detail": "Pharm > rituximab (B), muromonab (T); azathioprine nonselective."
+    },
+    {
+      "tag": "safety",
+      "topic": "Azathioprine interactions",
+      "detail": "Pharm > allopurinol raises levels; check TPMT; marrow suppression."
+    }
+  ],
+  "memoryHook": "Azathioprine starves ALL dividing cells of purines - both B and T lymphocytes drop, dragging immunoglobulin and IL-2 down with them (unlike the sniper drugs rituximab and muromonab).",
+  "stem": [
+    {
+      "text": "A 32-year-old man comes to the clinic for follow-up due to Crohn disease. The patient was initially diagnosed 3 years ago and achieved disease remission following a course of high-dose glucocorticoids. He remained in remission until 2 months ago, when he experienced an acute flare of diarrhea and abdominal pain that required a brief hospitalization and another course of high-dose glucocorticoids. The patient completed a prescribed glucocorticoid taper earlier this week and says that his symptoms have returned to \"about normal.\" "
+    },
+    {
+      "text": "Azathioprine maintenance therapy is started",
+      "clue": true,
+      "type": "green",
+      "note": "Azathioprine is a nonselective purine-synthesis inhibitor used as a steroid-sparing maintenance immunosuppressant in Crohn disease."
+    },
+    {
+      "text": " to help "
+    },
+    {
+      "text": "prevent future flares",
+      "clue": true,
+      "type": "blue",
+      "note": "Maintenance immunosuppression broadly reduces lymphocyte proliferation - both B and T cells - and their downstream products."
+    },
+    {
+      "text": ". Which of the following (B-lymphocyte count, T-lymphocyte count, immunoglobulin level, IL-2 activity) most accurately describes the expected effects of this new medication on immune function?"
+    }
+  ]
+}

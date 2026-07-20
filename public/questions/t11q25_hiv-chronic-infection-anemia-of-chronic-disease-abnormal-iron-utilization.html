@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIV/chronic infection: anemia of chronic disease (abnormal iron utilization)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 11 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q384", "item": 384, "qid": "19136", "title": "HIV/chronic infection: anemia of chronic disease (abnormal iron utilization)", "system": "Hematology", "topic": "Anemia of chronic disease / hepcidin", "correct": "A", "yourAnswer": "D", "percentCorrect": 64, "vignette": "A 45-year-old man comes to the office due to 3 months of exertional fatigue and weight loss. He is sexually active with multiple male partners. Temperature is 37.9 C (100.2 F), blood pressure is 110/70 mm Hg, pulse is 84/min, and respirations are 13/min. BMI is 20 kg/m2. The patient appears chronically ill and has mucosal pallor. There are thick, white plaques over the buccal mucosa and soft palate. Anterior and posterior cervical lymphadenopathy is present. The lungs are clear to auscultation. The abdomen is soft and nontender. There is no organomegaly. Laboratory results: hematocrit 28%, mean corpuscular volume 76 um3, platelets 160,000/mm3, leukocytes 4,100/mm3, serum iron 30 ug/dL, and total iron-binding capacity 190 ug/dL (normal 250-460). Which of the following is the most likely underlying cause of this patient's anemia?", "clues": [{"text": "sexually active with multiple male partners", "type": "orange", "note": "High-risk sexual history plus weight loss, thrush, and lymphadenopathy suggest undiagnosed HIV infection."}, {"text": "thick, white plaques over the buccal mucosa and soft palate", "type": "green", "note": "Oral candidiasis (thrush) in this context indicates immunosuppression - consistent with HIV."}, {"text": "serum iron 30 ug/dL", "type": "green", "note": "Low serum iron could suggest iron deficiency, but the total iron-binding capacity distinguishes the cause."}, {"text": "total iron-binding capacity 190 ug/dL (normal 250-460)", "type": "green", "note": "A LOW TIBC (with low iron) is the hallmark of ANEMIA OF CHRONIC DISEASE (iron sequestration), NOT iron deficiency (where TIBC is HIGH)."}], "whatMatters": "A chronically ill HIV patient with anemia, low serum iron, and a LOW TIBC has ANEMIA OF CHRONIC DISEASE (inflammation). Inflammatory cytokines raise HEPCIDIN, which sequesters iron in macrophages and blocks absorption - so iron is present but poorly UTILIZED ('abnormal iron utilization'). Answer A. (Iron deficiency would show a HIGH TIBC.)", "strategy": "Use the TIBC to split low-iron anemias: LOW TIBC = anemia of chronic disease (iron sequestered, hepcidin high); HIGH TIBC = iron deficiency (transferrin up). Chronic infection (HIV) + low iron + low TIBC = ACD = abnormal iron utilization. Reject GI blood loss/iron deficiency (high TIBC), thalassemia (high iron, target cells), DIC (schistocytes/thrombocytopenia), and porphyria (heme enzyme defect, neurovisceral/cutaneous, not this picture).", "options": [{"letter": "A", "text": "Abnormal iron utilization", "correct": true}, {"letter": "B", "text": "Decreased synthesis of globin chains", "correct": false}, {"letter": "C", "text": "Deposition of fibrin in the microcirculation", "correct": false}, {"letter": "D", "text": "Gastrointestinal blood loss", "correct": false}, {"letter": "E", "text": "Deficiency of a heme synthesis enzyme", "correct": false}], "eliminations": [{"letter": "B", "label": "Decreased globin synthesis - thalassemia (high iron)", "detail": "WHAT IT IS: reduced globin-chain synthesis (thalassemia), microcytic. ❌ WHY IT FAILS: thalassemia has NORMAL/HIGH serum iron (not low) and target cells; this patient has low iron with low TIBC (ACD). ✅ Correct if: microcytosis with high/normal iron and target cells."}, {"letter": "C", "label": "Fibrin deposition - DIC (microangiopathy)", "detail": "WHAT IT IS: microvascular fibrin/thrombi shearing RBCs (DIC) - schistocytes + thrombocytopenia. ❌ WHY IT FAILS: this is not a consumptive microangiopathy (platelets 160,000, no schistocytes); it's ACD. ✅ Correct if: schistocytes + low platelets + coagulopathy."}, {"letter": "D", "label": "GI blood loss - iron deficiency (HIGH TIBC) (your pick)", "detail": "WHAT IT IS: chronic GI bleeding causing iron deficiency anemia. ❌ WHY IT FAILS: iron deficiency raises TIBC (increased transferrin); this patient's TIBC is LOW, indicating anemia of chronic disease, not iron deficiency. ✅ Correct if: microcytic anemia with LOW iron and HIGH TIBC (low ferritin)."}, {"letter": "E", "label": "Heme synthesis enzyme deficiency - porphyria/sideroblastic", "detail": "WHAT IT IS: defective heme synthesis (porphyrias/sideroblastic anemia). ❌ WHY IT FAILS: porphyrias present with neurovisceral/cutaneous symptoms and sideroblastic anemia has HIGH iron - not low iron/low TIBC. ✅ Correct if: ringed sideroblasts (high iron) or porphyria symptoms."}], "reasoning": ["Chronically ill HIV patient (thrush, lymphadenopathy, weight loss) with anemia", "Low serum iron with LOW TIBC = anemia of chronic disease (not iron deficiency)", "Inflammatory cytokines raise hepcidin -> iron sequestration + reduced absorption -> impaired iron utilization", "-> abnormal iron utilization; answer A"], "mechanism": "Anemia of chronic disease (anemia of inflammation) develops with chronic infections (e.g., HIV), malignancy, and autoimmune disease. Inflammatory cytokines (IL-6) stimulate hepatic production of HEPCIDIN, which degrades ferroportin on enterocytes and macrophages, DECREASING intestinal iron absorption and TRAPPING iron in the reticuloendothelial system. The result is low circulating (serum) iron despite adequate/increased body iron stores - i.e., ABNORMAL IRON UTILIZATION - with reduced iron available for erythropoiesis. Cytokines also blunt erythropoietin response and RBC survival. Labs show a normocytic (or mildly microcytic) anemia with LOW serum iron, LOW total iron-binding capacity (reduced transferrin), a low reticulocyte count, and normal-to-HIGH ferritin (an acute-phase reactant). The LOW TIBC is the key discriminator from IRON DEFICIENCY, where the body upregulates transferrin so TIBC is HIGH (and ferritin low). Treatment targets the underlying inflammation (e.g., antiretroviral therapy). The distractors - thalassemia (high iron), DIC (microangiopathy), GI iron-deficiency (high TIBC), and heme-enzyme defects - don't fit low iron with low TIBC.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Heme > anemia of chronic disease: IL-6 -> hepcidin -> iron sequestration; ↓serum iron, ↓TIBC, ↑/normal ferritin, normo-/microcytic; vs iron deficiency (↑TIBC, ↓ferritin)."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Low iron + LOW TIBC in chronic infection = ACD (abnormal iron utilization), not iron deficiency."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on anemia of chronic disease, hepcidin, TIBC/transferrin, ferritin, or iron sequestration? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Iron deficiency (GI loss) has HIGH TIBC; thalassemia has high iron; DIC = schistocytes; porphyria/sideroblastic differ."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: ACD = ↓iron, ↓TIBC, ↑ferritin (hepcidin sequesters iron); iron deficiency = ↓iron, ↑TIBC, ↓ferritin."}], "keywords": [{"front": "Low serum iron + LOW TIBC in chronic infection", "back": "Anemia of chronic disease (abnormal iron utilization)"}, {"front": "Key mediator of anemia of chronic disease", "back": "Hepcidin (IL-6-driven) - sequesters iron"}, {"front": "TIBC: ACD vs iron deficiency", "back": "ACD low; iron deficiency high"}, {"front": "Ferritin: ACD vs iron deficiency", "back": "ACD high/normal (acute phase); iron deficiency low"}, {"front": "HIV oral finding suggesting immunosuppression", "back": "Oral candidiasis (thrush)"}, {"front": "Treatment of anemia of chronic disease", "back": "Treat the underlying inflammatory condition"}], "firstAid": [{"tag": "answer / stem", "topic": "Anemia of chronic disease", "detail": "Heme: hepcidin sequesters iron -> ↓iron, ↓TIBC; abnormal iron utilization."}, {"tag": "options", "topic": "Microcytic/low-iron differential", "detail": "Heme > iron deficiency (↑TIBC), thalassemia (↑iron), sideroblastic (↑iron)."}, {"tag": "context", "topic": "HIV", "detail": "ID > thrush, lymphadenopathy, weight loss; chronic inflammation -> ACD."}], "memoryHook": "Inflammation hoards iron behind hepcidin's locked door - plenty of iron in the vault but none for the marrow: low iron AND low TIBC = anemia of chronic disease.", "stem": [{"text": "A 45-year-old man comes to the office due to 3 months of exertional fatigue and weight loss. He is "}, {"text": "sexually active with multiple male partners", "clue": true, "type": "orange", "note": "High-risk sexual history plus weight loss, thrush, and lymphadenopathy suggest undiagnosed HIV infection."}, {"text": ". Temperature is 37.9 C (100.2 F), blood pressure is 110/70 mm Hg, pulse is 84/min, and respirations are 13/min. BMI is 20 kg/m2. The patient appears chronically ill and has mucosal pallor. There are "}, {"text": "thick, white plaques over the buccal mucosa and soft palate", "clue": true, "type": "green", "note": "Oral candidiasis (thrush) in this context indicates immunosuppression - consistent with HIV."}, {"text": ". Anterior and posterior cervical lymphadenopathy is present. The lungs are clear to auscultation. The abdomen is soft and nontender. There is no organomegaly. Laboratory results: hematocrit 28%, mean corpuscular volume 76 um3, platelets 160,000/mm3, leukocytes 4,100/mm3, "}, {"text": "serum iron 30 ug/dL", "clue": true, "type": "green", "note": "Low serum iron could suggest iron deficiency, but the total iron-binding capacity distinguishes the cause."}, {"text": ", and "}, {"text": "total iron-binding capacity 190 ug/dL (normal 250-460)", "clue": true, "type": "green", "note": "A LOW TIBC (with low iron) is the hallmark of ANEMIA OF CHRONIC DISEASE (iron sequestration), NOT iron deficiency (where TIBC is HIGH)."}, {"text": ". Which of the following is the most likely underlying cause of this patient's anemia?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

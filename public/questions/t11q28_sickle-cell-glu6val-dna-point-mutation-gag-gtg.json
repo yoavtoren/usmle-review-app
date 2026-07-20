@@ -1,0 +1,191 @@
+{
+  "id": "q387",
+  "item": 387,
+  "qid": "12019",
+  "title": "Sickle cell (Glu6Val): DNA point mutation GAG -> GTG",
+  "system": "Genetics",
+  "topic": "Sickle cell mutation / genetic code",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 57,
+  "vignette": "A 14-year-old boy with chronic anemia is being evaluated after experiencing several episodes of chest, back, and extremity pain. Peripheral blood smear reveals sickle-shaped red blood cells. Genetic testing shows that the patient is homozygous for a point mutation in the beta-globin gene, resulting in a glutamic acid to valine substitution at position 6. Using the provided genetic code table, sequencing the affected DNA would most likely reveal which of the following changes?",
+  "clues": [
+    {
+      "text": "sickle-shaped red blood cells",
+      "type": "green",
+      "note": "Sickled RBCs with vaso-occlusive pain crises indicate sickle cell disease."
+    },
+    {
+      "text": "glutamic acid to valine substitution at position 6",
+      "type": "red",
+      "note": "The sickle mutation replaces glutamate (Glu) with valine (Val) at position 6 of the beta-globin chain - a single-base missense mutation."
+    }
+  ],
+  "whatMatters": "Sickle cell disease is a single-nucleotide MISSENSE mutation in beta-globin causing GLUTAMATE -> VALINE at codon 6. In DNA, glutamate is coded by GAA/GAG and valine by GTT/GTC/GTA/GTG; the single-base change that accomplishes it is GAG -> GTG (A->T at the middle position). Answer D.",
+  "strategy": "Translate the amino-acid change into a DNA codon change using the table, remembering DNA uses T (not U). Glutamate = GAA or GAG; valine = GT_. A SINGLE base substitution linking them is GAG -> GTG (or GAA -> GTA). Pick the DNA option (GAG -> GTG). Reject the RNA option (GAA -> GUA - uracil isn't in DNA), multi-base changes, and codons that don't encode Glu->Val (e.g., a silent TTA->CTA).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "CAA -> GTT",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "CAT -> CTT",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "GAA -> GUA",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "GAG -> GTG",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "GTA -> GAA",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "TTA -> CTA",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "CAA -> GTT - not Glu->Val, multiple base changes",
+      "detail": "WHAT IT IS: glutamine (CAA) to valine (GTT). ❌ WHY IT FAILS: the starting codon codes glutaMINE (not glutaMATE), and it requires multiple base changes - not the single Glu->Val substitution of sickle cell. ✅ Correct if: a different missense example."
+    },
+    {
+      "letter": "B",
+      "label": "CAT -> CTT - histidine to leucine",
+      "detail": "WHAT IT IS: histidine (CAT) to leucine (CTT). ❌ WHY IT FAILS: wrong amino acids entirely (not Glu->Val). ✅ Correct if: a His->Leu substitution."
+    },
+    {
+      "letter": "C",
+      "label": "GAA -> GUA - RNA (uracil not in DNA)",
+      "detail": "WHAT IT IS: glutamate (GAA) to valine (GUA) - a valid single change but written in RNA. ❌ WHY IT FAILS: the question asks about DNA sequencing, and URACIL (U) does not occur in DNA (DNA uses thymine, T). ✅ Correct if: describing the mRNA-level change (GAA -> GUA)."
+    },
+    {
+      "letter": "E",
+      "label": "GTA -> GAA - valine to glutamate (reverse)",
+      "detail": "WHAT IT IS: valine (GTA) to glutamate (GAA) - the REVERSE direction. ❌ WHY IT FAILS: sickle cell is Glu->Val, not Val->Glu. ✅ Correct if: asking for the reverse substitution."
+    },
+    {
+      "letter": "F",
+      "label": "TTA -> CTA - silent (both leucine)",
+      "detail": "WHAT IT IS: TTA and CTA both encode leucine. ❌ WHY IT FAILS: it's a SILENT mutation (no amino-acid change) and involves leucine, not Glu->Val. ✅ Correct if: illustrating a silent mutation."
+    }
+  ],
+  "reasoning": [
+    "Sickle cell = missense mutation, glutamate -> valine at beta-globin codon 6",
+    "Using the DNA code: glutamate = GAA/GAG; valine = GTT/GTC/GTA/GTG",
+    "The single-base substitution connecting them (with T, since it's DNA) is GAG -> GTG",
+    "-> GAG -> GTG; answer D"
+  ],
+  "mechanism": "Sickle cell disease is an autosomal recessive disorder caused by a single-nucleotide POINT MUTATION in the coding region of the beta-globin gene, producing a MISSENSE change - glutamic acid (a hydrophilic, negatively charged residue) replaced by VALINE (hydrophobic) at position 6. This hydrophobic patch promotes polymerization of deoxygenated hemoglobin S, sickling red cells during hypoxic/stress states and causing painful vaso-occlusive episodes. Reading a genetic code TABLE (recalling that DNA uses THYMINE, not uracil): glutamate is encoded by GAA and GAG, and valine by GTT, GTC, GTA, and GTG. Comparing codons, the substitutions requiring only a SINGLE base change to convert Glu->Val are GAA->GTA and GAG->GTG; the classic sickle mutation is GAG -> GTG (an A->T change at the second position). The RNA-level equivalent is GAG->GUG (or GAA->GUA), but because the question asks about DNA, options containing uracil are incorrect. The other choices are wrong amino acids, multi-base changes, the reverse direction, or a silent mutation.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Genetics/Heme > sickle cell: point (missense) mutation in beta-globin, Glu6Val; GAG -> GTG (DNA) / GAG -> GUG (mRNA); hydrophobic valine -> HbS polymerization."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Convert Glu->Val to a single-base DNA codon change (use T, not U): GAG -> GTG."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on missense vs silent mutation, codon table, DNA (thymine) vs RNA (uracil), or Glu/Val codons? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "GAA->GUA is the RNA version (uracil not in DNA); other options are wrong amino acids, multi-base, reverse, or silent."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "On the codon table: find glutamate (GAA/GAG) and valine (GT_) and identify the single-base swap. Anchor: 'sickle = GAG -> GTG in DNA (GUG in mRNA).'"
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: sickle cell = missense Glu6Val; DNA GAG -> GTG; hydrophobic valine drives HbS polymerization."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Sickle cell mutation (amino acid)",
+      "back": "Glutamate -> valine at beta-globin position 6 (missense)"
+    },
+    {
+      "front": "Sickle cell DNA codon change",
+      "back": "GAG -> GTG (mRNA: GAG -> GUG)"
+    },
+    {
+      "front": "DNA vs RNA base difference",
+      "back": "DNA uses thymine (T); RNA uses uracil (U)"
+    },
+    {
+      "front": "Glutamate codons",
+      "back": "GAA, GAG"
+    },
+    {
+      "front": "Valine codons",
+      "back": "GTT, GTC, GTA, GTG"
+    },
+    {
+      "front": "Silent vs missense mutation",
+      "back": "Silent = same amino acid; missense = different amino acid"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Sickle cell mutation",
+      "detail": "Genetics: missense Glu6Val; DNA GAG -> GTG."
+    },
+    {
+      "tag": "options",
+      "topic": "Reading the codon table",
+      "detail": "Genetics > DNA uses T (not U); single-base substitutions."
+    },
+    {
+      "tag": "pathophys",
+      "topic": "HbS polymerization",
+      "detail": "Heme > hydrophobic valine -> sickling in deoxygenation."
+    }
+  ],
+  "memoryHook": "Sickle swaps one letter: GAG (Glu) -> GTG (Val) in the DNA - a single A-to-T that makes hemoglobin sticky; the GUA/GUG versions belong to RNA, not DNA.",
+  "stem": [
+    {
+      "text": "A 14-year-old boy with chronic anemia is being evaluated after experiencing several episodes of chest, back, and extremity pain. Peripheral blood smear reveals "
+    },
+    {
+      "text": "sickle-shaped red blood cells",
+      "clue": true,
+      "type": "green",
+      "note": "Sickled RBCs with vaso-occlusive pain crises indicate sickle cell disease."
+    },
+    {
+      "text": ". Genetic testing shows that the patient is homozygous for a point mutation in the beta-globin gene, resulting in a "
+    },
+    {
+      "text": "glutamic acid to valine substitution at position 6",
+      "clue": true,
+      "type": "red",
+      "note": "The sickle mutation replaces glutamate (Glu) with valine (Val) at position 6 of the beta-globin chain - a single-base missense mutation."
+    },
+    {
+      "text": ". Using the provided genetic code table, sequencing the affected DNA would most likely reveal which of the following changes?"
+    }
+  ]
+}

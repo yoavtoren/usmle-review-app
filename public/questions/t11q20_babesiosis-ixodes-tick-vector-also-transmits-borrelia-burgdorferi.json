@@ -1,0 +1,214 @@
+{
+  "id": "q379",
+  "item": 379,
+  "qid": "11540",
+  "title": "Babesiosis (Ixodes tick): vector also transmits Borrelia burgdorferi",
+  "system": "Microbiology",
+  "topic": "Babesiosis / Ixodes-borne coinfection",
+  "correct": "A",
+  "yourAnswer": "F",
+  "percentCorrect": 61,
+  "vignette": "A 48-year-old man comes to the hospital due to 10 days of persistent fever, chills, fatigue, and dyspnea. He had a splenectomy at age 28 after a motor vehicle accident and is up to date on appropriate vaccinations. The patient does not use tobacco, alcohol, or illicit drugs. He recently traveled from New York City to Connecticut for a family wedding. His temperature is 38.6 C (101.5 F), blood pressure is 118/70 mm Hg, and pulse is 108/min. Lung examination reveals coarse crackles. Laboratory results show hemoglobin 9.6 g/dL, platelets 108,000/mm3, elevated lactate dehydrogenase, and low haptoglobin. Chest x-ray reveals bilateral infiltrates. A peripheral blood smear shows normocytic, normochromic anemia with ring- and cross-shaped (Maltese cross) intraerythrocytic inclusions. The vector responsible for this patient's current condition can also transmit which of the following organisms?",
+  "clues": [
+    {
+      "text": "splenectomy at age 28",
+      "type": "orange",
+      "note": "Asplenia predisposes to severe babesiosis (the spleen normally clears parasitized red cells), explaining this patient's severe course."
+    },
+    {
+      "text": "traveled from New York City to Connecticut",
+      "type": "orange",
+      "note": "The northeastern United States is the endemic region for babesiosis (and Lyme disease), transmitted by the Ixodes tick."
+    },
+    {
+      "text": "low haptoglobin",
+      "type": "green",
+      "note": "Low haptoglobin with high LDH and anemia indicates intravascular HEMOLYSIS - Babesia lyses red cells."
+    },
+    {
+      "text": "ring- and cross-shaped (Maltese cross) intraerythrocytic inclusions",
+      "type": "green",
+      "note": "Intraerythrocytic ring forms and the tetrad 'Maltese cross' are diagnostic of Babesia (transmitted by the Ixodes tick)."
+    }
+  ],
+  "whatMatters": "Hemolytic anemia with intraerythrocytic ring forms and 'Maltese cross' tetrads in an asplenic patient from the northeastern US = BABESIOSIS (Babesia microti), transmitted by the IXODES scapularis tick. The same Ixodes tick also transmits Lyme disease - BORRELIA BURGDORFERI (and Anaplasma). Answer A.",
+  "strategy": "Identify babesiosis and its vector (Ixodes scapularis), then recall the OTHER Ixodes-borne pathogens: Borrelia burgdorferi (Lyme) and Anaplasma phagocytophilum - coinfection is common. Pick Borrelia burgdorferi. Reject organisms with DIFFERENT vectors/transmission: dengue and Plasmodium (mosquitoes - Aedes and Anopheles), and encapsulated bacteria (H. influenzae, N. meningitidis - respiratory, relevant to asplenia risk but not tick-borne) and Histoplasma (inhaled from bird/bat droppings).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Borrelia burgdorferi",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Dengue virus",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Haemophilus influenzae",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Histoplasma capsulatum",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Neisseria meningitidis",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Plasmodium falciparum",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Dengue virus - Aedes mosquito",
+      "detail": "WHAT IT IS: dengue is transmitted by AEDES mosquitoes (tropical regions). ❌ WHY IT FAILS: it's not tick-borne; babesiosis's vector is the Ixodes tick. ✅ Correct if: a mosquito-borne febrile illness in the tropics."
+    },
+    {
+      "letter": "C",
+      "label": "Haemophilus influenzae - respiratory, not tick-borne",
+      "detail": "WHAT IT IS: an encapsulated respiratory bacterium (dangerous in asplenia). ❌ WHY IT FAILS: it spreads by respiratory droplets, not the Ixodes tick (although asplenia raises risk of encapsulated organisms in general). ✅ Correct if: asking what asplenic patients are vaccinated against."
+    },
+    {
+      "letter": "D",
+      "label": "Histoplasma capsulatum - inhaled from droppings",
+      "detail": "WHAT IT IS: a dimorphic fungus acquired by INHALATION (bird/bat droppings; Ohio/Mississippi valleys). ❌ WHY IT FAILS: it's not transmitted by a tick. ✅ Correct if: cave exposure/pulmonary fungal infection."
+    },
+    {
+      "letter": "E",
+      "label": "Neisseria meningitidis - respiratory, not tick-borne",
+      "detail": "WHAT IT IS: an encapsulated respiratory bacterium (asplenia risk). ❌ WHY IT FAILS: droplet-transmitted, not via the Ixodes tick. ✅ Correct if: asplenia vaccination targets."
+    },
+    {
+      "letter": "F",
+      "label": "Plasmodium falciparum - Anopheles mosquito (your pick)",
+      "detail": "WHAT IT IS: malaria, transmitted by ANOPHELES mosquitoes; its smear also shows ring forms (a mimic of Babesia). ❌ WHY IT FAILS: it's mosquito-borne, not tick-borne, and lacks the 'Maltese cross' tetrads/travel-to-endemic-area for malaria; the shared VECTOR asked about is the Ixodes tick. ✅ Correct if: ring forms WITH banana-shaped gametocytes after travel to a malaria-endemic region."
+    }
+  ],
+  "reasoning": [
+    "Hemolytic anemia + intraerythrocytic rings/'Maltese cross' + asplenia + northeastern US = babesiosis (Babesia microti)",
+    "Babesia is transmitted by the Ixodes scapularis tick",
+    "The same Ixodes tick also transmits Borrelia burgdorferi (Lyme disease) and Anaplasma - coinfection is common",
+    "-> Borrelia burgdorferi; answer A"
+  ],
+  "mechanism": "Babesiosis is caused by the intraerythrocytic protozoan Babesia microti, transmitted by the IXODES scapularis (deer) tick in the northeastern and upper-midwestern United States. Babesia invades and lyses red blood cells, causing a febrile HEMOLYTIC illness (fever, fatigue, anemia, thrombocytopenia, elevated LDH, low haptoglobin, elevated liver enzymes); severe disease (ARDS, DIC) occurs in ASPLENIC, elderly, or immunocompromised patients because the spleen normally filters parasitized cells. Diagnosis is by Giemsa-stained thin blood smear showing intraerythrocytic RING forms and occasional tetrads ('MALTESE CROSS'). Crucially, the SAME Ixodes tick vector transmits Lyme disease (BORRELIA BURGDORFERI) and human granulocytic anaplasmosis (Anaplasma phagocytophilum), so these infections occur in the same geographic regions and COINFECTION is common. The distractors have different transmission: dengue and Plasmodium are MOSQUITO-borne (Aedes and Anopheles, respectively; malaria's ring forms are a smear mimic but it isn't tick-borne), Histoplasma is inhaled, and H. influenzae/N. meningitidis are respiratory encapsulated bacteria (relevant to asplenia risk but not tick-borne).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro > babesiosis: Babesia microti, Ixodes scapularis tick (same as Lyme/Borrelia burgdorferi and Anaplasma), northeastern US; intraerythrocytic rings + Maltese cross; severe in asplenia; hemolytic anemia."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Babesia's Ixodes vector also carries Borrelia burgdorferi (Lyme) - coinfection is common."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on babesiosis, Ixodes tick, Maltese cross, Borrelia burgdorferi/Lyme, or hemolysis markers? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Dengue (Aedes) and malaria (Anopheles) are mosquito-borne; Histoplasma inhaled; H. influenzae/N. meningitidis respiratory (asplenia risk) - not Ixodes-borne."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: Ixodes scapularis transmits Babesia + Borrelia burgdorferi (Lyme) + Anaplasma; babesiosis severe in asplenia (Maltese cross)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Intraerythrocytic rings + 'Maltese cross' + hemolysis (northeastern US)",
+      "back": "Babesiosis (Babesia microti)"
+    },
+    {
+      "front": "Babesiosis vector",
+      "back": "Ixodes scapularis (deer) tick"
+    },
+    {
+      "front": "Other Ixodes-borne diseases",
+      "back": "Lyme (Borrelia burgdorferi), anaplasmosis (Anaplasma)"
+    },
+    {
+      "front": "Why severe babesiosis in asplenia",
+      "back": "Spleen normally clears parasitized red cells"
+    },
+    {
+      "front": "Babesia vs malaria on smear",
+      "back": "Babesia: Maltese cross, no gametocytes; malaria: banana-shaped gametocytes (Anopheles)"
+    },
+    {
+      "front": "Dengue / malaria vectors",
+      "back": "Aedes mosquito / Anopheles mosquito"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Babesiosis",
+      "detail": "Micro: Babesia microti, Ixodes tick (also Lyme/Borrelia, Anaplasma); Maltese cross; severe in asplenia."
+    },
+    {
+      "tag": "options",
+      "topic": "Vector-borne differential",
+      "detail": "Micro > dengue (Aedes), malaria (Anopheles), Histoplasma (inhaled)."
+    },
+    {
+      "tag": "clinical",
+      "topic": "Ixodes coinfection",
+      "detail": "Micro > babesiosis + Lyme + anaplasmosis share the same tick."
+    }
+  ],
+  "memoryHook": "One tick, three diseases: the Ixodes that gave him babesiosis (Maltese-cross rings) also carries Lyme's Borrelia - malaria rides mosquitoes, not ticks.",
+  "stem": [
+    {
+      "text": "A 48-year-old man comes to the hospital due to 10 days of persistent fever, chills, fatigue, and dyspnea. He had a "
+    },
+    {
+      "text": "splenectomy at age 28",
+      "clue": true,
+      "type": "orange",
+      "note": "Asplenia predisposes to severe babesiosis (the spleen normally clears parasitized red cells), explaining this patient's severe course."
+    },
+    {
+      "text": " after a motor vehicle accident and is up to date on appropriate vaccinations. The patient does not use tobacco, alcohol, or illicit drugs. He recently "
+    },
+    {
+      "text": "traveled from New York City to Connecticut",
+      "clue": true,
+      "type": "orange",
+      "note": "The northeastern United States is the endemic region for babesiosis (and Lyme disease), transmitted by the Ixodes tick."
+    },
+    {
+      "text": " for a family wedding. His temperature is 38.6 C (101.5 F), blood pressure is 118/70 mm Hg, and pulse is 108/min. Lung examination reveals coarse crackles. Laboratory results show hemoglobin 9.6 g/dL, platelets 108,000/mm3, elevated lactate dehydrogenase, and "
+    },
+    {
+      "text": "low haptoglobin",
+      "clue": true,
+      "type": "green",
+      "note": "Low haptoglobin with high LDH and anemia indicates intravascular HEMOLYSIS - Babesia lyses red cells."
+    },
+    {
+      "text": ". Chest x-ray reveals bilateral infiltrates. A peripheral blood smear shows normocytic, normochromic anemia with "
+    },
+    {
+      "text": "ring- and cross-shaped (Maltese cross) intraerythrocytic inclusions",
+      "clue": true,
+      "type": "green",
+      "note": "Intraerythrocytic ring forms and the tetrad 'Maltese cross' are diagnostic of Babesia (transmitted by the Ixodes tick)."
+    },
+    {
+      "text": ". The vector responsible for this patient's current condition can also transmit which of the following organisms?"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "q365",
+  "item": 365,
+  "qid": "981",
+  "title": "Celiac disease -> vitamin D deficiency: low Ca, low phosphorus, high PTH",
+  "system": "Pathophysiology",
+  "topic": "Malabsorption / vitamin D deficiency",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 36,
+  "vignette": "A 30-year-old woman has had diarrhea and weight loss for the past several months. She also has diffuse bone pain and generalized weakness. The patient has a history of primary hypothyroidism for which she takes levothyroxine. She is 162.5 cm (5 ft 4 in) tall and weighs 45 kg (99.2 lb). BMI is 17 kg/m2. On physical examination, the abdomen is soft and nontender. Initial laboratory evaluation reveals microcytic anemia, hypoalbuminemia, normal magnesium level, and normal serum TSH concentration. The patient is found to have positive anti-tissue transglutaminase IgA antibodies. Which of the following sets of additional laboratory findings (serum calcium, serum phosphorus, serum parathyroid hormone) is most likely present in this patient?",
+  "clues": [
+    {
+      "text": "diarrhea and weight loss for the past several months",
+      "type": "blue",
+      "note": "Chronic diarrhea with weight loss and low BMI suggests malabsorption."
+    },
+    {
+      "text": "diffuse bone pain and generalized weakness",
+      "type": "green",
+      "note": "Bone pain and weakness point to osteomalacia from vitamin D deficiency (impaired bone mineralization)."
+    },
+    {
+      "text": "positive anti-tissue transglutaminase IgA antibodies",
+      "type": "green",
+      "note": "Positive anti-tissue transglutaminase IgA confirms CELIAC DISEASE, which causes fat/fat-soluble vitamin (including vitamin D) malabsorption."
+    }
+  ],
+  "whatMatters": "Celiac disease -> malabsorption of fat-soluble vitamins including VITAMIN D. Vitamin D deficiency reduces intestinal calcium absorption -> HYPOCALCEMIA, which drives secondary HYPERPARATHYROIDISM (↑PTH); the high PTH promotes renal phosphate wasting -> LOW PHOSPHORUS. So: ↓Ca, ↓phosphorus, ↑PTH. Answer B.",
+  "strategy": "Trace vitamin D deficiency: ↓Ca absorption -> ↓serum Ca -> ↑PTH (secondary hyperparathyroidism). High PTH causes renal phosphate excretion -> ↓phosphorus. Pick ↓Ca, ↓phosphorus, ↑PTH. Reject rows with high phosphorus (that's CKD or hypoparathyroidism), low PTH (hypoparathyroidism), or high calcium (primary hyperparathyroidism).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Calcium ↑ | Phosphorus ↓ | PTH ↓",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Calcium ↓ | Phosphorus ↓ | PTH ↑",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Calcium ↓ | Phosphorus ↑ | PTH ↓",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Calcium ↓ | Phosphorus ↑ | PTH ↑",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Calcium normal | Phosphorus ↓ | PTH ↓",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "↑Ca, ↓phosphorus, ↓PTH - not vitamin D deficiency",
+      "detail": "WHAT IT IS: high calcium with low PTH suggests PTH-independent hypercalcemia. ❌ WHY IT FAILS: vitamin D deficiency LOWERS calcium and RAISES PTH - the opposite of this row. ✅ Correct if: hypercalcemia of malignancy or vitamin D toxicity (low PTH)."
+    },
+    {
+      "letter": "C",
+      "label": "↓Ca, ↑phosphorus, ↓PTH - hypoparathyroidism (your pick)",
+      "detail": "WHAT IT IS: low calcium with HIGH phosphorus and LOW PTH = hypoparathyroidism. ❌ WHY IT FAILS: in vitamin D deficiency PTH is HIGH (secondary hyperparathyroidism) and phosphorus is LOW (PTH-driven renal wasting), not this pattern. ✅ Correct if: post-surgical/autoimmune hypoparathyroidism."
+    },
+    {
+      "letter": "D",
+      "label": "↓Ca, ↑phosphorus, ↑PTH - chronic kidney disease",
+      "detail": "WHAT IT IS: low calcium, HIGH phosphorus, high PTH = CKD-mineral bone disorder. ❌ WHY IT FAILS: the failing kidney retains phosphate (high phosphorus); in vitamin D-deficiency malabsorption the kidney is normal and PTH drives phosphorus LOW. ✅ Correct if: advanced CKD with phosphate retention."
+    },
+    {
+      "letter": "E",
+      "label": "Normal Ca, ↓phosphorus, ↓PTH - inconsistent",
+      "detail": "WHAT IT IS: normal calcium with low PTH. ❌ WHY IT FAILS: PTH should be HIGH in vitamin D deficiency (to defend calcium); this row doesn't fit secondary hyperparathyroidism. ✅ Correct if: an isolated phosphate-wasting disorder without secondary hyperPTH."
+    }
+  ],
+  "reasoning": [
+    "Celiac disease causes malabsorption of fat-soluble vitamin D",
+    "Vitamin D deficiency reduces intestinal calcium absorption -> hypocalcemia",
+    "Hypocalcemia stimulates PTH (secondary hyperparathyroidism); high PTH wastes phosphate renally -> low phosphorus",
+    "-> ↓Ca, ↓phosphorus, ↑PTH; answer B"
+  ],
+  "mechanism": "Celiac disease is an immune-mediated enteropathy (villous atrophy) that impairs absorption of dietary fats and FAT-SOLUBLE VITAMINS (A, D, E, K). Deficiency of VITAMIN D reduces intestinal absorption of calcium (and phosphate), lowering serum calcium; low vitamin D also removes its direct suppression of the parathyroid glands. The resulting HYPOCALCEMIA stimulates parathyroid hormone secretion - SECONDARY HYPERPARATHYROIDISM (↑PTH). Elevated PTH mobilizes calcium from bone (helping keep calcium low-to-normal, but causing bone pain/osteomalacia and increased alkaline phosphatase) and promotes RENAL PHOSPHATE EXCRETION, driving serum PHOSPHORUS DOWN. Hence the classic vitamin D-deficiency panel is LOW calcium, LOW phosphorus, and HIGH PTH (with low 25-hydroxyvitamin D). This differs from chronic kidney disease (where phosphorus is HIGH because the kidney can't excrete it) and from hypoparathyroidism (low PTH, high phosphorus). Treatment is a gluten-free diet plus vitamin D/calcium repletion.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid GI/Renal > celiac disease -> fat-soluble vitamin (D) malabsorption; vitamin D deficiency = ↓Ca, ↓phosphorus, ↑PTH (secondary hyperparathyroidism), ↑alkaline phosphatase, osteomalacia."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Vitamin D deficiency lowers Ca -> ↑PTH -> renal phosphate wasting -> low phosphorus."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on vitamin D deficiency, secondary hyperparathyroidism, osteomalacia, or PTH's phosphate effect? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "High-phosphorus rows = CKD/hypoparathyroidism; low-PTH rows = hypoparathyroidism; high-Ca row = PTH-independent hypercalcemia."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: vitamin D deficiency (celiac malabsorption) -> ↓Ca, ↓phosphorus, ↑PTH (secondary hyperPTH); contrast CKD (↑phosphorus)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Vitamin D deficiency lab panel",
+      "back": "↓Ca, ↓phosphorus, ↑PTH (secondary hyperparathyroidism)"
+    },
+    {
+      "front": "Why phosphorus is LOW in vitamin D deficiency",
+      "back": "High PTH promotes renal phosphate excretion"
+    },
+    {
+      "front": "Celiac malabsorbs which vitamins",
+      "back": "Fat-soluble A, D, E, K (+ iron, folate)"
+    },
+    {
+      "front": "CKD mineral panel vs vitamin D deficiency",
+      "back": "CKD: ↑phosphorus; vitamin D deficiency: ↓phosphorus"
+    },
+    {
+      "front": "Hypoparathyroidism panel",
+      "back": "↓Ca, ↑phosphorus, ↓PTH"
+    },
+    {
+      "front": "Bone disease from vitamin D deficiency (adult)",
+      "back": "Osteomalacia (bone pain, ↑alkaline phosphatase)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Vitamin D deficiency",
+      "detail": "Renal/Endo: ↓Ca, ↓phosphorus, ↑PTH; osteomalacia; from celiac malabsorption."
+    },
+    {
+      "tag": "options",
+      "topic": "Calcium/phosphate disorders",
+      "detail": "Endo > CKD (↑phos), hypoparathyroidism (↓PTH/↑phos), primary hyperPTH (↑Ca)."
+    },
+    {
+      "tag": "context",
+      "topic": "Celiac disease",
+      "detail": "GI > anti-tissue transglutaminase IgA; villous atrophy; fat-soluble vitamin loss."
+    }
+  ],
+  "memoryHook": "No vitamin D from the damaged gut -> calcium drops -> PTH surges (secondary), and that surge flushes phosphorus out the kidney: ↓Ca, ↓phos, ↑PTH.",
+  "stem": [
+    {
+      "text": "A 30-year-old woman has had "
+    },
+    {
+      "text": "diarrhea and weight loss for the past several months",
+      "clue": true,
+      "type": "blue",
+      "note": "Chronic diarrhea with weight loss and low BMI suggests malabsorption."
+    },
+    {
+      "text": ". She also has "
+    },
+    {
+      "text": "diffuse bone pain and generalized weakness",
+      "clue": true,
+      "type": "green",
+      "note": "Bone pain and weakness point to osteomalacia from vitamin D deficiency (impaired bone mineralization)."
+    },
+    {
+      "text": ". The patient has a history of primary hypothyroidism for which she takes levothyroxine. She is 162.5 cm (5 ft 4 in) tall and weighs 45 kg (99.2 lb). BMI is 17 kg/m2. On physical examination, the abdomen is soft and nontender. Initial laboratory evaluation reveals microcytic anemia, hypoalbuminemia, normal magnesium level, and normal serum TSH concentration. The patient is found to have "
+    },
+    {
+      "text": "positive anti-tissue transglutaminase IgA antibodies",
+      "clue": true,
+      "type": "green",
+      "note": "Positive anti-tissue transglutaminase IgA confirms CELIAC DISEASE, which causes fat/fat-soluble vitamin (including vitamin D) malabsorption."
+    },
+    {
+      "text": ". Which of the following sets of additional laboratory findings (serum calcium, serum phosphorus, serum parathyroid hormone) is most likely present in this patient?"
+    }
+  ]
+}

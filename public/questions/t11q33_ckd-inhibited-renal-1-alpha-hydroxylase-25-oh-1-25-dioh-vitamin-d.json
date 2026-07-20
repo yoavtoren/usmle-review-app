@@ -1,0 +1,195 @@
+{
+  "id": "q392",
+  "item": 392,
+  "qid": "991",
+  "title": "CKD: inhibited renal 1-alpha-hydroxylase (25-OH -> 1,25-diOH vitamin D)",
+  "system": "Physiology",
+  "topic": "Vitamin D activation / CKD mineral bone disorder",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 79,
+  "vignette": "A 34-year-old man with type 1 diabetes mellitus comes to the office due to achy pain in the shoulders, elbows, and thighs over the past several months. The patient was diagnosed with diabetes 15 years ago and has had difficulty adequately controlling it. He currently takes multiple daily injections of insulin. Vital signs are within normal limits. Physical examination shows mild pedal edema. Serum creatinine is 2.2 mg/dL, up from 1.6 mg/dL six months ago. Additional laboratory results show low serum calcium and elevated parathyroid hormone levels. On the vitamin D metabolism pathway shown - 7-dehydrocholesterol (A) cholecalciferol (B) 25-hydroxyvitamin D3 (C) 1,25-dihydroxyvitamin D3, with side branches (D) to 24,25-dihydroxyvitamin D3 and (E) to 1,24,25-dihydroxyvitamin D3 - inhibition of which of the following enzymatic steps is most likely responsible for this patient's current symptoms?",
+  "clues": [
+    {
+      "text": "Serum creatinine is 2.2 mg/dL, up from 1.6 mg/dL six months ago",
+      "type": "red",
+      "note": "Progressive rise in creatinine indicates worsening chronic kidney disease (here diabetic nephropathy), which impairs renal vitamin D activation."
+    },
+    {
+      "text": "low serum calcium and elevated parathyroid hormone levels",
+      "type": "green",
+      "note": "Hypocalcemia with high PTH (secondary hyperparathyroidism) results from reduced active vitamin D - the renal 1-alpha-hydroxylase step is impaired in CKD."
+    },
+    {
+      "text": "1,25-dihydroxyvitamin D3",
+      "type": "blue",
+      "note": "1,25-dihydroxyvitamin D is the ACTIVE hormone; its formation from 25-OH vitamin D requires renal 1-alpha-hydroxylase (step C), which fails in CKD."
+    }
+  ],
+  "whatMatters": "Worsening CKD (creatinine 2.2) with hypocalcemia and high PTH = CKD-mineral bone disorder. The diseased kidney loses 1-ALPHA-HYDROXYLASE activity, so it can't convert 25-hydroxyvitamin D to active 1,25-DIHYDROXYVITAMIN D. On the pathway, that is step C (25-OH D3 -> 1,25-diOH D3). Answer C.",
+  "strategy": "Trace vitamin D activation: skin (A) makes cholecalciferol -> liver 25-hydroxylase (B) makes 25-OH D -> KIDNEY 1-alpha-hydroxylase (C) makes active 1,25-diOH D. CKD knocks out the RENAL step (C), causing hypocalcemia and secondary hyperparathyroidism (bone pain/osteodystrophy). Reject A (skin/UV step), B (hepatic 25-hydroxylase), and D/E (24-hydroxylase inactivating steps - inhibiting them would RAISE, not lower, active vitamin D).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Step A (skin: 7-dehydrocholesterol -> cholecalciferol)",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Step B (liver 25-hydroxylase)",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Step C (renal 1-alpha-hydroxylase)",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Step D (24-hydroxylase to 24,25-diOH D3)",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Step E (24-hydroxylase to 1,24,25-triOH D3)",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Step A - skin/UV synthesis",
+      "detail": "WHAT IT IS: ultraviolet-driven conversion of 7-dehydrocholesterol to cholecalciferol in the skin. ❌ WHY IT FAILS: deficiency here (poor sun exposure) causes vitamin D deficiency, but CKD specifically impairs the RENAL 1-alpha-hydroxylase step, not skin synthesis. ✅ Correct if: vitamin D deficiency from inadequate sunlight."
+    },
+    {
+      "letter": "B",
+      "label": "Step B - hepatic 25-hydroxylase",
+      "detail": "WHAT IT IS: liver conversion of cholecalciferol to 25-hydroxyvitamin D. ❌ WHY IT FAILS: this step is impaired in advanced LIVER disease, not CKD; the renal 1-alpha-hydroxylase step is the one lost in kidney disease. ✅ Correct if: severe hepatic dysfunction."
+    },
+    {
+      "letter": "D",
+      "label": "Step D - 24-hydroxylase (inactivation) of 25-OH D",
+      "detail": "WHAT IT IS: 24-hydroxylase converts 25-OH D to inactive 24,25-diOH D (degrading excess vitamin D). ❌ WHY IT FAILS: inhibiting this DEGRADATION step would RAISE active vitamin D and improve symptoms - opposite of this patient. ✅ Correct if: asking about vitamin D inactivation/degradation."
+    },
+    {
+      "letter": "E",
+      "label": "Step E - 24-hydroxylase (inactivation) of 1,25-diOH D",
+      "detail": "WHAT IT IS: 24-hydroxylase converts active 1,25-diOH D to inactive 1,24,25-triOH D. ❌ WHY IT FAILS: it DEGRADES active hormone; inhibiting it would increase, not decrease, active vitamin D. ✅ Correct if: asking about how active vitamin D is inactivated."
+    }
+  ],
+  "reasoning": [
+    "Progressive CKD (rising creatinine) with hypocalcemia and high PTH = CKD-mineral bone disorder",
+    "The kidney normally performs the final activation of vitamin D via 1-alpha-hydroxylase",
+    "CKD reduces 1-alpha-hydroxylase, lowering active 1,25-diOH vitamin D -> hypocalcemia + secondary hyperparathyroidism",
+    "-> step C (25-OH D3 -> 1,25-diOH D3); answer C"
+  ],
+  "mechanism": "Vitamin D activation is a three-organ relay: the SKIN converts 7-dehydrocholesterol to cholecalciferol (vitamin D3) under UV light (step A); the LIVER 25-hydroxylase converts it to 25-hydroxyvitamin D (the main storage form; step B); and the KIDNEY (proximal tubule) 1-ALPHA-HYDROXYLASE converts 25-OH D to the physiologically ACTIVE 1,25-DIHYDROXYVITAMIN D (calcitriol; step C), a reaction upregulated by PTH and inhibited by FGF-23. In CHRONIC KIDNEY DISEASE, reduced functional renal mass and elevated FGF-23 IMPAIR 1-alpha-hydroxylase (step C), so active calcitriol falls. Low calcitriol decreases intestinal calcium absorption -> HYPOCALCEMIA, which (along with phosphate retention) drives SECONDARY HYPERPARATHYROIDISM (elevated PTH). Chronically high PTH produces renal osteodystrophy with bone/joint pain, defective mineralization, and fracture risk - explaining this patient's achy limb pain. Steps D and E are 24-hydroxylase reactions that INACTIVATE vitamin D metabolites; inhibiting them would raise active vitamin D, not cause deficiency, so they are wrong.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Renal/Biochem > vitamin D activation: skin (D3) -> liver 25-hydroxylase -> kidney 1-alpha-hydroxylase (active 1,25-diOH D); CKD impairs 1-alpha-hydroxylase -> ↓calcitriol -> hypocalcemia + secondary hyperparathyroidism (renal osteodystrophy)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "CKD knocks out the RENAL activation step (1-alpha-hydroxylase, step C)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on 1-alpha-hydroxylase, calcitriol, 25-OH vs 1,25-diOH vitamin D, FGF-23, or secondary hyperparathyroidism? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Step A = skin/UV; step B = hepatic; steps D/E = 24-hydroxylase INACTIVATION (inhibiting them would raise active vitamin D)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "On the pathway: step C is the kidney's conversion of 25-hydroxyvitamin D3 to ACTIVE 1,25-dihydroxyvitamin D3 (1-alpha-hydroxylase). Anchor: 'CKD blocks the kidney's 1-alpha-hydroxylase = step C.'"
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: CKD -> ↓1-alpha-hydroxylase -> ↓calcitriol -> ↓Ca -> ↑PTH (secondary hyperparathyroidism); FGF-23 also suppresses it."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Enzyme impaired in CKD (vitamin D)",
+      "back": "Renal 1-alpha-hydroxylase (25-OH D -> 1,25-diOH D)"
+    },
+    {
+      "front": "Active vitamin D form",
+      "back": "1,25-dihydroxyvitamin D (calcitriol)"
+    },
+    {
+      "front": "Liver vs kidney vitamin D enzymes",
+      "back": "Liver 25-hydroxylase; kidney 1-alpha-hydroxylase"
+    },
+    {
+      "front": "CKD mineral panel",
+      "back": "↓calcium, ↑phosphate, ↑PTH, ↓calcitriol (secondary hyperparathyroidism)"
+    },
+    {
+      "front": "1-alpha-hydroxylase regulation",
+      "back": "Upregulated by PTH; inhibited by FGF-23"
+    },
+    {
+      "front": "24-hydroxylase role",
+      "back": "Inactivates vitamin D metabolites (24,25 / 1,24,25)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Vitamin D activation in CKD",
+      "detail": "Renal: ↓1-alpha-hydroxylase -> ↓calcitriol -> hypocalcemia + secondary hyperparathyroidism."
+    },
+    {
+      "tag": "options",
+      "topic": "Vitamin D pathway",
+      "detail": "Biochem > skin (D3), liver (25-OH), kidney (1,25-diOH); 24-hydroxylase inactivates."
+    },
+    {
+      "tag": "complication",
+      "topic": "Renal osteodystrophy",
+      "detail": "Renal > bone pain, defective mineralization, fractures."
+    }
+  ],
+  "memoryHook": "The kidney flips vitamin D's final 'ON' switch (1-alpha-hydroxylase, step C); failing kidneys can't - calcium drops, PTH climbs, bones ache.",
+  "stem": [
+    {
+      "text": "A 34-year-old man with type 1 diabetes mellitus comes to the office due to achy pain in the shoulders, elbows, and thighs over the past several months. The patient was diagnosed with diabetes 15 years ago and has had difficulty adequately controlling it. He currently takes multiple daily injections of insulin. Vital signs are within normal limits. Physical examination shows mild pedal edema. "
+    },
+    {
+      "text": "Serum creatinine is 2.2 mg/dL, up from 1.6 mg/dL six months ago",
+      "clue": true,
+      "type": "red",
+      "note": "Progressive rise in creatinine indicates worsening chronic kidney disease (here diabetic nephropathy), which impairs renal vitamin D activation."
+    },
+    {
+      "text": ". Additional laboratory results show "
+    },
+    {
+      "text": "low serum calcium and elevated parathyroid hormone levels",
+      "clue": true,
+      "type": "green",
+      "note": "Hypocalcemia with high PTH (secondary hyperparathyroidism) results from reduced active vitamin D - the renal 1-alpha-hydroxylase step is impaired in CKD."
+    },
+    {
+      "text": ". On the vitamin D metabolism pathway shown - 7-dehydrocholesterol (A) cholecalciferol (B) 25-hydroxyvitamin D3 (C) "
+    },
+    {
+      "text": "1,25-dihydroxyvitamin D3",
+      "clue": true,
+      "type": "blue",
+      "note": "1,25-dihydroxyvitamin D is the ACTIVE hormone; its formation from 25-OH vitamin D requires renal 1-alpha-hydroxylase (step C), which fails in CKD."
+    },
+    {
+      "text": ", with side branches (D) to 24,25-dihydroxyvitamin D3 and (E) to 1,24,25-dihydroxyvitamin D3 - inhibition of which of the following enzymatic steps is most likely responsible for this patient's current symptoms?"
+    }
+  ]
+}

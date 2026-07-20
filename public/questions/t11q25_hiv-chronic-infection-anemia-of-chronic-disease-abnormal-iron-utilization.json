@@ -1,0 +1,204 @@
+{
+  "id": "q384",
+  "item": 384,
+  "qid": "19136",
+  "title": "HIV/chronic infection: anemia of chronic disease (abnormal iron utilization)",
+  "system": "Hematology",
+  "topic": "Anemia of chronic disease / hepcidin",
+  "correct": "A",
+  "yourAnswer": "D",
+  "percentCorrect": 64,
+  "vignette": "A 45-year-old man comes to the office due to 3 months of exertional fatigue and weight loss. He is sexually active with multiple male partners. Temperature is 37.9 C (100.2 F), blood pressure is 110/70 mm Hg, pulse is 84/min, and respirations are 13/min. BMI is 20 kg/m2. The patient appears chronically ill and has mucosal pallor. There are thick, white plaques over the buccal mucosa and soft palate. Anterior and posterior cervical lymphadenopathy is present. The lungs are clear to auscultation. The abdomen is soft and nontender. There is no organomegaly. Laboratory results: hematocrit 28%, mean corpuscular volume 76 um3, platelets 160,000/mm3, leukocytes 4,100/mm3, serum iron 30 ug/dL, and total iron-binding capacity 190 ug/dL (normal 250-460). Which of the following is the most likely underlying cause of this patient's anemia?",
+  "clues": [
+    {
+      "text": "sexually active with multiple male partners",
+      "type": "orange",
+      "note": "High-risk sexual history plus weight loss, thrush, and lymphadenopathy suggest undiagnosed HIV infection."
+    },
+    {
+      "text": "thick, white plaques over the buccal mucosa and soft palate",
+      "type": "green",
+      "note": "Oral candidiasis (thrush) in this context indicates immunosuppression - consistent with HIV."
+    },
+    {
+      "text": "serum iron 30 ug/dL",
+      "type": "green",
+      "note": "Low serum iron could suggest iron deficiency, but the total iron-binding capacity distinguishes the cause."
+    },
+    {
+      "text": "total iron-binding capacity 190 ug/dL (normal 250-460)",
+      "type": "green",
+      "note": "A LOW TIBC (with low iron) is the hallmark of ANEMIA OF CHRONIC DISEASE (iron sequestration), NOT iron deficiency (where TIBC is HIGH)."
+    }
+  ],
+  "whatMatters": "A chronically ill HIV patient with anemia, low serum iron, and a LOW TIBC has ANEMIA OF CHRONIC DISEASE (inflammation). Inflammatory cytokines raise HEPCIDIN, which sequesters iron in macrophages and blocks absorption - so iron is present but poorly UTILIZED ('abnormal iron utilization'). Answer A. (Iron deficiency would show a HIGH TIBC.)",
+  "strategy": "Use the TIBC to split low-iron anemias: LOW TIBC = anemia of chronic disease (iron sequestered, hepcidin high); HIGH TIBC = iron deficiency (transferrin up). Chronic infection (HIV) + low iron + low TIBC = ACD = abnormal iron utilization. Reject GI blood loss/iron deficiency (high TIBC), thalassemia (high iron, target cells), DIC (schistocytes/thrombocytopenia), and porphyria (heme enzyme defect, neurovisceral/cutaneous, not this picture).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Abnormal iron utilization",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Decreased synthesis of globin chains",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Deposition of fibrin in the microcirculation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Gastrointestinal blood loss",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Deficiency of a heme synthesis enzyme",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Decreased globin synthesis - thalassemia (high iron)",
+      "detail": "WHAT IT IS: reduced globin-chain synthesis (thalassemia), microcytic. ❌ WHY IT FAILS: thalassemia has NORMAL/HIGH serum iron (not low) and target cells; this patient has low iron with low TIBC (ACD). ✅ Correct if: microcytosis with high/normal iron and target cells."
+    },
+    {
+      "letter": "C",
+      "label": "Fibrin deposition - DIC (microangiopathy)",
+      "detail": "WHAT IT IS: microvascular fibrin/thrombi shearing RBCs (DIC) - schistocytes + thrombocytopenia. ❌ WHY IT FAILS: this is not a consumptive microangiopathy (platelets 160,000, no schistocytes); it's ACD. ✅ Correct if: schistocytes + low platelets + coagulopathy."
+    },
+    {
+      "letter": "D",
+      "label": "GI blood loss - iron deficiency (HIGH TIBC) (your pick)",
+      "detail": "WHAT IT IS: chronic GI bleeding causing iron deficiency anemia. ❌ WHY IT FAILS: iron deficiency raises TIBC (increased transferrin); this patient's TIBC is LOW, indicating anemia of chronic disease, not iron deficiency. ✅ Correct if: microcytic anemia with LOW iron and HIGH TIBC (low ferritin)."
+    },
+    {
+      "letter": "E",
+      "label": "Heme synthesis enzyme deficiency - porphyria/sideroblastic",
+      "detail": "WHAT IT IS: defective heme synthesis (porphyrias/sideroblastic anemia). ❌ WHY IT FAILS: porphyrias present with neurovisceral/cutaneous symptoms and sideroblastic anemia has HIGH iron - not low iron/low TIBC. ✅ Correct if: ringed sideroblasts (high iron) or porphyria symptoms."
+    }
+  ],
+  "reasoning": [
+    "Chronically ill HIV patient (thrush, lymphadenopathy, weight loss) with anemia",
+    "Low serum iron with LOW TIBC = anemia of chronic disease (not iron deficiency)",
+    "Inflammatory cytokines raise hepcidin -> iron sequestration + reduced absorption -> impaired iron utilization",
+    "-> abnormal iron utilization; answer A"
+  ],
+  "mechanism": "Anemia of chronic disease (anemia of inflammation) develops with chronic infections (e.g., HIV), malignancy, and autoimmune disease. Inflammatory cytokines (IL-6) stimulate hepatic production of HEPCIDIN, which degrades ferroportin on enterocytes and macrophages, DECREASING intestinal iron absorption and TRAPPING iron in the reticuloendothelial system. The result is low circulating (serum) iron despite adequate/increased body iron stores - i.e., ABNORMAL IRON UTILIZATION - with reduced iron available for erythropoiesis. Cytokines also blunt erythropoietin response and RBC survival. Labs show a normocytic (or mildly microcytic) anemia with LOW serum iron, LOW total iron-binding capacity (reduced transferrin), a low reticulocyte count, and normal-to-HIGH ferritin (an acute-phase reactant). The LOW TIBC is the key discriminator from IRON DEFICIENCY, where the body upregulates transferrin so TIBC is HIGH (and ferritin low). Treatment targets the underlying inflammation (e.g., antiretroviral therapy). The distractors - thalassemia (high iron), DIC (microangiopathy), GI iron-deficiency (high TIBC), and heme-enzyme defects - don't fit low iron with low TIBC.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Heme > anemia of chronic disease: IL-6 -> hepcidin -> iron sequestration; ↓serum iron, ↓TIBC, ↑/normal ferritin, normo-/microcytic; vs iron deficiency (↑TIBC, ↓ferritin)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Low iron + LOW TIBC in chronic infection = ACD (abnormal iron utilization), not iron deficiency."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on anemia of chronic disease, hepcidin, TIBC/transferrin, ferritin, or iron sequestration? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Iron deficiency (GI loss) has HIGH TIBC; thalassemia has high iron; DIC = schistocytes; porphyria/sideroblastic differ."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: ACD = ↓iron, ↓TIBC, ↑ferritin (hepcidin sequesters iron); iron deficiency = ↓iron, ↑TIBC, ↓ferritin."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Low serum iron + LOW TIBC in chronic infection",
+      "back": "Anemia of chronic disease (abnormal iron utilization)"
+    },
+    {
+      "front": "Key mediator of anemia of chronic disease",
+      "back": "Hepcidin (IL-6-driven) - sequesters iron"
+    },
+    {
+      "front": "TIBC: ACD vs iron deficiency",
+      "back": "ACD low; iron deficiency high"
+    },
+    {
+      "front": "Ferritin: ACD vs iron deficiency",
+      "back": "ACD high/normal (acute phase); iron deficiency low"
+    },
+    {
+      "front": "HIV oral finding suggesting immunosuppression",
+      "back": "Oral candidiasis (thrush)"
+    },
+    {
+      "front": "Treatment of anemia of chronic disease",
+      "back": "Treat the underlying inflammatory condition"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Anemia of chronic disease",
+      "detail": "Heme: hepcidin sequesters iron -> ↓iron, ↓TIBC; abnormal iron utilization."
+    },
+    {
+      "tag": "options",
+      "topic": "Microcytic/low-iron differential",
+      "detail": "Heme > iron deficiency (↑TIBC), thalassemia (↑iron), sideroblastic (↑iron)."
+    },
+    {
+      "tag": "context",
+      "topic": "HIV",
+      "detail": "ID > thrush, lymphadenopathy, weight loss; chronic inflammation -> ACD."
+    }
+  ],
+  "memoryHook": "Inflammation hoards iron behind hepcidin's locked door - plenty of iron in the vault but none for the marrow: low iron AND low TIBC = anemia of chronic disease.",
+  "stem": [
+    {
+      "text": "A 45-year-old man comes to the office due to 3 months of exertional fatigue and weight loss. He is "
+    },
+    {
+      "text": "sexually active with multiple male partners",
+      "clue": true,
+      "type": "orange",
+      "note": "High-risk sexual history plus weight loss, thrush, and lymphadenopathy suggest undiagnosed HIV infection."
+    },
+    {
+      "text": ". Temperature is 37.9 C (100.2 F), blood pressure is 110/70 mm Hg, pulse is 84/min, and respirations are 13/min. BMI is 20 kg/m2. The patient appears chronically ill and has mucosal pallor. There are "
+    },
+    {
+      "text": "thick, white plaques over the buccal mucosa and soft palate",
+      "clue": true,
+      "type": "green",
+      "note": "Oral candidiasis (thrush) in this context indicates immunosuppression - consistent with HIV."
+    },
+    {
+      "text": ". Anterior and posterior cervical lymphadenopathy is present. The lungs are clear to auscultation. The abdomen is soft and nontender. There is no organomegaly. Laboratory results: hematocrit 28%, mean corpuscular volume 76 um3, platelets 160,000/mm3, leukocytes 4,100/mm3, "
+    },
+    {
+      "text": "serum iron 30 ug/dL",
+      "clue": true,
+      "type": "green",
+      "note": "Low serum iron could suggest iron deficiency, but the total iron-binding capacity distinguishes the cause."
+    },
+    {
+      "text": ", and "
+    },
+    {
+      "text": "total iron-binding capacity 190 ug/dL (normal 250-460)",
+      "clue": true,
+      "type": "green",
+      "note": "A LOW TIBC (with low iron) is the hallmark of ANEMIA OF CHRONIC DISEASE (iron sequestration), NOT iron deficiency (where TIBC is HIGH)."
+    },
+    {
+      "text": ". Which of the following is the most likely underlying cause of this patient's anemia?"
+    }
+  ]
+}

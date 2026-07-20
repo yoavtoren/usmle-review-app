@@ -1,0 +1,200 @@
+{
+  "id": "q363",
+  "item": 363,
+  "qid": "19665",
+  "title": "Relative risk arithmetic: RR of moderate vs nonsmokers = 4",
+  "system": "Biostatistics",
+  "topic": "Relative risk (shared comparison group)",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 77,
+  "vignette": "A 65-year-old man comes to the office because his family is concerned about his constant cough after smoking. The patient asks about the risk of developing chronic obstructive pulmonary disease (COPD) in adult smokers. A recent cohort study reported that compared to heavy smokers, the relative risk (RR) of COPD for nonsmokers is 0.10 and for moderate smokers is 0.40. The patient is a moderate smoker. Based on the study, which of the following is the RR of COPD for moderate smokers compared to nonsmokers?",
+  "clues": [
+    {
+      "text": "relative risk (RR) of COPD for nonsmokers is 0.10",
+      "type": "blue",
+      "note": "This RR uses HEAVY smokers as the reference (denominator): RR(nonsmokers vs heavy) = risk_nonsmokers / risk_heavy = 0.10."
+    },
+    {
+      "text": "for moderate smokers is 0.40",
+      "type": "blue",
+      "note": "Same reference group: RR(moderate vs heavy) = risk_moderate / risk_heavy = 0.40."
+    },
+    {
+      "text": "RR of COPD for moderate smokers compared to nonsmokers",
+      "type": "green",
+      "note": "The two given RRs share the SAME denominator (heavy smokers), so dividing them cancels it: RR(moderate vs nonsmokers) = 0.40 / 0.10 = 4."
+    }
+  ],
+  "whatMatters": "Both given relative risks use HEAVY smokers as the common comparison group, so dividing them cancels that shared denominator: RR(moderate vs nonsmoker) = RR(moderate vs heavy) / RR(nonsmoker vs heavy) = 0.40 / 0.10 = 4. Answer E. Moderate smokers have 4 times the COPD risk of nonsmokers.",
+  "strategy": "Write each RR as a ratio of risks relative to the shared reference (heavy smokers): 0.40 = risk_mod/risk_heavy and 0.10 = risk_non/risk_heavy. Dividing gives risk_mod/risk_non = 0.40/0.10 = 4. Reject 0.10/0.40 (=0.25, the reverse), the given values themselves (0.10, 0.40), and the inverses (2.5, 10).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "0.10",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "0.25",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "0.40",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "2.5",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "4",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "10",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "0.10 - the given RR for nonsmokers vs heavy",
+      "detail": "WHAT IT IS: 0.10 is RR(nonsmokers vs heavy smokers). ❌ WHY IT FAILS: that's a different comparison (nonsmokers vs heavy), not moderate vs nonsmokers. ✅ Correct if: asked for nonsmokers vs heavy smokers."
+    },
+    {
+      "letter": "B",
+      "label": "0.25 - the reciprocal (nonsmoker vs moderate)",
+      "detail": "WHAT IT IS: 0.10/0.40 = 0.25 = RR(nonsmokers vs moderate smokers). ❌ WHY IT FAILS: this is the inverse comparison (it says nonsmokers have 25% the risk of moderate smokers), not moderate vs nonsmokers. ✅ Correct if: asked for nonsmokers vs moderate smokers."
+    },
+    {
+      "letter": "C",
+      "label": "0.40 - the given RR for moderate vs heavy",
+      "detail": "WHAT IT IS: 0.40 is RR(moderate vs heavy smokers). ❌ WHY IT FAILS: that's moderate vs HEAVY, not moderate vs nonsmokers. ✅ Correct if: asked for moderate vs heavy smokers."
+    },
+    {
+      "letter": "D",
+      "label": "2.5 - inverse of 0.40",
+      "detail": "WHAT IT IS: 1/0.40 = 2.5 = RR(heavy vs moderate smokers). ❌ WHY IT FAILS: it's the reciprocal of a different comparison, not moderate vs nonsmokers. ✅ Correct if: asked for heavy vs moderate smokers."
+    },
+    {
+      "letter": "F",
+      "label": "10 - inverse of 0.10",
+      "detail": "WHAT IT IS: 1/0.10 = 10 = RR(heavy vs nonsmokers). ❌ WHY IT FAILS: it's heavy vs nonsmokers, not moderate vs nonsmokers. ✅ Correct if: asked for heavy vs nonsmokers."
+    }
+  ],
+  "reasoning": [
+    "Both given RRs share heavy smokers as the reference (denominator)",
+    "RR(moderate vs heavy)=0.40 and RR(nonsmoker vs heavy)=0.10",
+    "Divide to cancel the shared denominator: 0.40/0.10 = 4",
+    "-> RR(moderate vs nonsmoker) = 4; answer E"
+  ],
+  "mechanism": "Relative risk (RR) is the risk of an outcome in an exposed group divided by the risk in a reference (unexposed) group; its value depends entirely on which group is the reference. Here the study reports two RRs that both use HEAVY smokers as the reference: RR(nonsmokers vs heavy) = risk_non / risk_heavy = 0.10, and RR(moderate vs heavy) = risk_moderate / risk_heavy = 0.40. To get the RR of MODERATE smokers compared to NONSMOKERS, divide the two (the common heavy-smoker denominator cancels): RR(moderate vs non) = (risk_moderate/risk_heavy) / (risk_non/risk_heavy) = 0.40 / 0.10 = 4. So moderate smokers have four times the risk of COPD compared with nonsmokers. Watch the direction: the reciprocal (0.10/0.40 = 0.25) would give nonsmokers vs moderate smokers, and taking inverses (2.5, 10) answers other comparisons.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > relative risk = risk(exposed)/risk(reference); RRs with the same reference divide to change the comparison group (cancel the shared denominator)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Same denominator (heavy smokers) -> divide the two RRs: 0.40/0.10 = 4 for moderate vs nonsmoker."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on relative risk, reference/comparison group, or how RR direction works? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "0.25 is the reverse (nonsmoker vs moderate); 0.10/0.40 are the given values; 2.5/10 are inverses of other comparisons."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: RRs sharing a reference group divide to re-base the comparison; keep track of numerator/denominator direction."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "RR(moderate vs nonsmoker) from RR(mod vs heavy)=0.40, RR(non vs heavy)=0.10",
+      "back": "0.40/0.10 = 4"
+    },
+    {
+      "front": "Relative risk definition",
+      "back": "Risk in exposed / risk in reference group"
+    },
+    {
+      "front": "Why you can divide the two RRs",
+      "back": "They share the same reference (heavy smokers) - it cancels"
+    },
+    {
+      "front": "Reverse comparison (nonsmoker vs moderate)",
+      "back": "0.10/0.40 = 0.25"
+    },
+    {
+      "front": "RR interpretation for value 4",
+      "back": "Moderate smokers have 4x the risk of COPD vs nonsmokers"
+    },
+    {
+      "front": "Inverse comparisons",
+      "back": "1/0.40 = 2.5 (heavy vs moderate); 1/0.10 = 10 (heavy vs nonsmoker)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Relative risk arithmetic",
+      "detail": "Biostat: shared-reference RRs divide -> 0.40/0.10 = 4."
+    },
+    {
+      "tag": "options",
+      "topic": "Direction of comparison",
+      "detail": "Biostat > watch numerator/denominator; reciprocals answer different questions."
+    },
+    {
+      "tag": "concept",
+      "topic": "Relative risk",
+      "detail": "Biostat > risk(exposed)/risk(reference); used in cohort studies."
+    }
+  ],
+  "memoryHook": "Same yardstick (heavy smokers) on both RRs - just divide: 0.40 over 0.10 = 4, so moderate smokers face 4x the COPD risk of nonsmokers.",
+  "stem": [
+    {
+      "text": "A 65-year-old man comes to the office because his family is concerned about his constant cough after smoking. The patient asks about the risk of developing chronic obstructive pulmonary disease (COPD) in adult smokers. A recent cohort study reported that compared to heavy smokers, the "
+    },
+    {
+      "text": "relative risk (RR) of COPD for nonsmokers is 0.10",
+      "clue": true,
+      "type": "blue",
+      "note": "This RR uses HEAVY smokers as the reference (denominator): RR(nonsmokers vs heavy) = risk_nonsmokers / risk_heavy = 0.10."
+    },
+    {
+      "text": " and "
+    },
+    {
+      "text": "for moderate smokers is 0.40",
+      "clue": true,
+      "type": "blue",
+      "note": "Same reference group: RR(moderate vs heavy) = risk_moderate / risk_heavy = 0.40."
+    },
+    {
+      "text": ". The patient is a moderate smoker. Based on the study, which of the following is the "
+    },
+    {
+      "text": "RR of COPD for moderate smokers compared to nonsmokers",
+      "clue": true,
+      "type": "green",
+      "note": "The two given RRs share the SAME denominator (heavy smokers), so dividing them cancels it: RR(moderate vs nonsmokers) = 0.40 / 0.10 = 4."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

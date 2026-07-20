@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACA stroke (distal to ACom): contralateral leg deficit + incontinence</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 11 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q397", "item": 397, "qid": "21589", "title": "ACA stroke (distal to ACom): contralateral leg deficit + incontinence", "system": "Neurology", "topic": "Anterior cerebral artery stroke / circle of Willis", "correct": "A", "yourAnswer": "D", "percentCorrect": 52, "vignette": "A 58-year-old man comes to the emergency department due to a 3-hour history of abrupt-onset weakness and numbness of the right lower extremity, as well as urinary incontinence. Two months ago, the patient was hospitalized due to left-sided weakness that resolved spontaneously after several hours. At that time, MRI of the head and MR angiography of the head and neck were normal, but the patient was found to have atrial fibrillation. An oral anticoagulant was prescribed at discharge, but the patient has been nonadherent with therapy. Blood pressure is 162/94 mm Hg and pulse is 102/min and irregularly irregular. Physical examination shows weakness and sensory loss in the right lower extremity. Babinski sign is present on the right. Speech is normal. Examination of the right upper extremity and the left extremities is unremarkable. An embolic occlusion affecting which of the following vascular regions is the most likely cause of this patient's current symptoms?", "clues": [{"text": "weakness and numbness of the right lower extremity", "type": "green", "note": "Motor and sensory deficits of the contralateral LEG (with the arm/face spared) localize to the medial motor/sensory cortex - anterior cerebral artery territory (leg area of the homunculus)."}, {"text": "urinary incontinence", "type": "green", "note": "Urinary incontinence (loss of cortical inhibition of the micturition center in the medial frontal lobe) is characteristic of an anterior cerebral artery stroke."}, {"text": "atrial fibrillation", "type": "orange", "note": "Atrial fibrillation (with nonadherence to anticoagulation) is a source of cardioembolism causing embolic stroke."}, {"text": "Examination of the right upper extremity and the left extremities is unremarkable", "type": "blue", "note": "Sparing of the arm and face (only the leg affected) points away from the middle cerebral artery and toward the anterior cerebral artery."}], "whatMatters": "Contralateral LEG weakness/sensory loss (arm and face spared) plus urinary incontinence = ANTERIOR CEREBRAL ARTERY (ACA) stroke (medial frontal/parietal cortex). For symptoms to occur, the embolus must lodge DISTAL to the anterior communicating artery (ACom) - proximal to it, the circle of Willis provides collateral flow. Answer A.", "strategy": "Localize the deficit to the ACA (leg > arm/face, incontinence), then use the circle of Willis logic: an occlusion PROXIMAL to the ACom can be bypassed by collateral flow (often asymptomatic), so a SYMPTOMATIC ACA stroke is usually DISTAL to the ACom. Reject ACA proximal to ACom (collateralized), and MCA branches (superior division -> face/arm + Broca aphasia; inferior division -> Wernicke aphasia/visual; MCA stem -> global deficits) which cause arm/face/language deficits, not an isolated leg deficit.", "options": [{"letter": "A", "text": "Anterior cerebral artery distal to the origin of the anterior communicating artery", "correct": true}, {"letter": "B", "text": "Anterior cerebral artery proximal to the origin of the anterior communicating artery", "correct": false}, {"letter": "C", "text": "Inferior division of the middle cerebral artery", "correct": false}, {"letter": "D", "text": "Superior division of the middle cerebral artery", "correct": false}, {"letter": "E", "text": "Trunk of the middle cerebral artery before the bifurcation", "correct": false}], "eliminations": [{"letter": "B", "label": "ACA proximal to ACom - collateralized (often asymptomatic)", "detail": "WHAT IT IS: an occlusion of the A1 segment BEFORE the anterior communicating artery. ❌ WHY IT FAILS: the ACom provides collateral flow from the opposite side, so a proximal occlusion is often asymptomatic; a symptomatic ACA stroke is usually DISTAL to the ACom. ✅ Correct if: asking which location is protected by collateral flow."}, {"letter": "C", "label": "Inferior division of MCA - Wernicke aphasia/visual, not leg", "detail": "WHAT IT IS: supplies lateral temporal/parietal cortex. ❌ WHY IT FAILS: it causes sensory deficits of the face/arm, visual field defects, and Wernicke (receptive) aphasia/hemineglect - not an isolated leg deficit. ✅ Correct if: fluent aphasia + visual field cut with face/arm sensory loss."}, {"letter": "D", "label": "Superior division of MCA - face/arm + Broca aphasia (your pick)", "detail": "WHAT IT IS: supplies the lateral frontal cortex. ❌ WHY IT FAILS: it causes contralateral FACE and ARM weakness with Broca (expressive) aphasia - the arm/face are spared here and speech is normal, so it's ACA, not MCA. ✅ Correct if: face/arm weakness + non-fluent aphasia."}, {"letter": "E", "label": "MCA trunk (stem) - global hemispheric deficit", "detail": "WHAT IT IS: proximal MCA occlusion affecting the entire MCA territory. ❌ WHY IT FAILS: it produces profound contralateral face/arm (> leg) hemiparesis, hemianesthesia, global aphasia, and gaze deviation - far more than this isolated leg deficit. ✅ Correct if: massive MCA-territory stroke."}], "reasoning": ["Contralateral LEG weakness/sensory loss + urinary incontinence, arm/face spared = anterior cerebral artery stroke", "The circle of Willis (via the anterior communicating artery) collateralizes proximal ACA occlusions", "So a symptomatic ACA infarct must be DISTAL to the anterior communicating artery (no collateral)", "-> ACA distal to the origin of the ACom; answer A"], "mechanism": "The ANTERIOR CEREBRAL ARTERY (ACA) supplies the MEDIAL surfaces of the frontal and parietal lobes - the cortical representation of the contralateral LOWER extremity (medial homunculus) and the frontal micturition center. An ACA stroke therefore causes contralateral LEG motor and sensory deficits (with relative sparing of the arm and face) and URINARY INCONTINENCE (loss of cortical inhibition of micturition); a positive Babinski indicates upper-motor-neuron injury. Emboli (here from atrial fibrillation with nonadherent anticoagulation) are a common cause. The CIRCLE OF WILLIS provides collateral protection: the ANTERIOR COMMUNICATING ARTERY (ACom) connects the two ACAs, so an occlusion PROXIMAL to the ACom (A1 segment) can be bypassed by flow from the contralateral side and is often asymptomatic; a SYMPTOMATIC ACA infarct usually results from occlusion DISTAL to the ACom (A2 and beyond), where no collateral exists. Thus the lesion is in the ACA distal to the ACom. Middle cerebral artery occlusions (superior division, inferior division, or stem) instead cause face/arm-predominant deficits with aphasia or neglect - not the isolated leg findings seen here.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Neuro > ACA stroke: contralateral LEG > arm/face weakness/sensory loss + urinary incontinence (medial frontal/parietal cortex); circle of Willis - ACom collateralizes proximal ACA occlusions."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Isolated leg deficit + incontinence = ACA; must be distal to ACom (proximal is collateralized)."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on anterior cerebral artery, homunculus, anterior communicating artery, circle of Willis, or micturition center? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "MCA divisions/stem cause face/arm + aphasia/neglect; ACA proximal to ACom is collateralized (often asymptomatic)."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: ACA = contralateral leg deficit + incontinence; symptomatic ACA stroke usually distal to ACom (no collateral)."}], "keywords": [{"front": "Contralateral leg weakness + urinary incontinence, arm/face spared", "back": "Anterior cerebral artery (ACA) stroke"}, {"front": "Why symptomatic ACA stroke is distal to ACom", "back": "ACom collateralizes proximal (A1) occlusions"}, {"front": "ACA cortical territory", "back": "Medial frontal/parietal (leg homunculus + micturition center)"}, {"front": "MCA superior division stroke", "back": "Contralateral face/arm weakness + Broca aphasia"}, {"front": "MCA inferior division stroke", "back": "Wernicke aphasia, visual field defect, hemineglect"}, {"front": "Embolic stroke source here", "back": "Atrial fibrillation (nonadherent anticoagulation)"}], "firstAid": [{"tag": "answer / stem", "topic": "ACA stroke", "detail": "Neuro: contralateral leg deficit + incontinence; lesion distal to ACom."}, {"tag": "options", "topic": "Cerebral artery syndromes", "detail": "Neuro > MCA (face/arm, aphasia), ACA (leg); circle of Willis collateral."}, {"tag": "cause", "topic": "Cardioembolism", "detail": "Neuro > atrial fibrillation -> embolic stroke; anticoagulate."}], "memoryHook": "ACA feeds the medial 'leg' strip and the pee-control center - so its stroke drops the opposite leg and lets the bladder go; symptoms only show if the clot is past the ACom bridge.", "stem": [{"text": "A 58-year-old man comes to the emergency department due to a 3-hour history of abrupt-onset "}, {"text": "weakness and numbness of the right lower extremity", "clue": true, "type": "green", "note": "Motor and sensory deficits of the contralateral LEG (with the arm/face spared) localize to the medial motor/sensory cortex - anterior cerebral artery territory (leg area of the homunculus)."}, {"text": ", as well as "}, {"text": "urinary incontinence", "clue": true, "type": "green", "note": "Urinary incontinence (loss of cortical inhibition of the micturition center in the medial frontal lobe) is characteristic of an anterior cerebral artery stroke."}, {"text": ". Two months ago, the patient was hospitalized due to left-sided weakness that resolved spontaneously after several hours. At that time, MRI of the head and MR angiography of the head and neck were normal, but the patient was found to have "}, {"text": "atrial fibrillation", "clue": true, "type": "orange", "note": "Atrial fibrillation (with nonadherence to anticoagulation) is a source of cardioembolism causing embolic stroke."}, {"text": ". An oral anticoagulant was prescribed at discharge, but the patient has been nonadherent with therapy. Blood pressure is 162/94 mm Hg and pulse is 102/min and irregularly irregular. Physical examination shows weakness and sensory loss in the right lower extremity. Babinski sign is present on the right. Speech is normal. "}, {"text": "Examination of the right upper extremity and the left extremities is unremarkable", "clue": true, "type": "blue", "note": "Sparing of the arm and face (only the leg affected) points away from the middle cerebral artery and toward the anterior cerebral artery."}, {"text": ". An embolic occlusion affecting which of the following vascular regions is the most likely cause of this patient's current symptoms?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>
