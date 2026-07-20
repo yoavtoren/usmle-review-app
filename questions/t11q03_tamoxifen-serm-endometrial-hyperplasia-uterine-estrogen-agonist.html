@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamoxifen (SERM): endometrial hyperplasia (uterine estrogen agonist)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 11 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q362", "item": 362, "qid": "581", "title": "Tamoxifen (SERM): endometrial hyperplasia (uterine estrogen agonist)", "system": "Pharmacology", "topic": "Selective estrogen receptor modulators - tamoxifen", "correct": "D", "yourAnswer": "D", "percentCorrect": 45, "vignette": "A 55-year-old postmenopausal woman comes to the office for follow-up of breast cancer treatment. The patient recently underwent breast-conserving surgery. The tumor margin did not show any invasion, and sentinel axillary lymph node biopsy was negative for nodal metastasis. The tumor was estrogen receptor and progesterone receptor positive but HER2 negative. After a discussion of management options, the patient is started on tamoxifen therapy; she now reports hot flashes that come and go in waves and affect her sleep significantly. Which of the following conditions is the patient also at risk for as a result of this therapy?", "clues": [{"text": "estrogen receptor and progesterone receptor positive", "type": "orange", "note": "Hormone receptor-positive breast cancer is treated with endocrine therapy such as tamoxifen (a selective estrogen receptor modulator)."}, {"text": "started on tamoxifen therapy", "type": "green", "note": "Tamoxifen is a SERM: an estrogen ANTAGONIST in breast tissue but an estrogen AGONIST in the endometrium - the basis of its adverse effects."}, {"text": "hot flashes that come and go in waves", "type": "blue", "note": "Hot flashes reflect tamoxifen's antiestrogenic effect in some tissues (a common, expected side effect)."}], "whatMatters": "Tamoxifen is a selective estrogen receptor modulator (SERM): an estrogen ANTAGONIST in breast tissue (treating ER-positive cancer) but an estrogen AGONIST in the ENDOMETRIUM. This stimulatory uterine effect increases the risk of ENDOMETRIAL HYPERPLASIA (and polyps/carcinoma). Answer D.", "strategy": "Recall tamoxifen's tissue-specific actions: breast antagonist (antitumor), bone agonist (protects bone), and ENDOMETRIAL agonist (hyperplasia/cancer risk) plus increased venous thromboembolism. The uterine agonism = endometrial hyperplasia. Reject decreased bone mass (tamoxifen PRESERVES bone in postmenopausal women), lipid effects (tamoxifen tends to LOWER LDL, not raise it; HDL usually unchanged), and breast fibroadenoma (tamoxifen reduces benign breast changes).", "options": [{"letter": "A", "text": "Decrease in bone mass", "correct": false}, {"letter": "B", "text": "Decrease in HDL level", "correct": false}, {"letter": "C", "text": "Fibroadenoma of the breast", "correct": false}, {"letter": "D", "text": "Hyperplasia of the endometrium", "correct": true}, {"letter": "E", "text": "Increase in LDL level", "correct": false}], "eliminations": [{"letter": "A", "label": "Decrease in bone mass - tamoxifen PROTECTS bone", "detail": "WHAT IT IS: bone loss/osteoporosis. ❌ WHY IT FAILS: in postmenopausal women tamoxifen acts as an estrogen AGONIST on bone, INCREASING bone mineral density (reducing fractures), not decreasing it. ✅ Correct if: a premenopausal patient (where tamoxifen can reduce bone density) or an aromatase inhibitor (which causes bone loss)."}, {"letter": "B", "label": "Decrease in HDL - not a tamoxifen effect", "detail": "WHAT IT IS: a fall in HDL cholesterol. ❌ WHY IT FAILS: tamoxifen generally LOWERS total/LDL cholesterol with HDL unchanged or modestly increased - it doesn't characteristically decrease HDL. ✅ Correct if: an agent that lowers HDL (e.g., anabolic steroids)."}, {"letter": "C", "label": "Fibroadenoma of the breast - tamoxifen reduces benign breast changes", "detail": "WHAT IT IS: a benign estrogen-responsive breast tumor. ❌ WHY IT FAILS: tamoxifen is antiestrogenic in the breast and REDUCES estrogen-dependent benign breast changes (fibroadenoma/cystic changes), not increases them. ✅ Correct if: an estrogenic exposure promoting benign breast changes."}, {"letter": "E", "label": "Increase in LDL - tamoxifen lowers LDL", "detail": "WHAT IT IS: a rise in LDL cholesterol. ❌ WHY IT FAILS: tamoxifen tends to DECREASE LDL (estrogenic hepatic effect); it may raise triglycerides in some patients, but not LDL. ✅ Correct if: an agent that raises LDL."}], "reasoning": ["Tamoxifen (a SERM) treats ER-positive breast cancer as a breast estrogen antagonist", "In the endometrium, tamoxifen acts as an estrogen AGONIST", "This stimulates the endometrium -> hyperplasia (and polyps/carcinoma)", "-> hyperplasia of the endometrium; answer D"], "mechanism": "Selective estrogen receptor modulators (SERMs) such as TAMOXIFEN competitively bind the estrogen receptor and behave as an AGONIST or ANTAGONIST depending on the tissue - a difference determined by which coregulatory (coactivator vs corepressor) proteins the receptor recruits in that tissue. In BREAST tissue, tamoxifen is an ANTAGONIST (antiestrogenic/antitumor), which is why it treats and prevents ER-positive breast cancer. In the ENDOMETRIUM, however, tamoxifen is an AGONIST, stimulating endometrial proliferation and increasing the risk of endometrial polyps, HYPERPLASIA, and carcinoma (and uterine sarcoma) - so patients need monitoring for abnormal uterine bleeding. In BONE, tamoxifen is also an agonist, preserving bone mineral density in postmenopausal women; it additionally tends to lower LDL cholesterol and increases the risk of venous thromboembolism. Common side effects include hot flashes. (Raloxifene, another SERM, lacks the endometrial-agonist effect, so it does not raise endometrial cancer risk.) Thus tamoxifen's characteristic adverse effect here is endometrial hyperplasia.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Pharm/Repro > SERMs: tamoxifen = breast antagonist (antitumor), endometrial + bone AGONIST; risks = endometrial hyperplasia/cancer, VTE, hot flashes; raloxifene spares endometrium."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Tamoxifen's uterine estrogen-agonist effect raises endometrial hyperplasia/cancer risk."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on SERM, estrogen agonist vs antagonist, tissue-specific effect, or endometrial hyperplasia? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Tamoxifen PROTECTS bone (not decreases), LOWERS LDL (not raises), REDUCES benign breast changes - only endometrial hyperplasia fits."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: tamoxifen = breast antagonist + endometrial/bone agonist; risks endometrial hyperplasia/cancer + VTE; raloxifene spares uterus."}], "keywords": [{"front": "Tamoxifen uterine effect/risk", "back": "Estrogen agonist -> endometrial hyperplasia/polyps/carcinoma"}, {"front": "Tamoxifen breast effect", "back": "Estrogen antagonist (antitumor) - treats ER-positive cancer"}, {"front": "Tamoxifen bone effect", "back": "Estrogen agonist -> preserves bone (postmenopausal)"}, {"front": "Other major tamoxifen risk", "back": "Venous thromboembolism"}, {"front": "SERM that spares the endometrium", "back": "Raloxifene (no increased endometrial cancer)"}, {"front": "Tamoxifen lipid effect", "back": "Lowers LDL (HDL unchanged)"}], "firstAid": [{"tag": "answer / stem", "topic": "Tamoxifen (SERM)", "detail": "Pharm: breast antagonist, endometrial agonist -> hyperplasia/cancer; VTE risk."}, {"tag": "options", "topic": "Tissue-specific effects", "detail": "Pharm > bone agonist (protects), lowers LDL, reduces benign breast changes."}, {"tag": "contrast", "topic": "Raloxifene", "detail": "Pharm > SERM without endometrial agonism (used for osteoporosis)."}], "memoryHook": "Tamoxifen flips its role by tissue: it blocks estrogen in the breast but MIMICS it in the uterus - so the endometrium overgrows (hyperplasia).", "stem": [{"text": "A 55-year-old postmenopausal woman comes to the office for follow-up of breast cancer treatment. The patient recently underwent breast-conserving surgery. The tumor margin did not show any invasion, and sentinel axillary lymph node biopsy was negative for nodal metastasis. The tumor was "}, {"text": "estrogen receptor and progesterone receptor positive", "clue": true, "type": "orange", "note": "Hormone receptor-positive breast cancer is treated with endocrine therapy such as tamoxifen (a selective estrogen receptor modulator)."}, {"text": " but HER2 negative. After a discussion of management options, the patient is "}, {"text": "started on tamoxifen therapy", "clue": true, "type": "green", "note": "Tamoxifen is a SERM: an estrogen ANTAGONIST in breast tissue but an estrogen AGONIST in the endometrium - the basis of its adverse effects."}, {"text": "; she now reports "}, {"text": "hot flashes that come and go in waves", "clue": true, "type": "blue", "note": "Hot flashes reflect tamoxifen's antiestrogenic effect in some tissues (a common, expected side effect)."}, {"text": " and affect her sleep significantly. Which of the following conditions is the patient also at risk for as a result of this therapy?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

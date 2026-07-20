@@ -1,0 +1,190 @@
+{
+  "id": "q378",
+  "item": 378,
+  "qid": "21083",
+  "title": "Kernicterus (bilirubin encephalopathy): basal ganglia deposition",
+  "system": "Pathology",
+  "topic": "Bilirubin-induced neurologic dysfunction",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 79,
+  "vignette": "An 18-month-old boy is brought to the office due to abnormal limb movements and delay in achieving motor milestones. He is unable to pull up to stand or walk and recently developed stiffness in the extremities. Birth history is remarkable for readmission at age 1 week for severe, persistent jaundice due to RhD incompatibility, which required intensive phototherapy and exchange transfusion. On examination, the patient exhibits a limited upward gaze and dystonic extremity movement. MRI of the head would most likely reveal abnormal signal in which of the following areas?",
+  "clues": [
+    {
+      "text": "severe, persistent jaundice due to RhD incompatibility",
+      "type": "red",
+      "note": "Severe neonatal hyperbilirubinemia (here from RhD hemolytic disease) can overwhelm albumin binding, letting unconjugated bilirubin cross the immature blood-brain barrier."
+    },
+    {
+      "text": "required intensive phototherapy and exchange transfusion",
+      "type": "orange",
+      "note": "The need for exchange transfusion signals very high bilirubin levels - the setting for bilirubin-induced neurologic injury (kernicterus)."
+    },
+    {
+      "text": "limited upward gaze and dystonic extremity movement",
+      "type": "green",
+      "note": "Upward gaze palsy and dystonic/choreoathetoid movements are classic chronic kernicterus findings from injury to the basal ganglia and brainstem."
+    }
+  ],
+  "whatMatters": "Severe neonatal unconjugated hyperbilirubinemia (RhD hemolysis) caused KERNICTERUS (chronic bilirubin-induced neurologic dysfunction). Neurotoxic unconjugated bilirubin preferentially deposits in and damages the BASAL GANGLIA (and brainstem nuclei), producing choreoathetosis/dystonia, upward gaze palsy, and hearing loss. MRI shows abnormal basal ganglia signal. Answer A.",
+  "strategy": "Connect severe neonatal jaundice -> chronic kernicterus -> basal ganglia injury (movement disorder + upward gaze palsy + sensorineural hearing loss). Pick the basal ganglia. Reject corpus callosum (agenesis -> gross motor delay, no bilirubin deposition), lateral temporal cortex (spared in kernicterus), mammillary bodies (thiamine/Wernicke - memory), and occipital cortex (cortical blindness, not this picture).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Basal ganglia",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Corpus callosum",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Lateral temporal cortex",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Mammillary bodies",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Occipital cortex",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Corpus callosum - agenesis/dysgenesis, not bilirubin",
+      "detail": "WHAT IT IS: corpus callosum abnormalities (agenesis/dysgenesis) can cause gross motor delay. ❌ WHY IT FAILS: bilirubin does not deposit in the corpus callosum, and it wouldn't explain the dystonia/gaze palsy of kernicterus. ✅ Correct if: a callosal malformation."
+    },
+    {
+      "letter": "C",
+      "label": "Lateral temporal cortex - spared in kernicterus",
+      "detail": "WHAT IT IS: the lateral temporal cortex (auditory/receptive speech - Wernicke area). ❌ WHY IT FAILS: it is typically spared in kernicterus, and its damage would cause receptive aphasia, not a movement disorder. ✅ Correct if: receptive (Wernicke) aphasia."
+    },
+    {
+      "letter": "D",
+      "label": "Mammillary bodies - Wernicke-Korsakoff (thiamine)",
+      "detail": "WHAT IT IS: mammillary body damage from thiamine deficiency (Wernicke-Korsakoff). ❌ WHY IT FAILS: that causes memory impairment in adults, not neonatal kernicterus. ✅ Correct if: alcoholic thiamine deficiency with memory loss."
+    },
+    {
+      "letter": "E",
+      "label": "Occipital cortex - cortical blindness",
+      "detail": "WHAT IT IS: primary visual cortex. ❌ WHY IT FAILS: its damage causes cortical blindness/visual field loss, not the choreoathetosis/dystonia of kernicterus. ✅ Correct if: cortical visual loss."
+    }
+  ],
+  "reasoning": [
+    "Severe neonatal unconjugated hyperbilirubinemia (RhD hemolysis) crossing the immature blood-brain barrier",
+    "Unconjugated bilirubin is neurotoxic and deposits preferentially in the basal ganglia and brainstem nuclei",
+    "Chronic injury -> dystonia/choreoathetosis, upward gaze palsy, sensorineural hearing loss (kernicterus)",
+    "-> abnormal signal in the basal ganglia; answer A"
+  ],
+  "mechanism": "Unconjugated (indirect) bilirubin is normally bound to albumin, which keeps it out of the immature neonatal brain. When bilirubin production overwhelms binding capacity - most often with a hemolytic condition such as RhD incompatibility (also G6PD deficiency, birth trauma/cephalohematoma, prematurity) and total bilirubin rises very high - the excess UNBOUND, lipid-soluble unconjugated bilirubin crosses the blood-brain barrier and is neurotoxic. It preferentially deposits in the BASAL GANGLIA (especially the globus pallidus and subthalamic nucleus) and brainstem nuclei. Acute bilirubin encephalopathy (poor feeding, lethargy, hypertonia, seizures) can progress, if inadequately treated, to CHRONIC KERNICTERUS ('bilirubin-induced neurologic dysfunction'): choreoathetoid/dystonic movements, upward GAZE PALSY, sensorineural HEARING LOSS, and developmental delay - matching this toddler. MRI shows abnormal signal in the basal ganglia. Prevention/treatment is aggressive management of neonatal jaundice (phototherapy, exchange transfusion). The distractor regions are not bilirubin targets and produce different deficits.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Peds/Neuro > kernicterus: severe neonatal unconjugated hyperbilirubinemia -> bilirubin deposits in BASAL GANGLIA + brainstem nuclei -> choreoathetosis/dystonia, upward gaze palsy, hearing loss; prevent with phototherapy/exchange transfusion."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Severe neonatal jaundice -> chronic kernicterus -> basal ganglia injury (MRI signal)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on kernicterus/bilirubin-induced neurologic dysfunction, unconjugated bilirubin, basal ganglia, choreoathetosis, or RhD incompatibility? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Corpus callosum (malformation), lateral temporal cortex (spared), mammillary bodies (Wernicke), occipital (cortical blindness) aren't bilirubin targets."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: kernicterus = unconjugated bilirubin in basal ganglia/brainstem -> dystonia, upward gaze palsy, hearing loss; prevent with phototherapy/exchange."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Brain region injured in kernicterus",
+      "back": "Basal ganglia (globus pallidus/subthalamic nucleus) + brainstem nuclei"
+    },
+    {
+      "front": "Toxic bilirubin form in kernicterus",
+      "back": "Unbound UNCONJUGATED (indirect) bilirubin (lipid-soluble)"
+    },
+    {
+      "front": "Chronic kernicterus features",
+      "back": "Choreoathetosis/dystonia, upward gaze palsy, sensorineural hearing loss"
+    },
+    {
+      "front": "Common cause of severe neonatal hyperbilirubinemia",
+      "back": "Hemolysis (RhD incompatibility, G6PD deficiency)"
+    },
+    {
+      "front": "Prevention/treatment of kernicterus",
+      "back": "Phototherapy; exchange transfusion"
+    },
+    {
+      "front": "Mammillary body damage cause",
+      "back": "Thiamine deficiency (Wernicke-Korsakoff)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Kernicterus",
+      "detail": "Peds: unconjugated bilirubin -> basal ganglia/brainstem; dystonia, gaze palsy, hearing loss."
+    },
+    {
+      "tag": "options",
+      "topic": "Regional brain injury",
+      "detail": "Neuro > mammillary (Wernicke), occipital (blindness), lateral temporal (Wernicke aphasia)."
+    },
+    {
+      "tag": "prevention",
+      "topic": "Neonatal jaundice",
+      "detail": "Peds > phototherapy, exchange transfusion for severe hyperbilirubinemia."
+    }
+  ],
+  "memoryHook": "Too much unconjugated bilirubin stains the newborn's basal ganglia yellow (kernicterus) - years later it shows as dystonia, upgaze palsy, and deafness.",
+  "stem": [
+    {
+      "text": "An 18-month-old boy is brought to the office due to abnormal limb movements and delay in achieving motor milestones. He is unable to pull up to stand or walk and recently developed stiffness in the extremities. Birth history is remarkable for readmission at age 1 week for "
+    },
+    {
+      "text": "severe, persistent jaundice due to RhD incompatibility",
+      "clue": true,
+      "type": "red",
+      "note": "Severe neonatal hyperbilirubinemia (here from RhD hemolytic disease) can overwhelm albumin binding, letting unconjugated bilirubin cross the immature blood-brain barrier."
+    },
+    {
+      "text": ", which "
+    },
+    {
+      "text": "required intensive phototherapy and exchange transfusion",
+      "clue": true,
+      "type": "orange",
+      "note": "The need for exchange transfusion signals very high bilirubin levels - the setting for bilirubin-induced neurologic injury (kernicterus)."
+    },
+    {
+      "text": ". On examination, the patient exhibits a "
+    },
+    {
+      "text": "limited upward gaze and dystonic extremity movement",
+      "clue": true,
+      "type": "green",
+      "note": "Upward gaze palsy and dystonic/choreoathetoid movements are classic chronic kernicterus findings from injury to the basal ganglia and brainstem."
+    },
+    {
+      "text": ". MRI of the head would most likely reveal abnormal signal in which of the following areas?"
+    }
+  ]
+}

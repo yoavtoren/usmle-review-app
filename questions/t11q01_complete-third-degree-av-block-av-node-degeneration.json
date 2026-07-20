@@ -1,0 +1,209 @@
+{
+  "id": "q360",
+  "item": 360,
+  "qid": "15555",
+  "title": "Complete (third-degree) AV block: AV node degeneration",
+  "system": "Cardiology",
+  "topic": "Third-degree atrioventricular block",
+  "correct": "A",
+  "yourAnswer": "E",
+  "percentCorrect": 62,
+  "vignette": "A 78-year-old man is brought to the emergency department due to lightheadedness that began earlier in the day. This morning, the patient felt unsteady and almost passed out when he tried to get out of bed. He has not had similar symptoms before and he has had no chest pain or shortness of breath. He has a history of coronary artery disease requiring percutaneous coronary intervention. The rhythm strip of the ECG obtained in the emergency department shows P waves and QRS complexes occurring independently of one another (atrioventricular dissociation), with the atrial rate faster than a slow, regular ventricular escape rhythm. Which of the following is the most likely cause of this patient's current symptoms?",
+  "clues": [
+    {
+      "text": "almost passed out when he tried to get out of bed",
+      "type": "blue",
+      "note": "Near-syncope/lightheadedness from a bradyarrhythmia reflects reduced cardiac output - here from a very slow ventricular rate."
+    },
+    {
+      "text": "history of coronary artery disease",
+      "type": "orange",
+      "note": "Coronary disease and age-related fibrosis predispose to conduction-system degeneration and heart block."
+    },
+    {
+      "text": "P waves and QRS complexes occurring independently of one another (atrioventricular dissociation)",
+      "type": "red",
+      "note": "Complete dissociation of P waves from QRS complexes (atria and ventricles beating independently) is the hallmark of THIRD-DEGREE (complete) AV block."
+    },
+    {
+      "text": "slow, regular ventricular escape rhythm",
+      "type": "green",
+      "note": "A slow, regular ventricular ESCAPE rhythm (His-Purkinje/ventricular pacemaker) drives the ventricles when AV conduction fails - producing symptomatic bradycardia."
+    }
+  ],
+  "whatMatters": "AV dissociation (P waves and QRS marching independently, atrial rate > slow regular ventricular escape) = THIRD-DEGREE (complete) AV BLOCK. The atria cannot communicate with the ventricles because of AV NODE dysfunction, most often from age-related fibrosis/degeneration (or ischemia). Answer A. Definitive treatment is a permanent pacemaker.",
+  "strategy": "Read the strip: independent P waves and QRS (no fixed relationship) with an escape rhythm = complete heart block. Its cause is AV NODE degeneration/fibrosis (or ischemia). Reject sinus node degeneration (sick sinus - P waves still conduct to QRS, no dissociation), LV ectopic foci (ventricular tachycardia - wide, fast), cavotricuspid isthmus reentry (atrial flutter - sawtooth), and sporadic atrial depolarization (atrial fibrillation - irregular, no P waves).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Degenerative changes involving the atrioventricular node",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Degenerative changes involving the sinus node",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Ectopic electrical foci in left ventricular myocardium",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Reentrant circuit involving the cavotricuspid isthmus",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Sporadic depolarization of atrial cardiomyocytes",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Sinus node degeneration - sick sinus, no AV dissociation",
+      "detail": "WHAT IT IS: sinoatrial node dysfunction (sick sinus syndrome) causing bradycardia with sinus pauses/arrest. ❌ WHY IT FAILS: in sick sinus, each P wave is still promptly followed by a QRS (AV conduction intact) - there is no P-QRS dissociation as seen here. ✅ Correct if: bradycardia with dropped/delayed P waves but preserved P-QRS relationship."
+    },
+    {
+      "letter": "C",
+      "label": "LV ectopic foci - ventricular tachycardia",
+      "detail": "WHAT IT IS: monomorphic ventricular tachycardia from an ectopic LV focus. ❌ WHY IT FAILS: VT is a WIDE-complex, RAPID rhythm, not a slow escape rhythm with independent P waves. ✅ Correct if: fast wide-complex tachycardia (often post-MI)."
+    },
+    {
+      "letter": "D",
+      "label": "Cavotricuspid isthmus reentry - atrial flutter",
+      "detail": "WHAT IT IS: a macro-reentrant circuit around the cavotricuspid isthmus = typical atrial flutter. ❌ WHY IT FAILS: flutter shows sawtooth flutter waves with a regular/irregular ventricular response, not AV dissociation with a slow escape. ✅ Correct if: sawtooth flutter waves on ECG."
+    },
+    {
+      "letter": "E",
+      "label": "Sporadic atrial depolarization - atrial fibrillation (your pick)",
+      "detail": "WHAT IT IS: chaotic, sporadic atrial depolarizations = atrial fibrillation. ❌ WHY IT FAILS: atrial fibrillation has NO discernible P waves and an IRREGULARLY irregular ventricular response - not organized P waves dissociated from a regular escape rhythm. ✅ Correct if: irregularly irregular rhythm with absent P waves."
+    }
+  ],
+  "reasoning": [
+    "Rhythm strip shows P waves and QRS complexes fully dissociated with a slow regular ventricular escape",
+    "This is third-degree (complete) AV block - atria and ventricles beat independently",
+    "The block is due to AV node dysfunction, most often age-related fibrosis/degeneration (or ischemia)",
+    "-> degenerative changes involving the AV node; answer A"
+  ],
+  "mechanism": "In THIRD-DEGREE (complete) atrioventricular block, conduction through the AV node fails entirely, so atrial impulses cannot reach the ventricles. On ECG there is complete AV DISSOCIATION: P waves march out at the intrinsic sinoatrial rate (~60-100/min) and QRS complexes appear independently at the intrinsic rate of a subsidiary (His bundle or ventricular) ESCAPE pacemaker (~30-45/min), with no fixed relationship between them. The resulting slow ventricular rate reduces cardiac output, causing lightheadedness, fatigue, and syncope, as in this patient. The most common causes are AGE-RELATED FIBROSIS/DEGENERATION of the conduction system (with ischemic heart disease, infiltrative disease such as sarcoidosis, or infection such as Lyme carditis as other causes). Definitive management is a PERMANENT PACEMAKER. The distractors are other rhythm problems: sinus node degeneration (sick sinus - conduction intact, no dissociation), LV ectopic foci (VT), cavotricuspid-isthmus reentry (atrial flutter), and sporadic atrial depolarization (atrial fibrillation).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid CV > third-degree (complete) AV block: AV dissociation, P waves and QRS independent, escape rhythm; causes = degeneration/fibrosis, ischemia, Lyme, sarcoid; treat with pacemaker."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Independent P waves and QRS with a slow escape = complete heart block from AV node failure."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on AV dissociation, escape rhythm, third-degree AV block, sick sinus syndrome, or atrial flutter/fibrillation? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Sick sinus (no dissociation), VT (fast wide), atrial flutter (sawtooth), atrial fibrillation (irregular, no P waves) are the wrong rhythms."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "On the rhythm strip: regular P waves at one rate and QRS complexes at a slower, independent rate - no consistent PR interval (AV dissociation). Anchor: 'P's and QRS's ignore each other = complete heart block.'"
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: third-degree AV block = AV dissociation + escape rhythm; cause AV node degeneration/ischemia; treat pacemaker."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "P waves and QRS fully independent (AV dissociation)",
+      "back": "Third-degree (complete) AV block"
+    },
+    {
+      "front": "Most common cause of complete AV block",
+      "back": "Age-related fibrosis/degeneration of the AV node (also ischemia)"
+    },
+    {
+      "front": "Definitive treatment of complete heart block",
+      "back": "Permanent pacemaker"
+    },
+    {
+      "front": "Sick sinus syndrome ECG",
+      "back": "Sinus bradycardia/pauses; P-QRS relationship preserved"
+    },
+    {
+      "front": "Atrial fibrillation ECG",
+      "back": "Irregularly irregular, no discernible P waves"
+    },
+    {
+      "front": "Atrial flutter mechanism",
+      "back": "Cavotricuspid isthmus reentry (sawtooth waves)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Complete AV block",
+      "detail": "CV: AV dissociation + escape rhythm; AV node degeneration; pacemaker."
+    },
+    {
+      "tag": "options",
+      "topic": "Arrhythmia differential",
+      "detail": "CV > sick sinus, VT (ectopic LV), atrial flutter (isthmus), atrial fibrillation."
+    },
+    {
+      "tag": "causes",
+      "topic": "Heart block etiologies",
+      "detail": "CV > fibrosis/aging, ischemia, Lyme carditis, sarcoidosis."
+    }
+  ],
+  "memoryHook": "In complete heart block the atria and ventricles stop talking - P waves and QRS march to different drums; the worn-out AV node is the broken phone line, and a pacemaker reconnects it.",
+  "stem": [
+    {
+      "text": "A 78-year-old man is brought to the emergency department due to lightheadedness that began earlier in the day. This morning, the patient felt unsteady and "
+    },
+    {
+      "text": "almost passed out when he tried to get out of bed",
+      "clue": true,
+      "type": "blue",
+      "note": "Near-syncope/lightheadedness from a bradyarrhythmia reflects reduced cardiac output - here from a very slow ventricular rate."
+    },
+    {
+      "text": ". He has not had similar symptoms before and he has had no chest pain or shortness of breath. He has a "
+    },
+    {
+      "text": "history of coronary artery disease",
+      "clue": true,
+      "type": "orange",
+      "note": "Coronary disease and age-related fibrosis predispose to conduction-system degeneration and heart block."
+    },
+    {
+      "text": " requiring percutaneous coronary intervention. The rhythm strip of the ECG obtained in the emergency department shows "
+    },
+    {
+      "text": "P waves and QRS complexes occurring independently of one another (atrioventricular dissociation)",
+      "clue": true,
+      "type": "red",
+      "note": "Complete dissociation of P waves from QRS complexes (atria and ventricles beating independently) is the hallmark of THIRD-DEGREE (complete) AV block."
+    },
+    {
+      "text": ", with the atrial rate faster than a "
+    },
+    {
+      "text": "slow, regular ventricular escape rhythm",
+      "clue": true,
+      "type": "green",
+      "note": "A slow, regular ventricular ESCAPE rhythm (His-Purkinje/ventricular pacemaker) drives the ventricles when AV conduction fails - producing symptomatic bradycardia."
+    },
+    {
+      "text": ". Which of the following is the most likely cause of this patient's current symptoms?"
+    }
+  ]
+}

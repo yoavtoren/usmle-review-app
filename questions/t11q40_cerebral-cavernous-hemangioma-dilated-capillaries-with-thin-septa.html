@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cerebral cavernous hemangioma: dilated capillaries with thin septa</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 11 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q399", "item": 399, "qid": "12283", "title": "Cerebral cavernous hemangioma: dilated capillaries with thin septa", "system": "Pathology", "topic": "Cavernous hemangioma (vascular malformation)", "correct": "A", "yourAnswer": "B", "percentCorrect": 69, "vignette": "A 30-year-old man with a history of epilepsy comes to the office for follow-up. He has a history of recurrent seizures that start as jerky, rhythmic movements of his left leg and gradually spread to involve the entire left side of his body. The patient frequently loses consciousness and has been witnessed to have a generalized tonic-clonic seizure. Neuroimaging has revealed a focal lesion in the right motor area. He has been treated with several antiepilepsy drugs, but his seizures have remained poorly controlled. Surgery is performed to remove the lesion, and the excised brain tissue shows a 1.5-cm mass composed of engorged purplish clusters. Microscopy shows numerous dilated capillaries with an endothelial lining separated by a thin layer of fibrous connective tissue. Which of the following is the most likely diagnosis?", "clues": [{"text": "seizures that start as jerky, rhythmic movements of his left leg and gradually spread", "type": "blue", "note": "A focal seizure with 'Jacksonian march' (spread along the motor homunculus) points to a structural lesion in the contralateral motor cortex."}, {"text": "a 1.5-cm mass composed of engorged purplish clusters", "type": "green", "note": "A well-circumscribed 'mulberry-like' cluster of engorged purple vascular spaces is the gross appearance of a cavernous hemangioma."}, {"text": "numerous dilated capillaries with an endothelial lining separated by a thin layer of fibrous connective tissue", "type": "green", "note": "Dilated, thin-walled vascular channels (endothelium-lined) separated by scant fibrous septa - lacking normal intervening brain/elastic/smooth muscle - is the histology of a cavernous hemangioma."}], "whatMatters": "A well-circumscribed 'mulberry-like' cluster of dilated, thin-walled capillaries lined by endothelium and separated by thin fibrous septa (no normal brain in between) = CAVERNOUS HEMANGIOMA (a vascular malformation). Its poor structural support makes it prone to bleed and irritate cortex, causing seizures. Answer A.", "strategy": "Read the histology: abnormal DILATED capillaries/blood vessels with thin adventitia lacking elastic fibers and smooth muscle = cavernous hemangioma. Reject the tumors and aneurysm: ependymoma (perivascular pseudorosettes), glioblastoma (pseudopalisading necrosis + tumor cells), Kaposi sarcoma (HHV-8, spindle cells), and saccular (berry) aneurysm (a focal arterial outpouching from myointimal hyperplasia, at the circle of Willis).", "options": [{"letter": "A", "text": "Cavernous hemangioma", "correct": true}, {"letter": "B", "text": "Ependymoma", "correct": false}, {"letter": "C", "text": "Glioblastoma", "correct": false}, {"letter": "D", "text": "Kaposi sarcoma", "correct": false}, {"letter": "E", "text": "Saccular aneurysm", "correct": false}], "eliminations": [{"letter": "B", "label": "Ependymoma - perivascular pseudorosettes (your pick)", "detail": "WHAT IT IS: a CNS tumor (4th ventricle in children, spinal cord in adults) whose cells form perivascular PSEUDOROSETTES. ❌ WHY IT FAILS: the lesion here is a cluster of dilated blood vessels (a malformation), not a cellular tumor with pseudorosettes. ✅ Correct if: a tumor with perivascular pseudorosettes."}, {"letter": "C", "label": "Glioblastoma - pseudopalisading necrosis", "detail": "WHAT IT IS: an aggressive astrocytoma with areas of necrosis surrounded by tumor cells (pseudopalisading) and microvascular proliferation. ❌ WHY IT FAILS: histology shows dilated vessels with thin septa, not a necrotic glial tumor. ✅ Correct if: pseudopalisading necrosis with malignant glial cells."}, {"letter": "D", "label": "Kaposi sarcoma - HHV-8 spindle cells", "detail": "WHAT IT IS: an HHV-8-driven vascular tumor with elongated SPINDLE cells (skin/GI/respiratory in immunosuppressed patients). ❌ WHY IT FAILS: it shows spindle-cell proliferation, not simple dilated capillaries with thin septa, and is not a typical solitary brain mass. ✅ Correct if: violaceous skin nodules in HIV with spindle cells."}, {"letter": "E", "label": "Saccular (berry) aneurysm - arterial outpouching", "detail": "WHAT IT IS: a focal outpouching of a cerebral artery (thickened intima/myointimal hyperplasia, stretched adventitia) at the circle of Willis. ❌ WHY IT FAILS: it is a single arterial dilation prone to subarachnoid hemorrhage, not a cluster of dilated capillaries causing focal seizures. ✅ Correct if: a berry aneurysm (subarachnoid hemorrhage risk)."}], "reasoning": ["A well-circumscribed cluster of engorged purple vascular spaces causing focal seizures", "Histology: dilated, thin-walled capillaries lined by endothelium, separated by thin fibrous septa (no normal brain between)", "This is a cavernous hemangioma - a low-flow vascular malformation prone to bleed and irritate cortex", "-> cavernous hemangioma; answer A"], "mechanism": "Cavernous hemangiomas (cavernous malformations) are benign VASCULAR MALFORMATIONS that can involve deep tissues including the liver and brain. Grossly they appear as well-circumscribed 'MULBERRY-LIKE' clusters of engorged purple vascular channels. Histologically they consist of abnormally DILATED, thin-walled capillaries/sinusoidal blood vessels lined by a single endothelial layer and separated only by scant FIBROUS connective-tissue septa, with a thin adventitia that LACKS elastic fibers and smooth muscle and NO intervening normal brain parenchyma. This reduced structural support gives them a tendency to LEAK/bleed (often with hemosiderin deposits) and to irritate surrounding cortex. In the brain, they are frequently asymptomatic but can cause SEIZURES (as here, a focal motor seizure with Jacksonian spread from a right motor-cortex lesion) or focal neurologic deficits; surgical resection is indicated for intractable epilepsy or progressive deficits. The distractors are distinguished histologically: ependymoma (perivascular pseudorosettes), glioblastoma (pseudopalisading necrosis), Kaposi sarcoma (HHV-8 spindle cells), and saccular aneurysm (an arterial outpouching from myointimal hyperplasia).", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Path/Neuro > cavernous hemangioma: vascular malformation; dilated thin-walled vessels with thin fibrous septa (no elastic/smooth muscle, no normal brain between); 'mulberry' gross; bleeds; seizures."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Dilated capillaries with thin septa (no normal brain) = cavernous hemangioma (malformation), not a tumor."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on cavernous hemangioma/malformation, vascular malformation, Jacksonian march, pseudorosette, or pseudopalisading necrosis? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Ependymoma (pseudorosettes), glioblastoma (pseudopalisading necrosis), Kaposi (spindle cells), berry aneurysm (arterial outpouching) have different histology."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: cavernous hemangioma = dilated thin-walled vessels + thin fibrous septa (no normal brain); prone to bleed; causes seizures."}], "keywords": [{"front": "Dilated thin-walled vessels with thin fibrous septa, no normal brain between", "back": "Cavernous hemangioma (vascular malformation)"}, {"front": "Gross appearance of cavernous hemangioma", "back": "'Mulberry-like' cluster of engorged purple vascular spaces"}, {"front": "Why cavernous hemangiomas bleed/seize", "back": "Thin walls lacking smooth muscle/elastic support -> leak + cortical irritation"}, {"front": "Ependymoma histology", "back": "Perivascular pseudorosettes"}, {"front": "Glioblastoma histology", "back": "Pseudopalisading necrosis + microvascular proliferation"}, {"front": "Saccular (berry) aneurysm", "back": "Arterial outpouching (myointimal hyperplasia) at circle of Willis"}], "firstAid": [{"tag": "answer / stem", "topic": "Cavernous hemangioma", "detail": "Path: dilated thin-walled vessels + thin fibrous septa; mulberry gross; bleeds/seizures."}, {"tag": "options", "topic": "CNS lesion histology", "detail": "Path > ependymoma (pseudorosettes), GBM (pseudopalisading), Kaposi (spindle), berry aneurysm."}, {"tag": "clinical", "topic": "Cavernous malformation", "detail": "Neuro > seizures/hemorrhage; resect if intractable epilepsy/deficits."}], "memoryHook": "A brain 'mulberry' of floppy dilated capillaries with only thin fibrous walls (no muscle, no brain between) = cavernous hemangioma - it oozes blood and sparks seizures.", "stem": [{"text": "A 30-year-old man with a history of epilepsy comes to the office for follow-up. He has a history of recurrent "}, {"text": "seizures that start as jerky, rhythmic movements of his left leg and gradually spread", "clue": true, "type": "blue", "note": "A focal seizure with 'Jacksonian march' (spread along the motor homunculus) points to a structural lesion in the contralateral motor cortex."}, {"text": " to involve the entire left side of his body. The patient frequently loses consciousness and has been witnessed to have a generalized tonic-clonic seizure. Neuroimaging has revealed a focal lesion in the right motor area. He has been treated with several antiepilepsy drugs, but his seizures have remained poorly controlled. Surgery is performed to remove the lesion, and the excised brain tissue shows "}, {"text": "a 1.5-cm mass composed of engorged purplish clusters", "clue": true, "type": "green", "note": "A well-circumscribed 'mulberry-like' cluster of engorged purple vascular spaces is the gross appearance of a cavernous hemangioma."}, {"text": ". Microscopy shows "}, {"text": "numerous dilated capillaries with an endothelial lining separated by a thin layer of fibrous connective tissue", "clue": true, "type": "green", "note": "Dilated, thin-walled vascular channels (endothelium-lined) separated by scant fibrous septa - lacking normal intervening brain/elastic/smooth muscle - is the histology of a cavernous hemangioma."}, {"text": ". Which of the following is the most likely diagnosis?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

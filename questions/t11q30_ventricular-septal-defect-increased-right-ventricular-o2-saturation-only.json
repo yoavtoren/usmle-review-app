@@ -1,0 +1,176 @@
+{
+  "id": "q389",
+  "item": 389,
+  "qid": "19531",
+  "title": "Ventricular septal defect: increased right ventricular O2 saturation only",
+  "system": "Pathophysiology",
+  "topic": "VSD / left-to-right shunt oxygen step-up",
+  "correct": "D",
+  "yourAnswer": "C",
+  "percentCorrect": 58,
+  "vignette": "A 4-year-old boy is brought to the office for routine evaluation of a heart murmur. The patient has no fatigue, shortness of breath, or exercise intolerance. He has no other medical conditions and has had no surgeries. Vital signs are within normal limits. On examination, the patient has no cyanosis or clubbing of the fingers. There is a harsh, 3/6 holosystolic murmur best heard at the left lower sternal border. There are no rubs or gallops. Pulses are 2+ in the upper and lower extremities. Compared to an unaffected child, which of the following changes in oxygen saturation (right atrium, right ventricle, left atrium, left ventricle, systemic circulation) would be expected in this patient?",
+  "clues": [
+    {
+      "text": "no cyanosis or clubbing",
+      "type": "blue",
+      "note": "No cyanosis indicates a LEFT-to-RIGHT shunt (acyanotic) - oxygenated blood crosses into the right heart, not the reverse."
+    },
+    {
+      "text": "harsh, 3/6 holosystolic murmur best heard at the left lower sternal border",
+      "type": "green",
+      "note": "A harsh holosystolic murmur at the left LOWER sternal border is the classic finding of a ventricular septal defect (VSD)."
+    }
+  ],
+  "whatMatters": "A VSD is a LEFT-to-RIGHT shunt at the ventricular level: higher-pressure LV pushes OXYGENATED blood into the RIGHT VENTRICLE, so ONLY the RV shows an O2 saturation 'step-up.' The RA (upstream of the shunt) and the LA/LV/systemic circulation are unchanged. So: RA normal, RV INCREASED, LA normal, LV normal, systemic normal. Answer D.",
+  "strategy": "Trace where the oxygenated shunt blood enters. VSD -> LV-to-RV shunt -> increased O2 saturation in the RV (and pulmonary artery) ONLY; the RA is proximal to the shunt (unchanged) and left-sided/systemic saturations stay normal (patient is acyanotic). Reject rows with increased RA (that's an ASD - atrial-level shunt), any decreased LEFT-sided/systemic saturation (that's right-to-left shunting/cyanosis, e.g., Eisenmenger/tetralogy), or globally decreased values.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "RA decreased | RV increased | LA decreased | LV decreased | Systemic decreased",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "RA increased | RV increased | LA decreased | LV decreased | Systemic decreased",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "RA increased | RV increased | LA normal | LV normal | Systemic normal",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "RA normal | RV increased | LA normal | LV normal | Systemic normal",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "RA normal | RV normal | LA normal | LV decreased | Systemic decreased",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Left-sided/systemic decreased - right-to-left shunt (cyanosis)",
+      "detail": "WHAT IT IS: decreased left-heart/systemic saturations. ❌ WHY IT FAILS: that indicates a RIGHT-to-left shunt with cyanosis (e.g., tetralogy/Eisenmenger); this child is acyanotic with a simple left-to-right VSD. ✅ Correct if: a cyanotic right-to-left shunt."
+    },
+    {
+      "letter": "B",
+      "label": "RA increased + left-sided decreased - mixed/wrong",
+      "detail": "WHAT IT IS: increased RA saturation with decreased left-sided saturations. ❌ WHY IT FAILS: a VSD shunts into the RV (not RA), and left-sided saturations are normal (acyanotic). ✅ Correct if: combined atrial shunt with cyanosis - not a simple VSD."
+    },
+    {
+      "letter": "C",
+      "label": "RA increased - that's an ASD (atrial step-up) (your pick)",
+      "detail": "WHAT IT IS: increased O2 saturation beginning at the RIGHT ATRIUM. ❌ WHY IT FAILS: an ATRIAL-level shunt (ASD) raises RA saturation; a VSD shunts at the VENTRICLE, so the step-up starts at the RV and the RA is unchanged. ✅ Correct if: an atrial septal defect (RA step-up)."
+    },
+    {
+      "letter": "E",
+      "label": "LV/systemic decreased - right-to-left/obstructive",
+      "detail": "WHAT IT IS: normal right heart but decreased LV/systemic saturation. ❌ WHY IT FAILS: a VSD doesn't lower left-sided saturation (no right-to-left shunt here); it raises RV saturation. ✅ Correct if: a right-to-left shunt lowering systemic saturation."
+    }
+  ],
+  "reasoning": [
+    "A VSD is a left-to-right shunt at the ventricular level (harsh holosystolic murmur, acyanotic)",
+    "Higher-pressure LV pushes oxygenated blood into the RV",
+    "This raises O2 saturation in the RV (and pulmonary artery) only; RA (upstream) and left/systemic saturations are unchanged",
+    "-> RA normal, RV increased, others normal; answer D"
+  ],
+  "mechanism": "A ventricular septal defect (VSD) is an abnormal opening between the ventricles. Because left ventricular pressure exceeds right ventricular pressure, blood shunts LEFT-to-RIGHT during systole - oxygenated blood from the LV crosses into the RV. This produces an oxygen 'STEP-UP' (increased O2 saturation) in the RIGHT VENTRICLE (and the pulmonary artery downstream), while the RIGHT ATRIUM - which is UPSTREAM of the ventricular shunt - retains normal (low) saturation. Because it is a left-to-right shunt, no deoxygenated blood reaches the systemic circulation, so the LEFT atrium, LEFT ventricle, and systemic O2 saturations remain NORMAL and the child is ACYANOTIC (no cyanosis/clubbing). The harsh holosystolic murmur at the left lower sternal border is classic. (Contrast an ASD, where the step-up begins at the RIGHT ATRIUM.) Over years, a large VSD can raise pulmonary pressures and reverse to right-to-left shunting - Eisenmenger syndrome, with cyanosis and desaturated systemic blood - but that takes time and isn't present here. Therefore the expected change is an isolated increase in RV saturation.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid CV > VSD: left-to-right shunt, harsh holosystolic murmur at left lower sternal border, acyanotic; O2 step-up at the RV (ASD = step-up at RA); Eisenmenger if reversed."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "VSD shunts into the RV, so only RV saturation rises; RA and left/systemic stay normal."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on left-to-right shunt, oxygen step-up, VSD vs ASD, Eisenmenger, or holosystolic murmur? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "RA step-up = ASD; decreased left/systemic saturation = right-to-left shunt (cyanosis) - not a simple acyanotic VSD."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: VSD -> O2 step-up in RV only (left-to-right); ASD -> step-up in RA; reversal = Eisenmenger (cyanosis)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "VSD oxygen saturation change",
+      "back": "Increased in the right ventricle only (left-to-right shunt)"
+    },
+    {
+      "front": "VSD murmur",
+      "back": "Harsh holosystolic at the left lower sternal border"
+    },
+    {
+      "front": "O2 step-up location: VSD vs ASD",
+      "back": "VSD = right ventricle; ASD = right atrium"
+    },
+    {
+      "front": "Why VSD is acyanotic",
+      "back": "Left-to-right shunt (no deoxygenated blood to systemic circulation)"
+    },
+    {
+      "front": "VSD long-term risk",
+      "back": "Eisenmenger syndrome (shunt reversal -> cyanosis)"
+    },
+    {
+      "front": "Right-to-left shunt effect",
+      "back": "Decreased systemic O2 saturation (cyanosis)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Ventricular septal defect",
+      "detail": "CV: left-to-right shunt; O2 step-up in RV only; acyanotic."
+    },
+    {
+      "tag": "options",
+      "topic": "Shunt localization",
+      "detail": "CV > ASD (RA step-up), VSD (RV step-up), right-to-left (systemic desaturation)."
+    },
+    {
+      "tag": "complication",
+      "topic": "Eisenmenger",
+      "detail": "CV > chronic left-to-right shunt reverses -> cyanosis."
+    }
+  ],
+  "memoryHook": "A VSD squirts oxygen-rich blood one chamber over - into the right VENTRICLE - so only the RV's saturation jumps; the atrium upstream (and the whole left side) reads normal.",
+  "stem": [
+    {
+      "text": "A 4-year-old boy is brought to the office for routine evaluation of a heart murmur. The patient has no fatigue, shortness of breath, or exercise intolerance. He has no other medical conditions and has had no surgeries. Vital signs are within normal limits. On examination, the patient has "
+    },
+    {
+      "text": "no cyanosis or clubbing",
+      "clue": true,
+      "type": "blue",
+      "note": "No cyanosis indicates a LEFT-to-RIGHT shunt (acyanotic) - oxygenated blood crosses into the right heart, not the reverse."
+    },
+    {
+      "text": " of the fingers. There is a "
+    },
+    {
+      "text": "harsh, 3/6 holosystolic murmur best heard at the left lower sternal border",
+      "clue": true,
+      "type": "green",
+      "note": "A harsh holosystolic murmur at the left LOWER sternal border is the classic finding of a ventricular septal defect (VSD)."
+    },
+    {
+      "text": ". There are no rubs or gallops. Pulses are 2+ in the upper and lower extremities. Compared to an unaffected child, which of the following changes in oxygen saturation (right atrium, right ventricle, left atrium, left ventricle, systemic circulation) would be expected in this patient?"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normal pregnancy: decreased systemic vascular resistance</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 11 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q380", "item": 380, "qid": "20003", "title": "Normal pregnancy: decreased systemic vascular resistance", "system": "Physiology", "topic": "Maternal cardiovascular adaptations to pregnancy", "correct": "E", "yourAnswer": "E", "percentCorrect": 68, "vignette": "A 38-year-old woman, gravida 1 para 0, at 34 weeks gestation comes to the office due to increasing swelling in her hands and legs. The patient first noticed the swelling a few weeks ago but now cannot stand for more than an hour without needing to elevate her legs. She has no orthopnea, dyspnea, or chest pain. The patient has no chronic medical conditions and takes no daily medications. Vital signs are normal. Cardiac examination is within normal limits. Lungs are clear to auscultation. Bilateral lower extremities have 2+ pitting edema to the midshin. Urine dipstick shows no protein. Compared to a healthy nonpregnant woman, which of the following parameters is most likely to be decreased in this patient?", "clues": [{"text": "at 34 weeks gestation", "type": "orange", "note": "Third-trimester pregnancy involves major cardiovascular adaptations - increased cardiac output/plasma volume and decreased systemic vascular resistance."}, {"text": "2+ pitting edema to the midshin", "type": "blue", "note": "Dependent lower-extremity edema is common in normal pregnancy (increased plasma volume + decreased plasma oncotic pressure + venous compression), not necessarily pathologic."}, {"text": "Urine dipstick shows no protein", "type": "green", "note": "No proteinuria (and normal BP) argues against preeclampsia - this is physiologic pregnancy edema."}], "whatMatters": "Normal pregnancy markedly DECREASES SYSTEMIC VASCULAR RESISTANCE (via vasodilators like nitric oxide/progesterone and the low-resistance uteroplacental circuit). This is the dominant hemodynamic change; it triggers RAAS activation and volume expansion, so plasma volume, preload, and cardiac output all INCREASE. The parameter that DECREASES is SVR. Answer E.", "strategy": "Recall the pregnancy hemodynamic profile: DOWN = systemic vascular resistance (and blood pressure, especially mid-pregnancy) and pulmonary vascular resistance; UP = plasma volume (~40%), preload, stroke volume, cardiac output, and heart rate; central venous pressure stays roughly normal. The question asks what DECREASES -> SVR. Reject preload, cardiac output, plasma volume (all increased) and central venous pressure (unchanged).", "options": [{"letter": "A", "text": "Cardiac preload", "correct": false}, {"letter": "B", "text": "Cardiac output", "correct": false}, {"letter": "C", "text": "Central venous pressure", "correct": false}, {"letter": "D", "text": "Plasma volume", "correct": false}, {"letter": "E", "text": "Systemic vascular resistance", "correct": true}], "eliminations": [{"letter": "A", "label": "Cardiac preload - increased in pregnancy", "detail": "WHAT IT IS: ventricular end-diastolic volume/venous return. ❌ WHY IT FAILS: expanded plasma volume raises venous return and preload; it increases, not decreases. ✅ Correct if: asking what INCREASES with volume expansion."}, {"letter": "B", "label": "Cardiac output - increased ~30-50%", "detail": "WHAT IT IS: heart rate x stroke volume. ❌ WHY IT FAILS: cardiac output rises markedly (higher stroke volume + heart rate) to perfuse the uteroplacental unit. ✅ Correct if: asking what increases in pregnancy."}, {"letter": "C", "label": "Central venous pressure - roughly unchanged", "detail": "WHAT IT IS: right atrial filling pressure. ❌ WHY IT FAILS: increased venous capacitance and decreased pulmonary vascular resistance accommodate the extra volume, so CVP stays about NORMAL - it isn't the decreased parameter. ✅ Correct if: asking what stays unchanged."}, {"letter": "D", "label": "Plasma volume - increased up to ~40%", "detail": "WHAT IT IS: circulating plasma volume. ❌ WHY IT FAILS: RAAS activation from lower SVR expands plasma volume by up to 40% (physiologic anemia of pregnancy). ✅ Correct if: asking what increases (dilutional anemia)."}], "reasoning": ["Pregnancy triggers widespread vasodilation and a low-resistance uteroplacental circuit", "This markedly DECREASES systemic vascular resistance (the dominant change)", "Lower SVR -> RAAS activation -> increased plasma volume, preload, and cardiac output", "-> systemic vascular resistance is decreased; answer E"], "mechanism": "During pregnancy the maternal cardiovascular system adapts to increase cardiac output and optimize fetal perfusion. The dominant hemodynamic change is a marked DECREASE in SYSTEMIC VASCULAR RESISTANCE (SVR), driven by increased vasodilators (nitric oxide, prostacyclin, progesterone), reduced vascular sensitivity to vasoconstrictors, and the creation of a high-flow, low-resistance uteroplacental circuit. The fall in SVR (and blood pressure, which dips in the second trimester) activates the renin-angiotensin-aldosterone system, causing fluid retention and a rise in PLASMA VOLUME of up to ~40%; this increases venous return (PRELOAD), and together with reduced afterload it boosts STROKE VOLUME and CARDIAC OUTPUT (heart rate also rises). Pulmonary vascular resistance decreases and venous capacitance increases, so CENTRAL VENOUS PRESSURE stays roughly normal despite the added volume. Peripheral edema is common (increased volume + reduced plasma oncotic pressure) even without preeclampsia. Therefore, compared with a nonpregnant woman, the DECREASED parameter is systemic vascular resistance.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Repro/Physio > pregnancy: ↓SVR, ↓PVR, ↓BP (mid-pregnancy); ↑plasma volume (~40%), ↑preload, ↑stroke volume, ↑cardiac output, ↑heart rate; CVP ~unchanged; physiologic anemia + edema."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "The dominant hemodynamic change is decreased SVR; most other parameters increase."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on systemic vascular resistance, preload, cardiac output, central venous pressure, or RAAS activation? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Preload, cardiac output, and plasma volume INCREASE; CVP is roughly unchanged - only SVR decreases."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: pregnancy = ↓SVR (dominant), ↑plasma volume/CO/preload, CVP unchanged; physiologic anemia + dependent edema."}], "keywords": [{"front": "Dominant hemodynamic change in pregnancy", "back": "Decreased systemic vascular resistance"}, {"front": "Pregnancy plasma volume change", "back": "Increased up to ~40% (physiologic/dilutional anemia)"}, {"front": "Pregnancy cardiac output", "back": "Increased ~30-50% (↑stroke volume + heart rate)"}, {"front": "Central venous pressure in pregnancy", "back": "Roughly unchanged (↑venous capacitance, ↓PVR)"}, {"front": "Why blood pressure dips mid-pregnancy", "back": "Decreased SVR (vasodilation)"}, {"front": "Cause of pregnancy peripheral edema", "back": "↑plasma volume + ↓plasma oncotic pressure + venous compression"}], "firstAid": [{"tag": "answer / stem", "topic": "Pregnancy hemodynamics", "detail": "Physio: ↓SVR (dominant); ↑plasma volume/preload/CO; CVP unchanged."}, {"tag": "options", "topic": "Adaptations", "detail": "Repro > preload/CO/plasma volume up; SVR/PVR/BP down."}, {"tag": "clinical", "topic": "Physiologic edema", "detail": "OB > dependent edema common; no proteinuria/hypertension = not preeclampsia."}], "memoryHook": "Pregnancy opens the vascular floodgates: resistance drops (↓SVR), so the body pours in extra volume and pumps more - the one thing going DOWN is SVR.", "stem": [{"text": "A 38-year-old woman, gravida 1 para 0, "}, {"text": "at 34 weeks gestation", "clue": true, "type": "orange", "note": "Third-trimester pregnancy involves major cardiovascular adaptations - increased cardiac output/plasma volume and decreased systemic vascular resistance."}, {"text": " comes to the office due to increasing swelling in her hands and legs. The patient first noticed the swelling a few weeks ago but now cannot stand for more than an hour without needing to elevate her legs. She has no orthopnea, dyspnea, or chest pain. The patient has no chronic medical conditions and takes no daily medications. Vital signs are normal. Cardiac examination is within normal limits. Lungs are clear to auscultation. Bilateral lower extremities have "}, {"text": "2+ pitting edema to the midshin", "clue": true, "type": "blue", "note": "Dependent lower-extremity edema is common in normal pregnancy (increased plasma volume + decreased plasma oncotic pressure + venous compression), not necessarily pathologic."}, {"text": ". "}, {"text": "Urine dipstick shows no protein", "clue": true, "type": "green", "note": "No proteinuria (and normal BP) argues against preeclampsia - this is physiologic pregnancy edema."}, {"text": ". Compared to a healthy nonpregnant woman, which of the following parameters is most likely to be decreased in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

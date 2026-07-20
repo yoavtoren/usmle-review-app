@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acute dystonia from antipsychotics: D2 receptor antagonism</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 11 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q376", "item": 376, "qid": "8323", "title": "Acute dystonia from antipsychotics: D2 receptor antagonism", "system": "Pharmacology", "topic": "Extrapyramidal symptoms - acute dystonia", "correct": "B", "yourAnswer": "F", "percentCorrect": 71, "vignette": "A 22-year-old man comes to the emergency department due to sudden-onset pain and stiffness on one side of his neck. He was diagnosed with a psychiatric disorder 2 days ago and has been adherent with his newly prescribed medication. For the past few months, the patient has heard voices telling him to quit his job, and he believes that his girlfriend's parents are monitoring his sexual thoughts with a special device. He has been socially withdrawn and has difficulty showering regularly. Vital signs are within normal limits. The head is tilted to one side and cannot be straightened without considerable pain. The most likely cause of this patient's symptoms is antagonism of which of the following receptors?", "clues": [{"text": "diagnosed with a psychiatric disorder 2 days ago and has been adherent with his newly prescribed medication", "type": "orange", "note": "Recent initiation of a newly prescribed medication (an antipsychotic) is the key setup - acute dystonia develops within hours to days of starting."}, {"text": "heard voices telling him to quit his job", "type": "blue", "note": "Auditory hallucinations plus delusions and negative symptoms indicate schizophrenia, treated with dopamine (D2)-blocking antipsychotics."}, {"text": "head is tilted to one side and cannot be straightened without considerable pain", "type": "green", "note": "Painful, sustained muscle contraction pulling the head to one side is acute dystonia (spasmodic torticollis) - an extrapyramidal side effect of D2 blockade."}], "whatMatters": "A patient just started on an antipsychotic for schizophrenia who develops acute painful torticollis has an ACUTE DYSTONIC REACTION - an extrapyramidal symptom from DOPAMINE D2 RECEPTOR ANTAGONISM in the nigrostriatal pathway. Answer B. (Treat with an anticholinergic such as benztropine or the antihistamine diphenhydramine.)", "strategy": "Recognize acute dystonia (sudden sustained muscle spasm/torticollis, 4 hours-4 days after starting an antipsychotic) and attribute it to D2 blockade in the nigrostriatal pathway, which unbalances dopamine vs cholinergic tone -> extrapyramidal symptoms. Reject the receptors that explain OTHER antipsychotic side effects: alpha-1 (orthostatic hypotension), H1 (sedation/weight gain), M1 (anticholinergic - dry mouth/constipation), 5-HT2A (blocked by atypicals but doesn't cause dystonia), and GABA-A (flumazenil/benzodiazepines).", "options": [{"letter": "A", "text": "Alpha-1 adrenergic", "correct": false}, {"letter": "B", "text": "Dopaminergic D2", "correct": true}, {"letter": "C", "text": "GABA-A", "correct": false}, {"letter": "D", "text": "Histaminergic H1", "correct": false}, {"letter": "E", "text": "Muscarinic M1", "correct": false}, {"letter": "F", "text": "Serotonergic 5-HT2A", "correct": false}], "eliminations": [{"letter": "A", "label": "Alpha-1 adrenergic - orthostatic hypotension", "detail": "WHAT IT IS: alpha-1 blockade by antipsychotics. ❌ WHY IT FAILS: it causes orthostatic hypotension/dizziness, not dystonia. ✅ Correct if: postural hypotension on a low-potency antipsychotic."}, {"letter": "C", "label": "GABA-A - benzodiazepines/flumazenil", "detail": "WHAT IT IS: the benzodiazepine-modulated chloride channel. ❌ WHY IT FAILS: GABA-A is not the antipsychotic target causing dystonia. ✅ Correct if: benzodiazepine effect or flumazenil reversal."}, {"letter": "D", "label": "Histaminergic H1 - sedation/weight gain", "detail": "WHAT IT IS: H1 blockade. ❌ WHY IT FAILS: it causes sedation and weight gain, not extrapyramidal dystonia. ✅ Correct if: sedation/weight gain from an antipsychotic or antihistamine."}, {"letter": "E", "label": "Muscarinic M1 - anticholinergic effects", "detail": "WHAT IT IS: muscarinic blockade. ❌ WHY IT FAILS: it causes dry mouth, constipation, urinary retention, blurred vision - and MORE M1 blockade actually LESSENS extrapyramidal symptoms (low-potency antipsychotics cause fewer EPS). ✅ Correct if: anticholinergic side effects."}, {"letter": "F", "label": "Serotonergic 5-HT2A - atypical mechanism, not dystonia (your pick)", "detail": "WHAT IT IS: 5-HT2A antagonism, prominent in SECOND-generation (atypical) antipsychotics. ❌ WHY IT FAILS: 5-HT2A blockade actually helps REDUCE extrapyramidal symptoms (fewer EPS with atypicals); it does not CAUSE acute dystonia - that's D2 blockade. ✅ Correct if: explaining why atypicals have fewer EPS."}], "reasoning": ["Schizophrenia + newly started antipsychotic + acute painful torticollis = acute dystonic reaction", "Acute dystonia is an extrapyramidal symptom from dopamine D2 receptor blockade in the nigrostriatal pathway", "D2 blockade unbalances dopaminergic/cholinergic tone in the striatum -> excess cholinergic activity", "-> dopaminergic D2 antagonism; answer B"], "mechanism": "Antipsychotics treat schizophrenia primarily by blocking dopamine D2 receptors in the mesolimbic pathway. However, D2 blockade in the NIGROSTRIATAL pathway causes EXTRAPYRAMIDAL SYMPTOMS (EPS). In the striatum, inhibitory dopamine (D2) tone is normally balanced by excitatory cholinergic (M1) neurons; strong D2 blockade unmasks a relative CHOLINERGIC EXCESS, producing movement side effects. ACUTE DYSTONIA - sudden, sustained, often painful muscle contractions such as spasmodic TORTICOLLIS, oculogyric crisis, or (rarely) laryngospasm - can develop abruptly, typically 4 hours to 4 days after starting the drug, and is most common with HIGH-POTENCY first-generation agents (e.g., haloperidol, fluphenazine). It is treated by restoring the dopamine-acetylcholine balance with an ANTICHOLINERGIC (benztropine) or the antihistamine diphenhydramine. The other EPS (akathisia, parkinsonism, and later tardive dyskinesia) also stem from D2 blockade. The distractor receptors explain different antipsychotic effects (alpha-1 -> orthostasis, H1 -> sedation, M1 -> anticholinergic and FEWER EPS, 5-HT2A -> fewer EPS with atypicals); GABA-A is unrelated.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Psych/Pharm > antipsychotic EPS: D2 blockade (nigrostriatal) -> acute dystonia (hours-days), akathisia, parkinsonism, tardive dyskinesia; treat acute dystonia with benztropine/diphenhydramine; high-potency agents worst."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Acute torticollis days after a new antipsychotic = D2-blockade extrapyramidal reaction."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on acute dystonia/torticollis, extrapyramidal symptoms, nigrostriatal pathway, or D2 vs 5-HT2A? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Alpha-1 (orthostasis), H1 (sedation), M1 (anticholinergic, fewer EPS), 5-HT2A (fewer EPS with atypicals), GABA-A (benzodiazepines) don't cause dystonia."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: acute dystonia = D2 blockade (nigrostriatal); treat benztropine/diphenhydramine; high-potency antipsychotics highest risk."}], "keywords": [{"front": "Acute torticollis days after starting an antipsychotic", "back": "Acute dystonic reaction (D2 blockade / EPS)"}, {"front": "Receptor blockade causing extrapyramidal symptoms", "back": "Dopamine D2 (nigrostriatal pathway)"}, {"front": "Treatment of acute dystonia", "back": "Benztropine (anticholinergic) or diphenhydramine"}, {"front": "Why atypicals cause fewer EPS", "back": "5-HT2A antagonism (and lower D2 affinity)"}, {"front": "Antipsychotic causing orthostatic hypotension", "back": "Alpha-1 blockade (low-potency agents)"}, {"front": "Timeline of EPS", "back": "Dystonia (hours-days) -> akathisia/parkinsonism (days-weeks) -> tardive dyskinesia (months-years)"}], "firstAid": [{"tag": "answer / stem", "topic": "Acute dystonia", "detail": "Pharm: D2 blockade (nigrostriatal) -> extrapyramidal dystonia; treat benztropine/diphenhydramine."}, {"tag": "options", "topic": "Antipsychotic receptor effects", "detail": "Pharm > alpha-1 (orthostasis), H1 (sedation), M1 (anticholinergic), 5-HT2A (fewer EPS)."}, {"tag": "class", "topic": "High- vs low-potency", "detail": "Psych > high-potency (haloperidol) -> more EPS; low-potency -> more anticholinergic/sedation."}], "memoryHook": "Block D2 in the motor striatum and acetylcholine runs wild - the neck cramps into torticollis days after the first antipsychotic dose; benztropine rebalances it.", "stem": [{"text": "A 22-year-old man comes to the emergency department due to sudden-onset pain and stiffness on one side of his neck. He was "}, {"text": "diagnosed with a psychiatric disorder 2 days ago and has been adherent with his newly prescribed medication", "clue": true, "type": "orange", "note": "Recent initiation of a newly prescribed medication (an antipsychotic) is the key setup - acute dystonia develops within hours to days of starting."}, {"text": ". For the past few months, the patient has "}, {"text": "heard voices telling him to quit his job", "clue": true, "type": "blue", "note": "Auditory hallucinations plus delusions and negative symptoms indicate schizophrenia, treated with dopamine (D2)-blocking antipsychotics."}, {"text": ", and he believes that his girlfriend's parents are monitoring his sexual thoughts with a special device. He has been socially withdrawn and has difficulty showering regularly. Vital signs are within normal limits. The "}, {"text": "head is tilted to one side and cannot be straightened without considerable pain", "clue": true, "type": "green", "note": "Painful, sustained muscle contraction pulling the head to one side is acute dystonia (spasmodic torticollis) - an extrapyramidal side effect of D2 blockade."}, {"text": ". The most likely cause of this patient's symptoms is antagonism of which of the following receptors?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

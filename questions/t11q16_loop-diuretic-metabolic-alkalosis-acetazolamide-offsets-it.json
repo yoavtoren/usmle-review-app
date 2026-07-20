@@ -1,0 +1,176 @@
+{
+  "id": "q375",
+  "item": 375,
+  "qid": "18937",
+  "title": "Loop diuretic -> metabolic alkalosis; acetazolamide offsets it",
+  "system": "Pharmacology",
+  "topic": "Diuretics - contraction alkalosis / acetazolamide",
+  "correct": "D",
+  "yourAnswer": "B",
+  "percentCorrect": 66,
+  "vignette": "A 68-year-old man comes to the emergency department due to a 1-week history of increasing leg and abdominal swelling. The patient has a history of pulmonary hypertension and cor pulmonale from advanced chronic obstructive pulmonary disease. Other medical conditions include hypertension and gout. Physical examination shows scattered rhonchi, prolonged expiratory phase of expiration, mild ascites, and extensive edema of the abdominal wall and lower extremities. The patient is hospitalized and intravenous loop diuretic therapy is begun. Two days later, acetazolamide is added to his treatment regimen. Which of the following most likely prompted the additional therapy in this patient?",
+  "clues": [
+    {
+      "text": "intravenous loop diuretic therapy is begun",
+      "type": "orange",
+      "note": "Loop diuretics (e.g., furosemide) drive potent Na/water excretion and characteristically produce a metabolic alkalosis."
+    },
+    {
+      "text": "acetazolamide is added",
+      "type": "green",
+      "note": "Acetazolamide (a carbonic anhydrase inhibitor) causes bicarbonate loss in the urine - used specifically to correct a diuretic-induced METABOLIC ALKALOSIS."
+    }
+  ],
+  "whatMatters": "Loop diuretics commonly cause a METABOLIC ALKALOSIS (from volume contraction with aldosterone-driven H+/K+ loss and relatively greater chloride than sodium loss, so the kidney retains bicarbonate). ACETAZOLAMIDE, a carbonic anhydrase inhibitor, promotes urinary bicarbonate excretion, generating a mild metabolic acidosis that OFFSETS the alkalosis. Answer D.",
+  "strategy": "Ask WHY acetazolamide would be added to a loop diuretic. Acetazolamide's job here is to correct METABOLIC ALKALOSIS (it makes the kidney dump bicarbonate). This matters in cor pulmonale/COPD because alkalosis blunts respiratory drive. Reject hypokalemia (treated with potassium/potassium-sparing diuretics, not acetazolamide), inadequate diuresis (add a thiazide for synergy, and acetazolamide is a weak diuretic), hyperuricemia (loop/thiazide raise urate; acetazolamide doesn't fix it), and prerenal azotemia (managed by holding diuretics/volume, not acetazolamide).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Hyperuricemia",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Hypokalemia",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Inadequate diuresis",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Metabolic alkalosis",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Prerenal azotemia",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Hyperuricemia - not corrected by acetazolamide",
+      "detail": "WHAT IT IS: loop/thiazide diuretics raise uric acid (can precipitate gout). ❌ WHY IT FAILS: acetazolamide is not used to lower urate; a xanthine oxidase inhibitor would be. ✅ Correct if: managing gout/hyperuricemia (allopurinol)."
+    },
+    {
+      "letter": "B",
+      "label": "Hypokalemia - treat with potassium/potassium-sparing agents (your pick)",
+      "detail": "WHAT IT IS: low potassium from loop-diuretic kaliuresis. ❌ WHY IT FAILS: hypokalemia is corrected with potassium supplementation or a potassium-SPARING diuretic - acetazolamide actually causes additional potassium loss, so it wouldn't be added for hypokalemia. ✅ Correct if: adding a potassium-sparing agent for hypokalemia."
+    },
+    {
+      "letter": "C",
+      "label": "Inadequate diuresis - add a thiazide, not acetazolamide",
+      "detail": "WHAT IT IS: insufficient volume removal. ❌ WHY IT FAILS: for synergistic diuresis you add a thiazide (blocks the distal Na load); acetazolamide is only a WEAK diuretic and isn't chosen mainly to boost diuresis. ✅ Correct if: needing synergistic diuresis (loop + thiazide)."
+    },
+    {
+      "letter": "E",
+      "label": "Prerenal azotemia - manage volume/diuretic dose",
+      "detail": "WHAT IT IS: reduced renal perfusion (rising BUN/creatinine) from over-diuresis. ❌ WHY IT FAILS: it's managed by reducing/holding diuretics and restoring perfusion, not by adding acetazolamide. ✅ Correct if: over-diuresis causing prerenal azotemia."
+    }
+  ],
+  "reasoning": [
+    "Loop diuretics characteristically cause a metabolic (contraction) alkalosis",
+    "Acetazolamide inhibits carbonic anhydrase, increasing renal bicarbonate excretion",
+    "This generates a mild metabolic acidosis that offsets the alkalosis (important in COPD/cor pulmonale)",
+    "-> acetazolamide was added to correct metabolic alkalosis; answer D"
+  ],
+  "mechanism": "Loop diuretics (e.g., furosemide) inhibit the Na-K-2Cl transporter in the thick ascending limb, causing potent natriuresis and diuresis. They commonly produce a METABOLIC ALKALOSIS by two mechanisms: (1) volume contraction activates the renin-angiotensin-aldosterone system, and aldosterone increases renal H+ and K+ secretion (raising bicarbonate); and (2) loops cause relatively greater loss of chloride than sodium, and to maintain electroneutrality the kidney RETAINS bicarbonate. This metabolic alkalosis is clinically important because it can suppress ventilatory drive, hindering weaning from mechanical ventilation and worsening CO2 retention in patients with COPD/cor pulmonale. ACETAZOLAMIDE, a CARBONIC ANHYDRASE INHIBITOR, blocks proximal tubular reabsorption of sodium bicarbonate, increasing urinary HCO3 loss and producing a mild metabolic acidosis that OFFSETS the diuretic-induced alkalosis (and helps stimulate respiration). Thus acetazolamide was added to correct the metabolic alkalosis. It is not used for hypokalemia (it worsens K+ loss), hyperuricemia, inadequate diuresis (a thiazide is added for synergy), or prerenal azotemia.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Renal/Pharm > loop diuretics cause metabolic (contraction) alkalosis, hypokalemia, hyperuricemia; acetazolamide (carbonic anhydrase inhibitor) -> bicarbonate diuresis, corrects metabolic alkalosis."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Acetazolamide is added specifically to offset the loop-diuretic-induced metabolic alkalosis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on contraction alkalosis, carbonic anhydrase inhibitor, bicarbonate diuresis, or aldosterone-driven H+/K+ loss? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Hypokalemia (acetazolamide worsens it), inadequate diuresis (add thiazide), hyperuricemia (allopurinol), prerenal azotemia (hold diuretics) don't fit acetazolamide's role."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: loop diuretic -> metabolic alkalosis (+ hypokalemia); acetazolamide corrects the alkalosis by wasting bicarbonate."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Why add acetazolamide to a loop diuretic",
+      "back": "To correct diuretic-induced metabolic alkalosis (bicarbonate diuresis)"
+    },
+    {
+      "front": "Loop diuretic acid-base effect",
+      "back": "Metabolic (contraction) alkalosis"
+    },
+    {
+      "front": "Acetazolamide mechanism",
+      "back": "Carbonic anhydrase inhibitor -> ↑urinary HCO3 -> mild metabolic acidosis"
+    },
+    {
+      "front": "Loop diuretic electrolyte effects",
+      "back": "Hypokalemia, hypomagnesemia, hyperuricemia, hypocalcemia"
+    },
+    {
+      "front": "How to boost diuresis synergistically",
+      "back": "Add a thiazide to a loop diuretic (block distal Na)"
+    },
+    {
+      "front": "Why alkalosis matters in COPD/cor pulmonale",
+      "back": "Suppresses respiratory drive (worsens CO2 retention)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Diuretic-induced alkalosis",
+      "detail": "Pharm: loop -> metabolic alkalosis; acetazolamide corrects it (bicarbonate diuresis)."
+    },
+    {
+      "tag": "options",
+      "topic": "Loop diuretic effects",
+      "detail": "Renal > hypokalemia, hyperuricemia, ototoxicity; add thiazide for synergy."
+    },
+    {
+      "tag": "concept",
+      "topic": "Acetazolamide",
+      "detail": "Pharm > carbonic anhydrase inhibitor; mild metabolic acidosis; also glaucoma/altitude."
+    }
+  ],
+  "memoryHook": "Loop diuretics tip the blood alkaline; acetazolamide opens the kidney's bicarbonate drain to tip it back - added not for potassium, but to fix the alkalosis.",
+  "stem": [
+    {
+      "text": "A 68-year-old man comes to the emergency department due to a 1-week history of increasing leg and abdominal swelling. The patient has a history of pulmonary hypertension and cor pulmonale from advanced chronic obstructive pulmonary disease. Other medical conditions include hypertension and gout. Physical examination shows scattered rhonchi, prolonged expiratory phase of expiration, mild ascites, and extensive edema of the abdominal wall and lower extremities. The patient is hospitalized and "
+    },
+    {
+      "text": "intravenous loop diuretic therapy is begun",
+      "clue": true,
+      "type": "orange",
+      "note": "Loop diuretics (e.g., furosemide) drive potent Na/water excretion and characteristically produce a metabolic alkalosis."
+    },
+    {
+      "text": ". Two days later, "
+    },
+    {
+      "text": "acetazolamide is added",
+      "clue": true,
+      "type": "green",
+      "note": "Acetazolamide (a carbonic anhydrase inhibitor) causes bicarbonate loss in the urine - used specifically to correct a diuretic-induced METABOLIC ALKALOSIS."
+    },
+    {
+      "text": " to his treatment regimen. Which of the following most likely prompted the additional therapy in this patient?"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "q385",
+  "item": 385,
+  "qid": "12504",
+  "title": "Opioid intoxication: hypothermia, hypotension, decreased tidal volume",
+  "system": "Pharmacology",
+  "topic": "Opioid toxidrome",
+  "correct": "F",
+  "yourAnswer": "F",
+  "percentCorrect": 66,
+  "vignette": "A 26-year-old man with depressed mental status is brought to the emergency department by police. Due to fear of arrest, he swallowed a handful of pills as the officers approached him. On examination, the patient responds to painful stimuli but is somnolent. Pupils are <2 mm. Respirations are 6/min. Lungs are clear to auscultation. Which of the following additional findings (temperature, blood pressure, tidal volume) are most likely present in this patient?",
+  "clues": [
+    {
+      "text": "swallowed a handful of pills",
+      "type": "blue",
+      "note": "An acute ingestion presenting with CNS depression frames this as a toxidrome to identify from the exam. (Sensitive presentation - handled as clinical toxicology.)"
+    },
+    {
+      "text": "Pupils are <2 mm",
+      "type": "green",
+      "note": "Pinpoint pupils (miosis) with depressed consciousness are a hallmark of OPIOID intoxication."
+    },
+    {
+      "text": "Respirations are 6/min",
+      "type": "red",
+      "note": "Bradypnea (respiratory depression) is the most dangerous and characteristic feature of opioid overdose."
+    }
+  ],
+  "whatMatters": "Somnolence + MIOSIS (pinpoint pupils) + RESPIRATORY DEPRESSION = OPIOID intoxication (classic triad). Additional expected findings: HYPOTHERMIA (impaired thermogenesis), HYPOTENSION (histamine-mediated vasodilation), and DECREASED TIDAL VOLUME (reduced ventilatory drive). Answer F (all three decreased). Reverse with naloxone.",
+  "strategy": "Recognize the opioid toxidrome (CNS depression + miosis + hypoventilation), then predict its autonomic/respiratory profile: temperature DOWN, blood pressure DOWN (mildly), tidal volume DOWN (with the low respiratory rate). Pick the row with all three decreased. Reject rows showing increases (those fit sympathomimetic/anticholinergic toxidromes, not opioids).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Temperature ↑ | Blood pressure ↑ | Tidal volume ↑",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Temperature ↑ | Blood pressure ↑ | Tidal volume ↓",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Temperature ↑ | Blood pressure ↓ | Tidal volume ↑",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Temperature ↓ | Blood pressure ↑ | Tidal volume ↓",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Temperature ↑ | Blood pressure ↑ | Tidal volume ↑",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Temperature ↓ | Blood pressure ↓ | Tidal volume ↓",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "All increased - sympathomimetic, not opioid",
+      "detail": "WHAT IT IS: elevated temperature/BP with increased ventilation. ❌ WHY IT FAILS: that fits a sympathomimetic (cocaine/amphetamine) toxidrome; opioids DEPRESS these. ✅ Correct if: stimulant intoxication (hyperthermia, hypertension, tachypnea)."
+    },
+    {
+      "letter": "B",
+      "label": "↑temp/↑BP with ↓tidal volume - mixed/incorrect",
+      "detail": "WHAT IT IS: raised temperature/BP but low tidal volume. ❌ WHY IT FAILS: opioids lower temperature and BP too; this partial pattern doesn't fit. ✅ Correct if: a different combined toxidrome, not opioids."
+    },
+    {
+      "letter": "C",
+      "label": "↑temp/↓BP/↑tidal volume - inconsistent",
+      "detail": "WHAT IT IS: hyperthermia with hypotension and increased ventilation. ❌ WHY IT FAILS: opioids cause hypoVENTILATION (low tidal volume) and hypoTHERMIA, not this mix. ✅ Correct if: sepsis/other, not opioid overdose."
+    },
+    {
+      "letter": "D",
+      "label": "↓temp/↑BP/↓tidal volume - BP is wrong direction",
+      "detail": "WHAT IT IS: hypothermia and low tidal volume but HIGH BP. ❌ WHY IT FAILS: opioids tend to LOWER blood pressure (histamine-mediated vasodilation), not raise it. ✅ Correct if: hypothermia with a pressor effect (not opioids)."
+    },
+    {
+      "letter": "E",
+      "label": "All increased - duplicate sympathomimetic pattern",
+      "detail": "WHAT IT IS: everything up. ❌ WHY IT FAILS: same as A - opposite of the opioid (depressant) toxidrome. ✅ Correct if: stimulant intoxication."
+    }
+  ],
+  "reasoning": [
+    "Somnolence + pinpoint pupils + respiratory depression = opioid intoxication (classic triad)",
+    "Opioids depress thermoregulation and ventilation and cause histamine-mediated vasodilation",
+    "So temperature, blood pressure, and tidal volume all decrease",
+    "-> all three decreased; answer F"
+  ],
+  "mechanism": "Opioids act on mu (and kappa/delta) receptors throughout the CNS, spinal cord, and GI tract. The classic acute intoxication TRIAD is DECREASED RESPIRATORY RATE, MIOSIS (pinpoint pupils), and DEPRESSED MENTAL STATUS; respiratory depression is the most lethal effect and the best predictor of overdose. Additional findings all reflect CNS/autonomic depression: HYPOTHERMIA (opioid effects on central thermoregulation plus reduced ability to respond to the environment), HYPOTENSION (usually mild; opioids trigger histamine release from mast cells causing vasodilation), and DECREASED TIDAL VOLUME (brainstem respiratory-center depression reduces both rate AND depth of breathing, blunting the response to hypercapnia/hypoxia). GI effects (decreased motility -> constipation) are also common. Thus temperature, blood pressure, and tidal volume are all decreased. The antidote is NALOXONE (a competitive mu-opioid antagonist). Increases in these parameters would instead suggest a sympathomimetic toxidrome. (Sensitive topic: if you or someone you know is struggling, contacting a clinician or crisis line is appropriate - I can help find resources.)",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm/Tox > opioid toxidrome: respiratory depression + miosis + CNS depression; also hypothermia, hypotension, ↓tidal volume, constipation; reverse with naloxone."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Opioids depress everything: temperature, BP, and tidal volume all fall."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on toxidrome, miosis, tidal volume, respiratory depression, or naloxone? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Increases in temperature/BP/ventilation fit a SYMPATHOMIMETIC toxidrome, not opioids."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: opioid triad = ↓RR + miosis + ↓mental status; also ↓temp, ↓BP, ↓tidal volume; antidote naloxone. Sensitive topic - resources available."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Opioid intoxication classic triad",
+      "back": "↓respiratory rate + miosis + depressed mental status"
+    },
+    {
+      "front": "Opioid effect on temperature/BP/tidal volume",
+      "back": "All decreased (hypothermia, hypotension, ↓tidal volume)"
+    },
+    {
+      "front": "Most lethal opioid effect",
+      "back": "Respiratory depression"
+    },
+    {
+      "front": "Opioid overdose antidote",
+      "back": "Naloxone (mu-opioid antagonist)"
+    },
+    {
+      "front": "Why opioids cause hypotension",
+      "back": "Histamine release -> vasodilation"
+    },
+    {
+      "front": "Sympathomimetic toxidrome (contrast)",
+      "back": "Hyperthermia, hypertension, tachypnea, mydriasis"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Opioid toxidrome",
+      "detail": "Pharm: ↓RR + miosis + ↓mental status; ↓temp, ↓BP, ↓tidal volume; naloxone."
+    },
+    {
+      "tag": "options",
+      "topic": "Toxidromes",
+      "detail": "Tox > sympathomimetic (all up) vs opioid (all down)."
+    },
+    {
+      "tag": "antidote",
+      "topic": "Naloxone",
+      "detail": "Pharm > competitive mu-opioid antagonist reverses respiratory depression."
+    }
+  ],
+  "memoryHook": "Opioids are the great depressant: pupils pinpoint, breaths shallow and slow, and temperature and blood pressure all sag - naloxone flips the switch back on.",
+  "stem": [
+    {
+      "text": "A 26-year-old man with depressed mental status is brought to the emergency department by police. Due to fear of arrest, he "
+    },
+    {
+      "text": "swallowed a handful of pills",
+      "clue": true,
+      "type": "blue",
+      "note": "An acute ingestion presenting with CNS depression frames this as a toxidrome to identify from the exam. (Sensitive presentation - handled as clinical toxicology.)"
+    },
+    {
+      "text": " as the officers approached him. On examination, the patient responds to painful stimuli but is somnolent. "
+    },
+    {
+      "text": "Pupils are <2 mm",
+      "clue": true,
+      "type": "green",
+      "note": "Pinpoint pupils (miosis) with depressed consciousness are a hallmark of OPIOID intoxication."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Respirations are 6/min",
+      "clue": true,
+      "type": "red",
+      "note": "Bradypnea (respiratory depression) is the most dangerous and characteristic feature of opioid overdose."
+    },
+    {
+      "text": ". Lungs are clear to auscultation. Which of the following additional findings (temperature, blood pressure, tidal volume) are most likely present in this patient?"
+    }
+  ]
+}

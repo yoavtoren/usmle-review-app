@@ -1,0 +1,196 @@
+{
+  "id": "q386",
+  "item": 386,
+  "qid": "868",
+  "title": "Newborn predominant hemoglobin: fetal hemoglobin (alpha2 gamma2)",
+  "system": "Biochemistry",
+  "topic": "Hemoglobin switching - fetal hemoglobin",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 76,
+  "vignette": "A 2-day-old boy is being examined in the newborn nursery prior to discharge from the hospital. He was born at 38 weeks gestation by vaginal delivery. The pregnancy and delivery were uncomplicated, and the boy has been breastfeeding, stooling, and urinating normally. The patient's mother has beta-thalassemia trait, and his father has a normal hemoglobin electrophoresis. Vital signs and physical examination are normal. Which of the following hemoglobin compositions is most likely predominant in this infant?",
+  "clues": [
+    {
+      "text": "2-day-old boy",
+      "type": "orange",
+      "note": "At birth and for the first months of life, FETAL hemoglobin (Hb F) predominates before switching to adult hemoglobin."
+    },
+    {
+      "text": "mother has beta-thalassemia trait",
+      "type": "blue",
+      "note": "A beta-globin problem (beta-thalassemia) would manifest LATER, as Hb F (which uses GAMMA, not beta, chains) is replaced by adult Hb A - so a newborn is typically asymptomatic."
+    }
+  ],
+  "whatMatters": "In a term newborn, the PREDOMINANT hemoglobin is FETAL HEMOGLOBIN (Hb F) = alpha2 GAMMA2 (a2g2), making up ~60-80% of hemoglobin at birth. It is gradually replaced by adult Hb A (a2b2) over the first ~6 months. Answer B (a2g2).",
+  "strategy": "Recall the developmental hemoglobin sequence: embryonic (zeta/epsilon, e.g., Gower/Portland) -> FETAL Hb F (a2g2) predominant in late gestation and at birth -> adult Hb A (a2b2) by ~6 months, with a small amount of Hb A2 (a2d2). At 2 days old, pick Hb F = a2g2. Reject a2b2 (adult Hb A, predominant later), a2d2 (Hb A2, minor), b4/g4 (abnormal tetramers in thalassemia), and zeta/epsilon tetramers (embryonic).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "alpha2 beta2",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "alpha2 gamma2",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "alpha2 delta2",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "beta4",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "gamma4",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "zeta2 epsilon2",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "zeta2 gamma2",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "alpha2 beta2 - adult Hb A (predominant later, not at birth) (your pick nearby)",
+      "detail": "WHAT IT IS: adult hemoglobin A (a2b2), the major hemoglobin AFTER ~6 months of life. ❌ WHY IT FAILS: at 2 days old, fetal Hb F (a2g2) still predominates; Hb A is only a minor fraction at birth. ✅ Correct if: hemoglobin composition of an older infant/adult."
+    },
+    {
+      "letter": "C",
+      "label": "alpha2 delta2 - Hb A2 (minor adult, your pick)",
+      "detail": "WHAT IT IS: hemoglobin A2 (a2d2), a NORMAL minor adult hemoglobin (~2-3%). ❌ WHY IT FAILS: it is a minor component, not the predominant newborn hemoglobin (which is Hb F); Hb A2 is elevated in beta-thalassemia but never predominant. ✅ Correct if: the minor adult hemoglobin (increased in beta-thalassemia)."
+    },
+    {
+      "letter": "D",
+      "label": "beta4 - hemoglobin H (alpha-thalassemia)",
+      "detail": "WHAT IT IS: hemoglobin H (b4), formed from excess beta chains in alpha-thalassemia. ❌ WHY IT FAILS: it's an abnormal tetramer of alpha-thalassemia, not the normal predominant newborn hemoglobin. ✅ Correct if: alpha-thalassemia (Hb H disease)."
+    },
+    {
+      "letter": "E",
+      "label": "gamma4 - hemoglobin Barts (alpha-thalassemia major)",
+      "detail": "WHAT IT IS: hemoglobin Barts (g4), from excess gamma chains in severe alpha-thalassemia (hydrops fetalis). ❌ WHY IT FAILS: an abnormal, incompatible-with-life tetramer, not normal Hb F. ✅ Correct if: alpha-thalassemia major (hydrops fetalis)."
+    },
+    {
+      "letter": "F",
+      "label": "zeta2 epsilon2 - embryonic hemoglobin (Gower)",
+      "detail": "WHAT IT IS: embryonic hemoglobin (zeta/epsilon chains) produced in the first weeks of embryogenesis (yolk sac). ❌ WHY IT FAILS: it's replaced by Hb F well before birth. ✅ Correct if: early embryonic (Gower/Portland) hemoglobin."
+    },
+    {
+      "letter": "G",
+      "label": "zeta2 gamma2 - embryonic (Portland) hemoglobin",
+      "detail": "WHAT IT IS: embryonic Portland hemoglobin (zeta2 gamma2). ❌ WHY IT FAILS: another embryonic species not present at term. ✅ Correct if: early embryonic hemoglobin."
+    }
+  ],
+  "reasoning": [
+    "Hemoglobin switches developmentally: embryonic -> fetal -> adult",
+    "At term birth, fetal hemoglobin (Hb F) predominates (~60-80%)",
+    "Hb F is composed of 2 alpha and 2 gamma chains (a2g2)",
+    "-> alpha2 gamma2; answer B"
+  ],
+  "mechanism": "Hemoglobin is a tetramer of two alpha-like and two beta-like globin chains, and the specific chains switch during development. In early EMBRYOGENESIS the yolk sac makes zeta/epsilon-containing hemoglobins (Gower 1/2, Portland). FETAL HEMOGLOBIN (Hb F = alpha2 GAMMA2) production begins ~8 weeks and predominates from mid-gestation through birth, comprising ~60-80% of a term newborn's hemoglobin; Hb F has HIGHER oxygen affinity (it binds 2,3-bisphosphoglycerate poorly), which facilitates transplacental oxygen transfer from mother to fetus. After birth, gamma-chain production declines and beta-chain production rises, so ADULT HEMOGLOBIN A (a2b2) replaces Hb F over the first ~6 months and becomes the major adult hemoglobin, with a minor amount of Hb A2 (a2d2). Because beta-thalassemia affects the BETA chain, affected infants are typically ASYMPTOMATIC at birth (when gamma-based Hb F dominates) and become symptomatic only as Hb A should take over. Therefore, at 2 days old the predominant hemoglobin is Hb F (a2g2). The abnormal tetramers (b4 = Hb H, g4 = Hb Barts) occur in alpha-thalassemia.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Heme/Biochem > hemoglobin development: embryonic (zeta/epsilon) -> fetal Hb F (a2g2, predominant at birth, high O2 affinity) -> adult Hb A (a2b2) by ~6 months + minor Hb A2 (a2d2); Hb H (b4)/Barts (g4) in alpha-thalassemia."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "At birth Hb F (a2g2) predominates; adult Hb A (a2b2) takes over later."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on Hb F/A/A2, gamma vs beta vs delta chains, 2,3-BPG affinity, or hemoglobin switching? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "a2b2 = adult Hb A (later); a2d2 = minor Hb A2; b4/g4 = alpha-thalassemia tetramers; zeta/epsilon = embryonic."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: newborn predominant = Hb F (a2g2), high O2 affinity; beta-thalassemia asymptomatic at birth (gamma-based Hb F)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Predominant hemoglobin at birth",
+      "back": "Fetal hemoglobin Hb F = alpha2 gamma2"
+    },
+    {
+      "front": "Adult major hemoglobin (after ~6 months)",
+      "back": "Hb A = alpha2 beta2"
+    },
+    {
+      "front": "Minor adult hemoglobin (elevated in beta-thalassemia)",
+      "back": "Hb A2 = alpha2 delta2"
+    },
+    {
+      "front": "Why Hb F has high O2 affinity",
+      "back": "Binds 2,3-BPG poorly (aids placental O2 transfer)"
+    },
+    {
+      "front": "Hemoglobin H vs Hb Barts",
+      "back": "b4 (Hb H) and g4 (Barts) - alpha-thalassemia"
+    },
+    {
+      "front": "Why beta-thalassemia is asymptomatic at birth",
+      "back": "Hb F uses gamma chains, not beta"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Fetal hemoglobin",
+      "detail": "Biochem: Hb F (a2g2) predominant at birth; high O2 affinity."
+    },
+    {
+      "tag": "options",
+      "topic": "Hemoglobin species",
+      "detail": "Heme > Hb A (a2b2), Hb A2 (a2d2), Hb H (b4), Barts (g4), embryonic (zeta/epsilon)."
+    },
+    {
+      "tag": "switch",
+      "topic": "Hemoglobin switching",
+      "detail": "Biochem > embryonic -> fetal -> adult; beta-thalassemia shows after switch."
+    }
+  ],
+  "memoryHook": "A newborn still runs on fetal fuel: Hb F = alpha-2 GAMMA-2, the high-affinity hemoglobin that pulled oxygen across the placenta - adult beta chains take over months later.",
+  "stem": [
+    {
+      "text": "A "
+    },
+    {
+      "text": "2-day-old boy",
+      "clue": true,
+      "type": "orange",
+      "note": "At birth and for the first months of life, FETAL hemoglobin (Hb F) predominates before switching to adult hemoglobin."
+    },
+    {
+      "text": " is being examined in the newborn nursery prior to discharge from the hospital. He was born at 38 weeks gestation by vaginal delivery. The pregnancy and delivery were uncomplicated, and the boy has been breastfeeding, stooling, and urinating normally. The patient's "
+    },
+    {
+      "text": "mother has beta-thalassemia trait",
+      "clue": true,
+      "type": "blue",
+      "note": "A beta-globin problem (beta-thalassemia) would manifest LATER, as Hb F (which uses GAMMA, not beta, chains) is replaced by adult Hb A - so a newborn is typically asymptomatic."
+    },
+    {
+      "text": ", and his father has a normal hemoglobin electrophoresis. Vital signs and physical examination are normal. Which of the following hemoglobin compositions is most likely predominant in this infant?"
+    }
+  ]
+}
