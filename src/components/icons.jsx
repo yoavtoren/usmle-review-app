@@ -73,6 +73,12 @@ export const IconClose = (p) => (
 export const IconCheck = (p) => (
   <Svg {...p}><path d="m4 12.5 5 5 11-12" /></Svg>
 );
+export const IconPlus = (p) => (
+  <Svg {...p}><path d="M12 5v14M5 12h14" /></Svg>
+);
+export const IconNote = (p) => (
+  <Svg {...p}><path d="M5 3.5h14a1.5 1.5 0 0 1 1.5 1.5v10L15 20.5H5A1.5 1.5 0 0 1 3.5 19V5A1.5 1.5 0 0 1 5 3.5Z" /><path d="M14.5 20.5v-4a1.5 1.5 0 0 1 1.5-1.5h4M7.5 8.5h9M7.5 12h6" /></Svg>
+);
 export const IconSettings = (p) => (
   <Svg {...p}><circle cx="12" cy="12" r="3.2" /><path d="M12 2.5v2.4M12 19.1v2.4M21.5 12h-2.4M4.9 12H2.5M18.7 5.3l-1.7 1.7M7 17l-1.7 1.7M18.7 18.7 17 17M7 7 5.3 5.3" /></Svg>
 );

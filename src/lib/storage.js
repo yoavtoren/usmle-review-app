@@ -291,6 +291,17 @@ export function saveGeneralTasks(tasks) {
   localStorage.setItem(GTASKS_KEY, JSON.stringify(tasks));
 }
 
+// ── Rail scratch notes (free-form pad in the sidebar) ────────────────────────
+const RAIL_NOTES_KEY = "usmle-app:rail-notes-v1";
+
+export function loadRailNotes() {
+  try { return localStorage.getItem(RAIL_NOTES_KEY) || ""; }
+  catch { return ""; }
+}
+export function saveRailNotes(text) {
+  localStorage.setItem(RAIL_NOTES_KEY, text || "");
+}
+
 // ── FA topic manual tracking ──────────────────────────────────────────────────
 const FA_TOPICS_KEY = "fa-topics-v2";
 

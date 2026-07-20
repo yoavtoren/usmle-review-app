@@ -41,6 +41,7 @@ const SYNC_KEYS = [
   "usmle-fa-intake-v1",         // First Aid intake
   "usmle-light-mode-v1",        // pause / light mode
   "usmle-app:aims-tasks-v2",    // AIMS tasks
+  "usmle-app:rail-notes-v1",    // sidebar scratch notes
   "usmle-app:rhythms-v1",       // workstream rhythms
   "usmle-app:reminder-state-v1",// reminder dismiss / snooze
   "usmle-app:email-config-v1",  // email reminder config

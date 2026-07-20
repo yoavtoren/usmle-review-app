@@ -373,6 +373,97 @@ code {
   border-radius: 50%; background: #B04A38; border: 1px solid var(--rail-bg);
 }
 
+/* ── Rail panel: inline Tasks & Notes ── */
+.rail-panel {
+  border-top: 1px solid var(--rail-line);
+  padding: 12px 12px 4px;
+  display: flex; flex-direction: column; gap: 10px;
+  flex-shrink: 0;
+}
+/* Collapses away in the mini rail — the widget needs its full width. */
+.app-shell.rail-mini .rail-panel { display: none; }
+
+.rail-panel-tabs {
+  display: flex; gap: 4px;
+  background: rgba(0,0,0,0.20); border-radius: 9px; padding: 3px;
+}
+.rail-panel-tab {
+  flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  padding: 6px 4px; border: none; border-radius: 7px; cursor: pointer;
+  background: transparent; color: var(--rail-text-dim);
+  font-family: inherit; font-size: 11.5px; font-weight: 650;
+  transition: background var(--t), color var(--t);
+}
+.rail-panel-tab:hover { color: var(--rail-text); }
+.rail-panel-tab.on {
+  background: rgba(213,179,106,0.16); color: var(--rail-gold);
+}
+.rail-panel-tab svg { flex-shrink: 0; }
+
+.rail-panel-body { display: flex; flex-direction: column; gap: 8px; }
+.rail-panel-empty {
+  margin: 2px 2px 0; font-size: 11.5px; color: var(--rail-text-dim); text-align: center; padding: 6px 0;
+}
+
+/* Quick-add row */
+.rail-task-add { display: flex; gap: 6px; }
+.rail-task-input {
+  flex: 1; min-width: 0; padding: 7px 9px; border-radius: 8px;
+  background: rgba(245,241,229,0.05); border: 1px solid var(--rail-line);
+  color: var(--rail-text); font-family: inherit; font-size: 12px;
+}
+.rail-task-input::placeholder { color: var(--rail-text-dim); }
+.rail-task-input:focus { outline: none; border-color: rgba(213,179,106,0.5); background: rgba(245,241,229,0.08); }
+.rail-task-addbtn {
+  flex-shrink: 0; width: 30px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px; cursor: pointer;
+  background: rgba(213,179,106,0.16); border: 1px solid rgba(213,179,106,0.28); color: var(--rail-gold);
+  transition: background var(--t), opacity var(--t);
+}
+.rail-task-addbtn:hover:not(:disabled) { background: rgba(213,179,106,0.28); }
+.rail-task-addbtn:disabled { opacity: 0.4; cursor: default; }
+
+/* Task list */
+.rail-task-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.rail-task { display: flex; align-items: center; gap: 8px; padding: 4px 2px; }
+.rail-task-check {
+  flex-shrink: 0; width: 17px; height: 17px; border-radius: 5px; cursor: pointer;
+  background: transparent; border: 1.5px solid rgba(245,241,229,0.28); color: var(--rail-bg);
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background var(--t), border-color var(--t);
+}
+.rail-task-check:hover { border-color: var(--rail-gold); }
+.rail-task-check svg { color: var(--rail-gold); }
+.rail-task-title {
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: 12px; color: var(--rail-text);
+}
+.rail-task.overdue .rail-task-check { border-color: #C77; }
+.rail-task.overdue .rail-task-title { color: #E9A79A; }
+
+.rail-panel-link {
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  padding: 6px; border: none; background: transparent; cursor: pointer;
+  color: var(--rail-text-dim); font-family: inherit; font-size: 11.5px; font-weight: 600;
+  transition: color var(--t);
+}
+.rail-panel-link:hover { color: var(--rail-gold); }
+.rail-panel-link svg { transform: scaleX(-1); }
+
+/* Notes pad */
+.rail-notes {
+  width: 100%; min-height: 92px; resize: vertical; padding: 9px 10px; border-radius: 8px;
+  background: rgba(245,241,229,0.05); border: 1px solid var(--rail-line);
+  color: var(--rail-text); font-family: inherit; font-size: 12px; line-height: 1.5;
+}
+.rail-notes::placeholder { color: var(--rail-text-dim); }
+.rail-notes:focus { outline: none; border-color: rgba(213,179,106,0.5); background: rgba(245,241,229,0.08); }
+.rail-notes-saved {
+  align-self: flex-start; font-size: 10px; color: var(--rail-gold);
+  opacity: 0; transition: opacity var(--t);
+}
+.rail-notes-saved.show { opacity: 0.85; }
+
 /* ── Rail foot: countdown plaque + actions ── */
 .rail-foot { border-top: 1px solid var(--rail-line); padding: 12px; display: flex; flex-direction: column; gap: 8px; }
 .rail-countdown {

@@ -5,6 +5,7 @@ import {
   IconHome, IconDash, IconClipboard, IconBook, IconBox,
   IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar, IconUser,
 } from "./icons.jsx";
+import RailPanel from "./RailPanel.jsx";
 import { getSyncStatus, subscribeSyncStatus } from "../lib/icloudSync.js";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
 import { EXAM_DATE, daysUntilExam, localISODate } from "../lib/config.js";
@@ -164,6 +165,8 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
             </div>
           ))}
         </nav>
+
+        <RailPanel onNavigate={go} />
 
         <div className="rail-foot">
           <div className="rail-countdown" title={`בחינה: ${examStr}`}>
