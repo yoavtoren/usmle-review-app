@@ -1,12 +1,24 @@
 {
-  "profileVersion": 1,
-  "updatedAt": "2026-07-09",
+  "profileVersion": 2,
+  "updatedAt": "2026-07-22",
+  "planNote": "Re-planned 22 Jul 2026 from the Step 1 strategy overhaul brief. Zone A move-out sprint 22 Jul–3 Aug (maintenance only — marked off), Zone B re-entry ramp 4–15 Aug, Zone C dedicated block 16 Aug–5 Oct, taper to the target sit date 9 Oct (hard cap 11 Oct). Full plan: src/lib/strategyData.js and the /strategy page.",
   "fulltime": true,
   "schedule": {
     "restDays": [],
     "reducedDays": { "Fri": "low" },
-    "commitments": [],
-    "offDates": []
+    "commitments": [
+      { "date": "2026-08-03", "what": "CEO business-planning event" },
+      { "date": "2026-08-05", "what": "CEO panel + speech" },
+      { "date": "2026-09-01", "what": "Permanent flat — front-loaded 1–5 Sept, viewings delegated to parents" },
+      { "date": "2026-09-13", "what": "Birthday — one dinner, no production" }
+    ],
+    "offDates": [
+      "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26",
+      "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31",
+      "2026-08-01", "2026-08-02", "2026-08-03",
+      "2026-08-05",
+      "2026-08-14", "2026-08-15"
+    ]
   },
   "retention": { "weakTopicReviewTarget": 2, "mode": "successCount" },
   "resourceMinutesPerTopic": {
@@ -23,7 +35,7 @@
   },
   "nbme": {
     "outputType": "passProbability",
-    "note": "PLACEHOLDER — replace thresholds with your NBME software's own predicted output / pass line.",
+    "note": "Step 1 is pass/fail — aim for a clear margin over passing, not a number.",
     "band": [
       { "minStd": 0,   "label": "not yet passing" },
       { "minStd": 196, "label": "borderline" },
@@ -32,29 +44,28 @@
     ]
   },
   "assessments": [
-    { "name": "NBME (baseline)", "date": "2026-09-14", "target": "pass", "result": null, "perSystem": [] },
-    { "name": "UWSA 1",          "date": "2026-09-20", "target": "pass", "result": null, "perSystem": [] },
-    { "name": "NBME (mid)",      "date": "2026-09-25", "target": "pass w/ margin", "result": null, "perSystem": [] },
-    { "name": "UWSA 2",          "date": "2026-09-30", "target": "comfortable pass", "result": null, "perSystem": [] },
-    { "name": "Free 120",        "date": "2026-10-02", "target": ">=65%", "result": null, "perSystem": [] },
-    { "name": "NBME (final)",    "date": "2026-10-03", "target": "comfortable pass", "result": null, "perSystem": [] }
+    { "name": "Diagnostic NBME 25 / UWSA 1", "date": "2026-08-12", "target": "pass", "result": null, "perSystem": [] },
+    { "name": "NBME 27",                     "date": "2026-08-29", "target": "pass", "result": null, "perSystem": [] },
+    { "name": "NBME 29",                     "date": "2026-09-12", "target": "pass w/ margin", "result": null, "perSystem": [] },
+    { "name": "NBME 31 / UWSA 2",            "date": "2026-09-26", "target": "comfortable pass", "result": null, "perSystem": [] },
+    { "name": "Free 120",                    "date": "2026-10-01", "target": ">=65%", "result": null, "perSystem": [] }
   ],
   "perSystemPerformance": [
-    { "system": "Cardiovascular",     "pct": null, "source": null },
-    { "system": "Renal",              "pct": null, "source": null },
-    { "system": "Respiratory",        "pct": null, "source": null },
-    { "system": "Hematology/Oncology","pct": null, "source": null },
-    { "system": "Endocrine",          "pct": null, "source": null },
-    { "system": "Gastrointestinal",   "pct": null, "source": null },
-    { "system": "Reproductive",       "pct": null, "source": null },
-    { "system": "Neurology",          "pct": null, "source": null },
-    { "system": "Psychiatry",         "pct": null, "source": null },
-    { "system": "MSK/Skin",           "pct": null, "source": null },
-    { "system": "Biochemistry",       "pct": null, "source": null },
-    { "system": "Immunology",         "pct": null, "source": null },
-    { "system": "Microbiology",       "pct": null, "source": null },
-    { "system": "Pharmacology",       "pct": null, "source": null },
-    { "system": "Pathology",          "pct": null, "source": null },
-    { "system": "Public Health",      "pct": null, "source": null }
+    { "system": "Cardiovascular",     "pct": 42, "source": "UWorld 22 Jul 2026 (42 Q)" },
+    { "system": "Renal",              "pct": 49, "source": "UWorld 22 Jul 2026 (21 Q)" },
+    { "system": "Respiratory",        "pct": 36, "source": "UWorld 22 Jul 2026 (32 Q)" },
+    { "system": "Hematology/Oncology","pct": 23, "source": "UWorld 22 Jul 2026 (26 Q)" },
+    { "system": "Endocrine",          "pct": 35, "source": "UWorld 22 Jul 2026 (30 Q)" },
+    { "system": "Gastrointestinal",   "pct": 58, "source": "UWorld 22 Jul 2026 (48 Q)" },
+    { "system": "Reproductive",       "pct": 45, "source": "UWorld 22 Jul 2026 (female repro + pregnancy, 14 Q)" },
+    { "system": "Neurology",          "pct": 49, "source": "UWorld 22 Jul 2026 (55 Q)" },
+    { "system": "Psychiatry",         "pct": 23, "source": "UWorld 22 Jul 2026 (24 Q)" },
+    { "system": "MSK/Skin",           "pct": 58, "source": "UWorld 22 Jul 2026 (rheum/MSK + derm, 29 Q)" },
+    { "system": "Biochemistry",       "pct": 29, "source": "UWorld 22 Jul 2026 (24 Q)" },
+    { "system": "Immunology",         "pct": 40, "source": "UWorld 22 Jul 2026 (11 Q)" },
+    { "system": "Microbiology",       "pct": 76, "source": "UWorld 22 Jul 2026 (50 Q)" },
+    { "system": "Pharmacology",       "pct": 39, "source": "UWorld 22 Jul 2026 (64 Q)" },
+    { "system": "Pathology",          "pct": 50, "source": "UWorld 22 Jul 2026 (56 Q)" },
+    { "system": "Public Health",      "pct": 30, "source": "UWorld 22 Jul 2026 (biostats 36 / ethics 23 / behavioral 27)" }
   ]
 }
