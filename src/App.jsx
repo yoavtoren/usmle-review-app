@@ -19,6 +19,8 @@ import TasksPage from "./components/TasksPage.jsx";
 import QuestionBank from "./components/QuestionBank.jsx";
 import ProgressTracker from "./components/ProgressTracker.jsx";
 import Planner from "./components/Planner.jsx";
+import StrategyPage from "./components/StrategyPage.jsx";
+import ErrorLogPage from "./components/ErrorLogPage.jsx";
 import AccountPage, { LoginGate } from "./components/AccountPage.jsx";
 import { vtNavigate } from "./lib/vt.js";
 
@@ -154,7 +156,7 @@ export default function App() {
   }, [nav]);
 
   // Step 1 is English / left-to-right; everything else is Hebrew / right-to-left.
-  const isEnglishArea = /^\/(step1|tests|fa|bank|progress|planner)(\/|$)/.test(loc.pathname);
+  const isEnglishArea = /^\/(step1|tests|fa|bank|progress|planner|strategy|errors)(\/|$)/.test(loc.pathname);
   const areaDir  = isEnglishArea ? "ltr" : "rtl";
   const areaLang = isEnglishArea ? "en" : "he";
 
@@ -215,6 +217,8 @@ export default function App() {
             } />
             <Route path="/fa/book" element={<FirstAidBook />} />
             <Route path="/planner" element={<Planner />} />
+            <Route path="/strategy" element={<StrategyPage />} />
+            <Route path="/errors" element={<ErrorLogPage />} />
             <Route path="/bank" element={<QuestionBank questions={questions} />} />
             <Route path="/progress" element={<ProgressTracker />} />
             <Route path="/tasks" element={<TasksPage />} />

@@ -33,6 +33,7 @@ const SYNC_KEYS = [
   "fa-topics-v2",               // First Aid topic coverage
   "test-log-v9",                // unified UWorld/NBME test log (result+stats+feeling)
   "usmle-scheduler-v1",         // adaptive planner state
+  "usmle-error-log-v1",         // error log (ENCODE step — why each question was missed)
   "usmle-q-seen-v1",            // question import timestamps
   "usmle-app:reset-progress-v2",// one-time reset guard (synced → runs once)
   "usmle-streak-v1",            // daily streak

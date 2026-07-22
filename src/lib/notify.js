@@ -107,7 +107,9 @@ export async function syncSystemNotifications({ questions } = {}) {
         id: hashId(rem.remId),
         title, body,
         schedule: { at: new Date(rem.fireTime) },
-        extra: { route: "/aims" },
+        // Plan milestones (assessments, radar dates, the 13:30 start trigger)
+        // open the strategy page; everything else is an AIMS deadline.
+        extra: { route: rem.item?.type === "plan" ? "/strategy" : "/aims" },
       });
     }
 

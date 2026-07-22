@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { vtNavigate } from "../lib/vt.js";
 import {
   IconHome, IconDash, IconClipboard, IconBook, IconBox,
-  IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar, IconUser,
+  IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar, IconUser, IconNote,
 } from "./icons.jsx";
 import RailPanel from "./RailPanel.jsx";
 import { getSyncStatus, subscribeSyncStatus } from "../lib/icloudSync.js";
@@ -81,8 +81,10 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
       label: "Step 1",
       // Route-language rule: these all open English/LTR study areas → English labels.
       items: [
+        { to: "/strategy", label: "Strategy", Icon: IconTarget },
         { to: "/planner", label: "Planner", Icon: IconCalendar },
         { to: "/step1", label: "Step 1 Board", Icon: IconDash },
+        { to: "/errors", label: "Error Log", Icon: IconNote },
         { to: "/tests", label: "Tests", Icon: IconClipboard },
         { to: "/bank", label: "Question Bank", Icon: IconBox },
         { to: "/progress", label: "Progress", Icon: IconPulse },

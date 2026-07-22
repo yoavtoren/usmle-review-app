@@ -5,6 +5,7 @@
 // so the messy deck `system` vocabulary lands on the 16 FA chapters cleanly.
 
 import { INTERVALS, loadProgress, loadTestLog, loadFATopics } from "./storage.js";
+import { systemWeaknessFromErrors } from "./errorLog.js";
 import { chaptersFromText } from "./faMap.js";
 import { EXAM_DATE_ISO, localISODate } from "./config.js";
 
@@ -29,6 +30,10 @@ const SYS_STAT_MATCH = {
   "Repro": ["reproductive", "pregnancy", "childbirth", "breast"],
   "Respiratory": ["pulmonary", "critical care"],
 };
+
+// The plan-unit system vocabulary, in one place, so UI that has to ask the user
+// "which system?" (e.g. the error log) writes names the weakness engine joins on.
+export const PLAN_SYSTEMS = Object.keys(SYS_STAT_MATCH);
 
 // Aggregate every logged test's per-subject + per-system stats into a raw
 // { total, correct } per plan-unit system. This is the live exam signal that
@@ -81,10 +86,15 @@ export const CAPACITY_LABELS = { low: "🌱 Low", med: "🌿 Medium", high: "�
 
 const DEFAULT_SETTINGS = {
   examDate: EXAM_DATE_ISO,
-  contentDeadline: "2026-09-14",
+  // Content must land before the taper (Free 120 + final NBME + error-log review
+  // in the last week of Sept / first days of Oct) — see strategyData.js.
+  contentDeadline: "2026-09-26",
   ankiProtected: true,
-  capacityPresets: { low: 90, med: 240, high: 420 },   // minutes incl. Anki
-  ankiReserveMin: { low: 45, med: 60, high: 75 },
+  // Minutes incl. Anki. The dedicated block is 10–12 h/day (high = 11 h); low is
+  // a move/travel day, med a ramp or lighter half-day.
+  capacityPresets: { low: 150, med: 360, high: 660 },
+  // Anki ≤ 4 h/day total — reviews in the morning, new cards in the afternoon.
+  ankiReserveMin: { low: 90, med: 150, high: 240 },
   blockMinutes: 30,
   // "Big and bold first" priority weights (§3.1). weak (1.8) sits just under lead
   // (2.0) so a system you're scoring badly on — or an untouched First Aid chapter —
@@ -209,6 +219,31 @@ export function migrate(raw) {
       ...state.settings,
       weights: { ...state.settings.weights, weak: Math.max(state.settings.weights.weak || 0, DEFAULT_SETTINGS.weights.weak) },
       weightsTunedFA: true,
+    };
+    changed = true;
+  }
+  // One-time re-tune from the 22 Jul strategy overhaul: the dedicated block is
+  // 10–12 h/day and Anki runs up to 4 h (reviews AM + new PM), so the old
+  // 90/240/420-minute presets and 45–75-minute Anki reserve both understated the
+  // day. Content also has to finish before the taper (last week of Sept), not
+  // mid-September. Math.max never lowers a value the user raised by hand.
+  if (!state.settings.planTuned2607) {
+    const cp = state.settings.capacityPresets || DEFAULT_SETTINGS.capacityPresets;
+    const ar = state.settings.ankiReserveMin || DEFAULT_SETTINGS.ankiReserveMin;
+    state.settings = {
+      ...state.settings,
+      capacityPresets: {
+        low: Math.max(cp.low || 0, DEFAULT_SETTINGS.capacityPresets.low),
+        med: Math.max(cp.med || 0, DEFAULT_SETTINGS.capacityPresets.med),
+        high: Math.max(cp.high || 0, DEFAULT_SETTINGS.capacityPresets.high),
+      },
+      ankiReserveMin: {
+        low: Math.max(ar.low || 0, DEFAULT_SETTINGS.ankiReserveMin.low),
+        med: Math.max(ar.med || 0, DEFAULT_SETTINGS.ankiReserveMin.med),
+        high: Math.max(ar.high || 0, DEFAULT_SETTINGS.ankiReserveMin.high),
+      },
+      contentDeadline: DEFAULT_SETTINGS.contentDeadline,
+      planTuned2607: true,
     };
     changed = true;
   }
@@ -571,6 +606,11 @@ export function recomputeWeakness(state, units, deck, seed, { faDone = null } = 
   const CONF_K = 30;
   const TEST_K = 6; // Laplace smoothing on the live miss-rate itself
 
+  // Channel F — the error log (ENCODE step of the 4-pass loop). Systems you keep
+  // logging misses in over the last 3 weeks pull themselves forward; already
+  // damped by confidence inside systemWeaknessFromErrors.
+  const errorWeak = systemWeaknessFromErrors();
+
   const next = { ...state, units: { ...state.units } };
   for (const u of units) {
     const prev = next.units[u.key] || {};
@@ -593,7 +633,8 @@ export function recomputeWeakness(state, units, deck, seed, { faDone = null } = 
 
     // First Aid / deck progress (chA) is the other live channel: mastering a
     // chapter's questions drops it. Weakness is the worse of the two live views.
-    const liveWeak = clamp01(Math.max(chA, examWeak));
+    const chF = errorWeak[u.system] || 0;                            // error log (live)
+    const liveWeak = clamp01(Math.max(chA, examWeak, chF));
 
     // Channel E — First Aid TRACKER coverage (live). Fraction of this unit's FA
     // topics you've ticked off in the tracker (fa-topics-v2). Covered material
@@ -672,7 +713,9 @@ export function refreshPlan(state, units, deck, seed, { faDone = null, dateISO =
 // ── Priority score (§3.1) ────────────────────────────────────────────────────
 function urgency(state, units, u, dateISO) {
   const daysLeft = Math.max(1, studyDaysBetween(dateISO, state.settings.contentDeadline));
-  const avgDaily = recentAvgDailyMin(state) || 180;
+  // No history yet → fall back to the medium capacity preset, not a fixed 180,
+  // so the day model stays consistent with the configured presets.
+  const avgDaily = recentAvgDailyMin(state) || state.settings.capacityPresets.med;
   const remainingHighYieldMin = units.reduce((sum, x) => {
     const st = state.units[x.key];
     if (st && (st.status === "done" || st.status === "dropped")) return sum;
@@ -1174,7 +1217,7 @@ export function feasibility(state, units, dateISO = todayISO()) {
     }
   }
   const daysLeft = Math.max(0, studyDaysBetween(dateISO, state.settings.contentDeadline));
-  const avgDaily = recentAvgDailyMin(state) || 180;
+  const avgDaily = recentAvgDailyMin(state) || state.settings.capacityPresets.med;
   const ankiPerDay = state.settings.ankiReserveMin.med;
   const perDay = Math.max(30, avgDaily - ankiPerDay);
   // Effective days honor profile rest/reduced days (Friday = reduced, etc.);

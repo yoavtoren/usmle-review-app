@@ -1,5 +1,7 @@
 import { loadReminderState, saveReminderState } from './timelineData.js';
 import { loadAllWorkstreamTasks, CATEGORIES } from './workstreamData.js';
+import { ASSESSMENTS, RADAR, currentZone } from './strategyData.js';
+import { localISODate } from './config.js';
 
 // ── Timezone helper ───────────────────────────────────────────────────────
 function tzToUTC(dateStr, timeStr, tz) {
@@ -67,6 +69,7 @@ const NUDGES = {};
 
 // Precise in-app nudge: exact date, exact days remaining, category.
 function generateNudge(item, token, dateStr) {
+  if (item.plain) return item.note || '';
   if (NUDGES[item.id]) {
     const sameDay = token.startsWith('T-0@');
     return NUDGES[item.id](daysLeftPhrase(daysLeftAt(dateStr, Date.now())), sameDay);
@@ -83,6 +86,8 @@ function generateNudge(item, token, dateStr) {
 // notification scheduled days ahead still states the correct days-remaining.
 export function buildNotificationContent(rem) {
   const { item, dateStr, fireTime } = rem;
+  // Plan nudges (the 13:30 start trigger) aren't deadlines — no countdown copy.
+  if (item.plain) return { title: item.title, body: item.note || '' };
   const n = daysLeftAt(dateStr, fireTime);
   let prefix;
   if (n < 0)       prefix = '⚠️ באיחור';
@@ -128,6 +133,42 @@ function collectReminders() {
       t.reminders || ["T-7d", "T-1d", "T-0@08:00"]
     );
   }
+
+  // ── Step 1 plan (strategyData.js) ───────────────────────────────────────
+  // He's in Prague until the flight, then Israel — the plan's times are local.
+  const today = localISODate();
+  const planTz = (d) => (d < '2026-08-04' ? 'Europe/Prague' : 'Asia/Jerusalem');
+
+  // Assessment days: two days out (protect the morning) and at 07:30 on the day.
+  for (const a of ASSESSMENTS) {
+    check(
+      {
+        id: `plan-assess-${a.date}`, type: 'plan', front: 'step1', date: a.date,
+        title: `מבחן הערכה: ${a.form}`,
+        note: `${a.role} · בתנאי מבחן, בבוקר, ברצף אחד · לתעד ולמיין מחדש את החולשות`,
+      },
+      a.date, planTz(a.date), ['T-2d', 'T-0@07:30']
+    );
+  }
+
+  // Deadline radar — the fixed dates the whole plan is built around.
+  for (const r of RADAR) {
+    check(
+      { id: `plan-radar-${r.date}-${r.front}`, type: 'plan', front: 'step1', date: r.date, title: r.he || r.what, note: r.front },
+      r.date, planTz(r.date), r.hot ? ['T-7d', 'T-2d', 'T-0@08:00'] : ['T-3d', 'T-0@08:00']
+    );
+  }
+
+  // The 13:30 "begin now" start trigger — one easy momentum task, every day.
+  // The id carries the date, so dismissing today's doesn't kill tomorrow's.
+  const zone = currentZone(today);
+  const momentum = zone.id === 'A'
+    ? 'משימת פתיחה אחת: לארוז קופסה אחת, ואז סרטון ביוסטטיסטיקה אחד בטלפון. לא "לעשות את המעבר" — רק להתחיל.'
+    : 'משימת פתיחה אחת: לפתוח UWorld ולענות על 5 השאלות הראשונות של הסט של היום. זה כל המשימה.';
+  check(
+    { id: `plan-begin-${today}`, type: 'plan', front: 'step1', plain: true, title: '13:30 — מתחילים עכשיו', note: momentum },
+    today, planTz(today), ['T-0@13:30']
+  );
 
   return all.sort((a, b) => a.fireTime - b.fireTime);
 }

@@ -11,6 +11,7 @@ export const FRONT_COLORS = {
 export const TYPE_ICONS = {
   "task-deadline": "📌",
   aims:            "🎯",
+  plan:            "🧭", // Step 1 plan milestones (see strategyData.js)
 };
 
 export const URGENCY_COLORS = {

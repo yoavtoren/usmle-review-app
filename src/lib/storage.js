@@ -603,6 +603,7 @@ const RESET_KEYS = [
   LIGHT_MODE_KEY,               // pause / light mode
   Q_SEEN_KEY,                   // question import timestamps
   "usmle-scheduler-v1",         // adaptive planner state
+  "usmle-error-log-v1",         // error log (why each question was missed)
 ];
 
 export function resetAllProgress() {

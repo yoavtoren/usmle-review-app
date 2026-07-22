@@ -13,8 +13,10 @@ import { vtNavigate } from "../lib/vt.js";
 import { EXAM_DATE, daysUntilExam, localISODate, startOfLocalDay } from "../lib/config.js";
 import {
   IconTarget, IconArrow, IconFlame, IconClock,
-  IconPulse, IconBook, IconClipboard, IconBox, IconCheck, IconSparkle, IconCalendar,
+  IconPulse, IconBook, IconClipboard, IconBox, IconCheck, IconSparkle, IconCalendar, IconNote,
 } from "./icons.jsx";
+import { currentBlock } from "../lib/strategyData.js";
+import { loadErrors, whyCounts, isoDaysAgo } from "../lib/errorLog.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -90,6 +92,14 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
   const journeyPct = Math.round((elapsed / totalSpan) * 100);
 
   const faPct = faStats.total > 0 ? Math.round((faStats.seen / faStats.total) * 100) : 0;
+
+  // Quick-nav stats for the strategy + error-log chips: which block of the plan
+  // we're in, and whether the ENCODE step happened this week.
+  const strategyStat = currentBlock()?.label || "התוכנית";
+  const errorStat = useMemo(() => {
+    const n = whyCounts(loadErrors(), isoDaysAgo(7)).total;
+    return n ? `${n} השבוע` : "אין רישום";
+  }, []);
 
   const latest = log[log.length - 1] || null;
   const cohortDelta = latest && Number.isFinite(latest.uworldAvg) ? Math.round(latest.score - latest.uworldAvg) : null;
@@ -393,6 +403,8 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
 
           {/* I · Quick nav */}
           <nav className="hd-nav c12">
+            <NavChip Icon={IconTarget} label="אסטרטגיה" stat={strategyStat} onClick={() => go("/strategy")} />
+            <NavChip Icon={IconNote} label="יומן טעויות" stat={errorStat} onClick={() => go("/errors")} />
             <NavChip Icon={IconClipboard} label="מבחנים" stat={`${log.length} מבחנים`} onClick={() => go("/tests")} />
             <NavChip Icon={IconBox} label="בנק שאלות" stat={loading ? "…" : `${testStats.total || 0} שאלות`} onClick={() => go("/bank")} />
             <NavChip Icon={IconPulse} label="התקדמות" stat={`${masteredWeek} השבוע`} onClick={() => go("/progress")} />
