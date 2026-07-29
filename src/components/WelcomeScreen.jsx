@@ -149,9 +149,13 @@ function TaskManager({ tasks, setTasks }) {
     setImportError("");
     const reader = new FileReader();
     reader.onload = ev => {
-      const ok = importAllData(ev.target.result);
-      if (ok) window.location.reload();
-      else setImportError("Import failed — invalid file.");
+      const r = importAllData(ev.target.result);
+      if (r.ok) { window.location.reload(); return; }
+      setImportError({
+        "not-json": "Import failed — that file isn't valid JSON.",
+        "bad-shape": "Import failed — the file isn't a backup object.",
+        "no-known-keys": "Import failed — no recognised app data in that file.",
+      }[r.reason] || "Import failed — invalid file.");
     };
     reader.readAsText(file);
     e.target.value = "";

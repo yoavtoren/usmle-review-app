@@ -45,6 +45,8 @@ export default function Planner() {
   const nav = useNavigate();
   const units = plan?.units || [];
   const [sched, setSched] = useState(null);
+  // Mirror of `sched` that updates synchronously — see `mutate` below.
+  const schedRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [view, setView] = useState("today");   // today | timeline | calendar
   const [undoable, setUndoable] = useState(null); // { key } — shows "Done — Undo" for ~10s
@@ -68,6 +70,10 @@ export default function Planner() {
     setSched(s);
     setReady(true);
   }, [plan, deck, seed, profile, faBaseline]); // eslint-disable-line
+
+  // Keep the synchronous mirror aligned with whatever set `sched` (bootstrap,
+  // 🔄 re-prioritize, an imported backup).
+  useEffect(() => { schedRef.current = sched; }, [sched]);
 
   useEffect(() => () => { clearTimeout(undoTimer.current); clearTimeout(refreshTimer.current); }, []);
 
@@ -107,8 +113,21 @@ export default function Planner() {
   const activeKey = plannedKeys.find((k) => !completed.has(k) && sched.units[k]?.status !== "done");
   const activeUnit = activeKey ? byKey[activeKey] : null;
 
-  /* ── mutators (each returns fresh state) ── */
-  const mutate = (fn) => setSched((prev) => fn(prev));
+  /* ── mutators (each returns fresh state) ──
+     Scheduler mutators are NOT pure: they write localStorage, advance the
+     completion EMA / postpone counters, and stash the `lastDone` undo snapshot.
+     Running them inside a setState updater meant React 18 StrictMode invoked them
+     twice in development — double-counting every miss and capturing the undo
+     snapshot of the ALREADY-mutated state, so Undo restored the wrong thing.
+     Compute against a ref instead, so successive mutations in one tick still
+     chain off each other. */
+  const mutate = (fn) => {
+    const base = schedRef.current;
+    if (!base) return;
+    const next = fn(base);
+    schedRef.current = next;
+    setSched(next);
+  };
   const pickCapacity = (cap) => mutate((s) => planDay(s, units, date, cap));
   const markDone = (key, mins) => {
     recordActivity();

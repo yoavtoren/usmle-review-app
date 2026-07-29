@@ -20,35 +20,15 @@ import {
   initWebCloud, webBackend, onAuthChange, isSignedIn, userLabel,
 } from "./cloudkitWeb.js";
 import { isWebCloudConfigured } from "./cloudConfig.js";
+import { DATA_KEYS, DATA_KEY_SET } from "./dataKeys.js";
 
 const CloudKitKV = registerPlugin("CloudKitKV");
 const ICloudKV = registerPlugin("ICloudKV"); // legacy KVS fallback
 
-// Data keys worth syncing. UI-only prefs (e.g. rail-collapsed) are intentionally
-// excluded so device-local layout choices don't bounce between devices.
-const SYNC_KEYS = [
-  "usmle-review-progress-v1",   // spaced-repetition cards
-  "usmle-tasks-v1",             // USMLE tasks
-  "general-tasks-v1",           // personal tasks
-  "fa-topics-v2",               // First Aid topic coverage
-  "test-log-v9",                // unified UWorld/NBME test log (result+stats+feeling)
-  "usmle-scheduler-v1",         // adaptive planner state
-  "usmle-error-log-v1",         // error log (ENCODE step — why each question was missed)
-  "usmle-q-seen-v1",            // question import timestamps
-  "usmle-app:reset-progress-v2",// one-time reset guard (synced → runs once)
-  "usmle-streak-v1",            // daily streak
-  "usmle-q-intake-v1",          // question intake
-  "usmle-topic-ctr-v1",         // topic counters
-  "usmle-fa-intake-v1",         // First Aid intake
-  "usmle-light-mode-v1",        // pause / light mode
-  "usmle-app:aims-tasks-v2",    // AIMS tasks
-  "usmle-app:rail-notes-v1",    // sidebar scratch notes
-  "usmle-app:rhythms-v1",       // workstream rhythms
-  "usmle-app:reminder-state-v1",// reminder dismiss / snooze
-  "usmle-app:email-config-v1",  // email reminder config
-  "fa-book-last-page",          // last First Aid page read
-];
-const SYNC_SET = new Set(SYNC_KEYS);
+// Data keys worth syncing — the shared registry in dataKeys.js, so a key can
+// never be synced without also being backed up and recoverable.
+const SYNC_KEYS = DATA_KEYS;
+const SYNC_SET = DATA_KEY_SET;
 
 const META_KEY = "usmle:icloud-meta";           // { localKey: lastChangeMs }
 const PRELINK_BACKUP_KEY = "usmle:icloud-prelink-backup";

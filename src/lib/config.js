@@ -7,6 +7,11 @@ export const EXAM_DATE_ISO = "2026-10-11";
 // off-by-one-day flip in evening hours for UTC+ timezones (Israel).
 export const EXAM_DATE = new Date(2026, 9, 11);
 
+// Size of the UWorld Step 1 Qbank. One constant — the Tests page's completion
+// bar and the planner's daily-quota goal used to disagree (3400 vs 3200), so the
+// two screens reported different "% of the Qbank done" for the same work.
+export const QBANK_TOTAL = 3400;
+
 const DAY_MS = 86_400_000;
 
 // Midnight (local) of the given date — the app's single day-boundary definition.

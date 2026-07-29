@@ -4,6 +4,7 @@ import {
   isLoginSkipped, setLoginSkipped,
 } from "../lib/icloudSync.js";
 import { adoptAuthButton, releaseAuthButtons } from "../lib/cloudkitWeb.js";
+import { listSnapshots, restoreSnapshot, snapshotAll } from "../lib/storage.js";
 import { IconCheck, IconPulse } from "./icons.jsx";
 
 function useSyncStatus() {
@@ -53,6 +54,7 @@ function TransferButtons() {
   const doDownload = async () => {
     if (!window.confirm("להוריד את הנתונים מהענן ולדרוס את מה שיש במכשיר הזה? האפליקציה תיטען מחדש.")) return;
     setBusy("down"); setMsg(null);
+    snapshotAll("pre-download");   // cloud is about to overwrite this device
     try {
       const r = await downloadAll();
       if (!r.ok) setBusy(null);
@@ -72,6 +74,72 @@ function TransferButtons() {
       <p className="acct-meta acct-transfer-hint">
         העלאה = המכשיר הזה מנצח ודורס את הענן · הורדה = הענן דורס את המכשיר הזה.
       </p>
+      {msg && <p className="acct-meta">{msg}</p>}
+    </div>
+  );
+}
+
+// Local recovery ring. Every destructive action (reset, delete a test, re-import,
+// re-schedule) snapshots the full data set first; this is where you get it back.
+function RecoveryCard() {
+  const [snaps, setSnaps] = useState(listSnapshots);
+  const [msg, setMsg] = useState(null);
+  const [armed, setArmed] = useState(null); // snapshot `at` awaiting confirmation
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
+
+  const restore = (at) => {
+    if (armed !== at) {
+      setArmed(at);
+      clearTimeout(timer.current);
+      timer.current = setTimeout(() => setArmed(null), 3000);
+      return;
+    }
+    clearTimeout(timer.current);
+    setArmed(null);
+    const r = restoreSnapshot(at);
+    if (!r.ok) { setMsg("השחזור נכשל — הגיבוי לא נמצא."); return; }
+    setSnaps(listSnapshots());
+    setMsg(`שוחזרו ${r.count} תחומים — טוען מחדש…`);
+    setTimeout(() => window.location.reload(), 900);
+  };
+
+  return (
+    <div className="acct-card">
+      <div className="acct-card-head">
+        <span className="acct-title">שחזור מקומי</span>
+        <span className="acct-state">{snaps.length ? `${snaps.length} נקודות שחזור` : "אין עדיין"}</span>
+      </div>
+      {snaps.length === 0 ? (
+        <p className="acct-line">
+          לפני כל פעולה הרסנית (איפוס התקדמות, מחיקת מבחן, ייבוא גיבוי, פיזור מחדש של לוח החזרות)
+          נשמרת אוטומטית נקודת שחזור מלאה. עדיין לא בוצעה אף פעולה כזו.
+        </p>
+      ) : (
+        <>
+          <p className="acct-line">
+            נקודות שחזור נשמרות אוטומטית לפני כל פעולה הרסנית. שחזור דורס את הנתונים הנוכחיים
+            במכשיר הזה — אבל קודם שומר אותם כנקודת שחזור נוספת, כך שאפשר תמיד לחזור.
+          </p>
+          <ul className="acct-snaps">
+            {snaps.map((sn) => (
+              <li key={sn.at} className="acct-snap">
+                <span className="acct-snap-when">
+                  {new Date(sn.at).toLocaleString("he-IL", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
+                </span>
+                <span className="acct-snap-label">{sn.label}</span>
+                <button
+                  className="btn-secondary btn-xs"
+                  onClick={() => restore(sn.at)}
+                  style={armed === sn.at ? { color: "var(--bad)", borderColor: "var(--bad)", fontWeight: 700 } : undefined}
+                >
+                  {armed === sn.at ? "בטוח? שחזר" : "שחזר"}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
       {msg && <p className="acct-meta">{msg}</p>}
     </div>
   );
@@ -164,9 +232,11 @@ export default function AccountPage() {
         {s.error && s.state === "on" && <p className="acct-error">שגיאת סנכרון אחרונה: {s.error}</p>}
       </div>
 
+      <RecoveryCard />
+
       <p className="acct-footnote">
         מיזוג לפי "השינוי האחרון מנצח" עבור כל תחום בנפרד. לפני הקישור הראשון נשמר גיבוי
-        מקומי מלא (usmle:icloud-prelink-backup), וייצוא ידני זמין דרך מסך האימייל.
+        מקומי מלא (usmle:icloud-prelink-backup), וייצוא ידני מלא זמין במסך Step 1.
       </p>
     </div>
   );

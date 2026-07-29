@@ -5,6 +5,7 @@ import { chaptersFromText } from "../lib/faMap.js";
 import { markTaskInFA, lookupPage } from "../lib/faSync.js";
 import { FA_EDITION } from "../lib/firstAidData.js";
 import ReviewCharts from "./ReviewCharts.jsx";
+import { localISODate } from "../lib/config.js";
 import { playPop } from "../lib/sound.js";
 
 const BASE = import.meta.env.BASE_URL;
@@ -167,7 +168,11 @@ function ProgressChart({ lsTopics, chapterStats }) {
     for (const [key, val] of Object.entries(lsTopics)) {
       if (!val.done || !val.doneAt) continue;
       const chFile = key.split("::")[0];
-      const date = val.doneAt.slice(0, 10);
+      // doneAt is a UTC ISO timestamp; bucket it by the LOCAL calendar day so the
+      // bar lines up with the local label under it. Slicing the UTC string put a
+      // topic ticked after midnight in Israel on the previous day's bar while the
+      // label above it (toLocaleDateString) already read as the new day.
+      const date = localISODate(new Date(val.doneAt));
       if (!byDate[date]) byDate[date] = {};
       byDate[date][chFile] = (byDate[date][chFile] || 0) + 1;
     }
@@ -176,7 +181,7 @@ function ProgressChart({ lsTopics, chapterStats }) {
     for (let i = 29; i >= 0; i--) {
       const d = new Date(now);
       d.setDate(d.getDate() - i);
-      const iso = d.toISOString().slice(0, 10);
+      const iso = localISODate(d);
       dates.push({
         date: iso,
         label: d.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
@@ -434,7 +439,8 @@ export default function FADashboard({ onBack, onTrack }) {
     for (const [key, val] of Object.entries(lsTopics)) {
       const rank = val.difficulty ?? null;
       for (const rev of (val.reviews || [])) {
-        if (rev.completedAt) evs.push({ at: rev.completedAt.slice(0, 10), rank, topicId: key });
+        // Local calendar day, matching the rest of the app's day boundary.
+        if (rev.completedAt) evs.push({ at: localISODate(new Date(rev.completedAt)), rank, topicId: key });
       }
     }
     return evs;

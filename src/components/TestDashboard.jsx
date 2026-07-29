@@ -1,12 +1,12 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { loadTestLog, saveTestLog, loadProgress, testScore } from "../lib/storage.js";
+import { loadTestLog, saveTestLog, loadProgress, testScore, deleteTest } from "../lib/storage.js";
 import TestEntryForm, { emptyEntry, MOODS } from "./TestEntryForm.jsx";
 import { useLongPress } from "../lib/longPress.js";
 import { impact, notification } from "../lib/haptics.js";
+import { QBANK_TOTAL } from "../lib/config.js";
 
 const BASE = import.meta.env.BASE_URL;
-const QBANK_TOTAL = 3400;   // UWorld Step 1 Qbank (~3,400 questions)
 const DEFAULT_BLOCK = 40;   // standard UWorld block size when count not given
 
 // Resolve which deck block a logged test maps to. Prefer explicit fields, else
@@ -354,9 +354,7 @@ export default function TestDashboard({ onBack, onStudy }) {
     }
     clearTimeout(confirmTimer.current);
     setConfirmDelId(null);
-    const next = tests.filter(t => t.id !== id);
-    setTests(next);
-    saveTestLog(next);
+    setTests(deleteTest(id));   // snapshots first — recoverable from /account
   }
 
   const hasTrend = stats?.trend != null;

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {
   SUBJECTS, SYSTEMS, loadSnapshots, topicStats, weakSpots, overall,
 } from "../lib/progressData.js";
-import { loadTestLog, saveTestLog } from "../lib/storage.js";
+import { deleteTest } from "../lib/storage.js";
 import { IconPulse } from "./icons.jsx";
 
 const KINDS = [
@@ -34,8 +34,9 @@ export default function ProgressTracker() {
 
   function refresh() { setSnaps(loadSnapshots()); }
   // Two-tap inline confirm (same pattern as the Tests page): first tap arms
-  // "Sure?", second tap deletes, disarms after ~3s.
-  function deleteTest(id) {
+  // "Sure?", second tap deletes, disarms after ~3s. The delete itself goes
+  // through storage.deleteTest, which snapshots first (recoverable from /account).
+  function armDelete(id) {
     if (confirmDelId !== id) {
       setConfirmDelId(id);
       clearTimeout(confirmTimer.current);
@@ -44,7 +45,7 @@ export default function ProgressTracker() {
     }
     clearTimeout(confirmTimer.current);
     setConfirmDelId(null);
-    saveTestLog(loadTestLog().filter((t) => t.id !== id));
+    deleteTest(id);
     refresh();
   }
 
@@ -196,7 +197,7 @@ export default function ProgressTracker() {
                   </span>
                   <button className="prog-hist-btn" onClick={() => nav("/tests", { state: { editId: s.id } })}>Edit in Tests</button>
                   <button className="prog-hist-btn prog-hist-del"
-                    onClick={() => deleteTest(s.id)}
+                    onClick={() => armDelete(s.id)}
                     title={confirmDelId === s.id ? "Tap again to delete — removes this test's result and stats" : "Delete this test"}
                     style={confirmDelId === s.id ? { borderColor: "var(--bad)", color: "var(--bad)", background: "var(--bad-soft)", fontWeight: 700 } : undefined}>
                     {confirmDelId === s.id ? "Sure?" : "Delete"}

@@ -26,10 +26,15 @@ import { vtNavigate } from "./lib/vt.js";
 
 const BASE = import.meta.env.BASE_URL;
 
-function useAppData() {
+function useAppData(routeKey) {
   const [deck, setDeck] = useState(null);
   const [faData, setFaData] = useState(null);
-  const [progress] = useState(loadProgress());
+  // Saved progress, re-read whenever the app regains focus. This used to be a
+  // one-shot `useState(loadProgress())` — frozen for the whole session — so the
+  // sidebar's due badge, the OS notification sync and the daily email digest all
+  // kept reporting boot-time counts no matter how many cards you rated.
+  // (The lazy `useState(fn)` form also stops loadProgress() running every render.)
+  const [progress, setProgress] = useState(loadProgress);
   // Deck fetch lifecycle — loading shows "…" placeholders, error raises the retry banner.
   const [deckStatus, setDeckStatus] = useState({ loading: true, error: false });
   const [fetchKey, setFetchKey] = useState(0);
@@ -49,6 +54,21 @@ function useAppData() {
   }, [fetchKey]);
 
   const retry = () => setFetchKey((k) => k + 1);
+
+  // Study screens write progress straight to localStorage and are unmounted on
+  // navigation (the route is keyed by pathname), so re-reading on focus/visibility
+  // is enough to keep every shell-level count honest.
+  useEffect(() => {
+    const refresh = () => setProgress(loadProgress());
+    const onVisible = () => { if (document.visibilityState === "visible") refresh(); };
+    refresh();                       // also fires on every route change (routeKey)
+    window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [routeKey]);
 
   const testStats = useMemo(() => {
     if (!deck) return { total: 0, missed: 0, mastered: 0, due: 0 };
@@ -97,9 +117,9 @@ function DataErrorBanner({ onRetry, onDismiss }) {
 }
 
 export default function App() {
-  const { testStats, faStats, questions, dataLoading, dataError, retry } = useAppData();
   const nav = useNavigate();
   const loc = useLocation();
+  const { testStats, faStats, questions, dataLoading, dataError, retry } = useAppData(loc.pathname);
 
   const [dueCount, setDueCount]     = useState(getDueCount);
   const [showPopCenter, setShowPopCenter] = useState(false);
@@ -151,9 +171,9 @@ export default function App() {
   }, [questions, reviewDue]);
 
   // Tapping a system notification deep-links to the relevant page.
-  useEffect(() => {
-    attachNotificationTapHandler((route) => nav(route, route === "/tests/review" ? { state: { filter: "due" } } : undefined));
-  }, [nav]);
+  useEffect(() => attachNotificationTapHandler(
+    (route) => nav(route, route === "/tests/review" ? { state: { filter: "due" } } : undefined)
+  ), [nav]);
 
   // Step 1 is English / left-to-right; everything else is Hebrew / right-to-left.
   const isEnglishArea = /^\/(step1|tests|fa|bank|progress|planner|strategy|errors)(\/|$)/.test(loc.pathname);

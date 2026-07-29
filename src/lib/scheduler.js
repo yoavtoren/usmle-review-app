@@ -7,7 +7,7 @@
 import { INTERVALS, loadProgress, loadTestLog, loadFATopics } from "./storage.js";
 import { systemWeaknessFromErrors } from "./errorLog.js";
 import { chaptersFromText } from "./faMap.js";
-import { EXAM_DATE_ISO, localISODate } from "./config.js";
+import { EXAM_DATE_ISO, QBANK_TOTAL, localISODate } from "./config.js";
 
 // Maps each plan-unit system (short vocab) to the substrings that identify its
 // rows in the UWorld/NBME stat breakdown (subjects + systems taxonomy). Lets the
@@ -111,7 +111,7 @@ const DEFAULT_SETTINGS = {
   // finish by the content deadline, plus any you completed before using the app
   // (so the daily quota starts from your real position). ~3200 ≈ the full Step-1
   // Qbank; adjust in Settings.
-  uworldGoalTotal: 3200,
+  uworldGoalTotal: QBANK_TOTAL,
   uworldDoneOffset: 0,
 };
 
@@ -711,7 +711,18 @@ export function refreshPlan(state, units, deck, seed, { faDone = null, dateISO =
 }
 
 // ── Priority score (§3.1) ────────────────────────────────────────────────────
-function urgency(state, units, u, dateISO) {
+// The schedule-pressure term is identical for every unit in a scoring pass, but
+// computing it costs an O(units) reduce — and priority() is called once per unit,
+// which made every planDay/projectSchedule pass O(n²). Memoize it per
+// (state identity, date).
+//
+// Safe because the memoized quantity only depends on which units are done or
+// dropped, and a planning pass only ever moves units into `scheduled`/`skim`/
+// `in_progress` — never into `done`/`dropped`. Any mutator that DOES retire a
+// unit (recordDone, applyTriage) builds a new state object, which misses the memo.
+let _urgencyMemo = { state: null, dateISO: null, base: 0 };
+function urgencyBase(state, units, dateISO) {
+  if (_urgencyMemo.state === state && _urgencyMemo.dateISO === dateISO) return _urgencyMemo.base;
   const daysLeft = Math.max(1, studyDaysBetween(dateISO, state.settings.contentDeadline));
   // No history yet → fall back to the medium capacity preset, not a fixed 180,
   // so the day model stays consistent with the configured presets.
@@ -723,8 +734,13 @@ function urgency(state, units, u, dateISO) {
   }, 0);
   const capacityLeft = daysLeft * avgDaily;
   const base = clamp01(remainingHighYieldMin / Math.max(1, capacityLeft));
+  _urgencyMemo = { state, dateISO, base };
+  return base;
+}
+
+function urgency(state, units, u, dateISO) {
   const st = state.units[u.key] || {};
-  return base + 0.15 * Math.min(st.postponeCount || 0, 4);
+  return urgencyBase(state, units, dateISO) + 0.15 * Math.min(st.postponeCount || 0, 4);
 }
 
 // Has a done/skim/review unit's spaced interval elapsed? (reuses storage.js INTERVALS)
@@ -784,16 +800,23 @@ export function priority(state, units, u, dateISO, recentSystems = []) {
 }
 
 // ── Rollover (§3.3) ──────────────────────────────────────────────────────────
+// Statuses that still represent OUTSTANDING work — the single definition shared
+// by the day planner's pool, the rollover sweep, the feasibility monitor and the
+// forward projection. They disagreed before, which stranded `skim` units as
+// phantom work that was projected forever but could never be scheduled.
+export const POOL_STATUSES = ["todo", "scheduled", "in_progress", "skim"];
+
 export function rollover(state, dateISO) {
   const next = { ...state, units: { ...state.units } };
   let changed = false;
   for (const [key, st] of Object.entries(next.units)) {
     const stale =
-      (st.status === "scheduled" || st.status === "in_progress") &&
+      (st.status === "scheduled" || st.status === "in_progress" || st.status === "skim") &&
       st.plannedDate && st.plannedDate < dateISO;
     if (stale) {
       next.units[key] = {
-        ...st, status: "scheduled",
+        // A skimmed unit that rolled over is still a skim — only its date resets.
+        ...st, status: st.status === "skim" ? "skim" : "scheduled",
         postponeCount: (st.postponeCount || 0) + 1, plannedDate: null,
       };
       changed = true;
@@ -840,13 +863,24 @@ export function planDay(state, units, dateISO, capacity) {
   const content = budget - uworldBudget;
   const basicsBudget = Math.round(content * split.basicsPct);
 
-  // Pool = not-done units (todo / scheduled / in_progress), plus weak units
+  // Pool = not-done units (todo / scheduled / in_progress / skim), plus weak units
   // awaiting a retention review whose spaced interval is due (§retention target).
+  // `skim` MUST be in the pool: auto-triage (applyTriage) demotes low-yield units
+  // to skim, and the forward projection already lays them out — leaving them out
+  // here stranded them forever as phantom work on the Gantt and calendar that no
+  // day could ever schedule. A skim unit costs half its estimate (see estFor).
   const inPool = (u) => {
     const st = s.units[u.key] || {};
-    if (["todo", "scheduled", "in_progress"].includes(st.status)) return true;
+    if (POOL_STATUSES.includes(st.status)) return true;
     return st.status === "review" && reviewDue(s, u);
   };
+  // Snapshot the skim set BEFORE filling: fill() rewrites each picked unit's
+  // status, so reading it back mid-pass would lose the demotion.
+  const skimKeys = new Set(units.filter((u) => s.units[u.key]?.status === "skim").map((u) => u.key));
+  // Minutes a unit costs today — skimming is deliberately half the full read.
+  const estFor = (u) => (skimKeys.has(u.key)
+    ? Math.max(1, Math.round(u.estMinutes / 2))
+    : u.estMinutes);
   const scoreDesc = (a, b) => b.p - a.p;
   const score = (list) => list.map((u) => ({ u, p: priority(s, units, u, dateISO, recentSystems) })).sort(scoreDesc);
 
@@ -866,7 +900,7 @@ export function planDay(state, units, dateISO, capacity) {
   const sysCap = content * SYS_DAY_FRACTION;
   const dayMinutesBySystem = () => {
     const m = {};
-    for (const k of planned) { const u = byKey[k]; if (u) m[u.system] = (m[u.system] || 0) + u.estMinutes; }
+    for (const k of planned) { const u = byKey[k]; if (u) m[u.system] = (m[u.system] || 0) + estFor(u); }
     return m;
   };
   const fill = (scored, cap, { allowPartial = false, minOne = false, ceiling = Infinity } = {}) => {
@@ -879,7 +913,7 @@ export function planDay(state, units, dateISO, capacity) {
       for (let i = 0; i < scored.length; i++) {
         const { u, p } = scored[i];
         if (planned.includes(u.key)) continue;
-        const est = u.estMinutes;
+        const est = estFor(u);
         const sysUsed = daySys[u.system] || 0;
         const isFirstOverall = planned.length === 0;
         const forced = minOne && placedHere === 0;              // guarantee one from this track
@@ -895,7 +929,7 @@ export function planDay(state, units, dateISO, capacity) {
       }
       if (bestIdx < 0) break;
       const { u } = scored[bestIdx];
-      const est = u.estMinutes;
+      const est = estFor(u);
       if (planned.length === 0 && allowPartial && est > budget && capacity === "low") {
         planned.push(u.key);
         s.units[u.key] = { ...s.units[u.key], status: "in_progress", plannedDate: dateISO };
@@ -903,7 +937,13 @@ export function planDay(state, units, dateISO, capacity) {
         break;
       }
       planned.push(u.key);
-      s.units[u.key] = { ...s.units[u.key], status: "scheduled", plannedDate: dateISO };
+      // A triaged unit stays `skim` while it sits on the day — otherwise planning
+      // the day would silently promote it back to a full read.
+      s.units[u.key] = {
+        ...s.units[u.key],
+        status: skimKeys.has(u.key) ? "skim" : "scheduled",
+        plannedDate: dateISO,
+      };
       used += est; localUsed += est; placedHere++;
     }
   };
@@ -958,12 +998,20 @@ export function planDay(state, units, dateISO, capacity) {
   };
 
   const prevDay = s.days[dateISO] || {};
+  // A LOGGED UWorld block is recorded work, exactly like a completed unit — and
+  // re-planning today happens often (resize the day, 🔄 re-prioritize, change the
+  // Qbank goal). Rebuilding `uworld` from scratch used to wipe done/correct/total,
+  // which also silently walked `uworldDone()` — and therefore the whole Qbank
+  // pace — backwards. Refresh the block's targets from the new plan, then let the
+  // logged result win.
+  const prevUw = prevDay.uworld;
+  const keptUworld = prevUw?.done ? { ...uworld, ...prevUw } : uworld;
   s.days[dateISO] = {
     capacity,
     planned: orderedPlanned,
     anchor,
     basics,
-    uworld,
+    uworld: keptUworld,
     completed: prevDay.completed || [],
     missed: prevDay.missed || [],
     ankiDone: prevDay.ankiDone || false,
@@ -1212,7 +1260,10 @@ export function feasibility(state, units, dateISO = todayISO()) {
   let remainingMin = 0;
   for (const u of units) {
     const st = state.units[u.key] || {};
-    if (["todo", "scheduled", "in_progress"].includes(st.status)) {
+    // `skim` belongs here: it is outstanding work at half cost. Excluding it made
+    // the half-estimate branch below unreachable AND under-counted the workload,
+    // so the monitor reported "on track" while triaged units sat unschedulable.
+    if (POOL_STATUSES.includes(st.status)) {
       remainingMin += st.status === "skim" ? u.estMinutes / 2 : u.estMinutes;
     }
   }
@@ -1253,7 +1304,7 @@ export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 
   // Score the remaining pool ONCE — priority() is O(n) and would be too slow to
   // call per pick. Diversity is layered on per-day at pick time using this base.
   const scored = units
-    .filter((u) => ["todo", "scheduled", "in_progress", "skim"].includes(state.units[u.key]?.status || "todo"))
+    .filter((u) => POOL_STATUSES.includes(state.units[u.key]?.status || "todo"))
     .map((u) => ({
       key: u.key, u,
       remain: (state.units[u.key]?.status === "skim" ? u.estMinutes / 2 : u.estMinutes),
@@ -1430,7 +1481,11 @@ function maybeRetune(state, dateISO) {
   const rate = s.adaptation.completionRateEMA;
   const rh = s.adaptation.reasonHist;
   if (rate < 0.6) {
-    s.settings.capacityBiasMin = Math.min((s.settings.capacityBiasMin || 0) + 20, 120);
+    // capacityBiasMin lives on `adaptation` — that's what planDay subtracts from
+    // the day's budget (and what the capacity chips display). Writing it to
+    // `settings` meant this whole branch — "you keep not finishing, so make the
+    // day smaller" — silently did nothing.
+    s.adaptation.capacityBiasMin = Math.min((s.adaptation.capacityBiasMin || 0) + 20, 120);
     s.settings.weights.urgency = Math.min(s.settings.weights.urgency + 0.1, 1.5);
   } else if (rate > 0.9) {
     s.adaptation.capacityBiasMin = Math.max((s.adaptation.capacityBiasMin || 0) - 15, -30);

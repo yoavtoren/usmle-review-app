@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   loadProgress, getReviewSchedule, getMasteredThisWeek,
-  loadTestLog, getWeakSubjects,
+  loadTestLog, getWeakSubjects, testScore,
 } from "../lib/storage.js";
 import { weakSpots } from "../lib/progressData.js";
 import { loadCategoryTasks } from "../lib/workstreamData.js";
@@ -78,7 +78,14 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
   const d = useMemo(() => {
     const progress = loadProgress();
     const sched = getReviewSchedule(questions, progress);
-    const log = loadTestLog().slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+    // Resolve each test's overall % the same way the Tests page does — an entry
+    // logged with only a subject/system breakdown has no explicit `score`, and
+    // feeding that raw into the chart's scale produced a NaN path that silently
+    // blanked the whole trajectory.
+    const log = loadTestLog()
+      .map((t) => ({ ...t, score: testScore(t) }))
+      .filter((t) => Number.isFinite(t.score))
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
     let weak = weakSpots("subject", 4).map((w) => ({ name: w.name, pct: w.pct, kind: "pct" }));
     if (!weak.length) weak = getWeakSubjects(4).map((w) => ({ name: w.subject, count: w.count, kind: "miss" }));
     return { sched, log, weak, masteredWeek: getMasteredThisWeek() };

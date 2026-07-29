@@ -1,5 +1,7 @@
 // Local-only progress tracking. Everything lives in the browser's localStorage
-// on YOUR machine. Nothing is sent anywhere.
+// on YOUR machine (and, when signed in, your own private iCloud database).
+
+import { DATA_KEYS, DATA_KEY_SET, readKey, writeKey } from "./dataKeys.js";
 
 const KEY = "usmle-review-progress-v1";
 const DAY = 24 * 60 * 60 * 1000;
@@ -66,7 +68,21 @@ export function toggleDone(id) {
   return progress;
 }
 
+// Explicitly set a card's "done" flag. Exists so call sites never have to reach
+// for the raw storage key (TestReview used to write "usmle-review-progress-v1"
+// inline, which would silently fork into a second store on any key change).
+export function setDone(id, done) {
+  const progress = loadProgress();
+  progress[id] = { ...getCard(progress, id), done: !!done };
+  save(progress);
+  return progress;
+}
+
+// Only a card in `review` can be due. `dueAt` is null for BOTH new and mastered
+// cards, so the old `!card.dueAt || …` returned true for them — every caller had
+// to remember an external `status === "review"` guard. The guard now lives here.
 export function isDue(card) {
+  if (card?.status !== "review") return false;
   return !card.dueAt || card.dueAt <= Date.now();
 }
 
@@ -372,6 +388,16 @@ export function saveTestLog(log) {
   localStorage.setItem(TEST_LOG_KEY, JSON.stringify(log));
 }
 
+// Delete one logged test. Snapshots first — a test entry carries the result, the
+// full per-subject/per-system breakdown and the day's feeling note, and it is
+// deletable from two different screens with only a two-tap confirm.
+export function deleteTest(id) {
+  snapshotAll("pre-delete-test");
+  const next = loadTestLog().filter((t) => t.id !== id);
+  saveTestLog(next);
+  return next;
+}
+
 // Overall % for one test — prefer an explicit score, else derive it from the
 // subject stat breakdown (correct / graded), else from systems.
 export function testScore(test) {
@@ -407,6 +433,7 @@ export function saveQuestionIntake(id, meta) {
 export function resetQuestions(ids) {
   const set = new Set(ids);
   if (set.size === 0) return 0;
+  snapshotAll(`pre-reset-questions (${set.size})`);
 
   const progress = loadProgress();
   for (const id of set) delete progress[id];
@@ -489,6 +516,7 @@ export function isDueRespectingMode(card) {
 
 // ── Reset schedule to a target date ──────────────────────────────────────
 export function resetScheduleToDate(targetDateStr) {
+  snapshotAll("pre-reschedule");
   const progress = loadProgress();
   const targetMs = new Date(targetDateStr).getTime();
   const now = Date.now();
@@ -608,39 +636,94 @@ const RESET_KEYS = [
 
 export function resetAllProgress() {
   try {
+    snapshotAll("pre-reset");   // always recoverable — see listSnapshots()
     for (const k of RESET_KEYS) localStorage.removeItem(k);
-    // Mark it done. Synced (see icloudSync SYNC_KEYS) so the wipe happens once
+    // Mark it done. Synced (see dataKeys.DATA_KEYS) so the wipe happens once
     // across all devices instead of re-clobbering freshly re-imported data.
     localStorage.setItem(RESET_FLAG, JSON.stringify({ at: Date.now() }));
   } catch { /* best-effort */ }
 }
 
-// One-time automatic reset on first launch after this change ships.
+// RETIRED one-time reset.
+//
+// This used to call resetAllProgress() whenever the guard flag was missing. That
+// was a live data-loss path: initICloudSync() installs the localStorage patch
+// BEFORE its first reconcile finishes, and the web path deliberately yields after
+// 2.5s. On a slow network boot continued, the flag hadn't been pulled yet, and the
+// wipe ran through the PATCHED removeItem — pushing `null` tombstones for every
+// progress key to CloudKit and destroying the data on every other device too.
+//
+// The reset it existed for shipped and ran long ago. We keep writing the flag so
+// no device can ever re-arm it, but we never delete anything.
 export function maybeAutoReset() {
   try {
     if (localStorage.getItem(RESET_FLAG)) return;
-    resetAllProgress();
+    localStorage.setItem(RESET_FLAG, JSON.stringify({ at: Date.now(), retired: true }));
   } catch { /* never block startup */ }
 }
 
+// ── Local snapshot ring (the undo behind every destructive action) ─────────
+// Every irreversible action snapshots first. Deliberately NOT in DATA_KEYS: it
+// must never sync (it would blow the CloudKit record size) and must never be
+// cleared by a reset — it is what you recover *from*.
+const SNAP_KEY = "usmle:snapshots-v1";
+const SNAP_MAX = 5;
+
+export function snapshotAll(label = "manual") {
+  try {
+    const snaps = listSnapshots();
+    snaps.unshift({ at: Date.now(), label, data: JSON.parse(exportAllData()) });
+    localStorage.setItem(SNAP_KEY, JSON.stringify(snaps.slice(0, SNAP_MAX)));
+  } catch { /* quota / parse — a failed snapshot must never block the action */ }
+}
+
+export function listSnapshots() {
+  try {
+    const list = JSON.parse(localStorage.getItem(SNAP_KEY) || "[]");
+    return Array.isArray(list) ? list : [];
+  } catch { return []; }
+}
+
+/** Restore a snapshot by its `at` timestamp. Snapshots the CURRENT state first. */
+export function restoreSnapshot(at) {
+  const snap = listSnapshots().find((s) => s.at === at);
+  if (!snap) return { ok: false, reason: "not-found" };
+  snapshotAll("pre-restore");
+  let count = 0;
+  for (const k of DATA_KEYS) {
+    if (snap.data[k] === undefined) continue;
+    writeKey(k, snap.data[k]);
+    count++;
+  }
+  return { ok: true, count };
+}
+
 // ── JSON export / import ──────────────────────────────────────────────────
+// Both walk DATA_KEYS, so the backup covers exactly what syncs — no more
+// silently-unbacked-up stores (the error log, AIMS tasks and rail notes were all
+// missing from the old hand-written list).
 export function exportAllData() {
-  const keys = [KEY, TASKS_KEY, FA_TOPICS_KEY, TEST_LOG_KEY, STREAK_KEY,
-    Q_INTAKE_KEY, TOPIC_CTR_KEY, FA_INTAKE_KEY, LIGHT_MODE_KEY, Q_SEEN_KEY,
-    "usmle-scheduler-v1"];
-  const out = {};
-  for (const k of keys) {
-    const raw = localStorage.getItem(k);
-    if (raw) try { out[k] = JSON.parse(raw); } catch {}
+  const out = { __app: "usmle-review-app", __v: 1, __at: Date.now() };
+  for (const k of DATA_KEYS) {
+    const v = readKey(k);
+    if (v !== undefined) out[k] = v;
   }
   return JSON.stringify(out, null, 2);
 }
+
+/** Returns { ok, count, skipped } | { ok:false, reason }. Snapshots before writing. */
 export function importAllData(jsonStr) {
-  try {
-    const data = JSON.parse(jsonStr);
-    for (const [k, v] of Object.entries(data)) {
-      localStorage.setItem(k, JSON.stringify(v));
-    }
-    return true;
-  } catch { return false; }
+  let data;
+  try { data = JSON.parse(jsonStr); } catch { return { ok: false, reason: "not-json" }; }
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    return { ok: false, reason: "bad-shape" };
+  }
+  // Allowlist: only keys this app owns are ever written to localStorage.
+  const keys = Object.keys(data).filter((k) => DATA_KEY_SET.has(k));
+  if (!keys.length) return { ok: false, reason: "no-known-keys" };
+
+  snapshotAll("pre-import");
+  for (const k of keys) writeKey(k, data[k]);
+  const skipped = Object.keys(data).filter((k) => !DATA_KEY_SET.has(k) && !k.startsWith("__")).length;
+  return { ok: true, count: keys.length, skipped };
 }

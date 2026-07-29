@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
-  loadProgress, getCard, isDue, rate,
+  loadProgress, getCard, isDue, rate, setDone,
   processWizardComplete, saveQuestionIntake, getQIntakeMeta,
   loadTasks, saveTasks, bumpTopicMiss, loadTopicCounters, resetQuestions,
 } from "../lib/storage.js";
@@ -146,11 +146,7 @@ export default function TestReview({ onBack }) {
   // ── Mark Done button: opens wizard if not done, toggles off if already done ──
   function handleMarkDone(meta) {
     if (progress[meta.id]?.done) {
-      // Un-mark done: write directly (save() is private; key is stable)
-      const prog = loadProgress();
-      prog[meta.id] = { ...getCard(prog, meta.id), done: false };
-      localStorage.setItem("usmle-review-progress-v1", JSON.stringify(prog));
-      setProgress({ ...prog });
+      setProgress({ ...setDone(meta.id, false) });
     } else {
       setWizardId(meta.id);
     }

@@ -5,6 +5,7 @@
 import { Capacitor } from "@capacitor/core";
 import { getActiveReminders, getUpcomingReminders, buildNotificationContent } from "./reminderEngine.js";
 import { loadProgress, getCard, getLightMode } from "./storage.js";
+import { localISODate } from "./config.js";
 
 const isNative = Capacitor.isNativePlatform();
 const WEB_SHOWN_KEY = "usmle-app:web-notified-v1";
@@ -156,7 +157,9 @@ function webNotifyCheck(questions = []) {
 
   // One review digest per day, only once the 08:30 mark has passed.
   const now = new Date();
-  const dayKey = `reviews-${now.toISOString().slice(0, 10)}`;
+  // LOCAL date — a UTC key rolls over at 02:00/03:00 Israel time, which put the
+  // "one digest per day" marker on the wrong day either side of midnight.
+  const dayKey = `reviews-${localISODate(now)}`;
   if (!shown[dayKey] && (now.getHours() > REVIEW_HOUR || (now.getHours() === REVIEW_HOUR && now.getMinutes() >= REVIEW_MINUTE))) {
     const count = reviewCountsByDay(questions, 1)[0];
     if (count > 0) {
@@ -175,13 +178,22 @@ function webNotifyCheck(questions = []) {
 }
 
 // Tapping a scheduled notification deep-links into the right page.
-export async function attachNotificationTapHandler(onRoute) {
-  if (!isNative) return;
-  try {
-    const LN = await plugin();
-    LN.addListener("localNotificationActionPerformed", (event) => {
-      const route = event?.notification?.extra?.route;
-      if (route) onRoute(route);
-    });
-  } catch { /* plugin unavailable */ }
+// Returns a SYNCHRONOUS unsubscribe so callers can use it directly as a React
+// effect cleanup — without it, every re-run of the effect stacked another
+// listener and a single tap fired one navigation per stacked handler.
+export function attachNotificationTapHandler(onRoute) {
+  if (!isNative) return () => {};
+  let handle = null;
+  let cancelled = false;
+  (async () => {
+    try {
+      const LN = await plugin();
+      const h = await LN.addListener("localNotificationActionPerformed", (event) => {
+        const route = event?.notification?.extra?.route;
+        if (route) onRoute(route);
+      });
+      if (cancelled) h?.remove?.(); else handle = h;
+    } catch { /* plugin unavailable */ }
+  })();
+  return () => { cancelled = true; handle?.remove?.(); handle = null; };
 }

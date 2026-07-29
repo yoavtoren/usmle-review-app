@@ -1,3 +1,4 @@
+import { localISODate } from "./config.js";
 // ── Category config ────────────────────────────────────────────────────────
 export const CATEGORIES = {
   aims: {
@@ -36,8 +37,11 @@ export function loadAllWorkstreamTasks() {
 // ── Rhythms storage ────────────────────────────────────────────────────────
 const RHYTHMS_KEY = "usmle-app:rhythms-v1";
 
+// LOCAL dates — toISOString() yields the UTC day, which is the previous date
+// during the small hours in Israel (UTC+2/+3) and would mark a rhythm done for
+// the wrong day. localISODate is the app's one day-boundary definition.
 function isoToday() {
-  return new Date().toISOString().slice(0, 10);
+  return localISODate();
 }
 function isoWeekStart() {
   const d = new Date();
@@ -45,7 +49,7 @@ function isoWeekStart() {
   const diff = day === 0 ? -6 : 1 - day; // back to Monday
   const mon = new Date(d);
   mon.setDate(d.getDate() + diff);
-  return mon.toISOString().slice(0, 10);
+  return localISODate(mon);
 }
 
 export function loadRhythms() {

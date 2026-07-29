@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { localISODate } from "../lib/config.js";
 
 /* ── Shared review-progress charts ──────────────────────────────────────────
    Props:
@@ -12,22 +13,30 @@ import { useMemo } from "react";
 const DAY = 86400000;
 const RANK_COLOR = "#A26A12";
 
-function isoDay(ms) { return new Date(ms).toISOString().slice(0, 10); }
+// Local calendar day — callers hand us `at` values built with localISODate, so
+// the axis has to bucket and label on the same boundary or the newest events
+// land one column off after midnight in +TZ zones.
+function isoDay(ms) { return localISODate(new Date(ms)); }
 function labelFor(iso) {
-  return new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
 function buildDays(events) {
   if (!events.length) return null;
-  const todayMs = new Date(isoDay(Date.now()) + "T00:00:00Z").getTime();
-  const firstMs = new Date(events.map(e => e.at).sort()[0] + "T00:00:00Z").getTime();
-  let startMs = Math.min(firstMs, todayMs - 29 * DAY);
-  if (todayMs - startMs > 119 * DAY) startMs = todayMs - 119 * DAY; // cap window
+  // Anchor on LOCAL midnight and walk the window with calendar-date arithmetic
+  // rather than fixed 24h steps — an Israel DST change would otherwise shift the
+  // cursor by an hour and duplicate or skip a column.
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const first = new Date(events.map(e => e.at).sort()[0] + "T00:00:00");
+  const spanDays = Math.round((today - first) / DAY);
+  const back = Math.min(119, Math.max(29, Number.isFinite(spanDays) ? spanDays : 29));
 
   const days = [];
   const idx = {};
-  for (let m = startMs; m <= todayMs; m += DAY) {
-    const date = isoDay(m);
+  for (let i = back; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const date = isoDay(d.getTime());
     idx[date] = days.length;
     days.push({ date, count: 0, topics: new Set(), rankSum: 0, rankN: 0 });
   }
