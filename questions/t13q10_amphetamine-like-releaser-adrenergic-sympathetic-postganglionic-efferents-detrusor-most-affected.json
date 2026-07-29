@@ -1,0 +1,186 @@
+{
+  "id": "q449",
+  "item": 449,
+  "qid": "1359",
+  "title": "Amphetamine-like releaser: adrenergic sympathetic postganglionic efferents (detrusor) most affected",
+  "system": "Pharmacology",
+  "topic": "Autonomic nervous system - neurotransmitters",
+  "correct": "F",
+  "yourAnswer": "E",
+  "percentCorrect": 33,
+  "vignette": "A 26-year-old man with a history of excessive daytime sleepiness due to narcolepsy enrolls in a clinical trial evaluating a new stimulant medication. The patient was previously treated with modafinil, but his symptoms did not improve. It is explained to the patient that the new drug works by promoting the release of dopamine and norepinephrine from nerve terminals in the central nervous system. Adverse effects of the drug are due primarily to excess release of norepinephrine from peripheral autonomic nerve terminals. Which of the following autonomic efferents would be most affected by the use of this drug?",
+  "clues": [
+    {
+      "text": "promoting the release of dopamine and norepinephrine from nerve terminals",
+      "type": "blue",
+      "note": "This is an amphetamine-like mechanism: the drug displaces catecholamines (norepinephrine, dopamine) from presynaptic vesicles into the synapse."
+    },
+    {
+      "text": "excess release of norepinephrine from peripheral autonomic nerve terminals",
+      "type": "green",
+      "note": "The drug acts on terminals that STORE and release NOREPINEPHRINE - i.e., ADRENERGIC (sympathetic postganglionic) neurons. The affected efferent must be a NE-releasing one."
+    }
+  ],
+  "whatMatters": "The drug releases NOREPINEPHRINE from terminals that store it - i.e., ADRENERGIC sympathetic POSTGANGLIONIC neurons. Most sympathetic postganglionic fibers are adrenergic, EXCEPT eccrine sweat glands (cholinergic) and the adrenal medulla (preganglionic cholinergic). Of the options, only sympathetic output to the DETRUSOR muscle is adrenergic. Answer F.",
+  "strategy": "Find the efferent that RELEASES NOREPINEPHRINE. That means a sympathetic POSTGANGLIONIC (adrenergic) fiber. Eliminate cholinergic pathways: all parasympathetic fibers (bronchi, heart), preganglionic sympathetic fibers, the sympathetic supply to the adrenal medulla (preganglionic, cholinergic), and sympathetic fibers to eccrine SWEAT GLANDS (the famous cholinergic sympathetic exception). Only the detrusor's sympathetic (adrenergic) innervation stores/releases NE.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Parasympathetic output to the bronchi",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Parasympathetic output to the heart",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Preganglionic sympathetic output",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Sympathetic output to adrenal glands",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Sympathetic output to eccrine sweat glands",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Sympathetic output to the detrusor muscle",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Parasympathetic to bronchi - cholinergic",
+      "detail": "WHAT IT IS: postganglionic parasympathetic fibers releasing acetylcholine onto bronchial smooth muscle. ❌ WHY IT FAILS: parasympathetic terminals release ACETYLCHOLINE, not norepinephrine, so a NE-releasing drug wouldn't act here. ✅ Correct if: a muscarinic (cholinergic) effect."
+    },
+    {
+      "letter": "B",
+      "label": "Parasympathetic to heart - cholinergic (vagus)",
+      "detail": "WHAT IT IS: vagal (parasympathetic) input to the SA/AV node releasing acetylcholine. ❌ WHY IT FAILS: it is cholinergic; norepinephrine release from these terminals does not occur. ✅ Correct if: muscarinic slowing of heart rate."
+    },
+    {
+      "letter": "C",
+      "label": "Preganglionic sympathetic - cholinergic (nicotinic)",
+      "detail": "WHAT IT IS: preganglionic sympathetic fibers that release acetylcholine onto nicotinic receptors in ganglia. ❌ WHY IT FAILS: preganglionic transmission is CHOLINERGIC; it does not store/release norepinephrine. ✅ Correct if: ganglionic nicotinic transmission."
+    },
+    {
+      "letter": "D",
+      "label": "Sympathetic to adrenal medulla - preganglionic cholinergic",
+      "detail": "WHAT IT IS: sympathetic innervation of the adrenal medulla. ❌ WHY IT FAILS: the medulla is like a modified ganglion - its sympathetic input is PREGANGLIONIC and CHOLINERGIC (acetylcholine on nicotinic receptors), not a NE-releasing terminal. ✅ Correct if: acetylcholine-triggered catecholamine RELEASE into blood (not NE reuptake/release from a terminal)."
+    },
+    {
+      "letter": "E",
+      "label": "Sympathetic to eccrine sweat glands - cholinergic exception",
+      "detail": "WHAT IT IS: sympathetic postganglionic fibers to eccrine sweat glands. ❌ WHY IT FAILS: these are the classic CHOLINERGIC exception among sympathetic postganglionic neurons (release acetylcholine onto muscarinic receptors), so a norepinephrine-releasing drug spares them. ✅ Correct if: the sympathetic cholinergic (sweating) pathway."
+    }
+  ],
+  "reasoning": [
+    "The drug releases norepinephrine from peripheral terminals that store it",
+    "Only ADRENERGIC (sympathetic postganglionic) neurons store/release norepinephrine",
+    "Parasympathetic, preganglionic sympathetic, adrenal-medulla, and eccrine-sweat pathways are all cholinergic",
+    "-> sympathetic (adrenergic) output to the detrusor muscle is most affected; answer F"
+  ],
+  "mechanism": "AMPHETAMINE-like stimulants act by promoting RELEASE of catecholamines (norepinephrine, dopamine) from presynaptic terminals (and blocking reuptake), enhancing signaling. Peripheral adverse effects therefore arise wherever terminals STORE and release NOREPINEPHRINE - namely ADRENERGIC sympathetic POSTGANGLIONIC neurons. In the two-neuron autonomic scheme, ALL preganglionic fibers (sympathetic and parasympathetic) and ALL parasympathetic postganglionic fibers are CHOLINERGIC (acetylcholine). Sympathetic POSTGANGLIONIC fibers are ADRENERGIC (norepinephrine) with TWO notable exceptions that remain cholinergic: fibers to ECCRINE SWEAT GLANDS, and the ADRENAL MEDULLA (innervated directly by PREGANGLIONIC cholinergic fibers, releasing epinephrine/norepinephrine into the blood upon acetylcholine stimulation). Among the options, only the sympathetic supply to the DETRUSOR muscle is a norepinephrine-releasing (adrenergic) postganglionic efferent, so it is most affected by a drug that dumps norepinephrine from peripheral terminals.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid ANS > neurotransmitters: preganglionic (both) + all parasympathetic postganglionic = cholinergic; sympathetic postganglionic = adrenergic EXCEPT sweat glands (cholinergic) and adrenal medulla (preganglionic cholinergic)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "NE-releasing drug acts on adrenergic (sympathetic postganglionic) terminals -> detrusor, not the cholinergic exceptions."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on adrenergic vs cholinergic, pre-/postganglionic, sympathetic exceptions, or amphetamine release mechanism? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Bronchi/heart parasympathetic, preganglionic sympathetic, adrenal medulla, and eccrine sweat are all CHOLINERGIC."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: sympathetic postganglionic = NE EXCEPT sweat glands (ACh) + adrenal medulla (preganglionic ACh)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Amphetamine peripheral effect target",
+      "back": "Adrenergic (NE-releasing) sympathetic postganglionic terminals"
+    },
+    {
+      "front": "Cholinergic exceptions among sympathetic fibers",
+      "back": "Eccrine sweat glands + adrenal medulla (preganglionic)"
+    },
+    {
+      "front": "All parasympathetic fibers release",
+      "back": "Acetylcholine (cholinergic)"
+    },
+    {
+      "front": "Adrenal medulla innervation",
+      "back": "Preganglionic sympathetic, cholinergic (nicotinic)"
+    },
+    {
+      "front": "Amphetamine mechanism",
+      "back": "Promotes catecholamine release + blocks reuptake"
+    },
+    {
+      "front": "Detrusor sympathetic effect",
+      "back": "Beta-adrenergic relaxation (NE) - stores urine"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "ANS neurotransmitters",
+      "detail": "Pharm: NE released from adrenergic sympathetic postganglionic fibers (detrusor)."
+    },
+    {
+      "tag": "exceptions",
+      "topic": "Sympathetic cholinergic",
+      "detail": "ANS > sweat glands + adrenal medulla are cholinergic exceptions."
+    },
+    {
+      "tag": "drug",
+      "topic": "Amphetamine",
+      "detail": "Pharm > releases NE/dopamine; sympathomimetic adverse effects."
+    }
+  ],
+  "memoryHook": "An amphetamine dumps norepinephrine - so it hits only the NE-users (adrenergic sympathetic nerves). Sweat glands and the adrenal medulla run on acetylcholine and get skipped.",
+  "stem": [
+    {
+      "text": "A 26-year-old man with a history of excessive daytime sleepiness due to narcolepsy enrolls in a clinical trial evaluating a new stimulant medication. The patient was previously treated with modafinil, but his symptoms did not improve. It is explained to the patient that the new drug works by "
+    },
+    {
+      "text": "promoting the release of dopamine and norepinephrine from nerve terminals",
+      "clue": true,
+      "type": "blue",
+      "note": "This is an amphetamine-like mechanism: the drug displaces catecholamines (norepinephrine, dopamine) from presynaptic vesicles into the synapse."
+    },
+    {
+      "text": " in the central nervous system. Adverse effects of the drug are due primarily to "
+    },
+    {
+      "text": "excess release of norepinephrine from peripheral autonomic nerve terminals",
+      "clue": true,
+      "type": "green",
+      "note": "The drug acts on terminals that STORE and release NOREPINEPHRINE - i.e., ADRENERGIC (sympathetic postganglionic) neurons. The affected efferent must be a NE-releasing one."
+    },
+    {
+      "text": ". Which of the following autonomic efferents would be most affected by the use of this drug?"
+    }
+  ]
+}

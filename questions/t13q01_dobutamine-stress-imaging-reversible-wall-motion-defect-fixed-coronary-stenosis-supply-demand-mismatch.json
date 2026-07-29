@@ -1,0 +1,186 @@
+{
+  "id": "q440",
+  "item": 440,
+  "qid": "15180",
+  "title": "Dobutamine stress imaging: reversible wall-motion defect = fixed coronary stenosis (supply-demand mismatch)",
+  "system": "Pathophysiology",
+  "topic": "Stable angina / stress testing",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 47,
+  "vignette": "A 64-year-old man comes to the emergency department due to chest discomfort and shortness of breath. Medical history includes hypertension, type 2 diabetes mellitus, and severe osteoarthritis of the left knee. The patient is an active smoker with a 20-pack-year smoking history. He undergoes dobutamine infusion with simultaneous cardiac imaging. The following is seen: before infusion, normal left ventricular contractility with ejection fraction 60%; during infusion, decreased apical contractility with ejection fraction 45%; five minutes after infusion, normal left ventricular contractility with ejection fraction 60%. Which of the following best explains the observed findings?",
+  "clues": [
+    {
+      "text": "dobutamine infusion",
+      "type": "blue",
+      "note": "Dobutamine is a beta-1 agonist that raises heart rate and contractility, mimicking exercise to increase myocardial oxygen demand - the basis of pharmacologic stress testing."
+    },
+    {
+      "text": "decreased apical contractility with ejection fraction 45%",
+      "type": "green",
+      "note": "A NEW wall-motion abnormality (drop in contractility/EF) that appears only during stress indicates a region of myocardium that cannot increase its blood supply to meet demand = inducible ischemia."
+    },
+    {
+      "text": "five minutes after infusion, normal left ventricular contractility",
+      "type": "blue",
+      "note": "The defect is REVERSIBLE (contractility normalizes at rest) - this excludes infarction/scar and points to a fixed stenosis causing transient supply-demand mismatch only under stress."
+    }
+  ],
+  "whatMatters": "Dobutamine raises myocardial O2 demand; a region supplied by a FIXED coronary stenosis cannot increase flow, so it becomes transiently ischemic - a REVERSIBLE wall-motion defect (contractility falls during stress, normalizes at rest). This is stable angina from supply-demand mismatch. Answer E.",
+  "strategy": "Key on reversibility: the contractility defect appears DURING dobutamine and resolves AFTER. Transient = inducible ischemia from a fixed stenosis (supply-demand mismatch). Reject plaque thrombosis/MI (would give a PERSISTENT defect before/during/after), vasospasm (young patients, not dobutamine-triggered), focal fibrosis (persistent defect from old MI), and 'normal response' (normal myocardium INCREASES contractility/EF with dobutamine).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Coronary artery occlusion due to plaque thrombosis",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Coronary artery vasospasm",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Focal myocardial fibrosis",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Normal myocardial contractile response",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Supply-demand mismatch due to fixed coronary stenosis",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Plaque thrombosis / MI - would be persistent",
+      "detail": "WHAT IT IS: acute coronary occlusion from plaque rupture and thrombosis (acute MI). ❌ WHY IT FAILS: total occlusion causes a PERSISTENT wall-motion defect (before, during, AND after) - not one that normalizes at rest. ✅ Correct if: fixed, non-reversible defect with acute chest pain and troponin rise."
+    },
+    {
+      "letter": "B",
+      "label": "Coronary vasospasm - not dobutamine-provoked",
+      "detail": "WHAT IT IS: vasospastic (Prinzmetal) angina from transient coronary spasm. ❌ WHY IT FAILS: it typically occurs in younger patients at rest and is not provoked by dobutamine (weak alpha-1 effect); this scenario is classic demand ischemia. ✅ Correct if: rest angina with transient ST elevations, provoked by ergonovine."
+    },
+    {
+      "letter": "C",
+      "label": "Focal myocardial fibrosis - persistent scar",
+      "detail": "WHAT IT IS: scarred myocardium from a prior infarct. ❌ WHY IT FAILS: fibrosed tissue is akinetic at baseline, giving a PERSISTENT defect, not one that appears only during stress. ✅ Correct if: fixed defect with a history of prior MI."
+    },
+    {
+      "letter": "D",
+      "label": "Normal contractile response - EF should rise",
+      "detail": "WHAT IT IS: the expected response of healthy myocardium to dobutamine. ❌ WHY IT FAILS: normal myocardium INCREASES contractility and ejection fraction with dobutamine; a DROP in apical contractility is abnormal. ✅ Correct if: uniform augmentation of contractility and EF."
+    }
+  ],
+  "reasoning": [
+    "Dobutamine increases myocardial oxygen demand (stress test)",
+    "A new apical wall-motion defect (EF 60% -> 45%) appears only DURING stress",
+    "It reverses at rest (EF back to 60%) - so it is inducible ischemia, not infarction",
+    "-> a fixed coronary stenosis limits supply during increased demand; answer E"
+  ],
+  "mechanism": "Stable angina results from a FIXED atherosclerotic coronary stenosis that limits blood flow to downstream myocardium. At rest, flow is adequate; during increased demand it cannot rise to match, producing a supply-demand MISMATCH and transient ischemia. DOBUTAMINE, a beta-1 agonist, increases heart rate and contractility to mimic exercise and raise myocardial oxygen demand. Myocardium supplied by the stenotic vessel cannot augment flow, so it becomes transiently ischemic and shows a REVERSIBLE wall-motion abnormality (decreased apical contractility and a fall in ejection fraction during infusion, normalizing minutes later at rest). This reversibility distinguishes demand ischemia from infarction/scar (persistent defect) and identifies a flow-limiting lesion amenable to revascularization. Normal myocardium, by contrast, augments contractility and EF with dobutamine.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid CV > stable angina: fixed coronary stenosis -> supply-demand mismatch on exertion; stress testing (exercise or dobutamine/vasodilator) provokes reversible ischemia (wall-motion defect, EF drop); reversible = ischemia, fixed = scar/MI."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Defect that appears with dobutamine and resolves at rest = inducible ischemia from a fixed stenosis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on dobutamine, wall-motion abnormality, ejection fraction, supply-demand mismatch, or reversible vs fixed defect? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "MI/thrombosis and fibrosis give PERSISTENT defects; vasospasm isn't dobutamine-provoked; normal myocardium raises EF."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: dobutamine stress -> reversible wall-motion defect = fixed coronary stenosis (demand ischemia); persistent defect = infarct/scar."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Reversible stress-induced wall-motion defect",
+      "back": "Inducible ischemia from a fixed coronary stenosis"
+    },
+    {
+      "front": "Dobutamine stress test mechanism",
+      "back": "Beta-1 agonist raises HR + contractility (mimics exercise)"
+    },
+    {
+      "front": "Persistent (fixed) wall-motion defect",
+      "back": "Prior MI / scar (not inducible ischemia)"
+    },
+    {
+      "front": "Normal myocardial response to dobutamine",
+      "back": "Increased contractility and ejection fraction"
+    },
+    {
+      "front": "Stable angina pathophysiology",
+      "back": "Fixed stenosis -> supply-demand mismatch on exertion"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Stable angina / stress testing",
+      "detail": "CV: reversible defect on dobutamine stress = fixed coronary stenosis."
+    },
+    {
+      "tag": "options",
+      "topic": "Ischemia vs infarct",
+      "detail": "CV > persistent defect = MI/scar; vasospasm = rest angina."
+    },
+    {
+      "tag": "pharm",
+      "topic": "Dobutamine",
+      "detail": "CV > beta-1 agonist increases myocardial O2 demand for stress testing."
+    }
+  ],
+  "memoryHook": "If the weak spot only shows up when you push the heart (dobutamine) and disappears at rest, the pipe is narrowed, not dead - reversible = ischemia.",
+  "stem": [
+    {
+      "text": "A 64-year-old man comes to the emergency department due to chest discomfort and shortness of breath. Medical history includes hypertension, type 2 diabetes mellitus, and severe osteoarthritis of the left knee. The patient is an active smoker with a 20-pack-year smoking history. He undergoes "
+    },
+    {
+      "text": "dobutamine infusion",
+      "clue": true,
+      "type": "blue",
+      "note": "Dobutamine is a beta-1 agonist that raises heart rate and contractility, mimicking exercise to increase myocardial oxygen demand - the basis of pharmacologic stress testing."
+    },
+    {
+      "text": " with simultaneous cardiac imaging. The following is seen: before infusion, normal left ventricular contractility with ejection fraction 60%; during infusion, "
+    },
+    {
+      "text": "decreased apical contractility with ejection fraction 45%",
+      "clue": true,
+      "type": "green",
+      "note": "A NEW wall-motion abnormality (drop in contractility/EF) that appears only during stress indicates a region of myocardium that cannot increase its blood supply to meet demand = inducible ischemia."
+    },
+    {
+      "text": "; "
+    },
+    {
+      "text": "five minutes after infusion, normal left ventricular contractility",
+      "clue": true,
+      "type": "blue",
+      "note": "The defect is REVERSIBLE (contractility normalizes at rest) - this excludes infarction/scar and points to a fixed stenosis causing transient supply-demand mismatch only under stress."
+    },
+    {
+      "text": " with ejection fraction 60%. Which of the following best explains the observed findings?"
+    }
+  ]
+}

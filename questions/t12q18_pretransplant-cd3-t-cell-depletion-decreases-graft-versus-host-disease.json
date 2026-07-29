@@ -1,0 +1,190 @@
+{
+  "id": "q417",
+  "item": 417,
+  "qid": "16141",
+  "title": "Pretransplant CD3+ T-cell depletion decreases graft-versus-host disease",
+  "system": "Immunology",
+  "topic": "Allogeneic HSC transplant / GVHD",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 83,
+  "vignette": "A 56-year-old, previously healthy man has worsening fatigue and recurrent epistaxis. Evaluation shows anemia, thrombocytopenia, and abnormal circulating leukocytes. Bone marrow biopsy establishes a diagnosis of acute myeloid leukemia. The patient is initially treated with induction chemotherapy, and an allogeneic hematopoietic stem cell transplant is recommended. A nonrelated, HLA-matched donor is not found, so the patient's adult son volunteers to be the donor. The plan is for the patient to receive conditioning chemotherapy and radiotherapy followed by bone marrow transplant. Prior to transplant, a procedure is performed to deplete CD3+ cells in the marrow graft. This pretransplant procedure would be most helpful in decreasing this patient's risk for which of the following?",
+  "clues": [
+    {
+      "text": "allogeneic hematopoietic stem cell transplant",
+      "type": "orange",
+      "note": "Allogeneic transplant provides donor stem cells but also donor immune cells (T cells) that can attack the host - the setup for graft-versus-host disease."
+    },
+    {
+      "text": "the patient's adult son volunteers to be the donor",
+      "type": "blue",
+      "note": "A related but only partially HLA-matched donor (the son) increases the risk of graft-versus-host disease due to HLA mismatch."
+    },
+    {
+      "text": "deplete CD3+ cells in the marrow graft",
+      "type": "green",
+      "note": "CD3 marks T lymphocytes; removing donor CD3+ T cells before transplant primarily reduces GRAFT-VERSUS-HOST disease."
+    }
+  ],
+  "whatMatters": "In an allogeneic (especially HLA-mismatched) transplant, DONOR CD3+ T CELLS recognize host tissues as foreign and cause GRAFT-VERSUS-HOST DISEASE (GVHD). Depleting donor CD3+ (T) cells from the graft before transplant most reduces the risk of GVHD. Answer B. (Trade-off: less graft-versus-leukemia effect, so more relapse.)",
+  "strategy": "Link CD3 = T cells and donor T cells = the drivers of GVHD; removing them lowers GVHD risk. Recognize the trade-offs (which are the distractors): T-cell depletion also raises leukemia relapse (less graft-versus-tumor), viral infection (CMV/HHV-6), and posttransplant lymphoproliferative disease (less control of EBV-infected B cells). It does NOT reduce those; it reduces GVHD. Reject immunoglobulin deficiency (a normal, transient post-transplant effect worsened by T-cell removal).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cytomegalovirus infection",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Graft versus host disease",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Immunoglobulin deficiency",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Leukemia relapse",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Lymphoproliferative disease",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Cytomegalovirus infection - INCREASED by T-cell depletion",
+      "detail": "WHAT IT IS: reactivation/infection with CMV (and HHV-6). ❌ WHY IT FAILS: depleting donor (memory) T cells INCREASES viral infection risk; it does not decrease it. ✅ Correct if: asking what T-cell depletion makes WORSE."
+    },
+    {
+      "letter": "C",
+      "label": "Immunoglobulin deficiency - worsened, not helped",
+      "detail": "WHAT IT IS: low immunoglobulins from delayed immune reconstitution. ❌ WHY IT FAILS: removing donor T cells SLOWS engraftment/immune recovery, prolonging (not reducing) immunoglobulin deficiency. ✅ Correct if: asking about delayed B-cell/immunoglobulin recovery."
+    },
+    {
+      "letter": "D",
+      "label": "Leukemia relapse - INCREASED (less graft-versus-tumor)",
+      "detail": "WHAT IT IS: recurrence of AML. ❌ WHY IT FAILS: donor T cells also mediate a beneficial GRAFT-VERSUS-LEUKEMIA effect, so depleting them INCREASES relapse risk. ✅ Correct if: asking about the downside of T-cell depletion (more relapse)."
+    },
+    {
+      "letter": "E",
+      "label": "Lymphoproliferative disease - INCREASED (EBV)",
+      "detail": "WHAT IT IS: posttransplant lymphoproliferative disorder (EBV-driven B-cell proliferation). ❌ WHY IT FAILS: fewer donor T cells means less control of EBV-infected B cells, INCREASING this risk. ✅ Correct if: asking what T-cell depletion increases (PTLD)."
+    }
+  ],
+  "reasoning": [
+    "Allogeneic (HLA-mismatched, related-donor) transplant carries a high risk of graft-versus-host disease",
+    "GVHD is mediated by donor CD3+ T cells recognizing host tissue as foreign",
+    "Depleting donor CD3+ T cells from the graft removes the effector cells of GVHD",
+    "-> decreases graft-versus-host disease; answer B"
+  ],
+  "mechanism": "Allogeneic hematopoietic stem cell transplantation replaces the patient's marrow with donor stem cells but also transfers donor T LYMPHOCYTES (CD3+). These donor T cells can recognize recipient (host) cells - especially with HLA MISMATCH (a related but imperfectly matched son) - as foreign and mount a widespread, multisystem inflammatory attack: GRAFT-VERSUS-HOST DISEASE (GVHD), characteristically damaging the SKIN (maculopapular rash progressing to bullae), LIVER (elevated bilirubin/alkaline phosphatase), and GI TRACT (diarrhea, abdominal pain, nausea). DEPLETING donor CD3+ T cells from the graft before transplant removes the effector cells of GVHD and therefore DECREASES GVHD risk. However, this comes with trade-offs: donor T cells also provide a beneficial GRAFT-VERSUS-LEUKEMIA effect (so depletion increases relapse), and they help control viral infections (CMV, HHV-6) and EBV-infected B cells (so depletion increases viral infection and posttransplant lymphoproliferative disease), and slows immune reconstitution (prolonging immunoglobulin deficiency). Thus the specific benefit of pretransplant CD3+ T-cell depletion is reduced GVHD.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Immuno > graft-versus-host disease: donor CD3+ T cells attack host (skin/liver/GI); risk with HLA mismatch/no T-cell depletion; T-cell depletion reduces GVHD but increases relapse, viral infection, PTLD."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Removing donor CD3+ (T) cells reduces GVHD (their effector role); the distractors are what it INCREASES."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on graft-versus-host disease, CD3/T cells, HLA mismatch, graft-versus-leukemia, or PTLD? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "CMV, leukemia relapse, and lymphoproliferative disease are INCREASED by T-cell depletion; immunoglobulin deficiency is worsened (delayed recovery)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: pretransplant CD3+ T-cell depletion -> ↓GVHD but ↑relapse, ↑viral infection, ↑PTLD; GVHD hits skin/liver/GI."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Effect of pretransplant CD3+ T-cell depletion",
+      "back": "Decreases graft-versus-host disease"
+    },
+    {
+      "front": "Cells that mediate GVHD",
+      "back": "Donor CD3+ T lymphocytes (attack host)"
+    },
+    {
+      "front": "GVHD target organs",
+      "back": "Skin (rash), liver (LFTs), GI tract (diarrhea)"
+    },
+    {
+      "front": "Downsides of T-cell depletion",
+      "back": "↑leukemia relapse (less graft-versus-tumor), ↑viral infection, ↑PTLD"
+    },
+    {
+      "front": "GVHD risk factors",
+      "back": "HLA mismatch; lack of T-cell depletion"
+    },
+    {
+      "front": "Graft-versus-leukemia effect",
+      "back": "Donor T cells attack residual leukemia (beneficial)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Graft-versus-host disease",
+      "detail": "Immuno: donor CD3+ T cells attack host; T-cell depletion ↓GVHD."
+    },
+    {
+      "tag": "options",
+      "topic": "T-cell depletion trade-offs",
+      "detail": "Immuno > ↑relapse, ↑CMV, ↑PTLD, delayed immune recovery."
+    },
+    {
+      "tag": "clinical",
+      "topic": "GVHD organs",
+      "detail": "Heme > skin, liver, GI; HLA mismatch increases risk."
+    }
+  ],
+  "memoryHook": "Donor T cells are the soldiers of graft-versus-host disease - strip the CD3 tags out of the graft and GVHD fades, but so does the anti-leukemia patrol (more relapse) and the antiviral guard.",
+  "stem": [
+    {
+      "text": "A 56-year-old, previously healthy man has worsening fatigue and recurrent epistaxis. Evaluation shows anemia, thrombocytopenia, and abnormal circulating leukocytes. Bone marrow biopsy establishes a diagnosis of acute myeloid leukemia. The patient is initially treated with induction chemotherapy, and an "
+    },
+    {
+      "text": "allogeneic hematopoietic stem cell transplant",
+      "clue": true,
+      "type": "orange",
+      "note": "Allogeneic transplant provides donor stem cells but also donor immune cells (T cells) that can attack the host - the setup for graft-versus-host disease."
+    },
+    {
+      "text": " is recommended. A nonrelated, HLA-matched donor is not found, so "
+    },
+    {
+      "text": "the patient's adult son volunteers to be the donor",
+      "clue": true,
+      "type": "blue",
+      "note": "A related but only partially HLA-matched donor (the son) increases the risk of graft-versus-host disease due to HLA mismatch."
+    },
+    {
+      "text": ". The plan is for the patient to receive conditioning chemotherapy and radiotherapy followed by bone marrow transplant. Prior to transplant, a procedure is performed to "
+    },
+    {
+      "text": "deplete CD3+ cells in the marrow graft",
+      "clue": true,
+      "type": "green",
+      "note": "CD3 marks T lymphocytes; removing donor CD3+ T cells before transplant primarily reduces GRAFT-VERSUS-HOST disease."
+    },
+    {
+      "text": ". This pretransplant procedure would be most helpful in decreasing this patient's risk for which of the following?"
+    }
+  ]
+}

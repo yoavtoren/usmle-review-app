@@ -1,0 +1,200 @@
+{
+  "id": "q451",
+  "item": 451,
+  "qid": "728",
+  "title": "Rising staphylococcal nosocomial bloodstream infections: increased intravascular catheter use",
+  "system": "Microbiology",
+  "topic": "Nosocomial bloodstream infection",
+  "correct": "F",
+  "yourAnswer": "B",
+  "percentCorrect": 39,
+  "vignette": "A group of researchers collected demographic and clinical data from multiple hospitals across the nation to determine epidemiological features of nosocomial bloodstream infections. In this study, a nosocomial bloodstream infection was diagnosed if blood cultures drawn 48 hours after admission yielded a pathogenic organism. Analysis of the data collected over several decades shows that staphylococci are increasingly responsible for the identified cases. An increased use of which of the following is most likely the underlying cause of the observed trend?",
+  "clues": [
+    {
+      "text": "nosocomial bloodstream infections",
+      "type": "blue",
+      "note": "Nosocomial (hospital-acquired) bloodstream infections are frequently device-related, especially involving vascular access."
+    },
+    {
+      "text": "blood cultures drawn 48 hours after admission",
+      "type": "blue",
+      "note": "The >48-hour cutoff defines an infection as hospital-acquired (nosocomial) rather than community-acquired."
+    },
+    {
+      "text": "staphylococci are increasingly responsible",
+      "type": "green",
+      "note": "Staphylococci (coagulase-negative staph and S aureus) are SKIN commensals; their rise as bloodstream pathogens points to a portal that lets skin flora reach the blood - intravascular catheters."
+    }
+  ],
+  "whatMatters": "Staphylococci are SKIN flora. A rising share of staphylococcal nosocomial bloodstream infections reflects the increasing use of INTRAVASCULAR CATHETERS, which provide a direct portal for skin commensals (coagulase-negative staphylococci, S aureus) to colonize the device and reach the bloodstream. Answer F.",
+  "strategy": "Connect the ORGANISM to its PORTAL: staphylococci live on skin, so a skin-to-blood conduit is the cause - intravascular (central venous) catheters. Reject options that don't explain a staph (skin-flora) BSI trend: bioprosthetic valves (endocarditis, less common than catheter BSI), broad-spectrum antibiotics (select for resistance like MRSA but don't create the portal of entry), injection drug use (fewer BSIs than catheters and not a hospital trend), immunomodulators (increase risk broadly, not staph-specific), and urinary catheters (urinary source BSIs are mostly gram-negative enterics).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bioprosthetic heart valves",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Broad-spectrum antibiotics",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Illicit injection drugs",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Immunomodulating therapies",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Indwelling urinary catheters",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Intravascular catheters",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Bioprosthetic valves - endocarditis, not the main BSI driver",
+      "detail": "WHAT IT IS: prosthetic heart valves predisposing to endocarditis. ❌ WHY IT FAILS: valve-related staph bacteremia is far less common than intravascular-catheter BSI and doesn't explain a broad nosocomial trend. ✅ Correct if: prosthetic valve endocarditis specifically."
+    },
+    {
+      "letter": "B",
+      "label": "Broad-spectrum antibiotics - selects resistance, not the portal",
+      "detail": "WHAT IT IS: antibiotics that promote resistant organisms (e.g., MRSA). ❌ WHY IT FAILS: they shift which staph are resistant but do not create the portal of entry that increases staphylococcal bloodstream infections; most S aureus bacteremia is catheter-related. ✅ Correct if: emergence of drug-RESISTANT organisms."
+    },
+    {
+      "letter": "C",
+      "label": "Illicit injection drugs - fewer BSIs, not nosocomial",
+      "detail": "WHAT IT IS: IV drug use, a risk for S aureus bacteremia/endocarditis. ❌ WHY IT FAILS: it causes far fewer bloodstream infections than intravascular catheters and is not a hospital-acquired trend. ✅ Correct if: community S aureus endocarditis (tricuspid) in a person who injects drugs."
+    },
+    {
+      "letter": "D",
+      "label": "Immunomodulating therapies - broad risk, not staph-specific",
+      "detail": "WHAT IT IS: immunosuppressants increasing infection risk generally. ❌ WHY IT FAILS: they raise infection risk broadly but don't specifically drive a staphylococcal (skin-flora) bloodstream trend. ✅ Correct if: opportunistic infections from immunosuppression."
+    },
+    {
+      "letter": "E",
+      "label": "Indwelling urinary catheters - gram-negative source",
+      "detail": "WHAT IT IS: urinary catheters causing catheter-associated UTIs. ❌ WHY IT FAILS: urinary-source bacteremia is predominantly GRAM-NEGATIVE enterics (E coli), not staphylococci. ✅ Correct if: gram-negative urosepsis."
+    }
+  ],
+  "reasoning": [
+    "Staphylococci are normal skin flora",
+    "A skin-flora bloodstream infection needs a skin-to-blood portal",
+    "Intravascular catheters provide exactly that portal and their use has increased",
+    "-> increased intravascular catheter use; answer F"
+  ],
+  "mechanism": "NOSOCOMIAL BLOODSTREAM INFECTIONS (positive blood cultures >48 hours after admission) were historically dominated by GRAM-NEGATIVE enteric organisms (e.g., E coli) spreading from genitourinary/gastrointestinal sources. Over recent decades the microbiology SHIFTED toward SKIN COMMENSALS - COAGULASE-NEGATIVE STAPHYLOCOCCI and STAPHYLOCOCCUS AUREUS - because of the increasing use of INTRAVASCULAR (central venous) CATHETERS. These devices breach the skin barrier and provide a direct portal: skin flora colonize the external and internal catheter surfaces, form a BIOFILM within host fibrin and platelet deposits, and seed the bloodstream, particularly with long-term (>12 day) access. Bloodstream infection should be suspected when a patient with a vascular catheter develops new fever or bacteremia. The distractors either target a less common source (prosthetic valves), affect resistance rather than the portal (broad-spectrum antibiotics), contribute far fewer infections (injection drug use), act non-specifically (immunomodulators), or produce mainly gram-negative infections (urinary catheters).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro > nosocomial infections: central line-associated bloodstream infections from skin flora (coagulase-negative staph, S aureus); biofilm on catheters; >48 h defines nosocomial; urinary catheters -> gram-negative."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Staph = skin flora; their rise as BSI pathogens tracks with more intravascular catheters."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on nosocomial, coagulase-negative staphylococci, biofilm, central line-associated BSI, or portal of entry? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Antibiotics select resistance (MRSA) but not the portal; urinary catheters cause gram-negative BSIs; valves/IVDU/immunomodulators don't fit the trend."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: intravascular catheters -> skin-flora (staph) bloodstream infections; urinary catheters -> gram-negative."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Rising staphylococcal nosocomial BSI cause",
+      "back": "Increased intravascular (central venous) catheter use"
+    },
+    {
+      "front": "Most common CLABSI organisms",
+      "back": "Coagulase-negative staphylococci, S aureus (skin flora)"
+    },
+    {
+      "front": "Nosocomial infection time cutoff",
+      "back": ">48 hours after admission"
+    },
+    {
+      "front": "Urinary catheter BSI organisms",
+      "back": "Gram-negative enterics (E coli)"
+    },
+    {
+      "front": "Catheter infection mechanism",
+      "back": "Skin flora colonize device -> biofilm -> bloodstream"
+    },
+    {
+      "front": "Broad-spectrum antibiotics effect",
+      "back": "Select resistant organisms (e.g., MRSA), not the portal"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Catheter-related BSI",
+      "detail": "Micro: intravascular catheters -> skin-flora (staph) bloodstream infections."
+    },
+    {
+      "tag": "options",
+      "topic": "Device infections",
+      "detail": "Micro > urinary catheters -> gram-negative; valves -> endocarditis."
+    },
+    {
+      "tag": "concept",
+      "topic": "Biofilm",
+      "detail": "Micro > staph biofilm on catheters; coagulase-negative staph."
+    }
+  ],
+  "memoryHook": "Staph lives on skin, so when hospital blood infections turn staph, follow the line that pierces the skin - the IV catheter is the highway into the blood.",
+  "stem": [
+    {
+      "text": "A group of researchers collected demographic and clinical data from multiple hospitals across the nation to determine epidemiological features of "
+    },
+    {
+      "text": "nosocomial bloodstream infections",
+      "clue": true,
+      "type": "blue",
+      "note": "Nosocomial (hospital-acquired) bloodstream infections are frequently device-related, especially involving vascular access."
+    },
+    {
+      "text": ". In this study, a nosocomial bloodstream infection was diagnosed if "
+    },
+    {
+      "text": "blood cultures drawn 48 hours after admission",
+      "clue": true,
+      "type": "blue",
+      "note": "The >48-hour cutoff defines an infection as hospital-acquired (nosocomial) rather than community-acquired."
+    },
+    {
+      "text": " yielded a pathogenic organism. Analysis of the data collected over several decades shows that "
+    },
+    {
+      "text": "staphylococci are increasingly responsible",
+      "clue": true,
+      "type": "green",
+      "note": "Staphylococci (coagulase-negative staph and S aureus) are SKIN commensals; their rise as bloodstream pathogens points to a portal that lets skin flora reach the blood - intravascular catheters."
+    },
+    {
+      "text": " for the identified cases. An increased use of which of the following is most likely the underlying cause of the observed trend?"
+    }
+  ]
+}

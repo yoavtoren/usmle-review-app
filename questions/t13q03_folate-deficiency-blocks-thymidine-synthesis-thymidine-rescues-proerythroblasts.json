@@ -1,0 +1,190 @@
+{
+  "id": "q442",
+  "item": 442,
+  "qid": "1847",
+  "title": "Folate deficiency blocks thymidine synthesis: thymidine rescues proerythroblasts",
+  "system": "Biochemistry",
+  "topic": "Folate metabolism / DNA synthesis",
+  "correct": "E",
+  "yourAnswer": "D",
+  "percentCorrect": 30,
+  "vignette": "In an animal experiment, murine proerythroblasts are cultured in 2 different growth media; the first medium is folate deficient, whereas the second (control) is supplemented with additional folic acid. Both media contain high concentrations of erythropoietin. Over 48 hours, cells in the control media proliferate and differentiate into reticulocytes, whereas in the folate-deficient media, cell proliferation is minimal, with the majority of cells undergoing apoptosis. In another experiment, a substance is added to the folate-deficient media; this substance prevents apoptosis and permits proliferation of some of the proerythroblasts. Which of the following is the most likely substance added to the growth medium?",
+  "clues": [
+    {
+      "text": "folate deficient",
+      "type": "blue",
+      "note": "Folate (as tetrahydrofolate) donates the one-carbon unit needed to make thymidine (dTMP); without it, DNA synthesis stalls."
+    },
+    {
+      "text": "majority of cells undergoing apoptosis",
+      "type": "green",
+      "note": "Folate deficiency blocks dUMP->dTMP conversion, so uracil is misincorporated into DNA, triggering DNA repair, double-strand breaks, and apoptosis - especially in rapidly dividing cells."
+    },
+    {
+      "text": "prevents apoptosis and permits proliferation",
+      "type": "green",
+      "note": "The rescuing substance must bypass the folate-dependent step - supplying thymidine directly restores DNA synthesis without needing folate."
+    }
+  ],
+  "whatMatters": "Folate (tetrahydrofolate) is required by THYMIDYLATE SYNTHASE to convert dUMP to dTMP (thymidine). Folate deficiency halts DNA synthesis -> uracil misincorporation -> apoptosis. Supplying THYMIDINE directly bypasses this block and rescues the cells. Answer E.",
+  "strategy": "Trace the one-carbon pathway: folate is uniquely required to make THYMIDINE (thymidylate synthase oxidizes 5,10-methylene-THF to DHF). The rescue substance must be the downstream product that is missing = thymidine. Reject cobalamin (fixes B12-related folate trapping, not primary folate deficiency), cytosine/glutamine (not folate-limited here), and homocysteine (elevated in folate deficiency and toxic - it would not rescue).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cobalamin",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cytosine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Glutamine",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Homocysteine",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Thymidine",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Cobalamin - won't fix primary folate deficiency",
+      "detail": "WHAT IT IS: vitamin B12, a cofactor for methionine synthase that regenerates tetrahydrofolate. ❌ WHY IT FAILS: B12 only helps when folate is TRAPPED as 5-methyl-THF (B12 deficiency); adding B12 cannot supply the folate that is simply absent. ✅ Correct if: folate trapping secondary to B12 deficiency."
+    },
+    {
+      "letter": "B",
+      "label": "Cytosine - not the folate-limited base",
+      "detail": "WHAT IT IS: a pyrimidine base. ❌ WHY IT FAILS: cytosine synthesis is not the folate-dependent bottleneck (thymidine is); adding cytosine doesn't restore DNA synthesis. ✅ Correct if: a defect specifically limiting cytosine - not folate deficiency."
+    },
+    {
+      "letter": "C",
+      "label": "Glutamine - nitrogen donor, not limiting",
+      "detail": "WHAT IT IS: a major nitrogen source for purine and pyrimidine synthesis. ❌ WHY IT FAILS: glutamine supply is not what folate deficiency restricts; it won't ameliorate folate-related apoptosis. ✅ Correct if: nitrogen-limited nucleotide synthesis."
+    },
+    {
+      "letter": "D",
+      "label": "Homocysteine - elevated and harmful in folate deficiency",
+      "detail": "WHAT IT IS: an amino acid normally remethylated to methionine using folate. ❌ WHY IT FAILS: homocysteine ACCUMULATES in folate deficiency (impaired remethylation) and is toxic; adding more would not rescue DNA synthesis. ✅ Correct if: asking what rises in folate/B12 deficiency (homocysteine)."
+    }
+  ],
+  "reasoning": [
+    "Folate (THF) is required to synthesize thymidine (dUMP -> dTMP via thymidylate synthase)",
+    "Folate deficiency stalls DNA synthesis -> uracil misincorporation -> apoptosis of dividing proerythroblasts",
+    "A substance that rescues cells must bypass the folate-dependent step",
+    "-> thymidine supplied directly restores DNA synthesis; answer E"
+  ],
+  "mechanism": "All biochemical functions of folate require the reduced TETRAHYDROFOLATE (THF) form. THF carries one-carbon units for purine synthesis and, critically, for THYMIDYLATE SYNTHASE, which converts deoxyuridine monophosphate (dUMP) to deoxythymidine monophosphate (dTMP) using 5,10-methylene-THF (oxidized to dihydrofolate in the process, then regenerated by dihydrofolate reductase). Thymidine synthesis is UNIQUELY folate-dependent, so folate deficiency raises the dUMP:dTMP ratio and causes URACIL to be misincorporated into DNA; futile excision-repair produces double-strand breaks and APOPTOSIS, especially in rapidly dividing cells like proerythroblasts (the basis of megaloblastic anemia). Supplying THYMIDINE directly provides the missing nucleoside downstream of the folate-requiring step, bypassing the block and permitting DNA synthesis and proliferation. Cobalamin only helps when folate is trapped as 5-methyl-THF (B12 deficiency), not in true folate deficiency; homocysteine actually accumulates and is harmful.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem > folate: THF one-carbon carrier; thymidylate synthase (dUMP->dTMP) is folate-dependent; deficiency -> impaired DNA synthesis, uracil misincorporation, megaloblastic anemia; DHFR regenerates THF."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Folate makes thymidine; if folate is gone, giving thymidine downstream rescues DNA synthesis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on tetrahydrofolate, thymidylate synthase, dUMP/dTMP, uracil misincorporation, or megaloblastic anemia? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Cobalamin fixes folate TRAPPING (B12 deficiency), not absence; homocysteine rises and is toxic; cytosine/glutamine aren't the bottleneck."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: folate deficiency -> can't make thymidine -> apoptosis; thymidine supplementation bypasses the block."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Folate-dependent nucleotide step",
+      "back": "Thymidylate synthase: dUMP -> dTMP (thymidine)"
+    },
+    {
+      "front": "Rescue for folate-deficient dividing cells",
+      "back": "Thymidine (bypasses the folate-requiring step)"
+    },
+    {
+      "front": "Why folate deficiency causes apoptosis",
+      "back": "Uracil misincorporation -> DNA strand breaks"
+    },
+    {
+      "front": "When does B12 help folate function",
+      "back": "Only when folate is trapped as 5-methyl-THF (B12 deficiency)"
+    },
+    {
+      "front": "Metabolite elevated in folate/B12 deficiency",
+      "back": "Homocysteine"
+    },
+    {
+      "front": "DHFR role",
+      "back": "Regenerates tetrahydrofolate (target of methotrexate)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Folate & DNA synthesis",
+      "detail": "Biochem: thymidylate synthase needs folate; deficiency -> impaired thymidine -> apoptosis."
+    },
+    {
+      "tag": "options",
+      "topic": "B12 vs folate",
+      "detail": "Biochem > B12 fixes folate trapping; homocysteine rises in deficiency."
+    },
+    {
+      "tag": "hematology",
+      "topic": "Megaloblastic anemia",
+      "detail": "Heme > impaired DNA synthesis from folate/B12 deficiency."
+    }
+  ],
+  "memoryHook": "Folate's one job you can't skip is making thymidine - so when folate is gone, just hand the cell thymidine and it lives.",
+  "stem": [
+    {
+      "text": "In an animal experiment, murine proerythroblasts are cultured in 2 different growth media; the first medium is "
+    },
+    {
+      "text": "folate deficient",
+      "clue": true,
+      "type": "blue",
+      "note": "Folate (as tetrahydrofolate) donates the one-carbon unit needed to make thymidine (dTMP); without it, DNA synthesis stalls."
+    },
+    {
+      "text": ", whereas the second (control) is supplemented with additional folic acid. Both media contain high concentrations of erythropoietin. Over 48 hours, cells in the control media proliferate and differentiate into reticulocytes, whereas in the folate-deficient media, cell proliferation is minimal, with the "
+    },
+    {
+      "text": "majority of cells undergoing apoptosis",
+      "clue": true,
+      "type": "green",
+      "note": "Folate deficiency blocks dUMP->dTMP conversion, so uracil is misincorporated into DNA, triggering DNA repair, double-strand breaks, and apoptosis - especially in rapidly dividing cells."
+    },
+    {
+      "text": ". In another experiment, a substance is added to the folate-deficient media; this substance "
+    },
+    {
+      "text": "prevents apoptosis and permits proliferation",
+      "clue": true,
+      "type": "green",
+      "note": "The rescuing substance must bypass the folate-dependent step - supplying thymidine directly restores DNA synthesis without needing folate."
+    },
+    {
+      "text": " of some of the proerythroblasts. Which of the following is the most likely substance added to the growth medium?"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "id": "q404",
+  "item": 404,
+  "qid": "7643",
+  "title": "Infectious mononucleosis: atypical lymphocytes are reactive CD8+ T cells",
+  "system": "Hematology",
+  "topic": "Infectious mononucleosis (EBV)",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 40,
+  "vignette": "A 15-year-old girl is evaluated due to persistent fever, fatigue, and sore throat. Physical examination reveals splenomegaly and symmetric posterior cervical lymphadenopathy. A peripheral blood smear shows large, atypical lymphocytes with abundant basophilic cytoplasm and a cell membrane that conforms to the borders of neighboring red cells. The atypical cells seen here are most likely an activated form of which of the following?",
+  "clues": [
+    {
+      "text": "persistent fever, fatigue, and sore throat",
+      "type": "blue",
+      "note": "Fever, fatigue, and pharyngitis in an adolescent are classic for infectious mononucleosis (Epstein-Barr virus)."
+    },
+    {
+      "text": "splenomegaly and symmetric posterior cervical lymphadenopathy",
+      "type": "green",
+      "note": "Splenomegaly with POSTERIOR cervical lymphadenopathy is characteristic of infectious mononucleosis."
+    },
+    {
+      "text": "large, atypical lymphocytes with abundant basophilic cytoplasm",
+      "type": "green",
+      "note": "Atypical (reactive) lymphocytes - large, with abundant basophilic cytoplasm molding around neighboring cells - are the reactive CD8+ T cells responding to EBV."
+    }
+  ],
+  "whatMatters": "Fever + pharyngitis + posterior cervical adenopathy + splenomegaly + ATYPICAL LYMPHOCYTES = infectious mononucleosis (EBV). EBV infects B cells (via CD21), but the atypical lymphocytes on the smear are reactive/activated CD8+ CYTOTOXIC T LYMPHOCYTES mounting the antiviral response. Answer B.",
+  "strategy": "Distinguish the infected cell from the reactive cell: EBV INFECTS B lymphocytes (CD21 receptor), but the ATYPICAL lymphocytes seen on the smear are the host's reactive CD8+ T cells (>95% of atypical cells). Pick CD8+ cytotoxic lymphocytes. Reject CD4+ helper cells and CD21+ B cells (the infected cells, a minority of atypical cells), monocytes (vacuolated grayish cytoplasm, not this), and plasma cells (eccentric nucleus, perinuclear hof).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "CD4+ helper lymphocytes",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "CD8+ cytotoxic lymphocytes",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "CD14+ monocytes",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "CD21+ lymphocytes",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "CD27+ plasma cells",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "CD4+ helper lymphocytes - minority of atypical cells",
+      "detail": "WHAT IT IS: CD4 helper T cells. ❌ WHY IT FAILS: activated CD4 cells can look similar, but the atypical lymphocytes in mononucleosis are predominantly CD8+ cytotoxic T cells (>95%). ✅ Correct if: asking about helper T-cell responses generally."
+    },
+    {
+      "letter": "C",
+      "label": "CD14+ monocytes - different morphology (your pick)",
+      "detail": "WHAT IT IS: monocytes (CD14). ❌ WHY IT FAILS: monocytosis can occur in chronic infection, but monocytes have vacuolated, grayish cytoplasm - not the basophilic reactive lymphocyte molding seen here. ✅ Correct if: a monocyte-predominant process."
+    },
+    {
+      "letter": "D",
+      "label": "CD21+ lymphocytes - the INFECTED B cells (not the atypical cells)",
+      "detail": "WHAT IT IS: B lymphocytes, which EBV infects via the CD21 receptor. ❌ WHY IT FAILS: B cells are the cells that are INFECTED, but they make up <5% of the atypical lymphocytes; the reactive atypical cells are CD8+ T cells. ✅ Correct if: asking which cell EBV directly infects (CD21+ B cells)."
+    },
+    {
+      "letter": "E",
+      "label": "CD27+ plasma cells - eccentric nucleus/hof",
+      "detail": "WHAT IT IS: activated plasma cells (ovoid, eccentric nucleus, perinuclear clearing/spoke-wheel chromatin). ❌ WHY IT FAILS: that is a different morphology and not the reactive T cells of mononucleosis. ✅ Correct if: identifying a plasma cell."
+    }
+  ],
+  "reasoning": [
+    "Adolescent with fever, pharyngitis, posterior cervical adenopathy, splenomegaly, and atypical lymphocytes = infectious mononucleosis (EBV)",
+    "EBV infects B cells (CD21), but the atypical lymphocytes are the host's antiviral response",
+    "These reactive/atypical cells are predominantly CD8+ cytotoxic T lymphocytes",
+    "-> CD8+ cytotoxic lymphocytes; answer B"
+  ],
+  "mechanism": "Infectious mononucleosis is caused by Epstein-Barr virus (EBV), which enters through the pharyngeal mucosa and preferentially INFECTS B LYMPHOCYTES by binding the CD21 receptor. Infected B cells present viral antigens on MHC class I, triggering a vigorous host response by REACTIVE (ATYPICAL) CD8+ CYTOTOXIC T LYMPHOCYTES that clonally expand to destroy virus-infected cells. These reactive CD8+ T cells are what appear on the peripheral smear as ATYPICAL LYMPHOCYTES - larger than resting lymphocytes, with abundant basophilic cytoplasm and a membrane that molds ('conforms') around adjacent red cells (Downey cells); they make up >10% of lymphocytes, and >95% are CD8+ T cells. Clinically, mononucleosis presents with fever, exudative pharyngitis, fatigue, posterior cervical (or generalized) lymphadenopathy, and splenomegaly (avoid contact sports due to rupture risk); the heterophile (Monospot) antibody test is positive. Thus the atypical cells are activated CD8+ T cells, not the infected CD21+ B cells (a small minority), CD4 cells, monocytes, or plasma cells.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro/Heme > infectious mononucleosis (EBV): infects B cells (CD21); atypical lymphocytes = reactive CD8+ T cells (>95%); fever, posterior cervical adenopathy, splenomegaly; positive heterophile (Monospot)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "EBV infects B cells, but the atypical smear cells are reactive CD8+ cytotoxic T cells."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on atypical/reactive lymphocyte, CD8 vs CD4, CD21 (EBV receptor), Downey cells, or heterophile antibody? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "CD21+ B cells are the INFECTED cells (minority of atypical cells); CD4/monocytes/plasma cells are wrong lineages/morphology."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "On the smear: a large lymphocyte with abundant basophilic cytoplasm that indents around neighboring red cells (atypical/reactive lymphocyte). Anchor: 'atypical lymphocyte in mono = reactive CD8+ T cell.'"
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: EBV mono - infects B cells (CD21), atypical cells = reactive CD8+ T cells; posterior cervical adenopathy + splenomegaly; Monospot positive."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Atypical lymphocytes in infectious mononucleosis",
+      "back": "Reactive CD8+ cytotoxic T lymphocytes (>95%)"
+    },
+    {
+      "front": "Cell EBV directly infects",
+      "back": "B lymphocytes (via CD21 receptor)"
+    },
+    {
+      "front": "Mononucleosis exam findings",
+      "back": "Fever, pharyngitis, posterior cervical adenopathy, splenomegaly"
+    },
+    {
+      "front": "Diagnostic test for EBV mono",
+      "back": "Heterophile (Monospot) antibody"
+    },
+    {
+      "front": "Mononucleosis activity restriction",
+      "back": "Avoid contact sports (splenic rupture risk)"
+    },
+    {
+      "front": "Ampicillin/amoxicillin in mono",
+      "back": "Causes a morbilliform rash"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Infectious mononucleosis",
+      "detail": "Micro: EBV infects B cells (CD21); atypical cells = reactive CD8+ T cells."
+    },
+    {
+      "tag": "options",
+      "topic": "Immune cell markers",
+      "detail": "Immuno > CD4 (helper), CD8 (cytotoxic), CD21 (B cell/EBV), CD14 (monocyte)."
+    },
+    {
+      "tag": "clinical",
+      "topic": "EBV mono",
+      "detail": "Micro > posterior cervical adenopathy, splenomegaly, Monospot; avoid contact sports."
+    }
+  ],
+  "memoryHook": "EBV hides in B cells, but the smear's big blue atypical lymphocytes are the CD8 T-cell posse hunting them - the reactive cells, not the infected ones.",
+  "stem": [
+    {
+      "text": "A 15-year-old girl is evaluated due to "
+    },
+    {
+      "text": "persistent fever, fatigue, and sore throat",
+      "clue": true,
+      "type": "blue",
+      "note": "Fever, fatigue, and pharyngitis in an adolescent are classic for infectious mononucleosis (Epstein-Barr virus)."
+    },
+    {
+      "text": ". Physical examination reveals "
+    },
+    {
+      "text": "splenomegaly and symmetric posterior cervical lymphadenopathy",
+      "clue": true,
+      "type": "green",
+      "note": "Splenomegaly with POSTERIOR cervical lymphadenopathy is characteristic of infectious mononucleosis."
+    },
+    {
+      "text": ". A peripheral blood smear shows "
+    },
+    {
+      "text": "large, atypical lymphocytes with abundant basophilic cytoplasm",
+      "clue": true,
+      "type": "green",
+      "note": "Atypical (reactive) lymphocytes - large, with abundant basophilic cytoplasm molding around neighboring cells - are the reactive CD8+ T cells responding to EBV."
+    },
+    {
+      "text": " and a cell membrane that conforms to the borders of neighboring red cells. The atypical cells seen here are most likely an activated form of which of the following?"
+    }
+  ]
+}

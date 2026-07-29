@@ -1,0 +1,204 @@
+{
+  "id": "q425",
+  "item": 425,
+  "qid": "1254",
+  "title": "Nitroprusside cyanide toxicity: inhibits electron transfer to oxygen (complex IV)",
+  "system": "Pharmacology",
+  "topic": "Cyanide toxicity / electron transport chain",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 30,
+  "vignette": "A 49-year-old man comes to the emergency department with severe shortness of breath. The patient has a history of hypertension and medication nonadherence. Blood pressure is 260/144 mm Hg and pulse is 100/min. Chest examination demonstrates bibasilar crackles. There are no heart murmurs. Serum creatinine is 1.6 mg/dL. Intravenous furosemide and continuous nitroprusside infusion are started, along with noninvasive positive pressure ventilation, and he experiences improvement in his symptoms. The next morning, the patient is confused and lethargic, and he suffers a generalized tonic-clonic seizure. The skin appears flushed, and serum lactic acid level is elevated. The nitroprusside infusion rate is found to be higher than recommended. Which of the following mechanisms is most likely responsible for the drug toxicity seen in this patient?",
+  "clues": [
+    {
+      "text": "continuous nitroprusside infusion",
+      "type": "orange",
+      "note": "Nitroprusside is metabolized to nitric oxide (vasodilator) AND cyanide; prolonged/high-dose infusion (especially with renal impairment) can cause CYANIDE toxicity."
+    },
+    {
+      "text": "confused and lethargic, and he suffers a generalized tonic-clonic seizure",
+      "type": "red",
+      "note": "Neurologic dysfunction (altered mental status, seizures) reflects impaired cellular respiration from cyanide poisoning."
+    },
+    {
+      "text": "serum lactic acid level is elevated",
+      "type": "green",
+      "note": "Lactic acidosis results because cyanide blocks aerobic respiration, forcing anaerobic metabolism (lactate accumulation)."
+    },
+    {
+      "text": "nitroprusside infusion rate is found to be higher than recommended",
+      "type": "blue",
+      "note": "High-dose nitroprusside increases cyanide production - the key risk factor for this toxicity."
+    }
+  ],
+  "whatMatters": "High-dose nitroprusside releases CYANIDE, a potent mitochondrial toxin that binds the iron in CYTOCHROME C OXIDASE (complex IV), BLOCKING electron transfer to oxygen (the final step of the electron transport chain). Cells cannot use oxygen -> anaerobic metabolism -> lactic acidosis, neurologic dysfunction, and cardiovascular collapse. Answer D (inhibition of electron transfer to oxygen).",
+  "strategy": "Recognize nitroprusside -> cyanide toxicity (high dose, renal impairment, flushing, lactic acidosis, seizures) and the mechanism: cyanide binds complex IV (cytochrome c oxidase), halting electron transfer to O2. Reject impaired oxygen DELIVERY (methemoglobinemia/CO - different), impaired pyruvate->acetyl-CoA (arsenic), increased hepatic NADH (ethanol), and uncoupling of oxidative phosphorylation (dinitrophenol - hyperthermia).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Disruption of tissue oxygen delivery",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Impaired conversion of pyruvate to acetyl-CoA",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased reduction of hepatic NAD+ to NADH",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Inhibition of electron transfer to oxygen",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Uncoupling of oxidative phosphorylation",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Disrupted oxygen DELIVERY - methemoglobinemia / CO",
+      "detail": "WHAT IT IS: impaired oxygen carriage/unloading (methemoglobinemia from oxidizing agents, or carbon monoxide). ❌ WHY IT FAILS: cyanide does not impair oxygen DELIVERY - it blocks cellular USE of oxygen at complex IV (venous blood stays oxygenated/bright red). ✅ Correct if: methemoglobinemia or CO poisoning."
+    },
+    {
+      "letter": "B",
+      "label": "Impaired pyruvate->acetyl-CoA - arsenic",
+      "detail": "WHAT IT IS: inhibition of pyruvate dehydrogenase (e.g., arsenic) blocking pyruvate entry into the TCA cycle. ❌ WHY IT FAILS: cyanide acts at the electron transport chain (complex IV), not pyruvate dehydrogenase. ✅ Correct if: arsenic poisoning (severe GI symptoms/neuropathy)."
+    },
+    {
+      "letter": "C",
+      "label": "Increased hepatic NADH - ethanol",
+      "detail": "WHAT IT IS: ethanol metabolism raising NADH, causing hypoglycemia/lactic acidosis. ❌ WHY IT FAILS: this is ethanol's mechanism, not cyanide's (which blocks the electron transport chain). ✅ Correct if: ethanol-related metabolic derangements."
+    },
+    {
+      "letter": "E",
+      "label": "Uncoupling of oxidative phosphorylation - dinitrophenol",
+      "detail": "WHAT IT IS: uncouplers (e.g., dinitrophenol) let protons leak across the inner membrane, dissipating the gradient as heat. ❌ WHY IT FAILS: cyanide INHIBITS the chain (blocks electron flow), it does not UNCOUPLE it; uncoupling causes fatal HYPERthermia. ✅ Correct if: dinitrophenol overdose (hyperthermia)."
+    }
+  ],
+  "reasoning": [
+    "High-dose nitroprusside (with renal impairment) generates cyanide",
+    "Cyanide binds cytochrome c oxidase (complex IV) of the electron transport chain",
+    "This blocks the transfer of electrons to oxygen (final electron acceptor), halting aerobic ATP production",
+    "-> inhibition of electron transfer to oxygen; answer D"
+  ],
+  "mechanism": "Sodium nitroprusside is a fast-acting vasodilator for hypertensive emergencies; it decomposes into nitric oxide (the vasodilator) and CYANIDE ions. With HIGH doses, prolonged infusions, or RENAL insufficiency (impaired clearance of thiocyanate), cyanide accumulates. CYANIDE is a potent mitochondrial toxin that binds the ferric iron of CYTOCHROME C OXIDASE (Complex IV) in the electron transport chain, BLOCKING the transfer of electrons to their final acceptor, molecular OXYGEN. Cells therefore cannot use oxygen for oxidative phosphorylation despite adequate oxygen delivery (venous blood remains highly oxygenated and 'bright red'); ATP production falls and metabolism shifts to anaerobic glycolysis, generating LACTIC ACIDOSIS and causing neurologic dysfunction (confusion, seizures), flushing, and cardiovascular collapse. Treatment provides sulfur donors (sodium thiosulfate -> rhodanese converts cyanide to thiocyanate), hydroxocobalamin (directly binds cyanide), and/or sodium nitrite (induces methemoglobin to scavenge cyanide). The distractors describe other toxidromes: impaired oxygen delivery (methemoglobinemia/CO), impaired pyruvate dehydrogenase (arsenic), increased NADH (ethanol), and uncoupling of oxidative phosphorylation (dinitrophenol - hyperthermia).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm/Biochem > cyanide (nitroprusside) toxicity: binds cytochrome c oxidase (complex IV), blocks electron transfer to O2 -> lactic acidosis, neuro dysfunction, bright-red venous blood; treat thiosulfate/hydroxocobalamin/nitrite."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Cyanide blocks cellular USE of oxygen at complex IV (not delivery, not pyruvate/NADH, not uncoupling)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on cytochrome c oxidase/complex IV, electron transport chain, cyanide, or oxidative phosphorylation? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Oxygen delivery = methemoglobin/CO; pyruvate dehydrogenase = arsenic; NADH = ethanol; uncoupling = dinitrophenol (hyperthermia)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: cyanide (nitroprusside) inhibits complex IV -> no electron transfer to O2 -> lactic acidosis; antidotes thiosulfate/hydroxocobalamin/nitrite."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Nitroprusside toxicity mechanism",
+      "back": "Cyanide inhibits cytochrome c oxidase (complex IV) - blocks electron transfer to O2"
+    },
+    {
+      "front": "Nitroprusside metabolites",
+      "back": "Nitric oxide (vasodilator) + cyanide (toxin)"
+    },
+    {
+      "front": "Risk factors for nitroprusside cyanide toxicity",
+      "back": "High dose, prolonged infusion, renal insufficiency"
+    },
+    {
+      "front": "Cyanide toxicity findings",
+      "back": "Lactic acidosis, seizures, flushing, bright-red venous blood"
+    },
+    {
+      "front": "Cyanide antidotes",
+      "back": "Sodium thiosulfate, hydroxocobalamin, sodium nitrite"
+    },
+    {
+      "front": "Uncoupler (dinitrophenol) effect",
+      "back": "Dissipates proton gradient as heat -> hyperthermia"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Cyanide toxicity",
+      "detail": "Pharm: inhibits complex IV -> blocks electron transfer to O2; lactic acidosis."
+    },
+    {
+      "tag": "options",
+      "topic": "Metabolic toxins",
+      "detail": "Biochem > CO/methemoglobin (delivery), arsenic (PDH), ethanol (NADH), DNP (uncoupler)."
+    },
+    {
+      "tag": "antidote",
+      "topic": "Cyanide",
+      "detail": "Tox > thiosulfate, hydroxocobalamin, sodium nitrite."
+    }
+  ],
+  "memoryHook": "Nitroprusside sheds cyanide, which clamps complex IV - the cell's oxygen 'off switch' - so oxygen can't be used: lactic acid piles up and the brain seizes despite red, oxygen-rich blood.",
+  "stem": [
+    {
+      "text": "A 49-year-old man comes to the emergency department with severe shortness of breath. The patient has a history of hypertension and medication nonadherence. Blood pressure is 260/144 mm Hg and pulse is 100/min. Chest examination demonstrates bibasilar crackles. There are no heart murmurs. Serum creatinine is 1.6 mg/dL. Intravenous furosemide and "
+    },
+    {
+      "text": "continuous nitroprusside infusion",
+      "clue": true,
+      "type": "orange",
+      "note": "Nitroprusside is metabolized to nitric oxide (vasodilator) AND cyanide; prolonged/high-dose infusion (especially with renal impairment) can cause CYANIDE toxicity."
+    },
+    {
+      "text": " are started, along with noninvasive positive pressure ventilation, and he experiences improvement in his symptoms. The next morning, the patient is "
+    },
+    {
+      "text": "confused and lethargic, and he suffers a generalized tonic-clonic seizure",
+      "clue": true,
+      "type": "red",
+      "note": "Neurologic dysfunction (altered mental status, seizures) reflects impaired cellular respiration from cyanide poisoning."
+    },
+    {
+      "text": ". The skin appears flushed, and "
+    },
+    {
+      "text": "serum lactic acid level is elevated",
+      "clue": true,
+      "type": "green",
+      "note": "Lactic acidosis results because cyanide blocks aerobic respiration, forcing anaerobic metabolism (lactate accumulation)."
+    },
+    {
+      "text": ". The "
+    },
+    {
+      "text": "nitroprusside infusion rate is found to be higher than recommended",
+      "clue": true,
+      "type": "blue",
+      "note": "High-dose nitroprusside increases cyanide production - the key risk factor for this toxicity."
+    },
+    {
+      "text": ". Which of the following mechanisms is most likely responsible for the drug toxicity seen in this patient?"
+    }
+  ]
+}

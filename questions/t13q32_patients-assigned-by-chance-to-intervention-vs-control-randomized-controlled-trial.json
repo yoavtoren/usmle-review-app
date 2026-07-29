@@ -1,0 +1,190 @@
+{
+  "id": "q471",
+  "item": 471,
+  "qid": "14861",
+  "title": "Patients assigned by chance to intervention vs control: randomized controlled trial",
+  "system": "Biostatistics",
+  "topic": "Study design - RCT",
+  "correct": "D",
+  "yourAnswer": "A",
+  "percentCorrect": 59,
+  "vignette": "A study aims to investigate the effectiveness of the topical application of tetracycline ointment in the prevention of surgical-site infection associated with resection of advanced oral cavity cancer. Fifty patients who underwent locoregional resection were assigned by chance to receive standard care alone or tetracycline-ointment in addition to standard care. The patients were then followed for 1 month and the number and severity of surgical-site infections were recorded for each group. Which of the following best describes the study design?",
+  "clues": [
+    {
+      "text": "assigned by chance to receive standard care alone or tetracycline-ointment",
+      "type": "green",
+      "note": "RANDOM allocation of participants to an intervention vs control group is the defining feature of a randomized controlled trial (an experimental design)."
+    },
+    {
+      "text": "followed for 1 month",
+      "type": "blue",
+      "note": "Participants are followed FORWARD in time after the intervention to observe outcomes (prospective)."
+    },
+    {
+      "text": "number and severity of surgical-site infections were recorded",
+      "type": "blue",
+      "note": "The outcome (surgical-site infection) is measured in each group to compare the effect of the assigned intervention."
+    }
+  ],
+  "whatMatters": "Participants were RANDOMLY ASSIGNED (by chance) to receive an INTERVENTION (tetracycline ointment) vs a control, then followed for the outcome. Randomly allocating an intervention to compare groups defines a RANDOMIZED CONTROLLED TRIAL (experimental design). Answer D.",
+  "strategy": "Ask: did the researcher ASSIGN the intervention (experimental) or merely OBSERVE existing exposures (observational)? 'Assigned by chance to an intervention' = randomization = RCT. Reject case-control (starts from OUTCOME status and looks back at exposures), prospective/retrospective cohort (observe naturally occurring exposures, no random assignment), and crossover (each subject receives BOTH treatments sequentially - here each gets only one).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Case-control study",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Crossover design",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Prospective cohort study",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Randomized control trial",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Retrospective cohort study",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Case-control - starts from outcome, looks back",
+      "detail": "WHAT IT IS: an observational study that identifies participants by OUTCOME (cases vs controls) and looks BACK at prior exposures. ❌ WHY IT FAILS: here participants are assigned an intervention going FORWARD; the outcome hasn't happened yet. ✅ Correct if: comparing past exposures between those with vs without the disease."
+    },
+    {
+      "letter": "B",
+      "label": "Crossover - each subject gets both treatments",
+      "detail": "WHAT IT IS: an experiment where each subject receives different treatments SEQUENTIALLY (serving as their own control). ❌ WHY IT FAILS: each patient here receives only ONE assignment (ointment OR standard care), not both in sequence. ✅ Correct if: within-subject sequential treatments with washout."
+    },
+    {
+      "letter": "C",
+      "label": "Prospective cohort - observes existing exposures",
+      "detail": "WHAT IT IS: an observational study following groups defined by their (naturally occurring) exposure status forward in time. ❌ WHY IT FAILS: exposure here is RANDOMLY ASSIGNED by the researcher, which makes it experimental (RCT), not observational. ✅ Correct if: groups self-select exposure and are followed (no randomization)."
+    },
+    {
+      "letter": "E",
+      "label": "Retrospective cohort - looks back at records",
+      "detail": "WHAT IT IS: a cohort defined by exposure status in the PAST and tracked to outcomes via records. ❌ WHY IT FAILS: this study assigns exposure now and follows forward; it is not a records-based backward look, and exposure is randomized. ✅ Correct if: historical exposure cohorts tracked through existing data."
+    }
+  ],
+  "reasoning": [
+    "Participants were randomly assigned to an intervention vs control",
+    "Random assignment of an intervention is an EXPERIMENTAL design",
+    "They were followed forward to measure the outcome (surgical-site infection)",
+    "-> randomized controlled trial; answer D"
+  ],
+  "mechanism": "Research designs are classified by how much CONTROL the investigator has over the exposure/intervention. In OBSERVATIONAL designs (cross-sectional, case-control, cohort) the researcher merely OBSERVES naturally occurring exposures. In EXPERIMENTAL designs the researcher ASSIGNS the intervention. A RANDOMIZED CONTROLLED TRIAL is the prototypical experiment: participants are RANDOMLY ALLOCATED to two or more groups to receive a specific INTERVENTION (or control), and outcomes are compared - randomization balances confounders across groups. Here, 50 postoperative patients were assigned BY CHANCE to tetracycline ointment plus standard care versus standard care alone, then followed for surgical-site infections - a textbook RCT. The distractors are observational or structurally different: case-control (outcome-based, backward), prospective/retrospective cohort (exposure observed, not assigned), and crossover (each subject receives multiple treatments sequentially).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > study designs: experimental (RCT, crossover) assign the intervention; observational (cross-sectional, case-control, cohort) observe exposures; RCT = random allocation to intervention vs control; randomization reduces confounding."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Randomly assigned intervention + follow-up for outcome = RCT."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on RCT, randomization, cohort vs case-control, crossover, or experimental vs observational? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Case-control = outcome-based/backward; cohort = observed exposure (no randomization); crossover = both treatments per subject."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: 'assigned by chance' to an intervention = randomized controlled trial (experimental)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Random assignment to intervention vs control",
+      "back": "Randomized controlled trial (experimental)"
+    },
+    {
+      "front": "Experimental vs observational",
+      "back": "Experimental assigns the exposure; observational observes it"
+    },
+    {
+      "front": "Case-control design direction",
+      "back": "Start from outcome (cases/controls), look back at exposure"
+    },
+    {
+      "front": "Crossover design",
+      "back": "Each subject receives both treatments sequentially"
+    },
+    {
+      "front": "Cohort study",
+      "back": "Observe groups by exposure, follow forward (or backward via records)"
+    },
+    {
+      "front": "Benefit of randomization",
+      "back": "Balances confounders across groups"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Randomized controlled trial",
+      "detail": "Biostat: random allocation to intervention vs control (experimental)."
+    },
+    {
+      "tag": "options",
+      "topic": "Study designs",
+      "detail": "Biostat > case-control, cohort, crossover distinctions."
+    },
+    {
+      "tag": "concept",
+      "topic": "Randomization",
+      "detail": "Biostat > reduces confounding; hallmark of RCT."
+    }
+  ],
+  "memoryHook": "If a coin flip decides who gets the treatment, it's a randomized controlled trial - the researcher is running the experiment, not just watching.",
+  "stem": [
+    {
+      "text": "A study aims to investigate the effectiveness of the topical application of tetracycline ointment in the prevention of surgical-site infection associated with resection of advanced oral cavity cancer. Fifty patients who underwent locoregional resection were "
+    },
+    {
+      "text": "assigned by chance to receive standard care alone or tetracycline-ointment",
+      "clue": true,
+      "type": "green",
+      "note": "RANDOM allocation of participants to an intervention vs control group is the defining feature of a randomized controlled trial (an experimental design)."
+    },
+    {
+      "text": " in addition to standard care. The patients were then "
+    },
+    {
+      "text": "followed for 1 month",
+      "clue": true,
+      "type": "blue",
+      "note": "Participants are followed FORWARD in time after the intervention to observe outcomes (prospective)."
+    },
+    {
+      "text": " and the "
+    },
+    {
+      "text": "number and severity of surgical-site infections were recorded",
+      "clue": true,
+      "type": "blue",
+      "note": "The outcome (surgical-site infection) is measured in each group to compare the effect of the assigned intervention."
+    },
+    {
+      "text": " for each group. Which of the following best describes the study design?"
+    }
+  ]
+}

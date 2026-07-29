@@ -1,0 +1,186 @@
+{
+  "id": "q435",
+  "item": 435,
+  "qid": "1977",
+  "title": "Atrial fibrillation: ventricular rate set by AV node refractory period",
+  "system": "Physiology",
+  "topic": "Atrial fibrillation - ventricular response",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 50,
+  "vignette": "A 69-year-old man is brought to the emergency department with sudden onset palpitations and dyspnea. His medical history is significant for hypertension and gastroesophageal reflux disease. ECG reveals a heart rate of 120/min with an irregularly irregular rhythm, narrow QRS complexes, and no organized P waves. Which of the following physiologic factors most likely determines the ventricular contraction rate in this patient?",
+  "clues": [
+    {
+      "text": "irregularly irregular rhythm, narrow QRS complexes, and no organized P waves",
+      "type": "green",
+      "note": "Absent P waves + irregularly irregular narrow-QRS rhythm = atrial fibrillation; the atria fire chaotically, so the AV node gates how many impulses reach the ventricles."
+    },
+    {
+      "text": "ventricular contraction rate",
+      "type": "blue",
+      "note": "In atrial fibrillation the ventricular rate is limited by how frequently the AV node can conduct impulses - i.e., its refractory period."
+    }
+  ],
+  "whatMatters": "In ATRIAL FIBRILLATION, the atria depolarize chaotically at ~300-600/min. The AV NODE cannot conduct all these impulses - its REFRACTORY PERIOD limits how many reach the ventricles - so the AV node refractory period determines the (irregular) ventricular rate. Answer B.",
+  "strategy": "Recognize atrial fibrillation and reason about the ventricular response: the AV node is the gatekeeper; its refractory period sets the ventricular rate (this is why AV-nodal blockers - beta blockers, non-DHP CCBs, digoxin - control rate). Reject atrial depolarization rate (chaotic/too fast, not the limiter), bundle-branch conductivity (affects QRS width), Purkinje pacemaker activity (only in profound bradycardia), sinoatrial discharge (overridden in AF), and ventricular muscle refractory period (doesn't limit rate at these rates).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Atrial muscle depolarization rate",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Atrioventricular node refractory period",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Bundle branch conductivity",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Purkinje system pacemaker activity",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Sinoatrial node discharge rate",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Ventricular muscle refractory period",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Atrial depolarization rate - chaotic, not the limiter",
+      "detail": "WHAT IT IS: the rate at which the atria depolarize (~300-600/min in AF). ❌ WHY IT FAILS: the atria fire far faster than the ventricles can respond; the AV NODE (not atrial rate) limits how many impulses reach the ventricles. ✅ Correct if: asking what generates the chaotic atrial activity."
+    },
+    {
+      "letter": "C",
+      "label": "Bundle branch conductivity - affects QRS width, not rate",
+      "detail": "WHAT IT IS: conduction through the bundle branches, which determines QRS DURATION. ❌ WHY IT FAILS: it widens the QRS in bundle-branch block but does not set the ventricular rate. ✅ Correct if: QRS widening (bundle branch block)."
+    },
+    {
+      "letter": "D",
+      "label": "Purkinje pacemaker activity - only in severe bradycardia",
+      "detail": "WHAT IT IS: the Purkinje system can act as an escape pacemaker in profound bradycardia (<40/min). ❌ WHY IT FAILS: in AF the ventricles are being driven by AV-nodal conduction, not a Purkinje escape rhythm. ✅ Correct if: complete heart block with a ventricular escape."
+    },
+    {
+      "letter": "E",
+      "label": "Sinoatrial node discharge - overridden in AF",
+      "detail": "WHAT IT IS: the normal pacemaker's firing rate. ❌ WHY IT FAILS: in AF the chaotic atrial depolarizations are independent of SA node activity, which is overridden. ✅ Correct if: normal sinus rhythm rate control."
+    },
+    {
+      "letter": "F",
+      "label": "Ventricular muscle refractory period - doesn't limit rate here",
+      "detail": "WHAT IT IS: the refractory period of ventricular myocardium. ❌ WHY IT FAILS: it does not limit ventricular rate during AF (rates could approach ~300/min in VT); the AV node is the limiting gate. ✅ Correct if: asking about ventricular tachyarrhythmia limits."
+    }
+  ],
+  "reasoning": [
+    "Absent P waves + irregularly irregular narrow-QRS rhythm = atrial fibrillation",
+    "The atria depolarize chaotically at ~300-600/min - far faster than the ventricles can follow",
+    "The AV node's refractory period determines how many atrial impulses are conducted to the ventricles",
+    "-> AV node refractory period sets the ventricular rate; answer B"
+  ],
+  "mechanism": "Atrial fibrillation arises from chaotic, continuous electrical activity in the atria (often triggered near the pulmonary veins), producing ABSENT P waves and irregularly irregular R-R intervals with narrow QRS complexes. The atria depolarize extremely rapidly (~300-600/min), but the ventricles cannot respond that fast. The ATRIOVENTRICULAR (AV) NODE acts as the gatekeeper: each time it is excited it enters a REFRACTORY PERIOD during which further atrial impulses cannot be transmitted, so only a fraction of atrial impulses reach the ventricles. Because atrial excitation is random, the impulses that do pass produce an IRREGULAR ventricular rhythm, typically averaging ~90-170/min. The AV node's refractory period therefore DETERMINES the ventricular contraction rate - which is exactly why AV-nodal-blocking drugs (beta blockers, non-dihydropyridine calcium channel blockers, digoxin) are used for RATE CONTROL in AF. The distractors don't set the rate: atrial depolarization is too fast to be the limiter, bundle-branch conduction affects QRS width, Purkinje pacing occurs only in severe bradycardia, SA-node activity is overridden, and the ventricular muscle refractory period doesn't limit rate at these frequencies.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid CV > atrial fibrillation: absent P waves, irregularly irregular, narrow QRS; ventricular rate set by AV node refractory period; rate control with AV-nodal blockers (beta blockers, non-DHP CCB, digoxin)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "The AV node gates conduction, so its refractory period determines the ventricular rate in AF."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on AV node refractory period, atrial fibrillation, ventricular response, or rate vs rhythm control? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Atrial rate is chaotic (not the limiter); bundle branches set QRS width; Purkinje/SA/ventricular refractory don't set the AF ventricular rate."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: AF ventricular rate limited by AV node refractory period; control rate with beta blockers/non-DHP CCB/digoxin."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "What sets ventricular rate in atrial fibrillation",
+      "back": "AV node refractory period (gatekeeper)"
+    },
+    {
+      "front": "Atrial fibrillation ECG",
+      "back": "Absent P waves, irregularly irregular, narrow QRS"
+    },
+    {
+      "front": "Atrial depolarization rate in AF",
+      "back": "~300-600/min (too fast for ventricles)"
+    },
+    {
+      "front": "Rate-control drugs for AF",
+      "back": "Beta blockers, non-DHP CCB (diltiazem/verapamil), digoxin"
+    },
+    {
+      "front": "Bundle-branch conduction determines",
+      "back": "QRS duration (width), not rate"
+    },
+    {
+      "front": "Purkinje escape pacemaker rate",
+      "back": "~<40/min (profound bradycardia)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Atrial fibrillation",
+      "detail": "CV: AV node refractory period sets the (irregular) ventricular rate."
+    },
+    {
+      "tag": "options",
+      "topic": "Conduction system",
+      "detail": "CV > bundle branches (QRS width), Purkinje (escape), SA node (overridden)."
+    },
+    {
+      "tag": "treatment",
+      "topic": "AF rate control",
+      "detail": "CV > beta blockers, non-DHP CCB, digoxin (slow AV node)."
+    }
+  ],
+  "memoryHook": "The atria fire like a machine gun in AF, but the AV node is the turnstile - its refractory period decides how many beats slip through to the ventricles (which is why we slow the node to control the rate).",
+  "stem": [
+    {
+      "text": "A 69-year-old man is brought to the emergency department with sudden onset palpitations and dyspnea. His medical history is significant for hypertension and gastroesophageal reflux disease. ECG reveals a heart rate of 120/min with an "
+    },
+    {
+      "text": "irregularly irregular rhythm, narrow QRS complexes, and no organized P waves",
+      "clue": true,
+      "type": "green",
+      "note": "Absent P waves + irregularly irregular narrow-QRS rhythm = atrial fibrillation; the atria fire chaotically, so the AV node gates how many impulses reach the ventricles."
+    },
+    {
+      "text": ". Which of the following physiologic factors most likely determines the "
+    },
+    {
+      "text": "ventricular contraction rate",
+      "clue": true,
+      "type": "blue",
+      "note": "In atrial fibrillation the ventricular rate is limited by how frequently the AV node can conduct impulses - i.e., its refractory period."
+    },
+    {
+      "text": " in this patient?"
+    }
+  ]
+}

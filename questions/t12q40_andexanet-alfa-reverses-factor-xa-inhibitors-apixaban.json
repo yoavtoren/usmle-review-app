@@ -1,0 +1,190 @@
+{
+  "id": "q439",
+  "item": 439,
+  "qid": "15390",
+  "title": "Andexanet alfa reverses factor Xa inhibitors (apixaban)",
+  "system": "Pharmacology",
+  "topic": "Anticoagulant reversal agents",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 63,
+  "vignette": "A 74-year-old woman is brought to the emergency department after a fall with progressive confusion and a severe headache. She has atrial fibrillation and takes an oral anticoagulant for stroke prevention. CT scan of the head shows an acute intracranial hemorrhage. To urgently reverse her anticoagulation, she is given andexanet alfa, a recombinant modified human factor Xa decoy protein that binds and sequesters the drug. Which of the following medications was this patient most likely taking?",
+  "clues": [
+    {
+      "text": "atrial fibrillation and takes an oral anticoagulant for stroke prevention",
+      "type": "blue",
+      "note": "Atrial fibrillation stroke prophylaxis is commonly a direct oral anticoagulant (DOAC) - here a factor Xa inhibitor, given the reversal agent used."
+    },
+    {
+      "text": "acute intracranial hemorrhage",
+      "type": "red",
+      "note": "Life-threatening bleeding on an anticoagulant mandates urgent reversal with the agent specific to that drug's mechanism."
+    },
+    {
+      "text": "andexanet alfa, a recombinant modified human factor Xa decoy protein that binds and sequesters the drug",
+      "type": "green",
+      "note": "Andexanet alfa is a catalytically inactive factor Xa 'decoy' that binds and neutralizes FACTOR Xa INHIBITORS - apixaban and rivaroxaban - so the drug taken must be a factor Xa inhibitor."
+    }
+  ],
+  "whatMatters": "ANDEXANET ALFA is a decoy factor Xa protein that binds and sequesters DIRECT FACTOR Xa INHIBITORS (apixaban, rivaroxaban), reversing their effect. Of the options, the factor Xa inhibitor is APIXABAN. Answer A.",
+  "strategy": "Match reversal agent to drug class: andexanet alfa -> factor Xa inhibitors (apiXaban, rivaroXaban - the 'Xa' in the name). Then pick the factor Xa inhibitor from the list (apixaban). Reject dabigatran (direct thrombin inhibitor - reversed by idarucizumab), warfarin (reversed by vitamin K + 4-factor PCC/FFP), unfractionated heparin (reversed by protamine), and enoxaparin/LMWH (only partially reversed by protamine).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Apixaban",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Dabigatran",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Warfarin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Unfractionated heparin",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Enoxaparin",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Dabigatran - thrombin inhibitor, reversed by idarucizumab",
+      "detail": "WHAT IT IS: a direct THROMBIN (factor IIa) inhibitor. ❌ WHY IT FAILS: it is not a factor Xa inhibitor, so andexanet alfa does not reverse it; its specific antidote is idarucizumab. ✅ Correct if: reversal with idarucizumab."
+    },
+    {
+      "letter": "C",
+      "label": "Warfarin - vitamin K antagonist, reversed by PCC/vitamin K",
+      "detail": "WHAT IT IS: a vitamin K antagonist reducing factors II, VII, IX, X. ❌ WHY IT FAILS: warfarin is reversed with vitamin K plus 4-factor prothrombin complex concentrate (or FFP), not andexanet alfa. ✅ Correct if: elevated INR reversed with vitamin K + PCC."
+    },
+    {
+      "letter": "D",
+      "label": "Unfractionated heparin - reversed by protamine",
+      "detail": "WHAT IT IS: activates antithrombin (inhibits thrombin and Xa); monitored by aPTT. ❌ WHY IT FAILS: its antidote is protamine sulfate, not andexanet alfa. ✅ Correct if: reversal with protamine (full for UFH)."
+    },
+    {
+      "letter": "E",
+      "label": "Enoxaparin (LMWH) - only partially reversed by protamine",
+      "detail": "WHAT IT IS: a low-molecular-weight heparin acting mainly on factor Xa via antithrombin. ❌ WHY IT FAILS: andexanet alfa targets DIRECT oral Xa inhibitors; LMWH is (partially) reversed by protamine. ✅ Correct if: partial reversal with protamine."
+    }
+  ],
+  "reasoning": [
+    "Andexanet alfa is a decoy factor Xa protein that binds and neutralizes factor Xa INHIBITORS",
+    "Therefore the patient's drug must be a direct factor Xa inhibitor",
+    "Among the options, apixaban is the factor Xa inhibitor (rivaroxaban would also qualify)",
+    "-> apixaban; answer A"
+  ],
+  "mechanism": "ANDEXANET ALFA is a recombinant, catalytically INACTIVE (modified) human factor Xa 'DECOY' protein. It binds direct factor Xa INHIBITORS - APIXABAN and RIVAROXABAN - with high affinity, sequestering them away from endogenous factor Xa and thereby restoring the ability of native factor Xa to convert prothrombin to thrombin and generate a clot. It is used for urgent reversal of factor Xa inhibitors in life-threatening bleeding (e.g., intracranial hemorrhage). The '-Xa-' in apiXaban and rivaroXaban is a useful reminder that these are factor Xa inhibitors matched to andexanet. The distractors have DIFFERENT reversal strategies: DABIGATRAN (a direct thrombin/IIa inhibitor) is reversed by IDARUCIZUMAB (a monoclonal antibody fragment); WARFARIN (vitamin K antagonist) is reversed by VITAMIN K plus 4-factor PROTHROMBIN COMPLEX CONCENTRATE (or FFP); UNFRACTIONATED HEPARIN is reversed by PROTAMINE sulfate; and ENOXAPARIN (LMWH) is only PARTIALLY reversed by protamine.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > anticoagulant reversal: andexanet alfa reverses factor Xa inhibitors (apixaban, rivaroxaban); idarucizumab reverses dabigatran; vitamin K + PCC reverse warfarin; protamine reverses heparin (partial for LMWH)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Andexanet alfa = decoy Xa -> reverses a factor Xa inhibitor -> apixaban."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on andexanet alfa, factor Xa inhibitor, DOAC, idarucizumab, or PCC? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Dabigatran = idarucizumab; warfarin = vitamin K/PCC; heparin = protamine; LMWH = partial protamine."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: apiXaban/rivaroXaban (Xa inhibitors) reversed by andexanet alfa; dabigatran (IIa) reversed by idarucizumab."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Andexanet alfa reverses",
+      "back": "Factor Xa inhibitors (apixaban, rivaroxaban)"
+    },
+    {
+      "front": "Andexanet alfa mechanism",
+      "back": "Inactive factor Xa 'decoy' - binds/sequesters the Xa inhibitor"
+    },
+    {
+      "front": "Dabigatran reversal agent",
+      "back": "Idarucizumab (anti-dabigatran antibody fragment)"
+    },
+    {
+      "front": "Warfarin reversal (major bleed)",
+      "back": "Vitamin K + 4-factor prothrombin complex concentrate"
+    },
+    {
+      "front": "Heparin reversal agent",
+      "back": "Protamine sulfate (partial for LMWH/enoxaparin)"
+    },
+    {
+      "front": "Trick to spot factor Xa inhibitors",
+      "back": "'-Xa-' in apiXaban / rivaroXaban"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / drug",
+      "topic": "Andexanet alfa",
+      "detail": "Pharm: reverses factor Xa inhibitors (apixaban, rivaroxaban) in major bleeds."
+    },
+    {
+      "tag": "options",
+      "topic": "Reversal agents",
+      "detail": "Pharm > idarucizumab (dabigatran), vitamin K/PCC (warfarin), protamine (heparin)."
+    },
+    {
+      "tag": "class",
+      "topic": "DOACs",
+      "detail": "Cardio/Pharm > Xa inhibitors vs direct thrombin inhibitor; AF stroke prevention."
+    }
+  ],
+  "memoryHook": "AndeXanet mops up the '-Xa-' drugs (apiXaban, rivaroXaban); dabigatran gets idaruciZUMab instead.",
+  "stem": [
+    {
+      "text": "A 74-year-old woman is brought to the emergency department after a fall with progressive confusion and a severe headache. She has "
+    },
+    {
+      "text": "atrial fibrillation and takes an oral anticoagulant for stroke prevention",
+      "clue": true,
+      "type": "blue",
+      "note": "Atrial fibrillation stroke prophylaxis is commonly a direct oral anticoagulant (DOAC) - here a factor Xa inhibitor, given the reversal agent used."
+    },
+    {
+      "text": ". CT scan of the head shows an "
+    },
+    {
+      "text": "acute intracranial hemorrhage",
+      "clue": true,
+      "type": "red",
+      "note": "Life-threatening bleeding on an anticoagulant mandates urgent reversal with the agent specific to that drug's mechanism."
+    },
+    {
+      "text": ". To urgently reverse her anticoagulation, she is given "
+    },
+    {
+      "text": "andexanet alfa, a recombinant modified human factor Xa decoy protein that binds and sequesters the drug",
+      "clue": true,
+      "type": "green",
+      "note": "Andexanet alfa is a catalytically inactive factor Xa 'decoy' that binds and neutralizes FACTOR Xa INHIBITORS - apixaban and rivaroxaban - so the drug taken must be a factor Xa inhibitor."
+    },
+    {
+      "text": ". Which of the following medications was this patient most likely taking?"
+    }
+  ]
+}

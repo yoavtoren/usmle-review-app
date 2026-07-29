@@ -1,0 +1,209 @@
+{
+  "id": "q453",
+  "item": 453,
+  "qid": "2034",
+  "title": "Familial hypercholesterolemia Southern blot: son inherited the 8 kb mutant band",
+  "system": "Biochemistry",
+  "topic": "Southern blotting / autosomal dominant inheritance",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 90,
+  "vignette": "A 34-year-old man is found to have an LDL level of 310 mg/dL and a normal serum triglyceride level. His father suffered a myocardial infarction at age 39, and his paternal grandfather died of a heart attack at age 40. The patient's wife has a normal lipid profile. DNA samples are obtained from several family members for genetic analysis. Southern blotting of restriction fragments from a region containing the LDL receptor gene shows the following pattern: the patient's lane has a 12 kb and an 8 kb band; the wife's lane has only a 20 kb band; the son's lane has a 20 kb and an 8 kb band; the brother's lane has a 12 kb and a 10 kb band; and the father's lane has a 10 kb and an 8 kb band. Which of the following statements best describes the DNA analysis results?",
+  "clues": [
+    {
+      "text": "LDL level of 310 mg/dL",
+      "type": "green",
+      "note": "Markedly elevated LDL (310 vs normal <100 mg/dL) with normal triglycerides in a young adult suggests heterozygous familial hypercholesterolemia (LDL receptor defect)."
+    },
+    {
+      "text": "father suffered a myocardial infarction at age 39",
+      "type": "orange",
+      "note": "Premature coronary disease in a first-degree relative supports an inherited (autosomal dominant) hypercholesterolemia; the father is affected."
+    },
+    {
+      "text": "paternal grandfather died of a heart attack at age 40",
+      "type": "orange",
+      "note": "Premature CAD across successive generations (grandfather -> father) fits AUTOSOMAL DOMINANT vertical transmission of familial hypercholesterolemia."
+    },
+    {
+      "text": "the patient's lane has a 12 kb and an 8 kb band",
+      "type": "blue",
+      "note": "On the blot the affected patient and his affected father share the 8 kb band, which therefore marks the mutant LDL receptor allele; the son also carries the 8 kb band."
+    }
+  ],
+  "whatMatters": "The patient and his affected father BOTH carry the 8 kb band, so the 8 kb restriction fragment marks the MUTANT LDL receptor allele (familial hypercholesterolemia, autosomal dominant). The patient's SON also has the 8 kb band, so he most likely INHERITED the mutation. Answer E.",
+  "strategy": "Find the band shared by the two people known to be AFFECTED (patient + father) = 8 kb = mutant allele. Then see who else carries it: the son does -> he inherited the mutation. Reject 10 kb/12 kb as the mutant band (the patient, who is affected, must carry it - he lacks 10 kb; the 12 kb is shared with the unaffected-pattern brother), reject X-linked (father-to-son transmission would be impossible for X-linked, and FH is autosomal dominant), and reject 'brother inherited it' (brother lacks the 8 kb band).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "The disease is transmitted in an X-linked recessive fashion",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "The mutation is probably located in the 10 kb band",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "The mutation is probably located in the 12 kb band",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "The patient's brother most likely inherited the mutation",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "The patient's son most likely inherited the mutation",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "X-linked recessive - contradicted by inheritance/disease",
+      "detail": "WHAT IT IS: transmission on the X chromosome from carrier mothers to sons. ❌ WHY IT FAILS: familial hypercholesterolemia is AUTOSOMAL DOMINANT, and father-to-son transmission (grandfather->father->patient) cannot occur with X-linked inheritance. ✅ Correct if: a true X-linked pedigree (no male-to-male transmission)."
+    },
+    {
+      "letter": "B",
+      "label": "Mutation in 10 kb band - patient lacks it",
+      "detail": "WHAT IT IS: assigning the mutation to the 10 kb fragment. ❌ WHY IT FAILS: the affected PATIENT does not have a 10 kb band, so the mutant allele cannot be the 10 kb segment (the brother inherited the 10 kb band from the father and is not affected). ✅ Correct if: the affected individuals shared the 10 kb band."
+    },
+    {
+      "letter": "C",
+      "label": "Mutation in 12 kb band - shared with unaffected pattern",
+      "detail": "WHAT IT IS: assigning the mutation to the 12 kb fragment. ❌ WHY IT FAILS: the 12 kb band is shared by the patient and his brother, but the father (affected) lacks 12 kb; the segment common to both affected people (patient + father) is the 8 kb band. ✅ Correct if: both affected individuals shared the 12 kb band."
+    },
+    {
+      "letter": "D",
+      "label": "Brother inherited the mutation - he lacks 8 kb",
+      "detail": "WHAT IT IS: claiming the brother carries the mutant allele. ❌ WHY IT FAILS: the brother's lane shows 12 kb and 10 kb but NOT the 8 kb mutant band, so he did not inherit it. ✅ Correct if: the brother's lane contained the 8 kb band."
+    }
+  ],
+  "reasoning": [
+    "Very high LDL + premature CAD across generations = autosomal dominant familial hypercholesterolemia",
+    "The two known-affected people (patient and father) share the 8 kb band -> 8 kb marks the mutant LDL receptor allele",
+    "The patient's son also carries the 8 kb band",
+    "-> the son most likely inherited the mutation; answer E"
+  ],
+  "mechanism": "Heterozygous FAMILIAL HYPERCHOLESTEROLEMIA is an AUTOSOMAL DOMINANT LDL-receptor defect causing markedly elevated LDL and PREMATURE atherosclerosis (myocardial infarction at young ages across generations). SOUTHERN BLOTTING detects DNA sequence differences: genomic DNA is cut by restriction enzymes, fragments are separated by gel electrophoresis (larger fragments migrate slower), transferred to a membrane, and hybridized with a labeled DNA PROBE complementary to the LDL receptor gene, revealing band patterns. Because a mutation can create or destroy a restriction site, the mutant allele produces a distinctively sized fragment. Here, the two individuals known to be AFFECTED - the patient and his father - both carry the 8 kb band, identifying the 8 kb restriction fragment as the MUTANT LDL receptor allele. The patient's SON also carries the 8 kb band, so he most likely inherited the mutation and is at risk. The brother inherited the father's 10 kb (non-mutant) band and lacks the 8 kb fragment; father-to-son transmission also excludes X-linked inheritance.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem/Genetics > Southern blot (DNA): restriction digest -> electrophoresis -> probe hybridization; familial hypercholesterolemia = autosomal dominant LDL receptor defect, premature CAD; mutant allele = band shared by affected individuals."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Band shared by affected patient + affected father (8 kb) = mutant allele; son has it -> inherited it."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on Southern blot, restriction fragment, probe hybridization, familial hypercholesterolemia, or autosomal dominant? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "10 kb/12 kb aren't shared by BOTH affected people; brother lacks 8 kb; father-to-son transmission excludes X-linked."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "Southern blot (stem image): compare lanes - the 8 kb band is common to the two affected members (patient + father), marking the mutant allele; the son carries it -> inherited the mutation."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: on a linkage blot, the mutant allele = the band shared by affected individuals; trace it to at-risk relatives."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Familial hypercholesterolemia inheritance/defect",
+      "back": "Autosomal dominant LDL receptor mutation"
+    },
+    {
+      "front": "Identify the mutant band on a family blot",
+      "back": "Band shared by the AFFECTED individuals"
+    },
+    {
+      "front": "Southern blot analyzes",
+      "back": "DNA (restriction fragments) via probe hybridization"
+    },
+    {
+      "front": "Male-to-male (father-son) transmission excludes",
+      "back": "X-linked inheritance"
+    },
+    {
+      "front": "Heterozygous FH LDL level",
+      "back": "Markedly elevated (e.g., ~300 mg/dL) with premature CAD"
+    },
+    {
+      "front": "SNARE of blots (SNOW DROP)",
+      "back": "Southern=DNA, Northern=RNA, Western=protein"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Southern blotting",
+      "detail": "Biochem: DNA restriction fragments; mutant allele = band shared by affected members."
+    },
+    {
+      "tag": "disease",
+      "topic": "Familial hypercholesterolemia",
+      "detail": "Genetics > autosomal dominant LDL receptor defect; premature CAD."
+    },
+    {
+      "tag": "options",
+      "topic": "Inheritance patterns",
+      "detail": "Genetics > father-to-son transmission excludes X-linked."
+    }
+  ],
+  "memoryHook": "On a family blot, the band that shows up in everyone who's sick IS the disease - here the 8 kb band; the son carries it, so he's inherited the bad LDL receptor.",
+  "stem": [
+    {
+      "text": "A 34-year-old man is found to have an "
+    },
+    {
+      "text": "LDL level of 310 mg/dL",
+      "clue": true,
+      "type": "green",
+      "note": "Markedly elevated LDL (310 vs normal <100 mg/dL) with normal triglycerides in a young adult suggests heterozygous familial hypercholesterolemia (LDL receptor defect)."
+    },
+    {
+      "text": " and a normal serum triglyceride level. His "
+    },
+    {
+      "text": "father suffered a myocardial infarction at age 39",
+      "clue": true,
+      "type": "orange",
+      "note": "Premature coronary disease in a first-degree relative supports an inherited (autosomal dominant) hypercholesterolemia; the father is affected."
+    },
+    {
+      "text": ", and his "
+    },
+    {
+      "text": "paternal grandfather died of a heart attack at age 40",
+      "clue": true,
+      "type": "orange",
+      "note": "Premature CAD across successive generations (grandfather -> father) fits AUTOSOMAL DOMINANT vertical transmission of familial hypercholesterolemia."
+    },
+    {
+      "text": ". The patient's wife has a normal lipid profile. DNA samples are obtained from several family members for genetic analysis. Southern blotting of restriction fragments from a region containing the LDL receptor gene shows the following pattern: "
+    },
+    {
+      "text": "the patient's lane has a 12 kb and an 8 kb band",
+      "clue": true,
+      "type": "blue",
+      "note": "On the blot the affected patient and his affected father share the 8 kb band, which therefore marks the mutant LDL receptor allele; the son also carries the 8 kb band."
+    },
+    {
+      "text": "; the wife's lane has only a 20 kb band; the son's lane has a 20 kb and an 8 kb band; the brother's lane has a 12 kb and a 10 kb band; and the father's lane has a 10 kb and an 8 kb band. Which of the following statements best describes the DNA analysis results?"
+    }
+  ]
+}

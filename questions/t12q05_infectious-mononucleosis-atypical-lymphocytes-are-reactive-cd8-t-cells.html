@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infectious mononucleosis: atypical lymphocytes are reactive CD8+ T cells</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 12 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q404", "item": 404, "qid": "7643", "title": "Infectious mononucleosis: atypical lymphocytes are reactive CD8+ T cells", "system": "Hematology", "topic": "Infectious mononucleosis (EBV)", "correct": "B", "yourAnswer": "C", "percentCorrect": 40, "vignette": "A 15-year-old girl is evaluated due to persistent fever, fatigue, and sore throat. Physical examination reveals splenomegaly and symmetric posterior cervical lymphadenopathy. A peripheral blood smear shows large, atypical lymphocytes with abundant basophilic cytoplasm and a cell membrane that conforms to the borders of neighboring red cells. The atypical cells seen here are most likely an activated form of which of the following?", "clues": [{"text": "persistent fever, fatigue, and sore throat", "type": "blue", "note": "Fever, fatigue, and pharyngitis in an adolescent are classic for infectious mononucleosis (Epstein-Barr virus)."}, {"text": "splenomegaly and symmetric posterior cervical lymphadenopathy", "type": "green", "note": "Splenomegaly with POSTERIOR cervical lymphadenopathy is characteristic of infectious mononucleosis."}, {"text": "large, atypical lymphocytes with abundant basophilic cytoplasm", "type": "green", "note": "Atypical (reactive) lymphocytes - large, with abundant basophilic cytoplasm molding around neighboring cells - are the reactive CD8+ T cells responding to EBV."}], "whatMatters": "Fever + pharyngitis + posterior cervical adenopathy + splenomegaly + ATYPICAL LYMPHOCYTES = infectious mononucleosis (EBV). EBV infects B cells (via CD21), but the atypical lymphocytes on the smear are reactive/activated CD8+ CYTOTOXIC T LYMPHOCYTES mounting the antiviral response. Answer B.", "strategy": "Distinguish the infected cell from the reactive cell: EBV INFECTS B lymphocytes (CD21 receptor), but the ATYPICAL lymphocytes seen on the smear are the host's reactive CD8+ T cells (>95% of atypical cells). Pick CD8+ cytotoxic lymphocytes. Reject CD4+ helper cells and CD21+ B cells (the infected cells, a minority of atypical cells), monocytes (vacuolated grayish cytoplasm, not this), and plasma cells (eccentric nucleus, perinuclear hof).", "options": [{"letter": "A", "text": "CD4+ helper lymphocytes", "correct": false}, {"letter": "B", "text": "CD8+ cytotoxic lymphocytes", "correct": true}, {"letter": "C", "text": "CD14+ monocytes", "correct": false}, {"letter": "D", "text": "CD21+ lymphocytes", "correct": false}, {"letter": "E", "text": "CD27+ plasma cells", "correct": false}], "eliminations": [{"letter": "A", "label": "CD4+ helper lymphocytes - minority of atypical cells", "detail": "WHAT IT IS: CD4 helper T cells. ❌ WHY IT FAILS: activated CD4 cells can look similar, but the atypical lymphocytes in mononucleosis are predominantly CD8+ cytotoxic T cells (>95%). ✅ Correct if: asking about helper T-cell responses generally."}, {"letter": "C", "label": "CD14+ monocytes - different morphology (your pick)", "detail": "WHAT IT IS: monocytes (CD14). ❌ WHY IT FAILS: monocytosis can occur in chronic infection, but monocytes have vacuolated, grayish cytoplasm - not the basophilic reactive lymphocyte molding seen here. ✅ Correct if: a monocyte-predominant process."}, {"letter": "D", "label": "CD21+ lymphocytes - the INFECTED B cells (not the atypical cells)", "detail": "WHAT IT IS: B lymphocytes, which EBV infects via the CD21 receptor. ❌ WHY IT FAILS: B cells are the cells that are INFECTED, but they make up <5% of the atypical lymphocytes; the reactive atypical cells are CD8+ T cells. ✅ Correct if: asking which cell EBV directly infects (CD21+ B cells)."}, {"letter": "E", "label": "CD27+ plasma cells - eccentric nucleus/hof", "detail": "WHAT IT IS: activated plasma cells (ovoid, eccentric nucleus, perinuclear clearing/spoke-wheel chromatin). ❌ WHY IT FAILS: that is a different morphology and not the reactive T cells of mononucleosis. ✅ Correct if: identifying a plasma cell."}], "reasoning": ["Adolescent with fever, pharyngitis, posterior cervical adenopathy, splenomegaly, and atypical lymphocytes = infectious mononucleosis (EBV)", "EBV infects B cells (CD21), but the atypical lymphocytes are the host's antiviral response", "These reactive/atypical cells are predominantly CD8+ cytotoxic T lymphocytes", "-> CD8+ cytotoxic lymphocytes; answer B"], "mechanism": "Infectious mononucleosis is caused by Epstein-Barr virus (EBV), which enters through the pharyngeal mucosa and preferentially INFECTS B LYMPHOCYTES by binding the CD21 receptor. Infected B cells present viral antigens on MHC class I, triggering a vigorous host response by REACTIVE (ATYPICAL) CD8+ CYTOTOXIC T LYMPHOCYTES that clonally expand to destroy virus-infected cells. These reactive CD8+ T cells are what appear on the peripheral smear as ATYPICAL LYMPHOCYTES - larger than resting lymphocytes, with abundant basophilic cytoplasm and a membrane that molds ('conforms') around adjacent red cells (Downey cells); they make up >10% of lymphocytes, and >95% are CD8+ T cells. Clinically, mononucleosis presents with fever, exudative pharyngitis, fatigue, posterior cervical (or generalized) lymphadenopathy, and splenomegaly (avoid contact sports due to rupture risk); the heterophile (Monospot) antibody test is positive. Thus the atypical cells are activated CD8+ T cells, not the infected CD21+ B cells (a small minority), CD4 cells, monocytes, or plasma cells.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Micro/Heme > infectious mononucleosis (EBV): infects B cells (CD21); atypical lymphocytes = reactive CD8+ T cells (>95%); fever, posterior cervical adenopathy, splenomegaly; positive heterophile (Monospot)."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "EBV infects B cells, but the atypical smear cells are reactive CD8+ cytotoxic T cells."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on atypical/reactive lymphocyte, CD8 vs CD4, CD21 (EBV receptor), Downey cells, or heterophile antibody? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "CD21+ B cells are the INFECTED cells (minority of atypical cells); CD4/monocytes/plasma cells are wrong lineages/morphology."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "text": "On the smear: a large lymphocyte with abundant basophilic cytoplasm that indents around neighboring red cells (atypical/reactive lymphocyte). Anchor: 'atypical lymphocyte in mono = reactive CD8+ T cell.'"}, {"key": "other", "label": "🗒️ Other", "text": "Bank: EBV mono - infects B cells (CD21), atypical cells = reactive CD8+ T cells; posterior cervical adenopathy + splenomegaly; Monospot positive."}], "keywords": [{"front": "Atypical lymphocytes in infectious mononucleosis", "back": "Reactive CD8+ cytotoxic T lymphocytes (>95%)"}, {"front": "Cell EBV directly infects", "back": "B lymphocytes (via CD21 receptor)"}, {"front": "Mononucleosis exam findings", "back": "Fever, pharyngitis, posterior cervical adenopathy, splenomegaly"}, {"front": "Diagnostic test for EBV mono", "back": "Heterophile (Monospot) antibody"}, {"front": "Mononucleosis activity restriction", "back": "Avoid contact sports (splenic rupture risk)"}, {"front": "Ampicillin/amoxicillin in mono", "back": "Causes a morbilliform rash"}], "firstAid": [{"tag": "answer / stem", "topic": "Infectious mononucleosis", "detail": "Micro: EBV infects B cells (CD21); atypical cells = reactive CD8+ T cells."}, {"tag": "options", "topic": "Immune cell markers", "detail": "Immuno > CD4 (helper), CD8 (cytotoxic), CD21 (B cell/EBV), CD14 (monocyte)."}, {"tag": "clinical", "topic": "EBV mono", "detail": "Micro > posterior cervical adenopathy, splenomegaly, Monospot; avoid contact sports."}], "memoryHook": "EBV hides in B cells, but the smear's big blue atypical lymphocytes are the CD8 T-cell posse hunting them - the reactive cells, not the infected ones.", "stem": [{"text": "A 15-year-old girl is evaluated due to "}, {"text": "persistent fever, fatigue, and sore throat", "clue": true, "type": "blue", "note": "Fever, fatigue, and pharyngitis in an adolescent are classic for infectious mononucleosis (Epstein-Barr virus)."}, {"text": ". Physical examination reveals "}, {"text": "splenomegaly and symmetric posterior cervical lymphadenopathy", "clue": true, "type": "green", "note": "Splenomegaly with POSTERIOR cervical lymphadenopathy is characteristic of infectious mononucleosis."}, {"text": ". A peripheral blood smear shows "}, {"text": "large, atypical lymphocytes with abundant basophilic cytoplasm", "clue": true, "type": "green", "note": "Atypical (reactive) lymphocytes - large, with abundant basophilic cytoplasm molding around neighboring cells - are the reactive CD8+ T cells responding to EBV."}, {"text": " and a cell membrane that conforms to the borders of neighboring red cells. The atypical cells seen here are most likely an activated form of which of the following?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

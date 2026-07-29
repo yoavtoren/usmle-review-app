@@ -1,0 +1,195 @@
+{
+  "id": "q468",
+  "item": 468,
+  "qid": "1210",
+  "title": "Scatter plot with strong downward linear trend: correlation coefficient near -0.8",
+  "system": "Biostatistics",
+  "topic": "Correlation coefficient",
+  "correct": "E",
+  "yourAnswer": "C",
+  "percentCorrect": 74,
+  "vignette": "Inflammatory biological markers are clinically useful in a number of different ways, one being the assessment of disease activity in conditions such as systemic lupus erythematosus (SLE). A new inflammatory marker is being investigated in patients with active SLE flares. When the blood level of the new marker (in mg/L) is plotted against the C-reactive protein (CRP) level (also in mg/L), the following plot is obtained: as CRP increases, the new marker's level steadily decreases, with the data points clustering tightly along a downward-sloping line. Based on the plot, the correlation coefficient between the 2 variables is closest to which of the following values?",
+  "clues": [
+    {
+      "text": "plotted against the C-reactive protein (CRP) level",
+      "type": "blue",
+      "note": "Two continuous variables plotted against each other are summarized by a correlation coefficient (r) describing the strength and direction of their linear association."
+    },
+    {
+      "text": "as CRP increases, the new marker's level steadily decreases",
+      "type": "green",
+      "note": "An inverse relationship (one variable falls as the other rises) means a NEGATIVE correlation (r < 0)."
+    },
+    {
+      "text": "clustering tightly along a downward-sloping line",
+      "type": "green",
+      "note": "Little scatter around the line = a STRONG association, so |r| is close to 1; combined with the negative direction, r is near -0.8."
+    }
+  ],
+  "whatMatters": "The correlation coefficient (r) ranges from -1 to +1 and captures the STRENGTH and DIRECTION of a linear association. The points fall as CRP rises (NEGATIVE) with little scatter (STRONG), so r is close to -1 - best matched by -0.8. Answer E.",
+  "strategy": "Read direction, then strength. Downward trend -> negative r (rules out all positive values). Tight clustering along the line -> strong association -> |r| near 1, so -0.8 beats -0.2. Reject +0.8/+0.2 (wrong sign - the trend is negative), 0 (that's no association/random cloud), and -0.2 (too weak for such tight clustering).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "+0.8",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "+0.2",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "0",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "-0.2",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "-0.8",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "+0.8 - wrong sign (positive)",
+      "detail": "WHAT IT IS: a strong POSITIVE correlation. ❌ WHY IT FAILS: the marker DECREASES as CRP increases, so the association is negative, not positive. ✅ Correct if: both variables rose together with tight clustering."
+    },
+    {
+      "letter": "B",
+      "label": "+0.2 - wrong sign and too weak",
+      "detail": "WHAT IT IS: a weak POSITIVE correlation. ❌ WHY IT FAILS: the direction is negative and the association is strong (tight clustering), not weak-positive. ✅ Correct if: a faint upward trend with lots of scatter."
+    },
+    {
+      "letter": "C",
+      "label": "0 - implies no association",
+      "detail": "WHAT IT IS: no linear correlation (random scatter). ❌ WHY IT FAILS: the points show a clear downward linear pattern, so r is not 0. ✅ Correct if: a shapeless cloud with no trend."
+    },
+    {
+      "letter": "D",
+      "label": "-0.2 - correct sign but too weak",
+      "detail": "WHAT IT IS: a weak NEGATIVE correlation. ❌ WHY IT FAILS: the direction is right, but tight clustering along the line indicates a STRONG association (|r| near 1), so -0.8 fits better than -0.2. ✅ Correct if: a negative trend with substantial scatter around the line."
+    }
+  ],
+  "reasoning": [
+    "The marker falls as CRP rises -> negative correlation (r < 0)",
+    "Points cluster tightly along the line -> strong association (|r| near 1)",
+    "Negative and strong -> r closest to -0.8",
+    "-> answer E"
+  ],
+  "mechanism": "A CORRELATION COEFFICIENT (r) mathematically describes how well a straight 'line of best fit' matches the plotted data for two variables, capturing TWO features: DIRECTION (polarity) and STRENGTH. Its value ranges from -1 to +1. The SIGN gives direction: POSITIVE r means the variables move together (both increase), NEGATIVE r means they move oppositely (one increases as the other decreases). The MAGNITUDE gives strength: the closer |r| is to 1, the tighter the points hug the line (stronger linear association); r = 0 means no linear association (random scatter). Here the new marker DECREASES as CRP INCREASES (negative direction) with the points clustering tightly along a downward line (strong association), so r is close to -1 - best represented by -0.8. Note that r is NOT the slope: a data set can have r = +1 (perfect fit) with any positive slope value. The distractors are wrong in sign (+0.8, +0.2), imply no association (0), or are too weak for the tight clustering (-0.2).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > correlation coefficient r: ranges -1 to +1; sign = direction, magnitude = strength; r=0 no linear association; r is not the slope; r^2 = coefficient of determination."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Downward trend = negative r; tight clustering = strong -> r near -0.8."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on correlation coefficient, positive vs negative correlation, strength vs slope, or line of best fit? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Positive values wrong sign; 0 = no association; -0.2 too weak for tight clustering."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "Scatter plot (stem image): points slope downward (negative) with minimal scatter (strong) -> correlation coefficient closest to -0.8."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: negative + tightly clustered scatter = strong negative correlation (r near -0.8); r measures strength/direction, not slope."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Correlation coefficient (r) range",
+      "back": "-1 to +1"
+    },
+    {
+      "front": "Negative correlation meaning",
+      "back": "One variable rises as the other falls (r < 0)"
+    },
+    {
+      "front": "Strong association on a scatter plot",
+      "back": "Points cluster tightly along the line (|r| near 1)"
+    },
+    {
+      "front": "r = 0",
+      "back": "No linear association (random scatter)"
+    },
+    {
+      "front": "Is r the slope?",
+      "back": "No - r measures fit/strength, independent of slope value"
+    },
+    {
+      "front": "r^2 (coefficient of determination)",
+      "back": "Proportion of variance explained by the linear relationship"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Correlation coefficient",
+      "detail": "Biostat: sign = direction, magnitude = strength; r in [-1, +1]."
+    },
+    {
+      "tag": "options",
+      "topic": "Interpreting r",
+      "detail": "Biostat > 0 = none; near +/-1 = strong; r is not slope."
+    },
+    {
+      "tag": "related",
+      "topic": "r vs r^2",
+      "detail": "Biostat > r^2 = variance explained."
+    }
+  ],
+  "memoryHook": "Points sliding downhill in a tight line = strong + negative = r near -0.8; a fuzzy cloud would be 0, and uphill would be positive.",
+  "stem": [
+    {
+      "text": "Inflammatory biological markers are clinically useful in a number of different ways, one being the assessment of disease activity in conditions such as systemic lupus erythematosus (SLE). A new inflammatory marker is being investigated in patients with active SLE flares. When the blood level of the new marker (in mg/L) is "
+    },
+    {
+      "text": "plotted against the C-reactive protein (CRP) level",
+      "clue": true,
+      "type": "blue",
+      "note": "Two continuous variables plotted against each other are summarized by a correlation coefficient (r) describing the strength and direction of their linear association."
+    },
+    {
+      "text": " (also in mg/L), the following plot is obtained: "
+    },
+    {
+      "text": "as CRP increases, the new marker's level steadily decreases",
+      "clue": true,
+      "type": "green",
+      "note": "An inverse relationship (one variable falls as the other rises) means a NEGATIVE correlation (r < 0)."
+    },
+    {
+      "text": ", with the data points "
+    },
+    {
+      "text": "clustering tightly along a downward-sloping line",
+      "clue": true,
+      "type": "green",
+      "note": "Little scatter around the line = a STRONG association, so |r| is close to 1; combined with the negative direction, r is near -0.8."
+    },
+    {
+      "text": ". Based on the plot, the correlation coefficient between the 2 variables is closest to which of the following values?"
+    }
+  ]
+}

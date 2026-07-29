@@ -1,0 +1,200 @@
+{
+  "id": "q421",
+  "item": 421,
+  "qid": "1175",
+  "title": "Absolute risk reduction: back-calculate group size (N = 1200)",
+  "system": "Biostatistics",
+  "topic": "Absolute risk reduction / event rate",
+  "correct": "C",
+  "yourAnswer": "A",
+  "percentCorrect": 67,
+  "vignette": "A study compared drug A versus standard therapy in preventing recurrent pulmonary embolism (PE). The absolute risk reduction for drug A versus standard therapy was 4%. The incidence of recurrent PE in the standard therapy group was 6%. There were 24 patients who developed recurrent PE in the drug A group. How many total subjects were there in the drug A group?",
+  "clues": [
+    {
+      "text": "absolute risk reduction for drug A versus standard therapy was 4%",
+      "type": "green",
+      "note": "ARR = event rate(control) - event rate(treatment). With ARR 4% and control 6%, the drug A (treatment) event rate = 6% - 4% = 2%."
+    },
+    {
+      "text": "incidence of recurrent PE in the standard therapy group was 6%",
+      "type": "blue",
+      "note": "The control (standard therapy) event rate is 6%; subtracting the ARR gives the treatment event rate."
+    },
+    {
+      "text": "24 patients who developed recurrent PE in the drug A group",
+      "type": "green",
+      "note": "With a 2% event rate in the drug A group, 24 events = 2% of the group -> total = 24 / 0.02 = 1200."
+    }
+  ],
+  "whatMatters": "ARR = event rate(control) - event rate(treatment). So event rate in drug A = 6% - 4% = 2%. Since 24 recurrent PEs = 2% of the drug A group, total = 24 / 0.02 = 1200. Answer C.",
+  "strategy": "Two steps: (1) ARR = control rate - treatment rate -> 4% = 6% - X -> treatment (drug A) rate = 2%. (2) Rate = events/total -> 0.02 = 24/N -> N = 24/0.02 = 1200. Reject 600 (using 4%), 900, 1500, etc. - which come from using the wrong event rate.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "600",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "900",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "1200",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "1500",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "1800",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "2100",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "600 - uses 4% instead of 2% (your pick)",
+      "detail": "WHAT IT IS: 24 / 0.04 = 600, using the ARR (4%) as the event rate. ❌ WHY IT FAILS: the ARR is not the treatment event rate; the drug A event rate is 6% - 4% = 2%. ✅ Correct if: the drug A event rate were 4%."
+    },
+    {
+      "letter": "B",
+      "label": "900 - not a consistent rate",
+      "detail": "WHAT IT IS: doesn't correspond to 24 events at the correct rate. ❌ WHY IT FAILS: 24/900 = 2.67%, not the derived 2% drug A rate. ✅ Correct if: never with these numbers."
+    },
+    {
+      "letter": "D",
+      "label": "1500 - wrong rate",
+      "detail": "WHAT IT IS: 24/1500 = 1.6%. ❌ WHY IT FAILS: doesn't match the 2% drug A event rate. ✅ Correct if: never with these numbers."
+    },
+    {
+      "letter": "E",
+      "label": "1800 - wrong rate",
+      "detail": "WHAT IT IS: 24/1800 = 1.33%. ❌ WHY IT FAILS: inconsistent with a 2% event rate. ✅ Correct if: never with these numbers."
+    },
+    {
+      "letter": "F",
+      "label": "2100 - wrong rate",
+      "detail": "WHAT IT IS: 24/2100 = ~1.14%. ❌ WHY IT FAILS: inconsistent with 2%. ✅ Correct if: never with these numbers."
+    }
+  ],
+  "reasoning": [
+    "ARR = event rate(control) - event rate(treatment)",
+    "4% = 6% - event rate(drug A) -> event rate(drug A) = 2%",
+    "Event rate = events/total -> 0.02 = 24/N",
+    "N = 24 / 0.02 = 1200; answer C"
+  ],
+  "mechanism": "ABSOLUTE RISK REDUCTION (ARR) is the difference in event (bad-outcome) rates between the control and treatment groups: ARR = event rate(control) - event rate(treatment). Here the control (standard therapy) recurrent-PE rate is 6% and the ARR is 4%, so the drug A (treatment) event rate = 6% - 4% = 2% (0.02). An event rate equals the number of events divided by the number of subjects in that arm: rate = events/N. Rearranged, N = events/rate = 24 / 0.02 = 1200. Thus the drug A group had 1200 subjects. (Related measures: relative risk reduction = ARR/control rate = 4%/6% = 67%; number needed to treat = 1/ARR = 1/0.04 = 25.) The common error is dividing 24 by the ARR (0.04) to get 600 - but the ARR is not the drug A event rate; you must first derive the 2% treatment event rate.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > ARR = event rate(control) - event rate(treatment); event rate = events/N; NNT = 1/ARR; relative risk reduction = ARR/control rate."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Derive drug A event rate (6%-4%=2%), then N = 24/0.02 = 1200."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on absolute risk reduction, event rate, NNT, or relative risk reduction? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "600 uses the ARR (4%) as the event rate; the drug A rate is 2% (6%-4%)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: ARR = control rate - treatment rate; N = events/rate; NNT = 1/ARR."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Absolute risk reduction formula",
+      "back": "ARR = event rate(control) - event rate(treatment)"
+    },
+    {
+      "front": "Derive drug A event rate here",
+      "back": "6% - 4% = 2%"
+    },
+    {
+      "front": "Back-calculate group size",
+      "back": "N = events/rate = 24/0.02 = 1200"
+    },
+    {
+      "front": "Number needed to treat",
+      "back": "NNT = 1/ARR = 1/0.04 = 25"
+    },
+    {
+      "front": "Relative risk reduction",
+      "back": "ARR/control rate = 4%/6% = 67%"
+    },
+    {
+      "front": "Common error",
+      "back": "Dividing events by ARR (0.04) instead of the true event rate (0.02)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "ARR calculation",
+      "detail": "Biostat: ARR = control-treatment rate; N = events/rate = 1200."
+    },
+    {
+      "tag": "options",
+      "topic": "Risk measures",
+      "detail": "Biostat > ARR, NNT (1/ARR), relative risk reduction."
+    },
+    {
+      "tag": "concept",
+      "topic": "Event rate",
+      "detail": "Biostat > rate = events/subjects in that arm."
+    }
+  ],
+  "memoryHook": "ARR is the gap between the two event rates: 6% minus 4% leaves drug A at 2% - and 24 events at 2% means 1200 people (not 600).",
+  "stem": [
+    {
+      "text": "A study compared drug A versus standard therapy in preventing recurrent pulmonary embolism (PE). The "
+    },
+    {
+      "text": "absolute risk reduction for drug A versus standard therapy was 4%",
+      "clue": true,
+      "type": "green",
+      "note": "ARR = event rate(control) - event rate(treatment). With ARR 4% and control 6%, the drug A (treatment) event rate = 6% - 4% = 2%."
+    },
+    {
+      "text": ". The "
+    },
+    {
+      "text": "incidence of recurrent PE in the standard therapy group was 6%",
+      "clue": true,
+      "type": "blue",
+      "note": "The control (standard therapy) event rate is 6%; subtracting the ARR gives the treatment event rate."
+    },
+    {
+      "text": ". There were "
+    },
+    {
+      "text": "24 patients who developed recurrent PE in the drug A group",
+      "clue": true,
+      "type": "green",
+      "note": "With a 2% event rate in the drug A group, 24 events = 2% of the group -> total = 24 / 0.02 = 1200."
+    },
+    {
+      "text": ". How many total subjects were there in the drug A group?"
+    }
+  ]
+}

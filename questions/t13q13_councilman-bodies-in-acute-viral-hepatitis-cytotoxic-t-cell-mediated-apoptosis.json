@@ -1,0 +1,200 @@
+{
+  "id": "q452",
+  "item": 452,
+  "qid": "1927",
+  "title": "Councilman bodies in acute viral hepatitis = cytotoxic T-cell-mediated apoptosis",
+  "system": "Pathology",
+  "topic": "Acute viral hepatitis / apoptosis",
+  "correct": "B",
+  "yourAnswer": "A",
+  "percentCorrect": 39,
+  "vignette": "A 34-year-old man is evaluated due to elevated liver aminotransferases. The patient has no chronic medical conditions but has a history of injection drug use. Family history is notable for liver cirrhosis in his mother. Ultrasonography-guided liver biopsy is performed. Histopathology demonstrates marked panlobular mononuclear cell infiltration that spans adjacent lobules. Intensely eosinophilic round bodies are occasionally seen scattered among the hepatic parenchyma. Which of the following is the most likely cause of the latter histopathologic finding in this patient?",
+  "clues": [
+    {
+      "text": "history of injection drug use",
+      "type": "orange",
+      "note": "Injection drug use is a major risk factor for viral hepatitis (hepatitis C and B) - the setting for immune-mediated hepatocyte injury."
+    },
+    {
+      "text": "marked panlobular mononuclear cell infiltration",
+      "type": "blue",
+      "note": "Diffuse lymphocytic (mononuclear) inflammation spanning lobules is characteristic of acute viral hepatitis, driven by the immune response to viral antigens."
+    },
+    {
+      "text": "Intensely eosinophilic round bodies",
+      "type": "green",
+      "note": "These are COUNCILMAN (apoptotic) bodies - shrunken, intensely eosinophilic (pink) apoptotic hepatocytes, the hallmark of cytotoxic T-cell-mediated killing in viral hepatitis."
+    }
+  ],
+  "whatMatters": "The intensely eosinophilic round bodies are COUNCILMAN BODIES - apoptotic hepatocytes. In acute viral hepatitis, CYTOTOXIC (CD8+) T CELLS recognize viral antigens on infected hepatocytes and trigger APOPTOSIS (via Fas/perforin-granzyme), producing these shrunken pink bodies. Answer B.",
+  "strategy": "Name the finding, then its mechanism: intensely eosinophilic round bodies = Councilman bodies = apoptotic hepatocytes. In viral hepatitis, apoptosis is driven by CYTOTOXIC T CELLS (Fas ligand, perforin/granzyme). Reject coagulative necrosis (ischemia/toxin - centrilobular, not scattered apoptosis), pigment accumulation (hemochromatosis - iron), cytokeratin deposition (Mallory bodies - alcoholic hepatitis), fibrinoid necrosis (Aschoff bodies - rheumatic heart, not liver), and stellate-cell activation (fibrosis, not the eosinophilic bodies).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Coagulative necrosis due to a toxin",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cytotoxic T-cell-mediated apoptosis",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Intracellular pigment accumulation",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Intracytoplasmic cytokeratin deposition",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Small foci of fibrinoid necrosis",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Stellate cell activation into myofibroblast",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Coagulative necrosis (toxin) - centrilobular, not scattered apoptosis",
+      "detail": "WHAT IT IS: toxin/ischemia-mediated coagulative necrosis (e.g., acetaminophen), typically CENTRILOBULAR. ❌ WHY IT FAILS: that produces zones of necrosis, not scattered intensely eosinophilic APOPTOTIC (Councilman) bodies from immune killing. ✅ Correct if: centrilobular necrosis from a hepatotoxin/ischemia."
+    },
+    {
+      "letter": "C",
+      "label": "Pigment accumulation - hemochromatosis",
+      "detail": "WHAT IT IS: intracellular iron (hemochromatosis) or other pigment, highlighted by Prussian blue. ❌ WHY IT FAILS: pigment appears as yellow-brown granules, not eosinophilic apoptotic bodies. ✅ Correct if: iron overload with Prussian-blue-positive granules."
+    },
+    {
+      "letter": "D",
+      "label": "Cytokeratin deposition - Mallory bodies (alcohol)",
+      "detail": "WHAT IT IS: damaged cytokeratin intermediate filaments forming Mallory-Denk bodies, classic for ALCOHOLIC hepatitis. ❌ WHY IT FAILS: Mallory bodies are ropey eosinophilic INCLUSIONS within surviving hepatocytes, not the round apoptotic Councilman bodies of viral hepatitis. ✅ Correct if: alcoholic hepatitis with Mallory-Denk bodies and steatosis."
+    },
+    {
+      "letter": "E",
+      "label": "Fibrinoid necrosis - Aschoff bodies (rheumatic), not liver",
+      "detail": "WHAT IT IS: small foci of fibrinoid necrosis (e.g., Aschoff bodies in rheumatic heart disease). ❌ WHY IT FAILS: these are seen in the myocardium, not scattered in hepatic parenchyma as eosinophilic apoptotic bodies. ✅ Correct if: rheumatic carditis with Aschoff bodies."
+    },
+    {
+      "letter": "F",
+      "label": "Stellate cell activation - fibrosis, not the bodies",
+      "detail": "WHAT IT IS: hepatic stellate cells transdifferentiating into collagen-depositing myofibroblasts (fibrosis). ❌ WHY IT FAILS: that explains chronic fibrotic bands, not the intensely eosinophilic apoptotic hepatocytes. ✅ Correct if: progressive hepatic fibrosis/cirrhosis."
+    }
+  ],
+  "reasoning": [
+    "Injection drug use + panlobular mononuclear inflammation = acute viral hepatitis",
+    "The intensely eosinophilic round bodies are Councilman (apoptotic) bodies",
+    "In viral hepatitis, cytotoxic CD8+ T cells kill infected hepatocytes by apoptosis (Fas/perforin-granzyme)",
+    "-> cytotoxic T-cell-mediated apoptosis; answer B"
+  ],
+  "mechanism": "Injection drug use is a risk factor for ACUTE VIRAL HEPATITIS, marked histologically by diffuse PANLOBULAR mononuclear (lymphocytic) inflammation responding to viral antigens. To control infection, CYTOTOXIC (CD8+) T CELLS recognize viral peptides displayed on infected hepatocytes and trigger APOPTOSIS by engaging death receptors (Fas/FasL) and secreting perforin and granzymes; caspase activation then fragments the cell. Apoptotic hepatocytes shrink into small, round, intensely EOSINOPHILIC (pink) COUNCILMAN BODIES (acidophil bodies), sometimes with pyknotic nuclear remnants, and are promptly phagocytosed by Kupffer cells. The distractors describe different processes: coagulative necrosis (toxin/ischemia, centrilobular), iron/pigment accumulation (hemochromatosis), Mallory-Denk bodies (cytokeratin, alcoholic hepatitis), fibrinoid necrosis/Aschoff bodies (rheumatic heart disease), and stellate-cell-driven fibrosis - none of which produce the scattered eosinophilic apoptotic bodies of viral hepatitis.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Path > apoptosis/viral hepatitis: Councilman (acidophil) bodies = apoptotic hepatocytes; cytotoxic CD8+ T cells (Fas, perforin/granzyme) kill infected cells; panlobular lymphocytic inflammation; HCV/HBV risk with IVDU."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Eosinophilic round bodies = Councilman = apoptosis by cytotoxic T cells in viral hepatitis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on Councilman/acidophil bodies, apoptosis vs necrosis, cytotoxic T cells, Fas/perforin, or Mallory bodies? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Coagulative necrosis = toxin; pigment = hemochromatosis; cytokeratin = Mallory (alcohol); fibrinoid = Aschoff (heart); stellate = fibrosis."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: Councilman bodies (apoptotic hepatocytes) = cytotoxic T-cell killing in viral hepatitis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Intensely eosinophilic round hepatocyte bodies",
+      "back": "Councilman (acidophil) bodies = apoptosis"
+    },
+    {
+      "front": "Mechanism of hepatocyte death in viral hepatitis",
+      "back": "Cytotoxic CD8+ T cells (Fas, perforin/granzyme) -> apoptosis"
+    },
+    {
+      "front": "Mallory-Denk bodies",
+      "back": "Damaged cytokeratin; alcoholic hepatitis"
+    },
+    {
+      "front": "Councilman body clearance",
+      "back": "Phagocytosed by Kupffer cells"
+    },
+    {
+      "front": "IVDU-associated hepatitis viruses",
+      "back": "Hepatitis C and B"
+    },
+    {
+      "front": "Apoptosis vs necrosis histology",
+      "back": "Apoptosis = shrunken eosinophilic single cells; necrosis = swelling/zonal"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Viral hepatitis histology",
+      "detail": "Path: Councilman bodies = apoptotic hepatocytes; cytotoxic T-cell killing."
+    },
+    {
+      "tag": "options",
+      "topic": "Hepatic inclusions/injury",
+      "detail": "Path > Mallory (alcohol), iron (hemochromatosis), Aschoff (rheumatic)."
+    },
+    {
+      "tag": "immuno",
+      "topic": "CD8+ cytotoxic T cells",
+      "detail": "Immuno > Fas/FasL, perforin/granzyme -> apoptosis."
+    }
+  ],
+  "memoryHook": "Pink, shrunken hepatocyte 'Councilman' bodies are cells the immune police (cytotoxic T cells) executed - apoptosis, not a toxin's messy necrosis.",
+  "stem": [
+    {
+      "text": "A 34-year-old man is evaluated due to elevated liver aminotransferases. The patient has no chronic medical conditions but has a "
+    },
+    {
+      "text": "history of injection drug use",
+      "clue": true,
+      "type": "orange",
+      "note": "Injection drug use is a major risk factor for viral hepatitis (hepatitis C and B) - the setting for immune-mediated hepatocyte injury."
+    },
+    {
+      "text": ". Family history is notable for liver cirrhosis in his mother. Ultrasonography-guided liver biopsy is performed. Histopathology demonstrates "
+    },
+    {
+      "text": "marked panlobular mononuclear cell infiltration",
+      "clue": true,
+      "type": "blue",
+      "note": "Diffuse lymphocytic (mononuclear) inflammation spanning lobules is characteristic of acute viral hepatitis, driven by the immune response to viral antigens."
+    },
+    {
+      "text": " that spans adjacent lobules. "
+    },
+    {
+      "text": "Intensely eosinophilic round bodies",
+      "clue": true,
+      "type": "green",
+      "note": "These are COUNCILMAN (apoptotic) bodies - shrunken, intensely eosinophilic (pink) apoptotic hepatocytes, the hallmark of cytotoxic T-cell-mediated killing in viral hepatitis."
+    },
+    {
+      "text": " are occasionally seen scattered among the hepatic parenchyma. Which of the following is the most likely cause of the latter histopathologic finding in this patient?"
+    }
+  ]
+}

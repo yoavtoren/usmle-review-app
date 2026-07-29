@@ -1,0 +1,218 @@
+{
+  "id": "q456",
+  "item": 456,
+  "qid": "1138",
+  "title": "Typhoid fever (stepwise fever, relative bradycardia, rose spots): fecal-oral (contaminated food)",
+  "system": "Microbiology",
+  "topic": "Salmonella Typhi - typhoid fever",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 44,
+  "vignette": "A 46-year-old man comes to the emergency department due to fever. He returned from a vacation in Southeast Asia a week ago and began having symptoms toward the end of his trip. The patient describes continuous fever that has risen slowly to reach a high plateau and is relieved only by antipyretics. He has also had headaches and abdominal discomfort; he initially had constipation but has had loose stools for the past several days. Temperature is 40 C (104 F), blood pressure is 114/68 mm Hg, and pulse is 62/min. No oropharyngeal lesions, cervical lymphadenopathy, or neck rigidity is present. Lungs are clear on auscultation, and heart sounds are normal. Abdominal examination shows mild distension and generalized tenderness with hepatosplenomegaly. There is a faint, erythematous, macular skin rash over the trunk and abdomen. Laboratory studies reveal mild, normocytic, normochromic anemia and leukopenia with left shift. Peripheral blood smear is normal. Which of the following is the most likely route of transmission of this patient's infection?",
+  "clues": [
+    {
+      "text": "returned from a vacation in Southeast Asia a week ago",
+      "type": "orange",
+      "note": "Typhoid fever (Salmonella Typhi) is endemic in the developing world (South/Southeast Asia); recent travel there is a key exposure clue."
+    },
+    {
+      "text": "continuous fever that has risen slowly to reach a high plateau",
+      "type": "green",
+      "note": "A slowly rising, step-wise fever climbing to a sustained high plateau is characteristic of typhoid fever."
+    },
+    {
+      "text": "pulse is 62/min",
+      "type": "green",
+      "note": "Relative bradycardia despite fever of 40 C (pulse-temperature dissociation, Faget sign) is a classic clue to typhoid fever."
+    },
+    {
+      "text": "hepatosplenomegaly",
+      "type": "blue",
+      "note": "Dissemination through the reticuloendothelial system causes hepatosplenomegaly (with anemia and leukopenia) in the later weeks of typhoid."
+    },
+    {
+      "text": "faint, erythematous, macular skin rash over the trunk and abdomen",
+      "type": "green",
+      "note": "These are ROSE SPOTS - blanching salmon-colored macules on the trunk/abdomen, a hallmark of typhoid fever."
+    }
+  ],
+  "whatMatters": "Stepwise rising fever, relative bradycardia (pulse 62 at 40 C / normally faster with fever), rose spots, hepatosplenomegaly, and Southeast-Asian travel = TYPHOID FEVER (Salmonella Typhi). Humans are the only reservoir; transmission is FECAL-ORAL via food/water contaminated with human feces. Answer C.",
+  "strategy": "Assemble the typhoid picture (travel + stepwise fever + Faget sign + rose spots + hepatosplenomegaly + leukopenia) and recall its FECAL-ORAL spread (ingestion of contaminated food/water; humans are the sole reservoir). Reject vector-borne (malaria - tachycardia, smear parasites), carrier-animal (nontyphoidal Salmonella/zoonoses), droplet (meningococcus - rapid sepsis, purpura), and sexual (syphilis - palms/soles rash, adenopathy).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bite from a vector insect",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Exposure to a carrier animal",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Ingestion of contaminated food",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Inhalation of infectious droplets",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Sexual contact with infected person",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Vector insect bite - malaria",
+      "detail": "WHAT IT IS: mosquito-borne infection (malaria). ❌ WHY IT FAILS: malaria usually causes paroxysmal fever with TACHYCARDIA and shows parasites/hemolysis on smear - this patient has relative bradycardia, rose spots, and a normal smear. ✅ Correct if: cyclic fevers with ring forms on blood smear."
+    },
+    {
+      "letter": "B",
+      "label": "Carrier animal - zoonotic Salmonella/others",
+      "detail": "WHAT IT IS: zoonotic exposure (e.g., nontyphoidal Salmonella from reptiles/poultry). ❌ WHY IT FAILS: typhoidal Salmonella (Typhi/Paratyphi) reside ONLY in humans; the reservoir is human, spread by fecal-orally contaminated food/water. ✅ Correct if: nontyphoidal Salmonella gastroenteritis from animal contact."
+    },
+    {
+      "letter": "D",
+      "label": "Infectious droplets - meningococcus/respiratory",
+      "detail": "WHAT IT IS: respiratory droplet transmission (e.g., meningococcus). ❌ WHY IT FAILS: meningococcemia causes rapid-onset confusion, hypotension, and a petechial/purpuric rash, not stepwise fever with rose spots and hepatosplenomegaly. ✅ Correct if: fulminant sepsis with purpura and neck stiffness."
+    },
+    {
+      "letter": "E",
+      "label": "Sexual contact - syphilis",
+      "detail": "WHAT IT IS: sexually transmitted infection (e.g., secondary syphilis). ❌ WHY IT FAILS: secondary syphilis rash involves the PALMS and SOLES with generalized lymphadenopathy; typhoid's rose spots are truncal with pulse-temperature dissociation. ✅ Correct if: maculopapular palm/sole rash with lymphadenopathy."
+    }
+  ],
+  "reasoning": [
+    "Southeast-Asian travel + stepwise high-plateau fever = typhoid fever",
+    "Relative bradycardia (pulse 62 at 40 C), rose spots, and hepatosplenomegaly confirm Salmonella Typhi",
+    "Humans are the only reservoir; the organism spreads fecal-orally",
+    "-> ingestion of food/water contaminated with human feces; answer C"
+  ],
+  "mechanism": "TYPHOID (enteric) FEVER is caused by SALMONELLA enterica serotype TYPHI (or Paratyphi), gram-negative enteric bacilli that reside ONLY in the human gastrointestinal tract. Transmission is FECAL-ORAL, chiefly by ingestion of FOOD or WATER contaminated with human feces, so most cases arise in the developing world with poor sanitation; unvaccinated travelers are at risk. Ingested organisms invade intestinal enterocytes, are taken up by macrophages, and (protected by the Vi capsular antigen that impairs the oxidative burst) replicate and disseminate through the lymphatic and reticuloendothelial system, producing systemic illness. Manifestations develop stepwise: a slowly RISING fever to a high plateau, often with RELATIVE BRADYCARDIA (pulse-temperature dissociation), followed by abdominal pain, constipation then diarrhea, salmon-colored truncal ROSE SPOTS, and HEPATOSPLENOMEGALY with anemia and leukopenia; ulceration of Peyer patches can cause GI bleeding/perforation. The distractors correspond to vector-borne (malaria), zoonotic, droplet (meningococcal), and sexually transmitted (syphilis) pathogens.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro > Salmonella Typhi/typhoid fever: fecal-oral (human-only reservoir), Vi capsule, macrophage survival; stepwise fever, relative bradycardia, rose spots, hepatosplenomegaly; Peyer patch ulceration; carrier state (gallbladder)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Typhoid = human-only reservoir, fecal-oral -> ingestion of contaminated food/water."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on typhoid fever, relative bradycardia (Faget sign), rose spots, Vi antigen, or fecal-oral transmission? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Malaria = vector/tachycardia; zoonotic = nontyphoidal Salmonella; droplet = meningococcus; sexual = syphilis (palms/soles)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: typhoid fever = stepwise fever + relative bradycardia + rose spots + hepatosplenomegaly; fecal-oral, human reservoir."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Stepwise fever + relative bradycardia + rose spots",
+      "back": "Typhoid fever (Salmonella Typhi)"
+    },
+    {
+      "front": "Typhoid transmission / reservoir",
+      "back": "Fecal-oral (contaminated food/water); humans only"
+    },
+    {
+      "front": "Rose spots",
+      "back": "Blanching salmon macules on trunk/abdomen (typhoid)"
+    },
+    {
+      "front": "Salmonella Typhi immune evasion",
+      "back": "Vi capsular antigen; survives in macrophages"
+    },
+    {
+      "front": "Typhoid GI complication",
+      "back": "Peyer patch ulceration -> bleeding/perforation"
+    },
+    {
+      "front": "Chronic typhoid carrier site",
+      "back": "Gallbladder (associated with gallstones)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Typhoid fever",
+      "detail": "Micro: Salmonella Typhi; fecal-oral; rose spots, relative bradycardia."
+    },
+    {
+      "tag": "options",
+      "topic": "Fever transmission routes",
+      "detail": "Micro > malaria (vector), meningococcus (droplet), syphilis (sexual)."
+    },
+    {
+      "tag": "virulence",
+      "topic": "Vi antigen / carrier",
+      "detail": "Micro > macrophage survival; gallbladder carriage."
+    }
+  ],
+  "memoryHook": "Traveler back from Asia with a fever that climbs like stairs, a pulse too slow for the fever, and rose spots on the belly - typhoid, caught from food fouled by human feces.",
+  "stem": [
+    {
+      "text": "A 46-year-old man comes to the emergency department due to fever. He "
+    },
+    {
+      "text": "returned from a vacation in Southeast Asia a week ago",
+      "clue": true,
+      "type": "orange",
+      "note": "Typhoid fever (Salmonella Typhi) is endemic in the developing world (South/Southeast Asia); recent travel there is a key exposure clue."
+    },
+    {
+      "text": " and began having symptoms toward the end of his trip. The patient describes "
+    },
+    {
+      "text": "continuous fever that has risen slowly to reach a high plateau",
+      "clue": true,
+      "type": "green",
+      "note": "A slowly rising, step-wise fever climbing to a sustained high plateau is characteristic of typhoid fever."
+    },
+    {
+      "text": " and is relieved only by antipyretics. He has also had headaches and abdominal discomfort; he initially had constipation but has had loose stools for the past several days. Temperature is 40 C (104 F), blood pressure is 114/68 mm Hg, and "
+    },
+    {
+      "text": "pulse is 62/min",
+      "clue": true,
+      "type": "green",
+      "note": "Relative bradycardia despite fever of 40 C (pulse-temperature dissociation, Faget sign) is a classic clue to typhoid fever."
+    },
+    {
+      "text": ". No oropharyngeal lesions, cervical lymphadenopathy, or neck rigidity is present. Lungs are clear on auscultation, and heart sounds are normal. Abdominal examination shows mild distension and generalized tenderness with "
+    },
+    {
+      "text": "hepatosplenomegaly",
+      "clue": true,
+      "type": "blue",
+      "note": "Dissemination through the reticuloendothelial system causes hepatosplenomegaly (with anemia and leukopenia) in the later weeks of typhoid."
+    },
+    {
+      "text": ". There is a "
+    },
+    {
+      "text": "faint, erythematous, macular skin rash over the trunk and abdomen",
+      "clue": true,
+      "type": "green",
+      "note": "These are ROSE SPOTS - blanching salmon-colored macules on the trunk/abdomen, a hallmark of typhoid fever."
+    },
+    {
+      "text": ". Laboratory studies reveal mild, normocytic, normochromic anemia and leukopenia with left shift. Peripheral blood smear is normal. Which of the following is the most likely route of transmission of this patient's infection?"
+    }
+  ]
+}

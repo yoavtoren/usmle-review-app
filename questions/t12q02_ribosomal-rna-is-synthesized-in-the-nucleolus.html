@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ribosomal RNA is synthesized in the nucleolus</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 12 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q401", "item": 401, "qid": "1417", "title": "Ribosomal RNA is synthesized in the nucleolus", "system": "Histology", "topic": "Nucleolus / ribosome biogenesis", "correct": "B", "yourAnswer": "C", "percentCorrect": 51, "vignette": "Molecular biologists are investigating the functional significance of non-coding RNA molecules. During an experiment, they isolate large complexes containing both protein and RNA from exocrine pancreatic cells. The complexes are found both freely floating in the cytoplasm and bound to the endoplasmic reticulum. On the electron micrograph, five intracellular sites are labeled A-E: A is the rough endoplasmic reticulum, B is a dense round intranuclear body (the nucleolus), C is the nucleus, D is a mitochondrion, and E is an exocrine (zymogen) granule. The RNA found within these complexes is primarily synthesized at which of the following intracellular sites?", "clues": [{"text": "large complexes containing both protein and RNA", "type": "green", "note": "Protein + RNA complexes that translate on/off the ER are RIBOSOMES (ribosomal protein + ribosomal RNA)."}, {"text": "freely floating in the cytoplasm and bound to the endoplasmic reticulum", "type": "blue", "note": "Ribosomes exist both free (cytosolic proteins) and bound to the rough ER (secreted/membrane proteins) - matching this exocrine cell."}, {"text": "a dense round intranuclear body (the nucleolus)", "type": "green", "note": "The NUCLEOLUS is the dense intranuclear body where ribosomal RNA is transcribed and ribosomal subunits are assembled."}], "whatMatters": "The protein+RNA complexes are RIBOSOMES, and their RNA is ribosomal RNA (rRNA). rRNA is synthesized (transcribed) in the NUCLEOLUS - the dense round body within the nucleus where ribosome biogenesis occurs. On the micrograph this is label B. Answer B.", "strategy": "Identify the complexes as ribosomes, then recall that rRNA is made in the NUCLEOLUS (not the general nucleoplasm). Pick the dense intranuclear body (B). Reject the rough ER (A - where ribosomes DOCK, not where rRNA is made), the nucleus generally (C - mRNA/tRNA are transcribed in the nucleoplasm, but rRNA specifically in the nucleolus), mitochondria (D - own separate genome), and zymogen granules (E - stored secretory product).", "options": [{"letter": "A", "text": "Site A (rough endoplasmic reticulum)", "correct": false}, {"letter": "B", "text": "Site B (nucleolus)", "correct": true}, {"letter": "C", "text": "Site C (nucleus/nucleoplasm)", "correct": false}, {"letter": "D", "text": "Site D (mitochondrion)", "correct": false}, {"letter": "E", "text": "Site E (exocrine/zymogen granule)", "correct": false}], "eliminations": [{"letter": "A", "label": "Rough ER - ribosomes dock here, rRNA not made here", "detail": "WHAT IT IS: rough endoplasmic reticulum, studded with ribosomes translating secretory/membrane proteins. ❌ WHY IT FAILS: ribosomes ATTACH to the rough ER, but rRNA is SYNTHESIZED in the nucleolus, not the ER. ✅ Correct if: asking where secretory proteins are translated/processed."}, {"letter": "C", "label": "Nucleus (nucleoplasm) - mRNA/tRNA, not rRNA site (your pick)", "detail": "WHAT IT IS: the nucleus, where mRNA and tRNA are transcribed by RNA polymerases II and III. ❌ WHY IT FAILS: the question asks specifically about the ribosome's rRNA, which is transcribed in the NUCLEOLUS (a sub-compartment), by RNA polymerase I - more precise than 'the nucleus.' ✅ Correct if: asking where mRNA/tRNA (not rRNA) is made."}, {"letter": "D", "label": "Mitochondrion - separate mitochondrial genome", "detail": "WHAT IT IS: mitochondria have their own DNA and ribosomes. ❌ WHY IT FAILS: cytoplasmic/ER-bound ribosomal rRNA is made in the nucleolus, not by the mitochondrial genome. ✅ Correct if: asking about mitochondrial rRNA specifically."}, {"letter": "E", "label": "Zymogen granule - stored secretory enzymes", "detail": "WHAT IT IS: membrane-bound granules storing digestive proenzymes for exocytosis. ❌ WHY IT FAILS: they store secretory product, not the site of rRNA synthesis. ✅ Correct if: asking where secretory enzymes are stored before release."}], "reasoning": ["Protein + RNA complexes (free and ER-bound) = ribosomes", "Their RNA is ribosomal RNA (rRNA)", "rRNA is transcribed and ribosomal subunits assembled in the nucleolus", "-> nucleolus (label B); answer B"], "mechanism": "The large protein-plus-RNA complexes found both free in the cytoplasm and bound to the rough endoplasmic reticulum are RIBOSOMES, composed of ribosomal proteins and RIBOSOMAL RNA (rRNA). Ribosome biogenesis is centered in the NUCLEOLUS, a dense, non-membrane-bound intranuclear body. There, RNA POLYMERASE I transcribes the ribosomal DNA (present as tandem repeats) into the 45S pre-rRNA, which is processed into the 28S, 18S, and 5.8S rRNAs; these combine with ribosomal proteins (imported from the cytoplasm) to assemble the 60S and 40S subunits, which are exported to the cytoplasm to mature. (The 5S rRNA is the exception - transcribed by RNA polymerase III outside the nucleolus - but the vast majority of rRNA is made in the nucleolus.) A prominent nucleolus reflects high protein-synthetic activity, fitting a secretory exocrine pancreatic cell. On the micrograph, the nucleolus is the dense round body (B). The rough ER (A) is where ribosomes dock to translate, not where rRNA is transcribed; mitochondria (D) have a separate genome; and zymogen granules (E) store secretory enzymes.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Biochem/Cell > nucleolus = site of rRNA synthesis (RNA polymerase I) + ribosome subunit assembly; ribosomes = rRNA + protein, free (cytosolic proteins) or rough-ER-bound (secretory); 5S rRNA is the pol III exception."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "The complexes are ribosomes; their rRNA is transcribed in the nucleolus (more specific than 'the nucleus')."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on nucleolus, rRNA, ribosome subunits (60S/40S), RNA polymerase I, or rough ER? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Rough ER is where ribosomes DOCK; 'nucleus' is too general (mRNA/tRNA there); mitochondria/zymogen granules are unrelated."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "text": "On the electron micrograph: the dense, round intranuclear body (label B) is the nucleolus; the nucleus (C) surrounds it, and the ribosome-studded rough ER (A) lies in the cytoplasm. Anchor: 'dense round body in the nucleus = nucleolus = rRNA synthesis.'"}, {"key": "other", "label": "🗒️ Other", "text": "Bank: nucleolus makes rRNA (RNA pol I) and assembles ribosome subunits; prominent in secretory cells."}], "keywords": [{"front": "Site of ribosomal RNA synthesis", "back": "Nucleolus (RNA polymerase I)"}, {"front": "Composition of a ribosome", "back": "Ribosomal RNA (rRNA) + ribosomal proteins"}, {"front": "Free vs bound ribosomes", "back": "Free = cytosolic proteins; rough-ER-bound = secretory/membrane proteins"}, {"front": "rRNA exception made outside nucleolus", "back": "5S rRNA (RNA polymerase III)"}, {"front": "Ribosome subunits", "back": "60S + 40S (eukaryotic) assemble in nucleolus, mature in cytoplasm"}, {"front": "Prominent nucleolus indicates", "back": "High protein synthesis (e.g., secretory/plasma cells)"}], "firstAid": [{"tag": "answer / stem", "topic": "Nucleolus", "detail": "Cell: rRNA synthesis (RNA pol I) + ribosome subunit assembly."}, {"tag": "options", "topic": "Organelles on EM", "detail": "Cell > rough ER (ribosome docking), nucleus (mRNA/tRNA), mitochondria, zymogen granules."}, {"tag": "concept", "topic": "Ribosome biogenesis", "detail": "Biochem > 45S pre-rRNA -> 28S/18S/5.8S; 5S made by pol III."}], "memoryHook": "Ribosomes are protein-RNA machines, and their rRNA is stamped out in the nucleolus - the dense dot inside the nucleus that swells in busy secretory cells.", "stem": [{"text": "Molecular biologists are investigating the functional significance of non-coding RNA molecules. During an experiment, they isolate "}, {"text": "large complexes containing both protein and RNA", "clue": true, "type": "green", "note": "Protein + RNA complexes that translate on/off the ER are RIBOSOMES (ribosomal protein + ribosomal RNA)."}, {"text": " from exocrine pancreatic cells. The complexes are found both "}, {"text": "freely floating in the cytoplasm and bound to the endoplasmic reticulum", "clue": true, "type": "blue", "note": "Ribosomes exist both free (cytosolic proteins) and bound to the rough ER (secreted/membrane proteins) - matching this exocrine cell."}, {"text": ". On the electron micrograph, five intracellular sites are labeled A-E: A is the rough endoplasmic reticulum, B is "}, {"text": "a dense round intranuclear body (the nucleolus)", "clue": true, "type": "green", "note": "The NUCLEOLUS is the dense intranuclear body where ribosomal RNA is transcribed and ribosomal subunits are assembled."}, {"text": ", C is the nucleus, D is a mitochondrion, and E is an exocrine (zymogen) granule. The RNA found within these complexes is primarily synthesized at which of the following intracellular sites?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>
