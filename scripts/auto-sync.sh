@@ -2,9 +2,9 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # auto-sync.sh — runs after every Claude Code update (wired as a Stop hook).
 # On each run, if the working tree has changes (or unpushed commits) it will:
-#   1. build the web app (gate)          2. commit + push to origin/main
+#   1. lint + test + build (gates)       2. commit + push to origin/main
 #   3. deploy the web build (gh-pages)   4. sync the iOS/Xcode project (cap sync)
-# Deploy + iOS sync only happen when the build passes, so production/main stay green.
+# Deploy + iOS sync only happen when all three gates pass, so production/main stay green.
 # Runs detached from the hook, serialized by a lock, and logs to .claude/auto-sync.log.
 # ─────────────────────────────────────────────────────────────────────────────
 set -uo pipefail
@@ -38,8 +38,18 @@ if [ -z "$DIRTY" ] && [ -z "$UNPUSHED" ]; then
   exit 0
 fi
 
-# 1 · build (gate) ───────────────────────────────────────────────────────────
+# 1 · gates: lint → tests → build ────────────────────────────────────────────
+# `vite build` alone never caught the bugs that actually shipped here (a leaked
+# Capacitor listener, an effect on stale state, a re-plan that erased a logged
+# UWorld block). Lint and the unit suite run first and block the deploy too.
 BUILD_OK=1
+
+echo "▶ linting…"
+if npm run lint >/dev/null 2>&1; then echo "  ✓ lint clean"; else BUILD_OK=0; echo "  ✗ lint FAILED"; fi
+
+echo "▶ running unit tests…"
+if npm test >/dev/null 2>&1; then echo "  ✓ tests passed"; else BUILD_OK=0; echo "  ✗ tests FAILED"; fi
+
 echo "▶ building web…"
 if npm run build >/dev/null 2>&1; then echo "  ✓ build passed"; else BUILD_OK=0; echo "  ✗ build FAILED"; fi
 BUILD_STATUS="passing"; [ "$BUILD_OK" -eq 1 ] || BUILD_STATUS="FAILING"
@@ -62,7 +72,7 @@ Build: ${BUILD_STATUS}
 Changed:
 ${FILES}
 
-Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
 EOF
   echo "  ✓ committed"
 fi
@@ -74,7 +84,7 @@ if [ "$BUILD_OK" -eq 1 ]; then
   echo "▶ deploying web (gh-pages)…"
   if npm run deploy >/dev/null 2>&1; then echo "  ✓ web deployed"; else echo "  ✗ web deploy failed"; fi
 else
-  echo "· build failing — committed/pushed for safekeeping but SKIPPED deploy + iOS sync"
+  echo "· gates failing — committed/pushed for safekeeping but SKIPPED deploy + iOS sync"
 fi
 
 # 5 · rebuild + reinstall the Mac app (Designed for iPad) so /Applications

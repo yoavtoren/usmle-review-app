@@ -11,7 +11,11 @@
     "deploy": "vite build && rm -f dist/firstaid/*.pdf && npx gh-pages -d dist",
     "build:ios": "CAP_BUILD=1 vite build",
     "sync:ios": "npm run build:ios && npx cap sync ios",
-    "open:ios": "npx cap open ios"
+    "open:ios": "npx cap open ios",
+    "lint": "eslint src --ext .js,.jsx",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run lint && npm run test"
   },
   "dependencies": {
     "@capacitor/app": "^8.1.0",
@@ -31,6 +35,10 @@
     "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^8.4.1",
     "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.2"
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "vite": "^5.4.2",
+    "vitest": "^2.1.9"
   }
 }

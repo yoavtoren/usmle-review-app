@@ -272,7 +272,6 @@ export default function WelcomeScreen({ onNav, testStats, faStats, streak, quest
   const [tasks, setTasks]       = useState(() => loadTasks());
   const [lightMode, setLightModeState] = useState(() => getLightMode().paused);
   const [showReset, setShowReset] = useState(false);
-  const [importError, setImportError] = useState("");
 
   const insights = useMemo(() => {
     if (!questions?.length) return [];

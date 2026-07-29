@@ -212,7 +212,7 @@ function matchToken(tokens, synonyms) {
 export function inferTags(qFull) {
   if (!qFull) return { subject: "", system: "", confident: false };
   const raw = `${qFull.system || ""} / ${qFull.topic || ""}`.toLowerCase();
-  const tokens = raw.split(/[\/,>·—–-]| and | & |\s{2,}/).map(t => t.trim()).filter(Boolean);
+  const tokens = raw.split(/[/,>·—–-]| and | & |\s{2,}/).map(t => t.trim()).filter(Boolean);
   const subject = matchToken(tokens, SUBJECT_SYNONYMS);
   const system  = matchToken(tokens, SYSTEM_SYNONYMS);
   return { subject, system, confident: Boolean(subject && system) };
