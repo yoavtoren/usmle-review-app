@@ -1,8 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300..800&display=swap');
-
+/* ── Self-hosted type ─────────────────────────────────────────────────────
+   These four families used to load via @import from fonts.googleapis.com.
+   This app ships as a bundled iOS/Mac app and a static site, so on a plane —
+   or in any TestFlight install without a network — all four silently failed:
+   the editorial serif identity vanished and, because Inter carries no Hebrew,
+   Hebrew copy fell through to tofu. Subsetted WOFF2 (latin/latin-ext/hebrew,
+   italics for latin only) now ship in the bundle. Vite hashes and rewrites
+   these URLs, so they resolve under both the web base and the native base.
+   ──────────────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/Inter-latin-italic-100-900.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/Inter-latin-ext-normal-100-900.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/Inter-latin-normal-100-900.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('./fonts/Fraunces-latin-italic-300-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('./fonts/Fraunces-latin-ext-normal-300-700.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('./fonts/Fraunces-latin-normal-300-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('./fonts/FrankRuhlLibre-hebrew-normal-300-900.woff2') format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('./fonts/FrankRuhlLibre-latin-normal-300-900.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('./fonts/Heebo-hebrew-normal-300-800.woff2') format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('./fonts/Heebo-latin-normal-300-800.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 /* ═══════════════════════════════════════════════════════════════════
    THE READING ROOM — classic · elite · tactile
    Ivory paper · ink typography · racing green · antique gold
@@ -6100,4 +6184,23 @@ html[data-scrolled="true"] .scroll-edge-top { opacity: 1; }
   .strat-radar-row { grid-template-columns: 44px 64px 1fr; }
   .strat-radar-front { display: none; }
   .strat-encode { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── Route crash fallback (ErrorBoundary) ─────────────────────────────────── */
+.eb { display: flex; align-items: center; justify-content: center; min-height: 70vh; }
+.eb-card {
+  max-width: 520px; padding: 32px 30px; text-align: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+  box-shadow: 0 2px 20px rgba(46, 40, 24, 0.06);
+}
+.eb-ico { font-size: 30px; color: var(--bad); display: block; margin-bottom: 10px; }
+.eb-title { font: 600 22px/1.3 var(--serif, Georgia, serif); margin: 0 0 8px; color: var(--text); }
+.eb-sub { font-size: 14px; line-height: 1.7; color: var(--muted); margin: 0 0 20px; }
+.eb-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.eb-details { margin-top: 22px; text-align: start; font-size: 12px; color: var(--muted); }
+.eb-details summary { cursor: pointer; }
+.eb-details pre {
+  margin-top: 8px; padding: 10px; max-height: 200px; overflow: auto;
+  background: var(--surface-3); border-radius: 8px;
+  font-size: 11px; line-height: 1.5; white-space: pre-wrap; word-break: break-word;
 }

@@ -18,8 +18,7 @@ import {
 import { colorFor, TRACKS } from "../lib/subjectColors.js";
 import { impact, notification } from "../lib/haptics.js";
 import { loadFABaseline, mergeFADone } from "../lib/faCoverage.js";
-
-const BASE = import.meta.env.BASE_URL;
+import { fetchAppJSON } from "../lib/appData.js";
 
 /* ─── data loading ─────────────────────────────────────────────────────────── */
 function usePlanData() {
@@ -29,10 +28,11 @@ function usePlanData() {
   const [profile, setProfile] = useState(undefined); // undefined = loading, null = none
   const [faBaseline, setFaBaseline] = useState(undefined); // undefined = loading, {} = loaded
   useEffect(() => {
-    fetch(`${BASE}topic-plan.json`).then((r) => r.json()).then(setPlan).catch(() => setPlan({ units: [] }));
-    fetch(`${BASE}questions/deck.json`).then((r) => r.json()).then(setDeck).catch(() => setDeck({ questions: [] }));
-    fetch(`${BASE}weakness-seed.json`).then((r) => r.json()).then(setSeed).catch(() => setSeed({ weak: [] }));
-    fetch(`${BASE}profile.json`).then((r) => (r.ok ? r.json() : null)).then(setProfile).catch(() => setProfile(null));
+    // Session-cached (appData.js) — the Planner remounts on every navigation to it.
+    fetchAppJSON("topic-plan.json", { units: [] }).then(setPlan);
+    fetchAppJSON("questions/deck.json", { questions: [] }).then(setDeck);
+    fetchAppJSON("weakness-seed.json", { weak: [] }).then(setSeed);
+    fetchAppJSON("profile.json", null).then(setProfile);
     // Markdown [x] baseline for FA topics — merged with the tracker's live toggles
     // so the calendar + weakness engine see exactly what the FA Tracker shows.
     loadFABaseline().then(setFaBaseline).catch(() => setFaBaseline({}));

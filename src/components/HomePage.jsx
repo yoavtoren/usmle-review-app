@@ -17,8 +17,7 @@ import {
 } from "./icons.jsx";
 import { currentBlock } from "../lib/strategyData.js";
 import { loadErrors, whyCounts, isoDaysAgo } from "../lib/errorLog.js";
-
-const BASE = import.meta.env.BASE_URL;
+import { fetchAppJSON } from "../lib/appData.js";
 
 const JOURNEY_START = new Date(2026, 5, 10); // local midnight — same day boundary as EXAM_DATE
 const DAY = 86400000;
@@ -62,10 +61,12 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
   const [faData, setFaData] = useState(null);
   useEffect(() => {
     let live = true;
-    fetch(`${BASE}topic-plan.json`).then((r) => r.json())
-      .then((p) => { if (live) setPlanUnits(p?.units || []); }).catch(() => live && setPlanUnits([]));
-    fetch(`${BASE}fa/fa-progress.json`).then((r) => r.json())
-      .then((f) => { if (live) setFaData(f); }).catch(() => {});
+    // Session-cached (appData.js): App already fetched fa-progress.json, and this
+    // page remounts on every navigation back to it.
+    fetchAppJSON("topic-plan.json", { units: [] })
+      .then((p) => { if (live) setPlanUnits(p?.units || []); });
+    fetchAppJSON("fa/fa-progress.json", null)
+      .then((f) => { if (live && f) setFaData(f); });
     return () => { live = false; };
   }, []);
 

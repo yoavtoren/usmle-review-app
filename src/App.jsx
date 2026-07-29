@@ -23,8 +23,8 @@ import StrategyPage from "./components/StrategyPage.jsx";
 import ErrorLogPage from "./components/ErrorLogPage.jsx";
 import AccountPage, { LoginGate } from "./components/AccountPage.jsx";
 import { vtNavigate } from "./lib/vt.js";
-
-const BASE = import.meta.env.BASE_URL;
+import { fetchAppJSON, invalidateAppData } from "./lib/appData.js";
+import ErrorBoundary from "./components/ErrorBoundary.jsx";
 
 function useAppData(routeKey) {
   const [deck, setDeck] = useState(null);
@@ -42,18 +42,17 @@ function useAppData(routeKey) {
   useEffect(() => {
     let cancelled = false;
     setDeckStatus({ loading: true, error: false });
-    fetch(`${BASE}questions/deck.json`)
-      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+    // `undefined` fallback → the promise rejects on failure so the retry banner
+    // can distinguish "offline" from "empty deck". appData caches successes only.
+    fetchAppJSON("questions/deck.json", undefined)
       .then((d) => { if (!cancelled) { setDeck(d); setDeckStatus({ loading: false, error: false }); } })
       .catch(() => { if (!cancelled) setDeckStatus({ loading: false, error: true }); });
-    fetch(`${BASE}fa/fa-progress.json`)
-      .then((r) => r.json())
-      .then((d) => { if (!cancelled) setFaData(d); })
-      .catch(() => {});
+    fetchAppJSON("fa/fa-progress.json", null)
+      .then((d) => { if (!cancelled && d) setFaData(d); });
     return () => { cancelled = true; };
   }, [fetchKey]);
 
-  const retry = () => setFetchKey((k) => k + 1);
+  const retry = () => { invalidateAppData(); setFetchKey((k) => k + 1); };
 
   // Study screens write progress straight to localStorage and are unmounted on
   // navigation (the route is keyed by pathname), so re-reading on focus/visibility
@@ -209,6 +208,9 @@ export default function App() {
         {showMail && <EmailCenter onClose={() => setShowMail(false)} testStats={testStats} faStats={faStats} />}
 
         <div className={`route-fade${isEnglishArea ? " area-ltr" : " area-rtl"}`} key={loc.pathname} dir={areaDir} lang={areaLang}>
+          {/* Keyed by pathname with the route-fade wrapper, so navigating away
+              from a crashed screen resets the boundary automatically. */}
+          <ErrorBoundary>
           <Routes>
             <Route path="/" element={
               <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} loading={dataLoading} />
@@ -248,6 +250,7 @@ export default function App() {
               <HomePage testStats={testStats} faStats={faStats} streak={getStreak()} questions={questions} loading={dataLoading} />
             } />
           </Routes>
+          </ErrorBoundary>
         </div>
       </main>
     </div>

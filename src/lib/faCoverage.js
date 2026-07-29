@@ -8,8 +8,7 @@
 // what the user sees in the tracker.
 
 import { loadFATopics } from "./storage.js";
-
-const BASE = import.meta.env.BASE_URL || "/";
+import { fetchAppJSON, fetchAppText } from "./appData.js";
 
 // Parse a chapter markdown into { `${file}::${section}::${topic}`: markdownDone }
 // for the TOP-LEVEL topics only — that is the granularity of a plan unit's
@@ -29,21 +28,26 @@ function parseTopLevel(text, file) {
 
 // Fetch every chapter markdown and build the markdown-baseline done map. Returns
 // {} on any failure so the caller can still fall back to localStorage-only.
-export async function loadFABaseline() {
-  try {
-    const prog = await fetch(`${BASE}fa/fa-progress.json`).then((r) => r.json());
-    const maps = await Promise.all(
-      (prog.chapters || []).map((ch) =>
-        fetch(`${BASE}fa/${ch.file}`)
-          .then((r) => r.text())
-          .then((text) => parseTopLevel(text, ch.file))
-          .catch(() => ({}))
-      )
-    );
-    return Object.assign({}, ...maps);
-  } catch {
-    return {};
-  }
+//
+// Memoized: this reads 16 markdown files, and the Planner remounts on every
+// navigation to it.
+let _baseline = null;
+export function loadFABaseline() {
+  if (_baseline) return _baseline;
+  _baseline = (async () => {
+    try {
+      const prog = await fetchAppJSON("fa/fa-progress.json", { chapters: [] });
+      const maps = await Promise.all(
+        (prog.chapters || []).map((ch) =>
+          fetchAppText(`fa/${ch.file}`).then((text) => parseTopLevel(text, ch.file))
+        )
+      );
+      return Object.assign({}, ...maps);
+    } catch {
+      return {};
+    }
+  })().catch(() => ({}));
+  return _baseline;
 }
 
 // Effective set of DONE topic ids, applying the tracker's own precedence:
