@@ -1,0 +1,195 @@
+{
+  "id": "q401",
+  "item": 401,
+  "qid": "1417",
+  "title": "Ribosomal RNA is synthesized in the nucleolus",
+  "system": "Histology",
+  "topic": "Nucleolus / ribosome biogenesis",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 51,
+  "vignette": "Molecular biologists are investigating the functional significance of non-coding RNA molecules. During an experiment, they isolate large complexes containing both protein and RNA from exocrine pancreatic cells. The complexes are found both freely floating in the cytoplasm and bound to the endoplasmic reticulum. On the electron micrograph, five intracellular sites are labeled A-E: A is the rough endoplasmic reticulum, B is a dense round intranuclear body (the nucleolus), C is the nucleus, D is a mitochondrion, and E is an exocrine (zymogen) granule. The RNA found within these complexes is primarily synthesized at which of the following intracellular sites?",
+  "clues": [
+    {
+      "text": "large complexes containing both protein and RNA",
+      "type": "green",
+      "note": "Protein + RNA complexes that translate on/off the ER are RIBOSOMES (ribosomal protein + ribosomal RNA)."
+    },
+    {
+      "text": "freely floating in the cytoplasm and bound to the endoplasmic reticulum",
+      "type": "blue",
+      "note": "Ribosomes exist both free (cytosolic proteins) and bound to the rough ER (secreted/membrane proteins) - matching this exocrine cell."
+    },
+    {
+      "text": "a dense round intranuclear body (the nucleolus)",
+      "type": "green",
+      "note": "The NUCLEOLUS is the dense intranuclear body where ribosomal RNA is transcribed and ribosomal subunits are assembled."
+    }
+  ],
+  "whatMatters": "The protein+RNA complexes are RIBOSOMES, and their RNA is ribosomal RNA (rRNA). rRNA is synthesized (transcribed) in the NUCLEOLUS - the dense round body within the nucleus where ribosome biogenesis occurs. On the micrograph this is label B. Answer B.",
+  "strategy": "Identify the complexes as ribosomes, then recall that rRNA is made in the NUCLEOLUS (not the general nucleoplasm). Pick the dense intranuclear body (B). Reject the rough ER (A - where ribosomes DOCK, not where rRNA is made), the nucleus generally (C - mRNA/tRNA are transcribed in the nucleoplasm, but rRNA specifically in the nucleolus), mitochondria (D - own separate genome), and zymogen granules (E - stored secretory product).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Site A (rough endoplasmic reticulum)",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Site B (nucleolus)",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Site C (nucleus/nucleoplasm)",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Site D (mitochondrion)",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Site E (exocrine/zymogen granule)",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Rough ER - ribosomes dock here, rRNA not made here",
+      "detail": "WHAT IT IS: rough endoplasmic reticulum, studded with ribosomes translating secretory/membrane proteins. ❌ WHY IT FAILS: ribosomes ATTACH to the rough ER, but rRNA is SYNTHESIZED in the nucleolus, not the ER. ✅ Correct if: asking where secretory proteins are translated/processed."
+    },
+    {
+      "letter": "C",
+      "label": "Nucleus (nucleoplasm) - mRNA/tRNA, not rRNA site (your pick)",
+      "detail": "WHAT IT IS: the nucleus, where mRNA and tRNA are transcribed by RNA polymerases II and III. ❌ WHY IT FAILS: the question asks specifically about the ribosome's rRNA, which is transcribed in the NUCLEOLUS (a sub-compartment), by RNA polymerase I - more precise than 'the nucleus.' ✅ Correct if: asking where mRNA/tRNA (not rRNA) is made."
+    },
+    {
+      "letter": "D",
+      "label": "Mitochondrion - separate mitochondrial genome",
+      "detail": "WHAT IT IS: mitochondria have their own DNA and ribosomes. ❌ WHY IT FAILS: cytoplasmic/ER-bound ribosomal rRNA is made in the nucleolus, not by the mitochondrial genome. ✅ Correct if: asking about mitochondrial rRNA specifically."
+    },
+    {
+      "letter": "E",
+      "label": "Zymogen granule - stored secretory enzymes",
+      "detail": "WHAT IT IS: membrane-bound granules storing digestive proenzymes for exocytosis. ❌ WHY IT FAILS: they store secretory product, not the site of rRNA synthesis. ✅ Correct if: asking where secretory enzymes are stored before release."
+    }
+  ],
+  "reasoning": [
+    "Protein + RNA complexes (free and ER-bound) = ribosomes",
+    "Their RNA is ribosomal RNA (rRNA)",
+    "rRNA is transcribed and ribosomal subunits assembled in the nucleolus",
+    "-> nucleolus (label B); answer B"
+  ],
+  "mechanism": "The large protein-plus-RNA complexes found both free in the cytoplasm and bound to the rough endoplasmic reticulum are RIBOSOMES, composed of ribosomal proteins and RIBOSOMAL RNA (rRNA). Ribosome biogenesis is centered in the NUCLEOLUS, a dense, non-membrane-bound intranuclear body. There, RNA POLYMERASE I transcribes the ribosomal DNA (present as tandem repeats) into the 45S pre-rRNA, which is processed into the 28S, 18S, and 5.8S rRNAs; these combine with ribosomal proteins (imported from the cytoplasm) to assemble the 60S and 40S subunits, which are exported to the cytoplasm to mature. (The 5S rRNA is the exception - transcribed by RNA polymerase III outside the nucleolus - but the vast majority of rRNA is made in the nucleolus.) A prominent nucleolus reflects high protein-synthetic activity, fitting a secretory exocrine pancreatic cell. On the micrograph, the nucleolus is the dense round body (B). The rough ER (A) is where ribosomes dock to translate, not where rRNA is transcribed; mitochondria (D) have a separate genome; and zymogen granules (E) store secretory enzymes.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem/Cell > nucleolus = site of rRNA synthesis (RNA polymerase I) + ribosome subunit assembly; ribosomes = rRNA + protein, free (cytosolic proteins) or rough-ER-bound (secretory); 5S rRNA is the pol III exception."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "The complexes are ribosomes; their rRNA is transcribed in the nucleolus (more specific than 'the nucleus')."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on nucleolus, rRNA, ribosome subunits (60S/40S), RNA polymerase I, or rough ER? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Rough ER is where ribosomes DOCK; 'nucleus' is too general (mRNA/tRNA there); mitochondria/zymogen granules are unrelated."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "On the electron micrograph: the dense, round intranuclear body (label B) is the nucleolus; the nucleus (C) surrounds it, and the ribosome-studded rough ER (A) lies in the cytoplasm. Anchor: 'dense round body in the nucleus = nucleolus = rRNA synthesis.'"
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: nucleolus makes rRNA (RNA pol I) and assembles ribosome subunits; prominent in secretory cells."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Site of ribosomal RNA synthesis",
+      "back": "Nucleolus (RNA polymerase I)"
+    },
+    {
+      "front": "Composition of a ribosome",
+      "back": "Ribosomal RNA (rRNA) + ribosomal proteins"
+    },
+    {
+      "front": "Free vs bound ribosomes",
+      "back": "Free = cytosolic proteins; rough-ER-bound = secretory/membrane proteins"
+    },
+    {
+      "front": "rRNA exception made outside nucleolus",
+      "back": "5S rRNA (RNA polymerase III)"
+    },
+    {
+      "front": "Ribosome subunits",
+      "back": "60S + 40S (eukaryotic) assemble in nucleolus, mature in cytoplasm"
+    },
+    {
+      "front": "Prominent nucleolus indicates",
+      "back": "High protein synthesis (e.g., secretory/plasma cells)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Nucleolus",
+      "detail": "Cell: rRNA synthesis (RNA pol I) + ribosome subunit assembly."
+    },
+    {
+      "tag": "options",
+      "topic": "Organelles on EM",
+      "detail": "Cell > rough ER (ribosome docking), nucleus (mRNA/tRNA), mitochondria, zymogen granules."
+    },
+    {
+      "tag": "concept",
+      "topic": "Ribosome biogenesis",
+      "detail": "Biochem > 45S pre-rRNA -> 28S/18S/5.8S; 5S made by pol III."
+    }
+  ],
+  "memoryHook": "Ribosomes are protein-RNA machines, and their rRNA is stamped out in the nucleolus - the dense dot inside the nucleus that swells in busy secretory cells.",
+  "stem": [
+    {
+      "text": "Molecular biologists are investigating the functional significance of non-coding RNA molecules. During an experiment, they isolate "
+    },
+    {
+      "text": "large complexes containing both protein and RNA",
+      "clue": true,
+      "type": "green",
+      "note": "Protein + RNA complexes that translate on/off the ER are RIBOSOMES (ribosomal protein + ribosomal RNA)."
+    },
+    {
+      "text": " from exocrine pancreatic cells. The complexes are found both "
+    },
+    {
+      "text": "freely floating in the cytoplasm and bound to the endoplasmic reticulum",
+      "clue": true,
+      "type": "blue",
+      "note": "Ribosomes exist both free (cytosolic proteins) and bound to the rough ER (secreted/membrane proteins) - matching this exocrine cell."
+    },
+    {
+      "text": ". On the electron micrograph, five intracellular sites are labeled A-E: A is the rough endoplasmic reticulum, B is "
+    },
+    {
+      "text": "a dense round intranuclear body (the nucleolus)",
+      "clue": true,
+      "type": "green",
+      "note": "The NUCLEOLUS is the dense intranuclear body where ribosomal RNA is transcribed and ribosomal subunits are assembled."
+    },
+    {
+      "text": ", C is the nucleus, D is a mitochondrion, and E is an exocrine (zymogen) granule. The RNA found within these complexes is primarily synthesized at which of the following intracellular sites?"
+    }
+  ]
+}

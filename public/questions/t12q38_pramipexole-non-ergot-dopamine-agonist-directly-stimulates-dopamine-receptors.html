@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pramipexole: non-ergot dopamine agonist - directly stimulates dopamine receptors</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 12 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q437", "item": 437, "qid": "703", "title": "Pramipexole: non-ergot dopamine agonist - directly stimulates dopamine receptors", "system": "Pharmacology", "topic": "Parkinson disease - dopamine agonists", "correct": "B", "yourAnswer": "A", "percentCorrect": 55, "vignette": "A 58-year-old man comes to the office due to 8 months of a slowly progressive resting tremor of the right hand, stiffness, and slowness of movement. Examination shows a pill-rolling tremor at rest, cogwheel rigidity, bradykinesia, and reduced arm swing while walking. He is diagnosed with Parkinson disease. Because he is relatively young and his symptoms are mild, the physician prescribes pramipexole rather than levodopa as initial therapy. Which of the following best describes the mechanism of action of this medication?", "clues": [{"text": "pill-rolling tremor at rest, cogwheel rigidity, bradykinesia", "type": "green", "note": "The classic triad of resting tremor, rigidity, and bradykinesia = Parkinson disease from nigrostriatal dopamine deficiency."}, {"text": "relatively young", "type": "orange", "note": "In younger patients, non-ergot dopamine agonists are often started first to delay levodopa and its long-term motor complications (dyskinesias, on-off phenomenon)."}, {"text": "pramipexole", "type": "blue", "note": "Pramipexole is a NON-ERGOT dopamine agonist that DIRECTLY stimulates postsynaptic dopamine (D2/D3) receptors, independent of the patient's own dopamine synthesis."}], "whatMatters": "Pramipexole (and ropinirole) are NON-ERGOT DOPAMINE AGONISTS: they bind and DIRECTLY STIMULATE postsynaptic dopamine (mainly D2/D3) receptors in the striatum, bypassing the degenerating nigral neurons. This does not require conversion or endogenous dopamine. Answer B.", "strategy": "Classify the drug by name: pramipexole/ropinirole = dopamine-receptor AGONISTS (direct receptor stimulation). Contrast with the other anti-Parkinson mechanisms so you can reject them: levodopa (converted to dopamine - increases synthesis), amantadine (increases dopamine release/reuptake block), selegiline/rasagiline (MAO-B inhibition), entacapone/tolcapone (COMT inhibition), benztropine (antimuscarinic). The trap (A) is picking a mechanism that raises the patient's own dopamine, but agonists act at the receptor directly.", "options": [{"letter": "A", "text": "Increases synthesis of dopamine from levodopa", "correct": false}, {"letter": "B", "text": "Directly stimulates dopamine receptors", "correct": true}, {"letter": "C", "text": "Increases release of dopamine from nerve terminals", "correct": false}, {"letter": "D", "text": "Inhibits catechol-O-methyltransferase (COMT)", "correct": false}, {"letter": "E", "text": "Inhibits monoamine oxidase type B (MAO-B)", "correct": false}, {"letter": "F", "text": "Blocks central muscarinic receptors", "correct": false}], "eliminations": [{"letter": "A", "label": "Increases dopamine synthesis - that's levodopa", "detail": "WHAT IT IS: raising dopamine by supplying its precursor (levodopa, given with carbidopa). ❌ WHY IT FAILS: pramipexole is a receptor AGONIST - it does not increase dopamine synthesis or depend on endogenous dopamine; it acts directly at the receptor. ✅ Correct if: levodopa/carbidopa."}, {"letter": "C", "label": "Increases dopamine release - that's amantadine", "detail": "WHAT IT IS: promoting presynaptic dopamine release (and blocking reuptake) - amantadine. ❌ WHY IT FAILS: pramipexole works post-synaptically at the receptor, not by releasing stored dopamine. ✅ Correct if: amantadine (also NMDA antagonist)."}, {"letter": "D", "label": "Inhibits COMT - that's entacapone/tolcapone", "detail": "WHAT IT IS: blocking peripheral (and central) breakdown of levodopa/dopamine by COMT to prolong levodopa's effect - entacapone, tolcapone. ❌ WHY IT FAILS: pramipexole is not a COMT inhibitor and is not an adjunct that extends levodopa. ✅ Correct if: entacapone/tolcapone."}, {"letter": "E", "label": "Inhibits MAO-B - that's selegiline/rasagiline", "detail": "WHAT IT IS: blocking MAO-B, the enzyme that degrades dopamine in the CNS - selegiline, rasagiline. ❌ WHY IT FAILS: pramipexole does not inhibit MAO-B; it directly activates dopamine receptors. ✅ Correct if: selegiline/rasagiline."}, {"letter": "F", "label": "Blocks muscarinic receptors - that's benztropine/trihexyphenidyl", "detail": "WHAT IT IS: central antimuscarinics that rebalance the striatal dopamine:acetylcholine ratio, mainly improving tremor - benztropine, trihexyphenidyl. ❌ WHY IT FAILS: pramipexole acts on dopamine receptors, not muscarinic receptors. ✅ Correct if: antimuscarinic (tremor-predominant, younger patients)."}], "reasoning": ["Classic resting tremor + rigidity + bradykinesia = Parkinson disease", "Pramipexole is named as the drug; it is a non-ergot dopamine agonist", "Dopamine agonists bind and directly activate postsynaptic D2/D3 receptors", "-> directly stimulates dopamine receptors; answer B"], "mechanism": "Parkinson disease results from degeneration of dopaminergic neurons in the substantia nigra pars compacta, reducing dopaminergic input to the striatum. PRAMIPEXOLE (and ropinirole) are NON-ERGOT DOPAMINE AGONISTS that bind DIRECTLY to postsynaptic dopamine receptors - preferentially the D2/D3 family - in the striatum, mimicking dopamine and restoring dopaminergic signaling INDEPENDENTLY of the patient's own (failing) dopamine synthesis or the number of surviving nigral neurons. Because they act at the receptor and do not require enzymatic conversion, they are often used as INITIAL monotherapy in younger patients to DELAY levodopa and its long-term motor complications (dyskinesias, wearing-off/on-off phenomena). Notable adverse effects include somnolence/sudden sleep attacks, nausea, orthostatic hypotension, hallucinations, and IMPULSE-CONTROL disorders (pathologic gambling, hypersexuality, compulsive shopping). The distractors map to the OTHER anti-Parkinson mechanisms: increasing synthesis (levodopa), increasing release/blocking reuptake (amantadine), inhibiting COMT (entacapone/tolcapone), inhibiting MAO-B (selegiline/rasagiline), and antimuscarinic action (benztropine/trihexyphenidyl).", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Neuro/Pharm > Parkinson drugs: dopamine agonists (pramipexole, ropinirole - non-ergot) directly stimulate dopamine receptors; delay levodopa; ADRs include impulse-control disorders, somnolence, hallucinations."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Pramipexole = dopamine-receptor agonist -> directly stimulates dopamine (D2/D3) receptors."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on dopamine agonist, D2/D3 receptors, non-ergot, MAO-B, or COMT? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Synthesis = levodopa; release = amantadine; COMT = entacapone; MAO-B = selegiline; antimuscarinic = benztropine."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: pramipexole/ropinirole = non-ergot dopamine agonists (direct D2/D3 stimulation); watch for impulse-control disorders + sleep attacks."}], "keywords": [{"front": "Pramipexole / ropinirole mechanism", "back": "Non-ergot dopamine agonist - directly stimulate D2/D3 receptors"}, {"front": "Why start a dopamine agonist before levodopa (young patient)", "back": "Delay levodopa-related dyskinesias / motor complications"}, {"front": "Dopamine agonist signature adverse effects", "back": "Impulse-control disorders, sleep attacks, hallucinations, orthostasis"}, {"front": "Levodopa mechanism", "back": "Dopamine precursor -> increases dopamine synthesis (with carbidopa)"}, {"front": "Amantadine mechanism", "back": "Increases dopamine release + NMDA antagonist"}, {"front": "Selegiline / entacapone mechanisms", "back": "MAO-B inhibitor / COMT inhibitor (extend dopamine)"}], "firstAid": [{"tag": "answer / drug", "topic": "Dopamine agonists", "detail": "Pharm: pramipexole/ropinirole (non-ergot) directly stimulate dopamine receptors."}, {"tag": "adverse effects", "topic": "Impulse-control disorders", "detail": "Pharm > gambling/hypersexuality, sleep attacks with dopamine agonists."}, {"tag": "options", "topic": "Anti-Parkinson mechanisms", "detail": "Neuro/Pharm > levodopa, amantadine, MAO-B, COMT, antimuscarinics."}], "memoryHook": "Pramipexole 'presses the buttons' directly - it doesn't wait for the brain to make dopamine, it walks up and hits the dopamine receptors itself.", "stem": [{"text": "A 58-year-old man comes to the office due to 8 months of a slowly progressive resting tremor of the right hand, stiffness, and slowness of movement. Examination shows a "}, {"text": "pill-rolling tremor at rest, cogwheel rigidity, bradykinesia", "clue": true, "type": "green", "note": "The classic triad of resting tremor, rigidity, and bradykinesia = Parkinson disease from nigrostriatal dopamine deficiency."}, {"text": ", and reduced arm swing while walking. He is diagnosed with Parkinson disease. Because he is "}, {"text": "relatively young", "clue": true, "type": "orange", "note": "In younger patients, non-ergot dopamine agonists are often started first to delay levodopa and its long-term motor complications (dyskinesias, on-off phenomenon)."}, {"text": " and his symptoms are mild, the physician prescribes "}, {"text": "pramipexole", "clue": true, "type": "blue", "note": "Pramipexole is a NON-ERGOT dopamine agonist that DIRECTLY stimulates postsynaptic dopamine (D2/D3) receptors, independent of the patient's own dopamine synthesis."}, {"text": " rather than levodopa as initial therapy. Which of the following best describes the mechanism of action of this medication?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

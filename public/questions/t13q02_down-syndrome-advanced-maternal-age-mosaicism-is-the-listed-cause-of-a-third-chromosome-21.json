@@ -1,0 +1,204 @@
+{
+  "id": "q441",
+  "item": 441,
+  "qid": "1610",
+  "title": "Down syndrome (advanced maternal age): mosaicism is the listed cause of a third chromosome 21",
+  "system": "Genetics",
+  "topic": "Trisomy 21 - cytogenetic mechanisms",
+  "correct": "B",
+  "yourAnswer": "D",
+  "percentCorrect": 42,
+  "vignette": "A 1-hour-old girl born to a 40-year-old woman is brought to the nursery for evaluation. The pregnancy and delivery were uncomplicated. Physical examination shows mid-face hypoplasia with a flat nasal bridge, up-slanting palpebral fissures, a small mouth, and a single palmar crease bilaterally. Cardiac auscultation reveals a blowing holosystolic murmur heard best along the sternal border. Which of the following abnormalities is most likely to be present in this patient?",
+  "clues": [
+    {
+      "text": "40-year-old woman",
+      "type": "orange",
+      "note": "Advanced maternal age is the major risk factor for meiotic nondisjunction, which produces trisomy 21 (Down syndrome)."
+    },
+    {
+      "text": "mid-face hypoplasia with a flat nasal bridge, up-slanting palpebral fissures",
+      "type": "green",
+      "note": "Flat facial profile, flat nasal bridge, and up-slanting palpebral fissures are classic dysmorphic features of Down syndrome."
+    },
+    {
+      "text": "single palmar crease bilaterally",
+      "type": "green",
+      "note": "A single transverse (simian) palmar crease is a characteristic finding in Down syndrome."
+    },
+    {
+      "text": "blowing holosystolic murmur heard best along the sternal border",
+      "type": "blue",
+      "note": "Down syndrome is strongly associated with endocardial cushion (atrioventricular septal) defects and VSD - a holosystolic murmur at the sternal border."
+    }
+  ],
+  "whatMatters": "The infant has Down syndrome (trisomy 21) - flat facies, up-slanting palpebral fissures, single palmar crease, AV septal/VSD murmur, advanced maternal age. Among the options, only MOSAICISM produces a third copy of chromosome 21 (post-zygotic mitotic nondisjunction creating two cell lines). Answer B.",
+  "strategy": "Recognize Down syndrome, then pick the listed mechanism that yields extra chromosome 21 material. Meiotic nondisjunction (~95%) and Robertsonian translocation (~2-3%) aren't options, so MOSAICISM (<2%, post-zygotic mitotic nondisjunction) is the answer. Reject aberrant imprinting/uniparental disomy (Prader-Willi/Angelman), partial deletion (Cri-du-chat 5p-), and triplet expansion (Huntington, fragile X) - none give a third chromosome 21.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Aberrant genomic imprinting",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Mosaicism",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Partial deletion",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Triplet expansion",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Uniparental disomy",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Aberrant genomic imprinting - Prader-Willi/Angelman",
+      "detail": "WHAT IT IS: parent-of-origin-specific gene expression gone wrong (imprinting). ❌ WHY IT FAILS: it causes Prader-Willi/Angelman (chromosome 15), not a third chromosome 21. ✅ Correct if: hyperphagia/obesity (Prader-Willi) or happy puppet/ataxia (Angelman)."
+    },
+    {
+      "letter": "C",
+      "label": "Partial deletion - loss of genetic material",
+      "detail": "WHAT IT IS: loss of a chromosome segment (e.g., Cri-du-chat, 5p deletion). ❌ WHY IT FAILS: Down syndrome results from EXTRA chromosome 21 material, not a deletion. ✅ Correct if: high-pitched cry/microcephaly (5p-)."
+    },
+    {
+      "letter": "D",
+      "label": "Triplet expansion - Huntington / fragile X",
+      "detail": "WHAT IT IS: expansion of trinucleotide repeats (CAG, CGG). ❌ WHY IT FAILS: this causes Huntington disease or fragile X, not trisomy 21; it does not add a chromosome 21. ✅ Correct if: anticipation with repeat expansion (Huntington, fragile X, myotonic dystrophy)."
+    },
+    {
+      "letter": "E",
+      "label": "Uniparental disomy - two copies from one parent",
+      "detail": "WHAT IT IS: both homologs of a chromosome inherited from one parent. ❌ WHY IT FAILS: it involves a NORMAL chromosome count (46) with abnormal parental origin (e.g., Prader-Willi/Angelman), not a third chromosome 21. ✅ Correct if: imprinting disorder from UPD."
+    }
+  ],
+  "reasoning": [
+    "Flat facies, up-slanting palpebral fissures, single palmar crease, AVSD/VSD murmur, advanced maternal age = Down syndrome",
+    "Down syndrome requires a third copy of chromosome 21 material",
+    "Of the listed options, only mosaicism (post-zygotic mitotic nondisjunction) yields an extra chromosome 21",
+    "-> mosaicism; answer B"
+  ],
+  "mechanism": "Down syndrome results from an increased gene-dosage effect due to three copies of chromosome 21. Three cytogenetic mechanisms produce it: (1) MEIOTIC NONDISJUNCTION (~95%), strongly linked to ADVANCED MATERNAL AGE, giving a full trisomy 21 in every cell; (2) unbalanced ROBERTSONIAN TRANSLOCATION (~2-3%), where extra chromosome 21 material is attached to another acrocentric chromosome (high recurrence if a parent carries a balanced translocation); and (3) MOSAICISM (<2%), from post-zygotic MITOTIC nondisjunction, producing two cell lines (one normal, one trisomy 21), with severity depending on the proportion of affected cells. Because meiotic nondisjunction and translocation are not among the choices, MOSAICISM is the only listed mechanism that can create a third copy of chromosome 21. The distractors describe entirely different genetic errors (imprinting, deletion, triplet expansion, uniparental disomy) that do not generate trisomy 21.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Genetics > Down syndrome: trisomy 21; 95% meiotic nondisjunction (advanced maternal age), 2-3% Robertsonian translocation, <2% mosaicism (post-zygotic mitotic nondisjunction); flat facies, single palmar crease, AVSD/VSD, duodenal atresia, increased Alzheimer risk."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Down syndrome needs a 3rd chromosome 21; among options only mosaicism does that."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on nondisjunction, mosaicism, Robertsonian translocation, imprinting, or uniparental disomy? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Imprinting/UPD = Prader-Willi/Angelman; deletion = Cri-du-chat; triplet expansion = Huntington/fragile X."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: Down syndrome mechanisms = meiotic nondisjunction (most, maternal age) > translocation > mosaicism (only listed option here)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Down syndrome facies clues",
+      "back": "Flat nasal bridge, up-slanting palpebral fissures, single palmar crease"
+    },
+    {
+      "front": "Down syndrome + advanced maternal age mechanism",
+      "back": "Meiotic nondisjunction (most common overall)"
+    },
+    {
+      "front": "Down syndrome from post-zygotic mitotic nondisjunction",
+      "back": "Mosaicism (two cell lines)"
+    },
+    {
+      "front": "Down syndrome cardiac defect",
+      "back": "Endocardial cushion / AV septal defect (also VSD)"
+    },
+    {
+      "front": "Triplet expansion diseases",
+      "back": "Huntington, fragile X, myotonic dystrophy (not trisomy 21)"
+    },
+    {
+      "front": "Uniparental disomy classic disorders",
+      "back": "Prader-Willi / Angelman"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Trisomy 21 (Down syndrome)",
+      "detail": "Genetics: nondisjunction (maternal age) most common; mosaicism = post-zygotic mitotic error."
+    },
+    {
+      "tag": "options",
+      "topic": "Genetic mechanisms",
+      "detail": "Genetics > imprinting, deletion, triplet expansion, UPD map to other syndromes."
+    },
+    {
+      "tag": "cardiac",
+      "topic": "AV septal defect",
+      "detail": "CV > endocardial cushion defect associated with Down syndrome."
+    }
+  ],
+  "memoryHook": "Extra chromosome 21 can sneak in three ways; with translocation and meiotic nondisjunction off the menu, mosaicism (a mid-development copying slip) is what's left.",
+  "stem": [
+    {
+      "text": "A 1-hour-old girl born to a "
+    },
+    {
+      "text": "40-year-old woman",
+      "clue": true,
+      "type": "orange",
+      "note": "Advanced maternal age is the major risk factor for meiotic nondisjunction, which produces trisomy 21 (Down syndrome)."
+    },
+    {
+      "text": " is brought to the nursery for evaluation. The pregnancy and delivery were uncomplicated. Physical examination shows "
+    },
+    {
+      "text": "mid-face hypoplasia with a flat nasal bridge, up-slanting palpebral fissures",
+      "clue": true,
+      "type": "green",
+      "note": "Flat facial profile, flat nasal bridge, and up-slanting palpebral fissures are classic dysmorphic features of Down syndrome."
+    },
+    {
+      "text": ", a small mouth, and a "
+    },
+    {
+      "text": "single palmar crease bilaterally",
+      "clue": true,
+      "type": "green",
+      "note": "A single transverse (simian) palmar crease is a characteristic finding in Down syndrome."
+    },
+    {
+      "text": ". Cardiac auscultation reveals a "
+    },
+    {
+      "text": "blowing holosystolic murmur heard best along the sternal border",
+      "clue": true,
+      "type": "blue",
+      "note": "Down syndrome is strongly associated with endocardial cushion (atrioventricular septal) defects and VSD - a holosystolic murmur at the sternal border."
+    },
+    {
+      "text": ". Which of the following abnormalities is most likely to be present in this patient?"
+    }
+  ]
+}

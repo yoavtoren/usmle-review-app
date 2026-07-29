@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthracycline (doxorubicin) dilated cardiomyopathy: biventricular failure (high RAP + high LVEDP)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 13 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q445", "item": 445, "qid": "15650", "title": "Anthracycline (doxorubicin) dilated cardiomyopathy: biventricular failure (high RAP + high LVEDP)", "system": "Pathophysiology", "topic": "Heart failure hemodynamics", "correct": "D", "yourAnswer": "F", "percentCorrect": 54, "vignette": "A 68-year-old woman comes to the office due to a month-long history of worsening fatigue, shortness of breath, and dry cough. The patient has symptoms that worsen with exertion and when lying flat. She has had no chest pain, palpitations, or lightheadedness. The patient has a history of hypertension and breast cancer that is in remission after surgery and doxorubicin-based chemotherapy 15 years ago. She does not use tobacco, alcohol, or illicit drugs. Blood pressure is 110/62 mm Hg and pulse is 94/min. Physical examination shows crackles at the lung bases and bilateral pedal edema. Which of the following sets of findings are most likely present in this patient?", "clues": [{"text": "worsen with exertion and when lying flat", "type": "blue", "note": "Dyspnea on exertion plus orthopnea indicates elevated left-heart filling pressures (pulmonary congestion) - left ventricular failure."}, {"text": "doxorubicin-based chemotherapy 15 years ago", "type": "orange", "note": "Anthracyclines (doxorubicin) cause a dose-dependent DILATED cardiomyopathy that can present with heart failure years to decades after exposure."}, {"text": "crackles at the lung bases and bilateral pedal edema", "type": "green", "note": "Pulmonary crackles (left-sided congestion) PLUS peripheral edema (right-sided/systemic congestion) = biventricular failure -> both LVEDP and right atrial pressure are elevated."}], "whatMatters": "Doxorubicin causes DILATED CARDIOMYOPATHY. Reduced contractility raises LV end-diastolic pressure (transmitted back to the lungs -> crackles, orthopnea). Advanced/biventricular failure also elevates RIGHT ATRIAL PRESSURE (volume overload -> pedal edema). Both RAP and LVEDP are INCREASED. Answer D.", "strategy": "Read the congestion on both sides: pulmonary crackles/orthopnea = high LVEDP; pedal edema = high RAP. Decompensated dilated cardiomyopathy from anthracycline gives elevated pressures on BOTH sides -> increased RAP AND increased LVEDP. Reject any option with decreased/normal RAP (A, B, F) - overt volume overload makes RAP invariably elevated - and options with decreased LVEDP (A, C), which contradict pulmonary congestion.", "options": [{"letter": "A", "text": "Right atrial pressure decreased, LV end-diastolic pressure decreased", "correct": false}, {"letter": "B", "text": "Right atrial pressure decreased, LV end-diastolic pressure increased", "correct": false}, {"letter": "C", "text": "Right atrial pressure increased, LV end-diastolic pressure decreased", "correct": false}, {"letter": "D", "text": "Right atrial pressure increased, LV end-diastolic pressure increased", "correct": true}, {"letter": "E", "text": "Right atrial pressure increased, LV end-diastolic pressure no change", "correct": false}, {"letter": "F", "text": "Right atrial pressure no change, LV end-diastolic pressure increased", "correct": false}], "eliminations": [{"letter": "A", "label": "Both decreased - volume depletion, not failure", "detail": "WHAT IT IS: low RAP and low LVEDP. ❌ WHY IT FAILS: this pattern is intravascular volume DEPLETION; it cannot explain pulmonary crackles and peripheral edema. ✅ Correct if: hypovolemia/hemorrhage."}, {"letter": "B", "label": "Low RAP, high LVEDP - early isolated left failure", "detail": "WHAT IT IS: elevated left-sided pressure with normal/low right-sided pressure (early left heart failure). ❌ WHY IT FAILS: once overt volume overload with PERIPHERAL EDEMA develops, RAP is invariably elevated. ✅ Correct if: early left-sided failure BEFORE systemic congestion."}, {"letter": "C", "label": "High RAP, low LVEDP - isolated right failure", "detail": "WHAT IT IS: elevated right-sided pressure with low left-sided pressure (e.g., pulmonary hypertension/cor pulmonale). ❌ WHY IT FAILS: the patient has pulmonary crackles/orthopnea indicating HIGH LVEDP. ✅ Correct if: right heart failure from lung disease without left-sided disease."}, {"letter": "E", "label": "High RAP, unchanged LVEDP - contradicts crackles", "detail": "WHAT IT IS: elevated right-sided pressure with normal left-sided pressure. ❌ WHY IT FAILS: crackles and orthopnea require an ELEVATED LVEDP, not an unchanged one. ✅ Correct if: isolated right-sided overload without pulmonary congestion."}, {"letter": "F", "label": "Unchanged RAP, high LVEDP - ignores edema", "detail": "WHAT IT IS: normal right-sided pressure with elevated left-sided pressure. ❌ WHY IT FAILS: bilateral PEDAL EDEMA signals systemic venous congestion, so RAP must be elevated, not unchanged. ✅ Correct if: pure left-sided failure before systemic congestion develops."}], "reasoning": ["Anthracycline (doxorubicin) exposure -> delayed dilated cardiomyopathy", "Reduced LV contractility raises LVEDP, transmitted back to the lungs (crackles, orthopnea)", "Advanced/biventricular failure and volume overload raise right atrial pressure (pedal edema)", "-> both RAP and LVEDP are increased; answer D"], "mechanism": "ANTHRACYCLINE chemotherapeutics (e.g., DOXORUBICIN) cause a dose-dependent, often DELAYED DILATED CARDIOMYOPATHY through free-radical-mediated myocyte injury; heart failure can appear years to decades after treatment. Dilated cardiomyopathy impairs systolic contractile function; the LV dilates and, despite Frank-Starling and eccentric hypertrophy compensation, wall stress ultimately produces reduced cardiac output and an ELEVATED LV END-DIASTOLIC PRESSURE (LVEDP). Elevated LVEDP is transmitted backward to the pulmonary veins and capillaries, causing pulmonary congestion (crackles, orthopnea, exertional dyspnea). In advanced disease, RIGHT ATRIAL PRESSURE (which reflects central venous pressure) is also ELEVATED - both from backward transmission of high left-sided pressures causing secondary right-heart failure and because the cardiotoxic insult often directly affects the right ventricle - producing systemic venous congestion with peripheral (pedal) edema. Thus the patient has biventricular failure with BOTH RAP and LVEDP increased. Patterns with a low/normal RAP ignore the overt volume overload, and a low LVEDP contradicts the pulmonary findings.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid CV > dilated cardiomyopathy: causes include anthracyclines (doxorubicin, dose-dependent, delayed); systolic dysfunction -> elevated LVEDP (pulmonary congestion) and elevated RAP/CVP (systemic congestion) in biventricular failure."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Crackles/orthopnea = high LVEDP; pedal edema = high RAP; both elevated in decompensated HF."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on dilated cardiomyopathy, LVEDP, right atrial/central venous pressure, orthopnea, or anthracycline toxicity? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Any low/normal RAP ignores the edema; any low LVEDP ignores the pulmonary crackles."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: doxorubicin -> dilated cardiomyopathy; decompensated HF -> increased RAP AND increased LVEDP."}], "keywords": [{"front": "Doxorubicin cardiotoxicity", "back": "Dose-dependent, delayed dilated cardiomyopathy"}, {"front": "Pulmonary crackles + orthopnea reflect", "back": "Elevated LV end-diastolic pressure (left congestion)"}, {"front": "Peripheral (pedal) edema reflects", "back": "Elevated right atrial / central venous pressure"}, {"front": "Decompensated biventricular HF pressures", "back": "Both RAP and LVEDP increased"}, {"front": "Reduce anthracycline cardiotoxicity", "back": "Dexrazoxane (iron chelator), monitor EF"}, {"front": "Dilated cardiomyopathy other causes", "back": "Alcohol, myocarditis (Coxsackie), peripartum, thiamine deficiency"}], "firstAid": [{"tag": "answer / stem", "topic": "Dilated cardiomyopathy", "detail": "CV: anthracycline toxicity -> systolic failure; high LVEDP + high RAP."}, {"tag": "options", "topic": "HF hemodynamics", "detail": "CV > left congestion = LVEDP; systemic congestion = RAP."}, {"tag": "pharm", "topic": "Doxorubicin", "detail": "Onc/CV > free-radical myocyte injury; dexrazoxane protection."}], "memoryHook": "Doxorubicin's late gift is a floppy dilated heart - fluid backs up behind BOTH ventricles, so lungs crackle (LVEDP up) and ankles swell (RAP up).", "stem": [{"text": "A 68-year-old woman comes to the office due to a month-long history of worsening fatigue, shortness of breath, and dry cough. The patient has symptoms that "}, {"text": "worsen with exertion and when lying flat", "clue": true, "type": "blue", "note": "Dyspnea on exertion plus orthopnea indicates elevated left-heart filling pressures (pulmonary congestion) - left ventricular failure."}, {"text": ". She has had no chest pain, palpitations, or lightheadedness. The patient has a history of hypertension and breast cancer that is in remission after surgery and "}, {"text": "doxorubicin-based chemotherapy 15 years ago", "clue": true, "type": "orange", "note": "Anthracyclines (doxorubicin) cause a dose-dependent DILATED cardiomyopathy that can present with heart failure years to decades after exposure."}, {"text": ". She does not use tobacco, alcohol, or illicit drugs. Blood pressure is 110/62 mm Hg and pulse is 94/min. Physical examination shows "}, {"text": "crackles at the lung bases and bilateral pedal edema", "clue": true, "type": "green", "note": "Pulmonary crackles (left-sided congestion) PLUS peripheral edema (right-sided/systemic congestion) = biventricular failure -> both LVEDP and right atrial pressure are elevated."}, {"text": ". Which of the following sets of findings are most likely present in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

@@ -1,0 +1,214 @@
+{
+  "id": "q460",
+  "item": 460,
+  "qid": "12187",
+  "title": "Aortocavitary fistula (aortic root to RV): continuous flow (pressure gradient in systole and diastole)",
+  "system": "Physiology",
+  "topic": "Cardiac hemodynamics / shunt flow",
+  "correct": "A",
+  "yourAnswer": "C",
+  "percentCorrect": 38,
+  "vignette": "A 32-year-old man is evaluated in the emergency department due to fever, night sweats, and chills over the last several days. The patient reports recent intravenous drug use. He has otherwise been in good health with no other medical problems. Temperature is 38.3 C (100.9 F), blood pressure is 120/80 mm Hg, and pulse is 105/min and regular. Further evaluation reveals aortic valve endocarditis with an intracardiac abscess and formation of a small fistula between the right ventricle and aortic root that remains patent throughout the cardiac cycle. Doppler ultrasonographic examination of the fistula will most likely reveal which of the following blood flow patterns?",
+  "clues": [
+    {
+      "text": "recent intravenous drug use",
+      "type": "orange",
+      "note": "IV drug use is a major risk factor for infective endocarditis, which can extend into the myocardium and create an aortocavitary fistula."
+    },
+    {
+      "text": "aortic valve endocarditis",
+      "type": "blue",
+      "note": "Infection can burrow from the aortic valve/abscess into an adjacent chamber, forming a fistula between the aortic root and the right ventricle."
+    },
+    {
+      "text": "small fistula between the right ventricle and aortic root",
+      "type": "green",
+      "note": "This abnormal channel connects the HIGH-pressure aortic root to the LOW-pressure right ventricle; flow direction/timing follow the pressure gradient."
+    },
+    {
+      "text": "remains patent throughout the cardiac cycle",
+      "type": "green",
+      "note": "Because aortic pressure exceeds right ventricular pressure during BOTH systole and diastole, the shunt flows CONTINUOUSLY from aorta to RV (continuous murmur)."
+    }
+  ],
+  "whatMatters": "Aortic pressure (about 120/80) exceeds right ventricular pressure (about 25/2) during BOTH systole and diastole. So blood shunts from the high-pressure AORTIC ROOT to the low-pressure RIGHT VENTRICLE CONTINUOUSLY throughout the cardiac cycle (a continuous murmur). Answer A.",
+  "strategy": "Compare the two chambers' pressures across the whole cycle. Aortic root pressure > RV pressure in systole AND diastole, so flow is aorta->RV and CONTINUOUS. Reject any 'RV to aortic root' option (wrong direction - RV pressure never exceeds aortic) and any 'only systole/only diastole' option (a VSD-type gradient that equalizes in diastole - not the case for an aorta-to-RV connection, where the gradient persists all cycle).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Flow from the aortic root to the right ventricle continuously",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Flow from the aortic root to the right ventricle only in diastole",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Flow from the aortic root to the right ventricle only in systole",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Flow from the right ventricle to the aortic root continuously",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Flow from the right ventricle to the aortic root only in diastole",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Flow from the right ventricle to the aortic root only in systole",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Aorta->RV only in diastole - gradient exists all cycle",
+      "detail": "WHAT IT IS: shunt limited to diastole. ❌ WHY IT FAILS: aortic pressure exceeds RV pressure in systole too, so flow is not confined to diastole - it is continuous. ✅ Correct if: a lesion where the gradient exists only in diastole (e.g., aortic regurgitation across the valve)."
+    },
+    {
+      "letter": "C",
+      "label": "Aorta->RV only in systole - VSD-type reasoning",
+      "detail": "WHAT IT IS: shunt limited to systole (like a VSD, where LV>>RV mainly in systole). ❌ WHY IT FAILS: for an aorta-to-RV fistula the pressure gradient persists in diastole as well (aortic diastolic ~80 >> RV diastolic ~2), so flow does not stop in diastole. ✅ Correct if: a ventricular septal defect (LV-to-RV, predominantly systolic)."
+    },
+    {
+      "letter": "D",
+      "label": "RV->aorta continuously - wrong direction",
+      "detail": "WHAT IT IS: reversed flow from RV to aorta. ❌ WHY IT FAILS: RV pressure never exceeds aortic pressure, so flow cannot go RV->aorta. ✅ Correct if: a scenario with suprasystemic RV pressure (severe pulmonary hypertension/Eisenmenger) - not here."
+    },
+    {
+      "letter": "E",
+      "label": "RV->aorta only in diastole - wrong direction",
+      "detail": "WHAT IT IS: reversed flow limited to diastole. ❌ WHY IT FAILS: the gradient always favors aorta->RV; RV pressure is never higher. ✅ Correct if: (not applicable) RV pressure exceeding aortic in diastole."
+    },
+    {
+      "letter": "F",
+      "label": "RV->aorta only in systole - wrong direction",
+      "detail": "WHAT IT IS: reversed flow limited to systole. ❌ WHY IT FAILS: even in systole aortic pressure (~120) exceeds RV systolic (~25), so flow is aorta->RV, not the reverse. ✅ Correct if: (not applicable) suprasystemic RV systolic pressure."
+    }
+  ],
+  "reasoning": [
+    "An aortocavitary fistula connects the aortic root to the right ventricle",
+    "Aortic pressure (~120/80) exceeds RV pressure (~25/2) in both systole and diastole",
+    "A gradient present throughout the cycle drives continuous flow from aorta to RV",
+    "-> continuous aorta-to-RV shunt; answer A"
+  ],
+  "mechanism": "Infective endocarditis of the aortic valve can extend into the adjacent myocardium (often via an intracardiac ABSCESS) and erode a channel - an AORTOCAVITARY FISTULA - between the aortic root and a neighboring chamber, here the right ventricle. Flow through any abnormal connection follows the PRESSURE GRADIENT. Aortic root pressure tracks systemic arterial pressure (about 120/80 mm Hg), which EXCEEDS right ventricular pressure (about 25/2 mm Hg) during BOTH systole AND diastole. Therefore the shunt flows CONTINUOUSLY from the higher-pressure aortic root to the lower-pressure right ventricle throughout the cardiac cycle, producing a CONTINUOUS murmur on auscultation - analogous to arteriovenous fistulas and patent ductus arteriosus, where a systemic-to-low-pressure connection yields continuous flow. This contrasts with a ventricular septal defect, where the LV-to-RV gradient is large mainly in systole (flow predominantly systolic), and it excludes any RV-to-aorta direction because RV pressure never exceeds aortic pressure.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid CV > shunt hemodynamics: flow follows the pressure gradient; continuous flow when the gradient persists all cycle (PDA, AV fistula, aortocavitary fistula); VSD flow is predominantly systolic; endocarditis (IVDU) can cause aortocavitary fistula."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Aorta pressure > RV pressure in systole AND diastole -> continuous aorta-to-RV flow."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on aortocavitary fistula, pressure gradient, continuous vs systolic murmur, or intracardiac shunt? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "'Only systole' is VSD reasoning; 'RV to aorta' reverses the gradient (RV pressure is never higher)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: aorta-to-RV fistula = continuous flow (gradient present all cycle), like PDA/AV fistula; VSD = systolic."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Aortic root-to-RV fistula flow pattern",
+      "back": "Continuous (aortic pressure > RV pressure all cycle)"
+    },
+    {
+      "front": "Continuous murmur lesions",
+      "back": "PDA, AV fistula, aortocavitary fistula"
+    },
+    {
+      "front": "VSD shunt timing",
+      "back": "Predominantly systolic (LV>>RV in systole)"
+    },
+    {
+      "front": "Aortocavitary fistula cause",
+      "back": "Infective endocarditis extending from the valve/abscess"
+    },
+    {
+      "front": "Direction of shunt flow",
+      "back": "High-pressure chamber -> low-pressure chamber"
+    },
+    {
+      "front": "IVDU endocarditis valves",
+      "back": "Tricuspid (classic) but also aortic/left-sided"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Aortocavitary fistula",
+      "detail": "CV: aorta>RV all cycle -> continuous shunt flow (continuous murmur)."
+    },
+    {
+      "tag": "options",
+      "topic": "Shunt timing",
+      "detail": "CV > VSD = systolic; PDA/AV fistula = continuous."
+    },
+    {
+      "tag": "cause",
+      "topic": "Infective endocarditis",
+      "detail": "CV > IVDU; abscess extension creates fistula."
+    }
+  ],
+  "memoryHook": "Aorta always outpushes the RV - day and night (systole and diastole) - so blood pours aorta-to-RV nonstop: a continuous shunt, like a PDA.",
+  "stem": [
+    {
+      "text": "A 32-year-old man is evaluated in the emergency department due to fever, night sweats, and chills over the last several days. The patient reports "
+    },
+    {
+      "text": "recent intravenous drug use",
+      "clue": true,
+      "type": "orange",
+      "note": "IV drug use is a major risk factor for infective endocarditis, which can extend into the myocardium and create an aortocavitary fistula."
+    },
+    {
+      "text": ". He has otherwise been in good health with no other medical problems. Temperature is 38.3 C (100.9 F), blood pressure is 120/80 mm Hg, and pulse is 105/min and regular. Further evaluation reveals "
+    },
+    {
+      "text": "aortic valve endocarditis",
+      "clue": true,
+      "type": "blue",
+      "note": "Infection can burrow from the aortic valve/abscess into an adjacent chamber, forming a fistula between the aortic root and the right ventricle."
+    },
+    {
+      "text": " with an intracardiac abscess and formation of a "
+    },
+    {
+      "text": "small fistula between the right ventricle and aortic root",
+      "clue": true,
+      "type": "green",
+      "note": "This abnormal channel connects the HIGH-pressure aortic root to the LOW-pressure right ventricle; flow direction/timing follow the pressure gradient."
+    },
+    {
+      "text": " that "
+    },
+    {
+      "text": "remains patent throughout the cardiac cycle",
+      "clue": true,
+      "type": "green",
+      "note": "Because aortic pressure exceeds right ventricular pressure during BOTH systole and diastole, the shunt flows CONTINUOUSLY from aorta to RV (continuous murmur)."
+    },
+    {
+      "text": ". Doppler ultrasonographic examination of the fistula will most likely reveal which of the following blood flow patterns?"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "id": "q476",
+  "item": 476,
+  "qid": "1166",
+  "title": "ACE inhibitor-induced cough in diabetic nephropathy: switch to an ARB (valsartan)",
+  "system": "Pharmacology",
+  "topic": "ACE inhibitor vs ARB / diabetic nephropathy",
+  "correct": "E",
+  "yourAnswer": "A",
+  "percentCorrect": 85,
+  "vignette": "A 60-year-old man who was recently diagnosed with hypertension comes to the office for follow-up. He was treated with lisinopril but stopped a week ago due to a dry, nagging cough. Past medical history is notable for type 2 diabetes mellitus with moderately increased albuminuria but normal creatinine clearance. His other medications include metformin and rosuvastatin. The patient does not smoke or drink alcohol. His blood pressure is 150/92 mm Hg. BMI is 31 kg/m2. Physical examination, including the heart and lungs, is unremarkable. Which of the following is the best treatment for this patient's hypertension?",
+  "clues": [
+    {
+      "text": "treated with lisinopril but stopped a week ago due to a dry, nagging cough",
+      "type": "green",
+      "note": "A dry, nagging cough is the classic ACE inhibitor adverse effect from elevated bradykinin/substance P; it resolves after stopping the drug."
+    },
+    {
+      "text": "type 2 diabetes mellitus with moderately increased albuminuria",
+      "type": "orange",
+      "note": "Diabetic nephropathy (albuminuria) benefits from RAAS blockade (ACE inhibitor or ARB) for renoprotection - so the replacement should preserve that benefit."
+    }
+  ],
+  "whatMatters": "The patient needs RAAS blockade for diabetic nephropathy but developed an ACE inhibitor COUGH (bradykinin-mediated). An ANGIOTENSIN RECEPTOR BLOCKER (valsartan) gives the SAME renoprotective/antihypertensive benefit WITHOUT raising bradykinin - so no cough. Answer E.",
+  "strategy": "Preserve the renoprotective RAAS blockade while eliminating the cough: swap the ACE inhibitor for an ARB (valsartan). Reject re-challenging with another ACE inhibitor (ramipril would cause the same cough), and reject agents that don't provide the diabetic-nephropathy renoprotection: diltiazem (non-DHP CCB), hydralazine (direct vasodilator), and metoprolol (beta blocker).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Diltiazem",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Hydralazine",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Metoprolol",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Ramipril",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Valsartan",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Diltiazem - no bradykinin issue but less renoprotection",
+      "detail": "WHAT IT IS: a non-dihydropyridine calcium channel blocker. ❌ WHY IT FAILS: it lowers BP but does not provide the specific RAAS-mediated renoprotection needed for diabetic albuminuria the way an ARB does. ✅ Correct if: rate control/BP where RAAS blockade isn't the priority."
+    },
+    {
+      "letter": "B",
+      "label": "Hydralazine - direct vasodilator, not first-line here",
+      "detail": "WHAT IT IS: a direct arteriolar vasodilator. ❌ WHY IT FAILS: it causes reflex tachycardia/fluid retention and lacks renoprotective benefit for diabetic nephropathy. ✅ Correct if: adjunct in resistant hypertension or hypertensive emergency (with a beta blocker/diuretic)."
+    },
+    {
+      "letter": "C",
+      "label": "Metoprolol - beta blocker, not renoprotective",
+      "detail": "WHAT IT IS: a beta-1 selective blocker. ❌ WHY IT FAILS: it does not target the RAAS-mediated intraglomerular pressure reduction needed for albuminuria. ✅ Correct if: compelling indication like post-MI or heart failure."
+    },
+    {
+      "letter": "D",
+      "label": "Ramipril - another ACE inhibitor (same cough)",
+      "detail": "WHAT IT IS: a different ACE inhibitor. ❌ WHY IT FAILS: switching to another ACE inhibitor carries a high likelihood of the SAME bradykinin-mediated cough. ✅ Correct if: the patient tolerated ACE inhibitors (no cough)."
+    }
+  ],
+  "reasoning": [
+    "The dry cough is a bradykinin-mediated ACE inhibitor effect",
+    "Diabetic nephropathy (albuminuria) needs RAAS blockade for renoprotection",
+    "An ARB blocks the angiotensin receptor without raising bradykinin (no cough) and preserves renoprotection",
+    "-> switch to valsartan (an ARB); answer E"
+  ],
+  "mechanism": "ACE INHIBITORS (e.g., lisinopril) reduce angiotensin II AND inhibit the breakdown of BRADYKININ and substance P; the resulting accumulation of bradykinin causes the characteristic DRY, nonproductive COUGH (and, rarely, angioedema). In diabetes, RAAS blockade preferentially dilates the glomerular EFFERENT arteriole, lowering intraglomerular pressure and slowing progression of DIABETIC NEPHROPATHY (reducing albuminuria). ANGIOTENSIN RECEPTOR BLOCKERS (ARBs, e.g., valsartan, losartan) block the angiotensin II type 1 receptor and provide the SAME hemodynamic/renoprotective and antihypertensive benefit as ACE inhibitors, but because they do NOT affect bradykinin metabolism, they do NOT cause the cough. Therefore the best step for a patient with diabetic albuminuria who cannot tolerate an ACE inhibitor cough is to switch to an ARB. Re-challenging with another ACE inhibitor (ramipril) would reproduce the cough, and diltiazem, hydralazine, and metoprolol lack the specific renoprotective RAAS effect.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > ACE inhibitors vs ARBs: ACE inhibitors raise bradykinin (cough, angioedema); ARBs don't (no cough); both provide renoprotection in diabetic nephropathy (efferent arteriole dilation, lower intraglomerular pressure)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "ACE cough + need for renoprotection -> switch to an ARB (valsartan)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on ACE inhibitor, ARB, bradykinin, diabetic nephropathy/albuminuria, or efferent arteriole? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Ramipril = same cough; diltiazem/hydralazine/metoprolol lack the RAAS renoprotection for albuminuria."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: ACE inhibitor cough -> switch to ARB (same renoprotection, no bradykinin cough)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "ACE inhibitor dry cough mechanism",
+      "back": "Increased bradykinin (and substance P)"
+    },
+    {
+      "front": "Alternative for ACE inhibitor cough",
+      "back": "ARB (valsartan/losartan) - no bradykinin effect"
+    },
+    {
+      "front": "Renoprotection in diabetic nephropathy",
+      "back": "ACE inhibitor or ARB (lower intraglomerular pressure)"
+    },
+    {
+      "front": "RAAS effect on glomerulus",
+      "back": "Dilates efferent arteriole -> lowers intraglomerular pressure"
+    },
+    {
+      "front": "ACE inhibitor angioedema",
+      "back": "Bradykinin-mediated (ARBs lower risk)"
+    },
+    {
+      "front": "Switching within ACE inhibitors for cough",
+      "back": "Ineffective - class effect recurs"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "ARB (valsartan)",
+      "detail": "Pharm: replace ACE inhibitor for cough; same renoprotection, no bradykinin."
+    },
+    {
+      "tag": "options",
+      "topic": "Antihypertensives",
+      "detail": "Pharm > CCB, hydralazine, beta blocker lack RAAS renoprotection here."
+    },
+    {
+      "tag": "nephro",
+      "topic": "Diabetic nephropathy",
+      "detail": "Renal > RAAS blockade reduces albuminuria."
+    }
+  ],
+  "memoryHook": "ACE inhibitors leave bradykinin around to tickle a cough; ARBs skip that step - same kidney protection, no cough. Switch lisinopril to valsartan.",
+  "stem": [
+    {
+      "text": "A 60-year-old man who was recently diagnosed with hypertension comes to the office for follow-up. He was "
+    },
+    {
+      "text": "treated with lisinopril but stopped a week ago due to a dry, nagging cough",
+      "clue": true,
+      "type": "green",
+      "note": "A dry, nagging cough is the classic ACE inhibitor adverse effect from elevated bradykinin/substance P; it resolves after stopping the drug."
+    },
+    {
+      "text": ". Past medical history is notable for "
+    },
+    {
+      "text": "type 2 diabetes mellitus with moderately increased albuminuria",
+      "clue": true,
+      "type": "orange",
+      "note": "Diabetic nephropathy (albuminuria) benefits from RAAS blockade (ACE inhibitor or ARB) for renoprotection - so the replacement should preserve that benefit."
+    },
+    {
+      "text": " but normal creatinine clearance. His other medications include metformin and rosuvastatin. The patient does not smoke or drink alcohol. His blood pressure is 150/92 mm Hg. BMI is 31 kg/m2. Physical examination, including the heart and lungs, is unremarkable. Which of the following is the best treatment for this patient's hypertension?"
+    }
+  ]
+}

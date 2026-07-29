@@ -1,0 +1,190 @@
+{
+  "id": "q409",
+  "item": 409,
+  "qid": "606",
+  "title": "Sulfonylurea (glipizide) hypoglycemia: targets membrane K-ATP channels",
+  "system": "Pharmacology",
+  "topic": "Sulfonylureas - mechanism",
+  "correct": "C",
+  "yourAnswer": "A",
+  "percentCorrect": 62,
+  "vignette": "A 46-year-old woman comes to the office due to frequent episodes of headache, nausea, sweating, and a feeling as if she is going to pass out. The patient has had 3 such episodes in the past 2 weeks, with symptoms occurring when she skips a meal. During the most recent episode, finger-stick glucose was 50 mg/dL. She was diagnosed with type 2 diabetes mellitus 3 years ago and initially treated with metformin monotherapy; glipizide was added 3 months ago due to inadequate glycemic control. The patient has no other medical conditions. Vital signs are within normal limits and physical examination shows no abnormalities. Hemoglobin A1c is 6.9%. The medication most likely responsible for this patient's current symptoms works by targeting which of the following?",
+  "clues": [
+    {
+      "text": "symptoms occurring when she skips a meal",
+      "type": "blue",
+      "note": "Adrenergic symptoms triggered by skipping a meal indicate drug-induced hypoglycemia from an insulin secretagogue."
+    },
+    {
+      "text": "finger-stick glucose was 50 mg/dL",
+      "type": "green",
+      "note": "Documented hypoglycemia (50 mg/dL) confirms the episodes are due to excess insulin secretion."
+    },
+    {
+      "text": "glipizide was added 3 months ago",
+      "type": "green",
+      "note": "Glipizide is a SULFONYLUREA (insulin secretagogue) - the cause of hypoglycemia; it acts on pancreatic beta-cell K-ATP channels."
+    }
+  ],
+  "whatMatters": "Hypoglycemia after skipping meals in a patient on GLIPIZIDE = sulfonylurea effect. Sulfonylureas close the ATP-sensitive POTASSIUM (K-ATP) CHANNELS on the beta-cell MEMBRANE, depolarizing the cell to trigger glucose-INDEPENDENT insulin release. So the drug targets MEMBRANE ION CHANNELS. Answer C.",
+  "strategy": "Identify the culprit (glipizide, a sulfonylurea) and recall its target: the beta-cell ATP-sensitive K+ channel (a membrane ion channel). Closing it depolarizes the cell -> Ca2+ influx -> insulin release regardless of glucose -> hypoglycemia. Reject metformin's target (mitochondrial enzymes/AMPK - no hypoglycemia), TZD (nuclear PPAR-gamma receptors), GLP-1/incretin (surface adenylate-cyclase-coupled receptors), and insulin's receptor (surface tyrosine kinase).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Intracellular mitochondrial enzymes",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Intracellular nuclear receptors",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Membrane ion channels",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Surface adenylate cyclase-coupled receptors",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Surface tyrosine kinase receptor",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Intracellular mitochondrial enzymes - metformin (your pick)",
+      "detail": "WHAT IT IS: metformin inhibits mitochondrial enzymes of gluconeogenesis and activates AMPK. ❌ WHY IT FAILS: metformin does not increase insulin secretion and rarely causes hypoglycemia; the meal-skipping hypoglycemia is due to the sulfonylurea (K-ATP channel). ✅ Correct if: asking about metformin's mechanism."
+    },
+    {
+      "letter": "B",
+      "label": "Intracellular nuclear receptors - thiazolidinediones",
+      "detail": "WHAT IT IS: TZDs (pioglitazone) activate the nuclear transcription factor PPAR-gamma. ❌ WHY IT FAILS: that's a different class that improves insulin sensitivity, not the K-ATP-channel secretagogue causing hypoglycemia. ✅ Correct if: a TZD mechanism question."
+    },
+    {
+      "letter": "D",
+      "label": "Surface adenylate cyclase-coupled receptors - GLP-1 agonists",
+      "detail": "WHAT IT IS: GLP-1 receptor agonists act through G-protein/adenylate-cyclase-coupled surface receptors (glucose-dependent). ❌ WHY IT FAILS: those cause glucose-dependent insulin release with low hypoglycemia risk - not the culprit. ✅ Correct if: an incretin/GLP-1 mechanism."
+    },
+    {
+      "letter": "E",
+      "label": "Surface tyrosine kinase receptor - insulin receptor",
+      "detail": "WHAT IT IS: the insulin receptor (a surface receptor tyrosine kinase). ❌ WHY IT FAILS: that's the receptor for insulin itself, not the target of sulfonylureas. ✅ Correct if: describing insulin's own receptor."
+    }
+  ],
+  "reasoning": [
+    "Meal-skipping hypoglycemia in a patient on glipizide = sulfonylurea effect",
+    "Sulfonylureas bind and CLOSE the ATP-sensitive potassium (K-ATP) channel on the beta-cell membrane",
+    "Membrane depolarization opens voltage-gated Ca2+ channels -> insulin release (glucose-independent)",
+    "-> the drug targets membrane ion channels; answer C"
+  ],
+  "mechanism": "Glipizide is a SULFONYLUREA, an insulin secretagogue. It binds the SUR1 subunit of the ATP-sensitive POTASSIUM (K-ATP) CHANNEL on the pancreatic beta-cell MEMBRANE and CLOSES it. Normally these channels close only when intracellular ATP rises (i.e., when glucose is high); by closing them pharmacologically, sulfonylureas DEPOLARIZE the beta-cell membrane, opening voltage-gated CALCIUM channels so calcium influx triggers insulin EXOCYTOSIS - crucially, INDEPENDENT of the blood glucose level. This glucose-independent insulin release is why sulfonylureas can cause HYPOGLYCEMIA, especially when a meal is skipped (no incoming glucose) or with renal/hepatic impairment or longer-acting agents. Therefore the drug's target is a MEMBRANE ION CHANNEL (the K-ATP channel). The distractors are the targets of other agents: metformin (intracellular mitochondrial enzymes/AMPK), thiazolidinediones (nuclear PPAR-gamma), GLP-1 agonists (surface adenylate-cyclase-coupled receptors), and insulin (surface receptor tyrosine kinase).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > sulfonylureas: close beta-cell K-ATP (SUR1) channel -> depolarization -> Ca2+ influx -> glucose-independent insulin release -> hypoglycemia; contrast metformin (mitochondrial/AMPK), TZD (PPAR-gamma), GLP-1 (surface GPCR)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Glipizide (sulfonylurea) targets the beta-cell K-ATP channel = membrane ion channel."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on sulfonylurea, K-ATP channel/SUR1, insulin secretagogue, or glucose-independent insulin release? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Mitochondrial enzymes = metformin; nuclear receptors = TZD; adenylate-cyclase GPCR = GLP-1; tyrosine kinase = insulin receptor."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: sulfonylureas close beta-cell K-ATP channel (membrane ion channel) -> insulin release; hypoglycemia risk (skipped meals, CKD, glyburide)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Sulfonylurea target",
+      "back": "Beta-cell ATP-sensitive K+ (K-ATP) channel (membrane ion channel)"
+    },
+    {
+      "front": "Sulfonylurea effect on beta cell",
+      "back": "Close K-ATP -> depolarize -> Ca2+ influx -> insulin release (glucose-independent)"
+    },
+    {
+      "front": "Why sulfonylureas cause hypoglycemia",
+      "back": "Insulin secretion independent of blood glucose"
+    },
+    {
+      "front": "Metformin target",
+      "back": "Mitochondrial enzymes / AMPK (no hypoglycemia)"
+    },
+    {
+      "front": "Thiazolidinedione target",
+      "back": "Nuclear PPAR-gamma receptor"
+    },
+    {
+      "front": "Insulin receptor type",
+      "back": "Surface receptor tyrosine kinase"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Sulfonylureas",
+      "detail": "Pharm: close beta-cell K-ATP channel (membrane ion channel) -> insulin release."
+    },
+    {
+      "tag": "options",
+      "topic": "Antidiabetic targets",
+      "detail": "Pharm > metformin (mitochondria), TZD (nuclear), GLP-1 (GPCR), insulin (tyrosine kinase)."
+    },
+    {
+      "tag": "safety",
+      "topic": "Sulfonylurea hypoglycemia",
+      "detail": "Pharm > worse with skipped meals, renal/hepatic disease, glyburide."
+    }
+  ],
+  "memoryHook": "Glipizide slams the beta cell's potassium door (K-ATP channel) shut - the cell depolarizes and dumps insulin no matter the sugar, so skipping a meal tanks the glucose.",
+  "stem": [
+    {
+      "text": "A 46-year-old woman comes to the office due to frequent episodes of headache, nausea, sweating, and a feeling as if she is going to pass out. The patient has had 3 such episodes in the past 2 weeks, with "
+    },
+    {
+      "text": "symptoms occurring when she skips a meal",
+      "clue": true,
+      "type": "blue",
+      "note": "Adrenergic symptoms triggered by skipping a meal indicate drug-induced hypoglycemia from an insulin secretagogue."
+    },
+    {
+      "text": ". During the most recent episode, "
+    },
+    {
+      "text": "finger-stick glucose was 50 mg/dL",
+      "clue": true,
+      "type": "green",
+      "note": "Documented hypoglycemia (50 mg/dL) confirms the episodes are due to excess insulin secretion."
+    },
+    {
+      "text": ". She was diagnosed with type 2 diabetes mellitus 3 years ago and initially treated with metformin monotherapy; "
+    },
+    {
+      "text": "glipizide was added 3 months ago",
+      "clue": true,
+      "type": "green",
+      "note": "Glipizide is a SULFONYLUREA (insulin secretagogue) - the cause of hypoglycemia; it acts on pancreatic beta-cell K-ATP channels."
+    },
+    {
+      "text": " due to inadequate glycemic control. The patient has no other medical conditions. Vital signs are within normal limits and physical examination shows no abnormalities. Hemoglobin A1c is 6.9%. The medication most likely responsible for this patient's current symptoms works by targeting which of the following?"
+    }
+  ]
+}

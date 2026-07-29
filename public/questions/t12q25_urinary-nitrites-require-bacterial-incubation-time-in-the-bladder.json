@@ -1,0 +1,190 @@
+{
+  "id": "q424",
+  "item": 424,
+  "qid": "106575",
+  "title": "Urinary nitrites: require bacterial incubation time in the bladder",
+  "system": "Microbiology",
+  "topic": "Urinary tract infection - dipstick nitrites",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 48,
+  "vignette": "A 3-year-old girl is brought to the emergency department due to 2 days of worsening dysuria and urinary frequency. She is fully toilet-trained, and the parents say that she cries every time she urinates. The patient has had no fever, vomiting, or diarrhea. A small amount of urine is obtained via clean-catch collection. Because of the limited volume, only urinalysis is performed; it shows positive leukocyte esterase and negative nitrites. The patient is prescribed an oral antibiotic, with the first dose given prior to discharge. The following morning, she is taken immediately to the clinic for a follow-up appointment. Another sample is obtained, and urinalysis is now positive for both leukocyte esterase and nitrites. Which of the following factors is most likely responsible for the new urinalysis findings?",
+  "clues": [
+    {
+      "text": "positive leukocyte esterase and negative nitrites",
+      "type": "blue",
+      "note": "Positive leukocyte esterase indicates pyuria (UTI), but nitrites can be FALSE-NEGATIVE if urine hasn't dwelled long enough for bacteria to convert nitrate to nitrite."
+    },
+    {
+      "text": "The following morning",
+      "type": "green",
+      "note": "A FIRST-MORNING void has incubated in the bladder overnight, giving nitrate-reducing bacteria time to accumulate detectable nitrites."
+    },
+    {
+      "text": "positive for both leukocyte esterase and nitrites",
+      "type": "green",
+      "note": "Nitrites became positive because bacteria had MORE TIME in the bladder to reduce urinary nitrate to nitrite."
+    }
+  ],
+  "whatMatters": "Urinary NITRITES are produced when nitrate-reducing bacteria (e.g., E. coli) convert urinary nitrate to nitrite - a process that needs adequate INCUBATION TIME in the bladder (usually >4 hours). The initial daytime sample was too dilute/frequent (short dwell time) = false-negative; the FIRST-MORNING sample dwelled overnight, so nitrites turned positive. Answer C (increased time bacteria have been in the bladder).",
+  "strategy": "Explain the nitrite test: bacterial nitrate reductase needs TIME to make detectable nitrite, so daytime/frequent voids give false-negatives and first-morning voids are more often positive. The change here reflects longer bladder incubation. Reject dilute urine (morning urine is MORE concentrated), 'greater WBC activity' (WBCs don't make nitrites), antibiotic resistance (wouldn't create nitrites), and skin-flora contamination (short interval insufficient; skin flora aren't the nitrite source).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Dilute urine in the morning sample",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Greater white blood cell activity in the morning sample",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased time that bacteria have been in the bladder",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Presence of antibiotic-resistant organisms",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Sample contamination with normal skin flora",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Dilute urine - morning urine is more CONCENTRATED",
+      "detail": "WHAT IT IS: attributing the change to dilution. ❌ WHY IT FAILS: a first-morning void is typically MORE concentrated (overnight), and nitrites are more detectable in concentrated urine; dilution would reduce, not create, nitrites. ✅ Correct if: asking why detection improves in concentrated urine."
+    },
+    {
+      "letter": "B",
+      "label": "Greater WBC activity - WBCs don't produce nitrites",
+      "detail": "WHAT IT IS: crediting white blood cells for the nitrites. ❌ WHY IT FAILS: leukocyte esterase (from WBCs) is a separate marker; nitrites come from BACTERIAL nitrate reductase, not WBC activity. ✅ Correct if: explaining leukocyte esterase (WBC marker)."
+    },
+    {
+      "letter": "D",
+      "label": "Antibiotic-resistant organisms - wouldn't create nitrites",
+      "detail": "WHAT IT IS: resistance causing persistent findings. ❌ WHY IT FAILS: resistance would not specifically produce nitrites; the new positive reflects incubation time, and one dose wouldn't change resistance status. ✅ Correct if: persistent infection despite therapy (culture-based)."
+    },
+    {
+      "letter": "E",
+      "label": "Skin-flora contamination - not the nitrite source, short interval",
+      "detail": "WHAT IT IS: contamination altering results. ❌ WHY IT FAILS: skin flora are not the nitrate-reducers producing urinary nitrites, and the short interval is insufficient for contaminant-driven nitrite production. ✅ Correct if: contamination affecting culture, not dipstick nitrites."
+    }
+  ],
+  "reasoning": [
+    "Urinary nitrites are made by nitrate-reducing bacteria (E. coli, Klebsiella, Proteus) converting nitrate to nitrite",
+    "This conversion requires adequate bacterial incubation time in the bladder (>4 hours)",
+    "The daytime sample (frequent voiding, short dwell) was falsely nitrite-negative; the first-morning void incubated overnight -> positive",
+    "-> increased time bacteria have been in the bladder; answer C"
+  ],
+  "mechanism": "Urine dipstick is used initially to assess for urinary tract infection pending culture. NITRITES are a highly SPECIFIC marker for UTIs caused by nitrate-reductase-producing bacteria (e.g., Escherichia coli, Klebsiella, Proteus): these bacteria convert normal urinary NITRATE (NO3-) into NITRITE (NO2-). Crucially, this conversion requires adequate INCUBATION TIME of urine in the bladder - typically several hours (>4 hours). Therefore, dipstick nitrites can be FALSE-NEGATIVE when urine spends little time in the bladder, as with the frequent urination and small-volume daytime specimen this child gave initially. A FIRST-MORNING void, which has dwelled in the bladder overnight, allows nitrites to accumulate to detectable levels - explaining why the morning sample turned nitrite-positive. (Leukocyte esterase, a separate marker released by lysed neutrophils, indicates pyuria and was positive throughout.) The distractors are wrong because morning urine is more concentrated (favoring detection), WBC activity doesn't generate nitrites, one antibiotic dose/resistance wouldn't create nitrites, and skin flora aren't the nitrite source (and the interval is too short).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro/Renal > urine dipstick UTI: nitrites (specific; nitrate-reducing bacteria need incubation time in bladder - false-negative with frequent voiding), leukocyte esterase (WBC/pyuria marker)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Nitrites need bladder dwell time; the first-morning (overnight) sample turns positive."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on nitrite test, nitrate reductase, leukocyte esterase, or first-morning void? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Morning urine is more concentrated (not dilute); WBCs don't make nitrites; resistance/skin flora don't create nitrites."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: urinary nitrites need bacterial incubation time (>4 h) in bladder; first-morning void more likely positive; nitrate-reducers (E. coli/Klebsiella/Proteus)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Why did nitrites become positive on the morning sample",
+      "back": "Longer bacterial incubation time in the bladder (overnight)"
+    },
+    {
+      "front": "Urinary nitrite production",
+      "back": "Nitrate-reducing bacteria (E. coli/Klebsiella/Proteus) convert nitrate -> nitrite"
+    },
+    {
+      "front": "Cause of false-negative nitrites",
+      "back": "Insufficient bladder dwell time (frequent urination)"
+    },
+    {
+      "front": "Leukocyte esterase marks",
+      "back": "White blood cells (pyuria)"
+    },
+    {
+      "front": "Most specific dipstick UTI marker",
+      "back": "Nitrites"
+    },
+    {
+      "front": "Best urine sample for nitrites",
+      "back": "First-morning void (overnight incubation)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Urine nitrites",
+      "detail": "Micro: nitrate-reducing bacteria need bladder dwell time; first-morning void positive."
+    },
+    {
+      "tag": "options",
+      "topic": "Dipstick markers",
+      "detail": "Renal > leukocyte esterase (WBC), nitrites (bacteria), pH (urease/Proteus)."
+    },
+    {
+      "tag": "pathophys",
+      "topic": "Nitrate reductase",
+      "detail": "Micro > E. coli/Klebsiella/Proteus convert nitrate to nitrite."
+    }
+  ],
+  "memoryHook": "Bacteria need time to brew nitrites - a quick daytime pee misses them, but the overnight morning sample has stewed long enough to turn the dipstick positive.",
+  "stem": [
+    {
+      "text": "A 3-year-old girl is brought to the emergency department due to 2 days of worsening dysuria and urinary frequency. She is fully toilet-trained, and the parents say that she cries every time she urinates. The patient has had no fever, vomiting, or diarrhea. A small amount of urine is obtained via clean-catch collection. Because of the limited volume, only urinalysis is performed; it shows "
+    },
+    {
+      "text": "positive leukocyte esterase and negative nitrites",
+      "clue": true,
+      "type": "blue",
+      "note": "Positive leukocyte esterase indicates pyuria (UTI), but nitrites can be FALSE-NEGATIVE if urine hasn't dwelled long enough for bacteria to convert nitrate to nitrite."
+    },
+    {
+      "text": ". The patient is prescribed an oral antibiotic, with the first dose given prior to discharge. "
+    },
+    {
+      "text": "The following morning",
+      "clue": true,
+      "type": "green",
+      "note": "A FIRST-MORNING void has incubated in the bladder overnight, giving nitrate-reducing bacteria time to accumulate detectable nitrites."
+    },
+    {
+      "text": ", she is taken immediately to the clinic for a follow-up appointment. Another sample is obtained, and urinalysis is now "
+    },
+    {
+      "text": "positive for both leukocyte esterase and nitrites",
+      "clue": true,
+      "type": "green",
+      "note": "Nitrites became positive because bacteria had MORE TIME in the bladder to reduce urinary nitrate to nitrite."
+    },
+    {
+      "text": ". Which of the following factors is most likely responsible for the new urinalysis findings?"
+    }
+  ]
+}

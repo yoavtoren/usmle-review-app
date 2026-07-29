@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dobutamine stress imaging: reversible wall-motion defect = fixed coronary stenosis (supply-demand mismatch)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 13 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q440", "item": 440, "qid": "15180", "title": "Dobutamine stress imaging: reversible wall-motion defect = fixed coronary stenosis (supply-demand mismatch)", "system": "Pathophysiology", "topic": "Stable angina / stress testing", "correct": "E", "yourAnswer": "E", "percentCorrect": 47, "vignette": "A 64-year-old man comes to the emergency department due to chest discomfort and shortness of breath. Medical history includes hypertension, type 2 diabetes mellitus, and severe osteoarthritis of the left knee. The patient is an active smoker with a 20-pack-year smoking history. He undergoes dobutamine infusion with simultaneous cardiac imaging. The following is seen: before infusion, normal left ventricular contractility with ejection fraction 60%; during infusion, decreased apical contractility with ejection fraction 45%; five minutes after infusion, normal left ventricular contractility with ejection fraction 60%. Which of the following best explains the observed findings?", "clues": [{"text": "dobutamine infusion", "type": "blue", "note": "Dobutamine is a beta-1 agonist that raises heart rate and contractility, mimicking exercise to increase myocardial oxygen demand - the basis of pharmacologic stress testing."}, {"text": "decreased apical contractility with ejection fraction 45%", "type": "green", "note": "A NEW wall-motion abnormality (drop in contractility/EF) that appears only during stress indicates a region of myocardium that cannot increase its blood supply to meet demand = inducible ischemia."}, {"text": "five minutes after infusion, normal left ventricular contractility", "type": "blue", "note": "The defect is REVERSIBLE (contractility normalizes at rest) - this excludes infarction/scar and points to a fixed stenosis causing transient supply-demand mismatch only under stress."}], "whatMatters": "Dobutamine raises myocardial O2 demand; a region supplied by a FIXED coronary stenosis cannot increase flow, so it becomes transiently ischemic - a REVERSIBLE wall-motion defect (contractility falls during stress, normalizes at rest). This is stable angina from supply-demand mismatch. Answer E.", "strategy": "Key on reversibility: the contractility defect appears DURING dobutamine and resolves AFTER. Transient = inducible ischemia from a fixed stenosis (supply-demand mismatch). Reject plaque thrombosis/MI (would give a PERSISTENT defect before/during/after), vasospasm (young patients, not dobutamine-triggered), focal fibrosis (persistent defect from old MI), and 'normal response' (normal myocardium INCREASES contractility/EF with dobutamine).", "options": [{"letter": "A", "text": "Coronary artery occlusion due to plaque thrombosis", "correct": false}, {"letter": "B", "text": "Coronary artery vasospasm", "correct": false}, {"letter": "C", "text": "Focal myocardial fibrosis", "correct": false}, {"letter": "D", "text": "Normal myocardial contractile response", "correct": false}, {"letter": "E", "text": "Supply-demand mismatch due to fixed coronary stenosis", "correct": true}], "eliminations": [{"letter": "A", "label": "Plaque thrombosis / MI - would be persistent", "detail": "WHAT IT IS: acute coronary occlusion from plaque rupture and thrombosis (acute MI). ❌ WHY IT FAILS: total occlusion causes a PERSISTENT wall-motion defect (before, during, AND after) - not one that normalizes at rest. ✅ Correct if: fixed, non-reversible defect with acute chest pain and troponin rise."}, {"letter": "B", "label": "Coronary vasospasm - not dobutamine-provoked", "detail": "WHAT IT IS: vasospastic (Prinzmetal) angina from transient coronary spasm. ❌ WHY IT FAILS: it typically occurs in younger patients at rest and is not provoked by dobutamine (weak alpha-1 effect); this scenario is classic demand ischemia. ✅ Correct if: rest angina with transient ST elevations, provoked by ergonovine."}, {"letter": "C", "label": "Focal myocardial fibrosis - persistent scar", "detail": "WHAT IT IS: scarred myocardium from a prior infarct. ❌ WHY IT FAILS: fibrosed tissue is akinetic at baseline, giving a PERSISTENT defect, not one that appears only during stress. ✅ Correct if: fixed defect with a history of prior MI."}, {"letter": "D", "label": "Normal contractile response - EF should rise", "detail": "WHAT IT IS: the expected response of healthy myocardium to dobutamine. ❌ WHY IT FAILS: normal myocardium INCREASES contractility and ejection fraction with dobutamine; a DROP in apical contractility is abnormal. ✅ Correct if: uniform augmentation of contractility and EF."}], "reasoning": ["Dobutamine increases myocardial oxygen demand (stress test)", "A new apical wall-motion defect (EF 60% -> 45%) appears only DURING stress", "It reverses at rest (EF back to 60%) - so it is inducible ischemia, not infarction", "-> a fixed coronary stenosis limits supply during increased demand; answer E"], "mechanism": "Stable angina results from a FIXED atherosclerotic coronary stenosis that limits blood flow to downstream myocardium. At rest, flow is adequate; during increased demand it cannot rise to match, producing a supply-demand MISMATCH and transient ischemia. DOBUTAMINE, a beta-1 agonist, increases heart rate and contractility to mimic exercise and raise myocardial oxygen demand. Myocardium supplied by the stenotic vessel cannot augment flow, so it becomes transiently ischemic and shows a REVERSIBLE wall-motion abnormality (decreased apical contractility and a fall in ejection fraction during infusion, normalizing minutes later at rest). This reversibility distinguishes demand ischemia from infarction/scar (persistent defect) and identifies a flow-limiting lesion amenable to revascularization. Normal myocardium, by contrast, augments contractility and EF with dobutamine.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid CV > stable angina: fixed coronary stenosis -> supply-demand mismatch on exertion; stress testing (exercise or dobutamine/vasodilator) provokes reversible ischemia (wall-motion defect, EF drop); reversible = ischemia, fixed = scar/MI."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Defect that appears with dobutamine and resolves at rest = inducible ischemia from a fixed stenosis."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on dobutamine, wall-motion abnormality, ejection fraction, supply-demand mismatch, or reversible vs fixed defect? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "MI/thrombosis and fibrosis give PERSISTENT defects; vasospasm isn't dobutamine-provoked; normal myocardium raises EF."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: dobutamine stress -> reversible wall-motion defect = fixed coronary stenosis (demand ischemia); persistent defect = infarct/scar."}], "keywords": [{"front": "Reversible stress-induced wall-motion defect", "back": "Inducible ischemia from a fixed coronary stenosis"}, {"front": "Dobutamine stress test mechanism", "back": "Beta-1 agonist raises HR + contractility (mimics exercise)"}, {"front": "Persistent (fixed) wall-motion defect", "back": "Prior MI / scar (not inducible ischemia)"}, {"front": "Normal myocardial response to dobutamine", "back": "Increased contractility and ejection fraction"}, {"front": "Stable angina pathophysiology", "back": "Fixed stenosis -> supply-demand mismatch on exertion"}], "firstAid": [{"tag": "answer / stem", "topic": "Stable angina / stress testing", "detail": "CV: reversible defect on dobutamine stress = fixed coronary stenosis."}, {"tag": "options", "topic": "Ischemia vs infarct", "detail": "CV > persistent defect = MI/scar; vasospasm = rest angina."}, {"tag": "pharm", "topic": "Dobutamine", "detail": "CV > beta-1 agonist increases myocardial O2 demand for stress testing."}], "memoryHook": "If the weak spot only shows up when you push the heart (dobutamine) and disappears at rest, the pipe is narrowed, not dead - reversible = ischemia.", "stem": [{"text": "A 64-year-old man comes to the emergency department due to chest discomfort and shortness of breath. Medical history includes hypertension, type 2 diabetes mellitus, and severe osteoarthritis of the left knee. The patient is an active smoker with a 20-pack-year smoking history. He undergoes "}, {"text": "dobutamine infusion", "clue": true, "type": "blue", "note": "Dobutamine is a beta-1 agonist that raises heart rate and contractility, mimicking exercise to increase myocardial oxygen demand - the basis of pharmacologic stress testing."}, {"text": " with simultaneous cardiac imaging. The following is seen: before infusion, normal left ventricular contractility with ejection fraction 60%; during infusion, "}, {"text": "decreased apical contractility with ejection fraction 45%", "clue": true, "type": "green", "note": "A NEW wall-motion abnormality (drop in contractility/EF) that appears only during stress indicates a region of myocardium that cannot increase its blood supply to meet demand = inducible ischemia."}, {"text": "; "}, {"text": "five minutes after infusion, normal left ventricular contractility", "clue": true, "type": "blue", "note": "The defect is REVERSIBLE (contractility normalizes at rest) - this excludes infarction/scar and points to a fixed stenosis causing transient supply-demand mismatch only under stress."}, {"text": " with ejection fraction 60%. Which of the following best explains the observed findings?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

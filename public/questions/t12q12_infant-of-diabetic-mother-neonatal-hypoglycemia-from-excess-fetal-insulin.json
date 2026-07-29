@@ -1,0 +1,200 @@
+{
+  "id": "q411",
+  "item": 411,
+  "qid": "1440",
+  "title": "Infant of diabetic mother: neonatal hypoglycemia from excess fetal insulin",
+  "system": "Pathophysiology",
+  "topic": "Infant of a diabetic mother",
+  "correct": "A",
+  "yourAnswer": "B",
+  "percentCorrect": 73,
+  "vignette": "A 35-year-old woman at 38 weeks gestation undergoes induction of labor. The patient has type 2 diabetes mellitus, and her blood glucose levels were increasingly difficult to control during her third trimester despite increasing doses of insulin. During induction, the patient develops arrest of labor and undergoes a cesarean delivery. Apgar scores are 8 and 9 at 1 and 5 minutes, respectively. Physical examination shows a newborn large for gestational age with a birth weight of 4.6 kg (10.1 lb). The remainder of the examination is unremarkable, and vital signs are normal. An hour after delivery, the newborn develops hypoglycemia. Which of the following is the most likely cause of this newborn's hypoglycemia?",
+  "clues": [
+    {
+      "text": "type 2 diabetes mellitus",
+      "type": "orange",
+      "note": "Maternal diabetes exposes the fetus to high glucose (glucose crosses the placenta), driving fetal hyperinsulinemia."
+    },
+    {
+      "text": "large for gestational age with a birth weight of 4.6 kg",
+      "type": "green",
+      "note": "Macrosomia (>4 kg) reflects fetal hyperinsulinemia (insulin is a growth factor promoting fat/glycogen deposition)."
+    },
+    {
+      "text": "An hour after delivery, the newborn develops hypoglycemia",
+      "type": "red",
+      "note": "After the cord is cut, the maternal glucose supply stops, but the hyperplastic fetal beta cells keep secreting insulin -> neonatal hypoglycemia."
+    }
+  ],
+  "whatMatters": "Maternal diabetes -> chronic fetal HYPERGLYCEMIA -> fetal pancreatic beta-cell HYPERPLASIA and EXCESSIVE FETAL INSULIN production (causing macrosomia). After birth the maternal glucose stops but the neonate keeps oversecreting insulin -> neonatal HYPOGLYCEMIA. Answer A.",
+  "strategy": "Trace the pathway: maternal hyperglycemia -> glucose crosses placenta -> fetal hyperglycemia -> beta-cell hyperplasia -> fetal hyperinsulinemia (macrosomia, polycythemia). At birth glucose supply ends but insulin persists -> hypoglycemia. Pick 'excessive fetal insulin production.' Reject maternal insulin transfer (insulin does NOT cross the placenta), fetal cortisol deficiency (adrenal insufficiency - other features), impaired fetal glucose production/glycogen stores (IDMs actually have INCREASED glycogen), and impaired IGF-2 (IGF-2 is increased, causing macrosomia).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Excessive fetal insulin production",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Excessive maternal insulin doses",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Fetal cortisol deficiency",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Impaired fetal glucose production",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Impaired fetal insulin-like growth factor 2 production",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Inadequate fetal hepatic glycogen stores",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Excessive maternal insulin doses - insulin doesn't cross the placenta (your pick)",
+      "detail": "WHAT IT IS: attributing neonatal hypoglycemia to the mother's insulin. ❌ WHY IT FAILS: maternal insulin does NOT cross the placenta (it's catabolized by placental enzymes); the neonate's hypoglycemia comes from its OWN excess insulin. ✅ Correct if: never - maternal insulin doesn't reach the fetus."
+    },
+    {
+      "letter": "C",
+      "label": "Fetal cortisol deficiency - adrenal insufficiency picture",
+      "detail": "WHAT IT IS: primary adrenal insufficiency causing hypoglycemia. ❌ WHY IT FAILS: that would also show hypotension and electrolyte abnormalities, not the macrosomic IDM picture driven by hyperinsulinemia. ✅ Correct if: neonatal adrenal insufficiency with electrolyte disturbances."
+    },
+    {
+      "letter": "D",
+      "label": "Impaired fetal glucose production - not the mechanism",
+      "detail": "WHAT IT IS: inability to make glucose (gluconeogenesis defect). ❌ WHY IT FAILS: the IDM's problem is EXCESS insulin, not deficient glucose production; glycogen storage disorders present differently. ✅ Correct if: a gluconeogenesis/glycogen storage disorder."
+    },
+    {
+      "letter": "E",
+      "label": "Impaired IGF-2 production - IGF-2 is INCREASED",
+      "detail": "WHAT IT IS: reduced insulin-like growth factor 2. ❌ WHY IT FAILS: fetal hyperglycemia INCREASES IGF-2 (contributing to macrosomia); it isn't impaired and doesn't cause the hypoglycemia. ✅ Correct if: asking what promotes macrosomia (increased, not impaired)."
+    },
+    {
+      "letter": "F",
+      "label": "Inadequate hepatic glycogen - IDMs have INCREASED glycogen",
+      "detail": "WHAT IT IS: low glycogen stores limiting glucose release. ❌ WHY IT FAILS: infants of diabetic mothers actually have INCREASED glycogen stores, but can't mobilize them well due to hyperinsulinemia; the primary driver is excess insulin. ✅ Correct if: a glycogen storage disease with true glycogen depletion."
+    }
+  ],
+  "reasoning": [
+    "Maternal diabetes -> high maternal glucose crosses the placenta -> fetal hyperglycemia",
+    "Chronic fetal hyperglycemia -> pancreatic beta-cell hyperplasia -> excess fetal insulin (macrosomia)",
+    "At birth the maternal glucose supply stops but the neonate keeps secreting insulin",
+    "-> excessive fetal insulin production causes neonatal hypoglycemia; answer A"
+  ],
+  "mechanism": "In poorly controlled maternal diabetes, glucose freely crosses the placenta (INSULIN does not), so the fetus is exposed to sustained HYPERGLYCEMIA. This drives compensatory pancreatic BETA-CELL HYPERPLASIA and fetal HYPERINSULINEMIA. Because insulin is a potent anabolic growth factor, the fetus develops MACROSOMIA (increased fat/glycogen, organomegaly; risk of shoulder dystocia), POLYCYTHEMIA (increased metabolic demand -> hypoxemia -> erythropoietin), and (from ventricular septal glycogen deposition) hypertrophic cardiomyopathy. After delivery, the umbilical glucose supply abruptly ends, but the neonate's hyperplastic beta cells CONTINUE to oversecrete insulin, producing NEONATAL HYPOGLYCEMIA (jitteriness, irritability) in the first hours of life - treated with early feeding/dextrose. Thus the cause is EXCESSIVE FETAL INSULIN production. Maternal insulin does not reach the fetus; IGF-2 and glycogen stores are increased (not impaired); and there is no cortisol deficiency.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Repro/Endo > infant of diabetic mother: maternal hyperglycemia -> fetal hyperinsulinemia -> macrosomia, polycythemia, hypertrophic cardiomyopathy; neonatal hypoglycemia (insulin persists after cord cut); insulin doesn't cross placenta."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Excess fetal insulin persists after birth once maternal glucose stops -> hypoglycemia."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on macrosomia, fetal hyperinsulinemia, beta-cell hyperplasia, IGF-2, or placental transfer? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Maternal insulin doesn't cross the placenta; IGF-2/glycogen are INCREASED; no cortisol deficiency; not impaired glucose production."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: infant of diabetic mother -> fetal hyperinsulinemia (macrosomia, polycythemia, HCM) + neonatal hypoglycemia; treat with early feeding/dextrose."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Cause of hypoglycemia in an infant of a diabetic mother",
+      "back": "Excessive fetal insulin (persists after maternal glucose stops)"
+    },
+    {
+      "front": "Why does the fetus become hyperinsulinemic",
+      "back": "Maternal glucose crosses placenta -> fetal hyperglycemia -> beta-cell hyperplasia"
+    },
+    {
+      "front": "Does maternal insulin cross the placenta",
+      "back": "No (catabolized by placenta) - only glucose crosses"
+    },
+    {
+      "front": "Complications of maternal diabetes in the newborn",
+      "back": "Macrosomia, hypoglycemia, polycythemia, hypertrophic cardiomyopathy"
+    },
+    {
+      "front": "IGF-2 in infants of diabetic mothers",
+      "back": "Increased (contributes to macrosomia)"
+    },
+    {
+      "front": "Treatment of IDM hypoglycemia",
+      "back": "Early feeding / IV dextrose"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Infant of diabetic mother",
+      "detail": "Repro: fetal hyperinsulinemia -> macrosomia + neonatal hypoglycemia."
+    },
+    {
+      "tag": "options",
+      "topic": "Placental transfer",
+      "detail": "Physio > glucose crosses, insulin does NOT; IGF-2/glycogen increased."
+    },
+    {
+      "tag": "complications",
+      "topic": "Maternal diabetes",
+      "detail": "Peds > polycythemia, hypertrophic cardiomyopathy, shoulder dystocia."
+    }
+  ],
+  "memoryHook": "Mom's sugar crosses to the baby (her insulin can't), so the fetus revs up its own insulin and grows huge - then the cord is cut, the sugar stops, but the insulin keeps pumping: newborn hypoglycemia.",
+  "stem": [
+    {
+      "text": "A 35-year-old woman at 38 weeks gestation undergoes induction of labor. The patient has "
+    },
+    {
+      "text": "type 2 diabetes mellitus",
+      "clue": true,
+      "type": "orange",
+      "note": "Maternal diabetes exposes the fetus to high glucose (glucose crosses the placenta), driving fetal hyperinsulinemia."
+    },
+    {
+      "text": ", and her blood glucose levels were increasingly difficult to control during her third trimester despite increasing doses of insulin. During induction, the patient develops arrest of labor and undergoes a cesarean delivery. Apgar scores are 8 and 9 at 1 and 5 minutes, respectively. Physical examination shows a newborn "
+    },
+    {
+      "text": "large for gestational age with a birth weight of 4.6 kg",
+      "clue": true,
+      "type": "green",
+      "note": "Macrosomia (>4 kg) reflects fetal hyperinsulinemia (insulin is a growth factor promoting fat/glycogen deposition)."
+    },
+    {
+      "text": " (10.1 lb). The remainder of the examination is unremarkable, and vital signs are normal. "
+    },
+    {
+      "text": "An hour after delivery, the newborn develops hypoglycemia",
+      "clue": true,
+      "type": "red",
+      "note": "After the cord is cut, the maternal glucose supply stops, but the hyperplastic fetal beta cells keep secreting insulin -> neonatal hypoglycemia."
+    },
+    {
+      "text": ". Which of the following is the most likely cause of this newborn's hypoglycemia?"
+    }
+  ]
+}

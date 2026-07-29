@@ -1,0 +1,176 @@
+{
+  "id": "q420",
+  "item": 420,
+  "qid": "1358",
+  "title": "Omeprazole inhibits primary active transport (H/K-ATPase)",
+  "system": "Pharmacology",
+  "topic": "Membrane transport - proton pump inhibitor",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 70,
+  "vignette": "Many drugs and toxins act by inhibiting substance flow across cell membranes. Which of the following inhibits primary active transport?",
+  "clues": [
+    {
+      "text": "inhibiting substance flow across cell membranes",
+      "type": "blue",
+      "note": "Membrane transport is passive (down a gradient, no ATP) or active (against a gradient, uses ATP); the question targets PRIMARY active transport (direct ATP hydrolysis by an ATPase)."
+    },
+    {
+      "text": "primary active transport",
+      "type": "green",
+      "note": "Primary active transport uses an ATPase (e.g., Na/K-ATPase, H/K-ATPase, Ca-ATPase) that directly hydrolyzes ATP to move ions against their gradient - omeprazole blocks the H/K-ATPase."
+    }
+  ],
+  "whatMatters": "PRIMARY active transport is carried out by ATPases that directly hydrolyze ATP to pump ions against their gradient (Na/K-, H/K-, Ca-ATPase). OMEPRAZOLE (a proton pump inhibitor) inhibits the gastric parietal-cell H/K-ATPase (proton pump), reducing acid secretion. Answer C.",
+  "strategy": "Match the drug to the transport type it blocks. Omeprazole -> H/K-ATPase = PRIMARY active transport. Reject blockers of PASSIVE (channel-mediated) transport: tetrodotoxin (voltage-gated Na channels), verapamil (L-type Ca channels), lidocaine (voltage-gated Na channels), and dofetilide (delayed-rectifier K channels) - all inhibit passive ion flow, not an ATP-driven pump.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Tetrodotoxin",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Verapamil",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Omeprazole",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Lidocaine",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Dofetilide",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Tetrodotoxin - blocks voltage-gated Na channels (passive)",
+      "detail": "WHAT IT IS: a pufferfish neurotoxin that blocks voltage-gated sodium channels. ❌ WHY IT FAILS: sodium channels mediate PASSIVE transport (down the gradient), not ATP-driven primary active transport. ✅ Correct if: asking what blocks passive Na channel flow."
+    },
+    {
+      "letter": "B",
+      "label": "Verapamil - blocks L-type Ca channels (passive)",
+      "detail": "WHAT IT IS: a non-dihydropyridine calcium channel blocker. ❌ WHY IT FAILS: it inhibits PASSIVE calcium entry through L-type channels, not a primary active ATPase. ✅ Correct if: asking about passive calcium channel blockade."
+    },
+    {
+      "letter": "D",
+      "label": "Lidocaine - blocks voltage-gated Na channels (passive)",
+      "detail": "WHAT IT IS: a local anesthetic / class IB antiarrhythmic. ❌ WHY IT FAILS: it blocks voltage-gated sodium channels (passive transport), not an ATPase. ✅ Correct if: passive Na-channel blockade (nerve/cardiac)."
+    },
+    {
+      "letter": "E",
+      "label": "Dofetilide - blocks delayed-rectifier K channels (passive)",
+      "detail": "WHAT IT IS: a class III antiarrhythmic that blocks the rapid delayed-rectifier potassium current. ❌ WHY IT FAILS: it inhibits PASSIVE potassium efflux (prolonging repolarization/QT), not primary active transport. ✅ Correct if: passive K-channel blockade (QT prolongation)."
+    }
+  ],
+  "reasoning": [
+    "Primary active transport uses ATPases that directly hydrolyze ATP to move ions against a gradient",
+    "Omeprazole inhibits the gastric parietal-cell H/K-ATPase (proton pump)",
+    "Blocking this ATPase reduces gastric acid secretion",
+    "-> omeprazole; answer C (the others block passive ion channels)"
+  ],
+  "mechanism": "Transport across cell membranes is either PASSIVE (movement DOWN an electrochemical gradient through channels or carriers, requiring no energy) or ACTIVE (movement AGAINST a gradient, requiring energy). PRIMARY active transport is performed by ATPase 'pumps' that DIRECTLY hydrolyze ATP - classic examples are the Na/K-ATPase, the Ca-ATPase, and the gastric H/K-ATPase (the parietal-cell 'proton pump' that exchanges luminal K+ for H+ to acidify the stomach). OMEPRAZOLE and other proton pump inhibitors irreversibly inhibit the H/K-ATPase, decreasing gastric acid (used for peptic ulcer disease, GERD, and Zollinger-Ellison syndrome) - so omeprazole inhibits a primary active transporter. The distractors all block PASSIVE (channel-mediated) transport that flows down the gradient without ATP: tetrodotoxin and lidocaine block voltage-gated Na+ channels, verapamil blocks L-type Ca2+ channels, and dofetilide blocks delayed-rectifier K+ channels. (Secondary active transport - e.g., the Na-glucose cotransporter - uses the gradient set up by a primary pump, not direct ATP hydrolysis.)",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Physio/Pharm > primary active transport = ATPase pumps (Na/K-, H/K-, Ca-ATPase) hydrolyze ATP; omeprazole (PPI) inhibits gastric H/K-ATPase; passive transport = channels (Na, Ca, K)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Primary active transport = ATP-hydrolyzing pump; omeprazole blocks the H/K-ATPase."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on primary vs secondary active transport, passive transport, ATPase, or proton pump? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Tetrodotoxin/lidocaine (Na channels), verapamil (Ca channels), dofetilide (K channels) all block PASSIVE channel flow."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: omeprazole inhibits H/K-ATPase (primary active transport); channel blockers act on passive transport."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Drug that inhibits primary active transport",
+      "back": "Omeprazole (gastric H/K-ATPase / proton pump)"
+    },
+    {
+      "front": "Primary active transport examples",
+      "back": "Na/K-ATPase, H/K-ATPase, Ca-ATPase (direct ATP hydrolysis)"
+    },
+    {
+      "front": "Tetrodotoxin/lidocaine target",
+      "back": "Voltage-gated Na+ channels (passive)"
+    },
+    {
+      "front": "Verapamil target",
+      "back": "L-type Ca2+ channels (passive)"
+    },
+    {
+      "front": "Dofetilide target",
+      "back": "Delayed-rectifier K+ channels (passive)"
+    },
+    {
+      "front": "Secondary active transport",
+      "back": "Uses gradient from a primary pump (e.g., Na-glucose cotransporter)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Primary active transport",
+      "detail": "Pharm: omeprazole inhibits H/K-ATPase (proton pump)."
+    },
+    {
+      "tag": "options",
+      "topic": "Channel blockers (passive)",
+      "detail": "Pharm > Na channels (tetrodotoxin/lidocaine), Ca (verapamil), K (dofetilide)."
+    },
+    {
+      "tag": "concept",
+      "topic": "Membrane transport",
+      "detail": "Physio > passive (channels) vs active (ATPase pumps)."
+    }
+  ],
+  "memoryHook": "Only the proton pump (H/K-ATPase) burns ATP to push ions uphill - omeprazole jams it; the other drugs just plug passive channels flowing downhill.",
+  "stem": [
+    {
+      "text": "Many drugs and toxins act by "
+    },
+    {
+      "text": "inhibiting substance flow across cell membranes",
+      "clue": true,
+      "type": "blue",
+      "note": "Membrane transport is passive (down a gradient, no ATP) or active (against a gradient, uses ATP); the question targets PRIMARY active transport (direct ATP hydrolysis by an ATPase)."
+    },
+    {
+      "text": ". Which of the following inhibits "
+    },
+    {
+      "text": "primary active transport",
+      "clue": true,
+      "type": "green",
+      "note": "Primary active transport uses an ATPase (e.g., Na/K-ATPase, H/K-ATPase, Ca-ATPase) that directly hydrolyzes ATP to move ions against their gradient - omeprazole blocks the H/K-ATPase."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

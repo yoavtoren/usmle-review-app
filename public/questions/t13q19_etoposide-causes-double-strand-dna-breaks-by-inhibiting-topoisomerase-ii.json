@@ -1,0 +1,190 @@
+{
+  "id": "q458",
+  "item": 458,
+  "qid": "2018",
+  "title": "Etoposide causes double-strand DNA breaks by inhibiting topoisomerase II",
+  "system": "Pharmacology",
+  "topic": "Chemotherapy - topoisomerase inhibitors",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 67,
+  "vignette": "Cancer cells from a 23-year-old male with testicular cancer demonstrate high sensitivity to etoposide. The etoposide-killed cancer cells show a high number of double-stranded DNA fractures. These fractures are due to dysfunction of which of the following?",
+  "clues": [
+    {
+      "text": "testicular cancer",
+      "type": "blue",
+      "note": "Etoposide is a mainstay for testicular cancer and small cell lung cancer - a useful association for the drug class."
+    },
+    {
+      "text": "high sensitivity to etoposide",
+      "type": "orange",
+      "note": "Etoposide (a podophyllotoxin derivative) acts on topoisomerase II; naming the drug points directly to the enzyme affected."
+    },
+    {
+      "text": "high number of double-stranded DNA fractures",
+      "type": "green",
+      "note": "DOUBLE-strand breaks that accumulate = inhibition of TOPOISOMERASE II, which normally makes and then RESEALS transient double-strand breaks to relieve supercoiling."
+    }
+  ],
+  "whatMatters": "ETOPOSIDE inhibits TOPOISOMERASE II. Topoisomerase II makes transient DOUBLE-strand breaks to relieve supercoiling and then reseals them; etoposide blocks the resealing, so DOUBLE-strand breaks accumulate -> chromosomal breaks and cell death. Answer C.",
+  "strategy": "Match the break type to the enzyme: DOUBLE-strand breaks = topoisomerase II (topo I makes single-strand nicks). Etoposide/teniposide (and, at high dose, doxorubicin) inhibit topo II. Reject topoisomerase I (single-strand breaks; irinotecan/topotecan), microtubules (vinca alkaloids/taxanes - mitotic spindle, not DNA breaks), and the antimetabolite enzymes thymidylate synthase (5-FU) and dihydrofolate reductase (methotrexate), which impair nucleotide synthesis rather than cause double-strand breaks.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Thymidylate synthase",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Topoisomerase I",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Topoisomerase II",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Microtubules",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Dihydrofolate reductase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Thymidylate synthase - 5-FU target (antimetabolite)",
+      "detail": "WHAT IT IS: the enzyme converting dUMP to dTMP, inhibited by 5-fluorouracil. ❌ WHY IT FAILS: blocking it impairs thymidine/DNA synthesis, not the resealing of double-strand breaks. ✅ Correct if: 5-FU/capecitabine mechanism (thymidine synthesis block)."
+    },
+    {
+      "letter": "B",
+      "label": "Topoisomerase I - single-strand nicks",
+      "detail": "WHAT IT IS: the enzyme that makes SINGLE-strand nicks to relieve negative supercoiling (target of irinotecan/topotecan). ❌ WHY IT FAILS: its inhibition causes SINGLE-strand breaks, whereas etoposide produces DOUBLE-strand breaks. ✅ Correct if: irinotecan/topotecan (single-strand break accumulation)."
+    },
+    {
+      "letter": "D",
+      "label": "Microtubules - vinca/taxanes",
+      "detail": "WHAT IT IS: the mitotic spindle apparatus targeted by vinca alkaloids (inhibit assembly) and taxanes (stabilize). ❌ WHY IT FAILS: microtubule dysfunction disrupts chromosome SEPARATION in mitosis, not DNA strand integrity. ✅ Correct if: vincristine/vinblastine or paclitaxel."
+    },
+    {
+      "letter": "E",
+      "label": "Dihydrofolate reductase - methotrexate target",
+      "detail": "WHAT IT IS: the enzyme regenerating tetrahydrofolate, inhibited by methotrexate. ❌ WHY IT FAILS: DHFR inhibition impairs folate-dependent nucleotide synthesis, not double-strand break repair. ✅ Correct if: methotrexate mechanism (antifolate)."
+    }
+  ],
+  "reasoning": [
+    "Etoposide is a podophyllotoxin derivative used in testicular/small cell lung cancer",
+    "It targets topoisomerase II, which makes and reseals transient double-strand breaks",
+    "Etoposide blocks resealing, so double-strand breaks accumulate",
+    "-> dysfunction of topoisomerase II; answer C"
+  ],
+  "mechanism": "TOPOISOMERASES relieve the DNA supercoiling generated during replication and transcription. Topoisomerase I makes transient SINGLE-strand nicks (relieving negative supercoiling), whereas TOPOISOMERASE II induces transient DOUBLE-strand breaks in both strands simultaneously (relieving positive and negative supercoiling) and then RESEALS them. ETOPOSIDE (and teniposide), semisynthetic derivatives of the plant alkaloid PODOPHYLLOTOXIN, inhibit topoisomerase II's ability to reseal the breaks it creates, so DOUBLE-strand breaks accumulate, chromosomal fragmentation occurs, and the cell dies. Etoposide is used notably in TESTICULAR cancer and SMALL CELL LUNG cancer (a class-associated adverse effect is secondary AML with 11q23/MLL translocations). The distractors are other chemotherapy targets: topoisomerase I (irinotecan/topotecan - single-strand breaks), microtubules (vinca alkaloids/taxanes), and the antimetabolite enzymes thymidylate synthase (5-FU) and dihydrofolate reductase (methotrexate).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > etoposide/teniposide: inhibit topoisomerase II -> double-strand DNA breaks; used in testicular and small cell lung cancer; risk of secondary AML; topo I inhibitors = irinotecan/topotecan (single-strand)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Double-strand breaks accumulate = topoisomerase II blocked (etoposide)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on topoisomerase I vs II, supercoiling, single- vs double-strand breaks, or podophyllotoxin? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Topo I = single-strand (irinotecan); microtubules = vinca/taxanes; thymidylate synthase = 5-FU; DHFR = methotrexate."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: etoposide inhibits topoisomerase II -> double-strand breaks; testicular/small cell lung cancer."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Etoposide mechanism",
+      "back": "Inhibits topoisomerase II -> double-strand DNA breaks"
+    },
+    {
+      "front": "Topoisomerase I vs II break type",
+      "back": "I = single-strand nicks; II = double-strand breaks"
+    },
+    {
+      "front": "Topoisomerase I inhibitors",
+      "back": "Irinotecan, topotecan"
+    },
+    {
+      "front": "Etoposide clinical uses",
+      "back": "Testicular cancer, small cell lung cancer"
+    },
+    {
+      "front": "Etoposide serious late toxicity",
+      "back": "Secondary AML (11q23/MLL)"
+    },
+    {
+      "front": "Microtubule chemo agents",
+      "back": "Vinca alkaloids (inhibit assembly), taxanes (stabilize)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Etoposide / topoisomerase II",
+      "detail": "Pharm: blocks topo II resealing -> double-strand breaks."
+    },
+    {
+      "tag": "options",
+      "topic": "Chemo targets",
+      "detail": "Pharm > topo I (irinotecan), microtubules (vinca/taxanes), antimetabolites."
+    },
+    {
+      "tag": "toxicity",
+      "topic": "Secondary AML",
+      "detail": "Onc > topo II inhibitors -> 11q23/MLL leukemia."
+    }
+  ],
+  "memoryHook": "Topo II cuts BOTH DNA strands and stitches them back; etoposide cuts the thread mid-repair, so double-strand breaks pile up and the cancer cell dies.",
+  "stem": [
+    {
+      "text": "Cancer cells from a 23-year-old male with "
+    },
+    {
+      "text": "testicular cancer",
+      "clue": true,
+      "type": "blue",
+      "note": "Etoposide is a mainstay for testicular cancer and small cell lung cancer - a useful association for the drug class."
+    },
+    {
+      "text": " demonstrate "
+    },
+    {
+      "text": "high sensitivity to etoposide",
+      "clue": true,
+      "type": "orange",
+      "note": "Etoposide (a podophyllotoxin derivative) acts on topoisomerase II; naming the drug points directly to the enzyme affected."
+    },
+    {
+      "text": ". The etoposide-killed cancer cells show a "
+    },
+    {
+      "text": "high number of double-stranded DNA fractures",
+      "clue": true,
+      "type": "green",
+      "note": "DOUBLE-strand breaks that accumulate = inhibition of TOPOISOMERASE II, which normally makes and then RESEALS transient double-strand breaks to relieve supercoiling."
+    },
+    {
+      "text": ". These fractures are due to dysfunction of which of the following?"
+    }
+  ]
+}

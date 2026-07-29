@@ -1,0 +1,224 @@
+{
+  "id": "q457",
+  "item": 457,
+  "qid": "575",
+  "title": "Elderly BPH patient on amitriptyline: anticholinergic acute urinary retention + confusion",
+  "system": "Pharmacology",
+  "topic": "Tricyclic antidepressant anticholinergic toxicity",
+  "correct": "A",
+  "yourAnswer": "D",
+  "percentCorrect": 57,
+  "vignette": "A 65-year-old man is brought to the emergency department with new-onset confusion, suprapubic discomfort, and lack of urine output. His past medical history is significant for benign prostatic hyperplasia, hypertension, hyperlipidemia, and type 2 diabetes mellitus complicated by neuropathy. The patient also has a history of chronic insomnia and has been treated with several medications with little benefit. He does not know his current medications. On examination, the patient is afebrile, confused, and oriented only to self. Suprapubic fullness is present, but abdominal examination is otherwise unremarkable. A urinary catheter is placed and immediately drains 1000 mL of urine. Which of the following medications most likely has contributed to this patient's current condition?",
+  "clues": [
+    {
+      "text": "new-onset confusion, suprapubic discomfort, and lack of urine output",
+      "type": "red",
+      "note": "Confusion PLUS acute urinary retention in an elderly patient is a classic ANTICHOLINERGIC toxicity syndrome (central confusion + peripheral urinary retention)."
+    },
+    {
+      "text": "benign prostatic hyperplasia",
+      "type": "orange",
+      "note": "Pre-existing bladder outlet obstruction from BPH makes the elderly especially vulnerable to anticholinergic-precipitated acute urinary retention."
+    },
+    {
+      "text": "history of chronic insomnia",
+      "type": "blue",
+      "note": "Tricyclic antidepressants like amitriptyline are sometimes used off-label for insomnia/chronic pain - the likely culprit medication here."
+    },
+    {
+      "text": "urinary catheter is placed and immediately drains 1000 mL of urine",
+      "type": "green",
+      "note": "Draining 1000 mL confirms acute urinary retention - the anticholinergic effect (detrusor relaxation) blocking bladder emptying."
+    }
+  ],
+  "whatMatters": "An elderly man with BPH develops confusion + ACUTE URINARY RETENTION (1000 mL drained). AMITRIPTYLINE, a tricyclic antidepressant used off-label for insomnia/pain, has strong ANTICHOLINERGIC (antimuscarinic) effects -> central confusion and peripheral urinary retention, especially with underlying obstruction. Answer A.",
+  "strategy": "Pattern = anticholinergic toxicity (confusion + urinary retention + BPH). Find the drug with strong antimuscarinic activity used for insomnia: amitriptyline (TCA). Reject drugs that RELIEVE obstruction (finasteride, tamsulosin - treat BPH, don't cause retention), and non-anticholinergic drugs (atorvastatin - myopathy/hepatitis; duloxetine - rarely obstructive; gabapentin - sedation; metformin - lactic acidosis).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Amitriptyline",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Atorvastatin",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Duloxetine",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Finasteride",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Gabapentin",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Metformin",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Tamsulosin",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Atorvastatin - myopathy/hepatitis, not anticholinergic",
+      "detail": "WHAT IT IS: a statin for hyperlipidemia. ❌ WHY IT FAILS: adverse effects are myopathy and transaminitis, not anticholinergic confusion/urinary retention. ✅ Correct if: muscle pain or elevated CK/LFTs."
+    },
+    {
+      "letter": "C",
+      "label": "Duloxetine - rarely obstructive",
+      "detail": "WHAT IT IS: an SNRI for depression/neuropathic pain. ❌ WHY IT FAILS: it can cause confusion rarely but does not have the strong antimuscarinic effect that precipitates acute urinary retention like a TCA. ✅ Correct if: SNRI-related effects (rarely obstructive voiding)."
+    },
+    {
+      "letter": "D",
+      "label": "Finasteride - treats BPH, relieves obstruction",
+      "detail": "WHAT IT IS: a 5-alpha-reductase inhibitor used to shrink the prostate in BPH. ❌ WHY IT FAILS: it improves outflow obstruction and would not CAUSE urinary retention. ✅ Correct if: reducing prostate size/urinary symptoms over months."
+    },
+    {
+      "letter": "E",
+      "label": "Gabapentin - sedation, not retention",
+      "detail": "WHAT IT IS: used for neuropathic pain/insomnia. ❌ WHY IT FAILS: it causes sedation, confusion, and incoordination but lacks significant anticholinergic activity to cause acute urinary retention. ✅ Correct if: sedation/dizziness in painful diabetic neuropathy."
+    },
+    {
+      "letter": "F",
+      "label": "Metformin - lactic acidosis, not anticholinergic",
+      "detail": "WHAT IT IS: a biguanide for type 2 diabetes. ❌ WHY IT FAILS: its concern is lactic acidosis, not anticholinergic urinary retention/confusion. ✅ Correct if: lactic acidosis (renal impairment/contrast)."
+    },
+    {
+      "letter": "G",
+      "label": "Tamsulosin - alpha-blocker, relieves outflow",
+      "detail": "WHAT IT IS: an alpha-1 blocker used for BPH to relax bladder-neck/prostatic smooth muscle. ❌ WHY IT FAILS: it improves urinary flow and would not cause retention. ✅ Correct if: orthostatic hypotension or improved voiding in BPH."
+    }
+  ],
+  "reasoning": [
+    "Elderly man with BPH develops confusion + acute urinary retention (1000 mL drained)",
+    "This is an anticholinergic toxicity pattern (central + peripheral antimuscarinic effects)",
+    "Amitriptyline (a TCA used off-label for insomnia) has strong anticholinergic activity",
+    "-> amitriptyline most likely precipitated retention/confusion; answer A"
+  ],
+  "mechanism": "TRICYCLIC ANTIDEPRESSANTS (TCAs) such as AMITRIPTYLINE are occasionally used off-label for INSOMNIA and chronic pain. They have strong ANTICHOLINERGIC (antimuscarinic) properties: peripherally, muscarinic blockade at the detrusor prevents bladder contraction, causing URINARY RETENTION (with dry mouth, constipation, blurred vision, mydriasis, and flushing); centrally, muscarinic blockade causes CONFUSION/delirium. ELDERLY patients are especially susceptible because of comorbidities (BPH, dementia), reduced hepatic/renal clearance, and polypharmacy - and pre-existing bladder outlet obstruction from BPH makes acute retention likely. Hence a 65-year-old with BPH develops confusion and acute urinary retention (1000 mL on catheterization). TCAs are therefore relatively contraindicated in the elderly. The distractors are either treatments that RELIEVE outlet obstruction (finasteride, tamsulosin) or drugs without significant anticholinergic effect (atorvastatin, duloxetine, gabapentin, metformin).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > TCAs (amitriptyline): anticholinergic (confusion, dry mouth, constipation, urinary retention), alpha-1 block (orthostasis), antihistamine (sedation), cardiac Na-channel block (arrhythmia); caution/contraindicated in the elderly."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Confusion + acute urinary retention in an elderly BPH patient = anticholinergic drug (amitriptyline)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on anticholinergic/antimuscarinic effects, tricyclic antidepressants, acute urinary retention, or BPH? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Finasteride/tamsulosin TREAT BPH (relieve obstruction); statin/metformin/gabapentin/duloxetine aren't strongly anticholinergic."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: TCA (amitriptyline) anticholinergic -> urinary retention + confusion in elderly; relatively contraindicated."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Confusion + urinary retention in elderly on insomnia drug",
+      "back": "Amitriptyline (TCA) anticholinergic toxicity"
+    },
+    {
+      "front": "TCA anticholinergic effects",
+      "back": "Urinary retention, dry mouth, constipation, blurred vision, confusion"
+    },
+    {
+      "front": "Finasteride / tamsulosin role",
+      "back": "Treat BPH (relieve obstruction) - don't cause retention"
+    },
+    {
+      "front": "TCA cardiac toxicity",
+      "back": "Na-channel block -> wide QRS/arrhythmia (treat with bicarbonate)"
+    },
+    {
+      "front": "Why elderly are vulnerable to TCAs",
+      "back": "BPH, dementia, reduced clearance, polypharmacy"
+    },
+    {
+      "front": "Gabapentin main adverse effect",
+      "back": "Sedation/confusion (not anticholinergic retention)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "TCA anticholinergic toxicity",
+      "detail": "Pharm: amitriptyline -> urinary retention + confusion in the elderly."
+    },
+    {
+      "tag": "options",
+      "topic": "BPH drugs",
+      "detail": "Pharm > finasteride (5-ARI), tamsulosin (alpha-1 blocker) relieve obstruction."
+    },
+    {
+      "tag": "safety",
+      "topic": "Beers/elderly",
+      "detail": "Pharm > TCAs relatively contraindicated in older adults."
+    }
+  ],
+  "memoryHook": "A TCA for sleep dries everything up - in an older man with BPH, that antimuscarinic block locks the bladder (1000 mL retained) and clouds the mind.",
+  "stem": [
+    {
+      "text": "A 65-year-old man is brought to the emergency department with "
+    },
+    {
+      "text": "new-onset confusion, suprapubic discomfort, and lack of urine output",
+      "clue": true,
+      "type": "red",
+      "note": "Confusion PLUS acute urinary retention in an elderly patient is a classic ANTICHOLINERGIC toxicity syndrome (central confusion + peripheral urinary retention)."
+    },
+    {
+      "text": ". His past medical history is significant for "
+    },
+    {
+      "text": "benign prostatic hyperplasia",
+      "clue": true,
+      "type": "orange",
+      "note": "Pre-existing bladder outlet obstruction from BPH makes the elderly especially vulnerable to anticholinergic-precipitated acute urinary retention."
+    },
+    {
+      "text": ", hypertension, hyperlipidemia, and type 2 diabetes mellitus complicated by neuropathy. The patient also has a "
+    },
+    {
+      "text": "history of chronic insomnia",
+      "clue": true,
+      "type": "blue",
+      "note": "Tricyclic antidepressants like amitriptyline are sometimes used off-label for insomnia/chronic pain - the likely culprit medication here."
+    },
+    {
+      "text": " and has been treated with several medications with little benefit. He does not know his current medications. On examination, the patient is afebrile, confused, and oriented only to self. Suprapubic fullness is present, but abdominal examination is otherwise unremarkable. A "
+    },
+    {
+      "text": "urinary catheter is placed and immediately drains 1000 mL of urine",
+      "clue": true,
+      "type": "green",
+      "note": "Draining 1000 mL confirms acute urinary retention - the anticholinergic effect (detrusor relaxation) blocking bladder emptying."
+    },
+    {
+      "text": ". Which of the following medications most likely has contributed to this patient's current condition?"
+    }
+  ]
+}

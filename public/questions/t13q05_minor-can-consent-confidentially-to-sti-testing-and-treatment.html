@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minor can consent confidentially to STI testing and treatment</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 13 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q444", "item": 444, "qid": "2057", "title": "Minor can consent confidentially to STI testing and treatment", "system": "Behavioral science", "topic": "Adolescent consent / confidentiality", "correct": "D", "yourAnswer": "D", "percentCorrect": 76, "vignette": "A 17-year-old girl comes to the office for evaluation of worsening vaginal irritation and discharge. She has had multiple sexual partners in the past few months. The patient is adherent with oral contraceptives and inconsistently uses condoms. She has no prior medical conditions and takes no other medications. Urine pregnancy test is negative and urine gonorrhea test is positive. The patient does not want her parents to find out she is having sex and asks if the physician will tell her parents about today's visit. Which of the following is the most appropriate response to this patient?", "clues": [{"text": "17-year-old girl", "type": "orange", "note": "She is a minor (<18), who normally needs parental consent - EXCEPT for specific sensitive services such as STI care, for which minors can consent on their own in all states."}, {"text": "urine gonorrhea test is positive", "type": "green", "note": "Gonorrhea is a sexually transmitted infection; testing and treatment of STIs is a recognized exception allowing minors to consent confidentially."}, {"text": "does not want her parents to find out", "type": "blue", "note": "Confidentiality encourages adolescents to seek STI care; the physician should reassure her and directly answer her question rather than deflect."}, {"text": "asks if the physician will tell her parents", "type": "blue", "note": "The correct response affirms confidentiality: she can consent to STI testing/treatment herself, so the physician will not notify her parents."}], "whatMatters": "Minors can CONSENT to diagnosis and treatment of SEXUALLY TRANSMITTED INFECTIONS on their own, confidentially, in all states. The physician should reassure the 17-year-old that her parents will not be notified because she can consent to STI care herself. Answer D.", "strategy": "Recognize the confidential-care exception: STIs (also usually pregnancy care, contraception, substance-use and mental-health treatment) let minors consent without parental involvement. The correct answer both preserves confidentiality AND directly answers her question. Reject options that threaten to notify parents (A, E), that wrongly require parental consent for treatment (B), or that deflect without answering/undermine confidentiality (C).", "options": [{"letter": "A", "text": "\"Because gonorrhea is a reportable illness, I am obligated to report it to the health authorities and to your parents.\"", "correct": false}, {"letter": "B", "text": "\"I don't need to inform your parents that you are sexually active, but I will need their consent to prescribe antibiotic treatment.\"", "correct": false}, {"letter": "C", "text": "\"I recommend that you tell your parents about today's visit in case your symptoms become more serious.\"", "correct": false}, {"letter": "D", "text": "\"I will not notify your parents because you can consent to testing and treatment for sexually transmitted infections on your own.\"", "correct": true}, {"letter": "E", "text": "\"You can consent to treatment of gonorrhea, but because you are a minor, I am obligated to notify your parents.\"", "correct": false}], "eliminations": [{"letter": "A", "label": "Report to authorities AND parents - false", "detail": "WHAT IT IS: claiming reportability obligates notifying parents. ❌ WHY IT FAILS: while some STIs are reportable to PUBLIC HEALTH authorities, that does not require or permit notifying parents; parental notification for STIs is not mandated. ✅ Correct if: explaining anonymous public-health reporting (not to parents)."}, {"letter": "B", "label": "Need parental consent to treat - false", "detail": "WHAT IT IS: saying antibiotic treatment requires parental consent. ❌ WHY IT FAILS: minors can consent to STI TREATMENT themselves; parental consent is not required. ✅ Correct if: a non-exception treatment truly requiring parental consent."}, {"letter": "C", "label": "Recommend telling parents - deflects/undermines", "detail": "WHAT IT IS: urging her to disclose to parents. ❌ WHY IT FAILS: it fails to answer her confidentiality question and pressures disclosure that isn't required; it can deter care-seeking. ✅ Correct if: shared decision-making when the patient asks for guidance on involving family (not an obligation)."}, {"letter": "E", "label": "Obligated to notify parents - false", "detail": "WHAT IT IS: consent allowed but parents notified anyway. ❌ WHY IT FAILS: minors' confidential consent for STI care means parents are NOT notified; this contradicts the exception. ✅ Correct if: a situation with mandatory parental notification (not STIs)."}], "reasoning": ["A 17-year-old normally needs parental consent, but STI care is a confidential exception", "Gonorrhea (an STI) can be tested and treated with the minor's own consent", "Confidentiality should be preserved and her question answered directly", "-> reassure her that parents will not be notified; answer D"], "mechanism": "Minors (age <18) generally require PARENTAL CONSENT for medical care, but consent is NOT required for a defined set of sensitive services because mandating parental involvement would deter adolescents from seeking needed care. These exceptions include DIAGNOSIS AND TREATMENT OF SEXUALLY TRANSMITTED INFECTIONS (in all states), and - in most states - contraception, pregnancy care, and substance-use/mental-health treatment (emancipated minors and emergencies are separate exceptions). This patient has gonorrhea, an STI, so she can consent to testing and treatment CONFIDENTIALLY; the physician should reassure her that her parents will not be notified while directly answering her question. Although some STIs are reported anonymously to PUBLIC HEALTH departments for surveillance/partner tracing, this never entails notifying parents. Responses that require parental consent for treatment, threaten parental notification, or merely deflect are incorrect.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Behavioral science > minors' consent: STI (all states), plus usually contraception, pregnancy, substance-use/mental-health care; emancipated minor and emergency exceptions; confidentiality encourages care-seeking."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "STI = confidential minor-consent exception; reassure her and answer the question directly."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on minor consent exceptions, emancipated minor, confidentiality, or reportable disease vs parental notification? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Reportable to PUBLIC HEALTH is not the same as notifying parents; STI treatment doesn't need parental consent."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: minors self-consent (confidential) for STI care in all states; also often contraception, pregnancy, substance use, mental health."}], "keywords": [{"front": "Can a minor consent to STI care?", "back": "Yes - confidentially, in all states (no parental consent/notification)"}, {"front": "Minor confidential-care exceptions", "back": "STIs, contraception, pregnancy, substance use, mental health (varies)"}, {"front": "Reportable STI vs parental notification", "back": "Report to public health (anonymous) - NOT to parents"}, {"front": "Emancipated minor examples", "back": "Married, military, financially independent, parent, sometimes homeless/HS graduate"}, {"front": "Best response style to confidentiality question", "back": "Preserve confidentiality AND directly answer the patient"}], "firstAid": [{"tag": "answer / stem", "topic": "Adolescent consent", "detail": "Behavioral science: minors self-consent to STI testing/treatment, confidentially."}, {"tag": "options", "topic": "Confidentiality", "detail": "Ethics > no parental consent/notification required for STI care."}, {"tag": "concept", "topic": "Emancipated minor / exceptions", "detail": "Ethics > emergency, STI, pregnancy, substance use, mental health."}], "memoryHook": "For STIs, a teen holds her own consent card - the doctor treats and keeps it confidential; 'reportable' means the health department, not mom and dad.", "stem": [{"text": "A "}, {"text": "17-year-old girl", "clue": true, "type": "orange", "note": "She is a minor (<18), who normally needs parental consent - EXCEPT for specific sensitive services such as STI care, for which minors can consent on their own in all states."}, {"text": " comes to the office for evaluation of worsening vaginal irritation and discharge. She has had multiple sexual partners in the past few months. The patient is adherent with oral contraceptives and inconsistently uses condoms. She has no prior medical conditions and takes no other medications. Urine pregnancy test is negative and "}, {"text": "urine gonorrhea test is positive", "clue": true, "type": "green", "note": "Gonorrhea is a sexually transmitted infection; testing and treatment of STIs is a recognized exception allowing minors to consent confidentially."}, {"text": ". The patient "}, {"text": "does not want her parents to find out", "clue": true, "type": "blue", "note": "Confidentiality encourages adolescents to seek STI care; the physician should reassure her and directly answer her question rather than deflect."}, {"text": " she is having sex and "}, {"text": "asks if the physician will tell her parents", "clue": true, "type": "blue", "note": "The correct response affirms confidentiality: she can consent to STI testing/treatment herself, so the physician will not notify her parents."}, {"text": " about today's visit. Which of the following is the most appropriate response to this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

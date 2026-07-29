@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posterior interosseous nerve injury at the supinator: finger/thumb extension weakness</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 12 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q431", "item": 431, "qid": "1694", "title": "Posterior interosseous nerve injury at the supinator: finger/thumb extension weakness", "system": "Anatomy", "topic": "Radial nerve - posterior interosseous branch", "correct": "F", "yourAnswer": "D", "percentCorrect": 28, "vignette": "A 35-year-old, right-handed mechanic comes to the clinic due to progressive right hand weakness. The patient frequently uses a screwdriver at work. Neurologic examination shows preserved sensation in the upper limbs. There is weakness on extension of the fingers and thumb in the right hand. Strength is otherwise intact. Triceps reflexes are 2+ and bilaterally symmetric. The nerve affected in this patient was most likely injured at which of the following locations?", "clues": [{"text": "frequently uses a screwdriver at work", "type": "orange", "note": "Repetitive pronation/supination (screwdriver use) can compress the deep branch of the radial nerve (posterior interosseous nerve) as it passes through the supinator muscle."}, {"text": "preserved sensation in the upper limbs", "type": "green", "note": "PRESERVED sensation indicates the injured nerve is the deep MOTOR branch (posterior interosseous nerve) - which is purely motor - AFTER the sensory (superficial) branch has split off."}, {"text": "weakness on extension of the fingers and thumb", "type": "green", "note": "Weak FINGER and THUMB extension with intact wrist extension/triceps localizes to the posterior interosseous nerve (after branches to those muscles have left)."}, {"text": "Triceps reflexes are 2+ and bilaterally symmetric", "type": "blue", "note": "Intact triceps (elbow extension) reflex means the lesion is DISTAL to the triceps branches - i.e., in the forearm, not at the axilla/humerus."}], "whatMatters": "Weak FINGER and THUMB extension with SPARED sensation, wrist extension, and triceps = injury to the POSTERIOR INTEROSSEOUS NERVE (the deep, purely-motor branch of the radial nerve) where it passes through the SUPINATOR MUSCLE. Answer F. (Repetitive pronation/supination, e.g., screwdriver use, is the cause.)", "strategy": "Localize the radial nerve lesion by what is SPARED. Preserved sensation + intact triceps + intact wrist extension, but weak finger/thumb extension = the deep branch (posterior interosseous nerve) AFTER it passes the SUPINATOR. Reject the axilla and humeral midshaft (would cause wrist drop + sensory loss ± triceps weakness), carpal tunnel and hook of hamate (median/ulnar at the wrist), and coracobrachialis (musculocutaneous nerve region).", "options": [{"letter": "A", "text": "Axilla", "correct": false}, {"letter": "B", "text": "Carpal tunnel", "correct": false}, {"letter": "C", "text": "Coracobrachialis", "correct": false}, {"letter": "D", "text": "Hook of hamate", "correct": false}, {"letter": "E", "text": "Midshaft of the humerus", "correct": false}, {"letter": "F", "text": "Supinator muscle", "correct": true}], "eliminations": [{"letter": "A", "label": "Axilla - would cause wrist drop + sensory loss + weak triceps", "detail": "WHAT IT IS: radial nerve injury at the axilla (e.g., 'crutch palsy'). ❌ WHY IT FAILS: a proximal lesion causes WRIST DROP (weak wrist AND finger extension), sensory loss over the posterior arm/dorsal hand, and often weak elbow extension - this patient has intact sensation, wrist extension, and triceps. ✅ Correct if: wrist drop + sensory loss + triceps weakness (proximal radial lesion)."}, {"letter": "B", "label": "Carpal tunnel - median nerve at the wrist", "detail": "WHAT IT IS: median nerve compression at the wrist (carpal tunnel syndrome). ❌ WHY IT FAILS: it causes thenar weakness and median sensory symptoms, not finger/thumb EXTENSION weakness (a radial/posterior interosseous function). ✅ Correct if: thenar weakness + median sensory loss."}, {"letter": "C", "label": "Coracobrachialis - musculocutaneous nerve", "detail": "WHAT IT IS: the coracobrachialis is pierced by the musculocutaneous nerve (elbow flexion/forearm sensation). ❌ WHY IT FAILS: it is unrelated to finger/thumb extension (a radial function). ✅ Correct if: weak elbow flexion + lateral forearm sensory loss (musculocutaneous)."}, {"letter": "D", "label": "Hook of hamate - ulnar nerve at the wrist (your pick)", "detail": "WHAT IT IS: the ulnar nerve passes near the hook of hamate (Guyon canal). ❌ WHY IT FAILS: ulnar injury causes weak finger abduction/adduction and 4th-5th digit sensory loss - not finger/thumb EXTENSION weakness with preserved sensation. ✅ Correct if: ulnar claw/hypothenar findings."}, {"letter": "E", "label": "Midshaft of the humerus - wrist drop + sensory loss", "detail": "WHAT IT IS: radial nerve in the spiral (radial) groove (midshaft humeral fracture, 'Saturday night palsy'). ❌ WHY IT FAILS: it causes WRIST DROP (weak wrist and finger extension) plus dorsal-hand sensory loss (triceps usually spared) - this patient's wrist extension and sensation are intact. ✅ Correct if: wrist drop with sensory loss, triceps spared (midshaft humerus)."}], "reasoning": ["Weak finger/thumb extension but INTACT sensation, wrist extension, and triceps", "This localizes to the deep, purely-motor branch of the radial nerve (posterior interosseous nerve)", "The posterior interosseous nerve is entrapped as it passes through the SUPINATOR muscle (repetitive pronation/supination)", "-> supinator muscle; answer F"], "mechanism": "The RADIAL nerve enters the forearm anterior to the lateral epicondyle and divides into a SUPERFICIAL (purely SENSORY) branch and a DEEP (purely MOTOR) branch. The deep branch passes BETWEEN the two heads of the SUPINATOR muscle and continues as the POSTERIOR INTEROSSEOUS NERVE, innervating the finger and thumb extensors (and other deep extensors). Because the branches to the triceps (elbow extension) and to the extensor carpi radialis longus (a wrist extensor) leave PROXIMAL to the supinator, injury to the deep branch AT the supinator (from repetitive pronation/supination, e.g., screwdriver use, or trauma/radial head dislocation) causes weakness of FINGER and THUMB extension ('finger drop') while SPARING the triceps reflex, wrist extension, and - critically - all SENSATION (the sensory branch has already separated). This localizes the lesion to the supinator. Contrast a proximal radial nerve lesion at the AXILLA or MIDSHAFT HUMERUS, which causes 'wrist drop' (weak wrist AND finger extension) with dorsal-hand sensory loss (and, at the axilla, weak triceps).", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Anatomy > radial nerve branches: superficial (sensory) + deep (motor -> posterior interosseous nerve through supinator); PIN injury = finger/thumb extension weakness, no sensory loss, triceps/wrist extension spared; proximal lesions = wrist drop + sensory loss."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Preserved sensation + intact triceps/wrist extension + finger drop = posterior interosseous nerve at the supinator."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on posterior interosseous nerve, deep vs superficial radial branch, supinator, finger drop vs wrist drop? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Axilla/midshaft humerus = wrist drop + sensory loss; carpal tunnel (median), hook of hamate (ulnar), coracobrachialis (musculocutaneous)."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: posterior interosseous nerve (deep radial) at supinator -> finger/thumb extension weakness, NO sensory loss, wrist extension/triceps spared."}], "keywords": [{"front": "Finger/thumb extension weakness, sensation intact, wrist extension spared", "back": "Posterior interosseous nerve at the supinator"}, {"front": "Radial nerve branches in the forearm", "back": "Superficial (sensory) + deep (motor -> posterior interosseous nerve)"}, {"front": "Posterior interosseous nerve passes through", "back": "The supinator muscle"}, {"front": "Posterior interosseous vs proximal radial lesion", "back": "Finger drop (no sensory loss) vs wrist drop (+ sensory loss)"}, {"front": "Midshaft humerus radial injury", "back": "Wrist drop + dorsal-hand sensory loss (triceps spared)"}, {"front": "Hook of hamate nerve", "back": "Ulnar nerve (Guyon canal)"}], "firstAid": [{"tag": "answer / stem", "topic": "Posterior interosseous nerve", "detail": "Anatomy: deep radial branch through supinator; finger/thumb extension, no sensory loss."}, {"tag": "options", "topic": "Radial nerve localization", "detail": "Anatomy > axilla/midshaft (wrist drop + sensory), carpal tunnel (median), hamate (ulnar)."}, {"tag": "cause", "topic": "PIN syndrome", "detail": "Anatomy > repetitive pronation/supination (screwdriver), radial head trauma."}], "memoryHook": "Deep radial branch dives through the supinator and becomes the posterior interosseous - a pure motor nerve; pinch it and the fingers/thumb won't extend, but sensation, wrist, and triceps are fine (finger drop, not wrist drop).", "stem": [{"text": "A 35-year-old, right-handed mechanic comes to the clinic due to progressive right hand weakness. The patient "}, {"text": "frequently uses a screwdriver at work", "clue": true, "type": "orange", "note": "Repetitive pronation/supination (screwdriver use) can compress the deep branch of the radial nerve (posterior interosseous nerve) as it passes through the supinator muscle."}, {"text": ". Neurologic examination shows "}, {"text": "preserved sensation in the upper limbs", "clue": true, "type": "green", "note": "PRESERVED sensation indicates the injured nerve is the deep MOTOR branch (posterior interosseous nerve) - which is purely motor - AFTER the sensory (superficial) branch has split off."}, {"text": ". There is "}, {"text": "weakness on extension of the fingers and thumb", "clue": true, "type": "green", "note": "Weak FINGER and THUMB extension with intact wrist extension/triceps localizes to the posterior interosseous nerve (after branches to those muscles have left)."}, {"text": " in the right hand. Strength is otherwise intact. "}, {"text": "Triceps reflexes are 2+ and bilaterally symmetric", "clue": true, "type": "blue", "note": "Intact triceps (elbow extension) reflex means the lesion is DISTAL to the triceps branches - i.e., in the forearm, not at the axilla/humerus."}, {"text": ". The nerve affected in this patient was most likely injured at which of the following locations?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

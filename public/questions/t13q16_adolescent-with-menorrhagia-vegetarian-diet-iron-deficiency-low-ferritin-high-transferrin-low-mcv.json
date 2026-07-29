@@ -1,0 +1,228 @@
+{
+  "id": "q455",
+  "item": 455,
+  "qid": "1794",
+  "title": "Adolescent with menorrhagia + vegetarian diet: iron deficiency (low ferritin, high transferrin, low MCV)",
+  "system": "Pathology",
+  "topic": "Iron deficiency anemia",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 56,
+  "vignette": "A 16-year-old girl comes to the office due to fatigue for the past few months. She attends high school and plays on the school soccer team but says that her endurance has decreased. The patient sleeps 9 hours a night and has been a vegetarian for the past 6 months. She reached menarche at age 13 and has had regular menses for the past 6 months. Blood pressure is 110/60 mm Hg, pulse is 70/min, and BMI is 21 kg/m2. Physical examination shows a well-nourished teenage girl with pale conjunctivae. Hemoglobin is 9.2 g/dL. Which of the following sets of additional laboratory findings are most likely to be seen in this patient?",
+  "clues": [
+    {
+      "text": "fatigue for the past few months",
+      "type": "blue",
+      "note": "Gradual fatigue and decreased exercise tolerance are common presenting symptoms of anemia."
+    },
+    {
+      "text": "vegetarian for the past 6 months",
+      "type": "orange",
+      "note": "A vegetarian diet reduces intake of readily absorbed heme iron, contributing to iron deficiency."
+    },
+    {
+      "text": "regular menses for the past 6 months",
+      "type": "orange",
+      "note": "Menstrual blood loss is the leading cause of iron deficiency in menstruating adolescents/women (higher iron requirements from growth + losses)."
+    },
+    {
+      "text": "pale conjunctivae",
+      "type": "green",
+      "note": "Conjunctival pallor is a physical sign of anemia."
+    },
+    {
+      "text": "Hemoglobin is 9.2 g/dL",
+      "type": "green",
+      "note": "Hemoglobin 9.2 (normal ~12.0-16.0 g/dL in women) confirms anemia; the diet/menses point to iron deficiency (microcytic)."
+    }
+  ],
+  "whatMatters": "A menstruating, vegetarian teenager with anemia has IRON DEFICIENCY. Expect LOW serum ferritin (depleted stores), HIGH circulating transferrin/TIBC (upregulated when iron is low), and LOW MCV (microcytic), with NO hypersegmented neutrophils and NORMAL folate. Answer B (low ferritin, high transferrin, MCV 76, no hypersegmentation, normal folate).",
+  "strategy": "Build the iron-deficiency panel: ferritin LOW (first to fall), transferrin/TIBC HIGH (inverse to iron), iron LOW, MCV LOW (microcytic), and NO megaloblastic features (no hypersegmented neutrophils, normal folate/B12). Match to the option with low ferritin + high transferrin + low MCV. Reject options with normal ferritin+transferrin and MCV 74 (thalassemia pattern), low transferrin (anemia of chronic disease or B12), or high MCV with hypersegmented neutrophils (megaloblastic/folate).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Ferritin normal, transferrin normal, MCV 74, no hypersegmented neutrophils, folate normal",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Ferritin low, transferrin high, MCV 76, no hypersegmented neutrophils, folate normal",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Ferritin low, transferrin low, MCV 84, no hypersegmented neutrophils, folate normal",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Ferritin high, transferrin low, MCV 95, no hypersegmented neutrophils, folate normal",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Ferritin normal, transferrin normal, MCV 108, hypersegmented neutrophils present, folate normal",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Ferritin normal, transferrin normal, MCV 115, hypersegmented neutrophils present, folate low",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Normal ferritin/transferrin, MCV 74 - thalassemia pattern",
+      "detail": "WHAT IT IS: microcytosis (MCV 74) with NORMAL iron studies. ❌ WHY IT FAILS: iron deficiency lowers ferritin and raises transferrin; normal iron studies with microcytosis suggest thalassemia, not iron deficiency. ✅ Correct if: alpha/beta-thalassemia (normal ferritin, microcytic)."
+    },
+    {
+      "letter": "C",
+      "label": "Low ferritin + LOW transferrin - inconsistent",
+      "detail": "WHAT IT IS: low ferritin but low transferrin with MCV 84. ❌ WHY IT FAILS: in iron deficiency, transferrin (TIBC) rises, not falls; low transferrin fits anemia of chronic disease (where ferritin is normal/high). ✅ Correct if: anemia of chronic disease (low transferrin, high ferritin)."
+    },
+    {
+      "letter": "D",
+      "label": "High ferritin, low transferrin, MCV 95 - chronic disease",
+      "detail": "WHAT IT IS: high ferritin, low transferrin, normocytic. ❌ WHY IT FAILS: this is the anemia-of-chronic-disease pattern (iron sequestered), the OPPOSITE of iron deficiency's low ferritin/high transferrin. ✅ Correct if: chronic inflammation/infection."
+    },
+    {
+      "letter": "E",
+      "label": "MCV 108 + hypersegmented neutrophils - megaloblastic",
+      "detail": "WHAT IT IS: macrocytosis with hypersegmented neutrophils. ❌ WHY IT FAILS: those are features of megaloblastic (folate/B12) anemia, not the microcytic iron deficiency expected here. ✅ Correct if: B12/folate deficiency (macrocytic, hypersegmented PMNs)."
+    },
+    {
+      "letter": "F",
+      "label": "MCV 115, hypersegmented, low folate - folate deficiency",
+      "detail": "WHAT IT IS: macrocytic anemia with low folate and hypersegmented neutrophils. ❌ WHY IT FAILS: this is folate-deficiency megaloblastic anemia; this patient's diet/menses point to microcytic iron deficiency (and folate is abundant in vegetables). ✅ Correct if: folate-deficiency anemia."
+    }
+  ],
+  "reasoning": [
+    "Menstruating vegetarian teenager with anemia (Hgb 9.2) = iron deficiency",
+    "Iron deficiency depletes stores (low ferritin) and upregulates transferrin/TIBC (high)",
+    "Reduced iron for hemoglobin synthesis makes cells microcytic (low MCV) without megaloblastic features",
+    "-> low ferritin, high transferrin, MCV 76, no hypersegmented neutrophils, normal folate; answer B"
+  ],
+  "mechanism": "Menstruating adolescents/women are at high risk for IRON-DEFICIENCY ANEMIA from menstrual blood loss plus growth demands, aggravated by low dietary (heme) iron in a VEGETARIAN diet. As iron is depleted, findings evolve in sequence: (1) bone-marrow iron stores fall -> LOW SERUM FERRITIN (ferritin reflects total body stores and is the earliest and most specific marker, though it can rise falsely with inflammation); (2) the liver increases TRANSFERRIN synthesis, raising total iron-binding capacity -> HIGH CIRCULATING TRANSFERRIN with low transferrin saturation; (3) serum iron falls; (4) hemoglobin falls; and (5) red cells become MICROCYTIC and hypochromic -> LOW MCV. There are NO megaloblastic features (no hypersegmented neutrophils; folate/B12 normal). This maps to option B. The distractors represent thalassemia (normal iron studies, microcytic), anemia of chronic disease (high ferritin, low transferrin), and megaloblastic/folate deficiency (macrocytic with hypersegmented neutrophils).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Heme > iron deficiency anemia: low ferritin, high TIBC/transferrin, low serum iron, low % saturation, microcytic hypochromic (low MCV); causes = chronic blood loss (menses), poor intake; vs anemia of chronic disease (high ferritin, low TIBC)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Iron deficiency: stores down (ferritin low), transferrin up (TIBC high), cells small (MCV low)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on ferritin, transferrin/TIBC, MCV, hypersegmented neutrophils, or microcytic vs macrocytic? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Normal iron studies + microcytic = thalassemia; high ferritin/low transferrin = chronic disease; macrocytic + hypersegmented = megaloblastic."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: iron deficiency = LOW ferritin, HIGH transferrin/TIBC, LOW MCV; anemia of chronic disease is the mirror image."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Iron deficiency iron studies",
+      "back": "Low ferritin, high transferrin/TIBC, low serum iron, low saturation"
+    },
+    {
+      "front": "Iron deficiency red cell indices",
+      "back": "Microcytic, hypochromic (low MCV)"
+    },
+    {
+      "front": "Most common cause in menstruating women",
+      "back": "Menstrual blood loss (+ low dietary iron)"
+    },
+    {
+      "front": "Anemia of chronic disease iron studies",
+      "back": "High ferritin, low transferrin/TIBC (iron sequestered)"
+    },
+    {
+      "front": "Hypersegmented neutrophils + macrocytosis",
+      "back": "Megaloblastic anemia (B12/folate)"
+    },
+    {
+      "front": "Microcytic anemia with NORMAL iron studies",
+      "back": "Thalassemia"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Iron deficiency anemia",
+      "detail": "Heme: low ferritin, high transferrin/TIBC, low MCV; blood loss/diet."
+    },
+    {
+      "tag": "options",
+      "topic": "Microcytic differential",
+      "detail": "Heme > thalassemia (normal iron), chronic disease (high ferritin)."
+    },
+    {
+      "tag": "labs",
+      "topic": "Ferritin vs transferrin",
+      "detail": "Heme > ferritin = stores; transferrin/TIBC rises when iron low."
+    }
+  ],
+  "memoryHook": "Empty iron tank: stores drop (ferritin low), the body throws out more 'trucks' to grab iron (transferrin high), and red cells shrink (low MCV).",
+  "stem": [
+    {
+      "text": "A 16-year-old girl comes to the office due to "
+    },
+    {
+      "text": "fatigue for the past few months",
+      "clue": true,
+      "type": "blue",
+      "note": "Gradual fatigue and decreased exercise tolerance are common presenting symptoms of anemia."
+    },
+    {
+      "text": ". She attends high school and plays on the school soccer team but says that her endurance has decreased. The patient sleeps 9 hours a night and has been a "
+    },
+    {
+      "text": "vegetarian for the past 6 months",
+      "clue": true,
+      "type": "orange",
+      "note": "A vegetarian diet reduces intake of readily absorbed heme iron, contributing to iron deficiency."
+    },
+    {
+      "text": ". She reached menarche at age 13 and has had "
+    },
+    {
+      "text": "regular menses for the past 6 months",
+      "clue": true,
+      "type": "orange",
+      "note": "Menstrual blood loss is the leading cause of iron deficiency in menstruating adolescents/women (higher iron requirements from growth + losses)."
+    },
+    {
+      "text": ". Blood pressure is 110/60 mm Hg, pulse is 70/min, and BMI is 21 kg/m2. Physical examination shows a well-nourished teenage girl with "
+    },
+    {
+      "text": "pale conjunctivae",
+      "clue": true,
+      "type": "green",
+      "note": "Conjunctival pallor is a physical sign of anemia."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Hemoglobin is 9.2 g/dL",
+      "clue": true,
+      "type": "green",
+      "note": "Hemoglobin 9.2 (normal ~12.0-16.0 g/dL in women) confirms anemia; the diet/menses point to iron deficiency (microcytic)."
+    },
+    {
+      "text": ". Which of the following sets of additional laboratory findings are most likely to be seen in this patient?"
+    }
+  ]
+}

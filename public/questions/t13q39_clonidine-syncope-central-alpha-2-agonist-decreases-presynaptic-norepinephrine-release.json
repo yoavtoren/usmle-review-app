@@ -1,0 +1,190 @@
+{
+  "id": "q478",
+  "item": 478,
+  "qid": "21419",
+  "title": "Clonidine syncope: central alpha-2 agonist decreases presynaptic norepinephrine release",
+  "system": "Pharmacology",
+  "topic": "Clonidine mechanism / drug-induced syncope",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 38,
+  "vignette": "A 68-year-old woman comes to the office due to recurrent syncopal episodes. The most recent incident occurred 3 days ago while she was walking to her car and lasted about 1 minute. She was able to resume her normal activities afterward although she felt tired. She had no preceding chest pain or palpitations. The patient has had 2 similar syncopal episodes in the past 2 months, along with frequent episodes of intermittent dizziness. Medical history includes hypertension and chronic kidney disease. She takes lisinopril, amlodipine, and clonidine daily. Blood pressure is 155/85 mm Hg and pulse is 44/min. Heart and lung sounds are normal. After the offending medication is discontinued, she has no further syncopal episodes. The drug responsible for this patient's episodes most likely functions through which of the following mechanisms?",
+  "clues": [
+    {
+      "text": "takes lisinopril, amlodipine, and clonidine daily",
+      "type": "blue",
+      "note": "Of these, CLONIDINE (a central alpha-2 agonist) most characteristically causes bradycardia and orthostatic/reflex syncope by reducing sympathetic outflow."
+    },
+    {
+      "text": "pulse is 44/min",
+      "type": "green",
+      "note": "Marked bradycardia (44/min) reflects reduced central sympathetic outflow from clonidine (lisinopril/amlodipine tend to cause reflex TACHYcardia, not bradycardia)."
+    },
+    {
+      "text": "After the offending medication is discontinued, she has no further syncopal episodes",
+      "type": "green",
+      "note": "Resolution after stopping the drug confirms a medication-induced cause - clonidine, given the bradycardia."
+    }
+  ],
+  "whatMatters": "CLONIDINE is a central ALPHA-2 AGONIST: stimulating presynaptic alpha-2 receptors in the medulla DECREASES presynaptic release of NOREPINEPHRINE and reduces sympathetic outflow, causing bradycardia and impaired reflex vasoconstriction -> orthostatic syncope. Answer B.",
+  "strategy": "Identify clonidine as the culprit (bradycardia + syncope resolving on withdrawal) and recall its central mechanism: alpha-2 agonism -> decreased presynaptic NE release/sympathetic outflow. Reject decreased ACh release (botulinum/aminoglycosides - weakness, not syncope), beta-1 blockade in the SA node (beta blockers - clonidine isn't one), CCB blockade of AV-nodal calcium channels (non-DHP CCBs; amlodipine is a DHP with minimal nodal effect), and AV-nodal potassium channel blockade (class III antiarrhythmics - QT prolongation).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreasing presynaptic release of acetylcholine",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Decreasing presynaptic release of norepinephrine",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Blockade of beta-1 receptors in the sinoatrial node",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Blockade of calcium channels in the atrioventricular node",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Blockade of potassium channels in the atrioventricular node",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Decreased ACh release - botulinum/aminoglycosides",
+      "detail": "WHAT IT IS: reduced presynaptic acetylcholine release (botulinum toxin, aminoglycosides). ❌ WHY IT FAILS: this causes muscle weakness, not bradycardia/syncope, and isn't clonidine's mechanism. ✅ Correct if: neuromuscular weakness from impaired ACh release."
+    },
+    {
+      "letter": "C",
+      "label": "Beta-1 blockade in SA node - beta blockers",
+      "detail": "WHAT IT IS: blocking beta-1 adrenoreceptors to slow the SA node (metoprolol/atenolol). ❌ WHY IT FAILS: clonidine does not block adrenoreceptors; it reduces central sympathetic OUTPUT. ✅ Correct if: a beta blocker causing bradycardia."
+    },
+    {
+      "letter": "D",
+      "label": "Calcium channel blockade in AV node - non-DHP CCB",
+      "detail": "WHAT IT IS: slowing AV-nodal conduction via calcium channel blockade (diltiazem/verapamil). ❌ WHY IT FAILS: her CCB is amlodipine, a DIHYDROPYRIDINE with minimal effect on the AV node; clonidine acts centrally, not on nodal calcium channels. ✅ Correct if: a non-dihydropyridine CCB causing bradycardia/heart block."
+    },
+    {
+      "letter": "E",
+      "label": "Potassium channel blockade in AV node - class III antiarrhythmics",
+      "detail": "WHAT IT IS: blocking potassium channels to prolong repolarization (dofetilide/sotalol). ❌ WHY IT FAILS: that prolongs the QT (torsades risk), not clonidine's central sympatholytic effect. ✅ Correct if: class III antiarrhythmic with QT prolongation."
+    }
+  ],
+  "reasoning": [
+    "Bradycardia (44/min) + syncope that resolves after stopping the drug implicates clonidine",
+    "Clonidine is a central alpha-2 agonist",
+    "Alpha-2 stimulation decreases presynaptic norepinephrine release and sympathetic outflow",
+    "-> decreased presynaptic norepinephrine release; answer B"
+  ],
+  "mechanism": "CLONIDINE is a centrally acting ALPHA-2 ADRENERGIC AGONIST used for resistant hypertension (and other indications). It stimulates presynaptic ALPHA-2 receptors in the rostral ventrolateral medulla (which controls basal/reflex sympathetic activity); alpha-2 activation provides negative feedback that DECREASES the presynaptic release of NOREPINEPHRINE and reduces central sympathetic OUTFLOW. The result is lower heart rate (BRADYCARDIA) and reduced peripheral vascular resistance. Normally, standing triggers a baroreceptor-mediated increase in sympathetic tone (vasoconstriction + increased heart rate) to maintain cerebral perfusion; with clonidine's ATTENUATED sympathetic outflow, this compensatory response fails, causing ORTHOSTATIC hypotension and SYNCOPE (resolving when the drug is stopped). Lisinopril and amlodipine can contribute to orthostasis by vasodilation but do not slow heart rate (they may cause reflex tachycardia), which is why the bradycardic patient's syncope points to clonidine. The distractors are the mechanisms of other agents (ACh release, beta blockers, non-DHP CCBs, class III antiarrhythmics).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > clonidine: central alpha-2 agonist -> decreased presynaptic NE release + decreased sympathetic outflow -> lower HR/BP; used in resistant HTN; rebound hypertension if stopped abruptly; can cause bradycardia/orthostasis."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Clonidine (alpha-2 agonist) lowers presynaptic NE release and sympathetic outflow -> bradycardia, orthostatic syncope."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on alpha-2 agonist, presynaptic autoreceptor, sympathetic outflow, orthostatic syncope, or baroreceptor reflex? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "ACh release = botulinum/aminoglycoside; beta-1 block = beta blockers; AV Ca block = non-DHP CCB; K block = class III antiarrhythmics."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: clonidine = central alpha-2 agonist -> decreased NE release/sympathetic outflow; bradycardia + orthostasis; rebound HTN on withdrawal."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Clonidine mechanism",
+      "back": "Central alpha-2 agonist -> decreased presynaptic NE release/sympathetic outflow"
+    },
+    {
+      "front": "Clonidine cardiovascular effects",
+      "back": "Bradycardia, lowered BP, orthostatic syncope"
+    },
+    {
+      "front": "Clonidine withdrawal danger",
+      "back": "Rebound hypertension (taper, don't stop abruptly)"
+    },
+    {
+      "front": "Amlodipine class/effect",
+      "back": "Dihydropyridine CCB (vasodilator; minimal AV-node effect)"
+    },
+    {
+      "front": "Non-DHP CCB nodal effect",
+      "back": "Diltiazem/verapamil slow the AV node"
+    },
+    {
+      "front": "Baroreceptor reflex on standing",
+      "back": "Increases sympathetic tone (HR + vasoconstriction)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Clonidine",
+      "detail": "Pharm: central alpha-2 agonist -> decreased NE release; bradycardia/orthostasis."
+    },
+    {
+      "tag": "options",
+      "topic": "Bradycardia mechanisms",
+      "detail": "Pharm > beta blockers, non-DHP CCBs, class III antiarrhythmics."
+    },
+    {
+      "tag": "caution",
+      "topic": "Rebound hypertension",
+      "detail": "Pharm > taper clonidine to avoid rebound HTN."
+    }
+  ],
+  "memoryHook": "Clonidine tells the brain's sympathetic center to pipe down (alpha-2 feedback) - less norepinephrine goes out, the heart slows, and standing up can drop her to the floor.",
+  "stem": [
+    {
+      "text": "A 68-year-old woman comes to the office due to recurrent syncopal episodes. The most recent incident occurred 3 days ago while she was walking to her car and lasted about 1 minute. She was able to resume her normal activities afterward although she felt tired. She had no preceding chest pain or palpitations. The patient has had 2 similar syncopal episodes in the past 2 months, along with frequent episodes of intermittent dizziness. Medical history includes hypertension and chronic kidney disease. She "
+    },
+    {
+      "text": "takes lisinopril, amlodipine, and clonidine daily",
+      "clue": true,
+      "type": "blue",
+      "note": "Of these, CLONIDINE (a central alpha-2 agonist) most characteristically causes bradycardia and orthostatic/reflex syncope by reducing sympathetic outflow."
+    },
+    {
+      "text": ". Blood pressure is 155/85 mm Hg and "
+    },
+    {
+      "text": "pulse is 44/min",
+      "clue": true,
+      "type": "green",
+      "note": "Marked bradycardia (44/min) reflects reduced central sympathetic outflow from clonidine (lisinopril/amlodipine tend to cause reflex TACHYcardia, not bradycardia)."
+    },
+    {
+      "text": ". Heart and lung sounds are normal. "
+    },
+    {
+      "text": "After the offending medication is discontinued, she has no further syncopal episodes",
+      "clue": true,
+      "type": "green",
+      "note": "Resolution after stopping the drug confirms a medication-induced cause - clonidine, given the bradycardia."
+    },
+    {
+      "text": ". The drug responsible for this patient's episodes most likely functions through which of the following mechanisms?"
+    }
+  ]
+}

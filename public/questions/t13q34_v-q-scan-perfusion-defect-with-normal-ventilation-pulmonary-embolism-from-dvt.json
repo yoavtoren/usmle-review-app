@@ -1,0 +1,209 @@
+{
+  "id": "q473",
+  "item": 473,
+  "qid": "476",
+  "title": "V/Q scan perfusion defect with normal ventilation: pulmonary embolism (from DVT)",
+  "system": "Pathology",
+  "topic": "Pulmonary embolism / V-Q scan",
+  "correct": "A",
+  "yourAnswer": "E",
+  "percentCorrect": 75,
+  "vignette": "A 56-year-old man is evaluated for dyspnea and chest discomfort. Medical history includes hypertension, type 2 diabetes mellitus, and chronic kidney disease. Temperature is 37.8 C (100 F), blood pressure is 160/90 mm Hg, pulse is 98/min, and respirations are 24/min. BMI is 31 kg/m2. The patient undergoes a 2-part nuclear medicine test. During the first part, he breathes in a radioactive tracer and a lung scan is performed. In the second part, he is given an intravenous injection of a different radioactive material while breathing normal air, and the scan is repeated. When the images are compared, a large area of the lower right lung is not visualized in the second scan. Based on the observed findings, which of the following underlying disease processes is most likely present in this patient?",
+  "clues": [
+    {
+      "text": "chronic kidney disease",
+      "type": "orange",
+      "note": "CKD is a reason to avoid CT pulmonary angiography (contrast nephrotoxicity) and use a ventilation-perfusion (V/Q) scan instead."
+    },
+    {
+      "text": "2-part nuclear medicine test",
+      "type": "blue",
+      "note": "A 2-part inhaled-then-injected radiotracer study is a VENTILATION-PERFUSION (V/Q) scan, comparing regional airflow with blood flow."
+    },
+    {
+      "text": "breathes in a radioactive tracer",
+      "type": "blue",
+      "note": "The inhaled tracer maps VENTILATION; here it is normal (the area IS ventilated)."
+    },
+    {
+      "text": "large area of the lower right lung is not visualized in the second scan",
+      "type": "green",
+      "note": "The injected tracer maps PERFUSION; an area ventilated but NOT perfused is a V/Q MISMATCH - the hallmark of pulmonary embolism."
+    }
+  ],
+  "whatMatters": "A V/Q scan shows a region that is VENTILATED but NOT PERFUSED (perfusion defect with normal ventilation) = V/Q MISMATCH, the classic finding of a PULMONARY EMBOLISM. PEs most commonly arise from a deep vein thrombosis that embolizes to the lungs. Answer A.",
+  "strategy": "Interpret the two phases: normal ventilation + absent perfusion = mismatch = PE. Then pick the source: DVT (embolizes to pulmonary arteries). Reject processes that cause MATCHED defects or different patterns: endobronchial neoplasm and viral pleuritis with effusion (airway/alveolar problems -> matched ventilation+perfusion defects via hypoxic vasoconstriction), pneumothorax (decreased volume on both scans), and LV infarction (pulmonary edema, not a segmental perfusion defect).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Deep venous thrombosis",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Endobronchial neoplasm",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Left ventricular infarction",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Spontaneous pneumothorax",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Viral pleuritis with effusion",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Endobronchial neoplasm - matched defect",
+      "detail": "WHAT IT IS: airway obstruction by tumor. ❌ WHY IT FAILS: airway obstruction reduces ventilation, and hypoxic vasoconstriction then reduces perfusion too - a MATCHED defect, not the ventilated-but-not-perfused mismatch seen here. ✅ Correct if: a region with BOTH ventilation and perfusion reduced (matched)."
+    },
+    {
+      "letter": "C",
+      "label": "LV infarction - pulmonary edema, not segmental defect",
+      "detail": "WHAT IT IS: left ventricular infarction causing cardiogenic pulmonary edema. ❌ WHY IT FAILS: that produces diffuse edema, not an isolated segmental PERFUSION defect with preserved ventilation. ✅ Correct if: pulmonary edema pattern from left heart failure."
+    },
+    {
+      "letter": "D",
+      "label": "Spontaneous pneumothorax - decreased volume both scans",
+      "detail": "WHAT IT IS: air in the pleural space collapsing the lung. ❌ WHY IT FAILS: a pneumothorax reduces lung VOLUME on BOTH ventilation and perfusion images (matched), rather than an isolated perfusion defect. ✅ Correct if: unilateral decreased volume on both phases."
+    },
+    {
+      "letter": "E",
+      "label": "Viral pleuritis with effusion - matched (compression)",
+      "detail": "WHAT IT IS: pleural effusion compressing lung with atelectasis. ❌ WHY IT FAILS: compression/atelectasis reduces ventilation AND triggers hypoxic vasoconstriction -> MATCHED defect, not a pure perfusion defect. ✅ Correct if: effusion with matched ventilation/perfusion reduction."
+    }
+  ],
+  "reasoning": [
+    "A 2-part inhaled/injected radiotracer study is a V/Q scan (ventilation then perfusion)",
+    "Ventilation is preserved but a large lower-right region is not perfused (perfusion defect)",
+    "A ventilated-but-not-perfused area = V/Q MISMATCH = pulmonary embolism",
+    "-> the PE most likely arose from a deep vein thrombosis; answer A"
+  ],
+  "mechanism": "A VENTILATION-PERFUSION (V/Q) SCAN is a two-part nuclear study: an INHALED radiolabeled aerosol maps regional VENTILATION, and an INTRAVENOUS radiotracer maps regional PERFUSION; the images are overlaid. Normally both are uniform (V/Q match). A V/Q MISMATCH - a region that is VENTILATED but NOT PERFUSED - indicates increased physiologic dead space and is the classic pattern of PULMONARY EMBOLISM, which blocks arterial blood flow to a ventilated lung segment. PEs most commonly originate from a DEEP VEIN THROMBOSIS in the lower extremities that embolizes to the pulmonary vasculature (risk factors: immobility, obesity, malignancy). CT pulmonary angiography is usually preferred, but a V/Q scan is used when angiography is contraindicated - here CHRONIC KIDNEY DISEASE (contrast nephrotoxicity). Conditions that reduce ventilation (endobronchial tumor, pneumothorax, effusion with atelectasis) produce MATCHED defects because alveolar hypoxia triggers reflex vasoconstriction; LV infarction causes pulmonary edema - none give the isolated perfusion defect seen here.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pulm > pulmonary embolism: V/Q mismatch (perfusion defect, normal ventilation); most common source = lower-extremity DVT; CTPA preferred, V/Q when contrast contraindicated (CKD); increased physiologic dead space."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Ventilated but not perfused = V/Q mismatch = PE (from DVT)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on V/Q scan, ventilation vs perfusion, V/Q mismatch, dead space, or hypoxic vasoconstriction? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Airway/alveolar problems (tumor, effusion, pneumothorax) give MATCHED defects; LV infarct = edema, not segmental perfusion defect."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "V/Q scan (stem): normal inhaled (ventilation) scan but a lower-right area absent on the injected (perfusion) scan = mismatch = pulmonary embolism."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: V/Q mismatch (perfusion defect + normal ventilation) = PE from DVT; matched defects = airway/parenchymal disease."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "V/Q mismatch (ventilated, not perfused)",
+      "back": "Pulmonary embolism"
+    },
+    {
+      "front": "Most common source of PE",
+      "back": "Lower-extremity deep vein thrombosis"
+    },
+    {
+      "front": "When to use V/Q over CT angiography",
+      "back": "Contrast contraindicated (e.g., CKD, contrast allergy)"
+    },
+    {
+      "front": "Matched V/Q defect causes",
+      "back": "Airway/parenchymal disease (hypoxic vasoconstriction)"
+    },
+    {
+      "front": "PE and dead space",
+      "back": "Increased physiologic dead space (ventilation without perfusion)"
+    },
+    {
+      "front": "V/Q scan two phases",
+      "back": "Inhaled tracer (ventilation) + IV tracer (perfusion)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Pulmonary embolism",
+      "detail": "Pulm: V/Q mismatch = PE; source usually DVT."
+    },
+    {
+      "tag": "options",
+      "topic": "Matched vs mismatched defects",
+      "detail": "Pulm > airway/parenchymal disease = matched."
+    },
+    {
+      "tag": "workup",
+      "topic": "V/Q vs CTPA",
+      "detail": "Pulm > V/Q when contrast contraindicated (CKD)."
+    }
+  ],
+  "memoryHook": "Air gets in but blood can't reach - a segment that ventilates yet won't perfuse is a clot blocking the artery: pulmonary embolism from a leg DVT.",
+  "stem": [
+    {
+      "text": "A 56-year-old man is evaluated for dyspnea and chest discomfort. Medical history includes hypertension, type 2 diabetes mellitus, and "
+    },
+    {
+      "text": "chronic kidney disease",
+      "clue": true,
+      "type": "orange",
+      "note": "CKD is a reason to avoid CT pulmonary angiography (contrast nephrotoxicity) and use a ventilation-perfusion (V/Q) scan instead."
+    },
+    {
+      "text": ". Temperature is 37.8 C (100 F), blood pressure is 160/90 mm Hg, pulse is 98/min, and respirations are 24/min. BMI is 31 kg/m2. The patient undergoes a "
+    },
+    {
+      "text": "2-part nuclear medicine test",
+      "clue": true,
+      "type": "blue",
+      "note": "A 2-part inhaled-then-injected radiotracer study is a VENTILATION-PERFUSION (V/Q) scan, comparing regional airflow with blood flow."
+    },
+    {
+      "text": ". During the first part, he "
+    },
+    {
+      "text": "breathes in a radioactive tracer",
+      "clue": true,
+      "type": "blue",
+      "note": "The inhaled tracer maps VENTILATION; here it is normal (the area IS ventilated)."
+    },
+    {
+      "text": " and a lung scan is performed. In the second part, he is given an intravenous injection of a different radioactive material while breathing normal air, and the scan is repeated. When the images are compared, a "
+    },
+    {
+      "text": "large area of the lower right lung is not visualized in the second scan",
+      "clue": true,
+      "type": "green",
+      "note": "The injected tracer maps PERFUSION; an area ventilated but NOT perfused is a V/Q MISMATCH - the hallmark of pulmonary embolism."
+    },
+    {
+      "text": ". Based on the observed findings, which of the following underlying disease processes is most likely present in this patient?"
+    }
+  ]
+}

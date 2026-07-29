@@ -1,0 +1,176 @@
+{
+  "id": "q408",
+  "item": 408,
+  "qid": "1907",
+  "title": "Exocrine pancreatic insufficiency: D-xylose absorption remains normal",
+  "system": "Physiology",
+  "topic": "Malabsorption - D-xylose test",
+  "correct": "C",
+  "yourAnswer": "B",
+  "percentCorrect": 63,
+  "vignette": "A 55-year-old man with a history of chronic pancreatitis and alcohol abuse is investigated for recent-onset weight loss, decreased appetite, and worsening of chronic abdominal pain. Physical examination is significant for diffuse muscle atrophy, temporal wasting, and a mildly enlarged liver without ascites. Serum lipase and amylase are normal, and aspartate aminotransferase (AST) is mildly elevated. Abdominal imaging shows a malignant mass in the pancreas. The patient subsequently undergoes an uncomplicated subtotal pancreatectomy and returns for a postoperative nutritional assessment following hospital discharge. Which of the following tests will most likely be normal in this patient after surgery?",
+  "clues": [
+    {
+      "text": "chronic pancreatitis and alcohol abuse",
+      "type": "orange",
+      "note": "Chronic pancreatitis (and now pancreatic resection) destroys exocrine tissue, setting up exocrine pancreatic insufficiency and malabsorption."
+    },
+    {
+      "text": "uncomplicated subtotal pancreatectomy",
+      "type": "red",
+      "note": "Removing most of the pancreas causes exocrine insufficiency - deficient pancreatic enzymes (lipase, trypsin) for digestion."
+    }
+  ],
+  "whatMatters": "Chronic pancreatitis + subtotal pancreatectomy = EXOCRINE PANCREATIC INSUFFICIENCY (deficient pancreatic enzymes). This impairs digestion of fats/proteins/complex carbs, but the test that stays NORMAL is INTESTINAL D-XYLOSE ABSORPTION, because D-xylose is a MONOSACCHARIDE absorbed directly by the intestinal mucosa WITHOUT pancreatic enzymes. Answer C.",
+  "strategy": "Use the D-xylose test to separate PANCREATIC from MUCOSAL causes of malabsorption. D-xylose needs no pancreatic enzymes, so its absorption is NORMAL in pancreatic insufficiency (abnormal only with mucosal disease/bacterial overgrowth). Reject tests that reflect lost pancreatic function: duodenal lipase/trypsin after CCK (decreased), serum trypsinogen (decreased), and stool neutral fat (increased - steatorrhea from lipase deficiency).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Duodenal lipase levels after cholecystokinin stimulation",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Duodenal trypsin levels after cholecystokinin stimulation",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Intestinal D-xylose absorption",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Serum trypsinogen",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Stool neutral fat content",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Duodenal lipase after CCK - decreased in pancreatic insufficiency",
+      "detail": "WHAT IT IS: pancreatic lipase secreted into the duodenum after cholecystokinin stimulation. ❌ WHY IT FAILS: with exocrine insufficiency, lipase secretion is DECREASED (abnormal), not normal. ✅ Correct if: asking which test is ABNORMAL (confirms pancreatic insufficiency)."
+    },
+    {
+      "letter": "B",
+      "label": "Duodenal trypsin after CCK - decreased (your pick)",
+      "detail": "WHAT IT IS: pancreatic trypsin measured in the duodenum after CCK stimulation. ❌ WHY IT FAILS: exocrine insufficiency lowers trypsin secretion, so this is DECREASED/abnormal, not normal. ✅ Correct if: asking which test detects pancreatic insufficiency."
+    },
+    {
+      "letter": "D",
+      "label": "Serum trypsinogen - decreased in chronic pancreatic insufficiency",
+      "detail": "WHAT IT IS: a pancreatic proenzyme also detectable in serum. ❌ WHY IT FAILS: in chronic pancreatitis/resection, serum trypsinogen is LOW (abnormal), not normal. ✅ Correct if: acute pancreatitis (elevated) or confirming chronic insufficiency (low)."
+    },
+    {
+      "letter": "E",
+      "label": "Stool neutral fat - increased (steatorrhea)",
+      "detail": "WHAT IT IS: fecal fat content. ❌ WHY IT FAILS: pancreatic LIPASE deficiency causes fat malabsorption, so stool neutral fat is INCREASED (steatorrhea), not normal. ✅ Correct if: asking about steatorrhea/fat malabsorption."
+    }
+  ],
+  "reasoning": [
+    "Chronic pancreatitis + subtotal pancreatectomy -> exocrine pancreatic insufficiency (deficient enzymes)",
+    "Pancreatic enzymes are needed to digest fats, proteins, and complex carbohydrates",
+    "D-xylose is a monosaccharide absorbed directly by the intestinal mucosa WITHOUT pancreatic enzymes",
+    "-> intestinal D-xylose absorption remains normal; answer C"
+  ],
+  "mechanism": "The exocrine pancreas secretes enzymes (lipase, amylase, proteases such as trypsin) that digest dietary fat, starch, and protein in the duodenum. After extensive chronic pancreatitis and SUBTOTAL PANCREATECTOMY, these enzymes are deficient - EXOCRINE PANCREATIC INSUFFICIENCY - causing maldigestion with steatorrhea, weight loss, and fat-soluble vitamin deficiency. Diagnostic tests that reflect this loss are abnormal: pancreatic lipase and trypsin secreted into the duodenum after cholecystokinin (CCK) stimulation are DECREASED, serum trypsinogen is LOW, and stool neutral fat is INCREASED (steatorrhea). The D-XYLOSE ABSORPTION TEST distinguishes a pancreatic from a mucosal cause: D-xylose is a MONOSACCHARIDE that is absorbed directly across the intestinal epithelium WITHOUT requiring any pancreatic (or brush-border) digestive enzyme. Therefore, in pure pancreatic insufficiency, D-xylose absorption is NORMAL; it becomes abnormal only when the intestinal MUCOSA itself is diseased (e.g., celiac disease) or with small-bowel bacterial overgrowth. Hence the test that will be normal after pancreatectomy is intestinal D-xylose absorption.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid GI > D-xylose test: monosaccharide absorbed without pancreatic enzymes; NORMAL in pancreatic insufficiency, ABNORMAL in mucosal disease (celiac) / bacterial overgrowth; distinguishes pancreatic vs mucosal malabsorption."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "D-xylose needs no pancreatic enzymes, so it stays normal despite exocrine insufficiency."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on exocrine pancreatic insufficiency, D-xylose, cholecystokinin, trypsinogen, or steatorrhea? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Lipase/trypsin after CCK and serum trypsinogen are DECREASED; stool fat is INCREASED - all abnormal in pancreatic insufficiency."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: D-xylose normal in pancreatic insufficiency (monosaccharide, no enzymes needed); abnormal in mucosal disease/overgrowth."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Test that stays normal in pancreatic insufficiency",
+      "back": "Intestinal D-xylose absorption (no pancreatic enzymes needed)"
+    },
+    {
+      "front": "D-xylose test - what it distinguishes",
+      "back": "Pancreatic (normal) vs mucosal/bacterial-overgrowth (abnormal) malabsorption"
+    },
+    {
+      "front": "Effect of exocrine pancreatic insufficiency on stool fat",
+      "back": "Increased (steatorrhea) from lipase deficiency"
+    },
+    {
+      "front": "Duodenal enzymes after CCK in insufficiency",
+      "back": "Decreased lipase and trypsin"
+    },
+    {
+      "front": "Serum trypsinogen in chronic pancreatitis",
+      "back": "Low (decreased)"
+    },
+    {
+      "front": "When is D-xylose abnormal",
+      "back": "Mucosal disease (celiac) or small-bowel bacterial overgrowth"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "D-xylose test",
+      "detail": "GI: normal in pancreatic insufficiency; abnormal in mucosal disease/overgrowth."
+    },
+    {
+      "tag": "options",
+      "topic": "Pancreatic function tests",
+      "detail": "GI > lipase/trypsin (CCK), serum trypsinogen (low), stool fat (high)."
+    },
+    {
+      "tag": "context",
+      "topic": "Exocrine insufficiency",
+      "detail": "GI > chronic pancreatitis/resection -> maldigestion, steatorrhea."
+    }
+  ],
+  "memoryHook": "D-xylose slips straight across the gut lining without pancreatic help - so when the pancreas is gone, D-xylose still absorbs normally; it's the enzyme-dependent tests that crash.",
+  "stem": [
+    {
+      "text": "A 55-year-old man with a history of "
+    },
+    {
+      "text": "chronic pancreatitis and alcohol abuse",
+      "clue": true,
+      "type": "orange",
+      "note": "Chronic pancreatitis (and now pancreatic resection) destroys exocrine tissue, setting up exocrine pancreatic insufficiency and malabsorption."
+    },
+    {
+      "text": " is investigated for recent-onset weight loss, decreased appetite, and worsening of chronic abdominal pain. Physical examination is significant for diffuse muscle atrophy, temporal wasting, and a mildly enlarged liver without ascites. Serum lipase and amylase are normal, and aspartate aminotransferase (AST) is mildly elevated. Abdominal imaging shows a malignant mass in the pancreas. The patient subsequently undergoes an "
+    },
+    {
+      "text": "uncomplicated subtotal pancreatectomy",
+      "clue": true,
+      "type": "red",
+      "note": "Removing most of the pancreas causes exocrine insufficiency - deficient pancreatic enzymes (lipase, trypsin) for digestion."
+    },
+    {
+      "text": " and returns for a postoperative nutritional assessment following hospital discharge. Which of the following tests will most likely be normal in this patient after surgery?"
+    }
+  ]
+}
