@@ -1,24 +1,22 @@
 {
-  "profileVersion": 2,
-  "updatedAt": "2026-07-22",
-  "planNote": "Re-planned 22 Jul 2026 from the Step 1 strategy overhaul brief. Zone A move-out sprint 22 Jul–3 Aug (maintenance only — marked off), Zone B re-entry ramp 4–15 Aug, Zone C dedicated block 16 Aug–5 Oct, taper to the target sit date 9 Oct (hard cap 11 Oct). Full plan: src/lib/strategyData.js and the /strategy page.",
+  "profileVersion": 3,
+  "updatedAt": "2026-07-30",
+  "planNote": "Re-planned 30 Jul 2026. In Israel, fully settled — nothing but Step 1 from now until the exam on Tue 6 Oct 2026 (booked, fixed). Only exception: half days 2–5 Aug (CEO event 3 Aug, panel + speech 5 Aug — mornings still belong to Step 1). Content deadline 26 Sept, then taper. Full plan: src/lib/strategyData.js and the /strategy page.",
   "fulltime": true,
   "schedule": {
     "restDays": [],
     "reducedDays": { "Fri": "low" },
+    "reducedDates": {
+      "2026-08-02": 0.5,
+      "2026-08-03": 0.5,
+      "2026-08-04": 0.5,
+      "2026-08-05": 0.5
+    },
     "commitments": [
-      { "date": "2026-08-03", "what": "CEO business-planning event" },
-      { "date": "2026-08-05", "what": "CEO panel + speech" },
-      { "date": "2026-09-01", "what": "Permanent flat — front-loaded 1–5 Sept, viewings delegated to parents" },
-      { "date": "2026-09-13", "what": "Birthday — one dinner, no production" }
+      { "date": "2026-08-03", "what": "CEO business-planning event (half day)" },
+      { "date": "2026-08-05", "what": "CEO panel + speech (half day — the last one)" }
     ],
-    "offDates": [
-      "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26",
-      "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31",
-      "2026-08-01", "2026-08-02", "2026-08-03",
-      "2026-08-05",
-      "2026-08-14", "2026-08-15"
-    ]
+    "offDates": []
   },
   "retention": { "weakTopicReviewTarget": 2, "mode": "successCount" },
   "resourceMinutesPerTopic": {

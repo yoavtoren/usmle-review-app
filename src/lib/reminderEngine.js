@@ -1,7 +1,10 @@
 import { loadReminderState, saveReminderState } from './timelineData.js';
 import { loadAllWorkstreamTasks, CATEGORIES } from './workstreamData.js';
-import { ASSESSMENTS, RADAR, currentZone } from './strategyData.js';
+import { ASSESSMENTS, RADAR } from './strategyData.js';
 import { localISODate } from './config.js';
+
+// He lives in Israel — every plan time is local Israel time.
+const HOME_TZ = 'Asia/Jerusalem';
 
 // ── Timezone helper ───────────────────────────────────────────────────────
 function tzToUTC(dateStr, timeStr, tz) {
@@ -25,7 +28,7 @@ function subtractDays(dateStr, days) {
   return d.toISOString().slice(0, 10);
 }
 
-export function resolveToken(token, dateStr, tz = 'Europe/Prague') {
+export function resolveToken(token, dateStr, tz = HOME_TZ) {
   if (!dateStr) return null;
   const dayMatch = token.match(/^T-(\d+)d$/);
   if (dayMatch) {
@@ -116,7 +119,7 @@ function collectReminders() {
     for (const tok of toks) {
       const remId = `${item.id}::${tok}`;
       if (dismissed.has(remId)) continue;
-      let fireTime = resolveToken(tok, dateStr, tz || 'Europe/Prague');
+      let fireTime = resolveToken(tok, dateStr, tz || HOME_TZ);
       if (!fireTime) continue;
       // A snooze pushes the fire time forward.
       if (snoozedUntil[remId] && snoozedUntil[remId] > fireTime) fireTime = snoozedUntil[remId];
@@ -135,9 +138,8 @@ function collectReminders() {
   }
 
   // ── Step 1 plan (strategyData.js) ───────────────────────────────────────
-  // He's in Prague until the flight, then Israel — the plan's times are local.
   const today = localISODate();
-  const planTz = (d) => (d < '2026-08-04' ? 'Europe/Prague' : 'Asia/Jerusalem');
+  const planTz = () => HOME_TZ;
 
   // Assessment days: two days out (protect the morning) and at 07:30 on the day.
   for (const a of ASSESSMENTS) {
@@ -161,10 +163,7 @@ function collectReminders() {
 
   // The 13:30 "begin now" start trigger — one easy momentum task, every day.
   // The id carries the date, so dismissing today's doesn't kill tomorrow's.
-  const zone = currentZone(today);
-  const momentum = zone.id === 'A'
-    ? 'משימת פתיחה אחת: לארוז קופסה אחת, ואז סרטון ביוסטטיסטיקה אחד בטלפון. לא "לעשות את המעבר" — רק להתחיל.'
-    : 'משימת פתיחה אחת: לפתוח UWorld ולענות על 5 השאלות הראשונות של הסט של היום. זה כל המשימה.';
+  const momentum = 'משימת פתיחה אחת: לפתוח UWorld ולענות על 5 השאלות הראשונות של הסט של היום. זה כל המשימה.';
   check(
     { id: `plan-begin-${today}`, type: 'plan', front: 'step1', plain: true, title: '13:30 — מתחילים עכשיו', note: momentum },
     today, planTz(today), ['T-0@13:30']

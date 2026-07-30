@@ -12,8 +12,8 @@ import CountUp from "../lib/CountUp.jsx";
 import { vtNavigate } from "../lib/vt.js";
 import { EXAM_DATE, daysUntilExam, localISODate, startOfLocalDay } from "../lib/config.js";
 import {
-  IconTarget, IconArrow, IconFlame, IconClock,
-  IconPulse, IconBook, IconClipboard, IconBox, IconCheck, IconSparkle, IconCalendar, IconNote,
+  IconTarget, IconArrow, IconFlame,
+  IconPulse, IconBook, IconClipboard, IconBox, IconCheck, IconSparkle, IconNote,
 } from "./icons.jsx";
 import { currentBlock } from "../lib/strategyData.js";
 import { loadErrors, whyCounts, isoDaysAgo } from "../lib/errorLog.js";
@@ -50,6 +50,13 @@ function heWhen(ms) {
 }
 
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+// "12.8" — compact Hebrew-style day.month for an ISO date.
+function heDate(iso) {
+  if (!iso) return "";
+  const d = new Date(`${iso}T00:00:00`);
+  return `${d.getDate()}.${d.getMonth() + 1}`;
+}
 
 export default function HomePage({ testStats, faStats, streak = 0, questions = [], loading = false }) {
   const nav = useNavigate();
@@ -167,14 +174,19 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
         {/* ═══ Bento ═══ */}
         <div className="hd-bento">
 
-          {/* A · Hero — Today's plan (the one card that says what to do) */}
+          {/* A · Hero — Today (NBME countdown loudest, UWorld quota next, topics support) */}
           <section className="hd-card hd-hero hd-today c8"
             aria-label="המשימות שלי להיום">
             <div className="hd-hero-bg" aria-hidden="true" />
             <div className="hd-hero-main">
               <div className="hd-hero-head">
                 <span className="hd-hero-ico" aria-hidden="true"><IconClipboard size={18} /></span>
-                <span className="hd-hero-kicker">המשימות שלי · היום</span>
+                <span className="hd-hero-kicker">היום · מה באמת חשוב</span>
+                {today && today.dayFraction < 1 && (
+                  <span className="hd-half-chip">
+                    {today.dayFraction === 0 ? "יום מנוחה" : today.dayFraction === 0.5 ? "חצי יום" : "יום מופחת"}
+                  </span>
+                )}
                 {today?.hasPlan && (
                   <span className="hd-today-count num">{today.doneCount}/{today.totalCount} הושלמו</span>
                 )}
@@ -182,44 +194,57 @@ export default function HomePage({ testStats, faStats, streak = 0, questions = [
 
               {!today ? (
                 <div className="hd-today-list"><span className="hd-today-skel" /><span className="hd-today-skel" /><span className="hd-today-skel" /></div>
-              ) : today.hasPlan ? (<>
+              ) : (<>
+                {/* 1 · The two numbers that matter — NBME (loudest) + UWorld quota */}
+                <div className="hd-focus">
+                  {today.nbme && (
+                    <button className={`hd-nbme${today.nbme.days <= 3 ? " imminent" : ""}`} onClick={() => go("/planner")}
+                      aria-label={`המבחן הבא: ${today.nbme.label}, בעוד ${today.nbme.days} ימים`}>
+                      <span className="hd-nbme-txt">
+                        <span className="hd-nbme-kicker">🧪 המבחן הבא · {heDate(today.nbme.iso)}</span>
+                        <span className="hd-nbme-label" dir="ltr">{today.nbme.label}</span>
+                      </span>
+                      <span className="hd-nbme-days num">
+                        {today.nbme.days === 0 ? "היום!" : today.nbme.days === 1 ? "מחר" : <>{today.nbme.days}<small> ימים</small></>}
+                      </span>
+                    </button>
+                  )}
+                  <button className="hd-uwq" onClick={() => go("/planner")}
+                    aria-label={`יעד UWorld להיום: ${today.uworld.targetQ} שאלות`}>
+                    <span className="hd-uwq-txt">
+                      <span className="hd-uwq-kicker">🎯 UWorld היום</span>
+                      <span className="hd-uwq-s num">
+                        {today.uworld.goalQ > 0
+                          ? `${today.uworld.doneQ}/${today.uworld.goalQ} · עד ${heDate(today.uworld.deadline)}`
+                          : "לסיים לפני הטייפר"}
+                      </span>
+                    </span>
+                    <span className={`hd-uwq-n num${today.uworld.done ? " done" : ""}`}>
+                      {today.uworld.done && today.uworld.total ? today.uworld.total : today.uworld.targetQ}
+                      <small> שאלות{today.uworld.done ? " ✓" : ""}</small>
+                    </span>
+                  </button>
+                </div>
+
+                {/* 2 · Topic suggestion — support, not the headline */}
+                <div className="hd-sugg-h">
+                  {today.isSuggestion ? "הצעת נושאים להיום (מהמתכנן)" : "הנושאים של היום"}
+                  {today.planned.length > 2 && <span className="hd-sugg-more num"> · ‏+{today.planned.length - 2} במתכנן</span>}
+                </div>
                 <ul className="hd-today-list">
-                  <TaskRow done={today.anki.done} emoji="🎴" title="Anki" note="חזרות מרווחות" />
-                  {today.planned.slice(0, 4).map((p) => (
+                  {today.planned.slice(0, 2).map((p) => (
                     <TaskRow key={p.key} done={p.done}
                       dot={colorFor(p.colorKey).hex}
                       title={p.system} note={p.detail}
                       right={p.minutes ? `${p.minutes}′` : null} />
                   ))}
-                  {today.planned.length > 4 && (
-                    <li className="hd-today-more">+{today.planned.length - 4} בלוקים נוספים</li>
+                  {!today.planned.length && (
+                    <li className="hd-today-more">אין בלוקים להיום — פתח את המתכנן לבחירת עומס</li>
                   )}
-                  {today.uworld && (
-                    <TaskRow done={today.uworld.done} emoji="🎯"
-                      title="UWorld" note={`${today.uworld.targetQ} שאלות`} />
-                  )}
+                  <TaskRow done={today.anki.done} emoji="🎴" title="Anki" note="חזרות מרווחות"
+                    right={!loading && sched.dueNow > 0 ? `${sched.dueNow} ממתינות` : null} />
                 </ul>
-                <button className="hd-today-review" onClick={() => go("/step1")}>
-                  <span className={`hd-today-review-n num${!loading && sched.dueNow > 0 ? " hot" : ""}`}>
-                    {loading ? "…" : sched.dueNow}
-                  </span>
-                  <span className="hd-today-review-l">שאלות לביקורת מרווחת</span>
-                  <IconArrow size={13} className="mir" aria-hidden="true" />
-                </button>
-              </>) : (
-                <div className="hd-today-empty">
-                  <span className="hd-today-empty-ico"><IconCalendar size={22} /></span>
-                  <p className="hd-today-empty-h">עוד לא תכננת את היום</p>
-                  <p className="hd-today-empty-s">בחר עומס יומי במתכנן וקבל רשימת משימות מותאמת — נושאים, UWorld ו‑Anki.</p>
-                  {!loading && sched.dueNow > 0 && (
-                    <button className="hd-today-review solo" onClick={() => go("/step1")}>
-                      <span className="hd-today-review-n num hot">{sched.dueNow}</span>
-                      <span className="hd-today-review-l">שאלות ממתינות לביקורת</span>
-                      <IconArrow size={13} className="mir" aria-hidden="true" />
-                    </button>
-                  )}
-                </div>
-              )}
+              </>)}
             </div>
 
             <div className="hd-hero-rail hd-today-rail">

@@ -9,10 +9,10 @@ import { localISODate, startOfLocalDay } from "./config.js";
 
 const DAY_MS = 86_400_000;
 
-// Planning sit date. EXAM_DATE (config.js) stays the hard ceiling — this is the
-// date the taper is built around.
-export const TARGET_SIT_ISO = "2026-10-09";
-export const PLAN_ANCHOR_ISO = "2026-07-22"; // the day this plan was written
+// The booked sit date — Tuesday 6 Oct 2026, same as EXAM_DATE (config.js).
+// One fixed date, no window and no hard cap: the taper is built backward from it.
+export const TARGET_SIT_ISO = "2026-10-06";
+export const PLAN_ANCHOR_ISO = "2026-07-30"; // the day this plan was last revised
 
 export function daysFromToday(iso, now = new Date()) {
   return Math.round((new Date(iso + "T00:00:00") - startOfLocalDay(now)) / DAY_MS);
@@ -22,56 +22,30 @@ export function daysFromToday(iso, now = new Date()) {
 
 export const ZONES = [
   {
-    id: "A",
-    name: "Move-out sprint",
-    from: "2026-07-22", to: "2026-08-03",
-    headline: "The Prague move outranks study.",
-    hours: "~2–3 h/day, phone-friendly",
+    id: "D",
+    name: "Drill — full focus",
+    from: "2026-07-22", to: "2026-09-26",
+    headline: "Nothing but Step 1 from here to the exam. Weak-first, system by system.",
+    hours: "10–12 h/day, 7 days · the ONLY exception: half days 2–5 Aug",
     doing: [
-      "Book the Prague→Israel flight (overdue).",
-      "Pack in chunks; cancel internet + phone; sell/donate furniture.",
-      "Keep daily Anki reviews going — don't let the pile grow (≤1.5 h).",
-      "Kill the two smallest avoided subjects: Biostatistics (Randy Neil) + Behavioral/Ethics (Mehlman).",
-      "Tiny UWorld sets (10–20 Q) on those two only.",
-    ],
-    dropping: ["Heavy new systems", "MedCross (paused)", "Any FOMO revising of strong subjects"],
-  },
-  {
-    id: "B",
-    name: "Re-entry + ramp",
-    from: "2026-08-04", to: "2026-08-15",
-    headline: "Land in Israel, clear the CEO peak, rebuild study hours 4 → 8/day.",
-    hours: "4 → 8 h/day, ramping",
-    doing: [
-      "CEO business-planning event 3 Aug; panel + speech 5 Aug.",
+      "Open by killing the two smallest avoided subjects: Biostatistics (Randy Neil) + Behavioral/Ethics (Mehlman).",
+      "Daily UWorld — full blocks, on pace to finish the Qbank by 26 Sept.",
+      "2–5 Aug: half days (CEO event 3 Aug, panel + speech 5 Aug). Mornings still belong to Step 1.",
       "Diagnostic NBME ~11–13 Aug — sets the real baseline and re-sorts the block order.",
-      "Vacation 14–15 Aug: genuinely rest (it protects accuracy).",
-    ],
-    dropping: ["Everything except Anki reviews on 3 + 5 Aug and 14–15 Aug"],
-  },
-  {
-    id: "C",
-    name: "Dedicated block",
-    from: "2026-08-16", to: "2026-10-05",
-    headline: "Full-time. System-by-system, weak-first. This is the engine.",
-    hours: "10–12 h/day, 7 days, one lighter half-day/week",
-    doing: [
-      "Weak-first sequence (below), each organ system paired with its own pharmacology.",
-      "20–30% interleaved mixed/random UWorld every day.",
+      "Weak-first sequence (below), each organ system paired with its own pharmacology; 20–30% interleaved mixed UWorld daily.",
       "NBME every ~10–12 days; each form's weak-5 becomes the next block's interleaved focus.",
-      "Permanent flat front-loaded to 1–5 Sept, viewings delegated to parents.",
-      "Keep the last 2–3 weeks of September clear for the final push.",
+      "Content DONE by 26 Sept — the taper owns the final stretch to the exam.",
     ],
-    dropping: ["MedCross (still paused)", "CEO beyond ~2–5 h/week of mornings", "New time on green systems"],
+    dropping: ["Everything that isn't the exam", "MedCross (paused)", "CEO beyond the 2–5 Aug peak", "Flat hunt (parents own it)", "New time on green systems"],
   },
   {
     id: "T",
     name: "Taper & sit",
-    from: "2026-10-06", to: "2026-10-11",
+    from: "2026-09-27", to: "2026-10-06",
     headline: "Free 120 + newest NBME + error-log review. No new material in the last 5 days.",
     hours: "taper",
     doing: [
-      "Target sit date Fri 9 Oct; 11 Oct is the hard cap.",
+      "Exam day: Tuesday 6 Oct — booked and fixed.",
       "Sleep, error log, weak-tag Anki only.",
     ],
     dropping: ["All new material"],
@@ -183,10 +157,10 @@ export const TEACH_BACK = {
 
 export const WHAT_TO_DROP = [
   { front: "MedCross", call: "Paused until after Step 1 — the sacrificial front. No content, no dev." },
-  { front: "CEO", call: "Contained to mornings, ~2–5 h/week. After the 3 + 5 Aug peak it's maintenance." },
-  { front: "September move", call: "Delegated to parents — brief them now on area, budget, move-in date." },
+  { front: "CEO", call: "Contained to the 2–5 Aug half-day peak, then mornings, ~2–5 h/week. Maintenance." },
+  { front: "Flat hunt", call: "Fully delegated to parents — zero attention until after the exam." },
   { front: "Green subjects", call: "Micro / derm / ID / anatomy — maintenance only." },
-  { front: "Collisions", call: "Move (Zone A) or Exam (Zone C) wins. Everything else yields." },
+  { front: "Collisions", call: "The exam wins. Everything else yields." },
 ];
 
 /* ── Weak-first block sequence (§5) ─────────────────────────────────────── */
@@ -195,12 +169,12 @@ export const BLOCKS = [
   {
     id: "pre", label: "Pre", from: "2026-07-22", to: "2026-08-15",
     primary: "Biostats (Randy Neil) + Behavioral/Ethics (Mehlman)",
-    why: "Smallest, most-avoided, lowest %; phone-friendly during the move",
+    why: "Smallest, most-avoided, lowest % — kill them before the dedicated block",
     assessment: "Diagnostic NBME ~11–13 Aug",
     filters: ["Biostatistics & Epidemiology", "Social Sciences (Ethics/Legal/Professional)", "Psychiatric/Behavioral"],
     anki: "Unsuspend the biostats + behavioral/ethics tags only",
     teachBack: "Study design & bias · confidentiality vs. duty to warn",
-    collision: "Move-out sprint — study is maintenance-level, the move wins.",
+    collision: "CEO peak — 2–5 Aug are half days (mornings = Step 1, afternoons = CEO).",
   },
   {
     id: "w1", label: "Week 1", from: "2026-08-16", to: "2026-08-22",
@@ -230,7 +204,7 @@ export const BLOCKS = [
     filters: ["Cardiovascular System"],
     anki: "Cardiovascular subtree + antihypertensives/antiarrhythmics",
     teachBack: "Pressure–volume loops · why each antihypertensive class works",
-    collision: "September move (1–5 Sept) — delegate viewings, lean on family.",
+    collision: null,
   },
   {
     id: "w4", label: "Week 4", from: "2026-09-06", to: "2026-09-12",
@@ -250,7 +224,7 @@ export const BLOCKS = [
     filters: ["Endocrine, Diabetes & Metabolism", "Gastrointestinal & Nutrition", "Female Reproductive System & Breast"],
     anki: "Endocrine + GI + Repro subtrees",
     teachBack: "Feedback loops on each axis · the menstrual cycle hormone by hormone",
-    collision: "13 Sept birthday — one dinner with Angela, no production.",
+    collision: null,
   },
   {
     id: "w6", label: "Week 6", from: "2026-09-20", to: "2026-09-26",
@@ -273,8 +247,8 @@ export const BLOCKS = [
     collision: "No new material in the last 5 days.",
   },
   {
-    id: "exam", label: "Exam", from: "2026-10-06", to: "2026-10-11",
-    primary: "Sit — earliest green date; 11 Oct is the cap",
+    id: "exam", label: "Exam", from: "2026-10-06", to: "2026-10-06",
+    primary: "Sit Step 1 — Tuesday 6 Oct",
     why: "",
     assessment: null,
     filters: [],
@@ -302,8 +276,9 @@ export const ASSESSMENTS = [
 ];
 
 export const GO_NO_GO =
-  "If the last two assessments + the Free 120 all clear the passing threshold with margin → sit at the earliest booked date. "
-  + "If not → use the buffer to 11 Oct. Step 1 is pass/fail: aim for a clear margin over passing, not a number. "
+  "The date is booked: Tuesday 6 Oct. The go/no-go question is no longer WHEN to sit — it's WHAT the taper drills. "
+  + "If the last two assessments + the Free 120 clear the passing threshold with margin → taper as planned. "
+  + "If not → the taper becomes 100% error-log + weak-tag work on the forms' worst categories. Step 1 is pass/fail: aim for a clear margin over passing, not a number. "
   + "Take every form timed, in one sitting, in the morning. Log each one, and let its top-5 weak categories become the next block's interleaved focus.";
 
 /* ── Daily templates (§7) ───────────────────────────────────────────────── */
@@ -325,34 +300,31 @@ export const DAY_BLOCK = {
   footer: "One lighter half-day/week (Fri family/judo or Sat): reviews only, no new systems.",
 };
 
-export const DAY_MOVE = {
-  id: "move", title: "Move day (Zone A)",
-  sub: "Scaled down — the move wins, but nothing non-negotiable gets dropped.",
+export const DAY_HALF = {
+  id: "half", title: "Half day (2–5 Aug · CEO peak)",
+  sub: "The CEO front owns the afternoon — the morning still belongs to Step 1, every one of these days.",
   rows: [
-    { time: "Anki", what: "Due reviews only, ≤1.5 h so the pile doesn't grow", kind: "anki" },
-    { time: "Input", what: "One Randy Neil biostats video OR one Mehlman ethics page (phone)" },
-    { time: "Questions", what: "One 10–20 Q biostats/ethics set" },
-    { time: "13:30", what: "Nudge still fires — with a move-flavored momentum task (pack ONE box)", kind: "trigger" },
-    { time: "Move", what: "Flight, packing chunks, cancellations, furniture" },
-    { time: "Daily", what: "Movement break + Angela time + main meal midday — still non-negotiable", kind: "angela" },
+    { time: "08:30", what: "Wake · coffee · straight into reviews before the day gets eaten", kind: "trigger" },
+    { time: "09:00–10:30", what: "Anki: all due reviews (≤1.5 h so the pile doesn't grow)", kind: "anki" },
+    { time: "10:30–12:00", what: "One UWorld set (20–40 Q) — biostats/ethics or the current weak system, tutor mode", kind: "peak" },
+    { time: "~12:00", what: "MAIN MEAL midday, then hand the day to the CEO front", kind: "meal" },
+    { time: "Afternoon", what: "CEO: business-planning event (3.8) / panel + speech (5.8) — planned, no guilt" },
+    { time: "Evening", what: "ENCODE the morning's misses (error log + unsuspend) if energy allows · Angela phone-down time", kind: "angela" },
   ],
-  footer: "Anki ≤ 1.5 h on move days; no new cards until the move is done.",
+  footer: "Half day = the scheduler expects ~half the minutes on 2–5 Aug. No new Anki cards on these days.",
 };
 
 /* ── Deadline radar (§8.1) ──────────────────────────────────────────────── */
 
 // `he` is the notification copy (the app's Hebrew side); `what` is the page copy.
 export const RADAR = [
-  { date: "2026-07-31", what: "Prague lease ends — be moved out", he: "סוף החוזה בפראג — לסיים את הפינוי", front: "July move", hot: true },
-  { date: "2026-08-03", what: "CEO business-planning event", he: "אירוע תכנון עסקי (CEO)", front: "CEO" },
-  { date: "2026-08-05", what: "CEO panel + speech", he: "פאנל ונאום (CEO)", front: "CEO" },
+  { date: "2026-08-02", what: "Half days begin (2–5 Aug) — mornings are Step 1's", he: "מתחילים חצאי ימים (2–5.8) — הבקרים שייכים ל‑Step 1", front: "CEO" },
+  { date: "2026-08-03", what: "CEO business-planning event (half day)", he: "אירוע תכנון עסקי (CEO) — חצי יום", front: "CEO" },
+  { date: "2026-08-05", what: "CEO panel + speech (half day, last one)", he: "פאנל ונאום (CEO) — חצי יום אחרון", front: "CEO" },
+  { date: "2026-08-06", what: "Back to full days — nothing but the exam from here", he: "חוזרים לימים מלאים — רק הבחינה מכאן", front: "Step 1", hot: true },
   { date: "2026-08-12", what: "Diagnostic NBME", he: "NBME אבחוני — קו הבסיס האמיתי", front: "Step 1", hot: true },
-  { date: "2026-08-14", what: "Vacation (14–15 Aug) — genuinely rest", he: "חופשה (14–15.8) — לנוח באמת", front: "—" },
-  { date: "2026-08-16", what: "Dedicated block begins", he: "מתחיל הבלוק הייעודי — במשרה מלאה", front: "Step 1", hot: true },
-  { date: "2026-09-01", what: "Permanent flat — done early, with family (1–5 Sept)", he: "דירה קבועה — לסגור מוקדם, בעזרת המשפחה (1–5.9)", front: "Sept move" },
-  { date: "2026-09-13", what: "Birthday — minimal if deep in the block", he: "יום הולדת — ארוחה אחת, בלי הפקה", front: "Relationship" },
-  { date: "2026-10-09", what: "Target sit date", he: "תאריך יעד לבחינה", front: "Step 1", hot: true },
-  { date: "2026-10-11", what: "Hard cap — sit before this", he: "התקרה הקשיחה — לגשת לפני התאריך הזה", front: "Step 1", hot: true },
+  { date: "2026-09-27", what: "Taper begins — no new material", he: "מתחיל הטייפר — בלי חומר חדש", front: "Step 1", hot: true },
+  { date: "2026-10-06", what: "EXAM DAY — Step 1 (booked, fixed)", he: "יום הבחינה — Step 1 (סגור וקבוע)", front: "Step 1", hot: true },
 ];
 
 /* ── The 22 Jul baseline (§1 / §8.4) ────────────────────────────────────── */

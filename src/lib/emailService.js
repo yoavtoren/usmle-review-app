@@ -17,7 +17,7 @@ import { EXAM_DATE, daysUntilExam, localISODate } from "./config.js";
 const CONFIG_KEY = "usmle-app:email-config-v1";
 const LOG_KEY = "usmle-app:email-log-v1";
 
-// English display form of the exam date for the digest intro, e.g. "Oct 11, 2026".
+// English display form of the exam date for the digest intro, e.g. "Oct 6, 2026".
 const EXAM_LABEL = EXAM_DATE.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
 const DEFAULT_CONFIG = {

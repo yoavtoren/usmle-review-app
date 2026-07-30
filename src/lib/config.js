@@ -1,11 +1,11 @@
 // Shared app-wide constants and date helpers.
 // The exam date lives ONLY here — components must import it, never hardcode it.
 
-export const EXAM_DATE_ISO = "2026-10-11";
+export const EXAM_DATE_ISO = "2026-10-06";
 
 // Local-midnight Date for exam day. Using local (not UTC) midnight avoids the
 // off-by-one-day flip in evening hours for UTC+ timezones (Israel).
-export const EXAM_DATE = new Date(2026, 9, 11);
+export const EXAM_DATE = new Date(2026, 9, 6);
 
 // Size of the UWorld Step 1 Qbank. One constant — the Tests page's completion
 // bar and the planner's daily-quota goal used to disagree (3400 vs 3200), so the

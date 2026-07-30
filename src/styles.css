@@ -2560,6 +2560,58 @@ button.hd-card:active { transform: translateY(-1px) scale(.994); }
 .hd-today-review svg { margin-inline-start: auto; color: rgba(213,179,106,.7); }
 .hd-today-skel { height: 26px; border-radius: 8px; background: linear-gradient(90deg, rgba(245,241,229,.05), rgba(245,241,229,.1), rgba(245,241,229,.05)); background-size: 200% 100%; animation: hd-shimmer 1.3s linear infinite; }
 @keyframes hd-shimmer { to { background-position: -200% 0; } }
+
+/* Half-day chip (2–5 Aug etc.) */
+.hd-half-chip {
+  font: 700 9px var(--sans); letter-spacing: .1em; text-transform: uppercase;
+  color: #143528; padding: 2px 8px; border-radius: 999px;
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+/* The two numbers that matter — NBME tile (loudest) + UWorld quota tile.
+   One compact row so the hero still fits the one-viewport bento. */
+.hd-focus { display: grid; grid-template-columns: 1.35fr 1fr; gap: 8px; margin: 4px 0 2px; }
+.hd-nbme, .hd-uwq {
+  display: flex; align-items: center; gap: 10px; min-width: 0;
+  padding: 8px 12px; border-radius: 11px; cursor: pointer; text-align: start;
+  color: var(--on-dark); transition: border-color var(--t), background var(--t), transform var(--t);
+}
+.hd-nbme:hover, .hd-uwq:hover { transform: translateY(-1px); }
+
+/* NBME — the single loudest element on the dashboard */
+.hd-nbme {
+  background: linear-gradient(135deg, rgba(213,179,106,.28), rgba(213,179,106,.08));
+  border: 1px solid rgba(213,179,106,.62);
+  box-shadow: inset 0 1px 0 rgba(245,241,229,.12);
+}
+.hd-nbme:hover { border-color: rgba(213,179,106,.92); }
+.hd-nbme.imminent { border-color: var(--gold-2); background: linear-gradient(135deg, rgba(213,179,106,.4), rgba(213,179,106,.14)); }
+.hd-nbme-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hd-nbme-kicker { font: 800 8.5px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: rgba(213,179,106,.95); white-space: nowrap; }
+.hd-nbme-label { font: 500 14.5px var(--serif); letter-spacing: -.2px; color: var(--on-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hd-nbme-days { margin-inline-start: auto; flex: none; font: 500 28px var(--serif); line-height: 1; color: var(--gold-2); }
+.hd-nbme-days small { font: 700 9.5px var(--sans); letter-spacing: .04em; color: rgba(213,179,106,.85); margin-inline-start: 3px; }
+
+/* UWorld quota — the number of the day */
+.hd-uwq {
+  background: rgba(245,241,229,.05);
+  border: 1px solid rgba(213,179,106,.22);
+}
+.hd-uwq:hover { background: rgba(245,241,229,.09); border-color: rgba(213,179,106,.5); }
+.hd-uwq-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hd-uwq-kicker { font: 800 8.5px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: rgba(245,241,229,.65); white-space: nowrap; }
+.hd-uwq-s { font: 600 10px var(--sans); color: rgba(245,241,229,.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hd-uwq-n { margin-inline-start: auto; flex: none; font: 500 28px var(--serif); line-height: 1; color: var(--rail-gold); }
+.hd-uwq-n.done { color: var(--accent-2); }
+.hd-uwq-n small { font: 700 9.5px var(--sans); letter-spacing: .02em; color: rgba(245,241,229,.6); margin-inline-start: 3px; }
+
+/* Topic suggestion header */
+.hd-sugg-h {
+  margin: 7px 6px 0; font: 800 8.5px var(--sans); letter-spacing: .16em;
+  text-transform: uppercase; color: rgba(245,241,229,.5);
+}
+.hd-sugg-more { color: rgba(213,179,106,.8); letter-spacing: .04em; }
+@media (max-width: 560px) { .hd-focus { grid-template-columns: 1fr; } }
 .hd-today-empty { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 8px 4px; margin: auto 0; }
 .hd-today-empty-ico { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: var(--rail-gold); background: rgba(213,179,106,.1); border: 1px solid rgba(213,179,106,.35); margin-bottom: 4px; }
 .hd-today-empty-h { font: 500 17px var(--serif); color: var(--on-dark); }

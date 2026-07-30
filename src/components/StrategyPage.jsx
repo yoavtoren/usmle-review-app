@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import {
   ZONES, currentZone, LOOP, ANKI_RULES, ANKI_MATH, RESOURCE_MAP, GUARDRAILS,
   TEACH_BACK, WHAT_TO_DROP, BLOCKS, currentBlock, MAINTAIN_ONLY, ASSESSMENTS,
-  GO_NO_GO, DAY_BLOCK, DAY_MOVE, RADAR, BASELINE, statusFor, DIAGNOSIS,
-  TARGET_SIT_ISO, daysFromToday,
+  GO_NO_GO, DAY_BLOCK, DAY_HALF, RADAR, BASELINE, statusFor, DIAGNOSIS,
+  daysFromToday,
 } from "../lib/strategyData.js";
 import { EXAM_DATE_ISO, localISODate, daysUntilExam } from "../lib/config.js";
 import { loadErrors, whyCounts, isoDaysAgo } from "../lib/errorLog.js";
@@ -37,7 +37,7 @@ export default function StrategyPage({ initialTab = "loop", initialDay = DAY_BLO
 
   const zone = currentZone(today);
   const block = currentBlock(today);
-  const template = dayTpl === DAY_BLOCK.id ? DAY_BLOCK : DAY_MOVE;
+  const template = dayTpl === DAY_BLOCK.id ? DAY_BLOCK : DAY_HALF;
 
   // Live signal from the error log so the method page shows whether the ENCODE
   // step is actually happening this week — not just describing it.
@@ -57,7 +57,7 @@ export default function StrategyPage({ initialTab = "loop", initialDay = DAY_BLO
           <h1 className="td-title">The Step 1 plan</h1>
           <p className="td-sub">
             One repeatable loop — LEARN → PRACTICE → ENCODE → SPACE — run system by system, weak-first,
-            from the move-out sprint to the sit date. Re-planned {fmt(BASELINE.asOf, { month: "long", day: "numeric" })}.
+            from the ramp to exam day. Re-planned {fmt(BASELINE.asOf, { month: "long", day: "numeric" })}.
           </p>
         </div>
         <button className="td-submit-btn" onClick={() => nav("/errors")}>Open the error log</button>
@@ -69,7 +69,7 @@ export default function StrategyPage({ initialTab = "loop", initialDay = DAY_BLO
           <span className="strat-now-lbl">Days to the exam</span>
           <span className="strat-now-num num">{daysUntilExam()}</span>
           <span className="strat-now-sub">
-            Target sit {fmt(TARGET_SIT_ISO)} · hard cap {fmt(EXAM_DATE_ISO)}
+            Exam day {fmt(EXAM_DATE_ISO, { weekday: "short", month: "short", day: "numeric" })} · booked &amp; fixed
           </span>
         </div>
         <div className="strat-now-card">
@@ -205,7 +205,7 @@ export default function StrategyPage({ initialTab = "loop", initialDay = DAY_BLO
 
       {tab === "blocks" && (
         <>
-          <h2 className="strat-sec">Three zones</h2>
+          <h2 className="strat-sec">Two zones — drill, then taper</h2>
           <div className="strat-zones">
             {ZONES.map((z) => (
               <article key={z.id} className={`strat-card strat-zone${z.id === zone.id ? " now" : ""}`}>
@@ -294,7 +294,7 @@ export default function StrategyPage({ initialTab = "loop", initialDay = DAY_BLO
       {tab === "day" && (
         <>
           <div className="strat-tabs">
-            {[DAY_BLOCK, DAY_MOVE].map((t) => (
+            {[DAY_BLOCK, DAY_HALF].map((t) => (
               <button key={t.id} className={`chip${dayTpl === t.id ? " active" : ""}`} onClick={() => setDayTpl(t.id)}>
                 {t.title}
               </button>
@@ -314,7 +314,7 @@ export default function StrategyPage({ initialTab = "loop", initialDay = DAY_BLO
             <p className="strat-note">{template.footer}</p>
           </div>
           <p className="strat-callout">
-            Non-negotiable on every single day, block or move: the main meal at midday, a wrist-neutral movement
+            Non-negotiable on every single day, full or half: the main meal at midday, a wrist-neutral movement
             break, and phone-down time with Angela. Anki stays ≤ 4 h — reviews in the morning, new cards in the afternoon.
           </p>
         </>
@@ -353,7 +353,7 @@ export default function StrategyPage({ initialTab = "loop", initialDay = DAY_BLO
           ))}
           <p className="strat-callout">
             The six avoided subjects are still the six weakest — the avoidance risk is real and unbroken. That's why
-            biostats and ethics get killed during the move, and pharm / biochem / immuno lead the dedicated block.
+            biostats and ethics get killed during the ramp, and pharm / biochem / immuno lead the dedicated block.
           </p>
         </>
       )}

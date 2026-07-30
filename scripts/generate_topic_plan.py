@@ -30,7 +30,7 @@ FA_DIR = os.path.join(ROOT, "public", "fa")
 OUT = os.path.join(ROOT, "public", "topic-plan.json")
 
 # Plan anchors (kept in sync with the sidebar's exam countdown).
-EXAM_DATE = "2026-10-11"
+EXAM_DATE = "2026-10-06"
 CONTENT_DEADLINE = "2026-09-14"
 
 # ── Time model (minutes) ─────────────────────────────────────────────────────

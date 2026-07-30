@@ -13,7 +13,7 @@ import { markTaskInFA } from "../lib/faSync.js";
 import { EXAM_DATE, EXAM_DATE_ISO, localISODate } from "../lib/config.js";
 import ReviewSchedule from "./ReviewSchedule.jsx";
 
-// English display form of the exam date, e.g. "Oct 11, 2026" (this screen is LTR/English).
+// English display form of the exam date, e.g. "Oct 6, 2026" (this screen is LTR/English).
 const EXAM_LABEL = EXAM_DATE.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
 const PRIOS = [

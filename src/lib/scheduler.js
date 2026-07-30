@@ -247,6 +247,14 @@ export function migrate(raw) {
     };
     changed = true;
   }
+  // One-time fix from the 30 Jul revision: the exam is BOOKED for Tue 6 Oct 2026
+  // (the old plan carried an 11 Oct hard cap). Existing devices hold the old date
+  // in localStorage, so stamp the real one exactly once; after that the user's
+  // own edits win again.
+  if (!state.settings.examTuned0610) {
+    state.settings = { ...state.settings, examDate: EXAM_DATE_ISO, examTuned0610: true };
+    changed = true;
+  }
   return changed ? save(state) : state;
 }
 
@@ -448,9 +456,25 @@ function isRestDay(profile, iso) {
   if (!sc) return false;
   return (sc.restDays || []).includes(dayKey(iso)) || (sc.offDates || []).includes(iso);
 }
+// A reduced day is either a specific date (schedule.reducedDates: iso -> 0..1
+// fraction of a full day, e.g. the 2–5 Aug half days = 0.5) or a weekly pattern
+// (schedule.reducedDays: weekday -> capacity level, e.g. Fri = "low").
 function reducedCapacity(profile, iso) {
   const sc = profile?.schedule;
-  return sc?.reducedDays?.[dayKey(iso)] || null; // e.g. "low"
+  return sc?.reducedDates?.[iso] ?? sc?.reducedDays?.[dayKey(iso)] ?? null;
+}
+// The fraction of a normal study day a given date is worth: 0 for a rest/off
+// day, the declared fraction for a reduced date, the low/med preset ratio for a
+// weekly reduced level, 1 for a full day.
+export function dayFraction(state, iso) {
+  const profile = state.profile;
+  if (!profile?.schedule) return 1;
+  if (isRestDay(profile, iso)) return 0;
+  const red = reducedCapacity(profile, iso);
+  if (red == null) return 1;
+  if (typeof red === "number") return clamp01(red);
+  const cp = state.settings?.capacityPresets || DEFAULT_SETTINGS.capacityPresets;
+  return clamp01((cp[red] ?? cp.low ?? 90) / Math.max(1, cp.med || 240));
 }
 export function weakReviewTarget(state) {
   return state.settings?.weakReviewTarget || state.profile?.retention?.weakTopicReviewTarget || 1;
@@ -520,13 +544,9 @@ function scheduleCapacityDays(state, fromISO, toISO) {
   const from = isoToMs(fromISO), to = isoToMs(toISO);
   if (to <= from) return 0;
   if (!profile?.schedule) return Math.round((to - from) / DAY);
-  const cp = state.settings.capacityPresets;
-  const redRatio = clamp01((cp.low || 90) / Math.max(1, cp.med || 240));
   let days = 0;
   for (let ms = from + DAY; ms <= to; ms += DAY) {
-    const iso = msToISO(ms);
-    if (isRestDay(profile, iso)) continue;
-    days += reducedCapacity(profile, iso) ? redRatio : 1;
+    days += dayFraction(state, msToISO(ms));
   }
   return days;
 }
@@ -1081,11 +1101,18 @@ export function uworldPacing(state, dateISO = todayISO()) {
   const done = uworldDone(state);
   const remaining = Math.max(0, goal - done);
   const deadline = state.settings.contentDeadline;
-  // Days you can still practice, counting today (so the deadline day = 1 day).
-  const daysLeft = Math.max(1, studyDaysBetween(dateISO, deadline) + 1);
-  const perDay = Math.ceil(remaining / daysLeft);
+  // Days you can still practice, counting today (so the deadline day = 1 day) —
+  // weighted by the profile schedule, so a half day (2–5 Aug) counts as half a
+  // day of capacity and its quota shrinks to match instead of silently slipping.
+  const todayFrac = dayFraction(state, dateISO);
+  const daysLeft = Math.max(1, state.profile?.schedule
+    ? scheduleCapacityDays(state, dateISO, deadline) + todayFrac
+    : studyDaysBetween(dateISO, deadline) + 1);
+  const perFullDay = Math.ceil(remaining / daysLeft);
+  // Today's actual quota: the full-day rate scaled to what today can hold.
+  const perDay = Math.ceil(perFullDay * (todayFrac || 1));
   const pct = goal ? clamp(Math.round((done / goal) * 100), 0, 100) : 0;
-  return { goal, done, remaining, daysLeft, perDay, pct, deadline, complete: goal > 0 && remaining === 0 };
+  return { goal, done, remaining, daysLeft, perDay, perFullDay, pct, deadline, complete: goal > 0 && remaining === 0 };
 }
 
 // ── Completion / miss (§4) ───────────────────────────────────────────────────
@@ -1315,7 +1342,6 @@ export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 
   const anki = state.settings.ankiReserveMin.med;
   const perDay = Math.max(state.settings.blockMinutes,
     (recentAvgDailyMin(state) || state.settings.capacityPresets.med) - anki);
-  const sysCap = perDay * SYS_DAY_FRACTION;
 
   // Untaken assessments block their day (light — Anki only, no content).
   const assessByDate = {};
@@ -1327,11 +1353,14 @@ export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 
   // first, then each subsequent pick is penalized for systems already on the day
   // (and, lighter, for systems used the day before) and capped per system. Units
   // are whole ~45-min blocks so start === end — clean single-day Gantt bars.
+  // `dayBudget` honors the profile schedule: half days (2–5 Aug) project half
+  // the content, rest days project none — so the calendar tells the truth.
   const placed = new Set();
-  const fillDay = (date, prevSystems) => {
+  const fillDay = (date, prevSystems, dayBudget) => {
     const items = [];
     const daySys = {};
     const recent = new Set(prevSystems);
+    const sysCap = dayBudget * SYS_DAY_FRACTION;
     let used = 0;
     while (true) {
       let bestIdx = -1, bestVal = -Infinity;
@@ -1341,11 +1370,11 @@ export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 
         const sysUsed = daySys[s.u.system] || 0;
         const isFirst = items.length === 0;
         if (!isFirst) {
-          if (used + s.remain > perDay) continue;        // whole unit must fit
+          if (used + s.remain > dayBudget) continue;     // whole unit must fit
           if (sysUsed + s.remain > sysCap) continue;     // hard cap on one system/day
         }
         let val = s.base;
-        if (sysUsed > 0) val -= DIVERSITY_PENALTY * (1 + sysUsed / Math.max(1, perDay));
+        if (sysUsed > 0) val -= DIVERSITY_PENALTY * (1 + sysUsed / Math.max(1, dayBudget));
         else if (recent.has(s.u.system)) val -= CARRYOVER_PENALTY;
         if (val > bestVal) { bestVal = val; bestIdx = i; }
       }
@@ -1355,7 +1384,7 @@ export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 
       placed.add(s.key);
       used += s.remain;
       daySys[s.u.system] = (daySys[s.u.system] || 0) + s.remain;
-      if (used >= perDay) break;
+      if (used >= dayBudget) break;
     }
     return { items, systems: Object.keys(daySys) };
   };
@@ -1369,9 +1398,10 @@ export function projectSchedule(state, units, fromISO = todayISO(), { maxDays = 
 
   while (remaining > 0 && guard++ < maxDays) {
     const assessment = assessByDate[date] || null;
+    const budget = perDay * dayFraction(state, date);
     let items = [];
-    if (!assessment) {
-      const r = fillDay(date, prevSystems);
+    if (!assessment && budget >= state.settings.blockMinutes / 2) {
+      const r = fillDay(date, prevSystems, budget);
       items = r.items;
       for (const it of items) { spans[it.key] = { start: date, end: date, minutes: it.minutes }; }
       remaining -= items.length;
