@@ -163,7 +163,7 @@ function LineChart({ tests, traj }) {
             </text>
           </g>
         ))}
-        <text x={PAD.left + 4} y={toY(PASS_SCORE) - 5} fontSize="8.5" fill="var(--warn)" fontWeight="700">
+        <text x={(examX ?? W - PAD.right) - 6} y={toY(PASS_SCORE) + 12} textAnchor="end" fontSize="8.5" fill="var(--warn)" fontWeight="700">
           60% pass line
         </text>
 
@@ -693,7 +693,7 @@ export default function TestDashboard({ onBack, onStudy }) {
                       {traj.slopeWeek > 0.05 ? "▲ " : traj.slopeWeek < -0.05 ? "▼ " : "→ "}
                       {traj.slopeWeek >= 0 ? "+" : ""}{traj.slopeWeek.toFixed(1)}%<span className="td-hero-unit">/wk</span>
                     </span>
-                    <span className="td-hero-sub">fit over all {sorted.length} tests — every result reshapes it</span>
+                    <span className="td-hero-sub">all {sorted.length} tests shape this line</span>
                   </div>
                   <div className="td-hero-div" />
                   <div className="td-hero-cell">
