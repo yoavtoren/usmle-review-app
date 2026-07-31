@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { vtNavigate } from "../lib/vt.js";
 import {
-  IconHome, IconDash, IconClipboard, IconBook, IconBox,
+  IconHome, IconDash, IconClipboard, IconBook, IconBox, IconChecklist,
   IconTarget, IconPulse, IconBell, IconMail, IconChevron, IconCalendar, IconUser, IconNote,
 } from "./icons.jsx";
 import RailPanel from "./RailPanel.jsx";
@@ -88,7 +88,7 @@ export default function Sidebar({ dueCount = 0, onBellClick, onMailClick }) {
         { to: "/tests", label: "Tests", Icon: IconClipboard },
         { to: "/bank", label: "Question Bank", Icon: IconBox },
         { to: "/progress", label: "Progress", Icon: IconPulse },
-        { to: "/fa", label: "First Aid Checklist", Icon: IconBook },
+        { to: "/fa", label: "First Aid Checklist", Icon: IconChecklist },
         { to: "/fa/book", label: "FA Book", Icon: IconBook },
       ],
     },

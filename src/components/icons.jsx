@@ -34,6 +34,9 @@ export const IconClipboard = (p) => (
 export const IconBook = (p) => (
   <Svg {...p}><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6.5A2.5 2.5 0 0 0 4 21.5Z" /><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20" /></Svg>
 );
+export const IconChecklist = (p) => (
+  <Svg {...p}><path d="m3.5 5.5 1.4 1.4 2.6-2.8" /><path d="M11 6h9.5" /><path d="m3.5 11.5 1.4 1.4 2.6-2.8" /><path d="M11 12h9.5" /><path d="m3.5 17.5 1.4 1.4 2.6-2.8" /><path d="M11 18h9.5" /></Svg>
+);
 export const IconCap = (p) => (
   <Svg {...p}><path d="m2.5 8.5 9.5-4 9.5 4-9.5 4-9.5-4Z" /><path d="M6 10.5V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-5.5" /><path d="M21.5 8.5v5" /></Svg>
 );
