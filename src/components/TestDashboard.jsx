@@ -82,7 +82,9 @@ function LineChart({ tests, traj }) {
 
   const vals = sorted.flatMap(t => [t.score, ...(t.uworldAvg != null ? [t.uworldAvg] : [])]);
   const lo = Math.min(20, Math.floor((Math.min(...vals) - 4) / 10) * 10);
-  const hi = Math.max(80, Math.ceil((Math.max(...vals) + 4) / 10) * 10);
+  // Cap the top just above the ready benchmark so the lines use the vertical
+  // space instead of huddling in the middle of a 20–80 band.
+  const hi = Math.max(READY_SCORE + 5, Math.ceil((Math.max(...vals) + 4) / 10) * 10);
 
   const toX = m => PAD.left + ((m - minMs) / span) * CW;
   const toY = v => PAD.top + CH - ((Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo)) * CH;
@@ -112,7 +114,7 @@ function LineChart({ tests, traj }) {
   const showNeeded = traj && traj.lastScore < READY_SCORE && traj.examMs > lastMs;
 
   // Label first & last points; intermediates only when far enough apart in px.
-  const LABEL_GAP = 40;
+  const LABEL_GAP = 64;
   const labeledIdx = (() => {
     const keep = new Set([0, scorePts.length - 1]);
     let prevX = scorePts[0][0];
@@ -237,7 +239,7 @@ function LineChart({ tests, traj }) {
         )}
 
         {uwPts.map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="3.5" fill="var(--warn)" stroke="var(--surface)" strokeWidth="2" />
+          <circle key={i} cx={x} cy={y} r="2.8" fill="var(--warn)" stroke="var(--surface)" strokeWidth="1.5" />
         ))}
         {scorePts.map(([x, y, t], i) => (
           <g key={i}>
@@ -284,16 +286,7 @@ function LineChart({ tests, traj }) {
   );
 }
 
-function GapBadge({ gap }) {
-  if (gap == null) return <span className="muted">—</span>;
-  const cls = gap >= 0 ? "td-gap-pos" : "td-gap-neg";
-  return <span className={`td-gap-badge ${cls}`}>{gap >= 0 ? "+" : ""}{gap}%</span>;
-}
-
-function ScoreBadge({ score }) {
-  const cls = score >= 60 ? "td-score-ok" : score >= 50 ? "td-score-mid" : "td-score-low";
-  return <span className={`td-score-badge ${cls}`}>{score}%</span>;
-}
+const scoreBand = s => (s >= 60 ? "ok" : s >= 50 ? "mid" : "low");
 
 function moodOf(t) {
   return t?.feeling?.mood ? MOODS.find((m) => m.v === t.feeling.mood) : null;
@@ -619,8 +612,16 @@ export default function TestDashboard({ onBack, onStudy }) {
                     {...cardPress}
                   >
                     <div className="td-test-top-row">
-                      <div className="td-test-name">{t.testNum}</div>
-                      <div className="td-test-tools">
+                      <div className="td-test-id">
+                        <div className="td-test-name">{t.testNum}</div>
+                        <div className="td-test-date">
+                          {fmt(t.date)}
+                          {t.uworldAvg != null && <span className="td-test-uw"> · UWorld {t.uworldAvg}%</span>}
+                          {statCount > 0 && <span className="td-test-topics" title={`${statCount} topics scored`}> · {statCount} topics</span>}
+                          {mood && <span className="td-test-mood" title={`Felt: ${mood.label}`}>{mood.emoji}</span>}
+                        </div>
+                      </div>
+                      <div className={`td-test-tools${confirmDelId === t.id ? " td-tools-armed" : ""}`}>
                         <button className="td-edit-btn" onClick={() => setEditing(draftFrom(t))} title="Edit">✎</button>
                         <button
                           className="td-del-btn"
@@ -632,39 +633,39 @@ export default function TestDashboard({ onBack, onStudy }) {
                           {confirmDelId === t.id ? "Sure?" : "✕"}
                         </button>
                       </div>
+                      <div className="td-test-result">
+                        {sc != null
+                          ? <span className={`td-test-score td-sc-${scoreBand(sc)}`}>{sc}%</span>
+                          : <span className="muted small">no score</span>}
+                        {gap != null && (
+                          <span className={`td-test-gap ${gap >= 0 ? "pos" : "neg"}`}>
+                            {gap >= 0 ? "+" : "−"}{Math.abs(gap)} vs UW
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <div className="td-test-date">
-                      {fmt(t.date)}
-                      {mood && <span className="td-test-mood" title={`Felt: ${mood.label}`}>{mood.emoji}</span>}
-                      {statCount > 0 && <span className="td-test-statflag" title={`${statCount} topics scored`}>▦ stats</span>}
-                    </div>
-                    <div className="td-test-badges">
-                      {sc != null ? <ScoreBadge score={sc} /> : <span className="muted small">no score</span>}
-                      {t.uworldAvg != null && (
-                        <span className="td-uw-badge">{t.uworldAvg}% UWorld</span>
-                      )}
-                      <GapBadge gap={gap} />
-                    </div>
+
                     {t.feeling?.note && <div className="td-test-note">“{t.feeling.note}”</div>}
 
-                    {qTotal != null && (
-                      <div className="td-done-progress">
-                        <div className="td-done-bar-wrap">
-                          <div
-                            className="td-done-bar-fill"
-                            style={{ width: `${Math.round((doneCount / qTotal) * 100)}%` }}
-                          />
-                        </div>
-                        <span className="td-done-label">
-                          {doneCount} / {qTotal} reviewed
-                        </span>
+                    {(qTotal != null || (bq && bq.length > 0 && onStudy)) && (
+                      <div className="td-test-foot">
+                        {qTotal != null && (
+                          <>
+                            <div className="td-done-bar-wrap">
+                              <div
+                                className="td-done-bar-fill"
+                                style={{ width: `${Math.round((doneCount / qTotal) * 100)}%` }}
+                              />
+                            </div>
+                            <span className="td-done-label">{doneCount} / {qTotal}</span>
+                          </>
+                        )}
+                        {bq && bq.length > 0 && onStudy && (
+                          <button className="td-review-btn" onClick={() => onStudy(deckFileOf(t), blockOf(t))}>
+                            Review questions →
+                          </button>
+                        )}
                       </div>
-                    )}
-
-                    {bq && bq.length > 0 && onStudy && (
-                      <button className="td-review-btn" onClick={() => onStudy(deckFileOf(t), blockOf(t))}>
-                        Review questions →
-                      </button>
                     )}
                   </div>
                 );
@@ -684,55 +685,56 @@ export default function TestDashboard({ onBack, onStudy }) {
         <div className="td-col-dash">
           {stats ? (
             <>
-              {/* Trajectory hero: overall trend + projected 60% crossing */}
-              {traj && proj && (
-                <div className="td-hero">
-                  <div className="td-hero-cell">
-                    <span className="td-stat-label">Overall trend</span>
-                    <span className={`td-hero-num ${traj.slopeWeek > 0.05 ? "td-up" : traj.slopeWeek < -0.05 ? "td-dn" : ""}`}>
-                      {traj.slopeWeek > 0.05 ? "▲ " : traj.slopeWeek < -0.05 ? "▼ " : "→ "}
-                      {traj.slopeWeek >= 0 ? "+" : ""}{traj.slopeWeek.toFixed(1)}%<span className="td-hero-unit">/wk</span>
-                    </span>
-                    <span className="td-hero-sub">all {sorted.length} tests shape this line</span>
-                  </div>
-                  <div className="td-hero-div" />
-                  <div className="td-hero-cell">
-                    <span className="td-stat-label">Crossing 60%</span>
-                    <span className={`td-hero-num ${proj.tone === "ok" ? "td-up" : "td-dn"}`}>{proj.num}</span>
-                    <span className="td-hero-sub">{proj.sub}</span>
-                  </div>
-                </div>
-              )}
-
-              {/* Compact stat strip */}
-              <div className="td-strip">
-                <div className="td-strip-cell">
-                  <span className="td-strip-label">Latest</span>
-                  <span className="td-strip-num">
-                    {stats.latest}%
-                    {hasTrend && (
-                      <span className={`td-trend ${trendFlat ? "" : trendUp ? "td-trend-up" : "td-trend-dn"}`}>
-                        {trendFlat ? "→" : trendUp ? `▲ ${stats.trend}` : `▼ ${Math.abs(stats.trend)}`}
+              {/* Trajectory summary: trend + 60% crossing over a hairline-divided stat row */}
+              <div className="td-summary">
+                {traj && proj && (
+                  <div className="td-hero">
+                    <div className="td-hero-cell">
+                      <span className="td-stat-label">Overall trend</span>
+                      <span className={`td-hero-num ${traj.slopeWeek > 0.05 ? "td-up" : traj.slopeWeek < -0.05 ? "td-dn" : ""}`}>
+                        {traj.slopeWeek > 0.05 ? "▲ " : traj.slopeWeek < -0.05 ? "▼ " : "→ "}
+                        {traj.slopeWeek >= 0 ? "+" : ""}{traj.slopeWeek.toFixed(1)}%<span className="td-hero-unit">/wk</span>
                       </span>
-                    )}
-                  </span>
-                </div>
-                <div className="td-strip-cell">
-                  <span className="td-strip-label">Average</span>
-                  <span className="td-strip-num">{stats.avg}%</span>
-                </div>
-                <div className="td-strip-cell">
-                  <span className="td-strip-label">Best</span>
-                  <span className="td-strip-num td-best">{stats.best}%</span>
-                </div>
-                {stats.avgGap != null && (
-                  <div className="td-strip-cell">
-                    <span className="td-strip-label">vs UWorld</span>
-                    <span className={`td-strip-num ${stats.avgGap >= 0 ? "td-gap-pos-num" : "td-gap-neg-num"}`}>
-                      {stats.avgGap >= 0 ? "+" : ""}{stats.avgGap}%
-                    </span>
+                      <span className="td-hero-sub">all {sorted.length} tests shape this line</span>
+                    </div>
+                    <div className="td-hero-div" />
+                    <div className="td-hero-cell">
+                      <span className="td-stat-label">Crossing 60%</span>
+                      <span className={`td-hero-num ${proj.tone === "ok" ? "td-up" : "td-dn"}`}>{proj.num}</span>
+                      <span className="td-hero-sub">{proj.sub}</span>
+                    </div>
                   </div>
                 )}
+
+                <div className="td-strip">
+                  <div className="td-strip-cell">
+                    <span className="td-strip-label">Latest</span>
+                    <span className="td-strip-num">
+                      {stats.latest}%
+                      {hasTrend && (
+                        <span className={`td-trend ${trendFlat ? "" : trendUp ? "td-trend-up" : "td-trend-dn"}`}>
+                          {trendFlat ? "→" : trendUp ? `▲ ${stats.trend}` : `▼ ${Math.abs(stats.trend)}`}
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                  <div className="td-strip-cell">
+                    <span className="td-strip-label">Average</span>
+                    <span className="td-strip-num">{stats.avg}%</span>
+                  </div>
+                  <div className="td-strip-cell">
+                    <span className="td-strip-label">Best</span>
+                    <span className="td-strip-num td-best">{stats.best}%</span>
+                  </div>
+                  {stats.avgGap != null && (
+                    <div className="td-strip-cell">
+                      <span className="td-strip-label">vs UWorld</span>
+                      <span className={`td-strip-num ${stats.avgGap >= 0 ? "td-gap-pos-num" : "td-gap-neg-num"}`}>
+                        {stats.avgGap >= 0 ? "+" : ""}{stats.avgGap}%
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Forward-looking chart */}
@@ -767,8 +769,7 @@ export default function TestDashboard({ onBack, onStudy }) {
                     <span className="td-road-target">ready = {READY_SCORE}%</span>
                   </div>
                   <p className="td-road-sub">
-                    “Aim for” is the pace you need from your latest result to walk in at {READY_SCORE}% on
-                    Oct 6 · “on trend” is where today’s line puts you.
+                    Aim for = the pace to reach {READY_SCORE}% by Oct 6 · on trend = where today’s line puts you.
                   </p>
                   <div className="td-road-row td-road-headrow" aria-hidden="true">
                     <span />
@@ -792,7 +793,7 @@ export default function TestDashboard({ onBack, onStudy }) {
 
               {/* UWorld Qbank completion */}
               <div
-                className="td-qbank td-qbank-tail"
+                className="td-qbank"
                 title={isEstimate ? `Includes estimated counts (${DEFAULT_BLOCK} Qs assumed) for ${estimatedCount} test${estimatedCount === 1 ? "" : "s"} logged without a question count` : undefined}
               >
                 <div className="td-qbank-head">
