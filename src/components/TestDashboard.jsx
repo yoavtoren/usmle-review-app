@@ -62,8 +62,11 @@ function CtxMenu({ x, y, onEdit, onDelete, onClose }) {
 }
 
 // Score history extended forward to exam day: regression trend projected to its
-// 60% crossing, the "needed pace" line to walk in ready, and a hover tooltip.
-function LineChart({ tests, traj }) {
+// 60% crossing, the "needed pace" line to walk in ready, landmark score targets
+// along that pace, and a hover tooltip that works on any day of the timeline.
+function LineChart({ tests, traj, roadmap }) {
+  // hover: { type: "test", i } snapped to a logged test, or
+  //        { type: "day", ms, landmark } anywhere else on the timeline
   const [hover, setHover] = useState(null);
   const svgRef = useRef(null);
   if (!tests || tests.length === 0) return null;
@@ -113,6 +116,16 @@ function LineChart({ tests, traj }) {
   const showCross = crossMs != null && crossMs > minMs + DAY_MS && crossMs < maxMs - DAY_MS;
   const showNeeded = traj && traj.lastScore < READY_SCORE && traj.examMs > lastMs;
 
+  // Score needed on a given day to stay on the linear pace toward READY_SCORE.
+  const needAt = m => (showNeeded && m >= lastMs && m <= traj.examMs)
+    ? traj.lastScore + (READY_SCORE - traj.lastScore) * ((m - lastMs) / (traj.examMs - lastMs))
+    : null;
+  // Landmark targets drawn on the needed-pace line (exam row already has its
+  // own "ready 65%" label, so it only gets the marker).
+  const marks = showNeeded
+    ? (roadmap || []).filter(r => r.ms > lastMs && r.ms <= maxMs)
+    : [];
+
   // Label first & last points; intermediates only when far enough apart in px.
   const LABEL_GAP = 64;
   const labeledIdx = (() => {
@@ -129,13 +142,32 @@ function LineChart({ tests, traj }) {
     const rect = svgRef.current?.getBoundingClientRect();
     if (!rect) return;
     const px = ((e.clientX - rect.left) / rect.width) * W;
-    let best = null, bd = 26;
+    if (px < PAD.left - 4 || px > W - PAD.right + 4) { setHover(null); return; }
+    // Snap to the nearest logged test first…
+    let best = null, bd = 18;
     scorePts.forEach(([x], i) => { const d = Math.abs(x - px); if (d < bd) { bd = d; best = i; } });
-    setHover(best);
+    if (best != null) { setHover({ type: "test", i: best }); return; }
+    // …then to a landmark, else track the day under the pointer.
+    let ms = minMs + ((Math.max(PAD.left, Math.min(W - PAD.right, px)) - PAD.left) / CW) * span;
+    let landmark = null;
+    for (const r of marks) {
+      if (Math.abs(toX(r.ms) - px) < 10) { ms = r.ms; landmark = r; break; }
+    }
+    setHover({ type: "day", ms, landmark });
   }
 
-  const hoverT = hover != null ? sorted[hover] : null;
+  const hoverT = hover?.type === "test" ? sorted[hover.i] : null;
   const hoverGap = hoverT?.uworldAvg != null ? hoverT.score - hoverT.uworldAvg : null;
+  // Values shared by both tooltip flavors: trend prediction + pace target.
+  const hoverMs = hoverT ? dateMs(hoverT.date) : hover?.type === "day" ? hover.ms : null;
+  const hoverTrend = hoverMs != null && traj ? Math.round(traj.valAtMs(hoverMs)) : null;
+  const hoverNeedRaw = hoverMs != null ? needAt(hoverMs) : null;
+  const hoverNeed = hover?.landmark ? hover.landmark.needed : hoverNeedRaw != null ? Math.round(hoverNeedRaw) : null;
+  // Tooltip anchor: the test point, or the trend line (fallback: pace / pass line).
+  const hoverX = hoverT ? scorePts[hover.i][0] : hoverMs != null ? toX(hoverMs) : null;
+  const hoverY = hoverT
+    ? scorePts[hover.i][1]
+    : hoverMs != null ? toY(hoverTrend ?? hoverNeed ?? PASS_SCORE) : null;
 
   return (
     <div className="td-chart-wrap">
@@ -232,9 +264,28 @@ function LineChart({ tests, traj }) {
           </g>
         )}
 
+        {/* landmark score targets on the needed-pace line */}
+        {marks.map(r => {
+          const x = toX(r.ms), y = toY(needAt(r.ms) ?? r.needed);
+          const active = hover?.type === "day" && hover.landmark?.label === r.label;
+          return (
+            <g key={r.label}>
+              <line x1={x} x2={x} y1={y + 4} y2={PAD.top + CH}
+                stroke="var(--line)" strokeWidth="1" strokeDasharray="2 4" opacity="0.8" />
+              {active && <circle cx={x} cy={y} r="9" fill="none" stroke="var(--accent-mid)" strokeWidth="2" />}
+              <circle cx={x} cy={y} r="3.4" fill="var(--surface)" stroke="var(--text-2)" strokeWidth="1.7" />
+              {!r.exam && (
+                <text x={x} y={y + 15} textAnchor="middle" fontSize="8.5" fill="var(--text-2)" fontWeight="700">
+                  {r.needed}%
+                </text>
+              )}
+            </g>
+          );
+        })}
+
         {/* hover crosshair */}
-        {hover != null && (
-          <line x1={scorePts[hover][0]} x2={scorePts[hover][0]} y1={PAD.top} y2={PAD.top + CH}
+        {hoverX != null && (
+          <line x1={hoverX} x2={hoverX} y1={PAD.top} y2={PAD.top + CH}
             stroke="var(--line-hover)" strokeWidth="1" />
         )}
 
@@ -243,9 +294,9 @@ function LineChart({ tests, traj }) {
         ))}
         {scorePts.map(([x, y, t], i) => (
           <g key={i}>
-            {hover === i && <circle cx={x} cy={y} r="9" fill="none" stroke="var(--accent-mid)" strokeWidth="2" />}
+            {hoverT && hover.i === i && <circle cx={x} cy={y} r="9" fill="none" stroke="var(--accent-mid)" strokeWidth="2" />}
             <circle cx={x} cy={y} r="4.5" fill="var(--accent)" stroke="var(--surface)" strokeWidth="2.5" />
-            {labeledIdx.has(i) && hover !== i && (
+            {labeledIdx.has(i) && !(hoverT && hover.i === i) && (
               <text x={x} y={y - 11} textAnchor="middle" fontSize="9" fill="var(--accent)" fontWeight="700">
                 {t.score}%
               </text>
@@ -264,18 +315,36 @@ function LineChart({ tests, traj }) {
         ))}
       </svg>
 
-      {hoverT && (
+      {hoverX != null && (
         <div
-          className={`td-tip${scorePts[hover][1] < 90 ? " td-tip-below" : ""}`}
-          style={{ left: `${(scorePts[hover][0] / W) * 100}%`, top: `${(scorePts[hover][1] / H) * 100}%` }}
+          className={`td-tip${hoverY < 90 ? " td-tip-below" : ""}`}
+          style={{ left: `${(hoverX / W) * 100}%`, top: `${(hoverY / H) * 100}%` }}
         >
-          <div className="td-tip-date">{hoverT.testNum ? `${hoverT.testNum} · ` : ""}{shortDay(dateMs(hoverT.date))}</div>
-          <div className="td-tip-row"><i className="td-tip-dot td-tip-dot-me" />You <b>{hoverT.score}%</b></div>
-          {hoverT.uworldAvg != null && (
+          <div className="td-tip-date">
+            {hoverT
+              ? <>{hoverT.testNum ? `${hoverT.testNum} · ` : ""}{shortDay(hoverMs)}</>
+              : <>{shortDay(hoverMs)}{hover?.landmark && <span className="td-tip-flag">landmark</span>}</>}
+          </div>
+          {hoverT && (
+            <div className="td-tip-row"><i className="td-tip-dot td-tip-dot-me" />You <b>{hoverT.score}%</b></div>
+          )}
+          {hoverT?.uworldAvg != null && (
             <div className="td-tip-row"><i className="td-tip-dot td-tip-dot-uw" />UWorld <b>{hoverT.uworldAvg}%</b>
               {hoverGap != null && (
                 <span className={hoverGap >= 0 ? "td-tip-gap-pos" : "td-tip-gap-neg"}>
                   {hoverGap >= 0 ? "+" : ""}{hoverGap}
+                </span>
+              )}
+            </div>
+          )}
+          {hoverTrend != null && (
+            <div className="td-tip-row"><i className="td-tip-dot td-tip-dot-trend" />Trend <b>{hoverTrend}%</b></div>
+          )}
+          {hoverNeed != null && !hoverT && (
+            <div className="td-tip-row"><i className="td-tip-dot td-tip-dot-need" />Target <b>{hoverNeed}%</b>
+              {hoverTrend != null && (
+                <span className={hoverTrend - hoverNeed >= 0 ? "td-tip-gap-pos" : "td-tip-gap-neg"}>
+                  {hoverTrend - hoverNeed >= 0 ? "+" : ""}{hoverTrend - hoverNeed}
                 </span>
               )}
             </div>
@@ -465,7 +534,7 @@ export default function TestDashboard({ onBack, onStudy }) {
         const needed = Math.round(traj.lastScore + (READY_SCORE - traj.lastScore) * ((m - traj.lastMs) / span));
         const onTrend = Math.round(traj.valAtMs(m));
         const d = onTrend - needed;
-        return { label, exam: !!exam, needed, onTrend, diff: d, status: d >= 0 ? "ok" : d >= -3 ? "close" : "behind" };
+        return { label, ms: m, exam: !!exam, needed, onTrend, diff: d, status: d >= 0 ? "ok" : d >= -3 ? "close" : "behind" };
       })
       .filter(Boolean);
   }, [traj]);
@@ -757,7 +826,7 @@ export default function TestDashboard({ onBack, onStudy }) {
                   </div>
                 </div>
                 <div className="td-chart-body">
-                  <LineChart tests={sorted} traj={traj} />
+                  <LineChart tests={sorted} traj={traj} roadmap={roadmap} />
                 </div>
               </div>
 
