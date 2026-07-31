@@ -61,125 +61,226 @@ function CtxMenu({ x, y, onEdit, onDelete, onClose }) {
   );
 }
 
-function LineChart({ tests }) {
+// Score history extended forward to exam day: regression trend projected to its
+// 60% crossing, the "needed pace" line to walk in ready, and a hover tooltip.
+function LineChart({ tests, traj }) {
+  const [hover, setHover] = useState(null);
+  const svgRef = useRef(null);
   if (!tests || tests.length === 0) return null;
 
-  const W = 660, H = 280;
-  const PAD = { top: 20, right: 30, bottom: 44, left: 42 };
+  const W = 660, H = 300;
+  const PAD = { top: 30, right: 40, bottom: 30, left: 40 };
   const CW = W - PAD.left - PAD.right;
   const CH = H - PAD.top - PAD.bottom;
 
   const sorted = [...tests].sort((a, b) => new Date(a.date) - new Date(b.date));
-  const dates = sorted.map(t => new Date(t.date + "T12:00:00").getTime());
-  const minDate = Math.min(...dates);
-  const maxDate = Math.max(...dates);
-  const span = maxDate - minDate || 86400000;
+  const lastMs = dateMs(sorted.at(-1).date);
+  const minMs = dateMs(sorted[0].date);
+  const examMs = traj ? traj.examMs : lastMs;
+  const maxMs = Math.max(examMs, lastMs) + 3 * DAY_MS;
+  const span = maxMs - minMs || DAY_MS;
 
-  const toX = d => PAD.left + ((new Date(d + "T12:00:00").getTime() - minDate) / span) * CW;
-  const toY = v => PAD.top + CH - (Math.max(0, Math.min(100, v)) / 100) * CH;
+  const vals = sorted.flatMap(t => [t.score, ...(t.uworldAvg != null ? [t.uworldAvg] : [])]);
+  const lo = Math.min(20, Math.floor((Math.min(...vals) - 4) / 10) * 10);
+  const hi = Math.max(80, Math.ceil((Math.max(...vals) + 4) / 10) * 10);
 
-  const scorePts = sorted.map(t => [toX(t.date), toY(t.score), t]);
-  const uwPts = sorted.filter(t => t.uworldAvg != null).map(t => [toX(t.date), toY(t.uworldAvg), t]);
+  const toX = m => PAD.left + ((m - minMs) / span) * CW;
+  const toY = v => PAD.top + CH - ((Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo)) * CH;
 
-  // Linear regression trend line over score points
-  const trendLine = (() => {
-    if (scorePts.length < 2) return null;
-    const xs = scorePts.map(([x]) => x);
-    const ys = scorePts.map(([, y]) => y);
-    const n = xs.length;
-    const mx = xs.reduce((a, b) => a + b) / n;
-    const my = ys.reduce((a, b) => a + b) / n;
-    const slope = xs.reduce((s, x, i) => s + (x - mx) * (ys[i] - my), 0) /
-                  xs.reduce((s, x) => s + (x - mx) ** 2, 0);
-    const intercept = my - slope * mx;
-    const x1 = xs[0], x2 = xs[xs.length - 1];
-    return { x1, y1: slope * x1 + intercept, x2, y2: slope * x2 + intercept };
+  const scorePts = sorted.map(t => [toX(dateMs(t.date)), toY(t.score), t]);
+  const uwPts = sorted.filter(t => t.uworldAvg != null).map(t => [toX(dateMs(t.date)), toY(t.uworldAvg)]);
+  const linePath = pts => pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
+
+  // First-of-month ticks along the extended timeline
+  const ticks = (() => {
+    const out = [];
+    const d = new Date(minMs);
+    d.setDate(1);
+    if (d.getTime() < minMs) d.setMonth(d.getMonth() + 1);
+    while (d.getTime() <= maxMs) { out.push(d.getTime()); d.setMonth(d.getMonth() + 1); }
+    return out;
   })();
 
-  const linePath = pts => pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
-  const areaPath = pts => {
-    if (pts.length < 2) return "";
-    const base = toY(0);
-    return `${linePath(pts)} L${pts[pts.length - 1][0].toFixed(1)},${base.toFixed(1)} L${pts[0][0].toFixed(1)},${base.toFixed(1)} Z`;
+  const todayMs = Date.now();
+  const examX = traj ? toX(traj.examMs) : null;
+  const trendSeg = traj && {
+    x1: toX(minMs), y1: toY(traj.valAtMs(minMs)),
+    x2: toX(maxMs), y2: toY(traj.valAtMs(maxMs)),
   };
+  const crossMs = traj?.cross60;
+  const showCross = crossMs != null && crossMs > minMs + DAY_MS && crossMs < maxMs - DAY_MS;
+  const showNeeded = traj && traj.lastScore < READY_SCORE && traj.examMs > lastMs;
 
-  const gridYs = [0, 25, 50, 60, 75, 100];
-
-  // When tests cluster within days their labels overprint. Always label the
-  // first and last points; label intermediates only when they sit far enough
-  // (in px) from the previous labeled point AND from the last point's label.
-  const LABEL_GAP = 44;
+  // Label first & last points; intermediates only when far enough apart in px.
+  const LABEL_GAP = 40;
   const labeledIdx = (() => {
-    const xs = sorted.map(t => toX(t.date));
-    const keep = new Set();
-    if (!xs.length) return keep;
-    keep.add(0);
-    keep.add(xs.length - 1);
-    let lastX = xs[0];
-    for (let i = 1; i < xs.length - 1; i++) {
-      if (xs[i] - lastX > LABEL_GAP && xs[xs.length - 1] - xs[i] > LABEL_GAP) {
-        keep.add(i);
-        lastX = xs[i];
-      }
+    const keep = new Set([0, scorePts.length - 1]);
+    let prevX = scorePts[0][0];
+    for (let i = 1; i < scorePts.length - 1; i++) {
+      const [x] = scorePts[i];
+      if (x - prevX > LABEL_GAP && scorePts.at(-1)[0] - x > LABEL_GAP) { keep.add(i); prevX = x; }
     }
     return keep;
   })();
 
+  function handleMove(e) {
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const px = ((e.clientX - rect.left) / rect.width) * W;
+    let best = null, bd = 26;
+    scorePts.forEach(([x], i) => { const d = Math.abs(x - px); if (d < bd) { bd = d; best = i; } });
+    setHover(best);
+  }
+
+  const hoverT = hover != null ? sorted[hover] : null;
+  const hoverGap = hoverT?.uworldAvg != null ? hoverT.score - hoverT.uworldAvg : null;
+
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%", height: "auto", display: "block" }}>
-      {gridYs.map(y => (
-        <g key={y}>
-          <line x1={PAD.left} x2={W - PAD.right} y1={toY(y)} y2={toY(y)}
-            stroke="var(--line)" strokeWidth={y === 60 ? "1.5" : "1"}
-            strokeDasharray={y === 60 ? "4 3" : undefined} />
-          <text x={PAD.left - 6} y={toY(y)} textAnchor="end" dominantBaseline="middle" fontSize="9.5" fill="var(--muted)">
-            {y}%
-          </text>
-        </g>
-      ))}
-      <text x={PAD.left + 6} y={toY(60) - 6} fontSize="8.5" fill="#A26A12" fontWeight="700">
-        60% target
-      </text>
+    <div className="td-chart-wrap">
+      <svg
+        ref={svgRef}
+        viewBox={`0 0 ${W} ${H}`}
+        style={{ width: "100%", height: "auto", display: "block", touchAction: "pan-y" }}
+        onPointerMove={handleMove}
+        onPointerDown={handleMove}
+        onPointerLeave={() => setHover(null)}
+      >
+        <defs>
+          <clipPath id="tdPlot">
+            <rect x={PAD.left} y={PAD.top - 8} width={CW + 14} height={CH + 8} />
+          </clipPath>
+        </defs>
 
-      {trendLine && (
-        <line
-          x1={trendLine.x1.toFixed(1)} y1={trendLine.y1.toFixed(1)}
-          x2={trendLine.x2.toFixed(1)} y2={trendLine.y2.toFixed(1)}
-          stroke="rgba(148,163,184,0.55)" strokeWidth="1.5" strokeDasharray="6 4" strokeLinecap="round"
-        />
-      )}
-      {uwPts.length >= 2 && (
-        <>
-          <path d={areaPath(uwPts)} fill="#A26A12" opacity="0.07" />
-          <path d={linePath(uwPts)} fill="none" stroke="#A26A12" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
-        </>
-      )}
-      {scorePts.length >= 2 && (
-        <>
-          <path d={areaPath(scorePts)} fill="var(--accent)" opacity="0.09" />
-          <path d={linePath(scorePts)} fill="none" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        </>
-      )}
-
-      {uwPts.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="4" fill="#A26A12" stroke="var(--surface)" strokeWidth="2" />
-      ))}
-      {scorePts.map(([x, y, t], i) => (
-        <g key={i}>
-          <circle cx={x} cy={y} r="5.5" fill="var(--accent)" stroke="var(--surface)" strokeWidth="2.5" />
-          {labeledIdx.has(i) && (
-            <text x={x} y={y - 11} textAnchor="middle" fontSize="9" fill="var(--accent)" fontWeight="700">
-              {t.score}%
+        {/* grid */}
+        {[20, 40, 60, 80].filter(v => v >= lo && v <= hi).map(y => (
+          <g key={y}>
+            <line x1={PAD.left} x2={W - PAD.right} y1={toY(y)} y2={toY(y)}
+              stroke={y === PASS_SCORE ? "var(--warn-mid)" : "var(--line)"}
+              strokeWidth={y === PASS_SCORE ? "1.5" : "1"}
+              strokeDasharray={y === PASS_SCORE ? "4 3" : undefined} />
+            <text x={PAD.left - 6} y={toY(y)} textAnchor="end" dominantBaseline="middle" fontSize="9.5" fill="var(--muted)">
+              {y}%
             </text>
-          )}
-        </g>
-      ))}
-      {sorted.map((t, i) => labeledIdx.has(i) && (
-        <text key={i} x={toX(t.date)} y={H - 6} textAnchor="middle" fontSize="9.5" fill="var(--muted)">
-          {new Date(t.date + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+          </g>
+        ))}
+        <text x={PAD.left + 4} y={toY(PASS_SCORE) - 5} fontSize="8.5" fill="var(--warn)" fontWeight="700">
+          60% pass line
         </text>
-      ))}
-    </svg>
+
+        {/* exam day */}
+        {examX != null && (
+          <g>
+            <line x1={examX} x2={examX} y1={PAD.top - 6} y2={PAD.top + CH} stroke="var(--line-hover)" strokeWidth="1.2" />
+            <text x={examX - 5} y={PAD.top - 12} textAnchor="end" fontSize="9" fill="var(--text-2)" fontWeight="700">
+              Exam · Oct 6
+            </text>
+          </g>
+        )}
+
+        {/* today */}
+        {todayMs > minMs && todayMs < maxMs - DAY_MS && (
+          <g>
+            <line x1={toX(todayMs)} x2={toX(todayMs)} y1={PAD.top + 6} y2={PAD.top + CH}
+              stroke="var(--line)" strokeWidth="1" strokeDasharray="2 4" />
+            <text x={toX(todayMs)} y={PAD.top - 1} textAnchor="middle" fontSize="8.5" fill="var(--muted)">
+              today
+            </text>
+          </g>
+        )}
+
+        {/* trend, projected through exam day */}
+        {trendSeg && (
+          <line clipPath="url(#tdPlot)"
+            x1={trendSeg.x1.toFixed(1)} y1={trendSeg.y1.toFixed(1)}
+            x2={trendSeg.x2.toFixed(1)} y2={trendSeg.y2.toFixed(1)}
+            stroke="var(--muted)" opacity="0.55" strokeWidth="1.6" strokeDasharray="7 5" strokeLinecap="round" />
+        )}
+
+        {/* needed pace: latest result → ready on exam day */}
+        {showNeeded && (
+          <g>
+            <line clipPath="url(#tdPlot)"
+              x1={toX(lastMs)} y1={toY(traj.lastScore)} x2={toX(traj.examMs)} y2={toY(READY_SCORE)}
+              stroke="var(--text-2)" strokeWidth="1.4" strokeDasharray="2 4" strokeLinecap="round" />
+            <text x={toX(traj.examMs) - 5} y={toY(READY_SCORE) - 6} textAnchor="end" fontSize="8.5"
+              fill="var(--text-2)" fontWeight="700">
+              ready {READY_SCORE}%
+            </text>
+          </g>
+        )}
+
+        {/* series */}
+        {uwPts.length >= 2 && (
+          <path d={linePath(uwPts)} fill="none" stroke="var(--warn)" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
+        )}
+        {scorePts.length >= 2 && (
+          <path d={linePath(scorePts)} fill="none" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        )}
+
+        {/* 60% crossing on the trend */}
+        {showCross && (
+          <g>
+            <path
+              d={`M${toX(crossMs).toFixed(1)},${(toY(PASS_SCORE) - 6).toFixed(1)} l6,6 l-6,6 l-6,-6 Z`}
+              fill="var(--surface)" stroke="var(--accent)" strokeWidth="2" />
+            <text x={toX(crossMs)} y={toY(PASS_SCORE) - 13} textAnchor="middle" fontSize="9.5"
+              fill="var(--accent-ink)" fontWeight="750">
+              60% ≈ {shortDay(crossMs)}
+            </text>
+          </g>
+        )}
+
+        {/* hover crosshair */}
+        {hover != null && (
+          <line x1={scorePts[hover][0]} x2={scorePts[hover][0]} y1={PAD.top} y2={PAD.top + CH}
+            stroke="var(--line-hover)" strokeWidth="1" />
+        )}
+
+        {uwPts.map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="3.5" fill="var(--warn)" stroke="var(--surface)" strokeWidth="2" />
+        ))}
+        {scorePts.map(([x, y, t], i) => (
+          <g key={i}>
+            {hover === i && <circle cx={x} cy={y} r="9" fill="none" stroke="var(--accent-mid)" strokeWidth="2" />}
+            <circle cx={x} cy={y} r="4.5" fill="var(--accent)" stroke="var(--surface)" strokeWidth="2.5" />
+            {labeledIdx.has(i) && hover !== i && (
+              <text x={x} y={y - 11} textAnchor="middle" fontSize="9" fill="var(--accent)" fontWeight="700">
+                {t.score}%
+              </text>
+            )}
+          </g>
+        ))}
+
+        {/* month ticks */}
+        {ticks.map(m => (
+          <g key={m}>
+            <line x1={toX(m)} x2={toX(m)} y1={PAD.top + CH} y2={PAD.top + CH + 4} stroke="var(--line)" strokeWidth="1" />
+            <text x={toX(m)} y={H - 8} textAnchor="middle" fontSize="9.5" fill="var(--muted)">
+              {new Date(m).toLocaleDateString("en-US", { month: "short" })}
+            </text>
+          </g>
+        ))}
+      </svg>
+
+      {hoverT && (
+        <div
+          className={`td-tip${scorePts[hover][1] < 90 ? " td-tip-below" : ""}`}
+          style={{ left: `${(scorePts[hover][0] / W) * 100}%`, top: `${(scorePts[hover][1] / H) * 100}%` }}
+        >
+          <div className="td-tip-date">{hoverT.testNum ? `${hoverT.testNum} · ` : ""}{shortDay(dateMs(hoverT.date))}</div>
+          <div className="td-tip-row"><i className="td-tip-dot td-tip-dot-me" />You <b>{hoverT.score}%</b></div>
+          {hoverT.uworldAvg != null && (
+            <div className="td-tip-row"><i className="td-tip-dot td-tip-dot-uw" />UWorld <b>{hoverT.uworldAvg}%</b>
+              {hoverGap != null && (
+                <span className={hoverGap >= 0 ? "td-tip-gap-pos" : "td-tip-gap-neg"}>
+                  {hoverGap >= 0 ? "+" : ""}{hoverGap}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -304,11 +405,77 @@ export default function TestDashboard({ onBack, onStudy }) {
       best: Math.max(...scores),
       latest: sorted.at(-1)?.score,
       trend: sorted.length >= 2 ? sorted.at(-1).score - sorted.at(-2).score : null,
-      // Net change from the first recorded test to the latest — the real trajectory.
-      net: sorted.length >= 2 ? sorted.at(-1).score - sorted[0].score : null,
       avgGap: gaps.length ? Math.round(gaps.reduce((a, b) => a + b, 0) / gaps.length) : null,
     };
   }, [sorted]);
+
+  // Overall trajectory: least-squares regression over ALL results in date
+  // space, so every logged test reshapes the slope and the 60% projection.
+  const traj = useMemo(() => {
+    if (sorted.length < 2) return null;
+    const t0 = dateMs(sorted[0].date);
+    const xs = sorted.map(t => (dateMs(t.date) - t0) / DAY_MS);
+    const ys = sorted.map(t => t.score);
+    const n = xs.length;
+    const mx = xs.reduce((a, b) => a + b, 0) / n;
+    const my = ys.reduce((a, b) => a + b, 0) / n;
+    const den = xs.reduce((s, x) => s + (x - mx) ** 2, 0);
+    if (!den) return null;   // all tests on the same day — no slope to fit
+    const slope = xs.reduce((s, x, i) => s + (x - mx) * (ys[i] - my), 0) / den;
+    const intercept = my - slope * mx;
+    const valAtMs = m => slope * ((m - t0) / DAY_MS) + intercept;
+    const last = sorted.at(-1);
+    return {
+      slope,
+      slopeWeek: slope * 7,
+      valAtMs,
+      examMs: dateMs(EXAM_DATE_ISO),
+      lastMs: dateMs(last.date),
+      lastScore: last.score,
+      cross60: slope > 0.005 ? t0 + ((PASS_SCORE - intercept) / slope) * DAY_MS : null,
+    };
+  }, [sorted]);
+
+  // Human wording for the projected 60% crossing.
+  const proj = useMemo(() => {
+    if (!traj) return null;
+    if (traj.cross60 == null) {
+      return {
+        tone: "bad", num: "—",
+        sub: traj.slope < -0.005 ? "Trend is falling — it never crosses 60%" : "Trend is flat — no crossing in sight",
+      };
+    }
+    if (traj.cross60 <= traj.lastMs) {
+      return { tone: "ok", num: "Now", sub: "Your trend line is already above 60%" };
+    }
+    const margin = Math.round((traj.examMs - traj.cross60) / DAY_MS);
+    return margin >= 0
+      ? { tone: "ok", num: `≈ ${shortDay(traj.cross60)}`, sub: `${margin} days of margin before the exam` }
+      : { tone: "bad", num: `≈ ${shortDay(traj.cross60)}`, sub: `${-margin} days after exam day — pace up` };
+  }, [traj]);
+
+  // Landmarks on the road to Oct 6: the score needed at each checkpoint to
+  // reach READY_SCORE on exam day (linear pace from the latest result), next
+  // to where the current trend actually puts you on that date.
+  const roadmap = useMemo(() => {
+    if (!traj) return null;
+    const span = traj.examMs - traj.lastMs;
+    if (span <= 0) return null;
+    const marks = [
+      ["2026-08-15", "Aug 15"], ["2026-09-01", "Sep 1"], ["2026-09-15", "Sep 15"],
+      ["2026-10-01", "Oct 1"], [EXAM_DATE_ISO, "Oct 6", true],
+    ];
+    return marks
+      .map(([iso, label, exam]) => {
+        const m = dateMs(iso);
+        if (m <= traj.lastMs) return null;
+        const needed = Math.round(traj.lastScore + (READY_SCORE - traj.lastScore) * ((m - traj.lastMs) / span));
+        const onTrend = Math.round(traj.valAtMs(m));
+        const d = onTrend - needed;
+        return { label, exam: !!exam, needed, onTrend, diff: d, status: d >= 0 ? "ok" : d >= -3 ? "close" : "behind" };
+      })
+      .filter(Boolean);
+  }, [traj]);
 
   // Questions belonging to a test's block (from its resolved deck).
   function blockQuestions(test) {
@@ -517,9 +684,115 @@ export default function TestDashboard({ onBack, onStudy }) {
         <div className="td-col-dash">
           {stats ? (
             <>
+              {/* Trajectory hero: overall trend + projected 60% crossing */}
+              {traj && proj && (
+                <div className="td-hero">
+                  <div className="td-hero-cell">
+                    <span className="td-stat-label">Overall trend</span>
+                    <span className={`td-hero-num ${traj.slopeWeek > 0.05 ? "td-up" : traj.slopeWeek < -0.05 ? "td-dn" : ""}`}>
+                      {traj.slopeWeek > 0.05 ? "▲ " : traj.slopeWeek < -0.05 ? "▼ " : "→ "}
+                      {traj.slopeWeek >= 0 ? "+" : ""}{traj.slopeWeek.toFixed(1)}%<span className="td-hero-unit">/wk</span>
+                    </span>
+                    <span className="td-hero-sub">fit over all {sorted.length} tests — every result reshapes it</span>
+                  </div>
+                  <div className="td-hero-div" />
+                  <div className="td-hero-cell">
+                    <span className="td-stat-label">Crossing 60%</span>
+                    <span className={`td-hero-num ${proj.tone === "ok" ? "td-up" : "td-dn"}`}>{proj.num}</span>
+                    <span className="td-hero-sub">{proj.sub}</span>
+                  </div>
+                </div>
+              )}
+
+              {/* Compact stat strip */}
+              <div className="td-strip">
+                <div className="td-strip-cell">
+                  <span className="td-strip-label">Latest</span>
+                  <span className="td-strip-num">
+                    {stats.latest}%
+                    {hasTrend && (
+                      <span className={`td-trend ${trendFlat ? "" : trendUp ? "td-trend-up" : "td-trend-dn"}`}>
+                        {trendFlat ? "→" : trendUp ? `▲ ${stats.trend}` : `▼ ${Math.abs(stats.trend)}`}
+                      </span>
+                    )}
+                  </span>
+                </div>
+                <div className="td-strip-cell">
+                  <span className="td-strip-label">Average</span>
+                  <span className="td-strip-num">{stats.avg}%</span>
+                </div>
+                <div className="td-strip-cell">
+                  <span className="td-strip-label">Best</span>
+                  <span className="td-strip-num td-best">{stats.best}%</span>
+                </div>
+                {stats.avgGap != null && (
+                  <div className="td-strip-cell">
+                    <span className="td-strip-label">vs UWorld</span>
+                    <span className={`td-strip-num ${stats.avgGap >= 0 ? "td-gap-pos-num" : "td-gap-neg-num"}`}>
+                      {stats.avgGap >= 0 ? "+" : ""}{stats.avgGap}%
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {/* Forward-looking chart */}
+              <div className="td-chart-card">
+                <div className="td-chart-head">
+                  <span className="td-chart-title">Score → exam day</span>
+                  <div className="td-legend">
+                    <span className="td-legend-item">
+                      <span className="td-legend-line td-legend-score-line" /> My score
+                    </span>
+                    <span className="td-legend-item">
+                      <span className="td-legend-line td-legend-uw-line" /> UWorld avg
+                    </span>
+                    <span className="td-legend-item td-legend-trend">
+                      <span className="td-legend-dash td-legend-trend-dash" /> Trend
+                    </span>
+                    <span className="td-legend-item">
+                      <span className="td-legend-dash td-legend-need-dash" /> Needed pace
+                    </span>
+                  </div>
+                </div>
+                <div className="td-chart-body">
+                  <LineChart tests={sorted} traj={traj} />
+                </div>
+              </div>
+
+              {/* Road to exam day: landmark scores */}
+              {roadmap && roadmap.length > 0 && (
+                <div className="td-road">
+                  <div className="td-road-head">
+                    <span className="td-chart-title">Road to exam day</span>
+                    <span className="td-road-target">ready = {READY_SCORE}%</span>
+                  </div>
+                  <p className="td-road-sub">
+                    “Aim for” is the pace you need from your latest result to walk in at {READY_SCORE}% on
+                    Oct 6 · “on trend” is where today’s line puts you.
+                  </p>
+                  <div className="td-road-row td-road-headrow" aria-hidden="true">
+                    <span />
+                    <span>Aim for</span>
+                    <span>On trend</span>
+                  </div>
+                  {roadmap.map(r => (
+                    <div key={r.label} className={`td-road-row${r.exam ? " td-road-examrow" : ""}`}>
+                      <span className="td-road-date">{r.exam ? "Oct 6 · Exam" : r.label}</span>
+                      <span className="td-road-need">{r.needed}%</span>
+                      <span className={`td-road-trendv td-road-${r.status}`}>
+                        <i className="td-road-dot" />
+                        {r.onTrend}%
+                        <em className="td-road-diff">{r.diff >= 0 ? "+" : ""}{r.diff}</em>
+                      </span>
+                    </div>
+                  ))}
+                  <p className="td-road-foot">Pass line {PASS_SCORE}% · recalculated after every logged test</p>
+                </div>
+              )}
+
               {/* UWorld Qbank completion */}
               <div
-                className="td-qbank"
+                className="td-qbank td-qbank-tail"
                 title={isEstimate ? `Includes estimated counts (${DEFAULT_BLOCK} Qs assumed) for ${estimatedCount} test${estimatedCount === 1 ? "" : "s"} logged without a question count` : undefined}
               >
                 <div className="td-qbank-head">
@@ -534,68 +807,6 @@ export default function TestDashboard({ onBack, onStudy }) {
                 <span className="td-qbank-sub">
                   {isEstimate && "~"}{qbankPct}% of the Qbank · {isEstimate && "~"}{(QBANK_TOTAL - totalQs).toLocaleString()} left
                 </span>
-              </div>
-
-              <div className="td-stats-row">
-                <div className="td-stat-card">
-                  <span className="td-stat-label">Avg score</span>
-                  <span className="td-stat-num">{stats.avg}%</span>
-                </div>
-                <div className="td-stat-card">
-                  <span className="td-stat-label">Personal best</span>
-                  <span className="td-stat-num td-best">{stats.best}%</span>
-                </div>
-                <div className="td-stat-card">
-                  <span className="td-stat-label">Latest</span>
-                  <span className="td-stat-num">
-                    {stats.latest}%
-                    {hasTrend && (
-                      <span className={`td-trend ${trendFlat ? "" : trendUp ? "td-trend-up" : "td-trend-dn"}`}>
-                        {trendFlat ? "→" : trendUp ? `▲ ${stats.trend}` : `▼ ${Math.abs(stats.trend)}`}
-                      </span>
-                    )}
-                  </span>
-                </div>
-                {stats.net != null && (
-                  <div className="td-stat-card">
-                    <span className="td-stat-label">Trend since first</span>
-                    <span className={`td-stat-num ${stats.net > 0 ? "td-gap-pos-num" : stats.net < 0 ? "td-gap-neg-num" : ""}`}>
-                      {stats.net !== 0 && <span className="td-stat-arrow">{stats.net > 0 ? "▲" : "▼"}</span>}
-                      {stats.net > 0 ? "+" : stats.net < 0 ? "−" : ""}{stats.net === 0 ? "0" : Math.abs(stats.net)}%
-                    </span>
-                  </div>
-                )}
-                {stats.avgGap != null && (
-                  <div className="td-stat-card">
-                    <span className="td-stat-label">Avg gap vs UWorld</span>
-                    <span className={`td-stat-num ${stats.avgGap >= 0 ? "td-gap-pos-num" : "td-gap-neg-num"}`}>
-                      {stats.avgGap >= 0 ? "+" : ""}{stats.avgGap}%
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              <div className="td-chart-card">
-                <div className="td-chart-head">
-                  <span className="td-chart-title">Score over time</span>
-                  <div className="td-legend">
-                    <span className="td-legend-item">
-                      <span className="td-legend-line td-legend-score-line" /> My score
-                    </span>
-                    <span className="td-legend-item">
-                      <span className="td-legend-line td-legend-uw-line" /> UWorld avg
-                    </span>
-                    <span className="td-legend-item td-legend-target">
-                      <span className="td-legend-dash" /> 60% target
-                    </span>
-                    <span className="td-legend-item td-legend-trend">
-                      <span className="td-legend-dash td-legend-trend-dash" /> Trend
-                    </span>
-                  </div>
-                </div>
-                <div className="td-chart-body">
-                  <LineChart tests={sorted} />
-                </div>
               </div>
             </>
           ) : (

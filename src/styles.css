@@ -6256,3 +6256,105 @@ html[data-scrolled="true"] .scroll-edge-top { opacity: 1; }
   background: var(--surface-3); border-radius: 8px;
   font-size: 11px; line-height: 1.5; white-space: pre-wrap; word-break: break-word;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   TESTS DASHBOARD — trajectory hero, stat strip, roadmap, chart tooltip
+═══════════════════════════════════════════════════════════════════ */
+
+/* Trajectory hero: overall trend + projected 60% crossing */
+.td-hero {
+  display: grid; grid-template-columns: 1fr auto 1.2fr; gap: 20px; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl);
+  padding: 18px 22px; box-shadow: var(--sh-sm); margin-bottom: 14px;
+}
+.td-hero-cell { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.td-hero-div  { width: 1px; align-self: stretch; background: var(--line); }
+.td-hero-num {
+  font-size: 30px; font-weight: 750; letter-spacing: -1px; line-height: 1;
+  font-variant-numeric: tabular-nums; color: var(--text); white-space: nowrap;
+}
+.td-hero-unit { font-size: 15px; font-weight: 700; letter-spacing: 0; color: var(--muted); }
+.td-hero-sub  { font-size: var(--fs-caption); font-weight: 600; color: var(--muted); line-height: 1.35; }
+.td-up { color: var(--ok); }
+.td-dn { color: var(--bad); }
+
+/* Compact stat strip */
+.td-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 10px; margin-bottom: 14px; }
+.td-strip-cell {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; min-width: 0; box-shadow: var(--sh-sm);
+}
+.td-strip-label {
+  font-size: 9.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.td-strip-num {
+  display: flex; align-items: baseline; gap: 6px; white-space: nowrap;
+  font-size: 21px; font-weight: 750; letter-spacing: -0.6px; line-height: 1;
+  font-variant-numeric: tabular-nums; color: var(--text);
+}
+
+/* Chart: spacing, legend swatches, hover tooltip */
+.td-col-dash .td-chart-card { margin-bottom: 14px; }
+.td-legend-uw-line { background: var(--warn); }
+.td-legend-trend-dash { background: repeating-linear-gradient(90deg, var(--muted) 0 6px, transparent 6px 10px); opacity: 0.7; }
+.td-legend-need-dash  { background: repeating-linear-gradient(90deg, var(--text-2) 0 2px, transparent 2px 6px); }
+.td-chart-wrap { position: relative; }
+.td-tip {
+  position: absolute; transform: translate(-50%, calc(-100% - 14px));
+  background: var(--surface); border: 1px solid var(--line-hover); border-radius: 10px;
+  box-shadow: var(--sh-md); padding: 8px 11px; pointer-events: none; z-index: 5;
+  font-size: 11px; font-weight: 600; color: var(--text-2); white-space: nowrap;
+}
+.td-tip-below { transform: translate(-50%, 14px); }
+.td-tip-date { font-size: 10px; font-weight: 700; color: var(--muted); margin-bottom: 4px; }
+.td-tip-row { display: flex; align-items: center; gap: 6px; line-height: 1.5; }
+.td-tip-row b { color: var(--text); font-variant-numeric: tabular-nums; }
+.td-tip-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.td-tip-dot-me { background: var(--accent); }
+.td-tip-dot-uw { background: var(--warn); }
+.td-tip-gap-pos { color: var(--ok);  font-weight: 700; margin-left: 2px; }
+.td-tip-gap-neg { color: var(--bad); font-weight: 700; margin-left: 2px; }
+
+/* Road to exam day */
+.td-road {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl);
+  box-shadow: var(--sh-sm); padding: 18px 22px 14px; margin-bottom: 14px;
+}
+.td-road-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.td-road-target {
+  font-size: var(--fs-caption2); font-weight: 750; color: var(--accent-ink);
+  background: var(--accent-soft); border: 1px solid var(--accent-mid);
+  border-radius: 999px; padding: 3px 10px; white-space: nowrap;
+}
+.td-road-sub { margin: 8px 0 12px; font-size: var(--fs-caption); font-weight: 500; color: var(--muted); line-height: 1.5; }
+.td-road-row {
+  display: grid; grid-template-columns: minmax(84px, 1.1fr) 1fr 1.3fr;
+  align-items: center; gap: 8px; padding: 9px 2px;
+  border-top: 1px solid var(--line-soft);
+  font-variant-numeric: tabular-nums;
+}
+.td-road-headrow {
+  border-top: none; padding-top: 0; padding-bottom: 5px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted);
+}
+.td-road-date { font-size: var(--fs-caption); font-weight: 700; color: var(--text-2); white-space: nowrap; }
+.td-road-need { font-size: 15px; font-weight: 750; color: var(--text); }
+.td-road-trendv { display: flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 700; white-space: nowrap; }
+.td-road-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: currentColor; }
+.td-road-diff { font-style: normal; font-size: 10.5px; font-weight: 700; opacity: 0.75; }
+.td-road-ok     { color: var(--ok); }
+.td-road-close  { color: var(--warn); }
+.td-road-behind { color: var(--bad); }
+.td-road-examrow { border-top: 1.5px solid var(--line); }
+.td-road-examrow .td-road-date { color: var(--text); font-weight: 800; }
+.td-road-examrow .td-road-need { font-size: 17px; }
+.td-road-foot { margin: 10px 0 0; font-size: var(--fs-caption2); font-weight: 600; color: var(--muted); }
+
+.td-qbank-tail { margin-bottom: 0; }
+
+@media (max-width: 700px) {
+  .td-hero { grid-template-columns: 1fr; gap: 14px; }
+  .td-hero-div { width: auto; height: 1px; align-self: auto; }
+  .td-strip { grid-template-columns: 1fr 1fr; }
+}
