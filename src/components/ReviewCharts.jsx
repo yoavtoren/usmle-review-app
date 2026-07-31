@@ -1,18 +1,22 @@
 import { useMemo } from "react";
 import { localISODate } from "../lib/config.js";
 
-/* ── Shared review-progress charts ──────────────────────────────────────────
+/* ── Coverage-progress charts ───────────────────────────────────────────────
    Props:
      events   — [{ at: "YYYY-MM-DD", rank: number|null, topicId: string }]
+                ONE event per topic (its first-time completion) — repeats are
+                never fed in, so nothing here double-counts
+     baseline — done topics that carry no usable date; added as a constant
+                floor so the cumulative line matches the "Topics done" stat
      color    — accent color for the bars/area (the subject/area color)
-     target   — how many topics the review queue should eventually cover;
+     target   — how many topics the whole book holds;
                 enables the finish-date projection on the cumulative chart
      deadline — "YYYY-MM-DD" hard date (exam day) the projection is compared to
    Renders two charts in one card:
-     1. Daily reviews — bars = reviews that day (left count axis),
-        line = avg rank that day (right 1–5 axis, gold)
-     2. Cumulative    — area = distinct topics reviewed so far, dashed line =
-        projection to `target` at the recent pace, with the projected date
+     1. Daily — bars = topics first completed that day (left count axis),
+        line = avg difficulty that day (right 1–5 axis, gold)
+     2. Cumulative — area = topics done so far, dashed line = projection to
+        `target` at the recent pace, with the projected date
    Renders nothing without data. */
 
 const DAY = 86400000;
@@ -40,7 +44,7 @@ function daysBetween(isoA, isoB) {
   return Math.round((new Date(isoB + "T00:00:00") - new Date(isoA + "T00:00:00")) / DAY);
 }
 
-function buildDays(events) {
+function buildDays(events, baseline = 0) {
   if (!events.length) return null;
   // Anchor on LOCAL midnight and walk the window with calendar-date arithmetic
   // rather than fixed 24h steps — an Israel DST change would otherwise shift the
@@ -68,12 +72,15 @@ function buildDays(events) {
     if (e.rank != null) { d.rankSum += e.rank; d.rankN++; }
   }
 
-  // Cumulative pass
+  // Cumulative pass. The window is capped at 120 days — topics completed
+  // before it starts pre-seed the set so the running total never loses them;
+  // `baseline` covers done topics with no date at all.
   const seen = new Set();
+  for (const e of events) if (idx[e.at] === undefined && e.at < days[0].date) seen.add(e.topicId);
   for (const d of days) {
     d.dailyAvg = d.rankN ? d.rankSum / d.rankN : null;
     d.topics.forEach(t => seen.add(t));
-    d.cumTopics = seen.size;
+    d.cumTopics = baseline + seen.size;
   }
   return days;
 }
@@ -189,7 +196,7 @@ function DailyChart({ days, color }) {
         const x = PL + i * slotW + (slotW - barW) / 2;
         return (
           <path key={d.date} d={barPath(x, bottom - h, barW, h, 2)} fill={color} fillOpacity="0.78">
-            <title>{`${labelFor(d.date)} — ${d.count} review${d.count !== 1 ? "s" : ""}${d.dailyAvg != null ? ` · avg rank ${d.dailyAvg.toFixed(1)}` : ""}`}</title>
+            <title>{`${labelFor(d.date)} — ${d.count} new topic${d.count !== 1 ? "s" : ""}${d.dailyAvg != null ? ` · avg difficulty ${d.dailyAvg.toFixed(1)}` : ""}`}</title>
           </path>
         );
       })}
@@ -222,7 +229,13 @@ function CumulativeChart({ days, color, target, deadline }) {
   const future = daysLeft != null ? Math.min(daysLeft, Math.max(10, Math.round(n * 0.6)), 60) : 0;
   const total = n + future;
   const slotW = (W - PL - PR) / total;
-  const yMax = niceMax(Math.max(goal, 1));
+  // Scale to what is actually visible in the window, not the full goal — a
+  // whole-book target far beyond the plotted horizon would squash the history
+  // into a flat line at the bottom.
+  const visMax = daysLeft != null && daysLeft <= future ? goal
+    : daysLeft != null ? maxCum + pace * future
+    : maxCum;
+  const yMax = niceMax(Math.max(visMax, 1));
   const yOf = v => bottom - (v / yMax) * plotH;
   const cx = i => PL + i * slotW + slotW / 2;
 
@@ -234,7 +247,13 @@ function CumulativeChart({ days, color, target, deadline }) {
   const areaPath = `M${cx(0)},${bottom} L` + areaPts.join(" L") + ` L${cx(n - 1)},${bottom} Z`;
 
   const finishIso = daysLeft != null ? isoPlusDays(todayIso, daysLeft) : null;
-  const finishLabel = finishIso ? labelFor(finishIso) : null;
+  // A projection can land years out — show the year whenever it isn't this one.
+  const finishLabel = finishIso
+    ? new Date(finishIso + "T00:00:00").toLocaleDateString("en-US",
+        new Date(finishIso + "T00:00:00").getFullYear() === new Date().getFullYear()
+          ? { month: "short", day: "numeric" }
+          : { month: "short", day: "numeric", year: "numeric" })
+    : null;
   const reached = daysLeft != null && daysLeft <= future;
   const projEnd = daysLeft == null ? null : reached
     ? { x: cx(n - 1 + daysLeft), y: yOf(goal) }
@@ -248,8 +267,8 @@ function CumulativeChart({ days, color, target, deadline }) {
   const annot = daysLeft != null
     ? `~${pace.toFixed(1)}/day → all ${goal} by ${finishLabel}${deadlineNote}`
     : remaining <= 0
-      ? `all ${goal} topics reviewed ✓`
-      : "no reviews in the last 2 weeks — no pace to project";
+      ? `all ${goal} topics covered ✓`
+      : "no new topics in the last 2 weeks — no pace to project";
 
   const examIdx = deadline ? daysBetween(days[0].date, deadline) : -1;
   const showExam = examIdx > 0 && examIdx <= total - 1;
@@ -259,8 +278,8 @@ function CumulativeChart({ days, color, target, deadline }) {
       <YAxis yMax={yMax} y={yOf} x0={PL} x1={W - PR} />
       <XAxis isoList={isoList} x0={PL} slotW={slotW} bottom={bottom} maxLabels={Math.min(total, 26)} />
 
-      {/* target line (dashed = threshold, not grid) */}
-      {goal > maxCum && (
+      {/* target line (dashed = threshold, not grid) — only when it fits the scale */}
+      {goal > maxCum && goal <= yMax && (
         <>
           <line x1={PL} x2={W - PR} y1={yOf(goal)} y2={yOf(goal)} stroke="#C4BCA6" strokeWidth="1" strokeDasharray="4 3" />
           <text x={W - PR - 2} y={yOf(goal) - 3} textAnchor="end" fontSize="6.5" fill={MUTED}>target {goal}</text>
@@ -310,7 +329,7 @@ function CumulativeChart({ days, color, target, deadline }) {
 
       {/* current position: end dot + direct label */}
       <circle cx={cx(n - 1)} cy={yOf(maxCum)} r="2.6" fill={color} stroke="var(--surface)" strokeWidth="1.2">
-        <title>{`${labelFor(todayIso)} — ${maxCum} distinct topics reviewed`}</title>
+        <title>{`${labelFor(todayIso)} — ${maxCum} topics done`}</title>
       </circle>
       <text x={cx(n - 1)} y={yOf(maxCum) - 5} textAnchor="middle" fontSize="7" fontWeight="700" fill={INK}>{maxCum}</text>
 
@@ -320,29 +339,28 @@ function CumulativeChart({ days, color, target, deadline }) {
   );
 }
 
-export default function ReviewCharts({ events, color = "#1E4D38", target = 0, deadline = null }) {
-  const days = useMemo(() => buildDays(events || []), [events]);
+export default function ReviewCharts({ events, baseline = 0, color = "#1E4D38", target = 0, deadline = null }) {
+  const days = useMemo(() => buildDays(events || [], baseline), [events, baseline]);
   if (!days) return null;
-  const totalReviews = events.length;
-  const distinctTopics = days[days.length - 1].cumTopics;
+  const topicsDone = days[days.length - 1].cumTopics;
 
   return (
     <div className="rc-card">
       <div className="rc-head">
-        <span className="rc-title">📈 Review progress</span>
+        <span className="rc-title">📈 Coverage progress</span>
         <span className="rc-legend">
-          <span className="rc-leg"><span className="rc-swatch" style={{ background: color }} /> topics</span>
-          <span className="rc-leg"><span className="rc-swatch" style={{ background: RANK_COLOR }} /> avg rank</span>
-          <span className="rc-sub">{totalReviews} reviews · {distinctTopics} topics</span>
+          <span className="rc-leg"><span className="rc-swatch" style={{ background: color }} /> new topics</span>
+          <span className="rc-leg"><span className="rc-swatch" style={{ background: RANK_COLOR }} /> avg difficulty</span>
+          <span className="rc-sub">{topicsDone} topics done · repeats excluded</span>
         </span>
       </div>
       <div className="rc-grid">
         <div className="rc-chart">
-          <div className="rc-chart-lbl">Reviews per day</div>
+          <div className="rc-chart-lbl">New topics per day</div>
           <DailyChart days={days} color={color} />
         </div>
         <div className="rc-chart">
-          <div className="rc-chart-lbl">Cumulative topics reviewed</div>
+          <div className="rc-chart-lbl">Cumulative topics done</div>
           <CumulativeChart days={days} color={color} target={target} deadline={deadline} />
         </div>
       </div>

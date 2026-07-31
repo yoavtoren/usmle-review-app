@@ -443,25 +443,26 @@ export default function FADashboard({ onBack, onTrack }) {
     });
   }, []);
 
-  // Flatten FA reviews into chart events; rank = the topic's difficulty.
-  const reviewEvents = useMemo(() => {
-    const evs = [];
+  // Coverage events for the progress charts: ONE event per done topic — its
+  // first-time completion — so repeat reviews never inflate the counts and the
+  // cumulative line lands on the same number as the "Topics done" stat.
+  // Topics done but missing any usable date go into `baseline` (a constant
+  // floor under the cumulative line).
+  const coverage = useMemo(() => {
+    const events = [];
+    let baseline = 0;
     for (const [key, val] of Object.entries(lsTopics)) {
-      const rank = val.difficulty ?? null;
-      for (const rev of (val.reviews || [])) {
-        // Local calendar day, matching the rest of the app's day boundary.
-        if (rev.completedAt) evs.push({ at: localISODate(new Date(rev.completedAt)), rank, topicId: key });
-      }
+      if (!val.done) continue;
+      // Prefer the completion timestamp; fall back to the earliest review for
+      // legacy entries marked done before doneAt existed.
+      const stamp = val.doneAt
+        || (val.reviews || []).map(r => r.completedAt).filter(Boolean).sort()[0]
+        || null;
+      if (!stamp) { baseline++; continue; }
+      events.push({ at: localISODate(new Date(stamp)), rank: val.difficulty ?? null, topicId: key });
     }
-    return evs;
+    return { events, baseline };
   }, [lsTopics]);
-
-  // The cumulative-review projection aims at every done topic enrolled in
-  // spaced reviews (i.e. rated with a difficulty).
-  const reviewTarget = useMemo(
-    () => Object.values(lsTopics).filter(v => v.done && v.difficulty).length,
-    [lsTopics]
-  );
 
   const chapterStats = useMemo(() => {
     if (!data) return [];
@@ -665,7 +666,7 @@ export default function FADashboard({ onBack, onTrack }) {
       <ProgressChart lsTopics={lsTopics} chapterStats={chapterStats} />
 
       {/* Review-progress charts (whole First Aid) */}
-      <ReviewCharts events={reviewEvents} color="#1E4D38" target={reviewTarget} deadline={TARGET_SIT_ISO} />
+      <ReviewCharts events={coverage.events} baseline={coverage.baseline} color="#1E4D38" target={overallStats.total} deadline={TARGET_SIT_ISO} />
 
       {/* Due reviews panel */}
       <DueReviewsPanel
