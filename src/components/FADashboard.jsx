@@ -4,7 +4,8 @@ import { loadFATopics, saveFATopics, loadTasks, saveTasks, touchFASection } from
 import { chaptersFromText } from "../lib/faMap.js";
 import { markTaskInFA, lookupPage } from "../lib/faSync.js";
 import { FA_EDITION } from "../lib/firstAidData.js";
-import ReviewCharts from "./ReviewCharts.jsx";
+import ReviewCharts, { niceMax, barPath, XAxis, YAxis } from "./ReviewCharts.jsx";
+import { TARGET_SIT_ISO } from "../lib/strategyData.js";
 import { localISODate } from "../lib/config.js";
 import { playPop } from "../lib/sound.js";
 
@@ -163,10 +164,13 @@ function ReviewBadge({ reviews, total, nextDueAt }) {
 }
 
 function ProgressChart({ lsTopics, chapterStats }) {
-  const { showDates, maxTotal, chFileToColor } = useMemo(() => {
+  const { showDates, maxTotal, chFileToColor, chFileToName } = useMemo(() => {
     const byDate = {};
     for (const [key, val] of Object.entries(lsTopics)) {
       if (!val.done || !val.doneAt) continue;
+      // Topics auto-ticked by "✓ Read" on a missed question are re-review
+      // activity, not new coverage — keep them out of the daily-progress bars.
+      if (val.fromQuestion) continue;
       const chFile = key.split("::")[0];
       // doneAt is a UTC ISO timestamp; bucket it by the LOCAL calendar day so the
       // bar lines up with the local label under it. Slicing the UTC string put a
@@ -190,52 +194,58 @@ function ProgressChart({ lsTopics, chapterStats }) {
       });
     }
     const maxTotal = Math.max(...dates.map(d => d.total), 1);
-    const chFileToColor = {};
-    chapterStats.forEach(ch => { chFileToColor[ch.file] = ch.color; });
-    return { showDates: dates, maxTotal, chFileToColor };
+    const chFileToColor = {}, chFileToName = {};
+    chapterStats.forEach(ch => { chFileToColor[ch.file] = ch.color; chFileToName[ch.file] = ch.name; });
+    return { showDates: dates, maxTotal, chFileToColor, chFileToName };
   }, [lsTopics, chapterStats]);
 
   const hasData = showDates.some(d => d.total > 0);
   if (!hasData) return null;
 
-  const W = 600, H = 120;
+  const W = 600, PT = 8, PB = 32, PL = 22, PR = 6;
+  const plotH = 100, bottom = PT + plotH, H = bottom + PB;
   const n = showDates.length;
-  const slotW = W / n;
-  const barW = Math.max(3, Math.floor(slotW) - 2);
+  const slotW = (W - PL - PR) / n;
+  const barW = Math.max(3, Math.min(18, slotW - 3));
+  const yMax = niceMax(maxTotal);
+  const yOf = v => bottom - (v / yMax) * plotH;
+  const SEG_GAP = 1.2; // surface gap between stacked segments
 
   return (
     <div className="fad-chart-card">
       <div className="fad-chart-head">
         <span className="fad-section-label">Daily progress</span>
-        <span className="muted small">last 30 days</span>
+        <span className="muted small">new topics only · last 30 days</span>
       </div>
       <div className="fad-chart-wrap">
-        <svg viewBox={`0 0 ${W} ${H + 18}`} className="fad-chart-svg" preserveAspectRatio="xMidYMid meet">
+        <svg viewBox={`0 0 ${W} ${H}`} className="fad-chart-svg" preserveAspectRatio="xMidYMid meet">
+          <YAxis yMax={yMax} y={yOf} x0={PL} x1={W - PR} />
+          <XAxis isoList={showDates.map(d => d.date)} x0={PL} slotW={slotW} bottom={bottom} maxLabels={n} />
           {showDates.map((d, i) => {
             if (d.total === 0) return null;
-            const x = Math.floor(i * slotW + (slotW - barW) / 2);
-            let y = H;
+            const x = PL + i * slotW + (slotW - barW) / 2;
+            const entries = Object.entries(d.counts).sort();
+            const tip = `${d.label} — ${d.total} new topic${d.total !== 1 ? "s" : ""}\n` +
+              entries.map(([f, c]) => `${chFileToName[f] || f}: ${c}`).join("\n");
+            let yCursor = bottom;
             return (
               <g key={d.date}>
-                {Object.entries(d.counts).sort().map(([chFile, count]) => {
-                  const barH = Math.max(2, Math.round((count / maxTotal) * H));
-                  y -= barH;
+                <title>{tip}</title>
+                {entries.map(([chFile, count], j) => {
+                  const h = Math.max(2, (count / yMax) * plotH);
+                  const top = yCursor - h;
+                  yCursor = top;
+                  const segH = Math.max(1.5, h - (j > 0 ? SEG_GAP : 0));
                   const color = chFileToColor[chFile] || "#A39B88";
-                  const yPos = y;
-                  return <rect key={chFile} x={x} y={yPos} width={barW} height={barH} fill={color} rx="1" />;
+                  // Topmost segment gets the rounded data-end; the stack stays
+                  // square at the baseline and between segments.
+                  return j === entries.length - 1
+                    ? <path key={chFile} d={barPath(x, top, barW, segH, 2.5)} fill={color} />
+                    : <rect key={chFile} x={x} y={top} width={barW} height={segH} fill={color} />;
                 })}
               </g>
             );
           })}
-          {showDates
-            .map((d, i) => ({ d, i }))
-            .filter(({ i }) => i % 5 === 0 || i === n - 1)
-            .map(({ d, i }) => (
-              <text key={i} x={Math.floor(i * slotW + slotW / 2)} y={H + 13}
-                textAnchor="middle" fontSize="7.5" fill="#A39B88">
-                {d.label}
-              </text>
-            ))}
         </svg>
       </div>
     </div>
@@ -446,6 +456,13 @@ export default function FADashboard({ onBack, onTrack }) {
     return evs;
   }, [lsTopics]);
 
+  // The cumulative-review projection aims at every done topic enrolled in
+  // spaced reviews (i.e. rated with a difficulty).
+  const reviewTarget = useMemo(
+    () => Object.values(lsTopics).filter(v => v.done && v.difficulty).length,
+    [lsTopics]
+  );
+
   const chapterStats = useMemo(() => {
     if (!data) return [];
     return data.chapters.map((ch, idx) => {
@@ -502,6 +519,9 @@ export default function FADashboard({ onBack, onTrack }) {
   const activityLog = useMemo(() => {
     const byDate = {};
     for (const val of Object.values(lsTopics)) {
+      // Same rule as the daily chart: only topics you newly ticked yourself —
+      // auto-ticks from missed-question reads are re-reviews, not new progress.
+      if (val.fromQuestion) continue;
       if (val.done && val.doneAt) {
         const d = new Date(val.doneAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
         byDate[d] = (byDate[d] || 0) + 1;
@@ -645,7 +665,7 @@ export default function FADashboard({ onBack, onTrack }) {
       <ProgressChart lsTopics={lsTopics} chapterStats={chapterStats} />
 
       {/* Review-progress charts (whole First Aid) */}
-      <ReviewCharts events={reviewEvents} color="#1E4D38" />
+      <ReviewCharts events={reviewEvents} color="#1E4D38" target={reviewTarget} deadline={TARGET_SIT_ISO} />
 
       {/* Due reviews panel */}
       <DueReviewsPanel

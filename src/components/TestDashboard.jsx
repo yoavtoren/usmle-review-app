@@ -4,10 +4,16 @@ import { loadTestLog, saveTestLog, loadProgress, testScore, deleteTest } from ".
 import TestEntryForm, { emptyEntry, MOODS } from "./TestEntryForm.jsx";
 import { useLongPress } from "../lib/longPress.js";
 import { impact, notification } from "../lib/haptics.js";
-import { QBANK_TOTAL } from "../lib/config.js";
+import { QBANK_TOTAL, EXAM_DATE_ISO } from "../lib/config.js";
 
 const BASE = import.meta.env.BASE_URL;
 const DEFAULT_BLOCK = 40;   // standard UWorld block size when count not given
+const DAY_MS = 86400000;
+const PASS_SCORE = 60;      // UWorld % that correlates with a comfortable pass
+const READY_SCORE = 65;     // walk-in-ready benchmark — safely above the pass line
+
+const dateMs = iso => new Date(iso + "T12:00:00").getTime();
+const shortDay = m => new Date(m).toLocaleDateString("en-US", { month: "short", day: "numeric" });
 
 // Resolve which deck block a logged test maps to. Prefer explicit fields, else
 // infer from the test name ("UWORLD test 5" → "test5") so manually-added tests

@@ -1388,7 +1388,7 @@ kbd { background: var(--surface); border: 1px solid var(--line-hover); border-ra
 .fad-chart-card { background: var(--surface); border-radius: var(--r-xl); border: 1px solid var(--line); padding: 20px 24px; margin-bottom: 20px; box-shadow: var(--sh-sm); }
 .fad-chart-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
 .fad-chart-wrap { width: 100%; }
-.fad-chart-svg  { width: 100%; height: auto; display: block; max-height: 160px; }
+.fad-chart-svg  { width: 100%; height: auto; display: block; max-height: 180px; }
 
 /* Due reviews panel */
 .fad-due-card { background: var(--surface); border-radius: var(--r-xl); border: 1px solid var(--warn-mid); padding: 20px 24px; margin-bottom: 20px; box-shadow: 0 2px 12px var(--warn-soft); }
@@ -3992,7 +3992,7 @@ a.ms-mat-title2:hover { color: var(--accent); text-decoration: underline; }
 .rc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .rc-chart { min-width: 0; }
 .rc-chart-lbl { font-size: var(--fs-caption2); font-weight: 800; color: var(--muted); margin-bottom: 4px; }
-.rc-svg { width: 100%; height: 120px; display: block; }
+.rc-svg { width: 100%; height: auto; display: block; }
 @media (max-width: 720px) {
   .rc-grid { grid-template-columns: 1fr; gap: 14px; }
 }
