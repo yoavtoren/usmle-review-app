@@ -1,0 +1,176 @@
+{
+  "id": "q511",
+  "item": 511,
+  "qid": "1419",
+  "title": "Leading vs lagging strand: greatest difference is DNA fragment joining by DNA ligase",
+  "system": "Biochemistry",
+  "topic": "DNA replication - leading vs lagging strand",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 58,
+  "vignette": "A 65-year-old woman with chronic obstructive pulmonary disease and type 2 diabetes mellitus comes to the emergency department due to profound fever and malaise. After initial evaluation, she is hospitalized for sepsis. Blood cultures plated on lactose-containing media grow rapidly dividing gram-negative bacteria. Replication of these microbial cells requires the synthesis of new bacterial DNA, a process that uses parent DNA strands as templates to produce 2 daughter strands. DNA synthesis occurs slightly differently between the 2 strands. The greatest difference most likely involves which of the following processes?",
+  "clues": [
+    {
+      "text": "produce 2 daughter strands",
+      "type": "blue",
+      "note": "Both new strands are made by DNA polymerase, but only in the 5'->3' direction, which forces the two strands to be synthesized differently."
+    },
+    {
+      "text": "DNA synthesis occurs slightly differently between the 2 strands",
+      "type": "green",
+      "note": "The leading strand is made continuously; the LAGGING strand is made in short Okazaki fragments that must be JOINED - the key difference between strands."
+    }
+  ],
+  "whatMatters": "DNA polymerase synthesizes only 5'->3', so the LEADING strand is made CONTINUOUSLY, while the LAGGING strand is made in short OKAZAKI FRAGMENTS that must be joined into a continuous strand by DNA LIGASE. Ligase therefore acts far more on the lagging strand - the greatest difference. Answer A.",
+  "strategy": "Find the process that DIFFERS between strands. Both use helicase, single-strand binding proteins, gyrase, primase, and proofreading polymerase - these act on the fork/parent equally. Only the lagging strand needs many Okazaki fragments JOINED by DNA LIGASE, so ligase activity differs most. Reject helicase, single-strand-binding proteins, and gyrase (act on the parent strands, not strand-specific) and proofreading (both strands are proofread 3'->5').",
+  "options": [
+    {
+      "letter": "A",
+      "text": "DNA fragment joining by DNA ligase",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Enzymatic function of DNA helicase",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Interaction with single-stranded DNA-binding proteins",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Proofreading orientation by DNA polymerase III",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Supercoil relaxation by DNA gyrase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "DNA helicase - acts on the parent strands",
+      "detail": "WHAT IT IS: unwinds the parental duplex at the fork. ❌ WHY IT FAILS: helicase works on the parent DNA, not differentially on leading vs lagging daughter strands. ✅ Correct if: strand separation at the origin/fork."
+    },
+    {
+      "letter": "C",
+      "label": "Single-stranded DNA-binding proteins - protect parent",
+      "detail": "WHAT IT IS: proteins that stabilize exposed single-stranded parent DNA. ❌ WHY IT FAILS: they act on the parent strands overall, not as a leading/lagging difference. ✅ Correct if: preventing reannealing/degradation of ssDNA."
+    },
+    {
+      "letter": "D",
+      "label": "Proofreading by DNA pol III - both strands proofread",
+      "detail": "WHAT IT IS: 3'->5' exonuclease proofreading. ❌ WHY IT FAILS: DNA polymerase III proofreads BOTH the leading and lagging strands (3'->5'), so it is not the key difference. ✅ Correct if: comparing proofreading capacity across polymerases."
+    },
+    {
+      "letter": "E",
+      "label": "DNA gyrase - relieves supercoiling on parent",
+      "detail": "WHAT IT IS: a type II topoisomerase relieving supercoils ahead of the fork. ❌ WHY IT FAILS: it acts on the parent duplex, not differentially on the two daughter strands. ✅ Correct if: supercoil relaxation ahead of the fork."
+    }
+  ],
+  "reasoning": [
+    "DNA polymerase synthesizes only in the 5'->3' direction",
+    "The leading strand is made continuously; the lagging strand is made in Okazaki fragments",
+    "Those fragments must be joined into a continuous strand by DNA ligase",
+    "-> DNA ligase acts much more on the lagging strand (the greatest difference); answer A"
+  ],
+  "mechanism": "DNA replication is SEMICONSERVATIVE and bidirectional. Helicase unwinds the parent duplex (gyrase relieves the resulting supercoils; single-strand-binding proteins protect exposed ssDNA), and primase lays RNA primers. Because DNA polymerase can synthesize ONLY in the 5'->3' DIRECTION, the two daughter strands are made differently: the LEADING strand is synthesized CONTINUOUSLY toward the advancing fork, whereas the LAGGING strand is synthesized DISCONTINUOUSLY as short OKAZAKI FRAGMENTS moving away from the fork, each requiring its own RNA primer. After DNA polymerase I removes the RNA primers and replaces them with DNA, DNA LIGASE seals the nicks to JOIN the Okazaki fragments into a continuous strand. Because the lagging strand has many fragments and the leading strand essentially one continuous segment, DNA LIGASE acts far MORE on the lagging strand - the greatest process difference between the two strands. Helicase, single-strand-binding proteins, gyrase (parent-strand actions), and proofreading (both strands, 3'->5') are not strand-specific differences.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem > DNA replication: 5'->3' synthesis only; leading strand continuous, lagging strand = Okazaki fragments (own primers) joined by DNA ligase; pol I removes primers; helicase/SSB/gyrase act on parent; proofreading both strands."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Lagging strand = Okazaki fragments joined by ligase -> ligase differs most between strands."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on leading/lagging strand, Okazaki fragments, DNA ligase, primase, or 5'->3' synthesis? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Helicase/SSB/gyrase act on parent strands; proofreading occurs on both strands - none is strand-specific like ligase."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: lagging strand made in Okazaki fragments joined by DNA ligase (acts more on lagging strand)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Greatest leading vs lagging difference",
+      "back": "DNA ligase joining Okazaki fragments (lagging strand)"
+    },
+    {
+      "front": "Why strands differ",
+      "back": "DNA polymerase synthesizes only 5'->3'"
+    },
+    {
+      "front": "Leading strand synthesis",
+      "back": "Continuous"
+    },
+    {
+      "front": "Lagging strand synthesis",
+      "back": "Discontinuous (Okazaki fragments, each with a primer)"
+    },
+    {
+      "front": "DNA polymerase I role",
+      "back": "Removes RNA primers, fills with DNA"
+    },
+    {
+      "front": "Helicase/SSB/gyrase act on",
+      "back": "Parent strands (not strand-specific)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Leading vs lagging strand",
+      "detail": "Biochem: ligase joins Okazaki fragments (lagging strand)."
+    },
+    {
+      "tag": "options",
+      "topic": "Replication enzymes",
+      "detail": "Biochem > helicase/SSB/gyrase on parent; proofreading both strands."
+    },
+    {
+      "tag": "concept",
+      "topic": "Okazaki fragments",
+      "detail": "Biochem > discontinuous lagging-strand synthesis."
+    }
+  ],
+  "memoryHook": "Only the lagging strand is built in little pieces (Okazaki), so DNA ligase is the busy 'stapler' there - that's the biggest difference between the two strands.",
+  "stem": [
+    {
+      "text": "A 65-year-old woman with chronic obstructive pulmonary disease and type 2 diabetes mellitus comes to the emergency department due to profound fever and malaise. After initial evaluation, she is hospitalized for sepsis. Blood cultures plated on lactose-containing media grow rapidly dividing gram-negative bacteria. Replication of these microbial cells requires the synthesis of new bacterial DNA, a process that uses parent DNA strands as templates to "
+    },
+    {
+      "text": "produce 2 daughter strands",
+      "clue": true,
+      "type": "blue",
+      "note": "Both new strands are made by DNA polymerase, but only in the 5'->3' direction, which forces the two strands to be synthesized differently."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "DNA synthesis occurs slightly differently between the 2 strands",
+      "clue": true,
+      "type": "green",
+      "note": "The leading strand is made continuously; the LAGGING strand is made in short Okazaki fragments that must be JOINED - the key difference between strands."
+    },
+    {
+      "text": ". The greatest difference most likely involves which of the following processes?"
+    }
+  ]
+}

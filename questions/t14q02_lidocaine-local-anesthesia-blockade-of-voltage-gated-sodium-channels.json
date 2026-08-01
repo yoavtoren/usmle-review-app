@@ -1,0 +1,176 @@
+{
+  "id": "q481",
+  "item": 481,
+  "qid": "15712",
+  "title": "Lidocaine local anesthesia: blockade of voltage-gated sodium channels",
+  "system": "Pharmacology",
+  "topic": "Local anesthetics",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 88,
+  "vignette": "A 10-year-old boy is brought to the emergency department due to a fall while riding his bicycle. The patient hit his forehead on a concrete road barrier and sustained a laceration but did not lose consciousness. He reports no headache, nausea, vomiting, vision disturbances, or focal weakness or numbness. The patient received a tetanus vaccine at age 6. Vital signs are within normal limits. Physical examination reveals a 2-cm laceration above the left eyebrow. There are no other injuries. Neurologic examination shows no abnormalities. Prior to laceration repair with suture, lidocaine is injected in the subcutaneous tissue around the laceration. The patient reports immediate relief of pain, and there is loss of sensation to touch in the area infiltrated with the medication. These effects are most likely due to which of the following changes within the affected neurons?",
+  "clues": [
+    {
+      "text": "lidocaine is injected in the subcutaneous tissue around the laceration",
+      "type": "blue",
+      "note": "Lidocaine is an amide local anesthetic used for infiltration anesthesia; it acts on peripheral sensory nerve fibers."
+    },
+    {
+      "text": "loss of sensation to touch",
+      "type": "green",
+      "note": "Blocking impulse conduction in sensory neurons abolishes pain and touch transmission - achieved by blocking voltage-gated sodium channels."
+    }
+  ],
+  "whatMatters": "LIDOCAINE (a local anesthetic) blocks VOLTAGE-GATED SODIUM CHANNELS in the neuronal membrane, preventing the sodium influx needed for depolarization and action-potential propagation - so the nerve cannot transmit pain/touch signals. Answer B.",
+  "strategy": "Recall the local-anesthetic mechanism: they block voltage-gated Na channels (binding the inner pore in the open/inactivated state), halting action potentials. Small myelinated pain/temperature fibers are blocked preferentially. Reject potassium-channel block (affects repolarization, would prolong APs), decreased calcium current (slows nodal cells, not peripheral conduction), increased chloride conductance (GABA-A/benzodiazepines - CNS inhibition), and interruption of axonal transport (chemo/neurodegeneration, not acute anesthesia).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Blockade of potassium channels",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Blockade of sodium channels",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Decreased calcium current",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Increased chloride conductance",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Interruption of axonal transport",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Potassium channel block - prolongs, not halts APs",
+      "detail": "WHAT IT IS: blocking K channels that mediate repolarization. ❌ WHY IT FAILS: this would PROLONG action potentials (delay repolarization), not abolish conduction; local anesthetics act on Na channels. ✅ Correct if: class III antiarrhythmic effect (QT prolongation)."
+    },
+    {
+      "letter": "C",
+      "label": "Decreased calcium current - nodal cells, not peripheral nerve",
+      "detail": "WHAT IT IS: reduced Ca influx slowing depolarization in calcium-dependent tissues (SA/AV nodes). ❌ WHY IT FAILS: peripheral nerve depolarization depends on SODIUM, not calcium; blocking Ca wouldn't produce infiltration anesthesia. ✅ Correct if: calcium channel blocker effect on nodal tissue."
+    },
+    {
+      "letter": "D",
+      "label": "Increased chloride conductance - GABA-A (CNS)",
+      "detail": "WHAT IT IS: chloride influx causing hyperpolarization (GABA-A receptor, benzodiazepines). ❌ WHY IT FAILS: that is central inhibitory signaling, not the peripheral Na-channel block of a local anesthetic. ✅ Correct if: benzodiazepine/barbiturate CNS sedation."
+    },
+    {
+      "letter": "E",
+      "label": "Interruption of axonal transport - chemo/degeneration",
+      "detail": "WHAT IT IS: impaired delivery of organelles/vesicles down the axon (e.g., vincristine, neurodegeneration). ❌ WHY IT FAILS: local anesthetics work within seconds by blocking Na channels, not by disrupting slow axonal transport. ✅ Correct if: chemotherapy-induced peripheral neuropathy."
+    }
+  ],
+  "reasoning": [
+    "Lidocaine is a local anesthetic given for infiltration anesthesia",
+    "Local anesthetics block voltage-gated sodium channels in the nerve membrane",
+    "Without sodium influx, the neuron cannot depolarize or propagate action potentials",
+    "-> loss of pain/touch sensation via sodium-channel blockade; answer B"
+  ],
+  "mechanism": "LOCAL ANESTHETICS such as LIDOCAINE interrupt nerve conduction by BLOCKING VOLTAGE-GATED SODIUM CHANNELS in the neuronal membrane, preventing the rapid Na influx required to reach threshold and propagate ACTION POTENTIALS. They are WEAK BASES: the uncharged (nonionized) form diffuses across the lipid membrane, then the charged (protonated) form binds the channel's inner pore (preferentially in the open/inactivated state, i.e., use-dependent block). Local anesthetics preferentially block SMALL, MYELINATED fibers, so pain and temperature are lost first while pressure and motor function are relatively preserved. In INFECTED/acidic tissue, more drug is trapped in the charged form and cannot cross the membrane, so a higher dose is needed. The distractors describe unrelated mechanisms: K-channel block (repolarization), Ca-current reduction (nodal cells), chloride conductance (GABA-A/CNS), and axonal transport disruption (neuropathy).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > local anesthetics (lidocaine): block voltage-gated Na channels (inner pore, use-dependent); weak bases (uncharged form penetrates, charged form blocks); block small myelinated pain fibers first; less effective in acidic/infected tissue."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Local anesthetic = Na-channel block -> no depolarization/conduction -> numbness."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on voltage-gated sodium channel, action potential, local anesthetic, weak base ionization, or use-dependent block? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "K block = prolongs AP; Ca = nodal cells; Cl conductance = GABA-A/CNS; axonal transport = chemo neuropathy."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: local anesthetics block voltage-gated Na channels; less effective in infected/acidic tissue (need higher dose)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Lidocaine / local anesthetic mechanism",
+      "back": "Block voltage-gated sodium channels (no depolarization)"
+    },
+    {
+      "front": "Local anesthetic ionization",
+      "back": "Weak base: uncharged form penetrates, charged form blocks channel"
+    },
+    {
+      "front": "Fiber block order",
+      "back": "Small myelinated pain/temperature fibers first"
+    },
+    {
+      "front": "Why local anesthetics fail in infected tissue",
+      "back": "Acidic pH traps charged form -> less penetration"
+    },
+    {
+      "front": "Amide vs ester local anesthetics",
+      "back": "Amides have 2 'i's (lidocaine); esters metabolized by plasma esterases"
+    },
+    {
+      "front": "Use-dependent block",
+      "back": "Preferential binding to open/inactivated Na channels"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Local anesthetics",
+      "detail": "Pharm: block voltage-gated Na channels -> no conduction."
+    },
+    {
+      "tag": "options",
+      "topic": "Channel mechanisms",
+      "detail": "Pharm > K (repolarization), Ca (nodal), Cl (GABA-A)."
+    },
+    {
+      "tag": "clinical",
+      "topic": "Infected tissue",
+      "detail": "Pharm > acidic pH reduces efficacy (higher dose)."
+    }
+  ],
+  "memoryHook": "Lidocaine slams the sodium gates shut - no sodium rush, no action potential, no pain signal getting through.",
+  "stem": [
+    {
+      "text": "A 10-year-old boy is brought to the emergency department due to a fall while riding his bicycle. The patient hit his forehead on a concrete road barrier and sustained a laceration but did not lose consciousness. He reports no headache, nausea, vomiting, vision disturbances, or focal weakness or numbness. The patient received a tetanus vaccine at age 6. Vital signs are within normal limits. Physical examination reveals a 2-cm laceration above the left eyebrow. There are no other injuries. Neurologic examination shows no abnormalities. Prior to laceration repair with suture, "
+    },
+    {
+      "text": "lidocaine is injected in the subcutaneous tissue around the laceration",
+      "clue": true,
+      "type": "blue",
+      "note": "Lidocaine is an amide local anesthetic used for infiltration anesthesia; it acts on peripheral sensory nerve fibers."
+    },
+    {
+      "text": ". The patient reports immediate relief of pain, and there is "
+    },
+    {
+      "text": "loss of sensation to touch",
+      "clue": true,
+      "type": "green",
+      "note": "Blocking impulse conduction in sensory neurons abolishes pain and touch transmission - achieved by blocking voltage-gated sodium channels."
+    },
+    {
+      "text": " in the area infiltrated with the medication. These effects are most likely due to which of the following changes within the affected neurons?"
+    }
+  ]
+}

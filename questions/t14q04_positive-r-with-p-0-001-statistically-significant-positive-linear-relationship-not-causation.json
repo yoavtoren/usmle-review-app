@@ -1,0 +1,176 @@
+{
+  "id": "q483",
+  "item": 483,
+  "qid": "19632",
+  "title": "Positive r with p<0.001: statistically significant positive linear relationship (not causation)",
+  "system": "Biostatistics",
+  "topic": "Correlation coefficient interpretation",
+  "correct": "D",
+  "yourAnswer": "A",
+  "percentCorrect": 71,
+  "vignette": "A research group is studying the correlation between BMI and blood pressure in a random sample of children age 12-16. After collecting data, they conduct a correlation analysis at a 1% significance level. The researchers find that BMI correlates with systolic blood pressure with a coefficient of r = 0.46 (p <0.001) and diastolic blood pressure with a coefficient of r = 0.37 (p <0.001). Which of the following is the most accurate interpretation of these results?",
+  "clues": [
+    {
+      "text": "r = 0.46 (p <0.001)",
+      "type": "green",
+      "note": "A POSITIVE r (both variables rise together) that is statistically significant (p < 0.01 threshold) indicates a significant positive linear relationship - but correlation is not causation."
+    },
+    {
+      "text": "r = 0.37 (p <0.001)",
+      "type": "blue",
+      "note": "The diastolic coefficient is also positive and significant, reinforcing a positive (not negative) linear association."
+    }
+  ],
+  "whatMatters": "Both correlation coefficients are POSITIVE (r = 0.46, 0.37) and STATISTICALLY SIGNIFICANT (p < 0.001, below the 1% threshold), so there is a statistically significant POSITIVE LINEAR relationship between BMI and blood pressure. Correlation does NOT prove causation. Answer D.",
+  "strategy": "Read sign, significance, and the correlation-vs-causation limit. Positive r -> positive linear relationship; p < significance level -> statistically significant; correlation alone can't establish causation. Reject causal claims (A 'causes', B 'increases risk...later in life' - both assert causation), a 'negative' relationship (r is positive), and 'no significant relationship' (p is highly significant).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "An increase in BMI causes a statistically significant increase in blood pressure in children",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Childhood obesity significantly increases the risk of cardiovascular disease later in life",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "There is a statistically significant negative linear relationship between BMI and blood pressure in children",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "There is a statistically significant positive linear relationship between BMI and blood pressure in children",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "There is no statistically significant linear relationship between BMI and blood pressure in children",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "'Causes' - correlation is not causation",
+      "detail": "WHAT IT IS: a causal claim that higher BMI causes higher BP. ❌ WHY IT FAILS: a correlation coefficient shows association, not causation; confounders could explain the link. ✅ Correct if: a randomized/experimental design supporting causation."
+    },
+    {
+      "letter": "B",
+      "label": "Increases CVD risk later - unsupported causal/temporal claim",
+      "detail": "WHAT IT IS: a causal, longitudinal claim about future cardiovascular disease. ❌ WHY IT FAILS: this cross-sectional correlation says nothing about future outcomes or causation. ✅ Correct if: a prospective cohort demonstrating incident CVD."
+    },
+    {
+      "letter": "C",
+      "label": "Negative linear relationship - sign is wrong",
+      "detail": "WHAT IT IS: an inverse association. ❌ WHY IT FAILS: r is POSITIVE (0.46, 0.37), so the relationship is positive, not negative. ✅ Correct if: r were negative."
+    },
+    {
+      "letter": "E",
+      "label": "No significant relationship - p says otherwise",
+      "detail": "WHAT IT IS: denying a significant association. ❌ WHY IT FAILS: p < 0.001 is below the 1% significance level, so the relationship IS statistically significant. ✅ Correct if: p exceeded the significance threshold."
+    }
+  ],
+  "reasoning": [
+    "Both correlation coefficients are positive (r = 0.46 and 0.37)",
+    "Both p-values (<0.001) are below the 1% significance level -> statistically significant",
+    "A correlation shows association, not causation",
+    "-> statistically significant positive linear relationship (not causal); answer D"
+  ],
+  "mechanism": "The CORRELATION COEFFICIENT (r) measures the DIRECTION and STRENGTH of a LINEAR association between two variables and ranges from -1 to +1. A POSITIVE r means the variables increase together; a negative r means one rises as the other falls; values near +/-1 are strong, values near 0 are weak. A CORRELATION ANALYSIS also tests whether the association is statistically significant: a p-value below the chosen SIGNIFICANCE LEVEL (here 1%) indicates a statistically significant linear relationship. In this study, r = 0.46 (systolic) and 0.37 (diastolic) are both POSITIVE with p < 0.001, so there is a STATISTICALLY SIGNIFICANT POSITIVE LINEAR relationship between BMI and blood pressure in these children. Crucially, CORRELATION DOES NOT IMPLY CAUSATION - the significant association does not prove that higher BMI CAUSES higher blood pressure (confounders may be responsible), nor does it speak to future disease. Hence causal claims (A, B) are wrong, 'negative' (C) has the wrong sign, and 'no relationship' (E) contradicts the significant p-value.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > correlation coefficient: r in [-1,+1], sign = direction, magnitude = strength; p < significance level = statistically significant; correlation != causation; cross-sectional design limits."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Positive r + p<0.001 = significant positive linear relationship; can't claim causation."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on correlation coefficient, significance level/p-value, positive vs negative correlation, or correlation vs causation? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "'Causes'/'increases future risk' assert causation; 'negative' has wrong sign; 'no relationship' ignores p<0.001."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: positive significant r = positive linear association only; correlation is not causation."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Positive r meaning",
+      "back": "Variables increase together (positive linear relationship)"
+    },
+    {
+      "front": "p < significance level means",
+      "back": "Statistically significant association"
+    },
+    {
+      "front": "Correlation vs causation",
+      "back": "Association does NOT prove causation (confounders)"
+    },
+    {
+      "front": "r range and strength",
+      "back": "-1 to +1; near +/-1 strong, near 0 weak"
+    },
+    {
+      "front": "Design limit here",
+      "back": "Cross-sectional correlation - no temporal/causal inference"
+    },
+    {
+      "front": "r^2 meaning",
+      "back": "Proportion of variance explained by the linear relationship"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Correlation interpretation",
+      "detail": "Biostat: positive significant r = positive linear association, not causation."
+    },
+    {
+      "tag": "options",
+      "topic": "Correlation vs causation",
+      "detail": "Biostat > causal claims need experimental/longitudinal design."
+    },
+    {
+      "tag": "concept",
+      "topic": "Significance",
+      "detail": "Biostat > p < alpha = statistically significant."
+    }
+  ],
+  "memoryHook": "Positive r + tiny p = 'they move together, for real' - but 'move together' is not 'one causes the other.'",
+  "stem": [
+    {
+      "text": "A research group is studying the correlation between BMI and blood pressure in a random sample of children age 12-16. After collecting data, they conduct a correlation analysis at a 1% significance level. The researchers find that BMI correlates with systolic blood pressure with a coefficient of "
+    },
+    {
+      "text": "r = 0.46 (p <0.001)",
+      "clue": true,
+      "type": "green",
+      "note": "A POSITIVE r (both variables rise together) that is statistically significant (p < 0.01 threshold) indicates a significant positive linear relationship - but correlation is not causation."
+    },
+    {
+      "text": " and diastolic blood pressure with a coefficient of "
+    },
+    {
+      "text": "r = 0.37 (p <0.001)",
+      "clue": true,
+      "type": "blue",
+      "note": "The diastolic coefficient is also positive and significant, reinforcing a positive (not negative) linear association."
+    },
+    {
+      "text": ". Which of the following is the most accurate interpretation of these results?"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "q490",
+  "item": 490,
+  "qid": "377",
+  "title": "Anti-HBs positive with anti-HBc negative: hepatitis B vaccination (not infection)",
+  "system": "Microbiology",
+  "topic": "Hepatitis B serology",
+  "correct": "A",
+  "yourAnswer": "D",
+  "percentCorrect": 88,
+  "vignette": "A 38-year-old woman who works as a nurse at a large community hospital is undergoing evaluation following an accidental needlestick in the operating room. The patient being operated on is not known to have any infections. As part of her evaluation, the nurse has serologic testing for viral hepatitis. Laboratory results are as follows: anti-HAV IgM negative, anti-HAV IgG positive, HBsAg negative, HBeAg negative, anti-HBs positive, anti-HBc IgM negative, anti-HBc IgG negative, anti-HBe negative, and anti-HCV negative. Which of the following statements is most likely to be true regarding the nurse's viral status?",
+  "clues": [
+    {
+      "text": "HBsAg negative",
+      "type": "blue",
+      "note": "Absence of hepatitis B surface antigen means there is no active HBV infection (no circulating virus)."
+    },
+    {
+      "text": "anti-HBs positive",
+      "type": "green",
+      "note": "Anti-HBs (surface antibody) is the neutralizing, immunity-conferring antibody - present after vaccination OR recovery from infection."
+    },
+    {
+      "text": "anti-HBc IgM negative, anti-HBc IgG negative",
+      "type": "green",
+      "note": "Absent anti-HBc (core antibody) is the key: the vaccine contains only surface antigen, so vaccinated people never make anti-HBc; natural infection WOULD produce anti-HBc."
+    }
+  ],
+  "whatMatters": "Isolated ANTI-HBs POSITIVE with HBsAg NEGATIVE and ANTI-HBc NEGATIVE indicates HEPATITIS B VACCINATION. The vaccine contains only HBsAg, so it induces anti-HBs (immunity) but never anti-HBc; natural infection would produce anti-HBc. Answer A.",
+  "strategy": "Use anti-HBc to separate vaccination from natural immunity: anti-HBs POSITIVE + anti-HBc NEGATIVE = vaccinated; anti-HBs positive + anti-HBc positive = recovered from infection. HBsAg negative rules out active/chronic infection and carrier state. (Anti-HAV IgG positive/IgM negative = prior HAV exposure or vaccine, not acute.) Reject chronic hepatitis/carrier (need HBsAg positive), recent recovery (would have anti-HBc), active HAV shedding (IgM would be positive), and HDV infection (impossible without HBsAg).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "She has been vaccinated against hepatitis B virus (HBV)",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "She has chronic hepatitis but is non-contagious",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "She has recovered from HBV infection recently",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "She is actively shedding hepatitis A virus",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "She is an asymptomatic carrier of HBV",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "She is infected with hepatitis D virus",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Chronic hepatitis - needs HBsAg positive",
+      "detail": "WHAT IT IS: chronic HBV infection. ❌ WHY IT FAILS: chronic infection requires persistent HBsAg (>6 months); her HBsAg is negative and she has protective anti-HBs. ✅ Correct if: HBsAg positive >6 months with anti-HBc positive."
+    },
+    {
+      "letter": "C",
+      "label": "Recently recovered from HBV - would have anti-HBc",
+      "detail": "WHAT IT IS: resolved natural HBV infection. ❌ WHY IT FAILS: recovery from infection produces anti-HBc (IgG), which is NEGATIVE here; only the vaccine gives anti-HBs without anti-HBc. ✅ Correct if: anti-HBs AND anti-HBc positive with HBsAg negative."
+    },
+    {
+      "letter": "D",
+      "label": "Actively shedding HAV - IgM would be positive",
+      "detail": "WHAT IT IS: acute hepatitis A. ❌ WHY IT FAILS: acute HAV shows anti-HAV IgM POSITIVE; here IgM is negative and only IgG is positive (past exposure or vaccination). ✅ Correct if: anti-HAV IgM positive (acute HAV)."
+    },
+    {
+      "letter": "E",
+      "label": "Asymptomatic HBV carrier - needs HBsAg positive",
+      "detail": "WHAT IT IS: an inactive chronic carrier. ❌ WHY IT FAILS: a carrier has circulating HBsAg; hers is negative, and she has protective anti-HBs. ✅ Correct if: HBsAg positive with normal LFTs, low viral load."
+    },
+    {
+      "letter": "F",
+      "label": "Hepatitis D infection - impossible without HBsAg",
+      "detail": "WHAT IT IS: HDV coinfection/superinfection. ❌ WHY IT FAILS: HDV is defective and requires HBV (HBsAg) to replicate; with HBsAg negative, HDV infection cannot occur. ✅ Correct if: HBsAg positive with anti-HDV."
+    }
+  ],
+  "reasoning": [
+    "HBsAg negative -> no active or chronic HBV infection",
+    "Anti-HBs positive -> immunity (vaccination or recovery)",
+    "Anti-HBc negative -> never naturally infected (vaccine contains only surface antigen)",
+    "-> hepatitis B vaccination; answer A"
+  ],
+  "mechanism": "HEPATITIS B serology distinguishes infection from immunity. HBsAg (surface antigen) indicates active infection (persistence >6 months = chronic). Anti-HBs (surface antibody) is the NEUTRALIZING, protective antibody seen after either VACCINATION or recovery from infection. Anti-HBc (core antibody) is the discriminator: the recombinant HBV VACCINE contains ONLY HBsAg, so vaccinated individuals develop anti-HBs but NEVER anti-HBc; in contrast, NATURAL infection exposes the immune system to core antigen (found in the virus/infected hepatocytes but not circulating), so recovered or infected people are anti-HBc POSITIVE. This nurse has HBsAg negative, anti-HBs POSITIVE, and anti-HBc NEGATIVE - the pattern of successful VACCINATION. (Her anti-HAV IgG positive with IgM negative reflects prior HAV exposure or vaccination, not acute infection; anti-HCV negative.) Chronic infection/carrier states require HBsAg positivity, recovery would show anti-HBc, acute HAV would show anti-HAV IgM, and HDV cannot infect without HBsAg.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro > hepatitis B serology: HBsAg (active infection), anti-HBs (immunity: vaccine or recovery), anti-HBc (natural infection only - vaccine has only HBsAg), IgM anti-HBc (acute/window), HBeAg (infectivity); HDV needs HBsAg."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Anti-HBs positive + anti-HBc negative = vaccinated (natural infection would give anti-HBc)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on HBsAg, anti-HBs, anti-HBc (IgM/IgG), HBeAg, window period, or anti-HAV IgM vs IgG? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Chronic/carrier need HBsAg positive; recovery has anti-HBc; acute HAV has IgM; HDV needs HBsAg."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: vaccinated = anti-HBs positive + anti-HBc NEGATIVE; recovered = anti-HBs positive + anti-HBc positive."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Anti-HBs positive, anti-HBc negative",
+      "back": "Hepatitis B vaccination"
+    },
+    {
+      "front": "Anti-HBs positive, anti-HBc positive",
+      "back": "Recovery from natural HBV infection"
+    },
+    {
+      "front": "HBsAg meaning",
+      "back": "Active HBV infection (>6 months = chronic)"
+    },
+    {
+      "front": "Why vaccinated lack anti-HBc",
+      "back": "Vaccine contains only surface antigen (HBsAg)"
+    },
+    {
+      "front": "Anti-HAV IgM vs IgG",
+      "back": "IgM = acute HAV; IgG = past exposure/immunity"
+    },
+    {
+      "front": "Hepatitis D requirement",
+      "back": "Needs HBsAg (HBV) to replicate"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "HBV serology",
+      "detail": "Micro: anti-HBs+ / anti-HBc- = vaccinated."
+    },
+    {
+      "tag": "options",
+      "topic": "Infection vs immunity",
+      "detail": "Micro > HBsAg (active), anti-HBc (natural infection), HDV needs HBsAg."
+    },
+    {
+      "tag": "HAV",
+      "topic": "Anti-HAV IgM/IgG",
+      "detail": "Micro > IgM acute, IgG past/immune."
+    }
+  ],
+  "memoryHook": "Vaccine gives you the shield (anti-HBs) but never the core scar (anti-HBc) - so anti-HBs positive with anti-HBc negative means 'vaccinated,' not 'infected.'",
+  "stem": [
+    {
+      "text": "A 38-year-old woman who works as a nurse at a large community hospital is undergoing evaluation following an accidental needlestick in the operating room. The patient being operated on is not known to have any infections. As part of her evaluation, the nurse has serologic testing for viral hepatitis. Laboratory results are as follows: anti-HAV IgM negative, anti-HAV IgG positive, "
+    },
+    {
+      "text": "HBsAg negative",
+      "clue": true,
+      "type": "blue",
+      "note": "Absence of hepatitis B surface antigen means there is no active HBV infection (no circulating virus)."
+    },
+    {
+      "text": ", HBeAg negative, "
+    },
+    {
+      "text": "anti-HBs positive",
+      "clue": true,
+      "type": "green",
+      "note": "Anti-HBs (surface antibody) is the neutralizing, immunity-conferring antibody - present after vaccination OR recovery from infection."
+    },
+    {
+      "text": ", "
+    },
+    {
+      "text": "anti-HBc IgM negative, anti-HBc IgG negative",
+      "clue": true,
+      "type": "green",
+      "note": "Absent anti-HBc (core antibody) is the key: the vaccine contains only surface antigen, so vaccinated people never make anti-HBc; natural infection WOULD produce anti-HBc."
+    },
+    {
+      "text": ", anti-HBe negative, and anti-HCV negative. Which of the following statements is most likely to be true regarding the nurse's viral status?"
+    }
+  ]
+}

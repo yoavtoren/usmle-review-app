@@ -1,0 +1,214 @@
+{
+  "id": "q545",
+  "item": 545,
+  "qid": "20603",
+  "title": "Seizure + anticholinergic toxidrome + QRS widening after psych discharge: tricyclic antidepressant overdose",
+  "system": "Pharmacology",
+  "topic": "Tricyclic antidepressant overdose",
+  "correct": "F",
+  "yourAnswer": "B",
+  "percentCorrect": 57,
+  "vignette": "A 17-year-old girl is brought to the emergency department by a friend an hour after she was observed having a seizure. The patient has no known history of a seizure disorder. Her friend reports she has a history of depression and substance use disorder and was released yesterday from a psychiatric hospital after 3 days of inpatient treatment. The patient's medications are unknown. Temperature is 38.3 C (100.9 F), blood pressure is 90/50 mm Hg, and pulse is 130/min. On examination, the patient is sedated and disoriented. The pupils are dilated and bowel sounds are decreased. She has 700 mL of urine return when a urinary catheter is placed. ECG reveals sinus tachycardia and a QRS duration of 130 msec. Which of the following is the most likely cause of this patient's symptoms?",
+  "clues": [
+    {
+      "text": "history of depression",
+      "type": "orange",
+      "note": "Depression is a common indication for tricyclic antidepressants (TCAs), which are dangerous in overdose and available to psychiatric patients."
+    },
+    {
+      "text": "pupils are dilated and bowel sounds are decreased",
+      "type": "green",
+      "note": "Mydriasis with decreased bowel sounds (plus hyperthermia, flushing, tachycardia) is an ANTICHOLINERGIC toxidrome - a hallmark of TCA overdose."
+    },
+    {
+      "text": "700 mL of urine return when a urinary catheter is placed",
+      "type": "green",
+      "note": "Urinary retention (large bladder volume on catheterization) is another anticholinergic effect."
+    },
+    {
+      "text": "QRS duration of 130 msec",
+      "type": "red",
+      "note": "QRS WIDENING (130 / normal <120 msec) from cardiac fast sodium-channel blockade is the dangerous cardiotoxic signature of TCA overdose (arrhythmia risk)."
+    }
+  ],
+  "whatMatters": "New-onset seizure + ANTICHOLINERGIC toxidrome (dilated pupils, decreased bowel sounds, urinary retention, hyperthermia, tachycardia) + QRS WIDENING and hypotension = TRICYCLIC ANTIDEPRESSANT OVERDOSE (multi-receptor blockade). Answer F.",
+  "strategy": "Assemble the TCA overdose triad: (1) CNS (seizures, sedation - GABA-A/muscarinic and histamine block); (2) ANTICHOLINERGIC signs (mydriasis, ileus, retention, hyperthermia); (3) CARDIAC toxicity (QRS widening from fast-Na-channel block, hypotension from alpha-1 block). Reject cocaine overdose (would be HYPERtension + diaphoresis, not hypotension/dry-anticholinergic/QRS widening), benzodiazepine/opioid withdrawal, salicylate toxicity (tinnitus, mixed acid-base, no QRS widening/anticholinergic), and serotonin syndrome (hyperreflexia/clonus, diaphoresis, hypertension - no QRS widening).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Benzodiazepine withdrawal",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cocaine overdose",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Opioid withdrawal",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Salicylate toxicity",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Serotonin syndrome",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Tricyclic antidepressant overdose",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Benzodiazepine withdrawal - no anticholinergic/QRS",
+      "detail": "WHAT IT IS: withdrawal causing seizures, tremor, tachycardia, agitation. ❌ WHY IT FAILS: it doesn't cause anticholinergic signs (dry, dilated, retention) or QRS widening/hypotension. ✅ Correct if: seizures with autonomic hyperactivity after stopping a benzodiazepine (no QRS widening)."
+    },
+    {
+      "letter": "B",
+      "label": "Cocaine overdose - hypertension/diaphoresis expected",
+      "detail": "WHAT IT IS: sympathomimetic toxicity (seizures, hyperthermia, tachycardia, MI). ❌ WHY IT FAILS: cocaine causes HYPERtension and DIAPHORESIS (wet skin), not the hypotension and dry anticholinergic picture/QRS widening seen here. ✅ Correct if: hypertensive, diaphoretic, agitated with chest pain."
+    },
+    {
+      "letter": "C",
+      "label": "Opioid withdrawal - hypertension, diarrhea",
+      "detail": "WHAT IT IS: withdrawal with dilated pupils, mild fever, hypertension, diarrhea/cramps. ❌ WHY IT FAILS: it doesn't cause seizures, cardiac conduction delay, decreased bowel sounds, or hypotension. ✅ Correct if: mydriasis with GI hyperactivity and hypertension after stopping opioids."
+    },
+    {
+      "letter": "D",
+      "label": "Salicylate toxicity - tinnitus, mixed acid-base",
+      "detail": "WHAT IT IS: aspirin toxicity (hyperthermia, altered mental status, seizures from neuroglycopenia). ❌ WHY IT FAILS: it presents with tinnitus, tachypnea, and a mixed respiratory alkalosis/anion-gap metabolic acidosis - not QRS widening, urinary retention, or dilated pupils. ✅ Correct if: tinnitus + mixed acid-base disturbance."
+    },
+    {
+      "letter": "E",
+      "label": "Serotonin syndrome - clonus/hyperreflexia, hypertension",
+      "detail": "WHAT IT IS: excess serotonergic activity (agitation, hyperthermia, neuromuscular hyperactivity). ❌ WHY IT FAILS: it features hyperreflexia/CLONUS, diaphoresis, and hypertension - not QRS widening or the dry anticholinergic picture. ✅ Correct if: clonus/hyperreflexia after serotonergic drugs."
+    }
+  ],
+  "reasoning": [
+    "New-onset seizure with sedation, hyperthermia, and tachycardia after psychiatric discharge",
+    "Anticholinergic signs: dilated pupils, decreased bowel sounds, urinary retention",
+    "ECG shows QRS widening (fast sodium-channel block) with hypotension (alpha-1 block)",
+    "-> tricyclic antidepressant overdose; answer F"
+  ],
+  "mechanism": "TRICYCLIC ANTIDEPRESSANTS (TCAs; e.g., amitriptyline, nortriptyline) block MULTIPLE receptors/channels, so overdose produces a characteristic multi-system picture: (1) CNS effects - SEIZURES (GABA-A antagonism), SEDATION/coma (H1 antihistamine), and agitation/delirium (central muscarinic block); (2) ANTICHOLINERGIC toxicity from muscarinic blockade - hyperthermia, dry/flushed skin, MYDRIASIS (dilated pupils), tachycardia, DECREASED bowel sounds (ileus), and URINARY RETENTION; and (3) CARDIOVASCULAR toxicity - blockade of cardiac FAST SODIUM CHANNELS slows phase 0 depolarization, causing QRS WIDENING (>100-120 msec) with risk of ventricular arrhythmia, and alpha-1 blockade causes HYPOTENSION. Cardiac toxicity is the major cause of death; treatment of QRS widening/arrhythmia is IV SODIUM BICARBONATE (increases extracellular sodium and alkalinizes, relieving Na-channel block). This patient - recently discharged from psychiatric care (TCA access), with a seizure, anticholinergic signs, hypotension, and QRS widening - fits TCA overdose. The distractors (cocaine, salicylate, serotonin syndrome, benzodiazepine/opioid withdrawal) each lack the QRS widening plus anticholinergic-with-hypotension combination.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > TCA overdose: block muscarinic (anticholinergic), H1 (sedation), alpha-1 (hypotension), GABA-A (seizures), and cardiac fast Na channels (QRS widening, arrhythmia); treat QRS widening with sodium bicarbonate; cardiotoxicity is the main cause of death."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Seizure + anticholinergic signs + QRS widening + hypotension = TCA overdose."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on anticholinergic toxidrome, QRS widening, fast sodium-channel block, alpha-1 blockade, or sodium bicarbonate treatment? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Cocaine = hypertension/diaphoresis; salicylate = tinnitus/mixed acid-base; serotonin syndrome = clonus/hypertension; withdrawals lack QRS widening."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: TCA overdose = anticholinergic + seizures + QRS widening/hypotension; treat with sodium bicarbonate."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Seizure + anticholinergic + QRS widening",
+      "back": "Tricyclic antidepressant overdose"
+    },
+    {
+      "front": "TCA cardiac toxicity mechanism",
+      "back": "Fast sodium-channel block -> QRS widening/arrhythmia"
+    },
+    {
+      "front": "TCA overdose antidote for QRS widening",
+      "back": "IV sodium bicarbonate"
+    },
+    {
+      "front": "TCA receptor blockade",
+      "back": "Muscarinic, H1, alpha-1, GABA-A, cardiac Na channels"
+    },
+    {
+      "front": "Cocaine vs TCA vital signs",
+      "back": "Cocaine = hypertension/diaphoresis; TCA = hypotension/dry"
+    },
+    {
+      "front": "Anticholinergic toxidrome signs",
+      "back": "Dilated pupils, dry/flushed, hyperthermia, ileus, urinary retention"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "TCA overdose",
+      "detail": "Pharm: anticholinergic + seizures + QRS widening/hypotension."
+    },
+    {
+      "tag": "treatment",
+      "topic": "Sodium bicarbonate",
+      "detail": "Tox > for QRS widening/arrhythmia in TCA overdose."
+    },
+    {
+      "tag": "options",
+      "topic": "Toxidromes",
+      "detail": "Tox > cocaine, salicylate, serotonin syndrome differ."
+    }
+  ],
+  "memoryHook": "Recently discharged depressed teen with a seizure, dry-and-dilated (anticholinergic), floppy blood pressure, and a WIDE QRS = tricyclic overdose - give sodium bicarbonate.",
+  "stem": [
+    {
+      "text": "A 17-year-old girl is brought to the emergency department by a friend an hour after she was observed having a seizure. The patient has no known history of a seizure disorder. Her friend reports she has a "
+    },
+    {
+      "text": "history of depression",
+      "clue": true,
+      "type": "orange",
+      "note": "Depression is a common indication for tricyclic antidepressants (TCAs), which are dangerous in overdose and available to psychiatric patients."
+    },
+    {
+      "text": " and substance use disorder and was released yesterday from a psychiatric hospital after 3 days of inpatient treatment. The patient's medications are unknown. Temperature is 38.3 C (100.9 F), blood pressure is 90/50 mm Hg, and pulse is 130/min. On examination, the patient is sedated and disoriented. The "
+    },
+    {
+      "text": "pupils are dilated and bowel sounds are decreased",
+      "clue": true,
+      "type": "green",
+      "note": "Mydriasis with decreased bowel sounds (plus hyperthermia, flushing, tachycardia) is an ANTICHOLINERGIC toxidrome - a hallmark of TCA overdose."
+    },
+    {
+      "text": ". She has "
+    },
+    {
+      "text": "700 mL of urine return when a urinary catheter is placed",
+      "clue": true,
+      "type": "green",
+      "note": "Urinary retention (large bladder volume on catheterization) is another anticholinergic effect."
+    },
+    {
+      "text": ". ECG reveals sinus tachycardia and a "
+    },
+    {
+      "text": "QRS duration of 130 msec",
+      "clue": true,
+      "type": "red",
+      "note": "QRS WIDENING (130 / normal <120 msec) from cardiac fast sodium-channel blockade is the dangerous cardiotoxic signature of TCA overdose (arrhythmia risk)."
+    },
+    {
+      "text": ". Which of the following is the most likely cause of this patient's symptoms?"
+    }
+  ]
+}

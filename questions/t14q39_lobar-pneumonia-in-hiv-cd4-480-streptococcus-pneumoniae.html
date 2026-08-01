@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lobar pneumonia in HIV (CD4 480): Streptococcus pneumoniae</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 14 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q518", "item": 518, "qid": "1767", "title": "Lobar pneumonia in HIV (CD4 480): Streptococcus pneumoniae", "system": "Microbiology", "topic": "Community-acquired pneumonia in HIV", "correct": "G", "yourAnswer": "G", "percentCorrect": 47, "vignette": "A 34-year-old man with HIV comes to the emergency department due to fever, chills, productive cough, and left-sided chest pain that worsens with deep breathing. His symptoms began 3 days ago and have progressively worsened. The patient was diagnosed with HIV 4 years ago during routine screening, and he takes antiretroviral therapy. His CD4 count was 480 cells/mm3 a month ago. Temperature is 38.8 C (102 F), blood pressure is 110/66 mm Hg, pulse is 110/min, and respirations are 22/min. Physical examination shows dullness to percussion, bronchial breath sounds, and crackles over the left lower lung. The right lung and cardiac auscultation findings are normal. Laboratory testing reveals an elevated leukocyte count with left shift. Which of the following organisms is most likely responsible for this patient's current symptoms?", "clues": [{"text": "left-sided chest pain that worsens with deep breathing", "type": "blue", "note": "Pleuritic chest pain with acute fever/productive cough over a few days suggests a typical bacterial lobar pneumonia."}, {"text": "CD4 count was 480 cells/mm3", "type": "orange", "note": "A relatively PRESERVED CD4 count (480; >200) makes opportunistic infections (PCP at CD4 <200, disseminated fungal at <50) far less likely; typical bacteria predominate."}, {"text": "dullness to percussion, bronchial breath sounds, and crackles over the left lower lung", "type": "green", "note": "Dullness, bronchial breath sounds, and crackles indicate LOBAR CONSOLIDATION - classic for Streptococcus pneumoniae."}], "whatMatters": "Acute lobar pneumonia (fever, productive cough, pleuritic pain, focal consolidation, leukocytosis) in an HIV patient with a relatively PRESERVED CD4 (480) = STREPTOCOCCUS PNEUMONIAE - the most common cause of community-acquired pneumonia in HIV-infected and uninfected people alike (and HIV increases invasive pneumococcal risk). Answer G.", "strategy": "Use CD4 to gate the differential: at CD4 480 (>200), think TYPICAL bacterial pneumonia -> S pneumoniae (lobar consolidation, acute onset). Reject opportunistic/atypical causes that need low CD4 or fit a different tempo: Aspergillus (CD4 <50, cavitary), Pneumocystis (CD4 <200, subacute diffuse dyspnea, reticulonodular), TB (weeks, upper-lobe cavitary), Legionella (GI/neuro, atypical), Mycoplasma (young, mild 'walking pneumonia'), and influenza (viral, not lobar bacterial consolidation).", "options": [{"letter": "A", "text": "Aspergillus fumigatus", "correct": false}, {"letter": "B", "text": "Influenza virus", "correct": false}, {"letter": "C", "text": "Legionella pneumophila", "correct": false}, {"letter": "D", "text": "Mycobacterium tuberculosis", "correct": false}, {"letter": "E", "text": "Mycoplasma pneumoniae", "correct": false}, {"letter": "F", "text": "Pneumocystis jiroveci", "correct": false}, {"letter": "G", "text": "Streptococcus pneumoniae", "correct": true}], "eliminations": [{"letter": "A", "label": "Aspergillus - CD4 <50, cavitary", "detail": "WHAT IT IS: invasive aspergillosis (angioinvasive mold). ❌ WHY IT FAILS: it affects severely immunosuppressed patients (CD4 <50) with nodular/cavitary infiltrates, not a lobar pneumonia at CD4 480. ✅ Correct if: profound immunosuppression with a cavitary/nodular lesion (halo sign)."}, {"letter": "B", "label": "Influenza - viral, not lobar consolidation", "detail": "WHAT IT IS: influenza virus (acute fever, myalgias, malaise). ❌ WHY IT FAILS: influenza is not a lobar bacterial consolidation; lobar findings suggest bacterial (often secondary) pneumonia. ✅ Correct if: viral prodrome without focal consolidation (or secondary bacterial pneumonia)."}, {"letter": "C", "label": "Legionella - atypical, GI/neuro", "detail": "WHAT IT IS: Legionella (atypical pneumonia). ❌ WHY IT FAILS: it usually has prominent GI symptoms (diarrhea), confusion, hyponatremia, and poorly Gram-staining sputum; S pneumoniae is more common overall. ✅ Correct if: pneumonia + watery diarrhea + confusion + hyponatremia."}, {"letter": "D", "label": "Mycobacterium tuberculosis - weeks, upper-lobe cavitary", "detail": "WHAT IT IS: reactivation TB. ❌ WHY IT FAILS: TB is subacute/chronic (weeks) with cough, weight loss, night sweats, and UPPER-lobe cavitary disease - not a 3-day lobar lower-lobe pneumonia. ✅ Correct if: chronic cough with upper-lobe cavities/hemoptysis."}, {"letter": "E", "label": "Mycoplasma - young, mild 'walking pneumonia'", "detail": "WHAT IT IS: Mycoplasma (atypical pneumonia). ❌ WHY IT FAILS: it causes a milder, subacute illness with patchy interstitial infiltrates, not acute lobar consolidation with high fever. ✅ Correct if: young patient with mild cough +/- cold agglutinins."}, {"letter": "F", "label": "Pneumocystis jiroveci - CD4 <200, subacute diffuse", "detail": "WHAT IT IS: PCP (opportunistic fungus). ❌ WHY IT FAILS: PCP occurs at CD4 <200 with WEEKS of progressive dyspnea, dry cough, hypoxia, and bilateral reticulonodular infiltrates - not acute lobar pneumonia at CD4 480. ✅ Correct if: CD4 <200 with diffuse infiltrates and exertional hypoxia."}], "reasoning": ["Acute fever, productive cough, and pleuritic pain with focal lobar consolidation and leukocytosis = typical bacterial pneumonia", "The CD4 count is relatively preserved (480 > 200), making opportunistic infections unlikely", "Streptococcus pneumoniae is the most common cause of community-acquired pneumonia regardless of HIV status", "-> Streptococcus pneumoniae; answer G"], "mechanism": "Although HIV impairs cell-mediated immunity, it also reduces OPSONIZING antibody production and phagocyte recruitment, so HIV patients are at markedly increased risk for INVASIVE BACTERIAL infections with ENCAPSULATED organisms - especially STREPTOCOCCUS PNEUMONIAE. S pneumoniae is the MOST COMMON cause of COMMUNITY-ACQUIRED PNEUMONIA in both HIV-infected and uninfected people, presenting acutely with fever, productive cough, PLEURITIC chest pain, LEUKOCYTOSIS, and signs of LOBAR CONSOLIDATION (dullness to percussion, bronchial breath sounds, crackles). The risk of invasive pneumococcal disease is elevated in HIV REGARDLESS of CD4 count, and all HIV patients should receive PNEUMOCOCCAL VACCINATION. The other organisms are far less likely here: opportunistic infections (Pneumocystis at CD4 <200, Aspergillus at CD4 <50) require low CD4; TB is chronic/cavitary; and Legionella/Mycoplasma/influenza have atypical or viral presentations that don't fit acute lobar consolidation. A relatively preserved CD4 of 480 further points away from opportunistic pathogens.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Micro/Pulm > CAP in HIV: S pneumoniae most common (encapsulated; increased invasive risk regardless of CD4); lobar consolidation; use CD4 to gate opportunistic infections (PCP <200, Aspergillus/CMV/MAC <50); vaccinate."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Lobar pneumonia + CD4 480 = typical bacteria -> S pneumoniae (most common CAP)."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on lobar consolidation, CD4 thresholds, encapsulated organisms, or opportunistic vs typical pneumonia? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "PCP/Aspergillus need low CD4; TB is chronic/cavitary; Legionella/Mycoplasma/influenza are atypical/viral (not acute lobar)."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: S pneumoniae = most common CAP in HIV and non-HIV; lobar consolidation; increased invasive risk regardless of CD4."}], "keywords": [{"front": "Most common CAP (HIV and non-HIV)", "back": "Streptococcus pneumoniae"}, {"front": "CD4 >200 pneumonia thinking", "back": "Typical bacteria (not opportunistic)"}, {"front": "Lobar consolidation exam findings", "back": "Dullness, bronchial breath sounds, crackles"}, {"front": "PCP CD4 threshold / imaging", "back": "CD4 <200; bilateral reticulonodular infiltrates"}, {"front": "Aspergillus CD4 threshold", "back": "CD4 <50 (cavitary/nodular)"}, {"front": "HIV pneumococcal risk", "back": "Increased invasive disease regardless of CD4; vaccinate"}], "firstAid": [{"tag": "answer / stem", "topic": "S pneumoniae CAP", "detail": "Micro: most common CAP; lobar consolidation; HIV increases invasive risk."}, {"tag": "options", "topic": "CD4-gated infections", "detail": "Micro > PCP <200, Aspergillus <50; TB chronic; atypicals differ."}, {"tag": "prevention", "topic": "Pneumococcal vaccine", "detail": "Micro > all HIV patients."}], "memoryHook": "CD4 is a healthy 480 and the lung is solidly consolidated - no exotic bug needed: it's plain old pneumococcus, the #1 pneumonia in everyone.", "stem": [{"text": "A 34-year-old man with HIV comes to the emergency department due to fever, chills, productive cough, and "}, {"text": "left-sided chest pain that worsens with deep breathing", "clue": true, "type": "blue", "note": "Pleuritic chest pain with acute fever/productive cough over a few days suggests a typical bacterial lobar pneumonia."}, {"text": ". His symptoms began 3 days ago and have progressively worsened. The patient was diagnosed with HIV 4 years ago during routine screening, and he takes antiretroviral therapy. His "}, {"text": "CD4 count was 480 cells/mm3", "clue": true, "type": "orange", "note": "A relatively PRESERVED CD4 count (480; >200) makes opportunistic infections (PCP at CD4 <200, disseminated fungal at <50) far less likely; typical bacteria predominate."}, {"text": " a month ago. Temperature is 38.8 C (102 F), blood pressure is 110/66 mm Hg, pulse is 110/min, and respirations are 22/min. Physical examination shows "}, {"text": "dullness to percussion, bronchial breath sounds, and crackles over the left lower lung", "clue": true, "type": "green", "note": "Dullness, bronchial breath sounds, and crackles indicate LOBAR CONSOLIDATION - classic for Streptococcus pneumoniae."}, {"text": ". The right lung and cardiac auscultation findings are normal. Laboratory testing reveals an elevated leukocyte count with left shift. Which of the following organisms is most likely responsible for this patient's current symptoms?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

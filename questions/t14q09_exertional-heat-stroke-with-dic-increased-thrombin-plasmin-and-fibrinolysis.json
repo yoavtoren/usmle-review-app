@@ -1,0 +1,214 @@
+{
+  "id": "q488",
+  "item": 488,
+  "qid": "16442",
+  "title": "Exertional heat stroke with DIC: increased thrombin, plasmin, and fibrinolysis",
+  "system": "Pathophysiology",
+  "topic": "Disseminated intravascular coagulation",
+  "correct": "E",
+  "yourAnswer": "A",
+  "percentCorrect": 27,
+  "vignette": "An 18-year-old woman collapsed while practicing for a marathon in hot, humid weather. The patient subsequently vomited 3 times and had a tonic-clonic seizure. She has no chronic medical conditions and takes no medications. The patient does not use alcohol or illicit drugs. Temperature is 40.8 C (105.4 F), blood pressure is 90/60 mm Hg, pulse is 130/min, and respirations are 22/min. The patient is profusely sweating and confused. Pupils are sluggishly reactive to light. Cardiopulmonary examination reveals clear lungs and normal heart sounds. Laboratory results show hemoglobin 15.8 g/dL, platelets 90,000/mm3, leukocytes 10,000/mm3, prothrombin time 20 seconds, and activated partial thromboplastin time 43 seconds. Which of the following sets of hematologic findings is most likely to be present in this patient?",
+  "clues": [
+    {
+      "text": "collapsed while practicing for a marathon in hot, humid weather",
+      "type": "orange",
+      "note": "Collapse during exertion in the heat with CNS dysfunction is EXERTIONAL HEAT STROKE, which can trigger disseminated intravascular coagulation."
+    },
+    {
+      "text": "Temperature is 40.8 C",
+      "type": "red",
+      "note": "Core temperature 40.8 C (105.4 F) with confusion/seizure = heat stroke; extreme hyperthermia causes tissue injury and release of tissue factor."
+    },
+    {
+      "text": "platelets 90,000/mm3",
+      "type": "green",
+      "note": "Thrombocytopenia (90,000 / normal 150,000-400,000) reflects consumption of platelets in microthrombi - a feature of DIC."
+    },
+    {
+      "text": "prothrombin time 20 seconds, and activated partial thromboplastin time 43 seconds",
+      "type": "green",
+      "note": "Prolonged PT (20 / normal ~11-15) and aPTT (43 / normal ~25-40) indicate consumption of clotting factors - confirming DIC."
+    }
+  ],
+  "whatMatters": "Heat stroke triggered DISSEMINATED INTRAVASCULAR COAGULATION: widespread activation of coagulation (INCREASED THROMBIN, microthrombi) consumes platelets and factors (thrombocytopenia, prolonged PT/PTT), and secondary INCREASED PLASMIN generation and FIBRINOLYSIS clear the clots. All three are increased. Answer E.",
+  "strategy": "Recognize DIC (thrombocytopenia + prolonged PT/PTT after a trigger) and reason the mechanism: coagulation cascade activation raises THROMBIN (forms microthrombi), which then activates FIBRINOLYSIS via PLASMIN (to clear thrombi, raising D-dimer). So thrombin production up, plasmin generation up, fibrinolysis up. Reject any option with decreased thrombin (coagulation is over-activated) or decreased fibrinolysis/plasmin (secondary fibrinolysis is increased).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Fibrinolysis decreased, thrombin production decreased, plasmin generation decreased",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Fibrinolysis decreased, thrombin production decreased, plasmin generation increased",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Fibrinolysis increased, thrombin production decreased, plasmin generation increased",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Fibrinolysis increased, thrombin production increased, plasmin generation decreased",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Fibrinolysis increased, thrombin production increased, plasmin generation increased",
+      "correct": true
+    },
+    {
+      "letter": "F",
+      "text": "Fibrinolysis decreased, thrombin production increased, plasmin generation decreased",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "All decreased - opposite of DIC",
+      "detail": "WHAT IT IS: coagulation and fibrinolysis both suppressed. ❌ WHY IT FAILS: DIC is defined by OVER-activation - increased thrombin generation with reactive increased fibrinolysis; nothing is globally decreased. ✅ Correct if: a state of impaired hemostasis without activation (not DIC)."
+    },
+    {
+      "letter": "B",
+      "label": "Thrombin down, plasmin up - thrombin should be up",
+      "detail": "WHAT IT IS: reduced thrombin but increased plasmin. ❌ WHY IT FAILS: DIC begins with EXCESS thrombin generation (tissue factor activation); thrombin is increased, not decreased. ✅ Correct if: primary hyperfibrinolysis without coagulation activation."
+    },
+    {
+      "letter": "C",
+      "label": "Thrombin down, fibrinolysis/plasmin up - thrombin wrong",
+      "detail": "WHAT IT IS: decreased thrombin with increased plasmin/fibrinolysis. ❌ WHY IT FAILS: the driving event in DIC is increased thrombin; the prolonged PT/PTT reflect CONSUMPTION after over-activation, not reduced thrombin generation. ✅ Correct if: isolated primary fibrinolysis."
+    },
+    {
+      "letter": "D",
+      "label": "Thrombin up, plasmin down - fibrinolysis should rise",
+      "detail": "WHAT IT IS: increased thrombin but decreased plasmin. ❌ WHY IT FAILS: excess thrombin/microthrombi trigger SECONDARY fibrinolysis with increased plasmin (elevated D-dimer); plasmin is increased. ✅ Correct if: thrombosis with suppressed fibrinolysis (not DIC)."
+    },
+    {
+      "letter": "F",
+      "label": "Thrombin up, fibrinolysis/plasmin down - fibrinolysis wrong",
+      "detail": "WHAT IT IS: increased thrombin with decreased fibrinolysis/plasmin. ❌ WHY IT FAILS: DIC's microthrombi activate plasmin-mediated fibrinolysis, so fibrinolysis is INCREASED (D-dimer rises). ✅ Correct if: a purely prothrombotic state without reactive fibrinolysis."
+    }
+  ],
+  "reasoning": [
+    "Heat stroke causes tissue injury and tissue-factor release, triggering DIC",
+    "Coagulation cascade over-activation increases thrombin and forms microthrombi (consuming platelets and factors -> thrombocytopenia, prolonged PT/PTT)",
+    "Microthrombi trigger secondary fibrinolysis: plasmin generation and fibrinolysis increase (elevated D-dimer)",
+    "-> thrombin, plasmin, and fibrinolysis all increased; answer E"
+  ],
+  "mechanism": "EXERTIONAL HEAT STROKE (collapse during exertion in heat with core temp >40 C and CNS dysfunction) causes widespread tissue ischemia/necrosis and release of procoagulant TISSUE FACTOR, which can trigger DISSEMINATED INTRAVASCULAR COAGULATION (DIC). In DIC, the extrinsic (tissue factor) COAGULATION CASCADE is massively activated, generating excess THROMBIN and cross-linked fibrin MICROTHROMBI throughout the microvasculature. This consumes PLATELETS (thrombocytopenia) and clotting FACTORS (prolonging PT and aPTT). Secondary FIBRINOLYSIS is then activated to clear the intravascular thrombi: plasminogen is converted to PLASMIN, which degrades cross-linked fibrin and releases fibrin-degradation products (elevated D-dimer). Thus THROMBIN production, PLASMIN generation, and FIBRINOLYSIS are ALL INCREASED. Clinically DIC produces both bleeding (oozing from puncture sites) and microthrombotic end-organ injury. The correct hematologic set is increased fibrinolysis, increased thrombin production, and increased plasmin generation.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Heme > DIC: triggers (sepsis, trauma, obstetric, malignancy, heat stroke); tissue factor -> increased thrombin -> microthrombi (consume platelets/factors -> thrombocytopenia, prolonged PT/PTT) -> secondary fibrinolysis (increased plasmin, high D-dimer, low fibrinogen)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "DIC = over-activated coagulation (thrombin up) with reactive fibrinolysis (plasmin up, fibrinolysis up)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on DIC, thrombin, plasmin/fibrinolysis, tissue factor, D-dimer, or consumption coagulopathy? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Any 'thrombin decreased' misreads the prolonged PT/PTT (that's CONSUMPTION); fibrinolysis/plasmin are increased, not decreased."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: DIC = increased thrombin + increased plasmin + increased fibrinolysis; consumption -> low platelets, high PT/PTT, high D-dimer, low fibrinogen."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "DIC coagulation/fibrinolysis state",
+      "back": "Thrombin up, plasmin up, fibrinolysis up"
+    },
+    {
+      "front": "DIC lab findings",
+      "back": "Low platelets, prolonged PT/PTT, high D-dimer, low fibrinogen"
+    },
+    {
+      "front": "Heat stroke hematologic complication",
+      "back": "DIC (tissue factor release)"
+    },
+    {
+      "front": "Why PT/PTT prolonged in DIC",
+      "back": "Consumption of clotting factors"
+    },
+    {
+      "front": "DIC fibrinolysis marker",
+      "back": "Elevated D-dimer (fibrin degradation products)"
+    },
+    {
+      "front": "Common DIC triggers",
+      "back": "Sepsis, trauma, obstetric, malignancy, heat stroke"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "DIC",
+      "detail": "Heme: increased thrombin + plasmin + fibrinolysis; consumption coagulopathy."
+    },
+    {
+      "tag": "trigger",
+      "topic": "Heat stroke",
+      "detail": "Path > tissue factor release triggers DIC."
+    },
+    {
+      "tag": "labs",
+      "topic": "Consumption",
+      "detail": "Heme > low platelets, high PT/PTT, high D-dimer, low fibrinogen."
+    }
+  ],
+  "memoryHook": "DIC is a clotting bonfire: thrombin blazes up making clots (eating platelets and factors), and plasmin rushes in to put them out - everything's turned UP.",
+  "stem": [
+    {
+      "text": "An 18-year-old woman "
+    },
+    {
+      "text": "collapsed while practicing for a marathon in hot, humid weather",
+      "clue": true,
+      "type": "orange",
+      "note": "Collapse during exertion in the heat with CNS dysfunction is EXERTIONAL HEAT STROKE, which can trigger disseminated intravascular coagulation."
+    },
+    {
+      "text": ". The patient subsequently vomited 3 times and had a tonic-clonic seizure. She has no chronic medical conditions and takes no medications. The patient does not use alcohol or illicit drugs. "
+    },
+    {
+      "text": "Temperature is 40.8 C",
+      "clue": true,
+      "type": "red",
+      "note": "Core temperature 40.8 C (105.4 F) with confusion/seizure = heat stroke; extreme hyperthermia causes tissue injury and release of tissue factor."
+    },
+    {
+      "text": " (105.4 F), blood pressure is 90/60 mm Hg, pulse is 130/min, and respirations are 22/min. The patient is profusely sweating and confused. Pupils are sluggishly reactive to light. Cardiopulmonary examination reveals clear lungs and normal heart sounds. Laboratory results show hemoglobin 15.8 g/dL, "
+    },
+    {
+      "text": "platelets 90,000/mm3",
+      "clue": true,
+      "type": "green",
+      "note": "Thrombocytopenia (90,000 / normal 150,000-400,000) reflects consumption of platelets in microthrombi - a feature of DIC."
+    },
+    {
+      "text": ", leukocytes 10,000/mm3, "
+    },
+    {
+      "text": "prothrombin time 20 seconds, and activated partial thromboplastin time 43 seconds",
+      "clue": true,
+      "type": "green",
+      "note": "Prolonged PT (20 / normal ~11-15) and aPTT (43 / normal ~25-40) indicate consumption of clotting factors - confirming DIC."
+    },
+    {
+      "text": ". Which of the following sets of hematologic findings is most likely to be present in this patient?"
+    }
+  ]
+}

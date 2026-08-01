@@ -1,0 +1,162 @@
+{
+  "id": "q557",
+  "item": 557,
+  "qid": "1121",
+  "title": "Insulin promotes hepatic glycogen synthesis by activating protein phosphatase (dephosphorylates glycogen synthase)",
+  "system": "Biochemistry",
+  "topic": "Insulin signaling",
+  "correct": "E",
+  "yourAnswer": "D",
+  "percentCorrect": 36,
+  "vignette": "A 14-year-old boy is brought to the emergency department due to excessive urination and thirst. He has lost 4.5 kg (10 lb) in the last 3 weeks. The patient has no past medical problems. His father has type 1 diabetes mellitus. Physical examination shows dry mucous membranes. Laboratory studies reveal blood glucose of 455 mg/dL, normal anion gap, and hemoglobin A1c of 11.3%. The patient is diagnosed with type 1 diabetes, and treatment with insulin is initiated. In addition to lowering blood glucose, insulin increases glycogen synthesis in hepatocytes. Activation of which of the following molecules most likely promotes this metabolic effect?",
+  "clues": [
+    {
+      "text": "insulin increases glycogen synthesis in hepatocytes",
+      "type": "green",
+      "note": "Insulin's anabolic effect on glycogen requires ACTIVATING glycogen synthase - achieved by dephosphorylation via a protein phosphatase downstream of PI3K."
+    }
+  ],
+  "whatMatters": "INSULIN acts through a receptor TYROSINE KINASE -> IRS-1 -> PI3K, which activates PROTEIN PHOSPHATASE (protein phosphatase 1). The phosphatase DEPHOSPHORYLATES and thereby ACTIVATES glycogen synthase, increasing glycogen synthesis. Answer E.",
+  "strategy": "Trace insulin signaling: receptor tyrosine kinase -> IRS-1 -> PI3K -> protein phosphatase -> dephosphorylates (activates) glycogen synthase (and inactivates glycogen phosphorylase). Pick 'protein phosphatase.' Reject other second messengers: JAK (cytokine/GH/prolactin receptors, not insulin), lipoxygenase (leukotriene synthesis), phospholipase C (IP3/Ca-DAG pathway), and protein kinase A (the GLUCAGON/cAMP pathway that promotes glycogen BREAKDOWN - the opposite effect).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Janus kinase (JAK)",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Lipoxygenase",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Phospholipase C",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Protein kinase A",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Protein phosphatase",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "JAK - cytokine/GH/prolactin receptors",
+      "detail": "WHAT IT IS: Janus kinase, the non-receptor tyrosine kinase of the JAK-STAT pathway (growth hormone, prolactin, cytokines/interferons). ❌ WHY IT FAILS: insulin uses its own receptor tyrosine kinase/IRS-1/PI3K, not JAK. ✅ Correct if: GH/prolactin/cytokine signaling (JAK-STAT)."
+    },
+    {
+      "letter": "B",
+      "label": "Lipoxygenase - leukotriene synthesis",
+      "detail": "WHAT IT IS: an enzyme of arachidonic acid metabolism making leukotrienes. ❌ WHY IT FAILS: it has no role in insulin-mediated glycogen synthesis. ✅ Correct if: leukotriene (inflammation/asthma) pathway."
+    },
+    {
+      "letter": "C",
+      "label": "Phospholipase C - IP3/DAG (Gq) pathway",
+      "detail": "WHAT IT IS: enzyme generating IP3 and DAG (raising Ca2+ and activating protein kinase C) in Gq-coupled signaling. ❌ WHY IT FAILS: this is the mechanism of other hormones (e.g., alpha-1, GnRH), not insulin's glycogen effect. ✅ Correct if: Gq/PLC-linked hormone signaling."
+    },
+    {
+      "letter": "D",
+      "label": "Protein kinase A - glucagon (glycogen breakdown)",
+      "detail": "WHAT IT IS: the cAMP-activated kinase of the Gs pathway. ❌ WHY IT FAILS: PKA (activated by GLUCAGON/epinephrine) PHOSPHORYLATES glycogen synthase (inactivating it) and activates glycogen phosphorylase - promoting glycogen BREAKDOWN, the OPPOSITE of insulin's effect. ✅ Correct if: glucagon-stimulated glycogenolysis."
+    }
+  ],
+  "reasoning": [
+    "Insulin signals via a receptor tyrosine kinase -> IRS-1 -> PI3K",
+    "PI3K activates protein phosphatase (PP1)",
+    "The phosphatase dephosphorylates and thereby activates glycogen synthase (and inactivates phosphorylase)",
+    "-> protein phosphatase; answer E"
+  ],
+  "mechanism": "The INSULIN RECEPTOR is a transmembrane RECEPTOR TYROSINE KINASE. Insulin binding triggers receptor AUTOPHOSPHORYLATION and phosphorylation of INSULIN RECEPTOR SUBSTRATE 1 (IRS-1), which activates two arms: the RAS/MAP kinase pathway (mitogenic - cell growth, DNA synthesis) and the PHOSPHATIDYLINOSITOL-3-KINASE (PI3K) pathway (metabolic effects - GLUT4 translocation, glycogen/lipid/protein synthesis). Through PI3K, insulin activates PROTEIN PHOSPHATASE (protein phosphatase 1), which DEPHOSPHORYLATES key enzymes: it ACTIVATES GLYCOGEN SYNTHASE (dephosphorylated = active) and INACTIVATES glycogen phosphorylase - net effect: increased glycogen SYNTHESIS and decreased breakdown. This opposes the GLUCAGON/epinephrine cAMP-PKA pathway, in which PKA PHOSPHORYLATES glycogen synthase (inactivating it) and activates phosphorylase to drive glycogenolysis. Thus insulin's promotion of hepatic glycogen synthesis is mediated by activating protein phosphatase. The distractors are other pathways: JAK-STAT (GH/prolactin/cytokines), lipoxygenase (leukotrienes), phospholipase C (IP3/DAG), and protein kinase A (glucagon - opposite effect).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem/Endo > insulin signaling: receptor tyrosine kinase -> IRS-1 -> PI3K (metabolic) and RAS/MAPK (growth); PI3K activates protein phosphatase -> dephosphorylates/activates glycogen synthase (glycogen synthesis); opposes glucagon/PKA (glycogenolysis)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Insulin -> PI3K -> protein phosphatase -> activates glycogen synthase (glycogen synthesis)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on receptor tyrosine kinase, IRS-1, PI3K, protein phosphatase, glycogen synthase, or JAK-STAT? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "PKA = glucagon pathway (glycogen BREAKDOWN); JAK = GH/prolactin/cytokines; PLC = IP3/DAG; lipoxygenase = leukotrienes."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: insulin -> tyrosine kinase/PI3K -> protein phosphatase dephosphorylates (activates) glycogen synthase; opposes glucagon/PKA."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Insulin promotes glycogen synthesis via",
+      "back": "Protein phosphatase (dephosphorylates/activates glycogen synthase)"
+    },
+    {
+      "front": "Insulin receptor type",
+      "back": "Receptor tyrosine kinase (IRS-1 -> PI3K + RAS/MAPK)"
+    },
+    {
+      "front": "PI3K pathway effects",
+      "back": "GLUT4 translocation, glycogen/lipid/protein synthesis"
+    },
+    {
+      "front": "Glucagon/PKA effect on glycogen",
+      "back": "Glycogen breakdown (phosphorylates synthase, activates phosphorylase)"
+    },
+    {
+      "front": "JAK-STAT hormones",
+      "back": "Growth hormone, prolactin, cytokines/interferons"
+    },
+    {
+      "front": "Active vs inactive glycogen synthase",
+      "back": "Dephosphorylated = active; phosphorylated = inactive"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Insulin signaling",
+      "detail": "Biochem: PI3K -> protein phosphatase activates glycogen synthase."
+    },
+    {
+      "tag": "options",
+      "topic": "Signaling pathways",
+      "detail": "Biochem > JAK-STAT, PLC, PKA (glucagon) differ."
+    },
+    {
+      "tag": "contrast",
+      "topic": "Insulin vs glucagon",
+      "detail": "Endo > phosphatase (synthesis) vs PKA (breakdown)."
+    }
+  ],
+  "memoryHook": "Insulin builds glycogen by REMOVING phosphates (protein phosphatase) to switch glycogen synthase ON - the mirror image of glucagon's PKA, which phosphorylates it OFF.",
+  "stem": [
+    {
+      "text": "A 14-year-old boy is brought to the emergency department due to excessive urination and thirst. He has lost 4.5 kg (10 lb) in the last 3 weeks. The patient has no past medical problems. His father has type 1 diabetes mellitus. Physical examination shows dry mucous membranes. Laboratory studies reveal blood glucose of 455 mg/dL, normal anion gap, and hemoglobin A1c of 11.3%. The patient is diagnosed with type 1 diabetes, and treatment with insulin is initiated. In addition to lowering blood glucose, "
+    },
+    {
+      "text": "insulin increases glycogen synthesis in hepatocytes",
+      "clue": true,
+      "type": "green",
+      "note": "Insulin's anabolic effect on glycogen requires ACTIVATING glycogen synthase - achieved by dephosphorylation via a protein phosphatase downstream of PI3K."
+    },
+    {
+      "text": ". Activation of which of the following molecules most likely promotes this metabolic effect?"
+    }
+  ]
+}

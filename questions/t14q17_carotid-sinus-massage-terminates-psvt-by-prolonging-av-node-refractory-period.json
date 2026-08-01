@@ -1,0 +1,190 @@
+{
+  "id": "q496",
+  "item": 496,
+  "qid": "1515",
+  "title": "Carotid sinus massage terminates PSVT by prolonging AV node refractory period",
+  "system": "Physiology",
+  "topic": "PSVT / vagal maneuvers",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 52,
+  "vignette": "A 23-year-old man comes to the emergency department with sudden onset of heart palpitations that started while he was at his desk at work. The patient has no known medical problems and does not use tobacco or illicit drugs. He drinks alcohol occasionally on the weekends. Initial blood pressure is 110/70 mm Hg and pulse is 160/min and regular. Gentle neck massage just below the angle of the right mandible provides immediate improvement of his condition. His blood pressure is now 120/80 mm Hg and pulse is 75/min. Which of the following mechanisms is responsible for improvement of this patient's condition?",
+  "clues": [
+    {
+      "text": "sudden onset of heart palpitations",
+      "type": "blue",
+      "note": "Abrupt-onset palpitations with a rapid, regular narrow-complex tachycardia suggest paroxysmal supraventricular tachycardia (PSVT), typically AV-nodal reentry."
+    },
+    {
+      "text": "pulse is 160/min and regular",
+      "type": "green",
+      "note": "A regular tachycardia around 150-200/min fits PSVT, a reentrant circuit involving the AV node."
+    },
+    {
+      "text": "Gentle neck massage just below the angle of the right mandible provides immediate improvement",
+      "type": "green",
+      "note": "Carotid sinus massage is a vagal maneuver: it increases parasympathetic tone to the AV node, which can break the reentrant circuit."
+    }
+  ],
+  "whatMatters": "CAROTID SINUS MASSAGE is a vagal maneuver that increases PARASYMPATHETIC (vagal) tone to the AV node, SLOWING conduction and PROLONGING the AV NODE REFRACTORY PERIOD - which interrupts the AV-nodal reentrant circuit and terminates PSVT. Answer D.",
+  "strategy": "Trace the reflex: carotid massage stretches carotid sinus baroreceptors -> increased afferent firing -> increased vagal (parasympathetic) output to the SA/AV nodes -> slowed AV conduction and prolonged AV-node refractoriness -> breaks PSVT reentry. Reject decreased baroreceptor firing (massage INCREASES firing), increased sympathetic output (vagal maneuvers do the opposite), increased SVR (not the mechanism), and prolonged ventricular refractory period (vagal fibers barely affect ventricular muscle).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Decreased baroreceptor firing rate",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Increased sympathetic output to the sinoatrial node",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Increased systemic vascular resistance",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Prolonged atrioventricular node refractory period",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Prolonged ventricular myocardium refractory period",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Decreased baroreceptor firing - massage increases firing",
+      "detail": "WHAT IT IS: reduced carotid baroreceptor afferent activity. ❌ WHY IT FAILS: carotid massage STRETCHES the sinus and INCREASES baroreceptor firing, which raises vagal tone; decreased firing would do the opposite. ✅ Correct if: hypotension reducing baroreceptor stretch."
+    },
+    {
+      "letter": "B",
+      "label": "Increased sympathetic output to SA node - opposite",
+      "detail": "WHAT IT IS: enhanced sympathetic drive speeding the SA node. ❌ WHY IT FAILS: vagal maneuvers INCREASE parasympathetic (not sympathetic) tone; more sympathetic output would speed, not terminate, the tachycardia. ✅ Correct if: exertion/sympathetic activation."
+    },
+    {
+      "letter": "C",
+      "label": "Increased SVR - not the termination mechanism",
+      "detail": "WHAT IT IS: peripheral vasoconstriction raising afterload/BP. ❌ WHY IT FAILS: PSVT termination is due to AV-nodal slowing, not a change in systemic vascular resistance. ✅ Correct if: a pressor response scenario."
+    },
+    {
+      "letter": "E",
+      "label": "Prolonged ventricular refractory period - vagal effect minimal",
+      "detail": "WHAT IT IS: lengthening ventricular muscle refractoriness. ❌ WHY IT FAILS: vagal fibers only sparsely innervate ventricular myocardium; carotid massage acts on the AV NODE, not ventricular refractoriness. ✅ Correct if: class III antiarrhythmic effect on ventricle."
+    }
+  ],
+  "reasoning": [
+    "Sudden regular narrow-complex tachycardia = PSVT (AV-nodal reentry)",
+    "Carotid sinus massage is a vagal maneuver that increases parasympathetic tone",
+    "Increased vagal tone slows AV conduction and prolongs the AV node refractory period",
+    "-> breaks the reentrant circuit and terminates PSVT; answer D"
+  ],
+  "mechanism": "PAROXYSMAL SUPRAVENTRICULAR TACHYCARDIA (PSVT) is most often due to a REENTRANT circuit traveling between the slow and fast conducting pathways of the ATRIOVENTRICULAR (AV) NODE. VAGAL MANEUVERS (carotid sinus massage, Valsalva, cold-water immersion) acutely terminate PSVT. The CAROTID SINUS (in the internal carotid just distal to the bifurcation) contains BARORECEPTORS; massage stretches them, INCREASING afferent firing via the glossopharyngeal nerve (CN IX) to medullary centers, which INCREASES efferent VAGAL (parasympathetic) output to the SA and AV nodes via the vagus (CN X). Enhanced vagal tone SLOWS AV-nodal conduction and PROLONGS the AV node REFRACTORY PERIOD, interrupting the reentrant loop and restoring sinus rhythm (pulse drops to ~75/min). Carotid massage therefore acts by increasing (not decreasing) baroreceptor firing and by boosting parasympathetic (not sympathetic) tone, and it targets the AV node rather than ventricular refractoriness or systemic vascular resistance.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid CV > PSVT: AV-nodal reentry; vagal maneuvers (carotid sinus massage, Valsalva) increase vagal tone -> slow AV conduction/prolong AV refractory period -> terminate; adenosine/AV-nodal blockers if needed."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Carotid massage -> increased vagal tone -> prolonged AV node refractory period -> terminates PSVT."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on PSVT, AV-nodal reentry, vagal maneuver, carotid sinus baroreceptors, or refractory period? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Massage INCREASES baroreceptor firing and PARASYMPATHETIC tone; it acts on the AV node, not ventricle/SVR."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: vagal maneuvers terminate PSVT by prolonging AV node refractory period (increased vagal tone)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Carotid sinus massage mechanism",
+      "back": "Increased vagal tone -> prolonged AV node refractory period"
+    },
+    {
+      "front": "PSVT mechanism",
+      "back": "AV-nodal reentrant circuit"
+    },
+    {
+      "front": "Vagal maneuvers examples",
+      "back": "Carotid massage, Valsalva, cold-water immersion"
+    },
+    {
+      "front": "Carotid sinus afferent/efferent nerves",
+      "back": "Afferent CN IX (glossopharyngeal); efferent CN X (vagus)"
+    },
+    {
+      "front": "Next step if vagal maneuvers fail",
+      "back": "Adenosine (transient AV block)"
+    },
+    {
+      "front": "Carotid massage effect on baroreceptor firing",
+      "back": "Increases it (stretch)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "PSVT / vagal maneuvers",
+      "detail": "CV: carotid massage prolongs AV node refractory period -> terminates PSVT."
+    },
+    {
+      "tag": "options",
+      "topic": "Autonomic reflex",
+      "detail": "CV > massage raises baroreceptor firing + vagal tone."
+    },
+    {
+      "tag": "treatment",
+      "topic": "Adenosine",
+      "detail": "CV > if vagal maneuvers fail, AV-nodal block."
+    }
+  ],
+  "memoryHook": "Rub the carotid, wake up the vagus - it jams the brakes on the AV node (longer refractory period), snapping the reentry loop and dropping the racing pulse.",
+  "stem": [
+    {
+      "text": "A 23-year-old man comes to the emergency department with "
+    },
+    {
+      "text": "sudden onset of heart palpitations",
+      "clue": true,
+      "type": "blue",
+      "note": "Abrupt-onset palpitations with a rapid, regular narrow-complex tachycardia suggest paroxysmal supraventricular tachycardia (PSVT), typically AV-nodal reentry."
+    },
+    {
+      "text": " that started while he was at his desk at work. The patient has no known medical problems and does not use tobacco or illicit drugs. He drinks alcohol occasionally on the weekends. Initial blood pressure is 110/70 mm Hg and "
+    },
+    {
+      "text": "pulse is 160/min and regular",
+      "clue": true,
+      "type": "green",
+      "note": "A regular tachycardia around 150-200/min fits PSVT, a reentrant circuit involving the AV node."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Gentle neck massage just below the angle of the right mandible provides immediate improvement",
+      "clue": true,
+      "type": "green",
+      "note": "Carotid sinus massage is a vagal maneuver: it increases parasympathetic tone to the AV node, which can break the reentrant circuit."
+    },
+    {
+      "text": " of his condition. His blood pressure is now 120/80 mm Hg and pulse is 75/min. Which of the following mechanisms is responsible for improvement of this patient's condition?"
+    }
+  ]
+}

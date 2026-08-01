@@ -1,0 +1,176 @@
+{
+  "id": "q510",
+  "item": 510,
+  "qid": "1000",
+  "title": "Acetyltransferase (antibiotic-modifying enzyme) in Pseudomonas: aminoglycoside (gentamicin) resistance",
+  "system": "Pharmacology",
+  "topic": "Antibiotic resistance - aminoglycosides",
+  "correct": "C",
+  "yourAnswer": "B",
+  "percentCorrect": 37,
+  "vignette": "A 77-year-old woman is brought to the emergency department due to fever and confusion. The patient has a history of Alzheimer dementia and lives in a nursing home. Temperature is 38.4 C (101.1 F), blood pressure is 104/74 mm Hg, pulse is 110/min, and respirations are 18/min. Suprapubic tenderness is present on physical examination. Urinalysis shows numerous bacteria and leukocytes, and urine culture grows Pseudomonas aeruginosa. Further analysis reveals that the isolated organism produces an enzyme that is located on the cytoplasmic surface of the cell membrane and that catalyzes the transfer of acetyl groups to exogenous substances. The bacteria are most likely resistant to which of the following antibiotics?",
+  "clues": [
+    {
+      "text": "urine culture grows Pseudomonas aeruginosa",
+      "type": "blue",
+      "note": "Pseudomonas aeruginosa has multiple resistance mechanisms, including beta-lactamases, efflux pumps, and antibiotic-MODIFYING enzymes."
+    },
+    {
+      "text": "catalyzes the transfer of acetyl groups to exogenous substances",
+      "type": "green",
+      "note": "An ACETYLTRANSFERASE adds acetyl groups to a drug - an antibiotic-modifying enzyme; the classic target is AMINOGLYCOSIDES (also acetylated/adenylated/phosphorylated)."
+    }
+  ],
+  "whatMatters": "An ACETYLTRANSFERASE is an antibiotic-MODIFYING enzyme; acetylation of an aminoglycoside reduces its binding to the 16S rRNA of the 30S ribosomal subunit, raising the minimum inhibitory concentration. Aminoglycoside resistance is MOST commonly due to such modifying enzymes, so the bacteria are resistant to GENTAMICIN. Answer C.",
+  "strategy": "Match enzyme to drug: acetyltransferase/adenyltransferase/phosphotransferase = AMINOGLYCOSIDE-modifying enzymes -> resistance to gentamicin/tobramycin/amikacin. Reject beta-lactams (resistance via beta-lactamase, not acetyltransferase): ceftazidime (cephalosporin), imipenem (carbapenem), piperacillin (penicillin); and fluoroquinolones (ciprofloxacin - resistance via target mutations/efflux, not acetylation).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Ceftazidime",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Ciprofloxacin",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Gentamicin",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Imipenem",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Piperacillin",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Ceftazidime - beta-lactamase, not acetyltransferase",
+      "detail": "WHAT IT IS: an anti-pseudomonal cephalosporin (beta-lactam). ❌ WHY IT FAILS: beta-lactam resistance is via BETA-LACTAMASE hydrolysis, not acetyl transfer. ✅ Correct if: an organism producing a cephalosporinase/ESBL."
+    },
+    {
+      "letter": "B",
+      "label": "Ciprofloxacin - target mutation/efflux",
+      "detail": "WHAT IT IS: a fluoroquinolone inhibiting DNA gyrase/topoisomerase. ❌ WHY IT FAILS: fluoroquinolone resistance arises from gyrase mutations or efflux pumps, not an acetyltransferase. ✅ Correct if: altered DNA gyrase or increased efflux."
+    },
+    {
+      "letter": "D",
+      "label": "Imipenem - carbapenemase",
+      "detail": "WHAT IT IS: a carbapenem (beta-lactam). ❌ WHY IT FAILS: resistance is via carbapenemase or porin loss, not acetylation. ✅ Correct if: carbapenemase-producing organism."
+    },
+    {
+      "letter": "E",
+      "label": "Piperacillin - beta-lactamase",
+      "detail": "WHAT IT IS: an anti-pseudomonal penicillin (beta-lactam). ❌ WHY IT FAILS: penicillin resistance is via beta-lactamase hydrolysis, not an acetyltransferase. ✅ Correct if: penicillinase/beta-lactamase production."
+    }
+  ],
+  "reasoning": [
+    "Acetyltransferase is an antibiotic-modifying enzyme (adds acetyl groups to a drug)",
+    "Antibiotic-modifying enzymes classically inactivate aminoglycosides",
+    "Modified aminoglycoside binds the 30S ribosome poorly -> resistance",
+    "-> resistant to gentamicin (an aminoglycoside); answer C"
+  ],
+  "mechanism": "PSEUDOMONAS AERUGINOSA is an opportunistic gram-negative pathogen with several antibiotic-resistance mechanisms: beta-lactamases, efflux pumps, porin changes, and ANTIBIOTIC-MODIFYING ENZYMES. AMINOGLYCOSIDES (e.g., GENTAMICIN, tobramycin, amikacin) bind the 16S rRNA of the 30S ribosomal subunit to inhibit protein synthesis. The MOST COMMON mechanism of aminoglycoside resistance is enzymatic modification of the drug by AMINOGLYCOSIDE-MODIFYING ENZYMES that ACETYLATE (acetyltransferase), ADENYLATE (adenyltransferase), or PHOSPHORYLATE (phosphotransferase) the antibiotic; these enzymes are typically located at the cytoplasmic membrane and are often plasmid/transposon-encoded. The modified aminoglycoside has REDUCED ability to bind its ribosomal target, raising the MIC and reducing bactericidal effect. Thus an organism producing an acetyltransferase is resistant to gentamicin. The beta-lactams (ceftazidime, imipenem, piperacillin) are inactivated by beta-lactamases, and fluoroquinolone (ciprofloxacin) resistance results from gyrase/topoisomerase mutations or efflux - not acetylation.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro/Pharm > aminoglycoside resistance: modifying enzymes (acetyl/adenyl/phospho-transferases) - most common; reduce binding to 16S rRNA (30S); beta-lactam resistance = beta-lactamase; fluoroquinolone = gyrase mutation/efflux."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Acetyltransferase = aminoglycoside-modifying enzyme -> gentamicin resistance."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on aminoglycoside, acetyltransferase, 30S/16S rRNA, beta-lactamase, or efflux pump? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Beta-lactams (ceftazidime/imipenem/piperacillin) = beta-lactamase; ciprofloxacin = gyrase mutation/efflux - not acetylation."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: aminoglycoside-modifying enzymes (acetyl/adenyl/phospho-transferase) = most common aminoglycoside resistance mechanism."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Acetyltransferase antibiotic target",
+      "back": "Aminoglycosides (e.g., gentamicin)"
+    },
+    {
+      "front": "Aminoglycoside-modifying enzymes",
+      "back": "Acetyltransferase, adenyltransferase, phosphotransferase"
+    },
+    {
+      "front": "Aminoglycoside ribosomal target",
+      "back": "16S rRNA of the 30S subunit"
+    },
+    {
+      "front": "Beta-lactam resistance mechanism",
+      "back": "Beta-lactamase (hydrolyzes the ring)"
+    },
+    {
+      "front": "Fluoroquinolone resistance mechanism",
+      "back": "DNA gyrase/topoisomerase mutation or efflux"
+    },
+    {
+      "front": "Most common aminoglycoside resistance",
+      "back": "Antibiotic-modifying enzymes"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Aminoglycoside resistance",
+      "detail": "Micro: modifying enzymes (acetyltransferase) -> gentamicin resistance."
+    },
+    {
+      "tag": "options",
+      "topic": "Resistance mechanisms",
+      "detail": "Micro > beta-lactamase, gyrase mutation, efflux, porin."
+    },
+    {
+      "tag": "drug",
+      "topic": "Aminoglycosides",
+      "detail": "Pharm > bind 30S (16S rRNA); bactericidal."
+    }
+  ],
+  "memoryHook": "Acetyl-transfer = the bug slapping a tag on the aminoglycoside so it can't grip the ribosome - gentamicin resistance.",
+  "stem": [
+    {
+      "text": "A 77-year-old woman is brought to the emergency department due to fever and confusion. The patient has a history of Alzheimer dementia and lives in a nursing home. Temperature is 38.4 C (101.1 F), blood pressure is 104/74 mm Hg, pulse is 110/min, and respirations are 18/min. Suprapubic tenderness is present on physical examination. Urinalysis shows numerous bacteria and leukocytes, and "
+    },
+    {
+      "text": "urine culture grows Pseudomonas aeruginosa",
+      "clue": true,
+      "type": "blue",
+      "note": "Pseudomonas aeruginosa has multiple resistance mechanisms, including beta-lactamases, efflux pumps, and antibiotic-MODIFYING enzymes."
+    },
+    {
+      "text": ". Further analysis reveals that the isolated organism produces an enzyme that is located on the cytoplasmic surface of the cell membrane and that "
+    },
+    {
+      "text": "catalyzes the transfer of acetyl groups to exogenous substances",
+      "clue": true,
+      "type": "green",
+      "note": "An ACETYLTRANSFERASE adds acetyl groups to a drug - an antibiotic-modifying enzyme; the classic target is AMINOGLYCOSIDES (also acetylated/adenylated/phosphorylated)."
+    },
+    {
+      "text": ". The bacteria are most likely resistant to which of the following antibiotics?"
+    }
+  ]
+}

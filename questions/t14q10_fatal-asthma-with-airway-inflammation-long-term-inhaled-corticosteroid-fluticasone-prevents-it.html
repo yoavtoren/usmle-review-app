@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatal asthma with airway inflammation: long-term inhaled corticosteroid (fluticasone) prevents it</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 14 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q489", "item": 489, "qid": "169", "title": "Fatal asthma with airway inflammation: long-term inhaled corticosteroid (fluticasone) prevents it", "system": "Pharmacology", "topic": "Asthma - controller therapy", "correct": "B", "yourAnswer": "B", "percentCorrect": 56, "vignette": "A 32-year-old woman is brought to the emergency department due to severe shortness of breath. She has no chest pain. The patient does not use tobacco. Temperature is 36.7 C (98 F), blood pressure is 132/81 mm Hg, pulse is 102/min, and respirations are 30/min. During physical examination, her condition deteriorates and she is emergently intubated due to acute respiratory failure. Shortly after intubation, she goes into cardiac arrest and dies despite resuscitation efforts. Review of the patient's medical records shows that she had been prescribed multiple medications but had a history of noncompliance. Autopsy shows hyperinflated lungs, airway mucus plugging, and cellular infiltration of the bronchial wall. Long-term use of which of the following drugs would have best prevented the cellular reaction in this patient's airways?", "clues": [{"text": "history of noncompliance", "type": "orange", "note": "Nonadherence to controller therapy is a major risk factor for uncontrolled, potentially fatal asthma."}, {"text": "hyperinflated lungs, airway mucus plugging, and cellular infiltration of the bronchial wall", "type": "green", "note": "Hyperinflation, mucus plugging, and inflammatory CELLULAR INFILTRATION of the bronchial wall are the pathology of uncontrolled asthma - chronic airway inflammation to be prevented by controller therapy."}], "whatMatters": "The 'cellular reaction' is the chronic INFLAMMATORY infiltration of the airway wall in asthma (eosinophils, T cells, mast cells). INHALED CORTICOSTEROIDS (fluticasone) are the most effective long-term controllers - they suppress airway inflammation and remodeling. Answer B.", "strategy": "Identify the target: prevent the CELLULAR (inflammatory) reaction, not just bronchospasm. Inhaled corticosteroids (fluticasone) are the cornerstone anti-inflammatory controller. Reject bronchodilators/relievers that don't treat inflammation: albuterol (short-acting beta-2 agonist), ipratropium (antimuscarinic), magnesium sulfate (acute bronchodilation), and weaker anti-inflammatory options (montelukast - leukotriene inhibitor, theophylline) that are less effective than inhaled steroids.", "options": [{"letter": "A", "text": "Albuterol", "correct": false}, {"letter": "B", "text": "Fluticasone", "correct": true}, {"letter": "C", "text": "Ipratropium", "correct": false}, {"letter": "D", "text": "Magnesium sulfate", "correct": false}, {"letter": "E", "text": "Montelukast", "correct": false}, {"letter": "F", "text": "Theophylline", "correct": false}], "eliminations": [{"letter": "A", "label": "Albuterol - reliever, not anti-inflammatory", "detail": "WHAT IT IS: a short-acting beta-2 agonist that relaxes airway smooth muscle. ❌ WHY IT FAILS: it relieves acute bronchospasm but does NOT prevent the chronic inflammatory cellular infiltration or airway remodeling. ✅ Correct if: acute rescue of bronchospasm."}, {"letter": "C", "label": "Ipratropium - antimuscarinic bronchodilator", "detail": "WHAT IT IS: a muscarinic antagonist reducing vagally mediated bronchoconstriction and mucus. ❌ WHY IT FAILS: it is a bronchodilator without anti-inflammatory action on airway cellular infiltration. ✅ Correct if: adjunct bronchodilation (COPD/acute severe asthma)."}, {"letter": "D", "label": "Magnesium sulfate - acute bronchodilation", "detail": "WHAT IT IS: IV agent for acute severe asthma (smooth-muscle relaxation, mild anti-inflammatory). ❌ WHY IT FAILS: it is used acutely and is far less effective than inhaled corticosteroids for chronic inflammation. ✅ Correct if: adjunct in acute severe asthma exacerbation."}, {"letter": "E", "label": "Montelukast - weaker anti-inflammatory", "detail": "WHAT IT IS: a leukotriene receptor antagonist for long-term control. ❌ WHY IT FAILS: it has anti-inflammatory effect but is LESS effective than inhaled corticosteroids at controlling airway inflammation; not first-line to prevent the cellular reaction. ✅ Correct if: add-on/alternative control (aspirin-exacerbated respiratory disease, allergic rhinitis)."}, {"letter": "F", "label": "Theophylline - weak, narrow therapeutic index", "detail": "WHAT IT IS: a phosphodiesterase inhibitor (bronchodilator with mild anti-inflammatory effect). ❌ WHY IT FAILS: it is far less potent than glucocorticoids and has a narrow therapeutic index/toxicity. ✅ Correct if: rarely, refractory asthma with careful level monitoring."}], "reasoning": ["Autopsy shows chronic inflammatory cellular infiltration of the airway wall (uncontrolled asthma)", "Preventing this inflammation requires an anti-inflammatory controller", "Inhaled corticosteroids (fluticasone) are the most effective long-term controllers", "-> long-term fluticasone would best have prevented the cellular reaction; answer B"], "mechanism": "ASTHMA is characterized by chronic AIRWAY INFLAMMATION (eosinophils, helper T cells, mast cells), airway hyperresponsiveness, and intermittent bronchoconstriction; sustained inflammation causes airway REMODELING (bronchial wall thickening, increased smooth muscle) that worsens obstruction. CORTICOSTEROIDS inhibit production of inflammatory mediators (cytokines, prostaglandins, leukotrienes), reduce leukocyte extravasation into the airway epithelium, induce apoptosis of inflammatory cells, and decrease mucus production - directly preventing the CELLULAR INFILTRATION seen at autopsy. INHALED corticosteroids (e.g., FLUTICASONE) are the cornerstone LONG-TERM CONTROLLER for persistent asthma, reducing exacerbation frequency and severity; nonadherence to controller therapy raises the risk of life-threatening exacerbations. The distractors are bronchodilators/relievers (albuterol, ipratropium, magnesium) that treat bronchospasm without preventing inflammation, or weaker anti-inflammatory agents (montelukast, theophylline) that are less effective than inhaled steroids.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Pulm/Pharm > asthma: chronic eosinophilic airway inflammation + remodeling; inhaled corticosteroids (fluticasone) = first-line long-term controller (anti-inflammatory); SABA (albuterol) = reliever; leukotriene inhibitors/theophylline are less effective controllers."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Prevent airway inflammatory 'cellular reaction' -> inhaled corticosteroid (fluticasone)."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on controller vs reliever, inhaled corticosteroid, airway remodeling, eosinophilic inflammation, or leukotriene inhibitor? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Albuterol/ipratropium/magnesium = bronchodilators (no anti-inflammatory control); montelukast/theophylline weaker than inhaled steroids."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: inhaled corticosteroids (fluticasone) are the most effective long-term anti-inflammatory controllers in asthma."}], "keywords": [{"front": "Most effective long-term asthma controller", "back": "Inhaled corticosteroid (fluticasone)"}, {"front": "Asthma airway pathology", "back": "Eosinophilic inflammation, mucus plugging, remodeling"}, {"front": "Albuterol role", "back": "Short-acting beta-2 agonist reliever (bronchospasm)"}, {"front": "Corticosteroid anti-inflammatory action", "back": "Reduce cytokines/leukotrienes, leukocyte extravasation, mucus"}, {"front": "Montelukast use", "back": "Add-on leukotriene inhibitor (less effective than ICS)"}, {"front": "Nonadherence to controllers", "back": "Risk of life-threatening exacerbation"}], "firstAid": [{"tag": "answer / stem", "topic": "Inhaled corticosteroids", "detail": "Pharm: first-line controller; suppress airway inflammation/remodeling."}, {"tag": "options", "topic": "Relievers vs controllers", "detail": "Pulm > SABA/ipratropium/magnesium relieve; steroids control."}, {"tag": "pathology", "topic": "Airway remodeling", "detail": "Pulm > chronic eosinophilic inflammation."}], "memoryHook": "Bronchodilators just open the pipe for a moment; only the inhaled steroid (fluticasone) puts out the fire in the airway wall - which is the 'cellular reaction' that kills in uncontrolled asthma.", "stem": [{"text": "A 32-year-old woman is brought to the emergency department due to severe shortness of breath. She has no chest pain. The patient does not use tobacco. Temperature is 36.7 C (98 F), blood pressure is 132/81 mm Hg, pulse is 102/min, and respirations are 30/min. During physical examination, her condition deteriorates and she is emergently intubated due to acute respiratory failure. Shortly after intubation, she goes into cardiac arrest and dies despite resuscitation efforts. Review of the patient's medical records shows that she had been prescribed multiple medications but had a "}, {"text": "history of noncompliance", "clue": true, "type": "orange", "note": "Nonadherence to controller therapy is a major risk factor for uncontrolled, potentially fatal asthma."}, {"text": ". Autopsy shows "}, {"text": "hyperinflated lungs, airway mucus plugging, and cellular infiltration of the bronchial wall", "clue": true, "type": "green", "note": "Hyperinflation, mucus plugging, and inflammatory CELLULAR INFILTRATION of the bronchial wall are the pathology of uncontrolled asthma - chronic airway inflammation to be prevented by controller therapy."}, {"text": ". Long-term use of which of the following drugs would have best prevented the cellular reaction in this patient's airways?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

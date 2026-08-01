@@ -1,0 +1,190 @@
+{
+  "id": "q556",
+  "item": 556,
+  "qid": "793",
+  "title": "46,XX virilization + adrenal hyperplasia: 21-hydroxylase deficiency (progesterone -> 11-deoxycorticosterone)",
+  "system": "Endocrinology",
+  "topic": "Congenital adrenal hyperplasia (21-hydroxylase)",
+  "correct": "C",
+  "yourAnswer": "E",
+  "percentCorrect": 58,
+  "vignette": "An infant born at 39 weeks gestation to a 26-year-old woman. The delivery was uncomplicated, and Apgar scores were 8 and 9 at 1 and 5 minutes, respectively. The mother had gestational diabetes during pregnancy, which was controlled by diet alone. Physical examination of the infant shows clitoromegaly and partial fusion of the labioscrotal folds. Cytogenetic analysis reveals a 46,XX karyotype. Abdominal imaging shows bilateral adrenal hyperplasia. This patient is most likely deficient for an enzyme normally responsible for which of the following reactions?",
+  "clues": [
+    {
+      "text": "clitoromegaly and partial fusion of the labioscrotal folds",
+      "type": "green",
+      "note": "Virilization (ambiguous genitalia) in a genetic female indicates excess androgens - classic for 21-hydroxylase deficiency (the most common congenital adrenal hyperplasia)."
+    },
+    {
+      "text": "46,XX karyotype",
+      "type": "blue",
+      "note": "A 46,XX infant with virilized genitalia suggests androgen excess in utero, as occurs in 21-hydroxylase deficiency."
+    },
+    {
+      "text": "bilateral adrenal hyperplasia",
+      "type": "green",
+      "note": "Low cortisol drives high ACTH, which enlarges the adrenals (bilateral adrenal hyperplasia) and shunts precursors into the androgen pathway."
+    }
+  ],
+  "whatMatters": "A virilized 46,XX infant with BILATERAL ADRENAL HYPERPLASIA = CONGENITAL ADRENAL HYPERPLASIA, most commonly 21-HYDROXYLASE deficiency. 21-hydroxylase converts PROGESTERONE -> 11-DEOXYCORTICOSTERONE (and 17-OH-progesterone -> 11-deoxycortisol). Answer C.",
+  "strategy": "Diagnose 21-hydroxylase deficiency (46,XX virilization + adrenal hyperplasia; salt-wasting in males later; elevated 17-hydroxyprogesterone), then identify its reaction: progesterone -> 11-deoxycorticosterone (in the zona glomerulosa) and 17-OHP -> 11-deoxycortisol (zona fasciculata). Reject other enzyme steps: cholesterol -> pregnenolone (side-chain cleavage/desmolase, lethal if absent), DHEA -> androstenedione (3-beta-HSD does other steps), progesterone -> 17-OH-progesterone (17-alpha-hydroxylase), and testosterone -> DHT (5-alpha-reductase; males not females are affected).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cholesterol -> Pregnenolone",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Dehydroepiandrosterone -> Androstenedione",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Progesterone -> 11-deoxycorticosterone",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Progesterone -> 17-hydroxyprogesterone",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Testosterone -> Dihydrotestosterone",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Cholesterol -> pregnenolone (desmolase) - lethal if absent",
+      "detail": "WHAT IT IS: side-chain cleavage enzyme (desmolase) - the first, rate-limiting step of all steroidogenesis. ❌ WHY IT FAILS: complete deficiency abolishes ALL steroid synthesis (lethal/severe), not selective virilization; 21-hydroxylase is far more common. ✅ Correct if: congenital lipoid adrenal hyperplasia (absent all steroids)."
+    },
+    {
+      "letter": "B",
+      "label": "DHEA -> androstenedione (3-beta-HSD does other steps)",
+      "detail": "WHAT IT IS: conversion within the androgen pathway (3-beta-hydroxysteroid dehydrogenase acts here and on pregnenolone/17-OH-pregnenolone). ❌ WHY IT FAILS: 3-beta-HSD deficiency is a very rare cause of CAH and would impair androgen synthesis; the classic enzyme here is 21-hydroxylase. ✅ Correct if: rare 3-beta-HSD deficiency."
+    },
+    {
+      "letter": "D",
+      "label": "Progesterone -> 17-hydroxyprogesterone (17-alpha-hydroxylase)",
+      "detail": "WHAT IT IS: 17-alpha-hydroxylase activity. ❌ WHY IT FAILS: 17-alpha-hydroxylase deficiency causes DECREASED androgens (ambiguous/female genitalia in genetic MALES, normal-appearing females) with mineralocorticoid EXCESS - the opposite virilization pattern. ✅ Correct if: hypertension/hypokalemia with underandrogenization."
+    },
+    {
+      "letter": "E",
+      "label": "Testosterone -> dihydrotestosterone (5-alpha-reductase)",
+      "detail": "WHAT IT IS: 5-alpha-reductase converting testosterone to DHT. ❌ WHY IT FAILS: 5-alpha-reductase deficiency undervirilizes genetic MALES (46,XY), not genetic females, and isn't associated with adrenal hyperplasia. ✅ Correct if: 46,XY undervirilization ('penis at 12')."
+    }
+  ],
+  "reasoning": [
+    "A virilized 46,XX infant with bilateral adrenal hyperplasia = congenital adrenal hyperplasia",
+    "The most common cause is 21-hydroxylase deficiency",
+    "21-hydroxylase converts progesterone to 11-deoxycorticosterone (and 17-OHP to 11-deoxycortisol)",
+    "-> progesterone -> 11-deoxycorticosterone; answer C"
+  ],
+  "mechanism": "CONGENITAL ADRENAL HYPERPLASIA (CAH) most commonly results from 21-HYDROXYLASE DEFICIENCY (~90% of cases). 21-hydroxylase catalyzes PROGESTERONE -> 11-DEOXYCORTICOSTERONE (an aldosterone precursor in the zona glomerulosa) and 17-HYDROXYPROGESTERONE -> 11-DEOXYCORTISOL (a cortisol precursor in the zona fasciculata). Deficiency impairs synthesis of both ALDOSTERONE and CORTISOL; low cortisol removes negative feedback, so ACTH rises, causing BILATERAL ADRENAL HYPERPLASIA and shunting accumulated precursors into the ANDROGEN pathway. Genetic FEMALES (46,XX) are thus VIRILIZED at birth (clitoromegaly, labioscrotal fusion - ambiguous genitalia), whereas genetic males have normal genitalia and present later with SALT-WASTING (hyponatremia, hyperkalemia, hypotension) or precocious puberty. Diagnosis is supported by a markedly elevated serum 17-HYDROXYPROGESTERONE (often on newborn screening). The distractors are other steroidogenic steps (desmolase, 3-beta-HSD, 17-alpha-hydroxylase, 5-alpha-reductase) that produce different phenotypes.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Endo > 21-hydroxylase deficiency (most common CAH): converts progesterone->11-deoxycorticosterone and 17-OHP->11-deoxycortisol; low aldosterone+cortisol -> high ACTH -> adrenal hyperplasia + androgen excess; 46,XX virilization, salt-wasting; elevated 17-OHP."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "46,XX virilization + adrenal hyperplasia = 21-hydroxylase deficiency (progesterone->11-deoxycorticosterone)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on congenital adrenal hyperplasia, 21-hydroxylase, 17-hydroxyprogesterone, virilization, or salt-wasting? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Desmolase (cholesterol->pregnenolone) = lethal; 17-alpha-hydroxylase = underandrogenization/hypertension; 5-alpha-reductase = 46,XY undervirilization."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: 21-hydroxylase deficiency = most common CAH; 46,XX virilization + salt-wasting; elevated 17-OHP; low aldosterone/cortisol, high androgens."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Most common CAH enzyme",
+      "back": "21-hydroxylase"
+    },
+    {
+      "front": "21-hydroxylase reactions",
+      "back": "Progesterone->11-deoxycorticosterone; 17-OHP->11-deoxycortisol"
+    },
+    {
+      "front": "21-hydroxylase deficiency 46,XX",
+      "back": "Virilization (ambiguous genitalia) at birth"
+    },
+    {
+      "front": "21-hydroxylase deficiency labs",
+      "back": "High 17-hydroxyprogesterone; low cortisol/aldosterone; high androgens"
+    },
+    {
+      "front": "17-alpha-hydroxylase deficiency",
+      "back": "Underandrogenization + hypertension/hypokalemia"
+    },
+    {
+      "front": "5-alpha-reductase deficiency",
+      "back": "46,XY undervirilization (DHT deficiency)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "21-hydroxylase deficiency",
+      "detail": "Endo: progesterone->11-deoxycorticosterone; CAH; 46,XX virilization."
+    },
+    {
+      "tag": "options",
+      "topic": "Steroidogenesis enzymes",
+      "detail": "Endo > desmolase, 17-alpha-hydroxylase, 5-alpha-reductase differ."
+    },
+    {
+      "tag": "labs",
+      "topic": "17-hydroxyprogesterone",
+      "detail": "Endo > elevated; newborn screen."
+    }
+  ],
+  "memoryHook": "A baby girl born virilized with big adrenals = 21-hydroxylase deficiency; that enzyme normally pushes progesterone on to 11-deoxycorticosterone (toward aldosterone/cortisol).",
+  "stem": [
+    {
+      "text": "An infant born at 39 weeks gestation to a 26-year-old woman. The delivery was uncomplicated, and Apgar scores were 8 and 9 at 1 and 5 minutes, respectively. The mother had gestational diabetes during pregnancy, which was controlled by diet alone. Physical examination of the infant shows "
+    },
+    {
+      "text": "clitoromegaly and partial fusion of the labioscrotal folds",
+      "clue": true,
+      "type": "green",
+      "note": "Virilization (ambiguous genitalia) in a genetic female indicates excess androgens - classic for 21-hydroxylase deficiency (the most common congenital adrenal hyperplasia)."
+    },
+    {
+      "text": ". Cytogenetic analysis reveals a "
+    },
+    {
+      "text": "46,XX karyotype",
+      "clue": true,
+      "type": "blue",
+      "note": "A 46,XX infant with virilized genitalia suggests androgen excess in utero, as occurs in 21-hydroxylase deficiency."
+    },
+    {
+      "text": ". Abdominal imaging shows "
+    },
+    {
+      "text": "bilateral adrenal hyperplasia",
+      "clue": true,
+      "type": "green",
+      "note": "Low cortisol drives high ACTH, which enlarges the adrenals (bilateral adrenal hyperplasia) and shunts precursors into the androgen pathway."
+    },
+    {
+      "text": ". This patient is most likely deficient for an enzyme normally responsible for which of the following reactions?"
+    }
+  ]
+}

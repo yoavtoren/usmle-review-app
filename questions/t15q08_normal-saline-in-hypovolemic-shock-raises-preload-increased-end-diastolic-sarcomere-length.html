@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normal saline in hypovolemic shock raises preload: increased end-diastolic sarcomere length</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 15 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q527", "item": 527, "qid": "1512", "title": "Normal saline in hypovolemic shock raises preload: increased end-diastolic sarcomere length", "system": "Physiology", "topic": "Frank-Starling / preload", "correct": "C", "yourAnswer": "C", "percentCorrect": 67, "vignette": "A 43-year-old man comes to the emergency department after experiencing 4 episodes of coffee ground emesis that started earlier this morning. He also describes epigastric pain over the last 3-4 months that was relieved by over-the-counter antacids. He has no other past medical history. The patient has smoked a pack of cigarettes daily for the last 20 years but does not use alcohol or illicit drugs. Blood pressure is 70/40 mm Hg and pulse is 130/min and regular. Extremities are cool to the touch with loss of skin turgor. Intravenous access is obtained via 2 large-bore peripheral catheters, and rapid infusion of 2 liters of normal saline is initiated. This intervention is most likely to increase which of the following hemodynamic parameters?", "clues": [{"text": "coffee ground emesis", "type": "blue", "note": "Coffee-ground emesis indicates upper GI bleeding (here from peptic ulcer disease), causing blood loss and hypovolemia."}, {"text": "Blood pressure is 70/40 mm Hg and pulse is 130/min", "type": "red", "note": "Hypotension with tachycardia (and cool extremities, poor turgor) indicates HYPOVOLEMIC SHOCK from blood loss."}, {"text": "rapid infusion of 2 liters of normal saline", "type": "green", "note": "IV isotonic fluids expand intravascular volume, increasing venous return and ventricular filling (PRELOAD)."}], "whatMatters": "IV NORMAL SALINE expands intravascular volume in hypovolemic shock, increasing venous return and LV end-diastolic volume (PRELOAD). Increased preload stretches the myocardium, INCREASING END-DIASTOLIC SARCOMERE LENGTH -> greater stroke volume via the Frank-Starling mechanism. Answer C.", "strategy": "Translate 'fluids increase preload' into the cellular measure: increased end-diastolic volume = increased ventricular filling = increased END-DIASTOLIC SARCOMERE LENGTH (Frank-Starling). Reject parameters that fluids do NOT raise (or actually lower): aortic wall elasticity (fixed structural property), diastolic compliance (intrinsic myocardial property), heart rate (falls as perfusion improves/sympathetic drive decreases), plasma renin activity (decreases with volume repletion), and total peripheral resistance/contraction velocity (high from sympathetic drive, fall with resuscitation).", "options": [{"letter": "A", "text": "Aortic wall elasticity", "correct": false}, {"letter": "B", "text": "Diastolic ventricular compliance", "correct": false}, {"letter": "C", "text": "End-diastolic sarcomere length", "correct": true}, {"letter": "D", "text": "Heart rate", "correct": false}, {"letter": "E", "text": "Plasma renin activity", "correct": false}, {"letter": "F", "text": "Total peripheral resistance", "correct": false}, {"letter": "G", "text": "Ventricular muscle contraction velocity", "correct": false}], "eliminations": [{"letter": "A", "label": "Aortic wall elasticity - fixed structural property", "detail": "WHAT IT IS: intrinsic compliance of the aortic media. ❌ WHY IT FAILS: it is a fixed structural property not changed by a fluid bolus. ✅ Correct if: age/atherosclerosis altering aortic stiffness (not acute fluids)."}, {"letter": "B", "label": "Diastolic ventricular compliance - intrinsic myocardial property", "detail": "WHAT IT IS: how readily the ventricle fills for a given pressure. ❌ WHY IT FAILS: compliance is an intrinsic property (reduced by LVH, HCM, infiltration), not increased by giving fluids. ✅ Correct if: conditions that change myocardial stiffness."}, {"letter": "D", "label": "Heart rate - decreases with resuscitation", "detail": "WHAT IT IS: beats per minute. ❌ WHY IT FAILS: adequate fluid resuscitation reduces the compensatory tachycardia (less sympathetic drive), so heart rate falls, not rises. ✅ Correct if: worsening hypovolemia raising heart rate."}, {"letter": "E", "label": "Plasma renin activity - decreases with volume repletion", "detail": "WHAT IT IS: renin release reflecting RAAS activation. ❌ WHY IT FAILS: renin is HIGH in hypovolemia and DECREASES after volume is restored, not increased. ✅ Correct if: hypovolemia/hypotension activating RAAS."}, {"letter": "F", "label": "Total peripheral resistance - decreases with resuscitation", "detail": "WHAT IT IS: systemic vascular resistance/afterload. ❌ WHY IT FAILS: TPR is elevated by compensatory sympathetic vasoconstriction in shock and DECREASES as perfusion is restored. ✅ Correct if: increasing sympathetic vasoconstriction (worsening shock)."}, {"letter": "G", "label": "Ventricular contraction velocity - decreases with resuscitation", "detail": "WHAT IT IS: myocardial contractility/velocity (inotropy). ❌ WHY IT FAILS: it is high from catecholamine drive in shock and falls as sympathetic activation decreases with fluids; the primary fluid effect is on preload. ✅ Correct if: an inotrope increasing contractility."}], "reasoning": ["The patient is in hypovolemic shock from GI bleeding", "IV normal saline expands intravascular volume, increasing venous return", "Increased ventricular filling raises end-diastolic volume, stretching the myocardium", "-> increased end-diastolic sarcomere length (Frank-Starling); answer C"], "mechanism": "HYPOVOLEMIC SHOCK from acute blood loss (upper GI bleeding here) reduces intravascular volume, lowering venous return, ventricular filling, stroke volume, and blood pressure; compensatory SYMPATHETIC activation raises heart rate, contractility, and systemic vascular resistance, and the RAAS is activated (high renin). The key treatment (besides controlling the bleed) is rapid intravenous VOLUME EXPANSION with isotonic crystalloid (NORMAL SALINE) or blood. Infused fluid increases the intravascular and left ventricular END-DIASTOLIC VOLUMES (PRELOAD). By the FRANK-STARLING relationship, greater end-diastolic volume STRETCHES the cardiomyocytes, INCREASING the END-DIASTOLIC SARCOMERE LENGTH; this improves actin-myosin overlap and increases the force of contraction, raising STROKE VOLUME and cardiac output. As perfusion is restored, the compensatory heart rate, TPR, contractility, and renin all DECREASE. Aortic wall elasticity and diastolic compliance are intrinsic properties unchanged by a fluid bolus. Therefore fluids most directly INCREASE end-diastolic sarcomere length.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid CV > preload/Frank-Starling: IV fluids increase intravascular volume -> increased venous return/end-diastolic volume (preload) -> increased sarcomere length -> increased stroke volume; hypovolemic shock compensations (tachycardia, high TPR, high renin) reverse with resuscitation."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Fluids raise preload (end-diastolic volume) -> increased end-diastolic sarcomere length (Frank-Starling)."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on preload, end-diastolic volume, sarcomere length, Frank-Starling, or hypovolemic shock compensation? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Heart rate/TPR/renin/contraction velocity are HIGH in shock and FALL with resuscitation; aortic elasticity/compliance are intrinsic."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: IV fluids increase preload -> increased end-diastolic sarcomere length (Frank-Starling) -> increased stroke volume."}], "keywords": [{"front": "IV fluids increase which cardiac parameter", "back": "End-diastolic sarcomere length (preload)"}, {"front": "Frank-Starling mechanism", "back": "Increased preload/sarcomere length -> increased stroke volume"}, {"front": "Hypovolemic shock compensations", "back": "Tachycardia, high TPR, high renin, high contractility"}, {"front": "Effect of resuscitation on those compensations", "back": "They decrease as perfusion improves"}, {"front": "Aortic elasticity / diastolic compliance", "back": "Intrinsic properties (not changed by a fluid bolus)"}, {"front": "Coffee-ground emesis", "back": "Upper GI bleeding (oxidized heme)"}], "firstAid": [{"tag": "answer / stem", "topic": "Preload / Frank-Starling", "detail": "CV: fluids raise end-diastolic sarcomere length -> more stroke volume."}, {"tag": "options", "topic": "Shock compensations", "detail": "CV > HR/TPR/renin/contractility fall with resuscitation."}, {"tag": "management", "topic": "Hypovolemic shock", "detail": "CV > isotonic fluids/blood + control bleeding."}], "memoryHook": "Fill the tank (saline) and the heart fills more each beat - stretching sarcomeres longer (Frank-Starling), so each squeeze ejects more blood.", "stem": [{"text": "A 43-year-old man comes to the emergency department after experiencing 4 episodes of "}, {"text": "coffee ground emesis", "clue": true, "type": "blue", "note": "Coffee-ground emesis indicates upper GI bleeding (here from peptic ulcer disease), causing blood loss and hypovolemia."}, {"text": " that started earlier this morning. He also describes epigastric pain over the last 3-4 months that was relieved by over-the-counter antacids. He has no other past medical history. The patient has smoked a pack of cigarettes daily for the last 20 years but does not use alcohol or illicit drugs. "}, {"text": "Blood pressure is 70/40 mm Hg and pulse is 130/min", "clue": true, "type": "red", "note": "Hypotension with tachycardia (and cool extremities, poor turgor) indicates HYPOVOLEMIC SHOCK from blood loss."}, {"text": " and regular. Extremities are cool to the touch with loss of skin turgor. Intravenous access is obtained via 2 large-bore peripheral catheters, and "}, {"text": "rapid infusion of 2 liters of normal saline", "clue": true, "type": "green", "note": "IV isotonic fluids expand intravascular volume, increasing venous return and ventricular filling (PRELOAD)."}, {"text": " is initiated. This intervention is most likely to increase which of the following hemodynamic parameters?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

@@ -1,0 +1,196 @@
+{
+  "id": "q548",
+  "item": 548,
+  "qid": "899",
+  "title": "Antiarrhythmic that prolongs QT but rarely causes torsades: amiodarone (class III)",
+  "system": "Pharmacology",
+  "topic": "Antiarrhythmics - amiodarone",
+  "correct": "B",
+  "yourAnswer": "F",
+  "percentCorrect": 51,
+  "vignette": "A 60-year-old man comes to the emergency department with dizziness and palpitations. He woke up this morning with an intermittent pounding sensation in his chest. The patient has occasionally experienced a similar sensation in the past and did not think it was serious. Later, while mowing the lawn, he became lightheaded and had to sit down to avoid passing out. After receiving the appropriate workup, the patient is diagnosed with a cardiac arrhythmia and started on a medication known to prolong the QT interval. However, the drug is associated with a lower incidence of torsade de pointes than other QT-prolonging agents. Which of the following medications was most likely used in this patient?",
+  "clues": [
+    {
+      "text": "started on a medication known to prolong the QT interval",
+      "type": "blue",
+      "note": "Drugs that prolong the QT interval predominantly block potassium channels, slowing phase 3 repolarization and lengthening the action potential (class III antiarrhythmics)."
+    },
+    {
+      "text": "lower incidence of torsade de pointes than other QT-prolonging agents",
+      "type": "green",
+      "note": "AMIODARONE prolongs the QT but has a notably LOW risk of torsades because it produces homogeneous repolarization (less QT dispersion)."
+    }
+  ],
+  "whatMatters": "AMIODARONE is a class III antiarrhythmic that BLOCKS POTASSIUM channels, prolonging repolarization and the QT interval; yet - uniquely among QT-prolonging drugs - it rarely causes TORSADES because its effect on repolarization is HOMOGENEOUS (less QT dispersion). Answer B.",
+  "strategy": "Match the description: prolongs QT (class III / K-channel block) but LOW torsades risk = amiodarone. Reject drugs that don't fit: adenosine (transient AV block for PSVT, no QT prolongation), digoxin (SHORTENS QT), esmolol (beta blocker, no QT effect), lidocaine (class IB, no QT prolongation), procainamide (class IA - prolongs QT with HIGHER torsades risk), and verapamil (class IV, prolongs PR not QT).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Adenosine",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Amiodarone",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Digoxin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Esmolol",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Lidocaine",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Procainamide",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Verapamil",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Adenosine - transient AV block, no QT effect",
+      "detail": "WHAT IT IS: an ultra-short-acting agent that activates cardiac potassium channels via A1 receptors and transiently blocks the AV node (for PSVT). ❌ WHY IT FAILS: it doesn't prolong the QT interval and isn't used for maintenance. ✅ Correct if: acute termination of PSVT."
+    },
+    {
+      "letter": "C",
+      "label": "Digoxin - SHORTENS the QT",
+      "detail": "WHAT IT IS: a cardiac glycoside that slows AV conduction (vagal) and increases contractility. ❌ WHY IT FAILS: digoxin decreases action potential duration and SHORTENS the QT (with scooped ST 'digoxin effect'), the opposite of QT prolongation. ✅ Correct if: AV nodal slowing/inotropy (with QT shortening)."
+    },
+    {
+      "letter": "D",
+      "label": "Esmolol - beta blocker, no QT effect",
+      "detail": "WHAT IT IS: a short-acting beta-1 blocker (class II) that slows the SA/AV node. ❌ WHY IT FAILS: it doesn't prolong the QT interval. ✅ Correct if: rate control via AV-node slowing."
+    },
+    {
+      "letter": "E",
+      "label": "Lidocaine - class IB, no QT prolongation",
+      "detail": "WHAT IT IS: a class IB antiarrhythmic (blocks fast Na channels, phase 0). ❌ WHY IT FAILS: it does not prolong the QT (may slightly shorten APD) and is used for ventricular arrhythmias. ✅ Correct if: ventricular arrhythmia post-MI (no QT prolongation)."
+    },
+    {
+      "letter": "F",
+      "label": "Procainamide - class IA, HIGHER torsades risk",
+      "detail": "WHAT IT IS: a class IA antiarrhythmic that prolongs the QT (Na block + some K block). ❌ WHY IT FAILS: it DOES prolong the QT but carries a HIGHER torsades risk than amiodarone (and causes drug-induced lupus). ✅ Correct if: a QT-prolonging class IA drug with higher torsades risk."
+    },
+    {
+      "letter": "G",
+      "label": "Verapamil - class IV, prolongs PR not QT",
+      "detail": "WHAT IT IS: a non-dihydropyridine calcium channel blocker (class IV). ❌ WHY IT FAILS: it slows AV conduction and prolongs the PR interval, not the QT. ✅ Correct if: AV-nodal slowing (rate control)."
+    }
+  ],
+  "reasoning": [
+    "A drug that prolongs the QT interval blocks potassium channels (class III)",
+    "Among class III/QT-prolonging drugs, amiodarone uniquely has a LOW torsades risk",
+    "This is due to more homogeneous repolarization (less QT dispersion)",
+    "-> amiodarone; answer B"
+  ],
+  "mechanism": "CLASS III ANTIARRHYTHMICS block outward POTASSIUM currents during PHASE 3 of the cardiac action potential, prolonging repolarization and total ACTION POTENTIAL DURATION - reflected on the ECG as a longer QT INTERVAL. Marked QT prolongation predisposes to TORSADE DE POINTES (polymorphic ventricular tachycardia), especially when repolarization becomes heterogeneous across the myocardium (increased QT DISPERSION, favoring reentry). AMIODARONE is a class III agent (with additional class I, II, and IV actions) used for a wide range of supraventricular and ventricular arrhythmias; although it prolongs the QT, it has a notably LOW incidence of torsades because it prolongs repolarization relatively HOMOGENEOUSLY across the myocardium (less QT dispersion). Amiodarone's other adverse effects (pulmonary fibrosis, thyroid dysfunction, hepatotoxicity, corneal deposits, blue-gray skin) reflect its iodine content and long half-life. The distractors either shorten the QT (digoxin), have no QT effect (adenosine, esmolol, lidocaine, verapamil), or prolong the QT with a HIGHER torsades risk (procainamide, a class IA drug).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > antiarrhythmics: class III (amiodarone, sotalol, dofetilide) block K channels -> prolong QT/APD; torsades risk with QT prolongation; amiodarone has LOW torsades risk (homogeneous repolarization); toxicities: lung/thyroid/liver/skin/cornea."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Prolongs QT but low torsades = amiodarone (class III, homogeneous repolarization)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on class III antiarrhythmics, QT interval, torsades de pointes, QT dispersion, or potassium-channel block? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Procainamide prolongs QT with HIGHER torsades risk; digoxin shortens QT; adenosine/esmolol/lidocaine/verapamil don't prolong QT."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: amiodarone prolongs QT but rarely causes torsades (homogeneous repolarization); watch pulmonary/thyroid/hepatic toxicity."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Prolongs QT but low torsades risk",
+      "back": "Amiodarone (class III)"
+    },
+    {
+      "front": "Class III antiarrhythmic mechanism",
+      "back": "Block K channels -> prolong repolarization/QT"
+    },
+    {
+      "front": "QT prolongation danger",
+      "back": "Torsades de pointes (polymorphic VT)"
+    },
+    {
+      "front": "Procainamide (class IA)",
+      "back": "Prolongs QT with HIGHER torsades risk (+ drug-induced lupus)"
+    },
+    {
+      "front": "Digoxin effect on QT",
+      "back": "Shortens QT ('scooped' ST)"
+    },
+    {
+      "front": "Amiodarone toxicities",
+      "back": "Pulmonary fibrosis, thyroid, hepatic, corneal deposits, blue-gray skin"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Amiodarone",
+      "detail": "Pharm: class III; prolongs QT; low torsades risk."
+    },
+    {
+      "tag": "options",
+      "topic": "Antiarrhythmic classes",
+      "detail": "Pharm > IA (procainamide), IB (lidocaine), II, IV differ."
+    },
+    {
+      "tag": "toxicity",
+      "topic": "Amiodarone adverse effects",
+      "detail": "Pharm > lung/thyroid/liver/skin/cornea."
+    }
+  ],
+  "memoryHook": "Amiodarone stretches the QT like other class III drugs but keeps repolarization even across the heart - so it rarely trips into torsades.",
+  "stem": [
+    {
+      "text": "A 60-year-old man comes to the emergency department with dizziness and palpitations. He woke up this morning with an intermittent pounding sensation in his chest. The patient has occasionally experienced a similar sensation in the past and did not think it was serious. Later, while mowing the lawn, he became lightheaded and had to sit down to avoid passing out. After receiving the appropriate workup, the patient is diagnosed with a cardiac arrhythmia and "
+    },
+    {
+      "text": "started on a medication known to prolong the QT interval",
+      "clue": true,
+      "type": "blue",
+      "note": "Drugs that prolong the QT interval predominantly block potassium channels, slowing phase 3 repolarization and lengthening the action potential (class III antiarrhythmics)."
+    },
+    {
+      "text": ". However, the drug is associated with a "
+    },
+    {
+      "text": "lower incidence of torsade de pointes than other QT-prolonging agents",
+      "clue": true,
+      "type": "green",
+      "note": "AMIODARONE prolongs the QT but has a notably LOW risk of torsades because it produces homogeneous repolarization (less QT dispersion)."
+    },
+    {
+      "text": ". Which of the following medications was most likely used in this patient?"
+    }
+  ]
+}

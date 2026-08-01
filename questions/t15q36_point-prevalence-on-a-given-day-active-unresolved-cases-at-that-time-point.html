@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Point prevalence on a given day = active (unresolved) cases at that time point</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 15 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q555", "item": 555, "qid": "14853", "title": "Point prevalence on a given day = active (unresolved) cases at that time point", "system": "Biostatistics", "topic": "Point prevalence", "correct": "C", "yourAnswer": "C", "percentCorrect": 85, "vignette": "A study is conducted to estimate the prevalence of catheter-associated urinary tract infection (CAUTI) in the intensive care unit (ICU) of an urban hospital. The plot below shows the number of cases of CAUTI in this hospital during the month of July among patients in the ICU, drawn as horizontal timelines for each case with onset and recovery marks relative to July 1 and July 31. Based on the plot, 9 cases of CAUTI occurred during July, but only 5 of them were still active (unresolved) on July 31 (the other 4 had recovered before July 31, and a 10th case began after July 31). Which of the following is the number of prevalent cases on July 31?", "clues": [{"text": "number of cases of CAUTI in this hospital during the month of July", "type": "blue", "note": "Cases with onset and recovery over the month are the raw data; PREVALENCE at a time point counts only those still active at that moment."}, {"text": "only 5 of them were still active (unresolved) on July 31", "type": "green", "note": "POINT prevalence on July 31 = the number of cases that are ACTIVE (unresolved) at that specific point in time = 5."}], "whatMatters": "POINT PREVALENCE is the number of ACTIVE (unresolved) disease cases at a SPECIFIC point in time, divided by the at-risk population. On July 31, only 5 CAUTI cases are still active (4 recovered earlier; a 10th began after July 31), so the number of prevalent cases on July 31 is 5. Answer C.", "strategy": "Read the timelines: a case is 'prevalent' on July 31 only if its onset is before/on July 31 AND it has NOT yet recovered by July 31. Count those still active = 5. Reject 1 (point prevalent on July 1), 4 (recovered during July), 8 (incident cases developing during July), and 9 (all cases active during July = period prevalence, not point).", "options": [{"letter": "A", "text": "1", "correct": false}, {"letter": "B", "text": "4", "correct": false}, {"letter": "C", "text": "5", "correct": true}, {"letter": "D", "text": "8", "correct": false}, {"letter": "E", "text": "9", "correct": false}], "eliminations": [{"letter": "A", "label": "1 - point prevalence on July 1", "detail": "WHAT IT IS: the single case already active at the START of July. ❌ WHY IT FAILS: that is the point prevalence on July 1, not July 31. ✅ Correct if: asking for prevalent cases at the beginning of the period."}, {"letter": "B", "label": "4 - cases that recovered during July", "detail": "WHAT IT IS: the number of patients whose CAUTI RESOLVED during the month. ❌ WHY IT FAILS: recovered cases are no longer active on July 31, so they aren't counted in the July 31 point prevalence. ✅ Correct if: counting recoveries during July."}, {"letter": "D", "label": "8 - incident cases during July", "detail": "WHAT IT IS: the number of NEW cases that developed between July 1 and July 31 (incidence). ❌ WHY IT FAILS: incidence counts new cases; point prevalence counts those still active on the date. ✅ Correct if: asked for incident cases during July."}, {"letter": "E", "label": "9 - period prevalence (all active during July)", "detail": "WHAT IT IS: all cases present at any time during the month (period prevalence numerator). ❌ WHY IT FAILS: point prevalence considers only cases active at the SPECIFIC time point (July 31), not the whole period. ✅ Correct if: asked for period-prevalent cases."}], "reasoning": ["Point prevalence counts disease cases ACTIVE at a specific point in time", "On July 31, 5 CAUTI cases remain unresolved (4 recovered earlier; a 10th started later)", "So the prevalent cases on July 31 = 5", "-> 5; answer C"], "mechanism": "PREVALENCE is the proportion of individuals in an at-risk population who HAVE a disease. POINT PREVALENCE counts the disease cases ACTIVE at a SPECIFIC POINT in time (e.g., July 31) divided by the population at that time; on a timeline plot, a case counts if it began on/before that date and has NOT yet resolved. PERIOD PREVALENCE counts cases present at ANY time during an interval (existing cases at the start PLUS all incident cases during the period). INCIDENCE counts only NEW cases arising during the period. Here, of the CAUTI timelines, only 5 remain active (unresolved) on July 31 (four had recovered earlier, and one new case began after July 31 and so is not counted on July 31). Therefore the POINT prevalence on July 31 = 5. The distractors correspond to July-1 point prevalence (1), recoveries during July (4), incident cases (8), and period prevalence (9).", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Biostat > prevalence/incidence: point prevalence = active cases at a specific time / population; period prevalence = cases present at any time in the interval; incidence = new cases in the period; read Lexis-type timeline plots by activity at the date."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Point prevalence on a date = cases active (unresolved) at that time = 5."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on point vs period prevalence, incidence, active/unresolved case, or timeline (Lexis) plot? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "1 = July-1 prevalence; 4 = recoveries; 8 = incident cases; 9 = period prevalence."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "text": "Timeline plot (stem): count only the case bars that cross/are active on July 31 (onset before, not yet recovered) = 5 = point prevalence."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: point prevalence = active cases at a specific point in time; period prevalence includes all cases during the interval."}], "keywords": [{"front": "Point prevalence definition", "back": "Active cases at a specific time point / population"}, {"front": "Period prevalence definition", "back": "Cases present at any time during the interval (existing + incident)"}, {"front": "Incidence definition", "back": "New cases arising during the period"}, {"front": "How to read a case-timeline plot", "back": "Case counts if active (onset before, not recovered) on the date"}, {"front": "Prevalence vs incidence", "back": "Prevalence = existing cases; incidence = new cases"}, {"front": "Prevalent case on July 31", "back": "Onset <= July 31 AND not yet resolved"}], "firstAid": [{"tag": "answer / stem", "topic": "Point prevalence", "detail": "Biostat: active cases at a specific time = 5."}, {"tag": "options", "topic": "Prevalence vs incidence", "detail": "Biostat > period prevalence, incidence, recoveries."}, {"tag": "concept", "topic": "Timeline reading", "detail": "Biostat > count active bars on the date."}], "memoryHook": "Freeze the calendar on July 31 and count who's still sick right then (5) - that's POINT prevalence; counting everyone sick all month would be period prevalence.", "stem": [{"text": "A study is conducted to estimate the prevalence of catheter-associated urinary tract infection (CAUTI) in the intensive care unit (ICU) of an urban hospital. The plot below shows the "}, {"text": "number of cases of CAUTI in this hospital during the month of July", "clue": true, "type": "blue", "note": "Cases with onset and recovery over the month are the raw data; PREVALENCE at a time point counts only those still active at that moment."}, {"text": " among patients in the ICU, drawn as horizontal timelines for each case with onset and recovery marks relative to July 1 and July 31. Based on the plot, 9 cases of CAUTI occurred during July, but "}, {"text": "only 5 of them were still active (unresolved) on July 31", "clue": true, "type": "green", "note": "POINT prevalence on July 31 = the number of cases that are ACTIVE (unresolved) at that specific point in time = 5."}, {"text": " (the other 4 had recovered before July 31, and a 10th case began after July 31). Which of the following is the number of prevalent cases on July 31?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

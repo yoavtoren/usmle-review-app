@@ -1,0 +1,186 @@
+{
+  "id": "q502",
+  "item": 502,
+  "qid": "2017",
+  "title": "Uracil in newly replicated DNA: incorporated by primase (RNA primer)",
+  "system": "Biochemistry",
+  "topic": "DNA replication - primase",
+  "correct": "F",
+  "yourAnswer": "F",
+  "percentCorrect": 36,
+  "vignette": "A 34-year-old woman with a history of recurrent urinary tract infections comes to the office with dysuria and increased urinary frequency. Her urine culture grows colonies of Gram-negative bacteria. The bacteria are isolated and placed in a growth-enhancing nutrient solution, where they undergo rapid cellular division. As they are actively dividing, the bacterial cells are lysed and their DNA is extracted and purified. Analysis of the partially replicated DNA fragments reveals the presence of uracil. Which of the following enzymes is most likely responsible for integration of this nucleotide into the DNA fragments?",
+  "clues": [
+    {
+      "text": "undergo rapid cellular division",
+      "type": "blue",
+      "note": "Rapidly dividing bacteria are actively replicating their DNA, so replication-fork enzymes (helicase, primase, polymerases, ligase, gyrase) are all at work."
+    },
+    {
+      "text": "presence of uracil",
+      "type": "green",
+      "note": "URACIL is a base found in RNA, not DNA. Its presence in replicating DNA fragments indicates a retained RNA PRIMER, which is synthesized by PRIMASE."
+    }
+  ],
+  "whatMatters": "URACIL is an RNA base. Its presence in partially replicated DNA reflects a retained RNA PRIMER. PRIMASE (a DNA-dependent RNA polymerase) synthesizes the short RNA primer that initiates DNA synthesis, so primase is responsible for incorporating uracil. Answer F.",
+  "strategy": "Key on uracil = RNA. The only replication enzyme that makes RNA is PRIMASE (lays down the ~10-nucleotide RNA primer). Reject DNA polymerases (I and III synthesize DNA, not RNA; Pol I later removes the primer), DNA ligase (seals nicks), helicase (unwinds DNA), and gyrase (relieves supercoiling) - none synthesize RNA or incorporate uracil.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "DNA ligase",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "DNA polymerase I",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "DNA polymerase III",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Gyrase",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Helicase",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Primase",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "DNA ligase - seals nicks, no synthesis",
+      "detail": "WHAT IT IS: the enzyme that joins Okazaki fragments/seals single-strand nicks. ❌ WHY IT FAILS: it forms phosphodiester bonds but does not synthesize nucleic acid or incorporate uracil. ✅ Correct if: joining adjacent DNA fragments."
+    },
+    {
+      "letter": "B",
+      "label": "DNA polymerase I - removes primer, adds DNA",
+      "detail": "WHAT IT IS: the polymerase that removes RNA primers (5'->3' exonuclease) and fills the gap with DNA. ❌ WHY IT FAILS: it synthesizes DNA (with thymine), not RNA; it REMOVES the uracil-containing primer rather than adding it. ✅ Correct if: primer excision/gap filling."
+    },
+    {
+      "letter": "C",
+      "label": "DNA polymerase III - main DNA synthesis",
+      "detail": "WHAT IT IS: the primary replicative polymerase extending leading/lagging strands. ❌ WHY IT FAILS: it synthesizes DNA (thymine), cannot initiate synthesis without a primer, and does not incorporate uracil. ✅ Correct if: high-speed DNA elongation."
+    },
+    {
+      "letter": "D",
+      "label": "Gyrase - relieves supercoiling",
+      "detail": "WHAT IT IS: a type II topoisomerase relieving supercoils ahead of the fork. ❌ WHY IT FAILS: it does not synthesize nucleic acid or place nucleotides. ✅ Correct if: supercoil relaxation."
+    },
+    {
+      "letter": "E",
+      "label": "Helicase - unwinds DNA",
+      "detail": "WHAT IT IS: the enzyme unwinding the parental duplex at the fork. ❌ WHY IT FAILS: it separates strands (ATP-dependent) but does not synthesize RNA/DNA. ✅ Correct if: strand separation at the origin/fork."
+    }
+  ],
+  "reasoning": [
+    "Uracil is an RNA base, not normally found in DNA",
+    "Its presence in replicating DNA reflects a retained RNA primer",
+    "Primase (a DNA-dependent RNA polymerase) synthesizes the RNA primer",
+    "-> primase incorporated the uracil; answer F"
+  ],
+  "mechanism": "During DNA replication, DNA polymerases can only EXTEND an existing strand - they cannot initiate synthesis de novo. Therefore PRIMASE, a DNA-dependent RNA POLYMERASE, first synthesizes a short (~10-nucleotide) RNA PRIMER on each template strand (continuously on the leading strand and once per Okazaki fragment on the lagging strand); DNA polymerase then adds deoxynucleotides to the primer's 3' end. Because these primers are RNA, they contain URACIL (RNA's base) rather than thymine. In a snapshot of PARTIALLY replicated DNA, uracil-containing segments represent these RNA primers, implicating PRIMASE. Normally the primers are later removed by DNA polymerase I (5'->3' exonuclease) and replaced with DNA, then sealed by DNA ligase, so mature DNA lacks uracil. The distractors are other replication enzymes that do not synthesize RNA: DNA polymerases (DNA synthesis/proofreading; Pol I removes primers), ligase (seals nicks), helicase (unwinds), and gyrase (relieves supercoiling).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem > DNA replication: primase = DNA-dependent RNA polymerase makes RNA primer (contains uracil); DNA pol III extends; DNA pol I removes RNA primer + fills; ligase seals; helicase unwinds; gyrase relieves supercoils."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Uracil = RNA primer -> made by primase."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on primase, RNA primer, uracil vs thymine, Okazaki fragments, or DNA pol I vs III? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "DNA polymerases make DNA (thymine); pol I removes the primer; ligase/helicase/gyrase don't synthesize nucleotides."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: uracil in replicating DNA = RNA primer laid down by primase (DNA-dependent RNA polymerase)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Enzyme incorporating uracil in DNA replication",
+      "back": "Primase (makes RNA primer)"
+    },
+    {
+      "front": "Primase function/type",
+      "back": "DNA-dependent RNA polymerase; synthesizes RNA primer"
+    },
+    {
+      "front": "Why DNA needs a primer",
+      "back": "DNA polymerase can only extend, not initiate"
+    },
+    {
+      "front": "RNA primer removal",
+      "back": "DNA polymerase I (5'->3' exonuclease), gap filled with DNA"
+    },
+    {
+      "front": "Uracil vs thymine",
+      "back": "Uracil = RNA; thymine = DNA"
+    },
+    {
+      "front": "Okazaki fragments",
+      "back": "Lagging-strand pieces, each needing its own primer"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Primase",
+      "detail": "Biochem: RNA primer (uracil) synthesized by primase."
+    },
+    {
+      "tag": "options",
+      "topic": "Replication enzymes",
+      "detail": "Biochem > pol III (extend), pol I (remove primer), ligase, helicase, gyrase."
+    },
+    {
+      "tag": "concept",
+      "topic": "RNA primer",
+      "detail": "Biochem > required to start DNA synthesis."
+    }
+  ],
+  "memoryHook": "Uracil is RNA's fingerprint - and the only enzyme laying down RNA during replication is primase, writing the little RNA primer that kicks off each new strand.",
+  "stem": [
+    {
+      "text": "A 34-year-old woman with a history of recurrent urinary tract infections comes to the office with dysuria and increased urinary frequency. Her urine culture grows colonies of Gram-negative bacteria. The bacteria are isolated and placed in a growth-enhancing nutrient solution, where they "
+    },
+    {
+      "text": "undergo rapid cellular division",
+      "clue": true,
+      "type": "blue",
+      "note": "Rapidly dividing bacteria are actively replicating their DNA, so replication-fork enzymes (helicase, primase, polymerases, ligase, gyrase) are all at work."
+    },
+    {
+      "text": ". As they are actively dividing, the bacterial cells are lysed and their DNA is extracted and purified. Analysis of the partially replicated DNA fragments reveals the "
+    },
+    {
+      "text": "presence of uracil",
+      "clue": true,
+      "type": "green",
+      "note": "URACIL is a base found in RNA, not DNA. Its presence in replicating DNA fragments indicates a retained RNA PRIMER, which is synthesized by PRIMASE."
+    },
+    {
+      "text": ". Which of the following enzymes is most likely responsible for integration of this nucleotide into the DNA fragments?"
+    }
+  ]
+}

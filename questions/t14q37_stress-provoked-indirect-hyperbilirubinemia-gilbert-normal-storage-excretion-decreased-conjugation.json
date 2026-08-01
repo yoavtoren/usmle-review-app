@@ -1,0 +1,200 @@
+{
+  "id": "q516",
+  "item": 516,
+  "qid": "21115",
+  "title": "Stress-provoked indirect hyperbilirubinemia (Gilbert): normal storage/excretion, decreased conjugation",
+  "system": "Pathophysiology",
+  "topic": "Gilbert syndrome",
+  "correct": "F",
+  "yourAnswer": "C",
+  "percentCorrect": 47,
+  "vignette": "A 17-year-old girl is brought to the office due to yellow eyes for the past day. The patient has no other symptoms, including fever, rash, abdominal pain, vomiting, or diarrhea. She has been preparing for her high school exit examination and has been quite stressed. Temperature is 37.1 C (98.8 F), blood pressure is 110/78 mm Hg, pulse is 80/min, and respirations are 14/min. Mild scleral icterus is present. The abdomen is soft with no hepatosplenomegaly. Serum laboratory results show hemoglobin 13.1 g/dL, total bilirubin 3.3 mg/dL, direct bilirubin 0.3 mg/dL, aspartate aminotransferase (SGOT) 22 U/L, and alanine aminotransferase (SGPT) 21 U/L. Two weeks after her examination, the patient's symptoms resolve. Repeat testing shows a total bilirubin concentration of 1.5 mg/dL. Which of the following changes most likely contributed to this patient's hyperbilirubinemia?",
+  "clues": [
+    {
+      "text": "quite stressed",
+      "type": "orange",
+      "note": "Stress (also fasting, illness, exertion) triggers the episodic jaundice of Gilbert syndrome."
+    },
+    {
+      "text": "total bilirubin 3.3 mg/dL, direct bilirubin 0.3 mg/dL",
+      "type": "green",
+      "note": "Elevated TOTAL bilirubin (3.3 / normal <1.2) with a NORMAL direct (0.3) fraction = INDIRECT (unconjugated) hyperbilirubinemia - the pattern of impaired conjugation."
+    },
+    {
+      "text": "total bilirubin concentration of 1.5 mg/dL",
+      "type": "blue",
+      "note": "Self-resolution of the mild jaundice after the stressor passes is characteristic of the benign, episodic course of Gilbert syndrome."
+    }
+  ],
+  "whatMatters": "Episodic, stress-provoked INDIRECT (unconjugated) hyperbilirubinemia with normal liver enzymes and self-resolution = GILBERT SYNDROME, caused by REDUCED UDP-glucuronosyltransferase activity -> DECREASED bilirubin CONJUGATION. Hepatocyte bilirubin STORAGE and EXCRETION are NORMAL. Answer F (normal / normal / decreased).",
+  "strategy": "Identify the isolated INDIRECT hyperbilirubinemia (high total, normal direct, normal LFTs) provoked by stress and self-limited = Gilbert syndrome. Its defect is decreased CONJUGATION (low UGT activity); storage and excretion are normal (bilirubin excretion into bile is preserved). Match normal/normal/decreased. Reject options with decreased excretion (Dubin-Johnson - direct hyperbilirubinemia) or altered storage (not the Gilbert defect).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Hepatocyte bilirubin storage decreased, excretion decreased, conjugation decreased",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Hepatocyte bilirubin storage decreased, excretion increased, conjugation increased",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Hepatocyte bilirubin storage increased, excretion decreased, conjugation normal",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Hepatocyte bilirubin storage increased, excretion increased, conjugation normal",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Hepatocyte bilirubin storage increased, excretion normal, conjugation decreased",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Hepatocyte bilirubin storage normal, excretion normal, conjugation decreased",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "All decreased - excretion is normal in Gilbert",
+      "detail": "WHAT IT IS: reduced storage, excretion, and conjugation. ❌ WHY IT FAILS: in Gilbert syndrome only CONJUGATION is impaired; storage and biliary excretion are normal. ✅ Correct if: a global hepatocyte transport/conjugation failure (not Gilbert)."
+    },
+    {
+      "letter": "B",
+      "label": "Increased conjugation - opposite of Gilbert",
+      "detail": "WHAT IT IS: increased conjugation/excretion. ❌ WHY IT FAILS: Gilbert has DECREASED conjugation (low UGT), not increased; this would lower bilirubin. ✅ Correct if: enzyme induction increasing conjugation."
+    },
+    {
+      "letter": "C",
+      "label": "Increased storage, decreased excretion - not Gilbert (Dubin-Johnson-like)",
+      "detail": "WHAT IT IS: increased hepatocyte storage with decreased excretion. ❌ WHY IT FAILS: decreased biliary excretion causes a DIRECT (conjugated) hyperbilirubinemia (Dubin-Johnson), but this patient has an INDIRECT elevation; conjugation (not excretion) is the Gilbert defect. ✅ Correct if: Dubin-Johnson (defective excretion, dark liver, elevated direct bilirubin)."
+    },
+    {
+      "letter": "D",
+      "label": "Increased storage/excretion, normal conjugation - wrong defect",
+      "detail": "WHAT IT IS: increased storage and excretion with normal conjugation. ❌ WHY IT FAILS: Gilbert's problem is REDUCED conjugation; storage/excretion are normal, not increased. ✅ Correct if: (not applicable) - doesn't match a defined disorder."
+    },
+    {
+      "letter": "E",
+      "label": "Increased storage, decreased conjugation - storage is normal",
+      "detail": "WHAT IT IS: increased storage with decreased conjugation. ❌ WHY IT FAILS: the conjugation defect is right, but hepatocyte bilirubin STORAGE is NORMAL in Gilbert, not increased. ✅ Correct if: a disorder combining storage excess with conjugation deficit (not Gilbert)."
+    }
+  ],
+  "reasoning": [
+    "Mild, stress-provoked jaundice with high total but normal direct bilirubin = indirect (unconjugated) hyperbilirubinemia",
+    "Normal liver enzymes and self-resolution indicate Gilbert syndrome",
+    "Gilbert results from reduced UDP-glucuronosyltransferase activity -> decreased conjugation; storage and excretion are normal",
+    "-> normal storage, normal excretion, decreased conjugation; answer F"
+  ],
+  "mechanism": "Normal BILIRUBIN metabolism: unconjugated bilirubin from red-cell breakdown is taken up and STORED by hepatocytes, CONJUGATED with glucuronic acid by UDP-GLUCURONOSYLTRANSFERASE (UGT), and then EXCRETED into the bile canaliculi. GILBERT SYNDROME - the most common inherited disorder of bilirubin metabolism - is caused by a genetic REDUCTION in UGT activity, so bilirubin CONJUGATION is DECREASED, producing a mild INDIRECT (unconjugated) hyperbilirubinemia. Hepatocyte STORAGE and biliary EXCRETION are NORMAL (and liver histology is normal). Episodes of mild jaundice are PROVOKED by stress, fasting, illness, dehydration, vigorous exercise, or menstruation, and they RESOLVE spontaneously; the CBC, blood smear, and AST/ALT/alkaline phosphatase are normal, and it is BENIGN requiring no treatment. This differs from Crigler-Najjar (severe/chronic unconjugated hyperbilirubinemia from near-absent UGT, neonatal onset with kernicterus risk) and from DUBIN-JOHNSON syndrome (benign DIRECT hyperbilirubinemia from defective canalicular EXCRETION, causing a dark liver). Thus the correct pattern is normal storage, normal excretion, and decreased conjugation.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid GI > Gilbert syndrome: reduced UDP-glucuronosyltransferase -> mild indirect hyperbilirubinemia; provoked by stress/fasting/illness; normal CBC/smear/LFTs; benign; vs Crigler-Najjar (severe), Dubin-Johnson (direct, defective excretion)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Indirect hyperbilirubinemia provoked by stress + normal LFTs = Gilbert (decreased conjugation; storage/excretion normal)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on indirect vs direct bilirubin, UDP-glucuronosyltransferase, conjugation, Gilbert vs Dubin-Johnson? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Decreased EXCRETION = Dubin-Johnson (direct hyperbilirubinemia); storage is normal in Gilbert; conjugation is DECREASED (not increased)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: Gilbert = decreased bilirubin conjugation (low UGT), normal storage/excretion; benign indirect hyperbilirubinemia provoked by stress."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Gilbert syndrome defect",
+      "back": "Decreased UDP-glucuronosyltransferase -> decreased conjugation"
+    },
+    {
+      "front": "Gilbert bilirubin pattern",
+      "back": "Mild indirect (unconjugated) hyperbilirubinemia; normal LFTs"
+    },
+    {
+      "front": "Gilbert triggers",
+      "back": "Stress, fasting, illness, dehydration, exercise, menstruation"
+    },
+    {
+      "front": "Dubin-Johnson syndrome",
+      "back": "Defective excretion -> direct hyperbilirubinemia; dark liver"
+    },
+    {
+      "front": "Crigler-Najjar",
+      "back": "Severe UGT deficiency; neonatal; kernicterus risk"
+    },
+    {
+      "front": "Gilbert storage/excretion",
+      "back": "Normal (only conjugation impaired)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Gilbert syndrome",
+      "detail": "GI: decreased conjugation (low UGT); normal storage/excretion; indirect."
+    },
+    {
+      "tag": "options",
+      "topic": "Hereditary hyperbilirubinemias",
+      "detail": "GI > Dubin-Johnson (excretion), Crigler-Najjar (severe UGT)."
+    },
+    {
+      "tag": "labs",
+      "topic": "Indirect bilirubin",
+      "detail": "GI > high total, normal direct, normal LFTs."
+    }
+  ],
+  "memoryHook": "Gilbert's liver stores and dumps bilirubin fine - it just can't CONJUGATE fast enough, so stress makes unconjugated bilirubin back up and the eyes go yellow, then it fades.",
+  "stem": [
+    {
+      "text": "A 17-year-old girl is brought to the office due to yellow eyes for the past day. The patient has no other symptoms, including fever, rash, abdominal pain, vomiting, or diarrhea. She has been preparing for her high school exit examination and has been "
+    },
+    {
+      "text": "quite stressed",
+      "clue": true,
+      "type": "orange",
+      "note": "Stress (also fasting, illness, exertion) triggers the episodic jaundice of Gilbert syndrome."
+    },
+    {
+      "text": ". Temperature is 37.1 C (98.8 F), blood pressure is 110/78 mm Hg, pulse is 80/min, and respirations are 14/min. Mild scleral icterus is present. The abdomen is soft with no hepatosplenomegaly. Serum laboratory results show hemoglobin 13.1 g/dL, "
+    },
+    {
+      "text": "total bilirubin 3.3 mg/dL, direct bilirubin 0.3 mg/dL",
+      "clue": true,
+      "type": "green",
+      "note": "Elevated TOTAL bilirubin (3.3 / normal <1.2) with a NORMAL direct (0.3) fraction = INDIRECT (unconjugated) hyperbilirubinemia - the pattern of impaired conjugation."
+    },
+    {
+      "text": ", aspartate aminotransferase (SGOT) 22 U/L, and alanine aminotransferase (SGPT) 21 U/L. Two weeks after her examination, the patient's symptoms resolve. Repeat testing shows a "
+    },
+    {
+      "text": "total bilirubin concentration of 1.5 mg/dL",
+      "clue": true,
+      "type": "blue",
+      "note": "Self-resolution of the mild jaundice after the stressor passes is characteristic of the benign, episodic course of Gilbert syndrome."
+    },
+    {
+      "text": ". Which of the following changes most likely contributed to this patient's hyperbilirubinemia?"
+    }
+  ]
+}
