@@ -1,0 +1,166 @@
+{
+  "id": "q536",
+  "item": 536,
+  "qid": "15279",
+  "title": "Trastuzumab (anti-HER2 monoclonal antibody) works via antibody-dependent cellular cytotoxicity: NK cells and granzymes",
+  "system": "Immunology",
+  "topic": "Antibody-dependent cellular cytotoxicity",
+  "correct": "C",
+  "yourAnswer": "B",
+  "percentCorrect": 37,
+  "vignette": "A 48-year-old woman is evaluated for a painless left breast mass. Physical examination shows a 4-cm mass with dimpling of the overlying skin; left axillary lymphadenopathy is also noted. Breast imaging reveals a spiculated soft tissue mass with microcalcifications. Biopsy of the mass demonstrates invasive ductal carcinoma. Immunohistochemistry of the tissue sample shows the tumor cells are negative for estrogen and progesterone receptors but overexpress the HER2 epidermal growth factor receptor. The patient is treated with systemic chemotherapy and a monoclonal antibody drug that binds the extracellular domain of the growth factor receptor. Repeat evaluation 6 weeks later shows a decrease in the size of the breast mass. Which of the following host factors are primarily responsible for mediating the response to the monoclonal antibody therapy?",
+  "clues": [
+    {
+      "text": "overexpress the HER2 epidermal growth factor receptor",
+      "type": "orange",
+      "note": "HER2 overexpression identifies a HER2-positive breast cancer treatable with the monoclonal antibody trastuzumab."
+    },
+    {
+      "text": "monoclonal antibody drug that binds the extracellular domain of the growth factor receptor",
+      "type": "green",
+      "note": "This is trastuzumab (an IgG monoclonal antibody). Once bound to HER2 on tumor cells, its Fc region recruits natural killer cells for antibody-dependent cellular cytotoxicity."
+    }
+  ],
+  "whatMatters": "Anti-HER2 monoclonal antibody (TRASTUZUMAB) binds tumor-cell HER2; its Fc region is recognized by NATURAL KILLER (NK) cells via CD16, which release GRANZYMES and perforin to kill the cell = ANTIBODY-DEPENDENT CELLULAR CYTOTOXICITY (ADCC). Answer C.",
+  "strategy": "Recall the main host effector of monoclonal-antibody antitumor activity: ADCC by NK cells. The antibody's Fc binds NK-cell CD16 (Fc receptor) -> NK releases perforin/granzymes -> apoptosis. Reject B cells/IgM (not involved in mediating a given monoclonal antibody's effect), CD8 T cells/interferon-gamma (interact with MHC I, not monoclonal Fc), and neutrophil lysosomes (phagocytosis, minor antitumor role).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "B lymphocytes and IgM",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "CD8+ T lymphocytes and interferon gamma",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Natural killer cells and granzymes",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Polymorphonuclear leukocytes and lysosomes",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "B lymphocytes and IgM - not the mediator",
+      "detail": "WHAT IT IS: B cells producing antibody (IgM). ❌ WHY IT FAILS: B cells/IgM are not the effectors that mediate a therapeutic monoclonal antibody's tumor killing; ADCC is NK-cell mediated. ✅ Correct if: humoral antibody generation (not ADCC effector)."
+    },
+    {
+      "letter": "B",
+      "label": "CD8+ T cells and interferon gamma - MHC I, not Fc",
+      "detail": "WHAT IT IS: cytotoxic T cells releasing cytokines/granules against MHC-I-presented antigen. ❌ WHY IT FAILS: CD8 T cells recognize MHC class I peptides, not the Fc of a monoclonal antibody; ADCC uses NK cells via CD16. ✅ Correct if: MHC-I-restricted cytotoxic T-cell killing."
+    },
+    {
+      "letter": "D",
+      "label": "Neutrophil lysosomes - phagocytosis, minor role",
+      "detail": "WHAT IT IS: polymorphonuclear leukocytes with CD16 performing phagocytosis. ❌ WHY IT FAILS: although neutrophils/macrophages have CD16, monoclonal-antibody antitumor efficacy is thought to be largely NK-cell ADCC, not neutrophil lysosomal killing. ✅ Correct if: CD16-mediated phagocytosis of opsonized microbes."
+    }
+  ],
+  "reasoning": [
+    "Trastuzumab is a monoclonal IgG antibody that binds HER2 on tumor cells",
+    "Its Fc region is recognized by NK cells through the CD16 Fc receptor",
+    "NK cells then release perforin and granzymes to induce tumor-cell apoptosis (ADCC)",
+    "-> natural killer cells and granzymes; answer C"
+  ],
+  "mechanism": "HER2 is an epidermal growth factor receptor overexpressed by aggressive breast cancers. TRASTUZUMAB, a MONOCLONAL IgG ANTIBODY, binds the extracellular domain of HER2 and causes tumor regression through several mechanisms (receptor downregulation, blocked signaling, complement), but much of its effect is ANTIBODY-DEPENDENT CELLULAR CYTOTOXICITY (ADCC): (1) the antibody's Fab binds HER2 on the tumor-cell surface; (2) a patrolling NATURAL KILLER (NK) CELL binds the antibody's FC portion via its CD16 receptor; and (3) the NK cell releases cytotoxic granules containing PERFORIN and GRANZYMES that induce apoptosis/osmotic lysis of the antibody-coated cell. NK cells are part of the INNATE immune system (they don't require MHC matching and can kill tumor cells that have downregulated MHC I). Therefore the host factors mediating the response are NK cells and granzymes. The distractors are incorrect effectors: B cells/IgM (humoral, not the effector), CD8 T cells/IFN-gamma (MHC-I restricted, not Fc-mediated), and neutrophil lysosomes (phagocytosis; minor antitumor role).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Immuno > ADCC: NK cells bind the Fc of an IgG-coated target via CD16 and release perforin/granzymes -> apoptosis; mechanism of monoclonal antibodies (trastuzumab, rituximab); NK cells = innate, kill MHC-I-low cells."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Monoclonal antibody Fc -> NK CD16 -> perforin/granzymes = ADCC."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on ADCC, NK cells, CD16/Fc receptor, perforin/granzymes, or trastuzumab? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "B cells/IgM = humoral (not effector); CD8 T/IFN-gamma = MHC I; neutrophil lysosomes = phagocytosis."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: monoclonal antibody antitumor effect = ADCC via NK cells (CD16 binds Fc) -> perforin/granzymes."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Monoclonal antibody antitumor mechanism",
+      "back": "ADCC: NK cells (CD16) + granzymes/perforin"
+    },
+    {
+      "front": "NK cell Fc receptor",
+      "back": "CD16 (binds IgG Fc)"
+    },
+    {
+      "front": "Trastuzumab target",
+      "back": "HER2 extracellular domain (HER2+ breast cancer)"
+    },
+    {
+      "front": "NK cell immune category",
+      "back": "Innate; kills MHC-I-low cells"
+    },
+    {
+      "front": "Cytotoxic granule contents",
+      "back": "Perforin + granzymes -> apoptosis"
+    },
+    {
+      "front": "CD8 T cell recognition",
+      "back": "MHC class I peptides (not antibody Fc)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "ADCC",
+      "detail": "Immuno: NK cells bind antibody Fc (CD16) -> granzymes/perforin."
+    },
+    {
+      "tag": "drug",
+      "topic": "Trastuzumab",
+      "detail": "Onc > anti-HER2 monoclonal antibody; ADCC."
+    },
+    {
+      "tag": "options",
+      "topic": "Effector cells",
+      "detail": "Immuno > NK vs CD8 T vs B cells vs neutrophils."
+    }
+  ],
+  "memoryHook": "The antibody flags the tumor (Fab on HER2); an NK cell grabs the flag's tail (Fc via CD16) and knifes the cell with granzymes - ADCC.",
+  "stem": [
+    {
+      "text": "A 48-year-old woman is evaluated for a painless left breast mass. Physical examination shows a 4-cm mass with dimpling of the overlying skin; left axillary lymphadenopathy is also noted. Breast imaging reveals a spiculated soft tissue mass with microcalcifications. Biopsy of the mass demonstrates invasive ductal carcinoma. Immunohistochemistry of the tissue sample shows the tumor cells are negative for estrogen and progesterone receptors but "
+    },
+    {
+      "text": "overexpress the HER2 epidermal growth factor receptor",
+      "clue": true,
+      "type": "orange",
+      "note": "HER2 overexpression identifies a HER2-positive breast cancer treatable with the monoclonal antibody trastuzumab."
+    },
+    {
+      "text": ". The patient is treated with systemic chemotherapy and a "
+    },
+    {
+      "text": "monoclonal antibody drug that binds the extracellular domain of the growth factor receptor",
+      "clue": true,
+      "type": "green",
+      "note": "This is trastuzumab (an IgG monoclonal antibody). Once bound to HER2 on tumor cells, its Fc region recruits natural killer cells for antibody-dependent cellular cytotoxicity."
+    },
+    {
+      "text": ". Repeat evaluation 6 weeks later shows a decrease in the size of the breast mass. Which of the following host factors are primarily responsible for mediating the response to the monoclonal antibody therapy?"
+    }
+  ]
+}

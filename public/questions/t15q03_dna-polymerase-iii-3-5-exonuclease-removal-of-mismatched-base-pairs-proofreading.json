@@ -1,0 +1,162 @@
+{
+  "id": "q522",
+  "item": 522,
+  "qid": "1435",
+  "title": "DNA polymerase III 3'->5' exonuclease: removal of mismatched base pairs (proofreading)",
+  "system": "Biochemistry",
+  "topic": "DNA replication - proofreading",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 61,
+  "vignette": "A research scientist purifies DNA polymerase III from an Escherichia coli extract. The isolated enzymes are then incubated in a mixture containing DNA templates, RNA primer oligonucleotides, and tagged deoxynucleotides. After analyzing the DNA molecules formed during incubation, the researcher concludes that the enzyme possesses 3' to 5' exonuclease activity. Which of the following enzymatic actions was most likely observed during the experiment?",
+  "clues": [
+    {
+      "text": "possesses 3' to 5' exonuclease activity",
+      "type": "green",
+      "note": "3'->5' exonuclease activity is the PROOFREADING function of DNA polymerases: it removes an incorrectly paired nucleotide from the 3' end of the growing strand."
+    }
+  ],
+  "whatMatters": "3'->5' EXONUCLEASE activity is the PROOFREADING function shared by all prokaryotic DNA polymerases (I, II, III). It removes MISMATCHED base pairs during DNA synthesis, then the correct base is added - ensuring replication fidelity. Answer C.",
+  "strategy": "Match the activity to its action: 3'->5' exonuclease = proofreading = removal of MISMATCHED bases. Reject unrelated activities: supercoil cleavage (DNA gyrase/topoisomerase), thymine-dimer excision (UV-specific/nucleotide excision repair endonuclease), RNA primer removal (that is DNA polymerase I's 5'->3' exonuclease, not 3'->5'), and unwinding (helicase).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cleavage of DNA strands to remove supercoils",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Excision of thymine dimers within DNA",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Removal of mismatched base pairs during DNA synthesis",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "Removal of RNA primer nucleotides",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Unwinding of double-stranded DNA",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Remove supercoils - DNA gyrase/topoisomerase",
+      "detail": "WHAT IT IS: cleaving DNA to relieve supercoiling (DNA gyrase, a type II topoisomerase). ❌ WHY IT FAILS: that is topoisomerase activity, not a polymerase's 3'->5' exonuclease proofreading. ✅ Correct if: supercoil relief at the fork."
+    },
+    {
+      "letter": "B",
+      "label": "Excise thymine dimers - nucleotide excision repair",
+      "detail": "WHAT IT IS: removing UV-induced thymine (pyrimidine) dimers via a UV-specific endonuclease (nucleotide excision repair). ❌ WHY IT FAILS: this is a DNA-repair pathway, not the proofreading exonuclease of DNA polymerase III. ✅ Correct if: repair of pyrimidine dimers (xeroderma pigmentosum defect)."
+    },
+    {
+      "letter": "D",
+      "label": "Remove RNA primer - DNA pol I 5'->3' exonuclease",
+      "detail": "WHAT IT IS: excision of RNA primers, a UNIQUE function of DNA polymerase I via its 5'->3' exonuclease. ❌ WHY IT FAILS: that is 5'->3' (not 3'->5') exonuclease and is specific to Pol I, not the proofreading activity described. ✅ Correct if: DNA polymerase I removing/replacing RNA primers."
+    },
+    {
+      "letter": "E",
+      "label": "Unwind DNA - helicase",
+      "detail": "WHAT IT IS: separating the parental strands (helicase). ❌ WHY IT FAILS: unwinding is not an exonuclease activity and is not performed by DNA polymerase III. ✅ Correct if: strand separation at the origin/fork."
+    }
+  ],
+  "reasoning": [
+    "3'->5' exonuclease activity of DNA polymerases is their proofreading function",
+    "Proofreading removes an incorrectly incorporated (mismatched) nucleotide from the 3' end",
+    "This maintains replication fidelity during DNA synthesis",
+    "-> removal of mismatched base pairs; answer C"
+  ],
+  "mechanism": "Prokaryotes have three DNA polymerases (I, II, III), all of which share two core activities: 5'->3' POLYMERASE activity (adding deoxynucleotides to the 3' end of a primer, extending the daughter strand) and 3'->5' EXONUCLEASE 'PROOFREADING' activity. As the daughter strand is synthesized, the polymerase checks that each newly added base is correctly paired with the template; if a MISMATCH occurs, the 3'->5' exonuclease removes the incorrect nucleotide (hydrolyzing the phosphodiester bond) so the correct complementary base can be added - greatly increasing REPLICATION FIDELITY. DNA polymerase III is the main REPLICATIVE polymerase (leading strand and Okazaki fragments); DNA polymerase I additionally has a UNIQUE 5'->3' EXONUCLEASE that removes RNA primers and replaces them with DNA. The distractors are other enzymes' jobs: topoisomerase/gyrase (supercoil relief), nucleotide excision repair (thymine-dimer removal), Pol I 5'->3' exonuclease (primer removal), and helicase (unwinding).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem > DNA replication: all prokaryotic DNA polymerases have 3'->5' exonuclease (proofreading, removes mismatches); DNA pol I uniquely has 5'->3' exonuclease (removes RNA primer); pol III = main replicative polymerase."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "3'->5' exonuclease = proofreading = remove mismatched bases during synthesis."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on 3'->5' vs 5'->3' exonuclease, proofreading, DNA pol I vs III, or RNA primer removal? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Supercoils = gyrase; thymine dimers = excision repair; primer removal = Pol I 5'->3' exonuclease; unwinding = helicase."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: 3'->5' exonuclease = proofreading (all pols); 5'->3' exonuclease = primer removal (Pol I only)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "3'->5' exonuclease activity",
+      "back": "Proofreading (removes mismatched bases)"
+    },
+    {
+      "front": "5'->3' exonuclease activity",
+      "back": "DNA polymerase I only (removes RNA primer)"
+    },
+    {
+      "front": "DNA polymerase III role",
+      "back": "Main replicative polymerase (leading + Okazaki)"
+    },
+    {
+      "front": "Thymine dimer removal",
+      "back": "Nucleotide excision repair (UV-specific endonuclease)"
+    },
+    {
+      "front": "Supercoil relief enzyme",
+      "back": "DNA gyrase (type II topoisomerase)"
+    },
+    {
+      "front": "Proofreading purpose",
+      "back": "Increase replication fidelity (fewer mutations)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Proofreading",
+      "detail": "Biochem: 3'->5' exonuclease removes mismatched bases."
+    },
+    {
+      "tag": "options",
+      "topic": "Replication/repair enzymes",
+      "detail": "Biochem > Pol I (primer), gyrase, excision repair, helicase."
+    },
+    {
+      "tag": "fidelity",
+      "topic": "DNA pol III",
+      "detail": "Biochem > main replicative polymerase with proofreading."
+    }
+  ],
+  "memoryHook": "3'->5' exonuclease is the spell-checker backing up over the last letter to fix a typo - proofreading out mismatched bases.",
+  "stem": [
+    {
+      "text": "A research scientist purifies DNA polymerase III from an Escherichia coli extract. The isolated enzymes are then incubated in a mixture containing DNA templates, RNA primer oligonucleotides, and tagged deoxynucleotides. After analyzing the DNA molecules formed during incubation, the researcher concludes that the enzyme "
+    },
+    {
+      "text": "possesses 3' to 5' exonuclease activity",
+      "clue": true,
+      "type": "green",
+      "note": "3'->5' exonuclease activity is the PROOFREADING function of DNA polymerases: it removes an incorrectly paired nucleotide from the 3' end of the growing strand."
+    },
+    {
+      "text": ". Which of the following enzymatic actions was most likely observed during the experiment?"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "id": "q544",
+  "item": 544,
+  "qid": "1029",
+  "title": "Glycolysis that sometimes yields no net ATP (2,3-BPG shunt): erythrocytes",
+  "system": "Biochemistry",
+  "topic": "Erythrocyte glycolysis / 2,3-BPG shunt",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 70,
+  "vignette": "A researcher is studying the role of glucose metabolites in normal cellular function. A specific human cell type is incubated in glucose-rich media. Intracellular levels of glucose metabolizing enzymes, intermediate products, and generated ATP are measured. In these cells, glycolysis of a single glucose molecule always yields pyruvate but sometimes generates no net ATP. Which of the following cells is most likely being studied in this experiment?",
+  "clues": [
+    {
+      "text": "glycolysis of a single glucose molecule always yields pyruvate but sometimes generates no net ATP",
+      "type": "green",
+      "note": "A cell that can complete glycolysis to pyruvate yet sometimes gain NO net ATP is diverting 1,3-BPG through the bisphosphoglycerate mutase (2,3-BPG) shunt - a property of erythrocytes."
+    }
+  ],
+  "whatMatters": "ERYTHROCYTES rely on glycolysis for ATP (no mitochondria). They can shunt 1,3-BPG to 2,3-BPG via BISPHOSPHOGLYCERATE MUTASE, BYPASSING the ATP-generating phosphoglycerate kinase step - so glycolysis still yields pyruvate but sometimes NO net ATP. Answer B.",
+  "strategy": "Key on the 2,3-BPG shunt: only erythrocytes make substantial 2,3-BPG (bisphosphoglycerate mutase), diverting 1,3-BPG away from the ATP-producing step. This explains glycolysis to pyruvate with no net ATP gain. Reject cells that don't run this shunt (adipocytes, hepatocytes, neurons, myocytes) - they have negligible 2,3-BPG production and normal net ATP from glycolysis (and mitochondria).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Adipocytes",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Erythrocytes",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Hepatocytes",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Neurons",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Skeletal muscle cells",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Adipocytes - negligible 2,3-BPG",
+      "detail": "WHAT IT IS: fat cells that also perform glycolysis. ❌ WHY IT FAILS: they have insignificant bisphosphoglycerate mutase/2,3-BPG production, so glycolysis yields normal net ATP. ✅ Correct if: lipogenesis/lipolysis, not the 2,3-BPG shunt."
+    },
+    {
+      "letter": "C",
+      "label": "Hepatocytes - have mitochondria, no shunt",
+      "detail": "WHAT IT IS: liver cells with full metabolic machinery. ❌ WHY IT FAILS: they don't run the erythrocyte 2,3-BPG shunt and use oxidative phosphorylation. ✅ Correct if: gluconeogenesis/ureagenesis (liver-specific)."
+    },
+    {
+      "letter": "D",
+      "label": "Neurons - oxidative, glucose-dependent",
+      "detail": "WHAT IT IS: neurons that depend on glucose but have mitochondria. ❌ WHY IT FAILS: they don't produce significant 2,3-BPG; glycolysis gives normal net ATP. ✅ Correct if: high oxidative demand/glucose dependence."
+    },
+    {
+      "letter": "E",
+      "label": "Skeletal muscle cells - no 2,3-BPG shunt",
+      "detail": "WHAT IT IS: myocytes performing glycolysis (and oxidative metabolism). ❌ WHY IT FAILS: negligible bisphosphoglycerate mutase; they gain net ATP from glycolysis. ✅ Correct if: anaerobic glycolysis to lactate (still net ATP)."
+    }
+  ],
+  "reasoning": [
+    "The cell completes glycolysis to pyruvate but can produce no net ATP",
+    "This occurs when 1,3-BPG is diverted to 2,3-BPG via bisphosphoglycerate mutase (bypassing phosphoglycerate kinase)",
+    "Only erythrocytes carry out this 2,3-BPG shunt in significant amounts",
+    "-> erythrocytes; answer B"
+  ],
+  "mechanism": "ERYTHROCYTES have no mitochondria, so they depend on GLYCOLYSIS for ATP. In standard glycolysis, ATP is generated when 1,3-BISPHOSPHOGLYCERATE (1,3-BPG) is converted to 3-phosphoglycerate by PHOSPHOGLYCERATE KINASE (a substrate-level phosphorylation). Red cells possess BISPHOSPHOGLYCERATE MUTASE, which diverts 1,3-BPG to 2,3-BISPHOSPHOGLYCERATE (2,3-BPG) in a step that produces NO ATP; 2,3-BPG is then hydrolyzed to 3-phosphoglycerate by bisphosphoglycerate phosphatase (also yielding no ATP). By routing carbon through this RAPOPORT-LUEBERING (2,3-BPG) SHUNT, the cell SACRIFICES the net ATP gain of glycolysis while still producing pyruvate. Functionally, 2,3-BPG binds deoxyhemoglobin and DECREASES hemoglobin's O2 affinity (right-shifts the curve); its production INCREASES in HYPOXIA and chronic anemia to enhance peripheral OXYGEN DELIVERY. Other cells (adipocytes, hepatocytes, neurons, myocytes) have negligible bisphosphoglycerate mutase and therefore gain net ATP from glycolysis and use mitochondria - so the described behavior identifies erythrocytes.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem > erythrocyte metabolism: no mitochondria -> glycolysis only; bisphosphoglycerate mutase makes 2,3-BPG (Rapoport-Luebering shunt), bypassing the ATP-generating phosphoglycerate kinase step (no net ATP); 2,3-BPG right-shifts the O2-hemoglobin curve; increases in hypoxia/anemia."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Glycolysis to pyruvate but no net ATP = 2,3-BPG shunt = erythrocytes."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on 2,3-BPG, bisphosphoglycerate mutase, phosphoglycerate kinase, Rapoport-Luebering shunt, or O2-hemoglobin curve? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Adipocytes/hepatocytes/neurons/myocytes lack significant 2,3-BPG production -> normal net ATP."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: erythrocytes shunt 1,3-BPG to 2,3-BPG (no ATP) via bisphosphoglycerate mutase; 2,3-BPG lowers Hb O2 affinity."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Glycolysis with no net ATP (2,3-BPG shunt)",
+      "back": "Erythrocytes"
+    },
+    {
+      "front": "Erythrocyte 2,3-BPG enzyme",
+      "back": "Bisphosphoglycerate mutase"
+    },
+    {
+      "front": "ATP-generating glycolysis step bypassed",
+      "back": "Phosphoglycerate kinase (1,3-BPG -> 3-PG)"
+    },
+    {
+      "front": "2,3-BPG effect on hemoglobin",
+      "back": "Decreases O2 affinity (right shift)"
+    },
+    {
+      "front": "When 2,3-BPG rises",
+      "back": "Hypoxia, chronic anemia, high altitude"
+    },
+    {
+      "front": "Why RBCs rely on glycolysis",
+      "back": "No mitochondria (no oxidative phosphorylation)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Erythrocyte glycolysis",
+      "detail": "Biochem: 2,3-BPG shunt bypasses ATP step (no net ATP)."
+    },
+    {
+      "tag": "function",
+      "topic": "2,3-BPG",
+      "detail": "Pulm > right-shifts O2-hemoglobin curve; rises in hypoxia."
+    },
+    {
+      "tag": "options",
+      "topic": "Cell metabolism",
+      "detail": "Biochem > other cells lack the shunt (net ATP)."
+    }
+  ],
+  "memoryHook": "Only red cells detour glycolysis into the 2,3-BPG shunt - skipping the ATP payoff step - so they can make pyruvate yet net zero ATP (and 2,3-BPG offloads oxygen).",
+  "stem": [
+    {
+      "text": "A researcher is studying the role of glucose metabolites in normal cellular function. A specific human cell type is incubated in glucose-rich media. Intracellular levels of glucose metabolizing enzymes, intermediate products, and generated ATP are measured. In these cells, "
+    },
+    {
+      "text": "glycolysis of a single glucose molecule always yields pyruvate but sometimes generates no net ATP",
+      "clue": true,
+      "type": "green",
+      "note": "A cell that can complete glycolysis to pyruvate yet sometimes gain NO net ATP is diverting 1,3-BPG through the bisphosphoglycerate mutase (2,3-BPG) shunt - a property of erythrocytes."
+    },
+    {
+      "text": ". Which of the following cells is most likely being studied in this experiment?"
+    }
+  ]
+}

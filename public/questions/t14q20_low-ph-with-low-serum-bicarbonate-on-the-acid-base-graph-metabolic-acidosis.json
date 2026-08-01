@@ -1,0 +1,171 @@
+{
+  "id": "q499",
+  "item": 499,
+  "qid": "2072",
+  "title": "Low pH with low serum bicarbonate on the acid-base graph: metabolic acidosis",
+  "system": "Pathophysiology",
+  "topic": "Acid-base interpretation",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 89,
+  "vignette": "A 34-year-old man is brought to the emergency department with new-onset confusion and lethargy. Laboratory studies, including an arterial blood gas, are obtained. The changes in his blood gas parameters are shown in the graph below. Point A represents these parameters at the patient's physiologic baseline, and point B indicates his state on arrival in the emergency department. On the acid-base graph, point B shows a decreased serum bicarbonate and a decreased pH compared with baseline point A. Which of the following is the most likely diagnosis?",
+  "clues": [
+    {
+      "text": "new-onset confusion and lethargy",
+      "type": "blue",
+      "note": "Confusion/lethargy can accompany a severe acid-base disturbance (e.g., diabetic ketoacidosis) causing this presentation."
+    },
+    {
+      "text": "point B shows a decreased serum bicarbonate and a decreased pH",
+      "type": "green",
+      "note": "A LOW pH (acidosis) with a LOW serum bicarbonate identifies a primary METABOLIC ACIDOSIS (bicarbonate is consumed); a compensatory fall in PaCO2 follows via hyperventilation."
+    }
+  ],
+  "whatMatters": "Point B shows a DECREASED pH (acidosis) with a DECREASED serum BICARBONATE. A primary drop in bicarbonate causing acidosis = METABOLIC ACIDOSIS. Respiratory compensation then lowers PaCO2 (hyperventilation) to blunt the pH change. Answer A.",
+  "strategy": "Read two axes: pH tells acidosis vs alkalosis; then decide metabolic vs respiratory by whether HCO3 or PaCO2 is the PRIMARY driver. Low pH + low HCO3 = metabolic ACIDOSIS. Reject metabolic alkalosis (would show HIGH pH + HIGH HCO3), respiratory acidosis (low pH but HIGH PaCO2 with a compensatory HIGH HCO3), and respiratory alkalosis (HIGH pH + low PaCO2).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Metabolic acidosis",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Metabolic alkalosis",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Respiratory acidosis",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Respiratory alkalosis",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Metabolic alkalosis - would raise pH and HCO3",
+      "detail": "WHAT IT IS: primary rise in bicarbonate raising pH. ❌ WHY IT FAILS: point B shows DECREASED pH and DECREASED bicarbonate, the opposite of alkalosis. ✅ Correct if: high pH with high HCO3 (e.g., vomiting)."
+    },
+    {
+      "letter": "C",
+      "label": "Respiratory acidosis - low pH but HIGH PaCO2/HCO3",
+      "detail": "WHAT IT IS: primary CO2 retention lowering pH, with compensatory rise in bicarbonate. ❌ WHY IT FAILS: here bicarbonate is DECREASED (a primary metabolic process), not increased; respiratory acidosis raises HCO3 to compensate. ✅ Correct if: low pH with high PaCO2 and elevated HCO3 (hypoventilation)."
+    },
+    {
+      "letter": "D",
+      "label": "Respiratory alkalosis - would raise pH",
+      "detail": "WHAT IT IS: primary hyperventilation lowering PaCO2 and raising pH. ❌ WHY IT FAILS: point B shows a LOW pH, not the high pH of alkalosis. ✅ Correct if: high pH with low PaCO2 (anxiety, PE)."
+    }
+  ],
+  "reasoning": [
+    "Point B has a decreased pH -> acidosis",
+    "The primary abnormality is a decreased serum bicarbonate",
+    "A low pH driven by low bicarbonate defines a metabolic acidosis (with compensatory low PaCO2)",
+    "-> metabolic acidosis; answer A"
+  ],
+  "mechanism": "Interpreting an acid-base disturbance uses the pH first (acidosis if low, alkalosis if high), then identifies the PRIMARY driver: a METABOLIC process changes serum BICARBONATE (HCO3-), whereas a RESPIRATORY process changes PaCO2. Point B shows a DECREASED pH (ACIDOSIS) with a DECREASED serum BICARBONATE, indicating a primary METABOLIC ACIDOSIS - bicarbonate is consumed buffering excess acid (e.g., ketoacids in diabetic ketoacidosis, lactate, toxins, or bicarbonate loss). The body compensates via RESPIRATORY compensation: chemoreceptor-driven HYPERVENTILATION lowers PaCO2 (Kussmaul respirations) to raise pH back toward normal, but full correction does not occur. On the acid-base nomogram, this places point B in the metabolic acidosis zone (low HCO3, low PaCO2, low pH). The distractors would show different patterns: metabolic alkalosis (high pH, high HCO3), respiratory acidosis (low pH, high PaCO2, compensatory high HCO3), and respiratory alkalosis (high pH, low PaCO2).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid renal/physiology > acid-base: pH sets acidosis/alkalosis; metabolic = primary HCO3 change, respiratory = primary PaCO2 change; metabolic acidosis (low pH, low HCO3) with respiratory compensation (low PaCO2, Kussmaul)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Low pH + low bicarbonate = metabolic acidosis (compensatory low PaCO2)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on metabolic vs respiratory, bicarbonate vs PaCO2, compensation, or acid-base nomogram? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Alkalosis raises pH; respiratory acidosis raises PaCO2/HCO3; respiratory alkalosis lowers PaCO2 with high pH."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "Acid-base graph (stem): point B moved to LOWER pH and LOWER serum bicarbonate than baseline point A = primary metabolic acidosis."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: low pH + low HCO3 = metabolic acidosis; low pH + high PaCO2 = respiratory acidosis."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Low pH + low bicarbonate",
+      "back": "Metabolic acidosis"
+    },
+    {
+      "front": "Metabolic acidosis respiratory compensation",
+      "back": "Hyperventilation lowers PaCO2 (Kussmaul breathing)"
+    },
+    {
+      "front": "Metabolic vs respiratory primary driver",
+      "back": "Metabolic = HCO3; respiratory = PaCO2"
+    },
+    {
+      "front": "Respiratory acidosis pattern",
+      "back": "Low pH, high PaCO2, compensatory high HCO3"
+    },
+    {
+      "front": "Metabolic alkalosis pattern",
+      "back": "High pH, high HCO3"
+    },
+    {
+      "front": "Common metabolic acidosis cause (young, confused)",
+      "back": "Diabetic ketoacidosis (anion gap)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Metabolic acidosis",
+      "detail": "Renal: low pH + low HCO3; compensatory low PaCO2."
+    },
+    {
+      "tag": "options",
+      "topic": "Acid-base patterns",
+      "detail": "Renal > alkalosis, respiratory acidosis/alkalosis distinctions."
+    },
+    {
+      "tag": "cause",
+      "topic": "DKA / anion gap",
+      "detail": "Endo/Renal > ketoacids consume bicarbonate."
+    }
+  ],
+  "memoryHook": "pH down + bicarbonate down = the acid ate the buffer: metabolic acidosis (and the lungs blow off CO2 to help via Kussmaul breathing).",
+  "stem": [
+    {
+      "text": "A 34-year-old man is brought to the emergency department with "
+    },
+    {
+      "text": "new-onset confusion and lethargy",
+      "clue": true,
+      "type": "blue",
+      "note": "Confusion/lethargy can accompany a severe acid-base disturbance (e.g., diabetic ketoacidosis) causing this presentation."
+    },
+    {
+      "text": ". Laboratory studies, including an arterial blood gas, are obtained. The changes in his blood gas parameters are shown in the graph below. Point A represents these parameters at the patient's physiologic baseline, and point B indicates his state on arrival in the emergency department. On the acid-base graph, "
+    },
+    {
+      "text": "point B shows a decreased serum bicarbonate and a decreased pH",
+      "clue": true,
+      "type": "green",
+      "note": "A LOW pH (acidosis) with a LOW serum bicarbonate identifies a primary METABOLIC ACIDOSIS (bicarbonate is consumed); a compensatory fall in PaCO2 follows via hyperventilation."
+    },
+    {
+      "text": " compared with baseline point A. Which of the following is the most likely diagnosis?"
+    }
+  ]
+}

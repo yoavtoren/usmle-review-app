@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depressive episode with mood-congruent delusions/hallucinations: major depressive disorder with psychotic features</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 14 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q485", "item": 485, "qid": "11617", "title": "Depressive episode with mood-congruent delusions/hallucinations: major depressive disorder with psychotic features", "system": "Behavioral science", "topic": "Major depressive disorder with psychotic features", "correct": "C", "yourAnswer": "D", "percentCorrect": 73, "vignette": "A 45-year-old man is hospitalized due to suicidal ideation. Over the past month, the patient has become increasingly depressed, withdrawn, and physically restless. He has had increasing difficulty concentrating at his job as a computer programmer. The patient's appetite has been poor, and he has had difficulty falling and staying asleep. He stopped going to work last week and refused to leave the house until his hospitalization. The patient has no medical or psychiatric history. Physical examination is unremarkable apart from a 4.5-kg (10-lb) weight loss. On mental status examination, the patient appears depressed and anxious. He reports that he is responsible for \"all the evil in the world\" and has heard a voice for the past week telling him that he does not deserve to live. Which of the following is the most likely diagnosis in this patient?", "clues": [{"text": "increasingly depressed, withdrawn, and physically restless", "type": "blue", "note": "A sustained depressed mood with psychomotor change over a month meets the core of a major depressive episode."}, {"text": "difficulty falling and staying asleep", "type": "green", "note": "Insomnia, plus poor concentration, poor appetite/weight loss, and suicidal ideation, fulfills the neurovegetative criteria (SIG E CAPS) for major depressive disorder."}, {"text": "responsible for \"all the evil in the world\"", "type": "green", "note": "A delusion of guilt/worthlessness that is MOOD-CONGRUENT (thematically consistent with depression) indicates psychotic features arising within the depressive episode."}, {"text": "heard a voice for the past week telling him that he does not deserve to live", "type": "green", "note": "An auditory hallucination occurring DURING the depressive episode (not independently) defines major depression WITH psychotic features."}], "whatMatters": "A full major depressive episode (>=2 weeks of depressed mood + neurovegetative symptoms + suicidal ideation) with psychotic symptoms - MOOD-CONGRUENT delusions of guilt and auditory hallucinations - occurring ONLY during the mood episode = MAJOR DEPRESSIVE DISORDER WITH PSYCHOTIC FEATURES. Answer C.", "strategy": "Confirm a major depressive episode, then note the psychosis occurs exclusively during the mood episode and is mood-congruent -> MDD with psychotic features. Reject bipolar (no mania/hypomania history), delusional disorder (isolated delusions without other psychotic symptoms or a full mood episode), schizoaffective disorder (requires psychosis for >=2 weeks WITHOUT prominent mood symptoms), and schizophrenia/schizophreniform (psychosis in the absence of a mood disorder, with duration criteria).", "options": [{"letter": "A", "text": "Bipolar disorder with psychotic features", "correct": false}, {"letter": "B", "text": "Delusional disorder", "correct": false}, {"letter": "C", "text": "Major depressive disorder with psychotic features", "correct": true}, {"letter": "D", "text": "Schizoaffective disorder", "correct": false}, {"letter": "E", "text": "Schizophrenia", "correct": false}, {"letter": "F", "text": "Schizophreniform disorder", "correct": false}], "eliminations": [{"letter": "A", "label": "Bipolar with psychotic features - no mania/hypomania", "detail": "WHAT IT IS: a mood disorder with at least one manic/hypomanic episode. ❌ WHY IT FAILS: there is no history of mania or hypomania (elevated mood, decreased need for sleep, grandiosity), so bipolar disorder is excluded. ✅ Correct if: a prior manic/hypomanic episode."}, {"letter": "B", "label": "Delusional disorder - isolated delusions, no full mood episode", "detail": "WHAT IT IS: >=1 month of delusions without other psychotic symptoms and with only brief/absent mood symptoms. ❌ WHY IT FAILS: this patient has hallucinations plus a full major depressive episode, not isolated delusions. ✅ Correct if: nonbizarre delusions alone with preserved functioning."}, {"letter": "D", "label": "Schizoaffective disorder - psychosis WITHOUT mood symptoms >=2 wk", "detail": "WHAT IT IS: mood episodes PLUS psychosis, but requires >=2 weeks of delusions/hallucinations in the ABSENCE of a major mood episode. ❌ WHY IT FAILS: here the psychotic symptoms occur only DURING the depressive episode; no evidence of psychosis without mood symptoms. ✅ Correct if: >=2 weeks of psychosis without concurrent mood symptoms plus mood episodes."}, {"letter": "E", "label": "Schizophrenia - psychosis without a mood disorder", "detail": "WHAT IT IS: >=6 months of psychotic symptoms with functional decline, independent of mood. ❌ WHY IT FAILS: the psychosis here is embedded in a mood episode and is mood-congruent, not a primary psychotic disorder. ✅ Correct if: chronic psychosis without a defining mood episode."}, {"letter": "F", "label": "Schizophreniform - psychotic disorder 1-6 months", "detail": "WHAT IT IS: schizophrenia-like psychosis lasting 1-6 months without a mood disorder. ❌ WHY IT FAILS: the psychotic symptoms occur within a depressive episode, not as a standalone psychotic disorder. ✅ Correct if: 1-6 months of primary psychosis without a mood episode."}], "reasoning": ["The patient has a major depressive episode (depressed mood + neurovegetative symptoms + suicidal ideation over a month)", "Psychotic symptoms (mood-congruent guilt delusion + auditory hallucination) occur DURING the episode", "Psychosis confined to the mood episode = MDD with psychotic features (not a primary psychotic or schizoaffective disorder)", "-> major depressive disorder with psychotic features; answer C"], "mechanism": "MAJOR DEPRESSIVE DISORDER WITH PSYCHOTIC FEATURES is a severe subtype of unipolar depression in which PSYCHOTIC symptoms (delusions and/or hallucinations) occur EXCLUSIVELY during a MAJOR DEPRESSIVE EPISODE. This patient meets criteria for a major depressive episode - >=2 weeks of depressed mood plus several neurovegetative symptoms (impaired concentration, poor appetite with weight loss, insomnia, psychomotor changes) and SUICIDAL IDEATION. His psychotic symptoms are MOOD-CONGRUENT (thematically depressive): a delusion of being responsible for 'all the evil in the world' (guilt/worthlessness) and an auditory hallucination telling him he doesn't deserve to live. Because the psychosis is present only during the mood episode, the diagnosis is MDD with psychotic features (which requires combined ANTIDEPRESSANT + ANTIPSYCHOTIC therapy, or electroconvulsive therapy). It is distinguished from SCHIZOAFFECTIVE DISORDER, which requires >=2 weeks of psychosis in the ABSENCE of a major mood episode, and from primary psychotic disorders (schizophrenia, schizophreniform) that occur without a defining mood episode; bipolar disorder is excluded by the absence of mania/hypomania. (This is a sensitive topic involving suicidal ideation; if this resonates personally, please know support is available and I can help you find appropriate resources.)", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Psych > MDD with psychotic features: major depressive episode + psychosis only during the episode; often mood-congruent (guilt, worthlessness, nihilism); treat with antidepressant + antipsychotic or ECT; distinguish from schizoaffective (psychosis without mood >=2 wk)."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Full depressive episode + psychosis confined to it = MDD with psychotic features."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on major depressive episode (SIG E CAPS), mood-congruent psychosis, schizoaffective criteria, or delusional disorder? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Schizoaffective needs psychosis WITHOUT mood >=2 wk; schizophrenia/schizophreniform = psychosis without a mood episode; bipolar needs mania; delusional = isolated delusions."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: psychosis only during a depressive episode = MDD with psychotic features (treat with antidepressant + antipsychotic or ECT)."}], "keywords": [{"front": "Psychosis only during a depressive episode", "back": "MDD with psychotic features"}, {"front": "Mood-congruent depressive delusions", "back": "Guilt, worthlessness, nihilism, deserved punishment"}, {"front": "Schizoaffective disorder key criterion", "back": ">=2 weeks of psychosis WITHOUT a major mood episode"}, {"front": "MDD with psychotic features treatment", "back": "Antidepressant + antipsychotic (or ECT)"}, {"front": "Bipolar exclusion clue", "back": "No history of mania/hypomania"}, {"front": "Major depressive episode mnemonic", "back": "SIG E CAPS (sleep, interest, guilt, energy, concentration, appetite, psychomotor, suicidality)"}], "firstAid": [{"tag": "answer / stem", "topic": "MDD with psychotic features", "detail": "Psych: depressive episode + mood-congruent psychosis confined to it."}, {"tag": "options", "topic": "Psychotic/mood disorders", "detail": "Psych > schizoaffective, schizophrenia, delusional, bipolar distinctions."}, {"tag": "treatment", "topic": "Antidepressant + antipsychotic / ECT", "detail": "Psych > combined therapy for psychotic depression."}], "memoryHook": "When the depression itself talks - guilt delusions and a voice saying he doesn't deserve to live, only during the low mood - it's depression WITH psychotic features, not a separate psychotic illness.", "stem": [{"text": "A 45-year-old man is hospitalized due to suicidal ideation. Over the past month, the patient has become "}, {"text": "increasingly depressed, withdrawn, and physically restless", "clue": true, "type": "blue", "note": "A sustained depressed mood with psychomotor change over a month meets the core of a major depressive episode."}, {"text": ". He has had increasing difficulty concentrating at his job as a computer programmer. The patient's appetite has been poor, and he has had "}, {"text": "difficulty falling and staying asleep", "clue": true, "type": "green", "note": "Insomnia, plus poor concentration, poor appetite/weight loss, and suicidal ideation, fulfills the neurovegetative criteria (SIG E CAPS) for major depressive disorder."}, {"text": ". He stopped going to work last week and refused to leave the house until his hospitalization. The patient has no medical or psychiatric history. Physical examination is unremarkable apart from a 4.5-kg (10-lb) weight loss. On mental status examination, the patient appears depressed and anxious. He reports that he is "}, {"text": "responsible for \"all the evil in the world\"", "clue": true, "type": "green", "note": "A delusion of guilt/worthlessness that is MOOD-CONGRUENT (thematically consistent with depression) indicates psychotic features arising within the depressive episode."}, {"text": " and has "}, {"text": "heard a voice for the past week telling him that he does not deserve to live", "clue": true, "type": "green", "note": "An auditory hallucination occurring DURING the depressive episode (not independently) defines major depression WITH psychotic features."}, {"text": ". Which of the following is the most likely diagnosis in this patient?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

@@ -1,0 +1,204 @@
+{
+  "id": "q500",
+  "item": 500,
+  "qid": "2073",
+  "title": "Anion-gap acidosis resolving with bicarbonate/sodium up and potassium down: insulin and normal saline (DKA)",
+  "system": "Pathology",
+  "topic": "Diabetic ketoacidosis - treatment",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 62,
+  "vignette": "Item 2 of 2. Results of the laboratory tests show an increased anion gap metabolic acidosis. An underlying cause is established, and appropriate treatment is instituted. Within several hours, the patient's mental status improves significantly. Repeat laboratory studies show an increase in serum bicarbonate and sodium levels, a decrease in serum osmolality, and a drop in the serum potassium level. Which of the following treatments was most likely given to this patient?",
+  "clues": [
+    {
+      "text": "increased anion gap metabolic acidosis",
+      "type": "blue",
+      "note": "An increased anion-gap metabolic acidosis in a patient with mental status changes suggests diabetic ketoacidosis (accumulation of ketoacids)."
+    },
+    {
+      "text": "increase in serum bicarbonate and sodium levels",
+      "type": "green",
+      "note": "Bicarbonate rises as ketoacid production stops; serum sodium rises/normalizes as isotonic saline corrects the dilutional hyponatremia of hyperglycemia."
+    },
+    {
+      "text": "decrease in serum osmolality",
+      "type": "green",
+      "note": "Lowering serum glucose with insulin (and rehydration) reduces plasma osmolality."
+    },
+    {
+      "text": "drop in the serum potassium level",
+      "type": "green",
+      "note": "Insulin drives potassium intracellularly, lowering serum potassium (why potassium must be repleted during DKA treatment)."
+    }
+  ],
+  "whatMatters": "The lab shifts - rising bicarbonate (ketoacid production stops), rising/normalizing sodium and falling osmolality (glucose lowered, isotonic rehydration), and falling potassium (insulin drives K+ into cells) - are the signature of treating DIABETIC KETOACIDOSIS with INSULIN and NORMAL SALINE. Answer A.",
+  "strategy": "Read the four changes together: they all follow from insulin + IV isotonic fluids in DKA (stop ketogenesis -> bicarbonate up; correct hyperglycemia -> osmolality down; isotonic saline -> sodium up; insulin -> potassium into cells -> serum K down). Reject loop diuretics (raise osmolality via free-water loss), mineralocorticoid (for hypoaldosteronism/type 4 RTA, lowers K but doesn't fit DKA), opioid antagonists (opioid overdose = respiratory acidosis), and thyroxine (hypothyroidism).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Insulin and normal saline",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Loop diuretics",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Mineralocorticoid injection",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Opioid antagonists",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Thyroxine supplementation",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Loop diuretics - would raise osmolality",
+      "detail": "WHAT IT IS: diuretics that increase free-water excretion. ❌ WHY IT FAILS: they can lower potassium and raise bicarbonate (contraction alkalosis) but INCREASE serum osmolality via free-water loss, opposite to the observed drop. ✅ Correct if: volume overload requiring diuresis."
+    },
+    {
+      "letter": "C",
+      "label": "Mineralocorticoid - for hypoaldosteronism, not DKA",
+      "detail": "WHAT IT IS: exogenous mineralocorticoid for hypoaldosteronism (type 4 RTA). ❌ WHY IT FAILS: an increased-anion-gap acidosis with altered mental status isn't hypoaldosteronism (which gives a normal-gap acidosis); mineralocorticoids also mildly raise (not lower) osmolality. ✅ Correct if: hyperkalemic normal-gap (type 4) RTA."
+    },
+    {
+      "letter": "D",
+      "label": "Opioid antagonists - opioid overdose = respiratory acidosis",
+      "detail": "WHAT IT IS: naloxone for opioid overdose. ❌ WHY IT FAILS: opioid overdose causes a RESPIRATORY acidosis (hypoventilation), not an increased-anion-gap metabolic acidosis. ✅ Correct if: opioid-induced respiratory depression."
+    },
+    {
+      "letter": "E",
+      "label": "Thyroxine - hypothyroidism, not this picture",
+      "detail": "WHAT IT IS: levothyroxine for severe hypothyroidism. ❌ WHY IT FAILS: hypothyroidism causes hyponatremia and hypoglycemia, not an anion-gap acidosis resolving with these shifts. ✅ Correct if: myxedema/severe hypothyroidism."
+    }
+  ],
+  "reasoning": [
+    "Increased anion-gap metabolic acidosis with mental status change = diabetic ketoacidosis",
+    "Insulin stops ketogenesis (bicarbonate rises) and lowers glucose (osmolality falls)",
+    "Insulin shifts potassium intracellularly (serum K falls); isotonic saline raises/normalizes sodium",
+    "-> insulin and normal saline; answer A"
+  ],
+  "mechanism": "DIABETIC KETOACIDOSIS (DKA) results from insulin deficiency: cells cannot take up glucose, so HYPERGLYCEMIA and lipolysis-driven KETOACID production cause an INCREASED ANION-GAP metabolic acidosis, hyperosmolality, osmotic diuresis, and dehydration, with mental status changes. The treatment of choice is IV INSULIN plus ISOTONIC (normal) SALINE. INSULIN restores cellular glucose uptake and halts ketogenesis, so ketoacids are consumed/cleared and serum BICARBONATE RISES; lowering glucose reduces serum OSMOLALITY; and insulin drives POTASSIUM intracellularly, so serum K FALLS (potassium is repleted because total-body potassium is depleted from urinary losses). Rehydration with NORMAL SALINE corrects volume depletion and helps NORMALIZE serum SODIUM (reversing the dilutional/translocational hyponatremia of hyperglycemia) while further lowering osmolality. These exact shifts - bicarbonate up, sodium up, osmolality down, potassium down - identify insulin + normal saline. The distractors treat other conditions and would not reproduce this pattern.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Endo > DKA: insulin deficiency -> hyperglycemia + ketoacidosis (anion gap); treat with IV insulin + isotonic saline (+ potassium repletion, watch for hypokalemia); insulin shifts K intracellularly; corrects glucose/osmolality."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Bicarbonate up + osmolality down + K down + Na up = insulin + normal saline treating DKA."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on anion gap, ketoacidosis, serum osmolality, insulin-driven potassium shift, or isotonic saline? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Loop diuretics raise osmolality; mineralocorticoid = type 4 RTA; opioid antagonist = respiratory acidosis; thyroxine = hypothyroidism."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: DKA treatment = insulin + normal saline; expect bicarbonate up, glucose/osmolality down, serum K down (replete K)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "DKA treatment of choice",
+      "back": "IV insulin + normal (isotonic) saline (+ potassium repletion)"
+    },
+    {
+      "front": "Insulin effect on potassium",
+      "back": "Shifts K intracellularly -> serum K falls"
+    },
+    {
+      "front": "Why bicarbonate rises with DKA treatment",
+      "back": "Insulin stops ketoacid production"
+    },
+    {
+      "front": "DKA acid-base",
+      "back": "Increased anion-gap metabolic acidosis"
+    },
+    {
+      "front": "Serum sodium in hyperglycemia",
+      "back": "Dilutional/translocational hyponatremia (corrects as glucose falls)"
+    },
+    {
+      "front": "DKA total-body potassium",
+      "back": "Depleted despite normal/high serum K at presentation"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "DKA treatment",
+      "detail": "Endo: insulin + normal saline; bicarbonate up, K down, osmolality down."
+    },
+    {
+      "tag": "options",
+      "topic": "Acidosis mimics",
+      "detail": "Renal > loop diuretics, type 4 RTA, opioid (respiratory)."
+    },
+    {
+      "tag": "electrolytes",
+      "topic": "Potassium in DKA",
+      "detail": "Endo > replete K (insulin lowers serum K)."
+    }
+  ],
+  "memoryHook": "Insulin + saline flips DKA back: ketones stop (bicarb up), sugar falls (osmolality down), and insulin sweeps potassium into cells (serum K down) - so replete the K.",
+  "stem": [
+    {
+      "text": "Item 2 of 2. Results of the laboratory tests show an "
+    },
+    {
+      "text": "increased anion gap metabolic acidosis",
+      "clue": true,
+      "type": "blue",
+      "note": "An increased anion-gap metabolic acidosis in a patient with mental status changes suggests diabetic ketoacidosis (accumulation of ketoacids)."
+    },
+    {
+      "text": ". An underlying cause is established, and appropriate treatment is instituted. Within several hours, the patient's mental status improves significantly. Repeat laboratory studies show an "
+    },
+    {
+      "text": "increase in serum bicarbonate and sodium levels",
+      "clue": true,
+      "type": "green",
+      "note": "Bicarbonate rises as ketoacid production stops; serum sodium rises/normalizes as isotonic saline corrects the dilutional hyponatremia of hyperglycemia."
+    },
+    {
+      "text": ", a "
+    },
+    {
+      "text": "decrease in serum osmolality",
+      "clue": true,
+      "type": "green",
+      "note": "Lowering serum glucose with insulin (and rehydration) reduces plasma osmolality."
+    },
+    {
+      "text": ", and a "
+    },
+    {
+      "text": "drop in the serum potassium level",
+      "clue": true,
+      "type": "green",
+      "note": "Insulin drives potassium intracellularly, lowering serum potassium (why potassium must be repleted during DKA treatment)."
+    },
+    {
+      "text": ". Which of the following treatments was most likely given to this patient?"
+    }
+  ]
+}

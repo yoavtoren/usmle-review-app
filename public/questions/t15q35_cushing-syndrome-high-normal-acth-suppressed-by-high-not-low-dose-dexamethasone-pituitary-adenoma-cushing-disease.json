@@ -1,0 +1,190 @@
+{
+  "id": "q554",
+  "item": 554,
+  "qid": "612",
+  "title": "Cushing syndrome, high-normal ACTH, suppressed by high- (not low-) dose dexamethasone: pituitary adenoma (Cushing disease)",
+  "system": "Endocrinology",
+  "topic": "Cushing syndrome - ACTH-dependent",
+  "correct": "D",
+  "yourAnswer": "D",
+  "percentCorrect": 62,
+  "vignette": "A 56-year-old woman comes to the office due to progressive weight gain and fatigue over the last 4 months. She also has had increasing difficulty in lifting heavy objects and climbing stairs. The patient has moderate, persistent bronchial asthma for which she uses inhaled corticosteroids and beta-2 agonists. Family history is significant for colon cancer in her father. Blood pressure is 160/90 mm Hg and pulse is 80/min. On physical examination, there is symmetric proximal muscle weakness of the upper and lower extremities. Fasting plasma glucose level is 135 mg/dL and 24-hour urinary cortisol is increased. Further evaluation reveals that high-dose, but not low-dose, dexamethasone suppresses serum cortisol levels. Serum ACTH levels are high-normal. Which of the following is the most likely cause of this patient's symptoms?",
+  "clues": [
+    {
+      "text": "24-hour urinary cortisol is increased",
+      "type": "green",
+      "note": "Elevated 24-hour urinary free cortisol confirms endogenous CORTISOL EXCESS (Cushing syndrome)."
+    },
+    {
+      "text": "high-dose, but not low-dose, dexamethasone suppresses serum cortisol levels",
+      "type": "green",
+      "note": "Failure to suppress with LOW-dose but suppression with HIGH-dose dexamethasone is the pattern of a pituitary ACTH-secreting adenoma (Cushing disease)."
+    },
+    {
+      "text": "Serum ACTH levels are high-normal",
+      "type": "blue",
+      "note": "A non-suppressed (high/normal) ACTH indicates ACTH-DEPENDENT Cushing syndrome - pituitary or ectopic - not an adrenal source."
+    }
+  ],
+  "whatMatters": "Cushing syndrome (high urinary cortisol) that is ACTH-DEPENDENT (high-normal ACTH) and SUPPRESSES with HIGH-dose but NOT low-dose dexamethasone = an ACTH-secreting PITUITARY ADENOMA (Cushing DISEASE) - the most common cause of endogenous Cushing syndrome. Answer D.",
+  "strategy": "Work the algorithm: confirm hypercortisolism (high urinary cortisol, not suppressed by low-dose dexamethasone), then use ACTH to split dependent vs independent - high/normal ACTH = ACTH-dependent. High-dose dexamethasone SUPPRESSION indicates a PITUITARY source. Reject adrenal adenoma/carcinoma (ACTH-independent -> LOW/suppressed ACTH), exogenous glucocorticoids (ACTH suppressed; inhaled steroids rarely cause it), and ectopic ACTH (small cell lung cancer) - NOT suppressed by high-dose dexamethasone.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Adrenal adenoma",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Adrenal carcinoma",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Exogenous glucocorticoids",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pituitary adenoma",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Small cell lung cancer",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Adrenal adenoma - ACTH-independent (low ACTH)",
+      "detail": "WHAT IT IS: an autonomously cortisol-secreting adrenal tumor. ❌ WHY IT FAILS: it is ACTH-INDEPENDENT, so ACTH would be SUPPRESSED (low), not high-normal; cortisol wouldn't suppress with dexamethasone. ✅ Correct if: hypercortisolism with a suppressed ACTH."
+    },
+    {
+      "letter": "B",
+      "label": "Adrenal carcinoma - ACTH-independent",
+      "detail": "WHAT IT IS: an adrenocortical malignancy autonomously making cortisol (often with androgens). ❌ WHY IT FAILS: also ACTH-INDEPENDENT (low ACTH); doesn't fit high-normal ACTH. ✅ Correct if: rapid virilizing hypercortisolism with a suppressed ACTH."
+    },
+    {
+      "letter": "C",
+      "label": "Exogenous glucocorticoids - suppressed ACTH",
+      "detail": "WHAT IT IS: iatrogenic Cushing from steroid intake. ❌ WHY IT FAILS: exogenous steroids SUPPRESS ACTH and cortisol; inhaled corticosteroids rarely cause systemic Cushing, and here urinary cortisol is high with non-suppressed ACTH. ✅ Correct if: systemic steroid use with low ACTH/low endogenous cortisol."
+    },
+    {
+      "letter": "E",
+      "label": "Small cell lung cancer - ectopic ACTH (no high-dose suppression)",
+      "detail": "WHAT IT IS: ectopic ACTH production (paraneoplastic). ❌ WHY IT FAILS: ectopic ACTH is NOT suppressed by high-dose dexamethasone (this patient DID suppress), and often causes very high ACTH with hyperpigmentation/hypokalemia. ✅ Correct if: hypercortisolism not suppressed by high-dose dexamethasone."
+    }
+  ],
+  "reasoning": [
+    "Increased urinary cortisol confirms Cushing syndrome",
+    "High-normal ACTH indicates ACTH-dependent disease (pituitary or ectopic)",
+    "Suppression with high-dose (but not low-dose) dexamethasone points to a pituitary source",
+    "-> ACTH-secreting pituitary adenoma (Cushing disease); answer D"
+  ],
+  "mechanism": "CUSHING SYNDROME is chronic cortisol excess (weight gain, proximal muscle weakness, hypertension, hyperglycemia, striae, easy bruising). Diagnosis proceeds in two steps. FIRST, confirm hypercortisolism with screening tests (elevated 24-hour urinary free cortisol; failure of LOW-DOSE dexamethasone to suppress cortisol; late-night salivary cortisol). SECOND, determine the cause using serum ACTH: if ACTH is LOW/SUPPRESSED, the source is ACTH-INDEPENDENT (adrenal adenoma/carcinoma/hyperplasia or exogenous steroids); if ACTH is HIGH or inappropriately NORMAL, it is ACTH-DEPENDENT (pituitary 'Cushing DISEASE' or ectopic ACTH). To distinguish pituitary from ectopic, a HIGH-DOSE dexamethasone suppression test is used: a corticotroph PITUITARY ADENOMA retains partial negative feedback and SUPPRESSES cortisol with high-dose dexamethasone, whereas ECTOPIC ACTH (e.g., small cell lung cancer) does NOT suppress. This patient has elevated urinary cortisol, high-normal ACTH, and suppression with high- (but not low-) dose dexamethasone - the signature of an ACTH-secreting PITUITARY ADENOMA (the most common cause of endogenous Cushing syndrome). The distractors are adrenal (ACTH-independent, low ACTH), exogenous steroids (low ACTH), and ectopic ACTH (no high-dose suppression).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Endo > Cushing syndrome workup: screen (urinary free cortisol, low-dose dexamethasone, late-night salivary cortisol); ACTH separates dependent (pituitary/ectopic) vs independent (adrenal/exogenous, low ACTH); high-dose dexamethasone suppresses pituitary (Cushing disease) but not ectopic ACTH."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "High-normal ACTH + high-dose (not low-dose) suppression = pituitary adenoma (Cushing disease)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on Cushing syndrome/disease, ACTH-dependent vs independent, dexamethasone suppression tests, or ectopic ACTH? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Adrenal/exogenous = LOW ACTH (independent); ectopic ACTH (SCLC) does NOT suppress with high-dose dexamethasone."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: ACTH high-normal + suppresses with high-dose dexamethasone = pituitary (Cushing disease); ectopic = no suppression."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "ACTH-dependent + high-dose dexamethasone suppression",
+      "back": "Pituitary adenoma (Cushing disease)"
+    },
+    {
+      "front": "ACTH-independent Cushing clue",
+      "back": "Suppressed (low) ACTH (adrenal/exogenous)"
+    },
+    {
+      "front": "Ectopic ACTH dexamethasone response",
+      "back": "No suppression (even high-dose); e.g., small cell lung cancer"
+    },
+    {
+      "front": "Cushing screening tests",
+      "back": "24-h urinary free cortisol, low-dose dexamethasone, late-night salivary cortisol"
+    },
+    {
+      "front": "Most common endogenous Cushing cause",
+      "back": "Pituitary adenoma (Cushing disease)"
+    },
+    {
+      "front": "Cushing clinical features",
+      "back": "Central obesity, proximal weakness, hypertension, hyperglycemia, striae"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Cushing disease",
+      "detail": "Endo: pituitary ACTH adenoma; high-dose dexamethasone suppresses."
+    },
+    {
+      "tag": "options",
+      "topic": "Cushing causes",
+      "detail": "Endo > adrenal (low ACTH), ectopic (no suppression), exogenous."
+    },
+    {
+      "tag": "workup",
+      "topic": "ACTH + dexamethasone",
+      "detail": "Endo > dependent vs independent; pituitary vs ectopic."
+    }
+  ],
+  "memoryHook": "High-normal ACTH that still bows to HIGH-dose dexamethasone = a pituitary adenoma keeping a little feedback (Cushing disease); ectopic tumors ignore the dexamethasone entirely.",
+  "stem": [
+    {
+      "text": "A 56-year-old woman comes to the office due to progressive weight gain and fatigue over the last 4 months. She also has had increasing difficulty in lifting heavy objects and climbing stairs. The patient has moderate, persistent bronchial asthma for which she uses inhaled corticosteroids and beta-2 agonists. Family history is significant for colon cancer in her father. Blood pressure is 160/90 mm Hg and pulse is 80/min. On physical examination, there is symmetric proximal muscle weakness of the upper and lower extremities. Fasting plasma glucose level is 135 mg/dL and "
+    },
+    {
+      "text": "24-hour urinary cortisol is increased",
+      "clue": true,
+      "type": "green",
+      "note": "Elevated 24-hour urinary free cortisol confirms endogenous CORTISOL EXCESS (Cushing syndrome)."
+    },
+    {
+      "text": ". Further evaluation reveals that "
+    },
+    {
+      "text": "high-dose, but not low-dose, dexamethasone suppresses serum cortisol levels",
+      "clue": true,
+      "type": "green",
+      "note": "Failure to suppress with LOW-dose but suppression with HIGH-dose dexamethasone is the pattern of a pituitary ACTH-secreting adenoma (Cushing disease)."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Serum ACTH levels are high-normal",
+      "clue": true,
+      "type": "blue",
+      "note": "A non-suppressed (high/normal) ACTH indicates ACTH-DEPENDENT Cushing syndrome - pituitary or ectopic - not an adrenal source."
+    },
+    {
+      "text": ". Which of the following is the most likely cause of this patient's symptoms?"
+    }
+  ]
+}

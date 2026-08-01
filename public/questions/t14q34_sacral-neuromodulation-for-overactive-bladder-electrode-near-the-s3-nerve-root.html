@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sacral neuromodulation for overactive bladder: electrode near the S3 nerve root</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 14 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q513", "item": 513, "qid": "20008", "title": "Sacral neuromodulation for overactive bladder: electrode near the S3 nerve root", "system": "Anatomy", "topic": "Bladder innervation / sacral neuromodulation", "correct": "F", "yourAnswer": "E", "percentCorrect": 62, "vignette": "A 64-year-old woman is evaluated for episodic urinary incontinence. Urodynamic studies reveal an overactive bladder. Symptoms persist after behavioral interventions, and the patient is unable to tolerate medical treatment. Low-amplitude electrical stimulation therapy that helps modulate neural control of the urinary bladder muscle, urethral sphincter, and pelvic muscles is planned. A stimulating electrode is most likely to be placed close to which of the following structures during this procedure?", "clues": [{"text": "overactive bladder", "type": "blue", "note": "Overactive bladder (urge incontinence) unresponsive to behavioral therapy and medications can be treated with sacral NEUROMODULATION."}, {"text": "modulate neural control of the urinary bladder muscle, urethral sphincter, and pelvic muscles", "type": "green", "note": "The bladder detrusor, urethral sphincter, and pelvic floor are innervated by nerves from the S2-S4 roots; sacral neuromodulation targets the S3 nerve root."}], "whatMatters": "The bladder detrusor, urethral sphincter, and pelvic floor muscles are innervated from the S2-S4 nerve roots. Sacral NEUROMODULATION for refractory overactive bladder places the stimulating electrode near the S3 NERVE ROOT. Answer F.", "strategy": "Recall pelvic innervation (S2-S4: 'S2,3,4 keep the pelvis off the floor') and that sacral neuromodulation targets S3. The electrode augments neural control of the pelvic floor/external urethral sphincter (somatic, pudendal) and modulates the bladder reflex. Reject central targets (nucleus accumbens - addiction; subthalamic nucleus - Parkinson), the vagus (GI, not bladder), and thoracic/lumbar roots (T6 - sympathetic foregut; L5 - lower-limb somatic, not pelvic floor/bladder).", "options": [{"letter": "A", "text": "Nucleus accumbens", "correct": false}, {"letter": "B", "text": "Subthalamic nucleus", "correct": false}, {"letter": "C", "text": "Vagus nerve", "correct": false}, {"letter": "D", "text": "T6 nerve root", "correct": false}, {"letter": "E", "text": "L5 nerve root", "correct": false}, {"letter": "F", "text": "S3 nerve root", "correct": true}], "eliminations": [{"letter": "A", "label": "Nucleus accumbens - reward, not continence", "detail": "WHAT IT IS: a basal ganglia structure mediating reward/pleasure. ❌ WHY IT FAILS: it plays no role in urinary continence; targeting it (e.g., for addiction) wouldn't modulate the bladder. ✅ Correct if: reward/addiction circuitry."}, {"letter": "B", "label": "Subthalamic nucleus - Parkinson target", "detail": "WHAT IT IS: a deep-brain-stimulation target for Parkinson disease. ❌ WHY IT FAILS: it controls movement, not micturition. ✅ Correct if: Parkinsonian rigidity/tremor."}, {"letter": "C", "label": "Vagus nerve - GI, not bladder", "detail": "WHAT IT IS: CN X, providing parasympathetic input to thoracoabdominal viscera (to the mid-gut). ❌ WHY IT FAILS: the vagus does not innervate the bladder/urethral sphincter (pelvic organs are supplied by S2-S4). ✅ Correct if: gastric motility modulation."}, {"letter": "D", "label": "T6 nerve root - sympathetic foregut", "detail": "WHAT IT IS: contributes to the greater splanchnic (sympathetic) nerve. ❌ WHY IT FAILS: bladder sympathetic input arises lower (~T10-L2), and continence neuromodulation targets sacral roots, not T6. ✅ Correct if: upper-abdominal sympathetic supply."}, {"letter": "E", "label": "L5 nerve root - lower-limb somatic", "detail": "WHAT IT IS: contributes somatic innervation to lower-limb muscles (e.g., extensor hallucis longus, tibialis). ❌ WHY IT FAILS: it does not innervate the pelvic floor, bladder, or urethral sphincter. ✅ Correct if: foot dorsiflexion/great-toe extension (L5)."}], "reasoning": ["Overactive bladder refractory to behavioral and medical therapy can be treated with sacral neuromodulation", "The bladder, urethral sphincter, and pelvic floor are innervated from S2-S4", "Sacral neuromodulation places the electrode near the S3 nerve root", "-> S3 nerve root; answer F"], "mechanism": "Refractory OVERACTIVE BLADDER (urge incontinence) can be treated with SACRAL NEUROMODULATION, in which a low-amplitude stimulating electrode is placed near the S3 NERVE ROOT to augment neural signals to the pelvic floor and urinary sphincter (which are innervated from the S2-S4 roots). SOMATIC innervation of the PELVIC FLOOR muscles and the EXTERNAL URETHRAL SPHINCTER travels via the PUDENDAL nerve (S2-S4); strengthening their contraction (physically or via neuromodulation) improves the urethrovesical angle and sphincter tone, promoting CONTINENCE. The S2-S4 pelvic splanchnic (parasympathetic) nerves also participate in the bladder stretch-contraction reflex, and neuromodulation appears to INHIBIT this reflex to reduce urgency. The distractors are unrelated: nucleus accumbens (reward), subthalamic nucleus (Parkinson), vagus (GI), and thoracic/lumbar roots (T6 sympathetic foregut; L5 lower-limb somatic) - none control the bladder/sphincter/pelvic floor.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Anatomy > pelvic innervation: bladder/urethral sphincter/pelvic floor from S2-S4 ('S2,3,4 keep the pelvis off the floor'); pudendal nerve (somatic, external sphincter); sacral neuromodulation targets S3 for refractory overactive bladder."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Bladder/sphincter/pelvic floor = S2-S4; sacral neuromodulation = S3 root."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on sacral neuromodulation, S2-S4 roots, pudendal nerve, external urethral sphincter, or overactive bladder? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Nucleus accumbens/subthalamic = brain targets; vagus = GI; T6 = sympathetic foregut; L5 = lower limb (not pelvic)."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: bladder/sphincter/pelvic floor = S2-S4; sacral neuromodulation electrode near S3."}], "keywords": [{"front": "Sacral neuromodulation target", "back": "S3 nerve root"}, {"front": "Pelvic floor/bladder/sphincter roots", "back": "S2-S4 ('keep the pelvis off the floor')"}, {"front": "External urethral sphincter nerve", "back": "Pudendal nerve (somatic, S2-S4)"}, {"front": "Bladder sympathetic supply", "back": "~T10-L2 (hypogastric nerve)"}, {"front": "Overactive bladder refractory therapy", "back": "Sacral neuromodulation (S3) or botulinum toxin"}, {"front": "L5 vs S3", "back": "L5 = lower limb; S3 = pelvic floor/bladder"}], "firstAid": [{"tag": "answer / stem", "topic": "Sacral neuromodulation", "detail": "Anatomy: electrode near S3 for overactive bladder."}, {"tag": "innervation", "topic": "S2-S4", "detail": "Anatomy > bladder, urethral sphincter, pelvic floor (pudendal)."}, {"tag": "options", "topic": "Wrong targets", "detail": "Neuro > accumbens/subthalamic (brain), vagus (GI), T6/L5."}], "memoryHook": "'S2, 3, 4 keep the pelvis off the floor' - so to retrain a leaky, overactive bladder, park the stimulator on the S3 root.", "stem": [{"text": "A 64-year-old woman is evaluated for episodic urinary incontinence. Urodynamic studies reveal an "}, {"text": "overactive bladder", "clue": true, "type": "blue", "note": "Overactive bladder (urge incontinence) unresponsive to behavioral therapy and medications can be treated with sacral NEUROMODULATION."}, {"text": ". Symptoms persist after behavioral interventions, and the patient is unable to tolerate medical treatment. Low-amplitude electrical stimulation therapy that helps "}, {"text": "modulate neural control of the urinary bladder muscle, urethral sphincter, and pelvic muscles", "clue": true, "type": "green", "note": "The bladder detrusor, urethral sphincter, and pelvic floor are innervated by nerves from the S2-S4 roots; sacral neuromodulation targets the S3 nerve root."}, {"text": " is planned. A stimulating electrode is most likely to be placed close to which of the following structures during this procedure?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

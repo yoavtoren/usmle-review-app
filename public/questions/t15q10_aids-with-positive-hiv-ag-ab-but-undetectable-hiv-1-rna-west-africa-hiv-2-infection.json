@@ -1,0 +1,190 @@
+{
+  "id": "q529",
+  "item": 529,
+  "qid": "15125",
+  "title": "AIDS with positive HIV Ag/Ab but undetectable HIV-1 RNA (West Africa): HIV-2 infection",
+  "system": "Microbiology",
+  "topic": "HIV-2 infection",
+  "correct": "D",
+  "yourAnswer": "E",
+  "percentCorrect": 54,
+  "vignette": "A 24-year-old woman comes to the office due to 3 weeks of worsening throat pain and difficulty swallowing. She has no chronic medical problems but has had recurrent vulvovaginal candidiasis and bacterial folliculitis over the past year. The patient has also had an unintentional weight loss of 4.5-kg (10-lb) over the past 3 months. She is an exchange student from Senegal. Physical examination shows generalized lymphadenopathy and oropharyngeal thrush. Upper endoscopy confirms Candida esophagitis. HIV antigen/antibody immunoassay returns positive. Further testing shows a CD4 count of 180/mm3 but there is no detectable plasma HIV-1 RNA. Which of the following best explains the observed laboratory findings in this patient?",
+  "clues": [
+    {
+      "text": "exchange student from Senegal",
+      "type": "orange",
+      "note": "HIV-2 is endemic to WEST AFRICA (e.g., Senegal); this geographic clue is key when HIV tests are discordant."
+    },
+    {
+      "text": "generalized lymphadenopathy and oropharyngeal thrush",
+      "type": "blue",
+      "note": "Opportunistic infections (thrush, Candida esophagitis) with weight loss and a low CD4 count indicate AIDS."
+    },
+    {
+      "text": "CD4 count of 180/mm3 but there is no detectable plasma HIV-1 RNA",
+      "type": "green",
+      "note": "A low CD4 with AIDS-defining illness and a POSITIVE Ag/Ab immunoassay but UNDETECTABLE HIV-1 RNA is the classic discordant pattern of HIV-2 (not detected by HIV-1 RNA assays)."
+    }
+  ],
+  "whatMatters": "AIDS (Candida esophagitis, CD4 180, weight loss) with a POSITIVE HIV antigen/antibody immunoassay but UNDETECTABLE HIV-1 RNA, in a patient from WEST AFRICA, indicates HIV-2 infection - HIV-1 RNA (viral load) assays do not detect HIV-2. Answer D.",
+  "strategy": "Spot the discordance: positive 4th-generation Ag/Ab test + AIDS + but NO detectable HIV-1 RNA + West African origin = HIV-2. HIV-2 has lower viremia and slower progression and evades HIV-1-specific RNA assays and NNRTIs/fusion inhibitors. Reject false-positive serology (would have normal CD4/no AIDS), CCR5 homozygous deletion (protects from infection), CXCR4 (X4) strain (still HIV-1, detectable RNA), and window period (Ag/Ab is already positive, so not the window).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "False-positive serology from cross-reactive antibodies",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Homozygous CCR5 deletion",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Infection with CXCR4 tropic strain",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Infection with HIV-2",
+      "correct": true
+    },
+    {
+      "letter": "E",
+      "text": "Window period of HIV infection",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "False-positive serology - no AIDS/low CD4",
+      "detail": "WHAT IT IS: cross-reactive antibodies (pregnancy, autoimmune, malignancy) causing a false-positive HIV test. ❌ WHY IT FAILS: false positives don't cause a low CD4 count or AIDS-defining illness (esophageal thrush) as seen here. ✅ Correct if: positive screen with negative confirmation and normal immune status."
+    },
+    {
+      "letter": "B",
+      "label": "Homozygous CCR5 deletion - resists infection",
+      "detail": "WHAT IT IS: CCR5-delta32 homozygosity blocking HIV entry. ❌ WHY IT FAILS: it PREVENTS HIV infection; such patients would not have AIDS/low CD4. ✅ Correct if: resistance to HIV infection."
+    },
+    {
+      "letter": "C",
+      "label": "CXCR4 (X4) tropic strain - still HIV-1 (detectable RNA)",
+      "detail": "WHAT IT IS: an HIV-1 strain using CXCR4 as coreceptor (late-stage, more virulent). ❌ WHY IT FAILS: X4 strains are still HIV-1 and would show DETECTABLE plasma HIV-1 RNA. ✅ Correct if: advanced HIV-1 with X4 tropism (positive HIV-1 RNA)."
+    },
+    {
+      "letter": "E",
+      "label": "Window period - Ag/Ab already positive",
+      "detail": "WHAT IT IS: early infection before serologic/antigen tests turn positive. ❌ WHY IT FAILS: her HIV antigen/antibody test is POSITIVE, so she is past the window period. ✅ Correct if: negative Ag/Ab test with a positive RNA (acute HIV)."
+    }
+  ],
+  "reasoning": [
+    "She has AIDS (Candida esophagitis, CD4 180, weight loss) and a positive HIV Ag/Ab immunoassay",
+    "Plasma HIV-1 RNA is undetectable despite clear HIV disease",
+    "HIV-1 RNA (viral load) assays do not detect HIV-2, which is endemic to West Africa (Senegal)",
+    "-> infection with HIV-2; answer D"
+  ],
+  "mechanism": "Most AIDS worldwide (and nearly all in the US) is caused by HIV-1, but HIV-2, endemic to WEST AFRICA, can also cause AIDS. Compared with HIV-1, HIV-2 produces LOWER viral loads, is LESS transmissible, and progresses to AIDS more SLOWLY. Fourth-generation HIV screening (antigen/antibody immunoassay) detects the p24 antigen and antibodies to BOTH HIV-1 and HIV-2 but does not differentiate them, so it is POSITIVE. However, standard plasma HIV-1 RNA (viral load) assays and HIV-1 Western blots are designed for HIV-1 and are UNDETECTABLE/indeterminate in HIV-2 infection. Thus a patient with AIDS-defining illness (Candida esophagitis), low CD4, a POSITIVE Ag/Ab test, and an UNDETECTABLE HIV-1 RNA - especially from West Africa - most likely has HIV-2; confirmation uses an HIV-1/HIV-2 differentiation immunoassay. Importantly, HIV-2 is intrinsically RESISTANT to NNRTIs and fusion inhibitors, which must be avoided in treatment. The distractors don't fit: false-positive serology wouldn't cause AIDS/low CD4; CCR5-delta32 homozygosity prevents infection; a CXCR4 (X4) HIV-1 strain would still show detectable HIV-1 RNA; and the window period is excluded because the Ag/Ab test is already positive.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Micro > HIV-2: endemic to West Africa; lower viral load, slower progression; positive 4th-gen Ag/Ab but undetectable HIV-1 RNA/indeterminate HIV-1 Western blot; confirm with HIV-1/HIV-2 differentiation assay; resistant to NNRTIs/fusion inhibitors."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Positive Ag/Ab + AIDS + undetectable HIV-1 RNA + West Africa = HIV-2."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on HIV-2, 4th-generation Ag/Ab test, HIV-1 RNA (viral load), window period, CCR5/CXCR4, or differentiation assay? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "False positive = no AIDS; CCR5 deletion = resists infection; X4 strain = HIV-1 (detectable RNA); window period = Ag/Ab negative."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: discordant HIV (positive Ag/Ab, undetectable HIV-1 RNA) + West Africa = HIV-2; avoid NNRTIs/fusion inhibitors."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Positive Ag/Ab but undetectable HIV-1 RNA + West Africa",
+      "back": "HIV-2 infection"
+    },
+    {
+      "front": "HIV-2 vs HIV-1",
+      "back": "HIV-2: lower viral load, slower progression, West Africa"
+    },
+    {
+      "front": "HIV-2 test detection",
+      "back": "4th-gen Ag/Ab positive; HIV-1 RNA/Western blot negative/indeterminate"
+    },
+    {
+      "front": "HIV-2 drug resistance",
+      "back": "Intrinsically resistant to NNRTIs and fusion inhibitors"
+    },
+    {
+      "front": "HIV window period",
+      "back": "Early infection with negative Ag/Ab but positive RNA"
+    },
+    {
+      "front": "CCR5-delta32 homozygous",
+      "back": "Resistance to HIV infection"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "HIV-2",
+      "detail": "Micro: West Africa; positive Ag/Ab, undetectable HIV-1 RNA."
+    },
+    {
+      "tag": "options",
+      "topic": "HIV testing/entry",
+      "detail": "Micro > window period, CCR5/CXCR4, false positives."
+    },
+    {
+      "tag": "treatment",
+      "topic": "HIV-2 resistance",
+      "detail": "Pharm > avoid NNRTIs/fusion inhibitors."
+    }
+  ],
+  "memoryHook": "AIDS is obvious, the antibody test is positive, but the HIV-1 'viral load' reads zero - and she's from West Africa: the assay just can't see HIV-2.",
+  "stem": [
+    {
+      "text": "A 24-year-old woman comes to the office due to 3 weeks of worsening throat pain and difficulty swallowing. She has no chronic medical problems but has had recurrent vulvovaginal candidiasis and bacterial folliculitis over the past year. The patient has also had an unintentional weight loss of 4.5-kg (10-lb) over the past 3 months. She is an "
+    },
+    {
+      "text": "exchange student from Senegal",
+      "clue": true,
+      "type": "orange",
+      "note": "HIV-2 is endemic to WEST AFRICA (e.g., Senegal); this geographic clue is key when HIV tests are discordant."
+    },
+    {
+      "text": ". Physical examination shows "
+    },
+    {
+      "text": "generalized lymphadenopathy and oropharyngeal thrush",
+      "clue": true,
+      "type": "blue",
+      "note": "Opportunistic infections (thrush, Candida esophagitis) with weight loss and a low CD4 count indicate AIDS."
+    },
+    {
+      "text": ". Upper endoscopy confirms Candida esophagitis. HIV antigen/antibody immunoassay returns positive. Further testing shows a "
+    },
+    {
+      "text": "CD4 count of 180/mm3 but there is no detectable plasma HIV-1 RNA",
+      "clue": true,
+      "type": "green",
+      "note": "A low CD4 with AIDS-defining illness and a POSITIVE Ag/Ab immunoassay but UNDETECTABLE HIV-1 RNA is the classic discordant pattern of HIV-2 (not detected by HIV-1 RNA assays)."
+    },
+    {
+      "text": ". Which of the following best explains the observed laboratory findings in this patient?"
+    }
+  ]
+}

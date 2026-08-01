@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lidocaine local anesthesia: blockade of voltage-gated sodium channels</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 14 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q481", "item": 481, "qid": "15712", "title": "Lidocaine local anesthesia: blockade of voltage-gated sodium channels", "system": "Pharmacology", "topic": "Local anesthetics", "correct": "B", "yourAnswer": "B", "percentCorrect": 88, "vignette": "A 10-year-old boy is brought to the emergency department due to a fall while riding his bicycle. The patient hit his forehead on a concrete road barrier and sustained a laceration but did not lose consciousness. He reports no headache, nausea, vomiting, vision disturbances, or focal weakness or numbness. The patient received a tetanus vaccine at age 6. Vital signs are within normal limits. Physical examination reveals a 2-cm laceration above the left eyebrow. There are no other injuries. Neurologic examination shows no abnormalities. Prior to laceration repair with suture, lidocaine is injected in the subcutaneous tissue around the laceration. The patient reports immediate relief of pain, and there is loss of sensation to touch in the area infiltrated with the medication. These effects are most likely due to which of the following changes within the affected neurons?", "clues": [{"text": "lidocaine is injected in the subcutaneous tissue around the laceration", "type": "blue", "note": "Lidocaine is an amide local anesthetic used for infiltration anesthesia; it acts on peripheral sensory nerve fibers."}, {"text": "loss of sensation to touch", "type": "green", "note": "Blocking impulse conduction in sensory neurons abolishes pain and touch transmission - achieved by blocking voltage-gated sodium channels."}], "whatMatters": "LIDOCAINE (a local anesthetic) blocks VOLTAGE-GATED SODIUM CHANNELS in the neuronal membrane, preventing the sodium influx needed for depolarization and action-potential propagation - so the nerve cannot transmit pain/touch signals. Answer B.", "strategy": "Recall the local-anesthetic mechanism: they block voltage-gated Na channels (binding the inner pore in the open/inactivated state), halting action potentials. Small myelinated pain/temperature fibers are blocked preferentially. Reject potassium-channel block (affects repolarization, would prolong APs), decreased calcium current (slows nodal cells, not peripheral conduction), increased chloride conductance (GABA-A/benzodiazepines - CNS inhibition), and interruption of axonal transport (chemo/neurodegeneration, not acute anesthesia).", "options": [{"letter": "A", "text": "Blockade of potassium channels", "correct": false}, {"letter": "B", "text": "Blockade of sodium channels", "correct": true}, {"letter": "C", "text": "Decreased calcium current", "correct": false}, {"letter": "D", "text": "Increased chloride conductance", "correct": false}, {"letter": "E", "text": "Interruption of axonal transport", "correct": false}], "eliminations": [{"letter": "A", "label": "Potassium channel block - prolongs, not halts APs", "detail": "WHAT IT IS: blocking K channels that mediate repolarization. ❌ WHY IT FAILS: this would PROLONG action potentials (delay repolarization), not abolish conduction; local anesthetics act on Na channels. ✅ Correct if: class III antiarrhythmic effect (QT prolongation)."}, {"letter": "C", "label": "Decreased calcium current - nodal cells, not peripheral nerve", "detail": "WHAT IT IS: reduced Ca influx slowing depolarization in calcium-dependent tissues (SA/AV nodes). ❌ WHY IT FAILS: peripheral nerve depolarization depends on SODIUM, not calcium; blocking Ca wouldn't produce infiltration anesthesia. ✅ Correct if: calcium channel blocker effect on nodal tissue."}, {"letter": "D", "label": "Increased chloride conductance - GABA-A (CNS)", "detail": "WHAT IT IS: chloride influx causing hyperpolarization (GABA-A receptor, benzodiazepines). ❌ WHY IT FAILS: that is central inhibitory signaling, not the peripheral Na-channel block of a local anesthetic. ✅ Correct if: benzodiazepine/barbiturate CNS sedation."}, {"letter": "E", "label": "Interruption of axonal transport - chemo/degeneration", "detail": "WHAT IT IS: impaired delivery of organelles/vesicles down the axon (e.g., vincristine, neurodegeneration). ❌ WHY IT FAILS: local anesthetics work within seconds by blocking Na channels, not by disrupting slow axonal transport. ✅ Correct if: chemotherapy-induced peripheral neuropathy."}], "reasoning": ["Lidocaine is a local anesthetic given for infiltration anesthesia", "Local anesthetics block voltage-gated sodium channels in the nerve membrane", "Without sodium influx, the neuron cannot depolarize or propagate action potentials", "-> loss of pain/touch sensation via sodium-channel blockade; answer B"], "mechanism": "LOCAL ANESTHETICS such as LIDOCAINE interrupt nerve conduction by BLOCKING VOLTAGE-GATED SODIUM CHANNELS in the neuronal membrane, preventing the rapid Na influx required to reach threshold and propagate ACTION POTENTIALS. They are WEAK BASES: the uncharged (nonionized) form diffuses across the lipid membrane, then the charged (protonated) form binds the channel's inner pore (preferentially in the open/inactivated state, i.e., use-dependent block). Local anesthetics preferentially block SMALL, MYELINATED fibers, so pain and temperature are lost first while pressure and motor function are relatively preserved. In INFECTED/acidic tissue, more drug is trapped in the charged form and cannot cross the membrane, so a higher dose is needed. The distractors describe unrelated mechanisms: K-channel block (repolarization), Ca-current reduction (nodal cells), chloride conductance (GABA-A/CNS), and axonal transport disruption (neuropathy).", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Pharm > local anesthetics (lidocaine): block voltage-gated Na channels (inner pore, use-dependent); weak bases (uncharged form penetrates, charged form blocks); block small myelinated pain fibers first; less effective in acidic/infected tissue."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Local anesthetic = Na-channel block -> no depolarization/conduction -> numbness."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on voltage-gated sodium channel, action potential, local anesthetic, weak base ionization, or use-dependent block? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "K block = prolongs AP; Ca = nodal cells; Cl conductance = GABA-A/CNS; axonal transport = chemo neuropathy."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: local anesthetics block voltage-gated Na channels; less effective in infected/acidic tissue (need higher dose)."}], "keywords": [{"front": "Lidocaine / local anesthetic mechanism", "back": "Block voltage-gated sodium channels (no depolarization)"}, {"front": "Local anesthetic ionization", "back": "Weak base: uncharged form penetrates, charged form blocks channel"}, {"front": "Fiber block order", "back": "Small myelinated pain/temperature fibers first"}, {"front": "Why local anesthetics fail in infected tissue", "back": "Acidic pH traps charged form -> less penetration"}, {"front": "Amide vs ester local anesthetics", "back": "Amides have 2 'i's (lidocaine); esters metabolized by plasma esterases"}, {"front": "Use-dependent block", "back": "Preferential binding to open/inactivated Na channels"}], "firstAid": [{"tag": "answer / stem", "topic": "Local anesthetics", "detail": "Pharm: block voltage-gated Na channels -> no conduction."}, {"tag": "options", "topic": "Channel mechanisms", "detail": "Pharm > K (repolarization), Ca (nodal), Cl (GABA-A)."}, {"tag": "clinical", "topic": "Infected tissue", "detail": "Pharm > acidic pH reduces efficacy (higher dose)."}], "memoryHook": "Lidocaine slams the sodium gates shut - no sodium rush, no action potential, no pain signal getting through.", "stem": [{"text": "A 10-year-old boy is brought to the emergency department due to a fall while riding his bicycle. The patient hit his forehead on a concrete road barrier and sustained a laceration but did not lose consciousness. He reports no headache, nausea, vomiting, vision disturbances, or focal weakness or numbness. The patient received a tetanus vaccine at age 6. Vital signs are within normal limits. Physical examination reveals a 2-cm laceration above the left eyebrow. There are no other injuries. Neurologic examination shows no abnormalities. Prior to laceration repair with suture, "}, {"text": "lidocaine is injected in the subcutaneous tissue around the laceration", "clue": true, "type": "blue", "note": "Lidocaine is an amide local anesthetic used for infiltration anesthesia; it acts on peripheral sensory nerve fibers."}, {"text": ". The patient reports immediate relief of pain, and there is "}, {"text": "loss of sensation to touch", "clue": true, "type": "green", "note": "Blocking impulse conduction in sensory neurons abolishes pain and touch transmission - achieved by blocking voltage-gated sodium channels."}, {"text": " in the area infiltrated with the medication. These effects are most likely due to which of the following changes within the affected neurons?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

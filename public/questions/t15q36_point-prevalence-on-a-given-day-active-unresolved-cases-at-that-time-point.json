@@ -1,0 +1,181 @@
+{
+  "id": "q555",
+  "item": 555,
+  "qid": "14853",
+  "title": "Point prevalence on a given day = active (unresolved) cases at that time point",
+  "system": "Biostatistics",
+  "topic": "Point prevalence",
+  "correct": "C",
+  "yourAnswer": "C",
+  "percentCorrect": 85,
+  "vignette": "A study is conducted to estimate the prevalence of catheter-associated urinary tract infection (CAUTI) in the intensive care unit (ICU) of an urban hospital. The plot below shows the number of cases of CAUTI in this hospital during the month of July among patients in the ICU, drawn as horizontal timelines for each case with onset and recovery marks relative to July 1 and July 31. Based on the plot, 9 cases of CAUTI occurred during July, but only 5 of them were still active (unresolved) on July 31 (the other 4 had recovered before July 31, and a 10th case began after July 31). Which of the following is the number of prevalent cases on July 31?",
+  "clues": [
+    {
+      "text": "number of cases of CAUTI in this hospital during the month of July",
+      "type": "blue",
+      "note": "Cases with onset and recovery over the month are the raw data; PREVALENCE at a time point counts only those still active at that moment."
+    },
+    {
+      "text": "only 5 of them were still active (unresolved) on July 31",
+      "type": "green",
+      "note": "POINT prevalence on July 31 = the number of cases that are ACTIVE (unresolved) at that specific point in time = 5."
+    }
+  ],
+  "whatMatters": "POINT PREVALENCE is the number of ACTIVE (unresolved) disease cases at a SPECIFIC point in time, divided by the at-risk population. On July 31, only 5 CAUTI cases are still active (4 recovered earlier; a 10th began after July 31), so the number of prevalent cases on July 31 is 5. Answer C.",
+  "strategy": "Read the timelines: a case is 'prevalent' on July 31 only if its onset is before/on July 31 AND it has NOT yet recovered by July 31. Count those still active = 5. Reject 1 (point prevalent on July 1), 4 (recovered during July), 8 (incident cases developing during July), and 9 (all cases active during July = period prevalence, not point).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "1",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "4",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "5",
+      "correct": true
+    },
+    {
+      "letter": "D",
+      "text": "8",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "9",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "1 - point prevalence on July 1",
+      "detail": "WHAT IT IS: the single case already active at the START of July. ❌ WHY IT FAILS: that is the point prevalence on July 1, not July 31. ✅ Correct if: asking for prevalent cases at the beginning of the period."
+    },
+    {
+      "letter": "B",
+      "label": "4 - cases that recovered during July",
+      "detail": "WHAT IT IS: the number of patients whose CAUTI RESOLVED during the month. ❌ WHY IT FAILS: recovered cases are no longer active on July 31, so they aren't counted in the July 31 point prevalence. ✅ Correct if: counting recoveries during July."
+    },
+    {
+      "letter": "D",
+      "label": "8 - incident cases during July",
+      "detail": "WHAT IT IS: the number of NEW cases that developed between July 1 and July 31 (incidence). ❌ WHY IT FAILS: incidence counts new cases; point prevalence counts those still active on the date. ✅ Correct if: asked for incident cases during July."
+    },
+    {
+      "letter": "E",
+      "label": "9 - period prevalence (all active during July)",
+      "detail": "WHAT IT IS: all cases present at any time during the month (period prevalence numerator). ❌ WHY IT FAILS: point prevalence considers only cases active at the SPECIFIC time point (July 31), not the whole period. ✅ Correct if: asked for period-prevalent cases."
+    }
+  ],
+  "reasoning": [
+    "Point prevalence counts disease cases ACTIVE at a specific point in time",
+    "On July 31, 5 CAUTI cases remain unresolved (4 recovered earlier; a 10th started later)",
+    "So the prevalent cases on July 31 = 5",
+    "-> 5; answer C"
+  ],
+  "mechanism": "PREVALENCE is the proportion of individuals in an at-risk population who HAVE a disease. POINT PREVALENCE counts the disease cases ACTIVE at a SPECIFIC POINT in time (e.g., July 31) divided by the population at that time; on a timeline plot, a case counts if it began on/before that date and has NOT yet resolved. PERIOD PREVALENCE counts cases present at ANY time during an interval (existing cases at the start PLUS all incident cases during the period). INCIDENCE counts only NEW cases arising during the period. Here, of the CAUTI timelines, only 5 remain active (unresolved) on July 31 (four had recovered earlier, and one new case began after July 31 and so is not counted on July 31). Therefore the POINT prevalence on July 31 = 5. The distractors correspond to July-1 point prevalence (1), recoveries during July (4), incident cases (8), and period prevalence (9).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > prevalence/incidence: point prevalence = active cases at a specific time / population; period prevalence = cases present at any time in the interval; incidence = new cases in the period; read Lexis-type timeline plots by activity at the date."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Point prevalence on a date = cases active (unresolved) at that time = 5."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on point vs period prevalence, incidence, active/unresolved case, or timeline (Lexis) plot? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "1 = July-1 prevalence; 4 = recoveries; 8 = incident cases; 9 = period prevalence."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "Timeline plot (stem): count only the case bars that cross/are active on July 31 (onset before, not yet recovered) = 5 = point prevalence."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: point prevalence = active cases at a specific point in time; period prevalence includes all cases during the interval."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Point prevalence definition",
+      "back": "Active cases at a specific time point / population"
+    },
+    {
+      "front": "Period prevalence definition",
+      "back": "Cases present at any time during the interval (existing + incident)"
+    },
+    {
+      "front": "Incidence definition",
+      "back": "New cases arising during the period"
+    },
+    {
+      "front": "How to read a case-timeline plot",
+      "back": "Case counts if active (onset before, not recovered) on the date"
+    },
+    {
+      "front": "Prevalence vs incidence",
+      "back": "Prevalence = existing cases; incidence = new cases"
+    },
+    {
+      "front": "Prevalent case on July 31",
+      "back": "Onset <= July 31 AND not yet resolved"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Point prevalence",
+      "detail": "Biostat: active cases at a specific time = 5."
+    },
+    {
+      "tag": "options",
+      "topic": "Prevalence vs incidence",
+      "detail": "Biostat > period prevalence, incidence, recoveries."
+    },
+    {
+      "tag": "concept",
+      "topic": "Timeline reading",
+      "detail": "Biostat > count active bars on the date."
+    }
+  ],
+  "memoryHook": "Freeze the calendar on July 31 and count who's still sick right then (5) - that's POINT prevalence; counting everyone sick all month would be period prevalence.",
+  "stem": [
+    {
+      "text": "A study is conducted to estimate the prevalence of catheter-associated urinary tract infection (CAUTI) in the intensive care unit (ICU) of an urban hospital. The plot below shows the "
+    },
+    {
+      "text": "number of cases of CAUTI in this hospital during the month of July",
+      "clue": true,
+      "type": "blue",
+      "note": "Cases with onset and recovery over the month are the raw data; PREVALENCE at a time point counts only those still active at that moment."
+    },
+    {
+      "text": " among patients in the ICU, drawn as horizontal timelines for each case with onset and recovery marks relative to July 1 and July 31. Based on the plot, 9 cases of CAUTI occurred during July, but "
+    },
+    {
+      "text": "only 5 of them were still active (unresolved) on July 31",
+      "clue": true,
+      "type": "green",
+      "note": "POINT prevalence on July 31 = the number of cases that are ACTIVE (unresolved) at that specific point in time = 5."
+    },
+    {
+      "text": " (the other 4 had recovered before July 31, and a 10th case began after July 31). Which of the following is the number of prevalent cases on July 31?"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statin nonadherence from negative illness association: empathize and build a positive association</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 15 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q534", "item": 534, "qid": "21737", "title": "Statin nonadherence from negative illness association: empathize and build a positive association", "system": "Behavioral science", "topic": "Treatment adherence / communication", "correct": "A", "yourAnswer": "A", "percentCorrect": 81, "vignette": "A 68-year-old woman comes to the office to discuss lipid-lowering therapy. She was prescribed rosuvastatin 6 months ago following a transient ischemic attack, but her pharmacy sent a notice to the physician a week ago that she has not filled her prescription for the past 3 months. The patient otherwise feels well and has had no recurrent neurologic symptoms. When asked why she is not taking her medication, she says, \"I feel great without it. The ministroke was the scariest thing that ever happened to me, and now that I have put it behind me, I don't want the medication to remind me about my problem all over again.\" Which of the following is the most appropriate response to this patient's statement?", "clues": [{"text": "she has not filled her prescription for the past 3 months", "type": "blue", "note": "Objective evidence of nonadherence to secondary-prevention statin therapy after a TIA - a key patient-safety issue to address supportively."}, {"text": "I don't want the medication to remind me about my problem all over again", "type": "green", "note": "Her nonadherence stems from a NEGATIVE emotional ASSOCIATION (the pill reminds her of the frightening TIA); the best response acknowledges this and reframes toward a positive association."}], "whatMatters": "Her nonadherence is driven by a NEGATIVE emotional ASSOCIATION between the statin and her frightening TIA. The best response is EMPATHIC - validating her fear and then reframing the medication around a POSITIVE association (staying healthy). Answer A.", "strategy": "Choose the response that (1) shows EMPATHY for her emotional experience and (2) encourages a NEW, POSITIVE association (medication = future health). Reject responses that are judgmental/fear-based (listing consequences), that merely defer to autonomy without exploring motivation, that assume a wrong reason (denial of recurrence risk), or that pressure with others' regret - none build a positive association or improve adherence.", "options": [{"letter": "A", "text": "\"I understand that having a ministroke was scary. Maybe we can talk about how the medication can help keep you healthy.\"", "correct": true}, {"letter": "B", "text": "\"It is your choice whether to take the medication. But for your safety, please discuss your preferences with me first.\"", "correct": false}, {"letter": "C", "text": "\"It sounds like you believe another ministroke is unlikely to happen to you. Is that correct?\"", "correct": false}, {"letter": "D", "text": "\"Many patients share your concerns about the medication. However, most people who stop the medication later regret not taking it.\"", "correct": false}, {"letter": "E", "text": "\"You have a serious condition. Let's talk about some of the consequences if you do not take this medication.\"", "correct": false}], "eliminations": [{"letter": "B", "label": "Defers to autonomy - no positive association", "detail": "WHAT IT IS: emphasizing that it's her choice and asking her to discuss preferences. ❌ WHY IT FAILS: it superficially respects autonomy but puts responsibility back on the physician and doesn't explore her motivations or build a positive association. ✅ Correct if: purely clarifying the decision-making process (not adherence counseling)."}, {"letter": "C", "label": "Assumes denial of recurrence - wrong reason", "detail": "WHAT IT IS: reflecting that she thinks another stroke is unlikely. ❌ WHY IT FAILS: her issue is a NEGATIVE ASSOCIATION (avoiding a reminder), not denial of risk; this misidentifies the barrier. ✅ Correct if: the patient truly denied her risk/seriousness."}, {"letter": "D", "label": "Others regret quitting - pressure, negative framing", "detail": "WHAT IT IS: telling her most people regret stopping. ❌ WHY IT FAILS: it universalizes and pressures rather than empathizing/reframing positively; unlikely to improve adherence. ✅ Correct if: (never ideal) - not this."}, {"letter": "E", "label": "Consequences of nonadherence - fear-based, reinforces negativity", "detail": "WHAT IT IS: focusing on the adverse outcomes if she doesn't take it. ❌ WHY IT FAILS: emphasizing complications reinforces her NEGATIVE association with treatment and may increase resistance. ✅ Correct if: (fear appeals are counterproductive here)."}], "reasoning": ["She is nonadherent because the statin triggers a negative emotional association with her frightening TIA", "Effective adherence counseling starts with empathy for her experience", "Then it reframes the medication toward a positive association (staying healthy)", "-> empathize and discuss how the medication keeps her healthy; answer A"], "mechanism": "The PSYCHOLOGICAL IMPACT of a serious illness - fear, and residual stigma or shame - frequently shapes a patient's self-image and subsequent health decisions, including MEDICATION ADHERENCE. This patient has NEGATIVELY ASSOCIATED her rosuvastatin (secondary prevention after a TIA) with the frightening memory of her 'ministroke,' leading her to stop taking it. Effective counseling begins with EMPATHIC acknowledgment of her emotional experience (validating that the TIA was scary), AVOIDS judgmental/critical or fear-based statements, and then helps her build NEW, POSITIVE ASSOCIATIONS with the medication - reframing it as a tool that lowers cholesterol and keeps her HEALTHY in the future rather than a reminder of disease. When patients come to associate treatment with improved health (rather than illness), adherence improves. The other options either defer without exploring motivation (B), misidentify her barrier as denial (C), pressure her with others' regret (D), or emphasize adverse consequences (E) - all of which fail to create the positive association needed.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Behavioral science > adherence/communication: address the emotional/psychological barriers; use empathy and positive reframing (link treatment to health) rather than fear appeals or judgment to improve adherence."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Negative illness association -> empathize + reframe medication toward staying healthy."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on treatment adherence, empathic communication, positive vs negative association, or fear appeals? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Autonomy-deferral, assuming denial, others' regret, and consequence-listing don't build a positive association."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: for illness-related negative associations driving nonadherence, empathize and reframe treatment as promoting health (positive association)."}], "keywords": [{"front": "Nonadherence from negative illness association", "back": "Empathize + reframe treatment toward health (positive association)"}, {"front": "Best first step in adherence counseling", "back": "Empathic acknowledgment of the patient's feelings"}, {"front": "Why fear appeals fail here", "back": "Reinforce the negative association -> more resistance"}, {"front": "Positive association goal", "back": "Link medication to improved future health"}, {"front": "Avoid in adherence counseling", "back": "Judgment, pressure, universalizing others' regret"}, {"front": "Statin after TIA", "back": "Secondary prevention of recurrent cerebrovascular events"}], "firstAid": [{"tag": "answer / stem", "topic": "Treatment adherence", "detail": "Behavioral science: empathize + build positive association."}, {"tag": "options", "topic": "Communication pitfalls", "detail": "Ethics > avoid fear appeals, judgment, false autonomy."}, {"tag": "concept", "topic": "Illness psychology", "detail": "Behavioral science > emotions shape health decisions."}], "memoryHook": "The pill reminds her of the scary stroke - so first say 'that was scary' (empathy), then flip the story: this medicine keeps you healthy (positive association).", "stem": [{"text": "A 68-year-old woman comes to the office to discuss lipid-lowering therapy. She was prescribed rosuvastatin 6 months ago following a transient ischemic attack, but her pharmacy sent a notice to the physician a week ago that "}, {"text": "she has not filled her prescription for the past 3 months", "clue": true, "type": "blue", "note": "Objective evidence of nonadherence to secondary-prevention statin therapy after a TIA - a key patient-safety issue to address supportively."}, {"text": ". The patient otherwise feels well and has had no recurrent neurologic symptoms. When asked why she is not taking her medication, she says, \"I feel great without it. The ministroke was the scariest thing that ever happened to me, and now that I have put it behind me, "}, {"text": "I don't want the medication to remind me about my problem all over again", "clue": true, "type": "green", "note": "Her nonadherence stems from a NEGATIVE emotional ASSOCIATION (the pill reminds her of the frightening TIA); the best response acknowledges this and reframes toward a positive association."}, {"text": ".\" Which of the following is the most appropriate response to this patient's statement?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

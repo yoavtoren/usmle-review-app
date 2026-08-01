@@ -1,0 +1,176 @@
+{
+  "id": "q524",
+  "item": 524,
+  "qid": "19431",
+  "title": "Specificity = TN/(TN+FP): 188/200 = 94%",
+  "system": "Biostatistics",
+  "topic": "Specificity",
+  "correct": "E",
+  "yourAnswer": "E",
+  "percentCorrect": 75,
+  "vignette": "A study is conducted to assess whether quantitative measurement of heat shock protein 90 alpha (Hsp90a) in plasma can improve diagnostic accuracy and help monitor treatment response in liver cancer patients. A total of 300 individuals (100 liver cancer patients and 200 healthy controls) participate in the study. Analyses reveal that 90 of the liver cancer patients have an abnormally high plasma Hsp90a level and that 12 of the healthy controls have an abnormally high plasma Hsp90a level. An abnormally high plasma Hsp90a level indicates a positive test for liver cancer. Which of the following values best represents the specificity of this test?",
+  "clues": [
+    {
+      "text": "12 of the healthy controls have an abnormally high plasma Hsp90a level",
+      "type": "green",
+      "note": "Among the 200 disease-FREE controls, 12 test positive = FALSE POSITIVES (FP); the remaining 188 test negative = TRUE NEGATIVES (TN)."
+    },
+    {
+      "text": "specificity of this test",
+      "type": "blue",
+      "note": "Specificity = the ability to correctly identify people WITHOUT disease = TN / (TN + FP)."
+    }
+  ],
+  "whatMatters": "SPECIFICITY = TN / (TN + FP) - the proportion of NON-diseased people who test negative. Of 200 healthy controls, 12 are false positives and 188 are true negatives, so specificity = 188/200 = 0.94 = 94%. Answer E.",
+  "strategy": "Use only the NON-diseased group for specificity. Controls = 200; false positives (test positive without disease) = 12; true negatives = 200 - 12 = 188. Specificity = 188/(188+12) = 188/200 = 94%. Reject 6% (that's the false-positive rate = 1 - specificity), 90%/10% (those are sensitivity/false-negative rate from the cancer group), and 33% (prevalence of cancer in the sample).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "6%",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "10%",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "33%",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "90%",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "94%",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "6% - false-positive rate (1 - specificity)",
+      "detail": "WHAT IT IS: FP/(TN+FP) = 12/200 = 6%, the false-positive rate. ❌ WHY IT FAILS: that is the COMPLEMENT of specificity (1 - specificity), not specificity itself. ✅ Correct if: asked for the false-positive rate."
+    },
+    {
+      "letter": "B",
+      "label": "10% - false-negative rate",
+      "detail": "WHAT IT IS: FN/(TP+FN) = 10/100 = 10%, the false-negative rate. ❌ WHY IT FAILS: it comes from the diseased group (sensitivity side), not specificity. ✅ Correct if: asked for the false-negative rate (1 - sensitivity)."
+    },
+    {
+      "letter": "C",
+      "label": "33% - prevalence in the sample",
+      "detail": "WHAT IT IS: 100 cancer patients / 300 total = 33%, the study prevalence. ❌ WHY IT FAILS: prevalence is not specificity. ✅ Correct if: asked for the proportion with disease (prevalence)."
+    },
+    {
+      "letter": "D",
+      "label": "90% - sensitivity",
+      "detail": "WHAT IT IS: TP/(TP+FN) = 90/100 = 90%, the sensitivity. ❌ WHY IT FAILS: sensitivity measures detection in the DISEASED group, not specificity in controls. ✅ Correct if: asked for sensitivity."
+    }
+  ],
+  "reasoning": [
+    "Specificity uses only the non-diseased (control) group",
+    "Controls = 200; 12 false positives, so 188 true negatives",
+    "Specificity = TN/(TN+FP) = 188/200",
+    "-> 94%; answer E"
+  ],
+  "mechanism": "A 2x2 diagnostic table classifies results as TRUE POSITIVE (TP), FALSE POSITIVE (FP), FALSE NEGATIVE (FN), and TRUE NEGATIVE (TN). SPECIFICITY measures a test's ability to correctly identify people WITHOUT the disease and equals TN / (TN + FP) - i.e., the fraction of NON-diseased individuals who test negative. Here there are 200 healthy CONTROLS; 12 test positive (FALSE POSITIVES) and 188 test negative (TRUE NEGATIVES), so specificity = 188/(188 + 12) = 188/200 = 0.94 (94%). Related quantities from the same data: SENSITIVITY = TP/(TP+FN) = 90/100 = 90% (detection in the 100 cancer patients); the FALSE-POSITIVE RATE = 1 - specificity = 12/200 = 6%; the FALSE-NEGATIVE RATE = 1 - sensitivity = 10/100 = 10%; and PREVALENCE = 100/300 = 33%. Sensitivity/specificity are properties of the test (independent of prevalence), whereas predictive values (PPV/NPV) depend on prevalence.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biostat > diagnostic testing: specificity = TN/(TN+FP); sensitivity = TP/(TP+FN); false-positive rate = 1 - specificity; PPV/NPV depend on prevalence; sensitivity/specificity do not."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Specificity = true negatives / all non-diseased = 188/200 = 94%."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on specificity, sensitivity, true/false positive-negative, false-positive rate, or prevalence? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "6% = FP rate (1 - specificity); 90% = sensitivity; 10% = FN rate; 33% = prevalence."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: specificity = TN/(TN+FP) (identifies healthy); use the control column only."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Specificity formula",
+      "back": "TN / (TN + FP)"
+    },
+    {
+      "front": "Sensitivity formula",
+      "back": "TP / (TP + FN)"
+    },
+    {
+      "front": "False-positive rate",
+      "back": "FP/(TN+FP) = 1 - specificity"
+    },
+    {
+      "front": "False-negative rate",
+      "back": "FN/(TP+FN) = 1 - sensitivity"
+    },
+    {
+      "front": "Prevalence in this study",
+      "back": "100/300 = 33%"
+    },
+    {
+      "front": "Do sensitivity/specificity depend on prevalence?",
+      "back": "No (PPV/NPV do)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Specificity",
+      "detail": "Biostat: TN/(TN+FP) = 188/200 = 94%."
+    },
+    {
+      "tag": "options",
+      "topic": "Test metrics",
+      "detail": "Biostat > sensitivity, FP/FN rates, prevalence."
+    },
+    {
+      "tag": "concept",
+      "topic": "SnNout/SpPin",
+      "detail": "Biostat > high specificity rules IN when positive."
+    }
+  ],
+  "memoryHook": "Specificity lives in the healthy column: 188 of 200 controls correctly test negative = 94% (the 12 false alarms are the 6% you subtract).",
+  "stem": [
+    {
+      "text": "A study is conducted to assess whether quantitative measurement of heat shock protein 90 alpha (Hsp90a) in plasma can improve diagnostic accuracy and help monitor treatment response in liver cancer patients. A total of 300 individuals (100 liver cancer patients and 200 healthy controls) participate in the study. Analyses reveal that 90 of the liver cancer patients have an abnormally high plasma Hsp90a level and that "
+    },
+    {
+      "text": "12 of the healthy controls have an abnormally high plasma Hsp90a level",
+      "clue": true,
+      "type": "green",
+      "note": "Among the 200 disease-FREE controls, 12 test positive = FALSE POSITIVES (FP); the remaining 188 test negative = TRUE NEGATIVES (TN)."
+    },
+    {
+      "text": ". An abnormally high plasma Hsp90a level indicates a positive test for liver cancer. Which of the following values best represents the "
+    },
+    {
+      "text": "specificity of this test",
+      "clue": true,
+      "type": "blue",
+      "note": "Specificity = the ability to correctly identify people WITHOUT disease = TN / (TN + FP)."
+    },
+    {
+      "text": "?"
+    }
+  ]
+}

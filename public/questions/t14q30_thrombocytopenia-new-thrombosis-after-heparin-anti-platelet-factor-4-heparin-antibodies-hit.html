@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thrombocytopenia + new thrombosis after heparin: anti-platelet factor 4/heparin antibodies (HIT)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 14 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q509", "item": 509, "qid": "15120", "title": "Thrombocytopenia + new thrombosis after heparin: anti-platelet factor 4/heparin antibodies (HIT)", "system": "Pathology", "topic": "Heparin-induced thrombocytopenia", "correct": "B", "yourAnswer": "E", "percentCorrect": 70, "vignette": "A 26-year-old woman, gravida 2 para 1, at 8 weeks gestation comes to the office due to pain and swelling of her left leg for the past day. The patient had a pulmonary embolism during her previous pregnancy, and prophylactic low-molecular-weight heparin therapy was initiated 6 days ago. She has no other medical conditions and takes prenatal vitamins. Physical examination shows left lower extremity edema and calf tenderness but no other abnormalities. Venous duplex ultrasonography reveals acute left femoral vein thrombosis. Platelet count, which was normal prior to anticoagulant therapy initiation, is 84,000/mm3. Other blood cell counts and renal and liver function studies are within normal limits. Which of the following most likely predisposed this patient to her current condition?", "clues": [{"text": "prophylactic low-molecular-weight heparin therapy was initiated 6 days ago", "type": "orange", "note": "Heparin-induced thrombocytopenia (type 2) typically develops 5-10 days after starting heparin (unfractionated more than low-molecular-weight, but LMWH can cause it)."}, {"text": "acute left femoral vein thrombosis", "type": "green", "note": "NEW thrombosis while on heparin is the paradoxical prothrombotic hallmark of HIT (heparin-induced thrombocytopenia AND thrombosis)."}, {"text": "Platelet count, which was normal prior to anticoagulant therapy initiation, is 84,000/mm3", "type": "green", "note": "A significant platelet DROP after starting heparin (from normal to 84,000) plus new thrombosis strongly suggests HIT."}], "whatMatters": "A platelet DROP plus NEW thrombosis 5-10 days after starting heparin = HEPARIN-INDUCED THROMBOCYTOPENIA (HIT type 2). It is caused by IgG ANTIBODIES against complexes of HEPARIN and PLATELET FACTOR 4 (PF4), which activate platelets and cause a prothrombotic state. Answer B.", "strategy": "Recognize HIT: platelet count falls (and/or new thrombosis) ~5-10 days after heparin exposure. Mechanism = anti-PF4/heparin IgG -> platelet activation -> thrombosis + thrombocytopenia. Reject acquired protein C deficiency (warfarin-induced skin necrosis), anti-GPIIb/IIIa antibodies (ITP - bleeding, low platelets, no thrombosis), cryoglobulins (vasculitis/purpura, not marked thrombocytopenia), and decreased ADAMTS13 (TTP - pentad with MAHA/schistocytes, not heparin-triggered isolated DVT).", "options": [{"letter": "A", "text": "Acquired protein C deficiency", "correct": false}, {"letter": "B", "text": "Anti-platelet factor 4/heparin antibodies", "correct": true}, {"letter": "C", "text": "Anti-platelet glycoprotein IIb/IIIa antibodies", "correct": false}, {"letter": "D", "text": "Cold-precipitable immunoglobulins", "correct": false}, {"letter": "E", "text": "Decreased ADAMTS13 level", "correct": false}], "eliminations": [{"letter": "A", "label": "Acquired protein C deficiency - warfarin skin necrosis", "detail": "WHAT IT IS: transient protein C depletion early in WARFARIN therapy (protein C falls faster than procoagulant factors). ❌ WHY IT FAILS: it causes warfarin-induced skin necrosis, not heparin-associated thrombocytopenia with new DVT; she is on heparin, not warfarin. ✅ Correct if: skin necrosis after starting warfarin without heparin bridging."}, {"letter": "C", "label": "Anti-GPIIb/IIIa antibodies - ITP (bleeding)", "detail": "WHAT IT IS: autoantibodies to platelet GPIIb/IIIa (immune thrombocytopenic purpura). ❌ WHY IT FAILS: ITP causes isolated thrombocytopenia with BLEEDING, not thrombosis, and is not heparin-triggered. ✅ Correct if: isolated low platelets with mucocutaneous bleeding."}, {"letter": "D", "label": "Cold-precipitable immunoglobulins - cryoglobulinemia", "detail": "WHAT IT IS: cryoglobulins (e.g., hepatitis C, autoimmune) causing vasculitis. ❌ WHY IT FAILS: cryoglobulinemia presents with palpable purpura, arthralgia, and vasculitis - not heparin-related thrombocytopenia with DVT. ✅ Correct if: purpuric vasculitis with cryoglobulins."}, {"letter": "E", "label": "Decreased ADAMTS13 - TTP (MAHA pentad)", "detail": "WHAT IT IS: ADAMTS13 deficiency causing thrombotic thrombocytopenic purpura. ❌ WHY IT FAILS: TTP shows microangiopathic hemolytic anemia (schistocytes), renal and neurologic involvement, and fever - not an isolated heparin-triggered DVT with otherwise normal counts. ✅ Correct if: MAHA + thrombocytopenia + neuro/renal signs (TTP pentad)."}], "reasoning": ["Platelets fell from normal to 84,000 about 6 days after starting heparin", "She simultaneously developed a NEW femoral vein thrombosis (prothrombotic)", "This thrombocytopenia-plus-thrombosis after heparin is HIT, mediated by anti-PF4/heparin IgG", "-> anti-platelet factor 4/heparin antibodies; answer B"], "mechanism": "HEPARIN-INDUCED THROMBOCYTOPENIA and thrombosis (HIT, type 2) is an immune-mediated, prothrombotic reaction typically occurring 5-10 DAYS after heparin exposure (more common with UNFRACTIONATED heparin but also with LOW-MOLECULAR-WEIGHT heparin). PLATELET FACTOR 4 (PF4), released from platelet alpha-granules, binds heparin; the immune system generates IgG ANTIBODIES against the HEPARIN-PF4 complex. The Fc portion of these antibodies then engages Fc receptors on platelets, causing widespread PLATELET ACTIVATION with further PF4 release and aggregation - producing a PROTHROMBOTIC state (arterial and venous thrombosis) along with a falling platelet count (consumption/clearance). Thus a >50% platelet drop and/or NEW thrombosis after heparin should raise suspicion for HIT; management is to STOP all heparin and start a NON-heparin anticoagulant (e.g., argatroban, fondaparinux). The distractors are other platelet/coagulation disorders (warfarin-related protein C depletion, ITP, cryoglobulinemia, TTP) that do not fit heparin-triggered thrombocytopenia with new thrombosis.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Heme > HIT (type 2): IgG vs heparin-PF4 complex -> platelet activation -> thrombocytopenia + thrombosis; 5-10 days after heparin; stop heparin, use argatroban/fondaparinux (avoid warfarin acutely)."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Platelet drop + new clot after heparin = HIT (anti-PF4/heparin IgG)."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on HIT, platelet factor 4, IgG/Fc receptor, or non-heparin anticoagulants? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Protein C = warfarin necrosis; anti-GPIIb/IIIa = ITP (bleeding); cryoglobulins = vasculitis; ADAMTS13 = TTP (MAHA)."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: HIT = anti-PF4/heparin antibodies -> platelet activation -> thrombocytopenia + thrombosis; stop heparin, use argatroban."}], "keywords": [{"front": "Thrombocytopenia + thrombosis after heparin", "back": "HIT (anti-PF4/heparin IgG antibodies)"}, {"front": "HIT timing", "back": "5-10 days after heparin exposure"}, {"front": "HIT paradox", "back": "Low platelets but PROthrombotic (arterial + venous clots)"}, {"front": "HIT management", "back": "Stop all heparin; start argatroban/fondaparinux (avoid warfarin acutely)"}, {"front": "ITP vs HIT", "back": "ITP = bleeding (anti-GPIIb/IIIa); HIT = clotting (anti-PF4)"}, {"front": "TTP mechanism", "back": "Decreased ADAMTS13 -> MAHA pentad"}], "firstAid": [{"tag": "answer / stem", "topic": "HIT", "detail": "Heme: anti-PF4/heparin IgG -> platelet activation -> thrombocytopenia + thrombosis."}, {"tag": "options", "topic": "Thrombocytopenia causes", "detail": "Heme > ITP, TTP, cryoglobulinemia, warfarin protein C."}, {"tag": "management", "topic": "Non-heparin anticoagulation", "detail": "Heme > argatroban/fondaparinux; stop heparin."}], "memoryHook": "Heparin's booby-trap: about a week in, antibodies to heparin-PF4 fire up the platelets - count drops AND new clots form. Stop the heparin, switch to argatroban.", "stem": [{"text": "A 26-year-old woman, gravida 2 para 1, at 8 weeks gestation comes to the office due to pain and swelling of her left leg for the past day. The patient had a pulmonary embolism during her previous pregnancy, and "}, {"text": "prophylactic low-molecular-weight heparin therapy was initiated 6 days ago", "clue": true, "type": "orange", "note": "Heparin-induced thrombocytopenia (type 2) typically develops 5-10 days after starting heparin (unfractionated more than low-molecular-weight, but LMWH can cause it)."}, {"text": ". She has no other medical conditions and takes prenatal vitamins. Physical examination shows left lower extremity edema and calf tenderness but no other abnormalities. Venous duplex ultrasonography reveals "}, {"text": "acute left femoral vein thrombosis", "clue": true, "type": "green", "note": "NEW thrombosis while on heparin is the paradoxical prothrombotic hallmark of HIT (heparin-induced thrombocytopenia AND thrombosis)."}, {"text": ". "}, {"text": "Platelet count, which was normal prior to anticoagulant therapy initiation, is 84,000/mm3", "clue": true, "type": "green", "note": "A significant platelet DROP after starting heparin (from normal to 84,000) plus new thrombosis strongly suggests HIT."}, {"text": ". Other blood cell counts and renal and liver function studies are within normal limits. Which of the following most likely predisposed this patient to her current condition?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>

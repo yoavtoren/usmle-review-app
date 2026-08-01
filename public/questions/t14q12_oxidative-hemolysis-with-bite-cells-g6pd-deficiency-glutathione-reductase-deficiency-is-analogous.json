@@ -1,0 +1,209 @@
+{
+  "id": "q491",
+  "item": 491,
+  "qid": "1037",
+  "title": "Oxidative hemolysis with bite cells: G6PD deficiency (glutathione reductase deficiency is analogous)",
+  "system": "Biochemistry",
+  "topic": "G6PD deficiency / oxidative stress",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 72,
+  "vignette": "A 24-year-old man is evaluated for episodic anemia, jaundice, and dark urine. These episodes typically occur after the use of certain drugs or following infection. Additional history reveals that he has a brother who experiences similar episodes. Peripheral blood smear reveals red blood cells with the findings shown below: the smear shows cells with a semicircular portion removed from the periphery (bite cells). Deficiency of which of the following enzymes would most likely result in a condition similar to this patient's presentation?",
+  "clues": [
+    {
+      "text": "episodic anemia, jaundice, and dark urine",
+      "type": "blue",
+      "note": "Episodic anemia with jaundice and hemoglobinuria (dark urine) indicates episodic hemolysis."
+    },
+    {
+      "text": "after the use of certain drugs or following infection",
+      "type": "green",
+      "note": "Hemolysis triggered by OXIDANT stressors (drugs like sulfonamides/antimalarials, infection, fava beans) is characteristic of G6PD deficiency."
+    },
+    {
+      "text": "brother who experiences similar episodes",
+      "type": "orange",
+      "note": "Affected males in the family fit X-LINKED RECESSIVE inheritance (G6PD deficiency)."
+    },
+    {
+      "text": "semicircular portion removed from the periphery (bite cells)",
+      "type": "green",
+      "note": "BITE CELLS form when splenic macrophages remove Heinz bodies (oxidized, precipitated hemoglobin) - the hallmark of G6PD deficiency."
+    }
+  ],
+  "whatMatters": "Oxidant-triggered hemolysis with BITE CELLS (and Heinz bodies) in an X-linked pattern = G6PD DEFICIENCY. G6PD generates NADPH to keep GLUTATHIONE reduced (antioxidant). GLUTATHIONE REDUCTASE deficiency causes an ANALOGOUS problem - inability to use NADPH to reduce glutathione. Answer B.",
+  "strategy": "Recognize G6PD deficiency (oxidant-triggered hemolysis, bite cells/Heinz bodies, X-linked), then find the enzyme whose deficiency reproduces the SAME defect: failure of the glutathione antioxidant system. Glutathione reductase (regenerates reduced glutathione from NADPH) fits. Reject glycolytic/other enzymes: bisphosphoglycerate mutase (2,3-BPG, O2 offloading), hexokinase and pyruvate kinase (glycolytic ATP - hemolysis but no oxidant trigger/bite cells), and transketolase (nonoxidative PPP/ribose, no NADPH).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Bisphosphoglycerate mutase",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Glutathione reductase",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Hexokinase",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Pyruvate kinase",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Transketolase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Bisphosphoglycerate mutase - 2,3-BPG, O2 offloading",
+      "detail": "WHAT IT IS: RBC enzyme making 2,3-bisphosphoglycerate, which promotes O2 offloading. ❌ WHY IT FAILS: its deficiency alters oxygen affinity, not oxidant defense; it wouldn't cause oxidant-triggered hemolysis with bite cells. ✅ Correct if: altered hemoglobin-oxygen affinity."
+    },
+    {
+      "letter": "C",
+      "label": "Hexokinase - glycolytic ATP, no oxidant link",
+      "detail": "WHAT IT IS: the first glycolytic enzyme; deficiency reduces RBC ATP. ❌ WHY IT FAILS: it causes chronic hemolysis from ATP lack, NOT oxidant-triggered hemolysis with bite cells/Heinz bodies. ✅ Correct if: nonspherocytic hemolysis from ATP depletion without oxidant trigger."
+    },
+    {
+      "letter": "D",
+      "label": "Pyruvate kinase - glycolytic ATP deficiency",
+      "detail": "WHAT IT IS: a late glycolytic enzyme; deficiency lowers ATP and causes chronic hemolytic anemia. ❌ WHY IT FAILS: hemolysis is not oxidant-triggered and lacks bite cells/Heinz bodies; smear shows echinocytes/burr cells. ✅ Correct if: chronic hemolysis with rigid RBCs from ATP deficiency."
+    },
+    {
+      "letter": "E",
+      "label": "Transketolase - nonoxidative PPP, no NADPH",
+      "detail": "WHAT IT IS: an enzyme of the NONoxidative pentose phosphate pathway (makes ribose; thiamine-dependent). ❌ WHY IT FAILS: it does not generate NADPH, so its deficiency wouldn't impair the glutathione antioxidant system. ✅ Correct if: thiamine-related transketolase activity testing (Wernicke)."
+    }
+  ],
+  "reasoning": [
+    "Oxidant-triggered episodic hemolysis with bite cells and X-linked inheritance = G6PD deficiency",
+    "G6PD makes NADPH, which glutathione reductase uses to keep glutathione reduced (antioxidant defense)",
+    "Glutathione reductase deficiency likewise prevents regeneration of reduced glutathione",
+    "-> deficiency of glutathione reductase reproduces the same oxidant-hemolysis picture; answer B"
+  ],
+  "mechanism": "GLUCOSE-6-PHOSPHATE DEHYDROGENASE (G6PD) DEFICIENCY is an X-linked recessive disorder causing episodic HEMOLYTIC anemia and jaundice triggered by OXIDANT stress (sulfonamide/antimalarial drugs, infection, fava beans). G6PD is the rate-limiting enzyme of the pentose phosphate pathway and generates NADPH, the reducing agent needed to keep GLUTATHIONE in its reduced state; reduced glutathione detoxifies hydrogen peroxide and protects red cells from oxidative injury. Without adequate NADPH/reduced glutathione, oxidized hemoglobin precipitates as HEINZ BODIES, which splenic macrophages pluck out, forming BITE CELLS. GLUTATHIONE REDUCTASE catalyzes the NADPH-dependent regeneration of reduced glutathione; its deficiency produces an ANALOGOUS failure of the antioxidant system - the red cell cannot use NADPH to reduce glutathione - yielding a clinically SIMILAR oxidant-induced hemolysis. The distractors involve oxygen-affinity regulation (bisphosphoglycerate mutase), glycolytic ATP production (hexokinase, pyruvate kinase - chronic hemolysis without oxidant trigger/bite cells), or the nonoxidative PPP (transketolase, which makes ribose and does not generate NADPH).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Biochem/Heme > G6PD deficiency: X-linked; PPP -> NADPH -> reduced glutathione (antioxidant); oxidant-triggered hemolysis; Heinz bodies -> bite cells; glutathione reductase deficiency is analogous."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "G6PD -> NADPH -> reduced glutathione; glutathione reductase deficiency breaks the same antioxidant loop."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on G6PD, NADPH, reduced glutathione, Heinz bodies/bite cells, pentose phosphate pathway, or glutathione reductase? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Bisphosphoglycerate mutase = O2 offloading; hexokinase/pyruvate kinase = glycolytic ATP (no oxidant trigger/bite cells); transketolase = nonoxidative PPP (no NADPH)."
+    },
+    {
+      "key": "imaging",
+      "label": "🖼️ Imaging / diagram",
+      "text": "Blood smear (stem): cells with a bite taken out of the rim = BITE CELLS (Heinz bodies removed by spleen) -> oxidative hemolysis (G6PD / glutathione antioxidant defect)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: oxidant hemolysis + bite cells/Heinz bodies = G6PD deficiency; glutathione reductase deficiency mimics it (both fail to reduce glutathione)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Oxidant hemolysis + bite cells/Heinz bodies",
+      "back": "G6PD deficiency"
+    },
+    {
+      "front": "G6PD product / role",
+      "back": "NADPH -> keeps glutathione reduced (antioxidant)"
+    },
+    {
+      "front": "Enzyme mimicking G6PD deficiency",
+      "back": "Glutathione reductase (also fails to reduce glutathione)"
+    },
+    {
+      "front": "G6PD hemolysis triggers",
+      "back": "Sulfa/antimalarial drugs, infection, fava beans"
+    },
+    {
+      "front": "Heinz bodies -> bite cells",
+      "back": "Splenic macrophages remove precipitated hemoglobin"
+    },
+    {
+      "front": "G6PD inheritance",
+      "back": "X-linked recessive"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "G6PD deficiency",
+      "detail": "Biochem: NADPH -> reduced glutathione; oxidant hemolysis, bite cells."
+    },
+    {
+      "tag": "analogous",
+      "topic": "Glutathione reductase",
+      "detail": "Heme > deficiency prevents glutathione reduction (same defect)."
+    },
+    {
+      "tag": "options",
+      "topic": "RBC enzymes",
+      "detail": "Biochem > pyruvate kinase/hexokinase (ATP), BPG mutase (O2), transketolase (ribose)."
+    }
+  ],
+  "memoryHook": "G6PD makes NADPH to keep glutathione's antioxidant shield charged; knock out glutathione reductase and the shield stays dead too - either way, oxidants bite chunks out of the red cells.",
+  "stem": [
+    {
+      "text": "A 24-year-old man is evaluated for "
+    },
+    {
+      "text": "episodic anemia, jaundice, and dark urine",
+      "clue": true,
+      "type": "blue",
+      "note": "Episodic anemia with jaundice and hemoglobinuria (dark urine) indicates episodic hemolysis."
+    },
+    {
+      "text": ". These episodes typically occur "
+    },
+    {
+      "text": "after the use of certain drugs or following infection",
+      "clue": true,
+      "type": "green",
+      "note": "Hemolysis triggered by OXIDANT stressors (drugs like sulfonamides/antimalarials, infection, fava beans) is characteristic of G6PD deficiency."
+    },
+    {
+      "text": ". Additional history reveals that he has a "
+    },
+    {
+      "text": "brother who experiences similar episodes",
+      "clue": true,
+      "type": "orange",
+      "note": "Affected males in the family fit X-LINKED RECESSIVE inheritance (G6PD deficiency)."
+    },
+    {
+      "text": ". Peripheral blood smear reveals red blood cells with the findings shown below: the smear shows cells with a "
+    },
+    {
+      "text": "semicircular portion removed from the periphery (bite cells)",
+      "clue": true,
+      "type": "green",
+      "note": "BITE CELLS form when splenic macrophages remove Heinz bodies (oxidized, precipitated hemoglobin) - the hallmark of G6PD deficiency."
+    },
+    {
+      "text": ". Deficiency of which of the following enzymes would most likely result in a condition similar to this patient's presentation?"
+    }
+  ]
+}

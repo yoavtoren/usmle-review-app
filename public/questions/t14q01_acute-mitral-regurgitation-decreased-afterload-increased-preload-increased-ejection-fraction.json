@@ -1,0 +1,190 @@
+{
+  "id": "q480",
+  "item": 480,
+  "qid": "11851",
+  "title": "Acute mitral regurgitation: decreased afterload, increased preload, increased ejection fraction",
+  "system": "Physiology",
+  "topic": "Mitral regurgitation hemodynamics",
+  "correct": "B",
+  "yourAnswer": "C",
+  "percentCorrect": 41,
+  "vignette": "A 42-year-old man comes to the emergency department due to acute-onset shortness of breath. He has no medical conditions and does not use alcohol, tobacco, or illicit drugs. The patient works as a box handler at a warehouse and has excellent exercise tolerance. Family history is insignificant. Blood pressure is 98/60 mm Hg and pulse is 112/min and regular. A short systolic murmur is heard at the apex. Bilateral crackles are present on lung auscultation. Bedside echocardiography reveals a flail posterior mitral leaflet due to chordal rupture and severe mitral regurgitation. Which of the following best reflects this patient's left ventricular hemodynamics compared to the normal heart?",
+  "clues": [
+    {
+      "text": "acute-onset shortness of breath",
+      "type": "blue",
+      "note": "Sudden dyspnea with pulmonary crackles indicates acute pulmonary edema from a sudden rise in left atrial pressure."
+    },
+    {
+      "text": "short systolic murmur is heard at the apex",
+      "type": "green",
+      "note": "An apical systolic murmur reflects mitral regurgitation; in ACUTE severe MR the murmur is often short/soft because left atrial pressure rises rapidly and equalizes."
+    },
+    {
+      "text": "flail posterior mitral leaflet due to chordal rupture and severe mitral regurgitation",
+      "type": "green",
+      "note": "Acute chordae tendineae rupture creates severe acute MR - a low-resistance regurgitant pathway into the left atrium during systole."
+    }
+  ],
+  "whatMatters": "In ACUTE severe MR, the incompetent valve is a LOW-resistance leak into the LA during systole, so LV AFTERLOAD DECREASES. Regurgitant volume returns and adds to normal venous return, raising LV end-diastolic volume (PRELOAD INCREASES). Lower afterload + higher preload raise total EJECTION FRACTION (though forward output falls). Answer B.",
+  "strategy": "Reason from the regurgitant pathway. The leaky mitral valve lets the LV eject into the low-pressure LA -> reduced afterload. The regurgitant blood re-enters the LV in diastole, increasing preload (LVEDV). Reduced afterload + increased preload -> increased total ejection fraction (even though FORWARD stroke volume drops -> hypotension). Reject any 'afterload increase' option (the leak lowers afterload) and any 'preload decrease' (regurgitant volume raises preload).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Afterload decrease, preload decrease, ejection fraction decrease",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Afterload decrease, preload increase, ejection fraction increase",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Afterload increase, preload decrease, ejection fraction decrease",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Afterload increase, preload decrease, ejection fraction increase",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Afterload increase, preload increase, ejection fraction increase",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Afterload dec, preload dec, EF dec - preload should rise",
+      "detail": "WHAT IT IS: afterload down but preload and EF down. ❌ WHY IT FAILS: afterload does fall, but the regurgitant volume INCREASES preload (LVEDV) and total EF rises; a falling preload/EF doesn't fit acute MR. ✅ Correct if: hypovolemia lowering preload."
+    },
+    {
+      "letter": "C",
+      "label": "Afterload inc, preload dec, EF dec - all wrong direction",
+      "detail": "WHAT IT IS: afterload up, preload down, EF down. ❌ WHY IT FAILS: the low-resistance regurgitant path DECREASES afterload and the regurgitant volume INCREASES preload; total EF rises, not falls. ✅ Correct if: acute increase in outflow resistance (e.g., acute severe aortic stenosis/hypertensive crisis)."
+    },
+    {
+      "letter": "D",
+      "label": "Afterload inc, preload dec, EF inc - afterload/preload wrong",
+      "detail": "WHAT IT IS: afterload up, preload down, EF up. ❌ WHY IT FAILS: afterload falls (not rises) and preload rises (not falls) in MR. ✅ Correct if: a state that raised afterload yet somehow increased EF (not MR)."
+    },
+    {
+      "letter": "E",
+      "label": "Afterload inc, preload inc, EF inc - afterload wrong",
+      "detail": "WHAT IT IS: afterload up, preload up, EF up. ❌ WHY IT FAILS: preload and EF do rise, but AFTERLOAD DECREASES in MR because of the low-resistance leak into the LA. ✅ Correct if: volume overload WITHOUT a regurgitant low-pressure runoff."
+    }
+  ],
+  "reasoning": [
+    "Acute severe MR creates a low-resistance regurgitant path into the left atrium during systole",
+    "Ejecting into the low-pressure LA reduces LV afterload",
+    "Regurgitant volume returns to the LV, increasing preload (LVEDV)",
+    "Lower afterload + higher preload raise total ejection fraction (forward output still falls) -> answer B"
+  ],
+  "mechanism": "In ACUTE mitral regurgitation (here from spontaneous chordae tendineae rupture and a FLAIL leaflet), the left ventricle during systole can eject blood both forward into the aorta and BACKWARD through the incompetent mitral valve into the left atrium. Because the regurgitant pathway is LOW-resistance, total LV AFTERLOAD (wall stress opposing ejection) DECREASES. During diastole, the regurgitant volume that entered the LA returns to the LV along with normal pulmonary venous return, INCREASING LV end-diastolic volume (PRELOAD). The combination of reduced afterload and increased preload increases the TOTAL LV EJECTION FRACTION (and total stroke volume via increased stroke volume/Frank-Starling). However, much of the ejected volume regurgitates into the LA, so FORWARD stroke volume and cardiac output FALL (hypotension, cardiogenic shock), and the sudden LA pressure rise causes PULMONARY EDEMA (the LA is normal-sized and noncompliant acutely). In chronic MR, compensatory LA enlargement and eccentric LV hypertrophy buffer these pressures. The correct hemodynamic set is therefore decreased afterload, increased preload, increased ejection fraction.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid CV > mitral regurgitation: regurgitant low-resistance path lowers afterload; regurgitant volume raises preload (LVEDV); total EF increases but forward output falls; acute MR -> pulmonary edema/hypotension; chronic MR -> LA enlargement, eccentric hypertrophy."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Leaky mitral valve = low-resistance runoff -> less afterload, more preload, higher total EF (less forward output)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on afterload, preload/LVEDV, ejection fraction vs forward stroke volume, regurgitant volume, or flail leaflet? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Any 'afterload increase' ignores the low-resistance leak; any 'preload decrease' ignores the regurgitant volume returning to the LV."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: acute MR = decreased afterload + increased preload + increased total EF (forward output falls -> shock/pulmonary edema)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Acute MR afterload",
+      "back": "Decreased (low-resistance regurgitant path into LA)"
+    },
+    {
+      "front": "Acute MR preload (LVEDV)",
+      "back": "Increased (regurgitant volume returns)"
+    },
+    {
+      "front": "Acute MR ejection fraction",
+      "back": "Increased total EF (but forward stroke volume falls)"
+    },
+    {
+      "front": "Acute MR clinical picture",
+      "back": "Pulmonary edema + hypotension (noncompliant LA)"
+    },
+    {
+      "front": "Cause of acute severe MR",
+      "back": "Chordae tendineae rupture / flail leaflet (also papillary muscle rupture post-MI)"
+    },
+    {
+      "front": "Chronic MR compensation",
+      "back": "LA enlargement + eccentric LV hypertrophy"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Mitral regurgitation",
+      "detail": "CV: decreased afterload, increased preload, increased total EF; forward output falls."
+    },
+    {
+      "tag": "acute vs chronic",
+      "topic": "Acute MR",
+      "detail": "CV > pulmonary edema + hypotension; noncompliant LA."
+    },
+    {
+      "tag": "cause",
+      "topic": "Flail leaflet",
+      "detail": "CV > chordal/papillary rupture -> acute severe MR."
+    }
+  ],
+  "memoryHook": "A leaky mitral valve is an open back door: the LV pushes against less resistance (afterload down), gets flooded with returning blood (preload up), and squeezes out a bigger fraction - but most of it leaks backward, so forward output crashes.",
+  "stem": [
+    {
+      "text": "A 42-year-old man comes to the emergency department due to "
+    },
+    {
+      "text": "acute-onset shortness of breath",
+      "clue": true,
+      "type": "blue",
+      "note": "Sudden dyspnea with pulmonary crackles indicates acute pulmonary edema from a sudden rise in left atrial pressure."
+    },
+    {
+      "text": ". He has no medical conditions and does not use alcohol, tobacco, or illicit drugs. The patient works as a box handler at a warehouse and has excellent exercise tolerance. Family history is insignificant. Blood pressure is 98/60 mm Hg and pulse is 112/min and regular. A "
+    },
+    {
+      "text": "short systolic murmur is heard at the apex",
+      "clue": true,
+      "type": "green",
+      "note": "An apical systolic murmur reflects mitral regurgitation; in ACUTE severe MR the murmur is often short/soft because left atrial pressure rises rapidly and equalizes."
+    },
+    {
+      "text": ". Bilateral crackles are present on lung auscultation. Bedside echocardiography reveals a "
+    },
+    {
+      "text": "flail posterior mitral leaflet due to chordal rupture and severe mitral regurgitation",
+      "clue": true,
+      "type": "green",
+      "note": "Acute chordae tendineae rupture creates severe acute MR - a low-resistance regurgitant pathway into the left atrium during systole."
+    },
+    {
+      "text": ". Which of the following best reflects this patient's left ventricular hemodynamics compared to the normal heart?"
+    }
+  ]
+}

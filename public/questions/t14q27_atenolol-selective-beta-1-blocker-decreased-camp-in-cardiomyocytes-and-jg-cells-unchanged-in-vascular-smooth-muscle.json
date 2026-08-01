@@ -1,0 +1,162 @@
+{
+  "id": "q506",
+  "item": 506,
+  "qid": "8289",
+  "title": "Atenolol (selective beta-1 blocker): decreased cAMP in cardiomyocytes and JG cells, unchanged in vascular smooth muscle",
+  "system": "Pharmacology",
+  "topic": "Beta blockers / GPCR signaling",
+  "correct": "B",
+  "yourAnswer": "B",
+  "percentCorrect": 52,
+  "vignette": "A 47-year-old man comes to the office for follow-up of his elevated blood pressure. The patient's medical history is significant for stable angina pectoris, for which he takes sublingual nitroglycerin as needed. He has no orthopnea, paroxysmal nocturnal dyspnea, or lower extremity swelling. His blood pressure is 154/107 mm Hg and pulse is 86/min. Physical examination shows no abnormalities. The patient is started on a low dose of atenolol. Which of the following cellular changes will most likely occur as a direct effect of this medication?",
+  "clues": [
+    {
+      "text": "started on a low dose of atenolol",
+      "type": "green",
+      "note": "At low doses atenolol is a SELECTIVE beta-1 adrenergic antagonist; beta-1 receptors couple to Gs and raise cAMP, so blockade lowers cAMP in beta-1-bearing cells."
+    }
+  ],
+  "whatMatters": "Atenolol is a SELECTIVE BETA-1 blocker. Beta-1 receptors (Gs-coupled -> cAMP) are on CARDIOMYOCYTES and renal JUXTAGLOMERULAR cells, so blockade DECREASES cAMP there. VASCULAR SMOOTH MUSCLE has beta-2 (not beta-1) receptors, so its cAMP is UNCHANGED. Answer B (decreased / decreased / no change).",
+  "strategy": "Map beta-1 receptor distribution and its Gs->cAMP signaling: heart (cardiomyocytes) and kidney (JG cells) have beta-1 -> atenolol lowers their cAMP; vascular smooth muscle has beta-2 -> atenolol (beta-1 selective) leaves it unchanged. Match the option: decreased, decreased, no change. Reject options that lower vascular smooth-muscle cAMP (that requires beta-2 blockade, e.g., propranolol) or spare the JG cell.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Cardiomyocyte cAMP decreased, juxtaglomerular cell cAMP decreased, vascular smooth muscle cAMP decreased",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Cardiomyocyte cAMP decreased, juxtaglomerular cell cAMP decreased, vascular smooth muscle cAMP no significant change",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Cardiomyocyte cAMP decreased, juxtaglomerular cell cAMP no significant change, vascular smooth muscle cAMP decreased",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Cardiomyocyte cAMP decreased, juxtaglomerular cell cAMP no significant change, vascular smooth muscle cAMP no significant change",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Cardiomyocyte cAMP no significant change, juxtaglomerular cell cAMP no significant change, vascular smooth muscle cAMP no significant change",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Vascular smooth muscle decreased - needs beta-2 block",
+      "detail": "WHAT IT IS: cAMP decreased in all three, including vascular smooth muscle. ❌ WHY IT FAILS: vascular smooth muscle carries beta-2 (not beta-1) receptors; a selective beta-1 blocker (atenolol) doesn't lower its cAMP - that would require a nonselective agent (propranolol). ✅ Correct if: nonselective beta blocker."
+    },
+    {
+      "letter": "C",
+      "label": "JG cell unchanged, vascular decreased - both wrong",
+      "detail": "WHAT IT IS: sparing JG cells but lowering vascular cAMP. ❌ WHY IT FAILS: JG cells DO express beta-1 (renin release), so their cAMP falls; vascular smooth muscle (beta-2) is spared by atenolol. ✅ Correct if: (mismatched receptor distribution) - not this."
+    },
+    {
+      "letter": "D",
+      "label": "JG cell unchanged - JG cells have beta-1",
+      "detail": "WHAT IT IS: only cardiomyocyte cAMP falls. ❌ WHY IT FAILS: renal juxtaglomerular cells have beta-1 receptors (stimulating renin), so atenolol lowers their cAMP too. ✅ Correct if: a drug not affecting JG beta-1 signaling."
+    },
+    {
+      "letter": "E",
+      "label": "No change anywhere - atenolol does block beta-1",
+      "detail": "WHAT IT IS: no cAMP change in any cell. ❌ WHY IT FAILS: atenolol blocks beta-1 receptors, so cardiomyocyte and JG-cell cAMP decrease. ✅ Correct if: a drug with no beta-1 activity."
+    }
+  ],
+  "reasoning": [
+    "Atenolol at low dose is a selective beta-1 antagonist",
+    "Beta-1 receptors (Gs -> cAMP) are on cardiomyocytes and renal juxtaglomerular cells",
+    "Blocking beta-1 lowers cAMP in those cells; vascular smooth muscle uses beta-2 (unaffected by atenolol)",
+    "-> cardiomyocyte and JG cAMP decreased, vascular smooth muscle unchanged; answer B"
+  ],
+  "mechanism": "BETA-ADRENERGIC receptors are G-protein-coupled receptors (GPCRs) linked to Gs, whose alpha subunit activates ADENYLYL CYCLASE to convert ATP to cAMP (activating protein kinase A). Receptor subtypes have distinct tissue distributions: BETA-1 receptors predominate in CARDIAC tissue (cardiomyocytes; increasing rate/contractility) and on renal JUXTAGLOMERULAR (JG) CELLS (stimulating renin release), whereas BETA-2 receptors predominate in VASCULAR and bronchial SMOOTH MUSCLE (causing relaxation). ATENOLOL at low doses is a SELECTIVE BETA-1 ANTAGONIST, so it lowers cAMP in beta-1-bearing cardiomyocytes and JG cells (reducing heart rate/contractility and renin), while leaving beta-2-bearing VASCULAR SMOOTH MUSCLE cAMP essentially UNCHANGED. Therefore the direct cellular effect is DECREASED cAMP in cardiomyocytes and JG cells with NO significant change in vascular smooth muscle. A NONselective beta blocker (propranolol) would additionally lower vascular smooth-muscle cAMP by blocking beta-2. (A drug like diltiazem, a calcium channel blocker, would not directly change cAMP.)",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm > beta blockers/GPCR: beta-1 (heart, JG cells) and beta-2 (vascular/bronchial smooth muscle) are Gs-coupled (raise cAMP); atenolol/metoprolol = beta-1 selective; propranolol = nonselective."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Atenolol blocks beta-1 (heart + JG cells -> cAMP down); vascular smooth muscle is beta-2 (unchanged)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on beta-1 vs beta-2, Gs/adenylyl cyclase/cAMP, juxtaglomerular cells, or selective vs nonselective beta blocker? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Lowering vascular smooth-muscle cAMP needs beta-2 block (propranolol); JG cells DO have beta-1 (renin)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: beta-1 = heart + JG cells; beta-2 = vascular/bronchial smooth muscle; atenolol (beta-1 selective) lowers cAMP in the former only."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Atenolol selectivity",
+      "back": "Selective beta-1 antagonist (low dose)"
+    },
+    {
+      "front": "Beta-1 receptor locations",
+      "back": "Cardiomyocytes + renal juxtaglomerular cells"
+    },
+    {
+      "front": "Beta-2 receptor locations",
+      "back": "Vascular and bronchial smooth muscle"
+    },
+    {
+      "front": "Beta receptor second messenger",
+      "back": "Gs -> adenylyl cyclase -> cAMP"
+    },
+    {
+      "front": "Nonselective beta blocker example",
+      "back": "Propranolol (blocks beta-1 and beta-2)"
+    },
+    {
+      "front": "Beta-1 on JG cells effect",
+      "back": "Stimulates renin release (blocked -> less renin)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Beta-1 blockade",
+      "detail": "Pharm: atenolol lowers cAMP in cardiomyocytes + JG cells."
+    },
+    {
+      "tag": "options",
+      "topic": "Receptor distribution",
+      "detail": "Pharm > beta-2 = vascular smooth muscle (spared by atenolol)."
+    },
+    {
+      "tag": "signaling",
+      "topic": "Gs/cAMP",
+      "detail": "Pharm > beta receptors raise cAMP; block lowers it."
+    }
+  ],
+  "memoryHook": "Atenolol = 'A-teno-ONE' hits beta-ONE - so it quiets cAMP in the heart and the renin (JG) cells, but leaves the beta-2 blood vessels alone.",
+  "stem": [
+    {
+      "text": "A 47-year-old man comes to the office for follow-up of his elevated blood pressure. The patient's medical history is significant for stable angina pectoris, for which he takes sublingual nitroglycerin as needed. He has no orthopnea, paroxysmal nocturnal dyspnea, or lower extremity swelling. His blood pressure is 154/107 mm Hg and pulse is 86/min. Physical examination shows no abnormalities. The patient is "
+    },
+    {
+      "text": "started on a low dose of atenolol",
+      "clue": true,
+      "type": "green",
+      "note": "At low doses atenolol is a SELECTIVE beta-1 adrenergic antagonist; beta-1 receptors couple to Gs and raise cAMP, so blockade lowers cAMP in beta-1-bearing cells."
+    },
+    {
+      "text": ". Which of the following cellular changes will most likely occur as a direct effect of this medication?"
+    }
+  ]
+}

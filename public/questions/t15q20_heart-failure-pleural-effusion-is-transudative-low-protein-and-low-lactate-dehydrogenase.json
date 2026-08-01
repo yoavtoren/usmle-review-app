@@ -1,0 +1,190 @@
+{
+  "id": "q539",
+  "item": 539,
+  "qid": "7239",
+  "title": "Heart-failure pleural effusion is transudative: low protein and low lactate dehydrogenase",
+  "system": "Pathophysiology",
+  "topic": "Transudative vs exudative pleural effusion",
+  "correct": "E",
+  "yourAnswer": "C",
+  "percentCorrect": 52,
+  "vignette": "Item 2 of 2. On physical examination, jugular venous pressure is elevated, breath sounds are decreased at the right lung base with dullness to percussion, and 2+ bilateral lower extremity pitting edema is present. Chest x-ray shows cephalization of the blood vessels, Kerley B lines, and a right pleural effusion. Thoracentesis is performed for pleural fluid analysis. In comparison to plasma fluid, which of the following pleural fluid findings is most likely to be observed?",
+  "clues": [
+    {
+      "text": "jugular venous pressure is elevated",
+      "type": "blue",
+      "note": "Elevated JVP indicates systemic venous congestion from heart failure - a cause of TRANSUDATIVE pleural effusion."
+    },
+    {
+      "text": "2+ bilateral lower extremity pitting edema is present",
+      "type": "green",
+      "note": "Bilateral pitting edema plus elevated JVP confirms heart failure with fluid overload."
+    },
+    {
+      "text": "cephalization of the blood vessels, Kerley B lines, and a right pleural effusion",
+      "type": "green",
+      "note": "Cephalization and Kerley B lines are radiographic signs of elevated pulmonary venous pressure (heart failure), which produces a TRANSUDATIVE effusion."
+    }
+  ],
+  "whatMatters": "Heart failure raises hydrostatic pressure, causing a TRANSUDATIVE pleural effusion. Transudates have LOW protein and LOW LACTATE DEHYDROGENASE (LDH) relative to plasma (they fail Light criteria). Answer E (low LDH content).",
+  "strategy": "Classify the effusion by mechanism: heart failure = increased HYDROSTATIC pressure = TRANSUDATE (low protein, low LDH). Use Light criteria - transudates are BELOW the exudative cutoffs. Reject exudate/other-source features: high protein and high WBC (exudates from inflammation/infection/malignancy), low glucose (infectious/malignant/rheumatoid exudate consuming glucose), and high amylase (pancreatitis/esophageal rupture) - none fit a cardiogenic transudate.",
+  "options": [
+    {
+      "letter": "A",
+      "text": "High amylase content",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "High protein content",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "High white blood cell count",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Low glucose content",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Low lactate dehydrogenase content",
+      "correct": true
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "High amylase - pancreatitis/esophageal rupture",
+      "detail": "WHAT IT IS: elevated pleural amylase (pancreatitis, pancreatic pseudocyst, esophageal rupture). ❌ WHY IT FAILS: those cause EXUDATIVE effusions, not the cardiogenic transudate here. ✅ Correct if: pancreatic/esophageal source."
+    },
+    {
+      "letter": "B",
+      "label": "High protein - exudate",
+      "detail": "WHAT IT IS: high pleural protein (pleural/serum protein >0.5) defining an EXUDATE. ❌ WHY IT FAILS: transudates from heart failure have LOW protein (increased hydrostatic pressure, not increased capillary permeability). ✅ Correct if: exudate from infection/malignancy/inflammation."
+    },
+    {
+      "letter": "C",
+      "label": "High white blood cell count - exudate (infection/malignancy)",
+      "detail": "WHAT IT IS: a high leukocyte count (complicated parapneumonic/malignant effusion). ❌ WHY IT FAILS: transudates do NOT show high WBC counts; heart failure effusions are paucicellular. ✅ Correct if: infected/inflammatory exudate."
+    },
+    {
+      "letter": "D",
+      "label": "Low glucose - infectious/malignant/rheumatoid exudate",
+      "detail": "WHAT IT IS: low pleural glucose from consumption by bacteria/neutrophils/malignant cells. ❌ WHY IT FAILS: that indicates an EXUDATE (empyema, malignancy, rheumatoid), not a cardiogenic transudate. ✅ Correct if: empyema/rheumatoid/malignant effusion with low glucose."
+    }
+  ],
+  "reasoning": [
+    "Elevated JVP, pitting edema, cephalization, and Kerley B lines indicate heart failure",
+    "Heart failure increases pulmonary capillary HYDROSTATIC pressure -> transudative effusion",
+    "Transudates have LOW protein and LOW lactate dehydrogenase relative to plasma",
+    "-> low lactate dehydrogenase content; answer E"
+  ],
+  "mechanism": "Pleural effusions are classified as TRANSUDATIVE or EXUDATIVE, a distinction guided by LIGHT'S CRITERIA (an effusion is EXUDATIVE if any is met: pleural/serum PROTEIN >0.5, pleural/serum LDH >0.6, or pleural LDH > two-thirds the upper limit of normal serum LDH). TRANSUDATIVE effusions form from an imbalance in HYDROSTATIC or ONCOTIC pressure with INTACT capillaries, so relatively little protein and LDH leak into the pleural space - i.e., LOW pleural PROTEIN and LOW LDH compared with plasma. HEART FAILURE causes a transudate: backup of blood from the failing left ventricle raises pulmonary capillary HYDROSTATIC pressure, driving low-protein fluid into the pleural space (cephalization and Kerley B lines reflect this elevated pulmonary venous pressure; elevated JVP and pedal edema reflect systemic congestion). Other transudate causes include cirrhosis (hepatic hydrothorax) and nephrotic syndrome (low oncotic pressure). By contrast, EXUDATES arise from increased capillary PERMEABILITY (infection, malignancy, rheumatologic disease) and show HIGH protein/LDH (and sometimes high WBC, low glucose, or high amylase). Therefore this cardiogenic effusion shows LOW LDH.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pulm > pleural effusions: Light criteria (protein >0.5, LDH >0.6, or LDH > 2/3 ULN = exudate); transudate = low protein/LDH (heart failure, cirrhosis, nephrotic); exudate = high protein/LDH (infection, malignancy, rheumatologic; +/- low glucose, high amylase, high WBC)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Heart failure = hydrostatic transudate = low protein and low LDH."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on transudate vs exudate, Light criteria, LDH/protein, hydrostatic vs oncotic pressure, or Kerley B lines? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "High protein/WBC, low glucose, high amylase = EXUDATE features (infection/malignancy/pancreatic), not a cardiogenic transudate."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: heart-failure effusion = transudate (low protein, low LDH); exudate = high protein/LDH (Light criteria)."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Heart-failure pleural effusion type",
+      "back": "Transudate (low protein, low LDH)"
+    },
+    {
+      "front": "Light criteria (exudate if any)",
+      "back": "Pleural/serum protein >0.5, LDH >0.6, or LDH > 2/3 ULN serum"
+    },
+    {
+      "front": "Transudate causes",
+      "back": "Heart failure, cirrhosis (hepatic hydrothorax), nephrotic syndrome"
+    },
+    {
+      "front": "Exudate causes",
+      "back": "Infection, malignancy, rheumatologic (high protein/LDH)"
+    },
+    {
+      "front": "Low pleural glucose",
+      "back": "Empyema, malignancy, rheumatoid (exudate)"
+    },
+    {
+      "front": "High pleural amylase",
+      "back": "Pancreatitis / esophageal rupture (exudate)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "Transudative effusion",
+      "detail": "Pulm: heart failure -> low protein, low LDH."
+    },
+    {
+      "tag": "options",
+      "topic": "Exudate features",
+      "detail": "Pulm > high protein/LDH/WBC, low glucose, high amylase."
+    },
+    {
+      "tag": "criteria",
+      "topic": "Light criteria",
+      "detail": "Pulm > protein >0.5, LDH >0.6, LDH > 2/3 ULN."
+    }
+  ],
+  "memoryHook": "A failing heart just squeezes low-protein water into the chest (pressure, not inflammation) - a transudate: low protein AND low LDH.",
+  "stem": [
+    {
+      "text": "Item 2 of 2. On physical examination, "
+    },
+    {
+      "text": "jugular venous pressure is elevated",
+      "clue": true,
+      "type": "blue",
+      "note": "Elevated JVP indicates systemic venous congestion from heart failure - a cause of TRANSUDATIVE pleural effusion."
+    },
+    {
+      "text": ", breath sounds are decreased at the right lung base with dullness to percussion, and "
+    },
+    {
+      "text": "2+ bilateral lower extremity pitting edema is present",
+      "clue": true,
+      "type": "green",
+      "note": "Bilateral pitting edema plus elevated JVP confirms heart failure with fluid overload."
+    },
+    {
+      "text": ". Chest x-ray shows "
+    },
+    {
+      "text": "cephalization of the blood vessels, Kerley B lines, and a right pleural effusion",
+      "clue": true,
+      "type": "green",
+      "note": "Cephalization and Kerley B lines are radiographic signs of elevated pulmonary venous pressure (heart failure), which produces a TRANSUDATIVE effusion."
+    },
+    {
+      "text": ". Thoracentesis is performed for pleural fluid analysis. In comparison to plasma fluid, which of the following pleural fluid findings is most likely to be observed?"
+    }
+  ]
+}

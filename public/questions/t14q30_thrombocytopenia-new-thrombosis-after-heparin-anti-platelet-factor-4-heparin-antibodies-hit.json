@@ -1,0 +1,190 @@
+{
+  "id": "q509",
+  "item": 509,
+  "qid": "15120",
+  "title": "Thrombocytopenia + new thrombosis after heparin: anti-platelet factor 4/heparin antibodies (HIT)",
+  "system": "Pathology",
+  "topic": "Heparin-induced thrombocytopenia",
+  "correct": "B",
+  "yourAnswer": "E",
+  "percentCorrect": 70,
+  "vignette": "A 26-year-old woman, gravida 2 para 1, at 8 weeks gestation comes to the office due to pain and swelling of her left leg for the past day. The patient had a pulmonary embolism during her previous pregnancy, and prophylactic low-molecular-weight heparin therapy was initiated 6 days ago. She has no other medical conditions and takes prenatal vitamins. Physical examination shows left lower extremity edema and calf tenderness but no other abnormalities. Venous duplex ultrasonography reveals acute left femoral vein thrombosis. Platelet count, which was normal prior to anticoagulant therapy initiation, is 84,000/mm3. Other blood cell counts and renal and liver function studies are within normal limits. Which of the following most likely predisposed this patient to her current condition?",
+  "clues": [
+    {
+      "text": "prophylactic low-molecular-weight heparin therapy was initiated 6 days ago",
+      "type": "orange",
+      "note": "Heparin-induced thrombocytopenia (type 2) typically develops 5-10 days after starting heparin (unfractionated more than low-molecular-weight, but LMWH can cause it)."
+    },
+    {
+      "text": "acute left femoral vein thrombosis",
+      "type": "green",
+      "note": "NEW thrombosis while on heparin is the paradoxical prothrombotic hallmark of HIT (heparin-induced thrombocytopenia AND thrombosis)."
+    },
+    {
+      "text": "Platelet count, which was normal prior to anticoagulant therapy initiation, is 84,000/mm3",
+      "type": "green",
+      "note": "A significant platelet DROP after starting heparin (from normal to 84,000) plus new thrombosis strongly suggests HIT."
+    }
+  ],
+  "whatMatters": "A platelet DROP plus NEW thrombosis 5-10 days after starting heparin = HEPARIN-INDUCED THROMBOCYTOPENIA (HIT type 2). It is caused by IgG ANTIBODIES against complexes of HEPARIN and PLATELET FACTOR 4 (PF4), which activate platelets and cause a prothrombotic state. Answer B.",
+  "strategy": "Recognize HIT: platelet count falls (and/or new thrombosis) ~5-10 days after heparin exposure. Mechanism = anti-PF4/heparin IgG -> platelet activation -> thrombosis + thrombocytopenia. Reject acquired protein C deficiency (warfarin-induced skin necrosis), anti-GPIIb/IIIa antibodies (ITP - bleeding, low platelets, no thrombosis), cryoglobulins (vasculitis/purpura, not marked thrombocytopenia), and decreased ADAMTS13 (TTP - pentad with MAHA/schistocytes, not heparin-triggered isolated DVT).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Acquired protein C deficiency",
+      "correct": false
+    },
+    {
+      "letter": "B",
+      "text": "Anti-platelet factor 4/heparin antibodies",
+      "correct": true
+    },
+    {
+      "letter": "C",
+      "text": "Anti-platelet glycoprotein IIb/IIIa antibodies",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Cold-precipitable immunoglobulins",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Decreased ADAMTS13 level",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "A",
+      "label": "Acquired protein C deficiency - warfarin skin necrosis",
+      "detail": "WHAT IT IS: transient protein C depletion early in WARFARIN therapy (protein C falls faster than procoagulant factors). ❌ WHY IT FAILS: it causes warfarin-induced skin necrosis, not heparin-associated thrombocytopenia with new DVT; she is on heparin, not warfarin. ✅ Correct if: skin necrosis after starting warfarin without heparin bridging."
+    },
+    {
+      "letter": "C",
+      "label": "Anti-GPIIb/IIIa antibodies - ITP (bleeding)",
+      "detail": "WHAT IT IS: autoantibodies to platelet GPIIb/IIIa (immune thrombocytopenic purpura). ❌ WHY IT FAILS: ITP causes isolated thrombocytopenia with BLEEDING, not thrombosis, and is not heparin-triggered. ✅ Correct if: isolated low platelets with mucocutaneous bleeding."
+    },
+    {
+      "letter": "D",
+      "label": "Cold-precipitable immunoglobulins - cryoglobulinemia",
+      "detail": "WHAT IT IS: cryoglobulins (e.g., hepatitis C, autoimmune) causing vasculitis. ❌ WHY IT FAILS: cryoglobulinemia presents with palpable purpura, arthralgia, and vasculitis - not heparin-related thrombocytopenia with DVT. ✅ Correct if: purpuric vasculitis with cryoglobulins."
+    },
+    {
+      "letter": "E",
+      "label": "Decreased ADAMTS13 - TTP (MAHA pentad)",
+      "detail": "WHAT IT IS: ADAMTS13 deficiency causing thrombotic thrombocytopenic purpura. ❌ WHY IT FAILS: TTP shows microangiopathic hemolytic anemia (schistocytes), renal and neurologic involvement, and fever - not an isolated heparin-triggered DVT with otherwise normal counts. ✅ Correct if: MAHA + thrombocytopenia + neuro/renal signs (TTP pentad)."
+    }
+  ],
+  "reasoning": [
+    "Platelets fell from normal to 84,000 about 6 days after starting heparin",
+    "She simultaneously developed a NEW femoral vein thrombosis (prothrombotic)",
+    "This thrombocytopenia-plus-thrombosis after heparin is HIT, mediated by anti-PF4/heparin IgG",
+    "-> anti-platelet factor 4/heparin antibodies; answer B"
+  ],
+  "mechanism": "HEPARIN-INDUCED THROMBOCYTOPENIA and thrombosis (HIT, type 2) is an immune-mediated, prothrombotic reaction typically occurring 5-10 DAYS after heparin exposure (more common with UNFRACTIONATED heparin but also with LOW-MOLECULAR-WEIGHT heparin). PLATELET FACTOR 4 (PF4), released from platelet alpha-granules, binds heparin; the immune system generates IgG ANTIBODIES against the HEPARIN-PF4 complex. The Fc portion of these antibodies then engages Fc receptors on platelets, causing widespread PLATELET ACTIVATION with further PF4 release and aggregation - producing a PROTHROMBOTIC state (arterial and venous thrombosis) along with a falling platelet count (consumption/clearance). Thus a >50% platelet drop and/or NEW thrombosis after heparin should raise suspicion for HIT; management is to STOP all heparin and start a NON-heparin anticoagulant (e.g., argatroban, fondaparinux). The distractors are other platelet/coagulation disorders (warfarin-related protein C depletion, ITP, cryoglobulinemia, TTP) that do not fit heparin-triggered thrombocytopenia with new thrombosis.",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Heme > HIT (type 2): IgG vs heparin-PF4 complex -> platelet activation -> thrombocytopenia + thrombosis; 5-10 days after heparin; stop heparin, use argatroban/fondaparinux (avoid warfarin acutely)."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Platelet drop + new clot after heparin = HIT (anti-PF4/heparin IgG)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on HIT, platelet factor 4, IgG/Fc receptor, or non-heparin anticoagulants? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Protein C = warfarin necrosis; anti-GPIIb/IIIa = ITP (bleeding); cryoglobulins = vasculitis; ADAMTS13 = TTP (MAHA)."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: HIT = anti-PF4/heparin antibodies -> platelet activation -> thrombocytopenia + thrombosis; stop heparin, use argatroban."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Thrombocytopenia + thrombosis after heparin",
+      "back": "HIT (anti-PF4/heparin IgG antibodies)"
+    },
+    {
+      "front": "HIT timing",
+      "back": "5-10 days after heparin exposure"
+    },
+    {
+      "front": "HIT paradox",
+      "back": "Low platelets but PROthrombotic (arterial + venous clots)"
+    },
+    {
+      "front": "HIT management",
+      "back": "Stop all heparin; start argatroban/fondaparinux (avoid warfarin acutely)"
+    },
+    {
+      "front": "ITP vs HIT",
+      "back": "ITP = bleeding (anti-GPIIb/IIIa); HIT = clotting (anti-PF4)"
+    },
+    {
+      "front": "TTP mechanism",
+      "back": "Decreased ADAMTS13 -> MAHA pentad"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "HIT",
+      "detail": "Heme: anti-PF4/heparin IgG -> platelet activation -> thrombocytopenia + thrombosis."
+    },
+    {
+      "tag": "options",
+      "topic": "Thrombocytopenia causes",
+      "detail": "Heme > ITP, TTP, cryoglobulinemia, warfarin protein C."
+    },
+    {
+      "tag": "management",
+      "topic": "Non-heparin anticoagulation",
+      "detail": "Heme > argatroban/fondaparinux; stop heparin."
+    }
+  ],
+  "memoryHook": "Heparin's booby-trap: about a week in, antibodies to heparin-PF4 fire up the platelets - count drops AND new clots form. Stop the heparin, switch to argatroban.",
+  "stem": [
+    {
+      "text": "A 26-year-old woman, gravida 2 para 1, at 8 weeks gestation comes to the office due to pain and swelling of her left leg for the past day. The patient had a pulmonary embolism during her previous pregnancy, and "
+    },
+    {
+      "text": "prophylactic low-molecular-weight heparin therapy was initiated 6 days ago",
+      "clue": true,
+      "type": "orange",
+      "note": "Heparin-induced thrombocytopenia (type 2) typically develops 5-10 days after starting heparin (unfractionated more than low-molecular-weight, but LMWH can cause it)."
+    },
+    {
+      "text": ". She has no other medical conditions and takes prenatal vitamins. Physical examination shows left lower extremity edema and calf tenderness but no other abnormalities. Venous duplex ultrasonography reveals "
+    },
+    {
+      "text": "acute left femoral vein thrombosis",
+      "clue": true,
+      "type": "green",
+      "note": "NEW thrombosis while on heparin is the paradoxical prothrombotic hallmark of HIT (heparin-induced thrombocytopenia AND thrombosis)."
+    },
+    {
+      "text": ". "
+    },
+    {
+      "text": "Platelet count, which was normal prior to anticoagulant therapy initiation, is 84,000/mm3",
+      "clue": true,
+      "type": "green",
+      "note": "A significant platelet DROP after starting heparin (from normal to 84,000) plus new thrombosis strongly suggests HIT."
+    },
+    {
+      "text": ". Other blood cell counts and renal and liver function studies are within normal limits. Which of the following most likely predisposed this patient to her current condition?"
+    }
+  ]
+}

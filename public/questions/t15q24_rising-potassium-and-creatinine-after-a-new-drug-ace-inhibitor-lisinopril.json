@@ -1,0 +1,182 @@
+{
+  "id": "q543",
+  "item": 543,
+  "qid": "1148",
+  "title": "Rising potassium and creatinine after a new drug: ACE inhibitor (lisinopril)",
+  "system": "Pharmacology",
+  "topic": "ACE inhibitors - renal effects",
+  "correct": "A",
+  "yourAnswer": "A",
+  "percentCorrect": 62,
+  "vignette": "A 59-year-old man who is being treated for hypercholesterolemia, diabetes, and hypertension comes to the physician for a scheduled follow-up visit three weeks after starting a new medication. He has no new complaints. Blood work drawn yesterday shows an interim increase in potassium from 4.8 mEq/L to 5.2 mEq/L and a creatinine elevation from 1.2 mg/dL to 1.6 mg/dL. Administration of which of the following drugs is most likely responsible for the change in this patient's renal function?",
+  "clues": [
+    {
+      "text": "increase in potassium from 4.8 mEq/L to 5.2 mEq/L and a creatinine elevation from 1.2 mg/dL to 1.6 mg/dL",
+      "type": "green",
+      "note": "A modest rise in potassium (5.2 / normal 3.5-5.0) plus creatinine (1.6 / normal 0.6-1.2) after starting a drug is the classic effect of an ACE inhibitor (dilates the efferent arteriole -> lower GFR; reduces aldosterone -> hyperkalemia)."
+    }
+  ],
+  "whatMatters": "An ACE INHIBITOR (LISINOPRIL) reduces angiotensin II, DILATING the EFFERENT arteriole -> decreased intraglomerular pressure -> lower GFR (rise in creatinine); reduced aldosterone -> HYPERKALEMIA. A modest early rise in K/creatinine is expected. Answer A.",
+  "strategy": "Match the lab pattern (increased creatinine + hyperkalemia soon after a new antihypertensive) to the drug: ACE inhibitor (lisinopril). Reject drugs that don't cause this pattern: metoprolol (beta blocker, no significant GFR change), atorvastatin (myopathy/hepatotoxicity, not this), hydrochlorothiazide/furosemide (potassium-WASTING diuretics -> hypokalemia), metformin (lactic acidosis risk, not GFR-lowering itself), and prazosin (alpha-1 blocker, no GFR effect).",
+  "options": [
+    {
+      "letter": "A",
+      "text": "Lisinopril",
+      "correct": true
+    },
+    {
+      "letter": "B",
+      "text": "Metoprolol",
+      "correct": false
+    },
+    {
+      "letter": "C",
+      "text": "Atorvastatin",
+      "correct": false
+    },
+    {
+      "letter": "D",
+      "text": "Hydrochlorothiazide",
+      "correct": false
+    },
+    {
+      "letter": "E",
+      "text": "Furosemide",
+      "correct": false
+    },
+    {
+      "letter": "F",
+      "text": "Metformin",
+      "correct": false
+    },
+    {
+      "letter": "G",
+      "text": "Prazosin",
+      "correct": false
+    }
+  ],
+  "eliminations": [
+    {
+      "letter": "B",
+      "label": "Metoprolol - beta blocker, no GFR change",
+      "detail": "WHAT IT IS: a beta-1 blocker (reduces heart rate/renin). ❌ WHY IT FAILS: it doesn't meaningfully change GFR or cause this creatinine/potassium rise. ✅ Correct if: bradycardia/AV block from a beta blocker."
+    },
+    {
+      "letter": "C",
+      "label": "Atorvastatin - myopathy/hepatotoxicity",
+      "detail": "WHAT IT IS: an HMG-CoA reductase inhibitor. ❌ WHY IT FAILS: its adverse effects are myopathy and transaminitis; it wouldn't cause hyperkalemia/rising creatinine without massive rhabdomyolysis (which would have myalgias, high CK, dark urine). ✅ Correct if: statin myopathy with elevated CK."
+    },
+    {
+      "letter": "D",
+      "label": "Hydrochlorothiazide - potassium-WASTING",
+      "detail": "WHAT IT IS: a thiazide diuretic. ❌ WHY IT FAILS: thiazides cause HYPOkalemia (potassium wasting), the opposite of this hyperkalemia. ✅ Correct if: hypokalemia/hyponatremia/hyperuricemia from a thiazide."
+    },
+    {
+      "letter": "E",
+      "label": "Furosemide - potassium-WASTING loop diuretic",
+      "detail": "WHAT IT IS: a loop diuretic. ❌ WHY IT FAILS: it also causes HYPOkalemia, not hyperkalemia. ✅ Correct if: hypokalemia/metabolic alkalosis/ototoxicity from a loop diuretic."
+    },
+    {
+      "letter": "F",
+      "label": "Metformin - lactic acidosis, not GFR-lowering",
+      "detail": "WHAT IT IS: a biguanide for diabetes. ❌ WHY IT FAILS: metformin does not itself lower GFR or raise potassium; its concern is lactic acidosis in renal impairment. ✅ Correct if: lactic acidosis in the setting of renal dysfunction/contrast."
+    },
+    {
+      "letter": "G",
+      "label": "Prazosin - alpha-1 blocker, no GFR effect",
+      "detail": "WHAT IT IS: an alpha-1 antagonist for hypertension/BPH. ❌ WHY IT FAILS: it lowers BP by vasodilation but does not decrease GFR or cause hyperkalemia. ✅ Correct if: orthostatic hypotension (first-dose)."
+    }
+  ],
+  "reasoning": [
+    "Three weeks after a new drug, potassium and creatinine rise modestly",
+    "ACE inhibitors dilate the efferent arteriole, lowering intraglomerular pressure and GFR (creatinine up)",
+    "They also reduce aldosterone, causing potassium retention (hyperkalemia)",
+    "-> lisinopril (an ACE inhibitor); answer A"
+  ],
+  "mechanism": "ANGIOTENSIN-CONVERTING ENZYME (ACE) INHIBITORS (the '-pril' drugs, e.g., LISINOPRIL) block conversion of angiotensin I to ANGIOTENSIN II. Angiotensin II normally constricts the EFFERENT glomerular arteriole more than the afferent, maintaining intraglomerular pressure and GFR; by removing this efferent constriction, ACE inhibitors DECREASE intraglomerular pressure and GFR, producing a modest rise in serum CREATININE (an expected effect, of concern only if creatinine rises >30% or the patient has bilateral renal artery stenosis). Reduced angiotensin II also lowers ALDOSTERONE, decreasing renal potassium excretion and causing HYPERKALEMIA. This gives the classic pattern of a small early increase in creatinine AND potassium after starting therapy (other ACE inhibitor effects: cough from bradykinin, angioedema). The distractors don't produce this pattern: beta blockers, statins, alpha blockers, and metformin don't lower GFR/raise potassium this way, and thiazide/loop diuretics cause potassium WASTING (hypokalemia).",
+  "difficulty": [
+    {
+      "key": "knowledge",
+      "label": "🧠 Knowledge",
+      "text": "First Aid Pharm/Renal > ACE inhibitors: block angiotensin II -> dilate efferent arteriole -> decreased GFR (creatinine up) + decreased aldosterone (hyperkalemia); cough (bradykinin), angioedema; avoid in bilateral renal artery stenosis/pregnancy; renoprotective in diabetic nephropathy."
+    },
+    {
+      "key": "comprehension",
+      "label": "📖 Comprehension",
+      "text": "Rising creatinine + hyperkalemia after new antihypertensive = ACE inhibitor (lisinopril)."
+    },
+    {
+      "key": "vocab",
+      "label": "🔤 Vocab",
+      "text": "Unsure on ACE inhibitor, efferent arteriole, GFR, aldosterone, or hyperkalemia? Tell me which."
+    },
+    {
+      "key": "distractor",
+      "label": "🨤 Distractor",
+      "text": "Thiazide/loop diuretics cause HYPOkalemia; beta/alpha blockers, statin, metformin don't lower GFR/raise K this way."
+    },
+    {
+      "key": "other",
+      "label": "🗒️ Other",
+      "text": "Bank: ACE inhibitor -> efferent dilation (decreased GFR, creatinine up) + decreased aldosterone (hyperkalemia); cough/angioedema."
+    }
+  ],
+  "keywords": [
+    {
+      "front": "Rising creatinine + hyperkalemia after new drug",
+      "back": "ACE inhibitor (lisinopril)"
+    },
+    {
+      "front": "ACE inhibitor renal hemodynamic effect",
+      "back": "Dilates efferent arteriole -> lower GFR (creatinine up)"
+    },
+    {
+      "front": "ACE inhibitor and potassium",
+      "back": "Decreased aldosterone -> hyperkalemia"
+    },
+    {
+      "front": "ACE inhibitor other adverse effects",
+      "back": "Cough (bradykinin), angioedema"
+    },
+    {
+      "front": "Thiazide/loop diuretic effect on K",
+      "back": "Potassium wasting (hypokalemia)"
+    },
+    {
+      "front": "Concerning creatinine rise on ACE inhibitor",
+      "back": ">30% (consider bilateral renal artery stenosis)"
+    }
+  ],
+  "firstAid": [
+    {
+      "tag": "answer / stem",
+      "topic": "ACE inhibitor renal effects",
+      "detail": "Pharm: decreased GFR (creatinine up) + hyperkalemia."
+    },
+    {
+      "tag": "options",
+      "topic": "Antihypertensives/diabetes drugs",
+      "detail": "Pharm > diuretics waste K; beta/alpha blockers, metformin differ."
+    },
+    {
+      "tag": "caution",
+      "topic": "Renal artery stenosis",
+      "detail": "Renal > avoid ACE inhibitor in bilateral stenosis."
+    }
+  ],
+  "memoryHook": "Lisino'-pril' relaxes the exit (efferent) arteriole - pressure drops so GFR falls (creatinine nudges up) and aldosterone dips, so potassium climbs.",
+  "stem": [
+    {
+      "text": "A 59-year-old man who is being treated for hypercholesterolemia, diabetes, and hypertension comes to the physician for a scheduled follow-up visit three weeks after starting a new medication. He has no new complaints. Blood work drawn yesterday shows an interim "
+    },
+    {
+      "text": "increase in potassium from 4.8 mEq/L to 5.2 mEq/L and a creatinine elevation from 1.2 mg/dL to 1.6 mg/dL",
+      "clue": true,
+      "type": "green",
+      "note": "A modest rise in potassium (5.2 / normal 3.5-5.0) plus creatinine (1.6 / normal 0.6-1.2) after starting a drug is the classic effect of an ACE inhibitor (dilates the efferent arteriole -> lower GFR; reduces aldosterone -> hyperkalemia)."
+    },
+    {
+      "text": ". Administration of which of the following drugs is most likely responsible for the change in this patient's renal function?"
+    }
+  ]
+}

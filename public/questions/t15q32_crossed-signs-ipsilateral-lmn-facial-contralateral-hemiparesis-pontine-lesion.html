@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crossed signs (ipsilateral LMN facial + contralateral hemiparesis): pontine lesion</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:#f3f4f6;color:#1c1f23;line-height:1.6;padding:18px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6ea;border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px}
+.back{display:inline-block;margin:0 auto 12px;max-width:720px;font-size:13px;color:#2563eb;text-decoration:none}
+.head .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;background:#2563eb;color:#fff;border-radius:999px;padding:2px 9px}
+.pill.ghost{background:#f3f4f6;color:#6b7280;border:1px solid #e3e6ea}
+h2{margin:0 0 2px;font-size:20px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;background:#f3f4f6;padding:5px;border-radius:10px;margin:14px 0}
+.tab{flex:1;min-width:86px;border:none;background:transparent;color:#6b7280;border-radius:7px;padding:9px 6px;
+  font-size:13px;font-weight:500;cursor:pointer}
+.tab.active{background:#fff;color:#1c1f23;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:#6b7280;margin:4px 0 8px}
+.stem{font-size:15.5px;line-height:1.85}
+.clue{border:none;border-radius:5px;padding:0 4px;margin:0 1px;font:inherit;font-weight:600;cursor:pointer}
+.clue.open{outline:2px solid currentColor;outline-offset:1px}
+.inline-panel{display:block;margin:7px 0;padding:10px 12px;background:#f3f4f6;border-left:3px solid #2563eb;
+  border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.6}
+.callout{background:#f3f4f6;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14px}
+.callout.info{background:#e6f1fb}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.option{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:9px;padding:11px 13px;font-size:14px;cursor:pointer}
+.option.locked{border-color:#2563eb;background:#e6f1fb}
+.lockmsg{font-size:13px;color:#2563eb}
+.elim{border:1px solid #e3e6ea;border-radius:9px;padding:12px 14px;margin-bottom:9px;cursor:pointer;font-size:14px}
+.panel{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:8px;color:#444}
+.reveal{width:100%;padding:15px;border:2px solid #2563eb;background:#e6f1fb;color:#2563eb;border-radius:11px;
+  font-size:15px;font-weight:600;cursor:pointer}
+.banner{background:#eafaf0;color:#1a7f37;border-radius:11px;padding:13px 15px;font-size:16px;font-weight:600}
+.ok{color:#1a7f37;font-weight:600}.bad{color:#b3261e;font-weight:600}.muted{color:#6b7280}
+h3{font-size:15px;margin:18px 0 8px}
+.chain{display:flex;flex-direction:column;gap:7px}
+.chain-step{border-radius:8px;padding:10px 12px;font-size:14px}
+.chain-next{align-self:flex-start;background:#f3f4f6;border:1px dashed #cdd2d8;color:#6b7280;border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:13px}
+.memhook{background:#e6f1fb;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:14.5px;color:#0c447c}
+.review{border-top:1px solid #e3e6ea;margin-top:18px;padding-top:6px}
+.diffgrid{display:flex;flex-direction:column;gap:7px}
+.diff{text-align:left;border:1px solid #e3e6ea;background:#fff;border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+.diff.active{border-color:#2563eb;background:#e6f1fb}
+.diffmsg{margin-top:10px;padding-top:10px;border-top:1px solid #e3e6ea;font-size:13.5px;line-height:1.6;color:#0c447c}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{min-height:92px;border-radius:10px;padding:14px;font-size:14px;line-height:1.45;cursor:pointer;
+  background:#efeefe;color:#3c3489;text-align:left;border:1px solid #e3e6ea}
+.flip.on{background:#e1f5ee;color:#0f6e56}
+.fa{border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.fa-topic{font-weight:600;font-size:14.5px}.fa-loc{color:#444;font-size:13.5px;margin-top:3px;line-height:1.6}
+.fatag{font-size:11px;font-weight:600;background:#f3f4f6;color:#6b7280;border-radius:999px;padding:2px 8px;margin-left:6px}
+.panel{white-space:pre-line}
+</style></head>
+<body>
+<a class="back" href="index.html">← test 15 · all 40</a>
+<div class="wrap" id="w"></div>
+<script id="qdata" type="application/json">{"id": "q551", "item": 551, "qid": "105500", "title": "Crossed signs (ipsilateral LMN facial + contralateral hemiparesis): pontine lesion", "system": "Anatomy", "topic": "Brainstem stroke localization", "correct": "D", "yourAnswer": "A", "percentCorrect": 48, "vignette": "A 64-year-old man with a history of uncontrolled hypertension comes to the emergency department due to sudden-onset, right-sided weakness. Blood pressure is 170/106 mm Hg. Examination shows left facial weakness affecting the forehead and lower face. Muscle strength is 3/5 in the right upper and lower extremities. Deep tendon reflexes are brisk and Babinski sign is present on the right. A midline, sagittal section of a normal brain is shown, with labeled points: A = cortex, B = midbrain, C = cerebellum, D = pons, and E = medulla. This patient's lesion is most likely located at which of the following anatomic locations?", "clues": [{"text": "left facial weakness affecting the forehead and lower face", "type": "green", "note": "Facial weakness involving the FOREHEAD (whole hemiface) is a LOWER motor neuron (CN VII) pattern - localizing to the facial nerve nucleus/fascicle in the PONS on the LEFT."}, {"text": "Muscle strength is 3/5 in the right upper and lower extremities", "type": "green", "note": "Contralateral (right) arm and leg weakness with brisk reflexes and a Babinski sign is an UPPER motor neuron pattern from the corticospinal tract (before it decussates in the medulla)."}, {"text": "A = cortex, B = midbrain, C = cerebellum, D = pons, and E = medulla", "type": "blue", "note": "On the labeled midsagittal brain, D marks the PONS - where a lesion produces ipsilateral CN VII palsy with contralateral hemiparesis (crossed signs)."}], "whatMatters": "'CROSSED SIGNS' - IPSILATERAL (left) LOWER-motor-neuron FACIAL palsy (forehead involved) plus CONTRALATERAL (right) UMN hemiparesis - localize to the LEFT PONS, where the CN VII nucleus lies and the corticospinal tract runs before decussating. That is point D. Answer D.", "strategy": "Use crossed signs to localize to the brainstem: cranial nerve deficit is IPSILATERAL to the lesion (CN VII forehead-involving = LMN = pons), body weakness is CONTRALATERAL (corticospinal tract above the medullary decussation). Left CN VII + right hemiparesis = left pons (D). Reject cortex A (UMN facial spares forehead; no crossed CN sign), midbrain B (CN III - ptosis/down-and-out eye), cerebellum C (ataxia/nystagmus), and medulla E (CN IX-XII - tongue/dysphagia/hoarseness).", "options": [{"letter": "A", "text": "A (cortex)", "correct": false}, {"letter": "B", "text": "B (midbrain)", "correct": false}, {"letter": "C", "text": "C (cerebellum)", "correct": false}, {"letter": "D", "text": "D (pons)", "correct": true}, {"letter": "E", "text": "E (medulla)", "correct": false}], "eliminations": [{"letter": "A", "label": "Cortex - UMN facial spares the forehead", "detail": "WHAT IT IS: a cortical (or internal capsule) lesion. ❌ WHY IT FAILS: it causes a CONTRALATERAL UPPER motor neuron facial palsy that SPARES the forehead (bilateral cortical input to the upper face) - not this forehead-involving (LMN) palsy or crossed signs. ✅ Correct if: contralateral face+body weakness with forehead sparing."}, {"letter": "B", "label": "Midbrain - CN III (down-and-out eye, ptosis)", "detail": "WHAT IT IS: a midbrain lesion. ❌ WHY IT FAILS: it classically involves the oculomotor nerve (CN III), causing ipsilateral ptosis and a 'down-and-out' eye with contralateral hemiparesis (Weber), not a CN VII facial palsy. ✅ Correct if: CN III palsy + contralateral weakness."}, {"letter": "C", "label": "Cerebellum - ataxia/nystagmus, no crossed weakness", "detail": "WHAT IT IS: a cerebellar lesion. ❌ WHY IT FAILS: it causes ipsilateral ataxia, dysmetria, and nystagmus - not cranial nerve palsies with contralateral hemiparesis. ✅ Correct if: limb/gait ataxia, intention tremor."}, {"letter": "E", "label": "Medulla - CN IX-XII (tongue, dysphagia, hoarseness)", "detail": "WHAT IT IS: a medullary lesion. ❌ WHY IT FAILS: medullary strokes involve CN IX (gag), X (dysphonia), and XII (tongue), often with crossed sensory/motor findings - not a CN VII facial palsy. ✅ Correct if: tongue deviation/dysphagia/hoarseness (medial/lateral medullary syndromes)."}], "reasoning": ["Forehead-involving (LMN) left facial weakness localizes to the left CN VII nucleus in the pons", "Right-sided UMN hemiparesis reflects the corticospinal tract above its medullary decussation", "Ipsilateral cranial nerve deficit + contralateral body weakness = crossed signs of a brainstem (pontine) lesion", "-> point D (pons); answer D"], "mechanism": "Because most cranial nerves (other than CN II and IV) do NOT decussate while the body's major motor (corticospinal) and sensory fibers DO cross in the medulla, BRAINSTEM strokes produce 'CROSSED SIGNS': an IPSILATERAL cranial-nerve deficit with CONTRALATERAL hemiparesis/hemisensory loss. The FACIAL nerve (CN VII) nucleus and fascicle lie in the PONS; a lesion there causes an IPSILATERAL LOWER motor neuron facial palsy affecting the WHOLE hemiface (forehead included) - distinguishing it from a cortical UPPER motor neuron palsy that SPARES the forehead (the upper face has bilateral cortical innervation). The corticospinal tract runs through the pons before decussating in the caudal medulla, so a pontine lesion also weakens the CONTRALATERAL arm and leg (UMN pattern: weakness, hyperreflexia, upgoing Babinski). This patient (uncontrolled hypertension - a risk for lacunar/pontine stroke) has LEFT LMN facial palsy + RIGHT hemiparesis = a LEFT PONTINE lesion, labeled D on the midsagittal brain. Cortex spares the forehead; midbrain gives CN III; cerebellum gives ataxia; medulla gives CN IX-XII deficits.", "difficulty": [{"key": "knowledge", "label": "🧠 Knowledge", "text": "First Aid Neuro > brainstem localization: crossed signs (ipsilateral CN deficit + contralateral hemiparesis); CN VII nucleus = pons (LMN facial palsy, forehead involved); corticospinal decussates in medulla; cortical facial palsy spares forehead; midbrain = CN III, medulla = CN IX-XII."}, {"key": "comprehension", "label": "📖 Comprehension", "text": "Ipsilateral forehead-involving facial palsy + contralateral hemiparesis = pons."}, {"key": "vocab", "label": "🔤 Vocab", "text": "Unsure on crossed signs, LMN vs UMN facial palsy, corticospinal decussation, or brainstem cranial nerve levels? Tell me which."}, {"key": "distractor", "label": "🨤 Distractor", "text": "Cortex UMN facial spares forehead; midbrain = CN III; cerebellum = ataxia; medulla = CN IX-XII."}, {"key": "imaging", "label": "🖼️ Imaging / diagram", "text": "Midsagittal brain (stem, labeled A-E): the lesion localizes to D = PONS (CN VII nucleus + corticospinal tract before medullary decussation)."}, {"key": "other", "label": "🗒️ Other", "text": "Bank: crossed signs = brainstem; pons = ipsilateral CN VII (forehead) palsy + contralateral hemiparesis."}], "keywords": [{"front": "Ipsilateral forehead-involving facial palsy + contralateral hemiparesis", "back": "Pontine lesion (crossed signs)"}, {"front": "CN VII nucleus location", "back": "Pons"}, {"front": "UMN vs LMN facial palsy", "back": "UMN spares forehead (cortical); LMN affects whole hemiface (CN VII/pons)"}, {"front": "Corticospinal tract decussation", "back": "Caudal medulla (pyramidal decussation)"}, {"front": "Midbrain stroke cranial nerve", "back": "CN III (down-and-out eye, ptosis - Weber)"}, {"front": "Medullary stroke cranial nerves", "back": "CN IX, X, XII (dysphagia, dysphonia, tongue)"}], "firstAid": [{"tag": "answer / stem", "topic": "Pontine stroke", "detail": "Neuro: ipsilateral CN VII (forehead) + contralateral hemiparesis."}, {"tag": "options", "topic": "Brainstem levels", "detail": "Neuro > midbrain (III), medulla (IX-XII), cortex (forehead spared)."}, {"tag": "concept", "topic": "Crossed signs", "detail": "Neuro > CN ipsilateral, body contralateral."}], "memoryHook": "Whole-face droop on one side + arm/leg weakness on the other = a crossed (brainstem) sign at the pons (where CN VII lives and the motor tract hasn't crossed yet).", "stem": [{"text": "A 64-year-old man with a history of uncontrolled hypertension comes to the emergency department due to sudden-onset, right-sided weakness. Blood pressure is 170/106 mm Hg. Examination shows "}, {"text": "left facial weakness affecting the forehead and lower face", "clue": true, "type": "green", "note": "Facial weakness involving the FOREHEAD (whole hemiface) is a LOWER motor neuron (CN VII) pattern - localizing to the facial nerve nucleus/fascicle in the PONS on the LEFT."}, {"text": ". "}, {"text": "Muscle strength is 3/5 in the right upper and lower extremities", "clue": true, "type": "green", "note": "Contralateral (right) arm and leg weakness with brisk reflexes and a Babinski sign is an UPPER motor neuron pattern from the corticospinal tract (before it decussates in the medulla)."}, {"text": ". Deep tendon reflexes are brisk and Babinski sign is present on the right. A midline, sagittal section of a normal brain is shown, with labeled points: "}, {"text": "A = cortex, B = midbrain, C = cerebellum, D = pons, and E = medulla", "clue": true, "type": "blue", "note": "On the labeled midsagittal brain, D marks the PONS - where a lesion produces ipsilateral CN VII palsy with contralateral hemiparesis (crossed signs)."}, {"text": ". This patient's lesion is most likely located at which of the following anatomic locations?"}]}</script>
+<script>
+(function(){
+var q=JSON.parse(document.getElementById('qdata').textContent);
+var BG={red:'#FCEBEB',orange:'#FAEEDA',blue:'#E6F1FB',green:'#EAF3DE',purple:'#FBEAF0'};
+var FG={red:'#791F1F',orange:'#633806',blue:'#0C447C',green:'#27500A',purple:'#72243E'};
+var STEPBG=['#FCEBEB','#E6F1FB','#F1EFE8','#EAF3DE','#FBEAF0'];
+var STEPFG=['#791F1F','#0C447C','#2C2C2A','#27500A','#72243E'];
+var TABS=[['q','📖 Question'],['e','🚫 Eliminate'],['a','🎯 Answer'],['k','🔑 Keywords'],['f','📚 First Aid']];
+var DIFF=[['knowledge','📚 Pure knowledge gap'],['comprehension','🧭 Understanding the question'],
+ ['vocab','🔤 Vocabulary'],['imaging','🖼️ Imaging / diagram'],['distractor','🧲 Pulled by a distractor'],['other','✍️ Something else']];
+var s={tab:'q',clue:null,elim:null,locked:null,revealed:false,steps:0,flips:{},diff:null};
+function esc(t){return (t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function diffMsg(k){
+ var fa=(q.firstAid&&q.firstAid[0])?q.firstAid[0].location:'';
+ if(k==='knowledge')return '📚 Go to First Aid: '+esc(fa)+'. Build flashcards from the Keywords tab and re-test.';
+ if(k==='comprehension')return '🧭 '+esc(q.strategy||'Re-read the stem; identify exactly what is being asked.');
+ if(k==='vocab')return '🔤 Note the unfamiliar term(s) in the stem and define them; the highlighted clues explain the key ones.';
+ if(k==='imaging')return '🖼️ Practice the image/diagram type; review First Aid: '+esc(fa)+'.';
+ if(k==='distractor')return '🧲 Re-read the Eliminate tab — learn why each trap is wrong before choosing.';
+ return '✍️ Note what happened (timing, second-guessing, careless click) and adjust next time.';
+}
+function wrongOpts(){return q.options.filter(function(o){return !o.correct;});}
+function correctOpt(){return q.options.filter(function(o){return o.correct;})[0];}
+function render(){
+ var H='';
+ H+='<div class="head"><div class="pills"><span class="pill">#'+esc(q.item)+'</span>';
+ H+='<span class="pill ghost">'+esc(q.system)+'</span><span class="pill ghost">'+esc(q.topic)+'</span>';
+ if(q.percentCorrect!=null)H+='<span class="pill ghost">'+esc(q.percentCorrect)+'% got it right</span>';
+ H+='</div><h2>'+esc(q.title)+'</h2></div>';
+ H+='<div class="tabs">'+TABS.map(function(t){return '<button class="tab'+(s.tab===t[0]?' active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>';
+
+ if(s.tab==='q'){
+  H+='<div class="hint">👆 Tap any highlighted phrase in the stem to reveal why it matters</div><div class="stem">';
+  (q.stem||[{text:q.vignette}]).forEach(function(seg,i){
+    if(seg.clue){
+      H+='<span><button class="clue'+(s.clue===i?' open':'')+'" data-clue="'+i+'" style="background:'+(BG[seg.type]||'#eee')+';color:'+(FG[seg.type]||'#333')+'">'+esc(seg.text)+'</button>';
+      if(s.clue===i)H+='<span class="inline-panel">'+esc(seg.note)+'</span>';
+      H+='</span>';
+    } else H+=esc(seg.text);
+  });
+  H+='</div>';
+  H+='<div class="callout"><strong>🧩 What actually matters:</strong> '+esc(q.whatMatters)+'</div>';
+  H+='<div class="callout info"><strong>🧠 In these kinds of questions:</strong> '+esc(q.strategy)+'</div>';
+  H+='<div class="options">'+q.options.map(function(o){return '<button class="option'+(s.locked===o.letter?' locked':'')+'" data-lock="'+o.letter+'"><b>'+o.letter+'</b> '+esc(o.text)+'</button>';}).join('')+'</div>';
+  if(s.locked)H+='<p class="lockmsg">🔒 Locked in '+s.locked+'. Open the 🎯 Answer tab to check it.</p>';
+ }
+
+ if(s.tab==='e'){
+  H+='<div class="hint">👆 Tap each wrong answer — what it is, why it fails, and when it WOULD be right</div>';
+  wrongOpts().forEach(function(o){
+   var el=(q.eliminations||[]).filter(function(e){return e.letter===o.letter;})[0];
+   var lab=el?(el.label||el.what||''):'';
+   var det=el?(el.detail|| (el.why?('WHY IT FAILS: '+el.why):'')):'';
+   H+='<div class="elim" data-elim="'+o.letter+'"><div><b>'+o.letter+'</b> '+esc(o.text)+(lab?' — '+esc(lab):'')+'</div>';
+   if(s.elim===o.letter&&det)H+='<div class="panel">'+esc(det)+'</div>';
+   H+='</div>';
+  });
+ }
+
+ if(s.tab==='a'){
+  if(!s.revealed){H+='<button class="reveal" data-act="reveal">🎯 Reveal answer</button>';}
+  else{
+   var c=correctOpt();
+   H+='<div class="banner">✅ '+c.letter+' · '+esc(c.text)+'</div>';
+   if(s.locked)H+='<p class="'+(s.locked===q.correct?'ok':'bad')+'">'+(s.locked===q.correct?'🎉 Your locked guess '+s.locked+' is correct.':'Your locked guess was '+s.locked+' — correct answer is '+q.correct+'.')+'</p>';
+   if(q.yourAnswer&&q.yourAnswer!==q.correct)H+='<p class="muted">On the real test you picked '+q.yourAnswer+'.</p>';
+   H+='<h3>🧩 Reasoning chain</h3><div class="chain">';
+   q.reasoning.slice(0,s.steps).forEach(function(st,i){H+='<div class="chain-step" style="background:'+STEPBG[Math.min(i,4)]+';color:'+STEPFG[Math.min(i,4)]+'">'+(i+1)+'. '+esc(st)+'</div>';});
+   if(s.steps<q.reasoning.length)H+='<button class="chain-next" data-act="step">👆 Reveal step '+(s.steps+1)+'</button>';
+   H+='</div>';
+   H+='<div class="callout"><strong>⚙️ Mechanism:</strong> '+esc(q.mechanism)+'</div>';
+   H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+   var DIFFS=(q.difficulty&&q.difficulty.length)?q.difficulty:DIFF.map(function(d){return {key:d[0],label:d[1],message:diffMsg(d[0])};});
+   H+='<div class="review"><h3>🤔 What made this hard for you? Tap one to route your study:</h3><div class="diffgrid">';
+   DIFFS.forEach(function(d){H+='<button class="diff'+(s.diff===d.key?' active':'')+'" data-diff="'+d.key+'">'+esc(d.label)+'</button>';});
+   H+='</div>';
+   if(s.diff){var dm=DIFFS.filter(function(d){return d.key===s.diff;})[0];if(dm)H+='<div class="diffmsg">'+esc(dm.message)+'</div>';}
+   H+='</div>';
+  }
+ }
+
+ if(s.tab==='k'){
+  H+='<div class="hint">👆 Tap a card to flip · “If you see…” → “think…”</div><div class="cardgrid">';
+  q.keywords.forEach(function(kw,i){
+   H+='<button class="flip'+(s.flips[i]?' on':'')+'" data-flip="'+i+'">'+(s.flips[i]?'→ <b>'+esc(kw.back)+'</b>':'If you see:<br><b>'+esc(kw.front)+'</b>')+'</button>';
+  });
+  H+='</div>';
+ }
+
+ if(s.tab==='f'){
+  H+='<div class="hint">📚 Where to review every topic in the stem AND the answer options</div>';
+  q.firstAid.forEach(function(fa){
+   H+='<div class="fa"><div class="fa-topic">'+esc(fa.topic)+(fa.tag?' <span class="fatag">'+esc(fa.tag)+'</span>':'')+'</div>'+
+      '<div class="fa-loc">'+esc(fa.detail||fa.location||'')+'</div></div>';
+  });
+  H+='<div class="memhook">🧠 '+esc(q.memoryHook)+'</div>';
+ }
+
+ document.getElementById('w').innerHTML=H;
+}
+document.getElementById('w').addEventListener('click',function(ev){
+ var t=ev.target.closest('[data-tab],[data-clue],[data-elim],[data-lock],[data-act],[data-flip],[data-diff]');
+ if(!t)return;
+ if(t.dataset.tab){s.tab=t.dataset.tab;}
+ else if(t.dataset.clue!=null){var i=+t.dataset.clue;s.clue=s.clue===i?null:i;}
+ else if(t.dataset.elim){s.elim=s.elim===t.dataset.elim?null:t.dataset.elim;}
+ else if(t.dataset.lock){s.locked=t.dataset.lock;}
+ else if(t.dataset.act==='reveal'){s.revealed=true;}
+ else if(t.dataset.act==='step'){s.steps++;}
+ else if(t.dataset.flip!=null){var f=+t.dataset.flip;s.flips[f]=!s.flips[f];}
+ else if(t.dataset.diff){s.diff=t.dataset.diff;}
+ render();
+});
+render();
+})();
+</script>
+<script>if(window.top!==window.self){var b=document.querySelector('.back');if(b)b.style.display='none';document.body.style.padding='0';}</script>
+</body></html>
